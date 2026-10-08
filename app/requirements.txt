@@ -1,0 +1,3 @@
+# NO pip dependencies. app/ezcodex.py uses Python stdlib only.
+# Engine (llama-cli) + model auto-download into app/bin/ and app/models/
+# on first run. Nothing to install.

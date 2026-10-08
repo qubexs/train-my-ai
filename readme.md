@@ -9,7 +9,19 @@ Stacks: JS, TS, Node.js, HTML, CSS, SQL, PostgreSQL, MySQL, **Linux, Docker**, B
 - Windows, ~8GB RAM (tested 7.8GB), Python 3.14, Node 24
 - LM Studio (local server on port 1234) + model `Qwen2.5-0.5B-Instruct-GGUF` (~676MB)
 
-## Quickstart
+## Standalone app (no LM Studio / Ollama / pip install)
+One command (Windows PowerShell, from this folder):
+```powershell
+powershell -ExecutionPolicy Bypass -File app/install.ps1
+```
+Then:
+```powershell
+.\ezcodex.bat --lang ms
+```
+Linux/Mac: `python3 app/ezcodex.py --lang ms` (needs Python 3.9+ only).
+First run auto-downloads engine (~19MB) + model (~491MB) into `app/bin/`, `app/models/`.
+
+## Quickstart (LM Studio path)
 ```powershell
 # 1. Load CPU-only, auto-unload after 5 min idle
 C:\Users\testlab\.lmstudio\bin\lms.exe load qwen2.5-0.5b-instruct --gpu off --identifier ezcodex-0.5b --ttl 300 -y
