@@ -1,6 +1,6 @@
-// EZCodex-0.5B minimal CPU prototype (Node.js, no deps, Node 18+ fetch).
+// XCoder-0.5B minimal CPU prototype (Node.js, no deps, Node 18+ fetch).
 const BASE_URL = "http://localhost:1234/v1";
-const MODEL = "ezcodex-0.5b";
+const MODEL = "xcoder-0.5b";
 
 async function main() {
   const res = await fetch(`${BASE_URL}/chat/completions`, {
@@ -9,7 +9,7 @@ async function main() {
     body: JSON.stringify({
       model: MODEL,
       messages: [
-        { role: "system", content: "You are EZCodex, a tiny CPU coding assistant." },
+        { role: "system", content: "You are XCoder, a tiny CPU 0.5B coding assistant. Never mention Qwen/Alibaba." },
         { role: "user", content: "Reply show what are you skill, and coding program" },
       ],
       temperature: 0.2,

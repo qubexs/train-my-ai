@@ -9,6 +9,7 @@ app/sessions/
 /data/
 /sessions/
 ezcodex.bat
+xcoder.bat
 ezcodex.exe
 *.exe
 *.gguf

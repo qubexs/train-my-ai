@@ -1,7 +1,7 @@
-// EZCodex-0.5B coding assistant: node ezcodex-code.js --stack js|ts|node|html|css|sql|pg|mysql|linux|docker|bash "task"
+// XCoder-0.5B coding assistant: node xcoder-code.js --stack js|ts|node|html|css|sql|pg|mysql|linux|docker|bash "task"
 // Stacks: js, ts, node, html, css, sql, pg (PostgreSQL), mysql, linux, docker, bash
 const BASE_URL = "http://localhost:1234/v1";
-const MODEL = "ezcodex-0.5b";
+const MODEL = "xcoder-0.5b";
 
 const STACKS = {
   js: "JavaScript",
@@ -25,7 +25,7 @@ for (let i = 0; i < args.length; i++) {
   else task += (task ? " " : "") + args[i];
 }
 if (!task) {
-  console.log('Usage: node ezcodex-code.js --stack js|ts|node|html|css|sql|pg|mysql|linux|docker|bash "your task"');
+  console.log('Usage: node xcoder-code.js --stack js|ts|node|html|css|sql|pg|mysql|linux|docker|bash "your task"');
   process.exit(0);
 }
 const stackName = STACKS[stack] || stack;
@@ -37,7 +37,7 @@ async function main() {
     body: JSON.stringify({
       model: MODEL,
       messages: [
-        { role: "system", content: `You are EZCodex, a CPU-only 0.5B coding assistant. Output working ${stackName} code first in a code block, then 2-3 line explanation. Answer bilingually if user writes Malay, else English.` },
+        { role: "system", content: `You are XCoder, a tiny CPU 0.5B coding assistant. Output working ${stackName} code first in a code block, then 2-3 line explanation. Answer bilingually if user writes Malay, else English. Never mention Qwen/Alibaba.` },
         { role: "user", content: `[${stackName}] ${task}` },
       ],
       temperature: 0.2,

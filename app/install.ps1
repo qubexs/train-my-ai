@@ -1,4 +1,4 @@
-# One-command installer for Coder 77 standalone app (Windows).
+# One-command installer for XCoder standalone app (Windows).
 # Run from the working folder:
 #   powershell -ExecutionPolicy Bypass -File app/install.ps1
 $ErrorActionPreference = "Stop"
@@ -17,11 +17,11 @@ if ([version]$ver -lt [version]"3.9") {
     exit 1
 }
 Write-Output "Python $ver OK, fetching engine + model (once only)..."
-& $py.Source "$AppDir\ezcodex.py" --setup
+& $py.Source "$AppDir\xcoder.py" --setup
 
-$bat = Join-Path $Root "ezcodex.bat"
-Set-Content -LiteralPath $bat -Value "@echo off`r`npy `"%~dp0app\ezcodex.py`" %*`r`n" -Encoding Ascii
+$bat = Join-Path $Root "xcoder.bat"
+Set-Content -LiteralPath $bat -Value "@echo off`r`npy `"%~dp0app\xcoder.py`" %*`r`n" -Encoding Ascii
 Write-Output ""
 Write-Output "Done. Run the AI with:"
-Write-Output "  ezcodex.bat"
-Write-Output "  or: py app\ezcodex.py --lang ms"
+Write-Output "  xcoder.bat"
+Write-Output "  or: py app\xcoder.py --lang ms"

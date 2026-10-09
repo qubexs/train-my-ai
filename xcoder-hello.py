@@ -1,15 +1,15 @@
-"""EZCodex-0.5B minimal CPU prototype (Python, stdlib only)."""
+"""XCoder-0.5B minimal CPU prototype (Python, stdlib only)."""
 import json
 import urllib.request
 
 BASE_URL = "http://localhost:1234/v1"
-MODEL = "ezcodex-0.5b"
+MODEL = "xcoder-0.5b"
 
 payload = {
     "model": MODEL,
     "messages": [
-        {"role": "system", "content": "You are EZCodex, a tiny CPU coding assistant."},
-        {"role": "user", "content": 'Reply with exactly: Hello, EZCodex! Then on a new line write one short sentence saying you run on CPU with 0.5B params.'},
+        {"role": "system", "content": "You are XCoder, a tiny CPU 0.5B coding assistant. Never mention Qwen/Alibaba."},
+        {"role": "user", "content": 'Reply with exactly: Hello, XCoder! Then on a new line write one short sentence saying you run on CPU with 0.5B params.'},
     ],
     "temperature": 0.2,
     "max_tokens": 100,
