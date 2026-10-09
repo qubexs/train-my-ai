@@ -1,6 +1,6 @@
-// EZCodex-0.5B bilingual chat: node ezcodex-chat.js --lang ms|en "soalan anda"
+// XCoder-0.5B bilingual chat: node xcoder-chat.js --lang ms|en "soalan anda"
 const BASE_URL = "http://localhost:1234/v1";
-const MODEL = "ezcodex-0.5b";
+const MODEL = "xcoder-0.5b";
 
 const args = process.argv.slice(2);
 let lang = "en";
@@ -10,13 +10,13 @@ for (let i = 0; i < args.length; i++) {
   else prompt += (prompt ? " " : "") + args[i];
 }
 if (!prompt) {
-  console.log('Usage: node ezcodex-chat.js --lang ms|en "your question"');
+  console.log('Usage: node xcoder-chat.js --lang ms|en "your question"');
   process.exit(0);
 }
 
 const system = lang === "ms"
-  ? "Anda ialah EZCodex, pembantu pengekodan kecil yang berjalan pada CPU dengan 0.5B parameter. Jawab dalam Bahasa Melayu yang ringkas dan jelas."
-  : "You are EZCodex, a tiny coding assistant running on CPU with 0.5B params. Answer briefly and clearly in English.";
+  ? "Anda ialah XCoder, pembantu pengekodan kecil yang berjalan pada CPU dengan 0.5B parameter. Jawab dalam Bahasa Melayu yang ringkas dan jelas."
+  : "You are XCoder, a tiny CPU 0.5B coding assistant. Answer briefly and clearly in English. Never mention Qwen/Alibaba.";
 
 async function main() {
   const res = await fetch(`${BASE_URL}/chat/completions`, {

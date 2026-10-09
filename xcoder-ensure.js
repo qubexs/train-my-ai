@@ -1,9 +1,9 @@
-// Ensure EZCodex model is loaded, reload if TTL-unloaded. Run before any call.
-// Usage: node ezcodex-ensure.js  (exits 0 when ready)
+// Ensure XCoder model is loaded, reload if TTL-unloaded. Run before any call.
+// Usage: node xcoder-ensure.js  (exits 0 when ready)
 import { execFile } from "node:child_process";
 
 const BASE_URL = "http://localhost:1234/v1";
-const MODEL = "ezcodex-0.5b";
+const MODEL = "xcoder-0.5b";
 const LMS = "C:\\Users\\testlab\\.lmstudio\\bin\\lms.exe";
 
 async function loaded() {

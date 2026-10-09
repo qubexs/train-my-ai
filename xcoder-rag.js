@@ -1,10 +1,10 @@
-// EZCodex-0.5B minimal CPU RAG - zero deps.
-// Usage: node ezcodex-rag.js "soalan" [--lang ms|en] [--k 2] [--show-sources]
+// XCoder-0.5B minimal CPU RAG - zero deps.
+// Usage: node xcoder-rag.js "soalan" [--lang ms|en] [--k 2] [--show-sources]
 import fs from "node:fs";
 import path from "node:path";
 
 const BASE_URL = "http://localhost:1234/v1";
-const MODEL = "ezcodex-0.5b";
+const MODEL = "xcoder-0.5b";
 const DOCS_DIR = new URL("./docs/", import.meta.url);
 
 function tokenize(s) {
@@ -57,7 +57,7 @@ for (let i = 0; i < args.length; i++) {
   else query += (query ? " " : "") + args[i];
 }
 if (!query) {
-  console.log('Usage: node ezcodex-rag.js "your question" [--lang ms|en] [--k 2] [--show-sources]');
+  console.log('Usage: node xcoder-rag.js "your question" [--lang ms|en] [--k 2] [--show-sources]');
   process.exit(0);
 }
 
@@ -72,8 +72,8 @@ const context = ranked.map((r, i) => `[${i + 1}:${r.file} score=${r.s}]\n${r.tex
 if (showSources) console.log("--- RETRIEVED ---\n" + context + "\n--- ANSWER ---\n");
 
 const system = lang === "ms"
-  ? "Anda ialah EZCodex. Jawab dalam Bahasa Melayu ringkas HANYA berdasarkan KONTEKS di bawah. Jika tiada jawapan, katakan tidak tahu."
-  : "You are EZCodex. Answer briefly ONLY from CONTEXT below. If not in context, say you don't know.";
+  ? "Anda ialah XCoder. Jawab dalam Bahasa Melayu ringkas HANYA berdasarkan KONTEKS di bawah. Jika tiada jawapan, katakan tidak tahu."
+  : "You are XCoder, a tiny CPU 0.5B coding assistant. Answer briefly ONLY from CONTEXT below. If not in context, say you don't know. Never mention Qwen/Alibaba.";
 
 const res = await fetch(`${BASE_URL}/chat/completions`, {
   method: "POST",

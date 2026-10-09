@@ -1,13 +1,13 @@
-"""Coder 77 / EZCodex-0.5B standalone app - NO LM Studio, NO Ollama, NO pip install.
+"""XCoder / XCoder-0.5B standalone app - NO LM Studio, NO Ollama, NO pip install.
 
 Everything lives under the working folder:
-  app/ezcodex.py      this CLI (Python stdlib only)
+  app/xcoder.py       this CLI (Python stdlib only)
   app/bin/            llama-cli binary, auto-downloaded on first run
   app/models/         GGUF model, auto-downloaded on first run (~491MB)
 
 Run from the working folder:
-  Windows:    py app\\ezcodex.py [--lang ms|en] [--name "Coder 77"]
-  Linux/Mac:  python3 app/ezcodex.py [--lang ms|en] [--name "Coder 77"]
+  Windows:    py app\\xcoder.py [--lang ms|en] [--name "XCoder"]
+  Linux/Mac:  python3 app/xcoder.py [--lang ms|en] [--name "XCoder"]
 
 Each answer spawns llama-cli, then the process exits: 0 RAM between turns.
 """
@@ -51,7 +51,7 @@ def asset_name():
 
 def download(url, dest, expect=None):
     dest.parent.mkdir(parents=True, exist_ok=True)
-    req = urllib.request.Request(url, headers={"User-Agent": "ezcodex-standalone"})
+    req = urllib.request.Request(url, headers={"User-Agent": "xcoder-standalone"})
     with urllib.request.urlopen(req, timeout=120) as r, open(dest, "wb") as f:
         total = int(r.headers.get("Content-Length", 0)) or expect or 1
         got, t0 = 0, time.time()
@@ -73,7 +73,7 @@ def ensure_cli():
     if hit:
         return hit[0]
     asset = asset_name()
-    print(f"[ezcodex] downloading engine {asset} ...")
+    print(f"[xcoder] downloading engine {asset} ...")
     with tempfile.TemporaryDirectory() as tmp:
         arc = Path(tmp) / asset
         download(f"{LLAMA_BASE}/{asset}", arc)
@@ -95,7 +95,7 @@ def ensure_model():
     dest = MODELS_DIR / HF_MODEL_URL.rsplit("/", 1)[-1]
     if dest.exists() and dest.stat().st_size == MODEL_SIZE:
         return dest
-    print("[ezcodex] downloading model (~491MB, once only) ...")
+    print("[xcoder] downloading model (~491MB, once only) ...")
     download(HF_MODEL_URL, dest, expect=MODEL_SIZE)
     return dest
 
@@ -134,9 +134,9 @@ def ask(cli, model, system, prompt):
 
 
 def main():
-    ap = argparse.ArgumentParser(description="Coder 77 standalone (engine built-in)")
+    ap = argparse.ArgumentParser(description="XCoder standalone (engine built-in)")
     ap.add_argument("--lang", default="ms", choices=["ms", "en"])
-    ap.add_argument("--name", default="Coder 77")
+    ap.add_argument("--name", default="XCoder")
     ap.add_argument("--setup", action="store_true",
                     help="download engine + model only, then exit")
     a = ap.parse_args()

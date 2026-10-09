@@ -1,4 +1,4 @@
-"""EZCodex sample app (Python stdlib only, CPU 0.5B).
+"""XCoder sample app (Python stdlib only, CPU 0.5B).
 Usage:
   python sample_app.py --lang ms --ask "Apakah fungsi tambah?"
   python sample_app.py --lang en --code py --task "write tambah(a,b) with example"
@@ -8,10 +8,10 @@ import json
 import urllib.request
 
 BASE_URL = "http://localhost:1234/v1"
-MODEL = "ezcodex-0.5b"
+MODEL = "xcoder-0.5b"
 
 
-def call_ezcodex(system: str, user: str, max_tokens: int = 400) -> str:
+def call_xcoder(system: str, user: str, max_tokens: int = 400) -> str:
     payload = {
         "model": MODEL,
         "messages": [
@@ -32,7 +32,7 @@ def call_ezcodex(system: str, user: str, max_tokens: int = 400) -> str:
 
 
 def main() -> None:
-    p = argparse.ArgumentParser(description="EZCodex Python sample app")
+    p = argparse.ArgumentParser(description="XCoder Python sample app")
     p.add_argument("--lang", default="ms", choices=["ms", "en"])
     p.add_argument("--ask", default="", help="General question")
     p.add_argument("--code", default="", help="Code stack: py, js, ts, sql, pg, mysql")
@@ -41,23 +41,23 @@ def main() -> None:
 
     if a.code and a.task:
         system = (
-            "Anda ialah EZCodex, pembantu pengekodan CPU 0.5B. Beri kod dahulu, kemudian 2 baris penjelasan dalam Bahasa Melayu."
+            "Anda ialah XCoder, pembantu pengekodan CPU 0.5B. Beri kod dahulu, kemudian 2 baris penjelasan dalam Bahasa Melayu."
             if a.lang == "ms"
-            else f"You are EZCodex, CPU 0.5B coding assistant. Output {a.code} code first, then 2-line English explanation."
+            else f"You are XCoder, a tiny CPU 0.5B coding assistant. Output {a.code} code first, then 2-line English explanation. Never mention Qwen/Alibaba."
         )
-        print(call_ezcodex(system, f"[{a.code}] {a.task}"))
+        print(call_xcoder(system, f"[{a.code}] {a.task}"))
     elif a.ask:
         system = (
-            "Anda ialah EZCodex, pembantu kecil CPU 0.5B. Jawab ringkas dalam Bahasa Melayu."
+            "Anda ialah XCoder, pembantu kecil CPU 0.5B. Jawab ringkas dalam Bahasa Melayu."
             if a.lang == "ms"
-            else "You are EZCodex, tiny CPU 0.5B assistant. Answer briefly in English."
+            else "You are XCoder, a tiny CPU 0.5B coding assistant. Answer briefly in English. Never mention Qwen/Alibaba."
         )
-        print(call_ezcodex(system, a.ask, max_tokens=250))
+        print(call_xcoder(system, a.ask, max_tokens=250))
     else:
         # demo default
-        print(call_ezcodex(
-            "Anda ialah EZCodex. Jawab ringkas dalam Bahasa Melayu.",
-            "Hello, EZCodex! Perkenalkan diri dalam 2 ayat.",
+        print(call_xcoder(
+            "Anda ialah XCoder. Jawab ringkas dalam Bahasa Melayu.",
+            "Hello, XCoder! Perkenalkan diri dalam 2 ayat.",
             max_tokens=150,
         ))
 

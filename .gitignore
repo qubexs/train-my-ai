@@ -1,6 +1,10 @@
 # Standalone engine + model auto-download on first run - never commit binaries.
 app/bin/
 app/models/
-ezcodex.bat
+xcoder.bat
 __pycache__/
 *.pyc
+# PyInstaller local build output - release via GitHub Actions instead.
+dist/
+build/
+*.spec

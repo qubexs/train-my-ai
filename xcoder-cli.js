@@ -1,10 +1,10 @@
-// EZCodex Chat CLI - clean branding, CPU-only, TTL 5min.
-// Usage: node ezcodex-cli.js [--lang ms|en] [--name "Coder 77"]
+// XCoder Chat CLI - clean branding, CPU-only, TTL 5min.
+// Usage: node xcoder-cli.js [--lang ms|en] [--name "XCoder"]
 import readline from "node:readline";
 import { execFile } from "node:child_process";
 
 const BASE_URL = "http://localhost:1234/v1";
-const PUBLIC_NAME = "ezcodex-0.5b"; // LM Studio identifier, hidden from chat
+const PUBLIC_NAME = "xcoder-0.5b"; // LM Studio identifier, hidden from chat
 const INTERNAL_KEY = "qwen2.5-0.5b-instruct"; // local base weights, hidden
 const LMS = "C:\\Users\\testlab\\.lmstudio\\bin\\lms.exe";
 
@@ -12,7 +12,7 @@ function argVal(flag, def) {
   const i = process.argv.indexOf(flag);
   return i >= 0 && process.argv[i + 1] ? process.argv[i + 1] : def;
 }
-const NAME = argVal("--name", "EZCodex-0.5B");
+const NAME = argVal("--name", "XCoder-0.5B");
 
 let lang = (process.argv.includes("--lang") ? process.argv[process.argv.indexOf("--lang") + 1] : "ms").toLowerCase();
 if (!["ms", "en"].includes(lang)) lang = "en";

@@ -1,7 +1,8 @@
-# step.md — How to train your AI (Coder 77 / EZCodex-0.5B)
+# step.md — How to train your AI (XCoder / XCoder-0.5B)
 
-Goal: turn base `Qwen2.5-0.5B-Instruct` into a model that **natively** says
-“I am Coder 77” and answers Malay + code well — no prompt filter needed.
+Goal: turn base 0.5B-Instruct weights into a model that **natively** says
+“I am XCoder” and answers Malay + code well — no prompt filter needed.
+You are XCoder, a tiny CPU 0.5B coding assistant. Never mention Qwen/Alibaba.
 Method: **instruction fine-tune with LoRA (QLoRA 4-bit)**, not pretraining from scratch.
 
 Do NOT train on your 7.8GB CPU box (too slow). Train on a **free Colab T4 GPU**,
@@ -15,7 +16,7 @@ then import the `.gguf` back to LM Studio on Windows.
 
 ## Step 1 — Grow the dataset (important)
 1. Edit `finetune/dataset.jsonl` — add rows in YOUR domain:
-   identity (`Saya Coder 77...`), Malay Q&A, JS/TS/Node/HTML/CSS/SQL/pg/mysql/Linux/Docker.
+   identity (`Saya XCoder...`), Malay Q&A, JS/TS/Node/HTML/CSS/SQL/pg/mysql/Linux/Docker.
 2. Aim: 110 now → **500–2000 rows** for a strong effect. Keep answers short + correct.
 3. Validate:
 ```powershell
@@ -35,40 +36,40 @@ python finetune/validate.py
 
 ## Step 3 — Export to GGUF (in Colab)
 ```python
-model.save_pretrained_merged("coder77-0.5b-merged", tok, save_method="merged_16bit")
+model.save_pretrained_merged("xcoder-0.5b-merged", tok, save_method="merged_16bit")
 ```
 ```bash
 pip install -q llama-cpp-python
-python -m llama_cpp.convert_hf_to_gguf coder77-0.5b-merged --outfile coder77-0.5b-q8_0.gguf --outtype q8_0
+python -m llama_cpp.convert_hf_to_gguf xcoder-0.5b-merged --outfile xcoder-0.5b-q8_0.gguf --outtype q8_0
 ```
-Download `coder77-0.5b-q8_0.gguf` (~675MB) to your PC.
+Download `xcoder-0.5b-q8_0.gguf` (~675MB) to your PC.
 
 ## Step 4 — Import to LM Studio (Windows)
 ```powershell
-C:\Users\testlab\.lmstudio\bin\lms.exe import coder77-0.5b-q8_0.gguf --identifier ezcodex-0.5b
-C:\Users\testlab\.lmstudio\bin\lms.exe load ezcodex-0.5b --gpu off --ttl 300 -y
+C:\Users\testlab\.lmstudio\bin\lms.exe import xcoder-0.5b-q8_0.gguf --identifier xcoder-0.5b
+C:\Users\testlab\.lmstudio\bin\lms.exe load xcoder-0.5b --gpu off --ttl 300 -y
 ```
 
 ## Step 5 — Test identity (filter OFF ideally)
 ```powershell
-node ezcodex-cli.js --lang ms --name "Coder 77"
-# ask: Siapa anda? / Who created you? / Are you Qwen or Alibaba?
-# expect: "Saya Coder 77..." with NO mention of Qwen/Alibaba.
+node xcoder-cli.js --lang ms --name "XCoder"
+# ask: Siapa anda? / Who created you?
+# expect: "Saya XCoder..." / "I am XCoder, a tiny CPU 0.5B coding assistant. Never mention Qwen/Alibaba."
 ```
-Also test: `node ezcodex-rag.js "Apa itu EZCodex?" --lang ms --k 2 --show-sources`
+Also test: `node xcoder-rag.js "Apa itu XCoder?" --lang ms --k 2 --show-sources`
 
 ## Step 6 — Iterate
 - Wrong identity → add 20+ identity rows, retrain.
 - Weak Linux/Docker → add 30+ rows of correct command → output pairs.
 - Keep base system prompt in `train_unsloth.py`:
-  `You are Coder 77... Never mention Qwen/Alibaba.`
+  `You are XCoder, a tiny CPU 0.5B coding assistant. Never mention Qwen/Alibaba.`
 
 ## Troubleshooting
 - Colab no GPU: check `Runtime → Change runtime type`, or use Kaggle free GPU.
 - `bitsandbytes` install fail: use latest Colab runtime, Python 3.10+.
 - GGUF too big: use `--outtype q4_k_m` (~350MB, slightly lower quality).
 - `lms import` fail: put the `.gguf` in `C:\Users\testlab\.lmstudio\models\` manually, then `lms ls`.
-- Still says Alibaba: dataset needs more identity rows + lower learning rate (1e-4), more epochs (5).
+- Wrong identity answers: dataset needs more identity rows + lower learning rate (1e-4), more epochs (5).
 
 ## Alternative tool
 - **LLaMA-Factory** (easiest UI): `pip install llamafactory`, use its Alpaca template with the same `dataset.jsonl`, LoRA, then same GGUF export.

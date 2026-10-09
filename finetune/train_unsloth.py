@@ -21,7 +21,7 @@ ds = load_dataset("json", data_files="dataset.jsonl", split="train")
 def fmt(x):
     ins, inp, out = x["instruction"], x.get("input", ""), x["output"]
     user = ins + (f"\n{inp}" if inp else "")
-    text = f"<|im_start|>system\nYou are Coder 77, a tiny CPU 0.5B coding assistant. Never mention Qwen/Alibaba.<|im_end|>\n<|im_start|>user\n{user}<|im_end|>\n<|im_start|>assistant\n{out}<|im_end|>"
+    text = f"<|im_start|>system\nYou are XCoder, a tiny CPU 0.5B coding assistant. Never mention Qwen/Alibaba.<|im_end|>\n<|im_start|>user\n{user}<|im_end|>\n<|im_start|>assistant\n{out}<|im_end|>"
     return {"text": text}
 
 ds = ds.map(fmt)
@@ -30,11 +30,11 @@ SFTTrainer(
     model=model, tokenizer=tok, train_dataset=ds, dataset_text_field="text",
     args=SFTConfig(per_device_train_batch_size=2, gradient_accumulation_steps=4,
                     num_train_epochs=3, learning_rate=2e-4, fp16=True,
-                    output_dir="coder77-0.5b", logging_steps=10),
+                    output_dir="xcoder-0.5b", logging_steps=10),
 ).train()
 
 # Merge + save, then export GGUF in Colab:
-#   model.save_pretrained_merged("coder77-0.5b-merged", tok, save_method="merged_16bit")
+#   model.save_pretrained_merged("xcoder-0.5b-merged", tok, save_method="merged_16bit")
 #   !pip install -q llama-cpp-python
-#   !python -m llama_cpp.convert_hf_to_gguf coder77-0.5b-merged --outfile coder77-0.5b-q8_0.gguf --outtype q8_0
-# Download the .gguf, then on Windows: lms import coder77-0.5b-q8_0.gguf --identifier ezcodex-0.5b
+#   !python -m llama_cpp.convert_hf_to_gguf xcoder-0.5b-merged --outfile xcoder-0.5b-q8_0.gguf --outtype q8_0
+# Download the .gguf, then on Windows: lms import xcoder-0.5b-q8_0.gguf --identifier xcoder-0.5b

@@ -1,14 +1,14 @@
-// EZCodex-0.5B coding tools - CPU-only, zero deps, safe-whitelist.
+// XCoder-0.5B coding tools - CPU-only, zero deps, safe-whitelist.
 // Usage:
-//   node ezcodex-tools.js --tool list [--arg docs] [--lang ms|en]
-//   node ezcodex-tools.js --tool read --arg docs/js-basics.md [--lang ms|en]
-//   node ezcodex-tools.js --tool run --arg "console.log([1,2,3].map(x=>x*2))" [--lang ms|en]
+//   node xcoder-tools.js --tool list [--arg docs] [--lang ms|en]
+//   node xcoder-tools.js --tool read --arg docs/js-basics.md [--lang ms|en]
+//   node xcoder-tools.js --tool run --arg "console.log([1,2,3].map(x=>x*2))" [--lang ms|en]
 import fs from "node:fs";
 import path from "node:path";
 import { execFile } from "node:child_process";
 
 const BASE_URL = "http://localhost:1234/v1";
-const MODEL = "ezcodex-0.5b";
+const MODEL = "xcoder-0.5b";
 const ROOT = process.cwd();
 
 function safePath(p) {
@@ -56,8 +56,8 @@ else { console.error("tool must be list|read|run"); process.exit(1); }
 console.log(`--- TOOL:${tool} RESULT ---\n${result}\n--- EXPLANATION (${lang}) ---`);
 
 const system = lang === "ms"
-  ? "Anda ialah EZCodex. Terangkan hasil tool di bawah dalam Bahasa Melayu ringkas (2-4 ayat)."
-  : "You are EZCodex. Explain the tool result below briefly in English (2-4 sentences).";
+  ? "Anda ialah XCoder. Terangkan hasil tool di bawah dalam Bahasa Melayu ringkas (2-4 ayat)."
+  : "You are XCoder, a tiny CPU 0.5B coding assistant. Explain the tool result below briefly in English (2-4 sentences). Never mention Qwen/Alibaba.";
 
 const res = await fetch(`${BASE_URL}/chat/completions`, {
   method: "POST",
