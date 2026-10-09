@@ -76,6 +76,8 @@ def main():
     ap.add_argument("--build-dir", default=str(ROOT / "build" / "train"))
     ap.add_argument("--only", default="",
                     help="train subset, e.g. xcoder-docker or xcoder-linux,xcoder-web")
+    ap.add_argument("--per-stack", action="store_true",
+                    help="satu model setiap fail datasets/<stack>.jsonl (16 pakar)")
     ap.add_argument("--epochs", type=float, default=3.0)
     ap.add_argument("--retrain", action="store_true",
                     help="latih semula walaupun GGUF wujud (lama dibackup .bak)")
@@ -83,6 +85,7 @@ def main():
     a = ap.parse_args()
 
     from experts import add as add_model
+    from experts import STACK2DOMAIN, GENERAL
 
     for mod in ("torch", "transformers", "datasets", "peft", "sentencepiece"):
         if a.dry_run:
@@ -99,7 +102,16 @@ def main():
     jobs = []
     only = {o.strip() for o in a.only.split(",") if o.strip()}
     ds_dir = Path(a.datasets_dir)
-    for name, stacks, doms in PLAN:
+    plan = list(PLAN)
+    if a.per_stack:
+        plan = []
+        for f in sorted(ds_dir.glob("*.jsonl")):
+            if count_rows(f) == 0:
+                continue
+            stack = f.stem
+            plan.append((f"xcoder-{stack}", [stack],
+                         [STACK2DOMAIN.get(stack, GENERAL)]))
+    for name, stacks, doms in plan:
         if only and name not in only:
             continue
         gguf = models_dir / f"{name}-0.5b-{QUANT}.gguf"
