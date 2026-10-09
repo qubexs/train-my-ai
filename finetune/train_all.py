@@ -72,14 +72,19 @@ def main():
     ap = argparse.ArgumentParser(description="Batch-train all XCoder experts")
     ap.add_argument("--models-dir", default=str(ROOT / "models"))
     ap.add_argument("--build-dir", default=str(ROOT / "build" / "train"))
-    ap.add_argument("--only", default="", help="train one expert, e.g. xcoder-docker")
+    ap.add_argument("--only", default="",
+                    help="train subset, e.g. xcoder-docker or xcoder-linux,xcoder-web")
     ap.add_argument("--epochs", type=float, default=3.0)
+    ap.add_argument("--retrain", action="store_true",
+                    help="latih semula walaupun GGUF wujud (lama dibackup .bak)")
     ap.add_argument("--dry-run", action="store_true", help="show plan only, train nothing")
     a = ap.parse_args()
 
     from experts import add as add_model
 
     for mod in ("torch", "transformers", "datasets", "peft", "sentencepiece"):
+        if a.dry_run:
+            break
         try:
             __import__(mod)
         except ImportError:
@@ -90,20 +95,29 @@ def main():
     models_dir.mkdir(parents=True, exist_ok=True)
     print(f"{'EXPERT':16} {'ROWS':>6}  DECISION")
     jobs = []
+    only = {o.strip() for o in a.only.split(",") if o.strip()}
     for name, stacks, doms in PLAN:
-        if a.only and a.only != name:
+        if only and name not in only:
             continue
         gguf = models_dir / f"{name}-0.5b-{QUANT}.gguf"
         files = [ROOT / "datasets" / f"{s}.jsonl" for s in stacks]
         files = [f for f in files if f.exists()]
         rows = sum(count_rows(f) for f in files)
-        if gguf.exists() and gguf.stat().st_size > 50_000_000:
+        ready = gguf.exists() and gguf.stat().st_size > 50_000_000
+        if ready and not a.retrain:
             print(f"{name:16} {rows:>6}  SKIP (siap: {gguf.name})")
             continue
         if rows == 0:
             print(f"{name:16} {rows:>6}  SKIP (tiada data)")
             continue
-        if rows < 50:
+        if a.retrain and ready:
+            if a.dry_run:
+                print(f"{name:16} {rows:>6}  RETRAIN (akan backup {gguf.name})")
+            else:
+                bak = gguf.with_suffix(".gguf.bak")
+                gguf.rename(bak)
+                print(f"{name:16} {rows:>6}  RETRAIN (lama -> {bak.name})")
+        elif rows < 50:
             print(f"{name:16} {rows:>6}  TRAIN (nipis! kesan lemah dijangka)")
         else:
             print(f"{name:16} {rows:>6}  TRAIN")
