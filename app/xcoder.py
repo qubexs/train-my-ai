@@ -188,8 +188,16 @@ def clean(text, name):
 # Labels the model emits when it role-plays extra turns instead of answering.
 # Generation is stopped there (llama-cli --reverse-prompt in ask()) AND any
 # leftovers are trimmed here, so a 0.5B model can't snowball old turns.
-TURN_LABELS = ("pengguna:", "soalan baru:", "perbualan sebelum:",
-               "konteks:", "context:", "soalan:", "question:")
+# "konteks"/"context"/"soalan baru"/"perbualan sebelum" match WITHOUT
+# colon too: the model echoes the header as "Konteks (rujukan...)" with
+# no colon after the word. ("soalan:"/"question:" stay colon-required so
+# a legit "Soalan yang baik..." opening is never eaten.)
+TURN_LABELS = ("pengguna:", "soalan baru", "soalan pengguna",
+               "previous user question", "perbualan sebelum",
+               "konteks", "context", "soalan:", "question:")
+# answer-cue echoes: strip the prefix on the first line, keep the text
+# ("Jawapan: Fungsi tambah..." -> "Fungsi tambah...")
+CUE_PREFIXES = ("jawapan:", "jawaban:", "answer:", "respons:", "response:")
 
 
 def strip_turns(text, name):
@@ -212,30 +220,39 @@ def strip_turns(text, name):
                 if s:
                     kept.append(s)
             continue  # leading prompt/question echo -> skip line
+        if not kept and low.startswith(CUE_PREFIXES):
+            s = s.split(":", 1)[1].strip()  # "Jawapan: ..." -> "..."
+            if not s:
+                continue
         kept.append(s)
     return "\n".join(kept).strip()
 
 
 def build_prompt(history, q, lang):
-    """Current question first, minimal context (last exchange only),
-    explicit 'do not repeat' framing so small models answer directly."""
+    """Current question plus the last USER turn only (never the model's
+    own past answers — those become copy-paste bait for 0.5B)."""
+    users = [h for h in history if h.startswith("Pengguna:")]
     if lang == "ms":
-        ctx = ("Konteks (rujukan sahaja, JANGAN ulang atau tulis semula):\n"
-               + "\n".join(history[-2:]) + "\n\n") if history else ""
+        ctx = ("Soalan pengguna sebelum ini:\n" + users[-1] + "\n\n") if users else ""
         return ctx + "Soalan: " + q
-    ctx = ("Context (reference only, do NOT repeat or rewrite):\n"
-           + "\n".join(history[-2:]) + "\n\n") if history else ""
+    ctx = ("Previous user question:\n" + users[-1] + "\n\n") if users else ""
     return ctx + "Question: " + q
 
 
 def ask(cli, model, system, prompt, name):
-    """One subprocess per answer. Returns (text, tps or None)."""
+    """One subprocess per answer. Returns (text, tps or None).
+
+    Single-turn conversation mode (-st) with -sys: llama-cli applies the
+    model's chat template, which the 0.5B model follows far better than
+    plain completion (plain mode parrots/echoes prompt chunks).
+    -r stops + strip_turns() trim any fabricated follow-up turns.
+    """
     p = subprocess.run(
         [str(cli), "-m", str(model), "-c", "2048", "-n", "400",
          "--temp", "0.3", "--log-disable", "-st",
          "--no-display-prompt", "-sys", system, "-p", prompt,
          "-r", "Pengguna:", "-r", "Soalan baru:",
-         "-r", "Perbualan sebelum:"],
+         "-r", "Perbualan sebelum:", "-r", "Konteks"],
         capture_output=True, text=True, timeout=300)
     if p.returncode != 0:
         raise RuntimeError((p.stderr or p.stdout)[-1000:])
@@ -292,17 +309,14 @@ def main():
             print("Sejarah dipadam.")
             continue
         if lang == "ms":
-            system = (f"Anda ialah {a.name}, pembantu pengekodan CPU kecil 0.5B. "
-                      f"Jawab ringkas dalam Bahasa Melayu. Jawab HANYA soalan terakhir. "
-                      f"Jangan ulang perbualan atau tulis giliran baharu seperti 'Pengguna:'. "
-                      f"Jika ditanya siapa anda, jawab HANYA: "
-                      f"Saya {a.name}, dibina untuk pengekodan. Jangan sebut Qwen, Alibaba, Tongyi.")
+            # Third-person framing: "Anda ialah X" is read by 0.5B as
+            # talking TO X ("Hai XCoder!"). Minimal wording, no bait.
+            # Identity leaks (Qwen/dll) are caught by clean() instead.
+            system = (f"Pembantu ini bernama {a.name}. Ia menjawab ringkas "
+                      "dalam Bahasa Melayu.")
         else:
-            system = (f"You are {a.name}, a tiny CPU 0.5B coding assistant. Answer briefly in English. "
-                      f"Answer ONLY the last question. "
-                      f"Do not repeat the conversation or start new turns like 'Pengguna:'. "
-                      f"If asked who you are, answer ONLY: I am {a.name}, built for coding. "
-                      f"Never mention Qwen, Alibaba, Tongyi.")
+            system = (f"This assistant is named {a.name}. It answers briefly "
+                      "in English.")
         print(f"... {a.name} berfikir (CPU) ...")
         try:
             raw, tps = ask(cli, model, system, build_prompt(history, q, lang), a.name)
