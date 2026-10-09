@@ -1,15 +1,12 @@
-"""Coder 77 / EZCodex-0.5B standalone app - NO LM Studio, NO Ollama, NO pip install.
+"""XCoder - opencode-style agentic CLI (stdlib only).
 
-Everything lives under the working folder:
-  app/ezcodex.py      this CLI (Python stdlib only)
-  app/bin/            llama-cli binary, auto-downloaded on first run
-  app/models/         GGUF model, auto-downloaded on first run (~491MB)
+Backends: llama-cli subprocess (default, 0 RAM idle) | --backend lmstudio (http://localhost:1234/v1)
+Tools: list/read/write/edit/run/bash/rag with workspace jail + confirm.
+Sessions: app/sessions/<name>.jsonl | Training flywheel: app/data/training.jsonl
+Train: `py app/ezcodex.py train --mode sft|pretrain --export-only` (+ Colab scripts in finetune/)
+Build exe: `py app/build_exe.py` (PyInstaller, win/linux/macos)
 
-Run from the working folder:
-  Windows:    py app\\ezcodex.py [--lang ms|en] [--name "Coder 77"]
-  Linux/Mac:  python3 app/ezcodex.py [--lang ms|en] [--name "Coder 77"]
-
-Each answer spawns llama-cli, then the process exits: 0 RAM between turns.
+Compat: old flags --lang/--name/--setup still work. Chat is now agentic.
 """
 import argparse
 import os
@@ -26,7 +23,11 @@ import urllib.request
 import zipfile
 from pathlib import Path
 
-APP_DIR = Path(__file__).resolve().parent
+APP_DIR = (Path(sys.executable).resolve().parent if getattr(sys, "frozen", False)
+           else Path(__file__).resolve().parent)
+sys.path.insert(0, str(APP_DIR))
+
+__version__ = "0.4.7"
 BIN_DIR = APP_DIR / "bin"
 MODELS_DIR = APP_DIR / "models"
 
@@ -35,6 +36,13 @@ LLAMA_BASE = f"https://github.com/ggerganov/llama.cpp/releases/download/{LLAMA_T
 HF_MODEL_URL = ("https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF/resolve/main/"
                 "qwen2.5-0.5b-instruct-q4_k_m.gguf")
 MODEL_SIZE = 491400032
+
+from backends import LlamaCliBackend, LmStudioBackend
+from agent import run_agent
+from experts import (GENERAL, add as add_model, detect as detect_domain,
+                     fmt_size, resolve as resolve_model, scan as scan_models,
+                     STACK2DOMAIN)
+from store import load_session, save_turn, list_sessions, log_training, export_sft, export_pretrain_corpus
 
 
 def asset_name():
@@ -62,8 +70,8 @@ def download(url, dest, expect=None):
             f.write(b)
             got += len(b)
             el = max(0.1, time.time() - t0)
-            print(f"\r  {got / 1e6:.0f}/{total / 1e6:.0f} MB "
-                  f"({got / el / 1e6:.1f} MB/s)", end="", flush=True)
+            print(f"\r  {got / 1e6:.0f}/{total / 1e6:.0f} MB ({got / el / 1e6:.1f} MB/s)",
+                  end="", flush=True)
     print()
 
 
@@ -100,62 +108,211 @@ def ensure_model():
     return dest
 
 
-def clean(text, name):
-    t = text
-    for pat in [r"qwen2\.5-0\.5b-instruct", r"\bqwen2\.5\b", r"\bqwen\b",
-                r"\banthropic\b", r"\bclaude\b", r"\bmeta ai\b", r"\bllama\b",
-                r"\balibaba cloud\b", r"\balibaba\b", r"\btongyi\b", r"\bqianwen\b"]:
-        t = re.sub(pat, name, t, flags=re.IGNORECASE)
-    t = re.sub(r"an?\s+ai\s+language\s+model\s+created\s+by\s+[^.,;\n]+",
-               f"coding assistant, I am {name}", t, flags=re.IGNORECASE)
-    t = re.sub(r"designed\s+by\s+[^.,;\n]+", f"built by {name}", t, flags=re.IGNORECASE)
-    t = re.sub(r"created\s+by\s+[^.,;\n]+", f"built by {name}", t, flags=re.IGNORECASE)
-    return t.strip()
+HELP = """Commands:
+/help                 this help
+/lang ms|en           switch language (clears turn cache, keeps session file)
+/tools on|off         enable/disable agentic tool loop
+/backend llama|lmstudio|server  tukar enjin inferens
+/server               status resident llama-server (backend server sahaja)
+/model <nama|path|id>  tukar model pakar (satu aktif pada satu masa)
+/model add <url|fail> [--name N] [--domains a,b]  daftar model baharu
+/models               senarai semua model pakar + domain
+/route on|off         auto-tukar pakar ikut domain soalan
+/session <name>       switch session file (sessions/<name>.jsonl)
+/sessions             list sessions
+/clear                clear in-memory history
+/good | /bad          rate last answer -> training log (flywheel)
+/train-log            show training.jsonl count
+/export sft|corpus    pecah ke datasets/<stack> + gabung finetune/ (atau corpus.txt)
+/cwd                  print workspace root
+/keluar|/exit|/quit   exit
+Inline tool (when /tools on): model may emit ```tool:read docs/js-basics.md``` etc.
+Tools: list read write edit run bash rag (workspace-jailed, bash asks confirm).
+"""
 
 
-def ask(cli, model, system, prompt):
-    """One subprocess per answer. Returns (text, tps or None)."""
-    p = subprocess.run(
-        [str(cli), "-m", str(model), "-c", "2048", "-n", "400",
-         "--temp", "0.3", "--log-disable", "-st",
-         "--no-display-prompt", "-sys", system, "-p", prompt],
-        capture_output=True, text=True, timeout=300)
-    if p.returncode != 0:
-        raise RuntimeError((p.stderr or p.stdout)[-1000:])
-    blob = p.stdout
-    m = re.search(r"Generation:\s*([\d.]+)\s*t/s", blob)
-    tps = float(m.group(1)) if m else None
-    # answer = lines after echoed "> prompt" up to "[ Prompt:" stats
-    lines = blob.splitlines()
-    start = next((i + 1 for i, l in enumerate(lines) if l.startswith("> ")), 0)
-    end = next((i for i, l in enumerate(lines) if l.startswith("[ Prompt:")), len(lines))
-    text = "\n".join(lines[start:end]).strip() or blob.strip()
-    return text, tps
-
-
-def main():
-    ap = argparse.ArgumentParser(description="Coder 77 standalone (engine built-in)")
+def build_parser():
+    ap = argparse.ArgumentParser(description="XCoder agentic CLI (opencode-style, stdlib only)")
     ap.add_argument("--lang", default="ms", choices=["ms", "en"])
-    ap.add_argument("--name", default="Coder 77")
-    ap.add_argument("--setup", action="store_true",
-                    help="download engine + model only, then exit")
-    a = ap.parse_args()
+    ap.add_argument("--name", default="XCoder")
+    ap.add_argument("--setup", action="store_true", help="download engine + model only, then exit")
+    ap.add_argument("--backend", default="llama", choices=["llama", "lmstudio", "server", "auto"])
+    ap.add_argument("--lm-url", default="http://localhost:1234/v1")
+    ap.add_argument("--lm-model", default="ezcodex-0.5b")
+    ap.add_argument("--port", type=int, default=8080, help="llama-server port (backend server)")
+    ap.add_argument("--threads", type=int, default=4, help="llama-server CPU threads")
+    ap.add_argument("--ctx", type=int, default=4096, help="llama-server context size")
+    ap.add_argument("--idle-timeout", type=int, default=180, help="server unload after N idle secs (0=never)")
+    ap.add_argument("--model", default="", help="override GGUF path (llama) or model id (lmstudio)")
+    ap.add_argument("--session", default="default")
+    ap.add_argument("--no-tools", action="store_true", help="disable agentic tool loop")
+    ap.add_argument("--allow-all", action="store_true", help="skip bash confirm (dangerous)")
+    ap.add_argument("--max-tokens", type=int, default=500, help="max tokens per answer (code: 800-1000)")
+    ap.add_argument("--autoroute", action="store_true", help="auto-switch expert model by question domain")
+    ap.add_argument("--once", default="", help="one-shot prompt, print answer and exit (for scripts)")
+    ap.add_argument("--version", action="version", version=f"%(prog)s {__version__}")
+    sub = ap.add_subparsers(dest="cmd")
+    t = sub.add_parser("train", help="training flywheel: export SFT dataset / pretrain corpus")
+    t.add_argument("--mode", choices=["sft", "pretrain", "both"], default="both")
+    t.add_argument("--domain", default="", help="export domain sahaja cth: linux,docker,web,data,php,python")
+    t.add_argument("--export-only", action="store_true", help="only export, do not print Colab next-steps")
+    return ap
 
-    if a.setup:
-        cli = ensure_cli()
-        model = ensure_model()
-        print(f"OK engine: {cli}")
-        print(f"OK model : {model} ({model.stat().st_size} bytes)")
-        return
 
-    if platform.system() == "Windows" and os.path.exists("NUL"):
-        pass  # working folder is current dir; all paths below are relative
-    cli = ensure_cli()
-    model = ensure_model()
-    print(f"{a.name} ready [standalone, engine built-in]. Taip /lang ms|en, /clear, /keluar\n")
+_MANAGER = None
+
+
+def get_manager(args):
+    global _MANAGER
+    if _MANAGER is None:
+        from server import ModelManager
+        _MANAGER = ModelManager(BIN_DIR, port=args.port, ctx=args.ctx,
+                                threads=args.threads, idle_timeout=args.idle_timeout)
+    return _MANAGER
+
+
+def make_backend(args, cli_path=None, model_path=None):
+    if args.backend == "lmstudio":
+        return LmStudioBackend(args.lm_url, args.model or args.lm_model,
+                               max_tokens=args.max_tokens)
+    if args.backend == "server":
+        from backends import ServerBackend
+        model = Path(args.model) if args.model else (model_path or ensure_model())
+        mgr = get_manager(args)
+        already, secs = mgr.load(model)
+        if not already:
+            print(f"[server] model dimuat dalam {secs:.1f}s (resident, unload selepas {args.idle_timeout}s idle)")
+        return ServerBackend(mgr, model="xcoder", max_tokens=args.max_tokens)
+    cli = cli_path or ensure_cli()
+    model = Path(args.model) if args.model else (model_path or ensure_model())
+    return LlamaCliBackend(cli, model, n_predict=args.max_tokens)
+
+
+def match_cur(model_path_str):
+    for m in scan_models(MODELS_DIR):
+        if m.get("file") and str(model_path_str or "").replace("\\", "/").endswith(m["file"]):
+            return {"name": m["name"], "domains": m.get("domains", [GENERAL])}
+    return {"name": "base", "domains": [GENERAL]}
+
+
+def expert_context(cur):
+    names = ", ".join(f"{m['name']} [{','.join(m.get('domains', []))}]"
+                      for m in scan_models(MODELS_DIR))
+    return (f"Model aktif: {cur['name']} (pakar: {','.join(cur.get('domains', []))}). "
+            f"Senarai model sebenar: {names}. "
+            f"Jika ditanya kepakaran atau program anda, senaraikan nama dari senarai ini. "
+            f"Jangan reka nama lain.")
+
+
+SELF_KEYS = ("pakar", "expert", "kepakaran", "senarai", "list", "boleh buat",
+             "what can you")
+
+OFFLINE_KEYS = ("berita", "news", "terkini", "semasa", "cuaca", "weather",
+                "live", "breaking")
+
+
+def answer_offline(q, lang):
+    """Soalan data-live/berita - jawab tepat tanpa model (model offline)."""
+    t = q.lower()
+    if not any(k in t for k in OFFLINE_KEYS):
+        return None
+    if lang == "ms":
+        return ("Saya offline sepenuhnya tanpa internet - tiada akses berita, "
+                "cuaca atau data live. Saya hanya boleh bantu pengekodan "
+                "(kod, SQL, Linux, Docker) setakat pengetahuan sedia ada.")
+    return ("I am fully offline with no internet - no access to news, weather "
+            "or live data. I can only help with coding (code, SQL, Linux, "
+            "Docker) from existing knowledge.")
+
+
+def answer_self(q, cur, name, lang):
+    """Jawapan tepat dari registry - model 0.5B tidak perlu berimaginasi."""
+    t = q.lower()
+    if not any(k in t for k in SELF_KEYS):
+        return None
+    if not any(k in t for k in ("anda", "kamu", "awak", "you")):
+        return None
+    names = ", ".join(f"{m['name']} [{','.join(m.get('domains', []))}]"
+                      for m in scan_models(MODELS_DIR))
+    if lang == "ms":
+        return (f"Saya {name}, model aktif: {cur['name']} "
+                f"(pakar: {','.join(cur.get('domains', []))}). "
+                f"Senarai model: {names}. Tukar dengan /model <nama>.")
+    return (f"I am {name}, active model: {cur['name']} "
+            f"(expert: {','.join(cur.get('domains', []))}). "
+            f"Model list: {names}. Switch with /model <name>.")
+
+
+def local_action(q, lang):
+    """Arahan jelas yang CLI boleh buat terus tanpa model (tepat, tiada halusinasi)."""
+    m = re.match(r"\s*(buatkan|buat|bina|create)\s+(folder|direktori|directory)\s+"
+                 r"[\"']?([^\"'\n]+?)[\"']?\s*$", q, re.IGNORECASE)
+    if not m:
+        return None
+    dirname = m.group(3).strip()
+    target = (Path.cwd() / dirname).resolve()
+    if target != Path.cwd().resolve() and Path.cwd().resolve() not in target.parents:
+        return "Blocked: luar workspace." if lang == "ms" else "Blocked: outside workspace."
+    try:
+        target.mkdir(parents=True, exist_ok=True)
+    except Exception as e:
+        return f"Ralat: {e}"
+    if lang == "ms":
+        return (f"OK folder '{dirname}' siap. Nak saya bina website blog Node.js + "
+                f"PostgreSQL di dalamnya fail demi fail? Cth: `tulis package.json untuk blog`.")
+    return (f"OK folder '{dirname}' ready. Want the Node.js + PostgreSQL blog scaffolded "
+            f"in it file by file? E.g. `write package.json for the blog`.")
+
+
+def scrub_history(h):
+    """Drop degenerate turns (role-play echoes) saved by older versions."""
+    out = []
+    for m in h:
+        c = m.get("content", "") or ""
+        if m.get("role") == "assistant" and ("Pengguna:" in c or "Pembantu:" in c):
+            continue
+        out.append(m)
+    return out
+
+
+def do_sft_export(flt):
+    """training.jsonl -> datasets/<stack>.jsonl -> finetune/<domain>/. Returns text."""
+    from store import export_stacks, merge_stacks
+    added, _ = export_stacks(domain=flt)
+    total = sum(added.values())
+    mdom = STACK2DOMAIN.get(flt, flt) if flt else None
+    merged = merge_stacks(domain=mdom)
+    parts = [f"{s}+{n}" for s, n in sorted(added.items())]
+    mg = ", ".join(f"{d}={n}" for d, n in sorted(merged.items()))
+    return (f"SFT: {total} new rows -> datasets/ [{', '.join(parts) or 'none'}]; "
+            f"merged [{mg}]")
+
+
+def repl(args):
+    cli_path = model_path = None
+    if args.backend in ("llama", "auto"):
+        cli_path, model_path = ensure_cli(), ensure_model()
+    elif args.backend == "server":
+        model_path = ensure_model()
+    backend = make_backend(args, cli_path, model_path)
+    name, lang = args.name, args.lang
+    tools_on = not args.no_tools
+    auto_route = args.autoroute
+    session = args.session
+    history = scrub_history(load_session(session)[-20:])
+    cur = match_cur(model_path)
+    tool_ctx = {"allow_all": args.allow_all,
+                "confirm": lambda msg: input(msg).strip().lower() in ("y", "yes"),
+                "rag_k": 2}
+    print(f"{name} v{__version__} ready [{backend.kind}, model={cur['name']}, tools={'on' if tools_on else 'off'}, "
+          f"route={'on' if auto_route else 'off'}, session={session}]. Taip /help\n")
+
+    def on_tool(tname, targ, result):
+        print(f"[tool:{tname}] {targ[:120]}")
+        print((result[:600] + ("..." if len(result) > 600 else "")) + "\n")
 
     width = shutil.get_terminal_size((80, 20)).columns
-    history, lang = [], a.lang
+    last_qa = [None, None, None]  # (question, answer, domain) for /good /bad
     while True:
         try:
             q = input("anda> ").strip()
@@ -165,40 +322,245 @@ def main():
             continue
         if q in ("/keluar", "/exit", "/quit"):
             break
+        if q == "/help":
+            print(HELP)
+            continue
         if q.startswith("/lang"):
             lang = "en" if q.split()[-1] == "en" else "ms"
-            history.clear()
             print(f"Bahasa: {lang}")
+            continue
+        if q.startswith("/tools"):
+            tools_on = q.split()[-1] != "off"
+            print(f"tools={'on' if tools_on else 'off'}")
+            continue
+        if q.startswith("/backend"):
+            b = q.split()[-1]
+            if b in ("llama", "auto"):
+                cli_path, model_path = ensure_cli(), ensure_model()
+                backend = LlamaCliBackend(cli_path, model_path, n_predict=args.max_tokens)
+            elif b == "lmstudio":
+                backend = LmStudioBackend(args.lm_url, args.lm_model, max_tokens=args.max_tokens)
+            elif b == "server":
+                from backends import ServerBackend
+                model_path = ensure_model()
+                mgr = get_manager(args)
+                already, secs = mgr.load(model_path)
+                if not already:
+                    print(f"[server] model dimuat dalam {secs:.1f}s")
+                backend = ServerBackend(mgr, model="xcoder", max_tokens=args.max_tokens)
+            else:
+                print("usage: /backend llama|lmstudio|server"); continue
+            print(f"backend={backend.kind}")
+            continue
+        if q == "/server":
+            if backend.kind != "server":
+                print("backend bukan server. /backend server dahulu.")
+                continue
+            st = backend.manager.status()
+            print(f"server {st['url']} alive={st['alive']} healthy={st['healthy']} "
+                  f"model={st['model']} idle_timeout={st['idle_timeout']}s")
+            continue
+        if q == "/models":
+            for m in scan_models(MODELS_DIR):
+                f = MODELS_DIR / m.get("file", "")
+                has = bool(m.get("file")) and f.exists()
+                mark = "*" if m.get("name") == cur.get("name") else " "
+                real = "" if has else " (fail tiada)"
+                print(f"{mark} {m['name']} [{','.join(m.get('domains', []))}] "
+                      f"{fmt_size(f) if has else 'tiada'}{real}")
+            print("* = aktif (satu pada satu masa). /model <nama> tukar. /route on = auto.")
+            continue
+        if q == "/model" or q.startswith("/model "):
+            rest = q[len("/model"):].strip()
+            if not rest:
+                print(f"aktif: {cur['name']} [{','.join(cur['domains'])}]")
+                continue
+            if rest.startswith("add "):
+                toks = rest[4:].split()
+                src = toks[0] if toks else ""
+                nm, doms = None, [GENERAL]
+                for i, t in enumerate(toks):
+                    if t == "--name" and i + 1 < len(toks):
+                        nm = toks[i + 1]
+                    if t == "--domains" and i + 1 < len(toks):
+                        doms = [d.strip() for d in toks[i + 1].split(",") if d.strip()]
+                if not src:
+                    print("guna: /model add <url|fail> [--name N] [--domains a,b]")
+                    continue
+                try:
+                    e = add_model(MODELS_DIR, src, name=nm, domains=doms)
+                    print(f"OK daftar {e['name']} [{','.join(e['domains'])}]")
+                except Exception as ex:
+                    print(f"Ralat: {ex}")
+                continue
+            p, note = resolve_model(MODELS_DIR, rest)
+            if p is None:
+                print(note)
+                continue
+            if backend.kind == "lmstudio":
+                backend = LmStudioBackend(args.lm_url, rest, max_tokens=args.max_tokens)
+            elif backend.kind == "server":
+                already, secs = backend.manager.load(p)
+                backend.model = rest
+                if not already:
+                    print(f"[server] Loading model... dimuat dalam {secs:.1f}s")
+            else:
+                backend = LlamaCliBackend(cli_path, p, n_predict=args.max_tokens)
+            hit = next((x for x in scan_models(MODELS_DIR)
+                        if x["name"].lower() == rest.lower()), None)
+            cur = {"name": hit["name"] if hit else rest,
+                   "domains": hit.get("domains", [GENERAL]) if hit else [GENERAL]}
+            print(f"model={cur['name']} [{','.join(cur['domains'])}] {note}".rstrip())
+            continue
+        if q.startswith("/route"):
+            auto_route = q.split()[-1] != "off" if len(q.split()) > 1 else True
+            print(f"route={'on' if auto_route else 'off'} (auto-tukar pakar ikut domain)")
+            continue
+        if q == "/sessions":
+            print("\n".join(list_sessions()) or "(no sessions)")
+            continue
+        if q.startswith("/session ") or q == "/session":
+            session = q.split(None, 1)[1] if len(q.split()) > 1 else "default"
+            history = scrub_history(load_session(session)[-20:])
+            print(f"session={session} ({len(history)} turns loaded)")
             continue
         if q == "/clear":
             history.clear()
             print("Sejarah dipadam.")
             continue
-        if lang == "ms":
-            system = (f"Anda ialah {a.name}, pembantu pengekodan CPU kecil 0.5B. "
-                      f"Jawab ringkas dalam Bahasa Melayu. Jika ditanya siapa anda, jawab HANYA: "
-                      f"Saya {a.name}, dibina untuk pengekodan. Jangan sebut Qwen, Alibaba, Tongyi.")
-        else:
-            system = (f"You are {a.name}, a tiny CPU 0.5B coding assistant. Answer briefly in English. "
-                      f"If asked who you are, answer ONLY: I am {a.name}, built for coding. "
-                      f"Never mention Qwen, Alibaba, Tongyi.")
-        ctx = ""
-        if history:
-            ctx = ("Perbualan sebelum:\n" + "\n".join(history[-6:]) +
-                   "\n\nSoalan baru: ")
-        print(f"... {a.name} berfikir (CPU) ...")
-        try:
-            raw, tps = ask(cli, model, system, ctx + q)
-        except Exception as e:
-            print(f"Ralat: {e}")
+        if q in ("/good", "/bad"):
+            if last_qa[0] and last_qa[2]:
+                log_training(last_qa[0], last_qa[1], lang=lang, kind="rated",
+                             tools_trace=[], rating=q[1:], domain=last_qa[2])
+                print("Logged ke training.jsonl")
+            else:
+                print("Nothing to rate yet.")
             continue
-        ans = clean(raw, a.name)
-        history += [f"Pengguna: {q}", f"{a.name}: {ans}"]
-        print(f"\n{a.name}> {ans}")
+        if q == "/train-log":
+            from store import DATA_DIR
+            p = DATA_DIR / "training.jsonl"
+            n = sum(1 for _ in p.open(encoding="utf-8")) if p.exists() else 0
+            print(f"{p} : {n} rows")
+            continue
+        if q.startswith("/export"):
+            mode = q.split()[-1] if len(q.split()) > 1 else "sft"
+            if mode in ("sft", "both"):
+                print(do_sft_export(None))
+            if mode in ("corpus", "pretrain", "both"):
+                print(export_pretrain_corpus())
+            continue
+        if q == "/cwd":
+            print(Path.cwd())
+            continue
+        if q.startswith("/"):
+            print("Perintah tidak dikenali. Taip /help untuk senarai.")
+            continue
+
+        print(f"... {name} berfikir ({backend.kind}/{cur['name']}) ...")
+        dom = detect_domain(q)
+        self_ans = answer_self(q, cur, name, lang)
+        off_ans = answer_offline(q, lang) if self_ans is None else None
+        if self_ans is not None:
+            ans, tps, trace = self_ans, None, [{"tool": "models", "arg": "", "result": "registry"}]
+        elif off_ans is not None:
+            ans, tps, trace = off_ans, None, [{"tool": "local", "arg": q[:100], "result": "offline-note"}]
+        else:
+            loc = local_action(q, lang)
+            if loc is not None:
+                ans, tps, trace = loc, None, [{"tool": "local", "arg": q[:100], "result": "mkdir"}]
+            else:
+                if auto_route and backend.kind in ("llama", "server") and dom != GENERAL \
+                        and dom not in cur.get("domains", []):
+                    cand = next((m for m in scan_models(MODELS_DIR)
+                                 if dom in m.get("domains", [])
+                                 and (MODELS_DIR / m.get("file", "")).exists()), None)
+                    if cand:
+                        if backend.kind == "server":
+                            print(f"-> route: {cand['name']} [{dom}] Loading model...")
+                            already, secs = backend.manager.load(MODELS_DIR / cand["file"])
+                            backend.model = cand["name"]
+                            if not already:
+                                print(f"[server] dimuat dalam {secs:.1f}s")
+                        else:
+                            backend = LlamaCliBackend(cli_path, MODELS_DIR / cand["file"],
+                                                      n_predict=args.max_tokens)
+                        cur = {"name": cand["name"], "domains": cand.get("domains", [dom])}
+                        print(f"-> route: {cur['name']} [{dom}] (satu model aktif)")
+                    else:
+                        print(f"(tiada pakar {dom} - jawab dengan {cur['name']}; "
+                              f"latih: train --mode sft --domain {dom})")
+                try:
+                    ans, tps, trace = run_agent(backend, q, name=name, lang=lang, history=history,
+                                                tools_on=tools_on, tool_ctx=tool_ctx, on_tool=on_tool,
+                                                expert_ctx=expert_context(cur))
+                except Exception as e:
+                    print(f"Ralat: {e}")
+                    continue
+        history += [{"role": "user", "content": q}, {"role": "assistant", "content": ans}]
+        save_turn(session, history[-2:])
+        log_training(q, ans, lang=lang, kind="chat", tools_trace=trace, domain=dom)
+        last_qa = [q, ans, dom]
+        print(f"\n{name}> {ans}")
         if tps:
             s = f"{tps:.1f} T/s"
             print(" " * max(0, width - len(s)) + f"\x1b[2m{s}\x1b[0m")
         print()
+
+    if backend.kind == "server":
+        backend.manager.stop()
+        print("[server] stopped, RAM dilepaskan.")
+
+
+def main():
+    ap = build_parser()
+    args = ap.parse_args()
+    if args.setup:
+        cli = ensure_cli()
+        model = ensure_model()
+        print(f"OK engine: {cli}\nOK model : {model} ({model.stat().st_size} bytes)")
+        return
+    if args.cmd == "train":
+        flt = (args.domain or "").strip().lower() or None
+        ddir = STACK2DOMAIN.get(flt, flt) if flt else "general"
+        corp_dest = f"finetune/{ddir}/corpus.txt"
+        if args.mode in ("sft", "both"):
+            print(do_sft_export(flt) + "; validate: python datasets/scripts/validate.py")
+        if args.mode in ("pretrain", "both"):
+            n, where = export_pretrain_corpus(dest=corp_dest, domain=flt)
+            print(f"Pretrain corpus: {n} turns -> {where}")
+        if not args.export_only:
+            print("Next: Colab T4 -> finetune/train_unsloth.py (LoRA/SFT) or app/train_pretrain.py "
+                  "(continued pretrain), export GGUF.")
+            if flt:
+                print(f"Next: import GGUF pakar -> /model add <fail> --name xcoder-{flt} "
+                      f"--domains {flt}. See step.md.")
+            else:
+                print("Import: /model add <fail> --name xcoder-base --domains general. See step.md.")
+        return
+    if args.once:
+        backend = make_backend(args)
+        cur = match_cur(args.model)
+        self_ans = answer_self(args.once, cur, args.name, args.lang)
+        if self_ans is not None:
+            print(self_ans)
+            return
+        off_ans = answer_offline(args.once, args.lang)
+        if off_ans is not None:
+            print(off_ans)
+            return
+        loc = local_action(args.once, args.lang)
+        if loc is not None:
+            print(loc)
+            return
+        ans, tps, _ = run_agent(backend, args.once, name=args.name, lang=args.lang,
+                                tools_on=not args.no_tools,
+                                tool_ctx={"allow_all": True, "rag_k": 2},
+                                expert_ctx=expert_context(cur))
+        print(ans)
+        if backend.kind == "server":
+            backend.manager.stop()
+        return
+    repl(args)
 
 
 if __name__ == "__main__":

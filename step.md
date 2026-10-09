@@ -1,59 +1,69 @@
-# step.md — How to train your AI (Coder 77 / EZCodex-0.5B)
+# step.md — How to train your AI (XCoder-0.5B)
+
+Layout data: `finetune/<kepakaran>/dataset.jsonl` — satu folder satu domain
+(`general`, `docker`, `web`, `data`, `linux`, `python`).
+Validasi semua: `python finetune/validate.py` · satu domain: `python finetune/validate.py docker`.
 
 Goal: turn base `Qwen2.5-0.5B-Instruct` into a model that **natively** says
-“I am Coder 77” and answers Malay + code well — no prompt filter needed.
+“I am XCoder” and answers Malay + code well — no prompt filter needed.
 Method: **instruction fine-tune with LoRA (QLoRA 4-bit)**, not pretraining from scratch.
 
 Do NOT train on your 7.8GB CPU box (too slow). Train on a **free Colab T4 GPU**,
 then import the `.gguf` back to LM Studio on Windows.
 
 ## Step 0 — What you have
-- `finetune/dataset.jsonl` — 110 rows, format per line:
-  `{"instruction": "...", "input": "...", "output": "..."}`
-- `finetune/train_unsloth.py` — Colab template (Unsloth, LoRA r16, 3 epochs)
-- `finetune/validate.py` — format checker
+- `datasets/<stack>.jsonl` — data mengikut stack (javascript, docker, sql, ...).
+  Format sebaris: `{"instruction": "...", "input": "...", "output": "..."}`
+- `finetune/<domain>/dataset.jsonl` — fail **terjana** via `merge.py` untuk Colab.
+- Alir: `train` → `datasets/` → `merge.py` → `finetune/` → Colab → GGUF → `/model add`.
 
 ## Step 1 — Grow the dataset (important)
-1. Edit `finetune/dataset.jsonl` — add rows in YOUR domain:
-   identity (`Saya Coder 77...`), Malay Q&A, JS/TS/Node/HTML/CSS/SQL/pg/mysql/Linux/Docker.
-2. Aim: 110 now → **500–2000 rows** for a strong effect. Keep answers short + correct.
+1. Chat + `/good` dalam CLI (auto-tag domain+stack), kemudian:
+```powershell
+py app/ezcodex.py train --mode sft --domain docker  # -> datasets/docker.jsonl
+python datasets/scripts/merge.py linux              # -> finetune/linux/dataset.jsonl
+python datasets/scripts/validate.py docker          # semak stack
+python datasets/scripts/statistics.py               # taburan semua stack
+```
+   Atau tulis baris manual dalam `datasets/<stack>.jsonl`.
+2. Aim: 110 kini → **500–2000 baris** untuk kesan ketara. Jawapan pendek + betul.
+   Baris baharu mesti guna identiti `XCoder` (baris lama `Coder 77` masih diterima validator).
 3. Validate:
 ```powershell
-python finetune/validate.py
-# expect: "N rows OK, identity rows: M"
+python finetune/validate.py docker
+# expect: "docker/dataset.jsonl: N rows OK, identity rows: M"
 ```
 
 ## Step 2 — Train on Colab (free GPU)
 1. Go to Google Colab → `Runtime → Change runtime type → T4 GPU`.
-2. Upload `finetune/dataset.jsonl` + `finetune/train_unsloth.py`.
+2. Upload `finetune/<domain>/dataset.jsonl` (rename dalam `/content/` jika perlu, elak `dataset (1).jsonl`).
 3. Install:
 ```
 !pip install -q unsloth trl peft accelerate bitsandbytes datasets
 ```
-4. Run `train_unsloth.py` (~30–60 min for 0.5B, 100+ rows, 3 epochs).
+4. Jalankan `train_unsloth.py` dengan `DATA` = nama fail, `OUT` = `xcoder-<domain>`
+   (~30–60 min untuk 0.5B, 100+ baris, 3 epochs).
 5. If out-of-memory: lower `max_seq_length` to 512 or batch size to 1.
 
-## Step 3 — Export to GGUF (in Colab)
+## Step 3 — Export to GGUF (in Colab, cara kalis-versi)
 ```python
-model.save_pretrained_merged("coder77-0.5b-merged", tok, save_method="merged_16bit")
+model.save_pretrained_gguf(OUT + "-gguf", tok, quantization_method="q4_k_m")
 ```
-```bash
-pip install -q llama-cpp-python
-python -m llama_cpp.convert_hf_to_gguf coder77-0.5b-merged --outfile coder77-0.5b-q8_0.gguf --outtype q8_0
-```
-Download `coder77-0.5b-q8_0.gguf` (~675MB) to your PC.
+Download `.gguf` (~350MB), rename ikut konvensyen
+`xcoder-<kepakaran>-0.5b-q4_k_m.gguf` (cth `xcoder-html-0.5b-q4_k_m.gguf`), ke PC.
 
-## Step 4 — Import to LM Studio (Windows)
+## Step 4 — Daftar sebagai pakar (ganti import LM Studio lama)
 ```powershell
-C:\Users\testlab\.lmstudio\bin\lms.exe import coder77-0.5b-q8_0.gguf --identifier ezcodex-0.5b
-C:\Users\testlab\.lmstudio\bin\lms.exe load ezcodex-0.5b --gpu off --ttl 300 -y
+# dalam CLI:
+# /model add E:\Downloads\xcoder-docker-0.5b-q4_k_m.gguf --name xcoder-docker --domains docker
+# /models   (sahkan)   /route on   (auto-hala soalan Docker ke pakar ini)
 ```
 
 ## Step 5 — Test identity (filter OFF ideally)
 ```powershell
 node ezcodex-cli.js --lang ms --name "Coder 77"
 # ask: Siapa anda? / Who created you? / Are you Qwen or Alibaba?
-# expect: "Saya Coder 77..." with NO mention of Qwen/Alibaba.
+# expect: "Saya XCoder..." with NO mention of Qwen/Alibaba.
 ```
 Also test: `node ezcodex-rag.js "Apa itu EZCodex?" --lang ms --k 2 --show-sources`
 
@@ -61,7 +71,18 @@ Also test: `node ezcodex-rag.js "Apa itu EZCodex?" --lang ms --k 2 --show-source
 - Wrong identity → add 20+ identity rows, retrain.
 - Weak Linux/Docker → add 30+ rows of correct command → output pairs.
 - Keep base system prompt in `train_unsloth.py`:
-  `You are Coder 77... Never mention Qwen/Alibaba.`
+  `You are XCoder... Never mention Qwen/Alibaba.`
+
+## Step 7 — Model pakar per domain (multi-model)
+Satu model kecil satu domain, tukar tanpa model besar.
+Konvensyen nama: `xcoder-<kepakaran>-0.5b-q4_k_m.gguf`, data di `datasets/<stack>.jsonl`
+(ada 16 stack: javascript, typescript, nodejs, html, css, tailwind, sql, postgresql,
+mysql, linux, docker, bash, python, laravel, php, general):
+1. Kumpul data per domain dalam CLI: chat + `/good` (auto-tag stack).
+2. `py app/ezcodex.py train --mode sft` (pecah ke stack) + `merge.py` (gabung ke domain).
+3. Tambah 30–100 baris domain (penting untuk kesan ketara), latih di Colab seperti Step 2–3, nama output `xcoder-docker-0.5b-q4_k_m.gguf`.
+4. Daftar: `/model add <fail> --name xcoder-docker --domains docker` → aktif dengan `/model xcoder-docker` atau auto via `--autoroute` / `/route on`.
+5. Ulang untuk domain lain (web, data, linux). Registry: `models/models.json` (per-mesin, auto-seed).
 
 ## Troubleshooting
 - Colab no GPU: check `Runtime → Change runtime type`, or use Kaggle free GPU.

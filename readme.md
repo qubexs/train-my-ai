@@ -1,7 +1,7 @@
-# EZCodex-0.5B / Coder 77 — CPU-only coding assistant
+# XCoder-0.5B — CPU-only coding assistant
 
 Tiny local AI: **0.5B params, CPU-only, 5-min auto-unload** to save power.
-Base weights: `Qwen2.5-0.5B-Instruct` (LM Studio), public name: `ezcodex-0.5b` / `Coder 77`.
+Base weights: `Qwen2.5-0.5B-Instruct` (LM Studio), public name: `XCoder-0.5B`.
 Languages: **Malay 🇲🇾 + English 🇬🇧**.
 Stacks: JS, TS, Node.js, HTML, CSS, SQL, PostgreSQL, MySQL, **Linux, Docker**, Bash, Python.
 
@@ -20,6 +20,33 @@ Then:
 ```
 Linux/Mac: `python3 app/ezcodex.py --lang ms` (needs Python 3.9+ only).
 First run auto-downloads engine (~19MB) + model (~491MB) into `app/bin/`, `app/models/`.
+
+## Agentic CLI (opencode-style)
+```powershell
+py app/ezcodex.py --lang ms --name "XCoder"            # REPL, tools on, session=default
+py app/ezcodex.py --backend lmstudio                     # use LM Studio http://localhost:1234/v1 instead
+py app/ezcodex.py --once "list docs and explain" --allow-all   # one-shot (scripts)
+py app/ezcodex.py train --mode both                      # pecah ke datasets/<stack>.jsonl + gabung finetune/
+py app/ezcodex.py train --mode sft --domain docker   # datasets/docker.jsonl -> finetune/linux/
+python datasets/scripts/validate.py                 # semak 16 stack
+python datasets/scripts/statistics.py               # taburan baris
+python datasets/scripts/merge.py linux              # gabung stack -> finetune/linux/dataset.jsonl
+```
+Slash: `/help /tools on|off /backend llama|lmstudio /session <name> /good /bad /export sft|corpus /clear`.
+Tools: `list read write edit run bash rag` (workspace-jailed, bash asks confirm).
+Every turn logs to `app/data/training.jsonl` — the finetune/pretrain flywheel.
+Exe (all OS): `pip install pyinstaller; python app/build_exe.py`, or tag `v*` for GitHub Actions matrix build.
+
+## Multi-model pakar (satu kecil pada satu masa)
+Setiap model pakar ada knowledge berbeza — tiada model besar perlu dibuka:
+```powershell
+py app/ezcodex.py --autoroute          # auto-tukar pakar ikut domain soalan
+/models                                # senarai pakar (* = aktif)
+/model xcoder-docker                  # tukar manual
+/model add <url|fail> --name xcoder-docker --domains docker  # daftar GGUF baharu
+py app/ezcodex.py train --mode sft --domain docker   # dataset per-pakar -> finetune/docker/dataset.jsonl
+```
+Alir: chat + `/good` (auto-tag domain) -> export `--domain X` -> Colab LoRA (`finetune/train_unsloth.py`) -> GGUF -> `/model add`. Backend `llama-cli` 0 RAM idle, jadi tukar pakar = percuma.
 
 ## Quickstart (LM Studio path)
 ```powershell
@@ -76,6 +103,6 @@ finetune/                training kit (see step.md)
 
 ## Notes / limits
 - 0.5B hallucinates without context — **always use RAG** for facts.
-- Identity (`Coder 77`, not Qwen/Alibaba) is currently a CLI prompt+filter override.
+- Identity (`XCoder`, not Qwen/Alibaba) is currently a CLI prompt+filter override.
   Permanent fix = fine-tune (see `step.md`), then the filter can be removed.
 - Run calls sequentially on low RAM; parallel model calls can kill the worker.

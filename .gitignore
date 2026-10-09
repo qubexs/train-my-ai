@@ -1,6 +1,19 @@
 # Standalone engine + model auto-download on first run - never commit binaries.
 app/bin/
 app/models/
+app/data/
+app/sessions/
+# same dirs when running ezcodex.exe from repo root (frozen layout, root-only)
+/bin/
+/models/
+/data/
+/sessions/
 ezcodex.bat
+ezcodex.exe
+*.exe
+*.gguf
 __pycache__/
 *.pyc
+build/
+dist/
+*.spec

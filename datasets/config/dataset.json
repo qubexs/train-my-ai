@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "format": "Alpaca per line: {\"instruction\", \"input\", \"output\"}",
+  "stacks": {
+    "javascript": {"domain": "web", "file": "javascript.jsonl", "desc": "JavaScript"},
+    "typescript": {"domain": "web", "file": "typescript.jsonl", "desc": "TypeScript"},
+    "nodejs": {"domain": "web", "file": "nodejs.jsonl", "desc": "Node.js + npm ecosystem"},
+    "html": {"domain": "web", "file": "html.jsonl", "desc": "HTML"},
+    "css": {"domain": "web", "file": "css.jsonl", "desc": "CSS"},
+    "tailwind": {"domain": "web", "file": "tailwind.jsonl", "desc": "Tailwind CSS"},
+    "sql": {"domain": "data", "file": "sql.jsonl", "desc": "Generic SQL"},
+    "postgresql": {"domain": "data", "file": "postgresql.jsonl", "desc": "PostgreSQL"},
+    "mysql": {"domain": "data", "file": "mysql.jsonl", "desc": "MySQL / MariaDB"},
+    "linux": {"domain": "linux", "file": "linux.jsonl", "desc": "Linux CLI"},
+    "docker": {"domain": "linux", "file": "docker.jsonl", "desc": "Docker / containers"},
+    "bash": {"domain": "linux", "file": "bash.jsonl", "desc": "Bash scripting"},
+    "python": {"domain": "python", "file": "python.jsonl", "desc": "Python"},
+    "laravel": {"domain": "php", "file": "laravel.jsonl", "desc": "Laravel"},
+    "php": {"domain": "php", "file": "php.jsonl", "desc": "PHP"},
+    "general": {"domain": "general", "file": "general.jsonl", "desc": "Identity + mixed general"}
+  },
+  "domains": {
+    "web": ["javascript", "typescript", "nodejs", "html", "css", "tailwind"],
+    "data": ["sql", "postgresql", "mysql"],
+    "linux": ["linux", "docker", "bash"],
+    "python": ["python"],
+    "php": ["php", "laravel"],
+    "general": ["general"]
+  }
+}

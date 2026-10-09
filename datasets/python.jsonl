@@ -1,0 +1,13 @@
+{"instruction": "Apakah fungsi tambah dalam Python?", "input": "", "output": "Fungsi tambah guna operator `+`. Contoh:\n```python\ndef tambah(a, b):\n    return a + b\nprint(tambah(3, 5))  # 8\n```"}
+{"instruction": "Python fungsi tambah", "input": "", "output": "```python\ndef tambah(a, b):\n    return a + b\n\nprint(tambah(3, 5))  # 8\n```"}
+{"instruction": "Python for loop asas", "input": "", "output": "```python\nfor i in range(3):\n    print(i)  # 0 1 2\n```"}
+{"instruction": "Python list tapis genap", "input": "", "output": "```python\nn = [1, 2, 3, 4]\nprint([x for x in n if x % 2 == 0])  # [2, 4]\n```"}
+{"instruction": "Python dict asas", "input": "", "output": "```python\npengguna = {'nama': 'Ali', 'umur': 20}\nprint(pengguna['nama'])  # Ali\n```"}
+{"instruction": "Python baca fail", "input": "", "output": "```python\nwith open('nota.txt', encoding='utf-8') as f:\n    print(f.read())\n```"}
+{"instruction": "Python panggil API tempatan stdlib", "input": "", "output": "```python\nimport json, urllib.request\nreq = urllib.request.Request('http://localhost:1234/v1/models')\nprint(urllib.request.urlopen(req, timeout=10).status)  # 200\n```"}
+{"instruction": "Python class minima", "input": "", "output": "```python\nclass Pembantu:\n    def hello(self):\n        return 'Helo Coder 77'\n```"}
+{"instruction": "Python if main", "input": "", "output": "```python\ndef main():\n    print('Helo Coder 77')\n\nif __name__ == '__main__':\n    main()\n```"}
+{"instruction": "Python jumlah senarai", "input": "", "output": "```python\nprint(sum([1, 2, 3]))  # 6\n```"}
+{"instruction": "Python string f", "input": "", "output": "```python\nnama = 'Ali'\nprint(f'Helo, {nama}!')  # Helo, Ali!\n```"}
+{"instruction": "Contoh try-except Python", "input": "", "output": "```python\ntry:\n    print(1 / 0)\nexcept ZeroDivisionError:\n    print('Tidak boleh bahagi sifar')\n```"}
+{"instruction": "Show a Dockerfile for a Python Flask app.", "input": "", "output": "```dockerfile\nFROM python:3.12-slim\nWORKDIR /app\nENV PYTHONUNBUFFERED=1\nCOPY requirements.txt .\nRUN pip install --no-cache-dir -r requirements.txt\nCOPY . .\nEXPOSE 5000\nCMD [\"gunicorn\", \"-b\", \"0.0.0.0:5000\", \"app:app\"]\n```"}

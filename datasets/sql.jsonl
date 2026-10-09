@@ -1,0 +1,125 @@
+{"instruction": "What does the latest tag mean?", "input": "", "output": "`latest` is just the default tag used when none is specified; it does not guarantee the newest version. Pin explicit version tags, or better an immutable digest (`image@sha256:...`), in production for reproducible deployments."}
+{"instruction": "How do I list and add rules with iptables?", "input": "", "output": "List with `sudo iptables -L -n -v --line-numbers` (add `-t nat` for the NAT table). Examples: `sudo iptables -A INPUT -p tcp --dport 22 -j ACCEPT`, `sudo iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT`, then `sudo iptables -P INPUT DROP` to default-deny. Rules are not persistent by default; save with `iptables-save` or the iptables-persistent / netfilter-persistent package. Order matters because the first matching rule wins."}
+{"instruction": "What is nftables and how does it compare to iptables?", "input": "", "output": "nftables is the modern replacement for iptables, ip6tables, arptables and ebtables, with one unified syntax, sets and maps, and atomic rule updates. Inspect with `sudo nft list ruleset`. Example: `sudo nft add rule inet filter input tcp dport 22 accept`. Many distros ship iptables-nft, a compatibility layer that translates iptables commands into nftables rules."}
+{"instruction": "What is the difference between a zombie and an orphan process?", "input": "", "output": "A zombie has finished executing but still has a process-table entry because its parent hasn't called wait() to read its exit status; it uses no CPU or memory, and it disappears when the parent reaps it or exits (shown as Z in ps). An orphan is a running process whose parent has exited; it is adopted by init (PID 1, or the nearest subreaper), which reaps it when it finishes."}
+{"instruction": "What is a good image tagging strategy for CI/CD?", "input": "", "output": "Tag every build immutably with the git commit SHA, add a semantic version tag (`1.4.2`, plus moving tags `1.4` and `1`) on releases, and use a mutable tag like `main` or `staging` only for convenience. Deploy by commit SHA or digest so you can trace and roll back exactly. Avoid deploying `latest`."}
+{"instruction": "What is the difference between a StatefulSet and a Deployment?", "input": "", "output": "A StatefulSet gives Pods stable, ordered identities (db-0, db-1), stable DNS via a headless Service, and per-Pod persistent volumes through volumeClaimTemplates, with ordered startup and termination. It suits databases and clustered systems. Deployments treat Pods as interchangeable and stateless."}
+{"instruction": "What is the difference between CMD and ENTRYPOINT?", "input": "", "output": "ENTRYPOINT defines the executable that always runs; CMD supplies default arguments (or a default command) that can be overridden by arguments to `docker run`. Together, `ENTRYPOINT [\"python\"]` plus `CMD [\"app.py\"]` runs `python app.py`, and `docker run img other.py` runs `python other.py`. Override ENTRYPOINT itself with `--entrypoint`."}
+{"instruction": "SQL cipta table pengguna", "input": "", "output": "```sql\nCREATE TABLE pengguna (\n  id SERIAL PRIMARY KEY,\n  nama TEXT NOT NULL\n);\n```"}
+{"instruction": "SQL insert pengguna", "input": "", "output": "```sql\nINSERT INTO pengguna (nama) VALUES ('Ali');\n```"}
+{"instruction": "SQL select semua pengguna", "input": "", "output": "```sql\nSELECT * FROM pengguna;\n```"}
+{"instruction": "SQL select dengan where", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama = 'Ali';\n```"}
+{"instruction": "SQL update nama", "input": "", "output": "```sql\nUPDATE pengguna SET nama = 'Abu' WHERE id = 1;\n```"}
+{"instruction": "SQL delete baris", "input": "", "output": "```sql\nDELETE FROM pengguna WHERE id = 1;\n```"}
+{"instruction": "SQL order by nama", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY nama;\n```"}
+{"instruction": "SQL join asas", "input": "", "output": "```sql\nSELECT p.nama, o.jumlah FROM pengguna p JOIN pesanan o ON o.pengguna_id = p.id;\n```"}
+{"instruction": "SQL group by kiraan", "input": "", "output": "```sql\nSELECT nama, COUNT(*) FROM pengguna GROUP BY nama;\n```"}
+{"instruction": "MySQL auto increment table", "input": "", "output": "```sql\nCREATE TABLE pengguna (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  nama VARCHAR(100) NOT NULL\n);\n```"}
+{"instruction": "SQL tambah column umur", "input": "", "output": "```sql\nALTER TABLE pengguna ADD COLUMN umur INT;\n```"}
+{"instruction": "SQL index pada nama", "input": "", "output": "```sql\nCREATE INDEX idx_pengguna_nama ON pengguna (nama);\n```"}
+{"instruction": "SQL transaction asas", "input": "", "output": "```sql\nBEGIN;\nUPDATE pengguna SET nama='Abu' WHERE id=1;\nCOMMIT;\n```"}
+{"instruction": "SQL kira baris pengguna", "input": "", "output": "```sql\nSELECT COUNT(*) AS jumlah FROM pengguna;\n```"}
+{"instruction": "What do setuid, setgid and the sticky bit do?", "input": "", "output": "setuid (4000) makes an executable run with the file owner's privileges (e.g. /usr/bin/passwd). setgid (2000) runs with the group's privileges, or on a directory makes new files inherit the directory's group. The sticky bit (1000) on a directory, like /tmp, lets only the file owner or root delete files within it. Set with `chmod u+s`, `g+s`, `+t`."}
+{"instruction": "How do I configure a firewall with ufw?", "input": "", "output": "```bash\nsudo ufw default deny incoming\nsudo ufw default allow outgoing\nsudo ufw allow 22/tcp\nsudo ufw allow 80,443/tcp\nsudo ufw enable\nsudo ufw status verbose\n```\nAllow SSH before enabling so you don't lock yourself out. Note that Docker-published ports can bypass ufw rules because Docker edits iptables directly."}
+{"instruction": "How do I set up NAT/port forwarding on Linux?", "input": "", "output": "Enable forwarding: `sudo sysctl -w net.ipv4.ip_forward=1` (persist in /etc/sysctl.d/). Masquerade outbound traffic: `sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE`. Forward a port: `sudo iptables -t nat -A PREROUTING -p tcp --dport 8080 -j DNAT --to-destination 10.0.0.5:80`, and allow it in the FORWARD chain."}
+{"instruction": "How do I find which process has a file or port open?", "input": "", "output": "`lsof /path/file` shows processes holding a file, `lsof -i :8080` shows the process on a port, and `sudo ss -tlnp | grep 8080` does the same via sockets. `fuser -v /path` is another option. These explain 'address already in use' and unmountable busy filesystems."}
+{"instruction": "What is an image digest and why pin it?", "input": "", "output": "A digest (`sha256:...`) is the content hash of an image manifest. Tags are mutable and can be repointed to different content, but a digest always refers to exactly the same bytes. Pin with `FROM node:20-alpine@sha256:<digest>` for reproducible, tamper-evident builds, and update digests deliberately (tools like Renovate or Dependabot can automate this)."}
+{"instruction": "Senaraikan semua pengguna", "input": "", "output": "```sql\nSELECT * FROM pengguna;\n```"}
+{"instruction": "Senaraikan semua pengguna — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT * FROM pengguna;\n```"}
+{"instruction": "Tulis query: Senaraikan semua pengguna.", "input": "", "output": "```sql\nSELECT * FROM pengguna;\n```"}
+{"instruction": "Kira baris dalam pengguna", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pengguna;\n```"}
+{"instruction": "Kira baris dalam pengguna — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pengguna;\n```"}
+{"instruction": "Tulis query: Kira baris dalam pengguna.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pengguna;\n```"}
+{"instruction": "Cari pengguna di mana nama bersamaan 'Ali'", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama = 'Ali';\n```"}
+{"instruction": "Cari pengguna di mana nama bersamaan 'Ali' — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama = 'Ali';\n```"}
+{"instruction": "Tulis query: Cari pengguna di mana nama bersamaan 'Ali'.", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama = 'Ali';\n```"}
+{"instruction": "Susun pengguna mengikut nama menurun, 5 teratas", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY nama DESC LIMIT 5;\n```"}
+{"instruction": "Susun pengguna mengikut nama menurun, 5 teratas — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY nama DESC LIMIT 5;\n```"}
+{"instruction": "Tulis query: Susun pengguna mengikut nama menurun, 5 teratas.", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY nama DESC LIMIT 5;\n```"}
+{"instruction": "Jumlahkan nama dalam pengguna berkelompok mengikut emel", "input": "", "output": "```sql\nSELECT emel, SUM(nama) AS jumlah FROM pengguna GROUP BY emel;\n```"}
+{"instruction": "Jumlahkan nama dalam pengguna berkelompok mengikut emel — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT emel, SUM(nama) AS jumlah FROM pengguna GROUP BY emel;\n```"}
+{"instruction": "Tulis query: Jumlahkan nama dalam pengguna berkelompok mengikut emel.", "input": "", "output": "```sql\nSELECT emel, SUM(nama) AS jumlah FROM pengguna GROUP BY emel;\n```"}
+{"instruction": "Kemas kini pengguna: tetapkan nama kepada 'Ali' untuk id 1", "input": "", "output": "```sql\nUPDATE pengguna SET nama = 'Ali' WHERE id = 1;\n```"}
+{"instruction": "Kemas kini pengguna: tetapkan nama kepada 'Ali' untuk id 1 — tunjukkan SQL.", "input": "", "output": "```sql\nUPDATE pengguna SET nama = 'Ali' WHERE id = 1;\n```"}
+{"instruction": "Tulis query: Kemas kini pengguna: tetapkan nama kepada 'Ali' untuk id 1.", "input": "", "output": "```sql\nUPDATE pengguna SET nama = 'Ali' WHERE id = 1;\n```"}
+{"instruction": "Padam baris id 9 dari pengguna", "input": "", "output": "```sql\nDELETE FROM pengguna WHERE id = 9;\n```"}
+{"instruction": "Padam baris id 9 dari pengguna — tunjukkan SQL.", "input": "", "output": "```sql\nDELETE FROM pengguna WHERE id = 9;\n```"}
+{"instruction": "Tulis query: Padam baris id 9 dari pengguna.", "input": "", "output": "```sql\nDELETE FROM pengguna WHERE id = 9;\n```"}
+{"instruction": "Tambah satu baris ke pengguna", "input": "", "output": "```sql\nINSERT INTO pengguna (nama, emel) VALUES ('Ali', 'ali@x.my');\n```"}
+{"instruction": "Tambah satu baris ke pengguna — tunjukkan SQL.", "input": "", "output": "```sql\nINSERT INTO pengguna (nama, emel) VALUES ('Ali', 'ali@x.my');\n```"}
+{"instruction": "Tulis query: Tambah satu baris ke pengguna.", "input": "", "output": "```sql\nINSERT INTO pengguna (nama, emel) VALUES ('Ali', 'ali@x.my');\n```"}
+{"instruction": "Purata nama dalam pengguna", "input": "", "output": "```sql\nSELECT AVG(nama) AS purata FROM pengguna;\n```"}
+{"instruction": "Purata nama dalam pengguna — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT AVG(nama) AS purata FROM pengguna;\n```"}
+{"instruction": "Tulis query: Purata nama dalam pengguna.", "input": "", "output": "```sql\nSELECT AVG(nama) AS purata FROM pengguna;\n```"}
+{"instruction": "Nilai maksimum nama dalam pengguna", "input": "", "output": "```sql\nSELECT MAX(nama) AS maks FROM pengguna;\n```"}
+{"instruction": "Nilai maksimum nama dalam pengguna — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT MAX(nama) AS maks FROM pengguna;\n```"}
+{"instruction": "Tulis query: Nilai maksimum nama dalam pengguna.", "input": "", "output": "```sql\nSELECT MAX(nama) AS maks FROM pengguna;\n```"}
+{"instruction": "Senaraikan semua pesanan", "input": "", "output": "```sql\nSELECT * FROM pesanan;\n```"}
+{"instruction": "Senaraikan semua pesanan — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT * FROM pesanan;\n```"}
+{"instruction": "Tulis query: Senaraikan semua pesanan.", "input": "", "output": "```sql\nSELECT * FROM pesanan;\n```"}
+{"instruction": "Kira baris dalam pesanan", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pesanan;\n```"}
+{"instruction": "Kira baris dalam pesanan — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pesanan;\n```"}
+{"instruction": "Tulis query: Kira baris dalam pesanan.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pesanan;\n```"}
+{"instruction": "Cari pesanan di mana pengguna_id bersamaan 'Ali'", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id = 'Ali';\n```"}
+{"instruction": "Cari pesanan di mana pengguna_id bersamaan 'Ali' — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id = 'Ali';\n```"}
+{"instruction": "Tulis query: Cari pesanan di mana pengguna_id bersamaan 'Ali'.", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id = 'Ali';\n```"}
+{"instruction": "Susun pesanan mengikut pengguna_id menurun, 5 teratas", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY pengguna_id DESC LIMIT 5;\n```"}
+{"instruction": "Susun pesanan mengikut pengguna_id menurun, 5 teratas — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY pengguna_id DESC LIMIT 5;\n```"}
+{"instruction": "Tulis query: Susun pesanan mengikut pengguna_id menurun, 5 teratas.", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY pengguna_id DESC LIMIT 5;\n```"}
+{"instruction": "Jumlahkan pengguna_id dalam pesanan berkelompok mengikut jumlah", "input": "", "output": "```sql\nSELECT jumlah, SUM(pengguna_id) AS jumlah FROM pesanan GROUP BY jumlah;\n```"}
+{"instruction": "Jumlahkan pengguna_id dalam pesanan berkelompok mengikut jumlah — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT jumlah, SUM(pengguna_id) AS jumlah FROM pesanan GROUP BY jumlah;\n```"}
+{"instruction": "Tulis query: Jumlahkan pengguna_id dalam pesanan berkelompok mengikut jumlah.", "input": "", "output": "```sql\nSELECT jumlah, SUM(pengguna_id) AS jumlah FROM pesanan GROUP BY jumlah;\n```"}
+{"instruction": "Kemas kini pesanan: tetapkan pengguna_id kepada 'Ali' untuk id 1", "input": "", "output": "```sql\nUPDATE pesanan SET pengguna_id = 'Ali' WHERE id = 1;\n```"}
+{"instruction": "Kemas kini pesanan: tetapkan pengguna_id kepada 'Ali' untuk id 1 — tunjukkan SQL.", "input": "", "output": "```sql\nUPDATE pesanan SET pengguna_id = 'Ali' WHERE id = 1;\n```"}
+{"instruction": "Tulis query: Kemas kini pesanan: tetapkan pengguna_id kepada 'Ali' untuk id 1.", "input": "", "output": "```sql\nUPDATE pesanan SET pengguna_id = 'Ali' WHERE id = 1;\n```"}
+{"instruction": "Padam baris id 9 dari pesanan", "input": "", "output": "```sql\nDELETE FROM pesanan WHERE id = 9;\n```"}
+{"instruction": "Padam baris id 9 dari pesanan — tunjukkan SQL.", "input": "", "output": "```sql\nDELETE FROM pesanan WHERE id = 9;\n```"}
+{"instruction": "Tulis query: Padam baris id 9 dari pesanan.", "input": "", "output": "```sql\nDELETE FROM pesanan WHERE id = 9;\n```"}
+{"instruction": "Tambah satu baris ke pesanan", "input": "", "output": "```sql\nINSERT INTO pesanan (pengguna_id, jumlah) VALUES ('Ali', 'ali@x.my');\n```"}
+{"instruction": "Tambah satu baris ke pesanan — tunjukkan SQL.", "input": "", "output": "```sql\nINSERT INTO pesanan (pengguna_id, jumlah) VALUES ('Ali', 'ali@x.my');\n```"}
+{"instruction": "Tulis query: Tambah satu baris ke pesanan.", "input": "", "output": "```sql\nINSERT INTO pesanan (pengguna_id, jumlah) VALUES ('Ali', 'ali@x.my');\n```"}
+{"instruction": "Purata pengguna_id dalam pesanan", "input": "", "output": "```sql\nSELECT AVG(pengguna_id) AS purata FROM pesanan;\n```"}
+{"instruction": "Purata pengguna_id dalam pesanan — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT AVG(pengguna_id) AS purata FROM pesanan;\n```"}
+{"instruction": "Tulis query: Purata pengguna_id dalam pesanan.", "input": "", "output": "```sql\nSELECT AVG(pengguna_id) AS purata FROM pesanan;\n```"}
+{"instruction": "Nilai maksimum pengguna_id dalam pesanan", "input": "", "output": "```sql\nSELECT MAX(pengguna_id) AS maks FROM pesanan;\n```"}
+{"instruction": "Nilai maksimum pengguna_id dalam pesanan — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT MAX(pengguna_id) AS maks FROM pesanan;\n```"}
+{"instruction": "Tulis query: Nilai maksimum pengguna_id dalam pesanan.", "input": "", "output": "```sql\nSELECT MAX(pengguna_id) AS maks FROM pesanan;\n```"}
+{"instruction": "Senaraikan semua produk", "input": "", "output": "```sql\nSELECT * FROM produk;\n```"}
+{"instruction": "Senaraikan semua produk — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT * FROM produk;\n```"}
+{"instruction": "Tulis query: Senaraikan semua produk.", "input": "", "output": "```sql\nSELECT * FROM produk;\n```"}
+{"instruction": "Kira baris dalam produk", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM produk;\n```"}
+{"instruction": "Kira baris dalam produk — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM produk;\n```"}
+{"instruction": "Tulis query: Kira baris dalam produk.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM produk;\n```"}
+{"instruction": "Cari produk di mana nama bersamaan 'Ali'", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama = 'Ali';\n```"}
+{"instruction": "Cari produk di mana nama bersamaan 'Ali' — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama = 'Ali';\n```"}
+{"instruction": "Tulis query: Cari produk di mana nama bersamaan 'Ali'.", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama = 'Ali';\n```"}
+{"instruction": "Susun produk mengikut nama menurun, 5 teratas", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY nama DESC LIMIT 5;\n```"}
+{"instruction": "Susun produk mengikut nama menurun, 5 teratas — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY nama DESC LIMIT 5;\n```"}
+{"instruction": "Tulis query: Susun produk mengikut nama menurun, 5 teratas.", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY nama DESC LIMIT 5;\n```"}
+{"instruction": "Jumlahkan nama dalam produk berkelompok mengikut harga", "input": "", "output": "```sql\nSELECT harga, SUM(nama) AS jumlah FROM produk GROUP BY harga;\n```"}
+{"instruction": "Jumlahkan nama dalam produk berkelompok mengikut harga — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT harga, SUM(nama) AS jumlah FROM produk GROUP BY harga;\n```"}
+{"instruction": "Tulis query: Jumlahkan nama dalam produk berkelompok mengikut harga.", "input": "", "output": "```sql\nSELECT harga, SUM(nama) AS jumlah FROM produk GROUP BY harga;\n```"}
+{"instruction": "Kemas kini produk: tetapkan nama kepada 'Ali' untuk id 1", "input": "", "output": "```sql\nUPDATE produk SET nama = 'Ali' WHERE id = 1;\n```"}
+{"instruction": "Kemas kini produk: tetapkan nama kepada 'Ali' untuk id 1 — tunjukkan SQL.", "input": "", "output": "```sql\nUPDATE produk SET nama = 'Ali' WHERE id = 1;\n```"}
+{"instruction": "Tulis query: Kemas kini produk: tetapkan nama kepada 'Ali' untuk id 1.", "input": "", "output": "```sql\nUPDATE produk SET nama = 'Ali' WHERE id = 1;\n```"}
+{"instruction": "Padam baris id 9 dari produk", "input": "", "output": "```sql\nDELETE FROM produk WHERE id = 9;\n```"}
+{"instruction": "Padam baris id 9 dari produk — tunjukkan SQL.", "input": "", "output": "```sql\nDELETE FROM produk WHERE id = 9;\n```"}
+{"instruction": "Tulis query: Padam baris id 9 dari produk.", "input": "", "output": "```sql\nDELETE FROM produk WHERE id = 9;\n```"}
+{"instruction": "Tambah satu baris ke produk", "input": "", "output": "```sql\nINSERT INTO produk (nama, harga) VALUES ('Ali', 'ali@x.my');\n```"}
+{"instruction": "Tambah satu baris ke produk — tunjukkan SQL.", "input": "", "output": "```sql\nINSERT INTO produk (nama, harga) VALUES ('Ali', 'ali@x.my');\n```"}
+{"instruction": "Tulis query: Tambah satu baris ke produk.", "input": "", "output": "```sql\nINSERT INTO produk (nama, harga) VALUES ('Ali', 'ali@x.my');\n```"}
+{"instruction": "Purata nama dalam produk", "input": "", "output": "```sql\nSELECT AVG(nama) AS purata FROM produk;\n```"}
+{"instruction": "Purata nama dalam produk — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT AVG(nama) AS purata FROM produk;\n```"}
+{"instruction": "Tulis query: Purata nama dalam produk.", "input": "", "output": "```sql\nSELECT AVG(nama) AS purata FROM produk;\n```"}
+{"instruction": "Nilai maksimum nama dalam produk", "input": "", "output": "```sql\nSELECT MAX(nama) AS maks FROM produk;\n```"}
+{"instruction": "Nilai maksimum nama dalam produk — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT MAX(nama) AS maks FROM produk;\n```"}
+{"instruction": "Tulis query: Nilai maksimum nama dalam produk.", "input": "", "output": "```sql\nSELECT MAX(nama) AS maks FROM produk;\n```"}
+{"instruction": "Sertai pesanan dengan nama pengguna", "input": "", "output": "```sql\nSELECT o.id, p.nama FROM pesanan o JOIN pengguna p ON p.id = o.pengguna_id;\n```"}
+{"instruction": "Sertai pesanan dengan nama pengguna — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT o.id, p.nama FROM pesanan o JOIN pengguna p ON p.id = o.pengguna_id;\n```"}
+{"instruction": "Tulis query: Sertai pesanan dengan nama pengguna.", "input": "", "output": "```sql\nSELECT o.id, p.nama FROM pesanan o JOIN pengguna p ON p.id = o.pengguna_id;\n```"}
+{"instruction": "Sertai produk dengan baki stok rendah", "input": "", "output": "```sql\nSELECT nama, stok FROM produk WHERE stok < 10 ORDER BY stok;\n```"}
+{"instruction": "Sertai produk dengan baki stok rendah — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT nama, stok FROM produk WHERE stok < 10 ORDER BY stok;\n```"}
+{"instruction": "Tulis query: Sertai produk dengan baki stok rendah.", "input": "", "output": "```sql\nSELECT nama, stok FROM produk WHERE stok < 10 ORDER BY stok;\n```"}
+{"instruction": "Jumlah belanja setiap pengguna", "input": "", "output": "```sql\nSELECT p.nama, SUM(o.jumlah) AS jumlah FROM pengguna p JOIN pesanan o ON o.pengguna_id = p.id GROUP BY p.nama;\n```"}
+{"instruction": "Jumlah belanja setiap pengguna — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT p.nama, SUM(o.jumlah) AS jumlah FROM pengguna p JOIN pesanan o ON o.pengguna_id = p.id GROUP BY p.nama;\n```"}
+{"instruction": "Tulis query: Jumlah belanja setiap pengguna.", "input": "", "output": "```sql\nSELECT p.nama, SUM(o.jumlah) AS jumlah FROM pengguna p JOIN pesanan o ON o.pengguna_id = p.id GROUP BY p.nama;\n```"}
