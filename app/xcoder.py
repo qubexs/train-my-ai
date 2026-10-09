@@ -234,8 +234,8 @@ def ask(cli, model, system, prompt, name):
         [str(cli), "-m", str(model), "-c", "2048", "-n", "400",
          "--temp", "0.3", "--log-disable", "-st",
          "--no-display-prompt", "-sys", system, "-p", prompt,
-         "-rs", "Pengguna:", "-rs", "Soalan baru:",
-         "-rs", "Perbualan sebelum:"],
+         "-r", "Pengguna:", "-r", "Soalan baru:",
+         "-r", "Perbualan sebelum:"],
         capture_output=True, text=True, timeout=300)
     if p.returncode != 0:
         raise RuntimeError((p.stderr or p.stdout)[-1000:])
