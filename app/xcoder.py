@@ -26,9 +26,27 @@ import urllib.request
 import zipfile
 from pathlib import Path
 
-APP_DIR = Path(__file__).resolve().parent
-BIN_DIR = APP_DIR / "bin"
-MODELS_DIR = APP_DIR / "models"
+def _base_dirs():
+    """Stable folders for engine + model.
+
+    Plain python: <repo>/app/{bin,models} next to this file.
+    PyInstaller onefile exe: __file__ lives in a temp dir (_MEI*)
+    that is deleted after every run, so use the exe's own folder
+    (<exe-dir>/app/...) instead — otherwise files are "never found"
+    and download on every run.
+    """
+    if getattr(sys, "frozen", False):
+        root = Path(sys.executable).resolve().parent
+    else:
+        root = Path(__file__).resolve().parent.parent  # repo root
+    app = root / "app"
+    return app / "bin", app / "models"
+
+
+BIN_DIR, MODELS_DIR = _base_dirs()
+
+# A file this big is a real model, not a corrupt/partial download.
+MIN_MODEL_SIZE = 50_000_000
 
 LLAMA_TAG = "b11491"
 LLAMA_BASE = f"https://github.com/ggerganov/llama.cpp/releases/download/{LLAMA_TAG}"
@@ -50,11 +68,27 @@ def asset_name():
 
 
 def download(url, dest, expect=None):
+    """Download once. Resumes a partial file (HTTP Range); never
+    re-downloads a complete file — callers check existence first."""
     dest.parent.mkdir(parents=True, exist_ok=True)
-    req = urllib.request.Request(url, headers={"User-Agent": "xcoder-standalone"})
-    with urllib.request.urlopen(req, timeout=120) as r, open(dest, "wb") as f:
-        total = int(r.headers.get("Content-Length", 0)) or expect or 1
-        got, t0 = 0, time.time()
+    have = dest.stat().st_size if dest.exists() else 0
+    headers = {"User-Agent": "xcoder-standalone"}
+    mode = "wb"
+    if have > 0:
+        headers["Range"] = f"bytes={have}-"
+        mode = "ab"
+    req = urllib.request.Request(url, headers=headers)
+    with urllib.request.urlopen(req, timeout=120) as r, open(dest, mode) as f:
+        if have > 0 and r.status != 206:
+            # server ignored Range: restart from scratch
+            f.seek(0)
+            f.truncate()
+            have = 0
+        total = have + (int(r.headers.get("Content-Length", 0)) or 0)
+        total = total or expect or 1
+        got, t0 = have, time.time()
+        if have > 0:
+            print(f"  sambung dari {have / 1e6:.0f} MB ...")
         while True:
             b = r.read(1024 * 1024)
             if not b:
@@ -64,14 +98,50 @@ def download(url, dest, expect=None):
             el = max(0.1, time.time() - t0)
             print(f"\r  {got / 1e6:.0f}/{total / 1e6:.0f} MB "
                   f"({got / el / 1e6:.1f} MB/s)", end="", flush=True)
-    print()
+    print(f"\n  siap: {dest} ({dest.stat().st_size / 1e6:.0f} MB)")
+
+
+def _search_dirs(primary, sub):
+    """Where to look for already-downloaded files: beside the
+    script/exe first, then the current working folder."""
+    dirs = [primary]
+    alt = Path.cwd() / "app" / sub
+    if alt.resolve() != primary.resolve():
+        dirs.append(alt)
+    return dirs
+
+
+def find_cli():
+    name = "llama-cli.exe" if platform.system() == "Windows" else "llama-cli"
+    for d in _search_dirs(BIN_DIR, "bin"):
+        if d.is_dir():
+            hit = sorted(d.rglob(name))
+            if hit:
+                return hit[0]
+    return None
+
+
+def find_model():
+    """Reuse ANY usable *.gguf found — exact name/size NOT required,
+    so a q8_0 model or a file whose size differs by a byte is still
+    used instead of downloading ~491MB again."""
+    want = HF_MODEL_URL.rsplit("/", 1)[-1]
+    found = []
+    for d in _search_dirs(MODELS_DIR, "models"):
+        if d.is_dir():
+            found += [p for p in d.glob("*.gguf")
+                      if p.stat().st_size >= MIN_MODEL_SIZE]
+    if not found:
+        return None
+    found.sort(key=lambda p: (p.name != want, -p.stat().st_size))
+    return found[0]
 
 
 def ensure_cli():
-    name = "llama-cli.exe" if platform.system() == "Windows" else "llama-cli"
-    hit = list(BIN_DIR.rglob(name))
+    hit = find_cli()
     if hit:
-        return hit[0]
+        print(f"[xcoder] engine OK (guna semula, tiada download): {hit}")
+        return hit
     asset = asset_name()
     print(f"[xcoder] downloading engine {asset} ...")
     with tempfile.TemporaryDirectory() as tmp:
@@ -92,9 +162,11 @@ def ensure_cli():
 
 
 def ensure_model():
+    hit = find_model()
+    if hit:
+        print(f"[xcoder] model OK (guna semula, tiada download): {hit}")
+        return hit
     dest = MODELS_DIR / HF_MODEL_URL.rsplit("/", 1)[-1]
-    if dest.exists() and dest.stat().st_size == MODEL_SIZE:
-        return dest
     print("[xcoder] downloading model (~491MB, once only) ...")
     download(HF_MODEL_URL, dest, expect=MODEL_SIZE)
     return dest
