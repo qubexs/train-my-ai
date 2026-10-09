@@ -71,6 +71,8 @@ def ensure_llamacpp(build_dir):
 def main():
     ap = argparse.ArgumentParser(description="Batch-train all XCoder experts")
     ap.add_argument("--models-dir", default=str(ROOT / "models"))
+    ap.add_argument("--datasets-dir", default=str(ROOT / "datasets"),
+                    help="folder datasets/<stack>.jsonl")
     ap.add_argument("--build-dir", default=str(ROOT / "build" / "train"))
     ap.add_argument("--only", default="",
                     help="train subset, e.g. xcoder-docker or xcoder-linux,xcoder-web")
@@ -96,11 +98,12 @@ def main():
     print(f"{'EXPERT':16} {'ROWS':>6}  DECISION")
     jobs = []
     only = {o.strip() for o in a.only.split(",") if o.strip()}
+    ds_dir = Path(a.datasets_dir)
     for name, stacks, doms in PLAN:
         if only and name not in only:
             continue
         gguf = models_dir / f"{name}-0.5b-{QUANT}.gguf"
-        files = [ROOT / "datasets" / f"{s}.jsonl" for s in stacks]
+        files = [ds_dir / f"{s}.jsonl" for s in stacks]
         files = [f for f in files if f.exists()]
         rows = sum(count_rows(f) for f in files)
         ready = gguf.exists() and gguf.stat().st_size > 50_000_000
