@@ -130,6 +130,7 @@ def main():
                 print(f"{name:16} {rows:>6}  RETRAIN (akan backup {gguf.name})")
             else:
                 bak = gguf.with_suffix(".gguf.bak")
+                bak.unlink(missing_ok=True)
                 gguf.rename(bak)
                 print(f"{name:16} {rows:>6}  RETRAIN (lama -> {bak.name})")
         elif rows < 50:
