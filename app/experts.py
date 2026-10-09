@@ -13,6 +13,46 @@ from pathlib import Path
 
 GENERAL = "general"
 
+# xcoder-<expert>-0.5b-<quant>.gguf -> default domains for auto-registration.
+EXPERT_DOMAIN_MAP = {
+    "general": [GENERAL], "base": [GENERAL],
+    "js": ["web"], "web": ["web"],
+    "sql": ["data"], "data": ["data"],
+    "linux": ["linux"], "docker": ["docker"], "bash": ["linux"],
+    "python": ["python"], "php": ["php"], "laravel": ["php"],
+}
+
+
+def infer_name_domains(filename):
+    """xcoder-docker-0.5b-q4_k_m.gguf -> (xcoder-docker, [docker])."""
+    import re
+    stem = Path(filename).stem.lower()
+    m = re.match(r"^(xcoder|coder77|ezcodex)-([a-z0-9]+?)(?:-0\.5b)?(?:-|$)", stem)
+    if m:
+        expert = m.group(2)
+        return f"xcoder-{expert}", EXPERT_DOMAIN_MAP.get(expert, [GENERAL])
+    return stem, [GENERAL]
+
+
+def auto_import(models_dir, src_dir=None):
+    """Copy newest *.gguf from Downloads (or src_dir) into models_dir + register.
+    Returns (entry|None, message). Skips files already registered."""
+    models_dir = Path(models_dir)
+    models_dir.mkdir(parents=True, exist_ok=True)
+    src_dir = Path(src_dir) if src_dir else Path.home() / "Downloads"
+    cands = sorted(src_dir.glob("*.gguf"), key=lambda p: p.stat().st_mtime,
+                   reverse=True) if src_dir.is_dir() else []
+    if not cands:
+        return None, f"tiada *.gguf dalam {src_dir}"
+    known = {m.get("file") for m in scan(models_dir)}
+    for cand in cands:
+        if cand.name in known or (models_dir / cand.name).exists():
+            continue
+        name, doms = infer_name_domains(cand.name)
+        entry = add(models_dir, str(cand), name=name, domains=doms)
+        return entry, f"auto-import {cand.name} -> {entry['name']} [{','.join(doms)}]"
+    return None, "semua GGUF dalam Downloads sudah didaftar"
+
 # Fine-grained stacks (order matters: specific before generic on ties).
 STACKS = {
     "typescript": ["typescript", ".ts", "interface ", ": number", ": string",
@@ -127,12 +167,25 @@ def scan(models_dir):
     for g in sorted(models_dir.glob("*.gguf")):
         if g.name not in known_files:
             if "qwen" in g.stem.lower() and not has_base:
-                name = "base"
+                reg["models"].append({"name": "base", "file": g.name, "url": "",
+                                      "domains": [GENERAL], "desc": "auto-dikesan",
+                                      "trained": True})
                 has_base = True
-            else:
+                continue
+            name, doms = infer_name_domains(g.name)
+            ph = next((m for m in reg["models"]
+                       if m.get("name") == name and not m.get("file")), None)
+            if ph:
+                # seed placeholder + real file arrived = complete registration
+                ph["file"] = g.name
+                ph["domains"] = doms or ph.get("domains", [GENERAL])
+                ph["desc"] = "auto-dikesan"
+                ph["trained"] = True
+                continue
+            if any(m.get("name") == name for m in reg["models"]):
                 name = g.stem
             reg["models"].append({"name": name, "file": g.name, "url": "",
-                                  "domains": [GENERAL], "desc": "auto-dikesan",
+                                  "domains": doms, "desc": "auto-dikesan",
                                   "trained": True})
     if not reg["models"]:
         reg["models"].append({"name": "base", "file": "", "url": "",

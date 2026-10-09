@@ -27,7 +27,7 @@ APP_DIR = (Path(sys.executable).resolve().parent if getattr(sys, "frozen", False
            else Path(__file__).resolve().parent)
 sys.path.insert(0, str(APP_DIR))
 
-__version__ = "0.4.7"
+__version__ = "0.4.9"
 BIN_DIR = APP_DIR / "bin"
 MODELS_DIR = APP_DIR / "models"
 
@@ -41,7 +41,7 @@ from backends import LlamaCliBackend, LmStudioBackend
 from agent import run_agent
 from experts import (GENERAL, add as add_model, detect as detect_domain,
                      fmt_size, resolve as resolve_model, scan as scan_models,
-                     STACK2DOMAIN)
+                     STACK2DOMAIN, infer_name_domains)
 from store import load_session, save_turn, list_sessions, log_training, export_sft, export_pretrain_corpus
 
 
@@ -116,6 +116,7 @@ HELP = """Commands:
 /server               status resident llama-server (backend server sahaja)
 /model <nama|path|id>  tukar model pakar (satu aktif pada satu masa)
 /model add <url|fail> [--name N] [--domains a,b]  daftar model baharu
+/model import [fail] [--from dir]  auto-import GGUF terbaru + aktifkan
 /models               senarai semua model pakar + domain
 /route on|off         auto-tukar pakar ikut domain soalan
 /session <name>       switch session file (sessions/<name>.jsonl)
@@ -374,6 +375,40 @@ def repl(args):
             rest = q[len("/model"):].strip()
             if not rest:
                 print(f"aktif: {cur['name']} [{','.join(cur['domains'])}]")
+                continue
+            if rest == "import" or rest.startswith("import "):
+                from experts import auto_import as auto_import_model
+                itoks = rest[len("import"):].strip().split()
+                explicit = next((t for t in itoks if not t.startswith("--")), "")
+                from_dir = None
+                for i, t in enumerate(itoks):
+                    if t == "--from" and i + 1 < len(itoks):
+                        from_dir = itoks[i + 1]
+                if explicit and Path(explicit).expanduser().is_file():
+                    nm, doms = infer_name_domains(Path(explicit).name)
+                    for i, t in enumerate(itoks):
+                        if t == "--name" and i + 1 < len(itoks):
+                            nm = itoks[i + 1]
+                        if t == "--domains" and i + 1 < len(itoks):
+                            doms = [d.strip() for d in itoks[i + 1].split(",") if d.strip()]
+                    e = add_model(MODELS_DIR, str(Path(explicit).expanduser()),
+                                  name=nm, domains=doms)
+                    note = f"import {explicit} -> {e['name']}"
+                else:
+                    e, note = auto_import_model(MODELS_DIR, from_dir)
+                    if e is None:
+                        print(note)
+                        continue
+                p2 = MODELS_DIR / e["file"]
+                if backend.kind == "server":
+                    already, secs = backend.manager.load(p2)
+                    backend.model = e["name"]
+                    if not already:
+                        print(f"[server] dimuat dalam {secs:.1f}s")
+                elif backend.kind != "lmstudio":
+                    backend = LlamaCliBackend(cli_path, p2, n_predict=args.max_tokens)
+                cur = {"name": e["name"], "domains": e.get("domains", [GENERAL])}
+                print(f"{note}; aktif: {cur['name']} [{','.join(cur['domains'])}]")
                 continue
             if rest.startswith("add "):
                 toks = rest[4:].split()

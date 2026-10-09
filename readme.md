@@ -44,6 +44,7 @@ py app/ezcodex.py --autoroute          # auto-tukar pakar ikut domain soalan
 /models                                # senarai pakar (* = aktif)
 /model xcoder-docker                  # tukar manual
 /model add <url|fail> --name xcoder-docker --domains docker  # daftar GGUF baharu
+/model import                 # auto-import GGUF terbaru dari Downloads + aktifkan
 py app/ezcodex.py train --mode sft --domain docker   # dataset per-pakar -> finetune/docker/dataset.jsonl
 ```
 Alir: chat + `/good` (auto-tag domain) -> export `--domain X` -> Colab LoRA (`finetune/train_unsloth.py`) -> GGUF -> `/model add`. Backend `llama-cli` 0 RAM idle, jadi tukar pakar = percuma.

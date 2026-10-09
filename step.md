@@ -52,12 +52,16 @@ model.save_pretrained_gguf(OUT + "-gguf", tok, quantization_method="q4_k_m")
 Download `.gguf` (~350MB), rename ikut konvensyen
 `xcoder-<kepakaran>-0.5b-q4_k_m.gguf` (cth `xcoder-html-0.5b-q4_k_m.gguf`), ke PC.
 
-## Step 4 — Daftar sebagai pakar (ganti import LM Studio lama)
-```powershell
-# dalam CLI:
-# /model add E:\Downloads\xcoder-docker-0.5b-q4_k_m.gguf --name xcoder-docker --domains docker
-# /models   (sahkan)   /route on   (auto-hala soalan Docker ke pakar ini)
+## Step 4 — Daftar sebagai pakar (auto-import)
+Lepas download `.gguf` dari Colab, dalam CLI:
 ```
+anda> /model import
+# auto: GGUF terbaru dalam Downloads disalin ke models/, didaftar
+# (nama+domain dari konvensyen xcoder-<pakar>-0.5b-q4_k_m.gguf), terus aktif.
+anda> /models     # sahkan
+anda> /route on   # auto-hala soalan ke pakar ini
+```
+Manual: `/model add <fail> --name xcoder-docker --domains docker`.
 
 ## Step 5 — Test identity (filter OFF ideally)
 ```powershell
