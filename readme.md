@@ -26,7 +26,7 @@ First run auto-downloads engine (~19MB) + model (~491MB) into `app/bin/`, `app/m
 py app/ezcodex.py --lang ms --name "XCoder"            # REPL, tools on, session=default
 py app/ezcodex.py --backend lmstudio                     # use LM Studio http://localhost:1234/v1 instead
 py app/ezcodex.py --backend server                     # resident llama-server (fast repeat, idle-unload)
-py app/ezcodex.py --backend server --gpu cuda          # GTX 1070+: full GPU offload (~2x T/s)
+py app/ezcodex.py --backend server --gpu cuda          # opt-in sahaja; lalai CPU. Dasar: GPU dikhaskan untuk training, inferens kekal CPU (jimat kuasa/RAM).
 py app/ezcodex.py --once "list docs and explain" --allow-all   # one-shot (scripts)
 py app/ezcodex.py train --mode both                      # pecah ke datasets/<stack>.jsonl + gabung finetune/
 py app/ezcodex.py train --mode sft --domain docker   # datasets/docker.jsonl -> finetune/linux/

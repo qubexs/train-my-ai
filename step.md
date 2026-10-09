@@ -44,6 +44,11 @@ pip install transformers datasets accelerate peft trl
 python finetune/train_local.py --data datasets/docker.jsonl --out xcoder-docker
 # ~10-20 min untuk 500 baris. Kemudian export GGUF (lihat komen dalam skrip).
 ```
+Batch semua pakar satu demi satu (langkau yang siap, daftar automatik ke `models/`):
+```powershell
+python finetune/train_all.py --dry-run   # semak pelan dahulu
+python finetune/train_all.py             # jalan berjam-jam; biarkan semalaman
+```
 ### B. Colab (GPU T4 percuma)
 1. Go to Google Colab → `Runtime → Change runtime type → T4 GPU`.
 2. Upload `finetune/<domain>/dataset.jsonl` (rename dalam `/content/` jika perlu, elak `dataset (1).jsonl`).

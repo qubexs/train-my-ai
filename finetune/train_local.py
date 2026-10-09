@@ -18,7 +18,8 @@ import sys
 
 def parse_args():
     ap = argparse.ArgumentParser(description="Local LoRA train (GTX 1070 friendly)")
-    ap.add_argument("--data", required=True, help="datasets/<stack>.jsonl or finetune/<domain>/dataset.jsonl")
+    ap.add_argument("--data", required=True,
+                    help="datasets/<stack>.jsonl, finetune/<domain>/dataset.jsonl, or comma list for multi-stack")
     ap.add_argument("--out", default="xcoder-0.5b", help="e.g. xcoder-docker")
     ap.add_argument("--model", default="Qwen/Qwen2.5-0.5B-Instruct")
     ap.add_argument("--epochs", type=float, default=3.0)
@@ -61,7 +62,8 @@ def main():
         lora_dropout=0, bias="none", task_type="CAUSAL_LM"))
     model.print_trainable_parameters()
 
-    ds = load_dataset("json", data_files=a.data, split="train")
+    files = [f.strip() for f in a.data.split(",") if f.strip()]
+    ds = load_dataset("json", data_files=files if len(files) > 1 else files[0], split="train")
 
     def fmt(x):
         ins, inp, out = x["instruction"], x.get("input", ""), x["output"]
