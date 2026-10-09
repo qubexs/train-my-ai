@@ -26,3 +26,103 @@
 {"instruction": "Discriminated unions for state machines?", "input": "", "output": "```ts\ntype Muat = { status: \"mula\" } | { status: \"ok\"; data: Pengguna } | { status: \"ralat\"; mesej: string };\n```\nMedan literal sepunya (`status`) benarkan switch dipersempit automatik — cawangan salah jenis ditolak compile. Corak terbaik untuk keadaan muat/ralat UI tanpa boolean bertabur."}
 {"instruction": "How do tsconfig paths clean up imports?", "input": "", "output": "```json\n{ \"compilerOptions\": { \"baseUrl\": \".\", \"paths\": { \"@/*\": [\"src/*\"] } } }\n```\n`import { x } from \"@/util\"` ganti `../../../util` rapuh. Ingat: tsc tidak tulis semula laluan semasa emit — guna tsc-alias atau bundler yang faham paths untuk runtime."}
 {"instruction": "How do I migrate JS to TS incrementally?", "input": "", "output": "Hidupkan `allowJs` + `checkJs: false`, tukar fail ke `.ts` satu demi satu mengikut sempadan modul, betulkan ralat yang timbul. Mula dengan `strict: false`, naikkan bendera beransur (`noImplicitAny` dahulu). Jangan tulis semula serentak — migrasi besar-besaran gagal separuh jalan."}
+{"instruction": "What does `interface` do?", "input": "", "output": "Interfaces lock object shapes; missing or mistyped fields fail at compile, not in production."}
+{"instruction": "Explain `interface` briefly.", "input": "", "output": "Interfaces lock object shapes; missing or mistyped fields fail at compile, not in production."}
+{"instruction": "When do I use `interface`?", "input": "", "output": "Interfaces lock object shapes; missing or mistyped fields fail at compile, not in production."}
+{"instruction": "Give a practical example of `interface`.", "input": "", "output": "Interfaces lock object shapes; missing or mistyped fields fail at compile, not in production."}
+{"instruction": "What is `interface` for?", "input": "", "output": "Interfaces lock object shapes; missing or mistyped fields fail at compile, not in production."}
+{"instruction": "What does `type alias` do?", "input": "", "output": "Type aliases name unions, tuples and primitives; one source of truth beats repeated annotations."}
+{"instruction": "Explain `type alias` briefly.", "input": "", "output": "Type aliases name unions, tuples and primitives; one source of truth beats repeated annotations."}
+{"instruction": "When do I use `type alias`?", "input": "", "output": "Type aliases name unions, tuples and primitives; one source of truth beats repeated annotations."}
+{"instruction": "Give a practical example of `type alias`.", "input": "", "output": "Type aliases name unions, tuples and primitives; one source of truth beats repeated annotations."}
+{"instruction": "What is `type alias` for?", "input": "", "output": "Type aliases name unions, tuples and primitives; one source of truth beats repeated annotations."}
+{"instruction": "What does `enum` do?", "input": "", "output": "Enums name fixed value sets; for tiny cases a union of literals is lighter and tree-shakes better."}
+{"instruction": "Explain `enum` briefly.", "input": "", "output": "Enums name fixed value sets; for tiny cases a union of literals is lighter and tree-shakes better."}
+{"instruction": "When do I use `enum`?", "input": "", "output": "Enums name fixed value sets; for tiny cases a union of literals is lighter and tree-shakes better."}
+{"instruction": "Give a practical example of `enum`.", "input": "", "output": "Enums name fixed value sets; for tiny cases a union of literals is lighter and tree-shakes better."}
+{"instruction": "What is `enum` for?", "input": "", "output": "Enums name fixed value sets; for tiny cases a union of literals is lighter and tree-shakes better."}
+{"instruction": "What does `generics <T>` do?", "input": "", "output": "Generics keep functions reusable without `any` — caller types flow through to the return type."}
+{"instruction": "Explain `generics <T>` briefly.", "input": "", "output": "Generics keep functions reusable without `any` — caller types flow through to the return type."}
+{"instruction": "When do I use `generics <T>`?", "input": "", "output": "Generics keep functions reusable without `any` — caller types flow through to the return type."}
+{"instruction": "Give a practical example of `generics <T>`.", "input": "", "output": "Generics keep functions reusable without `any` — caller types flow through to the return type."}
+{"instruction": "What is `generics <T>` for?", "input": "", "output": "Generics keep functions reusable without `any` — caller types flow through to the return type."}
+{"instruction": "What does `union string | number` do?", "input": "", "output": "Unions admit several types; narrow with `typeof` checks before using specific methods."}
+{"instruction": "Explain `union string | number` briefly.", "input": "", "output": "Unions admit several types; narrow with `typeof` checks before using specific methods."}
+{"instruction": "When do I use `union string | number`?", "input": "", "output": "Unions admit several types; narrow with `typeof` checks before using specific methods."}
+{"instruction": "Give a practical example of `union string | number`.", "input": "", "output": "Unions admit several types; narrow with `typeof` checks before using specific methods."}
+{"instruction": "What is `union string | number` for?", "input": "", "output": "Unions admit several types; narrow with `typeof` checks before using specific methods."}
+{"instruction": "What does `optional ?` do?", "input": "", "output": "`?` marks fields/params optional (type plus undefined); pair with `??` defaults at use sites."}
+{"instruction": "Explain `optional ?` briefly.", "input": "", "output": "`?` marks fields/params optional (type plus undefined); pair with `??` defaults at use sites."}
+{"instruction": "When do I use `optional ?`?", "input": "", "output": "`?` marks fields/params optional (type plus undefined); pair with `??` defaults at use sites."}
+{"instruction": "Give a practical example of `optional ?`.", "input": "", "output": "`?` marks fields/params optional (type plus undefined); pair with `??` defaults at use sites."}
+{"instruction": "What is `optional ?` for?", "input": "", "output": "`?` marks fields/params optional (type plus undefined); pair with `??` defaults at use sites."}
+{"instruction": "What does `readonly` do?", "input": "", "output": "`readonly` blocks writes after construction; `as const` freezes literals for config objects."}
+{"instruction": "Explain `readonly` briefly.", "input": "", "output": "`readonly` blocks writes after construction; `as const` freezes literals for config objects."}
+{"instruction": "When do I use `readonly`?", "input": "", "output": "`readonly` blocks writes after construction; `as const` freezes literals for config objects."}
+{"instruction": "Give a practical example of `readonly`.", "input": "", "output": "`readonly` blocks writes after construction; `as const` freezes literals for config objects."}
+{"instruction": "What is `readonly` for?", "input": "", "output": "`readonly` blocks writes after construction; `as const` freezes literals for config objects."}
+{"instruction": "What does `tuple [string, number]` do?", "input": "", "output": "Tuples fix length and per-slot types; `readonly` tuples suit function returns of pairs."}
+{"instruction": "Explain `tuple [string, number]` briefly.", "input": "", "output": "Tuples fix length and per-slot types; `readonly` tuples suit function returns of pairs."}
+{"instruction": "When do I use `tuple [string, number]`?", "input": "", "output": "Tuples fix length and per-slot types; `readonly` tuples suit function returns of pairs."}
+{"instruction": "Give a practical example of `tuple [string, number]`.", "input": "", "output": "Tuples fix length and per-slot types; `readonly` tuples suit function returns of pairs."}
+{"instruction": "What is `tuple [string, number]` for?", "input": "", "output": "Tuples fix length and per-slot types; `readonly` tuples suit function returns of pairs."}
+{"instruction": "What does `Record<K,V>` do?", "input": "", "output": "`Record<string, number>` types dictionaries; `Partial/Pick/Omit` derive variants from one interface."}
+{"instruction": "Explain `Record<K,V>` briefly.", "input": "", "output": "`Record<string, number>` types dictionaries; `Partial/Pick/Omit` derive variants from one interface."}
+{"instruction": "When do I use `Record<K,V>`?", "input": "", "output": "`Record<string, number>` types dictionaries; `Partial/Pick/Omit` derive variants from one interface."}
+{"instruction": "Give a practical example of `Record<K,V>`.", "input": "", "output": "`Record<string, number>` types dictionaries; `Partial/Pick/Omit` derive variants from one interface."}
+{"instruction": "What is `Record<K,V>` for?", "input": "", "output": "`Record<string, number>` types dictionaries; `Partial/Pick/Omit` derive variants from one interface."}
+{"instruction": "What does `unknown vs any` do?", "input": "", "output": "`unknown` forces narrowing before use; `any` disables checking entirely — treat as tech debt."}
+{"instruction": "Explain `unknown vs any` briefly.", "input": "", "output": "`unknown` forces narrowing before use; `any` disables checking entirely — treat as tech debt."}
+{"instruction": "When do I use `unknown vs any`?", "input": "", "output": "`unknown` forces narrowing before use; `any` disables checking entirely — treat as tech debt."}
+{"instruction": "Give a practical example of `unknown vs any`.", "input": "", "output": "`unknown` forces narrowing before use; `any` disables checking entirely — treat as tech debt."}
+{"instruction": "What is `unknown vs any` for?", "input": "", "output": "`unknown` forces narrowing before use; `any` disables checking entirely — treat as tech debt."}
+{"instruction": "What does `never` do?", "input": "", "output": "`never` marks unreachable code; use it in switch defaults so new cases fail compilation loudly."}
+{"instruction": "Explain `never` briefly.", "input": "", "output": "`never` marks unreachable code; use it in switch defaults so new cases fail compilation loudly."}
+{"instruction": "When do I use `never`?", "input": "", "output": "`never` marks unreachable code; use it in switch defaults so new cases fail compilation loudly."}
+{"instruction": "Give a practical example of `never`.", "input": "", "output": "`never` marks unreachable code; use it in switch defaults so new cases fail compilation loudly."}
+{"instruction": "What is `never` for?", "input": "", "output": "`never` marks unreachable code; use it in switch defaults so new cases fail compilation loudly."}
+{"instruction": "What does `as cast` do?", "input": "", "output": "`as` asserts without checking — safe only after validation; prefer narrowing or schema parsing."}
+{"instruction": "Explain `as cast` briefly.", "input": "", "output": "`as` asserts without checking — safe only after validation; prefer narrowing or schema parsing."}
+{"instruction": "When do I use `as cast`?", "input": "", "output": "`as` asserts without checking — safe only after validation; prefer narrowing or schema parsing."}
+{"instruction": "Give a practical example of `as cast`.", "input": "", "output": "`as` asserts without checking — safe only after validation; prefer narrowing or schema parsing."}
+{"instruction": "What is `as cast` for?", "input": "", "output": "`as` asserts without checking — safe only after validation; prefer narrowing or schema parsing."}
+{"instruction": "What does `implements` do?", "input": "", "output": "`class X implements Y` verifies conformance at compile; structural typing still allows compatible shapes."}
+{"instruction": "Explain `implements` briefly.", "input": "", "output": "`class X implements Y` verifies conformance at compile; structural typing still allows compatible shapes."}
+{"instruction": "When do I use `implements`?", "input": "", "output": "`class X implements Y` verifies conformance at compile; structural typing still allows compatible shapes."}
+{"instruction": "Give a practical example of `implements`.", "input": "", "output": "`class X implements Y` verifies conformance at compile; structural typing still allows compatible shapes."}
+{"instruction": "What is `implements` for?", "input": "", "output": "`class X implements Y` verifies conformance at compile; structural typing still allows compatible shapes."}
+{"instruction": "What does `abstract class` do?", "input": "", "output": "Abstract classes mix contracts with shared implementation; one inheritance chain per class only."}
+{"instruction": "Explain `abstract class` briefly.", "input": "", "output": "Abstract classes mix contracts with shared implementation; one inheritance chain per class only."}
+{"instruction": "When do I use `abstract class`?", "input": "", "output": "Abstract classes mix contracts with shared implementation; one inheritance chain per class only."}
+{"instruction": "Give a practical example of `abstract class`.", "input": "", "output": "Abstract classes mix contracts with shared implementation; one inheritance chain per class only."}
+{"instruction": "What is `abstract class` for?", "input": "", "output": "Abstract classes mix contracts with shared implementation; one inheritance chain per class only."}
+{"instruction": "What does `namespace` do?", "input": "", "output": "Namespaces group legacy globals; modern code prefers ES modules — use only when integrating old scripts."}
+{"instruction": "Explain `namespace` briefly.", "input": "", "output": "Namespaces group legacy globals; modern code prefers ES modules — use only when integrating old scripts."}
+{"instruction": "When do I use `namespace`?", "input": "", "output": "Namespaces group legacy globals; modern code prefers ES modules — use only when integrating old scripts."}
+{"instruction": "Give a practical example of `namespace`.", "input": "", "output": "Namespaces group legacy globals; modern code prefers ES modules — use only when integrating old scripts."}
+{"instruction": "What is `namespace` for?", "input": "", "output": "Namespaces group legacy globals; modern code prefers ES modules — use only when integrating old scripts."}
+{"instruction": "What does `decorators @` do?", "input": "", "output": "Decorators attach metadata at definition time (NestJS/Angular); keep them side-effect free."}
+{"instruction": "Explain `decorators @` briefly.", "input": "", "output": "Decorators attach metadata at definition time (NestJS/Angular); keep them side-effect free."}
+{"instruction": "When do I use `decorators @`?", "input": "", "output": "Decorators attach metadata at definition time (NestJS/Angular); keep them side-effect free."}
+{"instruction": "Give a practical example of `decorators @`.", "input": "", "output": "Decorators attach metadata at definition time (NestJS/Angular); keep them side-effect free."}
+{"instruction": "What is `decorators @` for?", "input": "", "output": "Decorators attach metadata at definition time (NestJS/Angular); keep them side-effect free."}
+{"instruction": "What does `strict mode` do?", "input": "", "output": "Strict mode catches null/any/property bugs at compile; migrate old code flag by flag."}
+{"instruction": "Explain `strict mode` briefly.", "input": "", "output": "Strict mode catches null/any/property bugs at compile; migrate old code flag by flag."}
+{"instruction": "When do I use `strict mode`?", "input": "", "output": "Strict mode catches null/any/property bugs at compile; migrate old code flag by flag."}
+{"instruction": "Give a practical example of `strict mode`.", "input": "", "output": "Strict mode catches null/any/property bugs at compile; migrate old code flag by flag."}
+{"instruction": "What is `strict mode` for?", "input": "", "output": "Strict mode catches null/any/property bugs at compile; migrate old code flag by flag."}
+{"instruction": "What does `tsconfig paths` do?", "input": "", "output": "`paths` aliases (`@/*`) kill `../../../` imports; bundlers need matching config to resolve at runtime."}
+{"instruction": "Explain `tsconfig paths` briefly.", "input": "", "output": "`paths` aliases (`@/*`) kill `../../../` imports; bundlers need matching config to resolve at runtime."}
+{"instruction": "When do I use `tsconfig paths`?", "input": "", "output": "`paths` aliases (`@/*`) kill `../../../` imports; bundlers need matching config to resolve at runtime."}
+{"instruction": "Give a practical example of `tsconfig paths`.", "input": "", "output": "`paths` aliases (`@/*`) kill `../../../` imports; bundlers need matching config to resolve at runtime."}
+{"instruction": "What is `tsconfig paths` for?", "input": "", "output": "`paths` aliases (`@/*`) kill `../../../` imports; bundlers need matching config to resolve at runtime."}
+{"instruction": "What does `declaration .d.ts` do?", "input": "", "output": "Declaration files describe untyped JS for the checker; `@types/*` packages provide community ones."}
+{"instruction": "Explain `declaration .d.ts` briefly.", "input": "", "output": "Declaration files describe untyped JS for the checker; `@types/*` packages provide community ones."}
+{"instruction": "When do I use `declaration .d.ts`?", "input": "", "output": "Declaration files describe untyped JS for the checker; `@types/*` packages provide community ones."}
+{"instruction": "Give a practical example of `declaration .d.ts`.", "input": "", "output": "Declaration files describe untyped JS for the checker; `@types/*` packages provide community ones."}
+{"instruction": "What is `declaration .d.ts` for?", "input": "", "output": "Declaration files describe untyped JS for the checker; `@types/*` packages provide community ones."}
+{"instruction": "What does `satisfies` do?", "input": "", "output": "`satisfies` validates shape while keeping literal types; `as` widens and hides information."}
+{"instruction": "Explain `satisfies` briefly.", "input": "", "output": "`satisfies` validates shape while keeping literal types; `as` widens and hides information."}
+{"instruction": "When do I use `satisfies`?", "input": "", "output": "`satisfies` validates shape while keeping literal types; `as` widens and hides information."}
+{"instruction": "Give a practical example of `satisfies`.", "input": "", "output": "`satisfies` validates shape while keeping literal types; `as` widens and hides information."}
+{"instruction": "What is `satisfies` for?", "input": "", "output": "`satisfies` validates shape while keeping literal types; `as` widens and hides information."}

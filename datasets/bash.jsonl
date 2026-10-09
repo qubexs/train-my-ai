@@ -28,3 +28,103 @@
 {"instruction": "How does trap cleanup work in bash?", "input": "", "output": "```bash\ntmp=$(mktemp -d)\ntrap 'rm -rf \"$tmp\"' EXIT\n```\n`trap ... EXIT` runs on any exit (success, error, signal) — temp files and mounts never leak. Add `ERR`/`INT` traps for custom messages, but EXIT alone covers most scripts."}
 {"instruction": "How do redirects and process substitution work?", "input": "", "output": "`cmd > out.log 2>&1` merges stderr into stdout for logging; `cmd1 <(cmd2)` feeds command output as a pseudo-file: `diff <(ls a) <(ls b)`. Order matters (`2>&1` after `>`); use `|&` shorthand in interactive shells."}
 {"instruction": "Why xargs -0 with find -print0?", "input": "", "output": "```bash\nfind . -name '*.tmp' -print0 | xargs -0 rm\n```\nNewline/space filenames break plain pipes — NUL-delimited `-print0/-0` is bulletproof. Add `-r` (no run if empty) and `-n1`/`-P4` for per-item or parallel execution."}
+{"instruction": "What does `set -euo pipefail` do?", "input": "", "output": "`set -euo pipefail` aborts on errors, unset vars and pipe failures — every serious script starts here."}
+{"instruction": "Explain `set -euo pipefail` briefly.", "input": "", "output": "`set -euo pipefail` aborts on errors, unset vars and pipe failures — every serious script starts here."}
+{"instruction": "When do I use `set -euo pipefail`?", "input": "", "output": "`set -euo pipefail` aborts on errors, unset vars and pipe failures — every serious script starts here."}
+{"instruction": "Give a practical example of `set -euo pipefail`.", "input": "", "output": "`set -euo pipefail` aborts on errors, unset vars and pipe failures — every serious script starts here."}
+{"instruction": "What is `set -euo pipefail` for?", "input": "", "output": "`set -euo pipefail` aborts on errors, unset vars and pipe failures — every serious script starts here."}
+{"instruction": "What does `if [[ -f fail ]]` do?", "input": "", "output": "`[[ ]]` tests safely (no word-splitting); `-f` file, `-d` dir, `-z` empty, with `&&`/`||` inside."}
+{"instruction": "Explain `if [[ -f fail ]]` briefly.", "input": "", "output": "`[[ ]]` tests safely (no word-splitting); `-f` file, `-d` dir, `-z` empty, with `&&`/`||` inside."}
+{"instruction": "When do I use `if [[ -f fail ]]`?", "input": "", "output": "`[[ ]]` tests safely (no word-splitting); `-f` file, `-d` dir, `-z` empty, with `&&`/`||` inside."}
+{"instruction": "Give a practical example of `if [[ -f fail ]]`.", "input": "", "output": "`[[ ]]` tests safely (no word-splitting); `-f` file, `-d` dir, `-z` empty, with `&&`/`||` inside."}
+{"instruction": "What is `if [[ -f fail ]]` for?", "input": "", "output": "`[[ ]]` tests safely (no word-splitting); `-f` file, `-d` dir, `-z` empty, with `&&`/`||` inside."}
+{"instruction": "What does `for f in *.md` do?", "input": "", "output": "`for f in *.md` loops glob matches; quote `\"$f\"` and set `nullglob` for empty dirs."}
+{"instruction": "Explain `for f in *.md` briefly.", "input": "", "output": "`for f in *.md` loops glob matches; quote `\"$f\"` and set `nullglob` for empty dirs."}
+{"instruction": "When do I use `for f in *.md`?", "input": "", "output": "`for f in *.md` loops glob matches; quote `\"$f\"` and set `nullglob` for empty dirs."}
+{"instruction": "Give a practical example of `for f in *.md`.", "input": "", "output": "`for f in *.md` loops glob matches; quote `\"$f\"` and set `nullglob` for empty dirs."}
+{"instruction": "What is `for f in *.md` for?", "input": "", "output": "`for f in *.md` loops glob matches; quote `\"$f\"` and set `nullglob` for empty dirs."}
+{"instruction": "What does `while read baris` do?", "input": "", "output": "`while IFS= read -r line < file` reads safely preserving spaces and backslashes."}
+{"instruction": "Explain `while read baris` briefly.", "input": "", "output": "`while IFS= read -r line < file` reads safely preserving spaces and backslashes."}
+{"instruction": "When do I use `while read baris`?", "input": "", "output": "`while IFS= read -r line < file` reads safely preserving spaces and backslashes."}
+{"instruction": "Give a practical example of `while read baris`.", "input": "", "output": "`while IFS= read -r line < file` reads safely preserving spaces and backslashes."}
+{"instruction": "What is `while read baris` for?", "input": "", "output": "`while IFS= read -r line < file` reads safely preserving spaces and backslashes."}
+{"instruction": "What does `function greet()` do?", "input": "", "output": "Functions return exit codes, not strings — echo data and capture with `$(...)`; use `local` vars."}
+{"instruction": "Explain `function greet()` briefly.", "input": "", "output": "Functions return exit codes, not strings — echo data and capture with `$(...)`; use `local` vars."}
+{"instruction": "When do I use `function greet()`?", "input": "", "output": "Functions return exit codes, not strings — echo data and capture with `$(...)`; use `local` vars."}
+{"instruction": "Give a practical example of `function greet()`.", "input": "", "output": "Functions return exit codes, not strings — echo data and capture with `$(...)`; use `local` vars."}
+{"instruction": "What is `function greet()` for?", "input": "", "output": "Functions return exit codes, not strings — echo data and capture with `$(...)`; use `local` vars."}
+{"instruction": "What does `case $1 in` do?", "input": "", "output": "`case` branches subcommands cleanly with patterns and a `*)` usage default; each arm ends `;;`."}
+{"instruction": "Explain `case $1 in` briefly.", "input": "", "output": "`case` branches subcommands cleanly with patterns and a `*)` usage default; each arm ends `;;`."}
+{"instruction": "When do I use `case $1 in`?", "input": "", "output": "`case` branches subcommands cleanly with patterns and a `*)` usage default; each arm ends `;;`."}
+{"instruction": "Give a practical example of `case $1 in`.", "input": "", "output": "`case` branches subcommands cleanly with patterns and a `*)` usage default; each arm ends `;;`."}
+{"instruction": "What is `case $1 in` for?", "input": "", "output": "`case` branches subcommands cleanly with patterns and a `*)` usage default; each arm ends `;;`."}
+{"instruction": "What does `$1 $@ $#` do?", "input": "", "output": "`$1` first arg, `\"$@\"` all args intact, `$#` count; `${1:?...}` fails fast with a message."}
+{"instruction": "Explain `$1 $@ $#` briefly.", "input": "", "output": "`$1` first arg, `\"$@\"` all args intact, `$#` count; `${1:?...}` fails fast with a message."}
+{"instruction": "When do I use `$1 $@ $#`?", "input": "", "output": "`$1` first arg, `\"$@\"` all args intact, `$#` count; `${1:?...}` fails fast with a message."}
+{"instruction": "Give a practical example of `$1 $@ $#`.", "input": "", "output": "`$1` first arg, `\"$@\"` all args intact, `$#` count; `${1:?...}` fails fast with a message."}
+{"instruction": "What is `$1 $@ $#` for?", "input": "", "output": "`$1` first arg, `\"$@\"` all args intact, `$#` count; `${1:?...}` fails fast with a message."}
+{"instruction": "What does `${PORT:-3000}` do?", "input": "", "output": "`${VAR:-default}` substitutes when empty; `${#s}` length; `${s%.ext}` strips suffix."}
+{"instruction": "Explain `${PORT:-3000}` briefly.", "input": "", "output": "`${VAR:-default}` substitutes when empty; `${#s}` length; `${s%.ext}` strips suffix."}
+{"instruction": "When do I use `${PORT:-3000}`?", "input": "", "output": "`${VAR:-default}` substitutes when empty; `${#s}` length; `${s%.ext}` strips suffix."}
+{"instruction": "Give a practical example of `${PORT:-3000}`.", "input": "", "output": "`${VAR:-default}` substitutes when empty; `${#s}` length; `${s%.ext}` strips suffix."}
+{"instruction": "What is `${PORT:-3000}` for?", "input": "", "output": "`${VAR:-default}` substitutes when empty; `${#s}` length; `${s%.ext}` strips suffix."}
+{"instruction": "What does `arr=(a b c)` do?", "input": "", "output": "Arrays index from 0; expand as `\"${arr[@]}\"` per element and count with `${#arr[@]}`."}
+{"instruction": "Explain `arr=(a b c)` briefly.", "input": "", "output": "Arrays index from 0; expand as `\"${arr[@]}\"` per element and count with `${#arr[@]}`."}
+{"instruction": "When do I use `arr=(a b c)`?", "input": "", "output": "Arrays index from 0; expand as `\"${arr[@]}\"` per element and count with `${#arr[@]}`."}
+{"instruction": "Give a practical example of `arr=(a b c)`.", "input": "", "output": "Arrays index from 0; expand as `\"${arr[@]}\"` per element and count with `${#arr[@]}`."}
+{"instruction": "What is `arr=(a b c)` for?", "input": "", "output": "Arrays index from 0; expand as `\"${arr[@]}\"` per element and count with `${#arr[@]}`."}
+{"instruction": "What does `trap cleanup EXIT` do?", "input": "", "output": "`trap ... EXIT` guarantees cleanup on any exit; temp dirs from `mktemp -d` never leak."}
+{"instruction": "Explain `trap cleanup EXIT` briefly.", "input": "", "output": "`trap ... EXIT` guarantees cleanup on any exit; temp dirs from `mktemp -d` never leak."}
+{"instruction": "When do I use `trap cleanup EXIT`?", "input": "", "output": "`trap ... EXIT` guarantees cleanup on any exit; temp dirs from `mktemp -d` never leak."}
+{"instruction": "Give a practical example of `trap cleanup EXIT`.", "input": "", "output": "`trap ... EXIT` guarantees cleanup on any exit; temp dirs from `mktemp -d` never leak."}
+{"instruction": "What is `trap cleanup EXIT` for?", "input": "", "output": "`trap ... EXIT` guarantees cleanup on any exit; temp dirs from `mktemp -d` never leak."}
+{"instruction": "What does `cmd > out 2>&1` do?", "input": "", "output": "`> out 2>&1` merges stderr into the log file; order matters — redirect stdout first."}
+{"instruction": "Explain `cmd > out 2>&1` briefly.", "input": "", "output": "`> out 2>&1` merges stderr into the log file; order matters — redirect stdout first."}
+{"instruction": "When do I use `cmd > out 2>&1`?", "input": "", "output": "`> out 2>&1` merges stderr into the log file; order matters — redirect stdout first."}
+{"instruction": "Give a practical example of `cmd > out 2>&1`.", "input": "", "output": "`> out 2>&1` merges stderr into the log file; order matters — redirect stdout first."}
+{"instruction": "What is `cmd > out 2>&1` for?", "input": "", "output": "`> out 2>&1` merges stderr into the log file; order matters — redirect stdout first."}
+{"instruction": "What does `a | b | c` do?", "input": "", "output": "Pipes chain stdout to stdin; `set -o pipefail` makes middle failures visible to `set -e`."}
+{"instruction": "Explain `a | b | c` briefly.", "input": "", "output": "Pipes chain stdout to stdin; `set -o pipefail` makes middle failures visible to `set -e`."}
+{"instruction": "When do I use `a | b | c`?", "input": "", "output": "Pipes chain stdout to stdin; `set -o pipefail` makes middle failures visible to `set -e`."}
+{"instruction": "Give a practical example of `a | b | c`.", "input": "", "output": "Pipes chain stdout to stdin; `set -o pipefail` makes middle failures visible to `set -e`."}
+{"instruction": "What is `a | b | c` for?", "input": "", "output": "Pipes chain stdout to stdin; `set -o pipefail` makes middle failures visible to `set -e`."}
+{"instruction": "What does `cmd1 && cmd2` do?", "input": "", "output": "`&&` runs next only on success, `||` on failure — the one-line try/catch of shell."}
+{"instruction": "Explain `cmd1 && cmd2` briefly.", "input": "", "output": "`&&` runs next only on success, `||` on failure — the one-line try/catch of shell."}
+{"instruction": "When do I use `cmd1 && cmd2`?", "input": "", "output": "`&&` runs next only on success, `||` on failure — the one-line try/catch of shell."}
+{"instruction": "Give a practical example of `cmd1 && cmd2`.", "input": "", "output": "`&&` runs next only on success, `||` on failure — the one-line try/catch of shell."}
+{"instruction": "What is `cmd1 && cmd2` for?", "input": "", "output": "`&&` runs next only on success, `||` on failure — the one-line try/catch of shell."}
+{"instruction": "What does `[[ $x =~ ^[0-9]+$ ]]` do?", "input": "", "output": "`=~` regex-matches inside `[[ ]]`; quote the pattern to avoid glob interpretation."}
+{"instruction": "Explain `[[ $x =~ ^[0-9]+$ ]]` briefly.", "input": "", "output": "`=~` regex-matches inside `[[ ]]`; quote the pattern to avoid glob interpretation."}
+{"instruction": "When do I use `[[ $x =~ ^[0-9]+$ ]]`?", "input": "", "output": "`=~` regex-matches inside `[[ ]]`; quote the pattern to avoid glob interpretation."}
+{"instruction": "Give a practical example of `[[ $x =~ ^[0-9]+$ ]]`.", "input": "", "output": "`=~` regex-matches inside `[[ ]]`; quote the pattern to avoid glob interpretation."}
+{"instruction": "What is `[[ $x =~ ^[0-9]+$ ]]` for?", "input": "", "output": "`=~` regex-matches inside `[[ ]]`; quote the pattern to avoid glob interpretation."}
+{"instruction": "What does `seq 1 10` do?", "input": "", "output": "`seq` generates number ranges for loops; `seq -w` zero-pads filenames in order."}
+{"instruction": "Explain `seq 1 10` briefly.", "input": "", "output": "`seq` generates number ranges for loops; `seq -w` zero-pads filenames in order."}
+{"instruction": "When do I use `seq 1 10`?", "input": "", "output": "`seq` generates number ranges for loops; `seq -w` zero-pads filenames in order."}
+{"instruction": "Give a practical example of `seq 1 10`.", "input": "", "output": "`seq` generates number ranges for loops; `seq -w` zero-pads filenames in order."}
+{"instruction": "What is `seq 1 10` for?", "input": "", "output": "`seq` generates number ranges for loops; `seq -w` zero-pads filenames in order."}
+{"instruction": "What does `find . -print0 | xargs -0` do?", "input": "", "output": "NUL-delimited pipelines survive spaces/newlines in filenames; add `-r` to skip empty runs."}
+{"instruction": "Explain `find . -print0 | xargs -0` briefly.", "input": "", "output": "NUL-delimited pipelines survive spaces/newlines in filenames; add `-r` to skip empty runs."}
+{"instruction": "When do I use `find . -print0 | xargs -0`?", "input": "", "output": "NUL-delimited pipelines survive spaces/newlines in filenames; add `-r` to skip empty runs."}
+{"instruction": "Give a practical example of `find . -print0 | xargs -0`.", "input": "", "output": "NUL-delimited pipelines survive spaces/newlines in filenames; add `-r` to skip empty runs."}
+{"instruction": "What is `find . -print0 | xargs -0` for?", "input": "", "output": "NUL-delimited pipelines survive spaces/newlines in filenames; add `-r` to skip empty runs."}
+{"instruction": "What does `$(date +%F)` do?", "input": "", "output": "`$(...)` captures output (nestable, unlike backticks); quote it unless splitting is intended."}
+{"instruction": "Explain `$(date +%F)` briefly.", "input": "", "output": "`$(...)` captures output (nestable, unlike backticks); quote it unless splitting is intended."}
+{"instruction": "When do I use `$(date +%F)`?", "input": "", "output": "`$(...)` captures output (nestable, unlike backticks); quote it unless splitting is intended."}
+{"instruction": "Give a practical example of `$(date +%F)`.", "input": "", "output": "`$(...)` captures output (nestable, unlike backticks); quote it unless splitting is intended."}
+{"instruction": "What is `$(date +%F)` for?", "input": "", "output": "`$(...)` captures output (nestable, unlike backticks); quote it unless splitting is intended."}
+{"instruction": "What does `<<EOF heredoc` do?", "input": "", "output": "Heredocs feed multi-line input (`cat <<EOF`); quote the tag (`<<'EOF'`) to disable expansion."}
+{"instruction": "Explain `<<EOF heredoc` briefly.", "input": "", "output": "Heredocs feed multi-line input (`cat <<EOF`); quote the tag (`<<'EOF'`) to disable expansion."}
+{"instruction": "When do I use `<<EOF heredoc`?", "input": "", "output": "Heredocs feed multi-line input (`cat <<EOF`); quote the tag (`<<'EOF'`) to disable expansion."}
+{"instruction": "Give a practical example of `<<EOF heredoc`.", "input": "", "output": "Heredocs feed multi-line input (`cat <<EOF`); quote the tag (`<<'EOF'`) to disable expansion."}
+{"instruction": "What is `<<EOF heredoc` for?", "input": "", "output": "Heredocs feed multi-line input (`cat <<EOF`); quote the tag (`<<'EOF'`) to disable expansion."}
+{"instruction": "What does `shift` do?", "input": "", "output": "`shift` consumes processed args so `$1` always means next; loop `while [[ $# -gt 0 ]]` for flags."}
+{"instruction": "Explain `shift` briefly.", "input": "", "output": "`shift` consumes processed args so `$1` always means next; loop `while [[ $# -gt 0 ]]` for flags."}
+{"instruction": "When do I use `shift`?", "input": "", "output": "`shift` consumes processed args so `$1` always means next; loop `while [[ $# -gt 0 ]]` for flags."}
+{"instruction": "Give a practical example of `shift`.", "input": "", "output": "`shift` consumes processed args so `$1` always means next; loop `while [[ $# -gt 0 ]]` for flags."}
+{"instruction": "What is `shift` for?", "input": "", "output": "`shift` consumes processed args so `$1` always means next; loop `while [[ $# -gt 0 ]]` for flags."}
+{"instruction": "What does `exec cmd` do?", "input": "", "output": "`exec` replaces the shell process (PID kept, no child) — used as the last line of entrypoints."}
+{"instruction": "Explain `exec cmd` briefly.", "input": "", "output": "`exec` replaces the shell process (PID kept, no child) — used as the last line of entrypoints."}
+{"instruction": "When do I use `exec cmd`?", "input": "", "output": "`exec` replaces the shell process (PID kept, no child) — used as the last line of entrypoints."}
+{"instruction": "Give a practical example of `exec cmd`.", "input": "", "output": "`exec` replaces the shell process (PID kept, no child) — used as the last line of entrypoints."}
+{"instruction": "What is `exec cmd` for?", "input": "", "output": "`exec` replaces the shell process (PID kept, no child) — used as the last line of entrypoints."}

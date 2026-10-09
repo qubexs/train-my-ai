@@ -32,6 +32,106 @@
 {"instruction": "How do I find files by name, time and run commands?", "input": "", "output": "`find /var/log -name '*.log' -mtime +7` old logs; `-size +100M` big files; `-exec grep -l ralat {} +` act on matches. Quote the glob (shell must not expand it) and prefer `-print0 | xargs -0` for weird filenames."}
 {"instruction": "Symlink vs hardlink (ln -s)?", "input": "", "output": "`ln -s /asal /pautan` creates a pointer (breaks if target moves, works across filesystems); hard links share the inode (same fs only, survive renames). Use symlinks for configs/versions (`current -> release-42`), hard links never for directories."}
 {"instruction": "How do permissions chmod/chown numbers work?", "input": "", "output": "`chmod 755 skrip.sh` = rwxr-xr-x (owner all, others read+execute); `640` for configs with secrets; never 777. `chown app:app fail` sets owner+group; `-R` recurses (careful with symlinks). Scripts need +x; data files must not have it."}
+{"instruction": "What does `ls -la` do?", "input": "", "output": "`ls -la` lists all files with details; `-l` long format, `-a` includes hidden dotfiles."}
+{"instruction": "Explain `ls -la` briefly.", "input": "", "output": "`ls -la` lists all files with details; `-l` long format, `-a` includes hidden dotfiles."}
+{"instruction": "When do I use `ls -la`?", "input": "", "output": "`ls -la` lists all files with details; `-l` long format, `-a` includes hidden dotfiles."}
+{"instruction": "Give a practical example of `ls -la`.", "input": "", "output": "`ls -la` lists all files with details; `-l` long format, `-a` includes hidden dotfiles."}
+{"instruction": "What is `ls -la` for?", "input": "", "output": "`ls -la` lists all files with details; `-l` long format, `-a` includes hidden dotfiles."}
+{"instruction": "What does `df -h` do?", "input": "", "output": "`df -h` shows disk usage per filesystem in human units; add `-i` to check inode exhaustion."}
+{"instruction": "Explain `df -h` briefly.", "input": "", "output": "`df -h` shows disk usage per filesystem in human units; add `-i` to check inode exhaustion."}
+{"instruction": "When do I use `df -h`?", "input": "", "output": "`df -h` shows disk usage per filesystem in human units; add `-i` to check inode exhaustion."}
+{"instruction": "Give a practical example of `df -h`.", "input": "", "output": "`df -h` shows disk usage per filesystem in human units; add `-i` to check inode exhaustion."}
+{"instruction": "What is `df -h` for?", "input": "", "output": "`df -h` shows disk usage per filesystem in human units; add `-i` to check inode exhaustion."}
+{"instruction": "What does `du -sh *` do?", "input": "", "output": "`du -sh *` ranks directory sizes; pipe to `sort -h` for biggest-first cleanup hunting."}
+{"instruction": "Explain `du -sh *` briefly.", "input": "", "output": "`du -sh *` ranks directory sizes; pipe to `sort -h` for biggest-first cleanup hunting."}
+{"instruction": "When do I use `du -sh *`?", "input": "", "output": "`du -sh *` ranks directory sizes; pipe to `sort -h` for biggest-first cleanup hunting."}
+{"instruction": "Give a practical example of `du -sh *`.", "input": "", "output": "`du -sh *` ranks directory sizes; pipe to `sort -h` for biggest-first cleanup hunting."}
+{"instruction": "What is `du -sh *` for?", "input": "", "output": "`du -sh *` ranks directory sizes; pipe to `sort -h` for biggest-first cleanup hunting."}
+{"instruction": "What does `free -h` do?", "input": "", "output": "`free -h` shows RAM/swap; watch the `available` column, not `free`, for real headroom."}
+{"instruction": "Explain `free -h` briefly.", "input": "", "output": "`free -h` shows RAM/swap; watch the `available` column, not `free`, for real headroom."}
+{"instruction": "When do I use `free -h`?", "input": "", "output": "`free -h` shows RAM/swap; watch the `available` column, not `free`, for real headroom."}
+{"instruction": "Give a practical example of `free -h`.", "input": "", "output": "`free -h` shows RAM/swap; watch the `available` column, not `free`, for real headroom."}
+{"instruction": "What is `free -h` for?", "input": "", "output": "`free -h` shows RAM/swap; watch the `available` column, not `free`, for real headroom."}
+{"instruction": "What does `ps aux` do?", "input": "", "output": "`ps aux` lists all processes with CPU/mem; pipe to `sort` or pair with `top` for live view."}
+{"instruction": "Explain `ps aux` briefly.", "input": "", "output": "`ps aux` lists all processes with CPU/mem; pipe to `sort` or pair with `top` for live view."}
+{"instruction": "When do I use `ps aux`?", "input": "", "output": "`ps aux` lists all processes with CPU/mem; pipe to `sort` or pair with `top` for live view."}
+{"instruction": "Give a practical example of `ps aux`.", "input": "", "output": "`ps aux` lists all processes with CPU/mem; pipe to `sort` or pair with `top` for live view."}
+{"instruction": "What is `ps aux` for?", "input": "", "output": "`ps aux` lists all processes with CPU/mem; pipe to `sort` or pair with `top` for live view."}
+{"instruction": "What does `top` do?", "input": "", "output": "`top` is the live process monitor (CPU, mem, load); press `q` to quit, `M` sorts by memory."}
+{"instruction": "Explain `top` briefly.", "input": "", "output": "`top` is the live process monitor (CPU, mem, load); press `q` to quit, `M` sorts by memory."}
+{"instruction": "When do I use `top`?", "input": "", "output": "`top` is the live process monitor (CPU, mem, load); press `q` to quit, `M` sorts by memory."}
+{"instruction": "Give a practical example of `top`.", "input": "", "output": "`top` is the live process monitor (CPU, mem, load); press `q` to quit, `M` sorts by memory."}
+{"instruction": "What is `top` for?", "input": "", "output": "`top` is the live process monitor (CPU, mem, load); press `q` to quit, `M` sorts by memory."}
+{"instruction": "What does `kill PID` do?", "input": "", "output": "`kill PID` sends SIGTERM for graceful exit; `-9` (SIGKILL) forces when stuck."}
+{"instruction": "Explain `kill PID` briefly.", "input": "", "output": "`kill PID` sends SIGTERM for graceful exit; `-9` (SIGKILL) forces when stuck."}
+{"instruction": "When do I use `kill PID`?", "input": "", "output": "`kill PID` sends SIGTERM for graceful exit; `-9` (SIGKILL) forces when stuck."}
+{"instruction": "Give a practical example of `kill PID`.", "input": "", "output": "`kill PID` sends SIGTERM for graceful exit; `-9` (SIGKILL) forces when stuck."}
+{"instruction": "What is `kill PID` for?", "input": "", "output": "`kill PID` sends SIGTERM for graceful exit; `-9` (SIGKILL) forces when stuck."}
+{"instruction": "What does `pkill -f pola` do?", "input": "", "output": "`pkill -f` kills by full command match — quote the pattern and double-check with `pgrep -f` first."}
+{"instruction": "Explain `pkill -f pola` briefly.", "input": "", "output": "`pkill -f` kills by full command match — quote the pattern and double-check with `pgrep -f` first."}
+{"instruction": "When do I use `pkill -f pola`?", "input": "", "output": "`pkill -f` kills by full command match — quote the pattern and double-check with `pgrep -f` first."}
+{"instruction": "Give a practical example of `pkill -f pola`.", "input": "", "output": "`pkill -f` kills by full command match — quote the pattern and double-check with `pgrep -f` first."}
+{"instruction": "What is `pkill -f pola` for?", "input": "", "output": "`pkill -f` kills by full command match — quote the pattern and double-check with `pgrep -f` first."}
+{"instruction": "What does `chmod 755 skrip.sh` do?", "input": "", "output": "`755` = rwxr-xr-x: owner full, others read+execute; scripts need +x, data files must not have it."}
+{"instruction": "Explain `chmod 755 skrip.sh` briefly.", "input": "", "output": "`755` = rwxr-xr-x: owner full, others read+execute; scripts need +x, data files must not have it."}
+{"instruction": "When do I use `chmod 755 skrip.sh`?", "input": "", "output": "`755` = rwxr-xr-x: owner full, others read+execute; scripts need +x, data files must not have it."}
+{"instruction": "Give a practical example of `chmod 755 skrip.sh`.", "input": "", "output": "`755` = rwxr-xr-x: owner full, others read+execute; scripts need +x, data files must not have it."}
+{"instruction": "What is `chmod 755 skrip.sh` for?", "input": "", "output": "`755` = rwxr-xr-x: owner full, others read+execute; scripts need +x, data files must not have it."}
+{"instruction": "What does `chown -R app:app /srv` do?", "input": "", "output": "`chown -R` changes owner recursively; beware symlinks and system dirs."}
+{"instruction": "Explain `chown -R app:app /srv` briefly.", "input": "", "output": "`chown -R` changes owner recursively; beware symlinks and system dirs."}
+{"instruction": "When do I use `chown -R app:app /srv`?", "input": "", "output": "`chown -R` changes owner recursively; beware symlinks and system dirs."}
+{"instruction": "Give a practical example of `chown -R app:app /srv`.", "input": "", "output": "`chown -R` changes owner recursively; beware symlinks and system dirs."}
+{"instruction": "What is `chown -R app:app /srv` for?", "input": "", "output": "`chown -R` changes owner recursively; beware symlinks and system dirs."}
+{"instruction": "What does `tar xzf app.tgz` do?", "input": "", "output": "`tar xzf` extracts gzip archives; list first with `tzf` and use `-C dir` to control destination."}
+{"instruction": "Explain `tar xzf app.tgz` briefly.", "input": "", "output": "`tar xzf` extracts gzip archives; list first with `tzf` and use `-C dir` to control destination."}
+{"instruction": "When do I use `tar xzf app.tgz`?", "input": "", "output": "`tar xzf` extracts gzip archives; list first with `tzf` and use `-C dir` to control destination."}
+{"instruction": "Give a practical example of `tar xzf app.tgz`.", "input": "", "output": "`tar xzf` extracts gzip archives; list first with `tzf` and use `-C dir` to control destination."}
+{"instruction": "What is `tar xzf app.tgz` for?", "input": "", "output": "`tar xzf` extracts gzip archives; list first with `tzf` and use `-C dir` to control destination."}
+{"instruction": "What does `grep -r teks .` do?", "input": "", "output": "`grep -r` searches recursively; add `-i` (case), `-n` (line numbers), `--include='*.py'` to narrow."}
+{"instruction": "Explain `grep -r teks .` briefly.", "input": "", "output": "`grep -r` searches recursively; add `-i` (case), `-n` (line numbers), `--include='*.py'` to narrow."}
+{"instruction": "When do I use `grep -r teks .`?", "input": "", "output": "`grep -r` searches recursively; add `-i` (case), `-n` (line numbers), `--include='*.py'` to narrow."}
+{"instruction": "Give a practical example of `grep -r teks .`.", "input": "", "output": "`grep -r` searches recursively; add `-i` (case), `-n` (line numbers), `--include='*.py'` to narrow."}
+{"instruction": "What is `grep -r teks .` for?", "input": "", "output": "`grep -r` searches recursively; add `-i` (case), `-n` (line numbers), `--include='*.py'` to narrow."}
+{"instruction": "What does `find . -name '*.log'` do?", "input": "", "output": "`find` locates by name/time/size; `-exec cmd {} +` acts on matches without xargs."}
+{"instruction": "Explain `find . -name '*.log'` briefly.", "input": "", "output": "`find` locates by name/time/size; `-exec cmd {} +` acts on matches without xargs."}
+{"instruction": "When do I use `find . -name '*.log'`?", "input": "", "output": "`find` locates by name/time/size; `-exec cmd {} +` acts on matches without xargs."}
+{"instruction": "Give a practical example of `find . -name '*.log'`.", "input": "", "output": "`find` locates by name/time/size; `-exec cmd {} +` acts on matches without xargs."}
+{"instruction": "What is `find . -name '*.log'` for?", "input": "", "output": "`find` locates by name/time/size; `-exec cmd {} +` acts on matches without xargs."}
+{"instruction": "What does `ssh user@hos` do?", "input": "", "output": "`ssh` opens a secure shell; keys (`ssh-keygen`, `ssh-copy-id`) replace passwords."}
+{"instruction": "Explain `ssh user@hos` briefly.", "input": "", "output": "`ssh` opens a secure shell; keys (`ssh-keygen`, `ssh-copy-id`) replace passwords."}
+{"instruction": "When do I use `ssh user@hos`?", "input": "", "output": "`ssh` opens a secure shell; keys (`ssh-keygen`, `ssh-copy-id`) replace passwords."}
+{"instruction": "Give a practical example of `ssh user@hos`.", "input": "", "output": "`ssh` opens a secure shell; keys (`ssh-keygen`, `ssh-copy-id`) replace passwords."}
+{"instruction": "What is `ssh user@hos` for?", "input": "", "output": "`ssh` opens a secure shell; keys (`ssh-keygen`, `ssh-copy-id`) replace passwords."}
+{"instruction": "What does `systemctl restart nginx` do?", "input": "", "output": "`systemctl restart` reloads a service; `enable` persists across boot, `status` shows logs."}
+{"instruction": "Explain `systemctl restart nginx` briefly.", "input": "", "output": "`systemctl restart` reloads a service; `enable` persists across boot, `status` shows logs."}
+{"instruction": "When do I use `systemctl restart nginx`?", "input": "", "output": "`systemctl restart` reloads a service; `enable` persists across boot, `status` shows logs."}
+{"instruction": "Give a practical example of `systemctl restart nginx`.", "input": "", "output": "`systemctl restart` reloads a service; `enable` persists across boot, `status` shows logs."}
+{"instruction": "What is `systemctl restart nginx` for?", "input": "", "output": "`systemctl restart` reloads a service; `enable` persists across boot, `status` shows logs."}
+{"instruction": "What does `journalctl -f` do?", "input": "", "output": "`journalctl -f` tails system logs; `-u unit` and `--since` narrow to incidents."}
+{"instruction": "Explain `journalctl -f` briefly.", "input": "", "output": "`journalctl -f` tails system logs; `-u unit` and `--since` narrow to incidents."}
+{"instruction": "When do I use `journalctl -f`?", "input": "", "output": "`journalctl -f` tails system logs; `-u unit` and `--since` narrow to incidents."}
+{"instruction": "Give a practical example of `journalctl -f`.", "input": "", "output": "`journalctl -f` tails system logs; `-u unit` and `--since` narrow to incidents."}
+{"instruction": "What is `journalctl -f` for?", "input": "", "output": "`journalctl -f` tails system logs; `-u unit` and `--since` narrow to incidents."}
+{"instruction": "What does `ufw allow 22/tcp` do?", "input": "", "output": "`ufw allow` opens firewall ports; always allow SSH before `ufw enable` or get locked out."}
+{"instruction": "Explain `ufw allow 22/tcp` briefly.", "input": "", "output": "`ufw allow` opens firewall ports; always allow SSH before `ufw enable` or get locked out."}
+{"instruction": "When do I use `ufw allow 22/tcp`?", "input": "", "output": "`ufw allow` opens firewall ports; always allow SSH before `ufw enable` or get locked out."}
+{"instruction": "Give a practical example of `ufw allow 22/tcp`.", "input": "", "output": "`ufw allow` opens firewall ports; always allow SSH before `ufw enable` or get locked out."}
+{"instruction": "What is `ufw allow 22/tcp` for?", "input": "", "output": "`ufw allow` opens firewall ports; always allow SSH before `ufw enable` or get locked out."}
+{"instruction": "What does `crontab -e` do?", "input": "", "output": "`crontab -e` edits your schedule (minute hour day month weekday); cron env is minimal, use absolute paths."}
+{"instruction": "Explain `crontab -e` briefly.", "input": "", "output": "`crontab -e` edits your schedule (minute hour day month weekday); cron env is minimal, use absolute paths."}
+{"instruction": "When do I use `crontab -e`?", "input": "", "output": "`crontab -e` edits your schedule (minute hour day month weekday); cron env is minimal, use absolute paths."}
+{"instruction": "Give a practical example of `crontab -e`.", "input": "", "output": "`crontab -e` edits your schedule (minute hour day month weekday); cron env is minimal, use absolute paths."}
+{"instruction": "What is `crontab -e` for?", "input": "", "output": "`crontab -e` edits your schedule (minute hour day month weekday); cron env is minimal, use absolute paths."}
+{"instruction": "What does `ln -s asal pautan` do?", "input": "", "output": "`ln -s` makes a pointer (breaks if target moves); hard links share inodes on one filesystem."}
+{"instruction": "Explain `ln -s asal pautan` briefly.", "input": "", "output": "`ln -s` makes a pointer (breaks if target moves); hard links share inodes on one filesystem."}
+{"instruction": "When do I use `ln -s asal pautan`?", "input": "", "output": "`ln -s` makes a pointer (breaks if target moves); hard links share inodes on one filesystem."}
+{"instruction": "Give a practical example of `ln -s asal pautan`.", "input": "", "output": "`ln -s` makes a pointer (breaks if target moves); hard links share inodes on one filesystem."}
+{"instruction": "What is `ln -s asal pautan` for?", "input": "", "output": "`ln -s` makes a pointer (breaks if target moves); hard links share inodes on one filesystem."}
+{"instruction": "What does `uname -a` do?", "input": "", "output": "`uname -a` prints kernel, hostname and architecture — first line of any bug report."}
+{"instruction": "Explain `uname -a` briefly.", "input": "", "output": "`uname -a` prints kernel, hostname and architecture — first line of any bug report."}
+{"instruction": "When do I use `uname -a`?", "input": "", "output": "`uname -a` prints kernel, hostname and architecture — first line of any bug report."}
+{"instruction": "Give a practical example of `uname -a`.", "input": "", "output": "`uname -a` prints kernel, hostname and architecture — first line of any bug report."}
+{"instruction": "What is `uname -a` for?", "input": "", "output": "`uname -a` prints kernel, hostname and architecture — first line of any bug report."}
 {"instruction": "How do I run a database like MySQL in Docker with persistence?", "input": "", "output": "`docker run -d --name mysql -e MYSQL_ROOT_PASSWORD=secret -v mysqldata:/var/lib/mysql -p 3306:3306 mysql:8`. The named volume keeps data when the container is removed. Avoid publishing the port publicly in production, and use secrets instead of plain passwords."}
 {"instruction": "list docker command complete", "input": "", "output": "Saya Coder 77, model aktif: base (pakar: general). Senarai model: base [general]."}
 {"instruction": "What is Docker?", "input": "", "output": "Docker is a platform for building, shipping and running applications in containers. A container is an isolated process (using Linux namespaces for isolation and cgroups for resource limits) that packages an app with its dependencies, sharing the host kernel. It is lighter and faster to start than a virtual machine."}
@@ -492,6 +592,164 @@
 {"instruction": "What does `compose extends` do?", "input": "", "output": "Inherits another service's definition to avoid repeating env/logging/resource stanzas."}
 {"instruction": "Explain `compose extends` briefly with an example.", "input": "", "output": "Inherits another service's definition to avoid repeating env/logging/resource stanzas."}
 {"instruction": "When do I use `compose extends`?", "input": "", "output": "Inherits another service's definition to avoid repeating env/logging/resource stanzas."}
+{"instruction": "How would you explain `docker ps -a` to a beginner?", "input": "", "output": "`docker ps` lists running containers; `-a` includes stopped ones with exit codes."}
+{"instruction": "Show me a real-world use of `docker ps -a`.", "input": "", "output": "`docker ps` lists running containers; `-a` includes stopped ones with exit codes."}
+{"instruction": "How would you explain `docker ps -q` to a beginner?", "input": "", "output": "`-q` prints only container IDs — made for scripting: `docker rm $(docker ps -aq -f status=exited)`."}
+{"instruction": "Show me a real-world use of `docker ps -q`.", "input": "", "output": "`-q` prints only container IDs — made for scripting: `docker rm $(docker ps -aq -f status=exited)`."}
+{"instruction": "How would you explain `docker ps --format` to a beginner?", "input": "", "output": "`--format 'table {{.Names}}\\t{{.Status}}'` renders scriptable columns instead of the default table."}
+{"instruction": "Show me a real-world use of `docker ps --format`.", "input": "", "output": "`--format 'table {{.Names}}\\t{{.Status}}'` renders scriptable columns instead of the default table."}
+{"instruction": "How would you explain `docker images -a` to a beginner?", "input": "", "output": "`docker images` lists tagged images; `-a` also shows untagged intermediate layers."}
+{"instruction": "Show me a real-world use of `docker images -a`.", "input": "", "output": "`docker images` lists tagged images; `-a` also shows untagged intermediate layers."}
+{"instruction": "How would you explain `docker images --digests` to a beginner?", "input": "", "output": "`--digests` adds content hashes so you can pin exact bytes, not mutable tags."}
+{"instruction": "Show me a real-world use of `docker images --digests`.", "input": "", "output": "`--digests` adds content hashes so you can pin exact bytes, not mutable tags."}
+{"instruction": "How would you explain `docker logs -f` to a beginner?", "input": "", "output": "`-f` follows log output live, like `tail -f`, until Ctrl-C."}
+{"instruction": "Show me a real-world use of `docker logs -f`.", "input": "", "output": "`-f` follows log output live, like `tail -f`, until Ctrl-C."}
+{"instruction": "How would you explain `docker logs --tail` to a beginner?", "input": "", "output": "`--tail 100` shows only the last 100 lines — essential on chatty services before following."}
+{"instruction": "Show me a real-world use of `docker logs --tail`.", "input": "", "output": "`--tail 100` shows only the last 100 lines — essential on chatty services before following."}
+{"instruction": "How would you explain `docker logs --since` to a beginner?", "input": "", "output": "`--since 30m` slices logs by time; pair with `--until` for incident windows."}
+{"instruction": "Show me a real-world use of `docker logs --since`.", "input": "", "output": "`--since 30m` slices logs by time; pair with `--until` for incident windows."}
+{"instruction": "How would you explain `docker logs -t` to a beginner?", "input": "", "output": "`-t` prefixes each line with an RFC3339 timestamp for correlating across services."}
+{"instruction": "Show me a real-world use of `docker logs -t`.", "input": "", "output": "`-t` prefixes each line with an RFC3339 timestamp for correlating across services."}
+{"instruction": "How would you explain `docker exec -it` to a beginner?", "input": "", "output": "`-it` allocates an interactive TTY shell inside a running container: `docker exec -it web sh`."}
+{"instruction": "Show me a real-world use of `docker exec -it`.", "input": "", "output": "`-it` allocates an interactive TTY shell inside a running container: `docker exec -it web sh`."}
+{"instruction": "How would you explain `docker exec -u` to a beginner?", "input": "", "output": "`-u postgres` runs the command as another user — for DB shells without image changes."}
+{"instruction": "Show me a real-world use of `docker exec -u`.", "input": "", "output": "`-u postgres` runs the command as another user — for DB shells without image changes."}
+{"instruction": "How would you explain `docker run -d` to a beginner?", "input": "", "output": "`-d` detaches: the container runs in background and the terminal returns immediately."}
+{"instruction": "Show me a real-world use of `docker run -d`.", "input": "", "output": "`-d` detaches: the container runs in background and the terminal returns immediately."}
+{"instruction": "How would you explain `docker run --rm` to a beginner?", "input": "", "output": "`--rm` deletes the container on exit — hygiene for one-shot jobs so stopped containers never pile up."}
+{"instruction": "Show me a real-world use of `docker run --rm`.", "input": "", "output": "`--rm` deletes the container on exit — hygiene for one-shot jobs so stopped containers never pile up."}
+{"instruction": "How would you explain `docker run -p` to a beginner?", "input": "", "output": "`-p 8080:80` publishes container port 80 on host 8080; prefix `127.0.0.1:` for loopback-only binding."}
+{"instruction": "Show me a real-world use of `docker run -p`.", "input": "", "output": "`-p 8080:80` publishes container port 80 on host 8080; prefix `127.0.0.1:` for loopback-only binding."}
+{"instruction": "How would you explain `docker run -v` to a beginner?", "input": "", "output": "`-v data:/data` mounts a named volume; `-v ./src:/app` bind-mounts host code for dev reload."}
+{"instruction": "Show me a real-world use of `docker run -v`.", "input": "", "output": "`-v data:/data` mounts a named volume; `-v ./src:/app` bind-mounts host code for dev reload."}
+{"instruction": "How would you explain `docker run -e` to a beginner?", "input": "", "output": "`-e KEY=val` sets container env vars; secrets belong in files/`--env-file`, never `-e` in shell history."}
+{"instruction": "Show me a real-world use of `docker run -e`.", "input": "", "output": "`-e KEY=val` sets container env vars; secrets belong in files/`--env-file`, never `-e` in shell history."}
+{"instruction": "How would you explain `docker run --restart` to a beginner?", "input": "", "output": "`--restart unless-stopped` revives crashed containers and survives host reboots."}
+{"instruction": "Show me a real-world use of `docker run --restart`.", "input": "", "output": "`--restart unless-stopped` revives crashed containers and survives host reboots."}
+{"instruction": "How would you explain `docker run --memory` to a beginner?", "input": "", "output": "`--memory 512m` caps RAM; exceeding it OOM-kills the container (check OOMKilled in inspect)."}
+{"instruction": "Show me a real-world use of `docker run --memory`.", "input": "", "output": "`--memory 512m` caps RAM; exceeding it OOM-kills the container (check OOMKilled in inspect)."}
+{"instruction": "How would you explain `docker run --cpus` to a beginner?", "input": "", "output": "`--cpus 1.5` caps CPU quota — noisy neighbors stop stealing cycles."}
+{"instruction": "Show me a real-world use of `docker run --cpus`.", "input": "", "output": "`--cpus 1.5` caps CPU quota — noisy neighbors stop stealing cycles."}
+{"instruction": "How would you explain `docker build -t` to a beginner?", "input": "", "output": "`-t user/app:1.0` names the result; always tag explicitly instead of accepting `latest`."}
+{"instruction": "Show me a real-world use of `docker build -t`.", "input": "", "output": "`-t user/app:1.0` names the result; always tag explicitly instead of accepting `latest`."}
+{"instruction": "How would you explain `docker build -f` to a beginner?", "input": "", "output": "`-f docker/Dockerfile.prod .` builds a non-default Dockerfile path with repo-root context."}
+{"instruction": "Show me a real-world use of `docker build -f`.", "input": "", "output": "`-f docker/Dockerfile.prod .` builds a non-default Dockerfile path with repo-root context."}
+{"instruction": "How would you explain `docker build --target` to a beginner?", "input": "", "output": "`--target debug` builds only up to a named stage — for debug images without shipping shells."}
+{"instruction": "Show me a real-world use of `docker build --target`.", "input": "", "output": "`--target debug` builds only up to a named stage — for debug images without shipping shells."}
+{"instruction": "How would you explain `docker build --no-cache` to a beginner?", "input": "", "output": "`--no-cache` ignores all layer cache; use to verify clean-room reproducibility, not daily."}
+{"instruction": "Show me a real-world use of `docker build --no-cache`.", "input": "", "output": "`--no-cache` ignores all layer cache; use to verify clean-room reproducibility, not daily."}
+{"instruction": "How would you explain `docker build --build-arg` to a beginner?", "input": "", "output": "`--build-arg VERSION=1.2` injects build-time vars (never secrets — they persist in history)."}
+{"instruction": "Show me a real-world use of `docker build --build-arg`.", "input": "", "output": "`--build-arg VERSION=1.2` injects build-time vars (never secrets — they persist in history)."}
+{"instruction": "How would you explain `docker stop -t` to a beginner?", "input": "", "output": "`-t 30` extends the SIGTERM grace period before SIGKILL for slow-draining apps."}
+{"instruction": "Show me a real-world use of `docker stop -t`.", "input": "", "output": "`-t 30` extends the SIGTERM grace period before SIGKILL for slow-draining apps."}
+{"instruction": "How would you explain `docker rm -f` to a beginner?", "input": "", "output": "`-f` kills a running container before removing — for stuck ones; prefer stop for graceful apps."}
+{"instruction": "Show me a real-world use of `docker rm -f`.", "input": "", "output": "`-f` kills a running container before removing — for stuck ones; prefer stop for graceful apps."}
+{"instruction": "How would you explain `docker rm -v` to a beginner?", "input": "", "output": "`-v` also removes anonymous volumes; named volumes survive (by design)."}
+{"instruction": "Show me a real-world use of `docker rm -v`.", "input": "", "output": "`-v` also removes anonymous volumes; named volumes survive (by design)."}
+{"instruction": "How would you explain `docker rmi -f` to a beginner?", "input": "", "output": "`-f` force-untags; layers vanish only when unreferenced by tags and containers."}
+{"instruction": "Show me a real-world use of `docker rmi -f`.", "input": "", "output": "`-f` force-untags; layers vanish only when unreferenced by tags and containers."}
+{"instruction": "How would you explain `docker network ls` to a beginner?", "input": "", "output": "Lists bridge/host/none plus user-defined and overlay networks with scope and driver."}
+{"instruction": "Show me a real-world use of `docker network ls`.", "input": "", "output": "Lists bridge/host/none plus user-defined and overlay networks with scope and driver."}
+{"instruction": "How would you explain `docker network create` to a beginner?", "input": "", "output": "`docker network create appnet` makes a user-defined bridge with automatic container DNS."}
+{"instruction": "Show me a real-world use of `docker network create`.", "input": "", "output": "`docker network create appnet` makes a user-defined bridge with automatic container DNS."}
+{"instruction": "How would you explain `docker network connect` to a beginner?", "input": "", "output": "Attaches a running container to another network live, optionally with `--alias`."}
+{"instruction": "Show me a real-world use of `docker network connect`.", "input": "", "output": "Attaches a running container to another network live, optionally with `--alias`."}
+{"instruction": "How would you explain `docker network prune` to a beginner?", "input": "", "output": "Deletes unused networks — review first, stopped Compose projects count as unused."}
+{"instruction": "Show me a real-world use of `docker network prune`.", "input": "", "output": "Deletes unused networks — review first, stopped Compose projects count as unused."}
+{"instruction": "How would you explain `docker volume create` to a beginner?", "input": "", "output": "Creates a managed named volume; pair with `--opt type=nfs` for shared storage."}
+{"instruction": "Show me a real-world use of `docker volume create`.", "input": "", "output": "Creates a managed named volume; pair with `--opt type=nfs` for shared storage."}
+{"instruction": "How would you explain `docker volume inspect` to a beginner?", "input": "", "output": "Shows mountpoint, driver and options — start here when data seems to vanish."}
+{"instruction": "Show me a real-world use of `docker volume inspect`.", "input": "", "output": "Shows mountpoint, driver and options — start here when data seems to vanish."}
+{"instruction": "How would you explain `docker volume prune` to a beginner?", "input": "", "output": "Deletes ALL unused volumes including named data — the most dangerous prune; never script blindly."}
+{"instruction": "Show me a real-world use of `docker volume prune`.", "input": "", "output": "Deletes ALL unused volumes including named data — the most dangerous prune; never script blindly."}
+{"instruction": "How would you explain `docker system df` to a beginner?", "input": "", "output": "Reports reclaimable space per object type (images, containers, volumes, build cache)."}
+{"instruction": "Show me a real-world use of `docker system df`.", "input": "", "output": "Reports reclaimable space per object type (images, containers, volumes, build cache)."}
+{"instruction": "How would you explain `docker system prune` to a beginner?", "input": "", "output": "One-shot cleanup of stopped containers, unused networks and dangling images (add `-a --volumes` cautiously)."}
+{"instruction": "Show me a real-world use of `docker system prune`.", "input": "", "output": "One-shot cleanup of stopped containers, unused networks and dangling images (add `-a --volumes` cautiously)."}
+{"instruction": "How would you explain `docker stats --no-stream` to a beginner?", "input": "", "output": "Single snapshot of CPU/mem/IO per container — for monitoring scripts, not humans."}
+{"instruction": "Show me a real-world use of `docker stats --no-stream`.", "input": "", "output": "Single snapshot of CPU/mem/IO per container — for monitoring scripts, not humans."}
+{"instruction": "How would you explain `docker inspect -f` to a beginner?", "input": "", "output": "`-f '{{.State.Status}}'` extracts fields with Go templates — the scriptable alternative to grep."}
+{"instruction": "Show me a real-world use of `docker inspect -f`.", "input": "", "output": "`-f '{{.State.Status}}'` extracts fields with Go templates — the scriptable alternative to grep."}
+{"instruction": "How would you explain `docker cp` to a beginner?", "input": "", "output": "`docker cp web:/app/out ./out` copies files both directions without exec or ssh."}
+{"instruction": "Show me a real-world use of `docker cp`.", "input": "", "output": "`docker cp web:/app/out ./out` copies files both directions without exec or ssh."}
+{"instruction": "How would you explain `docker tag` to a beginner?", "input": "", "output": "Adds an alias (`docker tag src:1 dst:2`); pushing then uploads shared layers once."}
+{"instruction": "Show me a real-world use of `docker tag`.", "input": "", "output": "Adds an alias (`docker tag src:1 dst:2`); pushing then uploads shared layers once."}
+{"instruction": "How would you explain `docker push` to a beginner?", "input": "", "output": "Uploads tagged layers to a registry; log in first and prefer explicit version tags."}
+{"instruction": "Show me a real-world use of `docker push`.", "input": "", "output": "Uploads tagged layers to a registry; log in first and prefer explicit version tags."}
+{"instruction": "How would you explain `docker pull -q` to a beginner?", "input": "", "output": "`-q` suppresses progress bars for CI logs; default pull fetches missing layers only."}
+{"instruction": "Show me a real-world use of `docker pull -q`.", "input": "", "output": "`-q` suppresses progress bars for CI logs; default pull fetches missing layers only."}
+{"instruction": "How would you explain `docker login` to a beginner?", "input": "", "output": "Stores registry credentials (use credential helpers, not raw base64 auths in dotfiles)."}
+{"instruction": "Show me a real-world use of `docker login`.", "input": "", "output": "Stores registry credentials (use credential helpers, not raw base64 auths in dotfiles)."}
+{"instruction": "How would you explain `docker context ls` to a beginner?", "input": "", "output": "Lists fast-switchable daemon endpoints (local, ssh hosts) for multi-host work."}
+{"instruction": "Show me a real-world use of `docker context ls`.", "input": "", "output": "Lists fast-switchable daemon endpoints (local, ssh hosts) for multi-host work."}
+{"instruction": "How would you explain `docker compose up -d` to a beginner?", "input": "", "output": "Starts the whole stack detached, creating networks and volumes as declared."}
+{"instruction": "Show me a real-world use of `docker compose up -d`.", "input": "", "output": "Starts the whole stack detached, creating networks and volumes as declared."}
+{"instruction": "How would you explain `docker compose down -v` to a beginner?", "input": "", "output": "`down` stops and removes containers/nets; `-v` also deletes named volumes (data loss!)."}
+{"instruction": "Show me a real-world use of `docker compose down -v`.", "input": "", "output": "`down` stops and removes containers/nets; `-v` also deletes named volumes (data loss!)."}
+{"instruction": "How would you explain `docker compose logs -f` to a beginner?", "input": "", "output": "Aggregated, prefixed logs of all services with `-f` follow and `--tail` slicing."}
+{"instruction": "Show me a real-world use of `docker compose logs -f`.", "input": "", "output": "Aggregated, prefixed logs of all services with `-f` follow and `--tail` slicing."}
+{"instruction": "How would you explain `docker compose exec` to a beginner?", "input": "", "output": "Runs one-offs inside a service container (`compose exec db psql`) without new containers."}
+{"instruction": "Show me a real-world use of `docker compose exec`.", "input": "", "output": "Runs one-offs inside a service container (`compose exec db psql`) without new containers."}
+{"instruction": "How would you explain `docker compose run --rm` to a beginner?", "input": "", "output": "One-off containers from a service definition, removed on exit — for migrations and shells."}
+{"instruction": "Show me a real-world use of `docker compose run --rm`.", "input": "", "output": "One-off containers from a service definition, removed on exit — for migrations and shells."}
+{"instruction": "How would you explain `docker compose build --pull` to a beginner?", "input": "", "output": "Rebuilds with freshly pulled bases so stale cached tags cannot silently ship."}
+{"instruction": "Show me a real-world use of `docker compose build --pull`.", "input": "", "output": "Rebuilds with freshly pulled bases so stale cached tags cannot silently ship."}
+{"instruction": "How would you explain `docker compose restart` to a beginner?", "input": "", "output": "Restarts service containers in dependency order without recreating them."}
+{"instruction": "Show me a real-world use of `docker compose restart`.", "input": "", "output": "Restarts service containers in dependency order without recreating them."}
+{"instruction": "How would you explain `docker compose port` to a beginner?", "input": "", "output": "`compose port web 80` prints the mapped host port — for dynamic `-p 80` assignments."}
+{"instruction": "Show me a real-world use of `docker compose port`.", "input": "", "output": "`compose port web 80` prints the mapped host port — for dynamic `-p 80` assignments."}
+{"instruction": "How would you explain `docker compose config` to a beginner?", "input": "", "output": "Renders the fully merged, interpolated model — the best multi-file debugging tool."}
+{"instruction": "Show me a real-world use of `docker compose config`.", "input": "", "output": "Renders the fully merged, interpolated model — the best multi-file debugging tool."}
+{"instruction": "How would you explain `compose image` to a beginner?", "input": "", "output": "Pins the exact image (always tag versions, never bare names relying on latest)."}
+{"instruction": "Show me a real-world use of `compose image`.", "input": "", "output": "Pins the exact image (always tag versions, never bare names relying on latest)."}
+{"instruction": "How would you explain `compose build` to a beginner?", "input": "", "output": "Builds from a context+dockerfile instead of pulling; combine with `image:` so built images are tagged."}
+{"instruction": "Show me a real-world use of `compose build`.", "input": "", "output": "Builds from a context+dockerfile instead of pulling; combine with `image:` so built images are tagged."}
+{"instruction": "How would you explain `compose ports` to a beginner?", "input": "", "output": "Publishes `HOST:CONTAINER` mappings; short syntax `- \"8080:80\"` needs quoting in YAML."}
+{"instruction": "Show me a real-world use of `compose ports`.", "input": "", "output": "Publishes `HOST:CONTAINER` mappings; short syntax `- \"8080:80\"` needs quoting in YAML."}
+{"instruction": "How would you explain `compose environment` to a beginner?", "input": "", "output": "Inline KEY=value map; secrets belong in `env_file` or `secrets`, and `.env` never commits."}
+{"instruction": "Show me a real-world use of `compose environment`.", "input": "", "output": "Inline KEY=value map; secrets belong in `env_file` or `secrets`, and `.env` never commits."}
+{"instruction": "How would you explain `compose env_file` to a beginner?", "input": "", "output": "Loads vars from a file kept out of git; explicit `environment:` still wins on conflict."}
+{"instruction": "Show me a real-world use of `compose env_file`.", "input": "", "output": "Loads vars from a file kept out of git; explicit `environment:` still wins on conflict."}
+{"instruction": "How would you explain `compose volumes` to a beginner?", "input": "", "output": "Mounts `named:/path` or `./host:/path`; add `:ro` for configs that must stay immutable."}
+{"instruction": "Show me a real-world use of `compose volumes`.", "input": "", "output": "Mounts `named:/path` or `./host:/path`; add `:ro` for configs that must stay immutable."}
+{"instruction": "How would you explain `compose depends_on` to a beginner?", "input": "", "output": "Orders startup only; add `condition: service_healthy` plus app retries for true readiness."}
+{"instruction": "Show me a real-world use of `compose depends_on`.", "input": "", "output": "Orders startup only; add `condition: service_healthy` plus app retries for true readiness."}
+{"instruction": "How would you explain `compose restart` to a beginner?", "input": "", "output": "`unless-stopped` for services; Compose ignores Swarm-only `deploy.resources` — use `mem_limit/cpus` here."}
+{"instruction": "Show me a real-world use of `compose restart`.", "input": "", "output": "`unless-stopped` for services; Compose ignores Swarm-only `deploy.resources` — use `mem_limit/cpus` here."}
+{"instruction": "How would you explain `compose healthcheck` to a beginner?", "input": "", "output": "Declares `test/interval/timeout/retries/start_period`; powers `depends_on` conditions and `up --wait`."}
+{"instruction": "Show me a real-world use of `compose healthcheck`.", "input": "", "output": "Declares `test/interval/timeout/retries/start_period`; powers `depends_on` conditions and `up --wait`."}
+{"instruction": "How would you explain `compose networks` to a beginner?", "input": "", "output": "Attaches user-defined networks for automatic DNS; default bridge gives no name resolution."}
+{"instruction": "Show me a real-world use of `compose networks`.", "input": "", "output": "Attaches user-defined networks for automatic DNS; default bridge gives no name resolution."}
+{"instruction": "How would you explain `compose profiles` to a beginner?", "input": "", "output": "Marks optional services started only with `--profile name` (debug tools, seeders)."}
+{"instruction": "Show me a real-world use of `compose profiles`.", "input": "", "output": "Marks optional services started only with `--profile name` (debug tools, seeders)."}
+{"instruction": "How would you explain `compose command` to a beginner?", "input": "", "output": "Overrides the image CMD per service; keep `entrypoint` for the fixed binary."}
+{"instruction": "Show me a real-world use of `compose command`.", "input": "", "output": "Overrides the image CMD per service; keep `entrypoint` for the fixed binary."}
+{"instruction": "How would you explain `compose user` to a beginner?", "input": "", "output": "Runs as `uid:gid` without rebuilding (e.g. match host ownership for bind mounts)."}
+{"instruction": "Show me a real-world use of `compose user`.", "input": "", "output": "Runs as `uid:gid` without rebuilding (e.g. match host ownership for bind mounts)."}
+{"instruction": "How would you explain `compose working_dir` to a beginner?", "input": "", "output": "Overrides WORKDIR for runtimes needing a different cwd than the image default."}
+{"instruction": "Show me a real-world use of `compose working_dir`.", "input": "", "output": "Overrides WORKDIR for runtimes needing a different cwd than the image default."}
+{"instruction": "How would you explain `compose stop_grace_period` to a beginner?", "input": "", "output": "Per-service SIGTERM window (e.g. `30s`) for slow-draining apps instead of global `-t`."}
+{"instruction": "Show me a real-world use of `compose stop_grace_period`.", "input": "", "output": "Per-service SIGTERM window (e.g. `30s`) for slow-draining apps instead of global `-t`."}
+{"instruction": "How would you explain `compose logging` to a beginner?", "input": "", "output": "Per-service driver/options (`max-size/max-file`) so one chatty service cannot fill the disk."}
+{"instruction": "Show me a real-world use of `compose logging`.", "input": "", "output": "Per-service driver/options (`max-size/max-file`) so one chatty service cannot fill the disk."}
+{"instruction": "How would you explain `compose deploy` to a beginner?", "input": "", "output": "Swarm-only (replicas, update_config, placement); silently ignored by plain `compose up`."}
+{"instruction": "Show me a real-world use of `compose deploy`.", "input": "", "output": "Swarm-only (replicas, update_config, placement); silently ignored by plain `compose up`."}
+{"instruction": "How would you explain `compose secrets` to a beginner?", "input": "", "output": "Mounts swarm/compose secrets as files under /run/secrets — never env vars for real secrets."}
+{"instruction": "Show me a real-world use of `compose secrets`.", "input": "", "output": "Mounts swarm/compose secrets as files under /run/secrets — never env vars for real secrets."}
+{"instruction": "How would you explain `compose configs` to a beginner?", "input": "", "output": "Mounts config files (nginx.conf) without rebuilding images on config change."}
+{"instruction": "Show me a real-world use of `compose configs`.", "input": "", "output": "Mounts config files (nginx.conf) without rebuilding images on config change."}
+{"instruction": "How would you explain `compose extra_hosts` to a beginner?", "input": "", "output": "Injects host entries (`host.docker.internal:host-gateway`) for host access from containers."}
+{"instruction": "Show me a real-world use of `compose extra_hosts`.", "input": "", "output": "Injects host entries (`host.docker.internal:host-gateway`) for host access from containers."}
+{"instruction": "How would you explain `compose init` to a beginner?", "input": "", "output": "`init: true` adds tini for zombie reaping and signal forwarding per service."}
+{"instruction": "Show me a real-world use of `compose init`.", "input": "", "output": "`init: true` adds tini for zombie reaping and signal forwarding per service."}
+{"instruction": "How would you explain `compose platform` to a beginner?", "input": "", "output": "Pins `linux/amd64` when images are arch-sensitive (Apple Silicon pulling amd64-only images)."}
+{"instruction": "Show me a real-world use of `compose platform`.", "input": "", "output": "Pins `linux/amd64` when images are arch-sensitive (Apple Silicon pulling amd64-only images)."}
+{"instruction": "How would you explain `compose pull_policy` to a beginner?", "input": "", "output": "`always/missing/never/build` controls freshness; `always` in deploy scripts kills stale-tag bugs."}
+{"instruction": "Show me a real-world use of `compose pull_policy`.", "input": "", "output": "`always/missing/never/build` controls freshness; `always` in deploy scripts kills stale-tag bugs."}
+{"instruction": "How would you explain `compose container_name` to a beginner?", "input": "", "output": "Fixes the name but forbids scaling that service — omit it unless something must address it statically."}
+{"instruction": "Show me a real-world use of `compose container_name`.", "input": "", "output": "Fixes the name but forbids scaling that service — omit it unless something must address it statically."}
+{"instruction": "How would you explain `compose extends` to a beginner?", "input": "", "output": "Inherits another service's definition to avoid repeating env/logging/resource stanzas."}
+{"instruction": "Show me a real-world use of `compose extends`.", "input": "", "output": "Inherits another service's definition to avoid repeating env/logging/resource stanzas."}
 {"instruction": "Senarai fail Linux termasuk tersembunyi", "input": "", "output": "```bash\nls -la\n```"}
 {"instruction": "Cari teks dalam semua fail", "input": "", "output": "```bash\ngrep -r \"tambah\" .\n```"}
 {"instruction": "Jadikan skrip boleh laku", "input": "", "output": "```bash\nchmod +x run.sh\n./run.sh\n```"}
@@ -522,3 +780,103 @@
 {"instruction": "How does trap cleanup work in bash?", "input": "", "output": "```bash\ntmp=$(mktemp -d)\ntrap 'rm -rf \"$tmp\"' EXIT\n```\n`trap ... EXIT` runs on any exit (success, error, signal) — temp files and mounts never leak. Add `ERR`/`INT` traps for custom messages, but EXIT alone covers most scripts."}
 {"instruction": "How do redirects and process substitution work?", "input": "", "output": "`cmd > out.log 2>&1` merges stderr into stdout for logging; `cmd1 <(cmd2)` feeds command output as a pseudo-file: `diff <(ls a) <(ls b)`. Order matters (`2>&1` after `>`); use `|&` shorthand in interactive shells."}
 {"instruction": "Why xargs -0 with find -print0?", "input": "", "output": "```bash\nfind . -name '*.tmp' -print0 | xargs -0 rm\n```\nNewline/space filenames break plain pipes — NUL-delimited `-print0/-0` is bulletproof. Add `-r` (no run if empty) and `-n1`/`-P4` for per-item or parallel execution."}
+{"instruction": "What does `set -euo pipefail` do?", "input": "", "output": "`set -euo pipefail` aborts on errors, unset vars and pipe failures — every serious script starts here."}
+{"instruction": "Explain `set -euo pipefail` briefly.", "input": "", "output": "`set -euo pipefail` aborts on errors, unset vars and pipe failures — every serious script starts here."}
+{"instruction": "When do I use `set -euo pipefail`?", "input": "", "output": "`set -euo pipefail` aborts on errors, unset vars and pipe failures — every serious script starts here."}
+{"instruction": "Give a practical example of `set -euo pipefail`.", "input": "", "output": "`set -euo pipefail` aborts on errors, unset vars and pipe failures — every serious script starts here."}
+{"instruction": "What is `set -euo pipefail` for?", "input": "", "output": "`set -euo pipefail` aborts on errors, unset vars and pipe failures — every serious script starts here."}
+{"instruction": "What does `if [[ -f fail ]]` do?", "input": "", "output": "`[[ ]]` tests safely (no word-splitting); `-f` file, `-d` dir, `-z` empty, with `&&`/`||` inside."}
+{"instruction": "Explain `if [[ -f fail ]]` briefly.", "input": "", "output": "`[[ ]]` tests safely (no word-splitting); `-f` file, `-d` dir, `-z` empty, with `&&`/`||` inside."}
+{"instruction": "When do I use `if [[ -f fail ]]`?", "input": "", "output": "`[[ ]]` tests safely (no word-splitting); `-f` file, `-d` dir, `-z` empty, with `&&`/`||` inside."}
+{"instruction": "Give a practical example of `if [[ -f fail ]]`.", "input": "", "output": "`[[ ]]` tests safely (no word-splitting); `-f` file, `-d` dir, `-z` empty, with `&&`/`||` inside."}
+{"instruction": "What is `if [[ -f fail ]]` for?", "input": "", "output": "`[[ ]]` tests safely (no word-splitting); `-f` file, `-d` dir, `-z` empty, with `&&`/`||` inside."}
+{"instruction": "What does `for f in *.md` do?", "input": "", "output": "`for f in *.md` loops glob matches; quote `\"$f\"` and set `nullglob` for empty dirs."}
+{"instruction": "Explain `for f in *.md` briefly.", "input": "", "output": "`for f in *.md` loops glob matches; quote `\"$f\"` and set `nullglob` for empty dirs."}
+{"instruction": "When do I use `for f in *.md`?", "input": "", "output": "`for f in *.md` loops glob matches; quote `\"$f\"` and set `nullglob` for empty dirs."}
+{"instruction": "Give a practical example of `for f in *.md`.", "input": "", "output": "`for f in *.md` loops glob matches; quote `\"$f\"` and set `nullglob` for empty dirs."}
+{"instruction": "What is `for f in *.md` for?", "input": "", "output": "`for f in *.md` loops glob matches; quote `\"$f\"` and set `nullglob` for empty dirs."}
+{"instruction": "What does `while read baris` do?", "input": "", "output": "`while IFS= read -r line < file` reads safely preserving spaces and backslashes."}
+{"instruction": "Explain `while read baris` briefly.", "input": "", "output": "`while IFS= read -r line < file` reads safely preserving spaces and backslashes."}
+{"instruction": "When do I use `while read baris`?", "input": "", "output": "`while IFS= read -r line < file` reads safely preserving spaces and backslashes."}
+{"instruction": "Give a practical example of `while read baris`.", "input": "", "output": "`while IFS= read -r line < file` reads safely preserving spaces and backslashes."}
+{"instruction": "What is `while read baris` for?", "input": "", "output": "`while IFS= read -r line < file` reads safely preserving spaces and backslashes."}
+{"instruction": "What does `function greet()` do?", "input": "", "output": "Functions return exit codes, not strings — echo data and capture with `$(...)`; use `local` vars."}
+{"instruction": "Explain `function greet()` briefly.", "input": "", "output": "Functions return exit codes, not strings — echo data and capture with `$(...)`; use `local` vars."}
+{"instruction": "When do I use `function greet()`?", "input": "", "output": "Functions return exit codes, not strings — echo data and capture with `$(...)`; use `local` vars."}
+{"instruction": "Give a practical example of `function greet()`.", "input": "", "output": "Functions return exit codes, not strings — echo data and capture with `$(...)`; use `local` vars."}
+{"instruction": "What is `function greet()` for?", "input": "", "output": "Functions return exit codes, not strings — echo data and capture with `$(...)`; use `local` vars."}
+{"instruction": "What does `case $1 in` do?", "input": "", "output": "`case` branches subcommands cleanly with patterns and a `*)` usage default; each arm ends `;;`."}
+{"instruction": "Explain `case $1 in` briefly.", "input": "", "output": "`case` branches subcommands cleanly with patterns and a `*)` usage default; each arm ends `;;`."}
+{"instruction": "When do I use `case $1 in`?", "input": "", "output": "`case` branches subcommands cleanly with patterns and a `*)` usage default; each arm ends `;;`."}
+{"instruction": "Give a practical example of `case $1 in`.", "input": "", "output": "`case` branches subcommands cleanly with patterns and a `*)` usage default; each arm ends `;;`."}
+{"instruction": "What is `case $1 in` for?", "input": "", "output": "`case` branches subcommands cleanly with patterns and a `*)` usage default; each arm ends `;;`."}
+{"instruction": "What does `$1 $@ $#` do?", "input": "", "output": "`$1` first arg, `\"$@\"` all args intact, `$#` count; `${1:?...}` fails fast with a message."}
+{"instruction": "Explain `$1 $@ $#` briefly.", "input": "", "output": "`$1` first arg, `\"$@\"` all args intact, `$#` count; `${1:?...}` fails fast with a message."}
+{"instruction": "When do I use `$1 $@ $#`?", "input": "", "output": "`$1` first arg, `\"$@\"` all args intact, `$#` count; `${1:?...}` fails fast with a message."}
+{"instruction": "Give a practical example of `$1 $@ $#`.", "input": "", "output": "`$1` first arg, `\"$@\"` all args intact, `$#` count; `${1:?...}` fails fast with a message."}
+{"instruction": "What is `$1 $@ $#` for?", "input": "", "output": "`$1` first arg, `\"$@\"` all args intact, `$#` count; `${1:?...}` fails fast with a message."}
+{"instruction": "What does `${PORT:-3000}` do?", "input": "", "output": "`${VAR:-default}` substitutes when empty; `${#s}` length; `${s%.ext}` strips suffix."}
+{"instruction": "Explain `${PORT:-3000}` briefly.", "input": "", "output": "`${VAR:-default}` substitutes when empty; `${#s}` length; `${s%.ext}` strips suffix."}
+{"instruction": "When do I use `${PORT:-3000}`?", "input": "", "output": "`${VAR:-default}` substitutes when empty; `${#s}` length; `${s%.ext}` strips suffix."}
+{"instruction": "Give a practical example of `${PORT:-3000}`.", "input": "", "output": "`${VAR:-default}` substitutes when empty; `${#s}` length; `${s%.ext}` strips suffix."}
+{"instruction": "What is `${PORT:-3000}` for?", "input": "", "output": "`${VAR:-default}` substitutes when empty; `${#s}` length; `${s%.ext}` strips suffix."}
+{"instruction": "What does `arr=(a b c)` do?", "input": "", "output": "Arrays index from 0; expand as `\"${arr[@]}\"` per element and count with `${#arr[@]}`."}
+{"instruction": "Explain `arr=(a b c)` briefly.", "input": "", "output": "Arrays index from 0; expand as `\"${arr[@]}\"` per element and count with `${#arr[@]}`."}
+{"instruction": "When do I use `arr=(a b c)`?", "input": "", "output": "Arrays index from 0; expand as `\"${arr[@]}\"` per element and count with `${#arr[@]}`."}
+{"instruction": "Give a practical example of `arr=(a b c)`.", "input": "", "output": "Arrays index from 0; expand as `\"${arr[@]}\"` per element and count with `${#arr[@]}`."}
+{"instruction": "What is `arr=(a b c)` for?", "input": "", "output": "Arrays index from 0; expand as `\"${arr[@]}\"` per element and count with `${#arr[@]}`."}
+{"instruction": "What does `trap cleanup EXIT` do?", "input": "", "output": "`trap ... EXIT` guarantees cleanup on any exit; temp dirs from `mktemp -d` never leak."}
+{"instruction": "Explain `trap cleanup EXIT` briefly.", "input": "", "output": "`trap ... EXIT` guarantees cleanup on any exit; temp dirs from `mktemp -d` never leak."}
+{"instruction": "When do I use `trap cleanup EXIT`?", "input": "", "output": "`trap ... EXIT` guarantees cleanup on any exit; temp dirs from `mktemp -d` never leak."}
+{"instruction": "Give a practical example of `trap cleanup EXIT`.", "input": "", "output": "`trap ... EXIT` guarantees cleanup on any exit; temp dirs from `mktemp -d` never leak."}
+{"instruction": "What is `trap cleanup EXIT` for?", "input": "", "output": "`trap ... EXIT` guarantees cleanup on any exit; temp dirs from `mktemp -d` never leak."}
+{"instruction": "What does `cmd > out 2>&1` do?", "input": "", "output": "`> out 2>&1` merges stderr into the log file; order matters — redirect stdout first."}
+{"instruction": "Explain `cmd > out 2>&1` briefly.", "input": "", "output": "`> out 2>&1` merges stderr into the log file; order matters — redirect stdout first."}
+{"instruction": "When do I use `cmd > out 2>&1`?", "input": "", "output": "`> out 2>&1` merges stderr into the log file; order matters — redirect stdout first."}
+{"instruction": "Give a practical example of `cmd > out 2>&1`.", "input": "", "output": "`> out 2>&1` merges stderr into the log file; order matters — redirect stdout first."}
+{"instruction": "What is `cmd > out 2>&1` for?", "input": "", "output": "`> out 2>&1` merges stderr into the log file; order matters — redirect stdout first."}
+{"instruction": "What does `a | b | c` do?", "input": "", "output": "Pipes chain stdout to stdin; `set -o pipefail` makes middle failures visible to `set -e`."}
+{"instruction": "Explain `a | b | c` briefly.", "input": "", "output": "Pipes chain stdout to stdin; `set -o pipefail` makes middle failures visible to `set -e`."}
+{"instruction": "When do I use `a | b | c`?", "input": "", "output": "Pipes chain stdout to stdin; `set -o pipefail` makes middle failures visible to `set -e`."}
+{"instruction": "Give a practical example of `a | b | c`.", "input": "", "output": "Pipes chain stdout to stdin; `set -o pipefail` makes middle failures visible to `set -e`."}
+{"instruction": "What is `a | b | c` for?", "input": "", "output": "Pipes chain stdout to stdin; `set -o pipefail` makes middle failures visible to `set -e`."}
+{"instruction": "What does `cmd1 && cmd2` do?", "input": "", "output": "`&&` runs next only on success, `||` on failure — the one-line try/catch of shell."}
+{"instruction": "Explain `cmd1 && cmd2` briefly.", "input": "", "output": "`&&` runs next only on success, `||` on failure — the one-line try/catch of shell."}
+{"instruction": "When do I use `cmd1 && cmd2`?", "input": "", "output": "`&&` runs next only on success, `||` on failure — the one-line try/catch of shell."}
+{"instruction": "Give a practical example of `cmd1 && cmd2`.", "input": "", "output": "`&&` runs next only on success, `||` on failure — the one-line try/catch of shell."}
+{"instruction": "What is `cmd1 && cmd2` for?", "input": "", "output": "`&&` runs next only on success, `||` on failure — the one-line try/catch of shell."}
+{"instruction": "What does `[[ $x =~ ^[0-9]+$ ]]` do?", "input": "", "output": "`=~` regex-matches inside `[[ ]]`; quote the pattern to avoid glob interpretation."}
+{"instruction": "Explain `[[ $x =~ ^[0-9]+$ ]]` briefly.", "input": "", "output": "`=~` regex-matches inside `[[ ]]`; quote the pattern to avoid glob interpretation."}
+{"instruction": "When do I use `[[ $x =~ ^[0-9]+$ ]]`?", "input": "", "output": "`=~` regex-matches inside `[[ ]]`; quote the pattern to avoid glob interpretation."}
+{"instruction": "Give a practical example of `[[ $x =~ ^[0-9]+$ ]]`.", "input": "", "output": "`=~` regex-matches inside `[[ ]]`; quote the pattern to avoid glob interpretation."}
+{"instruction": "What is `[[ $x =~ ^[0-9]+$ ]]` for?", "input": "", "output": "`=~` regex-matches inside `[[ ]]`; quote the pattern to avoid glob interpretation."}
+{"instruction": "What does `seq 1 10` do?", "input": "", "output": "`seq` generates number ranges for loops; `seq -w` zero-pads filenames in order."}
+{"instruction": "Explain `seq 1 10` briefly.", "input": "", "output": "`seq` generates number ranges for loops; `seq -w` zero-pads filenames in order."}
+{"instruction": "When do I use `seq 1 10`?", "input": "", "output": "`seq` generates number ranges for loops; `seq -w` zero-pads filenames in order."}
+{"instruction": "Give a practical example of `seq 1 10`.", "input": "", "output": "`seq` generates number ranges for loops; `seq -w` zero-pads filenames in order."}
+{"instruction": "What is `seq 1 10` for?", "input": "", "output": "`seq` generates number ranges for loops; `seq -w` zero-pads filenames in order."}
+{"instruction": "What does `find . -print0 | xargs -0` do?", "input": "", "output": "NUL-delimited pipelines survive spaces/newlines in filenames; add `-r` to skip empty runs."}
+{"instruction": "Explain `find . -print0 | xargs -0` briefly.", "input": "", "output": "NUL-delimited pipelines survive spaces/newlines in filenames; add `-r` to skip empty runs."}
+{"instruction": "When do I use `find . -print0 | xargs -0`?", "input": "", "output": "NUL-delimited pipelines survive spaces/newlines in filenames; add `-r` to skip empty runs."}
+{"instruction": "Give a practical example of `find . -print0 | xargs -0`.", "input": "", "output": "NUL-delimited pipelines survive spaces/newlines in filenames; add `-r` to skip empty runs."}
+{"instruction": "What is `find . -print0 | xargs -0` for?", "input": "", "output": "NUL-delimited pipelines survive spaces/newlines in filenames; add `-r` to skip empty runs."}
+{"instruction": "What does `$(date +%F)` do?", "input": "", "output": "`$(...)` captures output (nestable, unlike backticks); quote it unless splitting is intended."}
+{"instruction": "Explain `$(date +%F)` briefly.", "input": "", "output": "`$(...)` captures output (nestable, unlike backticks); quote it unless splitting is intended."}
+{"instruction": "When do I use `$(date +%F)`?", "input": "", "output": "`$(...)` captures output (nestable, unlike backticks); quote it unless splitting is intended."}
+{"instruction": "Give a practical example of `$(date +%F)`.", "input": "", "output": "`$(...)` captures output (nestable, unlike backticks); quote it unless splitting is intended."}
+{"instruction": "What is `$(date +%F)` for?", "input": "", "output": "`$(...)` captures output (nestable, unlike backticks); quote it unless splitting is intended."}
+{"instruction": "What does `<<EOF heredoc` do?", "input": "", "output": "Heredocs feed multi-line input (`cat <<EOF`); quote the tag (`<<'EOF'`) to disable expansion."}
+{"instruction": "Explain `<<EOF heredoc` briefly.", "input": "", "output": "Heredocs feed multi-line input (`cat <<EOF`); quote the tag (`<<'EOF'`) to disable expansion."}
+{"instruction": "When do I use `<<EOF heredoc`?", "input": "", "output": "Heredocs feed multi-line input (`cat <<EOF`); quote the tag (`<<'EOF'`) to disable expansion."}
+{"instruction": "Give a practical example of `<<EOF heredoc`.", "input": "", "output": "Heredocs feed multi-line input (`cat <<EOF`); quote the tag (`<<'EOF'`) to disable expansion."}
+{"instruction": "What is `<<EOF heredoc` for?", "input": "", "output": "Heredocs feed multi-line input (`cat <<EOF`); quote the tag (`<<'EOF'`) to disable expansion."}
+{"instruction": "What does `shift` do?", "input": "", "output": "`shift` consumes processed args so `$1` always means next; loop `while [[ $# -gt 0 ]]` for flags."}
+{"instruction": "Explain `shift` briefly.", "input": "", "output": "`shift` consumes processed args so `$1` always means next; loop `while [[ $# -gt 0 ]]` for flags."}
+{"instruction": "When do I use `shift`?", "input": "", "output": "`shift` consumes processed args so `$1` always means next; loop `while [[ $# -gt 0 ]]` for flags."}
+{"instruction": "Give a practical example of `shift`.", "input": "", "output": "`shift` consumes processed args so `$1` always means next; loop `while [[ $# -gt 0 ]]` for flags."}
+{"instruction": "What is `shift` for?", "input": "", "output": "`shift` consumes processed args so `$1` always means next; loop `while [[ $# -gt 0 ]]` for flags."}
+{"instruction": "What does `exec cmd` do?", "input": "", "output": "`exec` replaces the shell process (PID kept, no child) — used as the last line of entrypoints."}
+{"instruction": "Explain `exec cmd` briefly.", "input": "", "output": "`exec` replaces the shell process (PID kept, no child) — used as the last line of entrypoints."}
+{"instruction": "When do I use `exec cmd`?", "input": "", "output": "`exec` replaces the shell process (PID kept, no child) — used as the last line of entrypoints."}
+{"instruction": "Give a practical example of `exec cmd`.", "input": "", "output": "`exec` replaces the shell process (PID kept, no child) — used as the last line of entrypoints."}
+{"instruction": "What is `exec cmd` for?", "input": "", "output": "`exec` replaces the shell process (PID kept, no child) — used as the last line of entrypoints."}

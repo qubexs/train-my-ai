@@ -23,3 +23,103 @@
 {"instruction": "How do I start testing with pytest?", "input": "", "output": "```python\n# test_tambah.py\ndef tambah(a, b):\n    return a + b\n\ndef test_tambah():\n    assert tambah(2, 3) == 5\n```\nJalankan `pytest -q`; nama fail `test_*`, fungsi `test_*`, assert biasa (tiada boilerplate). Tambah `-x` henti pada gagal pertama dan `parametrize` untuk kes jadual."}
 {"instruction": "How do Python dataclasses work?", "input": "", "output": "```python\nfrom dataclasses import dataclass\n\n@dataclass\nclass Barang:\n    nama: str\n    harga: float = 0.0\n```\nPenjana `__init__/__repr__/__eq__` automatik — ganti kelas data boilerplate. `frozen=True` untuk tidak-boleh-ubah; `field(default_factory=list)` untuk lalai boleh-ubah (jangan `=[]` terus)."}
 {"instruction": "How do virtualenv and pip cache affect Docker builds?", "input": "", "output": "Jangan venv dalam imej — satu env per kontena sudah terasing. Lajukan pip dengan cache mount BuildKit (`RUN --mount=type=cache,target=/root/.cache/pip pip install ...`) supaya bina semula tidak muat turun semula. `pip check` sahkan tiada konflik dependensi."}
+{"instruction": "What does `print f-string` do?", "input": "", "output": "f-strings embed `{var}` and format specs (`{x:.2f}`); prefix debug with `=` to show names."}
+{"instruction": "Explain `print f-string` briefly.", "input": "", "output": "f-strings embed `{var}` and format specs (`{x:.2f}`); prefix debug with `=` to show names."}
+{"instruction": "When do I use `print f-string`?", "input": "", "output": "f-strings embed `{var}` and format specs (`{x:.2f}`); prefix debug with `=` to show names."}
+{"instruction": "Give a practical example of `print f-string`.", "input": "", "output": "f-strings embed `{var}` and format specs (`{x:.2f}`); prefix debug with `=` to show names."}
+{"instruction": "What is `print f-string` for?", "input": "", "output": "f-strings embed `{var}` and format specs (`{x:.2f}`); prefix debug with `=` to show names."}
+{"instruction": "What does `len() range()` do?", "input": "", "output": "`len()` counts containers; `range(5)` yields 0-4 lazily — pair with `enumerate`/`zip` in loops."}
+{"instruction": "Explain `len() range()` briefly.", "input": "", "output": "`len()` counts containers; `range(5)` yields 0-4 lazily — pair with `enumerate`/`zip` in loops."}
+{"instruction": "When do I use `len() range()`?", "input": "", "output": "`len()` counts containers; `range(5)` yields 0-4 lazily — pair with `enumerate`/`zip` in loops."}
+{"instruction": "Give a practical example of `len() range()`.", "input": "", "output": "`len()` counts containers; `range(5)` yields 0-4 lazily — pair with `enumerate`/`zip` in loops."}
+{"instruction": "What is `len() range()` for?", "input": "", "output": "`len()` counts containers; `range(5)` yields 0-4 lazily — pair with `enumerate`/`zip` in loops."}
+{"instruction": "What does `list append` do?", "input": "", "output": "`append` grows lists in place; comprehensions (`[x for x in y if ok]`) build filtered ones declaratively."}
+{"instruction": "Explain `list append` briefly.", "input": "", "output": "`append` grows lists in place; comprehensions (`[x for x in y if ok]`) build filtered ones declaratively."}
+{"instruction": "When do I use `list append`?", "input": "", "output": "`append` grows lists in place; comprehensions (`[x for x in y if ok]`) build filtered ones declaratively."}
+{"instruction": "Give a practical example of `list append`.", "input": "", "output": "`append` grows lists in place; comprehensions (`[x for x in y if ok]`) build filtered ones declaratively."}
+{"instruction": "What is `list append` for?", "input": "", "output": "`append` grows lists in place; comprehensions (`[x for x in y if ok]`) build filtered ones declaratively."}
+{"instruction": "What does `dict get` do?", "input": "", "output": "`d.get(k, default)` avoids KeyError; `setdefault` inserts-and-returns for counting patterns."}
+{"instruction": "Explain `dict get` briefly.", "input": "", "output": "`d.get(k, default)` avoids KeyError; `setdefault` inserts-and-returns for counting patterns."}
+{"instruction": "When do I use `dict get`?", "input": "", "output": "`d.get(k, default)` avoids KeyError; `setdefault` inserts-and-returns for counting patterns."}
+{"instruction": "Give a practical example of `dict get`.", "input": "", "output": "`d.get(k, default)` avoids KeyError; `setdefault` inserts-and-returns for counting patterns."}
+{"instruction": "What is `dict get` for?", "input": "", "output": "`d.get(k, default)` avoids KeyError; `setdefault` inserts-and-returns for counting patterns."}
+{"instruction": "What does `open() with` do?", "input": "", "output": "`with open(...) as f` auto-closes even on errors; always pass explicit encoding for text."}
+{"instruction": "Explain `open() with` briefly.", "input": "", "output": "`with open(...) as f` auto-closes even on errors; always pass explicit encoding for text."}
+{"instruction": "When do I use `open() with`?", "input": "", "output": "`with open(...) as f` auto-closes even on errors; always pass explicit encoding for text."}
+{"instruction": "Give a practical example of `open() with`.", "input": "", "output": "`with open(...) as f` auto-closes even on errors; always pass explicit encoding for text."}
+{"instruction": "What is `open() with` for?", "input": "", "output": "`with open(...) as f` auto-closes even on errors; always pass explicit encoding for text."}
+{"instruction": "What does `import module` do?", "input": "", "output": "Imports run once and cache in `sys.modules`; circular imports signal a design split is due."}
+{"instruction": "Explain `import module` briefly.", "input": "", "output": "Imports run once and cache in `sys.modules`; circular imports signal a design split is due."}
+{"instruction": "When do I use `import module`?", "input": "", "output": "Imports run once and cache in `sys.modules`; circular imports signal a design split is due."}
+{"instruction": "Give a practical example of `import module`.", "input": "", "output": "Imports run once and cache in `sys.modules`; circular imports signal a design split is due."}
+{"instruction": "What is `import module` for?", "input": "", "output": "Imports run once and cache in `sys.modules`; circular imports signal a design split is due."}
+{"instruction": "What does `def + return` do?", "input": "", "output": "Functions return values (or None); default args evaluate once — never use mutable `=[]` defaults."}
+{"instruction": "Explain `def + return` briefly.", "input": "", "output": "Functions return values (or None); default args evaluate once — never use mutable `=[]` defaults."}
+{"instruction": "When do I use `def + return`?", "input": "", "output": "Functions return values (or None); default args evaluate once — never use mutable `=[]` defaults."}
+{"instruction": "Give a practical example of `def + return`.", "input": "", "output": "Functions return values (or None); default args evaluate once — never use mutable `=[]` defaults."}
+{"instruction": "What is `def + return` for?", "input": "", "output": "Functions return values (or None); default args evaluate once — never use mutable `=[]` defaults."}
+{"instruction": "What does `try/except` do?", "input": "", "output": "Catch specific exceptions, keep `try` blocks tiny, and use `else`/`finally` for success/cleanup paths."}
+{"instruction": "Explain `try/except` briefly.", "input": "", "output": "Catch specific exceptions, keep `try` blocks tiny, and use `else`/`finally` for success/cleanup paths."}
+{"instruction": "When do I use `try/except`?", "input": "", "output": "Catch specific exceptions, keep `try` blocks tiny, and use `else`/`finally` for success/cleanup paths."}
+{"instruction": "Give a practical example of `try/except`.", "input": "", "output": "Catch specific exceptions, keep `try` blocks tiny, and use `else`/`finally` for success/cleanup paths."}
+{"instruction": "What is `try/except` for?", "input": "", "output": "Catch specific exceptions, keep `try` blocks tiny, and use `else`/`finally` for success/cleanup paths."}
+{"instruction": "What does `for and while` do?", "input": "", "output": "`for` iterates iterables directly (pythonic); `while` needs manual progress or loops forever."}
+{"instruction": "Explain `for and while` briefly.", "input": "", "output": "`for` iterates iterables directly (pythonic); `while` needs manual progress or loops forever."}
+{"instruction": "When do I use `for and while`?", "input": "", "output": "`for` iterates iterables directly (pythonic); `while` needs manual progress or loops forever."}
+{"instruction": "Give a practical example of `for and while`.", "input": "", "output": "`for` iterates iterables directly (pythonic); `while` needs manual progress or loops forever."}
+{"instruction": "What is `for and while` for?", "input": "", "output": "`for` iterates iterables directly (pythonic); `while` needs manual progress or loops forever."}
+{"instruction": "What does `if elif else` do?", "input": "", "output": "Chain `elif` instead of nesting; early-return flattens logic better than deep nesting."}
+{"instruction": "Explain `if elif else` briefly.", "input": "", "output": "Chain `elif` instead of nesting; early-return flattens logic better than deep nesting."}
+{"instruction": "When do I use `if elif else`?", "input": "", "output": "Chain `elif` instead of nesting; early-return flattens logic better than deep nesting."}
+{"instruction": "Give a practical example of `if elif else`.", "input": "", "output": "Chain `elif` instead of nesting; early-return flattens logic better than deep nesting."}
+{"instruction": "What is `if elif else` for?", "input": "", "output": "Chain `elif` instead of nesting; early-return flattens logic better than deep nesting."}
+{"instruction": "What does `pip install` do?", "input": "", "output": "`pip install pkg` resolves deps; pin with `==` in requirements and hash-check in CI."}
+{"instruction": "Explain `pip install` briefly.", "input": "", "output": "`pip install pkg` resolves deps; pin with `==` in requirements and hash-check in CI."}
+{"instruction": "When do I use `pip install`?", "input": "", "output": "`pip install pkg` resolves deps; pin with `==` in requirements and hash-check in CI."}
+{"instruction": "Give a practical example of `pip install`.", "input": "", "output": "`pip install pkg` resolves deps; pin with `==` in requirements and hash-check in CI."}
+{"instruction": "What is `pip install` for?", "input": "", "output": "`pip install pkg` resolves deps; pin with `==` in requirements and hash-check in CI."}
+{"instruction": "What does `venv` do?", "input": "", "output": "One venv per project isolates deps; never install into system Python on shared machines."}
+{"instruction": "Explain `venv` briefly.", "input": "", "output": "One venv per project isolates deps; never install into system Python on shared machines."}
+{"instruction": "When do I use `venv`?", "input": "", "output": "One venv per project isolates deps; never install into system Python on shared machines."}
+{"instruction": "Give a practical example of `venv`.", "input": "", "output": "One venv per project isolates deps; never install into system Python on shared machines."}
+{"instruction": "What is `venv` for?", "input": "", "output": "One venv per project isolates deps; never install into system Python on shared machines."}
+{"instruction": "What does `lambda` do?", "input": "", "output": "Lambdas suit one-expression callbacks (`key=lambda r: r[1]`); named `def` wins beyond one line."}
+{"instruction": "Explain `lambda` briefly.", "input": "", "output": "Lambdas suit one-expression callbacks (`key=lambda r: r[1]`); named `def` wins beyond one line."}
+{"instruction": "When do I use `lambda`?", "input": "", "output": "Lambdas suit one-expression callbacks (`key=lambda r: r[1]`); named `def` wins beyond one line."}
+{"instruction": "Give a practical example of `lambda`.", "input": "", "output": "Lambdas suit one-expression callbacks (`key=lambda r: r[1]`); named `def` wins beyond one line."}
+{"instruction": "What is `lambda` for?", "input": "", "output": "Lambdas suit one-expression callbacks (`key=lambda r: r[1]`); named `def` wins beyond one line."}
+{"instruction": "What does `enumerate and zip` do?", "input": "", "output": "`enumerate` adds indices, `zip` pairs iterables — both lazy; `zip(..., strict=True)` catches length drift."}
+{"instruction": "Explain `enumerate and zip` briefly.", "input": "", "output": "`enumerate` adds indices, `zip` pairs iterables — both lazy; `zip(..., strict=True)` catches length drift."}
+{"instruction": "When do I use `enumerate and zip`?", "input": "", "output": "`enumerate` adds indices, `zip` pairs iterables — both lazy; `zip(..., strict=True)` catches length drift."}
+{"instruction": "Give a practical example of `enumerate and zip`.", "input": "", "output": "`enumerate` adds indices, `zip` pairs iterables — both lazy; `zip(..., strict=True)` catches length drift."}
+{"instruction": "What is `enumerate and zip` for?", "input": "", "output": "`enumerate` adds indices, `zip` pairs iterables — both lazy; `zip(..., strict=True)` catches length drift."}
+{"instruction": "What does `split and join` do?", "input": "", "output": "`'a,b'.split(',')` breaks, `', '.join(list)` glues; strip whitespace before comparing user input."}
+{"instruction": "Explain `split and join` briefly.", "input": "", "output": "`'a,b'.split(',')` breaks, `', '.join(list)` glues; strip whitespace before comparing user input."}
+{"instruction": "When do I use `split and join`?", "input": "", "output": "`'a,b'.split(',')` breaks, `', '.join(list)` glues; strip whitespace before comparing user input."}
+{"instruction": "Give a practical example of `split and join`.", "input": "", "output": "`'a,b'.split(',')` breaks, `', '.join(list)` glues; strip whitespace before comparing user input."}
+{"instruction": "What is `split and join` for?", "input": "", "output": "`'a,b'.split(',')` breaks, `', '.join(list)` glues; strip whitespace before comparing user input."}
+{"instruction": "What does `int() and str()` do?", "input": "", "output": "Convert explicitly; `int('77')` works but `int('77px')` raises — validate with try/except or regex."}
+{"instruction": "Explain `int() and str()` briefly.", "input": "", "output": "Convert explicitly; `int('77')` works but `int('77px')` raises — validate with try/except or regex."}
+{"instruction": "When do I use `int() and str()`?", "input": "", "output": "Convert explicitly; `int('77')` works but `int('77px')` raises — validate with try/except or regex."}
+{"instruction": "Give a practical example of `int() and str()`.", "input": "", "output": "Convert explicitly; `int('77')` works but `int('77px')` raises — validate with try/except or regex."}
+{"instruction": "What is `int() and str()` for?", "input": "", "output": "Convert explicitly; `int('77')` works but `int('77px')` raises — validate with try/except or regex."}
+{"instruction": "What does `class __init__` do?", "input": "", "output": "`__init__` builds state per instance; methods take `self`; prefer dataclasses for pure data holders."}
+{"instruction": "Explain `class __init__` briefly.", "input": "", "output": "`__init__` builds state per instance; methods take `self`; prefer dataclasses for pure data holders."}
+{"instruction": "When do I use `class __init__`?", "input": "", "output": "`__init__` builds state per instance; methods take `self`; prefer dataclasses for pure data holders."}
+{"instruction": "Give a practical example of `class __init__`.", "input": "", "output": "`__init__` builds state per instance; methods take `self`; prefer dataclasses for pure data holders."}
+{"instruction": "What is `class __init__` for?", "input": "", "output": "`__init__` builds state per instance; methods take `self`; prefer dataclasses for pure data holders."}
+{"instruction": "What does `requests.get` do?", "input": "", "output": "`requests.get(url, timeout=10)` plus `raise_for_status()`; reuse a `Session` for connection pooling."}
+{"instruction": "Explain `requests.get` briefly.", "input": "", "output": "`requests.get(url, timeout=10)` plus `raise_for_status()`; reuse a `Session` for connection pooling."}
+{"instruction": "When do I use `requests.get`?", "input": "", "output": "`requests.get(url, timeout=10)` plus `raise_for_status()`; reuse a `Session` for connection pooling."}
+{"instruction": "Give a practical example of `requests.get`.", "input": "", "output": "`requests.get(url, timeout=10)` plus `raise_for_status()`; reuse a `Session` for connection pooling."}
+{"instruction": "What is `requests.get` for?", "input": "", "output": "`requests.get(url, timeout=10)` plus `raise_for_status()`; reuse a `Session` for connection pooling."}
+{"instruction": "What does `json module` do?", "input": "", "output": "`json.load(s)` parses (catch DecodeError on network data); `dumps(indent=2, ensure_ascii=False)` stays readable."}
+{"instruction": "Explain `json module` briefly.", "input": "", "output": "`json.load(s)` parses (catch DecodeError on network data); `dumps(indent=2, ensure_ascii=False)` stays readable."}
+{"instruction": "When do I use `json module`?", "input": "", "output": "`json.load(s)` parses (catch DecodeError on network data); `dumps(indent=2, ensure_ascii=False)` stays readable."}
+{"instruction": "Give a practical example of `json module`.", "input": "", "output": "`json.load(s)` parses (catch DecodeError on network data); `dumps(indent=2, ensure_ascii=False)` stays readable."}
+{"instruction": "What is `json module` for?", "input": "", "output": "`json.load(s)` parses (catch DecodeError on network data); `dumps(indent=2, ensure_ascii=False)` stays readable."}
+{"instruction": "What does `pathlib Path` do?", "input": "", "output": "`Path` joins with `/`, reads/writes text, and globs — portable across Windows and Linux unlike string paths."}
+{"instruction": "Explain `pathlib Path` briefly.", "input": "", "output": "`Path` joins with `/`, reads/writes text, and globs — portable across Windows and Linux unlike string paths."}
+{"instruction": "When do I use `pathlib Path`?", "input": "", "output": "`Path` joins with `/`, reads/writes text, and globs — portable across Windows and Linux unlike string paths."}
+{"instruction": "Give a practical example of `pathlib Path`.", "input": "", "output": "`Path` joins with `/`, reads/writes text, and globs — portable across Windows and Linux unlike string paths."}
+{"instruction": "What is `pathlib Path` for?", "input": "", "output": "`Path` joins with `/`, reads/writes text, and globs — portable across Windows and Linux unlike string paths."}

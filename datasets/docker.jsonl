@@ -458,3 +458,161 @@
 {"instruction": "What does `compose extends` do?", "input": "", "output": "Inherits another service's definition to avoid repeating env/logging/resource stanzas."}
 {"instruction": "Explain `compose extends` briefly with an example.", "input": "", "output": "Inherits another service's definition to avoid repeating env/logging/resource stanzas."}
 {"instruction": "When do I use `compose extends`?", "input": "", "output": "Inherits another service's definition to avoid repeating env/logging/resource stanzas."}
+{"instruction": "How would you explain `docker ps -a` to a beginner?", "input": "", "output": "`docker ps` lists running containers; `-a` includes stopped ones with exit codes."}
+{"instruction": "Show me a real-world use of `docker ps -a`.", "input": "", "output": "`docker ps` lists running containers; `-a` includes stopped ones with exit codes."}
+{"instruction": "How would you explain `docker ps -q` to a beginner?", "input": "", "output": "`-q` prints only container IDs — made for scripting: `docker rm $(docker ps -aq -f status=exited)`."}
+{"instruction": "Show me a real-world use of `docker ps -q`.", "input": "", "output": "`-q` prints only container IDs — made for scripting: `docker rm $(docker ps -aq -f status=exited)`."}
+{"instruction": "How would you explain `docker ps --format` to a beginner?", "input": "", "output": "`--format 'table {{.Names}}\\t{{.Status}}'` renders scriptable columns instead of the default table."}
+{"instruction": "Show me a real-world use of `docker ps --format`.", "input": "", "output": "`--format 'table {{.Names}}\\t{{.Status}}'` renders scriptable columns instead of the default table."}
+{"instruction": "How would you explain `docker images -a` to a beginner?", "input": "", "output": "`docker images` lists tagged images; `-a` also shows untagged intermediate layers."}
+{"instruction": "Show me a real-world use of `docker images -a`.", "input": "", "output": "`docker images` lists tagged images; `-a` also shows untagged intermediate layers."}
+{"instruction": "How would you explain `docker images --digests` to a beginner?", "input": "", "output": "`--digests` adds content hashes so you can pin exact bytes, not mutable tags."}
+{"instruction": "Show me a real-world use of `docker images --digests`.", "input": "", "output": "`--digests` adds content hashes so you can pin exact bytes, not mutable tags."}
+{"instruction": "How would you explain `docker logs -f` to a beginner?", "input": "", "output": "`-f` follows log output live, like `tail -f`, until Ctrl-C."}
+{"instruction": "Show me a real-world use of `docker logs -f`.", "input": "", "output": "`-f` follows log output live, like `tail -f`, until Ctrl-C."}
+{"instruction": "How would you explain `docker logs --tail` to a beginner?", "input": "", "output": "`--tail 100` shows only the last 100 lines — essential on chatty services before following."}
+{"instruction": "Show me a real-world use of `docker logs --tail`.", "input": "", "output": "`--tail 100` shows only the last 100 lines — essential on chatty services before following."}
+{"instruction": "How would you explain `docker logs --since` to a beginner?", "input": "", "output": "`--since 30m` slices logs by time; pair with `--until` for incident windows."}
+{"instruction": "Show me a real-world use of `docker logs --since`.", "input": "", "output": "`--since 30m` slices logs by time; pair with `--until` for incident windows."}
+{"instruction": "How would you explain `docker logs -t` to a beginner?", "input": "", "output": "`-t` prefixes each line with an RFC3339 timestamp for correlating across services."}
+{"instruction": "Show me a real-world use of `docker logs -t`.", "input": "", "output": "`-t` prefixes each line with an RFC3339 timestamp for correlating across services."}
+{"instruction": "How would you explain `docker exec -it` to a beginner?", "input": "", "output": "`-it` allocates an interactive TTY shell inside a running container: `docker exec -it web sh`."}
+{"instruction": "Show me a real-world use of `docker exec -it`.", "input": "", "output": "`-it` allocates an interactive TTY shell inside a running container: `docker exec -it web sh`."}
+{"instruction": "How would you explain `docker exec -u` to a beginner?", "input": "", "output": "`-u postgres` runs the command as another user — for DB shells without image changes."}
+{"instruction": "Show me a real-world use of `docker exec -u`.", "input": "", "output": "`-u postgres` runs the command as another user — for DB shells without image changes."}
+{"instruction": "How would you explain `docker run -d` to a beginner?", "input": "", "output": "`-d` detaches: the container runs in background and the terminal returns immediately."}
+{"instruction": "Show me a real-world use of `docker run -d`.", "input": "", "output": "`-d` detaches: the container runs in background and the terminal returns immediately."}
+{"instruction": "How would you explain `docker run --rm` to a beginner?", "input": "", "output": "`--rm` deletes the container on exit — hygiene for one-shot jobs so stopped containers never pile up."}
+{"instruction": "Show me a real-world use of `docker run --rm`.", "input": "", "output": "`--rm` deletes the container on exit — hygiene for one-shot jobs so stopped containers never pile up."}
+{"instruction": "How would you explain `docker run -p` to a beginner?", "input": "", "output": "`-p 8080:80` publishes container port 80 on host 8080; prefix `127.0.0.1:` for loopback-only binding."}
+{"instruction": "Show me a real-world use of `docker run -p`.", "input": "", "output": "`-p 8080:80` publishes container port 80 on host 8080; prefix `127.0.0.1:` for loopback-only binding."}
+{"instruction": "How would you explain `docker run -v` to a beginner?", "input": "", "output": "`-v data:/data` mounts a named volume; `-v ./src:/app` bind-mounts host code for dev reload."}
+{"instruction": "Show me a real-world use of `docker run -v`.", "input": "", "output": "`-v data:/data` mounts a named volume; `-v ./src:/app` bind-mounts host code for dev reload."}
+{"instruction": "How would you explain `docker run -e` to a beginner?", "input": "", "output": "`-e KEY=val` sets container env vars; secrets belong in files/`--env-file`, never `-e` in shell history."}
+{"instruction": "Show me a real-world use of `docker run -e`.", "input": "", "output": "`-e KEY=val` sets container env vars; secrets belong in files/`--env-file`, never `-e` in shell history."}
+{"instruction": "How would you explain `docker run --restart` to a beginner?", "input": "", "output": "`--restart unless-stopped` revives crashed containers and survives host reboots."}
+{"instruction": "Show me a real-world use of `docker run --restart`.", "input": "", "output": "`--restart unless-stopped` revives crashed containers and survives host reboots."}
+{"instruction": "How would you explain `docker run --memory` to a beginner?", "input": "", "output": "`--memory 512m` caps RAM; exceeding it OOM-kills the container (check OOMKilled in inspect)."}
+{"instruction": "Show me a real-world use of `docker run --memory`.", "input": "", "output": "`--memory 512m` caps RAM; exceeding it OOM-kills the container (check OOMKilled in inspect)."}
+{"instruction": "How would you explain `docker run --cpus` to a beginner?", "input": "", "output": "`--cpus 1.5` caps CPU quota — noisy neighbors stop stealing cycles."}
+{"instruction": "Show me a real-world use of `docker run --cpus`.", "input": "", "output": "`--cpus 1.5` caps CPU quota — noisy neighbors stop stealing cycles."}
+{"instruction": "How would you explain `docker build -t` to a beginner?", "input": "", "output": "`-t user/app:1.0` names the result; always tag explicitly instead of accepting `latest`."}
+{"instruction": "Show me a real-world use of `docker build -t`.", "input": "", "output": "`-t user/app:1.0` names the result; always tag explicitly instead of accepting `latest`."}
+{"instruction": "How would you explain `docker build -f` to a beginner?", "input": "", "output": "`-f docker/Dockerfile.prod .` builds a non-default Dockerfile path with repo-root context."}
+{"instruction": "Show me a real-world use of `docker build -f`.", "input": "", "output": "`-f docker/Dockerfile.prod .` builds a non-default Dockerfile path with repo-root context."}
+{"instruction": "How would you explain `docker build --target` to a beginner?", "input": "", "output": "`--target debug` builds only up to a named stage — for debug images without shipping shells."}
+{"instruction": "Show me a real-world use of `docker build --target`.", "input": "", "output": "`--target debug` builds only up to a named stage — for debug images without shipping shells."}
+{"instruction": "How would you explain `docker build --no-cache` to a beginner?", "input": "", "output": "`--no-cache` ignores all layer cache; use to verify clean-room reproducibility, not daily."}
+{"instruction": "Show me a real-world use of `docker build --no-cache`.", "input": "", "output": "`--no-cache` ignores all layer cache; use to verify clean-room reproducibility, not daily."}
+{"instruction": "How would you explain `docker build --build-arg` to a beginner?", "input": "", "output": "`--build-arg VERSION=1.2` injects build-time vars (never secrets — they persist in history)."}
+{"instruction": "Show me a real-world use of `docker build --build-arg`.", "input": "", "output": "`--build-arg VERSION=1.2` injects build-time vars (never secrets — they persist in history)."}
+{"instruction": "How would you explain `docker stop -t` to a beginner?", "input": "", "output": "`-t 30` extends the SIGTERM grace period before SIGKILL for slow-draining apps."}
+{"instruction": "Show me a real-world use of `docker stop -t`.", "input": "", "output": "`-t 30` extends the SIGTERM grace period before SIGKILL for slow-draining apps."}
+{"instruction": "How would you explain `docker rm -f` to a beginner?", "input": "", "output": "`-f` kills a running container before removing — for stuck ones; prefer stop for graceful apps."}
+{"instruction": "Show me a real-world use of `docker rm -f`.", "input": "", "output": "`-f` kills a running container before removing — for stuck ones; prefer stop for graceful apps."}
+{"instruction": "How would you explain `docker rm -v` to a beginner?", "input": "", "output": "`-v` also removes anonymous volumes; named volumes survive (by design)."}
+{"instruction": "Show me a real-world use of `docker rm -v`.", "input": "", "output": "`-v` also removes anonymous volumes; named volumes survive (by design)."}
+{"instruction": "How would you explain `docker rmi -f` to a beginner?", "input": "", "output": "`-f` force-untags; layers vanish only when unreferenced by tags and containers."}
+{"instruction": "Show me a real-world use of `docker rmi -f`.", "input": "", "output": "`-f` force-untags; layers vanish only when unreferenced by tags and containers."}
+{"instruction": "How would you explain `docker network ls` to a beginner?", "input": "", "output": "Lists bridge/host/none plus user-defined and overlay networks with scope and driver."}
+{"instruction": "Show me a real-world use of `docker network ls`.", "input": "", "output": "Lists bridge/host/none plus user-defined and overlay networks with scope and driver."}
+{"instruction": "How would you explain `docker network create` to a beginner?", "input": "", "output": "`docker network create appnet` makes a user-defined bridge with automatic container DNS."}
+{"instruction": "Show me a real-world use of `docker network create`.", "input": "", "output": "`docker network create appnet` makes a user-defined bridge with automatic container DNS."}
+{"instruction": "How would you explain `docker network connect` to a beginner?", "input": "", "output": "Attaches a running container to another network live, optionally with `--alias`."}
+{"instruction": "Show me a real-world use of `docker network connect`.", "input": "", "output": "Attaches a running container to another network live, optionally with `--alias`."}
+{"instruction": "How would you explain `docker network prune` to a beginner?", "input": "", "output": "Deletes unused networks — review first, stopped Compose projects count as unused."}
+{"instruction": "Show me a real-world use of `docker network prune`.", "input": "", "output": "Deletes unused networks — review first, stopped Compose projects count as unused."}
+{"instruction": "How would you explain `docker volume create` to a beginner?", "input": "", "output": "Creates a managed named volume; pair with `--opt type=nfs` for shared storage."}
+{"instruction": "Show me a real-world use of `docker volume create`.", "input": "", "output": "Creates a managed named volume; pair with `--opt type=nfs` for shared storage."}
+{"instruction": "How would you explain `docker volume inspect` to a beginner?", "input": "", "output": "Shows mountpoint, driver and options — start here when data seems to vanish."}
+{"instruction": "Show me a real-world use of `docker volume inspect`.", "input": "", "output": "Shows mountpoint, driver and options — start here when data seems to vanish."}
+{"instruction": "How would you explain `docker volume prune` to a beginner?", "input": "", "output": "Deletes ALL unused volumes including named data — the most dangerous prune; never script blindly."}
+{"instruction": "Show me a real-world use of `docker volume prune`.", "input": "", "output": "Deletes ALL unused volumes including named data — the most dangerous prune; never script blindly."}
+{"instruction": "How would you explain `docker system df` to a beginner?", "input": "", "output": "Reports reclaimable space per object type (images, containers, volumes, build cache)."}
+{"instruction": "Show me a real-world use of `docker system df`.", "input": "", "output": "Reports reclaimable space per object type (images, containers, volumes, build cache)."}
+{"instruction": "How would you explain `docker system prune` to a beginner?", "input": "", "output": "One-shot cleanup of stopped containers, unused networks and dangling images (add `-a --volumes` cautiously)."}
+{"instruction": "Show me a real-world use of `docker system prune`.", "input": "", "output": "One-shot cleanup of stopped containers, unused networks and dangling images (add `-a --volumes` cautiously)."}
+{"instruction": "How would you explain `docker stats --no-stream` to a beginner?", "input": "", "output": "Single snapshot of CPU/mem/IO per container — for monitoring scripts, not humans."}
+{"instruction": "Show me a real-world use of `docker stats --no-stream`.", "input": "", "output": "Single snapshot of CPU/mem/IO per container — for monitoring scripts, not humans."}
+{"instruction": "How would you explain `docker inspect -f` to a beginner?", "input": "", "output": "`-f '{{.State.Status}}'` extracts fields with Go templates — the scriptable alternative to grep."}
+{"instruction": "Show me a real-world use of `docker inspect -f`.", "input": "", "output": "`-f '{{.State.Status}}'` extracts fields with Go templates — the scriptable alternative to grep."}
+{"instruction": "How would you explain `docker cp` to a beginner?", "input": "", "output": "`docker cp web:/app/out ./out` copies files both directions without exec or ssh."}
+{"instruction": "Show me a real-world use of `docker cp`.", "input": "", "output": "`docker cp web:/app/out ./out` copies files both directions without exec or ssh."}
+{"instruction": "How would you explain `docker tag` to a beginner?", "input": "", "output": "Adds an alias (`docker tag src:1 dst:2`); pushing then uploads shared layers once."}
+{"instruction": "Show me a real-world use of `docker tag`.", "input": "", "output": "Adds an alias (`docker tag src:1 dst:2`); pushing then uploads shared layers once."}
+{"instruction": "How would you explain `docker push` to a beginner?", "input": "", "output": "Uploads tagged layers to a registry; log in first and prefer explicit version tags."}
+{"instruction": "Show me a real-world use of `docker push`.", "input": "", "output": "Uploads tagged layers to a registry; log in first and prefer explicit version tags."}
+{"instruction": "How would you explain `docker pull -q` to a beginner?", "input": "", "output": "`-q` suppresses progress bars for CI logs; default pull fetches missing layers only."}
+{"instruction": "Show me a real-world use of `docker pull -q`.", "input": "", "output": "`-q` suppresses progress bars for CI logs; default pull fetches missing layers only."}
+{"instruction": "How would you explain `docker login` to a beginner?", "input": "", "output": "Stores registry credentials (use credential helpers, not raw base64 auths in dotfiles)."}
+{"instruction": "Show me a real-world use of `docker login`.", "input": "", "output": "Stores registry credentials (use credential helpers, not raw base64 auths in dotfiles)."}
+{"instruction": "How would you explain `docker context ls` to a beginner?", "input": "", "output": "Lists fast-switchable daemon endpoints (local, ssh hosts) for multi-host work."}
+{"instruction": "Show me a real-world use of `docker context ls`.", "input": "", "output": "Lists fast-switchable daemon endpoints (local, ssh hosts) for multi-host work."}
+{"instruction": "How would you explain `docker compose up -d` to a beginner?", "input": "", "output": "Starts the whole stack detached, creating networks and volumes as declared."}
+{"instruction": "Show me a real-world use of `docker compose up -d`.", "input": "", "output": "Starts the whole stack detached, creating networks and volumes as declared."}
+{"instruction": "How would you explain `docker compose down -v` to a beginner?", "input": "", "output": "`down` stops and removes containers/nets; `-v` also deletes named volumes (data loss!)."}
+{"instruction": "Show me a real-world use of `docker compose down -v`.", "input": "", "output": "`down` stops and removes containers/nets; `-v` also deletes named volumes (data loss!)."}
+{"instruction": "How would you explain `docker compose logs -f` to a beginner?", "input": "", "output": "Aggregated, prefixed logs of all services with `-f` follow and `--tail` slicing."}
+{"instruction": "Show me a real-world use of `docker compose logs -f`.", "input": "", "output": "Aggregated, prefixed logs of all services with `-f` follow and `--tail` slicing."}
+{"instruction": "How would you explain `docker compose exec` to a beginner?", "input": "", "output": "Runs one-offs inside a service container (`compose exec db psql`) without new containers."}
+{"instruction": "Show me a real-world use of `docker compose exec`.", "input": "", "output": "Runs one-offs inside a service container (`compose exec db psql`) without new containers."}
+{"instruction": "How would you explain `docker compose run --rm` to a beginner?", "input": "", "output": "One-off containers from a service definition, removed on exit — for migrations and shells."}
+{"instruction": "Show me a real-world use of `docker compose run --rm`.", "input": "", "output": "One-off containers from a service definition, removed on exit — for migrations and shells."}
+{"instruction": "How would you explain `docker compose build --pull` to a beginner?", "input": "", "output": "Rebuilds with freshly pulled bases so stale cached tags cannot silently ship."}
+{"instruction": "Show me a real-world use of `docker compose build --pull`.", "input": "", "output": "Rebuilds with freshly pulled bases so stale cached tags cannot silently ship."}
+{"instruction": "How would you explain `docker compose restart` to a beginner?", "input": "", "output": "Restarts service containers in dependency order without recreating them."}
+{"instruction": "Show me a real-world use of `docker compose restart`.", "input": "", "output": "Restarts service containers in dependency order without recreating them."}
+{"instruction": "How would you explain `docker compose port` to a beginner?", "input": "", "output": "`compose port web 80` prints the mapped host port — for dynamic `-p 80` assignments."}
+{"instruction": "Show me a real-world use of `docker compose port`.", "input": "", "output": "`compose port web 80` prints the mapped host port — for dynamic `-p 80` assignments."}
+{"instruction": "How would you explain `docker compose config` to a beginner?", "input": "", "output": "Renders the fully merged, interpolated model — the best multi-file debugging tool."}
+{"instruction": "Show me a real-world use of `docker compose config`.", "input": "", "output": "Renders the fully merged, interpolated model — the best multi-file debugging tool."}
+{"instruction": "How would you explain `compose image` to a beginner?", "input": "", "output": "Pins the exact image (always tag versions, never bare names relying on latest)."}
+{"instruction": "Show me a real-world use of `compose image`.", "input": "", "output": "Pins the exact image (always tag versions, never bare names relying on latest)."}
+{"instruction": "How would you explain `compose build` to a beginner?", "input": "", "output": "Builds from a context+dockerfile instead of pulling; combine with `image:` so built images are tagged."}
+{"instruction": "Show me a real-world use of `compose build`.", "input": "", "output": "Builds from a context+dockerfile instead of pulling; combine with `image:` so built images are tagged."}
+{"instruction": "How would you explain `compose ports` to a beginner?", "input": "", "output": "Publishes `HOST:CONTAINER` mappings; short syntax `- \"8080:80\"` needs quoting in YAML."}
+{"instruction": "Show me a real-world use of `compose ports`.", "input": "", "output": "Publishes `HOST:CONTAINER` mappings; short syntax `- \"8080:80\"` needs quoting in YAML."}
+{"instruction": "How would you explain `compose environment` to a beginner?", "input": "", "output": "Inline KEY=value map; secrets belong in `env_file` or `secrets`, and `.env` never commits."}
+{"instruction": "Show me a real-world use of `compose environment`.", "input": "", "output": "Inline KEY=value map; secrets belong in `env_file` or `secrets`, and `.env` never commits."}
+{"instruction": "How would you explain `compose env_file` to a beginner?", "input": "", "output": "Loads vars from a file kept out of git; explicit `environment:` still wins on conflict."}
+{"instruction": "Show me a real-world use of `compose env_file`.", "input": "", "output": "Loads vars from a file kept out of git; explicit `environment:` still wins on conflict."}
+{"instruction": "How would you explain `compose volumes` to a beginner?", "input": "", "output": "Mounts `named:/path` or `./host:/path`; add `:ro` for configs that must stay immutable."}
+{"instruction": "Show me a real-world use of `compose volumes`.", "input": "", "output": "Mounts `named:/path` or `./host:/path`; add `:ro` for configs that must stay immutable."}
+{"instruction": "How would you explain `compose depends_on` to a beginner?", "input": "", "output": "Orders startup only; add `condition: service_healthy` plus app retries for true readiness."}
+{"instruction": "Show me a real-world use of `compose depends_on`.", "input": "", "output": "Orders startup only; add `condition: service_healthy` plus app retries for true readiness."}
+{"instruction": "How would you explain `compose restart` to a beginner?", "input": "", "output": "`unless-stopped` for services; Compose ignores Swarm-only `deploy.resources` — use `mem_limit/cpus` here."}
+{"instruction": "Show me a real-world use of `compose restart`.", "input": "", "output": "`unless-stopped` for services; Compose ignores Swarm-only `deploy.resources` — use `mem_limit/cpus` here."}
+{"instruction": "How would you explain `compose healthcheck` to a beginner?", "input": "", "output": "Declares `test/interval/timeout/retries/start_period`; powers `depends_on` conditions and `up --wait`."}
+{"instruction": "Show me a real-world use of `compose healthcheck`.", "input": "", "output": "Declares `test/interval/timeout/retries/start_period`; powers `depends_on` conditions and `up --wait`."}
+{"instruction": "How would you explain `compose networks` to a beginner?", "input": "", "output": "Attaches user-defined networks for automatic DNS; default bridge gives no name resolution."}
+{"instruction": "Show me a real-world use of `compose networks`.", "input": "", "output": "Attaches user-defined networks for automatic DNS; default bridge gives no name resolution."}
+{"instruction": "How would you explain `compose profiles` to a beginner?", "input": "", "output": "Marks optional services started only with `--profile name` (debug tools, seeders)."}
+{"instruction": "Show me a real-world use of `compose profiles`.", "input": "", "output": "Marks optional services started only with `--profile name` (debug tools, seeders)."}
+{"instruction": "How would you explain `compose command` to a beginner?", "input": "", "output": "Overrides the image CMD per service; keep `entrypoint` for the fixed binary."}
+{"instruction": "Show me a real-world use of `compose command`.", "input": "", "output": "Overrides the image CMD per service; keep `entrypoint` for the fixed binary."}
+{"instruction": "How would you explain `compose user` to a beginner?", "input": "", "output": "Runs as `uid:gid` without rebuilding (e.g. match host ownership for bind mounts)."}
+{"instruction": "Show me a real-world use of `compose user`.", "input": "", "output": "Runs as `uid:gid` without rebuilding (e.g. match host ownership for bind mounts)."}
+{"instruction": "How would you explain `compose working_dir` to a beginner?", "input": "", "output": "Overrides WORKDIR for runtimes needing a different cwd than the image default."}
+{"instruction": "Show me a real-world use of `compose working_dir`.", "input": "", "output": "Overrides WORKDIR for runtimes needing a different cwd than the image default."}
+{"instruction": "How would you explain `compose stop_grace_period` to a beginner?", "input": "", "output": "Per-service SIGTERM window (e.g. `30s`) for slow-draining apps instead of global `-t`."}
+{"instruction": "Show me a real-world use of `compose stop_grace_period`.", "input": "", "output": "Per-service SIGTERM window (e.g. `30s`) for slow-draining apps instead of global `-t`."}
+{"instruction": "How would you explain `compose logging` to a beginner?", "input": "", "output": "Per-service driver/options (`max-size/max-file`) so one chatty service cannot fill the disk."}
+{"instruction": "Show me a real-world use of `compose logging`.", "input": "", "output": "Per-service driver/options (`max-size/max-file`) so one chatty service cannot fill the disk."}
+{"instruction": "How would you explain `compose deploy` to a beginner?", "input": "", "output": "Swarm-only (replicas, update_config, placement); silently ignored by plain `compose up`."}
+{"instruction": "Show me a real-world use of `compose deploy`.", "input": "", "output": "Swarm-only (replicas, update_config, placement); silently ignored by plain `compose up`."}
+{"instruction": "How would you explain `compose secrets` to a beginner?", "input": "", "output": "Mounts swarm/compose secrets as files under /run/secrets — never env vars for real secrets."}
+{"instruction": "Show me a real-world use of `compose secrets`.", "input": "", "output": "Mounts swarm/compose secrets as files under /run/secrets — never env vars for real secrets."}
+{"instruction": "How would you explain `compose configs` to a beginner?", "input": "", "output": "Mounts config files (nginx.conf) without rebuilding images on config change."}
+{"instruction": "Show me a real-world use of `compose configs`.", "input": "", "output": "Mounts config files (nginx.conf) without rebuilding images on config change."}
+{"instruction": "How would you explain `compose extra_hosts` to a beginner?", "input": "", "output": "Injects host entries (`host.docker.internal:host-gateway`) for host access from containers."}
+{"instruction": "Show me a real-world use of `compose extra_hosts`.", "input": "", "output": "Injects host entries (`host.docker.internal:host-gateway`) for host access from containers."}
+{"instruction": "How would you explain `compose init` to a beginner?", "input": "", "output": "`init: true` adds tini for zombie reaping and signal forwarding per service."}
+{"instruction": "Show me a real-world use of `compose init`.", "input": "", "output": "`init: true` adds tini for zombie reaping and signal forwarding per service."}
+{"instruction": "How would you explain `compose platform` to a beginner?", "input": "", "output": "Pins `linux/amd64` when images are arch-sensitive (Apple Silicon pulling amd64-only images)."}
+{"instruction": "Show me a real-world use of `compose platform`.", "input": "", "output": "Pins `linux/amd64` when images are arch-sensitive (Apple Silicon pulling amd64-only images)."}
+{"instruction": "How would you explain `compose pull_policy` to a beginner?", "input": "", "output": "`always/missing/never/build` controls freshness; `always` in deploy scripts kills stale-tag bugs."}
+{"instruction": "Show me a real-world use of `compose pull_policy`.", "input": "", "output": "`always/missing/never/build` controls freshness; `always` in deploy scripts kills stale-tag bugs."}
+{"instruction": "How would you explain `compose container_name` to a beginner?", "input": "", "output": "Fixes the name but forbids scaling that service — omit it unless something must address it statically."}
+{"instruction": "Show me a real-world use of `compose container_name`.", "input": "", "output": "Fixes the name but forbids scaling that service — omit it unless something must address it statically."}
+{"instruction": "How would you explain `compose extends` to a beginner?", "input": "", "output": "Inherits another service's definition to avoid repeating env/logging/resource stanzas."}
+{"instruction": "Show me a real-world use of `compose extends`.", "input": "", "output": "Inherits another service's definition to avoid repeating env/logging/resource stanzas."}

@@ -21,3 +21,103 @@
 {"instruction": "How do favicons work in 2026?", "input": "", "output": "```html\n<link rel=\"icon\" href=\"/favicon.svg\" type=\"image/svg+xml\">\n<link rel=\"apple-touch-icon\" href=\"/ikon-180.png\">\n```\nSatu SVG cukup untuk pelayar moden (skala sempurna); tambah PNG 180px untuk Apple dan `manifest.json` untuk Android. Letak di root (`/favicon.ico` fallback automatik)."}
 {"instruction": "What are landmarks and skip links?", "input": "", "output": "```html\n<body>\n  <a class=\"lompati\" href=\"#utama\">Lompat ke kandungan</a>\n  <header>...</header>\n  <main id=\"utama\">...</main>\n</body>\n```\nLandmark (header/nav/main/footer) benarkan lompat kawasan via pembaca skrin; pautan langkau kelihatan-semasa-fokus selamatkan pengguna papan kekunci dari tab 50 pautan navigasi."}
 {"instruction": "How does the dialog element work?", "input": "", "output": "```html\n<dialog id=\"d\"><p>Padam barang ini?</p><button>Ya</button></dialog>\n<script>d.showModal()</script>\n```\n`showModal()` beri modal sebenar (fokus terperangkap, Esc tutup, latar ::backdrop) tanpa perpustakaan. Tangani `close` untuk baca `returnValue`; ganti div-modal tersuai di mana-mana boleh."}
+{"instruction": "What does `<!DOCTYPE html>` do?", "input": "", "output": "The doctype triggers standards mode; without it browsers fall back to quirks with legacy box behavior."}
+{"instruction": "Explain `<!DOCTYPE html>` briefly.", "input": "", "output": "The doctype triggers standards mode; without it browsers fall back to quirks with legacy box behavior."}
+{"instruction": "When do I use `<!DOCTYPE html>`?", "input": "", "output": "The doctype triggers standards mode; without it browsers fall back to quirks with legacy box behavior."}
+{"instruction": "Give a practical example of `<!DOCTYPE html>`.", "input": "", "output": "The doctype triggers standards mode; without it browsers fall back to quirks with legacy box behavior."}
+{"instruction": "What is `<!DOCTYPE html>` for?", "input": "", "output": "The doctype triggers standards mode; without it browsers fall back to quirks with legacy box behavior."}
+{"instruction": "What does `headings h1-h6` do?", "input": "", "output": "One h1 per page, ordered levels — screen readers navigate by this outline, not by font size."}
+{"instruction": "Explain `headings h1-h6` briefly.", "input": "", "output": "One h1 per page, ordered levels — screen readers navigate by this outline, not by font size."}
+{"instruction": "When do I use `headings h1-h6`?", "input": "", "output": "One h1 per page, ordered levels — screen readers navigate by this outline, not by font size."}
+{"instruction": "Give a practical example of `headings h1-h6`.", "input": "", "output": "One h1 per page, ordered levels — screen readers navigate by this outline, not by font size."}
+{"instruction": "What is `headings h1-h6` for?", "input": "", "output": "One h1 per page, ordered levels — screen readers navigate by this outline, not by font size."}
+{"instruction": "What does `p br hr` do?", "input": "", "output": "`<p>` paragraphs, `<br>` line breaks, `<hr>` thematic breaks; never fake spacing with empty divs."}
+{"instruction": "Explain `p br hr` briefly.", "input": "", "output": "`<p>` paragraphs, `<br>` line breaks, `<hr>` thematic breaks; never fake spacing with empty divs."}
+{"instruction": "When do I use `p br hr`?", "input": "", "output": "`<p>` paragraphs, `<br>` line breaks, `<hr>` thematic breaks; never fake spacing with empty divs."}
+{"instruction": "Give a practical example of `p br hr`.", "input": "", "output": "`<p>` paragraphs, `<br>` line breaks, `<hr>` thematic breaks; never fake spacing with empty divs."}
+{"instruction": "What is `p br hr` for?", "input": "", "output": "`<p>` paragraphs, `<br>` line breaks, `<hr>` thematic breaks; never fake spacing with empty divs."}
+{"instruction": "What does `a href` do?", "input": "", "output": "Anchors navigate (`href`) or jump (`#id`); external blank tabs need `rel=noopener` for safety."}
+{"instruction": "Explain `a href` briefly.", "input": "", "output": "Anchors navigate (`href`) or jump (`#id`); external blank tabs need `rel=noopener` for safety."}
+{"instruction": "When do I use `a href`?", "input": "", "output": "Anchors navigate (`href`) or jump (`#id`); external blank tabs need `rel=noopener` for safety."}
+{"instruction": "Give a practical example of `a href`.", "input": "", "output": "Anchors navigate (`href`) or jump (`#id`); external blank tabs need `rel=noopener` for safety."}
+{"instruction": "What is `a href` for?", "input": "", "output": "Anchors navigate (`href`) or jump (`#id`); external blank tabs need `rel=noopener` for safety."}
+{"instruction": "What does `img src alt` do?", "input": "", "output": "Always `alt` (content description or empty for decorative); `srcset` serves right sizes per screen."}
+{"instruction": "Explain `img src alt` briefly.", "input": "", "output": "Always `alt` (content description or empty for decorative); `srcset` serves right sizes per screen."}
+{"instruction": "When do I use `img src alt`?", "input": "", "output": "Always `alt` (content description or empty for decorative); `srcset` serves right sizes per screen."}
+{"instruction": "Give a practical example of `img src alt`.", "input": "", "output": "Always `alt` (content description or empty for decorative); `srcset` serves right sizes per screen."}
+{"instruction": "What is `img src alt` for?", "input": "", "output": "Always `alt` (content description or empty for decorative); `srcset` serves right sizes per screen."}
+{"instruction": "What does `ul ol li` do?", "input": "", "output": "`ul` unordered, `ol` meaningful order, `li` items only — nested lists need their own list parent."}
+{"instruction": "Explain `ul ol li` briefly.", "input": "", "output": "`ul` unordered, `ol` meaningful order, `li` items only — nested lists need their own list parent."}
+{"instruction": "When do I use `ul ol li`?", "input": "", "output": "`ul` unordered, `ol` meaningful order, `li` items only — nested lists need their own list parent."}
+{"instruction": "Give a practical example of `ul ol li`.", "input": "", "output": "`ul` unordered, `ol` meaningful order, `li` items only — nested lists need their own list parent."}
+{"instruction": "What is `ul ol li` for?", "input": "", "output": "`ul` unordered, `ol` meaningful order, `li` items only — nested lists need their own list parent."}
+{"instruction": "What does `table tr td` do?", "input": "", "output": "Tables are for tabular data with `th` headers; layout tables break screen readers — use CSS grid."}
+{"instruction": "Explain `table tr td` briefly.", "input": "", "output": "Tables are for tabular data with `th` headers; layout tables break screen readers — use CSS grid."}
+{"instruction": "When do I use `table tr td`?", "input": "", "output": "Tables are for tabular data with `th` headers; layout tables break screen readers — use CSS grid."}
+{"instruction": "Give a practical example of `table tr td`.", "input": "", "output": "Tables are for tabular data with `th` headers; layout tables break screen readers — use CSS grid."}
+{"instruction": "What is `table tr td` for?", "input": "", "output": "Tables are for tabular data with `th` headers; layout tables break screen readers — use CSS grid."}
+{"instruction": "What does `form input` do?", "input": "", "output": "Forms collect with named inputs; `method`/`action` define submission, labels make fields operable."}
+{"instruction": "Explain `form input` briefly.", "input": "", "output": "Forms collect with named inputs; `method`/`action` define submission, labels make fields operable."}
+{"instruction": "When do I use `form input`?", "input": "", "output": "Forms collect with named inputs; `method`/`action` define submission, labels make fields operable."}
+{"instruction": "Give a practical example of `form input`.", "input": "", "output": "Forms collect with named inputs; `method`/`action` define submission, labels make fields operable."}
+{"instruction": "What is `form input` for?", "input": "", "output": "Forms collect with named inputs; `method`/`action` define submission, labels make fields operable."}
+{"instruction": "What does `button type` do?", "input": "", "output": "`type=button` avoids accidental submits inside forms; `submit` sends, `reset` clears (rarely wanted)."}
+{"instruction": "Explain `button type` briefly.", "input": "", "output": "`type=button` avoids accidental submits inside forms; `submit` sends, `reset` clears (rarely wanted)."}
+{"instruction": "When do I use `button type`?", "input": "", "output": "`type=button` avoids accidental submits inside forms; `submit` sends, `reset` clears (rarely wanted)."}
+{"instruction": "Give a practical example of `button type`.", "input": "", "output": "`type=button` avoids accidental submits inside forms; `submit` sends, `reset` clears (rarely wanted)."}
+{"instruction": "What is `button type` for?", "input": "", "output": "`type=button` avoids accidental submits inside forms; `submit` sends, `reset` clears (rarely wanted)."}
+{"instruction": "What does `div vs span` do?", "input": "", "output": "`div` blocks, `span` inlines — both meaningless, so prefer semantic tags and reserve these for styling hooks."}
+{"instruction": "Explain `div vs span` briefly.", "input": "", "output": "`div` blocks, `span` inlines — both meaningless, so prefer semantic tags and reserve these for styling hooks."}
+{"instruction": "When do I use `div vs span`?", "input": "", "output": "`div` blocks, `span` inlines — both meaningless, so prefer semantic tags and reserve these for styling hooks."}
+{"instruction": "Give a practical example of `div vs span`.", "input": "", "output": "`div` blocks, `span` inlines — both meaningless, so prefer semantic tags and reserve these for styling hooks."}
+{"instruction": "What is `div vs span` for?", "input": "", "output": "`div` blocks, `span` inlines — both meaningless, so prefer semantic tags and reserve these for styling hooks."}
+{"instruction": "What does `header footer nav main` do?", "input": "", "output": "Landmarks let assistive tech jump regions; exactly one `main` holds the page's core content."}
+{"instruction": "Explain `header footer nav main` briefly.", "input": "", "output": "Landmarks let assistive tech jump regions; exactly one `main` holds the page's core content."}
+{"instruction": "When do I use `header footer nav main`?", "input": "", "output": "Landmarks let assistive tech jump regions; exactly one `main` holds the page's core content."}
+{"instruction": "Give a practical example of `header footer nav main`.", "input": "", "output": "Landmarks let assistive tech jump regions; exactly one `main` holds the page's core content."}
+{"instruction": "What is `header footer nav main` for?", "input": "", "output": "Landmarks let assistive tech jump regions; exactly one `main` holds the page's core content."}
+{"instruction": "What does `meta viewport` do?", "input": "", "output": "The viewport meta makes mobile render at device width; pair with `charset=utf-8` first in head."}
+{"instruction": "Explain `meta viewport` briefly.", "input": "", "output": "The viewport meta makes mobile render at device width; pair with `charset=utf-8` first in head."}
+{"instruction": "When do I use `meta viewport`?", "input": "", "output": "The viewport meta makes mobile render at device width; pair with `charset=utf-8` first in head."}
+{"instruction": "Give a practical example of `meta viewport`.", "input": "", "output": "The viewport meta makes mobile render at device width; pair with `charset=utf-8` first in head."}
+{"instruction": "What is `meta viewport` for?", "input": "", "output": "The viewport meta makes mobile render at device width; pair with `charset=utf-8` first in head."}
+{"instruction": "What does `title tag` do?", "input": "", "output": "Title shows in tabs/search; unique, front-loaded keywords per page under ~60 characters."}
+{"instruction": "Explain `title tag` briefly.", "input": "", "output": "Title shows in tabs/search; unique, front-loaded keywords per page under ~60 characters."}
+{"instruction": "When do I use `title tag`?", "input": "", "output": "Title shows in tabs/search; unique, front-loaded keywords per page under ~60 characters."}
+{"instruction": "Give a practical example of `title tag`.", "input": "", "output": "Title shows in tabs/search; unique, front-loaded keywords per page under ~60 characters."}
+{"instruction": "What is `title tag` for?", "input": "", "output": "Title shows in tabs/search; unique, front-loaded keywords per page under ~60 characters."}
+{"instruction": "What does `script src` do?", "input": "", "output": "`defer` scripts run in order after parsing; `async` runs whenever fetched — choose by dependency."}
+{"instruction": "Explain `script src` briefly.", "input": "", "output": "`defer` scripts run in order after parsing; `async` runs whenever fetched — choose by dependency."}
+{"instruction": "When do I use `script src`?", "input": "", "output": "`defer` scripts run in order after parsing; `async` runs whenever fetched — choose by dependency."}
+{"instruction": "Give a practical example of `script src`.", "input": "", "output": "`defer` scripts run in order after parsing; `async` runs whenever fetched — choose by dependency."}
+{"instruction": "What is `script src` for?", "input": "", "output": "`defer` scripts run in order after parsing; `async` runs whenever fetched — choose by dependency."}
+{"instruction": "What does `link stylesheet` do?", "input": "", "output": "Stylesheets in head prevent unstyled flashes; `media=print` scopes print-only rules."}
+{"instruction": "Explain `link stylesheet` briefly.", "input": "", "output": "Stylesheets in head prevent unstyled flashes; `media=print` scopes print-only rules."}
+{"instruction": "When do I use `link stylesheet`?", "input": "", "output": "Stylesheets in head prevent unstyled flashes; `media=print` scopes print-only rules."}
+{"instruction": "Give a practical example of `link stylesheet`.", "input": "", "output": "Stylesheets in head prevent unstyled flashes; `media=print` scopes print-only rules."}
+{"instruction": "What is `link stylesheet` for?", "input": "", "output": "Stylesheets in head prevent unstyled flashes; `media=print` scopes print-only rules."}
+{"instruction": "What does `video controls` do?", "input": "", "output": "Native video needs `controls` plus `preload=metadata`; caption tracks serve deaf users and SEO."}
+{"instruction": "Explain `video controls` briefly.", "input": "", "output": "Native video needs `controls` plus `preload=metadata`; caption tracks serve deaf users and SEO."}
+{"instruction": "When do I use `video controls`?", "input": "", "output": "Native video needs `controls` plus `preload=metadata`; caption tracks serve deaf users and SEO."}
+{"instruction": "Give a practical example of `video controls`.", "input": "", "output": "Native video needs `controls` plus `preload=metadata`; caption tracks serve deaf users and SEO."}
+{"instruction": "What is `video controls` for?", "input": "", "output": "Native video needs `controls` plus `preload=metadata`; caption tracks serve deaf users and SEO."}
+{"instruction": "What does `audio controls` do?", "input": "", "output": "Audio tags stream with built-in UI; offer transcripts — the accessible and searchable equivalent."}
+{"instruction": "Explain `audio controls` briefly.", "input": "", "output": "Audio tags stream with built-in UI; offer transcripts — the accessible and searchable equivalent."}
+{"instruction": "When do I use `audio controls`?", "input": "", "output": "Audio tags stream with built-in UI; offer transcripts — the accessible and searchable equivalent."}
+{"instruction": "Give a practical example of `audio controls`.", "input": "", "output": "Audio tags stream with built-in UI; offer transcripts — the accessible and searchable equivalent."}
+{"instruction": "What is `audio controls` for?", "input": "", "output": "Audio tags stream with built-in UI; offer transcripts — the accessible and searchable equivalent."}
+{"instruction": "What does `select option` do?", "input": "", "output": "Native selects work everywhere including mobile pickers; custom dropdowns must reimplement keyboard support."}
+{"instruction": "Explain `select option` briefly.", "input": "", "output": "Native selects work everywhere including mobile pickers; custom dropdowns must reimplement keyboard support."}
+{"instruction": "When do I use `select option`?", "input": "", "output": "Native selects work everywhere including mobile pickers; custom dropdowns must reimplement keyboard support."}
+{"instruction": "Give a practical example of `select option`.", "input": "", "output": "Native selects work everywhere including mobile pickers; custom dropdowns must reimplement keyboard support."}
+{"instruction": "What is `select option` for?", "input": "", "output": "Native selects work everywhere including mobile pickers; custom dropdowns must reimplement keyboard support."}
+{"instruction": "What does `textarea` do?", "input": "", "output": "Textareas take `rows`/`maxlength` and resize handles; never single-line `input` for paragraphs."}
+{"instruction": "Explain `textarea` briefly.", "input": "", "output": "Textareas take `rows`/`maxlength` and resize handles; never single-line `input` for paragraphs."}
+{"instruction": "When do I use `textarea`?", "input": "", "output": "Textareas take `rows`/`maxlength` and resize handles; never single-line `input` for paragraphs."}
+{"instruction": "Give a practical example of `textarea`.", "input": "", "output": "Textareas take `rows`/`maxlength` and resize handles; never single-line `input` for paragraphs."}
+{"instruction": "What is `textarea` for?", "input": "", "output": "Textareas take `rows`/`maxlength` and resize handles; never single-line `input` for paragraphs."}
+{"instruction": "What does `fieldset legend` do?", "input": "", "output": "Group related controls in `fieldset` with a `legend` caption — free semantics for forms and radios."}
+{"instruction": "Explain `fieldset legend` briefly.", "input": "", "output": "Group related controls in `fieldset` with a `legend` caption — free semantics for forms and radios."}
+{"instruction": "When do I use `fieldset legend`?", "input": "", "output": "Group related controls in `fieldset` with a `legend` caption — free semantics for forms and radios."}
+{"instruction": "Give a practical example of `fieldset legend`.", "input": "", "output": "Group related controls in `fieldset` with a `legend` caption — free semantics for forms and radios."}
+{"instruction": "What is `fieldset legend` for?", "input": "", "output": "Group related controls in `fieldset` with a `legend` caption — free semantics for forms and radios."}

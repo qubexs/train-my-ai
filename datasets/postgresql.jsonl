@@ -23,3 +23,103 @@
 {"instruction": "How do CASE expressions work in SQL?", "input": "", "output": "```sql\nSELECT nama,\n  CASE WHEN stok = 0 THEN 'habis'\n       WHEN stok < 10 THEN 'rendah'\n       ELSE 'ok' END AS status\nFROM barang;\n```\nCASE ialah if-ekspresi dalam query — labelkan data tanpa pusingan app. Boleh dalam ORDER BY/WHERE juga untuk susunan tersuai."}
 {"instruction": "How do partial and expression indexes work?", "input": "", "output": "```sql\nCREATE INDEX idx_aktif ON pengguna (emel) WHERE aktif;\nCREATE INDEX idx_nama_lower ON pengguna (lower(nama));\n```\nIndeks separa kecil dan laju untuk subset panas; indeks ekspresi laju carian fungsi. Syarat: query mesti sepadan predikat/ekspresi tepat — `WHERE aktif AND ...` guna yang pertama, tanpa `aktif` tidak."}
 {"instruction": "How do advisory locks coordinate Postgres jobs?", "input": "", "output": "```sql\nSELECT pg_try_advisory_lock(12345);  -- true = kami pemegang\n-- ... kerja ...\nSELECT pg_advisory_unlock(12345);\n```\nKunci nasihat selaras cron berlapis/pekerja tanpa tabel kunci sendiri — `pg_try_*` tidak sekat. Bebaskan sentiasa (finally) dan pilih ID kunci unik per tugas."}
+{"instruction": "What does `psql -U app` do?", "input": "", "output": "`psql -U app -d kedai` connects; `-h/-p` for remotes; `.pgpass` avoids password prompts in scripts."}
+{"instruction": "Explain `psql -U app` briefly.", "input": "", "output": "`psql -U app -d kedai` connects; `-h/-p` for remotes; `.pgpass` avoids password prompts in scripts."}
+{"instruction": "When do I use `psql -U app`?", "input": "", "output": "`psql -U app -d kedai` connects; `-h/-p` for remotes; `.pgpass` avoids password prompts in scripts."}
+{"instruction": "Give a practical example of `psql -U app`.", "input": "", "output": "`psql -U app -d kedai` connects; `-h/-p` for remotes; `.pgpass` avoids password prompts in scripts."}
+{"instruction": "What is `psql -U app` for?", "input": "", "output": "`psql -U app -d kedai` connects; `-h/-p` for remotes; `.pgpass` avoids password prompts in scripts."}
+{"instruction": "What does `\\l \\c \\dt` do?", "input": "", "output": "Backslash commands navigate: `\\l` databases, `\\c` switch, `\\dt` tables, `\\d t` columns."}
+{"instruction": "Explain `\\l \\c \\dt` briefly.", "input": "", "output": "Backslash commands navigate: `\\l` databases, `\\c` switch, `\\dt` tables, `\\d t` columns."}
+{"instruction": "When do I use `\\l \\c \\dt`?", "input": "", "output": "Backslash commands navigate: `\\l` databases, `\\c` switch, `\\dt` tables, `\\d t` columns."}
+{"instruction": "Give a practical example of `\\l \\c \\dt`.", "input": "", "output": "Backslash commands navigate: `\\l` databases, `\\c` switch, `\\dt` tables, `\\d t` columns."}
+{"instruction": "What is `\\l \\c \\dt` for?", "input": "", "output": "Backslash commands navigate: `\\l` databases, `\\c` switch, `\\dt` tables, `\\d t` columns."}
+{"instruction": "What does `CREATE DATABASE` do?", "input": "", "output": "`createdb kedai` or SQL with OWNER set to the app role — migrations then need no superuser."}
+{"instruction": "Explain `CREATE DATABASE` briefly.", "input": "", "output": "`createdb kedai` or SQL with OWNER set to the app role — migrations then need no superuser."}
+{"instruction": "When do I use `CREATE DATABASE`?", "input": "", "output": "`createdb kedai` or SQL with OWNER set to the app role — migrations then need no superuser."}
+{"instruction": "Give a practical example of `CREATE DATABASE`.", "input": "", "output": "`createdb kedai` or SQL with OWNER set to the app role — migrations then need no superuser."}
+{"instruction": "What is `CREATE DATABASE` for?", "input": "", "output": "`createdb kedai` or SQL with OWNER set to the app role — migrations then need no superuser."}
+{"instruction": "What does `CREATE TABLE` do?", "input": "", "output": "Declare PKs, NOT NULLs and defaults up front; `GENERATED ... AS IDENTITY` beats legacy SERIAL."}
+{"instruction": "Explain `CREATE TABLE` briefly.", "input": "", "output": "Declare PKs, NOT NULLs and defaults up front; `GENERATED ... AS IDENTITY` beats legacy SERIAL."}
+{"instruction": "When do I use `CREATE TABLE`?", "input": "", "output": "Declare PKs, NOT NULLs and defaults up front; `GENERATED ... AS IDENTITY` beats legacy SERIAL."}
+{"instruction": "Give a practical example of `CREATE TABLE`.", "input": "", "output": "Declare PKs, NOT NULLs and defaults up front; `GENERATED ... AS IDENTITY` beats legacy SERIAL."}
+{"instruction": "What is `CREATE TABLE` for?", "input": "", "output": "Declare PKs, NOT NULLs and defaults up front; `GENERATED ... AS IDENTITY` beats legacy SERIAL."}
+{"instruction": "What does `SERIAL IDENTITY UUID` do?", "input": "", "output": "IDENTITY is the modern auto-key; UUIDs (`gen_random_uuid()`) suit public/distributed ids; JSONB for semi-structure."}
+{"instruction": "Explain `SERIAL IDENTITY UUID` briefly.", "input": "", "output": "IDENTITY is the modern auto-key; UUIDs (`gen_random_uuid()`) suit public/distributed ids; JSONB for semi-structure."}
+{"instruction": "When do I use `SERIAL IDENTITY UUID`?", "input": "", "output": "IDENTITY is the modern auto-key; UUIDs (`gen_random_uuid()`) suit public/distributed ids; JSONB for semi-structure."}
+{"instruction": "Give a practical example of `SERIAL IDENTITY UUID`.", "input": "", "output": "IDENTITY is the modern auto-key; UUIDs (`gen_random_uuid()`) suit public/distributed ids; JSONB for semi-structure."}
+{"instruction": "What is `SERIAL IDENTITY UUID` for?", "input": "", "output": "IDENTITY is the modern auto-key; UUIDs (`gen_random_uuid()`) suit public/distributed ids; JSONB for semi-structure."}
+{"instruction": "What does `INSERT RETURNING` do?", "input": "", "output": "`RETURNING id` fetches generated values in one round trip — no follow-up SELECT, no races."}
+{"instruction": "Explain `INSERT RETURNING` briefly.", "input": "", "output": "`RETURNING id` fetches generated values in one round trip — no follow-up SELECT, no races."}
+{"instruction": "When do I use `INSERT RETURNING`?", "input": "", "output": "`RETURNING id` fetches generated values in one round trip — no follow-up SELECT, no races."}
+{"instruction": "Give a practical example of `INSERT RETURNING`.", "input": "", "output": "`RETURNING id` fetches generated values in one round trip — no follow-up SELECT, no races."}
+{"instruction": "What is `INSERT RETURNING` for?", "input": "", "output": "`RETURNING id` fetches generated values in one round trip — no follow-up SELECT, no races."}
+{"instruction": "What does `SELECT WHERE` do?", "input": "", "output": "Filter early with indexed WHERE; `ILIKE` for case-insensitive, `IN (...)` for sets, `BETWEEN` for ranges."}
+{"instruction": "Explain `SELECT WHERE` briefly.", "input": "", "output": "Filter early with indexed WHERE; `ILIKE` for case-insensitive, `IN (...)` for sets, `BETWEEN` for ranges."}
+{"instruction": "When do I use `SELECT WHERE`?", "input": "", "output": "Filter early with indexed WHERE; `ILIKE` for case-insensitive, `IN (...)` for sets, `BETWEEN` for ranges."}
+{"instruction": "Give a practical example of `SELECT WHERE`.", "input": "", "output": "Filter early with indexed WHERE; `ILIKE` for case-insensitive, `IN (...)` for sets, `BETWEEN` for ranges."}
+{"instruction": "What is `SELECT WHERE` for?", "input": "", "output": "Filter early with indexed WHERE; `ILIKE` for case-insensitive, `IN (...)` for sets, `BETWEEN` for ranges."}
+{"instruction": "What does `UPDATE DELETE` do?", "input": "", "output": "Same rule as MySQL: develop WHERE as SELECT first; wrap multi-statement changes in transactions."}
+{"instruction": "Explain `UPDATE DELETE` briefly.", "input": "", "output": "Same rule as MySQL: develop WHERE as SELECT first; wrap multi-statement changes in transactions."}
+{"instruction": "When do I use `UPDATE DELETE`?", "input": "", "output": "Same rule as MySQL: develop WHERE as SELECT first; wrap multi-statement changes in transactions."}
+{"instruction": "Give a practical example of `UPDATE DELETE`.", "input": "", "output": "Same rule as MySQL: develop WHERE as SELECT first; wrap multi-statement changes in transactions."}
+{"instruction": "What is `UPDATE DELETE` for?", "input": "", "output": "Same rule as MySQL: develop WHERE as SELECT first; wrap multi-statement changes in transactions."}
+{"instruction": "What does `JOIN` do?", "input": "", "output": "INNER/LEFT semantics mirror MySQL; `USING (id)` shortens equi-joins on same-named keys."}
+{"instruction": "Explain `JOIN` briefly.", "input": "", "output": "INNER/LEFT semantics mirror MySQL; `USING (id)` shortens equi-joins on same-named keys."}
+{"instruction": "When do I use `JOIN`?", "input": "", "output": "INNER/LEFT semantics mirror MySQL; `USING (id)` shortens equi-joins on same-named keys."}
+{"instruction": "Give a practical example of `JOIN`.", "input": "", "output": "INNER/LEFT semantics mirror MySQL; `USING (id)` shortens equi-joins on same-named keys."}
+{"instruction": "What is `JOIN` for?", "input": "", "output": "INNER/LEFT semantics mirror MySQL; `USING (id)` shortens equi-joins on same-named keys."}
+{"instruction": "What does `GROUP BY HAVING` do?", "input": "", "output": "Aggregate then filter groups with HAVING; `FILTER (WHERE ...)` pivots multiple aggregates in one pass."}
+{"instruction": "Explain `GROUP BY HAVING` briefly.", "input": "", "output": "Aggregate then filter groups with HAVING; `FILTER (WHERE ...)` pivots multiple aggregates in one pass."}
+{"instruction": "When do I use `GROUP BY HAVING`?", "input": "", "output": "Aggregate then filter groups with HAVING; `FILTER (WHERE ...)` pivots multiple aggregates in one pass."}
+{"instruction": "Give a practical example of `GROUP BY HAVING`.", "input": "", "output": "Aggregate then filter groups with HAVING; `FILTER (WHERE ...)` pivots multiple aggregates in one pass."}
+{"instruction": "What is `GROUP BY HAVING` for?", "input": "", "output": "Aggregate then filter groups with HAVING; `FILTER (WHERE ...)` pivots multiple aggregates in one pass."}
+{"instruction": "What does `ORDER BY LIMIT` do?", "input": "", "output": "Pair LIMIT with deterministic ORDER BY (add id tiebreak); keyset (`WHERE id >`) beats OFFSET at scale."}
+{"instruction": "Explain `ORDER BY LIMIT` briefly.", "input": "", "output": "Pair LIMIT with deterministic ORDER BY (add id tiebreak); keyset (`WHERE id >`) beats OFFSET at scale."}
+{"instruction": "When do I use `ORDER BY LIMIT`?", "input": "", "output": "Pair LIMIT with deterministic ORDER BY (add id tiebreak); keyset (`WHERE id >`) beats OFFSET at scale."}
+{"instruction": "Give a practical example of `ORDER BY LIMIT`.", "input": "", "output": "Pair LIMIT with deterministic ORDER BY (add id tiebreak); keyset (`WHERE id >`) beats OFFSET at scale."}
+{"instruction": "What is `ORDER BY LIMIT` for?", "input": "", "output": "Pair LIMIT with deterministic ORDER BY (add id tiebreak); keyset (`WHERE id >`) beats OFFSET at scale."}
+{"instruction": "What does `CTE WITH` do?", "input": "", "output": "WITH names subqueries as readable steps; chain several comma-separated; PG12+ inlines them well."}
+{"instruction": "Explain `CTE WITH` briefly.", "input": "", "output": "WITH names subqueries as readable steps; chain several comma-separated; PG12+ inlines them well."}
+{"instruction": "When do I use `CTE WITH`?", "input": "", "output": "WITH names subqueries as readable steps; chain several comma-separated; PG12+ inlines them well."}
+{"instruction": "Give a practical example of `CTE WITH`.", "input": "", "output": "WITH names subqueries as readable steps; chain several comma-separated; PG12+ inlines them well."}
+{"instruction": "What is `CTE WITH` for?", "input": "", "output": "WITH names subqueries as readable steps; chain several comma-separated; PG12+ inlines them well."}
+{"instruction": "What does `window ROW_NUMBER` do?", "input": "", "output": "Windows compute across related rows without collapsing them — rankings, running totals, lags."}
+{"instruction": "Explain `window ROW_NUMBER` briefly.", "input": "", "output": "Windows compute across related rows without collapsing them — rankings, running totals, lags."}
+{"instruction": "When do I use `window ROW_NUMBER`?", "input": "", "output": "Windows compute across related rows without collapsing them — rankings, running totals, lags."}
+{"instruction": "Give a practical example of `window ROW_NUMBER`.", "input": "", "output": "Windows compute across related rows without collapsing them — rankings, running totals, lags."}
+{"instruction": "What is `window ROW_NUMBER` for?", "input": "", "output": "Windows compute across related rows without collapsing them — rankings, running totals, lags."}
+{"instruction": "What does `EXPLAIN ANALYZE` do?", "input": "", "output": "Shows real plan + timings; seek Seq Scans on big tables, add btree/GIN/BRIN indexes, re-measure."}
+{"instruction": "Explain `EXPLAIN ANALYZE` briefly.", "input": "", "output": "Shows real plan + timings; seek Seq Scans on big tables, add btree/GIN/BRIN indexes, re-measure."}
+{"instruction": "When do I use `EXPLAIN ANALYZE`?", "input": "", "output": "Shows real plan + timings; seek Seq Scans on big tables, add btree/GIN/BRIN indexes, re-measure."}
+{"instruction": "Give a practical example of `EXPLAIN ANALYZE`.", "input": "", "output": "Shows real plan + timings; seek Seq Scans on big tables, add btree/GIN/BRIN indexes, re-measure."}
+{"instruction": "What is `EXPLAIN ANALYZE` for?", "input": "", "output": "Shows real plan + timings; seek Seq Scans on big tables, add btree/GIN/BRIN indexes, re-measure."}
+{"instruction": "What does `CREATE INDEX` do?", "input": "", "output": "Btree default, GIN for JSONB/full-text, BRIN for append-only time series; partial indexes shrink hot paths."}
+{"instruction": "Explain `CREATE INDEX` briefly.", "input": "", "output": "Btree default, GIN for JSONB/full-text, BRIN for append-only time series; partial indexes shrink hot paths."}
+{"instruction": "When do I use `CREATE INDEX`?", "input": "", "output": "Btree default, GIN for JSONB/full-text, BRIN for append-only time series; partial indexes shrink hot paths."}
+{"instruction": "Give a practical example of `CREATE INDEX`.", "input": "", "output": "Btree default, GIN for JSONB/full-text, BRIN for append-only time series; partial indexes shrink hot paths."}
+{"instruction": "What is `CREATE INDEX` for?", "input": "", "output": "Btree default, GIN for JSONB/full-text, BRIN for append-only time series; partial indexes shrink hot paths."}
+{"instruction": "What does `pg_dump pg_restore` do?", "input": "", "output": "Custom format (`-Fc`) enables selective restores; pair base backups with WAL archiving for PITR."}
+{"instruction": "Explain `pg_dump pg_restore` briefly.", "input": "", "output": "Custom format (`-Fc`) enables selective restores; pair base backups with WAL archiving for PITR."}
+{"instruction": "When do I use `pg_dump pg_restore`?", "input": "", "output": "Custom format (`-Fc`) enables selective restores; pair base backups with WAL archiving for PITR."}
+{"instruction": "Give a practical example of `pg_dump pg_restore`.", "input": "", "output": "Custom format (`-Fc`) enables selective restores; pair base backups with WAL archiving for PITR."}
+{"instruction": "What is `pg_dump pg_restore` for?", "input": "", "output": "Custom format (`-Fc`) enables selective restores; pair base backups with WAL archiving for PITR."}
+{"instruction": "What does `ALTER TABLE` do?", "input": "", "output": "Add nullable columns freely; backfill, then add NOT NULL — rewrites need maintenance windows on big tables."}
+{"instruction": "Explain `ALTER TABLE` briefly.", "input": "", "output": "Add nullable columns freely; backfill, then add NOT NULL — rewrites need maintenance windows on big tables."}
+{"instruction": "When do I use `ALTER TABLE`?", "input": "", "output": "Add nullable columns freely; backfill, then add NOT NULL — rewrites need maintenance windows on big tables."}
+{"instruction": "Give a practical example of `ALTER TABLE`.", "input": "", "output": "Add nullable columns freely; backfill, then add NOT NULL — rewrites need maintenance windows on big tables."}
+{"instruction": "What is `ALTER TABLE` for?", "input": "", "output": "Add nullable columns freely; backfill, then add NOT NULL — rewrites need maintenance windows on big tables."}
+{"instruction": "What does `TRUNCATE` do?", "input": "", "output": "Instant full clears without row WAL; needs no WHERE by design; `RESTART IDENTITY` resets sequences."}
+{"instruction": "Explain `TRUNCATE` briefly.", "input": "", "output": "Instant full clears without row WAL; needs no WHERE by design; `RESTART IDENTITY` resets sequences."}
+{"instruction": "When do I use `TRUNCATE`?", "input": "", "output": "Instant full clears without row WAL; needs no WHERE by design; `RESTART IDENTITY` resets sequences."}
+{"instruction": "Give a practical example of `TRUNCATE`.", "input": "", "output": "Instant full clears without row WAL; needs no WHERE by design; `RESTART IDENTITY` resets sequences."}
+{"instruction": "What is `TRUNCATE` for?", "input": "", "output": "Instant full clears without row WAL; needs no WHERE by design; `RESTART IDENTITY` resets sequences."}
+{"instruction": "What does `COPY CSV` do?", "input": "", "output": "Server-side `\\copy` moves bulk data hundreds of times faster than row INSERTs; mind superuser vs client paths."}
+{"instruction": "Explain `COPY CSV` briefly.", "input": "", "output": "Server-side `\\copy` moves bulk data hundreds of times faster than row INSERTs; mind superuser vs client paths."}
+{"instruction": "When do I use `COPY CSV`?", "input": "", "output": "Server-side `\\copy` moves bulk data hundreds of times faster than row INSERTs; mind superuser vs client paths."}
+{"instruction": "Give a practical example of `COPY CSV`.", "input": "", "output": "Server-side `\\copy` moves bulk data hundreds of times faster than row INSERTs; mind superuser vs client paths."}
+{"instruction": "What is `COPY CSV` for?", "input": "", "output": "Server-side `\\copy` moves bulk data hundreds of times faster than row INSERTs; mind superuser vs client paths."}
+{"instruction": "What does `roles pg_hba` do?", "input": "", "output": "Roles + `pg_hba.conf` (first match wins, prefer scram-sha-256) gate access; `SELECT pg_reload_conf()` applies."}
+{"instruction": "Explain `roles pg_hba` briefly.", "input": "", "output": "Roles + `pg_hba.conf` (first match wins, prefer scram-sha-256) gate access; `SELECT pg_reload_conf()` applies."}
+{"instruction": "When do I use `roles pg_hba`?", "input": "", "output": "Roles + `pg_hba.conf` (first match wins, prefer scram-sha-256) gate access; `SELECT pg_reload_conf()` applies."}
+{"instruction": "Give a practical example of `roles pg_hba`.", "input": "", "output": "Roles + `pg_hba.conf` (first match wins, prefer scram-sha-256) gate access; `SELECT pg_reload_conf()` applies."}
+{"instruction": "What is `roles pg_hba` for?", "input": "", "output": "Roles + `pg_hba.conf` (first match wins, prefer scram-sha-256) gate access; `SELECT pg_reload_conf()` applies."}

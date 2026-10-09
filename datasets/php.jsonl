@@ -10,3 +10,103 @@
 {"instruction": "How do PHP sessions work securely?", "input": "", "output": "```php\nsession_start();\n$_SESSION['uid'] = $id;\nsession_regenerate_id(true); // selepas log masuk\n```\nRegenerate ID selepas log masuk cegah fixation; `session_destroy()` + padam cookie semasa log keluar. Simpan sesi di luar kod (Redis/memcached untuk multi-server), dan tandakan cookie `httponly` + `secure`."}
 {"instruction": "How do I configure PHP error reporting?", "input": "", "output": "Dev: `error_reporting(E_ALL); ini_set('display_errors', '1');` — nampak semua amaran awal. Prod: papar OFF, log ON (`log_errors=1`, `error_log=/var/log/php/app.log`). Amaran yang disorok hari ini adalah outage minggu depan — betulkan, jangan `@` senyapkan."}
 {"instruction": "How do I enable OPcache for PHP?", "input": "", "output": "Dalam php.ini prod: `opcache.enable=1`, `opcache.memory_consumption=256`, dan `opcache.validate_timestamps=0` (muat semula manual selepas deploy via `opcache_reset()` atau restart php-fpm). OPcache simpan bytecode terkompil — speedup 2-3x percuma. Dev kekalkan validate_timestamps=1 agar edit terus nampak."}
+{"instruction": "What does `<?php echo` do?", "input": "", "output": "`<?php echo $x; ?>` (or `<?= $x ?>`) prints escaped output; all dynamic output needs `htmlspecialchars`."}
+{"instruction": "Explain `<?php echo` briefly.", "input": "", "output": "`<?php echo $x; ?>` (or `<?= $x ?>`) prints escaped output; all dynamic output needs `htmlspecialchars`."}
+{"instruction": "When do I use `<?php echo`?", "input": "", "output": "`<?php echo $x; ?>` (or `<?= $x ?>`) prints escaped output; all dynamic output needs `htmlspecialchars`."}
+{"instruction": "Give a practical example of `<?php echo`.", "input": "", "output": "`<?php echo $x; ?>` (or `<?= $x ?>`) prints escaped output; all dynamic output needs `htmlspecialchars`."}
+{"instruction": "What is `<?php echo` for?", "input": "", "output": "`<?php echo $x; ?>` (or `<?= $x ?>`) prints escaped output; all dynamic output needs `htmlspecialchars`."}
+{"instruction": "What does `$variables` do?", "input": "", "output": "`$` prefixes all variables (loosely typed); `$_GET/$_POST` carry request input — never trusted raw."}
+{"instruction": "Explain `$variables` briefly.", "input": "", "output": "`$` prefixes all variables (loosely typed); `$_GET/$_POST` carry request input — never trusted raw."}
+{"instruction": "When do I use `$variables`?", "input": "", "output": "`$` prefixes all variables (loosely typed); `$_GET/$_POST` carry request input — never trusted raw."}
+{"instruction": "Give a practical example of `$variables`.", "input": "", "output": "`$` prefixes all variables (loosely typed); `$_GET/$_POST` carry request input — never trusted raw."}
+{"instruction": "What is `$variables` for?", "input": "", "output": "`$` prefixes all variables (loosely typed); `$_GET/$_POST` carry request input — never trusted raw."}
+{"instruction": "What does `if else` do?", "input": "", "output": "Standard branches with `===` strict compare; loose `==` juggling (`'0' == false`) is a classic trap."}
+{"instruction": "Explain `if else` briefly.", "input": "", "output": "Standard branches with `===` strict compare; loose `==` juggling (`'0' == false`) is a classic trap."}
+{"instruction": "When do I use `if else`?", "input": "", "output": "Standard branches with `===` strict compare; loose `==` juggling (`'0' == false`) is a classic trap."}
+{"instruction": "Give a practical example of `if else`.", "input": "", "output": "Standard branches with `===` strict compare; loose `==` juggling (`'0' == false`) is a classic trap."}
+{"instruction": "What is `if else` for?", "input": "", "output": "Standard branches with `===` strict compare; loose `==` juggling (`'0' == false`) is a classic trap."}
+{"instruction": "What does `for foreach while` do?", "input": "", "output": "`foreach ($arr as $k => $v)` is the workhorse; `while` needs manual progress or loops forever."}
+{"instruction": "Explain `for foreach while` briefly.", "input": "", "output": "`foreach ($arr as $k => $v)` is the workhorse; `while` needs manual progress or loops forever."}
+{"instruction": "When do I use `for foreach while`?", "input": "", "output": "`foreach ($arr as $k => $v)` is the workhorse; `while` needs manual progress or loops forever."}
+{"instruction": "Give a practical example of `for foreach while`.", "input": "", "output": "`foreach ($arr as $k => $v)` is the workhorse; `while` needs manual progress or loops forever."}
+{"instruction": "What is `for foreach while` for?", "input": "", "output": "`foreach ($arr as $k => $v)` is the workhorse; `while` needs manual progress or loops forever."}
+{"instruction": "What does `function` do?", "input": "", "output": "Functions take typed params with defaults; `declare(strict_types=1)` per file stops silent coercion."}
+{"instruction": "Explain `function` briefly.", "input": "", "output": "Functions take typed params with defaults; `declare(strict_types=1)` per file stops silent coercion."}
+{"instruction": "When do I use `function`?", "input": "", "output": "Functions take typed params with defaults; `declare(strict_types=1)` per file stops silent coercion."}
+{"instruction": "Give a practical example of `function`.", "input": "", "output": "Functions take typed params with defaults; `declare(strict_types=1)` per file stops silent coercion."}
+{"instruction": "What is `function` for?", "input": "", "output": "Functions take typed params with defaults; `declare(strict_types=1)` per file stops silent coercion."}
+{"instruction": "What does `arrays assoc` do?", "input": "", "output": "PHP arrays are ordered maps; `[]` appends, `count()` sizes, `array_*` helpers transform."}
+{"instruction": "Explain `arrays assoc` briefly.", "input": "", "output": "PHP arrays are ordered maps; `[]` appends, `count()` sizes, `array_*` helpers transform."}
+{"instruction": "When do I use `arrays assoc`?", "input": "", "output": "PHP arrays are ordered maps; `[]` appends, `count()` sizes, `array_*` helpers transform."}
+{"instruction": "Give a practical example of `arrays assoc`.", "input": "", "output": "PHP arrays are ordered maps; `[]` appends, `count()` sizes, `array_*` helpers transform."}
+{"instruction": "What is `arrays assoc` for?", "input": "", "output": "PHP arrays are ordered maps; `[]` appends, `count()` sizes, `array_*` helpers transform."}
+{"instruction": "What does `count() sizeof` do?", "input": "", "output": "`count()` sizes arrays (O(1)); empty check via `=== []` or `empty()` — know their falsy differences."}
+{"instruction": "Explain `count() sizeof` briefly.", "input": "", "output": "`count()` sizes arrays (O(1)); empty check via `=== []` or `empty()` — know their falsy differences."}
+{"instruction": "When do I use `count() sizeof`?", "input": "", "output": "`count()` sizes arrays (O(1)); empty check via `=== []` or `empty()` — know their falsy differences."}
+{"instruction": "Give a practical example of `count() sizeof`.", "input": "", "output": "`count()` sizes arrays (O(1)); empty check via `=== []` or `empty()` — know their falsy differences."}
+{"instruction": "What is `count() sizeof` for?", "input": "", "output": "`count()` sizes arrays (O(1)); empty check via `=== []` or `empty()` — know their falsy differences."}
+{"instruction": "What does `strlen strpos` do?", "input": "", "output": "`strlen` bytes (not chars — use `mb_strlen` for Unicode); `strpos` returns 0-or-false, compare with `!==`."}
+{"instruction": "Explain `strlen strpos` briefly.", "input": "", "output": "`strlen` bytes (not chars — use `mb_strlen` for Unicode); `strpos` returns 0-or-false, compare with `!==`."}
+{"instruction": "When do I use `strlen strpos`?", "input": "", "output": "`strlen` bytes (not chars — use `mb_strlen` for Unicode); `strpos` returns 0-or-false, compare with `!==`."}
+{"instruction": "Give a practical example of `strlen strpos`.", "input": "", "output": "`strlen` bytes (not chars — use `mb_strlen` for Unicode); `strpos` returns 0-or-false, compare with `!==`."}
+{"instruction": "What is `strlen strpos` for?", "input": "", "output": "`strlen` bytes (not chars — use `mb_strlen` for Unicode); `strpos` returns 0-or-false, compare with `!==`."}
+{"instruction": "What does `str_replace explode` do?", "input": "", "output": "`str_replace` swaps substrings; `explode(',', $s)` splits, `implode` glues — CSV lines in two calls."}
+{"instruction": "Explain `str_replace explode` briefly.", "input": "", "output": "`str_replace` swaps substrings; `explode(',', $s)` splits, `implode` glues — CSV lines in two calls."}
+{"instruction": "When do I use `str_replace explode`?", "input": "", "output": "`str_replace` swaps substrings; `explode(',', $s)` splits, `implode` glues — CSV lines in two calls."}
+{"instruction": "Give a practical example of `str_replace explode`.", "input": "", "output": "`str_replace` swaps substrings; `explode(',', $s)` splits, `implode` glues — CSV lines in two calls."}
+{"instruction": "What is `str_replace explode` for?", "input": "", "output": "`str_replace` swaps substrings; `explode(',', $s)` splits, `implode` glues — CSV lines in two calls."}
+{"instruction": "What does `include require` do?", "input": "", "output": "`require` fatals on missing (critical code), `include` warns; `_once` variants prevent redeclaration."}
+{"instruction": "Explain `include require` briefly.", "input": "", "output": "`require` fatals on missing (critical code), `include` warns; `_once` variants prevent redeclaration."}
+{"instruction": "When do I use `include require`?", "input": "", "output": "`require` fatals on missing (critical code), `include` warns; `_once` variants prevent redeclaration."}
+{"instruction": "Give a practical example of `include require`.", "input": "", "output": "`require` fatals on missing (critical code), `include` warns; `_once` variants prevent redeclaration."}
+{"instruction": "What is `include require` for?", "input": "", "output": "`require` fatals on missing (critical code), `include` warns; `_once` variants prevent redeclaration."}
+{"instruction": "What does `class new` do?", "input": "", "output": "One class per PSR-4 file; constructor promotion trims boilerplate; visibility guards internals."}
+{"instruction": "Explain `class new` briefly.", "input": "", "output": "One class per PSR-4 file; constructor promotion trims boilerplate; visibility guards internals."}
+{"instruction": "When do I use `class new`?", "input": "", "output": "One class per PSR-4 file; constructor promotion trims boilerplate; visibility guards internals."}
+{"instruction": "Give a practical example of `class new`.", "input": "", "output": "One class per PSR-4 file; constructor promotion trims boilerplate; visibility guards internals."}
+{"instruction": "What is `class new` for?", "input": "", "output": "One class per PSR-4 file; constructor promotion trims boilerplate; visibility guards internals."}
+{"instruction": "What does `composer install` do?", "input": "", "output": "Composer resolves `composer.json` into locked `composer.lock`; commit both, never `vendor/`."}
+{"instruction": "Explain `composer install` briefly.", "input": "", "output": "Composer resolves `composer.json` into locked `composer.lock`; commit both, never `vendor/`."}
+{"instruction": "When do I use `composer install`?", "input": "", "output": "Composer resolves `composer.json` into locked `composer.lock`; commit both, never `vendor/`."}
+{"instruction": "Give a practical example of `composer install`.", "input": "", "output": "Composer resolves `composer.json` into locked `composer.lock`; commit both, never `vendor/`."}
+{"instruction": "What is `composer install` for?", "input": "", "output": "Composer resolves `composer.json` into locked `composer.lock`; commit both, never `vendor/`."}
+{"instruction": "What does `password_hash` do?", "input": "", "output": "`password_hash` with Argon2/bcrypt handles salt+cost; verify with `password_verify`, rehash on cost bumps."}
+{"instruction": "Explain `password_hash` briefly.", "input": "", "output": "`password_hash` with Argon2/bcrypt handles salt+cost; verify with `password_verify`, rehash on cost bumps."}
+{"instruction": "When do I use `password_hash`?", "input": "", "output": "`password_hash` with Argon2/bcrypt handles salt+cost; verify with `password_verify`, rehash on cost bumps."}
+{"instruction": "Give a practical example of `password_hash`.", "input": "", "output": "`password_hash` with Argon2/bcrypt handles salt+cost; verify with `password_verify`, rehash on cost bumps."}
+{"instruction": "What is `password_hash` for?", "input": "", "output": "`password_hash` with Argon2/bcrypt handles salt+cost; verify with `password_verify`, rehash on cost bumps."}
+{"instruction": "What does `PDO prepare` do?", "input": "", "output": "Prepared placeholders separate data from SQL (injection-proof); set ERRMODE_EXCEPTION and real prepares."}
+{"instruction": "Explain `PDO prepare` briefly.", "input": "", "output": "Prepared placeholders separate data from SQL (injection-proof); set ERRMODE_EXCEPTION and real prepares."}
+{"instruction": "When do I use `PDO prepare`?", "input": "", "output": "Prepared placeholders separate data from SQL (injection-proof); set ERRMODE_EXCEPTION and real prepares."}
+{"instruction": "Give a practical example of `PDO prepare`.", "input": "", "output": "Prepared placeholders separate data from SQL (injection-proof); set ERRMODE_EXCEPTION and real prepares."}
+{"instruction": "What is `PDO prepare` for?", "input": "", "output": "Prepared placeholders separate data from SQL (injection-proof); set ERRMODE_EXCEPTION and real prepares."}
+{"instruction": "What does `header Location` do?", "input": "", "output": "`header('Location: /x')` redirects but must precede any output; follow with `exit` to stop rendering."}
+{"instruction": "Explain `header Location` briefly.", "input": "", "output": "`header('Location: /x')` redirects but must precede any output; follow with `exit` to stop rendering."}
+{"instruction": "When do I use `header Location`?", "input": "", "output": "`header('Location: /x')` redirects but must precede any output; follow with `exit` to stop rendering."}
+{"instruction": "Give a practical example of `header Location`.", "input": "", "output": "`header('Location: /x')` redirects but must precede any output; follow with `exit` to stop rendering."}
+{"instruction": "What is `header Location` for?", "input": "", "output": "`header('Location: /x')` redirects but must precede any output; follow with `exit` to stop rendering."}
+{"instruction": "What does `session_start` do?", "input": "", "output": "Sessions persist per-user state; regenerate id after login, destroy on logout, flag cookies httponly+secure."}
+{"instruction": "Explain `session_start` briefly.", "input": "", "output": "Sessions persist per-user state; regenerate id after login, destroy on logout, flag cookies httponly+secure."}
+{"instruction": "When do I use `session_start`?", "input": "", "output": "Sessions persist per-user state; regenerate id after login, destroy on logout, flag cookies httponly+secure."}
+{"instruction": "Give a practical example of `session_start`.", "input": "", "output": "Sessions persist per-user state; regenerate id after login, destroy on logout, flag cookies httponly+secure."}
+{"instruction": "What is `session_start` for?", "input": "", "output": "Sessions persist per-user state; regenerate id after login, destroy on logout, flag cookies httponly+secure."}
+{"instruction": "What does `try catch` do?", "input": "", "output": "Catch specific `Exception` subclasses; log with context and rethrow or render — never swallow silently."}
+{"instruction": "Explain `try catch` briefly.", "input": "", "output": "Catch specific `Exception` subclasses; log with context and rethrow or render — never swallow silently."}
+{"instruction": "When do I use `try catch`?", "input": "", "output": "Catch specific `Exception` subclasses; log with context and rethrow or render — never swallow silently."}
+{"instruction": "Give a practical example of `try catch`.", "input": "", "output": "Catch specific `Exception` subclasses; log with context and rethrow or render — never swallow silently."}
+{"instruction": "What is `try catch` for?", "input": "", "output": "Catch specific `Exception` subclasses; log with context and rethrow or render — never swallow silently."}
+{"instruction": "What does `date() time` do?", "input": "", "output": "`date('Y-m-d')` formats timestamps; store UTC and convert per user timezone at display."}
+{"instruction": "Explain `date() time` briefly.", "input": "", "output": "`date('Y-m-d')` formats timestamps; store UTC and convert per user timezone at display."}
+{"instruction": "When do I use `date() time`?", "input": "", "output": "`date('Y-m-d')` formats timestamps; store UTC and convert per user timezone at display."}
+{"instruction": "Give a practical example of `date() time`.", "input": "", "output": "`date('Y-m-d')` formats timestamps; store UTC and convert per user timezone at display."}
+{"instruction": "What is `date() time` for?", "input": "", "output": "`date('Y-m-d')` formats timestamps; store UTC and convert per user timezone at display."}
+{"instruction": "What does `file_get_contents` do?", "input": "", "output": "Reads files/URLs into strings simply; check `=== false` and prefer streams for huge payloads."}
+{"instruction": "Explain `file_get_contents` briefly.", "input": "", "output": "Reads files/URLs into strings simply; check `=== false` and prefer streams for huge payloads."}
+{"instruction": "When do I use `file_get_contents`?", "input": "", "output": "Reads files/URLs into strings simply; check `=== false` and prefer streams for huge payloads."}
+{"instruction": "Give a practical example of `file_get_contents`.", "input": "", "output": "Reads files/URLs into strings simply; check `=== false` and prefer streams for huge payloads."}
+{"instruction": "What is `file_get_contents` for?", "input": "", "output": "Reads files/URLs into strings simply; check `=== false` and prefer streams for huge payloads."}
+{"instruction": "What does `__construct` do?", "input": "", "output": "Constructors build valid objects (inject deps, no work); heavy lifting belongs in explicit methods, not constructors."}
+{"instruction": "Explain `__construct` briefly.", "input": "", "output": "Constructors build valid objects (inject deps, no work); heavy lifting belongs in explicit methods, not constructors."}
+{"instruction": "When do I use `__construct`?", "input": "", "output": "Constructors build valid objects (inject deps, no work); heavy lifting belongs in explicit methods, not constructors."}
+{"instruction": "Give a practical example of `__construct`.", "input": "", "output": "Constructors build valid objects (inject deps, no work); heavy lifting belongs in explicit methods, not constructors."}
+{"instruction": "What is `__construct` for?", "input": "", "output": "Constructors build valid objects (inject deps, no work); heavy lifting belongs in explicit methods, not constructors."}

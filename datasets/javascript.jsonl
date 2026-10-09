@@ -52,3 +52,103 @@
 {"instruction": "What does strict mode change in JS?", "input": "", "output": "Modul ESM dan class sentiasa strict: tugasan ke pemboleh ubah tidak diisytihar jadi ralat (bukan global senyap), `this` undefined dalam fungsi biasa, `delete` pada sifat gagal. Tulis semua kod baharu sebagai modul — strict percuma tanpa perlu tulis manual."}
 {"instruction": "What is event delegation?", "input": "", "output": "```js\nsenarai.addEventListener(\"click\", (e) => {\n  const btn = e.target.closest(\"button[data-id]\");\n  if (btn) padam(btn.dataset.id);\n});\n```\nSatu pendengar pada induk tangani semua anak kini dan hadapan (termasuk dinamik) — ganti ratusan pendengar. `closest()` cari pemegang sebenar; semak null sebelum guna."}
 {"instruction": "How do I cancel fetch requests?", "input": "", "output": "```js\nconst c = new AbortController();\nfetch(url, { signal: c.signal });\n// kemudian: c.abort();\n```\nBatalkan permintaan basi (carian semasa menaip, komponen unmount) untuk elak race: respons lewat menimpa terkini. Tangani `AbortError` senyap — ia aliran normal, bukan pepijat."}
+{"instruction": "What does `Array.map` do?", "input": "", "output": "`map` transforms each element and returns a new array; original untouched — the functional workhorse."}
+{"instruction": "Explain `Array.map` briefly.", "input": "", "output": "`map` transforms each element and returns a new array; original untouched — the functional workhorse."}
+{"instruction": "When do I use `Array.map`?", "input": "", "output": "`map` transforms each element and returns a new array; original untouched — the functional workhorse."}
+{"instruction": "Give a practical example of `Array.map`.", "input": "", "output": "`map` transforms each element and returns a new array; original untouched — the functional workhorse."}
+{"instruction": "What is `Array.map` for?", "input": "", "output": "`map` transforms each element and returns a new array; original untouched — the functional workhorse."}
+{"instruction": "What does `Array.filter` do?", "input": "", "output": "`filter` keeps elements passing the test; chain after map for transform-then-select pipelines."}
+{"instruction": "Explain `Array.filter` briefly.", "input": "", "output": "`filter` keeps elements passing the test; chain after map for transform-then-select pipelines."}
+{"instruction": "When do I use `Array.filter`?", "input": "", "output": "`filter` keeps elements passing the test; chain after map for transform-then-select pipelines."}
+{"instruction": "Give a practical example of `Array.filter`.", "input": "", "output": "`filter` keeps elements passing the test; chain after map for transform-then-select pipelines."}
+{"instruction": "What is `Array.filter` for?", "input": "", "output": "`filter` keeps elements passing the test; chain after map for transform-then-select pipelines."}
+{"instruction": "What does `Array.reduce` do?", "input": "", "output": "`reduce` folds to one value with an accumulator; always pass the initial value to avoid edge bugs."}
+{"instruction": "Explain `Array.reduce` briefly.", "input": "", "output": "`reduce` folds to one value with an accumulator; always pass the initial value to avoid edge bugs."}
+{"instruction": "When do I use `Array.reduce`?", "input": "", "output": "`reduce` folds to one value with an accumulator; always pass the initial value to avoid edge bugs."}
+{"instruction": "Give a practical example of `Array.reduce`.", "input": "", "output": "`reduce` folds to one value with an accumulator; always pass the initial value to avoid edge bugs."}
+{"instruction": "What is `Array.reduce` for?", "input": "", "output": "`reduce` folds to one value with an accumulator; always pass the initial value to avoid edge bugs."}
+{"instruction": "What does `Array.find` do?", "input": "", "output": "`find` returns the first match (or undefined); `findIndex` gives its position for splicing."}
+{"instruction": "Explain `Array.find` briefly.", "input": "", "output": "`find` returns the first match (or undefined); `findIndex` gives its position for splicing."}
+{"instruction": "When do I use `Array.find`?", "input": "", "output": "`find` returns the first match (or undefined); `findIndex` gives its position for splicing."}
+{"instruction": "Give a practical example of `Array.find`.", "input": "", "output": "`find` returns the first match (or undefined); `findIndex` gives its position for splicing."}
+{"instruction": "What is `Array.find` for?", "input": "", "output": "`find` returns the first match (or undefined); `findIndex` gives its position for splicing."}
+{"instruction": "What does `Array.includes` do?", "input": "", "output": "`includes` answers membership directly; second arg sets the start index for searches."}
+{"instruction": "Explain `Array.includes` briefly.", "input": "", "output": "`includes` answers membership directly; second arg sets the start index for searches."}
+{"instruction": "When do I use `Array.includes`?", "input": "", "output": "`includes` answers membership directly; second arg sets the start index for searches."}
+{"instruction": "Give a practical example of `Array.includes`.", "input": "", "output": "`includes` answers membership directly; second arg sets the start index for searches."}
+{"instruction": "What is `Array.includes` for?", "input": "", "output": "`includes` answers membership directly; second arg sets the start index for searches."}
+{"instruction": "What does `slice vs splice` do?", "input": "", "output": "`slice` copies a range immutably; `splice` mutates in place for insert/delete — never confuse them."}
+{"instruction": "Explain `slice vs splice` briefly.", "input": "", "output": "`slice` copies a range immutably; `splice` mutates in place for insert/delete — never confuse them."}
+{"instruction": "When do I use `slice vs splice`?", "input": "", "output": "`slice` copies a range immutably; `splice` mutates in place for insert/delete — never confuse them."}
+{"instruction": "Give a practical example of `slice vs splice`.", "input": "", "output": "`slice` copies a range immutably; `splice` mutates in place for insert/delete — never confuse them."}
+{"instruction": "What is `slice vs splice` for?", "input": "", "output": "`slice` copies a range immutably; `splice` mutates in place for insert/delete — never confuse them."}
+{"instruction": "What does `push and pop` do?", "input": "", "output": "`push` appends (returns length), `pop` removes the end; `shift`/`unshift` work the front slower."}
+{"instruction": "Explain `push and pop` briefly.", "input": "", "output": "`push` appends (returns length), `pop` removes the end; `shift`/`unshift` work the front slower."}
+{"instruction": "When do I use `push and pop`?", "input": "", "output": "`push` appends (returns length), `pop` removes the end; `shift`/`unshift` work the front slower."}
+{"instruction": "Give a practical example of `push and pop`.", "input": "", "output": "`push` appends (returns length), `pop` removes the end; `shift`/`unshift` work the front slower."}
+{"instruction": "What is `push and pop` for?", "input": "", "output": "`push` appends (returns length), `pop` removes the end; `shift`/`unshift` work the front slower."}
+{"instruction": "What does `join and split` do?", "input": "", "output": "`join('-')` glues with a separator; `split(',')` breaks strings apart — CSV lines in one call."}
+{"instruction": "Explain `join and split` briefly.", "input": "", "output": "`join('-')` glues with a separator; `split(',')` breaks strings apart — CSV lines in one call."}
+{"instruction": "When do I use `join and split`?", "input": "", "output": "`join('-')` glues with a separator; `split(',')` breaks strings apart — CSV lines in one call."}
+{"instruction": "Give a practical example of `join and split`.", "input": "", "output": "`join('-')` glues with a separator; `split(',')` breaks strings apart — CSV lines in one call."}
+{"instruction": "What is `join and split` for?", "input": "", "output": "`join('-')` glues with a separator; `split(',')` breaks strings apart — CSV lines in one call."}
+{"instruction": "What does `Object.keys/values/entries` do?", "input": "", "output": "These list an object's keys, values or pairs for loops; `Object.fromEntries` rebuilds objects."}
+{"instruction": "Explain `Object.keys/values/entries` briefly.", "input": "", "output": "These list an object's keys, values or pairs for loops; `Object.fromEntries` rebuilds objects."}
+{"instruction": "When do I use `Object.keys/values/entries`?", "input": "", "output": "These list an object's keys, values or pairs for loops; `Object.fromEntries` rebuilds objects."}
+{"instruction": "Give a practical example of `Object.keys/values/entries`.", "input": "", "output": "These list an object's keys, values or pairs for loops; `Object.fromEntries` rebuilds objects."}
+{"instruction": "What is `Object.keys/values/entries` for?", "input": "", "output": "These list an object's keys, values or pairs for loops; `Object.fromEntries` rebuilds objects."}
+{"instruction": "What does `JSON.parse/stringify` do?", "input": "", "output": "`parse` revives objects (wrap in try/catch); `stringify` serializes — functions and undefined drop silently."}
+{"instruction": "Explain `JSON.parse/stringify` briefly.", "input": "", "output": "`parse` revives objects (wrap in try/catch); `stringify` serializes — functions and undefined drop silently."}
+{"instruction": "When do I use `JSON.parse/stringify`?", "input": "", "output": "`parse` revives objects (wrap in try/catch); `stringify` serializes — functions and undefined drop silently."}
+{"instruction": "Give a practical example of `JSON.parse/stringify`.", "input": "", "output": "`parse` revives objects (wrap in try/catch); `stringify` serializes — functions and undefined drop silently."}
+{"instruction": "What is `JSON.parse/stringify` for?", "input": "", "output": "`parse` revives objects (wrap in try/catch); `stringify` serializes — functions and undefined drop silently."}
+{"instruction": "What does `typeof` do?", "input": "", "output": "`typeof` names primitives (`typeof []` is misleadingly `object` — use Array.isArray); `instanceof` checks prototypes."}
+{"instruction": "Explain `typeof` briefly.", "input": "", "output": "`typeof` names primitives (`typeof []` is misleadingly `object` — use Array.isArray); `instanceof` checks prototypes."}
+{"instruction": "When do I use `typeof`?", "input": "", "output": "`typeof` names primitives (`typeof []` is misleadingly `object` — use Array.isArray); `instanceof` checks prototypes."}
+{"instruction": "Give a practical example of `typeof`.", "input": "", "output": "`typeof` names primitives (`typeof []` is misleadingly `object` — use Array.isArray); `instanceof` checks prototypes."}
+{"instruction": "What is `typeof` for?", "input": "", "output": "`typeof` names primitives (`typeof []` is misleadingly `object` — use Array.isArray); `instanceof` checks prototypes."}
+{"instruction": "What does `template literals` do?", "input": "", "output": "Backticks embed `${expr}` and span lines; tagged templates power SQL/HTML builders safely."}
+{"instruction": "Explain `template literals` briefly.", "input": "", "output": "Backticks embed `${expr}` and span lines; tagged templates power SQL/HTML builders safely."}
+{"instruction": "When do I use `template literals`?", "input": "", "output": "Backticks embed `${expr}` and span lines; tagged templates power SQL/HTML builders safely."}
+{"instruction": "Give a practical example of `template literals`.", "input": "", "output": "Backticks embed `${expr}` and span lines; tagged templates power SQL/HTML builders safely."}
+{"instruction": "What is `template literals` for?", "input": "", "output": "Backticks embed `${expr}` and span lines; tagged templates power SQL/HTML builders safely."}
+{"instruction": "What does `arrow functions` do?", "input": "", "output": "Arrows bind outer `this` lexically and suit callbacks; they cannot be constructors (no `new`)."}
+{"instruction": "Explain `arrow functions` briefly.", "input": "", "output": "Arrows bind outer `this` lexically and suit callbacks; they cannot be constructors (no `new`)."}
+{"instruction": "When do I use `arrow functions`?", "input": "", "output": "Arrows bind outer `this` lexically and suit callbacks; they cannot be constructors (no `new`)."}
+{"instruction": "Give a practical example of `arrow functions`.", "input": "", "output": "Arrows bind outer `this` lexically and suit callbacks; they cannot be constructors (no `new`)."}
+{"instruction": "What is `arrow functions` for?", "input": "", "output": "Arrows bind outer `this` lexically and suit callbacks; they cannot be constructors (no `new`)."}
+{"instruction": "What does `spread ...` do?", "input": "", "output": "Spread expands iterables into calls/arrays/objects; shallow only — nested objects stay shared."}
+{"instruction": "Explain `spread ...` briefly.", "input": "", "output": "Spread expands iterables into calls/arrays/objects; shallow only — nested objects stay shared."}
+{"instruction": "When do I use `spread ...`?", "input": "", "output": "Spread expands iterables into calls/arrays/objects; shallow only — nested objects stay shared."}
+{"instruction": "Give a practical example of `spread ...`.", "input": "", "output": "Spread expands iterables into calls/arrays/objects; shallow only — nested objects stay shared."}
+{"instruction": "What is `spread ...` for?", "input": "", "output": "Spread expands iterables into calls/arrays/objects; shallow only — nested objects stay shared."}
+{"instruction": "What does `destructuring` do?", "input": "", "output": "Pull fields positionally (`[a, b]`) or by name (`{x}`) with defaults; rest (`...r`) gathers leftovers."}
+{"instruction": "Explain `destructuring` briefly.", "input": "", "output": "Pull fields positionally (`[a, b]`) or by name (`{x}`) with defaults; rest (`...r`) gathers leftovers."}
+{"instruction": "When do I use `destructuring`?", "input": "", "output": "Pull fields positionally (`[a, b]`) or by name (`{x}`) with defaults; rest (`...r`) gathers leftovers."}
+{"instruction": "Give a practical example of `destructuring`.", "input": "", "output": "Pull fields positionally (`[a, b]`) or by name (`{x}`) with defaults; rest (`...r`) gathers leftovers."}
+{"instruction": "What is `destructuring` for?", "input": "", "output": "Pull fields positionally (`[a, b]`) or by name (`{x}`) with defaults; rest (`...r`) gathers leftovers."}
+{"instruction": "What does `optional chaining ?.` do?", "input": "", "output": "`?.` stops at null/undefined instead of throwing — safe deep access without guard pyramids."}
+{"instruction": "Explain `optional chaining ?.` briefly.", "input": "", "output": "`?.` stops at null/undefined instead of throwing — safe deep access without guard pyramids."}
+{"instruction": "When do I use `optional chaining ?.`?", "input": "", "output": "`?.` stops at null/undefined instead of throwing — safe deep access without guard pyramids."}
+{"instruction": "Give a practical example of `optional chaining ?.`.", "input": "", "output": "`?.` stops at null/undefined instead of throwing — safe deep access without guard pyramids."}
+{"instruction": "What is `optional chaining ?.` for?", "input": "", "output": "`?.` stops at null/undefined instead of throwing — safe deep access without guard pyramids."}
+{"instruction": "What does `nullish ??` do?", "input": "", "output": "`??` defaults only null/undefined, unlike `||` which also swallows 0, '' and false."}
+{"instruction": "Explain `nullish ??` briefly.", "input": "", "output": "`??` defaults only null/undefined, unlike `||` which also swallows 0, '' and false."}
+{"instruction": "When do I use `nullish ??`?", "input": "", "output": "`??` defaults only null/undefined, unlike `||` which also swallows 0, '' and false."}
+{"instruction": "Give a practical example of `nullish ??`.", "input": "", "output": "`??` defaults only null/undefined, unlike `||` which also swallows 0, '' and false."}
+{"instruction": "What is `nullish ??` for?", "input": "", "output": "`??` defaults only null/undefined, unlike `||` which also swallows 0, '' and false."}
+{"instruction": "What does `promises then/catch` do?", "input": "", "output": "Promises model future values; always end chains with `.catch` — unhandled rejections crash processes."}
+{"instruction": "Explain `promises then/catch` briefly.", "input": "", "output": "Promises model future values; always end chains with `.catch` — unhandled rejections crash processes."}
+{"instruction": "When do I use `promises then/catch`?", "input": "", "output": "Promises model future values; always end chains with `.catch` — unhandled rejections crash processes."}
+{"instruction": "Give a practical example of `promises then/catch`.", "input": "", "output": "Promises model future values; always end chains with `.catch` — unhandled rejections crash processes."}
+{"instruction": "What is `promises then/catch` for?", "input": "", "output": "Promises model future values; always end chains with `.catch` — unhandled rejections crash processes."}
+{"instruction": "What does `setTimeout/clearTimeout` do?", "input": "", "output": "`setTimeout` defers once (keep the id to cancel); `setInterval` repeats until cleared."}
+{"instruction": "Explain `setTimeout/clearTimeout` briefly.", "input": "", "output": "`setTimeout` defers once (keep the id to cancel); `setInterval` repeats until cleared."}
+{"instruction": "When do I use `setTimeout/clearTimeout`?", "input": "", "output": "`setTimeout` defers once (keep the id to cancel); `setInterval` repeats until cleared."}
+{"instruction": "Give a practical example of `setTimeout/clearTimeout`.", "input": "", "output": "`setTimeout` defers once (keep the id to cancel); `setInterval` repeats until cleared."}
+{"instruction": "What is `setTimeout/clearTimeout` for?", "input": "", "output": "`setTimeout` defers once (keep the id to cancel); `setInterval` repeats until cleared."}
+{"instruction": "What does `localStorage` do?", "input": "", "output": "`localStorage` persists strings per origin (~5MB); JSON-encode objects and guard quota errors."}
+{"instruction": "Explain `localStorage` briefly.", "input": "", "output": "`localStorage` persists strings per origin (~5MB); JSON-encode objects and guard quota errors."}
+{"instruction": "When do I use `localStorage`?", "input": "", "output": "`localStorage` persists strings per origin (~5MB); JSON-encode objects and guard quota errors."}
+{"instruction": "Give a practical example of `localStorage`.", "input": "", "output": "`localStorage` persists strings per origin (~5MB); JSON-encode objects and guard quota errors."}
+{"instruction": "What is `localStorage` for?", "input": "", "output": "`localStorage` persists strings per origin (~5MB); JSON-encode objects and guard quota errors."}

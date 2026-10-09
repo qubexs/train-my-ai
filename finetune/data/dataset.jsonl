@@ -123,6 +123,105 @@
 {"instruction": "Jumlah belanja setiap pengguna", "input": "", "output": "```sql\nSELECT p.nama, SUM(o.jumlah) AS jumlah FROM pengguna p JOIN pesanan o ON o.pengguna_id = p.id GROUP BY p.nama;\n```"}
 {"instruction": "Jumlah belanja setiap pengguna — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT p.nama, SUM(o.jumlah) AS jumlah FROM pengguna p JOIN pesanan o ON o.pengguna_id = p.id GROUP BY p.nama;\n```"}
 {"instruction": "Tulis query: Jumlah belanja setiap pengguna.", "input": "", "output": "```sql\nSELECT p.nama, SUM(o.jumlah) AS jumlah FROM pengguna p JOIN pesanan o ON o.pengguna_id = p.id GROUP BY p.nama;\n```"}
+{"instruction": "Beri SQL untuk: Senaraikan semua pengguna.", "input": "", "output": "```sql\nSELECT * FROM pengguna;\n```"}
+{"instruction": "Jawab dengan SQL: Senaraikan semua pengguna.", "input": "", "output": "```sql\nSELECT * FROM pengguna;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Senaraikan semua pengguna.", "input": "", "output": "```sql\nSELECT * FROM pengguna;\n```"}
+{"instruction": "Beri SQL untuk: Kira baris dalam pengguna.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pengguna;\n```"}
+{"instruction": "Jawab dengan SQL: Kira baris dalam pengguna.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pengguna;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Kira baris dalam pengguna.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pengguna;\n```"}
+{"instruction": "Beri SQL untuk: Cari pengguna di mana nama bersamaan 'Ali'.", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama = 'Ali';\n```"}
+{"instruction": "Jawab dengan SQL: Cari pengguna di mana nama bersamaan 'Ali'.", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama = 'Ali';\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Cari pengguna di mana nama bersamaan 'Ali'.", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama = 'Ali';\n```"}
+{"instruction": "Beri SQL untuk: Susun pengguna mengikut nama menurun, 5 teratas.", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY nama DESC LIMIT 5;\n```"}
+{"instruction": "Jawab dengan SQL: Susun pengguna mengikut nama menurun, 5 teratas.", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY nama DESC LIMIT 5;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Susun pengguna mengikut nama menurun, 5 teratas.", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY nama DESC LIMIT 5;\n```"}
+{"instruction": "Beri SQL untuk: Jumlahkan nama dalam pengguna berkelompok mengikut emel.", "input": "", "output": "```sql\nSELECT emel, SUM(nama) AS jumlah FROM pengguna GROUP BY emel;\n```"}
+{"instruction": "Jawab dengan SQL: Jumlahkan nama dalam pengguna berkelompok mengikut emel.", "input": "", "output": "```sql\nSELECT emel, SUM(nama) AS jumlah FROM pengguna GROUP BY emel;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Jumlahkan nama dalam pengguna berkelompok mengikut emel.", "input": "", "output": "```sql\nSELECT emel, SUM(nama) AS jumlah FROM pengguna GROUP BY emel;\n```"}
+{"instruction": "Beri SQL untuk: Kemas kini pengguna: tetapkan nama kepada 'Ali' untuk id 1.", "input": "", "output": "```sql\nUPDATE pengguna SET nama = 'Ali' WHERE id = 1;\n```"}
+{"instruction": "Jawab dengan SQL: Kemas kini pengguna: tetapkan nama kepada 'Ali' untuk id 1.", "input": "", "output": "```sql\nUPDATE pengguna SET nama = 'Ali' WHERE id = 1;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Kemas kini pengguna: tetapkan nama kepada 'Ali' untuk id 1.", "input": "", "output": "```sql\nUPDATE pengguna SET nama = 'Ali' WHERE id = 1;\n```"}
+{"instruction": "Beri SQL untuk: Padam baris id 9 dari pengguna.", "input": "", "output": "```sql\nDELETE FROM pengguna WHERE id = 9;\n```"}
+{"instruction": "Jawab dengan SQL: Padam baris id 9 dari pengguna.", "input": "", "output": "```sql\nDELETE FROM pengguna WHERE id = 9;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Padam baris id 9 dari pengguna.", "input": "", "output": "```sql\nDELETE FROM pengguna WHERE id = 9;\n```"}
+{"instruction": "Beri SQL untuk: Tambah satu baris ke pengguna.", "input": "", "output": "```sql\nINSERT INTO pengguna (nama, emel) VALUES ('Ali', 'ali@x.my');\n```"}
+{"instruction": "Jawab dengan SQL: Tambah satu baris ke pengguna.", "input": "", "output": "```sql\nINSERT INTO pengguna (nama, emel) VALUES ('Ali', 'ali@x.my');\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Tambah satu baris ke pengguna.", "input": "", "output": "```sql\nINSERT INTO pengguna (nama, emel) VALUES ('Ali', 'ali@x.my');\n```"}
+{"instruction": "Beri SQL untuk: Purata nama dalam pengguna.", "input": "", "output": "```sql\nSELECT AVG(nama) AS purata FROM pengguna;\n```"}
+{"instruction": "Jawab dengan SQL: Purata nama dalam pengguna.", "input": "", "output": "```sql\nSELECT AVG(nama) AS purata FROM pengguna;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Purata nama dalam pengguna.", "input": "", "output": "```sql\nSELECT AVG(nama) AS purata FROM pengguna;\n```"}
+{"instruction": "Beri SQL untuk: Nilai maksimum nama dalam pengguna.", "input": "", "output": "```sql\nSELECT MAX(nama) AS maks FROM pengguna;\n```"}
+{"instruction": "Jawab dengan SQL: Nilai maksimum nama dalam pengguna.", "input": "", "output": "```sql\nSELECT MAX(nama) AS maks FROM pengguna;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Nilai maksimum nama dalam pengguna.", "input": "", "output": "```sql\nSELECT MAX(nama) AS maks FROM pengguna;\n```"}
+{"instruction": "Beri SQL untuk: Senaraikan semua pesanan.", "input": "", "output": "```sql\nSELECT * FROM pesanan;\n```"}
+{"instruction": "Jawab dengan SQL: Senaraikan semua pesanan.", "input": "", "output": "```sql\nSELECT * FROM pesanan;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Senaraikan semua pesanan.", "input": "", "output": "```sql\nSELECT * FROM pesanan;\n```"}
+{"instruction": "Beri SQL untuk: Kira baris dalam pesanan.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pesanan;\n```"}
+{"instruction": "Jawab dengan SQL: Kira baris dalam pesanan.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pesanan;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Kira baris dalam pesanan.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pesanan;\n```"}
+{"instruction": "Beri SQL untuk: Cari pesanan di mana pengguna_id bersamaan 'Ali'.", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id = 'Ali';\n```"}
+{"instruction": "Jawab dengan SQL: Cari pesanan di mana pengguna_id bersamaan 'Ali'.", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id = 'Ali';\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Cari pesanan di mana pengguna_id bersamaan 'Ali'.", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id = 'Ali';\n```"}
+{"instruction": "Beri SQL untuk: Susun pesanan mengikut pengguna_id menurun, 5 teratas.", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY pengguna_id DESC LIMIT 5;\n```"}
+{"instruction": "Jawab dengan SQL: Susun pesanan mengikut pengguna_id menurun, 5 teratas.", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY pengguna_id DESC LIMIT 5;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Susun pesanan mengikut pengguna_id menurun, 5 teratas.", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY pengguna_id DESC LIMIT 5;\n```"}
+{"instruction": "Beri SQL untuk: Jumlahkan pengguna_id dalam pesanan berkelompok mengikut jumlah.", "input": "", "output": "```sql\nSELECT jumlah, SUM(pengguna_id) AS jumlah FROM pesanan GROUP BY jumlah;\n```"}
+{"instruction": "Jawab dengan SQL: Jumlahkan pengguna_id dalam pesanan berkelompok mengikut jumlah.", "input": "", "output": "```sql\nSELECT jumlah, SUM(pengguna_id) AS jumlah FROM pesanan GROUP BY jumlah;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Jumlahkan pengguna_id dalam pesanan berkelompok mengikut jumlah.", "input": "", "output": "```sql\nSELECT jumlah, SUM(pengguna_id) AS jumlah FROM pesanan GROUP BY jumlah;\n```"}
+{"instruction": "Beri SQL untuk: Kemas kini pesanan: tetapkan pengguna_id kepada 'Ali' untuk id 1.", "input": "", "output": "```sql\nUPDATE pesanan SET pengguna_id = 'Ali' WHERE id = 1;\n```"}
+{"instruction": "Jawab dengan SQL: Kemas kini pesanan: tetapkan pengguna_id kepada 'Ali' untuk id 1.", "input": "", "output": "```sql\nUPDATE pesanan SET pengguna_id = 'Ali' WHERE id = 1;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Kemas kini pesanan: tetapkan pengguna_id kepada 'Ali' untuk id 1.", "input": "", "output": "```sql\nUPDATE pesanan SET pengguna_id = 'Ali' WHERE id = 1;\n```"}
+{"instruction": "Beri SQL untuk: Padam baris id 9 dari pesanan.", "input": "", "output": "```sql\nDELETE FROM pesanan WHERE id = 9;\n```"}
+{"instruction": "Jawab dengan SQL: Padam baris id 9 dari pesanan.", "input": "", "output": "```sql\nDELETE FROM pesanan WHERE id = 9;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Padam baris id 9 dari pesanan.", "input": "", "output": "```sql\nDELETE FROM pesanan WHERE id = 9;\n```"}
+{"instruction": "Beri SQL untuk: Tambah satu baris ke pesanan.", "input": "", "output": "```sql\nINSERT INTO pesanan (pengguna_id, jumlah) VALUES ('Ali', 'ali@x.my');\n```"}
+{"instruction": "Jawab dengan SQL: Tambah satu baris ke pesanan.", "input": "", "output": "```sql\nINSERT INTO pesanan (pengguna_id, jumlah) VALUES ('Ali', 'ali@x.my');\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Tambah satu baris ke pesanan.", "input": "", "output": "```sql\nINSERT INTO pesanan (pengguna_id, jumlah) VALUES ('Ali', 'ali@x.my');\n```"}
+{"instruction": "Beri SQL untuk: Purata pengguna_id dalam pesanan.", "input": "", "output": "```sql\nSELECT AVG(pengguna_id) AS purata FROM pesanan;\n```"}
+{"instruction": "Jawab dengan SQL: Purata pengguna_id dalam pesanan.", "input": "", "output": "```sql\nSELECT AVG(pengguna_id) AS purata FROM pesanan;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Purata pengguna_id dalam pesanan.", "input": "", "output": "```sql\nSELECT AVG(pengguna_id) AS purata FROM pesanan;\n```"}
+{"instruction": "Beri SQL untuk: Nilai maksimum pengguna_id dalam pesanan.", "input": "", "output": "```sql\nSELECT MAX(pengguna_id) AS maks FROM pesanan;\n```"}
+{"instruction": "Jawab dengan SQL: Nilai maksimum pengguna_id dalam pesanan.", "input": "", "output": "```sql\nSELECT MAX(pengguna_id) AS maks FROM pesanan;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Nilai maksimum pengguna_id dalam pesanan.", "input": "", "output": "```sql\nSELECT MAX(pengguna_id) AS maks FROM pesanan;\n```"}
+{"instruction": "Beri SQL untuk: Senaraikan semua produk.", "input": "", "output": "```sql\nSELECT * FROM produk;\n```"}
+{"instruction": "Jawab dengan SQL: Senaraikan semua produk.", "input": "", "output": "```sql\nSELECT * FROM produk;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Senaraikan semua produk.", "input": "", "output": "```sql\nSELECT * FROM produk;\n```"}
+{"instruction": "Beri SQL untuk: Kira baris dalam produk.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM produk;\n```"}
+{"instruction": "Jawab dengan SQL: Kira baris dalam produk.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM produk;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Kira baris dalam produk.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM produk;\n```"}
+{"instruction": "Beri SQL untuk: Cari produk di mana nama bersamaan 'Ali'.", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama = 'Ali';\n```"}
+{"instruction": "Jawab dengan SQL: Cari produk di mana nama bersamaan 'Ali'.", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama = 'Ali';\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Cari produk di mana nama bersamaan 'Ali'.", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama = 'Ali';\n```"}
+{"instruction": "Beri SQL untuk: Susun produk mengikut nama menurun, 5 teratas.", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY nama DESC LIMIT 5;\n```"}
+{"instruction": "Jawab dengan SQL: Susun produk mengikut nama menurun, 5 teratas.", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY nama DESC LIMIT 5;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Susun produk mengikut nama menurun, 5 teratas.", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY nama DESC LIMIT 5;\n```"}
+{"instruction": "Beri SQL untuk: Jumlahkan nama dalam produk berkelompok mengikut harga.", "input": "", "output": "```sql\nSELECT harga, SUM(nama) AS jumlah FROM produk GROUP BY harga;\n```"}
+{"instruction": "Jawab dengan SQL: Jumlahkan nama dalam produk berkelompok mengikut harga.", "input": "", "output": "```sql\nSELECT harga, SUM(nama) AS jumlah FROM produk GROUP BY harga;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Jumlahkan nama dalam produk berkelompok mengikut harga.", "input": "", "output": "```sql\nSELECT harga, SUM(nama) AS jumlah FROM produk GROUP BY harga;\n```"}
+{"instruction": "Beri SQL untuk: Kemas kini produk: tetapkan nama kepada 'Ali' untuk id 1.", "input": "", "output": "```sql\nUPDATE produk SET nama = 'Ali' WHERE id = 1;\n```"}
+{"instruction": "Jawab dengan SQL: Kemas kini produk: tetapkan nama kepada 'Ali' untuk id 1.", "input": "", "output": "```sql\nUPDATE produk SET nama = 'Ali' WHERE id = 1;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Kemas kini produk: tetapkan nama kepada 'Ali' untuk id 1.", "input": "", "output": "```sql\nUPDATE produk SET nama = 'Ali' WHERE id = 1;\n```"}
+{"instruction": "Beri SQL untuk: Padam baris id 9 dari produk.", "input": "", "output": "```sql\nDELETE FROM produk WHERE id = 9;\n```"}
+{"instruction": "Jawab dengan SQL: Padam baris id 9 dari produk.", "input": "", "output": "```sql\nDELETE FROM produk WHERE id = 9;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Padam baris id 9 dari produk.", "input": "", "output": "```sql\nDELETE FROM produk WHERE id = 9;\n```"}
+{"instruction": "Beri SQL untuk: Tambah satu baris ke produk.", "input": "", "output": "```sql\nINSERT INTO produk (nama, harga) VALUES ('Ali', 'ali@x.my');\n```"}
+{"instruction": "Jawab dengan SQL: Tambah satu baris ke produk.", "input": "", "output": "```sql\nINSERT INTO produk (nama, harga) VALUES ('Ali', 'ali@x.my');\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Tambah satu baris ke produk.", "input": "", "output": "```sql\nINSERT INTO produk (nama, harga) VALUES ('Ali', 'ali@x.my');\n```"}
+{"instruction": "Beri SQL untuk: Purata nama dalam produk.", "input": "", "output": "```sql\nSELECT AVG(nama) AS purata FROM produk;\n```"}
+{"instruction": "Jawab dengan SQL: Purata nama dalam produk.", "input": "", "output": "```sql\nSELECT AVG(nama) AS purata FROM produk;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Purata nama dalam produk.", "input": "", "output": "```sql\nSELECT AVG(nama) AS purata FROM produk;\n```"}
+{"instruction": "Beri SQL untuk: Nilai maksimum nama dalam produk.", "input": "", "output": "```sql\nSELECT MAX(nama) AS maks FROM produk;\n```"}
+{"instruction": "Jawab dengan SQL: Nilai maksimum nama dalam produk.", "input": "", "output": "```sql\nSELECT MAX(nama) AS maks FROM produk;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Nilai maksimum nama dalam produk.", "input": "", "output": "```sql\nSELECT MAX(nama) AS maks FROM produk;\n```"}
+{"instruction": "Beri SQL untuk: Sertai pesanan dengan nama pengguna.", "input": "", "output": "```sql\nSELECT o.id, p.nama FROM pesanan o JOIN pengguna p ON p.id = o.pengguna_id;\n```"}
+{"instruction": "Jawab dengan SQL: Sertai pesanan dengan nama pengguna.", "input": "", "output": "```sql\nSELECT o.id, p.nama FROM pesanan o JOIN pengguna p ON p.id = o.pengguna_id;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Sertai pesanan dengan nama pengguna.", "input": "", "output": "```sql\nSELECT o.id, p.nama FROM pesanan o JOIN pengguna p ON p.id = o.pengguna_id;\n```"}
+{"instruction": "Beri SQL untuk: Sertai produk dengan baki stok rendah.", "input": "", "output": "```sql\nSELECT nama, stok FROM produk WHERE stok < 10 ORDER BY stok;\n```"}
+{"instruction": "Jawab dengan SQL: Sertai produk dengan baki stok rendah.", "input": "", "output": "```sql\nSELECT nama, stok FROM produk WHERE stok < 10 ORDER BY stok;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Sertai produk dengan baki stok rendah.", "input": "", "output": "```sql\nSELECT nama, stok FROM produk WHERE stok < 10 ORDER BY stok;\n```"}
+{"instruction": "Beri SQL untuk: Jumlah belanja setiap pengguna.", "input": "", "output": "```sql\nSELECT p.nama, SUM(o.jumlah) AS jumlah FROM pengguna p JOIN pesanan o ON o.pengguna_id = p.id GROUP BY p.nama;\n```"}
+{"instruction": "Jawab dengan SQL: Jumlah belanja setiap pengguna.", "input": "", "output": "```sql\nSELECT p.nama, SUM(o.jumlah) AS jumlah FROM pengguna p JOIN pesanan o ON o.pengguna_id = p.id GROUP BY p.nama;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Jumlah belanja setiap pengguna.", "input": "", "output": "```sql\nSELECT p.nama, SUM(o.jumlah) AS jumlah FROM pengguna p JOIN pesanan o ON o.pengguna_id = p.id GROUP BY p.nama;\n```"}
 {"instruction": "Show a Docker Compose file with a web app and Postgres.", "input": "", "output": "```yaml\nservices:\n  web:\n    build: .\n    ports:\n      - \"8000:8000\"\n    environment:\n      DATABASE_URL: postgres://app:secret@db:5432/app\n    depends_on:\n      db:\n        condition: service_healthy\n  db:\n    image: postgres:16\n    environment:\n      POSTGRES_USER: app\n      POSTGRES_PASSWORD: secret\n      POSTGRES_DB: app\n    volumes:\n      - pgdata:/var/lib/postgresql/data\n    healthcheck:\n      test: [\"CMD-SHELL\", \"pg_isready -U app\"]\n      interval: 5s\n      retries: 5\nvolumes:\n  pgdata:\n```\nServices reach each other by service name (`db`). In production, keep secrets out of the file."}
 {"instruction": "PostgreSQL connection string Node", "input": "", "output": "```js\nconst cs = 'postgres://user:pass@localhost:5432/mydb';\n```\nSimpan connection string dalam env, bukan kod; tambah `?sslmode=require` untuk sambungan jauh."}
 {"instruction": "How do I navigate psql quickly?", "input": "", "output": "`psql -U app -d kedai`, kemudian `\\l` senarai DB, `\\c lain` tukar DB, `\\dt` senarai tabel, `\\d barang` struktur tabel, `\\x on` paparan baris menegak. `\\?` semua meta-command, `\\h SELECT` sintaks SQL. Kuasai 6 ini dan anda jarang perlu GUI."}
@@ -148,6 +247,106 @@
 {"instruction": "How do CASE expressions work in SQL?", "input": "", "output": "```sql\nSELECT nama,\n  CASE WHEN stok = 0 THEN 'habis'\n       WHEN stok < 10 THEN 'rendah'\n       ELSE 'ok' END AS status\nFROM barang;\n```\nCASE ialah if-ekspresi dalam query — labelkan data tanpa pusingan app. Boleh dalam ORDER BY/WHERE juga untuk susunan tersuai."}
 {"instruction": "How do partial and expression indexes work?", "input": "", "output": "```sql\nCREATE INDEX idx_aktif ON pengguna (emel) WHERE aktif;\nCREATE INDEX idx_nama_lower ON pengguna (lower(nama));\n```\nIndeks separa kecil dan laju untuk subset panas; indeks ekspresi laju carian fungsi. Syarat: query mesti sepadan predikat/ekspresi tepat — `WHERE aktif AND ...` guna yang pertama, tanpa `aktif` tidak."}
 {"instruction": "How do advisory locks coordinate Postgres jobs?", "input": "", "output": "```sql\nSELECT pg_try_advisory_lock(12345);  -- true = kami pemegang\n-- ... kerja ...\nSELECT pg_advisory_unlock(12345);\n```\nKunci nasihat selaras cron berlapis/pekerja tanpa tabel kunci sendiri — `pg_try_*` tidak sekat. Bebaskan sentiasa (finally) dan pilih ID kunci unik per tugas."}
+{"instruction": "What does `psql -U app` do?", "input": "", "output": "`psql -U app -d kedai` connects; `-h/-p` for remotes; `.pgpass` avoids password prompts in scripts."}
+{"instruction": "Explain `psql -U app` briefly.", "input": "", "output": "`psql -U app -d kedai` connects; `-h/-p` for remotes; `.pgpass` avoids password prompts in scripts."}
+{"instruction": "When do I use `psql -U app`?", "input": "", "output": "`psql -U app -d kedai` connects; `-h/-p` for remotes; `.pgpass` avoids password prompts in scripts."}
+{"instruction": "Give a practical example of `psql -U app`.", "input": "", "output": "`psql -U app -d kedai` connects; `-h/-p` for remotes; `.pgpass` avoids password prompts in scripts."}
+{"instruction": "What is `psql -U app` for?", "input": "", "output": "`psql -U app -d kedai` connects; `-h/-p` for remotes; `.pgpass` avoids password prompts in scripts."}
+{"instruction": "What does `\\l \\c \\dt` do?", "input": "", "output": "Backslash commands navigate: `\\l` databases, `\\c` switch, `\\dt` tables, `\\d t` columns."}
+{"instruction": "Explain `\\l \\c \\dt` briefly.", "input": "", "output": "Backslash commands navigate: `\\l` databases, `\\c` switch, `\\dt` tables, `\\d t` columns."}
+{"instruction": "When do I use `\\l \\c \\dt`?", "input": "", "output": "Backslash commands navigate: `\\l` databases, `\\c` switch, `\\dt` tables, `\\d t` columns."}
+{"instruction": "Give a practical example of `\\l \\c \\dt`.", "input": "", "output": "Backslash commands navigate: `\\l` databases, `\\c` switch, `\\dt` tables, `\\d t` columns."}
+{"instruction": "What is `\\l \\c \\dt` for?", "input": "", "output": "Backslash commands navigate: `\\l` databases, `\\c` switch, `\\dt` tables, `\\d t` columns."}
+{"instruction": "What does `CREATE DATABASE` do?", "input": "", "output": "`createdb kedai` or SQL with OWNER set to the app role — migrations then need no superuser."}
+{"instruction": "Explain `CREATE DATABASE` briefly.", "input": "", "output": "`createdb kedai` or SQL with OWNER set to the app role — migrations then need no superuser."}
+{"instruction": "When do I use `CREATE DATABASE`?", "input": "", "output": "`createdb kedai` or SQL with OWNER set to the app role — migrations then need no superuser."}
+{"instruction": "Give a practical example of `CREATE DATABASE`.", "input": "", "output": "`createdb kedai` or SQL with OWNER set to the app role — migrations then need no superuser."}
+{"instruction": "What is `CREATE DATABASE` for?", "input": "", "output": "`createdb kedai` or SQL with OWNER set to the app role — migrations then need no superuser."}
+{"instruction": "What does `CREATE TABLE` do?", "input": "", "output": "Declare PKs, NOT NULLs and defaults up front; `GENERATED ... AS IDENTITY` beats legacy SERIAL."}
+{"instruction": "Explain `CREATE TABLE` briefly.", "input": "", "output": "Declare PKs, NOT NULLs and defaults up front; `GENERATED ... AS IDENTITY` beats legacy SERIAL."}
+{"instruction": "When do I use `CREATE TABLE`?", "input": "", "output": "Declare PKs, NOT NULLs and defaults up front; `GENERATED ... AS IDENTITY` beats legacy SERIAL."}
+{"instruction": "Give a practical example of `CREATE TABLE`.", "input": "", "output": "Declare PKs, NOT NULLs and defaults up front; `GENERATED ... AS IDENTITY` beats legacy SERIAL."}
+{"instruction": "What is `CREATE TABLE` for?", "input": "", "output": "Declare PKs, NOT NULLs and defaults up front; `GENERATED ... AS IDENTITY` beats legacy SERIAL."}
+{"instruction": "What does `SERIAL IDENTITY UUID` do?", "input": "", "output": "IDENTITY is the modern auto-key; UUIDs (`gen_random_uuid()`) suit public/distributed ids; JSONB for semi-structure."}
+{"instruction": "Explain `SERIAL IDENTITY UUID` briefly.", "input": "", "output": "IDENTITY is the modern auto-key; UUIDs (`gen_random_uuid()`) suit public/distributed ids; JSONB for semi-structure."}
+{"instruction": "When do I use `SERIAL IDENTITY UUID`?", "input": "", "output": "IDENTITY is the modern auto-key; UUIDs (`gen_random_uuid()`) suit public/distributed ids; JSONB for semi-structure."}
+{"instruction": "Give a practical example of `SERIAL IDENTITY UUID`.", "input": "", "output": "IDENTITY is the modern auto-key; UUIDs (`gen_random_uuid()`) suit public/distributed ids; JSONB for semi-structure."}
+{"instruction": "What is `SERIAL IDENTITY UUID` for?", "input": "", "output": "IDENTITY is the modern auto-key; UUIDs (`gen_random_uuid()`) suit public/distributed ids; JSONB for semi-structure."}
+{"instruction": "What does `INSERT RETURNING` do?", "input": "", "output": "`RETURNING id` fetches generated values in one round trip — no follow-up SELECT, no races."}
+{"instruction": "Explain `INSERT RETURNING` briefly.", "input": "", "output": "`RETURNING id` fetches generated values in one round trip — no follow-up SELECT, no races."}
+{"instruction": "When do I use `INSERT RETURNING`?", "input": "", "output": "`RETURNING id` fetches generated values in one round trip — no follow-up SELECT, no races."}
+{"instruction": "Give a practical example of `INSERT RETURNING`.", "input": "", "output": "`RETURNING id` fetches generated values in one round trip — no follow-up SELECT, no races."}
+{"instruction": "What is `INSERT RETURNING` for?", "input": "", "output": "`RETURNING id` fetches generated values in one round trip — no follow-up SELECT, no races."}
+{"instruction": "What does `SELECT WHERE` do?", "input": "", "output": "Filter early with indexed WHERE; `ILIKE` for case-insensitive, `IN (...)` for sets, `BETWEEN` for ranges."}
+{"instruction": "Explain `SELECT WHERE` briefly.", "input": "", "output": "Filter early with indexed WHERE; `ILIKE` for case-insensitive, `IN (...)` for sets, `BETWEEN` for ranges."}
+{"instruction": "When do I use `SELECT WHERE`?", "input": "", "output": "Filter early with indexed WHERE; `ILIKE` for case-insensitive, `IN (...)` for sets, `BETWEEN` for ranges."}
+{"instruction": "Give a practical example of `SELECT WHERE`.", "input": "", "output": "Filter early with indexed WHERE; `ILIKE` for case-insensitive, `IN (...)` for sets, `BETWEEN` for ranges."}
+{"instruction": "What is `SELECT WHERE` for?", "input": "", "output": "Filter early with indexed WHERE; `ILIKE` for case-insensitive, `IN (...)` for sets, `BETWEEN` for ranges."}
+{"instruction": "What does `UPDATE DELETE` do?", "input": "", "output": "Same rule as MySQL: develop WHERE as SELECT first; wrap multi-statement changes in transactions."}
+{"instruction": "Explain `UPDATE DELETE` briefly.", "input": "", "output": "Same rule as MySQL: develop WHERE as SELECT first; wrap multi-statement changes in transactions."}
+{"instruction": "When do I use `UPDATE DELETE`?", "input": "", "output": "Same rule as MySQL: develop WHERE as SELECT first; wrap multi-statement changes in transactions."}
+{"instruction": "Give a practical example of `UPDATE DELETE`.", "input": "", "output": "Same rule as MySQL: develop WHERE as SELECT first; wrap multi-statement changes in transactions."}
+{"instruction": "What is `UPDATE DELETE` for?", "input": "", "output": "Same rule as MySQL: develop WHERE as SELECT first; wrap multi-statement changes in transactions."}
+{"instruction": "What does `JOIN` do?", "input": "", "output": "INNER/LEFT semantics mirror MySQL; `USING (id)` shortens equi-joins on same-named keys."}
+{"instruction": "Explain `JOIN` briefly.", "input": "", "output": "INNER/LEFT semantics mirror MySQL; `USING (id)` shortens equi-joins on same-named keys."}
+{"instruction": "When do I use `JOIN`?", "input": "", "output": "INNER/LEFT semantics mirror MySQL; `USING (id)` shortens equi-joins on same-named keys."}
+{"instruction": "Give a practical example of `JOIN`.", "input": "", "output": "INNER/LEFT semantics mirror MySQL; `USING (id)` shortens equi-joins on same-named keys."}
+{"instruction": "What is `JOIN` for?", "input": "", "output": "INNER/LEFT semantics mirror MySQL; `USING (id)` shortens equi-joins on same-named keys."}
+{"instruction": "What does `GROUP BY HAVING` do?", "input": "", "output": "Aggregate then filter groups with HAVING; `FILTER (WHERE ...)` pivots multiple aggregates in one pass."}
+{"instruction": "Explain `GROUP BY HAVING` briefly.", "input": "", "output": "Aggregate then filter groups with HAVING; `FILTER (WHERE ...)` pivots multiple aggregates in one pass."}
+{"instruction": "When do I use `GROUP BY HAVING`?", "input": "", "output": "Aggregate then filter groups with HAVING; `FILTER (WHERE ...)` pivots multiple aggregates in one pass."}
+{"instruction": "Give a practical example of `GROUP BY HAVING`.", "input": "", "output": "Aggregate then filter groups with HAVING; `FILTER (WHERE ...)` pivots multiple aggregates in one pass."}
+{"instruction": "What is `GROUP BY HAVING` for?", "input": "", "output": "Aggregate then filter groups with HAVING; `FILTER (WHERE ...)` pivots multiple aggregates in one pass."}
+{"instruction": "What does `ORDER BY LIMIT` do?", "input": "", "output": "Pair LIMIT with deterministic ORDER BY (add id tiebreak); keyset (`WHERE id >`) beats OFFSET at scale."}
+{"instruction": "Explain `ORDER BY LIMIT` briefly.", "input": "", "output": "Pair LIMIT with deterministic ORDER BY (add id tiebreak); keyset (`WHERE id >`) beats OFFSET at scale."}
+{"instruction": "When do I use `ORDER BY LIMIT`?", "input": "", "output": "Pair LIMIT with deterministic ORDER BY (add id tiebreak); keyset (`WHERE id >`) beats OFFSET at scale."}
+{"instruction": "Give a practical example of `ORDER BY LIMIT`.", "input": "", "output": "Pair LIMIT with deterministic ORDER BY (add id tiebreak); keyset (`WHERE id >`) beats OFFSET at scale."}
+{"instruction": "What is `ORDER BY LIMIT` for?", "input": "", "output": "Pair LIMIT with deterministic ORDER BY (add id tiebreak); keyset (`WHERE id >`) beats OFFSET at scale."}
+{"instruction": "What does `CTE WITH` do?", "input": "", "output": "WITH names subqueries as readable steps; chain several comma-separated; PG12+ inlines them well."}
+{"instruction": "Explain `CTE WITH` briefly.", "input": "", "output": "WITH names subqueries as readable steps; chain several comma-separated; PG12+ inlines them well."}
+{"instruction": "When do I use `CTE WITH`?", "input": "", "output": "WITH names subqueries as readable steps; chain several comma-separated; PG12+ inlines them well."}
+{"instruction": "Give a practical example of `CTE WITH`.", "input": "", "output": "WITH names subqueries as readable steps; chain several comma-separated; PG12+ inlines them well."}
+{"instruction": "What is `CTE WITH` for?", "input": "", "output": "WITH names subqueries as readable steps; chain several comma-separated; PG12+ inlines them well."}
+{"instruction": "What does `window ROW_NUMBER` do?", "input": "", "output": "Windows compute across related rows without collapsing them — rankings, running totals, lags."}
+{"instruction": "Explain `window ROW_NUMBER` briefly.", "input": "", "output": "Windows compute across related rows without collapsing them — rankings, running totals, lags."}
+{"instruction": "When do I use `window ROW_NUMBER`?", "input": "", "output": "Windows compute across related rows without collapsing them — rankings, running totals, lags."}
+{"instruction": "Give a practical example of `window ROW_NUMBER`.", "input": "", "output": "Windows compute across related rows without collapsing them — rankings, running totals, lags."}
+{"instruction": "What is `window ROW_NUMBER` for?", "input": "", "output": "Windows compute across related rows without collapsing them — rankings, running totals, lags."}
+{"instruction": "What does `EXPLAIN ANALYZE` do?", "input": "", "output": "Shows real plan + timings; seek Seq Scans on big tables, add btree/GIN/BRIN indexes, re-measure."}
+{"instruction": "Explain `EXPLAIN ANALYZE` briefly.", "input": "", "output": "Shows real plan + timings; seek Seq Scans on big tables, add btree/GIN/BRIN indexes, re-measure."}
+{"instruction": "When do I use `EXPLAIN ANALYZE`?", "input": "", "output": "Shows real plan + timings; seek Seq Scans on big tables, add btree/GIN/BRIN indexes, re-measure."}
+{"instruction": "Give a practical example of `EXPLAIN ANALYZE`.", "input": "", "output": "Shows real plan + timings; seek Seq Scans on big tables, add btree/GIN/BRIN indexes, re-measure."}
+{"instruction": "What is `EXPLAIN ANALYZE` for?", "input": "", "output": "Shows real plan + timings; seek Seq Scans on big tables, add btree/GIN/BRIN indexes, re-measure."}
+{"instruction": "What does `CREATE INDEX` do?", "input": "", "output": "Btree default, GIN for JSONB/full-text, BRIN for append-only time series; partial indexes shrink hot paths."}
+{"instruction": "Explain `CREATE INDEX` briefly.", "input": "", "output": "Btree default, GIN for JSONB/full-text, BRIN for append-only time series; partial indexes shrink hot paths."}
+{"instruction": "When do I use `CREATE INDEX`?", "input": "", "output": "Btree default, GIN for JSONB/full-text, BRIN for append-only time series; partial indexes shrink hot paths."}
+{"instruction": "Give a practical example of `CREATE INDEX`.", "input": "", "output": "Btree default, GIN for JSONB/full-text, BRIN for append-only time series; partial indexes shrink hot paths."}
+{"instruction": "What is `CREATE INDEX` for?", "input": "", "output": "Btree default, GIN for JSONB/full-text, BRIN for append-only time series; partial indexes shrink hot paths."}
+{"instruction": "What does `pg_dump pg_restore` do?", "input": "", "output": "Custom format (`-Fc`) enables selective restores; pair base backups with WAL archiving for PITR."}
+{"instruction": "Explain `pg_dump pg_restore` briefly.", "input": "", "output": "Custom format (`-Fc`) enables selective restores; pair base backups with WAL archiving for PITR."}
+{"instruction": "When do I use `pg_dump pg_restore`?", "input": "", "output": "Custom format (`-Fc`) enables selective restores; pair base backups with WAL archiving for PITR."}
+{"instruction": "Give a practical example of `pg_dump pg_restore`.", "input": "", "output": "Custom format (`-Fc`) enables selective restores; pair base backups with WAL archiving for PITR."}
+{"instruction": "What is `pg_dump pg_restore` for?", "input": "", "output": "Custom format (`-Fc`) enables selective restores; pair base backups with WAL archiving for PITR."}
+{"instruction": "What does `ALTER TABLE` do?", "input": "", "output": "Add nullable columns freely; backfill, then add NOT NULL — rewrites need maintenance windows on big tables."}
+{"instruction": "Explain `ALTER TABLE` briefly.", "input": "", "output": "Add nullable columns freely; backfill, then add NOT NULL — rewrites need maintenance windows on big tables."}
+{"instruction": "When do I use `ALTER TABLE`?", "input": "", "output": "Add nullable columns freely; backfill, then add NOT NULL — rewrites need maintenance windows on big tables."}
+{"instruction": "Give a practical example of `ALTER TABLE`.", "input": "", "output": "Add nullable columns freely; backfill, then add NOT NULL — rewrites need maintenance windows on big tables."}
+{"instruction": "What is `ALTER TABLE` for?", "input": "", "output": "Add nullable columns freely; backfill, then add NOT NULL — rewrites need maintenance windows on big tables."}
+{"instruction": "What does `TRUNCATE` do?", "input": "", "output": "Instant full clears without row WAL; needs no WHERE by design; `RESTART IDENTITY` resets sequences."}
+{"instruction": "Explain `TRUNCATE` briefly.", "input": "", "output": "Instant full clears without row WAL; needs no WHERE by design; `RESTART IDENTITY` resets sequences."}
+{"instruction": "When do I use `TRUNCATE`?", "input": "", "output": "Instant full clears without row WAL; needs no WHERE by design; `RESTART IDENTITY` resets sequences."}
+{"instruction": "Give a practical example of `TRUNCATE`.", "input": "", "output": "Instant full clears without row WAL; needs no WHERE by design; `RESTART IDENTITY` resets sequences."}
+{"instruction": "What is `TRUNCATE` for?", "input": "", "output": "Instant full clears without row WAL; needs no WHERE by design; `RESTART IDENTITY` resets sequences."}
+{"instruction": "What does `COPY CSV` do?", "input": "", "output": "Server-side `\\copy` moves bulk data hundreds of times faster than row INSERTs; mind superuser vs client paths."}
+{"instruction": "Explain `COPY CSV` briefly.", "input": "", "output": "Server-side `\\copy` moves bulk data hundreds of times faster than row INSERTs; mind superuser vs client paths."}
+{"instruction": "When do I use `COPY CSV`?", "input": "", "output": "Server-side `\\copy` moves bulk data hundreds of times faster than row INSERTs; mind superuser vs client paths."}
+{"instruction": "Give a practical example of `COPY CSV`.", "input": "", "output": "Server-side `\\copy` moves bulk data hundreds of times faster than row INSERTs; mind superuser vs client paths."}
+{"instruction": "What is `COPY CSV` for?", "input": "", "output": "Server-side `\\copy` moves bulk data hundreds of times faster than row INSERTs; mind superuser vs client paths."}
+{"instruction": "What does `roles pg_hba` do?", "input": "", "output": "Roles + `pg_hba.conf` (first match wins, prefer scram-sha-256) gate access; `SELECT pg_reload_conf()` applies."}
+{"instruction": "Explain `roles pg_hba` briefly.", "input": "", "output": "Roles + `pg_hba.conf` (first match wins, prefer scram-sha-256) gate access; `SELECT pg_reload_conf()` applies."}
+{"instruction": "When do I use `roles pg_hba`?", "input": "", "output": "Roles + `pg_hba.conf` (first match wins, prefer scram-sha-256) gate access; `SELECT pg_reload_conf()` applies."}
+{"instruction": "Give a practical example of `roles pg_hba`.", "input": "", "output": "Roles + `pg_hba.conf` (first match wins, prefer scram-sha-256) gate access; `SELECT pg_reload_conf()` applies."}
+{"instruction": "What is `roles pg_hba` for?", "input": "", "output": "Roles + `pg_hba.conf` (first match wins, prefer scram-sha-256) gate access; `SELECT pg_reload_conf()` applies."}
 {"instruction": "How do I create a MySQL database, user and grants?", "input": "", "output": "```sql\nCREATE DATABASE kedai CHARACTER SET utf8mb4;\nCREATE USER 'app'@'localhost' IDENTIFIED BY 'rahsia-kuat';\nGRANT SELECT, INSERT, UPDATE, DELETE ON kedai.* TO 'app'@'localhost';\nFLUSH PRIVILEGES;\n```\nBeri keizinan minimum per aplikasi (bukan ALL), hos spesifik bukan `%` jika boleh — kebocoran kredensial terhad skopnya."}
 {"instruction": "How do I create a MySQL table with proper types?", "input": "", "output": "```sql\nCREATE TABLE barang (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  nama VARCHAR(100) NOT NULL,\n  harga DECIMAL(10,2) NOT NULL DEFAULT 0,\n  dicipta DATETIME DEFAULT CURRENT_TIMESTAMP\n) ENGINE=InnoDB;\n```\nGuna InnoDB (transaksi + foreign key), DECIMAL untuk wang (bukan FLOAT), dan NOT NULL melainkan null bermakna."}
 {"instruction": "MySQL basic CRUD?", "input": "", "output": "```sql\nINSERT INTO barang (nama, harga) VALUES ('Roti', 2.50);\nSELECT id, nama FROM barang WHERE harga < 10 ORDER BY harga DESC LIMIT 5;\nUPDATE barang SET harga = 2.80 WHERE id = 1;\nDELETE FROM barang WHERE id = 1;\n```\nSentiasa WHERE pada UPDATE/DELETE — tanpa ia semua baris terkesan. Uji SELECT dahulu dengan syarat sama sebelum ubah."}
@@ -170,3 +369,103 @@
 {"instruction": "How do I check MySQL character set issues?", "input": "", "output": "```sql\nSHOW VARIABLES LIKE 'character_set%';\nSHOW FULL COLUMNS FROM barang;\n```\nTanda soal berlian (�?) = rantaian encoding putus (klien/lajur/sambungan tidak sepadan). Selaraskan semua ke utf8mb4: pelayan, DB, tabel, lajur DAN sambungan (`SET NAMES`)."}
 {"instruction": "How do I find MySQL locks and deadlocks?", "input": "", "output": "`SHOW ENGINE INNODB STATUS\\G` bahagian TRANSACTIONS tunjuk kunci menunggu + transaksi penyekat; `performance_schema.data_locks` untuk butiran baris. Deadlock diselesaikan automatik (satu mangsa rollback) — tangkap ralat 1213 dan cuba semula dengan backoff di app."}
 {"instruction": "How do I replicate MySQL simply?", "input": "", "output": "Arkitektur asas: satu primary tulis + satu/lebih replica baca (binlog). Langkah: `server-id` unik setiap hos, pengguna `REPLICATION SLAVE`, `CHANGE MASTER TO` + `START SLAVE`, pantau `SHOW SLAVE STATUS` (`Seconds_Behind_Master: 0`). Replika adalah untuk baca/sandar — failover tulis perlu orkestrasi (MHA/Orchestrator/InnoDB Cluster)."}
+{"instruction": "What does `SHOW DATABASES` do?", "input": "", "output": "Lists databases you may access; `USE kedai;` then scopes unqualified tables to it."}
+{"instruction": "Explain `SHOW DATABASES` briefly.", "input": "", "output": "Lists databases you may access; `USE kedai;` then scopes unqualified tables to it."}
+{"instruction": "When do I use `SHOW DATABASES`?", "input": "", "output": "Lists databases you may access; `USE kedai;` then scopes unqualified tables to it."}
+{"instruction": "Give a practical example of `SHOW DATABASES`.", "input": "", "output": "Lists databases you may access; `USE kedai;` then scopes unqualified tables to it."}
+{"instruction": "What is `SHOW DATABASES` for?", "input": "", "output": "Lists databases you may access; `USE kedai;` then scopes unqualified tables to it."}
+{"instruction": "What does `CREATE DATABASE` do?", "input": "", "output": "`CREATE DATABASE kedai CHARACTER SET utf8mb4;` — charset at creation avoids later conversions."}
+{"instruction": "Explain `CREATE DATABASE` briefly.", "input": "", "output": "`CREATE DATABASE kedai CHARACTER SET utf8mb4;` — charset at creation avoids later conversions."}
+{"instruction": "When do I use `CREATE DATABASE`?", "input": "", "output": "`CREATE DATABASE kedai CHARACTER SET utf8mb4;` — charset at creation avoids later conversions."}
+{"instruction": "Give a practical example of `CREATE DATABASE`.", "input": "", "output": "`CREATE DATABASE kedai CHARACTER SET utf8mb4;` — charset at creation avoids later conversions."}
+{"instruction": "What is `CREATE DATABASE` for?", "input": "", "output": "`CREATE DATABASE kedai CHARACTER SET utf8mb4;` — charset at creation avoids later conversions."}
+{"instruction": "What does `USE database` do?", "input": "", "output": "`USE` sets the session default so short table names resolve; scripts should still qualify in joins."}
+{"instruction": "Explain `USE database` briefly.", "input": "", "output": "`USE` sets the session default so short table names resolve; scripts should still qualify in joins."}
+{"instruction": "When do I use `USE database`?", "input": "", "output": "`USE` sets the session default so short table names resolve; scripts should still qualify in joins."}
+{"instruction": "Give a practical example of `USE database`.", "input": "", "output": "`USE` sets the session default so short table names resolve; scripts should still qualify in joins."}
+{"instruction": "What is `USE database` for?", "input": "", "output": "`USE` sets the session default so short table names resolve; scripts should still qualify in joins."}
+{"instruction": "What does `SHOW TABLES` do?", "input": "", "output": "Lists tables in scope; `DESCRIBE t` then details columns, keys and defaults."}
+{"instruction": "Explain `SHOW TABLES` briefly.", "input": "", "output": "Lists tables in scope; `DESCRIBE t` then details columns, keys and defaults."}
+{"instruction": "When do I use `SHOW TABLES`?", "input": "", "output": "Lists tables in scope; `DESCRIBE t` then details columns, keys and defaults."}
+{"instruction": "Give a practical example of `SHOW TABLES`.", "input": "", "output": "Lists tables in scope; `DESCRIBE t` then details columns, keys and defaults."}
+{"instruction": "What is `SHOW TABLES` for?", "input": "", "output": "Lists tables in scope; `DESCRIBE t` then details columns, keys and defaults."}
+{"instruction": "What does `SELECT * WHERE` do?", "input": "", "output": "`SELECT cols FROM t WHERE cond` filters rows; list columns explicitly instead of `*` in app code."}
+{"instruction": "Explain `SELECT * WHERE` briefly.", "input": "", "output": "`SELECT cols FROM t WHERE cond` filters rows; list columns explicitly instead of `*` in app code."}
+{"instruction": "When do I use `SELECT * WHERE`?", "input": "", "output": "`SELECT cols FROM t WHERE cond` filters rows; list columns explicitly instead of `*` in app code."}
+{"instruction": "Give a practical example of `SELECT * WHERE`.", "input": "", "output": "`SELECT cols FROM t WHERE cond` filters rows; list columns explicitly instead of `*` in app code."}
+{"instruction": "What is `SELECT * WHERE` for?", "input": "", "output": "`SELECT cols FROM t WHERE cond` filters rows; list columns explicitly instead of `*` in app code."}
+{"instruction": "What does `ORDER BY LIMIT` do?", "input": "", "output": "`ORDER BY x DESC LIMIT 20` pages deterministically — but always pair LIMIT with ORDER BY."}
+{"instruction": "Explain `ORDER BY LIMIT` briefly.", "input": "", "output": "`ORDER BY x DESC LIMIT 20` pages deterministically — but always pair LIMIT with ORDER BY."}
+{"instruction": "When do I use `ORDER BY LIMIT`?", "input": "", "output": "`ORDER BY x DESC LIMIT 20` pages deterministically — but always pair LIMIT with ORDER BY."}
+{"instruction": "Give a practical example of `ORDER BY LIMIT`.", "input": "", "output": "`ORDER BY x DESC LIMIT 20` pages deterministically — but always pair LIMIT with ORDER BY."}
+{"instruction": "What is `ORDER BY LIMIT` for?", "input": "", "output": "`ORDER BY x DESC LIMIT 20` pages deterministically — but always pair LIMIT with ORDER BY."}
+{"instruction": "What does `INSERT INTO` do?", "input": "", "output": "Name columns explicitly (`INSERT INTO t (a,b) VALUES...`); positional inserts rot on schema change."}
+{"instruction": "Explain `INSERT INTO` briefly.", "input": "", "output": "Name columns explicitly (`INSERT INTO t (a,b) VALUES...`); positional inserts rot on schema change."}
+{"instruction": "When do I use `INSERT INTO`?", "input": "", "output": "Name columns explicitly (`INSERT INTO t (a,b) VALUES...`); positional inserts rot on schema change."}
+{"instruction": "Give a practical example of `INSERT INTO`.", "input": "", "output": "Name columns explicitly (`INSERT INTO t (a,b) VALUES...`); positional inserts rot on schema change."}
+{"instruction": "What is `INSERT INTO` for?", "input": "", "output": "Name columns explicitly (`INSERT INTO t (a,b) VALUES...`); positional inserts rot on schema change."}
+{"instruction": "What does `UPDATE WHERE` do?", "input": "", "output": "UPDATE without WHERE rewrites the table — develop the WHERE as SELECT first, then convert."}
+{"instruction": "Explain `UPDATE WHERE` briefly.", "input": "", "output": "UPDATE without WHERE rewrites the table — develop the WHERE as SELECT first, then convert."}
+{"instruction": "When do I use `UPDATE WHERE`?", "input": "", "output": "UPDATE without WHERE rewrites the table — develop the WHERE as SELECT first, then convert."}
+{"instruction": "Give a practical example of `UPDATE WHERE`.", "input": "", "output": "UPDATE without WHERE rewrites the table — develop the WHERE as SELECT first, then convert."}
+{"instruction": "What is `UPDATE WHERE` for?", "input": "", "output": "UPDATE without WHERE rewrites the table — develop the WHERE as SELECT first, then convert."}
+{"instruction": "What does `DELETE WHERE` do?", "input": "", "output": "Same discipline as UPDATE; prefer soft-delete flags for business records you may need back."}
+{"instruction": "Explain `DELETE WHERE` briefly.", "input": "", "output": "Same discipline as UPDATE; prefer soft-delete flags for business records you may need back."}
+{"instruction": "When do I use `DELETE WHERE`?", "input": "", "output": "Same discipline as UPDATE; prefer soft-delete flags for business records you may need back."}
+{"instruction": "Give a practical example of `DELETE WHERE`.", "input": "", "output": "Same discipline as UPDATE; prefer soft-delete flags for business records you may need back."}
+{"instruction": "What is `DELETE WHERE` for?", "input": "", "output": "Same discipline as UPDATE; prefer soft-delete flags for business records you may need back."}
+{"instruction": "What does `CREATE TABLE` do?", "input": "", "output": "Declare PK, NOT NULLs, sane defaults and InnoDB up front; altering later on big tables is painful."}
+{"instruction": "Explain `CREATE TABLE` briefly.", "input": "", "output": "Declare PK, NOT NULLs, sane defaults and InnoDB up front; altering later on big tables is painful."}
+{"instruction": "When do I use `CREATE TABLE`?", "input": "", "output": "Declare PK, NOT NULLs, sane defaults and InnoDB up front; altering later on big tables is painful."}
+{"instruction": "Give a practical example of `CREATE TABLE`.", "input": "", "output": "Declare PK, NOT NULLs, sane defaults and InnoDB up front; altering later on big tables is painful."}
+{"instruction": "What is `CREATE TABLE` for?", "input": "", "output": "Declare PK, NOT NULLs, sane defaults and InnoDB up front; altering later on big tables is painful."}
+{"instruction": "What does `primary key` do?", "input": "", "output": "Auto-increment integer PKs are the default sane choice; UUIDs suit distributed writes at a cost."}
+{"instruction": "Explain `primary key` briefly.", "input": "", "output": "Auto-increment integer PKs are the default sane choice; UUIDs suit distributed writes at a cost."}
+{"instruction": "When do I use `primary key`?", "input": "", "output": "Auto-increment integer PKs are the default sane choice; UUIDs suit distributed writes at a cost."}
+{"instruction": "Give a practical example of `primary key`.", "input": "", "output": "Auto-increment integer PKs are the default sane choice; UUIDs suit distributed writes at a cost."}
+{"instruction": "What is `primary key` for?", "input": "", "output": "Auto-increment integer PKs are the default sane choice; UUIDs suit distributed writes at a cost."}
+{"instruction": "What does `JOIN INNER LEFT` do?", "input": "", "output": "INNER keeps matches both sides; LEFT keeps all left rows (NULLs where unmatched) — know which you asked."}
+{"instruction": "Explain `JOIN INNER LEFT` briefly.", "input": "", "output": "INNER keeps matches both sides; LEFT keeps all left rows (NULLs where unmatched) — know which you asked."}
+{"instruction": "When do I use `JOIN INNER LEFT`?", "input": "", "output": "INNER keeps matches both sides; LEFT keeps all left rows (NULLs where unmatched) — know which you asked."}
+{"instruction": "Give a practical example of `JOIN INNER LEFT`.", "input": "", "output": "INNER keeps matches both sides; LEFT keeps all left rows (NULLs where unmatched) — know which you asked."}
+{"instruction": "What is `JOIN INNER LEFT` for?", "input": "", "output": "INNER keeps matches both sides; LEFT keeps all left rows (NULLs where unmatched) — know which you asked."}
+{"instruction": "What does `GROUP BY COUNT` do?", "input": "", "output": "Aggregate per group with COUNT/SUM/AVG; HAVING (not WHERE) filters the grouped results."}
+{"instruction": "Explain `GROUP BY COUNT` briefly.", "input": "", "output": "Aggregate per group with COUNT/SUM/AVG; HAVING (not WHERE) filters the grouped results."}
+{"instruction": "When do I use `GROUP BY COUNT`?", "input": "", "output": "Aggregate per group with COUNT/SUM/AVG; HAVING (not WHERE) filters the grouped results."}
+{"instruction": "Give a practical example of `GROUP BY COUNT`.", "input": "", "output": "Aggregate per group with COUNT/SUM/AVG; HAVING (not WHERE) filters the grouped results."}
+{"instruction": "What is `GROUP BY COUNT` for?", "input": "", "output": "Aggregate per group with COUNT/SUM/AVG; HAVING (not WHERE) filters the grouped results."}
+{"instruction": "What does `CREATE INDEX` do?", "input": "", "output": "Index WHERE/JOIN/ORDER columns (`(a,b)` composite in query order); EXPLAIN verifies `ref` over `ALL`."}
+{"instruction": "Explain `CREATE INDEX` briefly.", "input": "", "output": "Index WHERE/JOIN/ORDER columns (`(a,b)` composite in query order); EXPLAIN verifies `ref` over `ALL`."}
+{"instruction": "When do I use `CREATE INDEX`?", "input": "", "output": "Index WHERE/JOIN/ORDER columns (`(a,b)` composite in query order); EXPLAIN verifies `ref` over `ALL`."}
+{"instruction": "Give a practical example of `CREATE INDEX`.", "input": "", "output": "Index WHERE/JOIN/ORDER columns (`(a,b)` composite in query order); EXPLAIN verifies `ref` over `ALL`."}
+{"instruction": "What is `CREATE INDEX` for?", "input": "", "output": "Index WHERE/JOIN/ORDER columns (`(a,b)` composite in query order); EXPLAIN verifies `ref` over `ALL`."}
+{"instruction": "What does `mysqldump` do?", "input": "", "output": "`mysqldump --single-transaction db | gzip` backs up consistently; test restores or backups are fiction."}
+{"instruction": "Explain `mysqldump` briefly.", "input": "", "output": "`mysqldump --single-transaction db | gzip` backs up consistently; test restores or backups are fiction."}
+{"instruction": "When do I use `mysqldump`?", "input": "", "output": "`mysqldump --single-transaction db | gzip` backs up consistently; test restores or backups are fiction."}
+{"instruction": "Give a practical example of `mysqldump`.", "input": "", "output": "`mysqldump --single-transaction db | gzip` backs up consistently; test restores or backups are fiction."}
+{"instruction": "What is `mysqldump` for?", "input": "", "output": "`mysqldump --single-transaction db | gzip` backs up consistently; test restores or backups are fiction."}
+{"instruction": "What does `mysql -u -p` do?", "input": "", "output": "`mysql -u app -p db` connects interactively (`-h` host, `-P` port); history files can leak — prefer config files."}
+{"instruction": "Explain `mysql -u -p` briefly.", "input": "", "output": "`mysql -u app -p db` connects interactively (`-h` host, `-P` port); history files can leak — prefer config files."}
+{"instruction": "When do I use `mysql -u -p`?", "input": "", "output": "`mysql -u app -p db` connects interactively (`-h` host, `-P` port); history files can leak — prefer config files."}
+{"instruction": "Give a practical example of `mysql -u -p`.", "input": "", "output": "`mysql -u app -p db` connects interactively (`-h` host, `-P` port); history files can leak — prefer config files."}
+{"instruction": "What is `mysql -u -p` for?", "input": "", "output": "`mysql -u app -p db` connects interactively (`-h` host, `-P` port); history files can leak — prefer config files."}
+{"instruction": "What does `GRANT SELECT` do?", "input": "", "output": "Grant least privilege per app/host (`GRANT SELECT ON db.*`); `FLUSH PRIVILEGES` applies grant-table edits."}
+{"instruction": "Explain `GRANT SELECT` briefly.", "input": "", "output": "Grant least privilege per app/host (`GRANT SELECT ON db.*`); `FLUSH PRIVILEGES` applies grant-table edits."}
+{"instruction": "When do I use `GRANT SELECT`?", "input": "", "output": "Grant least privilege per app/host (`GRANT SELECT ON db.*`); `FLUSH PRIVILEGES` applies grant-table edits."}
+{"instruction": "Give a practical example of `GRANT SELECT`.", "input": "", "output": "Grant least privilege per app/host (`GRANT SELECT ON db.*`); `FLUSH PRIVILEGES` applies grant-table edits."}
+{"instruction": "What is `GRANT SELECT` for?", "input": "", "output": "Grant least privilege per app/host (`GRANT SELECT ON db.*`); `FLUSH PRIVILEGES` applies grant-table edits."}
+{"instruction": "What does `utf8mb4` do?", "input": "", "output": "utf8mb4 stores full Unicode (emoji included); legacy `utf8` is 3-byte and corrupts the rest."}
+{"instruction": "Explain `utf8mb4` briefly.", "input": "", "output": "utf8mb4 stores full Unicode (emoji included); legacy `utf8` is 3-byte and corrupts the rest."}
+{"instruction": "When do I use `utf8mb4`?", "input": "", "output": "utf8mb4 stores full Unicode (emoji included); legacy `utf8` is 3-byte and corrupts the rest."}
+{"instruction": "Give a practical example of `utf8mb4`.", "input": "", "output": "utf8mb4 stores full Unicode (emoji included); legacy `utf8` is 3-byte and corrupts the rest."}
+{"instruction": "What is `utf8mb4` for?", "input": "", "output": "utf8mb4 stores full Unicode (emoji included); legacy `utf8` is 3-byte and corrupts the rest."}
+{"instruction": "What does `slow query log` do?", "input": "", "output": "Enable slow log (`long_query_time=1`) and mine it with mysqldumpslow; fix with indexes before hardware."}
+{"instruction": "Explain `slow query log` briefly.", "input": "", "output": "Enable slow log (`long_query_time=1`) and mine it with mysqldumpslow; fix with indexes before hardware."}
+{"instruction": "When do I use `slow query log`?", "input": "", "output": "Enable slow log (`long_query_time=1`) and mine it with mysqldumpslow; fix with indexes before hardware."}
+{"instruction": "Give a practical example of `slow query log`.", "input": "", "output": "Enable slow log (`long_query_time=1`) and mine it with mysqldumpslow; fix with indexes before hardware."}
+{"instruction": "What is `slow query log` for?", "input": "", "output": "Enable slow log (`long_query_time=1`) and mine it with mysqldumpslow; fix with indexes before hardware."}
+{"instruction": "What does `SHOW PROCESSLIST` do?", "input": "", "output": "Shows live connections and their queries; `KILL id` stops runaways — diagnose before restarting."}
+{"instruction": "Explain `SHOW PROCESSLIST` briefly.", "input": "", "output": "Shows live connections and their queries; `KILL id` stops runaways — diagnose before restarting."}
+{"instruction": "When do I use `SHOW PROCESSLIST`?", "input": "", "output": "Shows live connections and their queries; `KILL id` stops runaways — diagnose before restarting."}
+{"instruction": "Give a practical example of `SHOW PROCESSLIST`.", "input": "", "output": "Shows live connections and their queries; `KILL id` stops runaways — diagnose before restarting."}
+{"instruction": "What is `SHOW PROCESSLIST` for?", "input": "", "output": "Shows live connections and their queries; `KILL id` stops runaways — diagnose before restarting."}

@@ -10,3 +10,103 @@
 {"instruction": "How do Laravel queues and the scheduler work?", "input": "", "output": "Hantar kerja berat: `HantarEmel::dispatch($pengguna);`, proses dengan `php artisan queue:work` (supervisor di prod). Tugas berkala di `routes/console.php` via `Schedule::command('laporan:harian')->daily();` dengan satu cron `* * * * * php artisan schedule:run`. Semak gagal di tabel `failed_jobs`."}
 {"instruction": "How does Laravel file storage work?", "input": "", "output": "```bash\nphp artisan storage:link\n```\n```php\n$path = $request->file('foto')->store('foto', 'public');\n```\n`storage:link` paut `public/storage` ke disk public supaya boleh diakses web. Jangan simpan upload dalam repo; untuk S3 tukar `FILESYSTEM_DISK=s3` tanpa ubah kod."}
 {"instruction": "How do seeders and factories generate dev data?", "input": "", "output": "```php\nPengguna::factory()->count(50)->create();\n```\nFactory takrif data realistik sekali; seeder panggil factory + baris tetap (admin, tetapan). `migrate:fresh --seed` beri setiap dev DB segar yang sama — pepijat 'di mesin saya ok' dari data kotor hilang."}
+{"instruction": "What does `artisan list` do?", "input": "", "output": "`php artisan list` reveals every command; `--help` details flags — the framework is self-documenting."}
+{"instruction": "Explain `artisan list` briefly.", "input": "", "output": "`php artisan list` reveals every command; `--help` details flags — the framework is self-documenting."}
+{"instruction": "When do I use `artisan list`?", "input": "", "output": "`php artisan list` reveals every command; `--help` details flags — the framework is self-documenting."}
+{"instruction": "Give a practical example of `artisan list`.", "input": "", "output": "`php artisan list` reveals every command; `--help` details flags — the framework is self-documenting."}
+{"instruction": "What is `artisan list` for?", "input": "", "output": "`php artisan list` reveals every command; `--help` details flags — the framework is self-documenting."}
+{"instruction": "What does `make:controller` do?", "input": "", "output": "`make:controller X --resource` scaffolds REST methods; `--api` drops create/edit for APIs."}
+{"instruction": "Explain `make:controller` briefly.", "input": "", "output": "`make:controller X --resource` scaffolds REST methods; `--api` drops create/edit for APIs."}
+{"instruction": "When do I use `make:controller`?", "input": "", "output": "`make:controller X --resource` scaffolds REST methods; `--api` drops create/edit for APIs."}
+{"instruction": "Give a practical example of `make:controller`.", "input": "", "output": "`make:controller X --resource` scaffolds REST methods; `--api` drops create/edit for APIs."}
+{"instruction": "What is `make:controller` for?", "input": "", "output": "`make:controller X --resource` scaffolds REST methods; `--api` drops create/edit for APIs."}
+{"instruction": "What does `make:model -m` do?", "input": "", "output": "`-m` bundles migration (add `-cr` for controller+resource); one command frames full CRUD."}
+{"instruction": "Explain `make:model -m` briefly.", "input": "", "output": "`-m` bundles migration (add `-cr` for controller+resource); one command frames full CRUD."}
+{"instruction": "When do I use `make:model -m`?", "input": "", "output": "`-m` bundles migration (add `-cr` for controller+resource); one command frames full CRUD."}
+{"instruction": "Give a practical example of `make:model -m`.", "input": "", "output": "`-m` bundles migration (add `-cr` for controller+resource); one command frames full CRUD."}
+{"instruction": "What is `make:model -m` for?", "input": "", "output": "`-m` bundles migration (add `-cr` for controller+resource); one command frames full CRUD."}
+{"instruction": "What does `Route::get post` do?", "input": "", "output": "Explicit verbs map URLs to handlers; name them (`->name()`) so links survive path changes."}
+{"instruction": "Explain `Route::get post` briefly.", "input": "", "output": "Explicit verbs map URLs to handlers; name them (`->name()`) so links survive path changes."}
+{"instruction": "When do I use `Route::get post`?", "input": "", "output": "Explicit verbs map URLs to handlers; name them (`->name()`) so links survive path changes."}
+{"instruction": "Give a practical example of `Route::get post`.", "input": "", "output": "Explicit verbs map URLs to handlers; name them (`->name()`) so links survive path changes."}
+{"instruction": "What is `Route::get post` for?", "input": "", "output": "Explicit verbs map URLs to handlers; name them (`->name()`) so links survive path changes."}
+{"instruction": "What does `Route::resource` do?", "input": "", "output": "Resource routes map seven REST actions to controller methods; `route:list` audits the table."}
+{"instruction": "Explain `Route::resource` briefly.", "input": "", "output": "Resource routes map seven REST actions to controller methods; `route:list` audits the table."}
+{"instruction": "When do I use `Route::resource`?", "input": "", "output": "Resource routes map seven REST actions to controller methods; `route:list` audits the table."}
+{"instruction": "Give a practical example of `Route::resource`.", "input": "", "output": "Resource routes map seven REST actions to controller methods; `route:list` audits the table."}
+{"instruction": "What is `Route::resource` for?", "input": "", "output": "Resource routes map seven REST actions to controller methods; `route:list` audits the table."}
+{"instruction": "What does `blade {{ }}` do?", "input": "", "output": "`{{ }}` escapes (XSS-safe default); `{!! !!}` raw only for self-generated HTML."}
+{"instruction": "Explain `blade {{ }}` briefly.", "input": "", "output": "`{{ }}` escapes (XSS-safe default); `{!! !!}` raw only for self-generated HTML."}
+{"instruction": "When do I use `blade {{ }}`?", "input": "", "output": "`{{ }}` escapes (XSS-safe default); `{!! !!}` raw only for self-generated HTML."}
+{"instruction": "Give a practical example of `blade {{ }}`.", "input": "", "output": "`{{ }}` escapes (XSS-safe default); `{!! !!}` raw only for self-generated HTML."}
+{"instruction": "What is `blade {{ }}` for?", "input": "", "output": "`{{ }}` escapes (XSS-safe default); `{!! !!}` raw only for self-generated HTML."}
+{"instruction": "What does `@if @foreach` do?", "input": "", "output": "Directives replace PHP tags in templates; `@auth/@guest` branch on login state cleanly."}
+{"instruction": "Explain `@if @foreach` briefly.", "input": "", "output": "Directives replace PHP tags in templates; `@auth/@guest` branch on login state cleanly."}
+{"instruction": "When do I use `@if @foreach`?", "input": "", "output": "Directives replace PHP tags in templates; `@auth/@guest` branch on login state cleanly."}
+{"instruction": "Give a practical example of `@if @foreach`.", "input": "", "output": "Directives replace PHP tags in templates; `@auth/@guest` branch on login state cleanly."}
+{"instruction": "What is `@if @foreach` for?", "input": "", "output": "Directives replace PHP tags in templates; `@auth/@guest` branch on login state cleanly."}
+{"instruction": "What does `Eloquent all find` do?", "input": "", "output": "`Model::all/find/where()->get()` read fluently; `firstOrFail()` 404s instead of null-checks."}
+{"instruction": "Explain `Eloquent all find` briefly.", "input": "", "output": "`Model::all/find/where()->get()` read fluently; `firstOrFail()` 404s instead of null-checks."}
+{"instruction": "When do I use `Eloquent all find`?", "input": "", "output": "`Model::all/find/where()->get()` read fluently; `firstOrFail()` 404s instead of null-checks."}
+{"instruction": "Give a practical example of `Eloquent all find`.", "input": "", "output": "`Model::all/find/where()->get()` read fluently; `firstOrFail()` 404s instead of null-checks."}
+{"instruction": "What is `Eloquent all find` for?", "input": "", "output": "`Model::all/find/where()->get()` read fluently; `firstOrFail()` 404s instead of null-checks."}
+{"instruction": "What does `migrations migrate` do?", "input": "", "output": "Migrations version the schema in code; `migrate`, `rollback`, `fresh --seed` cycle dev databases."}
+{"instruction": "Explain `migrations migrate` briefly.", "input": "", "output": "Migrations version the schema in code; `migrate`, `rollback`, `fresh --seed` cycle dev databases."}
+{"instruction": "When do I use `migrations migrate`?", "input": "", "output": "Migrations version the schema in code; `migrate`, `rollback`, `fresh --seed` cycle dev databases."}
+{"instruction": "Give a practical example of `migrations migrate`.", "input": "", "output": "Migrations version the schema in code; `migrate`, `rollback`, `fresh --seed` cycle dev databases."}
+{"instruction": "What is `migrations migrate` for?", "input": "", "output": "Migrations version the schema in code; `migrate`, `rollback`, `fresh --seed` cycle dev databases."}
+{"instruction": "What does `db:seed factories` do?", "input": "", "output": "Factories mint realistic rows; seeders compose them so every dev shares identical starter data."}
+{"instruction": "Explain `db:seed factories` briefly.", "input": "", "output": "Factories mint realistic rows; seeders compose them so every dev shares identical starter data."}
+{"instruction": "When do I use `db:seed factories`?", "input": "", "output": "Factories mint realistic rows; seeders compose them so every dev shares identical starter data."}
+{"instruction": "Give a practical example of `db:seed factories`.", "input": "", "output": "Factories mint realistic rows; seeders compose them so every dev shares identical starter data."}
+{"instruction": "What is `db:seed factories` for?", "input": "", "output": "Factories mint realistic rows; seeders compose them so every dev shares identical starter data."}
+{"instruction": "What does `request validate` do?", "input": "", "output": "`$request->validate([...])` auto-redirects with errors and old input; `@error` displays per field."}
+{"instruction": "Explain `request validate` briefly.", "input": "", "output": "`$request->validate([...])` auto-redirects with errors and old input; `@error` displays per field."}
+{"instruction": "When do I use `request validate`?", "input": "", "output": "`$request->validate([...])` auto-redirects with errors and old input; `@error` displays per field."}
+{"instruction": "Give a practical example of `request validate`.", "input": "", "output": "`$request->validate([...])` auto-redirects with errors and old input; `@error` displays per field."}
+{"instruction": "What is `request validate` for?", "input": "", "output": "`$request->validate([...])` auto-redirects with errors and old input; `@error` displays per field."}
+{"instruction": "What does `auth middleware` do?", "input": "", "output": "`->middleware('auth')` guards routes; Breeze scaffolds full login/register when starting fresh."}
+{"instruction": "Explain `auth middleware` briefly.", "input": "", "output": "`->middleware('auth')` guards routes; Breeze scaffolds full login/register when starting fresh."}
+{"instruction": "When do I use `auth middleware`?", "input": "", "output": "`->middleware('auth')` guards routes; Breeze scaffolds full login/register when starting fresh."}
+{"instruction": "Give a practical example of `auth middleware`.", "input": "", "output": "`->middleware('auth')` guards routes; Breeze scaffolds full login/register when starting fresh."}
+{"instruction": "What is `auth middleware` for?", "input": "", "output": "`->middleware('auth')` guards routes; Breeze scaffolds full login/register when starting fresh."}
+{"instruction": "What does `.env config` do?", "input": "", "output": "Env feeds `config/` files read via `config()`; cache configs in prod and never call `env()` outside config."}
+{"instruction": "Explain `.env config` briefly.", "input": "", "output": "Env feeds `config/` files read via `config()`; cache configs in prod and never call `env()` outside config."}
+{"instruction": "When do I use `.env config`?", "input": "", "output": "Env feeds `config/` files read via `config()`; cache configs in prod and never call `env()` outside config."}
+{"instruction": "Give a practical example of `.env config`.", "input": "", "output": "Env feeds `config/` files read via `config()`; cache configs in prod and never call `env()` outside config."}
+{"instruction": "What is `.env config` for?", "input": "", "output": "Env feeds `config/` files read via `config()`; cache configs in prod and never call `env()` outside config."}
+{"instruction": "What does `storage:link` do?", "input": "", "output": "The public disk needs `storage:link` once; uploads go to storage, never the repo."}
+{"instruction": "Explain `storage:link` briefly.", "input": "", "output": "The public disk needs `storage:link` once; uploads go to storage, never the repo."}
+{"instruction": "When do I use `storage:link`?", "input": "", "output": "The public disk needs `storage:link` once; uploads go to storage, never the repo."}
+{"instruction": "Give a practical example of `storage:link`.", "input": "", "output": "The public disk needs `storage:link` once; uploads go to storage, never the repo."}
+{"instruction": "What is `storage:link` for?", "input": "", "output": "The public disk needs `storage:link` once; uploads go to storage, never the repo."}
+{"instruction": "What does `queue:work` do?", "input": "", "output": "Dispatched jobs run async under workers supervised in prod; `failed_jobs` table catches casualties."}
+{"instruction": "Explain `queue:work` briefly.", "input": "", "output": "Dispatched jobs run async under workers supervised in prod; `failed_jobs` table catches casualties."}
+{"instruction": "When do I use `queue:work`?", "input": "", "output": "Dispatched jobs run async under workers supervised in prod; `failed_jobs` table catches casualties."}
+{"instruction": "Give a practical example of `queue:work`.", "input": "", "output": "Dispatched jobs run async under workers supervised in prod; `failed_jobs` table catches casualties."}
+{"instruction": "What is `queue:work` for?", "input": "", "output": "Dispatched jobs run async under workers supervised in prod; `failed_jobs` table catches casualties."}
+{"instruction": "What does `tinker` do?", "input": "", "output": "`php artisan tinker` is a REPL on your app — inspect models and test snippets without routes."}
+{"instruction": "Explain `tinker` briefly.", "input": "", "output": "`php artisan tinker` is a REPL on your app — inspect models and test snippets without routes."}
+{"instruction": "When do I use `tinker`?", "input": "", "output": "`php artisan tinker` is a REPL on your app — inspect models and test snippets without routes."}
+{"instruction": "Give a practical example of `tinker`.", "input": "", "output": "`php artisan tinker` is a REPL on your app — inspect models and test snippets without routes."}
+{"instruction": "What is `tinker` for?", "input": "", "output": "`php artisan tinker` is a REPL on your app — inspect models and test snippets without routes."}
+{"instruction": "What does `serve` do?", "input": "", "output": "`php artisan serve` boots dev quickly; production needs real servers (nginx + php-fpm), not serve."}
+{"instruction": "Explain `serve` briefly.", "input": "", "output": "`php artisan serve` boots dev quickly; production needs real servers (nginx + php-fpm), not serve."}
+{"instruction": "When do I use `serve`?", "input": "", "output": "`php artisan serve` boots dev quickly; production needs real servers (nginx + php-fpm), not serve."}
+{"instruction": "Give a practical example of `serve`.", "input": "", "output": "`php artisan serve` boots dev quickly; production needs real servers (nginx + php-fpm), not serve."}
+{"instruction": "What is `serve` for?", "input": "", "output": "`php artisan serve` boots dev quickly; production needs real servers (nginx + php-fpm), not serve."}
+{"instruction": "What does `config:cache` do?", "input": "", "output": "Cache config/routes/views on deploy for free speed; clear and rebuild on every release."}
+{"instruction": "Explain `config:cache` briefly.", "input": "", "output": "Cache config/routes/views on deploy for free speed; clear and rebuild on every release."}
+{"instruction": "When do I use `config:cache`?", "input": "", "output": "Cache config/routes/views on deploy for free speed; clear and rebuild on every release."}
+{"instruction": "Give a practical example of `config:cache`.", "input": "", "output": "Cache config/routes/views on deploy for free speed; clear and rebuild on every release."}
+{"instruction": "What is `config:cache` for?", "input": "", "output": "Cache config/routes/views on deploy for free speed; clear and rebuild on every release."}
+{"instruction": "What does `relationships` do?", "input": "", "output": "`hasMany/belongsTo` declare links; `with()` eager-loads to kill N+1 query explosions."}
+{"instruction": "Explain `relationships` briefly.", "input": "", "output": "`hasMany/belongsTo` declare links; `with()` eager-loads to kill N+1 query explosions."}
+{"instruction": "When do I use `relationships`?", "input": "", "output": "`hasMany/belongsTo` declare links; `with()` eager-loads to kill N+1 query explosions."}
+{"instruction": "Give a practical example of `relationships`.", "input": "", "output": "`hasMany/belongsTo` declare links; `with()` eager-loads to kill N+1 query explosions."}
+{"instruction": "What is `relationships` for?", "input": "", "output": "`hasMany/belongsTo` declare links; `with()` eager-loads to kill N+1 query explosions."}
+{"instruction": "What does `policies gates` do?", "input": "", "output": "Policies authorize per-model actions (`@can` in Blade); gates cover one-off abilities outside models."}
+{"instruction": "Explain `policies gates` briefly.", "input": "", "output": "Policies authorize per-model actions (`@can` in Blade); gates cover one-off abilities outside models."}
+{"instruction": "When do I use `policies gates`?", "input": "", "output": "Policies authorize per-model actions (`@can` in Blade); gates cover one-off abilities outside models."}
+{"instruction": "Give a practical example of `policies gates`.", "input": "", "output": "Policies authorize per-model actions (`@can` in Blade); gates cover one-off abilities outside models."}
+{"instruction": "What is `policies gates` for?", "input": "", "output": "Policies authorize per-model actions (`@can` in Blade); gates cover one-off abilities outside models."}

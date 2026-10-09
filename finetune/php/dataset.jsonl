@@ -10,6 +10,106 @@
 {"instruction": "How do PHP sessions work securely?", "input": "", "output": "```php\nsession_start();\n$_SESSION['uid'] = $id;\nsession_regenerate_id(true); // selepas log masuk\n```\nRegenerate ID selepas log masuk cegah fixation; `session_destroy()` + padam cookie semasa log keluar. Simpan sesi di luar kod (Redis/memcached untuk multi-server), dan tandakan cookie `httponly` + `secure`."}
 {"instruction": "How do I configure PHP error reporting?", "input": "", "output": "Dev: `error_reporting(E_ALL); ini_set('display_errors', '1');` — nampak semua amaran awal. Prod: papar OFF, log ON (`log_errors=1`, `error_log=/var/log/php/app.log`). Amaran yang disorok hari ini adalah outage minggu depan — betulkan, jangan `@` senyapkan."}
 {"instruction": "How do I enable OPcache for PHP?", "input": "", "output": "Dalam php.ini prod: `opcache.enable=1`, `opcache.memory_consumption=256`, dan `opcache.validate_timestamps=0` (muat semula manual selepas deploy via `opcache_reset()` atau restart php-fpm). OPcache simpan bytecode terkompil — speedup 2-3x percuma. Dev kekalkan validate_timestamps=1 agar edit terus nampak."}
+{"instruction": "What does `<?php echo` do?", "input": "", "output": "`<?php echo $x; ?>` (or `<?= $x ?>`) prints escaped output; all dynamic output needs `htmlspecialchars`."}
+{"instruction": "Explain `<?php echo` briefly.", "input": "", "output": "`<?php echo $x; ?>` (or `<?= $x ?>`) prints escaped output; all dynamic output needs `htmlspecialchars`."}
+{"instruction": "When do I use `<?php echo`?", "input": "", "output": "`<?php echo $x; ?>` (or `<?= $x ?>`) prints escaped output; all dynamic output needs `htmlspecialchars`."}
+{"instruction": "Give a practical example of `<?php echo`.", "input": "", "output": "`<?php echo $x; ?>` (or `<?= $x ?>`) prints escaped output; all dynamic output needs `htmlspecialchars`."}
+{"instruction": "What is `<?php echo` for?", "input": "", "output": "`<?php echo $x; ?>` (or `<?= $x ?>`) prints escaped output; all dynamic output needs `htmlspecialchars`."}
+{"instruction": "What does `$variables` do?", "input": "", "output": "`$` prefixes all variables (loosely typed); `$_GET/$_POST` carry request input — never trusted raw."}
+{"instruction": "Explain `$variables` briefly.", "input": "", "output": "`$` prefixes all variables (loosely typed); `$_GET/$_POST` carry request input — never trusted raw."}
+{"instruction": "When do I use `$variables`?", "input": "", "output": "`$` prefixes all variables (loosely typed); `$_GET/$_POST` carry request input — never trusted raw."}
+{"instruction": "Give a practical example of `$variables`.", "input": "", "output": "`$` prefixes all variables (loosely typed); `$_GET/$_POST` carry request input — never trusted raw."}
+{"instruction": "What is `$variables` for?", "input": "", "output": "`$` prefixes all variables (loosely typed); `$_GET/$_POST` carry request input — never trusted raw."}
+{"instruction": "What does `if else` do?", "input": "", "output": "Standard branches with `===` strict compare; loose `==` juggling (`'0' == false`) is a classic trap."}
+{"instruction": "Explain `if else` briefly.", "input": "", "output": "Standard branches with `===` strict compare; loose `==` juggling (`'0' == false`) is a classic trap."}
+{"instruction": "When do I use `if else`?", "input": "", "output": "Standard branches with `===` strict compare; loose `==` juggling (`'0' == false`) is a classic trap."}
+{"instruction": "Give a practical example of `if else`.", "input": "", "output": "Standard branches with `===` strict compare; loose `==` juggling (`'0' == false`) is a classic trap."}
+{"instruction": "What is `if else` for?", "input": "", "output": "Standard branches with `===` strict compare; loose `==` juggling (`'0' == false`) is a classic trap."}
+{"instruction": "What does `for foreach while` do?", "input": "", "output": "`foreach ($arr as $k => $v)` is the workhorse; `while` needs manual progress or loops forever."}
+{"instruction": "Explain `for foreach while` briefly.", "input": "", "output": "`foreach ($arr as $k => $v)` is the workhorse; `while` needs manual progress or loops forever."}
+{"instruction": "When do I use `for foreach while`?", "input": "", "output": "`foreach ($arr as $k => $v)` is the workhorse; `while` needs manual progress or loops forever."}
+{"instruction": "Give a practical example of `for foreach while`.", "input": "", "output": "`foreach ($arr as $k => $v)` is the workhorse; `while` needs manual progress or loops forever."}
+{"instruction": "What is `for foreach while` for?", "input": "", "output": "`foreach ($arr as $k => $v)` is the workhorse; `while` needs manual progress or loops forever."}
+{"instruction": "What does `function` do?", "input": "", "output": "Functions take typed params with defaults; `declare(strict_types=1)` per file stops silent coercion."}
+{"instruction": "Explain `function` briefly.", "input": "", "output": "Functions take typed params with defaults; `declare(strict_types=1)` per file stops silent coercion."}
+{"instruction": "When do I use `function`?", "input": "", "output": "Functions take typed params with defaults; `declare(strict_types=1)` per file stops silent coercion."}
+{"instruction": "Give a practical example of `function`.", "input": "", "output": "Functions take typed params with defaults; `declare(strict_types=1)` per file stops silent coercion."}
+{"instruction": "What is `function` for?", "input": "", "output": "Functions take typed params with defaults; `declare(strict_types=1)` per file stops silent coercion."}
+{"instruction": "What does `arrays assoc` do?", "input": "", "output": "PHP arrays are ordered maps; `[]` appends, `count()` sizes, `array_*` helpers transform."}
+{"instruction": "Explain `arrays assoc` briefly.", "input": "", "output": "PHP arrays are ordered maps; `[]` appends, `count()` sizes, `array_*` helpers transform."}
+{"instruction": "When do I use `arrays assoc`?", "input": "", "output": "PHP arrays are ordered maps; `[]` appends, `count()` sizes, `array_*` helpers transform."}
+{"instruction": "Give a practical example of `arrays assoc`.", "input": "", "output": "PHP arrays are ordered maps; `[]` appends, `count()` sizes, `array_*` helpers transform."}
+{"instruction": "What is `arrays assoc` for?", "input": "", "output": "PHP arrays are ordered maps; `[]` appends, `count()` sizes, `array_*` helpers transform."}
+{"instruction": "What does `count() sizeof` do?", "input": "", "output": "`count()` sizes arrays (O(1)); empty check via `=== []` or `empty()` — know their falsy differences."}
+{"instruction": "Explain `count() sizeof` briefly.", "input": "", "output": "`count()` sizes arrays (O(1)); empty check via `=== []` or `empty()` — know their falsy differences."}
+{"instruction": "When do I use `count() sizeof`?", "input": "", "output": "`count()` sizes arrays (O(1)); empty check via `=== []` or `empty()` — know their falsy differences."}
+{"instruction": "Give a practical example of `count() sizeof`.", "input": "", "output": "`count()` sizes arrays (O(1)); empty check via `=== []` or `empty()` — know their falsy differences."}
+{"instruction": "What is `count() sizeof` for?", "input": "", "output": "`count()` sizes arrays (O(1)); empty check via `=== []` or `empty()` — know their falsy differences."}
+{"instruction": "What does `strlen strpos` do?", "input": "", "output": "`strlen` bytes (not chars — use `mb_strlen` for Unicode); `strpos` returns 0-or-false, compare with `!==`."}
+{"instruction": "Explain `strlen strpos` briefly.", "input": "", "output": "`strlen` bytes (not chars — use `mb_strlen` for Unicode); `strpos` returns 0-or-false, compare with `!==`."}
+{"instruction": "When do I use `strlen strpos`?", "input": "", "output": "`strlen` bytes (not chars — use `mb_strlen` for Unicode); `strpos` returns 0-or-false, compare with `!==`."}
+{"instruction": "Give a practical example of `strlen strpos`.", "input": "", "output": "`strlen` bytes (not chars — use `mb_strlen` for Unicode); `strpos` returns 0-or-false, compare with `!==`."}
+{"instruction": "What is `strlen strpos` for?", "input": "", "output": "`strlen` bytes (not chars — use `mb_strlen` for Unicode); `strpos` returns 0-or-false, compare with `!==`."}
+{"instruction": "What does `str_replace explode` do?", "input": "", "output": "`str_replace` swaps substrings; `explode(',', $s)` splits, `implode` glues — CSV lines in two calls."}
+{"instruction": "Explain `str_replace explode` briefly.", "input": "", "output": "`str_replace` swaps substrings; `explode(',', $s)` splits, `implode` glues — CSV lines in two calls."}
+{"instruction": "When do I use `str_replace explode`?", "input": "", "output": "`str_replace` swaps substrings; `explode(',', $s)` splits, `implode` glues — CSV lines in two calls."}
+{"instruction": "Give a practical example of `str_replace explode`.", "input": "", "output": "`str_replace` swaps substrings; `explode(',', $s)` splits, `implode` glues — CSV lines in two calls."}
+{"instruction": "What is `str_replace explode` for?", "input": "", "output": "`str_replace` swaps substrings; `explode(',', $s)` splits, `implode` glues — CSV lines in two calls."}
+{"instruction": "What does `include require` do?", "input": "", "output": "`require` fatals on missing (critical code), `include` warns; `_once` variants prevent redeclaration."}
+{"instruction": "Explain `include require` briefly.", "input": "", "output": "`require` fatals on missing (critical code), `include` warns; `_once` variants prevent redeclaration."}
+{"instruction": "When do I use `include require`?", "input": "", "output": "`require` fatals on missing (critical code), `include` warns; `_once` variants prevent redeclaration."}
+{"instruction": "Give a practical example of `include require`.", "input": "", "output": "`require` fatals on missing (critical code), `include` warns; `_once` variants prevent redeclaration."}
+{"instruction": "What is `include require` for?", "input": "", "output": "`require` fatals on missing (critical code), `include` warns; `_once` variants prevent redeclaration."}
+{"instruction": "What does `class new` do?", "input": "", "output": "One class per PSR-4 file; constructor promotion trims boilerplate; visibility guards internals."}
+{"instruction": "Explain `class new` briefly.", "input": "", "output": "One class per PSR-4 file; constructor promotion trims boilerplate; visibility guards internals."}
+{"instruction": "When do I use `class new`?", "input": "", "output": "One class per PSR-4 file; constructor promotion trims boilerplate; visibility guards internals."}
+{"instruction": "Give a practical example of `class new`.", "input": "", "output": "One class per PSR-4 file; constructor promotion trims boilerplate; visibility guards internals."}
+{"instruction": "What is `class new` for?", "input": "", "output": "One class per PSR-4 file; constructor promotion trims boilerplate; visibility guards internals."}
+{"instruction": "What does `composer install` do?", "input": "", "output": "Composer resolves `composer.json` into locked `composer.lock`; commit both, never `vendor/`."}
+{"instruction": "Explain `composer install` briefly.", "input": "", "output": "Composer resolves `composer.json` into locked `composer.lock`; commit both, never `vendor/`."}
+{"instruction": "When do I use `composer install`?", "input": "", "output": "Composer resolves `composer.json` into locked `composer.lock`; commit both, never `vendor/`."}
+{"instruction": "Give a practical example of `composer install`.", "input": "", "output": "Composer resolves `composer.json` into locked `composer.lock`; commit both, never `vendor/`."}
+{"instruction": "What is `composer install` for?", "input": "", "output": "Composer resolves `composer.json` into locked `composer.lock`; commit both, never `vendor/`."}
+{"instruction": "What does `password_hash` do?", "input": "", "output": "`password_hash` with Argon2/bcrypt handles salt+cost; verify with `password_verify`, rehash on cost bumps."}
+{"instruction": "Explain `password_hash` briefly.", "input": "", "output": "`password_hash` with Argon2/bcrypt handles salt+cost; verify with `password_verify`, rehash on cost bumps."}
+{"instruction": "When do I use `password_hash`?", "input": "", "output": "`password_hash` with Argon2/bcrypt handles salt+cost; verify with `password_verify`, rehash on cost bumps."}
+{"instruction": "Give a practical example of `password_hash`.", "input": "", "output": "`password_hash` with Argon2/bcrypt handles salt+cost; verify with `password_verify`, rehash on cost bumps."}
+{"instruction": "What is `password_hash` for?", "input": "", "output": "`password_hash` with Argon2/bcrypt handles salt+cost; verify with `password_verify`, rehash on cost bumps."}
+{"instruction": "What does `PDO prepare` do?", "input": "", "output": "Prepared placeholders separate data from SQL (injection-proof); set ERRMODE_EXCEPTION and real prepares."}
+{"instruction": "Explain `PDO prepare` briefly.", "input": "", "output": "Prepared placeholders separate data from SQL (injection-proof); set ERRMODE_EXCEPTION and real prepares."}
+{"instruction": "When do I use `PDO prepare`?", "input": "", "output": "Prepared placeholders separate data from SQL (injection-proof); set ERRMODE_EXCEPTION and real prepares."}
+{"instruction": "Give a practical example of `PDO prepare`.", "input": "", "output": "Prepared placeholders separate data from SQL (injection-proof); set ERRMODE_EXCEPTION and real prepares."}
+{"instruction": "What is `PDO prepare` for?", "input": "", "output": "Prepared placeholders separate data from SQL (injection-proof); set ERRMODE_EXCEPTION and real prepares."}
+{"instruction": "What does `header Location` do?", "input": "", "output": "`header('Location: /x')` redirects but must precede any output; follow with `exit` to stop rendering."}
+{"instruction": "Explain `header Location` briefly.", "input": "", "output": "`header('Location: /x')` redirects but must precede any output; follow with `exit` to stop rendering."}
+{"instruction": "When do I use `header Location`?", "input": "", "output": "`header('Location: /x')` redirects but must precede any output; follow with `exit` to stop rendering."}
+{"instruction": "Give a practical example of `header Location`.", "input": "", "output": "`header('Location: /x')` redirects but must precede any output; follow with `exit` to stop rendering."}
+{"instruction": "What is `header Location` for?", "input": "", "output": "`header('Location: /x')` redirects but must precede any output; follow with `exit` to stop rendering."}
+{"instruction": "What does `session_start` do?", "input": "", "output": "Sessions persist per-user state; regenerate id after login, destroy on logout, flag cookies httponly+secure."}
+{"instruction": "Explain `session_start` briefly.", "input": "", "output": "Sessions persist per-user state; regenerate id after login, destroy on logout, flag cookies httponly+secure."}
+{"instruction": "When do I use `session_start`?", "input": "", "output": "Sessions persist per-user state; regenerate id after login, destroy on logout, flag cookies httponly+secure."}
+{"instruction": "Give a practical example of `session_start`.", "input": "", "output": "Sessions persist per-user state; regenerate id after login, destroy on logout, flag cookies httponly+secure."}
+{"instruction": "What is `session_start` for?", "input": "", "output": "Sessions persist per-user state; regenerate id after login, destroy on logout, flag cookies httponly+secure."}
+{"instruction": "What does `try catch` do?", "input": "", "output": "Catch specific `Exception` subclasses; log with context and rethrow or render — never swallow silently."}
+{"instruction": "Explain `try catch` briefly.", "input": "", "output": "Catch specific `Exception` subclasses; log with context and rethrow or render — never swallow silently."}
+{"instruction": "When do I use `try catch`?", "input": "", "output": "Catch specific `Exception` subclasses; log with context and rethrow or render — never swallow silently."}
+{"instruction": "Give a practical example of `try catch`.", "input": "", "output": "Catch specific `Exception` subclasses; log with context and rethrow or render — never swallow silently."}
+{"instruction": "What is `try catch` for?", "input": "", "output": "Catch specific `Exception` subclasses; log with context and rethrow or render — never swallow silently."}
+{"instruction": "What does `date() time` do?", "input": "", "output": "`date('Y-m-d')` formats timestamps; store UTC and convert per user timezone at display."}
+{"instruction": "Explain `date() time` briefly.", "input": "", "output": "`date('Y-m-d')` formats timestamps; store UTC and convert per user timezone at display."}
+{"instruction": "When do I use `date() time`?", "input": "", "output": "`date('Y-m-d')` formats timestamps; store UTC and convert per user timezone at display."}
+{"instruction": "Give a practical example of `date() time`.", "input": "", "output": "`date('Y-m-d')` formats timestamps; store UTC and convert per user timezone at display."}
+{"instruction": "What is `date() time` for?", "input": "", "output": "`date('Y-m-d')` formats timestamps; store UTC and convert per user timezone at display."}
+{"instruction": "What does `file_get_contents` do?", "input": "", "output": "Reads files/URLs into strings simply; check `=== false` and prefer streams for huge payloads."}
+{"instruction": "Explain `file_get_contents` briefly.", "input": "", "output": "Reads files/URLs into strings simply; check `=== false` and prefer streams for huge payloads."}
+{"instruction": "When do I use `file_get_contents`?", "input": "", "output": "Reads files/URLs into strings simply; check `=== false` and prefer streams for huge payloads."}
+{"instruction": "Give a practical example of `file_get_contents`.", "input": "", "output": "Reads files/URLs into strings simply; check `=== false` and prefer streams for huge payloads."}
+{"instruction": "What is `file_get_contents` for?", "input": "", "output": "Reads files/URLs into strings simply; check `=== false` and prefer streams for huge payloads."}
+{"instruction": "What does `__construct` do?", "input": "", "output": "Constructors build valid objects (inject deps, no work); heavy lifting belongs in explicit methods, not constructors."}
+{"instruction": "Explain `__construct` briefly.", "input": "", "output": "Constructors build valid objects (inject deps, no work); heavy lifting belongs in explicit methods, not constructors."}
+{"instruction": "When do I use `__construct`?", "input": "", "output": "Constructors build valid objects (inject deps, no work); heavy lifting belongs in explicit methods, not constructors."}
+{"instruction": "Give a practical example of `__construct`.", "input": "", "output": "Constructors build valid objects (inject deps, no work); heavy lifting belongs in explicit methods, not constructors."}
+{"instruction": "What is `__construct` for?", "input": "", "output": "Constructors build valid objects (inject deps, no work); heavy lifting belongs in explicit methods, not constructors."}
 {"instruction": "How do I scaffold a Laravel resource end to end?", "input": "", "output": "```bash\nphp artisan make:model Barang -mcr\nphp artisan migrate\n```\n`-mcr` jana model + migration + controller `--resource` sekali gus. Semak laluan dengan `php artisan route:list`. Satu arahan ini rangka CRUD penuh — isi method controller kemudian."}
 {"instruction": "How do Laravel routes and resource controllers work?", "input": "", "output": "```php\nRoute::get('/barang', [BarangController::class, 'index']);\nRoute::resource('barang', BarangController::class);\n```\n`Route::resource` petakan 7 laluan REST (index/create/store/show/edit/update/destroy) ke method controller. Letak API di `routes/api.php` (prefix `/api`, stateless) dan web di `routes/web.php` (sesi/CSRF)."}
 {"instruction": "Blade echo vs raw and directives?", "input": "", "output": "```blade\n{{ $nama }}          {{-- escaped, selamat --}}\n{!! $html !!}        {{-- mentah, hanya untuk HTML dipercayai --}}\n@foreach ($senarai as $s) ... @endforeach\n@auth ... @endauth\n```\n`{{ }}` escape automatik cegah XSS — `{!! !!}` untuk HTML yang anda hasilkan sendiri sahaja. Direktif `@if/@foreach/@auth` ganti logik PHP dalam templat."}
@@ -22,3 +122,103 @@
 {"instruction": "How do Laravel queues and the scheduler work?", "input": "", "output": "Hantar kerja berat: `HantarEmel::dispatch($pengguna);`, proses dengan `php artisan queue:work` (supervisor di prod). Tugas berkala di `routes/console.php` via `Schedule::command('laporan:harian')->daily();` dengan satu cron `* * * * * php artisan schedule:run`. Semak gagal di tabel `failed_jobs`."}
 {"instruction": "How does Laravel file storage work?", "input": "", "output": "```bash\nphp artisan storage:link\n```\n```php\n$path = $request->file('foto')->store('foto', 'public');\n```\n`storage:link` paut `public/storage` ke disk public supaya boleh diakses web. Jangan simpan upload dalam repo; untuk S3 tukar `FILESYSTEM_DISK=s3` tanpa ubah kod."}
 {"instruction": "How do seeders and factories generate dev data?", "input": "", "output": "```php\nPengguna::factory()->count(50)->create();\n```\nFactory takrif data realistik sekali; seeder panggil factory + baris tetap (admin, tetapan). `migrate:fresh --seed` beri setiap dev DB segar yang sama — pepijat 'di mesin saya ok' dari data kotor hilang."}
+{"instruction": "What does `artisan list` do?", "input": "", "output": "`php artisan list` reveals every command; `--help` details flags — the framework is self-documenting."}
+{"instruction": "Explain `artisan list` briefly.", "input": "", "output": "`php artisan list` reveals every command; `--help` details flags — the framework is self-documenting."}
+{"instruction": "When do I use `artisan list`?", "input": "", "output": "`php artisan list` reveals every command; `--help` details flags — the framework is self-documenting."}
+{"instruction": "Give a practical example of `artisan list`.", "input": "", "output": "`php artisan list` reveals every command; `--help` details flags — the framework is self-documenting."}
+{"instruction": "What is `artisan list` for?", "input": "", "output": "`php artisan list` reveals every command; `--help` details flags — the framework is self-documenting."}
+{"instruction": "What does `make:controller` do?", "input": "", "output": "`make:controller X --resource` scaffolds REST methods; `--api` drops create/edit for APIs."}
+{"instruction": "Explain `make:controller` briefly.", "input": "", "output": "`make:controller X --resource` scaffolds REST methods; `--api` drops create/edit for APIs."}
+{"instruction": "When do I use `make:controller`?", "input": "", "output": "`make:controller X --resource` scaffolds REST methods; `--api` drops create/edit for APIs."}
+{"instruction": "Give a practical example of `make:controller`.", "input": "", "output": "`make:controller X --resource` scaffolds REST methods; `--api` drops create/edit for APIs."}
+{"instruction": "What is `make:controller` for?", "input": "", "output": "`make:controller X --resource` scaffolds REST methods; `--api` drops create/edit for APIs."}
+{"instruction": "What does `make:model -m` do?", "input": "", "output": "`-m` bundles migration (add `-cr` for controller+resource); one command frames full CRUD."}
+{"instruction": "Explain `make:model -m` briefly.", "input": "", "output": "`-m` bundles migration (add `-cr` for controller+resource); one command frames full CRUD."}
+{"instruction": "When do I use `make:model -m`?", "input": "", "output": "`-m` bundles migration (add `-cr` for controller+resource); one command frames full CRUD."}
+{"instruction": "Give a practical example of `make:model -m`.", "input": "", "output": "`-m` bundles migration (add `-cr` for controller+resource); one command frames full CRUD."}
+{"instruction": "What is `make:model -m` for?", "input": "", "output": "`-m` bundles migration (add `-cr` for controller+resource); one command frames full CRUD."}
+{"instruction": "What does `Route::get post` do?", "input": "", "output": "Explicit verbs map URLs to handlers; name them (`->name()`) so links survive path changes."}
+{"instruction": "Explain `Route::get post` briefly.", "input": "", "output": "Explicit verbs map URLs to handlers; name them (`->name()`) so links survive path changes."}
+{"instruction": "When do I use `Route::get post`?", "input": "", "output": "Explicit verbs map URLs to handlers; name them (`->name()`) so links survive path changes."}
+{"instruction": "Give a practical example of `Route::get post`.", "input": "", "output": "Explicit verbs map URLs to handlers; name them (`->name()`) so links survive path changes."}
+{"instruction": "What is `Route::get post` for?", "input": "", "output": "Explicit verbs map URLs to handlers; name them (`->name()`) so links survive path changes."}
+{"instruction": "What does `Route::resource` do?", "input": "", "output": "Resource routes map seven REST actions to controller methods; `route:list` audits the table."}
+{"instruction": "Explain `Route::resource` briefly.", "input": "", "output": "Resource routes map seven REST actions to controller methods; `route:list` audits the table."}
+{"instruction": "When do I use `Route::resource`?", "input": "", "output": "Resource routes map seven REST actions to controller methods; `route:list` audits the table."}
+{"instruction": "Give a practical example of `Route::resource`.", "input": "", "output": "Resource routes map seven REST actions to controller methods; `route:list` audits the table."}
+{"instruction": "What is `Route::resource` for?", "input": "", "output": "Resource routes map seven REST actions to controller methods; `route:list` audits the table."}
+{"instruction": "What does `blade {{ }}` do?", "input": "", "output": "`{{ }}` escapes (XSS-safe default); `{!! !!}` raw only for self-generated HTML."}
+{"instruction": "Explain `blade {{ }}` briefly.", "input": "", "output": "`{{ }}` escapes (XSS-safe default); `{!! !!}` raw only for self-generated HTML."}
+{"instruction": "When do I use `blade {{ }}`?", "input": "", "output": "`{{ }}` escapes (XSS-safe default); `{!! !!}` raw only for self-generated HTML."}
+{"instruction": "Give a practical example of `blade {{ }}`.", "input": "", "output": "`{{ }}` escapes (XSS-safe default); `{!! !!}` raw only for self-generated HTML."}
+{"instruction": "What is `blade {{ }}` for?", "input": "", "output": "`{{ }}` escapes (XSS-safe default); `{!! !!}` raw only for self-generated HTML."}
+{"instruction": "What does `@if @foreach` do?", "input": "", "output": "Directives replace PHP tags in templates; `@auth/@guest` branch on login state cleanly."}
+{"instruction": "Explain `@if @foreach` briefly.", "input": "", "output": "Directives replace PHP tags in templates; `@auth/@guest` branch on login state cleanly."}
+{"instruction": "When do I use `@if @foreach`?", "input": "", "output": "Directives replace PHP tags in templates; `@auth/@guest` branch on login state cleanly."}
+{"instruction": "Give a practical example of `@if @foreach`.", "input": "", "output": "Directives replace PHP tags in templates; `@auth/@guest` branch on login state cleanly."}
+{"instruction": "What is `@if @foreach` for?", "input": "", "output": "Directives replace PHP tags in templates; `@auth/@guest` branch on login state cleanly."}
+{"instruction": "What does `Eloquent all find` do?", "input": "", "output": "`Model::all/find/where()->get()` read fluently; `firstOrFail()` 404s instead of null-checks."}
+{"instruction": "Explain `Eloquent all find` briefly.", "input": "", "output": "`Model::all/find/where()->get()` read fluently; `firstOrFail()` 404s instead of null-checks."}
+{"instruction": "When do I use `Eloquent all find`?", "input": "", "output": "`Model::all/find/where()->get()` read fluently; `firstOrFail()` 404s instead of null-checks."}
+{"instruction": "Give a practical example of `Eloquent all find`.", "input": "", "output": "`Model::all/find/where()->get()` read fluently; `firstOrFail()` 404s instead of null-checks."}
+{"instruction": "What is `Eloquent all find` for?", "input": "", "output": "`Model::all/find/where()->get()` read fluently; `firstOrFail()` 404s instead of null-checks."}
+{"instruction": "What does `migrations migrate` do?", "input": "", "output": "Migrations version the schema in code; `migrate`, `rollback`, `fresh --seed` cycle dev databases."}
+{"instruction": "Explain `migrations migrate` briefly.", "input": "", "output": "Migrations version the schema in code; `migrate`, `rollback`, `fresh --seed` cycle dev databases."}
+{"instruction": "When do I use `migrations migrate`?", "input": "", "output": "Migrations version the schema in code; `migrate`, `rollback`, `fresh --seed` cycle dev databases."}
+{"instruction": "Give a practical example of `migrations migrate`.", "input": "", "output": "Migrations version the schema in code; `migrate`, `rollback`, `fresh --seed` cycle dev databases."}
+{"instruction": "What is `migrations migrate` for?", "input": "", "output": "Migrations version the schema in code; `migrate`, `rollback`, `fresh --seed` cycle dev databases."}
+{"instruction": "What does `db:seed factories` do?", "input": "", "output": "Factories mint realistic rows; seeders compose them so every dev shares identical starter data."}
+{"instruction": "Explain `db:seed factories` briefly.", "input": "", "output": "Factories mint realistic rows; seeders compose them so every dev shares identical starter data."}
+{"instruction": "When do I use `db:seed factories`?", "input": "", "output": "Factories mint realistic rows; seeders compose them so every dev shares identical starter data."}
+{"instruction": "Give a practical example of `db:seed factories`.", "input": "", "output": "Factories mint realistic rows; seeders compose them so every dev shares identical starter data."}
+{"instruction": "What is `db:seed factories` for?", "input": "", "output": "Factories mint realistic rows; seeders compose them so every dev shares identical starter data."}
+{"instruction": "What does `request validate` do?", "input": "", "output": "`$request->validate([...])` auto-redirects with errors and old input; `@error` displays per field."}
+{"instruction": "Explain `request validate` briefly.", "input": "", "output": "`$request->validate([...])` auto-redirects with errors and old input; `@error` displays per field."}
+{"instruction": "When do I use `request validate`?", "input": "", "output": "`$request->validate([...])` auto-redirects with errors and old input; `@error` displays per field."}
+{"instruction": "Give a practical example of `request validate`.", "input": "", "output": "`$request->validate([...])` auto-redirects with errors and old input; `@error` displays per field."}
+{"instruction": "What is `request validate` for?", "input": "", "output": "`$request->validate([...])` auto-redirects with errors and old input; `@error` displays per field."}
+{"instruction": "What does `auth middleware` do?", "input": "", "output": "`->middleware('auth')` guards routes; Breeze scaffolds full login/register when starting fresh."}
+{"instruction": "Explain `auth middleware` briefly.", "input": "", "output": "`->middleware('auth')` guards routes; Breeze scaffolds full login/register when starting fresh."}
+{"instruction": "When do I use `auth middleware`?", "input": "", "output": "`->middleware('auth')` guards routes; Breeze scaffolds full login/register when starting fresh."}
+{"instruction": "Give a practical example of `auth middleware`.", "input": "", "output": "`->middleware('auth')` guards routes; Breeze scaffolds full login/register when starting fresh."}
+{"instruction": "What is `auth middleware` for?", "input": "", "output": "`->middleware('auth')` guards routes; Breeze scaffolds full login/register when starting fresh."}
+{"instruction": "What does `.env config` do?", "input": "", "output": "Env feeds `config/` files read via `config()`; cache configs in prod and never call `env()` outside config."}
+{"instruction": "Explain `.env config` briefly.", "input": "", "output": "Env feeds `config/` files read via `config()`; cache configs in prod and never call `env()` outside config."}
+{"instruction": "When do I use `.env config`?", "input": "", "output": "Env feeds `config/` files read via `config()`; cache configs in prod and never call `env()` outside config."}
+{"instruction": "Give a practical example of `.env config`.", "input": "", "output": "Env feeds `config/` files read via `config()`; cache configs in prod and never call `env()` outside config."}
+{"instruction": "What is `.env config` for?", "input": "", "output": "Env feeds `config/` files read via `config()`; cache configs in prod and never call `env()` outside config."}
+{"instruction": "What does `storage:link` do?", "input": "", "output": "The public disk needs `storage:link` once; uploads go to storage, never the repo."}
+{"instruction": "Explain `storage:link` briefly.", "input": "", "output": "The public disk needs `storage:link` once; uploads go to storage, never the repo."}
+{"instruction": "When do I use `storage:link`?", "input": "", "output": "The public disk needs `storage:link` once; uploads go to storage, never the repo."}
+{"instruction": "Give a practical example of `storage:link`.", "input": "", "output": "The public disk needs `storage:link` once; uploads go to storage, never the repo."}
+{"instruction": "What is `storage:link` for?", "input": "", "output": "The public disk needs `storage:link` once; uploads go to storage, never the repo."}
+{"instruction": "What does `queue:work` do?", "input": "", "output": "Dispatched jobs run async under workers supervised in prod; `failed_jobs` table catches casualties."}
+{"instruction": "Explain `queue:work` briefly.", "input": "", "output": "Dispatched jobs run async under workers supervised in prod; `failed_jobs` table catches casualties."}
+{"instruction": "When do I use `queue:work`?", "input": "", "output": "Dispatched jobs run async under workers supervised in prod; `failed_jobs` table catches casualties."}
+{"instruction": "Give a practical example of `queue:work`.", "input": "", "output": "Dispatched jobs run async under workers supervised in prod; `failed_jobs` table catches casualties."}
+{"instruction": "What is `queue:work` for?", "input": "", "output": "Dispatched jobs run async under workers supervised in prod; `failed_jobs` table catches casualties."}
+{"instruction": "What does `tinker` do?", "input": "", "output": "`php artisan tinker` is a REPL on your app — inspect models and test snippets without routes."}
+{"instruction": "Explain `tinker` briefly.", "input": "", "output": "`php artisan tinker` is a REPL on your app — inspect models and test snippets without routes."}
+{"instruction": "When do I use `tinker`?", "input": "", "output": "`php artisan tinker` is a REPL on your app — inspect models and test snippets without routes."}
+{"instruction": "Give a practical example of `tinker`.", "input": "", "output": "`php artisan tinker` is a REPL on your app — inspect models and test snippets without routes."}
+{"instruction": "What is `tinker` for?", "input": "", "output": "`php artisan tinker` is a REPL on your app — inspect models and test snippets without routes."}
+{"instruction": "What does `serve` do?", "input": "", "output": "`php artisan serve` boots dev quickly; production needs real servers (nginx + php-fpm), not serve."}
+{"instruction": "Explain `serve` briefly.", "input": "", "output": "`php artisan serve` boots dev quickly; production needs real servers (nginx + php-fpm), not serve."}
+{"instruction": "When do I use `serve`?", "input": "", "output": "`php artisan serve` boots dev quickly; production needs real servers (nginx + php-fpm), not serve."}
+{"instruction": "Give a practical example of `serve`.", "input": "", "output": "`php artisan serve` boots dev quickly; production needs real servers (nginx + php-fpm), not serve."}
+{"instruction": "What is `serve` for?", "input": "", "output": "`php artisan serve` boots dev quickly; production needs real servers (nginx + php-fpm), not serve."}
+{"instruction": "What does `config:cache` do?", "input": "", "output": "Cache config/routes/views on deploy for free speed; clear and rebuild on every release."}
+{"instruction": "Explain `config:cache` briefly.", "input": "", "output": "Cache config/routes/views on deploy for free speed; clear and rebuild on every release."}
+{"instruction": "When do I use `config:cache`?", "input": "", "output": "Cache config/routes/views on deploy for free speed; clear and rebuild on every release."}
+{"instruction": "Give a practical example of `config:cache`.", "input": "", "output": "Cache config/routes/views on deploy for free speed; clear and rebuild on every release."}
+{"instruction": "What is `config:cache` for?", "input": "", "output": "Cache config/routes/views on deploy for free speed; clear and rebuild on every release."}
+{"instruction": "What does `relationships` do?", "input": "", "output": "`hasMany/belongsTo` declare links; `with()` eager-loads to kill N+1 query explosions."}
+{"instruction": "Explain `relationships` briefly.", "input": "", "output": "`hasMany/belongsTo` declare links; `with()` eager-loads to kill N+1 query explosions."}
+{"instruction": "When do I use `relationships`?", "input": "", "output": "`hasMany/belongsTo` declare links; `with()` eager-loads to kill N+1 query explosions."}
+{"instruction": "Give a practical example of `relationships`.", "input": "", "output": "`hasMany/belongsTo` declare links; `with()` eager-loads to kill N+1 query explosions."}
+{"instruction": "What is `relationships` for?", "input": "", "output": "`hasMany/belongsTo` declare links; `with()` eager-loads to kill N+1 query explosions."}
+{"instruction": "What does `policies gates` do?", "input": "", "output": "Policies authorize per-model actions (`@can` in Blade); gates cover one-off abilities outside models."}
+{"instruction": "Explain `policies gates` briefly.", "input": "", "output": "Policies authorize per-model actions (`@can` in Blade); gates cover one-off abilities outside models."}
+{"instruction": "When do I use `policies gates`?", "input": "", "output": "Policies authorize per-model actions (`@can` in Blade); gates cover one-off abilities outside models."}
+{"instruction": "Give a practical example of `policies gates`.", "input": "", "output": "Policies authorize per-model actions (`@can` in Blade); gates cover one-off abilities outside models."}
+{"instruction": "What is `policies gates` for?", "input": "", "output": "Policies authorize per-model actions (`@can` in Blade); gates cover one-off abilities outside models."}

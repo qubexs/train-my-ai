@@ -6,3 +6,103 @@
 {"instruction": "How do I extend Tailwind theme colors and fonts?", "input": "", "output": "```js\n// tailwind.config.js\ntheme: { extend: { colors: { utama: \"#2563eb\" }, fontFamily: { sans: [\"Inter\"] } } }\n```\n`extend` adds without deleting defaults (top-level `colors` replaces everything). Then `bg-utama font-sans` work everywhere. Keep design tokens here — scattered arbitrary values (`bg-[#2563eb]`) defeat the system."}
 {"instruction": "When should I use @apply in Tailwind?", "input": "", "output": "```css\n.btn-utama { @apply rounded-lg bg-blue-600 px-4 py-2 text-white; }\n```\nUse @apply for genuinely repeated component patterns to cut markup noise — but overuse recreates the custom-CSS problems Tailwind removes (dead code, specificity). Rule: three repetitions of identical utility chains earns an @apply or a framework component."}
 {"instruction": "Why is my Tailwind production CSS huge?", "input": "", "output": "The `content` paths miss your templates, so nothing purges — set them to cover every file with classes (`./src/**/*.{html,js,ts,jsx,tsx}`). Dev builds look big (JIT in memory); production `build` output should be tens of KB. If still large, grep for dynamic class construction (`bg-${color}`) which the scanner cannot see — safelist those."}
+{"instruction": "What does `flex` do?", "input": "", "output": "`flex` lays one dimension with `gap`; `flex-1` children share leftover space proportionally."}
+{"instruction": "Explain `flex` briefly.", "input": "", "output": "`flex` lays one dimension with `gap`; `flex-1` children share leftover space proportionally."}
+{"instruction": "When do I use `flex`?", "input": "", "output": "`flex` lays one dimension with `gap`; `flex-1` children share leftover space proportionally."}
+{"instruction": "Give a practical example of `flex`.", "input": "", "output": "`flex` lays one dimension with `gap`; `flex-1` children share leftover space proportionally."}
+{"instruction": "What is `flex` for?", "input": "", "output": "`flex` lays one dimension with `gap`; `flex-1` children share leftover space proportionally."}
+{"instruction": "What does `grid` do?", "input": "", "output": "`grid grid-cols-3 gap-4` aligns two dimensions; `md:` prefixes adapt columns per breakpoint."}
+{"instruction": "Explain `grid` briefly.", "input": "", "output": "`grid grid-cols-3 gap-4` aligns two dimensions; `md:` prefixes adapt columns per breakpoint."}
+{"instruction": "When do I use `grid`?", "input": "", "output": "`grid grid-cols-3 gap-4` aligns two dimensions; `md:` prefixes adapt columns per breakpoint."}
+{"instruction": "Give a practical example of `grid`.", "input": "", "output": "`grid grid-cols-3 gap-4` aligns two dimensions; `md:` prefixes adapt columns per breakpoint."}
+{"instruction": "What is `grid` for?", "input": "", "output": "`grid grid-cols-3 gap-4` aligns two dimensions; `md:` prefixes adapt columns per breakpoint."}
+{"instruction": "What does `text-center text-xl` do?", "input": "", "output": "Type scale (`text-sm`..`text-4xl`), weights (`font-bold`) and alignment compose without custom CSS."}
+{"instruction": "Explain `text-center text-xl` briefly.", "input": "", "output": "Type scale (`text-sm`..`text-4xl`), weights (`font-bold`) and alignment compose without custom CSS."}
+{"instruction": "When do I use `text-center text-xl`?", "input": "", "output": "Type scale (`text-sm`..`text-4xl`), weights (`font-bold`) and alignment compose without custom CSS."}
+{"instruction": "Give a practical example of `text-center text-xl`.", "input": "", "output": "Type scale (`text-sm`..`text-4xl`), weights (`font-bold`) and alignment compose without custom CSS."}
+{"instruction": "What is `text-center text-xl` for?", "input": "", "output": "Type scale (`text-sm`..`text-4xl`), weights (`font-bold`) and alignment compose without custom CSS."}
+{"instruction": "What does `bg-blue-600` do?", "input": "", "output": "Palette colors with shades (`bg-blue-600 hover:bg-blue-700`); extend theme for brand tokens."}
+{"instruction": "Explain `bg-blue-600` briefly.", "input": "", "output": "Palette colors with shades (`bg-blue-600 hover:bg-blue-700`); extend theme for brand tokens."}
+{"instruction": "When do I use `bg-blue-600`?", "input": "", "output": "Palette colors with shades (`bg-blue-600 hover:bg-blue-700`); extend theme for brand tokens."}
+{"instruction": "Give a practical example of `bg-blue-600`.", "input": "", "output": "Palette colors with shades (`bg-blue-600 hover:bg-blue-700`); extend theme for brand tokens."}
+{"instruction": "What is `bg-blue-600` for?", "input": "", "output": "Palette colors with shades (`bg-blue-600 hover:bg-blue-700`); extend theme for brand tokens."}
+{"instruction": "What does `p-4 m-2` do?", "input": "", "output": "Spacing scale (`p-4` padding, `m-2` margin, `space-x-4` between children) replaces guesswork pixels."}
+{"instruction": "Explain `p-4 m-2` briefly.", "input": "", "output": "Spacing scale (`p-4` padding, `m-2` margin, `space-x-4` between children) replaces guesswork pixels."}
+{"instruction": "When do I use `p-4 m-2`?", "input": "", "output": "Spacing scale (`p-4` padding, `m-2` margin, `space-x-4` between children) replaces guesswork pixels."}
+{"instruction": "Give a practical example of `p-4 m-2`.", "input": "", "output": "Spacing scale (`p-4` padding, `m-2` margin, `space-x-4` between children) replaces guesswork pixels."}
+{"instruction": "What is `p-4 m-2` for?", "input": "", "output": "Spacing scale (`p-4` padding, `m-2` margin, `space-x-4` between children) replaces guesswork pixels."}
+{"instruction": "What does `rounded-lg shadow` do?", "input": "", "output": "Radius (`rounded`, `rounded-full` pills) plus layered `shadow` utilities build cards in two classes."}
+{"instruction": "Explain `rounded-lg shadow` briefly.", "input": "", "output": "Radius (`rounded`, `rounded-full` pills) plus layered `shadow` utilities build cards in two classes."}
+{"instruction": "When do I use `rounded-lg shadow`?", "input": "", "output": "Radius (`rounded`, `rounded-full` pills) plus layered `shadow` utilities build cards in two classes."}
+{"instruction": "Give a practical example of `rounded-lg shadow`.", "input": "", "output": "Radius (`rounded`, `rounded-full` pills) plus layered `shadow` utilities build cards in two classes."}
+{"instruction": "What is `rounded-lg shadow` for?", "input": "", "output": "Radius (`rounded`, `rounded-full` pills) plus layered `shadow` utilities build cards in two classes."}
+{"instruction": "What does `hover:` do?", "input": "", "output": "State variants (`hover: focus: disabled:`) compose freely; always pair hover with focus for keyboard users."}
+{"instruction": "Explain `hover:` briefly.", "input": "", "output": "State variants (`hover: focus: disabled:`) compose freely; always pair hover with focus for keyboard users."}
+{"instruction": "When do I use `hover:`?", "input": "", "output": "State variants (`hover: focus: disabled:`) compose freely; always pair hover with focus for keyboard users."}
+{"instruction": "Give a practical example of `hover:`.", "input": "", "output": "State variants (`hover: focus: disabled:`) compose freely; always pair hover with focus for keyboard users."}
+{"instruction": "What is `hover:` for?", "input": "", "output": "State variants (`hover: focus: disabled:`) compose freely; always pair hover with focus for keyboard users."}
+{"instruction": "What does `md:` do?", "input": "", "output": "Mobile-first breakpoints (`sm md lg xl 2xl`) layer enhancements upward from the phone base."}
+{"instruction": "Explain `md:` briefly.", "input": "", "output": "Mobile-first breakpoints (`sm md lg xl 2xl`) layer enhancements upward from the phone base."}
+{"instruction": "When do I use `md:`?", "input": "", "output": "Mobile-first breakpoints (`sm md lg xl 2xl`) layer enhancements upward from the phone base."}
+{"instruction": "Give a practical example of `md:`.", "input": "", "output": "Mobile-first breakpoints (`sm md lg xl 2xl`) layer enhancements upward from the phone base."}
+{"instruction": "What is `md:` for?", "input": "", "output": "Mobile-first breakpoints (`sm md lg xl 2xl`) layer enhancements upward from the phone base."}
+{"instruction": "What does `flex-col flex-row` do?", "input": "", "output": "Direction switch reflows the same markup; responsive (`flex-col md:flex-row`) without duplicate HTML."}
+{"instruction": "Explain `flex-col flex-row` briefly.", "input": "", "output": "Direction switch reflows the same markup; responsive (`flex-col md:flex-row`) without duplicate HTML."}
+{"instruction": "When do I use `flex-col flex-row`?", "input": "", "output": "Direction switch reflows the same markup; responsive (`flex-col md:flex-row`) without duplicate HTML."}
+{"instruction": "Give a practical example of `flex-col flex-row`.", "input": "", "output": "Direction switch reflows the same markup; responsive (`flex-col md:flex-row`) without duplicate HTML."}
+{"instruction": "What is `flex-col flex-row` for?", "input": "", "output": "Direction switch reflows the same markup; responsive (`flex-col md:flex-row`) without duplicate HTML."}
+{"instruction": "What does `items-center justify-center` do?", "input": "", "output": "Cross/main-axis centering pair — the two-class answer to vertical centering."}
+{"instruction": "Explain `items-center justify-center` briefly.", "input": "", "output": "Cross/main-axis centering pair — the two-class answer to vertical centering."}
+{"instruction": "When do I use `items-center justify-center`?", "input": "", "output": "Cross/main-axis centering pair — the two-class answer to vertical centering."}
+{"instruction": "Give a practical example of `items-center justify-center`.", "input": "", "output": "Cross/main-axis centering pair — the two-class answer to vertical centering."}
+{"instruction": "What is `items-center justify-center` for?", "input": "", "output": "Cross/main-axis centering pair — the two-class answer to vertical centering."}
+{"instruction": "What does `gap-4` do?", "input": "", "output": "`gap` spaces grid/flex children uniformly; replaces margin hacks and last-child exceptions."}
+{"instruction": "Explain `gap-4` briefly.", "input": "", "output": "`gap` spaces grid/flex children uniformly; replaces margin hacks and last-child exceptions."}
+{"instruction": "When do I use `gap-4`?", "input": "", "output": "`gap` spaces grid/flex children uniformly; replaces margin hacks and last-child exceptions."}
+{"instruction": "Give a practical example of `gap-4`.", "input": "", "output": "`gap` spaces grid/flex children uniformly; replaces margin hacks and last-child exceptions."}
+{"instruction": "What is `gap-4` for?", "input": "", "output": "`gap` spaces grid/flex children uniformly; replaces margin hacks and last-child exceptions."}
+{"instruction": "What does `border` do?", "input": "", "output": "`border border-gray-200` outlines; per-side (`border-t`) and divide utilities for lists."}
+{"instruction": "Explain `border` briefly.", "input": "", "output": "`border border-gray-200` outlines; per-side (`border-t`) and divide utilities for lists."}
+{"instruction": "When do I use `border`?", "input": "", "output": "`border border-gray-200` outlines; per-side (`border-t`) and divide utilities for lists."}
+{"instruction": "Give a practical example of `border`.", "input": "", "output": "`border border-gray-200` outlines; per-side (`border-t`) and divide utilities for lists."}
+{"instruction": "What is `border` for?", "input": "", "output": "`border border-gray-200` outlines; per-side (`border-t`) and divide utilities for lists."}
+{"instruction": "What does `w-full h-64` do?", "input": "", "output": "Sizing scale with fractions (`w-1/2`), viewport units and `max-w-*` containers for readable lines."}
+{"instruction": "Explain `w-full h-64` briefly.", "input": "", "output": "Sizing scale with fractions (`w-1/2`), viewport units and `max-w-*` containers for readable lines."}
+{"instruction": "When do I use `w-full h-64`?", "input": "", "output": "Sizing scale with fractions (`w-1/2`), viewport units and `max-w-*` containers for readable lines."}
+{"instruction": "Give a practical example of `w-full h-64`.", "input": "", "output": "Sizing scale with fractions (`w-1/2`), viewport units and `max-w-*` containers for readable lines."}
+{"instruction": "What is `w-full h-64` for?", "input": "", "output": "Sizing scale with fractions (`w-1/2`), viewport units and `max-w-*` containers for readable lines."}
+{"instruction": "What does `hidden block` do?", "input": "", "output": "Display swaps per breakpoint (`hidden md:block`); `invisible` keeps layout space unlike `hidden`."}
+{"instruction": "Explain `hidden block` briefly.", "input": "", "output": "Display swaps per breakpoint (`hidden md:block`); `invisible` keeps layout space unlike `hidden`."}
+{"instruction": "When do I use `hidden block`?", "input": "", "output": "Display swaps per breakpoint (`hidden md:block`); `invisible` keeps layout space unlike `hidden`."}
+{"instruction": "Give a practical example of `hidden block`.", "input": "", "output": "Display swaps per breakpoint (`hidden md:block`); `invisible` keeps layout space unlike `hidden`."}
+{"instruction": "What is `hidden block` for?", "input": "", "output": "Display swaps per breakpoint (`hidden md:block`); `invisible` keeps layout space unlike `hidden`."}
+{"instruction": "What does `container mx-auto` do?", "input": "", "output": "`container mx-auto px-4` centers content with gutters — the standard page shell."}
+{"instruction": "Explain `container mx-auto` briefly.", "input": "", "output": "`container mx-auto px-4` centers content with gutters — the standard page shell."}
+{"instruction": "When do I use `container mx-auto`?", "input": "", "output": "`container mx-auto px-4` centers content with gutters — the standard page shell."}
+{"instruction": "Give a practical example of `container mx-auto`.", "input": "", "output": "`container mx-auto px-4` centers content with gutters — the standard page shell."}
+{"instruction": "What is `container mx-auto` for?", "input": "", "output": "`container mx-auto px-4` centers content with gutters — the standard page shell."}
+{"instruction": "What does `space-x-4` do?", "input": "", "output": "`space-x/y` gaps siblings without wrapper classes; RTL-aware variants exist for mirrored layouts."}
+{"instruction": "Explain `space-x-4` briefly.", "input": "", "output": "`space-x/y` gaps siblings without wrapper classes; RTL-aware variants exist for mirrored layouts."}
+{"instruction": "When do I use `space-x-4`?", "input": "", "output": "`space-x/y` gaps siblings without wrapper classes; RTL-aware variants exist for mirrored layouts."}
+{"instruction": "Give a practical example of `space-x-4`.", "input": "", "output": "`space-x/y` gaps siblings without wrapper classes; RTL-aware variants exist for mirrored layouts."}
+{"instruction": "What is `space-x-4` for?", "input": "", "output": "`space-x/y` gaps siblings without wrapper classes; RTL-aware variants exist for mirrored layouts."}
+{"instruction": "What does `divide-y` do?", "input": "", "output": "`divide-y` draws rules between children only — cleaner than borders on every item."}
+{"instruction": "Explain `divide-y` briefly.", "input": "", "output": "`divide-y` draws rules between children only — cleaner than borders on every item."}
+{"instruction": "When do I use `divide-y`?", "input": "", "output": "`divide-y` draws rules between children only — cleaner than borders on every item."}
+{"instruction": "Give a practical example of `divide-y`.", "input": "", "output": "`divide-y` draws rules between children only — cleaner than borders on every item."}
+{"instruction": "What is `divide-y` for?", "input": "", "output": "`divide-y` draws rules between children only — cleaner than borders on every item."}
+{"instruction": "What does `dark:` do?", "input": "", "output": "Dark variants keyed off class strategy toggle whole themes with one ancestor class."}
+{"instruction": "Explain `dark:` briefly.", "input": "", "output": "Dark variants keyed off class strategy toggle whole themes with one ancestor class."}
+{"instruction": "When do I use `dark:`?", "input": "", "output": "Dark variants keyed off class strategy toggle whole themes with one ancestor class."}
+{"instruction": "Give a practical example of `dark:`.", "input": "", "output": "Dark variants keyed off class strategy toggle whole themes with one ancestor class."}
+{"instruction": "What is `dark:` for?", "input": "", "output": "Dark variants keyed off class strategy toggle whole themes with one ancestor class."}
+{"instruction": "What does `transition` do?", "input": "", "output": "`transition` + `duration-200` animate state changes; restrict to transform/opacity for smoothness."}
+{"instruction": "Explain `transition` briefly.", "input": "", "output": "`transition` + `duration-200` animate state changes; restrict to transform/opacity for smoothness."}
+{"instruction": "When do I use `transition`?", "input": "", "output": "`transition` + `duration-200` animate state changes; restrict to transform/opacity for smoothness."}
+{"instruction": "Give a practical example of `transition`.", "input": "", "output": "`transition` + `duration-200` animate state changes; restrict to transform/opacity for smoothness."}
+{"instruction": "What is `transition` for?", "input": "", "output": "`transition` + `duration-200` animate state changes; restrict to transform/opacity for smoothness."}
+{"instruction": "What does `animate-spin` do?", "input": "", "output": "Built-in keyframes (`spin ping pulse bounce`) cover loaders; custom ones extend via config."}
+{"instruction": "Explain `animate-spin` briefly.", "input": "", "output": "Built-in keyframes (`spin ping pulse bounce`) cover loaders; custom ones extend via config."}
+{"instruction": "When do I use `animate-spin`?", "input": "", "output": "Built-in keyframes (`spin ping pulse bounce`) cover loaders; custom ones extend via config."}
+{"instruction": "Give a practical example of `animate-spin`.", "input": "", "output": "Built-in keyframes (`spin ping pulse bounce`) cover loaders; custom ones extend via config."}
+{"instruction": "What is `animate-spin` for?", "input": "", "output": "Built-in keyframes (`spin ping pulse bounce`) cover loaders; custom ones extend via config."}

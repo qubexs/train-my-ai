@@ -32,3 +32,103 @@
 {"instruction": "How do I find files by name, time and run commands?", "input": "", "output": "`find /var/log -name '*.log' -mtime +7` old logs; `-size +100M` big files; `-exec grep -l ralat {} +` act on matches. Quote the glob (shell must not expand it) and prefer `-print0 | xargs -0` for weird filenames."}
 {"instruction": "Symlink vs hardlink (ln -s)?", "input": "", "output": "`ln -s /asal /pautan` creates a pointer (breaks if target moves, works across filesystems); hard links share the inode (same fs only, survive renames). Use symlinks for configs/versions (`current -> release-42`), hard links never for directories."}
 {"instruction": "How do permissions chmod/chown numbers work?", "input": "", "output": "`chmod 755 skrip.sh` = rwxr-xr-x (owner all, others read+execute); `640` for configs with secrets; never 777. `chown app:app fail` sets owner+group; `-R` recurses (careful with symlinks). Scripts need +x; data files must not have it."}
+{"instruction": "What does `ls -la` do?", "input": "", "output": "`ls -la` lists all files with details; `-l` long format, `-a` includes hidden dotfiles."}
+{"instruction": "Explain `ls -la` briefly.", "input": "", "output": "`ls -la` lists all files with details; `-l` long format, `-a` includes hidden dotfiles."}
+{"instruction": "When do I use `ls -la`?", "input": "", "output": "`ls -la` lists all files with details; `-l` long format, `-a` includes hidden dotfiles."}
+{"instruction": "Give a practical example of `ls -la`.", "input": "", "output": "`ls -la` lists all files with details; `-l` long format, `-a` includes hidden dotfiles."}
+{"instruction": "What is `ls -la` for?", "input": "", "output": "`ls -la` lists all files with details; `-l` long format, `-a` includes hidden dotfiles."}
+{"instruction": "What does `df -h` do?", "input": "", "output": "`df -h` shows disk usage per filesystem in human units; add `-i` to check inode exhaustion."}
+{"instruction": "Explain `df -h` briefly.", "input": "", "output": "`df -h` shows disk usage per filesystem in human units; add `-i` to check inode exhaustion."}
+{"instruction": "When do I use `df -h`?", "input": "", "output": "`df -h` shows disk usage per filesystem in human units; add `-i` to check inode exhaustion."}
+{"instruction": "Give a practical example of `df -h`.", "input": "", "output": "`df -h` shows disk usage per filesystem in human units; add `-i` to check inode exhaustion."}
+{"instruction": "What is `df -h` for?", "input": "", "output": "`df -h` shows disk usage per filesystem in human units; add `-i` to check inode exhaustion."}
+{"instruction": "What does `du -sh *` do?", "input": "", "output": "`du -sh *` ranks directory sizes; pipe to `sort -h` for biggest-first cleanup hunting."}
+{"instruction": "Explain `du -sh *` briefly.", "input": "", "output": "`du -sh *` ranks directory sizes; pipe to `sort -h` for biggest-first cleanup hunting."}
+{"instruction": "When do I use `du -sh *`?", "input": "", "output": "`du -sh *` ranks directory sizes; pipe to `sort -h` for biggest-first cleanup hunting."}
+{"instruction": "Give a practical example of `du -sh *`.", "input": "", "output": "`du -sh *` ranks directory sizes; pipe to `sort -h` for biggest-first cleanup hunting."}
+{"instruction": "What is `du -sh *` for?", "input": "", "output": "`du -sh *` ranks directory sizes; pipe to `sort -h` for biggest-first cleanup hunting."}
+{"instruction": "What does `free -h` do?", "input": "", "output": "`free -h` shows RAM/swap; watch the `available` column, not `free`, for real headroom."}
+{"instruction": "Explain `free -h` briefly.", "input": "", "output": "`free -h` shows RAM/swap; watch the `available` column, not `free`, for real headroom."}
+{"instruction": "When do I use `free -h`?", "input": "", "output": "`free -h` shows RAM/swap; watch the `available` column, not `free`, for real headroom."}
+{"instruction": "Give a practical example of `free -h`.", "input": "", "output": "`free -h` shows RAM/swap; watch the `available` column, not `free`, for real headroom."}
+{"instruction": "What is `free -h` for?", "input": "", "output": "`free -h` shows RAM/swap; watch the `available` column, not `free`, for real headroom."}
+{"instruction": "What does `ps aux` do?", "input": "", "output": "`ps aux` lists all processes with CPU/mem; pipe to `sort` or pair with `top` for live view."}
+{"instruction": "Explain `ps aux` briefly.", "input": "", "output": "`ps aux` lists all processes with CPU/mem; pipe to `sort` or pair with `top` for live view."}
+{"instruction": "When do I use `ps aux`?", "input": "", "output": "`ps aux` lists all processes with CPU/mem; pipe to `sort` or pair with `top` for live view."}
+{"instruction": "Give a practical example of `ps aux`.", "input": "", "output": "`ps aux` lists all processes with CPU/mem; pipe to `sort` or pair with `top` for live view."}
+{"instruction": "What is `ps aux` for?", "input": "", "output": "`ps aux` lists all processes with CPU/mem; pipe to `sort` or pair with `top` for live view."}
+{"instruction": "What does `top` do?", "input": "", "output": "`top` is the live process monitor (CPU, mem, load); press `q` to quit, `M` sorts by memory."}
+{"instruction": "Explain `top` briefly.", "input": "", "output": "`top` is the live process monitor (CPU, mem, load); press `q` to quit, `M` sorts by memory."}
+{"instruction": "When do I use `top`?", "input": "", "output": "`top` is the live process monitor (CPU, mem, load); press `q` to quit, `M` sorts by memory."}
+{"instruction": "Give a practical example of `top`.", "input": "", "output": "`top` is the live process monitor (CPU, mem, load); press `q` to quit, `M` sorts by memory."}
+{"instruction": "What is `top` for?", "input": "", "output": "`top` is the live process monitor (CPU, mem, load); press `q` to quit, `M` sorts by memory."}
+{"instruction": "What does `kill PID` do?", "input": "", "output": "`kill PID` sends SIGTERM for graceful exit; `-9` (SIGKILL) forces when stuck."}
+{"instruction": "Explain `kill PID` briefly.", "input": "", "output": "`kill PID` sends SIGTERM for graceful exit; `-9` (SIGKILL) forces when stuck."}
+{"instruction": "When do I use `kill PID`?", "input": "", "output": "`kill PID` sends SIGTERM for graceful exit; `-9` (SIGKILL) forces when stuck."}
+{"instruction": "Give a practical example of `kill PID`.", "input": "", "output": "`kill PID` sends SIGTERM for graceful exit; `-9` (SIGKILL) forces when stuck."}
+{"instruction": "What is `kill PID` for?", "input": "", "output": "`kill PID` sends SIGTERM for graceful exit; `-9` (SIGKILL) forces when stuck."}
+{"instruction": "What does `pkill -f pola` do?", "input": "", "output": "`pkill -f` kills by full command match — quote the pattern and double-check with `pgrep -f` first."}
+{"instruction": "Explain `pkill -f pola` briefly.", "input": "", "output": "`pkill -f` kills by full command match — quote the pattern and double-check with `pgrep -f` first."}
+{"instruction": "When do I use `pkill -f pola`?", "input": "", "output": "`pkill -f` kills by full command match — quote the pattern and double-check with `pgrep -f` first."}
+{"instruction": "Give a practical example of `pkill -f pola`.", "input": "", "output": "`pkill -f` kills by full command match — quote the pattern and double-check with `pgrep -f` first."}
+{"instruction": "What is `pkill -f pola` for?", "input": "", "output": "`pkill -f` kills by full command match — quote the pattern and double-check with `pgrep -f` first."}
+{"instruction": "What does `chmod 755 skrip.sh` do?", "input": "", "output": "`755` = rwxr-xr-x: owner full, others read+execute; scripts need +x, data files must not have it."}
+{"instruction": "Explain `chmod 755 skrip.sh` briefly.", "input": "", "output": "`755` = rwxr-xr-x: owner full, others read+execute; scripts need +x, data files must not have it."}
+{"instruction": "When do I use `chmod 755 skrip.sh`?", "input": "", "output": "`755` = rwxr-xr-x: owner full, others read+execute; scripts need +x, data files must not have it."}
+{"instruction": "Give a practical example of `chmod 755 skrip.sh`.", "input": "", "output": "`755` = rwxr-xr-x: owner full, others read+execute; scripts need +x, data files must not have it."}
+{"instruction": "What is `chmod 755 skrip.sh` for?", "input": "", "output": "`755` = rwxr-xr-x: owner full, others read+execute; scripts need +x, data files must not have it."}
+{"instruction": "What does `chown -R app:app /srv` do?", "input": "", "output": "`chown -R` changes owner recursively; beware symlinks and system dirs."}
+{"instruction": "Explain `chown -R app:app /srv` briefly.", "input": "", "output": "`chown -R` changes owner recursively; beware symlinks and system dirs."}
+{"instruction": "When do I use `chown -R app:app /srv`?", "input": "", "output": "`chown -R` changes owner recursively; beware symlinks and system dirs."}
+{"instruction": "Give a practical example of `chown -R app:app /srv`.", "input": "", "output": "`chown -R` changes owner recursively; beware symlinks and system dirs."}
+{"instruction": "What is `chown -R app:app /srv` for?", "input": "", "output": "`chown -R` changes owner recursively; beware symlinks and system dirs."}
+{"instruction": "What does `tar xzf app.tgz` do?", "input": "", "output": "`tar xzf` extracts gzip archives; list first with `tzf` and use `-C dir` to control destination."}
+{"instruction": "Explain `tar xzf app.tgz` briefly.", "input": "", "output": "`tar xzf` extracts gzip archives; list first with `tzf` and use `-C dir` to control destination."}
+{"instruction": "When do I use `tar xzf app.tgz`?", "input": "", "output": "`tar xzf` extracts gzip archives; list first with `tzf` and use `-C dir` to control destination."}
+{"instruction": "Give a practical example of `tar xzf app.tgz`.", "input": "", "output": "`tar xzf` extracts gzip archives; list first with `tzf` and use `-C dir` to control destination."}
+{"instruction": "What is `tar xzf app.tgz` for?", "input": "", "output": "`tar xzf` extracts gzip archives; list first with `tzf` and use `-C dir` to control destination."}
+{"instruction": "What does `grep -r teks .` do?", "input": "", "output": "`grep -r` searches recursively; add `-i` (case), `-n` (line numbers), `--include='*.py'` to narrow."}
+{"instruction": "Explain `grep -r teks .` briefly.", "input": "", "output": "`grep -r` searches recursively; add `-i` (case), `-n` (line numbers), `--include='*.py'` to narrow."}
+{"instruction": "When do I use `grep -r teks .`?", "input": "", "output": "`grep -r` searches recursively; add `-i` (case), `-n` (line numbers), `--include='*.py'` to narrow."}
+{"instruction": "Give a practical example of `grep -r teks .`.", "input": "", "output": "`grep -r` searches recursively; add `-i` (case), `-n` (line numbers), `--include='*.py'` to narrow."}
+{"instruction": "What is `grep -r teks .` for?", "input": "", "output": "`grep -r` searches recursively; add `-i` (case), `-n` (line numbers), `--include='*.py'` to narrow."}
+{"instruction": "What does `find . -name '*.log'` do?", "input": "", "output": "`find` locates by name/time/size; `-exec cmd {} +` acts on matches without xargs."}
+{"instruction": "Explain `find . -name '*.log'` briefly.", "input": "", "output": "`find` locates by name/time/size; `-exec cmd {} +` acts on matches without xargs."}
+{"instruction": "When do I use `find . -name '*.log'`?", "input": "", "output": "`find` locates by name/time/size; `-exec cmd {} +` acts on matches without xargs."}
+{"instruction": "Give a practical example of `find . -name '*.log'`.", "input": "", "output": "`find` locates by name/time/size; `-exec cmd {} +` acts on matches without xargs."}
+{"instruction": "What is `find . -name '*.log'` for?", "input": "", "output": "`find` locates by name/time/size; `-exec cmd {} +` acts on matches without xargs."}
+{"instruction": "What does `ssh user@hos` do?", "input": "", "output": "`ssh` opens a secure shell; keys (`ssh-keygen`, `ssh-copy-id`) replace passwords."}
+{"instruction": "Explain `ssh user@hos` briefly.", "input": "", "output": "`ssh` opens a secure shell; keys (`ssh-keygen`, `ssh-copy-id`) replace passwords."}
+{"instruction": "When do I use `ssh user@hos`?", "input": "", "output": "`ssh` opens a secure shell; keys (`ssh-keygen`, `ssh-copy-id`) replace passwords."}
+{"instruction": "Give a practical example of `ssh user@hos`.", "input": "", "output": "`ssh` opens a secure shell; keys (`ssh-keygen`, `ssh-copy-id`) replace passwords."}
+{"instruction": "What is `ssh user@hos` for?", "input": "", "output": "`ssh` opens a secure shell; keys (`ssh-keygen`, `ssh-copy-id`) replace passwords."}
+{"instruction": "What does `systemctl restart nginx` do?", "input": "", "output": "`systemctl restart` reloads a service; `enable` persists across boot, `status` shows logs."}
+{"instruction": "Explain `systemctl restart nginx` briefly.", "input": "", "output": "`systemctl restart` reloads a service; `enable` persists across boot, `status` shows logs."}
+{"instruction": "When do I use `systemctl restart nginx`?", "input": "", "output": "`systemctl restart` reloads a service; `enable` persists across boot, `status` shows logs."}
+{"instruction": "Give a practical example of `systemctl restart nginx`.", "input": "", "output": "`systemctl restart` reloads a service; `enable` persists across boot, `status` shows logs."}
+{"instruction": "What is `systemctl restart nginx` for?", "input": "", "output": "`systemctl restart` reloads a service; `enable` persists across boot, `status` shows logs."}
+{"instruction": "What does `journalctl -f` do?", "input": "", "output": "`journalctl -f` tails system logs; `-u unit` and `--since` narrow to incidents."}
+{"instruction": "Explain `journalctl -f` briefly.", "input": "", "output": "`journalctl -f` tails system logs; `-u unit` and `--since` narrow to incidents."}
+{"instruction": "When do I use `journalctl -f`?", "input": "", "output": "`journalctl -f` tails system logs; `-u unit` and `--since` narrow to incidents."}
+{"instruction": "Give a practical example of `journalctl -f`.", "input": "", "output": "`journalctl -f` tails system logs; `-u unit` and `--since` narrow to incidents."}
+{"instruction": "What is `journalctl -f` for?", "input": "", "output": "`journalctl -f` tails system logs; `-u unit` and `--since` narrow to incidents."}
+{"instruction": "What does `ufw allow 22/tcp` do?", "input": "", "output": "`ufw allow` opens firewall ports; always allow SSH before `ufw enable` or get locked out."}
+{"instruction": "Explain `ufw allow 22/tcp` briefly.", "input": "", "output": "`ufw allow` opens firewall ports; always allow SSH before `ufw enable` or get locked out."}
+{"instruction": "When do I use `ufw allow 22/tcp`?", "input": "", "output": "`ufw allow` opens firewall ports; always allow SSH before `ufw enable` or get locked out."}
+{"instruction": "Give a practical example of `ufw allow 22/tcp`.", "input": "", "output": "`ufw allow` opens firewall ports; always allow SSH before `ufw enable` or get locked out."}
+{"instruction": "What is `ufw allow 22/tcp` for?", "input": "", "output": "`ufw allow` opens firewall ports; always allow SSH before `ufw enable` or get locked out."}
+{"instruction": "What does `crontab -e` do?", "input": "", "output": "`crontab -e` edits your schedule (minute hour day month weekday); cron env is minimal, use absolute paths."}
+{"instruction": "Explain `crontab -e` briefly.", "input": "", "output": "`crontab -e` edits your schedule (minute hour day month weekday); cron env is minimal, use absolute paths."}
+{"instruction": "When do I use `crontab -e`?", "input": "", "output": "`crontab -e` edits your schedule (minute hour day month weekday); cron env is minimal, use absolute paths."}
+{"instruction": "Give a practical example of `crontab -e`.", "input": "", "output": "`crontab -e` edits your schedule (minute hour day month weekday); cron env is minimal, use absolute paths."}
+{"instruction": "What is `crontab -e` for?", "input": "", "output": "`crontab -e` edits your schedule (minute hour day month weekday); cron env is minimal, use absolute paths."}
+{"instruction": "What does `ln -s asal pautan` do?", "input": "", "output": "`ln -s` makes a pointer (breaks if target moves); hard links share inodes on one filesystem."}
+{"instruction": "Explain `ln -s asal pautan` briefly.", "input": "", "output": "`ln -s` makes a pointer (breaks if target moves); hard links share inodes on one filesystem."}
+{"instruction": "When do I use `ln -s asal pautan`?", "input": "", "output": "`ln -s` makes a pointer (breaks if target moves); hard links share inodes on one filesystem."}
+{"instruction": "Give a practical example of `ln -s asal pautan`.", "input": "", "output": "`ln -s` makes a pointer (breaks if target moves); hard links share inodes on one filesystem."}
+{"instruction": "What is `ln -s asal pautan` for?", "input": "", "output": "`ln -s` makes a pointer (breaks if target moves); hard links share inodes on one filesystem."}
+{"instruction": "What does `uname -a` do?", "input": "", "output": "`uname -a` prints kernel, hostname and architecture — first line of any bug report."}
+{"instruction": "Explain `uname -a` briefly.", "input": "", "output": "`uname -a` prints kernel, hostname and architecture — first line of any bug report."}
+{"instruction": "When do I use `uname -a`?", "input": "", "output": "`uname -a` prints kernel, hostname and architecture — first line of any bug report."}
+{"instruction": "Give a practical example of `uname -a`.", "input": "", "output": "`uname -a` prints kernel, hostname and architecture — first line of any bug report."}
+{"instruction": "What is `uname -a` for?", "input": "", "output": "`uname -a` prints kernel, hostname and architecture — first line of any bug report."}

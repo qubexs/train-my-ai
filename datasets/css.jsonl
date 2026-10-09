@@ -20,3 +20,103 @@
 {"instruction": "How does aspect-ratio work?", "input": "", "output": "```css\n.video { aspect-ratio: 16 / 9; width: 100%; }\n```\nGanti trik padding-top 56.25% — nisbah kekal walau lebar berubah, elak lompatan susun atur (CLS). Untuk gambar: tetapkan width + aspect-ratio, tinggi auto ikut."}
 {"instruction": "How does clamp() give fluid type?", "input": "", "output": "```css\nh1 { font-size: clamp(1.5rem, 4vw + 1rem, 3rem); }\n```\n`clamp(min, ideal, max)` — saiz mengikut viewport antara had; tiada media query untuk skala asas. Uji ekstrem (320px dan 4K) — formula buta pecah di hujung."}
 {"instruction": "How do print stylesheets work?", "input": "", "output": "```css\n@media print {\n  nav, .iklan, button { display: none; }\n  a[href]::after { content: \" (\" attr(href) \")\"; }\n}\n```\nSembunyi navigasi/iklan/interaktif; dedah URL pautan; paksa warna cetak (`print-color-adjust: exact` untuk carta). Uji dengan pratonton cetak, bukan tekaan."}
+{"instruction": "What does `color background` do?", "input": "", "output": "`color` paints text, `background` the box; test contrast 4.5:1 for body text accessibility."}
+{"instruction": "Explain `color background` briefly.", "input": "", "output": "`color` paints text, `background` the box; test contrast 4.5:1 for body text accessibility."}
+{"instruction": "When do I use `color background`?", "input": "", "output": "`color` paints text, `background` the box; test contrast 4.5:1 for body text accessibility."}
+{"instruction": "Give a practical example of `color background`.", "input": "", "output": "`color` paints text, `background` the box; test contrast 4.5:1 for body text accessibility."}
+{"instruction": "What is `color background` for?", "input": "", "output": "`color` paints text, `background` the box; test contrast 4.5:1 for body text accessibility."}
+{"instruction": "What does `font-size rem` do?", "input": "", "output": "Size in `rem` (root-relative) so user zoom scales everything; `px` freezes accessibility settings out."}
+{"instruction": "Explain `font-size rem` briefly.", "input": "", "output": "Size in `rem` (root-relative) so user zoom scales everything; `px` freezes accessibility settings out."}
+{"instruction": "When do I use `font-size rem`?", "input": "", "output": "Size in `rem` (root-relative) so user zoom scales everything; `px` freezes accessibility settings out."}
+{"instruction": "Give a practical example of `font-size rem`.", "input": "", "output": "Size in `rem` (root-relative) so user zoom scales everything; `px` freezes accessibility settings out."}
+{"instruction": "What is `font-size rem` for?", "input": "", "output": "Size in `rem` (root-relative) so user zoom scales everything; `px` freezes accessibility settings out."}
+{"instruction": "What does `font-family stack` do?", "input": "", "output": "Stacks degrade gracefully (`Inter, system-ui, sans-serif`); web fonts need `font-display: swap`."}
+{"instruction": "Explain `font-family stack` briefly.", "input": "", "output": "Stacks degrade gracefully (`Inter, system-ui, sans-serif`); web fonts need `font-display: swap`."}
+{"instruction": "When do I use `font-family stack`?", "input": "", "output": "Stacks degrade gracefully (`Inter, system-ui, sans-serif`); web fonts need `font-display: swap`."}
+{"instruction": "Give a practical example of `font-family stack`.", "input": "", "output": "Stacks degrade gracefully (`Inter, system-ui, sans-serif`); web fonts need `font-display: swap`."}
+{"instruction": "What is `font-family stack` for?", "input": "", "output": "Stacks degrade gracefully (`Inter, system-ui, sans-serif`); web fonts need `font-display: swap`."}
+{"instruction": "What does `margin padding` do?", "input": "", "output": "Margin spaces outside, padding inside; one-direction margins avoid collapse surprises in components."}
+{"instruction": "Explain `margin padding` briefly.", "input": "", "output": "Margin spaces outside, padding inside; one-direction margins avoid collapse surprises in components."}
+{"instruction": "When do I use `margin padding`?", "input": "", "output": "Margin spaces outside, padding inside; one-direction margins avoid collapse surprises in components."}
+{"instruction": "Give a practical example of `margin padding`.", "input": "", "output": "Margin spaces outside, padding inside; one-direction margins avoid collapse surprises in components."}
+{"instruction": "What is `margin padding` for?", "input": "", "output": "Margin spaces outside, padding inside; one-direction margins avoid collapse surprises in components."}
+{"instruction": "What does `border` do?", "input": "", "output": "`border: 1px solid #ddd` draws boxes; `border-radius` rounds, `border: none` resets for custom controls."}
+{"instruction": "Explain `border` briefly.", "input": "", "output": "`border: 1px solid #ddd` draws boxes; `border-radius` rounds, `border: none` resets for custom controls."}
+{"instruction": "When do I use `border`?", "input": "", "output": "`border: 1px solid #ddd` draws boxes; `border-radius` rounds, `border: none` resets for custom controls."}
+{"instruction": "Give a practical example of `border`.", "input": "", "output": "`border: 1px solid #ddd` draws boxes; `border-radius` rounds, `border: none` resets for custom controls."}
+{"instruction": "What is `border` for?", "input": "", "output": "`border: 1px solid #ddd` draws boxes; `border-radius` rounds, `border: none` resets for custom controls."}
+{"instruction": "What does `display block inline` do?", "input": "", "output": "Block fills width and stacks; inline flows in text; `inline-block` mixes both for pills and badges."}
+{"instruction": "Explain `display block inline` briefly.", "input": "", "output": "Block fills width and stacks; inline flows in text; `inline-block` mixes both for pills and badges."}
+{"instruction": "When do I use `display block inline`?", "input": "", "output": "Block fills width and stacks; inline flows in text; `inline-block` mixes both for pills and badges."}
+{"instruction": "Give a practical example of `display block inline`.", "input": "", "output": "Block fills width and stacks; inline flows in text; `inline-block` mixes both for pills and badges."}
+{"instruction": "What is `display block inline` for?", "input": "", "output": "Block fills width and stacks; inline flows in text; `inline-block` mixes both for pills and badges."}
+{"instruction": "What does `display flex` do?", "input": "", "output": "Flex lays out one dimension with `gap` spacing; `flex: 1` children share leftover space proportionally."}
+{"instruction": "Explain `display flex` briefly.", "input": "", "output": "Flex lays out one dimension with `gap` spacing; `flex: 1` children share leftover space proportionally."}
+{"instruction": "When do I use `display flex`?", "input": "", "output": "Flex lays out one dimension with `gap` spacing; `flex: 1` children share leftover space proportionally."}
+{"instruction": "Give a practical example of `display flex`.", "input": "", "output": "Flex lays out one dimension with `gap` spacing; `flex: 1` children share leftover space proportionally."}
+{"instruction": "What is `display flex` for?", "input": "", "output": "Flex lays out one dimension with `gap` spacing; `flex: 1` children share leftover space proportionally."}
+{"instruction": "What does `display grid` do?", "input": "", "output": "Grid aligns two dimensions via template columns; `auto-fit minmax()` makes responsive tracks for free."}
+{"instruction": "Explain `display grid` briefly.", "input": "", "output": "Grid aligns two dimensions via template columns; `auto-fit minmax()` makes responsive tracks for free."}
+{"instruction": "When do I use `display grid`?", "input": "", "output": "Grid aligns two dimensions via template columns; `auto-fit minmax()` makes responsive tracks for free."}
+{"instruction": "Give a practical example of `display grid`.", "input": "", "output": "Grid aligns two dimensions via template columns; `auto-fit minmax()` makes responsive tracks for free."}
+{"instruction": "What is `display grid` for?", "input": "", "output": "Grid aligns two dimensions via template columns; `auto-fit minmax()` makes responsive tracks for free."}
+{"instruction": "What does `position relative` do?", "input": "", "output": "Relative nudges visually while keeping flow space, and anchors absolute children to itself."}
+{"instruction": "Explain `position relative` briefly.", "input": "", "output": "Relative nudges visually while keeping flow space, and anchors absolute children to itself."}
+{"instruction": "When do I use `position relative`?", "input": "", "output": "Relative nudges visually while keeping flow space, and anchors absolute children to itself."}
+{"instruction": "Give a practical example of `position relative`.", "input": "", "output": "Relative nudges visually while keeping flow space, and anchors absolute children to itself."}
+{"instruction": "What is `position relative` for?", "input": "", "output": "Relative nudges visually while keeping flow space, and anchors absolute children to itself."}
+{"instruction": "What does `position absolute` do?", "input": "", "output": "Absolute pins to the nearest positioned ancestor (or page); great for badges, deadly for layouts."}
+{"instruction": "Explain `position absolute` briefly.", "input": "", "output": "Absolute pins to the nearest positioned ancestor (or page); great for badges, deadly for layouts."}
+{"instruction": "When do I use `position absolute`?", "input": "", "output": "Absolute pins to the nearest positioned ancestor (or page); great for badges, deadly for layouts."}
+{"instruction": "Give a practical example of `position absolute`.", "input": "", "output": "Absolute pins to the nearest positioned ancestor (or page); great for badges, deadly for layouts."}
+{"instruction": "What is `position absolute` for?", "input": "", "output": "Absolute pins to the nearest positioned ancestor (or page); great for badges, deadly for layouts."}
+{"instruction": "What does `flex-direction` do?", "input": "", "output": "`row` vs `column` sets the main axis; `justify-content` then runs along it, `align-items` across."}
+{"instruction": "Explain `flex-direction` briefly.", "input": "", "output": "`row` vs `column` sets the main axis; `justify-content` then runs along it, `align-items` across."}
+{"instruction": "When do I use `flex-direction`?", "input": "", "output": "`row` vs `column` sets the main axis; `justify-content` then runs along it, `align-items` across."}
+{"instruction": "Give a practical example of `flex-direction`.", "input": "", "output": "`row` vs `column` sets the main axis; `justify-content` then runs along it, `align-items` across."}
+{"instruction": "What is `flex-direction` for?", "input": "", "output": "`row` vs `column` sets the main axis; `justify-content` then runs along it, `align-items` across."}
+{"instruction": "What does `justify-content` do?", "input": "", "output": "Distributes along the main axis (`center`, `space-between`); pairs with `align-items` for full centering."}
+{"instruction": "Explain `justify-content` briefly.", "input": "", "output": "Distributes along the main axis (`center`, `space-between`); pairs with `align-items` for full centering."}
+{"instruction": "When do I use `justify-content`?", "input": "", "output": "Distributes along the main axis (`center`, `space-between`); pairs with `align-items` for full centering."}
+{"instruction": "Give a practical example of `justify-content`.", "input": "", "output": "Distributes along the main axis (`center`, `space-between`); pairs with `align-items` for full centering."}
+{"instruction": "What is `justify-content` for?", "input": "", "output": "Distributes along the main axis (`center`, `space-between`); pairs with `align-items` for full centering."}
+{"instruction": "What does `align-items` do?", "input": "", "output": "Aligns across the axis (`stretch` default fills); per-child `align-self` overrides exceptions."}
+{"instruction": "Explain `align-items` briefly.", "input": "", "output": "Aligns across the axis (`stretch` default fills); per-child `align-self` overrides exceptions."}
+{"instruction": "When do I use `align-items`?", "input": "", "output": "Aligns across the axis (`stretch` default fills); per-child `align-self` overrides exceptions."}
+{"instruction": "Give a practical example of `align-items`.", "input": "", "output": "Aligns across the axis (`stretch` default fills); per-child `align-self` overrides exceptions."}
+{"instruction": "What is `align-items` for?", "input": "", "output": "Aligns across the axis (`stretch` default fills); per-child `align-self` overrides exceptions."}
+{"instruction": "What does `grid-template-columns` do?", "input": "", "output": "`1fr 1fr` splits evenly; `repeat(3, 1fr)` scales; `minmax(200px, 1fr)` keeps floors."}
+{"instruction": "Explain `grid-template-columns` briefly.", "input": "", "output": "`1fr 1fr` splits evenly; `repeat(3, 1fr)` scales; `minmax(200px, 1fr)` keeps floors."}
+{"instruction": "When do I use `grid-template-columns`?", "input": "", "output": "`1fr 1fr` splits evenly; `repeat(3, 1fr)` scales; `minmax(200px, 1fr)` keeps floors."}
+{"instruction": "Give a practical example of `grid-template-columns`.", "input": "", "output": "`1fr 1fr` splits evenly; `repeat(3, 1fr)` scales; `minmax(200px, 1fr)` keeps floors."}
+{"instruction": "What is `grid-template-columns` for?", "input": "", "output": "`1fr 1fr` splits evenly; `repeat(3, 1fr)` scales; `minmax(200px, 1fr)` keeps floors."}
+{"instruction": "What does `media query` do?", "input": "", "output": "`@media (min-width: 768px)` enhances upward from mobile base; content-first breakpoints beat device lists."}
+{"instruction": "Explain `media query` briefly.", "input": "", "output": "`@media (min-width: 768px)` enhances upward from mobile base; content-first breakpoints beat device lists."}
+{"instruction": "When do I use `media query`?", "input": "", "output": "`@media (min-width: 768px)` enhances upward from mobile base; content-first breakpoints beat device lists."}
+{"instruction": "Give a practical example of `media query`.", "input": "", "output": "`@media (min-width: 768px)` enhances upward from mobile base; content-first breakpoints beat device lists."}
+{"instruction": "What is `media query` for?", "input": "", "output": "`@media (min-width: 768px)` enhances upward from mobile base; content-first breakpoints beat device lists."}
+{"instruction": "What does `:hover` do?", "input": "", "output": "Hover styles need focus equivalents (`:focus-visible`) — touch and keyboard users never hover."}
+{"instruction": "Explain `:hover` briefly.", "input": "", "output": "Hover styles need focus equivalents (`:focus-visible`) — touch and keyboard users never hover."}
+{"instruction": "When do I use `:hover`?", "input": "", "output": "Hover styles need focus equivalents (`:focus-visible`) — touch and keyboard users never hover."}
+{"instruction": "Give a practical example of `:hover`.", "input": "", "output": "Hover styles need focus equivalents (`:focus-visible`) — touch and keyboard users never hover."}
+{"instruction": "What is `:hover` for?", "input": "", "output": "Hover styles need focus equivalents (`:focus-visible`) — touch and keyboard users never hover."}
+{"instruction": "What does `transition` do?", "input": "", "output": "Transitions animate state changes (`transition: color .2s`); keep to transform/opacity for smoothness."}
+{"instruction": "Explain `transition` briefly.", "input": "", "output": "Transitions animate state changes (`transition: color .2s`); keep to transform/opacity for smoothness."}
+{"instruction": "When do I use `transition`?", "input": "", "output": "Transitions animate state changes (`transition: color .2s`); keep to transform/opacity for smoothness."}
+{"instruction": "Give a practical example of `transition`.", "input": "", "output": "Transitions animate state changes (`transition: color .2s`); keep to transform/opacity for smoothness."}
+{"instruction": "What is `transition` for?", "input": "", "output": "Transitions animate state changes (`transition: color .2s`); keep to transform/opacity for smoothness."}
+{"instruction": "What does `@keyframes` do?", "input": "", "output": "Keyframes script multi-step loops (spinners, pulses); honor `prefers-reduced-motion` for vestibular safety."}
+{"instruction": "Explain `@keyframes` briefly.", "input": "", "output": "Keyframes script multi-step loops (spinners, pulses); honor `prefers-reduced-motion` for vestibular safety."}
+{"instruction": "When do I use `@keyframes`?", "input": "", "output": "Keyframes script multi-step loops (spinners, pulses); honor `prefers-reduced-motion` for vestibular safety."}
+{"instruction": "Give a practical example of `@keyframes`.", "input": "", "output": "Keyframes script multi-step loops (spinners, pulses); honor `prefers-reduced-motion` for vestibular safety."}
+{"instruction": "What is `@keyframes` for?", "input": "", "output": "Keyframes script multi-step loops (spinners, pulses); honor `prefers-reduced-motion` for vestibular safety."}
+{"instruction": "What does `box-shadow` do?", "input": "", "output": "Layered shadows (`0 1px 2px, 0 8px 24px`) look natural; animate via pseudo-element opacity, not the property."}
+{"instruction": "Explain `box-shadow` briefly.", "input": "", "output": "Layered shadows (`0 1px 2px, 0 8px 24px`) look natural; animate via pseudo-element opacity, not the property."}
+{"instruction": "When do I use `box-shadow`?", "input": "", "output": "Layered shadows (`0 1px 2px, 0 8px 24px`) look natural; animate via pseudo-element opacity, not the property."}
+{"instruction": "Give a practical example of `box-shadow`.", "input": "", "output": "Layered shadows (`0 1px 2px, 0 8px 24px`) look natural; animate via pseudo-element opacity, not the property."}
+{"instruction": "What is `box-shadow` for?", "input": "", "output": "Layered shadows (`0 1px 2px, 0 8px 24px`) look natural; animate via pseudo-element opacity, not the property."}
+{"instruction": "What does `border-radius 50%` do?", "input": "", "output": "50% on squares makes circles (avatars with `object-fit: cover`); pills use half-height radius."}
+{"instruction": "Explain `border-radius 50%` briefly.", "input": "", "output": "50% on squares makes circles (avatars with `object-fit: cover`); pills use half-height radius."}
+{"instruction": "When do I use `border-radius 50%`?", "input": "", "output": "50% on squares makes circles (avatars with `object-fit: cover`); pills use half-height radius."}
+{"instruction": "Give a practical example of `border-radius 50%`.", "input": "", "output": "50% on squares makes circles (avatars with `object-fit: cover`); pills use half-height radius."}
+{"instruction": "What is `border-radius 50%` for?", "input": "", "output": "50% on squares makes circles (avatars with `object-fit: cover`); pills use half-height radius."}

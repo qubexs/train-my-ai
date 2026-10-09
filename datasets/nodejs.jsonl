@@ -23,3 +23,103 @@
 {"instruction": "How do I prompt input in a Node CLI?", "input": "", "output": "```js\nimport readline from \"node:readline\";\nconst rl = readline.createInterface({ input: process.stdin, output: process.stdout });\nconst nama = await rl.question(\"Nama? \");\nrl.close();\n```\n`question` janji-async pada Node moden — tiada pakej luar untuk prompt ringkas. Untuk CLI penuh (subcommand, bendera), guna commander/yargs."}
 {"instruction": "setTimeout vs setInterval management?", "input": "", "output": "Simpan rujukan (`const t = setTimeout(...)`) dan `clearTimeout/clearInterval` semasa selesai — pemasa yatim halang proses keluar dan bocor memori. Untuk tugas berkala yang mesti tidak bertindih, rantaikan setTimeout di hujung kerja, bukan setInterval buta."}
 {"instruction": "How do I structure a small Node project?", "input": "", "output": "```\nsrc/\n  server.js      # wiring sahaja (listen)\n  app.js         # cipta app express\n  laluan/        # Route handlers nipis\n  perkhidmatan/  # logik perniagaan\n  db.js          # pool sambungan\n```\nPisah wiring dari logik supaya handler boleh diuji tanpa dengar port. Satu modul satu tanggungjawab; kongsi via import eksplisit, bukan global."}
+{"instruction": "What does `node --version` do?", "input": "", "output": "`node --version` plus `.nvmrc` pinning keeps dev, CI and images on one runtime."}
+{"instruction": "Explain `node --version` briefly.", "input": "", "output": "`node --version` plus `.nvmrc` pinning keeps dev, CI and images on one runtime."}
+{"instruction": "When do I use `node --version`?", "input": "", "output": "`node --version` plus `.nvmrc` pinning keeps dev, CI and images on one runtime."}
+{"instruction": "Give a practical example of `node --version`.", "input": "", "output": "`node --version` plus `.nvmrc` pinning keeps dev, CI and images on one runtime."}
+{"instruction": "What is `node --version` for?", "input": "", "output": "`node --version` plus `.nvmrc` pinning keeps dev, CI and images on one runtime."}
+{"instruction": "What does `npm init -y` do?", "input": "", "output": "`npm init -y` scaffolds package.json instantly; edit name/version/scripts right after."}
+{"instruction": "Explain `npm init -y` briefly.", "input": "", "output": "`npm init -y` scaffolds package.json instantly; edit name/version/scripts right after."}
+{"instruction": "When do I use `npm init -y`?", "input": "", "output": "`npm init -y` scaffolds package.json instantly; edit name/version/scripts right after."}
+{"instruction": "Give a practical example of `npm init -y`.", "input": "", "output": "`npm init -y` scaffolds package.json instantly; edit name/version/scripts right after."}
+{"instruction": "What is `npm init -y` for?", "input": "", "output": "`npm init -y` scaffolds package.json instantly; edit name/version/scripts right after."}
+{"instruction": "What does `npm install express` do?", "input": "", "output": "Local installs land in node_modules (never global for project deps); lockfile commits for reproducibility."}
+{"instruction": "Explain `npm install express` briefly.", "input": "", "output": "Local installs land in node_modules (never global for project deps); lockfile commits for reproducibility."}
+{"instruction": "When do I use `npm install express`?", "input": "", "output": "Local installs land in node_modules (never global for project deps); lockfile commits for reproducibility."}
+{"instruction": "Give a practical example of `npm install express`.", "input": "", "output": "Local installs land in node_modules (never global for project deps); lockfile commits for reproducibility."}
+{"instruction": "What is `npm install express` for?", "input": "", "output": "Local installs land in node_modules (never global for project deps); lockfile commits for reproducibility."}
+{"instruction": "What does `require vs import` do?", "input": "", "output": "CommonJS `require` is dynamic and sync; ESM `import` is static and supports top-level await — new code uses ESM."}
+{"instruction": "Explain `require vs import` briefly.", "input": "", "output": "CommonJS `require` is dynamic and sync; ESM `import` is static and supports top-level await — new code uses ESM."}
+{"instruction": "When do I use `require vs import`?", "input": "", "output": "CommonJS `require` is dynamic and sync; ESM `import` is static and supports top-level await — new code uses ESM."}
+{"instruction": "Give a practical example of `require vs import`.", "input": "", "output": "CommonJS `require` is dynamic and sync; ESM `import` is static and supports top-level await — new code uses ESM."}
+{"instruction": "What is `require vs import` for?", "input": "", "output": "CommonJS `require` is dynamic and sync; ESM `import` is static and supports top-level await — new code uses ESM."}
+{"instruction": "What does `process.env` do?", "input": "", "output": "`process.env` reads environment strings; validate required vars at boot and fail fast with clear messages."}
+{"instruction": "Explain `process.env` briefly.", "input": "", "output": "`process.env` reads environment strings; validate required vars at boot and fail fast with clear messages."}
+{"instruction": "When do I use `process.env`?", "input": "", "output": "`process.env` reads environment strings; validate required vars at boot and fail fast with clear messages."}
+{"instruction": "Give a practical example of `process.env`.", "input": "", "output": "`process.env` reads environment strings; validate required vars at boot and fail fast with clear messages."}
+{"instruction": "What is `process.env` for?", "input": "", "output": "`process.env` reads environment strings; validate required vars at boot and fail fast with clear messages."}
+{"instruction": "What does `__dirname ESM` do?", "input": "", "output": "ESM has no `__dirname`; derive it from `import.meta.url` via `fileURLToPath` for path building."}
+{"instruction": "Explain `__dirname ESM` briefly.", "input": "", "output": "ESM has no `__dirname`; derive it from `import.meta.url` via `fileURLToPath` for path building."}
+{"instruction": "When do I use `__dirname ESM`?", "input": "", "output": "ESM has no `__dirname`; derive it from `import.meta.url` via `fileURLToPath` for path building."}
+{"instruction": "Give a practical example of `__dirname ESM`.", "input": "", "output": "ESM has no `__dirname`; derive it from `import.meta.url` via `fileURLToPath` for path building."}
+{"instruction": "What is `__dirname ESM` for?", "input": "", "output": "ESM has no `__dirname`; derive it from `import.meta.url` via `fileURLToPath` for path building."}
+{"instruction": "What does `fs.readFile` do?", "input": "", "output": "Prefer `fs/promises` with await over callbacks; stream (`createReadStream`) files too big for memory."}
+{"instruction": "Explain `fs.readFile` briefly.", "input": "", "output": "Prefer `fs/promises` with await over callbacks; stream (`createReadStream`) files too big for memory."}
+{"instruction": "When do I use `fs.readFile`?", "input": "", "output": "Prefer `fs/promises` with await over callbacks; stream (`createReadStream`) files too big for memory."}
+{"instruction": "Give a practical example of `fs.readFile`.", "input": "", "output": "Prefer `fs/promises` with await over callbacks; stream (`createReadStream`) files too big for memory."}
+{"instruction": "What is `fs.readFile` for?", "input": "", "output": "Prefer `fs/promises` with await over callbacks; stream (`createReadStream`) files too big for memory."}
+{"instruction": "What does `http.createServer` do?", "input": "", "output": "The native server suffices for webhooks and proxies; frameworks pay off once routing grows."}
+{"instruction": "Explain `http.createServer` briefly.", "input": "", "output": "The native server suffices for webhooks and proxies; frameworks pay off once routing grows."}
+{"instruction": "When do I use `http.createServer`?", "input": "", "output": "The native server suffices for webhooks and proxies; frameworks pay off once routing grows."}
+{"instruction": "Give a practical example of `http.createServer`.", "input": "", "output": "The native server suffices for webhooks and proxies; frameworks pay off once routing grows."}
+{"instruction": "What is `http.createServer` for?", "input": "", "output": "The native server suffices for webhooks and proxies; frameworks pay off once routing grows."}
+{"instruction": "What does `setTimeout` do?", "input": "", "output": "Timers return ids for cancellation; unref background timers so they never hold the process open."}
+{"instruction": "Explain `setTimeout` briefly.", "input": "", "output": "Timers return ids for cancellation; unref background timers so they never hold the process open."}
+{"instruction": "When do I use `setTimeout`?", "input": "", "output": "Timers return ids for cancellation; unref background timers so they never hold the process open."}
+{"instruction": "Give a practical example of `setTimeout`.", "input": "", "output": "Timers return ids for cancellation; unref background timers so they never hold the process open."}
+{"instruction": "What is `setTimeout` for?", "input": "", "output": "Timers return ids for cancellation; unref background timers so they never hold the process open."}
+{"instruction": "What does `setInterval` do?", "input": "", "output": "`setInterval` repeats blindly — chain `setTimeout` instead when work must not overlap."}
+{"instruction": "Explain `setInterval` briefly.", "input": "", "output": "`setInterval` repeats blindly — chain `setTimeout` instead when work must not overlap."}
+{"instruction": "When do I use `setInterval`?", "input": "", "output": "`setInterval` repeats blindly — chain `setTimeout` instead when work must not overlap."}
+{"instruction": "Give a practical example of `setInterval`.", "input": "", "output": "`setInterval` repeats blindly — chain `setTimeout` instead when work must not overlap."}
+{"instruction": "What is `setInterval` for?", "input": "", "output": "`setInterval` repeats blindly — chain `setTimeout` instead when work must not overlap."}
+{"instruction": "What does `console.log/error` do?", "input": "", "output": "`console.error` routes to stderr for real errors; structured JSON logs beat printf in production."}
+{"instruction": "Explain `console.log/error` briefly.", "input": "", "output": "`console.error` routes to stderr for real errors; structured JSON logs beat printf in production."}
+{"instruction": "When do I use `console.log/error`?", "input": "", "output": "`console.error` routes to stderr for real errors; structured JSON logs beat printf in production."}
+{"instruction": "Give a practical example of `console.log/error`.", "input": "", "output": "`console.error` routes to stderr for real errors; structured JSON logs beat printf in production."}
+{"instruction": "What is `console.log/error` for?", "input": "", "output": "`console.error` routes to stderr for real errors; structured JSON logs beat printf in production."}
+{"instruction": "What does `process.argv` do?", "input": "", "output": "`process.argv` carries CLI args after two slots; parsers (commander/yargs) handle flags robustly."}
+{"instruction": "Explain `process.argv` briefly.", "input": "", "output": "`process.argv` carries CLI args after two slots; parsers (commander/yargs) handle flags robustly."}
+{"instruction": "When do I use `process.argv`?", "input": "", "output": "`process.argv` carries CLI args after two slots; parsers (commander/yargs) handle flags robustly."}
+{"instruction": "Give a practical example of `process.argv`.", "input": "", "output": "`process.argv` carries CLI args after two slots; parsers (commander/yargs) handle flags robustly."}
+{"instruction": "What is `process.argv` for?", "input": "", "output": "`process.argv` carries CLI args after two slots; parsers (commander/yargs) handle flags robustly."}
+{"instruction": "What does `Buffer` do?", "input": "", "output": "Buffers hold raw bytes for crypto/files/protocols; convert with explicit encodings (`utf8`, `base64`, `hex`)."}
+{"instruction": "Explain `Buffer` briefly.", "input": "", "output": "Buffers hold raw bytes for crypto/files/protocols; convert with explicit encodings (`utf8`, `base64`, `hex`)."}
+{"instruction": "When do I use `Buffer`?", "input": "", "output": "Buffers hold raw bytes for crypto/files/protocols; convert with explicit encodings (`utf8`, `base64`, `hex`)."}
+{"instruction": "Give a practical example of `Buffer`.", "input": "", "output": "Buffers hold raw bytes for crypto/files/protocols; convert with explicit encodings (`utf8`, `base64`, `hex`)."}
+{"instruction": "What is `Buffer` for?", "input": "", "output": "Buffers hold raw bytes for crypto/files/protocols; convert with explicit encodings (`utf8`, `base64`, `hex`)."}
+{"instruction": "What does `EventEmitter` do?", "input": "", "output": "Emitters decouple modules via named events; remove listeners (`once`/`off`) to avoid leaks."}
+{"instruction": "Explain `EventEmitter` briefly.", "input": "", "output": "Emitters decouple modules via named events; remove listeners (`once`/`off`) to avoid leaks."}
+{"instruction": "When do I use `EventEmitter`?", "input": "", "output": "Emitters decouple modules via named events; remove listeners (`once`/`off`) to avoid leaks."}
+{"instruction": "Give a practical example of `EventEmitter`.", "input": "", "output": "Emitters decouple modules via named events; remove listeners (`once`/`off`) to avoid leaks."}
+{"instruction": "What is `EventEmitter` for?", "input": "", "output": "Emitters decouple modules via named events; remove listeners (`once`/`off`) to avoid leaks."}
+{"instruction": "What does `streams pipe` do?", "input": "", "output": "Streams move data in chunks with constant memory; `pipeline` wires backpressure and errors correctly."}
+{"instruction": "Explain `streams pipe` briefly.", "input": "", "output": "Streams move data in chunks with constant memory; `pipeline` wires backpressure and errors correctly."}
+{"instruction": "When do I use `streams pipe`?", "input": "", "output": "Streams move data in chunks with constant memory; `pipeline` wires backpressure and errors correctly."}
+{"instruction": "Give a practical example of `streams pipe`.", "input": "", "output": "Streams move data in chunks with constant memory; `pipeline` wires backpressure and errors correctly."}
+{"instruction": "What is `streams pipe` for?", "input": "", "output": "Streams move data in chunks with constant memory; `pipeline` wires backpressure and errors correctly."}
+{"instruction": "What does `child_process` do?", "input": "", "output": "`execFile` (no shell) is injection-safe; `spawn` streams big output; avoid `exec` with user input."}
+{"instruction": "Explain `child_process` briefly.", "input": "", "output": "`execFile` (no shell) is injection-safe; `spawn` streams big output; avoid `exec` with user input."}
+{"instruction": "When do I use `child_process`?", "input": "", "output": "`execFile` (no shell) is injection-safe; `spawn` streams big output; avoid `exec` with user input."}
+{"instruction": "Give a practical example of `child_process`.", "input": "", "output": "`execFile` (no shell) is injection-safe; `spawn` streams big output; avoid `exec` with user input."}
+{"instruction": "What is `child_process` for?", "input": "", "output": "`execFile` (no shell) is injection-safe; `spawn` streams big output; avoid `exec` with user input."}
+{"instruction": "What does `package.json scripts` do?", "input": "", "output": "Scripts document and automate (`dev`, `start`, `test`); keep them cross-platform for Windows teammates."}
+{"instruction": "Explain `package.json scripts` briefly.", "input": "", "output": "Scripts document and automate (`dev`, `start`, `test`); keep them cross-platform for Windows teammates."}
+{"instruction": "When do I use `package.json scripts`?", "input": "", "output": "Scripts document and automate (`dev`, `start`, `test`); keep them cross-platform for Windows teammates."}
+{"instruction": "Give a practical example of `package.json scripts`.", "input": "", "output": "Scripts document and automate (`dev`, `start`, `test`); keep them cross-platform for Windows teammates."}
+{"instruction": "What is `package.json scripts` for?", "input": "", "output": "Scripts document and automate (`dev`, `start`, `test`); keep them cross-platform for Windows teammates."}
+{"instruction": "What does `nodemon tsx watch` do?", "input": "", "output": "Auto-restart on change during dev (nodemon/tsx/node --watch); production uses real process managers."}
+{"instruction": "Explain `nodemon tsx watch` briefly.", "input": "", "output": "Auto-restart on change during dev (nodemon/tsx/node --watch); production uses real process managers."}
+{"instruction": "When do I use `nodemon tsx watch`?", "input": "", "output": "Auto-restart on change during dev (nodemon/tsx/node --watch); production uses real process managers."}
+{"instruction": "Give a practical example of `nodemon tsx watch`.", "input": "", "output": "Auto-restart on change during dev (nodemon/tsx/node --watch); production uses real process managers."}
+{"instruction": "What is `nodemon tsx watch` for?", "input": "", "output": "Auto-restart on change during dev (nodemon/tsx/node --watch); production uses real process managers."}
+{"instruction": "What does `dotenv` do?", "input": "", "output": "`.env` files feed local dev only — never commit; validate loaded values with a schema at startup."}
+{"instruction": "Explain `dotenv` briefly.", "input": "", "output": "`.env` files feed local dev only — never commit; validate loaded values with a schema at startup."}
+{"instruction": "When do I use `dotenv`?", "input": "", "output": "`.env` files feed local dev only — never commit; validate loaded values with a schema at startup."}
+{"instruction": "Give a practical example of `dotenv`.", "input": "", "output": "`.env` files feed local dev only — never commit; validate loaded values with a schema at startup."}
+{"instruction": "What is `dotenv` for?", "input": "", "output": "`.env` files feed local dev only — never commit; validate loaded values with a schema at startup."}
+{"instruction": "What does `graceful shutdown` do?", "input": "", "output": "On SIGTERM stop accepting, drain, close DB, then exit — matching orchestrator grace periods."}
+{"instruction": "Explain `graceful shutdown` briefly.", "input": "", "output": "On SIGTERM stop accepting, drain, close DB, then exit — matching orchestrator grace periods."}
+{"instruction": "When do I use `graceful shutdown`?", "input": "", "output": "On SIGTERM stop accepting, drain, close DB, then exit — matching orchestrator grace periods."}
+{"instruction": "Give a practical example of `graceful shutdown`.", "input": "", "output": "On SIGTERM stop accepting, drain, close DB, then exit — matching orchestrator grace periods."}
+{"instruction": "What is `graceful shutdown` for?", "input": "", "output": "On SIGTERM stop accepting, drain, close DB, then exit — matching orchestrator grace periods."}

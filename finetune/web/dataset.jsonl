@@ -52,6 +52,106 @@
 {"instruction": "What does strict mode change in JS?", "input": "", "output": "Modul ESM dan class sentiasa strict: tugasan ke pemboleh ubah tidak diisytihar jadi ralat (bukan global senyap), `this` undefined dalam fungsi biasa, `delete` pada sifat gagal. Tulis semua kod baharu sebagai modul — strict percuma tanpa perlu tulis manual."}
 {"instruction": "What is event delegation?", "input": "", "output": "```js\nsenarai.addEventListener(\"click\", (e) => {\n  const btn = e.target.closest(\"button[data-id]\");\n  if (btn) padam(btn.dataset.id);\n});\n```\nSatu pendengar pada induk tangani semua anak kini dan hadapan (termasuk dinamik) — ganti ratusan pendengar. `closest()` cari pemegang sebenar; semak null sebelum guna."}
 {"instruction": "How do I cancel fetch requests?", "input": "", "output": "```js\nconst c = new AbortController();\nfetch(url, { signal: c.signal });\n// kemudian: c.abort();\n```\nBatalkan permintaan basi (carian semasa menaip, komponen unmount) untuk elak race: respons lewat menimpa terkini. Tangani `AbortError` senyap — ia aliran normal, bukan pepijat."}
+{"instruction": "What does `Array.map` do?", "input": "", "output": "`map` transforms each element and returns a new array; original untouched — the functional workhorse."}
+{"instruction": "Explain `Array.map` briefly.", "input": "", "output": "`map` transforms each element and returns a new array; original untouched — the functional workhorse."}
+{"instruction": "When do I use `Array.map`?", "input": "", "output": "`map` transforms each element and returns a new array; original untouched — the functional workhorse."}
+{"instruction": "Give a practical example of `Array.map`.", "input": "", "output": "`map` transforms each element and returns a new array; original untouched — the functional workhorse."}
+{"instruction": "What is `Array.map` for?", "input": "", "output": "`map` transforms each element and returns a new array; original untouched — the functional workhorse."}
+{"instruction": "What does `Array.filter` do?", "input": "", "output": "`filter` keeps elements passing the test; chain after map for transform-then-select pipelines."}
+{"instruction": "Explain `Array.filter` briefly.", "input": "", "output": "`filter` keeps elements passing the test; chain after map for transform-then-select pipelines."}
+{"instruction": "When do I use `Array.filter`?", "input": "", "output": "`filter` keeps elements passing the test; chain after map for transform-then-select pipelines."}
+{"instruction": "Give a practical example of `Array.filter`.", "input": "", "output": "`filter` keeps elements passing the test; chain after map for transform-then-select pipelines."}
+{"instruction": "What is `Array.filter` for?", "input": "", "output": "`filter` keeps elements passing the test; chain after map for transform-then-select pipelines."}
+{"instruction": "What does `Array.reduce` do?", "input": "", "output": "`reduce` folds to one value with an accumulator; always pass the initial value to avoid edge bugs."}
+{"instruction": "Explain `Array.reduce` briefly.", "input": "", "output": "`reduce` folds to one value with an accumulator; always pass the initial value to avoid edge bugs."}
+{"instruction": "When do I use `Array.reduce`?", "input": "", "output": "`reduce` folds to one value with an accumulator; always pass the initial value to avoid edge bugs."}
+{"instruction": "Give a practical example of `Array.reduce`.", "input": "", "output": "`reduce` folds to one value with an accumulator; always pass the initial value to avoid edge bugs."}
+{"instruction": "What is `Array.reduce` for?", "input": "", "output": "`reduce` folds to one value with an accumulator; always pass the initial value to avoid edge bugs."}
+{"instruction": "What does `Array.find` do?", "input": "", "output": "`find` returns the first match (or undefined); `findIndex` gives its position for splicing."}
+{"instruction": "Explain `Array.find` briefly.", "input": "", "output": "`find` returns the first match (or undefined); `findIndex` gives its position for splicing."}
+{"instruction": "When do I use `Array.find`?", "input": "", "output": "`find` returns the first match (or undefined); `findIndex` gives its position for splicing."}
+{"instruction": "Give a practical example of `Array.find`.", "input": "", "output": "`find` returns the first match (or undefined); `findIndex` gives its position for splicing."}
+{"instruction": "What is `Array.find` for?", "input": "", "output": "`find` returns the first match (or undefined); `findIndex` gives its position for splicing."}
+{"instruction": "What does `Array.includes` do?", "input": "", "output": "`includes` answers membership directly; second arg sets the start index for searches."}
+{"instruction": "Explain `Array.includes` briefly.", "input": "", "output": "`includes` answers membership directly; second arg sets the start index for searches."}
+{"instruction": "When do I use `Array.includes`?", "input": "", "output": "`includes` answers membership directly; second arg sets the start index for searches."}
+{"instruction": "Give a practical example of `Array.includes`.", "input": "", "output": "`includes` answers membership directly; second arg sets the start index for searches."}
+{"instruction": "What is `Array.includes` for?", "input": "", "output": "`includes` answers membership directly; second arg sets the start index for searches."}
+{"instruction": "What does `slice vs splice` do?", "input": "", "output": "`slice` copies a range immutably; `splice` mutates in place for insert/delete — never confuse them."}
+{"instruction": "Explain `slice vs splice` briefly.", "input": "", "output": "`slice` copies a range immutably; `splice` mutates in place for insert/delete — never confuse them."}
+{"instruction": "When do I use `slice vs splice`?", "input": "", "output": "`slice` copies a range immutably; `splice` mutates in place for insert/delete — never confuse them."}
+{"instruction": "Give a practical example of `slice vs splice`.", "input": "", "output": "`slice` copies a range immutably; `splice` mutates in place for insert/delete — never confuse them."}
+{"instruction": "What is `slice vs splice` for?", "input": "", "output": "`slice` copies a range immutably; `splice` mutates in place for insert/delete — never confuse them."}
+{"instruction": "What does `push and pop` do?", "input": "", "output": "`push` appends (returns length), `pop` removes the end; `shift`/`unshift` work the front slower."}
+{"instruction": "Explain `push and pop` briefly.", "input": "", "output": "`push` appends (returns length), `pop` removes the end; `shift`/`unshift` work the front slower."}
+{"instruction": "When do I use `push and pop`?", "input": "", "output": "`push` appends (returns length), `pop` removes the end; `shift`/`unshift` work the front slower."}
+{"instruction": "Give a practical example of `push and pop`.", "input": "", "output": "`push` appends (returns length), `pop` removes the end; `shift`/`unshift` work the front slower."}
+{"instruction": "What is `push and pop` for?", "input": "", "output": "`push` appends (returns length), `pop` removes the end; `shift`/`unshift` work the front slower."}
+{"instruction": "What does `join and split` do?", "input": "", "output": "`join('-')` glues with a separator; `split(',')` breaks strings apart — CSV lines in one call."}
+{"instruction": "Explain `join and split` briefly.", "input": "", "output": "`join('-')` glues with a separator; `split(',')` breaks strings apart — CSV lines in one call."}
+{"instruction": "When do I use `join and split`?", "input": "", "output": "`join('-')` glues with a separator; `split(',')` breaks strings apart — CSV lines in one call."}
+{"instruction": "Give a practical example of `join and split`.", "input": "", "output": "`join('-')` glues with a separator; `split(',')` breaks strings apart — CSV lines in one call."}
+{"instruction": "What is `join and split` for?", "input": "", "output": "`join('-')` glues with a separator; `split(',')` breaks strings apart — CSV lines in one call."}
+{"instruction": "What does `Object.keys/values/entries` do?", "input": "", "output": "These list an object's keys, values or pairs for loops; `Object.fromEntries` rebuilds objects."}
+{"instruction": "Explain `Object.keys/values/entries` briefly.", "input": "", "output": "These list an object's keys, values or pairs for loops; `Object.fromEntries` rebuilds objects."}
+{"instruction": "When do I use `Object.keys/values/entries`?", "input": "", "output": "These list an object's keys, values or pairs for loops; `Object.fromEntries` rebuilds objects."}
+{"instruction": "Give a practical example of `Object.keys/values/entries`.", "input": "", "output": "These list an object's keys, values or pairs for loops; `Object.fromEntries` rebuilds objects."}
+{"instruction": "What is `Object.keys/values/entries` for?", "input": "", "output": "These list an object's keys, values or pairs for loops; `Object.fromEntries` rebuilds objects."}
+{"instruction": "What does `JSON.parse/stringify` do?", "input": "", "output": "`parse` revives objects (wrap in try/catch); `stringify` serializes — functions and undefined drop silently."}
+{"instruction": "Explain `JSON.parse/stringify` briefly.", "input": "", "output": "`parse` revives objects (wrap in try/catch); `stringify` serializes — functions and undefined drop silently."}
+{"instruction": "When do I use `JSON.parse/stringify`?", "input": "", "output": "`parse` revives objects (wrap in try/catch); `stringify` serializes — functions and undefined drop silently."}
+{"instruction": "Give a practical example of `JSON.parse/stringify`.", "input": "", "output": "`parse` revives objects (wrap in try/catch); `stringify` serializes — functions and undefined drop silently."}
+{"instruction": "What is `JSON.parse/stringify` for?", "input": "", "output": "`parse` revives objects (wrap in try/catch); `stringify` serializes — functions and undefined drop silently."}
+{"instruction": "What does `typeof` do?", "input": "", "output": "`typeof` names primitives (`typeof []` is misleadingly `object` — use Array.isArray); `instanceof` checks prototypes."}
+{"instruction": "Explain `typeof` briefly.", "input": "", "output": "`typeof` names primitives (`typeof []` is misleadingly `object` — use Array.isArray); `instanceof` checks prototypes."}
+{"instruction": "When do I use `typeof`?", "input": "", "output": "`typeof` names primitives (`typeof []` is misleadingly `object` — use Array.isArray); `instanceof` checks prototypes."}
+{"instruction": "Give a practical example of `typeof`.", "input": "", "output": "`typeof` names primitives (`typeof []` is misleadingly `object` — use Array.isArray); `instanceof` checks prototypes."}
+{"instruction": "What is `typeof` for?", "input": "", "output": "`typeof` names primitives (`typeof []` is misleadingly `object` — use Array.isArray); `instanceof` checks prototypes."}
+{"instruction": "What does `template literals` do?", "input": "", "output": "Backticks embed `${expr}` and span lines; tagged templates power SQL/HTML builders safely."}
+{"instruction": "Explain `template literals` briefly.", "input": "", "output": "Backticks embed `${expr}` and span lines; tagged templates power SQL/HTML builders safely."}
+{"instruction": "When do I use `template literals`?", "input": "", "output": "Backticks embed `${expr}` and span lines; tagged templates power SQL/HTML builders safely."}
+{"instruction": "Give a practical example of `template literals`.", "input": "", "output": "Backticks embed `${expr}` and span lines; tagged templates power SQL/HTML builders safely."}
+{"instruction": "What is `template literals` for?", "input": "", "output": "Backticks embed `${expr}` and span lines; tagged templates power SQL/HTML builders safely."}
+{"instruction": "What does `arrow functions` do?", "input": "", "output": "Arrows bind outer `this` lexically and suit callbacks; they cannot be constructors (no `new`)."}
+{"instruction": "Explain `arrow functions` briefly.", "input": "", "output": "Arrows bind outer `this` lexically and suit callbacks; they cannot be constructors (no `new`)."}
+{"instruction": "When do I use `arrow functions`?", "input": "", "output": "Arrows bind outer `this` lexically and suit callbacks; they cannot be constructors (no `new`)."}
+{"instruction": "Give a practical example of `arrow functions`.", "input": "", "output": "Arrows bind outer `this` lexically and suit callbacks; they cannot be constructors (no `new`)."}
+{"instruction": "What is `arrow functions` for?", "input": "", "output": "Arrows bind outer `this` lexically and suit callbacks; they cannot be constructors (no `new`)."}
+{"instruction": "What does `spread ...` do?", "input": "", "output": "Spread expands iterables into calls/arrays/objects; shallow only — nested objects stay shared."}
+{"instruction": "Explain `spread ...` briefly.", "input": "", "output": "Spread expands iterables into calls/arrays/objects; shallow only — nested objects stay shared."}
+{"instruction": "When do I use `spread ...`?", "input": "", "output": "Spread expands iterables into calls/arrays/objects; shallow only — nested objects stay shared."}
+{"instruction": "Give a practical example of `spread ...`.", "input": "", "output": "Spread expands iterables into calls/arrays/objects; shallow only — nested objects stay shared."}
+{"instruction": "What is `spread ...` for?", "input": "", "output": "Spread expands iterables into calls/arrays/objects; shallow only — nested objects stay shared."}
+{"instruction": "What does `destructuring` do?", "input": "", "output": "Pull fields positionally (`[a, b]`) or by name (`{x}`) with defaults; rest (`...r`) gathers leftovers."}
+{"instruction": "Explain `destructuring` briefly.", "input": "", "output": "Pull fields positionally (`[a, b]`) or by name (`{x}`) with defaults; rest (`...r`) gathers leftovers."}
+{"instruction": "When do I use `destructuring`?", "input": "", "output": "Pull fields positionally (`[a, b]`) or by name (`{x}`) with defaults; rest (`...r`) gathers leftovers."}
+{"instruction": "Give a practical example of `destructuring`.", "input": "", "output": "Pull fields positionally (`[a, b]`) or by name (`{x}`) with defaults; rest (`...r`) gathers leftovers."}
+{"instruction": "What is `destructuring` for?", "input": "", "output": "Pull fields positionally (`[a, b]`) or by name (`{x}`) with defaults; rest (`...r`) gathers leftovers."}
+{"instruction": "What does `optional chaining ?.` do?", "input": "", "output": "`?.` stops at null/undefined instead of throwing — safe deep access without guard pyramids."}
+{"instruction": "Explain `optional chaining ?.` briefly.", "input": "", "output": "`?.` stops at null/undefined instead of throwing — safe deep access without guard pyramids."}
+{"instruction": "When do I use `optional chaining ?.`?", "input": "", "output": "`?.` stops at null/undefined instead of throwing — safe deep access without guard pyramids."}
+{"instruction": "Give a practical example of `optional chaining ?.`.", "input": "", "output": "`?.` stops at null/undefined instead of throwing — safe deep access without guard pyramids."}
+{"instruction": "What is `optional chaining ?.` for?", "input": "", "output": "`?.` stops at null/undefined instead of throwing — safe deep access without guard pyramids."}
+{"instruction": "What does `nullish ??` do?", "input": "", "output": "`??` defaults only null/undefined, unlike `||` which also swallows 0, '' and false."}
+{"instruction": "Explain `nullish ??` briefly.", "input": "", "output": "`??` defaults only null/undefined, unlike `||` which also swallows 0, '' and false."}
+{"instruction": "When do I use `nullish ??`?", "input": "", "output": "`??` defaults only null/undefined, unlike `||` which also swallows 0, '' and false."}
+{"instruction": "Give a practical example of `nullish ??`.", "input": "", "output": "`??` defaults only null/undefined, unlike `||` which also swallows 0, '' and false."}
+{"instruction": "What is `nullish ??` for?", "input": "", "output": "`??` defaults only null/undefined, unlike `||` which also swallows 0, '' and false."}
+{"instruction": "What does `promises then/catch` do?", "input": "", "output": "Promises model future values; always end chains with `.catch` — unhandled rejections crash processes."}
+{"instruction": "Explain `promises then/catch` briefly.", "input": "", "output": "Promises model future values; always end chains with `.catch` — unhandled rejections crash processes."}
+{"instruction": "When do I use `promises then/catch`?", "input": "", "output": "Promises model future values; always end chains with `.catch` — unhandled rejections crash processes."}
+{"instruction": "Give a practical example of `promises then/catch`.", "input": "", "output": "Promises model future values; always end chains with `.catch` — unhandled rejections crash processes."}
+{"instruction": "What is `promises then/catch` for?", "input": "", "output": "Promises model future values; always end chains with `.catch` — unhandled rejections crash processes."}
+{"instruction": "What does `setTimeout/clearTimeout` do?", "input": "", "output": "`setTimeout` defers once (keep the id to cancel); `setInterval` repeats until cleared."}
+{"instruction": "Explain `setTimeout/clearTimeout` briefly.", "input": "", "output": "`setTimeout` defers once (keep the id to cancel); `setInterval` repeats until cleared."}
+{"instruction": "When do I use `setTimeout/clearTimeout`?", "input": "", "output": "`setTimeout` defers once (keep the id to cancel); `setInterval` repeats until cleared."}
+{"instruction": "Give a practical example of `setTimeout/clearTimeout`.", "input": "", "output": "`setTimeout` defers once (keep the id to cancel); `setInterval` repeats until cleared."}
+{"instruction": "What is `setTimeout/clearTimeout` for?", "input": "", "output": "`setTimeout` defers once (keep the id to cancel); `setInterval` repeats until cleared."}
+{"instruction": "What does `localStorage` do?", "input": "", "output": "`localStorage` persists strings per origin (~5MB); JSON-encode objects and guard quota errors."}
+{"instruction": "Explain `localStorage` briefly.", "input": "", "output": "`localStorage` persists strings per origin (~5MB); JSON-encode objects and guard quota errors."}
+{"instruction": "When do I use `localStorage`?", "input": "", "output": "`localStorage` persists strings per origin (~5MB); JSON-encode objects and guard quota errors."}
+{"instruction": "Give a practical example of `localStorage`.", "input": "", "output": "`localStorage` persists strings per origin (~5MB); JSON-encode objects and guard quota errors."}
+{"instruction": "What is `localStorage` for?", "input": "", "output": "`localStorage` persists strings per origin (~5MB); JSON-encode objects and guard quota errors."}
 {"instruction": "Tulis fungsi tambah TypeScript", "input": "", "output": "```ts\nexport function tambah(a: number, b: number): number {\n  return a + b;\n}\n```\nAnotasi `: number` pada parameter dan pulangan membolehkan pengkompil tangkap salah jenis sebelum jalan."}
 {"instruction": "TypeScript function with default parameter", "input": "", "output": "```ts\nexport function salam(nama = \"tetamu\"): string {\n  return `Helo, ${nama}!`;\n}\n```\nNilai lalai menjadikan parameter pilihan; jenisnya diinferens automatik sebagai string."}
 {"instruction": "TypeScript interface pengguna", "input": "", "output": "```ts\ninterface Pengguna {\n  nama: string;\n  umur: number;\n}\nconst ali: Pengguna = { nama: 'Ali', umur: 20 };\n```\nInterface mengunci bentuk objek — medan tiada atau salah jenis ditolak semasa compile."}
@@ -80,6 +180,106 @@
 {"instruction": "Discriminated unions for state machines?", "input": "", "output": "```ts\ntype Muat = { status: \"mula\" } | { status: \"ok\"; data: Pengguna } | { status: \"ralat\"; mesej: string };\n```\nMedan literal sepunya (`status`) benarkan switch dipersempit automatik — cawangan salah jenis ditolak compile. Corak terbaik untuk keadaan muat/ralat UI tanpa boolean bertabur."}
 {"instruction": "How do tsconfig paths clean up imports?", "input": "", "output": "```json\n{ \"compilerOptions\": { \"baseUrl\": \".\", \"paths\": { \"@/*\": [\"src/*\"] } } }\n```\n`import { x } from \"@/util\"` ganti `../../../util` rapuh. Ingat: tsc tidak tulis semula laluan semasa emit — guna tsc-alias atau bundler yang faham paths untuk runtime."}
 {"instruction": "How do I migrate JS to TS incrementally?", "input": "", "output": "Hidupkan `allowJs` + `checkJs: false`, tukar fail ke `.ts` satu demi satu mengikut sempadan modul, betulkan ralat yang timbul. Mula dengan `strict: false`, naikkan bendera beransur (`noImplicitAny` dahulu). Jangan tulis semula serentak — migrasi besar-besaran gagal separuh jalan."}
+{"instruction": "What does `interface` do?", "input": "", "output": "Interfaces lock object shapes; missing or mistyped fields fail at compile, not in production."}
+{"instruction": "Explain `interface` briefly.", "input": "", "output": "Interfaces lock object shapes; missing or mistyped fields fail at compile, not in production."}
+{"instruction": "When do I use `interface`?", "input": "", "output": "Interfaces lock object shapes; missing or mistyped fields fail at compile, not in production."}
+{"instruction": "Give a practical example of `interface`.", "input": "", "output": "Interfaces lock object shapes; missing or mistyped fields fail at compile, not in production."}
+{"instruction": "What is `interface` for?", "input": "", "output": "Interfaces lock object shapes; missing or mistyped fields fail at compile, not in production."}
+{"instruction": "What does `type alias` do?", "input": "", "output": "Type aliases name unions, tuples and primitives; one source of truth beats repeated annotations."}
+{"instruction": "Explain `type alias` briefly.", "input": "", "output": "Type aliases name unions, tuples and primitives; one source of truth beats repeated annotations."}
+{"instruction": "When do I use `type alias`?", "input": "", "output": "Type aliases name unions, tuples and primitives; one source of truth beats repeated annotations."}
+{"instruction": "Give a practical example of `type alias`.", "input": "", "output": "Type aliases name unions, tuples and primitives; one source of truth beats repeated annotations."}
+{"instruction": "What is `type alias` for?", "input": "", "output": "Type aliases name unions, tuples and primitives; one source of truth beats repeated annotations."}
+{"instruction": "What does `enum` do?", "input": "", "output": "Enums name fixed value sets; for tiny cases a union of literals is lighter and tree-shakes better."}
+{"instruction": "Explain `enum` briefly.", "input": "", "output": "Enums name fixed value sets; for tiny cases a union of literals is lighter and tree-shakes better."}
+{"instruction": "When do I use `enum`?", "input": "", "output": "Enums name fixed value sets; for tiny cases a union of literals is lighter and tree-shakes better."}
+{"instruction": "Give a practical example of `enum`.", "input": "", "output": "Enums name fixed value sets; for tiny cases a union of literals is lighter and tree-shakes better."}
+{"instruction": "What is `enum` for?", "input": "", "output": "Enums name fixed value sets; for tiny cases a union of literals is lighter and tree-shakes better."}
+{"instruction": "What does `generics <T>` do?", "input": "", "output": "Generics keep functions reusable without `any` — caller types flow through to the return type."}
+{"instruction": "Explain `generics <T>` briefly.", "input": "", "output": "Generics keep functions reusable without `any` — caller types flow through to the return type."}
+{"instruction": "When do I use `generics <T>`?", "input": "", "output": "Generics keep functions reusable without `any` — caller types flow through to the return type."}
+{"instruction": "Give a practical example of `generics <T>`.", "input": "", "output": "Generics keep functions reusable without `any` — caller types flow through to the return type."}
+{"instruction": "What is `generics <T>` for?", "input": "", "output": "Generics keep functions reusable without `any` — caller types flow through to the return type."}
+{"instruction": "What does `union string | number` do?", "input": "", "output": "Unions admit several types; narrow with `typeof` checks before using specific methods."}
+{"instruction": "Explain `union string | number` briefly.", "input": "", "output": "Unions admit several types; narrow with `typeof` checks before using specific methods."}
+{"instruction": "When do I use `union string | number`?", "input": "", "output": "Unions admit several types; narrow with `typeof` checks before using specific methods."}
+{"instruction": "Give a practical example of `union string | number`.", "input": "", "output": "Unions admit several types; narrow with `typeof` checks before using specific methods."}
+{"instruction": "What is `union string | number` for?", "input": "", "output": "Unions admit several types; narrow with `typeof` checks before using specific methods."}
+{"instruction": "What does `optional ?` do?", "input": "", "output": "`?` marks fields/params optional (type plus undefined); pair with `??` defaults at use sites."}
+{"instruction": "Explain `optional ?` briefly.", "input": "", "output": "`?` marks fields/params optional (type plus undefined); pair with `??` defaults at use sites."}
+{"instruction": "When do I use `optional ?`?", "input": "", "output": "`?` marks fields/params optional (type plus undefined); pair with `??` defaults at use sites."}
+{"instruction": "Give a practical example of `optional ?`.", "input": "", "output": "`?` marks fields/params optional (type plus undefined); pair with `??` defaults at use sites."}
+{"instruction": "What is `optional ?` for?", "input": "", "output": "`?` marks fields/params optional (type plus undefined); pair with `??` defaults at use sites."}
+{"instruction": "What does `readonly` do?", "input": "", "output": "`readonly` blocks writes after construction; `as const` freezes literals for config objects."}
+{"instruction": "Explain `readonly` briefly.", "input": "", "output": "`readonly` blocks writes after construction; `as const` freezes literals for config objects."}
+{"instruction": "When do I use `readonly`?", "input": "", "output": "`readonly` blocks writes after construction; `as const` freezes literals for config objects."}
+{"instruction": "Give a practical example of `readonly`.", "input": "", "output": "`readonly` blocks writes after construction; `as const` freezes literals for config objects."}
+{"instruction": "What is `readonly` for?", "input": "", "output": "`readonly` blocks writes after construction; `as const` freezes literals for config objects."}
+{"instruction": "What does `tuple [string, number]` do?", "input": "", "output": "Tuples fix length and per-slot types; `readonly` tuples suit function returns of pairs."}
+{"instruction": "Explain `tuple [string, number]` briefly.", "input": "", "output": "Tuples fix length and per-slot types; `readonly` tuples suit function returns of pairs."}
+{"instruction": "When do I use `tuple [string, number]`?", "input": "", "output": "Tuples fix length and per-slot types; `readonly` tuples suit function returns of pairs."}
+{"instruction": "Give a practical example of `tuple [string, number]`.", "input": "", "output": "Tuples fix length and per-slot types; `readonly` tuples suit function returns of pairs."}
+{"instruction": "What is `tuple [string, number]` for?", "input": "", "output": "Tuples fix length and per-slot types; `readonly` tuples suit function returns of pairs."}
+{"instruction": "What does `Record<K,V>` do?", "input": "", "output": "`Record<string, number>` types dictionaries; `Partial/Pick/Omit` derive variants from one interface."}
+{"instruction": "Explain `Record<K,V>` briefly.", "input": "", "output": "`Record<string, number>` types dictionaries; `Partial/Pick/Omit` derive variants from one interface."}
+{"instruction": "When do I use `Record<K,V>`?", "input": "", "output": "`Record<string, number>` types dictionaries; `Partial/Pick/Omit` derive variants from one interface."}
+{"instruction": "Give a practical example of `Record<K,V>`.", "input": "", "output": "`Record<string, number>` types dictionaries; `Partial/Pick/Omit` derive variants from one interface."}
+{"instruction": "What is `Record<K,V>` for?", "input": "", "output": "`Record<string, number>` types dictionaries; `Partial/Pick/Omit` derive variants from one interface."}
+{"instruction": "What does `unknown vs any` do?", "input": "", "output": "`unknown` forces narrowing before use; `any` disables checking entirely — treat as tech debt."}
+{"instruction": "Explain `unknown vs any` briefly.", "input": "", "output": "`unknown` forces narrowing before use; `any` disables checking entirely — treat as tech debt."}
+{"instruction": "When do I use `unknown vs any`?", "input": "", "output": "`unknown` forces narrowing before use; `any` disables checking entirely — treat as tech debt."}
+{"instruction": "Give a practical example of `unknown vs any`.", "input": "", "output": "`unknown` forces narrowing before use; `any` disables checking entirely — treat as tech debt."}
+{"instruction": "What is `unknown vs any` for?", "input": "", "output": "`unknown` forces narrowing before use; `any` disables checking entirely — treat as tech debt."}
+{"instruction": "What does `never` do?", "input": "", "output": "`never` marks unreachable code; use it in switch defaults so new cases fail compilation loudly."}
+{"instruction": "Explain `never` briefly.", "input": "", "output": "`never` marks unreachable code; use it in switch defaults so new cases fail compilation loudly."}
+{"instruction": "When do I use `never`?", "input": "", "output": "`never` marks unreachable code; use it in switch defaults so new cases fail compilation loudly."}
+{"instruction": "Give a practical example of `never`.", "input": "", "output": "`never` marks unreachable code; use it in switch defaults so new cases fail compilation loudly."}
+{"instruction": "What is `never` for?", "input": "", "output": "`never` marks unreachable code; use it in switch defaults so new cases fail compilation loudly."}
+{"instruction": "What does `as cast` do?", "input": "", "output": "`as` asserts without checking — safe only after validation; prefer narrowing or schema parsing."}
+{"instruction": "Explain `as cast` briefly.", "input": "", "output": "`as` asserts without checking — safe only after validation; prefer narrowing or schema parsing."}
+{"instruction": "When do I use `as cast`?", "input": "", "output": "`as` asserts without checking — safe only after validation; prefer narrowing or schema parsing."}
+{"instruction": "Give a practical example of `as cast`.", "input": "", "output": "`as` asserts without checking — safe only after validation; prefer narrowing or schema parsing."}
+{"instruction": "What is `as cast` for?", "input": "", "output": "`as` asserts without checking — safe only after validation; prefer narrowing or schema parsing."}
+{"instruction": "What does `implements` do?", "input": "", "output": "`class X implements Y` verifies conformance at compile; structural typing still allows compatible shapes."}
+{"instruction": "Explain `implements` briefly.", "input": "", "output": "`class X implements Y` verifies conformance at compile; structural typing still allows compatible shapes."}
+{"instruction": "When do I use `implements`?", "input": "", "output": "`class X implements Y` verifies conformance at compile; structural typing still allows compatible shapes."}
+{"instruction": "Give a practical example of `implements`.", "input": "", "output": "`class X implements Y` verifies conformance at compile; structural typing still allows compatible shapes."}
+{"instruction": "What is `implements` for?", "input": "", "output": "`class X implements Y` verifies conformance at compile; structural typing still allows compatible shapes."}
+{"instruction": "What does `abstract class` do?", "input": "", "output": "Abstract classes mix contracts with shared implementation; one inheritance chain per class only."}
+{"instruction": "Explain `abstract class` briefly.", "input": "", "output": "Abstract classes mix contracts with shared implementation; one inheritance chain per class only."}
+{"instruction": "When do I use `abstract class`?", "input": "", "output": "Abstract classes mix contracts with shared implementation; one inheritance chain per class only."}
+{"instruction": "Give a practical example of `abstract class`.", "input": "", "output": "Abstract classes mix contracts with shared implementation; one inheritance chain per class only."}
+{"instruction": "What is `abstract class` for?", "input": "", "output": "Abstract classes mix contracts with shared implementation; one inheritance chain per class only."}
+{"instruction": "What does `namespace` do?", "input": "", "output": "Namespaces group legacy globals; modern code prefers ES modules — use only when integrating old scripts."}
+{"instruction": "Explain `namespace` briefly.", "input": "", "output": "Namespaces group legacy globals; modern code prefers ES modules — use only when integrating old scripts."}
+{"instruction": "When do I use `namespace`?", "input": "", "output": "Namespaces group legacy globals; modern code prefers ES modules — use only when integrating old scripts."}
+{"instruction": "Give a practical example of `namespace`.", "input": "", "output": "Namespaces group legacy globals; modern code prefers ES modules — use only when integrating old scripts."}
+{"instruction": "What is `namespace` for?", "input": "", "output": "Namespaces group legacy globals; modern code prefers ES modules — use only when integrating old scripts."}
+{"instruction": "What does `decorators @` do?", "input": "", "output": "Decorators attach metadata at definition time (NestJS/Angular); keep them side-effect free."}
+{"instruction": "Explain `decorators @` briefly.", "input": "", "output": "Decorators attach metadata at definition time (NestJS/Angular); keep them side-effect free."}
+{"instruction": "When do I use `decorators @`?", "input": "", "output": "Decorators attach metadata at definition time (NestJS/Angular); keep them side-effect free."}
+{"instruction": "Give a practical example of `decorators @`.", "input": "", "output": "Decorators attach metadata at definition time (NestJS/Angular); keep them side-effect free."}
+{"instruction": "What is `decorators @` for?", "input": "", "output": "Decorators attach metadata at definition time (NestJS/Angular); keep them side-effect free."}
+{"instruction": "What does `strict mode` do?", "input": "", "output": "Strict mode catches null/any/property bugs at compile; migrate old code flag by flag."}
+{"instruction": "Explain `strict mode` briefly.", "input": "", "output": "Strict mode catches null/any/property bugs at compile; migrate old code flag by flag."}
+{"instruction": "When do I use `strict mode`?", "input": "", "output": "Strict mode catches null/any/property bugs at compile; migrate old code flag by flag."}
+{"instruction": "Give a practical example of `strict mode`.", "input": "", "output": "Strict mode catches null/any/property bugs at compile; migrate old code flag by flag."}
+{"instruction": "What is `strict mode` for?", "input": "", "output": "Strict mode catches null/any/property bugs at compile; migrate old code flag by flag."}
+{"instruction": "What does `tsconfig paths` do?", "input": "", "output": "`paths` aliases (`@/*`) kill `../../../` imports; bundlers need matching config to resolve at runtime."}
+{"instruction": "Explain `tsconfig paths` briefly.", "input": "", "output": "`paths` aliases (`@/*`) kill `../../../` imports; bundlers need matching config to resolve at runtime."}
+{"instruction": "When do I use `tsconfig paths`?", "input": "", "output": "`paths` aliases (`@/*`) kill `../../../` imports; bundlers need matching config to resolve at runtime."}
+{"instruction": "Give a practical example of `tsconfig paths`.", "input": "", "output": "`paths` aliases (`@/*`) kill `../../../` imports; bundlers need matching config to resolve at runtime."}
+{"instruction": "What is `tsconfig paths` for?", "input": "", "output": "`paths` aliases (`@/*`) kill `../../../` imports; bundlers need matching config to resolve at runtime."}
+{"instruction": "What does `declaration .d.ts` do?", "input": "", "output": "Declaration files describe untyped JS for the checker; `@types/*` packages provide community ones."}
+{"instruction": "Explain `declaration .d.ts` briefly.", "input": "", "output": "Declaration files describe untyped JS for the checker; `@types/*` packages provide community ones."}
+{"instruction": "When do I use `declaration .d.ts`?", "input": "", "output": "Declaration files describe untyped JS for the checker; `@types/*` packages provide community ones."}
+{"instruction": "Give a practical example of `declaration .d.ts`.", "input": "", "output": "Declaration files describe untyped JS for the checker; `@types/*` packages provide community ones."}
+{"instruction": "What is `declaration .d.ts` for?", "input": "", "output": "Declaration files describe untyped JS for the checker; `@types/*` packages provide community ones."}
+{"instruction": "What does `satisfies` do?", "input": "", "output": "`satisfies` validates shape while keeping literal types; `as` widens and hides information."}
+{"instruction": "Explain `satisfies` briefly.", "input": "", "output": "`satisfies` validates shape while keeping literal types; `as` widens and hides information."}
+{"instruction": "When do I use `satisfies`?", "input": "", "output": "`satisfies` validates shape while keeping literal types; `as` widens and hides information."}
+{"instruction": "Give a practical example of `satisfies`.", "input": "", "output": "`satisfies` validates shape while keeping literal types; `as` widens and hides information."}
+{"instruction": "What is `satisfies` for?", "input": "", "output": "`satisfies` validates shape while keeping literal types; `as` widens and hides information."}
 {"instruction": "Docker bina dan jalan app Node", "input": "", "output": "```bash\ndocker build -t app:1 .\ndocker run -d -p 3000:3000 app:1\n```\nBina imej bertag `app:1`, kemudian jalan detached dengan port kontena 3000 dipeta ke hos 3000."}
 {"instruction": "Dockerfile Node minima", "input": "", "output": "```dockerfile\nFROM node:20-alpine\nWORKDIR /app\nCOPY package*.json ./\nRUN npm ci --only=production\nCOPY . .\nCMD [\"node\", \"server.js\"]\n```\nSalin manifest dahulu supaya lapisan dependencies di-cache; kod disalin terakhir agar edit tidak bina semula deps."}
 {"instruction": "Show a Dockerfile for a Node.js app.", "input": "", "output": "```dockerfile\nFROM node:20-alpine\nWORKDIR /app\nCOPY package*.json ./\nRUN npm ci --omit=dev\nCOPY . .\nEXPOSE 3000\nUSER node\nCMD [\"node\", \"server.js\"]\n```\nCopying package files first lets Docker cache the dependency layer so it is only rebuilt when dependencies change."}
@@ -105,6 +305,106 @@
 {"instruction": "How do I prompt input in a Node CLI?", "input": "", "output": "```js\nimport readline from \"node:readline\";\nconst rl = readline.createInterface({ input: process.stdin, output: process.stdout });\nconst nama = await rl.question(\"Nama? \");\nrl.close();\n```\n`question` janji-async pada Node moden — tiada pakej luar untuk prompt ringkas. Untuk CLI penuh (subcommand, bendera), guna commander/yargs."}
 {"instruction": "setTimeout vs setInterval management?", "input": "", "output": "Simpan rujukan (`const t = setTimeout(...)`) dan `clearTimeout/clearInterval` semasa selesai — pemasa yatim halang proses keluar dan bocor memori. Untuk tugas berkala yang mesti tidak bertindih, rantaikan setTimeout di hujung kerja, bukan setInterval buta."}
 {"instruction": "How do I structure a small Node project?", "input": "", "output": "```\nsrc/\n  server.js      # wiring sahaja (listen)\n  app.js         # cipta app express\n  laluan/        # Route handlers nipis\n  perkhidmatan/  # logik perniagaan\n  db.js          # pool sambungan\n```\nPisah wiring dari logik supaya handler boleh diuji tanpa dengar port. Satu modul satu tanggungjawab; kongsi via import eksplisit, bukan global."}
+{"instruction": "What does `node --version` do?", "input": "", "output": "`node --version` plus `.nvmrc` pinning keeps dev, CI and images on one runtime."}
+{"instruction": "Explain `node --version` briefly.", "input": "", "output": "`node --version` plus `.nvmrc` pinning keeps dev, CI and images on one runtime."}
+{"instruction": "When do I use `node --version`?", "input": "", "output": "`node --version` plus `.nvmrc` pinning keeps dev, CI and images on one runtime."}
+{"instruction": "Give a practical example of `node --version`.", "input": "", "output": "`node --version` plus `.nvmrc` pinning keeps dev, CI and images on one runtime."}
+{"instruction": "What is `node --version` for?", "input": "", "output": "`node --version` plus `.nvmrc` pinning keeps dev, CI and images on one runtime."}
+{"instruction": "What does `npm init -y` do?", "input": "", "output": "`npm init -y` scaffolds package.json instantly; edit name/version/scripts right after."}
+{"instruction": "Explain `npm init -y` briefly.", "input": "", "output": "`npm init -y` scaffolds package.json instantly; edit name/version/scripts right after."}
+{"instruction": "When do I use `npm init -y`?", "input": "", "output": "`npm init -y` scaffolds package.json instantly; edit name/version/scripts right after."}
+{"instruction": "Give a practical example of `npm init -y`.", "input": "", "output": "`npm init -y` scaffolds package.json instantly; edit name/version/scripts right after."}
+{"instruction": "What is `npm init -y` for?", "input": "", "output": "`npm init -y` scaffolds package.json instantly; edit name/version/scripts right after."}
+{"instruction": "What does `npm install express` do?", "input": "", "output": "Local installs land in node_modules (never global for project deps); lockfile commits for reproducibility."}
+{"instruction": "Explain `npm install express` briefly.", "input": "", "output": "Local installs land in node_modules (never global for project deps); lockfile commits for reproducibility."}
+{"instruction": "When do I use `npm install express`?", "input": "", "output": "Local installs land in node_modules (never global for project deps); lockfile commits for reproducibility."}
+{"instruction": "Give a practical example of `npm install express`.", "input": "", "output": "Local installs land in node_modules (never global for project deps); lockfile commits for reproducibility."}
+{"instruction": "What is `npm install express` for?", "input": "", "output": "Local installs land in node_modules (never global for project deps); lockfile commits for reproducibility."}
+{"instruction": "What does `require vs import` do?", "input": "", "output": "CommonJS `require` is dynamic and sync; ESM `import` is static and supports top-level await — new code uses ESM."}
+{"instruction": "Explain `require vs import` briefly.", "input": "", "output": "CommonJS `require` is dynamic and sync; ESM `import` is static and supports top-level await — new code uses ESM."}
+{"instruction": "When do I use `require vs import`?", "input": "", "output": "CommonJS `require` is dynamic and sync; ESM `import` is static and supports top-level await — new code uses ESM."}
+{"instruction": "Give a practical example of `require vs import`.", "input": "", "output": "CommonJS `require` is dynamic and sync; ESM `import` is static and supports top-level await — new code uses ESM."}
+{"instruction": "What is `require vs import` for?", "input": "", "output": "CommonJS `require` is dynamic and sync; ESM `import` is static and supports top-level await — new code uses ESM."}
+{"instruction": "What does `process.env` do?", "input": "", "output": "`process.env` reads environment strings; validate required vars at boot and fail fast with clear messages."}
+{"instruction": "Explain `process.env` briefly.", "input": "", "output": "`process.env` reads environment strings; validate required vars at boot and fail fast with clear messages."}
+{"instruction": "When do I use `process.env`?", "input": "", "output": "`process.env` reads environment strings; validate required vars at boot and fail fast with clear messages."}
+{"instruction": "Give a practical example of `process.env`.", "input": "", "output": "`process.env` reads environment strings; validate required vars at boot and fail fast with clear messages."}
+{"instruction": "What is `process.env` for?", "input": "", "output": "`process.env` reads environment strings; validate required vars at boot and fail fast with clear messages."}
+{"instruction": "What does `__dirname ESM` do?", "input": "", "output": "ESM has no `__dirname`; derive it from `import.meta.url` via `fileURLToPath` for path building."}
+{"instruction": "Explain `__dirname ESM` briefly.", "input": "", "output": "ESM has no `__dirname`; derive it from `import.meta.url` via `fileURLToPath` for path building."}
+{"instruction": "When do I use `__dirname ESM`?", "input": "", "output": "ESM has no `__dirname`; derive it from `import.meta.url` via `fileURLToPath` for path building."}
+{"instruction": "Give a practical example of `__dirname ESM`.", "input": "", "output": "ESM has no `__dirname`; derive it from `import.meta.url` via `fileURLToPath` for path building."}
+{"instruction": "What is `__dirname ESM` for?", "input": "", "output": "ESM has no `__dirname`; derive it from `import.meta.url` via `fileURLToPath` for path building."}
+{"instruction": "What does `fs.readFile` do?", "input": "", "output": "Prefer `fs/promises` with await over callbacks; stream (`createReadStream`) files too big for memory."}
+{"instruction": "Explain `fs.readFile` briefly.", "input": "", "output": "Prefer `fs/promises` with await over callbacks; stream (`createReadStream`) files too big for memory."}
+{"instruction": "When do I use `fs.readFile`?", "input": "", "output": "Prefer `fs/promises` with await over callbacks; stream (`createReadStream`) files too big for memory."}
+{"instruction": "Give a practical example of `fs.readFile`.", "input": "", "output": "Prefer `fs/promises` with await over callbacks; stream (`createReadStream`) files too big for memory."}
+{"instruction": "What is `fs.readFile` for?", "input": "", "output": "Prefer `fs/promises` with await over callbacks; stream (`createReadStream`) files too big for memory."}
+{"instruction": "What does `http.createServer` do?", "input": "", "output": "The native server suffices for webhooks and proxies; frameworks pay off once routing grows."}
+{"instruction": "Explain `http.createServer` briefly.", "input": "", "output": "The native server suffices for webhooks and proxies; frameworks pay off once routing grows."}
+{"instruction": "When do I use `http.createServer`?", "input": "", "output": "The native server suffices for webhooks and proxies; frameworks pay off once routing grows."}
+{"instruction": "Give a practical example of `http.createServer`.", "input": "", "output": "The native server suffices for webhooks and proxies; frameworks pay off once routing grows."}
+{"instruction": "What is `http.createServer` for?", "input": "", "output": "The native server suffices for webhooks and proxies; frameworks pay off once routing grows."}
+{"instruction": "What does `setTimeout` do?", "input": "", "output": "Timers return ids for cancellation; unref background timers so they never hold the process open."}
+{"instruction": "Explain `setTimeout` briefly.", "input": "", "output": "Timers return ids for cancellation; unref background timers so they never hold the process open."}
+{"instruction": "When do I use `setTimeout`?", "input": "", "output": "Timers return ids for cancellation; unref background timers so they never hold the process open."}
+{"instruction": "Give a practical example of `setTimeout`.", "input": "", "output": "Timers return ids for cancellation; unref background timers so they never hold the process open."}
+{"instruction": "What is `setTimeout` for?", "input": "", "output": "Timers return ids for cancellation; unref background timers so they never hold the process open."}
+{"instruction": "What does `setInterval` do?", "input": "", "output": "`setInterval` repeats blindly — chain `setTimeout` instead when work must not overlap."}
+{"instruction": "Explain `setInterval` briefly.", "input": "", "output": "`setInterval` repeats blindly — chain `setTimeout` instead when work must not overlap."}
+{"instruction": "When do I use `setInterval`?", "input": "", "output": "`setInterval` repeats blindly — chain `setTimeout` instead when work must not overlap."}
+{"instruction": "Give a practical example of `setInterval`.", "input": "", "output": "`setInterval` repeats blindly — chain `setTimeout` instead when work must not overlap."}
+{"instruction": "What is `setInterval` for?", "input": "", "output": "`setInterval` repeats blindly — chain `setTimeout` instead when work must not overlap."}
+{"instruction": "What does `console.log/error` do?", "input": "", "output": "`console.error` routes to stderr for real errors; structured JSON logs beat printf in production."}
+{"instruction": "Explain `console.log/error` briefly.", "input": "", "output": "`console.error` routes to stderr for real errors; structured JSON logs beat printf in production."}
+{"instruction": "When do I use `console.log/error`?", "input": "", "output": "`console.error` routes to stderr for real errors; structured JSON logs beat printf in production."}
+{"instruction": "Give a practical example of `console.log/error`.", "input": "", "output": "`console.error` routes to stderr for real errors; structured JSON logs beat printf in production."}
+{"instruction": "What is `console.log/error` for?", "input": "", "output": "`console.error` routes to stderr for real errors; structured JSON logs beat printf in production."}
+{"instruction": "What does `process.argv` do?", "input": "", "output": "`process.argv` carries CLI args after two slots; parsers (commander/yargs) handle flags robustly."}
+{"instruction": "Explain `process.argv` briefly.", "input": "", "output": "`process.argv` carries CLI args after two slots; parsers (commander/yargs) handle flags robustly."}
+{"instruction": "When do I use `process.argv`?", "input": "", "output": "`process.argv` carries CLI args after two slots; parsers (commander/yargs) handle flags robustly."}
+{"instruction": "Give a practical example of `process.argv`.", "input": "", "output": "`process.argv` carries CLI args after two slots; parsers (commander/yargs) handle flags robustly."}
+{"instruction": "What is `process.argv` for?", "input": "", "output": "`process.argv` carries CLI args after two slots; parsers (commander/yargs) handle flags robustly."}
+{"instruction": "What does `Buffer` do?", "input": "", "output": "Buffers hold raw bytes for crypto/files/protocols; convert with explicit encodings (`utf8`, `base64`, `hex`)."}
+{"instruction": "Explain `Buffer` briefly.", "input": "", "output": "Buffers hold raw bytes for crypto/files/protocols; convert with explicit encodings (`utf8`, `base64`, `hex`)."}
+{"instruction": "When do I use `Buffer`?", "input": "", "output": "Buffers hold raw bytes for crypto/files/protocols; convert with explicit encodings (`utf8`, `base64`, `hex`)."}
+{"instruction": "Give a practical example of `Buffer`.", "input": "", "output": "Buffers hold raw bytes for crypto/files/protocols; convert with explicit encodings (`utf8`, `base64`, `hex`)."}
+{"instruction": "What is `Buffer` for?", "input": "", "output": "Buffers hold raw bytes for crypto/files/protocols; convert with explicit encodings (`utf8`, `base64`, `hex`)."}
+{"instruction": "What does `EventEmitter` do?", "input": "", "output": "Emitters decouple modules via named events; remove listeners (`once`/`off`) to avoid leaks."}
+{"instruction": "Explain `EventEmitter` briefly.", "input": "", "output": "Emitters decouple modules via named events; remove listeners (`once`/`off`) to avoid leaks."}
+{"instruction": "When do I use `EventEmitter`?", "input": "", "output": "Emitters decouple modules via named events; remove listeners (`once`/`off`) to avoid leaks."}
+{"instruction": "Give a practical example of `EventEmitter`.", "input": "", "output": "Emitters decouple modules via named events; remove listeners (`once`/`off`) to avoid leaks."}
+{"instruction": "What is `EventEmitter` for?", "input": "", "output": "Emitters decouple modules via named events; remove listeners (`once`/`off`) to avoid leaks."}
+{"instruction": "What does `streams pipe` do?", "input": "", "output": "Streams move data in chunks with constant memory; `pipeline` wires backpressure and errors correctly."}
+{"instruction": "Explain `streams pipe` briefly.", "input": "", "output": "Streams move data in chunks with constant memory; `pipeline` wires backpressure and errors correctly."}
+{"instruction": "When do I use `streams pipe`?", "input": "", "output": "Streams move data in chunks with constant memory; `pipeline` wires backpressure and errors correctly."}
+{"instruction": "Give a practical example of `streams pipe`.", "input": "", "output": "Streams move data in chunks with constant memory; `pipeline` wires backpressure and errors correctly."}
+{"instruction": "What is `streams pipe` for?", "input": "", "output": "Streams move data in chunks with constant memory; `pipeline` wires backpressure and errors correctly."}
+{"instruction": "What does `child_process` do?", "input": "", "output": "`execFile` (no shell) is injection-safe; `spawn` streams big output; avoid `exec` with user input."}
+{"instruction": "Explain `child_process` briefly.", "input": "", "output": "`execFile` (no shell) is injection-safe; `spawn` streams big output; avoid `exec` with user input."}
+{"instruction": "When do I use `child_process`?", "input": "", "output": "`execFile` (no shell) is injection-safe; `spawn` streams big output; avoid `exec` with user input."}
+{"instruction": "Give a practical example of `child_process`.", "input": "", "output": "`execFile` (no shell) is injection-safe; `spawn` streams big output; avoid `exec` with user input."}
+{"instruction": "What is `child_process` for?", "input": "", "output": "`execFile` (no shell) is injection-safe; `spawn` streams big output; avoid `exec` with user input."}
+{"instruction": "What does `package.json scripts` do?", "input": "", "output": "Scripts document and automate (`dev`, `start`, `test`); keep them cross-platform for Windows teammates."}
+{"instruction": "Explain `package.json scripts` briefly.", "input": "", "output": "Scripts document and automate (`dev`, `start`, `test`); keep them cross-platform for Windows teammates."}
+{"instruction": "When do I use `package.json scripts`?", "input": "", "output": "Scripts document and automate (`dev`, `start`, `test`); keep them cross-platform for Windows teammates."}
+{"instruction": "Give a practical example of `package.json scripts`.", "input": "", "output": "Scripts document and automate (`dev`, `start`, `test`); keep them cross-platform for Windows teammates."}
+{"instruction": "What is `package.json scripts` for?", "input": "", "output": "Scripts document and automate (`dev`, `start`, `test`); keep them cross-platform for Windows teammates."}
+{"instruction": "What does `nodemon tsx watch` do?", "input": "", "output": "Auto-restart on change during dev (nodemon/tsx/node --watch); production uses real process managers."}
+{"instruction": "Explain `nodemon tsx watch` briefly.", "input": "", "output": "Auto-restart on change during dev (nodemon/tsx/node --watch); production uses real process managers."}
+{"instruction": "When do I use `nodemon tsx watch`?", "input": "", "output": "Auto-restart on change during dev (nodemon/tsx/node --watch); production uses real process managers."}
+{"instruction": "Give a practical example of `nodemon tsx watch`.", "input": "", "output": "Auto-restart on change during dev (nodemon/tsx/node --watch); production uses real process managers."}
+{"instruction": "What is `nodemon tsx watch` for?", "input": "", "output": "Auto-restart on change during dev (nodemon/tsx/node --watch); production uses real process managers."}
+{"instruction": "What does `dotenv` do?", "input": "", "output": "`.env` files feed local dev only — never commit; validate loaded values with a schema at startup."}
+{"instruction": "Explain `dotenv` briefly.", "input": "", "output": "`.env` files feed local dev only — never commit; validate loaded values with a schema at startup."}
+{"instruction": "When do I use `dotenv`?", "input": "", "output": "`.env` files feed local dev only — never commit; validate loaded values with a schema at startup."}
+{"instruction": "Give a practical example of `dotenv`.", "input": "", "output": "`.env` files feed local dev only — never commit; validate loaded values with a schema at startup."}
+{"instruction": "What is `dotenv` for?", "input": "", "output": "`.env` files feed local dev only — never commit; validate loaded values with a schema at startup."}
+{"instruction": "What does `graceful shutdown` do?", "input": "", "output": "On SIGTERM stop accepting, drain, close DB, then exit — matching orchestrator grace periods."}
+{"instruction": "Explain `graceful shutdown` briefly.", "input": "", "output": "On SIGTERM stop accepting, drain, close DB, then exit — matching orchestrator grace periods."}
+{"instruction": "When do I use `graceful shutdown`?", "input": "", "output": "On SIGTERM stop accepting, drain, close DB, then exit — matching orchestrator grace periods."}
+{"instruction": "Give a practical example of `graceful shutdown`.", "input": "", "output": "On SIGTERM stop accepting, drain, close DB, then exit — matching orchestrator grace periods."}
+{"instruction": "What is `graceful shutdown` for?", "input": "", "output": "On SIGTERM stop accepting, drain, close DB, then exit — matching orchestrator grace periods."}
 {"instruction": "HTML butang asas", "input": "", "output": "```html\n<button type=\"button\">Klik Saya</button>\n```\n`type=\"button\"` elak butang jadi submit dalam form; untuk hantar guna `type=\"submit\"`."}
 {"instruction": "HTML input form nama", "input": "", "output": "```html\n<form><label>Nama: <input name=\"nama\"></label><button>Hantar</button></form>\n```\nLabel membalut input supaya klik teks fokus medan (aksesibiliti asas); atribut `name` tentukan kunci data dihantar."}
 {"instruction": "HTML table minima", "input": "", "output": "```html\n<table><tr><th>Nama</th></tr><tr><td>Ali</td></tr></table>\n```\n`th` untuk pengepala (skrin baca umumkannya); kekalkan jadual untuk data tabulasi sahaja, bukan susun atur."}
@@ -128,6 +428,106 @@
 {"instruction": "How do favicons work in 2026?", "input": "", "output": "```html\n<link rel=\"icon\" href=\"/favicon.svg\" type=\"image/svg+xml\">\n<link rel=\"apple-touch-icon\" href=\"/ikon-180.png\">\n```\nSatu SVG cukup untuk pelayar moden (skala sempurna); tambah PNG 180px untuk Apple dan `manifest.json` untuk Android. Letak di root (`/favicon.ico` fallback automatik)."}
 {"instruction": "What are landmarks and skip links?", "input": "", "output": "```html\n<body>\n  <a class=\"lompati\" href=\"#utama\">Lompat ke kandungan</a>\n  <header>...</header>\n  <main id=\"utama\">...</main>\n</body>\n```\nLandmark (header/nav/main/footer) benarkan lompat kawasan via pembaca skrin; pautan langkau kelihatan-semasa-fokus selamatkan pengguna papan kekunci dari tab 50 pautan navigasi."}
 {"instruction": "How does the dialog element work?", "input": "", "output": "```html\n<dialog id=\"d\"><p>Padam barang ini?</p><button>Ya</button></dialog>\n<script>d.showModal()</script>\n```\n`showModal()` beri modal sebenar (fokus terperangkap, Esc tutup, latar ::backdrop) tanpa perpustakaan. Tangani `close` untuk baca `returnValue`; ganti div-modal tersuai di mana-mana boleh."}
+{"instruction": "What does `<!DOCTYPE html>` do?", "input": "", "output": "The doctype triggers standards mode; without it browsers fall back to quirks with legacy box behavior."}
+{"instruction": "Explain `<!DOCTYPE html>` briefly.", "input": "", "output": "The doctype triggers standards mode; without it browsers fall back to quirks with legacy box behavior."}
+{"instruction": "When do I use `<!DOCTYPE html>`?", "input": "", "output": "The doctype triggers standards mode; without it browsers fall back to quirks with legacy box behavior."}
+{"instruction": "Give a practical example of `<!DOCTYPE html>`.", "input": "", "output": "The doctype triggers standards mode; without it browsers fall back to quirks with legacy box behavior."}
+{"instruction": "What is `<!DOCTYPE html>` for?", "input": "", "output": "The doctype triggers standards mode; without it browsers fall back to quirks with legacy box behavior."}
+{"instruction": "What does `headings h1-h6` do?", "input": "", "output": "One h1 per page, ordered levels — screen readers navigate by this outline, not by font size."}
+{"instruction": "Explain `headings h1-h6` briefly.", "input": "", "output": "One h1 per page, ordered levels — screen readers navigate by this outline, not by font size."}
+{"instruction": "When do I use `headings h1-h6`?", "input": "", "output": "One h1 per page, ordered levels — screen readers navigate by this outline, not by font size."}
+{"instruction": "Give a practical example of `headings h1-h6`.", "input": "", "output": "One h1 per page, ordered levels — screen readers navigate by this outline, not by font size."}
+{"instruction": "What is `headings h1-h6` for?", "input": "", "output": "One h1 per page, ordered levels — screen readers navigate by this outline, not by font size."}
+{"instruction": "What does `p br hr` do?", "input": "", "output": "`<p>` paragraphs, `<br>` line breaks, `<hr>` thematic breaks; never fake spacing with empty divs."}
+{"instruction": "Explain `p br hr` briefly.", "input": "", "output": "`<p>` paragraphs, `<br>` line breaks, `<hr>` thematic breaks; never fake spacing with empty divs."}
+{"instruction": "When do I use `p br hr`?", "input": "", "output": "`<p>` paragraphs, `<br>` line breaks, `<hr>` thematic breaks; never fake spacing with empty divs."}
+{"instruction": "Give a practical example of `p br hr`.", "input": "", "output": "`<p>` paragraphs, `<br>` line breaks, `<hr>` thematic breaks; never fake spacing with empty divs."}
+{"instruction": "What is `p br hr` for?", "input": "", "output": "`<p>` paragraphs, `<br>` line breaks, `<hr>` thematic breaks; never fake spacing with empty divs."}
+{"instruction": "What does `a href` do?", "input": "", "output": "Anchors navigate (`href`) or jump (`#id`); external blank tabs need `rel=noopener` for safety."}
+{"instruction": "Explain `a href` briefly.", "input": "", "output": "Anchors navigate (`href`) or jump (`#id`); external blank tabs need `rel=noopener` for safety."}
+{"instruction": "When do I use `a href`?", "input": "", "output": "Anchors navigate (`href`) or jump (`#id`); external blank tabs need `rel=noopener` for safety."}
+{"instruction": "Give a practical example of `a href`.", "input": "", "output": "Anchors navigate (`href`) or jump (`#id`); external blank tabs need `rel=noopener` for safety."}
+{"instruction": "What is `a href` for?", "input": "", "output": "Anchors navigate (`href`) or jump (`#id`); external blank tabs need `rel=noopener` for safety."}
+{"instruction": "What does `img src alt` do?", "input": "", "output": "Always `alt` (content description or empty for decorative); `srcset` serves right sizes per screen."}
+{"instruction": "Explain `img src alt` briefly.", "input": "", "output": "Always `alt` (content description or empty for decorative); `srcset` serves right sizes per screen."}
+{"instruction": "When do I use `img src alt`?", "input": "", "output": "Always `alt` (content description or empty for decorative); `srcset` serves right sizes per screen."}
+{"instruction": "Give a practical example of `img src alt`.", "input": "", "output": "Always `alt` (content description or empty for decorative); `srcset` serves right sizes per screen."}
+{"instruction": "What is `img src alt` for?", "input": "", "output": "Always `alt` (content description or empty for decorative); `srcset` serves right sizes per screen."}
+{"instruction": "What does `ul ol li` do?", "input": "", "output": "`ul` unordered, `ol` meaningful order, `li` items only — nested lists need their own list parent."}
+{"instruction": "Explain `ul ol li` briefly.", "input": "", "output": "`ul` unordered, `ol` meaningful order, `li` items only — nested lists need their own list parent."}
+{"instruction": "When do I use `ul ol li`?", "input": "", "output": "`ul` unordered, `ol` meaningful order, `li` items only — nested lists need their own list parent."}
+{"instruction": "Give a practical example of `ul ol li`.", "input": "", "output": "`ul` unordered, `ol` meaningful order, `li` items only — nested lists need their own list parent."}
+{"instruction": "What is `ul ol li` for?", "input": "", "output": "`ul` unordered, `ol` meaningful order, `li` items only — nested lists need their own list parent."}
+{"instruction": "What does `table tr td` do?", "input": "", "output": "Tables are for tabular data with `th` headers; layout tables break screen readers — use CSS grid."}
+{"instruction": "Explain `table tr td` briefly.", "input": "", "output": "Tables are for tabular data with `th` headers; layout tables break screen readers — use CSS grid."}
+{"instruction": "When do I use `table tr td`?", "input": "", "output": "Tables are for tabular data with `th` headers; layout tables break screen readers — use CSS grid."}
+{"instruction": "Give a practical example of `table tr td`.", "input": "", "output": "Tables are for tabular data with `th` headers; layout tables break screen readers — use CSS grid."}
+{"instruction": "What is `table tr td` for?", "input": "", "output": "Tables are for tabular data with `th` headers; layout tables break screen readers — use CSS grid."}
+{"instruction": "What does `form input` do?", "input": "", "output": "Forms collect with named inputs; `method`/`action` define submission, labels make fields operable."}
+{"instruction": "Explain `form input` briefly.", "input": "", "output": "Forms collect with named inputs; `method`/`action` define submission, labels make fields operable."}
+{"instruction": "When do I use `form input`?", "input": "", "output": "Forms collect with named inputs; `method`/`action` define submission, labels make fields operable."}
+{"instruction": "Give a practical example of `form input`.", "input": "", "output": "Forms collect with named inputs; `method`/`action` define submission, labels make fields operable."}
+{"instruction": "What is `form input` for?", "input": "", "output": "Forms collect with named inputs; `method`/`action` define submission, labels make fields operable."}
+{"instruction": "What does `button type` do?", "input": "", "output": "`type=button` avoids accidental submits inside forms; `submit` sends, `reset` clears (rarely wanted)."}
+{"instruction": "Explain `button type` briefly.", "input": "", "output": "`type=button` avoids accidental submits inside forms; `submit` sends, `reset` clears (rarely wanted)."}
+{"instruction": "When do I use `button type`?", "input": "", "output": "`type=button` avoids accidental submits inside forms; `submit` sends, `reset` clears (rarely wanted)."}
+{"instruction": "Give a practical example of `button type`.", "input": "", "output": "`type=button` avoids accidental submits inside forms; `submit` sends, `reset` clears (rarely wanted)."}
+{"instruction": "What is `button type` for?", "input": "", "output": "`type=button` avoids accidental submits inside forms; `submit` sends, `reset` clears (rarely wanted)."}
+{"instruction": "What does `div vs span` do?", "input": "", "output": "`div` blocks, `span` inlines — both meaningless, so prefer semantic tags and reserve these for styling hooks."}
+{"instruction": "Explain `div vs span` briefly.", "input": "", "output": "`div` blocks, `span` inlines — both meaningless, so prefer semantic tags and reserve these for styling hooks."}
+{"instruction": "When do I use `div vs span`?", "input": "", "output": "`div` blocks, `span` inlines — both meaningless, so prefer semantic tags and reserve these for styling hooks."}
+{"instruction": "Give a practical example of `div vs span`.", "input": "", "output": "`div` blocks, `span` inlines — both meaningless, so prefer semantic tags and reserve these for styling hooks."}
+{"instruction": "What is `div vs span` for?", "input": "", "output": "`div` blocks, `span` inlines — both meaningless, so prefer semantic tags and reserve these for styling hooks."}
+{"instruction": "What does `header footer nav main` do?", "input": "", "output": "Landmarks let assistive tech jump regions; exactly one `main` holds the page's core content."}
+{"instruction": "Explain `header footer nav main` briefly.", "input": "", "output": "Landmarks let assistive tech jump regions; exactly one `main` holds the page's core content."}
+{"instruction": "When do I use `header footer nav main`?", "input": "", "output": "Landmarks let assistive tech jump regions; exactly one `main` holds the page's core content."}
+{"instruction": "Give a practical example of `header footer nav main`.", "input": "", "output": "Landmarks let assistive tech jump regions; exactly one `main` holds the page's core content."}
+{"instruction": "What is `header footer nav main` for?", "input": "", "output": "Landmarks let assistive tech jump regions; exactly one `main` holds the page's core content."}
+{"instruction": "What does `meta viewport` do?", "input": "", "output": "The viewport meta makes mobile render at device width; pair with `charset=utf-8` first in head."}
+{"instruction": "Explain `meta viewport` briefly.", "input": "", "output": "The viewport meta makes mobile render at device width; pair with `charset=utf-8` first in head."}
+{"instruction": "When do I use `meta viewport`?", "input": "", "output": "The viewport meta makes mobile render at device width; pair with `charset=utf-8` first in head."}
+{"instruction": "Give a practical example of `meta viewport`.", "input": "", "output": "The viewport meta makes mobile render at device width; pair with `charset=utf-8` first in head."}
+{"instruction": "What is `meta viewport` for?", "input": "", "output": "The viewport meta makes mobile render at device width; pair with `charset=utf-8` first in head."}
+{"instruction": "What does `title tag` do?", "input": "", "output": "Title shows in tabs/search; unique, front-loaded keywords per page under ~60 characters."}
+{"instruction": "Explain `title tag` briefly.", "input": "", "output": "Title shows in tabs/search; unique, front-loaded keywords per page under ~60 characters."}
+{"instruction": "When do I use `title tag`?", "input": "", "output": "Title shows in tabs/search; unique, front-loaded keywords per page under ~60 characters."}
+{"instruction": "Give a practical example of `title tag`.", "input": "", "output": "Title shows in tabs/search; unique, front-loaded keywords per page under ~60 characters."}
+{"instruction": "What is `title tag` for?", "input": "", "output": "Title shows in tabs/search; unique, front-loaded keywords per page under ~60 characters."}
+{"instruction": "What does `script src` do?", "input": "", "output": "`defer` scripts run in order after parsing; `async` runs whenever fetched — choose by dependency."}
+{"instruction": "Explain `script src` briefly.", "input": "", "output": "`defer` scripts run in order after parsing; `async` runs whenever fetched — choose by dependency."}
+{"instruction": "When do I use `script src`?", "input": "", "output": "`defer` scripts run in order after parsing; `async` runs whenever fetched — choose by dependency."}
+{"instruction": "Give a practical example of `script src`.", "input": "", "output": "`defer` scripts run in order after parsing; `async` runs whenever fetched — choose by dependency."}
+{"instruction": "What is `script src` for?", "input": "", "output": "`defer` scripts run in order after parsing; `async` runs whenever fetched — choose by dependency."}
+{"instruction": "What does `link stylesheet` do?", "input": "", "output": "Stylesheets in head prevent unstyled flashes; `media=print` scopes print-only rules."}
+{"instruction": "Explain `link stylesheet` briefly.", "input": "", "output": "Stylesheets in head prevent unstyled flashes; `media=print` scopes print-only rules."}
+{"instruction": "When do I use `link stylesheet`?", "input": "", "output": "Stylesheets in head prevent unstyled flashes; `media=print` scopes print-only rules."}
+{"instruction": "Give a practical example of `link stylesheet`.", "input": "", "output": "Stylesheets in head prevent unstyled flashes; `media=print` scopes print-only rules."}
+{"instruction": "What is `link stylesheet` for?", "input": "", "output": "Stylesheets in head prevent unstyled flashes; `media=print` scopes print-only rules."}
+{"instruction": "What does `video controls` do?", "input": "", "output": "Native video needs `controls` plus `preload=metadata`; caption tracks serve deaf users and SEO."}
+{"instruction": "Explain `video controls` briefly.", "input": "", "output": "Native video needs `controls` plus `preload=metadata`; caption tracks serve deaf users and SEO."}
+{"instruction": "When do I use `video controls`?", "input": "", "output": "Native video needs `controls` plus `preload=metadata`; caption tracks serve deaf users and SEO."}
+{"instruction": "Give a practical example of `video controls`.", "input": "", "output": "Native video needs `controls` plus `preload=metadata`; caption tracks serve deaf users and SEO."}
+{"instruction": "What is `video controls` for?", "input": "", "output": "Native video needs `controls` plus `preload=metadata`; caption tracks serve deaf users and SEO."}
+{"instruction": "What does `audio controls` do?", "input": "", "output": "Audio tags stream with built-in UI; offer transcripts — the accessible and searchable equivalent."}
+{"instruction": "Explain `audio controls` briefly.", "input": "", "output": "Audio tags stream with built-in UI; offer transcripts — the accessible and searchable equivalent."}
+{"instruction": "When do I use `audio controls`?", "input": "", "output": "Audio tags stream with built-in UI; offer transcripts — the accessible and searchable equivalent."}
+{"instruction": "Give a practical example of `audio controls`.", "input": "", "output": "Audio tags stream with built-in UI; offer transcripts — the accessible and searchable equivalent."}
+{"instruction": "What is `audio controls` for?", "input": "", "output": "Audio tags stream with built-in UI; offer transcripts — the accessible and searchable equivalent."}
+{"instruction": "What does `select option` do?", "input": "", "output": "Native selects work everywhere including mobile pickers; custom dropdowns must reimplement keyboard support."}
+{"instruction": "Explain `select option` briefly.", "input": "", "output": "Native selects work everywhere including mobile pickers; custom dropdowns must reimplement keyboard support."}
+{"instruction": "When do I use `select option`?", "input": "", "output": "Native selects work everywhere including mobile pickers; custom dropdowns must reimplement keyboard support."}
+{"instruction": "Give a practical example of `select option`.", "input": "", "output": "Native selects work everywhere including mobile pickers; custom dropdowns must reimplement keyboard support."}
+{"instruction": "What is `select option` for?", "input": "", "output": "Native selects work everywhere including mobile pickers; custom dropdowns must reimplement keyboard support."}
+{"instruction": "What does `textarea` do?", "input": "", "output": "Textareas take `rows`/`maxlength` and resize handles; never single-line `input` for paragraphs."}
+{"instruction": "Explain `textarea` briefly.", "input": "", "output": "Textareas take `rows`/`maxlength` and resize handles; never single-line `input` for paragraphs."}
+{"instruction": "When do I use `textarea`?", "input": "", "output": "Textareas take `rows`/`maxlength` and resize handles; never single-line `input` for paragraphs."}
+{"instruction": "Give a practical example of `textarea`.", "input": "", "output": "Textareas take `rows`/`maxlength` and resize handles; never single-line `input` for paragraphs."}
+{"instruction": "What is `textarea` for?", "input": "", "output": "Textareas take `rows`/`maxlength` and resize handles; never single-line `input` for paragraphs."}
+{"instruction": "What does `fieldset legend` do?", "input": "", "output": "Group related controls in `fieldset` with a `legend` caption — free semantics for forms and radios."}
+{"instruction": "Explain `fieldset legend` briefly.", "input": "", "output": "Group related controls in `fieldset` with a `legend` caption — free semantics for forms and radios."}
+{"instruction": "When do I use `fieldset legend`?", "input": "", "output": "Group related controls in `fieldset` with a `legend` caption — free semantics for forms and radios."}
+{"instruction": "Give a practical example of `fieldset legend`.", "input": "", "output": "Group related controls in `fieldset` with a `legend` caption — free semantics for forms and radios."}
+{"instruction": "What is `fieldset legend` for?", "input": "", "output": "Group related controls in `fieldset` with a `legend` caption — free semantics for forms and radios."}
 {"instruction": "CSS tengah dengan flex", "input": "", "output": "```css\n.tengah { display: flex; align-items: center; justify-content: center; height: 100vh; }\n```\n`justify-content` jajar paksi utama (mendatar default), `align-items` paksi silang — gabungan ini tengah dua arah."}
 {"instruction": "CSS grid 2 lajur", "input": "", "output": "```css\n.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }\n```\n`1fr` kongsi ruang sama rata; tukar ke `repeat(auto-fit, minmax(200px, 1fr))` untuk responsif tanpa media query."}
 {"instruction": "HTML link fail CSS", "input": "", "output": "```html\n<link rel=\"stylesheet\" href=\"style.css\">\n```\nLetak dalam head supaya gaya dimuat sebelum render — elak kilatan kandungan tanpa gaya (FOUC)."}
@@ -150,6 +550,106 @@
 {"instruction": "How does aspect-ratio work?", "input": "", "output": "```css\n.video { aspect-ratio: 16 / 9; width: 100%; }\n```\nGanti trik padding-top 56.25% — nisbah kekal walau lebar berubah, elak lompatan susun atur (CLS). Untuk gambar: tetapkan width + aspect-ratio, tinggi auto ikut."}
 {"instruction": "How does clamp() give fluid type?", "input": "", "output": "```css\nh1 { font-size: clamp(1.5rem, 4vw + 1rem, 3rem); }\n```\n`clamp(min, ideal, max)` — saiz mengikut viewport antara had; tiada media query untuk skala asas. Uji ekstrem (320px dan 4K) — formula buta pecah di hujung."}
 {"instruction": "How do print stylesheets work?", "input": "", "output": "```css\n@media print {\n  nav, .iklan, button { display: none; }\n  a[href]::after { content: \" (\" attr(href) \")\"; }\n}\n```\nSembunyi navigasi/iklan/interaktif; dedah URL pautan; paksa warna cetak (`print-color-adjust: exact` untuk carta). Uji dengan pratonton cetak, bukan tekaan."}
+{"instruction": "What does `color background` do?", "input": "", "output": "`color` paints text, `background` the box; test contrast 4.5:1 for body text accessibility."}
+{"instruction": "Explain `color background` briefly.", "input": "", "output": "`color` paints text, `background` the box; test contrast 4.5:1 for body text accessibility."}
+{"instruction": "When do I use `color background`?", "input": "", "output": "`color` paints text, `background` the box; test contrast 4.5:1 for body text accessibility."}
+{"instruction": "Give a practical example of `color background`.", "input": "", "output": "`color` paints text, `background` the box; test contrast 4.5:1 for body text accessibility."}
+{"instruction": "What is `color background` for?", "input": "", "output": "`color` paints text, `background` the box; test contrast 4.5:1 for body text accessibility."}
+{"instruction": "What does `font-size rem` do?", "input": "", "output": "Size in `rem` (root-relative) so user zoom scales everything; `px` freezes accessibility settings out."}
+{"instruction": "Explain `font-size rem` briefly.", "input": "", "output": "Size in `rem` (root-relative) so user zoom scales everything; `px` freezes accessibility settings out."}
+{"instruction": "When do I use `font-size rem`?", "input": "", "output": "Size in `rem` (root-relative) so user zoom scales everything; `px` freezes accessibility settings out."}
+{"instruction": "Give a practical example of `font-size rem`.", "input": "", "output": "Size in `rem` (root-relative) so user zoom scales everything; `px` freezes accessibility settings out."}
+{"instruction": "What is `font-size rem` for?", "input": "", "output": "Size in `rem` (root-relative) so user zoom scales everything; `px` freezes accessibility settings out."}
+{"instruction": "What does `font-family stack` do?", "input": "", "output": "Stacks degrade gracefully (`Inter, system-ui, sans-serif`); web fonts need `font-display: swap`."}
+{"instruction": "Explain `font-family stack` briefly.", "input": "", "output": "Stacks degrade gracefully (`Inter, system-ui, sans-serif`); web fonts need `font-display: swap`."}
+{"instruction": "When do I use `font-family stack`?", "input": "", "output": "Stacks degrade gracefully (`Inter, system-ui, sans-serif`); web fonts need `font-display: swap`."}
+{"instruction": "Give a practical example of `font-family stack`.", "input": "", "output": "Stacks degrade gracefully (`Inter, system-ui, sans-serif`); web fonts need `font-display: swap`."}
+{"instruction": "What is `font-family stack` for?", "input": "", "output": "Stacks degrade gracefully (`Inter, system-ui, sans-serif`); web fonts need `font-display: swap`."}
+{"instruction": "What does `margin padding` do?", "input": "", "output": "Margin spaces outside, padding inside; one-direction margins avoid collapse surprises in components."}
+{"instruction": "Explain `margin padding` briefly.", "input": "", "output": "Margin spaces outside, padding inside; one-direction margins avoid collapse surprises in components."}
+{"instruction": "When do I use `margin padding`?", "input": "", "output": "Margin spaces outside, padding inside; one-direction margins avoid collapse surprises in components."}
+{"instruction": "Give a practical example of `margin padding`.", "input": "", "output": "Margin spaces outside, padding inside; one-direction margins avoid collapse surprises in components."}
+{"instruction": "What is `margin padding` for?", "input": "", "output": "Margin spaces outside, padding inside; one-direction margins avoid collapse surprises in components."}
+{"instruction": "What does `border` do?", "input": "", "output": "`border: 1px solid #ddd` draws boxes; `border-radius` rounds, `border: none` resets for custom controls."}
+{"instruction": "Explain `border` briefly.", "input": "", "output": "`border: 1px solid #ddd` draws boxes; `border-radius` rounds, `border: none` resets for custom controls."}
+{"instruction": "When do I use `border`?", "input": "", "output": "`border: 1px solid #ddd` draws boxes; `border-radius` rounds, `border: none` resets for custom controls."}
+{"instruction": "Give a practical example of `border`.", "input": "", "output": "`border: 1px solid #ddd` draws boxes; `border-radius` rounds, `border: none` resets for custom controls."}
+{"instruction": "What is `border` for?", "input": "", "output": "`border: 1px solid #ddd` draws boxes; `border-radius` rounds, `border: none` resets for custom controls."}
+{"instruction": "What does `display block inline` do?", "input": "", "output": "Block fills width and stacks; inline flows in text; `inline-block` mixes both for pills and badges."}
+{"instruction": "Explain `display block inline` briefly.", "input": "", "output": "Block fills width and stacks; inline flows in text; `inline-block` mixes both for pills and badges."}
+{"instruction": "When do I use `display block inline`?", "input": "", "output": "Block fills width and stacks; inline flows in text; `inline-block` mixes both for pills and badges."}
+{"instruction": "Give a practical example of `display block inline`.", "input": "", "output": "Block fills width and stacks; inline flows in text; `inline-block` mixes both for pills and badges."}
+{"instruction": "What is `display block inline` for?", "input": "", "output": "Block fills width and stacks; inline flows in text; `inline-block` mixes both for pills and badges."}
+{"instruction": "What does `display flex` do?", "input": "", "output": "Flex lays out one dimension with `gap` spacing; `flex: 1` children share leftover space proportionally."}
+{"instruction": "Explain `display flex` briefly.", "input": "", "output": "Flex lays out one dimension with `gap` spacing; `flex: 1` children share leftover space proportionally."}
+{"instruction": "When do I use `display flex`?", "input": "", "output": "Flex lays out one dimension with `gap` spacing; `flex: 1` children share leftover space proportionally."}
+{"instruction": "Give a practical example of `display flex`.", "input": "", "output": "Flex lays out one dimension with `gap` spacing; `flex: 1` children share leftover space proportionally."}
+{"instruction": "What is `display flex` for?", "input": "", "output": "Flex lays out one dimension with `gap` spacing; `flex: 1` children share leftover space proportionally."}
+{"instruction": "What does `display grid` do?", "input": "", "output": "Grid aligns two dimensions via template columns; `auto-fit minmax()` makes responsive tracks for free."}
+{"instruction": "Explain `display grid` briefly.", "input": "", "output": "Grid aligns two dimensions via template columns; `auto-fit minmax()` makes responsive tracks for free."}
+{"instruction": "When do I use `display grid`?", "input": "", "output": "Grid aligns two dimensions via template columns; `auto-fit minmax()` makes responsive tracks for free."}
+{"instruction": "Give a practical example of `display grid`.", "input": "", "output": "Grid aligns two dimensions via template columns; `auto-fit minmax()` makes responsive tracks for free."}
+{"instruction": "What is `display grid` for?", "input": "", "output": "Grid aligns two dimensions via template columns; `auto-fit minmax()` makes responsive tracks for free."}
+{"instruction": "What does `position relative` do?", "input": "", "output": "Relative nudges visually while keeping flow space, and anchors absolute children to itself."}
+{"instruction": "Explain `position relative` briefly.", "input": "", "output": "Relative nudges visually while keeping flow space, and anchors absolute children to itself."}
+{"instruction": "When do I use `position relative`?", "input": "", "output": "Relative nudges visually while keeping flow space, and anchors absolute children to itself."}
+{"instruction": "Give a practical example of `position relative`.", "input": "", "output": "Relative nudges visually while keeping flow space, and anchors absolute children to itself."}
+{"instruction": "What is `position relative` for?", "input": "", "output": "Relative nudges visually while keeping flow space, and anchors absolute children to itself."}
+{"instruction": "What does `position absolute` do?", "input": "", "output": "Absolute pins to the nearest positioned ancestor (or page); great for badges, deadly for layouts."}
+{"instruction": "Explain `position absolute` briefly.", "input": "", "output": "Absolute pins to the nearest positioned ancestor (or page); great for badges, deadly for layouts."}
+{"instruction": "When do I use `position absolute`?", "input": "", "output": "Absolute pins to the nearest positioned ancestor (or page); great for badges, deadly for layouts."}
+{"instruction": "Give a practical example of `position absolute`.", "input": "", "output": "Absolute pins to the nearest positioned ancestor (or page); great for badges, deadly for layouts."}
+{"instruction": "What is `position absolute` for?", "input": "", "output": "Absolute pins to the nearest positioned ancestor (or page); great for badges, deadly for layouts."}
+{"instruction": "What does `flex-direction` do?", "input": "", "output": "`row` vs `column` sets the main axis; `justify-content` then runs along it, `align-items` across."}
+{"instruction": "Explain `flex-direction` briefly.", "input": "", "output": "`row` vs `column` sets the main axis; `justify-content` then runs along it, `align-items` across."}
+{"instruction": "When do I use `flex-direction`?", "input": "", "output": "`row` vs `column` sets the main axis; `justify-content` then runs along it, `align-items` across."}
+{"instruction": "Give a practical example of `flex-direction`.", "input": "", "output": "`row` vs `column` sets the main axis; `justify-content` then runs along it, `align-items` across."}
+{"instruction": "What is `flex-direction` for?", "input": "", "output": "`row` vs `column` sets the main axis; `justify-content` then runs along it, `align-items` across."}
+{"instruction": "What does `justify-content` do?", "input": "", "output": "Distributes along the main axis (`center`, `space-between`); pairs with `align-items` for full centering."}
+{"instruction": "Explain `justify-content` briefly.", "input": "", "output": "Distributes along the main axis (`center`, `space-between`); pairs with `align-items` for full centering."}
+{"instruction": "When do I use `justify-content`?", "input": "", "output": "Distributes along the main axis (`center`, `space-between`); pairs with `align-items` for full centering."}
+{"instruction": "Give a practical example of `justify-content`.", "input": "", "output": "Distributes along the main axis (`center`, `space-between`); pairs with `align-items` for full centering."}
+{"instruction": "What is `justify-content` for?", "input": "", "output": "Distributes along the main axis (`center`, `space-between`); pairs with `align-items` for full centering."}
+{"instruction": "What does `align-items` do?", "input": "", "output": "Aligns across the axis (`stretch` default fills); per-child `align-self` overrides exceptions."}
+{"instruction": "Explain `align-items` briefly.", "input": "", "output": "Aligns across the axis (`stretch` default fills); per-child `align-self` overrides exceptions."}
+{"instruction": "When do I use `align-items`?", "input": "", "output": "Aligns across the axis (`stretch` default fills); per-child `align-self` overrides exceptions."}
+{"instruction": "Give a practical example of `align-items`.", "input": "", "output": "Aligns across the axis (`stretch` default fills); per-child `align-self` overrides exceptions."}
+{"instruction": "What is `align-items` for?", "input": "", "output": "Aligns across the axis (`stretch` default fills); per-child `align-self` overrides exceptions."}
+{"instruction": "What does `grid-template-columns` do?", "input": "", "output": "`1fr 1fr` splits evenly; `repeat(3, 1fr)` scales; `minmax(200px, 1fr)` keeps floors."}
+{"instruction": "Explain `grid-template-columns` briefly.", "input": "", "output": "`1fr 1fr` splits evenly; `repeat(3, 1fr)` scales; `minmax(200px, 1fr)` keeps floors."}
+{"instruction": "When do I use `grid-template-columns`?", "input": "", "output": "`1fr 1fr` splits evenly; `repeat(3, 1fr)` scales; `minmax(200px, 1fr)` keeps floors."}
+{"instruction": "Give a practical example of `grid-template-columns`.", "input": "", "output": "`1fr 1fr` splits evenly; `repeat(3, 1fr)` scales; `minmax(200px, 1fr)` keeps floors."}
+{"instruction": "What is `grid-template-columns` for?", "input": "", "output": "`1fr 1fr` splits evenly; `repeat(3, 1fr)` scales; `minmax(200px, 1fr)` keeps floors."}
+{"instruction": "What does `media query` do?", "input": "", "output": "`@media (min-width: 768px)` enhances upward from mobile base; content-first breakpoints beat device lists."}
+{"instruction": "Explain `media query` briefly.", "input": "", "output": "`@media (min-width: 768px)` enhances upward from mobile base; content-first breakpoints beat device lists."}
+{"instruction": "When do I use `media query`?", "input": "", "output": "`@media (min-width: 768px)` enhances upward from mobile base; content-first breakpoints beat device lists."}
+{"instruction": "Give a practical example of `media query`.", "input": "", "output": "`@media (min-width: 768px)` enhances upward from mobile base; content-first breakpoints beat device lists."}
+{"instruction": "What is `media query` for?", "input": "", "output": "`@media (min-width: 768px)` enhances upward from mobile base; content-first breakpoints beat device lists."}
+{"instruction": "What does `:hover` do?", "input": "", "output": "Hover styles need focus equivalents (`:focus-visible`) — touch and keyboard users never hover."}
+{"instruction": "Explain `:hover` briefly.", "input": "", "output": "Hover styles need focus equivalents (`:focus-visible`) — touch and keyboard users never hover."}
+{"instruction": "When do I use `:hover`?", "input": "", "output": "Hover styles need focus equivalents (`:focus-visible`) — touch and keyboard users never hover."}
+{"instruction": "Give a practical example of `:hover`.", "input": "", "output": "Hover styles need focus equivalents (`:focus-visible`) — touch and keyboard users never hover."}
+{"instruction": "What is `:hover` for?", "input": "", "output": "Hover styles need focus equivalents (`:focus-visible`) — touch and keyboard users never hover."}
+{"instruction": "What does `transition` do?", "input": "", "output": "Transitions animate state changes (`transition: color .2s`); keep to transform/opacity for smoothness."}
+{"instruction": "Explain `transition` briefly.", "input": "", "output": "Transitions animate state changes (`transition: color .2s`); keep to transform/opacity for smoothness."}
+{"instruction": "When do I use `transition`?", "input": "", "output": "Transitions animate state changes (`transition: color .2s`); keep to transform/opacity for smoothness."}
+{"instruction": "Give a practical example of `transition`.", "input": "", "output": "Transitions animate state changes (`transition: color .2s`); keep to transform/opacity for smoothness."}
+{"instruction": "What is `transition` for?", "input": "", "output": "Transitions animate state changes (`transition: color .2s`); keep to transform/opacity for smoothness."}
+{"instruction": "What does `@keyframes` do?", "input": "", "output": "Keyframes script multi-step loops (spinners, pulses); honor `prefers-reduced-motion` for vestibular safety."}
+{"instruction": "Explain `@keyframes` briefly.", "input": "", "output": "Keyframes script multi-step loops (spinners, pulses); honor `prefers-reduced-motion` for vestibular safety."}
+{"instruction": "When do I use `@keyframes`?", "input": "", "output": "Keyframes script multi-step loops (spinners, pulses); honor `prefers-reduced-motion` for vestibular safety."}
+{"instruction": "Give a practical example of `@keyframes`.", "input": "", "output": "Keyframes script multi-step loops (spinners, pulses); honor `prefers-reduced-motion` for vestibular safety."}
+{"instruction": "What is `@keyframes` for?", "input": "", "output": "Keyframes script multi-step loops (spinners, pulses); honor `prefers-reduced-motion` for vestibular safety."}
+{"instruction": "What does `box-shadow` do?", "input": "", "output": "Layered shadows (`0 1px 2px, 0 8px 24px`) look natural; animate via pseudo-element opacity, not the property."}
+{"instruction": "Explain `box-shadow` briefly.", "input": "", "output": "Layered shadows (`0 1px 2px, 0 8px 24px`) look natural; animate via pseudo-element opacity, not the property."}
+{"instruction": "When do I use `box-shadow`?", "input": "", "output": "Layered shadows (`0 1px 2px, 0 8px 24px`) look natural; animate via pseudo-element opacity, not the property."}
+{"instruction": "Give a practical example of `box-shadow`.", "input": "", "output": "Layered shadows (`0 1px 2px, 0 8px 24px`) look natural; animate via pseudo-element opacity, not the property."}
+{"instruction": "What is `box-shadow` for?", "input": "", "output": "Layered shadows (`0 1px 2px, 0 8px 24px`) look natural; animate via pseudo-element opacity, not the property."}
+{"instruction": "What does `border-radius 50%` do?", "input": "", "output": "50% on squares makes circles (avatars with `object-fit: cover`); pills use half-height radius."}
+{"instruction": "Explain `border-radius 50%` briefly.", "input": "", "output": "50% on squares makes circles (avatars with `object-fit: cover`); pills use half-height radius."}
+{"instruction": "When do I use `border-radius 50%`?", "input": "", "output": "50% on squares makes circles (avatars with `object-fit: cover`); pills use half-height radius."}
+{"instruction": "Give a practical example of `border-radius 50%`.", "input": "", "output": "50% on squares makes circles (avatars with `object-fit: cover`); pills use half-height radius."}
+{"instruction": "What is `border-radius 50%` for?", "input": "", "output": "50% on squares makes circles (avatars with `object-fit: cover`); pills use half-height radius."}
 {"instruction": "How do I set up Tailwind CSS?", "input": "", "output": "Install the CLI (`npm i -D tailwindcss @tailwindcss/cli`) with `@import \"tailwindcss\";` in your CSS, or the classic config route (`tailwindcss init`, content paths, directives). The engine scans source files and generates only used utilities — production CSS stays kilobytes, not megabytes."}
 {"instruction": "What is utility-first CSS in Tailwind?", "input": "", "output": "```html\n<button class=\"rounded-lg bg-blue-600 px-4 py-2 font-bold text-white hover:bg-blue-700\">Simpan</button>\n```\nStyle by composing small utilities in markup instead of naming custom classes. Reads verbose at first, but eliminates dead CSS, naming debates and specificity wars — the stylesheet is generated from what you actually use."}
 {"instruction": "How do responsive prefixes work in Tailwind?", "input": "", "output": "```html\n<div class=\"grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-4\">...</div>\n```\nPrefixes are mobile-first min-width breakpoints (`sm: md: lg: xl: 2xl:`) — unprefixed is the phone base, larger screens add on. Same pattern for states: `hover: focus: disabled:` compose freely (`md:hover:bg-blue-800`)."}
@@ -158,3 +658,103 @@
 {"instruction": "How do I extend Tailwind theme colors and fonts?", "input": "", "output": "```js\n// tailwind.config.js\ntheme: { extend: { colors: { utama: \"#2563eb\" }, fontFamily: { sans: [\"Inter\"] } } }\n```\n`extend` adds without deleting defaults (top-level `colors` replaces everything). Then `bg-utama font-sans` work everywhere. Keep design tokens here — scattered arbitrary values (`bg-[#2563eb]`) defeat the system."}
 {"instruction": "When should I use @apply in Tailwind?", "input": "", "output": "```css\n.btn-utama { @apply rounded-lg bg-blue-600 px-4 py-2 text-white; }\n```\nUse @apply for genuinely repeated component patterns to cut markup noise — but overuse recreates the custom-CSS problems Tailwind removes (dead code, specificity). Rule: three repetitions of identical utility chains earns an @apply or a framework component."}
 {"instruction": "Why is my Tailwind production CSS huge?", "input": "", "output": "The `content` paths miss your templates, so nothing purges — set them to cover every file with classes (`./src/**/*.{html,js,ts,jsx,tsx}`). Dev builds look big (JIT in memory); production `build` output should be tens of KB. If still large, grep for dynamic class construction (`bg-${color}`) which the scanner cannot see — safelist those."}
+{"instruction": "What does `flex` do?", "input": "", "output": "`flex` lays one dimension with `gap`; `flex-1` children share leftover space proportionally."}
+{"instruction": "Explain `flex` briefly.", "input": "", "output": "`flex` lays one dimension with `gap`; `flex-1` children share leftover space proportionally."}
+{"instruction": "When do I use `flex`?", "input": "", "output": "`flex` lays one dimension with `gap`; `flex-1` children share leftover space proportionally."}
+{"instruction": "Give a practical example of `flex`.", "input": "", "output": "`flex` lays one dimension with `gap`; `flex-1` children share leftover space proportionally."}
+{"instruction": "What is `flex` for?", "input": "", "output": "`flex` lays one dimension with `gap`; `flex-1` children share leftover space proportionally."}
+{"instruction": "What does `grid` do?", "input": "", "output": "`grid grid-cols-3 gap-4` aligns two dimensions; `md:` prefixes adapt columns per breakpoint."}
+{"instruction": "Explain `grid` briefly.", "input": "", "output": "`grid grid-cols-3 gap-4` aligns two dimensions; `md:` prefixes adapt columns per breakpoint."}
+{"instruction": "When do I use `grid`?", "input": "", "output": "`grid grid-cols-3 gap-4` aligns two dimensions; `md:` prefixes adapt columns per breakpoint."}
+{"instruction": "Give a practical example of `grid`.", "input": "", "output": "`grid grid-cols-3 gap-4` aligns two dimensions; `md:` prefixes adapt columns per breakpoint."}
+{"instruction": "What is `grid` for?", "input": "", "output": "`grid grid-cols-3 gap-4` aligns two dimensions; `md:` prefixes adapt columns per breakpoint."}
+{"instruction": "What does `text-center text-xl` do?", "input": "", "output": "Type scale (`text-sm`..`text-4xl`), weights (`font-bold`) and alignment compose without custom CSS."}
+{"instruction": "Explain `text-center text-xl` briefly.", "input": "", "output": "Type scale (`text-sm`..`text-4xl`), weights (`font-bold`) and alignment compose without custom CSS."}
+{"instruction": "When do I use `text-center text-xl`?", "input": "", "output": "Type scale (`text-sm`..`text-4xl`), weights (`font-bold`) and alignment compose without custom CSS."}
+{"instruction": "Give a practical example of `text-center text-xl`.", "input": "", "output": "Type scale (`text-sm`..`text-4xl`), weights (`font-bold`) and alignment compose without custom CSS."}
+{"instruction": "What is `text-center text-xl` for?", "input": "", "output": "Type scale (`text-sm`..`text-4xl`), weights (`font-bold`) and alignment compose without custom CSS."}
+{"instruction": "What does `bg-blue-600` do?", "input": "", "output": "Palette colors with shades (`bg-blue-600 hover:bg-blue-700`); extend theme for brand tokens."}
+{"instruction": "Explain `bg-blue-600` briefly.", "input": "", "output": "Palette colors with shades (`bg-blue-600 hover:bg-blue-700`); extend theme for brand tokens."}
+{"instruction": "When do I use `bg-blue-600`?", "input": "", "output": "Palette colors with shades (`bg-blue-600 hover:bg-blue-700`); extend theme for brand tokens."}
+{"instruction": "Give a practical example of `bg-blue-600`.", "input": "", "output": "Palette colors with shades (`bg-blue-600 hover:bg-blue-700`); extend theme for brand tokens."}
+{"instruction": "What is `bg-blue-600` for?", "input": "", "output": "Palette colors with shades (`bg-blue-600 hover:bg-blue-700`); extend theme for brand tokens."}
+{"instruction": "What does `p-4 m-2` do?", "input": "", "output": "Spacing scale (`p-4` padding, `m-2` margin, `space-x-4` between children) replaces guesswork pixels."}
+{"instruction": "Explain `p-4 m-2` briefly.", "input": "", "output": "Spacing scale (`p-4` padding, `m-2` margin, `space-x-4` between children) replaces guesswork pixels."}
+{"instruction": "When do I use `p-4 m-2`?", "input": "", "output": "Spacing scale (`p-4` padding, `m-2` margin, `space-x-4` between children) replaces guesswork pixels."}
+{"instruction": "Give a practical example of `p-4 m-2`.", "input": "", "output": "Spacing scale (`p-4` padding, `m-2` margin, `space-x-4` between children) replaces guesswork pixels."}
+{"instruction": "What is `p-4 m-2` for?", "input": "", "output": "Spacing scale (`p-4` padding, `m-2` margin, `space-x-4` between children) replaces guesswork pixels."}
+{"instruction": "What does `rounded-lg shadow` do?", "input": "", "output": "Radius (`rounded`, `rounded-full` pills) plus layered `shadow` utilities build cards in two classes."}
+{"instruction": "Explain `rounded-lg shadow` briefly.", "input": "", "output": "Radius (`rounded`, `rounded-full` pills) plus layered `shadow` utilities build cards in two classes."}
+{"instruction": "When do I use `rounded-lg shadow`?", "input": "", "output": "Radius (`rounded`, `rounded-full` pills) plus layered `shadow` utilities build cards in two classes."}
+{"instruction": "Give a practical example of `rounded-lg shadow`.", "input": "", "output": "Radius (`rounded`, `rounded-full` pills) plus layered `shadow` utilities build cards in two classes."}
+{"instruction": "What is `rounded-lg shadow` for?", "input": "", "output": "Radius (`rounded`, `rounded-full` pills) plus layered `shadow` utilities build cards in two classes."}
+{"instruction": "What does `hover:` do?", "input": "", "output": "State variants (`hover: focus: disabled:`) compose freely; always pair hover with focus for keyboard users."}
+{"instruction": "Explain `hover:` briefly.", "input": "", "output": "State variants (`hover: focus: disabled:`) compose freely; always pair hover with focus for keyboard users."}
+{"instruction": "When do I use `hover:`?", "input": "", "output": "State variants (`hover: focus: disabled:`) compose freely; always pair hover with focus for keyboard users."}
+{"instruction": "Give a practical example of `hover:`.", "input": "", "output": "State variants (`hover: focus: disabled:`) compose freely; always pair hover with focus for keyboard users."}
+{"instruction": "What is `hover:` for?", "input": "", "output": "State variants (`hover: focus: disabled:`) compose freely; always pair hover with focus for keyboard users."}
+{"instruction": "What does `md:` do?", "input": "", "output": "Mobile-first breakpoints (`sm md lg xl 2xl`) layer enhancements upward from the phone base."}
+{"instruction": "Explain `md:` briefly.", "input": "", "output": "Mobile-first breakpoints (`sm md lg xl 2xl`) layer enhancements upward from the phone base."}
+{"instruction": "When do I use `md:`?", "input": "", "output": "Mobile-first breakpoints (`sm md lg xl 2xl`) layer enhancements upward from the phone base."}
+{"instruction": "Give a practical example of `md:`.", "input": "", "output": "Mobile-first breakpoints (`sm md lg xl 2xl`) layer enhancements upward from the phone base."}
+{"instruction": "What is `md:` for?", "input": "", "output": "Mobile-first breakpoints (`sm md lg xl 2xl`) layer enhancements upward from the phone base."}
+{"instruction": "What does `flex-col flex-row` do?", "input": "", "output": "Direction switch reflows the same markup; responsive (`flex-col md:flex-row`) without duplicate HTML."}
+{"instruction": "Explain `flex-col flex-row` briefly.", "input": "", "output": "Direction switch reflows the same markup; responsive (`flex-col md:flex-row`) without duplicate HTML."}
+{"instruction": "When do I use `flex-col flex-row`?", "input": "", "output": "Direction switch reflows the same markup; responsive (`flex-col md:flex-row`) without duplicate HTML."}
+{"instruction": "Give a practical example of `flex-col flex-row`.", "input": "", "output": "Direction switch reflows the same markup; responsive (`flex-col md:flex-row`) without duplicate HTML."}
+{"instruction": "What is `flex-col flex-row` for?", "input": "", "output": "Direction switch reflows the same markup; responsive (`flex-col md:flex-row`) without duplicate HTML."}
+{"instruction": "What does `items-center justify-center` do?", "input": "", "output": "Cross/main-axis centering pair — the two-class answer to vertical centering."}
+{"instruction": "Explain `items-center justify-center` briefly.", "input": "", "output": "Cross/main-axis centering pair — the two-class answer to vertical centering."}
+{"instruction": "When do I use `items-center justify-center`?", "input": "", "output": "Cross/main-axis centering pair — the two-class answer to vertical centering."}
+{"instruction": "Give a practical example of `items-center justify-center`.", "input": "", "output": "Cross/main-axis centering pair — the two-class answer to vertical centering."}
+{"instruction": "What is `items-center justify-center` for?", "input": "", "output": "Cross/main-axis centering pair — the two-class answer to vertical centering."}
+{"instruction": "What does `gap-4` do?", "input": "", "output": "`gap` spaces grid/flex children uniformly; replaces margin hacks and last-child exceptions."}
+{"instruction": "Explain `gap-4` briefly.", "input": "", "output": "`gap` spaces grid/flex children uniformly; replaces margin hacks and last-child exceptions."}
+{"instruction": "When do I use `gap-4`?", "input": "", "output": "`gap` spaces grid/flex children uniformly; replaces margin hacks and last-child exceptions."}
+{"instruction": "Give a practical example of `gap-4`.", "input": "", "output": "`gap` spaces grid/flex children uniformly; replaces margin hacks and last-child exceptions."}
+{"instruction": "What is `gap-4` for?", "input": "", "output": "`gap` spaces grid/flex children uniformly; replaces margin hacks and last-child exceptions."}
+{"instruction": "What does `border` do?", "input": "", "output": "`border border-gray-200` outlines; per-side (`border-t`) and divide utilities for lists."}
+{"instruction": "Explain `border` briefly.", "input": "", "output": "`border border-gray-200` outlines; per-side (`border-t`) and divide utilities for lists."}
+{"instruction": "When do I use `border`?", "input": "", "output": "`border border-gray-200` outlines; per-side (`border-t`) and divide utilities for lists."}
+{"instruction": "Give a practical example of `border`.", "input": "", "output": "`border border-gray-200` outlines; per-side (`border-t`) and divide utilities for lists."}
+{"instruction": "What is `border` for?", "input": "", "output": "`border border-gray-200` outlines; per-side (`border-t`) and divide utilities for lists."}
+{"instruction": "What does `w-full h-64` do?", "input": "", "output": "Sizing scale with fractions (`w-1/2`), viewport units and `max-w-*` containers for readable lines."}
+{"instruction": "Explain `w-full h-64` briefly.", "input": "", "output": "Sizing scale with fractions (`w-1/2`), viewport units and `max-w-*` containers for readable lines."}
+{"instruction": "When do I use `w-full h-64`?", "input": "", "output": "Sizing scale with fractions (`w-1/2`), viewport units and `max-w-*` containers for readable lines."}
+{"instruction": "Give a practical example of `w-full h-64`.", "input": "", "output": "Sizing scale with fractions (`w-1/2`), viewport units and `max-w-*` containers for readable lines."}
+{"instruction": "What is `w-full h-64` for?", "input": "", "output": "Sizing scale with fractions (`w-1/2`), viewport units and `max-w-*` containers for readable lines."}
+{"instruction": "What does `hidden block` do?", "input": "", "output": "Display swaps per breakpoint (`hidden md:block`); `invisible` keeps layout space unlike `hidden`."}
+{"instruction": "Explain `hidden block` briefly.", "input": "", "output": "Display swaps per breakpoint (`hidden md:block`); `invisible` keeps layout space unlike `hidden`."}
+{"instruction": "When do I use `hidden block`?", "input": "", "output": "Display swaps per breakpoint (`hidden md:block`); `invisible` keeps layout space unlike `hidden`."}
+{"instruction": "Give a practical example of `hidden block`.", "input": "", "output": "Display swaps per breakpoint (`hidden md:block`); `invisible` keeps layout space unlike `hidden`."}
+{"instruction": "What is `hidden block` for?", "input": "", "output": "Display swaps per breakpoint (`hidden md:block`); `invisible` keeps layout space unlike `hidden`."}
+{"instruction": "What does `container mx-auto` do?", "input": "", "output": "`container mx-auto px-4` centers content with gutters — the standard page shell."}
+{"instruction": "Explain `container mx-auto` briefly.", "input": "", "output": "`container mx-auto px-4` centers content with gutters — the standard page shell."}
+{"instruction": "When do I use `container mx-auto`?", "input": "", "output": "`container mx-auto px-4` centers content with gutters — the standard page shell."}
+{"instruction": "Give a practical example of `container mx-auto`.", "input": "", "output": "`container mx-auto px-4` centers content with gutters — the standard page shell."}
+{"instruction": "What is `container mx-auto` for?", "input": "", "output": "`container mx-auto px-4` centers content with gutters — the standard page shell."}
+{"instruction": "What does `space-x-4` do?", "input": "", "output": "`space-x/y` gaps siblings without wrapper classes; RTL-aware variants exist for mirrored layouts."}
+{"instruction": "Explain `space-x-4` briefly.", "input": "", "output": "`space-x/y` gaps siblings without wrapper classes; RTL-aware variants exist for mirrored layouts."}
+{"instruction": "When do I use `space-x-4`?", "input": "", "output": "`space-x/y` gaps siblings without wrapper classes; RTL-aware variants exist for mirrored layouts."}
+{"instruction": "Give a practical example of `space-x-4`.", "input": "", "output": "`space-x/y` gaps siblings without wrapper classes; RTL-aware variants exist for mirrored layouts."}
+{"instruction": "What is `space-x-4` for?", "input": "", "output": "`space-x/y` gaps siblings without wrapper classes; RTL-aware variants exist for mirrored layouts."}
+{"instruction": "What does `divide-y` do?", "input": "", "output": "`divide-y` draws rules between children only — cleaner than borders on every item."}
+{"instruction": "Explain `divide-y` briefly.", "input": "", "output": "`divide-y` draws rules between children only — cleaner than borders on every item."}
+{"instruction": "When do I use `divide-y`?", "input": "", "output": "`divide-y` draws rules between children only — cleaner than borders on every item."}
+{"instruction": "Give a practical example of `divide-y`.", "input": "", "output": "`divide-y` draws rules between children only — cleaner than borders on every item."}
+{"instruction": "What is `divide-y` for?", "input": "", "output": "`divide-y` draws rules between children only — cleaner than borders on every item."}
+{"instruction": "What does `dark:` do?", "input": "", "output": "Dark variants keyed off class strategy toggle whole themes with one ancestor class."}
+{"instruction": "Explain `dark:` briefly.", "input": "", "output": "Dark variants keyed off class strategy toggle whole themes with one ancestor class."}
+{"instruction": "When do I use `dark:`?", "input": "", "output": "Dark variants keyed off class strategy toggle whole themes with one ancestor class."}
+{"instruction": "Give a practical example of `dark:`.", "input": "", "output": "Dark variants keyed off class strategy toggle whole themes with one ancestor class."}
+{"instruction": "What is `dark:` for?", "input": "", "output": "Dark variants keyed off class strategy toggle whole themes with one ancestor class."}
+{"instruction": "What does `transition` do?", "input": "", "output": "`transition` + `duration-200` animate state changes; restrict to transform/opacity for smoothness."}
+{"instruction": "Explain `transition` briefly.", "input": "", "output": "`transition` + `duration-200` animate state changes; restrict to transform/opacity for smoothness."}
+{"instruction": "When do I use `transition`?", "input": "", "output": "`transition` + `duration-200` animate state changes; restrict to transform/opacity for smoothness."}
+{"instruction": "Give a practical example of `transition`.", "input": "", "output": "`transition` + `duration-200` animate state changes; restrict to transform/opacity for smoothness."}
+{"instruction": "What is `transition` for?", "input": "", "output": "`transition` + `duration-200` animate state changes; restrict to transform/opacity for smoothness."}
+{"instruction": "What does `animate-spin` do?", "input": "", "output": "Built-in keyframes (`spin ping pulse bounce`) cover loaders; custom ones extend via config."}
+{"instruction": "Explain `animate-spin` briefly.", "input": "", "output": "Built-in keyframes (`spin ping pulse bounce`) cover loaders; custom ones extend via config."}
+{"instruction": "When do I use `animate-spin`?", "input": "", "output": "Built-in keyframes (`spin ping pulse bounce`) cover loaders; custom ones extend via config."}
+{"instruction": "Give a practical example of `animate-spin`.", "input": "", "output": "Built-in keyframes (`spin ping pulse bounce`) cover loaders; custom ones extend via config."}
+{"instruction": "What is `animate-spin` for?", "input": "", "output": "Built-in keyframes (`spin ping pulse bounce`) cover loaders; custom ones extend via config."}
