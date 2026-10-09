@@ -12,19 +12,23 @@ import urllib.request
 from pathlib import Path
 
 
-def find_server(bin_dir):
+def find_server(bin_dir, flavor="cpu"):
+    if flavor == "cuda":
+        bin_dir = Path(bin_dir).parent / "bin-cuda"
     cands = list(Path(bin_dir).rglob("llama-server.exe")) + \
         list(Path(bin_dir).rglob("llama-server"))
     cands = [c for c in cands if c.is_file()]
     if not cands:
-        raise SystemExit(f"llama-server not found in {bin_dir} — run with --setup first")
+        raise SystemExit(f"llama-server ({flavor}) not found in {bin_dir} — run with --setup first")
     return str(cands[0])
 
 
 class ModelManager:
     def __init__(self, bin_dir, host="127.0.0.1", port=8080, ctx=4096,
-                 threads=4, idle_timeout=180):
-        self.exe = find_server(bin_dir)
+                 threads=4, idle_timeout=180, flavor="cpu", ngl=0):
+        self.flavor = flavor
+        self.ngl = ngl if flavor == "cuda" else 0
+        self.exe = find_server(bin_dir, flavor)
         self.host, self.port = host, port
         self.ctx, self.threads = ctx, threads
         self.idle_timeout = idle_timeout
@@ -69,8 +73,10 @@ class ModelManager:
             t0 = time.time()
             cmd = [self.exe, "-m", gguf_path, "--host", self.host,
                    "--port", str(self.port), "-c", str(self.ctx),
-                   "-b", "128", "-t", str(self.threads), "--parallel", "1",
-                   "--log-disable"]
+                   "-b", "128", "-t", str(self.threads), "--parallel", "1"]
+            if self.ngl:
+                cmd += ["-ngl", str(self.ngl)]
+            cmd += ["--log-disable"]
             self._proc = subprocess.Popen(cmd, stdout=subprocess.DEVNULL,
                                           stderr=subprocess.STDOUT)
             self._model = gguf_path
@@ -128,4 +134,5 @@ class ModelManager:
         with self._lock:
             return {"model": self._model, "alive": self._alive(),
                     "healthy": self._healthy() if self._alive() else False,
-                    "url": self.url, "idle_timeout": self.idle_timeout}
+                    "url": self.url, "idle_timeout": self.idle_timeout,
+                    "flavor": self.flavor, "ngl": self.ngl}

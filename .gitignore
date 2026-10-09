@@ -1,10 +1,12 @@
 # Standalone engine + model auto-download on first run - never commit binaries.
 app/bin/
+app/bin-cuda/
 app/models/
 app/data/
 app/sessions/
 # same dirs when running ezcodex.exe from repo root (frozen layout, root-only)
 /bin/
+/bin-cuda/
 /models/
 /data/
 /sessions/

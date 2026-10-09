@@ -27,7 +27,7 @@ APP_DIR = (Path(sys.executable).resolve().parent if getattr(sys, "frozen", False
            else Path(__file__).resolve().parent)
 sys.path.insert(0, str(APP_DIR))
 
-__version__ = "0.4.9"
+__version__ = "0.4.10"
 BIN_DIR = APP_DIR / "bin"
 MODELS_DIR = APP_DIR / "models"
 
@@ -132,6 +132,42 @@ Tools: list read write edit run bash rag (workspace-jailed, bash asks confirm).
 """
 
 
+def cuda_dir():
+    return APP_DIR / "bin-cuda"
+
+
+def ensure_cuda():
+    """Download llama.cpp CUDA build (GTX 1070+) into bin-cuda/. Returns dir."""
+    import json as _json
+    d = cuda_dir()
+    if list(d.rglob("llama-server.exe")) + list(d.rglob("llama-server")):
+        return d
+    api = f"https://api.github.com/repos/ggerganov/llama.cpp/releases/tags/{LLAMA_TAG}"
+    req = urllib.request.Request(api, headers={"User-Agent": "ezcodex-standalone"})
+    with urllib.request.urlopen(req, timeout=60) as r:
+        rel = _json.loads(r.read().decode())
+    names = [a["name"] for a in rel.get("assets", [])]
+    lower = [(n, n.lower()) for n in names]
+    pack = next((n for n, l in lower if l.startswith("llama-") and "-cuda-12" in l
+                 and "win" in l and "x64" in l and l.endswith(".zip")), None)
+    # matching CUDA runtime (cublas/cudart DLLs ship separately)
+    rt = next((n for n, l in lower if l.startswith("cudart-llama-") and "-cuda-12" in l
+               and "win" in l and "x64" in l and l.endswith(".zip")), None)
+    if not pack:
+        raise SystemExit(f"tiada asset llama CUDA untuk {LLAMA_TAG}.")
+    print(f"[ezcodex] downloading CUDA engine {pack} ...")
+    with tempfile.TemporaryDirectory() as tmp:
+        for hit in [x for x in (pack, rt) if x]:
+            arc = Path(tmp) / hit
+            if not arc.exists():
+                download(f"{LLAMA_BASE}/{hit}", arc)
+            with zipfile.ZipFile(arc) as z:
+                z.extractall(d)
+    if not (list(d.rglob("llama-server.exe")) + list(d.rglob("llama-server"))):
+        raise SystemExit("llama-server tidak ditemui selepas extract CUDA")
+    return d
+
+
 def build_parser():
     ap = argparse.ArgumentParser(description="XCoder agentic CLI (opencode-style, stdlib only)")
     ap.add_argument("--lang", default="ms", choices=["ms", "en"])
@@ -144,6 +180,8 @@ def build_parser():
     ap.add_argument("--threads", type=int, default=4, help="llama-server CPU threads")
     ap.add_argument("--ctx", type=int, default=4096, help="llama-server context size")
     ap.add_argument("--idle-timeout", type=int, default=180, help="server unload after N idle secs (0=never)")
+    ap.add_argument("--gpu", default="off", choices=["off", "cuda"],
+                    help="server/llama GPU offload (cuda = GTX 1070+, bin-cuda)")
     ap.add_argument("--model", default="", help="override GGUF path (llama) or model id (lmstudio)")
     ap.add_argument("--session", default="default")
     ap.add_argument("--no-tools", action="store_true", help="disable agentic tool loop")
@@ -167,8 +205,11 @@ def get_manager(args):
     global _MANAGER
     if _MANAGER is None:
         from server import ModelManager
-        _MANAGER = ModelManager(BIN_DIR, port=args.port, ctx=args.ctx,
-                                threads=args.threads, idle_timeout=args.idle_timeout)
+        flavor = "cuda" if args.gpu == "cuda" else "cpu"
+        bindir = ensure_cuda() if flavor == "cuda" else BIN_DIR
+        _MANAGER = ModelManager(bindir, port=args.port, ctx=args.ctx,
+                                threads=args.threads, idle_timeout=args.idle_timeout,
+                                flavor=flavor, ngl=99 if flavor == "cuda" else 0)
     return _MANAGER
 
 
@@ -359,7 +400,8 @@ def repl(args):
                 continue
             st = backend.manager.status()
             print(f"server {st['url']} alive={st['alive']} healthy={st['healthy']} "
-                  f"model={st['model']} idle_timeout={st['idle_timeout']}s")
+                  f"model={st['model']} flavor={st.get('flavor')} ngl={st.get('ngl')} "
+                  f"idle_timeout={st['idle_timeout']}s")
             continue
         if q == "/models":
             for m in scan_models(MODELS_DIR):
