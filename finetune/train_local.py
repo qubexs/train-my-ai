@@ -9,9 +9,8 @@
 # Run:
 #   python finetune/train_local.py --data datasets/docker.jsonl --out xcoder-docker
 # Then export GGUF (same venv):
-#   git clone --depth 1 https://github.com/ggerganov/llama.cpp
-#   pip install -r llama.cpp/requirements/convert_hf_to_gguf.txt
-#   python llama.cpp/convert_hf_to_gguf.py xcoder-docker-merged --outfile xcoder-docker-0.5b-q4_k_m.gguf --outtype q4_k_m
+#   python llama.cpp/convert_hf_to_gguf.py <out>-merged --outfile tmp-f16.gguf --outtype f16
+#   app\bin\llama-quantize.exe tmp-f16.gguf <out>-0.5b-q4_k_m.gguf Q4_K_M
 import argparse
 import sys
 
@@ -36,9 +35,9 @@ def main():
     a = parse_args()
     import torch
     from datasets import load_dataset
-    from transformers import AutoModelForCausalLM, AutoTokenizer, TrainingArguments
-    from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
-    from trl import SFTTrainer, SFTConfig
+    from transformers import AutoModelForCausalLM, AutoTokenizer
+    from transformers import DataCollatorForLanguageModeling, Trainer, TrainingArguments
+    from peft import LoraConfig, get_peft_model
 
     use_fp16 = a.fp16 == "on" or (a.fp16 == "auto" and torch.cuda.is_available()
                                   and torch.cuda.get_device_capability()[0] >= 7)
@@ -51,9 +50,14 @@ def main():
     tok = AutoTokenizer.from_pretrained(a.model, use_fast=True)
     if tok.pad_token is None:
         tok.pad_token = tok.eos_token
-    model = AutoModelForCausalLM.from_pretrained(
-        a.model, torch_dtype=dtype,
-        device_map="auto" if torch.cuda.is_available() else None)
+    try:
+        model = AutoModelForCausalLM.from_pretrained(
+            a.model, dtype=dtype,
+            device_map="auto" if torch.cuda.is_available() else None)
+    except TypeError:  # transformers lama: torch_dtype
+        model = AutoModelForCausalLM.from_pretrained(
+            a.model, torch_dtype=dtype,
+            device_map="auto" if torch.cuda.is_available() else None)
     model.gradient_checkpointing_enable()
     model = get_peft_model(model, LoraConfig(
         r=16, lora_alpha=16,
@@ -76,15 +80,20 @@ def main():
 
     ds = ds.map(fmt)
 
-    args = SFTConfig(output_dir=a.out, num_train_epochs=a.epochs, learning_rate=a.lr,
-                     per_device_train_batch_size=a.batch,
-                     gradient_accumulation_steps=a.accum,
-                     gradient_checkpointing=True, fp16=use_fp16,
-                     max_seq_length=a.max_len,
-                     logging_steps=5, save_steps=100, save_total_limit=1,
-                     dataloader_pin_memory=False, report_to="none")
-    SFTTrainer(model=model, tokenizer=tok, train_dataset=ds,
-               dataset_text_field="text", args=args).train()
+    args = TrainingArguments(output_dir=a.out, num_train_epochs=a.epochs,
+                             learning_rate=a.lr,
+                             per_device_train_batch_size=a.batch,
+                             gradient_accumulation_steps=a.accum,
+                             gradient_checkpointing=True, fp16=use_fp16,
+                             logging_steps=5, save_steps=100, save_total_limit=1,
+                             dataloader_pin_memory=False, report_to="none")
+
+    def tok_fn(batch):
+        return tok(batch["text"], truncation=True, max_length=a.max_len)
+
+    ds_tok = ds.map(tok_fn, batched=True, remove_columns=ds.column_names)
+    Trainer(model=model, args=args, train_dataset=ds_tok,
+            data_collator=DataCollatorForLanguageModeling(tok, mlm=False)).train()
 
     merged = model.merge_and_unload()
     merged.save_pretrained(a.out + "-merged")

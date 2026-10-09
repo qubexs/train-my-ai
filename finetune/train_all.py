@@ -49,6 +49,15 @@ def run(cmd, cwd=None):
     subprocess.run(cmd, check=True, cwd=cwd)
 
 
+def find_quantize():
+    hits = sorted((ROOT / "app" / "bin").rglob("llama-quantize.exe")) + \
+        sorted((ROOT / "app" / "bin").rglob("llama-quantize"))
+    hits = [h for h in hits if h.is_file()]
+    if not hits:
+        raise SystemExit("llama-quantize.exe tiada — jalankan CLI --setup dahulu")
+    return str(hits[0])
+
+
 def ensure_llamacpp(build_dir):
     conv = build_dir / "llama.cpp" / "convert_hf_to_gguf.py"
     if conv.exists():
@@ -69,6 +78,13 @@ def main():
     a = ap.parse_args()
 
     from experts import add as add_model
+
+    for mod in ("torch", "transformers", "datasets", "peft", "sentencepiece"):
+        try:
+            __import__(mod)
+        except ImportError:
+            raise SystemExit(f"modul tiada: {mod} — pasang dalam venv dahulu "
+                             f"(pip install torch transformers datasets accelerate peft sentencepiece)")
 
     models_dir = Path(a.models_dir)
     models_dir.mkdir(parents=True, exist_ok=True)
@@ -105,8 +121,11 @@ def main():
         run([sys.executable, str(ROOT / "finetune" / "train_local.py"),
              "--data", data, "--out", str(out), "--epochs", str(a.epochs)])
         merged = str(out) + "-merged"
-        run([sys.executable, str(conv), merged, "--outfile", str(gguf),
-             "--outtype", QUANT])
+        f16 = str(out) + "-f16.gguf"
+        run([sys.executable, str(conv), merged, "--outfile", f16,
+             "--outtype", "f16"])
+        run([find_quantize(), f16, str(gguf), QUANT.upper()])
+        Path(f16).unlink(missing_ok=True)
         if gguf.stat().st_size < 50_000_000:
             raise SystemExit(f"GGUF mencurigakan kecil: {gguf}")
         e = add_model(models_dir, str(gguf), name=name, domains=doms)

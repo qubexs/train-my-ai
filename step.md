@@ -40,7 +40,7 @@ Pascal tiada sokongan Unsloth/bitsandbytes — guna LoRA standard:
 ```powershell
 py -m venv .venv-gpu; .\.venv-gpu\Scripts\Activate.ps1
 pip install torch --index-url https://download.pytorch.org/whl/cu118
-pip install transformers datasets accelerate peft trl
+pip install transformers datasets accelerate peft sentencepiece
 python finetune/train_local.py --data datasets/docker.jsonl --out xcoder-docker
 # ~10-20 min untuk 500 baris. Kemudian export GGUF (lihat komen dalam skrip).
 ```
