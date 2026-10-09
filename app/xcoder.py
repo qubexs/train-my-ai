@@ -113,12 +113,57 @@ def clean(text, name):
     return t.strip()
 
 
-def ask(cli, model, system, prompt):
+# Labels the model emits when it role-plays extra turns instead of answering.
+# Generation is stopped there (llama-cli --reverse-prompt in ask()) AND any
+# leftovers are trimmed here, so a 0.5B model can't snowball old turns.
+TURN_LABELS = ("pengguna:", "soalan baru:", "perbualan sebelum:",
+               "konteks:", "context:", "soalan:", "question:")
+
+
+def strip_turns(text, name):
+    """Keep only the direct answer: drop prompt echoes, self-labels
+    ('XCoder: ...') and fabricated follow-up turns ('Pengguna: ...')."""
+    mine = name.lower() + ":"
+    kept = []
+    for raw in text.splitlines():
+        s = raw.strip()
+        if s.startswith("> "):  # llama-cli prompt echo
+            s = s[2:].strip()
+        if not s:
+            continue
+        low = s.lower()
+        if low.startswith(TURN_LABELS) or low.startswith(mine):
+            if kept:
+                break  # fabricated next turn -> answer ends here
+            if low.startswith(mine):
+                s = s[len(name) + 1:].strip()  # "XCoder: Hai" -> "Hai"
+                if s:
+                    kept.append(s)
+            continue  # leading prompt/question echo -> skip line
+        kept.append(s)
+    return "\n".join(kept).strip()
+
+
+def build_prompt(history, q, lang):
+    """Current question first, minimal context (last exchange only),
+    explicit 'do not repeat' framing so small models answer directly."""
+    if lang == "ms":
+        ctx = ("Konteks (rujukan sahaja, JANGAN ulang atau tulis semula):\n"
+               + "\n".join(history[-2:]) + "\n\n") if history else ""
+        return ctx + "Soalan: " + q
+    ctx = ("Context (reference only, do NOT repeat or rewrite):\n"
+           + "\n".join(history[-2:]) + "\n\n") if history else ""
+    return ctx + "Question: " + q
+
+
+def ask(cli, model, system, prompt, name):
     """One subprocess per answer. Returns (text, tps or None)."""
     p = subprocess.run(
         [str(cli), "-m", str(model), "-c", "2048", "-n", "400",
          "--temp", "0.3", "--log-disable", "-st",
-         "--no-display-prompt", "-sys", system, "-p", prompt],
+         "--no-display-prompt", "-sys", system, "-p", prompt,
+         "-rs", "Pengguna:", "-rs", "Soalan baru:",
+         "-rs", "Perbualan sebelum:"],
         capture_output=True, text=True, timeout=300)
     if p.returncode != 0:
         raise RuntimeError((p.stderr or p.stdout)[-1000:])
@@ -130,7 +175,7 @@ def ask(cli, model, system, prompt):
     start = next((i + 1 for i, l in enumerate(lines) if l.startswith("> ")), 0)
     end = next((i for i, l in enumerate(lines) if l.startswith("[ Prompt:")), len(lines))
     text = "\n".join(lines[start:end]).strip() or blob.strip()
-    return text, tps
+    return strip_turns(text, name), tps
 
 
 def main():
@@ -176,24 +221,28 @@ def main():
             continue
         if lang == "ms":
             system = (f"Anda ialah {a.name}, pembantu pengekodan CPU kecil 0.5B. "
-                      f"Jawab ringkas dalam Bahasa Melayu. Jika ditanya siapa anda, jawab HANYA: "
+                      f"Jawab ringkas dalam Bahasa Melayu. Jawab HANYA soalan terakhir. "
+                      f"Jangan ulang perbualan atau tulis giliran baharu seperti 'Pengguna:'. "
+                      f"Jika ditanya siapa anda, jawab HANYA: "
                       f"Saya {a.name}, dibina untuk pengekodan. Jangan sebut Qwen, Alibaba, Tongyi.")
         else:
             system = (f"You are {a.name}, a tiny CPU 0.5B coding assistant. Answer briefly in English. "
+                      f"Answer ONLY the last question. "
+                      f"Do not repeat the conversation or start new turns like 'Pengguna:'. "
                       f"If asked who you are, answer ONLY: I am {a.name}, built for coding. "
                       f"Never mention Qwen, Alibaba, Tongyi.")
-        ctx = ""
-        if history:
-            ctx = ("Perbualan sebelum:\n" + "\n".join(history[-6:]) +
-                   "\n\nSoalan baru: ")
         print(f"... {a.name} berfikir (CPU) ...")
         try:
-            raw, tps = ask(cli, model, system, ctx + q)
+            raw, tps = ask(cli, model, system, build_prompt(history, q, lang), a.name)
         except Exception as e:
             print(f"Ralat: {e}")
             continue
         ans = clean(raw, a.name)
+        if not ans:
+            print("Maaf, tiada jawapan. Cuba lagi dengan ayat lebih ringkas.")
+            continue
         history += [f"Pengguna: {q}", f"{a.name}: {ans}"]
+        del history[:-8]  # bound growth: last 4 exchanges max
         print(f"\n{a.name}> {ans}")
         if tps:
             s = f"{tps:.1f} T/s"
