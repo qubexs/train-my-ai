@@ -110,3 +110,345 @@
 {"instruction": "When do I use `__construct`?", "input": "", "output": "Constructors build valid objects (inject deps, no work); heavy lifting belongs in explicit methods, not constructors."}
 {"instruction": "Give a practical example of `__construct`.", "input": "", "output": "Constructors build valid objects (inject deps, no work); heavy lifting belongs in explicit methods, not constructors."}
 {"instruction": "What is `__construct` for?", "input": "", "output": "Constructors build valid objects (inject deps, no work); heavy lifting belongs in explicit methods, not constructors."}
+{"instruction": "Apakah fungsi `<?php echo`?", "input": "", "output": "`<?php echo $x; ?>` (or `<?= $x ?>`) prints escaped output; all dynamic output needs `htmlspecialchars`."}
+{"instruction": "Terangkan `<?php echo` secara ringkas.", "input": "", "output": "`<?php echo $x; ?>` (or `<?= $x ?>`) prints escaped output; all dynamic output needs `htmlspecialchars`."}
+{"instruction": "Bila perlu guna `<?php echo`?", "input": "", "output": "`<?php echo $x; ?>` (or `<?= $x ?>`) prints escaped output; all dynamic output needs `htmlspecialchars`."}
+{"instruction": "Beri contoh penggunaan `<?php echo`.", "input": "", "output": "`<?php echo $x; ?>` (or `<?= $x ?>`) prints escaped output; all dynamic output needs `htmlspecialchars`."}
+{"instruction": "`<?php echo` untuk apa?", "input": "", "output": "`<?php echo $x; ?>` (or `<?= $x ?>`) prints escaped output; all dynamic output needs `htmlspecialchars`."}
+{"instruction": "How would you explain `<?php echo` to a junior developer?", "input": "", "output": "`<?php echo $x; ?>` (or `<?= $x ?>`) prints escaped output; all dynamic output needs `htmlspecialchars`."}
+{"instruction": "Give a real-world scenario for `<?php echo`.", "input": "", "output": "`<?php echo $x; ?>` (or `<?= $x ?>`) prints escaped output; all dynamic output needs `htmlspecialchars`."}
+{"instruction": "What problem does `<?php echo` solve?", "input": "", "output": "`<?php echo $x; ?>` (or `<?= $x ?>`) prints escaped output; all dynamic output needs `htmlspecialchars`."}
+{"instruction": "Apakah fungsi `$variables`?", "input": "", "output": "`$` prefixes all variables (loosely typed); `$_GET/$_POST` carry request input — never trusted raw."}
+{"instruction": "Terangkan `$variables` secara ringkas.", "input": "", "output": "`$` prefixes all variables (loosely typed); `$_GET/$_POST` carry request input — never trusted raw."}
+{"instruction": "Bila perlu guna `$variables`?", "input": "", "output": "`$` prefixes all variables (loosely typed); `$_GET/$_POST` carry request input — never trusted raw."}
+{"instruction": "Beri contoh penggunaan `$variables`.", "input": "", "output": "`$` prefixes all variables (loosely typed); `$_GET/$_POST` carry request input — never trusted raw."}
+{"instruction": "`$variables` untuk apa?", "input": "", "output": "`$` prefixes all variables (loosely typed); `$_GET/$_POST` carry request input — never trusted raw."}
+{"instruction": "How would you explain `$variables` to a junior developer?", "input": "", "output": "`$` prefixes all variables (loosely typed); `$_GET/$_POST` carry request input — never trusted raw."}
+{"instruction": "Give a real-world scenario for `$variables`.", "input": "", "output": "`$` prefixes all variables (loosely typed); `$_GET/$_POST` carry request input — never trusted raw."}
+{"instruction": "What problem does `$variables` solve?", "input": "", "output": "`$` prefixes all variables (loosely typed); `$_GET/$_POST` carry request input — never trusted raw."}
+{"instruction": "Apakah fungsi `if else`?", "input": "", "output": "Standard branches with `===` strict compare; loose `==` juggling (`'0' == false`) is a classic trap."}
+{"instruction": "Terangkan `if else` secara ringkas.", "input": "", "output": "Standard branches with `===` strict compare; loose `==` juggling (`'0' == false`) is a classic trap."}
+{"instruction": "Bila perlu guna `if else`?", "input": "", "output": "Standard branches with `===` strict compare; loose `==` juggling (`'0' == false`) is a classic trap."}
+{"instruction": "Beri contoh penggunaan `if else`.", "input": "", "output": "Standard branches with `===` strict compare; loose `==` juggling (`'0' == false`) is a classic trap."}
+{"instruction": "`if else` untuk apa?", "input": "", "output": "Standard branches with `===` strict compare; loose `==` juggling (`'0' == false`) is a classic trap."}
+{"instruction": "How would you explain `if else` to a junior developer?", "input": "", "output": "Standard branches with `===` strict compare; loose `==` juggling (`'0' == false`) is a classic trap."}
+{"instruction": "Give a real-world scenario for `if else`.", "input": "", "output": "Standard branches with `===` strict compare; loose `==` juggling (`'0' == false`) is a classic trap."}
+{"instruction": "What problem does `if else` solve?", "input": "", "output": "Standard branches with `===` strict compare; loose `==` juggling (`'0' == false`) is a classic trap."}
+{"instruction": "Apakah fungsi `for foreach while`?", "input": "", "output": "`foreach ($arr as $k => $v)` is the workhorse; `while` needs manual progress or loops forever."}
+{"instruction": "Terangkan `for foreach while` secara ringkas.", "input": "", "output": "`foreach ($arr as $k => $v)` is the workhorse; `while` needs manual progress or loops forever."}
+{"instruction": "Bila perlu guna `for foreach while`?", "input": "", "output": "`foreach ($arr as $k => $v)` is the workhorse; `while` needs manual progress or loops forever."}
+{"instruction": "Beri contoh penggunaan `for foreach while`.", "input": "", "output": "`foreach ($arr as $k => $v)` is the workhorse; `while` needs manual progress or loops forever."}
+{"instruction": "`for foreach while` untuk apa?", "input": "", "output": "`foreach ($arr as $k => $v)` is the workhorse; `while` needs manual progress or loops forever."}
+{"instruction": "How would you explain `for foreach while` to a junior developer?", "input": "", "output": "`foreach ($arr as $k => $v)` is the workhorse; `while` needs manual progress or loops forever."}
+{"instruction": "Give a real-world scenario for `for foreach while`.", "input": "", "output": "`foreach ($arr as $k => $v)` is the workhorse; `while` needs manual progress or loops forever."}
+{"instruction": "What problem does `for foreach while` solve?", "input": "", "output": "`foreach ($arr as $k => $v)` is the workhorse; `while` needs manual progress or loops forever."}
+{"instruction": "Apakah fungsi `function`?", "input": "", "output": "Functions take typed params with defaults; `declare(strict_types=1)` per file stops silent coercion."}
+{"instruction": "Terangkan `function` secara ringkas.", "input": "", "output": "Functions take typed params with defaults; `declare(strict_types=1)` per file stops silent coercion."}
+{"instruction": "Bila perlu guna `function`?", "input": "", "output": "Functions take typed params with defaults; `declare(strict_types=1)` per file stops silent coercion."}
+{"instruction": "Beri contoh penggunaan `function`.", "input": "", "output": "Functions take typed params with defaults; `declare(strict_types=1)` per file stops silent coercion."}
+{"instruction": "`function` untuk apa?", "input": "", "output": "Functions take typed params with defaults; `declare(strict_types=1)` per file stops silent coercion."}
+{"instruction": "How would you explain `function` to a junior developer?", "input": "", "output": "Functions take typed params with defaults; `declare(strict_types=1)` per file stops silent coercion."}
+{"instruction": "Give a real-world scenario for `function`.", "input": "", "output": "Functions take typed params with defaults; `declare(strict_types=1)` per file stops silent coercion."}
+{"instruction": "What problem does `function` solve?", "input": "", "output": "Functions take typed params with defaults; `declare(strict_types=1)` per file stops silent coercion."}
+{"instruction": "Apakah fungsi `arrays assoc`?", "input": "", "output": "PHP arrays are ordered maps; `[]` appends, `count()` sizes, `array_*` helpers transform."}
+{"instruction": "Terangkan `arrays assoc` secara ringkas.", "input": "", "output": "PHP arrays are ordered maps; `[]` appends, `count()` sizes, `array_*` helpers transform."}
+{"instruction": "Bila perlu guna `arrays assoc`?", "input": "", "output": "PHP arrays are ordered maps; `[]` appends, `count()` sizes, `array_*` helpers transform."}
+{"instruction": "Beri contoh penggunaan `arrays assoc`.", "input": "", "output": "PHP arrays are ordered maps; `[]` appends, `count()` sizes, `array_*` helpers transform."}
+{"instruction": "`arrays assoc` untuk apa?", "input": "", "output": "PHP arrays are ordered maps; `[]` appends, `count()` sizes, `array_*` helpers transform."}
+{"instruction": "How would you explain `arrays assoc` to a junior developer?", "input": "", "output": "PHP arrays are ordered maps; `[]` appends, `count()` sizes, `array_*` helpers transform."}
+{"instruction": "Give a real-world scenario for `arrays assoc`.", "input": "", "output": "PHP arrays are ordered maps; `[]` appends, `count()` sizes, `array_*` helpers transform."}
+{"instruction": "What problem does `arrays assoc` solve?", "input": "", "output": "PHP arrays are ordered maps; `[]` appends, `count()` sizes, `array_*` helpers transform."}
+{"instruction": "Apakah fungsi `count() sizeof`?", "input": "", "output": "`count()` sizes arrays (O(1)); empty check via `=== []` or `empty()` — know their falsy differences."}
+{"instruction": "Terangkan `count() sizeof` secara ringkas.", "input": "", "output": "`count()` sizes arrays (O(1)); empty check via `=== []` or `empty()` — know their falsy differences."}
+{"instruction": "Bila perlu guna `count() sizeof`?", "input": "", "output": "`count()` sizes arrays (O(1)); empty check via `=== []` or `empty()` — know their falsy differences."}
+{"instruction": "Beri contoh penggunaan `count() sizeof`.", "input": "", "output": "`count()` sizes arrays (O(1)); empty check via `=== []` or `empty()` — know their falsy differences."}
+{"instruction": "`count() sizeof` untuk apa?", "input": "", "output": "`count()` sizes arrays (O(1)); empty check via `=== []` or `empty()` — know their falsy differences."}
+{"instruction": "How would you explain `count() sizeof` to a junior developer?", "input": "", "output": "`count()` sizes arrays (O(1)); empty check via `=== []` or `empty()` — know their falsy differences."}
+{"instruction": "Give a real-world scenario for `count() sizeof`.", "input": "", "output": "`count()` sizes arrays (O(1)); empty check via `=== []` or `empty()` — know their falsy differences."}
+{"instruction": "What problem does `count() sizeof` solve?", "input": "", "output": "`count()` sizes arrays (O(1)); empty check via `=== []` or `empty()` — know their falsy differences."}
+{"instruction": "Apakah fungsi `strlen strpos`?", "input": "", "output": "`strlen` bytes (not chars — use `mb_strlen` for Unicode); `strpos` returns 0-or-false, compare with `!==`."}
+{"instruction": "Terangkan `strlen strpos` secara ringkas.", "input": "", "output": "`strlen` bytes (not chars — use `mb_strlen` for Unicode); `strpos` returns 0-or-false, compare with `!==`."}
+{"instruction": "Bila perlu guna `strlen strpos`?", "input": "", "output": "`strlen` bytes (not chars — use `mb_strlen` for Unicode); `strpos` returns 0-or-false, compare with `!==`."}
+{"instruction": "Beri contoh penggunaan `strlen strpos`.", "input": "", "output": "`strlen` bytes (not chars — use `mb_strlen` for Unicode); `strpos` returns 0-or-false, compare with `!==`."}
+{"instruction": "`strlen strpos` untuk apa?", "input": "", "output": "`strlen` bytes (not chars — use `mb_strlen` for Unicode); `strpos` returns 0-or-false, compare with `!==`."}
+{"instruction": "How would you explain `strlen strpos` to a junior developer?", "input": "", "output": "`strlen` bytes (not chars — use `mb_strlen` for Unicode); `strpos` returns 0-or-false, compare with `!==`."}
+{"instruction": "Give a real-world scenario for `strlen strpos`.", "input": "", "output": "`strlen` bytes (not chars — use `mb_strlen` for Unicode); `strpos` returns 0-or-false, compare with `!==`."}
+{"instruction": "What problem does `strlen strpos` solve?", "input": "", "output": "`strlen` bytes (not chars — use `mb_strlen` for Unicode); `strpos` returns 0-or-false, compare with `!==`."}
+{"instruction": "Apakah fungsi `str_replace explode`?", "input": "", "output": "`str_replace` swaps substrings; `explode(',', $s)` splits, `implode` glues — CSV lines in two calls."}
+{"instruction": "Terangkan `str_replace explode` secara ringkas.", "input": "", "output": "`str_replace` swaps substrings; `explode(',', $s)` splits, `implode` glues — CSV lines in two calls."}
+{"instruction": "Bila perlu guna `str_replace explode`?", "input": "", "output": "`str_replace` swaps substrings; `explode(',', $s)` splits, `implode` glues — CSV lines in two calls."}
+{"instruction": "Beri contoh penggunaan `str_replace explode`.", "input": "", "output": "`str_replace` swaps substrings; `explode(',', $s)` splits, `implode` glues — CSV lines in two calls."}
+{"instruction": "`str_replace explode` untuk apa?", "input": "", "output": "`str_replace` swaps substrings; `explode(',', $s)` splits, `implode` glues — CSV lines in two calls."}
+{"instruction": "How would you explain `str_replace explode` to a junior developer?", "input": "", "output": "`str_replace` swaps substrings; `explode(',', $s)` splits, `implode` glues — CSV lines in two calls."}
+{"instruction": "Give a real-world scenario for `str_replace explode`.", "input": "", "output": "`str_replace` swaps substrings; `explode(',', $s)` splits, `implode` glues — CSV lines in two calls."}
+{"instruction": "What problem does `str_replace explode` solve?", "input": "", "output": "`str_replace` swaps substrings; `explode(',', $s)` splits, `implode` glues — CSV lines in two calls."}
+{"instruction": "Apakah fungsi `include require`?", "input": "", "output": "`require` fatals on missing (critical code), `include` warns; `_once` variants prevent redeclaration."}
+{"instruction": "Terangkan `include require` secara ringkas.", "input": "", "output": "`require` fatals on missing (critical code), `include` warns; `_once` variants prevent redeclaration."}
+{"instruction": "Bila perlu guna `include require`?", "input": "", "output": "`require` fatals on missing (critical code), `include` warns; `_once` variants prevent redeclaration."}
+{"instruction": "Beri contoh penggunaan `include require`.", "input": "", "output": "`require` fatals on missing (critical code), `include` warns; `_once` variants prevent redeclaration."}
+{"instruction": "`include require` untuk apa?", "input": "", "output": "`require` fatals on missing (critical code), `include` warns; `_once` variants prevent redeclaration."}
+{"instruction": "How would you explain `include require` to a junior developer?", "input": "", "output": "`require` fatals on missing (critical code), `include` warns; `_once` variants prevent redeclaration."}
+{"instruction": "Give a real-world scenario for `include require`.", "input": "", "output": "`require` fatals on missing (critical code), `include` warns; `_once` variants prevent redeclaration."}
+{"instruction": "What problem does `include require` solve?", "input": "", "output": "`require` fatals on missing (critical code), `include` warns; `_once` variants prevent redeclaration."}
+{"instruction": "Apakah fungsi `class new`?", "input": "", "output": "One class per PSR-4 file; constructor promotion trims boilerplate; visibility guards internals."}
+{"instruction": "Terangkan `class new` secara ringkas.", "input": "", "output": "One class per PSR-4 file; constructor promotion trims boilerplate; visibility guards internals."}
+{"instruction": "Bila perlu guna `class new`?", "input": "", "output": "One class per PSR-4 file; constructor promotion trims boilerplate; visibility guards internals."}
+{"instruction": "Beri contoh penggunaan `class new`.", "input": "", "output": "One class per PSR-4 file; constructor promotion trims boilerplate; visibility guards internals."}
+{"instruction": "`class new` untuk apa?", "input": "", "output": "One class per PSR-4 file; constructor promotion trims boilerplate; visibility guards internals."}
+{"instruction": "How would you explain `class new` to a junior developer?", "input": "", "output": "One class per PSR-4 file; constructor promotion trims boilerplate; visibility guards internals."}
+{"instruction": "Give a real-world scenario for `class new`.", "input": "", "output": "One class per PSR-4 file; constructor promotion trims boilerplate; visibility guards internals."}
+{"instruction": "What problem does `class new` solve?", "input": "", "output": "One class per PSR-4 file; constructor promotion trims boilerplate; visibility guards internals."}
+{"instruction": "Apakah fungsi `composer install`?", "input": "", "output": "Composer resolves `composer.json` into locked `composer.lock`; commit both, never `vendor/`."}
+{"instruction": "Terangkan `composer install` secara ringkas.", "input": "", "output": "Composer resolves `composer.json` into locked `composer.lock`; commit both, never `vendor/`."}
+{"instruction": "Bila perlu guna `composer install`?", "input": "", "output": "Composer resolves `composer.json` into locked `composer.lock`; commit both, never `vendor/`."}
+{"instruction": "Beri contoh penggunaan `composer install`.", "input": "", "output": "Composer resolves `composer.json` into locked `composer.lock`; commit both, never `vendor/`."}
+{"instruction": "`composer install` untuk apa?", "input": "", "output": "Composer resolves `composer.json` into locked `composer.lock`; commit both, never `vendor/`."}
+{"instruction": "How would you explain `composer install` to a junior developer?", "input": "", "output": "Composer resolves `composer.json` into locked `composer.lock`; commit both, never `vendor/`."}
+{"instruction": "Give a real-world scenario for `composer install`.", "input": "", "output": "Composer resolves `composer.json` into locked `composer.lock`; commit both, never `vendor/`."}
+{"instruction": "What problem does `composer install` solve?", "input": "", "output": "Composer resolves `composer.json` into locked `composer.lock`; commit both, never `vendor/`."}
+{"instruction": "Apakah fungsi `password_hash`?", "input": "", "output": "`password_hash` with Argon2/bcrypt handles salt+cost; verify with `password_verify`, rehash on cost bumps."}
+{"instruction": "Terangkan `password_hash` secara ringkas.", "input": "", "output": "`password_hash` with Argon2/bcrypt handles salt+cost; verify with `password_verify`, rehash on cost bumps."}
+{"instruction": "Bila perlu guna `password_hash`?", "input": "", "output": "`password_hash` with Argon2/bcrypt handles salt+cost; verify with `password_verify`, rehash on cost bumps."}
+{"instruction": "Beri contoh penggunaan `password_hash`.", "input": "", "output": "`password_hash` with Argon2/bcrypt handles salt+cost; verify with `password_verify`, rehash on cost bumps."}
+{"instruction": "`password_hash` untuk apa?", "input": "", "output": "`password_hash` with Argon2/bcrypt handles salt+cost; verify with `password_verify`, rehash on cost bumps."}
+{"instruction": "How would you explain `password_hash` to a junior developer?", "input": "", "output": "`password_hash` with Argon2/bcrypt handles salt+cost; verify with `password_verify`, rehash on cost bumps."}
+{"instruction": "Give a real-world scenario for `password_hash`.", "input": "", "output": "`password_hash` with Argon2/bcrypt handles salt+cost; verify with `password_verify`, rehash on cost bumps."}
+{"instruction": "What problem does `password_hash` solve?", "input": "", "output": "`password_hash` with Argon2/bcrypt handles salt+cost; verify with `password_verify`, rehash on cost bumps."}
+{"instruction": "Apakah fungsi `PDO prepare`?", "input": "", "output": "Prepared placeholders separate data from SQL (injection-proof); set ERRMODE_EXCEPTION and real prepares."}
+{"instruction": "Terangkan `PDO prepare` secara ringkas.", "input": "", "output": "Prepared placeholders separate data from SQL (injection-proof); set ERRMODE_EXCEPTION and real prepares."}
+{"instruction": "Bila perlu guna `PDO prepare`?", "input": "", "output": "Prepared placeholders separate data from SQL (injection-proof); set ERRMODE_EXCEPTION and real prepares."}
+{"instruction": "Beri contoh penggunaan `PDO prepare`.", "input": "", "output": "Prepared placeholders separate data from SQL (injection-proof); set ERRMODE_EXCEPTION and real prepares."}
+{"instruction": "`PDO prepare` untuk apa?", "input": "", "output": "Prepared placeholders separate data from SQL (injection-proof); set ERRMODE_EXCEPTION and real prepares."}
+{"instruction": "How would you explain `PDO prepare` to a junior developer?", "input": "", "output": "Prepared placeholders separate data from SQL (injection-proof); set ERRMODE_EXCEPTION and real prepares."}
+{"instruction": "Give a real-world scenario for `PDO prepare`.", "input": "", "output": "Prepared placeholders separate data from SQL (injection-proof); set ERRMODE_EXCEPTION and real prepares."}
+{"instruction": "What problem does `PDO prepare` solve?", "input": "", "output": "Prepared placeholders separate data from SQL (injection-proof); set ERRMODE_EXCEPTION and real prepares."}
+{"instruction": "Apakah fungsi `header Location`?", "input": "", "output": "`header('Location: /x')` redirects but must precede any output; follow with `exit` to stop rendering."}
+{"instruction": "Terangkan `header Location` secara ringkas.", "input": "", "output": "`header('Location: /x')` redirects but must precede any output; follow with `exit` to stop rendering."}
+{"instruction": "Bila perlu guna `header Location`?", "input": "", "output": "`header('Location: /x')` redirects but must precede any output; follow with `exit` to stop rendering."}
+{"instruction": "Beri contoh penggunaan `header Location`.", "input": "", "output": "`header('Location: /x')` redirects but must precede any output; follow with `exit` to stop rendering."}
+{"instruction": "`header Location` untuk apa?", "input": "", "output": "`header('Location: /x')` redirects but must precede any output; follow with `exit` to stop rendering."}
+{"instruction": "How would you explain `header Location` to a junior developer?", "input": "", "output": "`header('Location: /x')` redirects but must precede any output; follow with `exit` to stop rendering."}
+{"instruction": "Give a real-world scenario for `header Location`.", "input": "", "output": "`header('Location: /x')` redirects but must precede any output; follow with `exit` to stop rendering."}
+{"instruction": "What problem does `header Location` solve?", "input": "", "output": "`header('Location: /x')` redirects but must precede any output; follow with `exit` to stop rendering."}
+{"instruction": "Apakah fungsi `session_start`?", "input": "", "output": "Sessions persist per-user state; regenerate id after login, destroy on logout, flag cookies httponly+secure."}
+{"instruction": "Terangkan `session_start` secara ringkas.", "input": "", "output": "Sessions persist per-user state; regenerate id after login, destroy on logout, flag cookies httponly+secure."}
+{"instruction": "Bila perlu guna `session_start`?", "input": "", "output": "Sessions persist per-user state; regenerate id after login, destroy on logout, flag cookies httponly+secure."}
+{"instruction": "Beri contoh penggunaan `session_start`.", "input": "", "output": "Sessions persist per-user state; regenerate id after login, destroy on logout, flag cookies httponly+secure."}
+{"instruction": "`session_start` untuk apa?", "input": "", "output": "Sessions persist per-user state; regenerate id after login, destroy on logout, flag cookies httponly+secure."}
+{"instruction": "How would you explain `session_start` to a junior developer?", "input": "", "output": "Sessions persist per-user state; regenerate id after login, destroy on logout, flag cookies httponly+secure."}
+{"instruction": "Give a real-world scenario for `session_start`.", "input": "", "output": "Sessions persist per-user state; regenerate id after login, destroy on logout, flag cookies httponly+secure."}
+{"instruction": "What problem does `session_start` solve?", "input": "", "output": "Sessions persist per-user state; regenerate id after login, destroy on logout, flag cookies httponly+secure."}
+{"instruction": "Apakah fungsi `try catch`?", "input": "", "output": "Catch specific `Exception` subclasses; log with context and rethrow or render — never swallow silently."}
+{"instruction": "Terangkan `try catch` secara ringkas.", "input": "", "output": "Catch specific `Exception` subclasses; log with context and rethrow or render — never swallow silently."}
+{"instruction": "Bila perlu guna `try catch`?", "input": "", "output": "Catch specific `Exception` subclasses; log with context and rethrow or render — never swallow silently."}
+{"instruction": "Beri contoh penggunaan `try catch`.", "input": "", "output": "Catch specific `Exception` subclasses; log with context and rethrow or render — never swallow silently."}
+{"instruction": "`try catch` untuk apa?", "input": "", "output": "Catch specific `Exception` subclasses; log with context and rethrow or render — never swallow silently."}
+{"instruction": "How would you explain `try catch` to a junior developer?", "input": "", "output": "Catch specific `Exception` subclasses; log with context and rethrow or render — never swallow silently."}
+{"instruction": "Give a real-world scenario for `try catch`.", "input": "", "output": "Catch specific `Exception` subclasses; log with context and rethrow or render — never swallow silently."}
+{"instruction": "What problem does `try catch` solve?", "input": "", "output": "Catch specific `Exception` subclasses; log with context and rethrow or render — never swallow silently."}
+{"instruction": "Apakah fungsi `date() time`?", "input": "", "output": "`date('Y-m-d')` formats timestamps; store UTC and convert per user timezone at display."}
+{"instruction": "Terangkan `date() time` secara ringkas.", "input": "", "output": "`date('Y-m-d')` formats timestamps; store UTC and convert per user timezone at display."}
+{"instruction": "Bila perlu guna `date() time`?", "input": "", "output": "`date('Y-m-d')` formats timestamps; store UTC and convert per user timezone at display."}
+{"instruction": "Beri contoh penggunaan `date() time`.", "input": "", "output": "`date('Y-m-d')` formats timestamps; store UTC and convert per user timezone at display."}
+{"instruction": "`date() time` untuk apa?", "input": "", "output": "`date('Y-m-d')` formats timestamps; store UTC and convert per user timezone at display."}
+{"instruction": "How would you explain `date() time` to a junior developer?", "input": "", "output": "`date('Y-m-d')` formats timestamps; store UTC and convert per user timezone at display."}
+{"instruction": "Give a real-world scenario for `date() time`.", "input": "", "output": "`date('Y-m-d')` formats timestamps; store UTC and convert per user timezone at display."}
+{"instruction": "What problem does `date() time` solve?", "input": "", "output": "`date('Y-m-d')` formats timestamps; store UTC and convert per user timezone at display."}
+{"instruction": "Apakah fungsi `file_get_contents`?", "input": "", "output": "Reads files/URLs into strings simply; check `=== false` and prefer streams for huge payloads."}
+{"instruction": "Terangkan `file_get_contents` secara ringkas.", "input": "", "output": "Reads files/URLs into strings simply; check `=== false` and prefer streams for huge payloads."}
+{"instruction": "Bila perlu guna `file_get_contents`?", "input": "", "output": "Reads files/URLs into strings simply; check `=== false` and prefer streams for huge payloads."}
+{"instruction": "Beri contoh penggunaan `file_get_contents`.", "input": "", "output": "Reads files/URLs into strings simply; check `=== false` and prefer streams for huge payloads."}
+{"instruction": "`file_get_contents` untuk apa?", "input": "", "output": "Reads files/URLs into strings simply; check `=== false` and prefer streams for huge payloads."}
+{"instruction": "How would you explain `file_get_contents` to a junior developer?", "input": "", "output": "Reads files/URLs into strings simply; check `=== false` and prefer streams for huge payloads."}
+{"instruction": "Give a real-world scenario for `file_get_contents`.", "input": "", "output": "Reads files/URLs into strings simply; check `=== false` and prefer streams for huge payloads."}
+{"instruction": "What problem does `file_get_contents` solve?", "input": "", "output": "Reads files/URLs into strings simply; check `=== false` and prefer streams for huge payloads."}
+{"instruction": "Apakah fungsi `__construct`?", "input": "", "output": "Constructors build valid objects (inject deps, no work); heavy lifting belongs in explicit methods, not constructors."}
+{"instruction": "Terangkan `__construct` secara ringkas.", "input": "", "output": "Constructors build valid objects (inject deps, no work); heavy lifting belongs in explicit methods, not constructors."}
+{"instruction": "Bila perlu guna `__construct`?", "input": "", "output": "Constructors build valid objects (inject deps, no work); heavy lifting belongs in explicit methods, not constructors."}
+{"instruction": "Beri contoh penggunaan `__construct`.", "input": "", "output": "Constructors build valid objects (inject deps, no work); heavy lifting belongs in explicit methods, not constructors."}
+{"instruction": "`__construct` untuk apa?", "input": "", "output": "Constructors build valid objects (inject deps, no work); heavy lifting belongs in explicit methods, not constructors."}
+{"instruction": "How would you explain `__construct` to a junior developer?", "input": "", "output": "Constructors build valid objects (inject deps, no work); heavy lifting belongs in explicit methods, not constructors."}
+{"instruction": "Give a real-world scenario for `__construct`.", "input": "", "output": "Constructors build valid objects (inject deps, no work); heavy lifting belongs in explicit methods, not constructors."}
+{"instruction": "What problem does `__construct` solve?", "input": "", "output": "Constructors build valid objects (inject deps, no work); heavy lifting belongs in explicit methods, not constructors."}
+{"instruction": "What does `echo vs print` do?", "input": "", "output": "`echo` outputs (no return, multiple args); `print` returns 1 — both beat string-concat debugging via error_log."}
+{"instruction": "Explain `echo vs print` briefly.", "input": "", "output": "`echo` outputs (no return, multiple args); `print` returns 1 — both beat string-concat debugging via error_log."}
+{"instruction": "When do I use `echo vs print`?", "input": "", "output": "`echo` outputs (no return, multiple args); `print` returns 1 — both beat string-concat debugging via error_log."}
+{"instruction": "Give a practical example of `echo vs print`.", "input": "", "output": "`echo` outputs (no return, multiple args); `print` returns 1 — both beat string-concat debugging via error_log."}
+{"instruction": "What is `echo vs print` for?", "input": "", "output": "`echo` outputs (no return, multiple args); `print` returns 1 — both beat string-concat debugging via error_log."}
+{"instruction": "Apakah fungsi `echo vs print`?", "input": "", "output": "`echo` outputs (no return, multiple args); `print` returns 1 — both beat string-concat debugging via error_log."}
+{"instruction": "Terangkan `echo vs print` secara ringkas.", "input": "", "output": "`echo` outputs (no return, multiple args); `print` returns 1 — both beat string-concat debugging via error_log."}
+{"instruction": "Bila perlu guna `echo vs print`?", "input": "", "output": "`echo` outputs (no return, multiple args); `print` returns 1 — both beat string-concat debugging via error_log."}
+{"instruction": "Beri contoh penggunaan `echo vs print`.", "input": "", "output": "`echo` outputs (no return, multiple args); `print` returns 1 — both beat string-concat debugging via error_log."}
+{"instruction": "`echo vs print` untuk apa?", "input": "", "output": "`echo` outputs (no return, multiple args); `print` returns 1 — both beat string-concat debugging via error_log."}
+{"instruction": "How would you explain `echo vs print` to a junior developer?", "input": "", "output": "`echo` outputs (no return, multiple args); `print` returns 1 — both beat string-concat debugging via error_log."}
+{"instruction": "Give a real-world scenario for `echo vs print`.", "input": "", "output": "`echo` outputs (no return, multiple args); `print` returns 1 — both beat string-concat debugging via error_log."}
+{"instruction": "What problem does `echo vs print` solve?", "input": "", "output": "`echo` outputs (no return, multiple args); `print` returns 1 — both beat string-concat debugging via error_log."}
+{"instruction": "What does `comments` do?", "input": "", "output": "`//` lines, `#` lines, `/** */` docblocks for IDE hints; stale comments lie — delete code instead of commenting it out."}
+{"instruction": "Explain `comments` briefly.", "input": "", "output": "`//` lines, `#` lines, `/** */` docblocks for IDE hints; stale comments lie — delete code instead of commenting it out."}
+{"instruction": "When do I use `comments`?", "input": "", "output": "`//` lines, `#` lines, `/** */` docblocks for IDE hints; stale comments lie — delete code instead of commenting it out."}
+{"instruction": "Give a practical example of `comments`.", "input": "", "output": "`//` lines, `#` lines, `/** */` docblocks for IDE hints; stale comments lie — delete code instead of commenting it out."}
+{"instruction": "What is `comments` for?", "input": "", "output": "`//` lines, `#` lines, `/** */` docblocks for IDE hints; stale comments lie — delete code instead of commenting it out."}
+{"instruction": "Apakah fungsi `comments`?", "input": "", "output": "`//` lines, `#` lines, `/** */` docblocks for IDE hints; stale comments lie — delete code instead of commenting it out."}
+{"instruction": "Terangkan `comments` secara ringkas.", "input": "", "output": "`//` lines, `#` lines, `/** */` docblocks for IDE hints; stale comments lie — delete code instead of commenting it out."}
+{"instruction": "Bila perlu guna `comments`?", "input": "", "output": "`//` lines, `#` lines, `/** */` docblocks for IDE hints; stale comments lie — delete code instead of commenting it out."}
+{"instruction": "Beri contoh penggunaan `comments`.", "input": "", "output": "`//` lines, `#` lines, `/** */` docblocks for IDE hints; stale comments lie — delete code instead of commenting it out."}
+{"instruction": "`comments` untuk apa?", "input": "", "output": "`//` lines, `#` lines, `/** */` docblocks for IDE hints; stale comments lie — delete code instead of commenting it out."}
+{"instruction": "How would you explain `comments` to a junior developer?", "input": "", "output": "`//` lines, `#` lines, `/** */` docblocks for IDE hints; stale comments lie — delete code instead of commenting it out."}
+{"instruction": "Give a real-world scenario for `comments`.", "input": "", "output": "`//` lines, `#` lines, `/** */` docblocks for IDE hints; stale comments lie — delete code instead of commenting it out."}
+{"instruction": "What problem does `comments` solve?", "input": "", "output": "`//` lines, `#` lines, `/** */` docblocks for IDE hints; stale comments lie — delete code instead of commenting it out."}
+{"instruction": "What does `constants define` do?", "input": "", "output": "`define('HAD', 100)` or `const HAD = 100` (compile-time, namespaced); magic numbers deserve names."}
+{"instruction": "Explain `constants define` briefly.", "input": "", "output": "`define('HAD', 100)` or `const HAD = 100` (compile-time, namespaced); magic numbers deserve names."}
+{"instruction": "When do I use `constants define`?", "input": "", "output": "`define('HAD', 100)` or `const HAD = 100` (compile-time, namespaced); magic numbers deserve names."}
+{"instruction": "Give a practical example of `constants define`.", "input": "", "output": "`define('HAD', 100)` or `const HAD = 100` (compile-time, namespaced); magic numbers deserve names."}
+{"instruction": "What is `constants define` for?", "input": "", "output": "`define('HAD', 100)` or `const HAD = 100` (compile-time, namespaced); magic numbers deserve names."}
+{"instruction": "Apakah fungsi `constants define`?", "input": "", "output": "`define('HAD', 100)` or `const HAD = 100` (compile-time, namespaced); magic numbers deserve names."}
+{"instruction": "Terangkan `constants define` secara ringkas.", "input": "", "output": "`define('HAD', 100)` or `const HAD = 100` (compile-time, namespaced); magic numbers deserve names."}
+{"instruction": "Bila perlu guna `constants define`?", "input": "", "output": "`define('HAD', 100)` or `const HAD = 100` (compile-time, namespaced); magic numbers deserve names."}
+{"instruction": "Beri contoh penggunaan `constants define`.", "input": "", "output": "`define('HAD', 100)` or `const HAD = 100` (compile-time, namespaced); magic numbers deserve names."}
+{"instruction": "`constants define` untuk apa?", "input": "", "output": "`define('HAD', 100)` or `const HAD = 100` (compile-time, namespaced); magic numbers deserve names."}
+{"instruction": "How would you explain `constants define` to a junior developer?", "input": "", "output": "`define('HAD', 100)` or `const HAD = 100` (compile-time, namespaced); magic numbers deserve names."}
+{"instruction": "Give a real-world scenario for `constants define`.", "input": "", "output": "`define('HAD', 100)` or `const HAD = 100` (compile-time, namespaced); magic numbers deserve names."}
+{"instruction": "What problem does `constants define` solve?", "input": "", "output": "`define('HAD', 100)` or `const HAD = 100` (compile-time, namespaced); magic numbers deserve names."}
+{"instruction": "What does `string concat .` do?", "input": "", "output": "`.` concatenates (`'a' . $b`); `.=` appends — PHP has no `+` for strings (that adds numbers)."}
+{"instruction": "Explain `string concat .` briefly.", "input": "", "output": "`.` concatenates (`'a' . $b`); `.=` appends — PHP has no `+` for strings (that adds numbers)."}
+{"instruction": "When do I use `string concat .`?", "input": "", "output": "`.` concatenates (`'a' . $b`); `.=` appends — PHP has no `+` for strings (that adds numbers)."}
+{"instruction": "Give a practical example of `string concat .`.", "input": "", "output": "`.` concatenates (`'a' . $b`); `.=` appends — PHP has no `+` for strings (that adds numbers)."}
+{"instruction": "What is `string concat .` for?", "input": "", "output": "`.` concatenates (`'a' . $b`); `.=` appends — PHP has no `+` for strings (that adds numbers)."}
+{"instruction": "Apakah fungsi `string concat .`?", "input": "", "output": "`.` concatenates (`'a' . $b`); `.=` appends — PHP has no `+` for strings (that adds numbers)."}
+{"instruction": "Terangkan `string concat .` secara ringkas.", "input": "", "output": "`.` concatenates (`'a' . $b`); `.=` appends — PHP has no `+` for strings (that adds numbers)."}
+{"instruction": "Bila perlu guna `string concat .`?", "input": "", "output": "`.` concatenates (`'a' . $b`); `.=` appends — PHP has no `+` for strings (that adds numbers)."}
+{"instruction": "Beri contoh penggunaan `string concat .`.", "input": "", "output": "`.` concatenates (`'a' . $b`); `.=` appends — PHP has no `+` for strings (that adds numbers)."}
+{"instruction": "`string concat .` untuk apa?", "input": "", "output": "`.` concatenates (`'a' . $b`); `.=` appends — PHP has no `+` for strings (that adds numbers)."}
+{"instruction": "How would you explain `string concat .` to a junior developer?", "input": "", "output": "`.` concatenates (`'a' . $b`); `.=` appends — PHP has no `+` for strings (that adds numbers)."}
+{"instruction": "Give a real-world scenario for `string concat .`.", "input": "", "output": "`.` concatenates (`'a' . $b`); `.=` appends — PHP has no `+` for strings (that adds numbers)."}
+{"instruction": "What problem does `string concat .` solve?", "input": "", "output": "`.` concatenates (`'a' . $b`); `.=` appends — PHP has no `+` for strings (that adds numbers)."}
+{"instruction": "What does `== vs ===` do?", "input": "", "output": "Loose `==` juggles types (`'0' == false` is true!); strict `===` checks type too — default to strict."}
+{"instruction": "Explain `== vs ===` briefly.", "input": "", "output": "Loose `==` juggles types (`'0' == false` is true!); strict `===` checks type too — default to strict."}
+{"instruction": "When do I use `== vs ===`?", "input": "", "output": "Loose `==` juggles types (`'0' == false` is true!); strict `===` checks type too — default to strict."}
+{"instruction": "Give a practical example of `== vs ===`.", "input": "", "output": "Loose `==` juggles types (`'0' == false` is true!); strict `===` checks type too — default to strict."}
+{"instruction": "What is `== vs ===` for?", "input": "", "output": "Loose `==` juggles types (`'0' == false` is true!); strict `===` checks type too — default to strict."}
+{"instruction": "Apakah fungsi `== vs ===`?", "input": "", "output": "Loose `==` juggles types (`'0' == false` is true!); strict `===` checks type too — default to strict."}
+{"instruction": "Terangkan `== vs ===` secara ringkas.", "input": "", "output": "Loose `==` juggles types (`'0' == false` is true!); strict `===` checks type too — default to strict."}
+{"instruction": "Bila perlu guna `== vs ===`?", "input": "", "output": "Loose `==` juggles types (`'0' == false` is true!); strict `===` checks type too — default to strict."}
+{"instruction": "Beri contoh penggunaan `== vs ===`.", "input": "", "output": "Loose `==` juggles types (`'0' == false` is true!); strict `===` checks type too — default to strict."}
+{"instruction": "`== vs ===` untuk apa?", "input": "", "output": "Loose `==` juggles types (`'0' == false` is true!); strict `===` checks type too — default to strict."}
+{"instruction": "How would you explain `== vs ===` to a junior developer?", "input": "", "output": "Loose `==` juggles types (`'0' == false` is true!); strict `===` checks type too — default to strict."}
+{"instruction": "Give a real-world scenario for `== vs ===`.", "input": "", "output": "Loose `==` juggles types (`'0' == false` is true!); strict `===` checks type too — default to strict."}
+{"instruction": "What problem does `== vs ===` solve?", "input": "", "output": "Loose `==` juggles types (`'0' == false` is true!); strict `===` checks type too — default to strict."}
+{"instruction": "What does `switch` do?", "input": "", "output": "`switch` branches scalar equality with `break` per arm (forgetting falls through); `match` returns values strictly."}
+{"instruction": "Explain `switch` briefly.", "input": "", "output": "`switch` branches scalar equality with `break` per arm (forgetting falls through); `match` returns values strictly."}
+{"instruction": "When do I use `switch`?", "input": "", "output": "`switch` branches scalar equality with `break` per arm (forgetting falls through); `match` returns values strictly."}
+{"instruction": "Give a practical example of `switch`.", "input": "", "output": "`switch` branches scalar equality with `break` per arm (forgetting falls through); `match` returns values strictly."}
+{"instruction": "What is `switch` for?", "input": "", "output": "`switch` branches scalar equality with `break` per arm (forgetting falls through); `match` returns values strictly."}
+{"instruction": "Apakah fungsi `switch`?", "input": "", "output": "`switch` branches scalar equality with `break` per arm (forgetting falls through); `match` returns values strictly."}
+{"instruction": "Terangkan `switch` secara ringkas.", "input": "", "output": "`switch` branches scalar equality with `break` per arm (forgetting falls through); `match` returns values strictly."}
+{"instruction": "Bila perlu guna `switch`?", "input": "", "output": "`switch` branches scalar equality with `break` per arm (forgetting falls through); `match` returns values strictly."}
+{"instruction": "Beri contoh penggunaan `switch`.", "input": "", "output": "`switch` branches scalar equality with `break` per arm (forgetting falls through); `match` returns values strictly."}
+{"instruction": "`switch` untuk apa?", "input": "", "output": "`switch` branches scalar equality with `break` per arm (forgetting falls through); `match` returns values strictly."}
+{"instruction": "How would you explain `switch` to a junior developer?", "input": "", "output": "`switch` branches scalar equality with `break` per arm (forgetting falls through); `match` returns values strictly."}
+{"instruction": "Give a real-world scenario for `switch`.", "input": "", "output": "`switch` branches scalar equality with `break` per arm (forgetting falls through); `match` returns values strictly."}
+{"instruction": "What problem does `switch` solve?", "input": "", "output": "`switch` branches scalar equality with `break` per arm (forgetting falls through); `match` returns values strictly."}
+{"instruction": "What does `do-while` do?", "input": "", "output": "`do { } while ($c);` runs at least once (menus, retries); plain `while` may run zero times."}
+{"instruction": "Explain `do-while` briefly.", "input": "", "output": "`do { } while ($c);` runs at least once (menus, retries); plain `while` may run zero times."}
+{"instruction": "When do I use `do-while`?", "input": "", "output": "`do { } while ($c);` runs at least once (menus, retries); plain `while` may run zero times."}
+{"instruction": "Give a practical example of `do-while`.", "input": "", "output": "`do { } while ($c);` runs at least once (menus, retries); plain `while` may run zero times."}
+{"instruction": "What is `do-while` for?", "input": "", "output": "`do { } while ($c);` runs at least once (menus, retries); plain `while` may run zero times."}
+{"instruction": "Apakah fungsi `do-while`?", "input": "", "output": "`do { } while ($c);` runs at least once (menus, retries); plain `while` may run zero times."}
+{"instruction": "Terangkan `do-while` secara ringkas.", "input": "", "output": "`do { } while ($c);` runs at least once (menus, retries); plain `while` may run zero times."}
+{"instruction": "Bila perlu guna `do-while`?", "input": "", "output": "`do { } while ($c);` runs at least once (menus, retries); plain `while` may run zero times."}
+{"instruction": "Beri contoh penggunaan `do-while`.", "input": "", "output": "`do { } while ($c);` runs at least once (menus, retries); plain `while` may run zero times."}
+{"instruction": "`do-while` untuk apa?", "input": "", "output": "`do { } while ($c);` runs at least once (menus, retries); plain `while` may run zero times."}
+{"instruction": "How would you explain `do-while` to a junior developer?", "input": "", "output": "`do { } while ($c);` runs at least once (menus, retries); plain `while` may run zero times."}
+{"instruction": "Give a real-world scenario for `do-while`.", "input": "", "output": "`do { } while ($c);` runs at least once (menus, retries); plain `while` may run zero times."}
+{"instruction": "What problem does `do-while` solve?", "input": "", "output": "`do { } while ($c);` runs at least once (menus, retries); plain `while` may run zero times."}
+{"instruction": "What does `global static vars` do?", "input": "", "output": "`global` imports scope (avoid), `static` persists across calls (counters, memoization) — both need discipline."}
+{"instruction": "Explain `global static vars` briefly.", "input": "", "output": "`global` imports scope (avoid), `static` persists across calls (counters, memoization) — both need discipline."}
+{"instruction": "When do I use `global static vars`?", "input": "", "output": "`global` imports scope (avoid), `static` persists across calls (counters, memoization) — both need discipline."}
+{"instruction": "Give a practical example of `global static vars`.", "input": "", "output": "`global` imports scope (avoid), `static` persists across calls (counters, memoization) — both need discipline."}
+{"instruction": "What is `global static vars` for?", "input": "", "output": "`global` imports scope (avoid), `static` persists across calls (counters, memoization) — both need discipline."}
+{"instruction": "Apakah fungsi `global static vars`?", "input": "", "output": "`global` imports scope (avoid), `static` persists across calls (counters, memoization) — both need discipline."}
+{"instruction": "Terangkan `global static vars` secara ringkas.", "input": "", "output": "`global` imports scope (avoid), `static` persists across calls (counters, memoization) — both need discipline."}
+{"instruction": "Bila perlu guna `global static vars`?", "input": "", "output": "`global` imports scope (avoid), `static` persists across calls (counters, memoization) — both need discipline."}
+{"instruction": "Beri contoh penggunaan `global static vars`.", "input": "", "output": "`global` imports scope (avoid), `static` persists across calls (counters, memoization) — both need discipline."}
+{"instruction": "`global static vars` untuk apa?", "input": "", "output": "`global` imports scope (avoid), `static` persists across calls (counters, memoization) — both need discipline."}
+{"instruction": "How would you explain `global static vars` to a junior developer?", "input": "", "output": "`global` imports scope (avoid), `static` persists across calls (counters, memoization) — both need discipline."}
+{"instruction": "Give a real-world scenario for `global static vars`.", "input": "", "output": "`global` imports scope (avoid), `static` persists across calls (counters, memoization) — both need discipline."}
+{"instruction": "What problem does `global static vars` solve?", "input": "", "output": "`global` imports scope (avoid), `static` persists across calls (counters, memoization) — both need discipline."}
+{"instruction": "What does `references &$var` do?", "input": "", "output": "`&$var` aliases (modify caller data, foreach by reference); unset after loops to avoid spooky reuse."}
+{"instruction": "Explain `references &$var` briefly.", "input": "", "output": "`&$var` aliases (modify caller data, foreach by reference); unset after loops to avoid spooky reuse."}
+{"instruction": "When do I use `references &$var`?", "input": "", "output": "`&$var` aliases (modify caller data, foreach by reference); unset after loops to avoid spooky reuse."}
+{"instruction": "Give a practical example of `references &$var`.", "input": "", "output": "`&$var` aliases (modify caller data, foreach by reference); unset after loops to avoid spooky reuse."}
+{"instruction": "What is `references &$var` for?", "input": "", "output": "`&$var` aliases (modify caller data, foreach by reference); unset after loops to avoid spooky reuse."}
+{"instruction": "Apakah fungsi `references &$var`?", "input": "", "output": "`&$var` aliases (modify caller data, foreach by reference); unset after loops to avoid spooky reuse."}
+{"instruction": "Terangkan `references &$var` secara ringkas.", "input": "", "output": "`&$var` aliases (modify caller data, foreach by reference); unset after loops to avoid spooky reuse."}
+{"instruction": "Bila perlu guna `references &$var`?", "input": "", "output": "`&$var` aliases (modify caller data, foreach by reference); unset after loops to avoid spooky reuse."}
+{"instruction": "Beri contoh penggunaan `references &$var`.", "input": "", "output": "`&$var` aliases (modify caller data, foreach by reference); unset after loops to avoid spooky reuse."}
+{"instruction": "`references &$var` untuk apa?", "input": "", "output": "`&$var` aliases (modify caller data, foreach by reference); unset after loops to avoid spooky reuse."}
+{"instruction": "How would you explain `references &$var` to a junior developer?", "input": "", "output": "`&$var` aliases (modify caller data, foreach by reference); unset after loops to avoid spooky reuse."}
+{"instruction": "Give a real-world scenario for `references &$var`.", "input": "", "output": "`&$var` aliases (modify caller data, foreach by reference); unset after loops to avoid spooky reuse."}
+{"instruction": "What problem does `references &$var` solve?", "input": "", "output": "`&$var` aliases (modify caller data, foreach by reference); unset after loops to avoid spooky reuse."}
+{"instruction": "What does `null coalescing ??` do?", "input": "", "output": "`$nama ?? 'tetamu'` defaults null/undefined only; `??=` assigns lazily — cleaner than ternaries for config."}
+{"instruction": "Explain `null coalescing ??` briefly.", "input": "", "output": "`$nama ?? 'tetamu'` defaults null/undefined only; `??=` assigns lazily — cleaner than ternaries for config."}
+{"instruction": "When do I use `null coalescing ??`?", "input": "", "output": "`$nama ?? 'tetamu'` defaults null/undefined only; `??=` assigns lazily — cleaner than ternaries for config."}
+{"instruction": "Give a practical example of `null coalescing ??`.", "input": "", "output": "`$nama ?? 'tetamu'` defaults null/undefined only; `??=` assigns lazily — cleaner than ternaries for config."}
+{"instruction": "What is `null coalescing ??` for?", "input": "", "output": "`$nama ?? 'tetamu'` defaults null/undefined only; `??=` assigns lazily — cleaner than ternaries for config."}
+{"instruction": "Apakah fungsi `null coalescing ??`?", "input": "", "output": "`$nama ?? 'tetamu'` defaults null/undefined only; `??=` assigns lazily — cleaner than ternaries for config."}
+{"instruction": "Terangkan `null coalescing ??` secara ringkas.", "input": "", "output": "`$nama ?? 'tetamu'` defaults null/undefined only; `??=` assigns lazily — cleaner than ternaries for config."}
+{"instruction": "Bila perlu guna `null coalescing ??`?", "input": "", "output": "`$nama ?? 'tetamu'` defaults null/undefined only; `??=` assigns lazily — cleaner than ternaries for config."}
+{"instruction": "Beri contoh penggunaan `null coalescing ??`.", "input": "", "output": "`$nama ?? 'tetamu'` defaults null/undefined only; `??=` assigns lazily — cleaner than ternaries for config."}
+{"instruction": "`null coalescing ??` untuk apa?", "input": "", "output": "`$nama ?? 'tetamu'` defaults null/undefined only; `??=` assigns lazily — cleaner than ternaries for config."}
+{"instruction": "How would you explain `null coalescing ??` to a junior developer?", "input": "", "output": "`$nama ?? 'tetamu'` defaults null/undefined only; `??=` assigns lazily — cleaner than ternaries for config."}
+{"instruction": "Give a real-world scenario for `null coalescing ??`.", "input": "", "output": "`$nama ?? 'tetamu'` defaults null/undefined only; `??=` assigns lazily — cleaner than ternaries for config."}
+{"instruction": "What problem does `null coalescing ??` solve?", "input": "", "output": "`$nama ?? 'tetamu'` defaults null/undefined only; `??=` assigns lazily — cleaner than ternaries for config."}
+{"instruction": "What does `spaceship <=>` do?", "input": "", "output": "`$a <=> $b` returns -1/0/1 — the one-line comparator for `usort` callbacks and version checks."}
+{"instruction": "Explain `spaceship <=>` briefly.", "input": "", "output": "`$a <=> $b` returns -1/0/1 — the one-line comparator for `usort` callbacks and version checks."}
+{"instruction": "When do I use `spaceship <=>`?", "input": "", "output": "`$a <=> $b` returns -1/0/1 — the one-line comparator for `usort` callbacks and version checks."}
+{"instruction": "Give a practical example of `spaceship <=>`.", "input": "", "output": "`$a <=> $b` returns -1/0/1 — the one-line comparator for `usort` callbacks and version checks."}
+{"instruction": "What is `spaceship <=>` for?", "input": "", "output": "`$a <=> $b` returns -1/0/1 — the one-line comparator for `usort` callbacks and version checks."}
+{"instruction": "Apakah fungsi `spaceship <=>`?", "input": "", "output": "`$a <=> $b` returns -1/0/1 — the one-line comparator for `usort` callbacks and version checks."}
+{"instruction": "Terangkan `spaceship <=>` secara ringkas.", "input": "", "output": "`$a <=> $b` returns -1/0/1 — the one-line comparator for `usort` callbacks and version checks."}
+{"instruction": "Bila perlu guna `spaceship <=>`?", "input": "", "output": "`$a <=> $b` returns -1/0/1 — the one-line comparator for `usort` callbacks and version checks."}
+{"instruction": "Beri contoh penggunaan `spaceship <=>`.", "input": "", "output": "`$a <=> $b` returns -1/0/1 — the one-line comparator for `usort` callbacks and version checks."}
+{"instruction": "`spaceship <=>` untuk apa?", "input": "", "output": "`$a <=> $b` returns -1/0/1 — the one-line comparator for `usort` callbacks and version checks."}
+{"instruction": "How would you explain `spaceship <=>` to a junior developer?", "input": "", "output": "`$a <=> $b` returns -1/0/1 — the one-line comparator for `usort` callbacks and version checks."}
+{"instruction": "Give a real-world scenario for `spaceship <=>`.", "input": "", "output": "`$a <=> $b` returns -1/0/1 — the one-line comparator for `usort` callbacks and version checks."}
+{"instruction": "What problem does `spaceship <=>` solve?", "input": "", "output": "`$a <=> $b` returns -1/0/1 — the one-line comparator for `usort` callbacks and version checks."}
+{"instruction": "What does `match expression` do?", "input": "", "output": "`match($x) { 1 => 'satu', default => 'lain' }` is strict, exhaustive-checked, and returns — switch done right."}
+{"instruction": "Explain `match expression` briefly.", "input": "", "output": "`match($x) { 1 => 'satu', default => 'lain' }` is strict, exhaustive-checked, and returns — switch done right."}
+{"instruction": "When do I use `match expression`?", "input": "", "output": "`match($x) { 1 => 'satu', default => 'lain' }` is strict, exhaustive-checked, and returns — switch done right."}
+{"instruction": "Give a practical example of `match expression`.", "input": "", "output": "`match($x) { 1 => 'satu', default => 'lain' }` is strict, exhaustive-checked, and returns — switch done right."}
+{"instruction": "What is `match expression` for?", "input": "", "output": "`match($x) { 1 => 'satu', default => 'lain' }` is strict, exhaustive-checked, and returns — switch done right."}
+{"instruction": "Apakah fungsi `match expression`?", "input": "", "output": "`match($x) { 1 => 'satu', default => 'lain' }` is strict, exhaustive-checked, and returns — switch done right."}
+{"instruction": "Terangkan `match expression` secara ringkas.", "input": "", "output": "`match($x) { 1 => 'satu', default => 'lain' }` is strict, exhaustive-checked, and returns — switch done right."}
+{"instruction": "Bila perlu guna `match expression`?", "input": "", "output": "`match($x) { 1 => 'satu', default => 'lain' }` is strict, exhaustive-checked, and returns — switch done right."}
+{"instruction": "Beri contoh penggunaan `match expression`.", "input": "", "output": "`match($x) { 1 => 'satu', default => 'lain' }` is strict, exhaustive-checked, and returns — switch done right."}
+{"instruction": "`match expression` untuk apa?", "input": "", "output": "`match($x) { 1 => 'satu', default => 'lain' }` is strict, exhaustive-checked, and returns — switch done right."}
+{"instruction": "How would you explain `match expression` to a junior developer?", "input": "", "output": "`match($x) { 1 => 'satu', default => 'lain' }` is strict, exhaustive-checked, and returns — switch done right."}
+{"instruction": "Give a real-world scenario for `match expression`.", "input": "", "output": "`match($x) { 1 => 'satu', default => 'lain' }` is strict, exhaustive-checked, and returns — switch done right."}
+{"instruction": "What problem does `match expression` solve?", "input": "", "output": "`match($x) { 1 => 'satu', default => 'lain' }` is strict, exhaustive-checked, and returns — switch done right."}
+{"instruction": "What does `arrow fn fn` do?", "input": "", "output": "`fn($x) => $x * 2` auto-captures scope (unlike `function() use`) — for short callbacks only."}
+{"instruction": "Explain `arrow fn fn` briefly.", "input": "", "output": "`fn($x) => $x * 2` auto-captures scope (unlike `function() use`) — for short callbacks only."}
+{"instruction": "When do I use `arrow fn fn`?", "input": "", "output": "`fn($x) => $x * 2` auto-captures scope (unlike `function() use`) — for short callbacks only."}
+{"instruction": "Give a practical example of `arrow fn fn`.", "input": "", "output": "`fn($x) => $x * 2` auto-captures scope (unlike `function() use`) — for short callbacks only."}
+{"instruction": "What is `arrow fn fn` for?", "input": "", "output": "`fn($x) => $x * 2` auto-captures scope (unlike `function() use`) — for short callbacks only."}
+{"instruction": "Apakah fungsi `arrow fn fn`?", "input": "", "output": "`fn($x) => $x * 2` auto-captures scope (unlike `function() use`) — for short callbacks only."}
+{"instruction": "Terangkan `arrow fn fn` secara ringkas.", "input": "", "output": "`fn($x) => $x * 2` auto-captures scope (unlike `function() use`) — for short callbacks only."}
+{"instruction": "Bila perlu guna `arrow fn fn`?", "input": "", "output": "`fn($x) => $x * 2` auto-captures scope (unlike `function() use`) — for short callbacks only."}
+{"instruction": "Beri contoh penggunaan `arrow fn fn`.", "input": "", "output": "`fn($x) => $x * 2` auto-captures scope (unlike `function() use`) — for short callbacks only."}
+{"instruction": "`arrow fn fn` untuk apa?", "input": "", "output": "`fn($x) => $x * 2` auto-captures scope (unlike `function() use`) — for short callbacks only."}
+{"instruction": "How would you explain `arrow fn fn` to a junior developer?", "input": "", "output": "`fn($x) => $x * 2` auto-captures scope (unlike `function() use`) — for short callbacks only."}
+{"instruction": "Give a real-world scenario for `arrow fn fn`.", "input": "", "output": "`fn($x) => $x * 2` auto-captures scope (unlike `function() use`) — for short callbacks only."}
+{"instruction": "What problem does `arrow fn fn` solve?", "input": "", "output": "`fn($x) => $x * 2` auto-captures scope (unlike `function() use`) — for short callbacks only."}
+{"instruction": "What does `named arguments` do?", "input": "", "output": "`bina(nama: 'Ali', umur: 20)` self-documents calls and survives reordering; pairs with defaults for options bags."}
+{"instruction": "Explain `named arguments` briefly.", "input": "", "output": "`bina(nama: 'Ali', umur: 20)` self-documents calls and survives reordering; pairs with defaults for options bags."}
+{"instruction": "When do I use `named arguments`?", "input": "", "output": "`bina(nama: 'Ali', umur: 20)` self-documents calls and survives reordering; pairs with defaults for options bags."}
+{"instruction": "Give a practical example of `named arguments`.", "input": "", "output": "`bina(nama: 'Ali', umur: 20)` self-documents calls and survives reordering; pairs with defaults for options bags."}
+{"instruction": "What is `named arguments` for?", "input": "", "output": "`bina(nama: 'Ali', umur: 20)` self-documents calls and survives reordering; pairs with defaults for options bags."}
+{"instruction": "Apakah fungsi `named arguments`?", "input": "", "output": "`bina(nama: 'Ali', umur: 20)` self-documents calls and survives reordering; pairs with defaults for options bags."}
+{"instruction": "Terangkan `named arguments` secara ringkas.", "input": "", "output": "`bina(nama: 'Ali', umur: 20)` self-documents calls and survives reordering; pairs with defaults for options bags."}
+{"instruction": "Bila perlu guna `named arguments`?", "input": "", "output": "`bina(nama: 'Ali', umur: 20)` self-documents calls and survives reordering; pairs with defaults for options bags."}
+{"instruction": "Beri contoh penggunaan `named arguments`.", "input": "", "output": "`bina(nama: 'Ali', umur: 20)` self-documents calls and survives reordering; pairs with defaults for options bags."}
+{"instruction": "`named arguments` untuk apa?", "input": "", "output": "`bina(nama: 'Ali', umur: 20)` self-documents calls and survives reordering; pairs with defaults for options bags."}
+{"instruction": "How would you explain `named arguments` to a junior developer?", "input": "", "output": "`bina(nama: 'Ali', umur: 20)` self-documents calls and survives reordering; pairs with defaults for options bags."}
+{"instruction": "Give a real-world scenario for `named arguments`.", "input": "", "output": "`bina(nama: 'Ali', umur: 20)` self-documents calls and survives reordering; pairs with defaults for options bags."}
+{"instruction": "What problem does `named arguments` solve?", "input": "", "output": "`bina(nama: 'Ali', umur: 20)` self-documents calls and survives reordering; pairs with defaults for options bags."}

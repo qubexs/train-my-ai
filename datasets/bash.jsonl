@@ -128,3 +128,345 @@
 {"instruction": "When do I use `exec cmd`?", "input": "", "output": "`exec` replaces the shell process (PID kept, no child) — used as the last line of entrypoints."}
 {"instruction": "Give a practical example of `exec cmd`.", "input": "", "output": "`exec` replaces the shell process (PID kept, no child) — used as the last line of entrypoints."}
 {"instruction": "What is `exec cmd` for?", "input": "", "output": "`exec` replaces the shell process (PID kept, no child) — used as the last line of entrypoints."}
+{"instruction": "Apakah fungsi `set -euo pipefail`?", "input": "", "output": "`set -euo pipefail` aborts on errors, unset vars and pipe failures — every serious script starts here."}
+{"instruction": "Terangkan `set -euo pipefail` secara ringkas.", "input": "", "output": "`set -euo pipefail` aborts on errors, unset vars and pipe failures — every serious script starts here."}
+{"instruction": "Bila perlu guna `set -euo pipefail`?", "input": "", "output": "`set -euo pipefail` aborts on errors, unset vars and pipe failures — every serious script starts here."}
+{"instruction": "Beri contoh penggunaan `set -euo pipefail`.", "input": "", "output": "`set -euo pipefail` aborts on errors, unset vars and pipe failures — every serious script starts here."}
+{"instruction": "`set -euo pipefail` untuk apa?", "input": "", "output": "`set -euo pipefail` aborts on errors, unset vars and pipe failures — every serious script starts here."}
+{"instruction": "How would you explain `set -euo pipefail` to a junior developer?", "input": "", "output": "`set -euo pipefail` aborts on errors, unset vars and pipe failures — every serious script starts here."}
+{"instruction": "Give a real-world scenario for `set -euo pipefail`.", "input": "", "output": "`set -euo pipefail` aborts on errors, unset vars and pipe failures — every serious script starts here."}
+{"instruction": "What problem does `set -euo pipefail` solve?", "input": "", "output": "`set -euo pipefail` aborts on errors, unset vars and pipe failures — every serious script starts here."}
+{"instruction": "Apakah fungsi `if [[ -f fail ]]`?", "input": "", "output": "`[[ ]]` tests safely (no word-splitting); `-f` file, `-d` dir, `-z` empty, with `&&`/`||` inside."}
+{"instruction": "Terangkan `if [[ -f fail ]]` secara ringkas.", "input": "", "output": "`[[ ]]` tests safely (no word-splitting); `-f` file, `-d` dir, `-z` empty, with `&&`/`||` inside."}
+{"instruction": "Bila perlu guna `if [[ -f fail ]]`?", "input": "", "output": "`[[ ]]` tests safely (no word-splitting); `-f` file, `-d` dir, `-z` empty, with `&&`/`||` inside."}
+{"instruction": "Beri contoh penggunaan `if [[ -f fail ]]`.", "input": "", "output": "`[[ ]]` tests safely (no word-splitting); `-f` file, `-d` dir, `-z` empty, with `&&`/`||` inside."}
+{"instruction": "`if [[ -f fail ]]` untuk apa?", "input": "", "output": "`[[ ]]` tests safely (no word-splitting); `-f` file, `-d` dir, `-z` empty, with `&&`/`||` inside."}
+{"instruction": "How would you explain `if [[ -f fail ]]` to a junior developer?", "input": "", "output": "`[[ ]]` tests safely (no word-splitting); `-f` file, `-d` dir, `-z` empty, with `&&`/`||` inside."}
+{"instruction": "Give a real-world scenario for `if [[ -f fail ]]`.", "input": "", "output": "`[[ ]]` tests safely (no word-splitting); `-f` file, `-d` dir, `-z` empty, with `&&`/`||` inside."}
+{"instruction": "What problem does `if [[ -f fail ]]` solve?", "input": "", "output": "`[[ ]]` tests safely (no word-splitting); `-f` file, `-d` dir, `-z` empty, with `&&`/`||` inside."}
+{"instruction": "Apakah fungsi `for f in *.md`?", "input": "", "output": "`for f in *.md` loops glob matches; quote `\"$f\"` and set `nullglob` for empty dirs."}
+{"instruction": "Terangkan `for f in *.md` secara ringkas.", "input": "", "output": "`for f in *.md` loops glob matches; quote `\"$f\"` and set `nullglob` for empty dirs."}
+{"instruction": "Bila perlu guna `for f in *.md`?", "input": "", "output": "`for f in *.md` loops glob matches; quote `\"$f\"` and set `nullglob` for empty dirs."}
+{"instruction": "Beri contoh penggunaan `for f in *.md`.", "input": "", "output": "`for f in *.md` loops glob matches; quote `\"$f\"` and set `nullglob` for empty dirs."}
+{"instruction": "`for f in *.md` untuk apa?", "input": "", "output": "`for f in *.md` loops glob matches; quote `\"$f\"` and set `nullglob` for empty dirs."}
+{"instruction": "How would you explain `for f in *.md` to a junior developer?", "input": "", "output": "`for f in *.md` loops glob matches; quote `\"$f\"` and set `nullglob` for empty dirs."}
+{"instruction": "Give a real-world scenario for `for f in *.md`.", "input": "", "output": "`for f in *.md` loops glob matches; quote `\"$f\"` and set `nullglob` for empty dirs."}
+{"instruction": "What problem does `for f in *.md` solve?", "input": "", "output": "`for f in *.md` loops glob matches; quote `\"$f\"` and set `nullglob` for empty dirs."}
+{"instruction": "Apakah fungsi `while read baris`?", "input": "", "output": "`while IFS= read -r line < file` reads safely preserving spaces and backslashes."}
+{"instruction": "Terangkan `while read baris` secara ringkas.", "input": "", "output": "`while IFS= read -r line < file` reads safely preserving spaces and backslashes."}
+{"instruction": "Bila perlu guna `while read baris`?", "input": "", "output": "`while IFS= read -r line < file` reads safely preserving spaces and backslashes."}
+{"instruction": "Beri contoh penggunaan `while read baris`.", "input": "", "output": "`while IFS= read -r line < file` reads safely preserving spaces and backslashes."}
+{"instruction": "`while read baris` untuk apa?", "input": "", "output": "`while IFS= read -r line < file` reads safely preserving spaces and backslashes."}
+{"instruction": "How would you explain `while read baris` to a junior developer?", "input": "", "output": "`while IFS= read -r line < file` reads safely preserving spaces and backslashes."}
+{"instruction": "Give a real-world scenario for `while read baris`.", "input": "", "output": "`while IFS= read -r line < file` reads safely preserving spaces and backslashes."}
+{"instruction": "What problem does `while read baris` solve?", "input": "", "output": "`while IFS= read -r line < file` reads safely preserving spaces and backslashes."}
+{"instruction": "Apakah fungsi `function greet()`?", "input": "", "output": "Functions return exit codes, not strings — echo data and capture with `$(...)`; use `local` vars."}
+{"instruction": "Terangkan `function greet()` secara ringkas.", "input": "", "output": "Functions return exit codes, not strings — echo data and capture with `$(...)`; use `local` vars."}
+{"instruction": "Bila perlu guna `function greet()`?", "input": "", "output": "Functions return exit codes, not strings — echo data and capture with `$(...)`; use `local` vars."}
+{"instruction": "Beri contoh penggunaan `function greet()`.", "input": "", "output": "Functions return exit codes, not strings — echo data and capture with `$(...)`; use `local` vars."}
+{"instruction": "`function greet()` untuk apa?", "input": "", "output": "Functions return exit codes, not strings — echo data and capture with `$(...)`; use `local` vars."}
+{"instruction": "How would you explain `function greet()` to a junior developer?", "input": "", "output": "Functions return exit codes, not strings — echo data and capture with `$(...)`; use `local` vars."}
+{"instruction": "Give a real-world scenario for `function greet()`.", "input": "", "output": "Functions return exit codes, not strings — echo data and capture with `$(...)`; use `local` vars."}
+{"instruction": "What problem does `function greet()` solve?", "input": "", "output": "Functions return exit codes, not strings — echo data and capture with `$(...)`; use `local` vars."}
+{"instruction": "Apakah fungsi `case $1 in`?", "input": "", "output": "`case` branches subcommands cleanly with patterns and a `*)` usage default; each arm ends `;;`."}
+{"instruction": "Terangkan `case $1 in` secara ringkas.", "input": "", "output": "`case` branches subcommands cleanly with patterns and a `*)` usage default; each arm ends `;;`."}
+{"instruction": "Bila perlu guna `case $1 in`?", "input": "", "output": "`case` branches subcommands cleanly with patterns and a `*)` usage default; each arm ends `;;`."}
+{"instruction": "Beri contoh penggunaan `case $1 in`.", "input": "", "output": "`case` branches subcommands cleanly with patterns and a `*)` usage default; each arm ends `;;`."}
+{"instruction": "`case $1 in` untuk apa?", "input": "", "output": "`case` branches subcommands cleanly with patterns and a `*)` usage default; each arm ends `;;`."}
+{"instruction": "How would you explain `case $1 in` to a junior developer?", "input": "", "output": "`case` branches subcommands cleanly with patterns and a `*)` usage default; each arm ends `;;`."}
+{"instruction": "Give a real-world scenario for `case $1 in`.", "input": "", "output": "`case` branches subcommands cleanly with patterns and a `*)` usage default; each arm ends `;;`."}
+{"instruction": "What problem does `case $1 in` solve?", "input": "", "output": "`case` branches subcommands cleanly with patterns and a `*)` usage default; each arm ends `;;`."}
+{"instruction": "Apakah fungsi `$1 $@ $#`?", "input": "", "output": "`$1` first arg, `\"$@\"` all args intact, `$#` count; `${1:?...}` fails fast with a message."}
+{"instruction": "Terangkan `$1 $@ $#` secara ringkas.", "input": "", "output": "`$1` first arg, `\"$@\"` all args intact, `$#` count; `${1:?...}` fails fast with a message."}
+{"instruction": "Bila perlu guna `$1 $@ $#`?", "input": "", "output": "`$1` first arg, `\"$@\"` all args intact, `$#` count; `${1:?...}` fails fast with a message."}
+{"instruction": "Beri contoh penggunaan `$1 $@ $#`.", "input": "", "output": "`$1` first arg, `\"$@\"` all args intact, `$#` count; `${1:?...}` fails fast with a message."}
+{"instruction": "`$1 $@ $#` untuk apa?", "input": "", "output": "`$1` first arg, `\"$@\"` all args intact, `$#` count; `${1:?...}` fails fast with a message."}
+{"instruction": "How would you explain `$1 $@ $#` to a junior developer?", "input": "", "output": "`$1` first arg, `\"$@\"` all args intact, `$#` count; `${1:?...}` fails fast with a message."}
+{"instruction": "Give a real-world scenario for `$1 $@ $#`.", "input": "", "output": "`$1` first arg, `\"$@\"` all args intact, `$#` count; `${1:?...}` fails fast with a message."}
+{"instruction": "What problem does `$1 $@ $#` solve?", "input": "", "output": "`$1` first arg, `\"$@\"` all args intact, `$#` count; `${1:?...}` fails fast with a message."}
+{"instruction": "Apakah fungsi `${PORT:-3000}`?", "input": "", "output": "`${VAR:-default}` substitutes when empty; `${#s}` length; `${s%.ext}` strips suffix."}
+{"instruction": "Terangkan `${PORT:-3000}` secara ringkas.", "input": "", "output": "`${VAR:-default}` substitutes when empty; `${#s}` length; `${s%.ext}` strips suffix."}
+{"instruction": "Bila perlu guna `${PORT:-3000}`?", "input": "", "output": "`${VAR:-default}` substitutes when empty; `${#s}` length; `${s%.ext}` strips suffix."}
+{"instruction": "Beri contoh penggunaan `${PORT:-3000}`.", "input": "", "output": "`${VAR:-default}` substitutes when empty; `${#s}` length; `${s%.ext}` strips suffix."}
+{"instruction": "`${PORT:-3000}` untuk apa?", "input": "", "output": "`${VAR:-default}` substitutes when empty; `${#s}` length; `${s%.ext}` strips suffix."}
+{"instruction": "How would you explain `${PORT:-3000}` to a junior developer?", "input": "", "output": "`${VAR:-default}` substitutes when empty; `${#s}` length; `${s%.ext}` strips suffix."}
+{"instruction": "Give a real-world scenario for `${PORT:-3000}`.", "input": "", "output": "`${VAR:-default}` substitutes when empty; `${#s}` length; `${s%.ext}` strips suffix."}
+{"instruction": "What problem does `${PORT:-3000}` solve?", "input": "", "output": "`${VAR:-default}` substitutes when empty; `${#s}` length; `${s%.ext}` strips suffix."}
+{"instruction": "Apakah fungsi `arr=(a b c)`?", "input": "", "output": "Arrays index from 0; expand as `\"${arr[@]}\"` per element and count with `${#arr[@]}`."}
+{"instruction": "Terangkan `arr=(a b c)` secara ringkas.", "input": "", "output": "Arrays index from 0; expand as `\"${arr[@]}\"` per element and count with `${#arr[@]}`."}
+{"instruction": "Bila perlu guna `arr=(a b c)`?", "input": "", "output": "Arrays index from 0; expand as `\"${arr[@]}\"` per element and count with `${#arr[@]}`."}
+{"instruction": "Beri contoh penggunaan `arr=(a b c)`.", "input": "", "output": "Arrays index from 0; expand as `\"${arr[@]}\"` per element and count with `${#arr[@]}`."}
+{"instruction": "`arr=(a b c)` untuk apa?", "input": "", "output": "Arrays index from 0; expand as `\"${arr[@]}\"` per element and count with `${#arr[@]}`."}
+{"instruction": "How would you explain `arr=(a b c)` to a junior developer?", "input": "", "output": "Arrays index from 0; expand as `\"${arr[@]}\"` per element and count with `${#arr[@]}`."}
+{"instruction": "Give a real-world scenario for `arr=(a b c)`.", "input": "", "output": "Arrays index from 0; expand as `\"${arr[@]}\"` per element and count with `${#arr[@]}`."}
+{"instruction": "What problem does `arr=(a b c)` solve?", "input": "", "output": "Arrays index from 0; expand as `\"${arr[@]}\"` per element and count with `${#arr[@]}`."}
+{"instruction": "Apakah fungsi `trap cleanup EXIT`?", "input": "", "output": "`trap ... EXIT` guarantees cleanup on any exit; temp dirs from `mktemp -d` never leak."}
+{"instruction": "Terangkan `trap cleanup EXIT` secara ringkas.", "input": "", "output": "`trap ... EXIT` guarantees cleanup on any exit; temp dirs from `mktemp -d` never leak."}
+{"instruction": "Bila perlu guna `trap cleanup EXIT`?", "input": "", "output": "`trap ... EXIT` guarantees cleanup on any exit; temp dirs from `mktemp -d` never leak."}
+{"instruction": "Beri contoh penggunaan `trap cleanup EXIT`.", "input": "", "output": "`trap ... EXIT` guarantees cleanup on any exit; temp dirs from `mktemp -d` never leak."}
+{"instruction": "`trap cleanup EXIT` untuk apa?", "input": "", "output": "`trap ... EXIT` guarantees cleanup on any exit; temp dirs from `mktemp -d` never leak."}
+{"instruction": "How would you explain `trap cleanup EXIT` to a junior developer?", "input": "", "output": "`trap ... EXIT` guarantees cleanup on any exit; temp dirs from `mktemp -d` never leak."}
+{"instruction": "Give a real-world scenario for `trap cleanup EXIT`.", "input": "", "output": "`trap ... EXIT` guarantees cleanup on any exit; temp dirs from `mktemp -d` never leak."}
+{"instruction": "What problem does `trap cleanup EXIT` solve?", "input": "", "output": "`trap ... EXIT` guarantees cleanup on any exit; temp dirs from `mktemp -d` never leak."}
+{"instruction": "Apakah fungsi `cmd > out 2>&1`?", "input": "", "output": "`> out 2>&1` merges stderr into the log file; order matters — redirect stdout first."}
+{"instruction": "Terangkan `cmd > out 2>&1` secara ringkas.", "input": "", "output": "`> out 2>&1` merges stderr into the log file; order matters — redirect stdout first."}
+{"instruction": "Bila perlu guna `cmd > out 2>&1`?", "input": "", "output": "`> out 2>&1` merges stderr into the log file; order matters — redirect stdout first."}
+{"instruction": "Beri contoh penggunaan `cmd > out 2>&1`.", "input": "", "output": "`> out 2>&1` merges stderr into the log file; order matters — redirect stdout first."}
+{"instruction": "`cmd > out 2>&1` untuk apa?", "input": "", "output": "`> out 2>&1` merges stderr into the log file; order matters — redirect stdout first."}
+{"instruction": "How would you explain `cmd > out 2>&1` to a junior developer?", "input": "", "output": "`> out 2>&1` merges stderr into the log file; order matters — redirect stdout first."}
+{"instruction": "Give a real-world scenario for `cmd > out 2>&1`.", "input": "", "output": "`> out 2>&1` merges stderr into the log file; order matters — redirect stdout first."}
+{"instruction": "What problem does `cmd > out 2>&1` solve?", "input": "", "output": "`> out 2>&1` merges stderr into the log file; order matters — redirect stdout first."}
+{"instruction": "Apakah fungsi `a | b | c`?", "input": "", "output": "Pipes chain stdout to stdin; `set -o pipefail` makes middle failures visible to `set -e`."}
+{"instruction": "Terangkan `a | b | c` secara ringkas.", "input": "", "output": "Pipes chain stdout to stdin; `set -o pipefail` makes middle failures visible to `set -e`."}
+{"instruction": "Bila perlu guna `a | b | c`?", "input": "", "output": "Pipes chain stdout to stdin; `set -o pipefail` makes middle failures visible to `set -e`."}
+{"instruction": "Beri contoh penggunaan `a | b | c`.", "input": "", "output": "Pipes chain stdout to stdin; `set -o pipefail` makes middle failures visible to `set -e`."}
+{"instruction": "`a | b | c` untuk apa?", "input": "", "output": "Pipes chain stdout to stdin; `set -o pipefail` makes middle failures visible to `set -e`."}
+{"instruction": "How would you explain `a | b | c` to a junior developer?", "input": "", "output": "Pipes chain stdout to stdin; `set -o pipefail` makes middle failures visible to `set -e`."}
+{"instruction": "Give a real-world scenario for `a | b | c`.", "input": "", "output": "Pipes chain stdout to stdin; `set -o pipefail` makes middle failures visible to `set -e`."}
+{"instruction": "What problem does `a | b | c` solve?", "input": "", "output": "Pipes chain stdout to stdin; `set -o pipefail` makes middle failures visible to `set -e`."}
+{"instruction": "Apakah fungsi `cmd1 && cmd2`?", "input": "", "output": "`&&` runs next only on success, `||` on failure — the one-line try/catch of shell."}
+{"instruction": "Terangkan `cmd1 && cmd2` secara ringkas.", "input": "", "output": "`&&` runs next only on success, `||` on failure — the one-line try/catch of shell."}
+{"instruction": "Bila perlu guna `cmd1 && cmd2`?", "input": "", "output": "`&&` runs next only on success, `||` on failure — the one-line try/catch of shell."}
+{"instruction": "Beri contoh penggunaan `cmd1 && cmd2`.", "input": "", "output": "`&&` runs next only on success, `||` on failure — the one-line try/catch of shell."}
+{"instruction": "`cmd1 && cmd2` untuk apa?", "input": "", "output": "`&&` runs next only on success, `||` on failure — the one-line try/catch of shell."}
+{"instruction": "How would you explain `cmd1 && cmd2` to a junior developer?", "input": "", "output": "`&&` runs next only on success, `||` on failure — the one-line try/catch of shell."}
+{"instruction": "Give a real-world scenario for `cmd1 && cmd2`.", "input": "", "output": "`&&` runs next only on success, `||` on failure — the one-line try/catch of shell."}
+{"instruction": "What problem does `cmd1 && cmd2` solve?", "input": "", "output": "`&&` runs next only on success, `||` on failure — the one-line try/catch of shell."}
+{"instruction": "Apakah fungsi `[[ $x =~ ^[0-9]+$ ]]`?", "input": "", "output": "`=~` regex-matches inside `[[ ]]`; quote the pattern to avoid glob interpretation."}
+{"instruction": "Terangkan `[[ $x =~ ^[0-9]+$ ]]` secara ringkas.", "input": "", "output": "`=~` regex-matches inside `[[ ]]`; quote the pattern to avoid glob interpretation."}
+{"instruction": "Bila perlu guna `[[ $x =~ ^[0-9]+$ ]]`?", "input": "", "output": "`=~` regex-matches inside `[[ ]]`; quote the pattern to avoid glob interpretation."}
+{"instruction": "Beri contoh penggunaan `[[ $x =~ ^[0-9]+$ ]]`.", "input": "", "output": "`=~` regex-matches inside `[[ ]]`; quote the pattern to avoid glob interpretation."}
+{"instruction": "`[[ $x =~ ^[0-9]+$ ]]` untuk apa?", "input": "", "output": "`=~` regex-matches inside `[[ ]]`; quote the pattern to avoid glob interpretation."}
+{"instruction": "How would you explain `[[ $x =~ ^[0-9]+$ ]]` to a junior developer?", "input": "", "output": "`=~` regex-matches inside `[[ ]]`; quote the pattern to avoid glob interpretation."}
+{"instruction": "Give a real-world scenario for `[[ $x =~ ^[0-9]+$ ]]`.", "input": "", "output": "`=~` regex-matches inside `[[ ]]`; quote the pattern to avoid glob interpretation."}
+{"instruction": "What problem does `[[ $x =~ ^[0-9]+$ ]]` solve?", "input": "", "output": "`=~` regex-matches inside `[[ ]]`; quote the pattern to avoid glob interpretation."}
+{"instruction": "Apakah fungsi `seq 1 10`?", "input": "", "output": "`seq` generates number ranges for loops; `seq -w` zero-pads filenames in order."}
+{"instruction": "Terangkan `seq 1 10` secara ringkas.", "input": "", "output": "`seq` generates number ranges for loops; `seq -w` zero-pads filenames in order."}
+{"instruction": "Bila perlu guna `seq 1 10`?", "input": "", "output": "`seq` generates number ranges for loops; `seq -w` zero-pads filenames in order."}
+{"instruction": "Beri contoh penggunaan `seq 1 10`.", "input": "", "output": "`seq` generates number ranges for loops; `seq -w` zero-pads filenames in order."}
+{"instruction": "`seq 1 10` untuk apa?", "input": "", "output": "`seq` generates number ranges for loops; `seq -w` zero-pads filenames in order."}
+{"instruction": "How would you explain `seq 1 10` to a junior developer?", "input": "", "output": "`seq` generates number ranges for loops; `seq -w` zero-pads filenames in order."}
+{"instruction": "Give a real-world scenario for `seq 1 10`.", "input": "", "output": "`seq` generates number ranges for loops; `seq -w` zero-pads filenames in order."}
+{"instruction": "What problem does `seq 1 10` solve?", "input": "", "output": "`seq` generates number ranges for loops; `seq -w` zero-pads filenames in order."}
+{"instruction": "Apakah fungsi `find . -print0 | xargs -0`?", "input": "", "output": "NUL-delimited pipelines survive spaces/newlines in filenames; add `-r` to skip empty runs."}
+{"instruction": "Terangkan `find . -print0 | xargs -0` secara ringkas.", "input": "", "output": "NUL-delimited pipelines survive spaces/newlines in filenames; add `-r` to skip empty runs."}
+{"instruction": "Bila perlu guna `find . -print0 | xargs -0`?", "input": "", "output": "NUL-delimited pipelines survive spaces/newlines in filenames; add `-r` to skip empty runs."}
+{"instruction": "Beri contoh penggunaan `find . -print0 | xargs -0`.", "input": "", "output": "NUL-delimited pipelines survive spaces/newlines in filenames; add `-r` to skip empty runs."}
+{"instruction": "`find . -print0 | xargs -0` untuk apa?", "input": "", "output": "NUL-delimited pipelines survive spaces/newlines in filenames; add `-r` to skip empty runs."}
+{"instruction": "How would you explain `find . -print0 | xargs -0` to a junior developer?", "input": "", "output": "NUL-delimited pipelines survive spaces/newlines in filenames; add `-r` to skip empty runs."}
+{"instruction": "Give a real-world scenario for `find . -print0 | xargs -0`.", "input": "", "output": "NUL-delimited pipelines survive spaces/newlines in filenames; add `-r` to skip empty runs."}
+{"instruction": "What problem does `find . -print0 | xargs -0` solve?", "input": "", "output": "NUL-delimited pipelines survive spaces/newlines in filenames; add `-r` to skip empty runs."}
+{"instruction": "Apakah fungsi `$(date +%F)`?", "input": "", "output": "`$(...)` captures output (nestable, unlike backticks); quote it unless splitting is intended."}
+{"instruction": "Terangkan `$(date +%F)` secara ringkas.", "input": "", "output": "`$(...)` captures output (nestable, unlike backticks); quote it unless splitting is intended."}
+{"instruction": "Bila perlu guna `$(date +%F)`?", "input": "", "output": "`$(...)` captures output (nestable, unlike backticks); quote it unless splitting is intended."}
+{"instruction": "Beri contoh penggunaan `$(date +%F)`.", "input": "", "output": "`$(...)` captures output (nestable, unlike backticks); quote it unless splitting is intended."}
+{"instruction": "`$(date +%F)` untuk apa?", "input": "", "output": "`$(...)` captures output (nestable, unlike backticks); quote it unless splitting is intended."}
+{"instruction": "How would you explain `$(date +%F)` to a junior developer?", "input": "", "output": "`$(...)` captures output (nestable, unlike backticks); quote it unless splitting is intended."}
+{"instruction": "Give a real-world scenario for `$(date +%F)`.", "input": "", "output": "`$(...)` captures output (nestable, unlike backticks); quote it unless splitting is intended."}
+{"instruction": "What problem does `$(date +%F)` solve?", "input": "", "output": "`$(...)` captures output (nestable, unlike backticks); quote it unless splitting is intended."}
+{"instruction": "Apakah fungsi `<<EOF heredoc`?", "input": "", "output": "Heredocs feed multi-line input (`cat <<EOF`); quote the tag (`<<'EOF'`) to disable expansion."}
+{"instruction": "Terangkan `<<EOF heredoc` secara ringkas.", "input": "", "output": "Heredocs feed multi-line input (`cat <<EOF`); quote the tag (`<<'EOF'`) to disable expansion."}
+{"instruction": "Bila perlu guna `<<EOF heredoc`?", "input": "", "output": "Heredocs feed multi-line input (`cat <<EOF`); quote the tag (`<<'EOF'`) to disable expansion."}
+{"instruction": "Beri contoh penggunaan `<<EOF heredoc`.", "input": "", "output": "Heredocs feed multi-line input (`cat <<EOF`); quote the tag (`<<'EOF'`) to disable expansion."}
+{"instruction": "`<<EOF heredoc` untuk apa?", "input": "", "output": "Heredocs feed multi-line input (`cat <<EOF`); quote the tag (`<<'EOF'`) to disable expansion."}
+{"instruction": "How would you explain `<<EOF heredoc` to a junior developer?", "input": "", "output": "Heredocs feed multi-line input (`cat <<EOF`); quote the tag (`<<'EOF'`) to disable expansion."}
+{"instruction": "Give a real-world scenario for `<<EOF heredoc`.", "input": "", "output": "Heredocs feed multi-line input (`cat <<EOF`); quote the tag (`<<'EOF'`) to disable expansion."}
+{"instruction": "What problem does `<<EOF heredoc` solve?", "input": "", "output": "Heredocs feed multi-line input (`cat <<EOF`); quote the tag (`<<'EOF'`) to disable expansion."}
+{"instruction": "Apakah fungsi `shift`?", "input": "", "output": "`shift` consumes processed args so `$1` always means next; loop `while [[ $# -gt 0 ]]` for flags."}
+{"instruction": "Terangkan `shift` secara ringkas.", "input": "", "output": "`shift` consumes processed args so `$1` always means next; loop `while [[ $# -gt 0 ]]` for flags."}
+{"instruction": "Bila perlu guna `shift`?", "input": "", "output": "`shift` consumes processed args so `$1` always means next; loop `while [[ $# -gt 0 ]]` for flags."}
+{"instruction": "Beri contoh penggunaan `shift`.", "input": "", "output": "`shift` consumes processed args so `$1` always means next; loop `while [[ $# -gt 0 ]]` for flags."}
+{"instruction": "`shift` untuk apa?", "input": "", "output": "`shift` consumes processed args so `$1` always means next; loop `while [[ $# -gt 0 ]]` for flags."}
+{"instruction": "How would you explain `shift` to a junior developer?", "input": "", "output": "`shift` consumes processed args so `$1` always means next; loop `while [[ $# -gt 0 ]]` for flags."}
+{"instruction": "Give a real-world scenario for `shift`.", "input": "", "output": "`shift` consumes processed args so `$1` always means next; loop `while [[ $# -gt 0 ]]` for flags."}
+{"instruction": "What problem does `shift` solve?", "input": "", "output": "`shift` consumes processed args so `$1` always means next; loop `while [[ $# -gt 0 ]]` for flags."}
+{"instruction": "Apakah fungsi `exec cmd`?", "input": "", "output": "`exec` replaces the shell process (PID kept, no child) — used as the last line of entrypoints."}
+{"instruction": "Terangkan `exec cmd` secara ringkas.", "input": "", "output": "`exec` replaces the shell process (PID kept, no child) — used as the last line of entrypoints."}
+{"instruction": "Bila perlu guna `exec cmd`?", "input": "", "output": "`exec` replaces the shell process (PID kept, no child) — used as the last line of entrypoints."}
+{"instruction": "Beri contoh penggunaan `exec cmd`.", "input": "", "output": "`exec` replaces the shell process (PID kept, no child) — used as the last line of entrypoints."}
+{"instruction": "`exec cmd` untuk apa?", "input": "", "output": "`exec` replaces the shell process (PID kept, no child) — used as the last line of entrypoints."}
+{"instruction": "How would you explain `exec cmd` to a junior developer?", "input": "", "output": "`exec` replaces the shell process (PID kept, no child) — used as the last line of entrypoints."}
+{"instruction": "Give a real-world scenario for `exec cmd`.", "input": "", "output": "`exec` replaces the shell process (PID kept, no child) — used as the last line of entrypoints."}
+{"instruction": "What problem does `exec cmd` solve?", "input": "", "output": "`exec` replaces the shell process (PID kept, no child) — used as the last line of entrypoints."}
+{"instruction": "What does `select menu` do?", "input": "", "output": "`select opt in mula henti keluar; do case $opt in ...` builds interactive menus with numbered prompts."}
+{"instruction": "Explain `select menu` briefly.", "input": "", "output": "`select opt in mula henti keluar; do case $opt in ...` builds interactive menus with numbered prompts."}
+{"instruction": "When do I use `select menu`?", "input": "", "output": "`select opt in mula henti keluar; do case $opt in ...` builds interactive menus with numbered prompts."}
+{"instruction": "Give a practical example of `select menu`.", "input": "", "output": "`select opt in mula henti keluar; do case $opt in ...` builds interactive menus with numbered prompts."}
+{"instruction": "What is `select menu` for?", "input": "", "output": "`select opt in mula henti keluar; do case $opt in ...` builds interactive menus with numbered prompts."}
+{"instruction": "Apakah fungsi `select menu`?", "input": "", "output": "`select opt in mula henti keluar; do case $opt in ...` builds interactive menus with numbered prompts."}
+{"instruction": "Terangkan `select menu` secara ringkas.", "input": "", "output": "`select opt in mula henti keluar; do case $opt in ...` builds interactive menus with numbered prompts."}
+{"instruction": "Bila perlu guna `select menu`?", "input": "", "output": "`select opt in mula henti keluar; do case $opt in ...` builds interactive menus with numbered prompts."}
+{"instruction": "Beri contoh penggunaan `select menu`.", "input": "", "output": "`select opt in mula henti keluar; do case $opt in ...` builds interactive menus with numbered prompts."}
+{"instruction": "`select menu` untuk apa?", "input": "", "output": "`select opt in mula henti keluar; do case $opt in ...` builds interactive menus with numbered prompts."}
+{"instruction": "How would you explain `select menu` to a junior developer?", "input": "", "output": "`select opt in mula henti keluar; do case $opt in ...` builds interactive menus with numbered prompts."}
+{"instruction": "Give a real-world scenario for `select menu`.", "input": "", "output": "`select opt in mula henti keluar; do case $opt in ...` builds interactive menus with numbered prompts."}
+{"instruction": "What problem does `select menu` solve?", "input": "", "output": "`select opt in mula henti keluar; do case $opt in ...` builds interactive menus with numbered prompts."}
+{"instruction": "What does `getopts flags` do?", "input": "", "output": "`while getopts 'vf:' o; do case $o in v) ...;; f) fail=$OPTARG;;` parses script flags robustly."}
+{"instruction": "Explain `getopts flags` briefly.", "input": "", "output": "`while getopts 'vf:' o; do case $o in v) ...;; f) fail=$OPTARG;;` parses script flags robustly."}
+{"instruction": "When do I use `getopts flags`?", "input": "", "output": "`while getopts 'vf:' o; do case $o in v) ...;; f) fail=$OPTARG;;` parses script flags robustly."}
+{"instruction": "Give a practical example of `getopts flags`.", "input": "", "output": "`while getopts 'vf:' o; do case $o in v) ...;; f) fail=$OPTARG;;` parses script flags robustly."}
+{"instruction": "What is `getopts flags` for?", "input": "", "output": "`while getopts 'vf:' o; do case $o in v) ...;; f) fail=$OPTARG;;` parses script flags robustly."}
+{"instruction": "Apakah fungsi `getopts flags`?", "input": "", "output": "`while getopts 'vf:' o; do case $o in v) ...;; f) fail=$OPTARG;;` parses script flags robustly."}
+{"instruction": "Terangkan `getopts flags` secara ringkas.", "input": "", "output": "`while getopts 'vf:' o; do case $o in v) ...;; f) fail=$OPTARG;;` parses script flags robustly."}
+{"instruction": "Bila perlu guna `getopts flags`?", "input": "", "output": "`while getopts 'vf:' o; do case $o in v) ...;; f) fail=$OPTARG;;` parses script flags robustly."}
+{"instruction": "Beri contoh penggunaan `getopts flags`.", "input": "", "output": "`while getopts 'vf:' o; do case $o in v) ...;; f) fail=$OPTARG;;` parses script flags robustly."}
+{"instruction": "`getopts flags` untuk apa?", "input": "", "output": "`while getopts 'vf:' o; do case $o in v) ...;; f) fail=$OPTARG;;` parses script flags robustly."}
+{"instruction": "How would you explain `getopts flags` to a junior developer?", "input": "", "output": "`while getopts 'vf:' o; do case $o in v) ...;; f) fail=$OPTARG;;` parses script flags robustly."}
+{"instruction": "Give a real-world scenario for `getopts flags`.", "input": "", "output": "`while getopts 'vf:' o; do case $o in v) ...;; f) fail=$OPTARG;;` parses script flags robustly."}
+{"instruction": "What problem does `getopts flags` solve?", "input": "", "output": "`while getopts 'vf:' o; do case $o in v) ...;; f) fail=$OPTARG;;` parses script flags robustly."}
+{"instruction": "What does `readonly VAR` do?", "input": "", "output": "`readonly`/`declare -r` freezes constants; typos then fail loudly instead of forking behavior silently."}
+{"instruction": "Explain `readonly VAR` briefly.", "input": "", "output": "`readonly`/`declare -r` freezes constants; typos then fail loudly instead of forking behavior silently."}
+{"instruction": "When do I use `readonly VAR`?", "input": "", "output": "`readonly`/`declare -r` freezes constants; typos then fail loudly instead of forking behavior silently."}
+{"instruction": "Give a practical example of `readonly VAR`.", "input": "", "output": "`readonly`/`declare -r` freezes constants; typos then fail loudly instead of forking behavior silently."}
+{"instruction": "What is `readonly VAR` for?", "input": "", "output": "`readonly`/`declare -r` freezes constants; typos then fail loudly instead of forking behavior silently."}
+{"instruction": "Apakah fungsi `readonly VAR`?", "input": "", "output": "`readonly`/`declare -r` freezes constants; typos then fail loudly instead of forking behavior silently."}
+{"instruction": "Terangkan `readonly VAR` secara ringkas.", "input": "", "output": "`readonly`/`declare -r` freezes constants; typos then fail loudly instead of forking behavior silently."}
+{"instruction": "Bila perlu guna `readonly VAR`?", "input": "", "output": "`readonly`/`declare -r` freezes constants; typos then fail loudly instead of forking behavior silently."}
+{"instruction": "Beri contoh penggunaan `readonly VAR`.", "input": "", "output": "`readonly`/`declare -r` freezes constants; typos then fail loudly instead of forking behavior silently."}
+{"instruction": "`readonly VAR` untuk apa?", "input": "", "output": "`readonly`/`declare -r` freezes constants; typos then fail loudly instead of forking behavior silently."}
+{"instruction": "How would you explain `readonly VAR` to a junior developer?", "input": "", "output": "`readonly`/`declare -r` freezes constants; typos then fail loudly instead of forking behavior silently."}
+{"instruction": "Give a real-world scenario for `readonly VAR`.", "input": "", "output": "`readonly`/`declare -r` freezes constants; typos then fail loudly instead of forking behavior silently."}
+{"instruction": "What problem does `readonly VAR` solve?", "input": "", "output": "`readonly`/`declare -r` freezes constants; typos then fail loudly instead of forking behavior silently."}
+{"instruction": "What does `mapfile lines` do?", "input": "", "output": "`mapfile -t arr < file` loads lines into an array fast; beats `while read` loops for big files."}
+{"instruction": "Explain `mapfile lines` briefly.", "input": "", "output": "`mapfile -t arr < file` loads lines into an array fast; beats `while read` loops for big files."}
+{"instruction": "When do I use `mapfile lines`?", "input": "", "output": "`mapfile -t arr < file` loads lines into an array fast; beats `while read` loops for big files."}
+{"instruction": "Give a practical example of `mapfile lines`.", "input": "", "output": "`mapfile -t arr < file` loads lines into an array fast; beats `while read` loops for big files."}
+{"instruction": "What is `mapfile lines` for?", "input": "", "output": "`mapfile -t arr < file` loads lines into an array fast; beats `while read` loops for big files."}
+{"instruction": "Apakah fungsi `mapfile lines`?", "input": "", "output": "`mapfile -t arr < file` loads lines into an array fast; beats `while read` loops for big files."}
+{"instruction": "Terangkan `mapfile lines` secara ringkas.", "input": "", "output": "`mapfile -t arr < file` loads lines into an array fast; beats `while read` loops for big files."}
+{"instruction": "Bila perlu guna `mapfile lines`?", "input": "", "output": "`mapfile -t arr < file` loads lines into an array fast; beats `while read` loops for big files."}
+{"instruction": "Beri contoh penggunaan `mapfile lines`.", "input": "", "output": "`mapfile -t arr < file` loads lines into an array fast; beats `while read` loops for big files."}
+{"instruction": "`mapfile lines` untuk apa?", "input": "", "output": "`mapfile -t arr < file` loads lines into an array fast; beats `while read` loops for big files."}
+{"instruction": "How would you explain `mapfile lines` to a junior developer?", "input": "", "output": "`mapfile -t arr < file` loads lines into an array fast; beats `while read` loops for big files."}
+{"instruction": "Give a real-world scenario for `mapfile lines`.", "input": "", "output": "`mapfile -t arr < file` loads lines into an array fast; beats `while read` loops for big files."}
+{"instruction": "What problem does `mapfile lines` solve?", "input": "", "output": "`mapfile -t arr < file` loads lines into an array fast; beats `while read` loops for big files."}
+{"instruction": "What does `printf format` do?", "input": "", "output": "`printf '%-20s %5d\\n' name num` formats columns portably; `echo` flags vary across shells."}
+{"instruction": "Explain `printf format` briefly.", "input": "", "output": "`printf '%-20s %5d\\n' name num` formats columns portably; `echo` flags vary across shells."}
+{"instruction": "When do I use `printf format`?", "input": "", "output": "`printf '%-20s %5d\\n' name num` formats columns portably; `echo` flags vary across shells."}
+{"instruction": "Give a practical example of `printf format`.", "input": "", "output": "`printf '%-20s %5d\\n' name num` formats columns portably; `echo` flags vary across shells."}
+{"instruction": "What is `printf format` for?", "input": "", "output": "`printf '%-20s %5d\\n' name num` formats columns portably; `echo` flags vary across shells."}
+{"instruction": "Apakah fungsi `printf format`?", "input": "", "output": "`printf '%-20s %5d\\n' name num` formats columns portably; `echo` flags vary across shells."}
+{"instruction": "Terangkan `printf format` secara ringkas.", "input": "", "output": "`printf '%-20s %5d\\n' name num` formats columns portably; `echo` flags vary across shells."}
+{"instruction": "Bila perlu guna `printf format`?", "input": "", "output": "`printf '%-20s %5d\\n' name num` formats columns portably; `echo` flags vary across shells."}
+{"instruction": "Beri contoh penggunaan `printf format`.", "input": "", "output": "`printf '%-20s %5d\\n' name num` formats columns portably; `echo` flags vary across shells."}
+{"instruction": "`printf format` untuk apa?", "input": "", "output": "`printf '%-20s %5d\\n' name num` formats columns portably; `echo` flags vary across shells."}
+{"instruction": "How would you explain `printf format` to a junior developer?", "input": "", "output": "`printf '%-20s %5d\\n' name num` formats columns portably; `echo` flags vary across shells."}
+{"instruction": "Give a real-world scenario for `printf format`.", "input": "", "output": "`printf '%-20s %5d\\n' name num` formats columns portably; `echo` flags vary across shells."}
+{"instruction": "What problem does `printf format` solve?", "input": "", "output": "`printf '%-20s %5d\\n' name num` formats columns portably; `echo` flags vary across shells."}
+{"instruction": "What does `pushd popd` do?", "input": "", "output": "`pushd dir` stacks directories, `popd` returns — `dirs -v` lists the stack for deep navigation."}
+{"instruction": "Explain `pushd popd` briefly.", "input": "", "output": "`pushd dir` stacks directories, `popd` returns — `dirs -v` lists the stack for deep navigation."}
+{"instruction": "When do I use `pushd popd`?", "input": "", "output": "`pushd dir` stacks directories, `popd` returns — `dirs -v` lists the stack for deep navigation."}
+{"instruction": "Give a practical example of `pushd popd`.", "input": "", "output": "`pushd dir` stacks directories, `popd` returns — `dirs -v` lists the stack for deep navigation."}
+{"instruction": "What is `pushd popd` for?", "input": "", "output": "`pushd dir` stacks directories, `popd` returns — `dirs -v` lists the stack for deep navigation."}
+{"instruction": "Apakah fungsi `pushd popd`?", "input": "", "output": "`pushd dir` stacks directories, `popd` returns — `dirs -v` lists the stack for deep navigation."}
+{"instruction": "Terangkan `pushd popd` secara ringkas.", "input": "", "output": "`pushd dir` stacks directories, `popd` returns — `dirs -v` lists the stack for deep navigation."}
+{"instruction": "Bila perlu guna `pushd popd`?", "input": "", "output": "`pushd dir` stacks directories, `popd` returns — `dirs -v` lists the stack for deep navigation."}
+{"instruction": "Beri contoh penggunaan `pushd popd`.", "input": "", "output": "`pushd dir` stacks directories, `popd` returns — `dirs -v` lists the stack for deep navigation."}
+{"instruction": "`pushd popd` untuk apa?", "input": "", "output": "`pushd dir` stacks directories, `popd` returns — `dirs -v` lists the stack for deep navigation."}
+{"instruction": "How would you explain `pushd popd` to a junior developer?", "input": "", "output": "`pushd dir` stacks directories, `popd` returns — `dirs -v` lists the stack for deep navigation."}
+{"instruction": "Give a real-world scenario for `pushd popd`.", "input": "", "output": "`pushd dir` stacks directories, `popd` returns — `dirs -v` lists the stack for deep navigation."}
+{"instruction": "What problem does `pushd popd` solve?", "input": "", "output": "`pushd dir` stacks directories, `popd` returns — `dirs -v` lists the stack for deep navigation."}
+{"instruction": "What does `test -e -s -x` do?", "input": "", "output": "`-e` exists, `-s` non-empty, `-x` executable — probe before acting instead of rescuing failures."}
+{"instruction": "Explain `test -e -s -x` briefly.", "input": "", "output": "`-e` exists, `-s` non-empty, `-x` executable — probe before acting instead of rescuing failures."}
+{"instruction": "When do I use `test -e -s -x`?", "input": "", "output": "`-e` exists, `-s` non-empty, `-x` executable — probe before acting instead of rescuing failures."}
+{"instruction": "Give a practical example of `test -e -s -x`.", "input": "", "output": "`-e` exists, `-s` non-empty, `-x` executable — probe before acting instead of rescuing failures."}
+{"instruction": "What is `test -e -s -x` for?", "input": "", "output": "`-e` exists, `-s` non-empty, `-x` executable — probe before acting instead of rescuing failures."}
+{"instruction": "Apakah fungsi `test -e -s -x`?", "input": "", "output": "`-e` exists, `-s` non-empty, `-x` executable — probe before acting instead of rescuing failures."}
+{"instruction": "Terangkan `test -e -s -x` secara ringkas.", "input": "", "output": "`-e` exists, `-s` non-empty, `-x` executable — probe before acting instead of rescuing failures."}
+{"instruction": "Bila perlu guna `test -e -s -x`?", "input": "", "output": "`-e` exists, `-s` non-empty, `-x` executable — probe before acting instead of rescuing failures."}
+{"instruction": "Beri contoh penggunaan `test -e -s -x`.", "input": "", "output": "`-e` exists, `-s` non-empty, `-x` executable — probe before acting instead of rescuing failures."}
+{"instruction": "`test -e -s -x` untuk apa?", "input": "", "output": "`-e` exists, `-s` non-empty, `-x` executable — probe before acting instead of rescuing failures."}
+{"instruction": "How would you explain `test -e -s -x` to a junior developer?", "input": "", "output": "`-e` exists, `-s` non-empty, `-x` executable — probe before acting instead of rescuing failures."}
+{"instruction": "Give a real-world scenario for `test -e -s -x`.", "input": "", "output": "`-e` exists, `-s` non-empty, `-x` executable — probe before acting instead of rescuing failures."}
+{"instruction": "What problem does `test -e -s -x` solve?", "input": "", "output": "`-e` exists, `-s` non-empty, `-x` executable — probe before acting instead of rescuing failures."}
+{"instruction": "What does `${s/old/new}` do?", "input": "", "output": "`${s/old/new}` substitutes first match (`//` for all); pure-bash edits avoid subshell forks."}
+{"instruction": "Explain `${s/old/new}` briefly.", "input": "", "output": "`${s/old/new}` substitutes first match (`//` for all); pure-bash edits avoid subshell forks."}
+{"instruction": "When do I use `${s/old/new}`?", "input": "", "output": "`${s/old/new}` substitutes first match (`//` for all); pure-bash edits avoid subshell forks."}
+{"instruction": "Give a practical example of `${s/old/new}`.", "input": "", "output": "`${s/old/new}` substitutes first match (`//` for all); pure-bash edits avoid subshell forks."}
+{"instruction": "What is `${s/old/new}` for?", "input": "", "output": "`${s/old/new}` substitutes first match (`//` for all); pure-bash edits avoid subshell forks."}
+{"instruction": "Apakah fungsi `${s/old/new}`?", "input": "", "output": "`${s/old/new}` substitutes first match (`//` for all); pure-bash edits avoid subshell forks."}
+{"instruction": "Terangkan `${s/old/new}` secara ringkas.", "input": "", "output": "`${s/old/new}` substitutes first match (`//` for all); pure-bash edits avoid subshell forks."}
+{"instruction": "Bila perlu guna `${s/old/new}`?", "input": "", "output": "`${s/old/new}` substitutes first match (`//` for all); pure-bash edits avoid subshell forks."}
+{"instruction": "Beri contoh penggunaan `${s/old/new}`.", "input": "", "output": "`${s/old/new}` substitutes first match (`//` for all); pure-bash edits avoid subshell forks."}
+{"instruction": "`${s/old/new}` untuk apa?", "input": "", "output": "`${s/old/new}` substitutes first match (`//` for all); pure-bash edits avoid subshell forks."}
+{"instruction": "How would you explain `${s/old/new}` to a junior developer?", "input": "", "output": "`${s/old/new}` substitutes first match (`//` for all); pure-bash edits avoid subshell forks."}
+{"instruction": "Give a real-world scenario for `${s/old/new}`.", "input": "", "output": "`${s/old/new}` substitutes first match (`//` for all); pure-bash edits avoid subshell forks."}
+{"instruction": "What problem does `${s/old/new}` solve?", "input": "", "output": "`${s/old/new}` substitutes first match (`//` for all); pure-bash edits avoid subshell forks."}
+{"instruction": "What does `${s:0:3}` do?", "input": "", "output": "Substring slicing (`${s:0:3}`, `${s: -4}`) extracts parts; negative offsets count from the end."}
+{"instruction": "Explain `${s:0:3}` briefly.", "input": "", "output": "Substring slicing (`${s:0:3}`, `${s: -4}`) extracts parts; negative offsets count from the end."}
+{"instruction": "When do I use `${s:0:3}`?", "input": "", "output": "Substring slicing (`${s:0:3}`, `${s: -4}`) extracts parts; negative offsets count from the end."}
+{"instruction": "Give a practical example of `${s:0:3}`.", "input": "", "output": "Substring slicing (`${s:0:3}`, `${s: -4}`) extracts parts; negative offsets count from the end."}
+{"instruction": "What is `${s:0:3}` for?", "input": "", "output": "Substring slicing (`${s:0:3}`, `${s: -4}`) extracts parts; negative offsets count from the end."}
+{"instruction": "Apakah fungsi `${s:0:3}`?", "input": "", "output": "Substring slicing (`${s:0:3}`, `${s: -4}`) extracts parts; negative offsets count from the end."}
+{"instruction": "Terangkan `${s:0:3}` secara ringkas.", "input": "", "output": "Substring slicing (`${s:0:3}`, `${s: -4}`) extracts parts; negative offsets count from the end."}
+{"instruction": "Bila perlu guna `${s:0:3}`?", "input": "", "output": "Substring slicing (`${s:0:3}`, `${s: -4}`) extracts parts; negative offsets count from the end."}
+{"instruction": "Beri contoh penggunaan `${s:0:3}`.", "input": "", "output": "Substring slicing (`${s:0:3}`, `${s: -4}`) extracts parts; negative offsets count from the end."}
+{"instruction": "`${s:0:3}` untuk apa?", "input": "", "output": "Substring slicing (`${s:0:3}`, `${s: -4}`) extracts parts; negative offsets count from the end."}
+{"instruction": "How would you explain `${s:0:3}` to a junior developer?", "input": "", "output": "Substring slicing (`${s:0:3}`, `${s: -4}`) extracts parts; negative offsets count from the end."}
+{"instruction": "Give a real-world scenario for `${s:0:3}`.", "input": "", "output": "Substring slicing (`${s:0:3}`, `${s: -4}`) extracts parts; negative offsets count from the end."}
+{"instruction": "What problem does `${s:0:3}` solve?", "input": "", "output": "Substring slicing (`${s:0:3}`, `${s: -4}`) extracts parts; negative offsets count from the end."}
+{"instruction": "What does `${VAR:=default}` do?", "input": "", "output": "`:=` assigns the default permanently when empty — one-shot config with memory."}
+{"instruction": "Explain `${VAR:=default}` briefly.", "input": "", "output": "`:=` assigns the default permanently when empty — one-shot config with memory."}
+{"instruction": "When do I use `${VAR:=default}`?", "input": "", "output": "`:=` assigns the default permanently when empty — one-shot config with memory."}
+{"instruction": "Give a practical example of `${VAR:=default}`.", "input": "", "output": "`:=` assigns the default permanently when empty — one-shot config with memory."}
+{"instruction": "What is `${VAR:=default}` for?", "input": "", "output": "`:=` assigns the default permanently when empty — one-shot config with memory."}
+{"instruction": "Apakah fungsi `${VAR:=default}`?", "input": "", "output": "`:=` assigns the default permanently when empty — one-shot config with memory."}
+{"instruction": "Terangkan `${VAR:=default}` secara ringkas.", "input": "", "output": "`:=` assigns the default permanently when empty — one-shot config with memory."}
+{"instruction": "Bila perlu guna `${VAR:=default}`?", "input": "", "output": "`:=` assigns the default permanently when empty — one-shot config with memory."}
+{"instruction": "Beri contoh penggunaan `${VAR:=default}`.", "input": "", "output": "`:=` assigns the default permanently when empty — one-shot config with memory."}
+{"instruction": "`${VAR:=default}` untuk apa?", "input": "", "output": "`:=` assigns the default permanently when empty — one-shot config with memory."}
+{"instruction": "How would you explain `${VAR:=default}` to a junior developer?", "input": "", "output": "`:=` assigns the default permanently when empty — one-shot config with memory."}
+{"instruction": "Give a real-world scenario for `${VAR:=default}`.", "input": "", "output": "`:=` assigns the default permanently when empty — one-shot config with memory."}
+{"instruction": "What problem does `${VAR:=default}` solve?", "input": "", "output": "`:=` assigns the default permanently when empty — one-shot config with memory."}
+{"instruction": "What does `source lib.sh` do?", "input": "", "output": "`source` (or `.`) loads function libraries into the current shell; guard with file existence tests."}
+{"instruction": "Explain `source lib.sh` briefly.", "input": "", "output": "`source` (or `.`) loads function libraries into the current shell; guard with file existence tests."}
+{"instruction": "When do I use `source lib.sh`?", "input": "", "output": "`source` (or `.`) loads function libraries into the current shell; guard with file existence tests."}
+{"instruction": "Give a practical example of `source lib.sh`.", "input": "", "output": "`source` (or `.`) loads function libraries into the current shell; guard with file existence tests."}
+{"instruction": "What is `source lib.sh` for?", "input": "", "output": "`source` (or `.`) loads function libraries into the current shell; guard with file existence tests."}
+{"instruction": "Apakah fungsi `source lib.sh`?", "input": "", "output": "`source` (or `.`) loads function libraries into the current shell; guard with file existence tests."}
+{"instruction": "Terangkan `source lib.sh` secara ringkas.", "input": "", "output": "`source` (or `.`) loads function libraries into the current shell; guard with file existence tests."}
+{"instruction": "Bila perlu guna `source lib.sh`?", "input": "", "output": "`source` (or `.`) loads function libraries into the current shell; guard with file existence tests."}
+{"instruction": "Beri contoh penggunaan `source lib.sh`.", "input": "", "output": "`source` (or `.`) loads function libraries into the current shell; guard with file existence tests."}
+{"instruction": "`source lib.sh` untuk apa?", "input": "", "output": "`source` (or `.`) loads function libraries into the current shell; guard with file existence tests."}
+{"instruction": "How would you explain `source lib.sh` to a junior developer?", "input": "", "output": "`source` (or `.`) loads function libraries into the current shell; guard with file existence tests."}
+{"instruction": "Give a real-world scenario for `source lib.sh`.", "input": "", "output": "`source` (or `.`) loads function libraries into the current shell; guard with file existence tests."}
+{"instruction": "What problem does `source lib.sh` solve?", "input": "", "output": "`source` (or `.`) loads function libraries into the current shell; guard with file existence tests."}
+{"instruction": "What does `set -x debug` do?", "input": "", "output": "`set -x` traces every command before running; wrap noisy sections with `set +x` to silence."}
+{"instruction": "Explain `set -x debug` briefly.", "input": "", "output": "`set -x` traces every command before running; wrap noisy sections with `set +x` to silence."}
+{"instruction": "When do I use `set -x debug`?", "input": "", "output": "`set -x` traces every command before running; wrap noisy sections with `set +x` to silence."}
+{"instruction": "Give a practical example of `set -x debug`.", "input": "", "output": "`set -x` traces every command before running; wrap noisy sections with `set +x` to silence."}
+{"instruction": "What is `set -x debug` for?", "input": "", "output": "`set -x` traces every command before running; wrap noisy sections with `set +x` to silence."}
+{"instruction": "Apakah fungsi `set -x debug`?", "input": "", "output": "`set -x` traces every command before running; wrap noisy sections with `set +x` to silence."}
+{"instruction": "Terangkan `set -x debug` secara ringkas.", "input": "", "output": "`set -x` traces every command before running; wrap noisy sections with `set +x` to silence."}
+{"instruction": "Bila perlu guna `set -x debug`?", "input": "", "output": "`set -x` traces every command before running; wrap noisy sections with `set +x` to silence."}
+{"instruction": "Beri contoh penggunaan `set -x debug`.", "input": "", "output": "`set -x` traces every command before running; wrap noisy sections with `set +x` to silence."}
+{"instruction": "`set -x debug` untuk apa?", "input": "", "output": "`set -x` traces every command before running; wrap noisy sections with `set +x` to silence."}
+{"instruction": "How would you explain `set -x debug` to a junior developer?", "input": "", "output": "`set -x` traces every command before running; wrap noisy sections with `set +x` to silence."}
+{"instruction": "Give a real-world scenario for `set -x debug`.", "input": "", "output": "`set -x` traces every command before running; wrap noisy sections with `set +x` to silence."}
+{"instruction": "What problem does `set -x debug` solve?", "input": "", "output": "`set -x` traces every command before running; wrap noisy sections with `set +x` to silence."}
+{"instruction": "What does `exit codes` do?", "input": "", "output": "`exit 0` success, nonzero failure (1 generic, 2 misuse, 126/127 exec problems); document yours in usage text."}
+{"instruction": "Explain `exit codes` briefly.", "input": "", "output": "`exit 0` success, nonzero failure (1 generic, 2 misuse, 126/127 exec problems); document yours in usage text."}
+{"instruction": "When do I use `exit codes`?", "input": "", "output": "`exit 0` success, nonzero failure (1 generic, 2 misuse, 126/127 exec problems); document yours in usage text."}
+{"instruction": "Give a practical example of `exit codes`.", "input": "", "output": "`exit 0` success, nonzero failure (1 generic, 2 misuse, 126/127 exec problems); document yours in usage text."}
+{"instruction": "What is `exit codes` for?", "input": "", "output": "`exit 0` success, nonzero failure (1 generic, 2 misuse, 126/127 exec problems); document yours in usage text."}
+{"instruction": "Apakah fungsi `exit codes`?", "input": "", "output": "`exit 0` success, nonzero failure (1 generic, 2 misuse, 126/127 exec problems); document yours in usage text."}
+{"instruction": "Terangkan `exit codes` secara ringkas.", "input": "", "output": "`exit 0` success, nonzero failure (1 generic, 2 misuse, 126/127 exec problems); document yours in usage text."}
+{"instruction": "Bila perlu guna `exit codes`?", "input": "", "output": "`exit 0` success, nonzero failure (1 generic, 2 misuse, 126/127 exec problems); document yours in usage text."}
+{"instruction": "Beri contoh penggunaan `exit codes`.", "input": "", "output": "`exit 0` success, nonzero failure (1 generic, 2 misuse, 126/127 exec problems); document yours in usage text."}
+{"instruction": "`exit codes` untuk apa?", "input": "", "output": "`exit 0` success, nonzero failure (1 generic, 2 misuse, 126/127 exec problems); document yours in usage text."}
+{"instruction": "How would you explain `exit codes` to a junior developer?", "input": "", "output": "`exit 0` success, nonzero failure (1 generic, 2 misuse, 126/127 exec problems); document yours in usage text."}
+{"instruction": "Give a real-world scenario for `exit codes`.", "input": "", "output": "`exit 0` success, nonzero failure (1 generic, 2 misuse, 126/127 exec problems); document yours in usage text."}
+{"instruction": "What problem does `exit codes` solve?", "input": "", "output": "`exit 0` success, nonzero failure (1 generic, 2 misuse, 126/127 exec problems); document yours in usage text."}
+{"instruction": "What does `jobs wait &` do?", "input": "", "output": "`cmd &` backgrounds, `jobs` lists, `wait` blocks until done — poor man's parallelism with `wait -n`."}
+{"instruction": "Explain `jobs wait &` briefly.", "input": "", "output": "`cmd &` backgrounds, `jobs` lists, `wait` blocks until done — poor man's parallelism with `wait -n`."}
+{"instruction": "When do I use `jobs wait &`?", "input": "", "output": "`cmd &` backgrounds, `jobs` lists, `wait` blocks until done — poor man's parallelism with `wait -n`."}
+{"instruction": "Give a practical example of `jobs wait &`.", "input": "", "output": "`cmd &` backgrounds, `jobs` lists, `wait` blocks until done — poor man's parallelism with `wait -n`."}
+{"instruction": "What is `jobs wait &` for?", "input": "", "output": "`cmd &` backgrounds, `jobs` lists, `wait` blocks until done — poor man's parallelism with `wait -n`."}
+{"instruction": "Apakah fungsi `jobs wait &`?", "input": "", "output": "`cmd &` backgrounds, `jobs` lists, `wait` blocks until done — poor man's parallelism with `wait -n`."}
+{"instruction": "Terangkan `jobs wait &` secara ringkas.", "input": "", "output": "`cmd &` backgrounds, `jobs` lists, `wait` blocks until done — poor man's parallelism with `wait -n`."}
+{"instruction": "Bila perlu guna `jobs wait &`?", "input": "", "output": "`cmd &` backgrounds, `jobs` lists, `wait` blocks until done — poor man's parallelism with `wait -n`."}
+{"instruction": "Beri contoh penggunaan `jobs wait &`.", "input": "", "output": "`cmd &` backgrounds, `jobs` lists, `wait` blocks until done — poor man's parallelism with `wait -n`."}
+{"instruction": "`jobs wait &` untuk apa?", "input": "", "output": "`cmd &` backgrounds, `jobs` lists, `wait` blocks until done — poor man's parallelism with `wait -n`."}
+{"instruction": "How would you explain `jobs wait &` to a junior developer?", "input": "", "output": "`cmd &` backgrounds, `jobs` lists, `wait` blocks until done — poor man's parallelism with `wait -n`."}
+{"instruction": "Give a real-world scenario for `jobs wait &`.", "input": "", "output": "`cmd &` backgrounds, `jobs` lists, `wait` blocks until done — poor man's parallelism with `wait -n`."}
+{"instruction": "What problem does `jobs wait &` solve?", "input": "", "output": "`cmd &` backgrounds, `jobs` lists, `wait` blocks until done — poor man's parallelism with `wait -n`."}

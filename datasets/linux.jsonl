@@ -132,3 +132,345 @@
 {"instruction": "When do I use `uname -a`?", "input": "", "output": "`uname -a` prints kernel, hostname and architecture — first line of any bug report."}
 {"instruction": "Give a practical example of `uname -a`.", "input": "", "output": "`uname -a` prints kernel, hostname and architecture — first line of any bug report."}
 {"instruction": "What is `uname -a` for?", "input": "", "output": "`uname -a` prints kernel, hostname and architecture — first line of any bug report."}
+{"instruction": "Apakah fungsi `ls -la`?", "input": "", "output": "`ls -la` lists all files with details; `-l` long format, `-a` includes hidden dotfiles."}
+{"instruction": "Terangkan `ls -la` secara ringkas.", "input": "", "output": "`ls -la` lists all files with details; `-l` long format, `-a` includes hidden dotfiles."}
+{"instruction": "Bila perlu guna `ls -la`?", "input": "", "output": "`ls -la` lists all files with details; `-l` long format, `-a` includes hidden dotfiles."}
+{"instruction": "Beri contoh penggunaan `ls -la`.", "input": "", "output": "`ls -la` lists all files with details; `-l` long format, `-a` includes hidden dotfiles."}
+{"instruction": "`ls -la` untuk apa?", "input": "", "output": "`ls -la` lists all files with details; `-l` long format, `-a` includes hidden dotfiles."}
+{"instruction": "How would you explain `ls -la` to a junior developer?", "input": "", "output": "`ls -la` lists all files with details; `-l` long format, `-a` includes hidden dotfiles."}
+{"instruction": "Give a real-world scenario for `ls -la`.", "input": "", "output": "`ls -la` lists all files with details; `-l` long format, `-a` includes hidden dotfiles."}
+{"instruction": "What problem does `ls -la` solve?", "input": "", "output": "`ls -la` lists all files with details; `-l` long format, `-a` includes hidden dotfiles."}
+{"instruction": "Apakah fungsi `df -h`?", "input": "", "output": "`df -h` shows disk usage per filesystem in human units; add `-i` to check inode exhaustion."}
+{"instruction": "Terangkan `df -h` secara ringkas.", "input": "", "output": "`df -h` shows disk usage per filesystem in human units; add `-i` to check inode exhaustion."}
+{"instruction": "Bila perlu guna `df -h`?", "input": "", "output": "`df -h` shows disk usage per filesystem in human units; add `-i` to check inode exhaustion."}
+{"instruction": "Beri contoh penggunaan `df -h`.", "input": "", "output": "`df -h` shows disk usage per filesystem in human units; add `-i` to check inode exhaustion."}
+{"instruction": "`df -h` untuk apa?", "input": "", "output": "`df -h` shows disk usage per filesystem in human units; add `-i` to check inode exhaustion."}
+{"instruction": "How would you explain `df -h` to a junior developer?", "input": "", "output": "`df -h` shows disk usage per filesystem in human units; add `-i` to check inode exhaustion."}
+{"instruction": "Give a real-world scenario for `df -h`.", "input": "", "output": "`df -h` shows disk usage per filesystem in human units; add `-i` to check inode exhaustion."}
+{"instruction": "What problem does `df -h` solve?", "input": "", "output": "`df -h` shows disk usage per filesystem in human units; add `-i` to check inode exhaustion."}
+{"instruction": "Apakah fungsi `du -sh *`?", "input": "", "output": "`du -sh *` ranks directory sizes; pipe to `sort -h` for biggest-first cleanup hunting."}
+{"instruction": "Terangkan `du -sh *` secara ringkas.", "input": "", "output": "`du -sh *` ranks directory sizes; pipe to `sort -h` for biggest-first cleanup hunting."}
+{"instruction": "Bila perlu guna `du -sh *`?", "input": "", "output": "`du -sh *` ranks directory sizes; pipe to `sort -h` for biggest-first cleanup hunting."}
+{"instruction": "Beri contoh penggunaan `du -sh *`.", "input": "", "output": "`du -sh *` ranks directory sizes; pipe to `sort -h` for biggest-first cleanup hunting."}
+{"instruction": "`du -sh *` untuk apa?", "input": "", "output": "`du -sh *` ranks directory sizes; pipe to `sort -h` for biggest-first cleanup hunting."}
+{"instruction": "How would you explain `du -sh *` to a junior developer?", "input": "", "output": "`du -sh *` ranks directory sizes; pipe to `sort -h` for biggest-first cleanup hunting."}
+{"instruction": "Give a real-world scenario for `du -sh *`.", "input": "", "output": "`du -sh *` ranks directory sizes; pipe to `sort -h` for biggest-first cleanup hunting."}
+{"instruction": "What problem does `du -sh *` solve?", "input": "", "output": "`du -sh *` ranks directory sizes; pipe to `sort -h` for biggest-first cleanup hunting."}
+{"instruction": "Apakah fungsi `free -h`?", "input": "", "output": "`free -h` shows RAM/swap; watch the `available` column, not `free`, for real headroom."}
+{"instruction": "Terangkan `free -h` secara ringkas.", "input": "", "output": "`free -h` shows RAM/swap; watch the `available` column, not `free`, for real headroom."}
+{"instruction": "Bila perlu guna `free -h`?", "input": "", "output": "`free -h` shows RAM/swap; watch the `available` column, not `free`, for real headroom."}
+{"instruction": "Beri contoh penggunaan `free -h`.", "input": "", "output": "`free -h` shows RAM/swap; watch the `available` column, not `free`, for real headroom."}
+{"instruction": "`free -h` untuk apa?", "input": "", "output": "`free -h` shows RAM/swap; watch the `available` column, not `free`, for real headroom."}
+{"instruction": "How would you explain `free -h` to a junior developer?", "input": "", "output": "`free -h` shows RAM/swap; watch the `available` column, not `free`, for real headroom."}
+{"instruction": "Give a real-world scenario for `free -h`.", "input": "", "output": "`free -h` shows RAM/swap; watch the `available` column, not `free`, for real headroom."}
+{"instruction": "What problem does `free -h` solve?", "input": "", "output": "`free -h` shows RAM/swap; watch the `available` column, not `free`, for real headroom."}
+{"instruction": "Apakah fungsi `ps aux`?", "input": "", "output": "`ps aux` lists all processes with CPU/mem; pipe to `sort` or pair with `top` for live view."}
+{"instruction": "Terangkan `ps aux` secara ringkas.", "input": "", "output": "`ps aux` lists all processes with CPU/mem; pipe to `sort` or pair with `top` for live view."}
+{"instruction": "Bila perlu guna `ps aux`?", "input": "", "output": "`ps aux` lists all processes with CPU/mem; pipe to `sort` or pair with `top` for live view."}
+{"instruction": "Beri contoh penggunaan `ps aux`.", "input": "", "output": "`ps aux` lists all processes with CPU/mem; pipe to `sort` or pair with `top` for live view."}
+{"instruction": "`ps aux` untuk apa?", "input": "", "output": "`ps aux` lists all processes with CPU/mem; pipe to `sort` or pair with `top` for live view."}
+{"instruction": "How would you explain `ps aux` to a junior developer?", "input": "", "output": "`ps aux` lists all processes with CPU/mem; pipe to `sort` or pair with `top` for live view."}
+{"instruction": "Give a real-world scenario for `ps aux`.", "input": "", "output": "`ps aux` lists all processes with CPU/mem; pipe to `sort` or pair with `top` for live view."}
+{"instruction": "What problem does `ps aux` solve?", "input": "", "output": "`ps aux` lists all processes with CPU/mem; pipe to `sort` or pair with `top` for live view."}
+{"instruction": "Apakah fungsi `top`?", "input": "", "output": "`top` is the live process monitor (CPU, mem, load); press `q` to quit, `M` sorts by memory."}
+{"instruction": "Terangkan `top` secara ringkas.", "input": "", "output": "`top` is the live process monitor (CPU, mem, load); press `q` to quit, `M` sorts by memory."}
+{"instruction": "Bila perlu guna `top`?", "input": "", "output": "`top` is the live process monitor (CPU, mem, load); press `q` to quit, `M` sorts by memory."}
+{"instruction": "Beri contoh penggunaan `top`.", "input": "", "output": "`top` is the live process monitor (CPU, mem, load); press `q` to quit, `M` sorts by memory."}
+{"instruction": "`top` untuk apa?", "input": "", "output": "`top` is the live process monitor (CPU, mem, load); press `q` to quit, `M` sorts by memory."}
+{"instruction": "How would you explain `top` to a junior developer?", "input": "", "output": "`top` is the live process monitor (CPU, mem, load); press `q` to quit, `M` sorts by memory."}
+{"instruction": "Give a real-world scenario for `top`.", "input": "", "output": "`top` is the live process monitor (CPU, mem, load); press `q` to quit, `M` sorts by memory."}
+{"instruction": "What problem does `top` solve?", "input": "", "output": "`top` is the live process monitor (CPU, mem, load); press `q` to quit, `M` sorts by memory."}
+{"instruction": "Apakah fungsi `kill PID`?", "input": "", "output": "`kill PID` sends SIGTERM for graceful exit; `-9` (SIGKILL) forces when stuck."}
+{"instruction": "Terangkan `kill PID` secara ringkas.", "input": "", "output": "`kill PID` sends SIGTERM for graceful exit; `-9` (SIGKILL) forces when stuck."}
+{"instruction": "Bila perlu guna `kill PID`?", "input": "", "output": "`kill PID` sends SIGTERM for graceful exit; `-9` (SIGKILL) forces when stuck."}
+{"instruction": "Beri contoh penggunaan `kill PID`.", "input": "", "output": "`kill PID` sends SIGTERM for graceful exit; `-9` (SIGKILL) forces when stuck."}
+{"instruction": "`kill PID` untuk apa?", "input": "", "output": "`kill PID` sends SIGTERM for graceful exit; `-9` (SIGKILL) forces when stuck."}
+{"instruction": "How would you explain `kill PID` to a junior developer?", "input": "", "output": "`kill PID` sends SIGTERM for graceful exit; `-9` (SIGKILL) forces when stuck."}
+{"instruction": "Give a real-world scenario for `kill PID`.", "input": "", "output": "`kill PID` sends SIGTERM for graceful exit; `-9` (SIGKILL) forces when stuck."}
+{"instruction": "What problem does `kill PID` solve?", "input": "", "output": "`kill PID` sends SIGTERM for graceful exit; `-9` (SIGKILL) forces when stuck."}
+{"instruction": "Apakah fungsi `pkill -f pola`?", "input": "", "output": "`pkill -f` kills by full command match — quote the pattern and double-check with `pgrep -f` first."}
+{"instruction": "Terangkan `pkill -f pola` secara ringkas.", "input": "", "output": "`pkill -f` kills by full command match — quote the pattern and double-check with `pgrep -f` first."}
+{"instruction": "Bila perlu guna `pkill -f pola`?", "input": "", "output": "`pkill -f` kills by full command match — quote the pattern and double-check with `pgrep -f` first."}
+{"instruction": "Beri contoh penggunaan `pkill -f pola`.", "input": "", "output": "`pkill -f` kills by full command match — quote the pattern and double-check with `pgrep -f` first."}
+{"instruction": "`pkill -f pola` untuk apa?", "input": "", "output": "`pkill -f` kills by full command match — quote the pattern and double-check with `pgrep -f` first."}
+{"instruction": "How would you explain `pkill -f pola` to a junior developer?", "input": "", "output": "`pkill -f` kills by full command match — quote the pattern and double-check with `pgrep -f` first."}
+{"instruction": "Give a real-world scenario for `pkill -f pola`.", "input": "", "output": "`pkill -f` kills by full command match — quote the pattern and double-check with `pgrep -f` first."}
+{"instruction": "What problem does `pkill -f pola` solve?", "input": "", "output": "`pkill -f` kills by full command match — quote the pattern and double-check with `pgrep -f` first."}
+{"instruction": "Apakah fungsi `chmod 755 skrip.sh`?", "input": "", "output": "`755` = rwxr-xr-x: owner full, others read+execute; scripts need +x, data files must not have it."}
+{"instruction": "Terangkan `chmod 755 skrip.sh` secara ringkas.", "input": "", "output": "`755` = rwxr-xr-x: owner full, others read+execute; scripts need +x, data files must not have it."}
+{"instruction": "Bila perlu guna `chmod 755 skrip.sh`?", "input": "", "output": "`755` = rwxr-xr-x: owner full, others read+execute; scripts need +x, data files must not have it."}
+{"instruction": "Beri contoh penggunaan `chmod 755 skrip.sh`.", "input": "", "output": "`755` = rwxr-xr-x: owner full, others read+execute; scripts need +x, data files must not have it."}
+{"instruction": "`chmod 755 skrip.sh` untuk apa?", "input": "", "output": "`755` = rwxr-xr-x: owner full, others read+execute; scripts need +x, data files must not have it."}
+{"instruction": "How would you explain `chmod 755 skrip.sh` to a junior developer?", "input": "", "output": "`755` = rwxr-xr-x: owner full, others read+execute; scripts need +x, data files must not have it."}
+{"instruction": "Give a real-world scenario for `chmod 755 skrip.sh`.", "input": "", "output": "`755` = rwxr-xr-x: owner full, others read+execute; scripts need +x, data files must not have it."}
+{"instruction": "What problem does `chmod 755 skrip.sh` solve?", "input": "", "output": "`755` = rwxr-xr-x: owner full, others read+execute; scripts need +x, data files must not have it."}
+{"instruction": "Apakah fungsi `chown -R app:app /srv`?", "input": "", "output": "`chown -R` changes owner recursively; beware symlinks and system dirs."}
+{"instruction": "Terangkan `chown -R app:app /srv` secara ringkas.", "input": "", "output": "`chown -R` changes owner recursively; beware symlinks and system dirs."}
+{"instruction": "Bila perlu guna `chown -R app:app /srv`?", "input": "", "output": "`chown -R` changes owner recursively; beware symlinks and system dirs."}
+{"instruction": "Beri contoh penggunaan `chown -R app:app /srv`.", "input": "", "output": "`chown -R` changes owner recursively; beware symlinks and system dirs."}
+{"instruction": "`chown -R app:app /srv` untuk apa?", "input": "", "output": "`chown -R` changes owner recursively; beware symlinks and system dirs."}
+{"instruction": "How would you explain `chown -R app:app /srv` to a junior developer?", "input": "", "output": "`chown -R` changes owner recursively; beware symlinks and system dirs."}
+{"instruction": "Give a real-world scenario for `chown -R app:app /srv`.", "input": "", "output": "`chown -R` changes owner recursively; beware symlinks and system dirs."}
+{"instruction": "What problem does `chown -R app:app /srv` solve?", "input": "", "output": "`chown -R` changes owner recursively; beware symlinks and system dirs."}
+{"instruction": "Apakah fungsi `tar xzf app.tgz`?", "input": "", "output": "`tar xzf` extracts gzip archives; list first with `tzf` and use `-C dir` to control destination."}
+{"instruction": "Terangkan `tar xzf app.tgz` secara ringkas.", "input": "", "output": "`tar xzf` extracts gzip archives; list first with `tzf` and use `-C dir` to control destination."}
+{"instruction": "Bila perlu guna `tar xzf app.tgz`?", "input": "", "output": "`tar xzf` extracts gzip archives; list first with `tzf` and use `-C dir` to control destination."}
+{"instruction": "Beri contoh penggunaan `tar xzf app.tgz`.", "input": "", "output": "`tar xzf` extracts gzip archives; list first with `tzf` and use `-C dir` to control destination."}
+{"instruction": "`tar xzf app.tgz` untuk apa?", "input": "", "output": "`tar xzf` extracts gzip archives; list first with `tzf` and use `-C dir` to control destination."}
+{"instruction": "How would you explain `tar xzf app.tgz` to a junior developer?", "input": "", "output": "`tar xzf` extracts gzip archives; list first with `tzf` and use `-C dir` to control destination."}
+{"instruction": "Give a real-world scenario for `tar xzf app.tgz`.", "input": "", "output": "`tar xzf` extracts gzip archives; list first with `tzf` and use `-C dir` to control destination."}
+{"instruction": "What problem does `tar xzf app.tgz` solve?", "input": "", "output": "`tar xzf` extracts gzip archives; list first with `tzf` and use `-C dir` to control destination."}
+{"instruction": "Apakah fungsi `grep -r teks .`?", "input": "", "output": "`grep -r` searches recursively; add `-i` (case), `-n` (line numbers), `--include='*.py'` to narrow."}
+{"instruction": "Terangkan `grep -r teks .` secara ringkas.", "input": "", "output": "`grep -r` searches recursively; add `-i` (case), `-n` (line numbers), `--include='*.py'` to narrow."}
+{"instruction": "Bila perlu guna `grep -r teks .`?", "input": "", "output": "`grep -r` searches recursively; add `-i` (case), `-n` (line numbers), `--include='*.py'` to narrow."}
+{"instruction": "Beri contoh penggunaan `grep -r teks .`.", "input": "", "output": "`grep -r` searches recursively; add `-i` (case), `-n` (line numbers), `--include='*.py'` to narrow."}
+{"instruction": "`grep -r teks .` untuk apa?", "input": "", "output": "`grep -r` searches recursively; add `-i` (case), `-n` (line numbers), `--include='*.py'` to narrow."}
+{"instruction": "How would you explain `grep -r teks .` to a junior developer?", "input": "", "output": "`grep -r` searches recursively; add `-i` (case), `-n` (line numbers), `--include='*.py'` to narrow."}
+{"instruction": "Give a real-world scenario for `grep -r teks .`.", "input": "", "output": "`grep -r` searches recursively; add `-i` (case), `-n` (line numbers), `--include='*.py'` to narrow."}
+{"instruction": "What problem does `grep -r teks .` solve?", "input": "", "output": "`grep -r` searches recursively; add `-i` (case), `-n` (line numbers), `--include='*.py'` to narrow."}
+{"instruction": "Apakah fungsi `find . -name '*.log'`?", "input": "", "output": "`find` locates by name/time/size; `-exec cmd {} +` acts on matches without xargs."}
+{"instruction": "Terangkan `find . -name '*.log'` secara ringkas.", "input": "", "output": "`find` locates by name/time/size; `-exec cmd {} +` acts on matches without xargs."}
+{"instruction": "Bila perlu guna `find . -name '*.log'`?", "input": "", "output": "`find` locates by name/time/size; `-exec cmd {} +` acts on matches without xargs."}
+{"instruction": "Beri contoh penggunaan `find . -name '*.log'`.", "input": "", "output": "`find` locates by name/time/size; `-exec cmd {} +` acts on matches without xargs."}
+{"instruction": "`find . -name '*.log'` untuk apa?", "input": "", "output": "`find` locates by name/time/size; `-exec cmd {} +` acts on matches without xargs."}
+{"instruction": "How would you explain `find . -name '*.log'` to a junior developer?", "input": "", "output": "`find` locates by name/time/size; `-exec cmd {} +` acts on matches without xargs."}
+{"instruction": "Give a real-world scenario for `find . -name '*.log'`.", "input": "", "output": "`find` locates by name/time/size; `-exec cmd {} +` acts on matches without xargs."}
+{"instruction": "What problem does `find . -name '*.log'` solve?", "input": "", "output": "`find` locates by name/time/size; `-exec cmd {} +` acts on matches without xargs."}
+{"instruction": "Apakah fungsi `ssh user@hos`?", "input": "", "output": "`ssh` opens a secure shell; keys (`ssh-keygen`, `ssh-copy-id`) replace passwords."}
+{"instruction": "Terangkan `ssh user@hos` secara ringkas.", "input": "", "output": "`ssh` opens a secure shell; keys (`ssh-keygen`, `ssh-copy-id`) replace passwords."}
+{"instruction": "Bila perlu guna `ssh user@hos`?", "input": "", "output": "`ssh` opens a secure shell; keys (`ssh-keygen`, `ssh-copy-id`) replace passwords."}
+{"instruction": "Beri contoh penggunaan `ssh user@hos`.", "input": "", "output": "`ssh` opens a secure shell; keys (`ssh-keygen`, `ssh-copy-id`) replace passwords."}
+{"instruction": "`ssh user@hos` untuk apa?", "input": "", "output": "`ssh` opens a secure shell; keys (`ssh-keygen`, `ssh-copy-id`) replace passwords."}
+{"instruction": "How would you explain `ssh user@hos` to a junior developer?", "input": "", "output": "`ssh` opens a secure shell; keys (`ssh-keygen`, `ssh-copy-id`) replace passwords."}
+{"instruction": "Give a real-world scenario for `ssh user@hos`.", "input": "", "output": "`ssh` opens a secure shell; keys (`ssh-keygen`, `ssh-copy-id`) replace passwords."}
+{"instruction": "What problem does `ssh user@hos` solve?", "input": "", "output": "`ssh` opens a secure shell; keys (`ssh-keygen`, `ssh-copy-id`) replace passwords."}
+{"instruction": "Apakah fungsi `systemctl restart nginx`?", "input": "", "output": "`systemctl restart` reloads a service; `enable` persists across boot, `status` shows logs."}
+{"instruction": "Terangkan `systemctl restart nginx` secara ringkas.", "input": "", "output": "`systemctl restart` reloads a service; `enable` persists across boot, `status` shows logs."}
+{"instruction": "Bila perlu guna `systemctl restart nginx`?", "input": "", "output": "`systemctl restart` reloads a service; `enable` persists across boot, `status` shows logs."}
+{"instruction": "Beri contoh penggunaan `systemctl restart nginx`.", "input": "", "output": "`systemctl restart` reloads a service; `enable` persists across boot, `status` shows logs."}
+{"instruction": "`systemctl restart nginx` untuk apa?", "input": "", "output": "`systemctl restart` reloads a service; `enable` persists across boot, `status` shows logs."}
+{"instruction": "How would you explain `systemctl restart nginx` to a junior developer?", "input": "", "output": "`systemctl restart` reloads a service; `enable` persists across boot, `status` shows logs."}
+{"instruction": "Give a real-world scenario for `systemctl restart nginx`.", "input": "", "output": "`systemctl restart` reloads a service; `enable` persists across boot, `status` shows logs."}
+{"instruction": "What problem does `systemctl restart nginx` solve?", "input": "", "output": "`systemctl restart` reloads a service; `enable` persists across boot, `status` shows logs."}
+{"instruction": "Apakah fungsi `journalctl -f`?", "input": "", "output": "`journalctl -f` tails system logs; `-u unit` and `--since` narrow to incidents."}
+{"instruction": "Terangkan `journalctl -f` secara ringkas.", "input": "", "output": "`journalctl -f` tails system logs; `-u unit` and `--since` narrow to incidents."}
+{"instruction": "Bila perlu guna `journalctl -f`?", "input": "", "output": "`journalctl -f` tails system logs; `-u unit` and `--since` narrow to incidents."}
+{"instruction": "Beri contoh penggunaan `journalctl -f`.", "input": "", "output": "`journalctl -f` tails system logs; `-u unit` and `--since` narrow to incidents."}
+{"instruction": "`journalctl -f` untuk apa?", "input": "", "output": "`journalctl -f` tails system logs; `-u unit` and `--since` narrow to incidents."}
+{"instruction": "How would you explain `journalctl -f` to a junior developer?", "input": "", "output": "`journalctl -f` tails system logs; `-u unit` and `--since` narrow to incidents."}
+{"instruction": "Give a real-world scenario for `journalctl -f`.", "input": "", "output": "`journalctl -f` tails system logs; `-u unit` and `--since` narrow to incidents."}
+{"instruction": "What problem does `journalctl -f` solve?", "input": "", "output": "`journalctl -f` tails system logs; `-u unit` and `--since` narrow to incidents."}
+{"instruction": "Apakah fungsi `ufw allow 22/tcp`?", "input": "", "output": "`ufw allow` opens firewall ports; always allow SSH before `ufw enable` or get locked out."}
+{"instruction": "Terangkan `ufw allow 22/tcp` secara ringkas.", "input": "", "output": "`ufw allow` opens firewall ports; always allow SSH before `ufw enable` or get locked out."}
+{"instruction": "Bila perlu guna `ufw allow 22/tcp`?", "input": "", "output": "`ufw allow` opens firewall ports; always allow SSH before `ufw enable` or get locked out."}
+{"instruction": "Beri contoh penggunaan `ufw allow 22/tcp`.", "input": "", "output": "`ufw allow` opens firewall ports; always allow SSH before `ufw enable` or get locked out."}
+{"instruction": "`ufw allow 22/tcp` untuk apa?", "input": "", "output": "`ufw allow` opens firewall ports; always allow SSH before `ufw enable` or get locked out."}
+{"instruction": "How would you explain `ufw allow 22/tcp` to a junior developer?", "input": "", "output": "`ufw allow` opens firewall ports; always allow SSH before `ufw enable` or get locked out."}
+{"instruction": "Give a real-world scenario for `ufw allow 22/tcp`.", "input": "", "output": "`ufw allow` opens firewall ports; always allow SSH before `ufw enable` or get locked out."}
+{"instruction": "What problem does `ufw allow 22/tcp` solve?", "input": "", "output": "`ufw allow` opens firewall ports; always allow SSH before `ufw enable` or get locked out."}
+{"instruction": "Apakah fungsi `crontab -e`?", "input": "", "output": "`crontab -e` edits your schedule (minute hour day month weekday); cron env is minimal, use absolute paths."}
+{"instruction": "Terangkan `crontab -e` secara ringkas.", "input": "", "output": "`crontab -e` edits your schedule (minute hour day month weekday); cron env is minimal, use absolute paths."}
+{"instruction": "Bila perlu guna `crontab -e`?", "input": "", "output": "`crontab -e` edits your schedule (minute hour day month weekday); cron env is minimal, use absolute paths."}
+{"instruction": "Beri contoh penggunaan `crontab -e`.", "input": "", "output": "`crontab -e` edits your schedule (minute hour day month weekday); cron env is minimal, use absolute paths."}
+{"instruction": "`crontab -e` untuk apa?", "input": "", "output": "`crontab -e` edits your schedule (minute hour day month weekday); cron env is minimal, use absolute paths."}
+{"instruction": "How would you explain `crontab -e` to a junior developer?", "input": "", "output": "`crontab -e` edits your schedule (minute hour day month weekday); cron env is minimal, use absolute paths."}
+{"instruction": "Give a real-world scenario for `crontab -e`.", "input": "", "output": "`crontab -e` edits your schedule (minute hour day month weekday); cron env is minimal, use absolute paths."}
+{"instruction": "What problem does `crontab -e` solve?", "input": "", "output": "`crontab -e` edits your schedule (minute hour day month weekday); cron env is minimal, use absolute paths."}
+{"instruction": "Apakah fungsi `ln -s asal pautan`?", "input": "", "output": "`ln -s` makes a pointer (breaks if target moves); hard links share inodes on one filesystem."}
+{"instruction": "Terangkan `ln -s asal pautan` secara ringkas.", "input": "", "output": "`ln -s` makes a pointer (breaks if target moves); hard links share inodes on one filesystem."}
+{"instruction": "Bila perlu guna `ln -s asal pautan`?", "input": "", "output": "`ln -s` makes a pointer (breaks if target moves); hard links share inodes on one filesystem."}
+{"instruction": "Beri contoh penggunaan `ln -s asal pautan`.", "input": "", "output": "`ln -s` makes a pointer (breaks if target moves); hard links share inodes on one filesystem."}
+{"instruction": "`ln -s asal pautan` untuk apa?", "input": "", "output": "`ln -s` makes a pointer (breaks if target moves); hard links share inodes on one filesystem."}
+{"instruction": "How would you explain `ln -s asal pautan` to a junior developer?", "input": "", "output": "`ln -s` makes a pointer (breaks if target moves); hard links share inodes on one filesystem."}
+{"instruction": "Give a real-world scenario for `ln -s asal pautan`.", "input": "", "output": "`ln -s` makes a pointer (breaks if target moves); hard links share inodes on one filesystem."}
+{"instruction": "What problem does `ln -s asal pautan` solve?", "input": "", "output": "`ln -s` makes a pointer (breaks if target moves); hard links share inodes on one filesystem."}
+{"instruction": "Apakah fungsi `uname -a`?", "input": "", "output": "`uname -a` prints kernel, hostname and architecture — first line of any bug report."}
+{"instruction": "Terangkan `uname -a` secara ringkas.", "input": "", "output": "`uname -a` prints kernel, hostname and architecture — first line of any bug report."}
+{"instruction": "Bila perlu guna `uname -a`?", "input": "", "output": "`uname -a` prints kernel, hostname and architecture — first line of any bug report."}
+{"instruction": "Beri contoh penggunaan `uname -a`.", "input": "", "output": "`uname -a` prints kernel, hostname and architecture — first line of any bug report."}
+{"instruction": "`uname -a` untuk apa?", "input": "", "output": "`uname -a` prints kernel, hostname and architecture — first line of any bug report."}
+{"instruction": "How would you explain `uname -a` to a junior developer?", "input": "", "output": "`uname -a` prints kernel, hostname and architecture — first line of any bug report."}
+{"instruction": "Give a real-world scenario for `uname -a`.", "input": "", "output": "`uname -a` prints kernel, hostname and architecture — first line of any bug report."}
+{"instruction": "What problem does `uname -a` solve?", "input": "", "output": "`uname -a` prints kernel, hostname and architecture — first line of any bug report."}
+{"instruction": "What does `history` do?", "input": "", "output": "`history` recalls past commands; `!42` reruns number 42, `!!` repeats last — verify before rerunning destructive ones."}
+{"instruction": "Explain `history` briefly.", "input": "", "output": "`history` recalls past commands; `!42` reruns number 42, `!!` repeats last — verify before rerunning destructive ones."}
+{"instruction": "When do I use `history`?", "input": "", "output": "`history` recalls past commands; `!42` reruns number 42, `!!` repeats last — verify before rerunning destructive ones."}
+{"instruction": "Give a practical example of `history`.", "input": "", "output": "`history` recalls past commands; `!42` reruns number 42, `!!` repeats last — verify before rerunning destructive ones."}
+{"instruction": "What is `history` for?", "input": "", "output": "`history` recalls past commands; `!42` reruns number 42, `!!` repeats last — verify before rerunning destructive ones."}
+{"instruction": "Apakah fungsi `history`?", "input": "", "output": "`history` recalls past commands; `!42` reruns number 42, `!!` repeats last — verify before rerunning destructive ones."}
+{"instruction": "Terangkan `history` secara ringkas.", "input": "", "output": "`history` recalls past commands; `!42` reruns number 42, `!!` repeats last — verify before rerunning destructive ones."}
+{"instruction": "Bila perlu guna `history`?", "input": "", "output": "`history` recalls past commands; `!42` reruns number 42, `!!` repeats last — verify before rerunning destructive ones."}
+{"instruction": "Beri contoh penggunaan `history`.", "input": "", "output": "`history` recalls past commands; `!42` reruns number 42, `!!` repeats last — verify before rerunning destructive ones."}
+{"instruction": "`history` untuk apa?", "input": "", "output": "`history` recalls past commands; `!42` reruns number 42, `!!` repeats last — verify before rerunning destructive ones."}
+{"instruction": "How would you explain `history` to a junior developer?", "input": "", "output": "`history` recalls past commands; `!42` reruns number 42, `!!` repeats last — verify before rerunning destructive ones."}
+{"instruction": "Give a real-world scenario for `history`.", "input": "", "output": "`history` recalls past commands; `!42` reruns number 42, `!!` repeats last — verify before rerunning destructive ones."}
+{"instruction": "What problem does `history` solve?", "input": "", "output": "`history` recalls past commands; `!42` reruns number 42, `!!` repeats last — verify before rerunning destructive ones."}
+{"instruction": "What does `alias ll` do?", "input": "", "output": "`alias ll='ls -la'` shortens favorites; persist in ~/.bashrc, reload with `source ~/.bashrc`."}
+{"instruction": "Explain `alias ll` briefly.", "input": "", "output": "`alias ll='ls -la'` shortens favorites; persist in ~/.bashrc, reload with `source ~/.bashrc`."}
+{"instruction": "When do I use `alias ll`?", "input": "", "output": "`alias ll='ls -la'` shortens favorites; persist in ~/.bashrc, reload with `source ~/.bashrc`."}
+{"instruction": "Give a practical example of `alias ll`.", "input": "", "output": "`alias ll='ls -la'` shortens favorites; persist in ~/.bashrc, reload with `source ~/.bashrc`."}
+{"instruction": "What is `alias ll` for?", "input": "", "output": "`alias ll='ls -la'` shortens favorites; persist in ~/.bashrc, reload with `source ~/.bashrc`."}
+{"instruction": "Apakah fungsi `alias ll`?", "input": "", "output": "`alias ll='ls -la'` shortens favorites; persist in ~/.bashrc, reload with `source ~/.bashrc`."}
+{"instruction": "Terangkan `alias ll` secara ringkas.", "input": "", "output": "`alias ll='ls -la'` shortens favorites; persist in ~/.bashrc, reload with `source ~/.bashrc`."}
+{"instruction": "Bila perlu guna `alias ll`?", "input": "", "output": "`alias ll='ls -la'` shortens favorites; persist in ~/.bashrc, reload with `source ~/.bashrc`."}
+{"instruction": "Beri contoh penggunaan `alias ll`.", "input": "", "output": "`alias ll='ls -la'` shortens favorites; persist in ~/.bashrc, reload with `source ~/.bashrc`."}
+{"instruction": "`alias ll` untuk apa?", "input": "", "output": "`alias ll='ls -la'` shortens favorites; persist in ~/.bashrc, reload with `source ~/.bashrc`."}
+{"instruction": "How would you explain `alias ll` to a junior developer?", "input": "", "output": "`alias ll='ls -la'` shortens favorites; persist in ~/.bashrc, reload with `source ~/.bashrc`."}
+{"instruction": "Give a real-world scenario for `alias ll`.", "input": "", "output": "`alias ll='ls -la'` shortens favorites; persist in ~/.bashrc, reload with `source ~/.bashrc`."}
+{"instruction": "What problem does `alias ll` solve?", "input": "", "output": "`alias ll='ls -la'` shortens favorites; persist in ~/.bashrc, reload with `source ~/.bashrc`."}
+{"instruction": "What does `export PATH` do?", "input": "", "output": "`export PATH=$PATH:/opt/bin` extends lookup; verify with `which cmd` and persist in shell rc files."}
+{"instruction": "Explain `export PATH` briefly.", "input": "", "output": "`export PATH=$PATH:/opt/bin` extends lookup; verify with `which cmd` and persist in shell rc files."}
+{"instruction": "When do I use `export PATH`?", "input": "", "output": "`export PATH=$PATH:/opt/bin` extends lookup; verify with `which cmd` and persist in shell rc files."}
+{"instruction": "Give a practical example of `export PATH`.", "input": "", "output": "`export PATH=$PATH:/opt/bin` extends lookup; verify with `which cmd` and persist in shell rc files."}
+{"instruction": "What is `export PATH` for?", "input": "", "output": "`export PATH=$PATH:/opt/bin` extends lookup; verify with `which cmd` and persist in shell rc files."}
+{"instruction": "Apakah fungsi `export PATH`?", "input": "", "output": "`export PATH=$PATH:/opt/bin` extends lookup; verify with `which cmd` and persist in shell rc files."}
+{"instruction": "Terangkan `export PATH` secara ringkas.", "input": "", "output": "`export PATH=$PATH:/opt/bin` extends lookup; verify with `which cmd` and persist in shell rc files."}
+{"instruction": "Bila perlu guna `export PATH`?", "input": "", "output": "`export PATH=$PATH:/opt/bin` extends lookup; verify with `which cmd` and persist in shell rc files."}
+{"instruction": "Beri contoh penggunaan `export PATH`.", "input": "", "output": "`export PATH=$PATH:/opt/bin` extends lookup; verify with `which cmd` and persist in shell rc files."}
+{"instruction": "`export PATH` untuk apa?", "input": "", "output": "`export PATH=$PATH:/opt/bin` extends lookup; verify with `which cmd` and persist in shell rc files."}
+{"instruction": "How would you explain `export PATH` to a junior developer?", "input": "", "output": "`export PATH=$PATH:/opt/bin` extends lookup; verify with `which cmd` and persist in shell rc files."}
+{"instruction": "Give a real-world scenario for `export PATH`.", "input": "", "output": "`export PATH=$PATH:/opt/bin` extends lookup; verify with `which cmd` and persist in shell rc files."}
+{"instruction": "What problem does `export PATH` solve?", "input": "", "output": "`export PATH=$PATH:/opt/bin` extends lookup; verify with `which cmd` and persist in shell rc files."}
+{"instruction": "What does `echo $?` do?", "input": "", "output": "`echo $?` prints the last exit code (0 success); scripts branch on it immediately before it gets clobbered."}
+{"instruction": "Explain `echo $?` briefly.", "input": "", "output": "`echo $?` prints the last exit code (0 success); scripts branch on it immediately before it gets clobbered."}
+{"instruction": "When do I use `echo $?`?", "input": "", "output": "`echo $?` prints the last exit code (0 success); scripts branch on it immediately before it gets clobbered."}
+{"instruction": "Give a practical example of `echo $?`.", "input": "", "output": "`echo $?` prints the last exit code (0 success); scripts branch on it immediately before it gets clobbered."}
+{"instruction": "What is `echo $?` for?", "input": "", "output": "`echo $?` prints the last exit code (0 success); scripts branch on it immediately before it gets clobbered."}
+{"instruction": "Apakah fungsi `echo $?`?", "input": "", "output": "`echo $?` prints the last exit code (0 success); scripts branch on it immediately before it gets clobbered."}
+{"instruction": "Terangkan `echo $?` secara ringkas.", "input": "", "output": "`echo $?` prints the last exit code (0 success); scripts branch on it immediately before it gets clobbered."}
+{"instruction": "Bila perlu guna `echo $?`?", "input": "", "output": "`echo $?` prints the last exit code (0 success); scripts branch on it immediately before it gets clobbered."}
+{"instruction": "Beri contoh penggunaan `echo $?`.", "input": "", "output": "`echo $?` prints the last exit code (0 success); scripts branch on it immediately before it gets clobbered."}
+{"instruction": "`echo $?` untuk apa?", "input": "", "output": "`echo $?` prints the last exit code (0 success); scripts branch on it immediately before it gets clobbered."}
+{"instruction": "How would you explain `echo $?` to a junior developer?", "input": "", "output": "`echo $?` prints the last exit code (0 success); scripts branch on it immediately before it gets clobbered."}
+{"instruction": "Give a real-world scenario for `echo $?`.", "input": "", "output": "`echo $?` prints the last exit code (0 success); scripts branch on it immediately before it gets clobbered."}
+{"instruction": "What problem does `echo $?` solve?", "input": "", "output": "`echo $?` prints the last exit code (0 success); scripts branch on it immediately before it gets clobbered."}
+{"instruction": "What does `whoami id` do?", "input": "", "output": "`whoami`/`id` show user, groups and ids — first check when permissions mysteriously deny."}
+{"instruction": "Explain `whoami id` briefly.", "input": "", "output": "`whoami`/`id` show user, groups and ids — first check when permissions mysteriously deny."}
+{"instruction": "When do I use `whoami id`?", "input": "", "output": "`whoami`/`id` show user, groups and ids — first check when permissions mysteriously deny."}
+{"instruction": "Give a practical example of `whoami id`.", "input": "", "output": "`whoami`/`id` show user, groups and ids — first check when permissions mysteriously deny."}
+{"instruction": "What is `whoami id` for?", "input": "", "output": "`whoami`/`id` show user, groups and ids — first check when permissions mysteriously deny."}
+{"instruction": "Apakah fungsi `whoami id`?", "input": "", "output": "`whoami`/`id` show user, groups and ids — first check when permissions mysteriously deny."}
+{"instruction": "Terangkan `whoami id` secara ringkas.", "input": "", "output": "`whoami`/`id` show user, groups and ids — first check when permissions mysteriously deny."}
+{"instruction": "Bila perlu guna `whoami id`?", "input": "", "output": "`whoami`/`id` show user, groups and ids — first check when permissions mysteriously deny."}
+{"instruction": "Beri contoh penggunaan `whoami id`.", "input": "", "output": "`whoami`/`id` show user, groups and ids — first check when permissions mysteriously deny."}
+{"instruction": "`whoami id` untuk apa?", "input": "", "output": "`whoami`/`id` show user, groups and ids — first check when permissions mysteriously deny."}
+{"instruction": "How would you explain `whoami id` to a junior developer?", "input": "", "output": "`whoami`/`id` show user, groups and ids — first check when permissions mysteriously deny."}
+{"instruction": "Give a real-world scenario for `whoami id`.", "input": "", "output": "`whoami`/`id` show user, groups and ids — first check when permissions mysteriously deny."}
+{"instruction": "What problem does `whoami id` solve?", "input": "", "output": "`whoami`/`id` show user, groups and ids — first check when permissions mysteriously deny."}
+{"instruction": "What does `uptime w` do?", "input": "", "output": "`uptime`/`w` show load averages (1/5/15 min) and logged users; load ≈ CPU count means saturated."}
+{"instruction": "Explain `uptime w` briefly.", "input": "", "output": "`uptime`/`w` show load averages (1/5/15 min) and logged users; load ≈ CPU count means saturated."}
+{"instruction": "When do I use `uptime w`?", "input": "", "output": "`uptime`/`w` show load averages (1/5/15 min) and logged users; load ≈ CPU count means saturated."}
+{"instruction": "Give a practical example of `uptime w`.", "input": "", "output": "`uptime`/`w` show load averages (1/5/15 min) and logged users; load ≈ CPU count means saturated."}
+{"instruction": "What is `uptime w` for?", "input": "", "output": "`uptime`/`w` show load averages (1/5/15 min) and logged users; load ≈ CPU count means saturated."}
+{"instruction": "Apakah fungsi `uptime w`?", "input": "", "output": "`uptime`/`w` show load averages (1/5/15 min) and logged users; load ≈ CPU count means saturated."}
+{"instruction": "Terangkan `uptime w` secara ringkas.", "input": "", "output": "`uptime`/`w` show load averages (1/5/15 min) and logged users; load ≈ CPU count means saturated."}
+{"instruction": "Bila perlu guna `uptime w`?", "input": "", "output": "`uptime`/`w` show load averages (1/5/15 min) and logged users; load ≈ CPU count means saturated."}
+{"instruction": "Beri contoh penggunaan `uptime w`.", "input": "", "output": "`uptime`/`w` show load averages (1/5/15 min) and logged users; load ≈ CPU count means saturated."}
+{"instruction": "`uptime w` untuk apa?", "input": "", "output": "`uptime`/`w` show load averages (1/5/15 min) and logged users; load ≈ CPU count means saturated."}
+{"instruction": "How would you explain `uptime w` to a junior developer?", "input": "", "output": "`uptime`/`w` show load averages (1/5/15 min) and logged users; load ≈ CPU count means saturated."}
+{"instruction": "Give a real-world scenario for `uptime w`.", "input": "", "output": "`uptime`/`w` show load averages (1/5/15 min) and logged users; load ≈ CPU count means saturated."}
+{"instruction": "What problem does `uptime w` solve?", "input": "", "output": "`uptime`/`w` show load averages (1/5/15 min) and logged users; load ≈ CPU count means saturated."}
+{"instruction": "What does `date` do?", "input": "", "output": "`date` prints/sets clock (`date -u` UTC); logs in UTC avoid timezone archaeology later."}
+{"instruction": "Explain `date` briefly.", "input": "", "output": "`date` prints/sets clock (`date -u` UTC); logs in UTC avoid timezone archaeology later."}
+{"instruction": "When do I use `date`?", "input": "", "output": "`date` prints/sets clock (`date -u` UTC); logs in UTC avoid timezone archaeology later."}
+{"instruction": "Give a practical example of `date`.", "input": "", "output": "`date` prints/sets clock (`date -u` UTC); logs in UTC avoid timezone archaeology later."}
+{"instruction": "What is `date` for?", "input": "", "output": "`date` prints/sets clock (`date -u` UTC); logs in UTC avoid timezone archaeology later."}
+{"instruction": "Apakah fungsi `date`?", "input": "", "output": "`date` prints/sets clock (`date -u` UTC); logs in UTC avoid timezone archaeology later."}
+{"instruction": "Terangkan `date` secara ringkas.", "input": "", "output": "`date` prints/sets clock (`date -u` UTC); logs in UTC avoid timezone archaeology later."}
+{"instruction": "Bila perlu guna `date`?", "input": "", "output": "`date` prints/sets clock (`date -u` UTC); logs in UTC avoid timezone archaeology later."}
+{"instruction": "Beri contoh penggunaan `date`.", "input": "", "output": "`date` prints/sets clock (`date -u` UTC); logs in UTC avoid timezone archaeology later."}
+{"instruction": "`date` untuk apa?", "input": "", "output": "`date` prints/sets clock (`date -u` UTC); logs in UTC avoid timezone archaeology later."}
+{"instruction": "How would you explain `date` to a junior developer?", "input": "", "output": "`date` prints/sets clock (`date -u` UTC); logs in UTC avoid timezone archaeology later."}
+{"instruction": "Give a real-world scenario for `date`.", "input": "", "output": "`date` prints/sets clock (`date -u` UTC); logs in UTC avoid timezone archaeology later."}
+{"instruction": "What problem does `date` solve?", "input": "", "output": "`date` prints/sets clock (`date -u` UTC); logs in UTC avoid timezone archaeology later."}
+{"instruction": "What does `df -i` do?", "input": "", "output": "`df -i` reveals inode exhaustion — full with free space means millions of tiny files (caches, sessions)."}
+{"instruction": "Explain `df -i` briefly.", "input": "", "output": "`df -i` reveals inode exhaustion — full with free space means millions of tiny files (caches, sessions)."}
+{"instruction": "When do I use `df -i`?", "input": "", "output": "`df -i` reveals inode exhaustion — full with free space means millions of tiny files (caches, sessions)."}
+{"instruction": "Give a practical example of `df -i`.", "input": "", "output": "`df -i` reveals inode exhaustion — full with free space means millions of tiny files (caches, sessions)."}
+{"instruction": "What is `df -i` for?", "input": "", "output": "`df -i` reveals inode exhaustion — full with free space means millions of tiny files (caches, sessions)."}
+{"instruction": "Apakah fungsi `df -i`?", "input": "", "output": "`df -i` reveals inode exhaustion — full with free space means millions of tiny files (caches, sessions)."}
+{"instruction": "Terangkan `df -i` secara ringkas.", "input": "", "output": "`df -i` reveals inode exhaustion — full with free space means millions of tiny files (caches, sessions)."}
+{"instruction": "Bila perlu guna `df -i`?", "input": "", "output": "`df -i` reveals inode exhaustion — full with free space means millions of tiny files (caches, sessions)."}
+{"instruction": "Beri contoh penggunaan `df -i`.", "input": "", "output": "`df -i` reveals inode exhaustion — full with free space means millions of tiny files (caches, sessions)."}
+{"instruction": "`df -i` untuk apa?", "input": "", "output": "`df -i` reveals inode exhaustion — full with free space means millions of tiny files (caches, sessions)."}
+{"instruction": "How would you explain `df -i` to a junior developer?", "input": "", "output": "`df -i` reveals inode exhaustion — full with free space means millions of tiny files (caches, sessions)."}
+{"instruction": "Give a real-world scenario for `df -i`.", "input": "", "output": "`df -i` reveals inode exhaustion — full with free space means millions of tiny files (caches, sessions)."}
+{"instruction": "What problem does `df -i` solve?", "input": "", "output": "`df -i` reveals inode exhaustion — full with free space means millions of tiny files (caches, sessions)."}
+{"instruction": "What does `du --max-depth=1` do?", "input": "", "output": "`du -h --max-depth=1 | sort -h` drills one level at a time toward the hog without full scans."}
+{"instruction": "Explain `du --max-depth=1` briefly.", "input": "", "output": "`du -h --max-depth=1 | sort -h` drills one level at a time toward the hog without full scans."}
+{"instruction": "When do I use `du --max-depth=1`?", "input": "", "output": "`du -h --max-depth=1 | sort -h` drills one level at a time toward the hog without full scans."}
+{"instruction": "Give a practical example of `du --max-depth=1`.", "input": "", "output": "`du -h --max-depth=1 | sort -h` drills one level at a time toward the hog without full scans."}
+{"instruction": "What is `du --max-depth=1` for?", "input": "", "output": "`du -h --max-depth=1 | sort -h` drills one level at a time toward the hog without full scans."}
+{"instruction": "Apakah fungsi `du --max-depth=1`?", "input": "", "output": "`du -h --max-depth=1 | sort -h` drills one level at a time toward the hog without full scans."}
+{"instruction": "Terangkan `du --max-depth=1` secara ringkas.", "input": "", "output": "`du -h --max-depth=1 | sort -h` drills one level at a time toward the hog without full scans."}
+{"instruction": "Bila perlu guna `du --max-depth=1`?", "input": "", "output": "`du -h --max-depth=1 | sort -h` drills one level at a time toward the hog without full scans."}
+{"instruction": "Beri contoh penggunaan `du --max-depth=1`.", "input": "", "output": "`du -h --max-depth=1 | sort -h` drills one level at a time toward the hog without full scans."}
+{"instruction": "`du --max-depth=1` untuk apa?", "input": "", "output": "`du -h --max-depth=1 | sort -h` drills one level at a time toward the hog without full scans."}
+{"instruction": "How would you explain `du --max-depth=1` to a junior developer?", "input": "", "output": "`du -h --max-depth=1 | sort -h` drills one level at a time toward the hog without full scans."}
+{"instruction": "Give a real-world scenario for `du --max-depth=1`.", "input": "", "output": "`du -h --max-depth=1 | sort -h` drills one level at a time toward the hog without full scans."}
+{"instruction": "What problem does `du --max-depth=1` solve?", "input": "", "output": "`du -h --max-depth=1 | sort -h` drills one level at a time toward the hog without full scans."}
+{"instruction": "What does `sudo !!` do?", "input": "", "output": "`sudo !!` reruns the last command as root after permission-denied — the most typed sudo pattern."}
+{"instruction": "Explain `sudo !!` briefly.", "input": "", "output": "`sudo !!` reruns the last command as root after permission-denied — the most typed sudo pattern."}
+{"instruction": "When do I use `sudo !!`?", "input": "", "output": "`sudo !!` reruns the last command as root after permission-denied — the most typed sudo pattern."}
+{"instruction": "Give a practical example of `sudo !!`.", "input": "", "output": "`sudo !!` reruns the last command as root after permission-denied — the most typed sudo pattern."}
+{"instruction": "What is `sudo !!` for?", "input": "", "output": "`sudo !!` reruns the last command as root after permission-denied — the most typed sudo pattern."}
+{"instruction": "Apakah fungsi `sudo !!`?", "input": "", "output": "`sudo !!` reruns the last command as root after permission-denied — the most typed sudo pattern."}
+{"instruction": "Terangkan `sudo !!` secara ringkas.", "input": "", "output": "`sudo !!` reruns the last command as root after permission-denied — the most typed sudo pattern."}
+{"instruction": "Bila perlu guna `sudo !!`?", "input": "", "output": "`sudo !!` reruns the last command as root after permission-denied — the most typed sudo pattern."}
+{"instruction": "Beri contoh penggunaan `sudo !!`.", "input": "", "output": "`sudo !!` reruns the last command as root after permission-denied — the most typed sudo pattern."}
+{"instruction": "`sudo !!` untuk apa?", "input": "", "output": "`sudo !!` reruns the last command as root after permission-denied — the most typed sudo pattern."}
+{"instruction": "How would you explain `sudo !!` to a junior developer?", "input": "", "output": "`sudo !!` reruns the last command as root after permission-denied — the most typed sudo pattern."}
+{"instruction": "Give a real-world scenario for `sudo !!`.", "input": "", "output": "`sudo !!` reruns the last command as root after permission-denied — the most typed sudo pattern."}
+{"instruction": "What problem does `sudo !!` solve?", "input": "", "output": "`sudo !!` reruns the last command as root after permission-denied — the most typed sudo pattern."}
+{"instruction": "What does `apt update upgrade` do?", "input": "", "output": "`apt update` refreshes lists, `upgrade` installs; `-y` automates, autoremove cleans strays."}
+{"instruction": "Explain `apt update upgrade` briefly.", "input": "", "output": "`apt update` refreshes lists, `upgrade` installs; `-y` automates, autoremove cleans strays."}
+{"instruction": "When do I use `apt update upgrade`?", "input": "", "output": "`apt update` refreshes lists, `upgrade` installs; `-y` automates, autoremove cleans strays."}
+{"instruction": "Give a practical example of `apt update upgrade`.", "input": "", "output": "`apt update` refreshes lists, `upgrade` installs; `-y` automates, autoremove cleans strays."}
+{"instruction": "What is `apt update upgrade` for?", "input": "", "output": "`apt update` refreshes lists, `upgrade` installs; `-y` automates, autoremove cleans strays."}
+{"instruction": "Apakah fungsi `apt update upgrade`?", "input": "", "output": "`apt update` refreshes lists, `upgrade` installs; `-y` automates, autoremove cleans strays."}
+{"instruction": "Terangkan `apt update upgrade` secara ringkas.", "input": "", "output": "`apt update` refreshes lists, `upgrade` installs; `-y` automates, autoremove cleans strays."}
+{"instruction": "Bila perlu guna `apt update upgrade`?", "input": "", "output": "`apt update` refreshes lists, `upgrade` installs; `-y` automates, autoremove cleans strays."}
+{"instruction": "Beri contoh penggunaan `apt update upgrade`.", "input": "", "output": "`apt update` refreshes lists, `upgrade` installs; `-y` automates, autoremove cleans strays."}
+{"instruction": "`apt update upgrade` untuk apa?", "input": "", "output": "`apt update` refreshes lists, `upgrade` installs; `-y` automates, autoremove cleans strays."}
+{"instruction": "How would you explain `apt update upgrade` to a junior developer?", "input": "", "output": "`apt update` refreshes lists, `upgrade` installs; `-y` automates, autoremove cleans strays."}
+{"instruction": "Give a real-world scenario for `apt update upgrade`.", "input": "", "output": "`apt update` refreshes lists, `upgrade` installs; `-y` automates, autoremove cleans strays."}
+{"instruction": "What problem does `apt update upgrade` solve?", "input": "", "output": "`apt update` refreshes lists, `upgrade` installs; `-y` automates, autoremove cleans strays."}
+{"instruction": "What does `systemctl enable --now` do?", "input": "", "output": "`--now` enables plus starts in one shot; `is-enabled`/`is-active` verify each half."}
+{"instruction": "Explain `systemctl enable --now` briefly.", "input": "", "output": "`--now` enables plus starts in one shot; `is-enabled`/`is-active` verify each half."}
+{"instruction": "When do I use `systemctl enable --now`?", "input": "", "output": "`--now` enables plus starts in one shot; `is-enabled`/`is-active` verify each half."}
+{"instruction": "Give a practical example of `systemctl enable --now`.", "input": "", "output": "`--now` enables plus starts in one shot; `is-enabled`/`is-active` verify each half."}
+{"instruction": "What is `systemctl enable --now` for?", "input": "", "output": "`--now` enables plus starts in one shot; `is-enabled`/`is-active` verify each half."}
+{"instruction": "Apakah fungsi `systemctl enable --now`?", "input": "", "output": "`--now` enables plus starts in one shot; `is-enabled`/`is-active` verify each half."}
+{"instruction": "Terangkan `systemctl enable --now` secara ringkas.", "input": "", "output": "`--now` enables plus starts in one shot; `is-enabled`/`is-active` verify each half."}
+{"instruction": "Bila perlu guna `systemctl enable --now`?", "input": "", "output": "`--now` enables plus starts in one shot; `is-enabled`/`is-active` verify each half."}
+{"instruction": "Beri contoh penggunaan `systemctl enable --now`.", "input": "", "output": "`--now` enables plus starts in one shot; `is-enabled`/`is-active` verify each half."}
+{"instruction": "`systemctl enable --now` untuk apa?", "input": "", "output": "`--now` enables plus starts in one shot; `is-enabled`/`is-active` verify each half."}
+{"instruction": "How would you explain `systemctl enable --now` to a junior developer?", "input": "", "output": "`--now` enables plus starts in one shot; `is-enabled`/`is-active` verify each half."}
+{"instruction": "Give a real-world scenario for `systemctl enable --now`.", "input": "", "output": "`--now` enables plus starts in one shot; `is-enabled`/`is-active` verify each half."}
+{"instruction": "What problem does `systemctl enable --now` solve?", "input": "", "output": "`--now` enables plus starts in one shot; `is-enabled`/`is-active` verify each half."}
+{"instruction": "What does `lsblk` do?", "input": "", "output": "`lsblk` maps disks, partitions and mountpoints as a tree — partitioning mistakes show up here first."}
+{"instruction": "Explain `lsblk` briefly.", "input": "", "output": "`lsblk` maps disks, partitions and mountpoints as a tree — partitioning mistakes show up here first."}
+{"instruction": "When do I use `lsblk`?", "input": "", "output": "`lsblk` maps disks, partitions and mountpoints as a tree — partitioning mistakes show up here first."}
+{"instruction": "Give a practical example of `lsblk`.", "input": "", "output": "`lsblk` maps disks, partitions and mountpoints as a tree — partitioning mistakes show up here first."}
+{"instruction": "What is `lsblk` for?", "input": "", "output": "`lsblk` maps disks, partitions and mountpoints as a tree — partitioning mistakes show up here first."}
+{"instruction": "Apakah fungsi `lsblk`?", "input": "", "output": "`lsblk` maps disks, partitions and mountpoints as a tree — partitioning mistakes show up here first."}
+{"instruction": "Terangkan `lsblk` secara ringkas.", "input": "", "output": "`lsblk` maps disks, partitions and mountpoints as a tree — partitioning mistakes show up here first."}
+{"instruction": "Bila perlu guna `lsblk`?", "input": "", "output": "`lsblk` maps disks, partitions and mountpoints as a tree — partitioning mistakes show up here first."}
+{"instruction": "Beri contoh penggunaan `lsblk`.", "input": "", "output": "`lsblk` maps disks, partitions and mountpoints as a tree — partitioning mistakes show up here first."}
+{"instruction": "`lsblk` untuk apa?", "input": "", "output": "`lsblk` maps disks, partitions and mountpoints as a tree — partitioning mistakes show up here first."}
+{"instruction": "How would you explain `lsblk` to a junior developer?", "input": "", "output": "`lsblk` maps disks, partitions and mountpoints as a tree — partitioning mistakes show up here first."}
+{"instruction": "Give a real-world scenario for `lsblk`.", "input": "", "output": "`lsblk` maps disks, partitions and mountpoints as a tree — partitioning mistakes show up here first."}
+{"instruction": "What problem does `lsblk` solve?", "input": "", "output": "`lsblk` maps disks, partitions and mountpoints as a tree — partitioning mistakes show up here first."}
+{"instruction": "What does `mount umount` do?", "input": "", "output": "`mount /dev/sdb1 /data` attaches storage; `umount` detaches (fails if busy — find culprits with `lsof`)."}
+{"instruction": "Explain `mount umount` briefly.", "input": "", "output": "`mount /dev/sdb1 /data` attaches storage; `umount` detaches (fails if busy — find culprits with `lsof`)."}
+{"instruction": "When do I use `mount umount`?", "input": "", "output": "`mount /dev/sdb1 /data` attaches storage; `umount` detaches (fails if busy — find culprits with `lsof`)."}
+{"instruction": "Give a practical example of `mount umount`.", "input": "", "output": "`mount /dev/sdb1 /data` attaches storage; `umount` detaches (fails if busy — find culprits with `lsof`)."}
+{"instruction": "What is `mount umount` for?", "input": "", "output": "`mount /dev/sdb1 /data` attaches storage; `umount` detaches (fails if busy — find culprits with `lsof`)."}
+{"instruction": "Apakah fungsi `mount umount`?", "input": "", "output": "`mount /dev/sdb1 /data` attaches storage; `umount` detaches (fails if busy — find culprits with `lsof`)."}
+{"instruction": "Terangkan `mount umount` secara ringkas.", "input": "", "output": "`mount /dev/sdb1 /data` attaches storage; `umount` detaches (fails if busy — find culprits with `lsof`)."}
+{"instruction": "Bila perlu guna `mount umount`?", "input": "", "output": "`mount /dev/sdb1 /data` attaches storage; `umount` detaches (fails if busy — find culprits with `lsof`)."}
+{"instruction": "Beri contoh penggunaan `mount umount`.", "input": "", "output": "`mount /dev/sdb1 /data` attaches storage; `umount` detaches (fails if busy — find culprits with `lsof`)."}
+{"instruction": "`mount umount` untuk apa?", "input": "", "output": "`mount /dev/sdb1 /data` attaches storage; `umount` detaches (fails if busy — find culprits with `lsof`)."}
+{"instruction": "How would you explain `mount umount` to a junior developer?", "input": "", "output": "`mount /dev/sdb1 /data` attaches storage; `umount` detaches (fails if busy — find culprits with `lsof`)."}
+{"instruction": "Give a real-world scenario for `mount umount`.", "input": "", "output": "`mount /dev/sdb1 /data` attaches storage; `umount` detaches (fails if busy — find culprits with `lsof`)."}
+{"instruction": "What problem does `mount umount` solve?", "input": "", "output": "`mount /dev/sdb1 /data` attaches storage; `umount` detaches (fails if busy — find culprits with `lsof`)."}

@@ -222,3 +222,102 @@
 {"instruction": "Beri SQL untuk: Jumlah belanja setiap pengguna.", "input": "", "output": "```sql\nSELECT p.nama, SUM(o.jumlah) AS jumlah FROM pengguna p JOIN pesanan o ON o.pengguna_id = p.id GROUP BY p.nama;\n```"}
 {"instruction": "Jawab dengan SQL: Jumlah belanja setiap pengguna.", "input": "", "output": "```sql\nSELECT p.nama, SUM(o.jumlah) AS jumlah FROM pengguna p JOIN pesanan o ON o.pengguna_id = p.id GROUP BY p.nama;\n```"}
 {"instruction": "Tunjukkan cara dalam SQL: Jumlah belanja setiap pengguna.", "input": "", "output": "```sql\nSELECT p.nama, SUM(o.jumlah) AS jumlah FROM pengguna p JOIN pesanan o ON o.pengguna_id = p.id GROUP BY p.nama;\n```"}
+{"instruction": "Apakah SQL bagi: Senaraikan semua pengguna?", "input": "", "output": "```sql\nSELECT * FROM pengguna;\n```"}
+{"instruction": "Tuliskan ayat SQL: Senaraikan semua pengguna.", "input": "", "output": "```sql\nSELECT * FROM pengguna;\n```"}
+{"instruction": "Lengkapkan SQL ini: Senaraikan semua pengguna.", "input": "", "output": "```sql\nSELECT * FROM pengguna;\n```"}
+{"instruction": "Apakah SQL bagi: Kira baris dalam pengguna?", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pengguna;\n```"}
+{"instruction": "Tuliskan ayat SQL: Kira baris dalam pengguna.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pengguna;\n```"}
+{"instruction": "Lengkapkan SQL ini: Kira baris dalam pengguna.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pengguna;\n```"}
+{"instruction": "Apakah SQL bagi: Cari pengguna di mana nama bersamaan 'Ali'?", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama = 'Ali';\n```"}
+{"instruction": "Tuliskan ayat SQL: Cari pengguna di mana nama bersamaan 'Ali'.", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama = 'Ali';\n```"}
+{"instruction": "Lengkapkan SQL ini: Cari pengguna di mana nama bersamaan 'Ali'.", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama = 'Ali';\n```"}
+{"instruction": "Apakah SQL bagi: Susun pengguna mengikut nama menurun, 5 teratas?", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY nama DESC LIMIT 5;\n```"}
+{"instruction": "Tuliskan ayat SQL: Susun pengguna mengikut nama menurun, 5 teratas.", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY nama DESC LIMIT 5;\n```"}
+{"instruction": "Lengkapkan SQL ini: Susun pengguna mengikut nama menurun, 5 teratas.", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY nama DESC LIMIT 5;\n```"}
+{"instruction": "Apakah SQL bagi: Jumlahkan nama dalam pengguna berkelompok mengikut emel?", "input": "", "output": "```sql\nSELECT emel, SUM(nama) AS jumlah FROM pengguna GROUP BY emel;\n```"}
+{"instruction": "Tuliskan ayat SQL: Jumlahkan nama dalam pengguna berkelompok mengikut emel.", "input": "", "output": "```sql\nSELECT emel, SUM(nama) AS jumlah FROM pengguna GROUP BY emel;\n```"}
+{"instruction": "Lengkapkan SQL ini: Jumlahkan nama dalam pengguna berkelompok mengikut emel.", "input": "", "output": "```sql\nSELECT emel, SUM(nama) AS jumlah FROM pengguna GROUP BY emel;\n```"}
+{"instruction": "Apakah SQL bagi: Kemas kini pengguna: tetapkan nama kepada 'Ali' untuk id 1?", "input": "", "output": "```sql\nUPDATE pengguna SET nama = 'Ali' WHERE id = 1;\n```"}
+{"instruction": "Tuliskan ayat SQL: Kemas kini pengguna: tetapkan nama kepada 'Ali' untuk id 1.", "input": "", "output": "```sql\nUPDATE pengguna SET nama = 'Ali' WHERE id = 1;\n```"}
+{"instruction": "Lengkapkan SQL ini: Kemas kini pengguna: tetapkan nama kepada 'Ali' untuk id 1.", "input": "", "output": "```sql\nUPDATE pengguna SET nama = 'Ali' WHERE id = 1;\n```"}
+{"instruction": "Apakah SQL bagi: Padam baris id 9 dari pengguna?", "input": "", "output": "```sql\nDELETE FROM pengguna WHERE id = 9;\n```"}
+{"instruction": "Tuliskan ayat SQL: Padam baris id 9 dari pengguna.", "input": "", "output": "```sql\nDELETE FROM pengguna WHERE id = 9;\n```"}
+{"instruction": "Lengkapkan SQL ini: Padam baris id 9 dari pengguna.", "input": "", "output": "```sql\nDELETE FROM pengguna WHERE id = 9;\n```"}
+{"instruction": "Apakah SQL bagi: Tambah satu baris ke pengguna?", "input": "", "output": "```sql\nINSERT INTO pengguna (nama, emel) VALUES ('Ali', 'ali@x.my');\n```"}
+{"instruction": "Tuliskan ayat SQL: Tambah satu baris ke pengguna.", "input": "", "output": "```sql\nINSERT INTO pengguna (nama, emel) VALUES ('Ali', 'ali@x.my');\n```"}
+{"instruction": "Lengkapkan SQL ini: Tambah satu baris ke pengguna.", "input": "", "output": "```sql\nINSERT INTO pengguna (nama, emel) VALUES ('Ali', 'ali@x.my');\n```"}
+{"instruction": "Apakah SQL bagi: Purata nama dalam pengguna?", "input": "", "output": "```sql\nSELECT AVG(nama) AS purata FROM pengguna;\n```"}
+{"instruction": "Tuliskan ayat SQL: Purata nama dalam pengguna.", "input": "", "output": "```sql\nSELECT AVG(nama) AS purata FROM pengguna;\n```"}
+{"instruction": "Lengkapkan SQL ini: Purata nama dalam pengguna.", "input": "", "output": "```sql\nSELECT AVG(nama) AS purata FROM pengguna;\n```"}
+{"instruction": "Apakah SQL bagi: Nilai maksimum nama dalam pengguna?", "input": "", "output": "```sql\nSELECT MAX(nama) AS maks FROM pengguna;\n```"}
+{"instruction": "Tuliskan ayat SQL: Nilai maksimum nama dalam pengguna.", "input": "", "output": "```sql\nSELECT MAX(nama) AS maks FROM pengguna;\n```"}
+{"instruction": "Lengkapkan SQL ini: Nilai maksimum nama dalam pengguna.", "input": "", "output": "```sql\nSELECT MAX(nama) AS maks FROM pengguna;\n```"}
+{"instruction": "Apakah SQL bagi: Senaraikan semua pesanan?", "input": "", "output": "```sql\nSELECT * FROM pesanan;\n```"}
+{"instruction": "Tuliskan ayat SQL: Senaraikan semua pesanan.", "input": "", "output": "```sql\nSELECT * FROM pesanan;\n```"}
+{"instruction": "Lengkapkan SQL ini: Senaraikan semua pesanan.", "input": "", "output": "```sql\nSELECT * FROM pesanan;\n```"}
+{"instruction": "Apakah SQL bagi: Kira baris dalam pesanan?", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pesanan;\n```"}
+{"instruction": "Tuliskan ayat SQL: Kira baris dalam pesanan.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pesanan;\n```"}
+{"instruction": "Lengkapkan SQL ini: Kira baris dalam pesanan.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pesanan;\n```"}
+{"instruction": "Apakah SQL bagi: Cari pesanan di mana pengguna_id bersamaan 'Ali'?", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id = 'Ali';\n```"}
+{"instruction": "Tuliskan ayat SQL: Cari pesanan di mana pengguna_id bersamaan 'Ali'.", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id = 'Ali';\n```"}
+{"instruction": "Lengkapkan SQL ini: Cari pesanan di mana pengguna_id bersamaan 'Ali'.", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id = 'Ali';\n```"}
+{"instruction": "Apakah SQL bagi: Susun pesanan mengikut pengguna_id menurun, 5 teratas?", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY pengguna_id DESC LIMIT 5;\n```"}
+{"instruction": "Tuliskan ayat SQL: Susun pesanan mengikut pengguna_id menurun, 5 teratas.", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY pengguna_id DESC LIMIT 5;\n```"}
+{"instruction": "Lengkapkan SQL ini: Susun pesanan mengikut pengguna_id menurun, 5 teratas.", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY pengguna_id DESC LIMIT 5;\n```"}
+{"instruction": "Apakah SQL bagi: Jumlahkan pengguna_id dalam pesanan berkelompok mengikut jumlah?", "input": "", "output": "```sql\nSELECT jumlah, SUM(pengguna_id) AS jumlah FROM pesanan GROUP BY jumlah;\n```"}
+{"instruction": "Tuliskan ayat SQL: Jumlahkan pengguna_id dalam pesanan berkelompok mengikut jumlah.", "input": "", "output": "```sql\nSELECT jumlah, SUM(pengguna_id) AS jumlah FROM pesanan GROUP BY jumlah;\n```"}
+{"instruction": "Lengkapkan SQL ini: Jumlahkan pengguna_id dalam pesanan berkelompok mengikut jumlah.", "input": "", "output": "```sql\nSELECT jumlah, SUM(pengguna_id) AS jumlah FROM pesanan GROUP BY jumlah;\n```"}
+{"instruction": "Apakah SQL bagi: Kemas kini pesanan: tetapkan pengguna_id kepada 'Ali' untuk id 1?", "input": "", "output": "```sql\nUPDATE pesanan SET pengguna_id = 'Ali' WHERE id = 1;\n```"}
+{"instruction": "Tuliskan ayat SQL: Kemas kini pesanan: tetapkan pengguna_id kepada 'Ali' untuk id 1.", "input": "", "output": "```sql\nUPDATE pesanan SET pengguna_id = 'Ali' WHERE id = 1;\n```"}
+{"instruction": "Lengkapkan SQL ini: Kemas kini pesanan: tetapkan pengguna_id kepada 'Ali' untuk id 1.", "input": "", "output": "```sql\nUPDATE pesanan SET pengguna_id = 'Ali' WHERE id = 1;\n```"}
+{"instruction": "Apakah SQL bagi: Padam baris id 9 dari pesanan?", "input": "", "output": "```sql\nDELETE FROM pesanan WHERE id = 9;\n```"}
+{"instruction": "Tuliskan ayat SQL: Padam baris id 9 dari pesanan.", "input": "", "output": "```sql\nDELETE FROM pesanan WHERE id = 9;\n```"}
+{"instruction": "Lengkapkan SQL ini: Padam baris id 9 dari pesanan.", "input": "", "output": "```sql\nDELETE FROM pesanan WHERE id = 9;\n```"}
+{"instruction": "Apakah SQL bagi: Tambah satu baris ke pesanan?", "input": "", "output": "```sql\nINSERT INTO pesanan (pengguna_id, jumlah) VALUES ('Ali', 'ali@x.my');\n```"}
+{"instruction": "Tuliskan ayat SQL: Tambah satu baris ke pesanan.", "input": "", "output": "```sql\nINSERT INTO pesanan (pengguna_id, jumlah) VALUES ('Ali', 'ali@x.my');\n```"}
+{"instruction": "Lengkapkan SQL ini: Tambah satu baris ke pesanan.", "input": "", "output": "```sql\nINSERT INTO pesanan (pengguna_id, jumlah) VALUES ('Ali', 'ali@x.my');\n```"}
+{"instruction": "Apakah SQL bagi: Purata pengguna_id dalam pesanan?", "input": "", "output": "```sql\nSELECT AVG(pengguna_id) AS purata FROM pesanan;\n```"}
+{"instruction": "Tuliskan ayat SQL: Purata pengguna_id dalam pesanan.", "input": "", "output": "```sql\nSELECT AVG(pengguna_id) AS purata FROM pesanan;\n```"}
+{"instruction": "Lengkapkan SQL ini: Purata pengguna_id dalam pesanan.", "input": "", "output": "```sql\nSELECT AVG(pengguna_id) AS purata FROM pesanan;\n```"}
+{"instruction": "Apakah SQL bagi: Nilai maksimum pengguna_id dalam pesanan?", "input": "", "output": "```sql\nSELECT MAX(pengguna_id) AS maks FROM pesanan;\n```"}
+{"instruction": "Tuliskan ayat SQL: Nilai maksimum pengguna_id dalam pesanan.", "input": "", "output": "```sql\nSELECT MAX(pengguna_id) AS maks FROM pesanan;\n```"}
+{"instruction": "Lengkapkan SQL ini: Nilai maksimum pengguna_id dalam pesanan.", "input": "", "output": "```sql\nSELECT MAX(pengguna_id) AS maks FROM pesanan;\n```"}
+{"instruction": "Apakah SQL bagi: Senaraikan semua produk?", "input": "", "output": "```sql\nSELECT * FROM produk;\n```"}
+{"instruction": "Tuliskan ayat SQL: Senaraikan semua produk.", "input": "", "output": "```sql\nSELECT * FROM produk;\n```"}
+{"instruction": "Lengkapkan SQL ini: Senaraikan semua produk.", "input": "", "output": "```sql\nSELECT * FROM produk;\n```"}
+{"instruction": "Apakah SQL bagi: Kira baris dalam produk?", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM produk;\n```"}
+{"instruction": "Tuliskan ayat SQL: Kira baris dalam produk.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM produk;\n```"}
+{"instruction": "Lengkapkan SQL ini: Kira baris dalam produk.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM produk;\n```"}
+{"instruction": "Apakah SQL bagi: Cari produk di mana nama bersamaan 'Ali'?", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama = 'Ali';\n```"}
+{"instruction": "Tuliskan ayat SQL: Cari produk di mana nama bersamaan 'Ali'.", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama = 'Ali';\n```"}
+{"instruction": "Lengkapkan SQL ini: Cari produk di mana nama bersamaan 'Ali'.", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama = 'Ali';\n```"}
+{"instruction": "Apakah SQL bagi: Susun produk mengikut nama menurun, 5 teratas?", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY nama DESC LIMIT 5;\n```"}
+{"instruction": "Tuliskan ayat SQL: Susun produk mengikut nama menurun, 5 teratas.", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY nama DESC LIMIT 5;\n```"}
+{"instruction": "Lengkapkan SQL ini: Susun produk mengikut nama menurun, 5 teratas.", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY nama DESC LIMIT 5;\n```"}
+{"instruction": "Apakah SQL bagi: Jumlahkan nama dalam produk berkelompok mengikut harga?", "input": "", "output": "```sql\nSELECT harga, SUM(nama) AS jumlah FROM produk GROUP BY harga;\n```"}
+{"instruction": "Tuliskan ayat SQL: Jumlahkan nama dalam produk berkelompok mengikut harga.", "input": "", "output": "```sql\nSELECT harga, SUM(nama) AS jumlah FROM produk GROUP BY harga;\n```"}
+{"instruction": "Lengkapkan SQL ini: Jumlahkan nama dalam produk berkelompok mengikut harga.", "input": "", "output": "```sql\nSELECT harga, SUM(nama) AS jumlah FROM produk GROUP BY harga;\n```"}
+{"instruction": "Apakah SQL bagi: Kemas kini produk: tetapkan nama kepada 'Ali' untuk id 1?", "input": "", "output": "```sql\nUPDATE produk SET nama = 'Ali' WHERE id = 1;\n```"}
+{"instruction": "Tuliskan ayat SQL: Kemas kini produk: tetapkan nama kepada 'Ali' untuk id 1.", "input": "", "output": "```sql\nUPDATE produk SET nama = 'Ali' WHERE id = 1;\n```"}
+{"instruction": "Lengkapkan SQL ini: Kemas kini produk: tetapkan nama kepada 'Ali' untuk id 1.", "input": "", "output": "```sql\nUPDATE produk SET nama = 'Ali' WHERE id = 1;\n```"}
+{"instruction": "Apakah SQL bagi: Padam baris id 9 dari produk?", "input": "", "output": "```sql\nDELETE FROM produk WHERE id = 9;\n```"}
+{"instruction": "Tuliskan ayat SQL: Padam baris id 9 dari produk.", "input": "", "output": "```sql\nDELETE FROM produk WHERE id = 9;\n```"}
+{"instruction": "Lengkapkan SQL ini: Padam baris id 9 dari produk.", "input": "", "output": "```sql\nDELETE FROM produk WHERE id = 9;\n```"}
+{"instruction": "Apakah SQL bagi: Tambah satu baris ke produk?", "input": "", "output": "```sql\nINSERT INTO produk (nama, harga) VALUES ('Ali', 'ali@x.my');\n```"}
+{"instruction": "Tuliskan ayat SQL: Tambah satu baris ke produk.", "input": "", "output": "```sql\nINSERT INTO produk (nama, harga) VALUES ('Ali', 'ali@x.my');\n```"}
+{"instruction": "Lengkapkan SQL ini: Tambah satu baris ke produk.", "input": "", "output": "```sql\nINSERT INTO produk (nama, harga) VALUES ('Ali', 'ali@x.my');\n```"}
+{"instruction": "Apakah SQL bagi: Purata nama dalam produk?", "input": "", "output": "```sql\nSELECT AVG(nama) AS purata FROM produk;\n```"}
+{"instruction": "Tuliskan ayat SQL: Purata nama dalam produk.", "input": "", "output": "```sql\nSELECT AVG(nama) AS purata FROM produk;\n```"}
+{"instruction": "Lengkapkan SQL ini: Purata nama dalam produk.", "input": "", "output": "```sql\nSELECT AVG(nama) AS purata FROM produk;\n```"}
+{"instruction": "Apakah SQL bagi: Nilai maksimum nama dalam produk?", "input": "", "output": "```sql\nSELECT MAX(nama) AS maks FROM produk;\n```"}
+{"instruction": "Tuliskan ayat SQL: Nilai maksimum nama dalam produk.", "input": "", "output": "```sql\nSELECT MAX(nama) AS maks FROM produk;\n```"}
+{"instruction": "Lengkapkan SQL ini: Nilai maksimum nama dalam produk.", "input": "", "output": "```sql\nSELECT MAX(nama) AS maks FROM produk;\n```"}
+{"instruction": "Apakah SQL bagi: Sertai pesanan dengan nama pengguna?", "input": "", "output": "```sql\nSELECT o.id, p.nama FROM pesanan o JOIN pengguna p ON p.id = o.pengguna_id;\n```"}
+{"instruction": "Tuliskan ayat SQL: Sertai pesanan dengan nama pengguna.", "input": "", "output": "```sql\nSELECT o.id, p.nama FROM pesanan o JOIN pengguna p ON p.id = o.pengguna_id;\n```"}
+{"instruction": "Lengkapkan SQL ini: Sertai pesanan dengan nama pengguna.", "input": "", "output": "```sql\nSELECT o.id, p.nama FROM pesanan o JOIN pengguna p ON p.id = o.pengguna_id;\n```"}
+{"instruction": "Apakah SQL bagi: Sertai produk dengan baki stok rendah?", "input": "", "output": "```sql\nSELECT nama, stok FROM produk WHERE stok < 10 ORDER BY stok;\n```"}
+{"instruction": "Tuliskan ayat SQL: Sertai produk dengan baki stok rendah.", "input": "", "output": "```sql\nSELECT nama, stok FROM produk WHERE stok < 10 ORDER BY stok;\n```"}
+{"instruction": "Lengkapkan SQL ini: Sertai produk dengan baki stok rendah.", "input": "", "output": "```sql\nSELECT nama, stok FROM produk WHERE stok < 10 ORDER BY stok;\n```"}
+{"instruction": "Apakah SQL bagi: Jumlah belanja setiap pengguna?", "input": "", "output": "```sql\nSELECT p.nama, SUM(o.jumlah) AS jumlah FROM pengguna p JOIN pesanan o ON o.pengguna_id = p.id GROUP BY p.nama;\n```"}
+{"instruction": "Tuliskan ayat SQL: Jumlah belanja setiap pengguna.", "input": "", "output": "```sql\nSELECT p.nama, SUM(o.jumlah) AS jumlah FROM pengguna p JOIN pesanan o ON o.pengguna_id = p.id GROUP BY p.nama;\n```"}
+{"instruction": "Lengkapkan SQL ini: Jumlah belanja setiap pengguna.", "input": "", "output": "```sql\nSELECT p.nama, SUM(o.jumlah) AS jumlah FROM pengguna p JOIN pesanan o ON o.pengguna_id = p.id GROUP BY p.nama;\n```"}

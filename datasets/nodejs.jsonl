@@ -123,3 +123,358 @@
 {"instruction": "When do I use `graceful shutdown`?", "input": "", "output": "On SIGTERM stop accepting, drain, close DB, then exit — matching orchestrator grace periods."}
 {"instruction": "Give a practical example of `graceful shutdown`.", "input": "", "output": "On SIGTERM stop accepting, drain, close DB, then exit — matching orchestrator grace periods."}
 {"instruction": "What is `graceful shutdown` for?", "input": "", "output": "On SIGTERM stop accepting, drain, close DB, then exit — matching orchestrator grace periods."}
+{"instruction": "Apakah fungsi `node --version`?", "input": "", "output": "`node --version` plus `.nvmrc` pinning keeps dev, CI and images on one runtime."}
+{"instruction": "Terangkan `node --version` secara ringkas.", "input": "", "output": "`node --version` plus `.nvmrc` pinning keeps dev, CI and images on one runtime."}
+{"instruction": "Bila perlu guna `node --version`?", "input": "", "output": "`node --version` plus `.nvmrc` pinning keeps dev, CI and images on one runtime."}
+{"instruction": "Beri contoh penggunaan `node --version`.", "input": "", "output": "`node --version` plus `.nvmrc` pinning keeps dev, CI and images on one runtime."}
+{"instruction": "`node --version` untuk apa?", "input": "", "output": "`node --version` plus `.nvmrc` pinning keeps dev, CI and images on one runtime."}
+{"instruction": "How would you explain `node --version` to a junior developer?", "input": "", "output": "`node --version` plus `.nvmrc` pinning keeps dev, CI and images on one runtime."}
+{"instruction": "Give a real-world scenario for `node --version`.", "input": "", "output": "`node --version` plus `.nvmrc` pinning keeps dev, CI and images on one runtime."}
+{"instruction": "What problem does `node --version` solve?", "input": "", "output": "`node --version` plus `.nvmrc` pinning keeps dev, CI and images on one runtime."}
+{"instruction": "Apakah fungsi `npm init -y`?", "input": "", "output": "`npm init -y` scaffolds package.json instantly; edit name/version/scripts right after."}
+{"instruction": "Terangkan `npm init -y` secara ringkas.", "input": "", "output": "`npm init -y` scaffolds package.json instantly; edit name/version/scripts right after."}
+{"instruction": "Bila perlu guna `npm init -y`?", "input": "", "output": "`npm init -y` scaffolds package.json instantly; edit name/version/scripts right after."}
+{"instruction": "Beri contoh penggunaan `npm init -y`.", "input": "", "output": "`npm init -y` scaffolds package.json instantly; edit name/version/scripts right after."}
+{"instruction": "`npm init -y` untuk apa?", "input": "", "output": "`npm init -y` scaffolds package.json instantly; edit name/version/scripts right after."}
+{"instruction": "How would you explain `npm init -y` to a junior developer?", "input": "", "output": "`npm init -y` scaffolds package.json instantly; edit name/version/scripts right after."}
+{"instruction": "Give a real-world scenario for `npm init -y`.", "input": "", "output": "`npm init -y` scaffolds package.json instantly; edit name/version/scripts right after."}
+{"instruction": "What problem does `npm init -y` solve?", "input": "", "output": "`npm init -y` scaffolds package.json instantly; edit name/version/scripts right after."}
+{"instruction": "Apakah fungsi `npm install express`?", "input": "", "output": "Local installs land in node_modules (never global for project deps); lockfile commits for reproducibility."}
+{"instruction": "Terangkan `npm install express` secara ringkas.", "input": "", "output": "Local installs land in node_modules (never global for project deps); lockfile commits for reproducibility."}
+{"instruction": "Bila perlu guna `npm install express`?", "input": "", "output": "Local installs land in node_modules (never global for project deps); lockfile commits for reproducibility."}
+{"instruction": "Beri contoh penggunaan `npm install express`.", "input": "", "output": "Local installs land in node_modules (never global for project deps); lockfile commits for reproducibility."}
+{"instruction": "`npm install express` untuk apa?", "input": "", "output": "Local installs land in node_modules (never global for project deps); lockfile commits for reproducibility."}
+{"instruction": "How would you explain `npm install express` to a junior developer?", "input": "", "output": "Local installs land in node_modules (never global for project deps); lockfile commits for reproducibility."}
+{"instruction": "Give a real-world scenario for `npm install express`.", "input": "", "output": "Local installs land in node_modules (never global for project deps); lockfile commits for reproducibility."}
+{"instruction": "What problem does `npm install express` solve?", "input": "", "output": "Local installs land in node_modules (never global for project deps); lockfile commits for reproducibility."}
+{"instruction": "Apakah fungsi `require vs import`?", "input": "", "output": "CommonJS `require` is dynamic and sync; ESM `import` is static and supports top-level await — new code uses ESM."}
+{"instruction": "Terangkan `require vs import` secara ringkas.", "input": "", "output": "CommonJS `require` is dynamic and sync; ESM `import` is static and supports top-level await — new code uses ESM."}
+{"instruction": "Bila perlu guna `require vs import`?", "input": "", "output": "CommonJS `require` is dynamic and sync; ESM `import` is static and supports top-level await — new code uses ESM."}
+{"instruction": "Beri contoh penggunaan `require vs import`.", "input": "", "output": "CommonJS `require` is dynamic and sync; ESM `import` is static and supports top-level await — new code uses ESM."}
+{"instruction": "`require vs import` untuk apa?", "input": "", "output": "CommonJS `require` is dynamic and sync; ESM `import` is static and supports top-level await — new code uses ESM."}
+{"instruction": "How would you explain `require vs import` to a junior developer?", "input": "", "output": "CommonJS `require` is dynamic and sync; ESM `import` is static and supports top-level await — new code uses ESM."}
+{"instruction": "Give a real-world scenario for `require vs import`.", "input": "", "output": "CommonJS `require` is dynamic and sync; ESM `import` is static and supports top-level await — new code uses ESM."}
+{"instruction": "What problem does `require vs import` solve?", "input": "", "output": "CommonJS `require` is dynamic and sync; ESM `import` is static and supports top-level await — new code uses ESM."}
+{"instruction": "Apakah fungsi `process.env`?", "input": "", "output": "`process.env` reads environment strings; validate required vars at boot and fail fast with clear messages."}
+{"instruction": "Terangkan `process.env` secara ringkas.", "input": "", "output": "`process.env` reads environment strings; validate required vars at boot and fail fast with clear messages."}
+{"instruction": "Bila perlu guna `process.env`?", "input": "", "output": "`process.env` reads environment strings; validate required vars at boot and fail fast with clear messages."}
+{"instruction": "Beri contoh penggunaan `process.env`.", "input": "", "output": "`process.env` reads environment strings; validate required vars at boot and fail fast with clear messages."}
+{"instruction": "`process.env` untuk apa?", "input": "", "output": "`process.env` reads environment strings; validate required vars at boot and fail fast with clear messages."}
+{"instruction": "How would you explain `process.env` to a junior developer?", "input": "", "output": "`process.env` reads environment strings; validate required vars at boot and fail fast with clear messages."}
+{"instruction": "Give a real-world scenario for `process.env`.", "input": "", "output": "`process.env` reads environment strings; validate required vars at boot and fail fast with clear messages."}
+{"instruction": "What problem does `process.env` solve?", "input": "", "output": "`process.env` reads environment strings; validate required vars at boot and fail fast with clear messages."}
+{"instruction": "Apakah fungsi `__dirname ESM`?", "input": "", "output": "ESM has no `__dirname`; derive it from `import.meta.url` via `fileURLToPath` for path building."}
+{"instruction": "Terangkan `__dirname ESM` secara ringkas.", "input": "", "output": "ESM has no `__dirname`; derive it from `import.meta.url` via `fileURLToPath` for path building."}
+{"instruction": "Bila perlu guna `__dirname ESM`?", "input": "", "output": "ESM has no `__dirname`; derive it from `import.meta.url` via `fileURLToPath` for path building."}
+{"instruction": "Beri contoh penggunaan `__dirname ESM`.", "input": "", "output": "ESM has no `__dirname`; derive it from `import.meta.url` via `fileURLToPath` for path building."}
+{"instruction": "`__dirname ESM` untuk apa?", "input": "", "output": "ESM has no `__dirname`; derive it from `import.meta.url` via `fileURLToPath` for path building."}
+{"instruction": "How would you explain `__dirname ESM` to a junior developer?", "input": "", "output": "ESM has no `__dirname`; derive it from `import.meta.url` via `fileURLToPath` for path building."}
+{"instruction": "Give a real-world scenario for `__dirname ESM`.", "input": "", "output": "ESM has no `__dirname`; derive it from `import.meta.url` via `fileURLToPath` for path building."}
+{"instruction": "What problem does `__dirname ESM` solve?", "input": "", "output": "ESM has no `__dirname`; derive it from `import.meta.url` via `fileURLToPath` for path building."}
+{"instruction": "Apakah fungsi `fs.readFile`?", "input": "", "output": "Prefer `fs/promises` with await over callbacks; stream (`createReadStream`) files too big for memory."}
+{"instruction": "Terangkan `fs.readFile` secara ringkas.", "input": "", "output": "Prefer `fs/promises` with await over callbacks; stream (`createReadStream`) files too big for memory."}
+{"instruction": "Bila perlu guna `fs.readFile`?", "input": "", "output": "Prefer `fs/promises` with await over callbacks; stream (`createReadStream`) files too big for memory."}
+{"instruction": "Beri contoh penggunaan `fs.readFile`.", "input": "", "output": "Prefer `fs/promises` with await over callbacks; stream (`createReadStream`) files too big for memory."}
+{"instruction": "`fs.readFile` untuk apa?", "input": "", "output": "Prefer `fs/promises` with await over callbacks; stream (`createReadStream`) files too big for memory."}
+{"instruction": "How would you explain `fs.readFile` to a junior developer?", "input": "", "output": "Prefer `fs/promises` with await over callbacks; stream (`createReadStream`) files too big for memory."}
+{"instruction": "Give a real-world scenario for `fs.readFile`.", "input": "", "output": "Prefer `fs/promises` with await over callbacks; stream (`createReadStream`) files too big for memory."}
+{"instruction": "What problem does `fs.readFile` solve?", "input": "", "output": "Prefer `fs/promises` with await over callbacks; stream (`createReadStream`) files too big for memory."}
+{"instruction": "Apakah fungsi `http.createServer`?", "input": "", "output": "The native server suffices for webhooks and proxies; frameworks pay off once routing grows."}
+{"instruction": "Terangkan `http.createServer` secara ringkas.", "input": "", "output": "The native server suffices for webhooks and proxies; frameworks pay off once routing grows."}
+{"instruction": "Bila perlu guna `http.createServer`?", "input": "", "output": "The native server suffices for webhooks and proxies; frameworks pay off once routing grows."}
+{"instruction": "Beri contoh penggunaan `http.createServer`.", "input": "", "output": "The native server suffices for webhooks and proxies; frameworks pay off once routing grows."}
+{"instruction": "`http.createServer` untuk apa?", "input": "", "output": "The native server suffices for webhooks and proxies; frameworks pay off once routing grows."}
+{"instruction": "How would you explain `http.createServer` to a junior developer?", "input": "", "output": "The native server suffices for webhooks and proxies; frameworks pay off once routing grows."}
+{"instruction": "Give a real-world scenario for `http.createServer`.", "input": "", "output": "The native server suffices for webhooks and proxies; frameworks pay off once routing grows."}
+{"instruction": "What problem does `http.createServer` solve?", "input": "", "output": "The native server suffices for webhooks and proxies; frameworks pay off once routing grows."}
+{"instruction": "Apakah fungsi `setTimeout`?", "input": "", "output": "Timers return ids for cancellation; unref background timers so they never hold the process open."}
+{"instruction": "Terangkan `setTimeout` secara ringkas.", "input": "", "output": "Timers return ids for cancellation; unref background timers so they never hold the process open."}
+{"instruction": "Bila perlu guna `setTimeout`?", "input": "", "output": "Timers return ids for cancellation; unref background timers so they never hold the process open."}
+{"instruction": "Beri contoh penggunaan `setTimeout`.", "input": "", "output": "Timers return ids for cancellation; unref background timers so they never hold the process open."}
+{"instruction": "`setTimeout` untuk apa?", "input": "", "output": "Timers return ids for cancellation; unref background timers so they never hold the process open."}
+{"instruction": "How would you explain `setTimeout` to a junior developer?", "input": "", "output": "Timers return ids for cancellation; unref background timers so they never hold the process open."}
+{"instruction": "Give a real-world scenario for `setTimeout`.", "input": "", "output": "Timers return ids for cancellation; unref background timers so they never hold the process open."}
+{"instruction": "What problem does `setTimeout` solve?", "input": "", "output": "Timers return ids for cancellation; unref background timers so they never hold the process open."}
+{"instruction": "Apakah fungsi `setInterval`?", "input": "", "output": "`setInterval` repeats blindly — chain `setTimeout` instead when work must not overlap."}
+{"instruction": "Terangkan `setInterval` secara ringkas.", "input": "", "output": "`setInterval` repeats blindly — chain `setTimeout` instead when work must not overlap."}
+{"instruction": "Bila perlu guna `setInterval`?", "input": "", "output": "`setInterval` repeats blindly — chain `setTimeout` instead when work must not overlap."}
+{"instruction": "Beri contoh penggunaan `setInterval`.", "input": "", "output": "`setInterval` repeats blindly — chain `setTimeout` instead when work must not overlap."}
+{"instruction": "`setInterval` untuk apa?", "input": "", "output": "`setInterval` repeats blindly — chain `setTimeout` instead when work must not overlap."}
+{"instruction": "How would you explain `setInterval` to a junior developer?", "input": "", "output": "`setInterval` repeats blindly — chain `setTimeout` instead when work must not overlap."}
+{"instruction": "Give a real-world scenario for `setInterval`.", "input": "", "output": "`setInterval` repeats blindly — chain `setTimeout` instead when work must not overlap."}
+{"instruction": "What problem does `setInterval` solve?", "input": "", "output": "`setInterval` repeats blindly — chain `setTimeout` instead when work must not overlap."}
+{"instruction": "Apakah fungsi `console.log/error`?", "input": "", "output": "`console.error` routes to stderr for real errors; structured JSON logs beat printf in production."}
+{"instruction": "Terangkan `console.log/error` secara ringkas.", "input": "", "output": "`console.error` routes to stderr for real errors; structured JSON logs beat printf in production."}
+{"instruction": "Bila perlu guna `console.log/error`?", "input": "", "output": "`console.error` routes to stderr for real errors; structured JSON logs beat printf in production."}
+{"instruction": "Beri contoh penggunaan `console.log/error`.", "input": "", "output": "`console.error` routes to stderr for real errors; structured JSON logs beat printf in production."}
+{"instruction": "`console.log/error` untuk apa?", "input": "", "output": "`console.error` routes to stderr for real errors; structured JSON logs beat printf in production."}
+{"instruction": "How would you explain `console.log/error` to a junior developer?", "input": "", "output": "`console.error` routes to stderr for real errors; structured JSON logs beat printf in production."}
+{"instruction": "Give a real-world scenario for `console.log/error`.", "input": "", "output": "`console.error` routes to stderr for real errors; structured JSON logs beat printf in production."}
+{"instruction": "What problem does `console.log/error` solve?", "input": "", "output": "`console.error` routes to stderr for real errors; structured JSON logs beat printf in production."}
+{"instruction": "Apakah fungsi `process.argv`?", "input": "", "output": "`process.argv` carries CLI args after two slots; parsers (commander/yargs) handle flags robustly."}
+{"instruction": "Terangkan `process.argv` secara ringkas.", "input": "", "output": "`process.argv` carries CLI args after two slots; parsers (commander/yargs) handle flags robustly."}
+{"instruction": "Bila perlu guna `process.argv`?", "input": "", "output": "`process.argv` carries CLI args after two slots; parsers (commander/yargs) handle flags robustly."}
+{"instruction": "Beri contoh penggunaan `process.argv`.", "input": "", "output": "`process.argv` carries CLI args after two slots; parsers (commander/yargs) handle flags robustly."}
+{"instruction": "`process.argv` untuk apa?", "input": "", "output": "`process.argv` carries CLI args after two slots; parsers (commander/yargs) handle flags robustly."}
+{"instruction": "How would you explain `process.argv` to a junior developer?", "input": "", "output": "`process.argv` carries CLI args after two slots; parsers (commander/yargs) handle flags robustly."}
+{"instruction": "Give a real-world scenario for `process.argv`.", "input": "", "output": "`process.argv` carries CLI args after two slots; parsers (commander/yargs) handle flags robustly."}
+{"instruction": "What problem does `process.argv` solve?", "input": "", "output": "`process.argv` carries CLI args after two slots; parsers (commander/yargs) handle flags robustly."}
+{"instruction": "Apakah fungsi `Buffer`?", "input": "", "output": "Buffers hold raw bytes for crypto/files/protocols; convert with explicit encodings (`utf8`, `base64`, `hex`)."}
+{"instruction": "Terangkan `Buffer` secara ringkas.", "input": "", "output": "Buffers hold raw bytes for crypto/files/protocols; convert with explicit encodings (`utf8`, `base64`, `hex`)."}
+{"instruction": "Bila perlu guna `Buffer`?", "input": "", "output": "Buffers hold raw bytes for crypto/files/protocols; convert with explicit encodings (`utf8`, `base64`, `hex`)."}
+{"instruction": "Beri contoh penggunaan `Buffer`.", "input": "", "output": "Buffers hold raw bytes for crypto/files/protocols; convert with explicit encodings (`utf8`, `base64`, `hex`)."}
+{"instruction": "`Buffer` untuk apa?", "input": "", "output": "Buffers hold raw bytes for crypto/files/protocols; convert with explicit encodings (`utf8`, `base64`, `hex`)."}
+{"instruction": "How would you explain `Buffer` to a junior developer?", "input": "", "output": "Buffers hold raw bytes for crypto/files/protocols; convert with explicit encodings (`utf8`, `base64`, `hex`)."}
+{"instruction": "Give a real-world scenario for `Buffer`.", "input": "", "output": "Buffers hold raw bytes for crypto/files/protocols; convert with explicit encodings (`utf8`, `base64`, `hex`)."}
+{"instruction": "What problem does `Buffer` solve?", "input": "", "output": "Buffers hold raw bytes for crypto/files/protocols; convert with explicit encodings (`utf8`, `base64`, `hex`)."}
+{"instruction": "Apakah fungsi `EventEmitter`?", "input": "", "output": "Emitters decouple modules via named events; remove listeners (`once`/`off`) to avoid leaks."}
+{"instruction": "Terangkan `EventEmitter` secara ringkas.", "input": "", "output": "Emitters decouple modules via named events; remove listeners (`once`/`off`) to avoid leaks."}
+{"instruction": "Bila perlu guna `EventEmitter`?", "input": "", "output": "Emitters decouple modules via named events; remove listeners (`once`/`off`) to avoid leaks."}
+{"instruction": "Beri contoh penggunaan `EventEmitter`.", "input": "", "output": "Emitters decouple modules via named events; remove listeners (`once`/`off`) to avoid leaks."}
+{"instruction": "`EventEmitter` untuk apa?", "input": "", "output": "Emitters decouple modules via named events; remove listeners (`once`/`off`) to avoid leaks."}
+{"instruction": "How would you explain `EventEmitter` to a junior developer?", "input": "", "output": "Emitters decouple modules via named events; remove listeners (`once`/`off`) to avoid leaks."}
+{"instruction": "Give a real-world scenario for `EventEmitter`.", "input": "", "output": "Emitters decouple modules via named events; remove listeners (`once`/`off`) to avoid leaks."}
+{"instruction": "What problem does `EventEmitter` solve?", "input": "", "output": "Emitters decouple modules via named events; remove listeners (`once`/`off`) to avoid leaks."}
+{"instruction": "Apakah fungsi `streams pipe`?", "input": "", "output": "Streams move data in chunks with constant memory; `pipeline` wires backpressure and errors correctly."}
+{"instruction": "Terangkan `streams pipe` secara ringkas.", "input": "", "output": "Streams move data in chunks with constant memory; `pipeline` wires backpressure and errors correctly."}
+{"instruction": "Bila perlu guna `streams pipe`?", "input": "", "output": "Streams move data in chunks with constant memory; `pipeline` wires backpressure and errors correctly."}
+{"instruction": "Beri contoh penggunaan `streams pipe`.", "input": "", "output": "Streams move data in chunks with constant memory; `pipeline` wires backpressure and errors correctly."}
+{"instruction": "`streams pipe` untuk apa?", "input": "", "output": "Streams move data in chunks with constant memory; `pipeline` wires backpressure and errors correctly."}
+{"instruction": "How would you explain `streams pipe` to a junior developer?", "input": "", "output": "Streams move data in chunks with constant memory; `pipeline` wires backpressure and errors correctly."}
+{"instruction": "Give a real-world scenario for `streams pipe`.", "input": "", "output": "Streams move data in chunks with constant memory; `pipeline` wires backpressure and errors correctly."}
+{"instruction": "What problem does `streams pipe` solve?", "input": "", "output": "Streams move data in chunks with constant memory; `pipeline` wires backpressure and errors correctly."}
+{"instruction": "Apakah fungsi `child_process`?", "input": "", "output": "`execFile` (no shell) is injection-safe; `spawn` streams big output; avoid `exec` with user input."}
+{"instruction": "Terangkan `child_process` secara ringkas.", "input": "", "output": "`execFile` (no shell) is injection-safe; `spawn` streams big output; avoid `exec` with user input."}
+{"instruction": "Bila perlu guna `child_process`?", "input": "", "output": "`execFile` (no shell) is injection-safe; `spawn` streams big output; avoid `exec` with user input."}
+{"instruction": "Beri contoh penggunaan `child_process`.", "input": "", "output": "`execFile` (no shell) is injection-safe; `spawn` streams big output; avoid `exec` with user input."}
+{"instruction": "`child_process` untuk apa?", "input": "", "output": "`execFile` (no shell) is injection-safe; `spawn` streams big output; avoid `exec` with user input."}
+{"instruction": "How would you explain `child_process` to a junior developer?", "input": "", "output": "`execFile` (no shell) is injection-safe; `spawn` streams big output; avoid `exec` with user input."}
+{"instruction": "Give a real-world scenario for `child_process`.", "input": "", "output": "`execFile` (no shell) is injection-safe; `spawn` streams big output; avoid `exec` with user input."}
+{"instruction": "What problem does `child_process` solve?", "input": "", "output": "`execFile` (no shell) is injection-safe; `spawn` streams big output; avoid `exec` with user input."}
+{"instruction": "Apakah fungsi `package.json scripts`?", "input": "", "output": "Scripts document and automate (`dev`, `start`, `test`); keep them cross-platform for Windows teammates."}
+{"instruction": "Terangkan `package.json scripts` secara ringkas.", "input": "", "output": "Scripts document and automate (`dev`, `start`, `test`); keep them cross-platform for Windows teammates."}
+{"instruction": "Bila perlu guna `package.json scripts`?", "input": "", "output": "Scripts document and automate (`dev`, `start`, `test`); keep them cross-platform for Windows teammates."}
+{"instruction": "Beri contoh penggunaan `package.json scripts`.", "input": "", "output": "Scripts document and automate (`dev`, `start`, `test`); keep them cross-platform for Windows teammates."}
+{"instruction": "`package.json scripts` untuk apa?", "input": "", "output": "Scripts document and automate (`dev`, `start`, `test`); keep them cross-platform for Windows teammates."}
+{"instruction": "How would you explain `package.json scripts` to a junior developer?", "input": "", "output": "Scripts document and automate (`dev`, `start`, `test`); keep them cross-platform for Windows teammates."}
+{"instruction": "Give a real-world scenario for `package.json scripts`.", "input": "", "output": "Scripts document and automate (`dev`, `start`, `test`); keep them cross-platform for Windows teammates."}
+{"instruction": "What problem does `package.json scripts` solve?", "input": "", "output": "Scripts document and automate (`dev`, `start`, `test`); keep them cross-platform for Windows teammates."}
+{"instruction": "Apakah fungsi `nodemon tsx watch`?", "input": "", "output": "Auto-restart on change during dev (nodemon/tsx/node --watch); production uses real process managers."}
+{"instruction": "Terangkan `nodemon tsx watch` secara ringkas.", "input": "", "output": "Auto-restart on change during dev (nodemon/tsx/node --watch); production uses real process managers."}
+{"instruction": "Bila perlu guna `nodemon tsx watch`?", "input": "", "output": "Auto-restart on change during dev (nodemon/tsx/node --watch); production uses real process managers."}
+{"instruction": "Beri contoh penggunaan `nodemon tsx watch`.", "input": "", "output": "Auto-restart on change during dev (nodemon/tsx/node --watch); production uses real process managers."}
+{"instruction": "`nodemon tsx watch` untuk apa?", "input": "", "output": "Auto-restart on change during dev (nodemon/tsx/node --watch); production uses real process managers."}
+{"instruction": "How would you explain `nodemon tsx watch` to a junior developer?", "input": "", "output": "Auto-restart on change during dev (nodemon/tsx/node --watch); production uses real process managers."}
+{"instruction": "Give a real-world scenario for `nodemon tsx watch`.", "input": "", "output": "Auto-restart on change during dev (nodemon/tsx/node --watch); production uses real process managers."}
+{"instruction": "What problem does `nodemon tsx watch` solve?", "input": "", "output": "Auto-restart on change during dev (nodemon/tsx/node --watch); production uses real process managers."}
+{"instruction": "Apakah fungsi `dotenv`?", "input": "", "output": "`.env` files feed local dev only — never commit; validate loaded values with a schema at startup."}
+{"instruction": "Terangkan `dotenv` secara ringkas.", "input": "", "output": "`.env` files feed local dev only — never commit; validate loaded values with a schema at startup."}
+{"instruction": "Bila perlu guna `dotenv`?", "input": "", "output": "`.env` files feed local dev only — never commit; validate loaded values with a schema at startup."}
+{"instruction": "Beri contoh penggunaan `dotenv`.", "input": "", "output": "`.env` files feed local dev only — never commit; validate loaded values with a schema at startup."}
+{"instruction": "`dotenv` untuk apa?", "input": "", "output": "`.env` files feed local dev only — never commit; validate loaded values with a schema at startup."}
+{"instruction": "How would you explain `dotenv` to a junior developer?", "input": "", "output": "`.env` files feed local dev only — never commit; validate loaded values with a schema at startup."}
+{"instruction": "Give a real-world scenario for `dotenv`.", "input": "", "output": "`.env` files feed local dev only — never commit; validate loaded values with a schema at startup."}
+{"instruction": "What problem does `dotenv` solve?", "input": "", "output": "`.env` files feed local dev only — never commit; validate loaded values with a schema at startup."}
+{"instruction": "Apakah fungsi `graceful shutdown`?", "input": "", "output": "On SIGTERM stop accepting, drain, close DB, then exit — matching orchestrator grace periods."}
+{"instruction": "Terangkan `graceful shutdown` secara ringkas.", "input": "", "output": "On SIGTERM stop accepting, drain, close DB, then exit — matching orchestrator grace periods."}
+{"instruction": "Bila perlu guna `graceful shutdown`?", "input": "", "output": "On SIGTERM stop accepting, drain, close DB, then exit — matching orchestrator grace periods."}
+{"instruction": "Beri contoh penggunaan `graceful shutdown`.", "input": "", "output": "On SIGTERM stop accepting, drain, close DB, then exit — matching orchestrator grace periods."}
+{"instruction": "`graceful shutdown` untuk apa?", "input": "", "output": "On SIGTERM stop accepting, drain, close DB, then exit — matching orchestrator grace periods."}
+{"instruction": "How would you explain `graceful shutdown` to a junior developer?", "input": "", "output": "On SIGTERM stop accepting, drain, close DB, then exit — matching orchestrator grace periods."}
+{"instruction": "Give a real-world scenario for `graceful shutdown`.", "input": "", "output": "On SIGTERM stop accepting, drain, close DB, then exit — matching orchestrator grace periods."}
+{"instruction": "What problem does `graceful shutdown` solve?", "input": "", "output": "On SIGTERM stop accepting, drain, close DB, then exit — matching orchestrator grace periods."}
+{"instruction": "What does `os module` do?", "input": "", "output": "`os.cpus().length` sizes pools, `os.tmpdir()` finds scratch space, `os.homedir()` locates configs portably."}
+{"instruction": "Explain `os module` briefly.", "input": "", "output": "`os.cpus().length` sizes pools, `os.tmpdir()` finds scratch space, `os.homedir()` locates configs portably."}
+{"instruction": "When do I use `os module`?", "input": "", "output": "`os.cpus().length` sizes pools, `os.tmpdir()` finds scratch space, `os.homedir()` locates configs portably."}
+{"instruction": "Give a practical example of `os module`.", "input": "", "output": "`os.cpus().length` sizes pools, `os.tmpdir()` finds scratch space, `os.homedir()` locates configs portably."}
+{"instruction": "What is `os module` for?", "input": "", "output": "`os.cpus().length` sizes pools, `os.tmpdir()` finds scratch space, `os.homedir()` locates configs portably."}
+{"instruction": "Apakah fungsi `os module`?", "input": "", "output": "`os.cpus().length` sizes pools, `os.tmpdir()` finds scratch space, `os.homedir()` locates configs portably."}
+{"instruction": "Terangkan `os module` secara ringkas.", "input": "", "output": "`os.cpus().length` sizes pools, `os.tmpdir()` finds scratch space, `os.homedir()` locates configs portably."}
+{"instruction": "Bila perlu guna `os module`?", "input": "", "output": "`os.cpus().length` sizes pools, `os.tmpdir()` finds scratch space, `os.homedir()` locates configs portably."}
+{"instruction": "Beri contoh penggunaan `os module`.", "input": "", "output": "`os.cpus().length` sizes pools, `os.tmpdir()` finds scratch space, `os.homedir()` locates configs portably."}
+{"instruction": "`os module` untuk apa?", "input": "", "output": "`os.cpus().length` sizes pools, `os.tmpdir()` finds scratch space, `os.homedir()` locates configs portably."}
+{"instruction": "How would you explain `os module` to a junior developer?", "input": "", "output": "`os.cpus().length` sizes pools, `os.tmpdir()` finds scratch space, `os.homedir()` locates configs portably."}
+{"instruction": "Give a real-world scenario for `os module`.", "input": "", "output": "`os.cpus().length` sizes pools, `os.tmpdir()` finds scratch space, `os.homedir()` locates configs portably."}
+{"instruction": "What problem does `os module` solve?", "input": "", "output": "`os.cpus().length` sizes pools, `os.tmpdir()` finds scratch space, `os.homedir()` locates configs portably."}
+{"instruction": "What does `path basename extname` do?", "input": "", "output": "`basename(p)` strips dirs, `extname(p)` grabs `.json` (leading-dot files count as no-extension)."}
+{"instruction": "Explain `path basename extname` briefly.", "input": "", "output": "`basename(p)` strips dirs, `extname(p)` grabs `.json` (leading-dot files count as no-extension)."}
+{"instruction": "When do I use `path basename extname`?", "input": "", "output": "`basename(p)` strips dirs, `extname(p)` grabs `.json` (leading-dot files count as no-extension)."}
+{"instruction": "Give a practical example of `path basename extname`.", "input": "", "output": "`basename(p)` strips dirs, `extname(p)` grabs `.json` (leading-dot files count as no-extension)."}
+{"instruction": "What is `path basename extname` for?", "input": "", "output": "`basename(p)` strips dirs, `extname(p)` grabs `.json` (leading-dot files count as no-extension)."}
+{"instruction": "Apakah fungsi `path basename extname`?", "input": "", "output": "`basename(p)` strips dirs, `extname(p)` grabs `.json` (leading-dot files count as no-extension)."}
+{"instruction": "Terangkan `path basename extname` secara ringkas.", "input": "", "output": "`basename(p)` strips dirs, `extname(p)` grabs `.json` (leading-dot files count as no-extension)."}
+{"instruction": "Bila perlu guna `path basename extname`?", "input": "", "output": "`basename(p)` strips dirs, `extname(p)` grabs `.json` (leading-dot files count as no-extension)."}
+{"instruction": "Beri contoh penggunaan `path basename extname`.", "input": "", "output": "`basename(p)` strips dirs, `extname(p)` grabs `.json` (leading-dot files count as no-extension)."}
+{"instruction": "`path basename extname` untuk apa?", "input": "", "output": "`basename(p)` strips dirs, `extname(p)` grabs `.json` (leading-dot files count as no-extension)."}
+{"instruction": "How would you explain `path basename extname` to a junior developer?", "input": "", "output": "`basename(p)` strips dirs, `extname(p)` grabs `.json` (leading-dot files count as no-extension)."}
+{"instruction": "Give a real-world scenario for `path basename extname`.", "input": "", "output": "`basename(p)` strips dirs, `extname(p)` grabs `.json` (leading-dot files count as no-extension)."}
+{"instruction": "What problem does `path basename extname` solve?", "input": "", "output": "`basename(p)` strips dirs, `extname(p)` grabs `.json` (leading-dot files count as no-extension)."}
+{"instruction": "What does `process.exit codes` do?", "input": "", "output": "`process.exit(0)` clean, nonzero failure; flush streams first — abrupt exits truncate piped output."}
+{"instruction": "Explain `process.exit codes` briefly.", "input": "", "output": "`process.exit(0)` clean, nonzero failure; flush streams first — abrupt exits truncate piped output."}
+{"instruction": "When do I use `process.exit codes`?", "input": "", "output": "`process.exit(0)` clean, nonzero failure; flush streams first — abrupt exits truncate piped output."}
+{"instruction": "Give a practical example of `process.exit codes`.", "input": "", "output": "`process.exit(0)` clean, nonzero failure; flush streams first — abrupt exits truncate piped output."}
+{"instruction": "What is `process.exit codes` for?", "input": "", "output": "`process.exit(0)` clean, nonzero failure; flush streams first — abrupt exits truncate piped output."}
+{"instruction": "Apakah fungsi `process.exit codes`?", "input": "", "output": "`process.exit(0)` clean, nonzero failure; flush streams first — abrupt exits truncate piped output."}
+{"instruction": "Terangkan `process.exit codes` secara ringkas.", "input": "", "output": "`process.exit(0)` clean, nonzero failure; flush streams first — abrupt exits truncate piped output."}
+{"instruction": "Bila perlu guna `process.exit codes`?", "input": "", "output": "`process.exit(0)` clean, nonzero failure; flush streams first — abrupt exits truncate piped output."}
+{"instruction": "Beri contoh penggunaan `process.exit codes`.", "input": "", "output": "`process.exit(0)` clean, nonzero failure; flush streams first — abrupt exits truncate piped output."}
+{"instruction": "`process.exit codes` untuk apa?", "input": "", "output": "`process.exit(0)` clean, nonzero failure; flush streams first — abrupt exits truncate piped output."}
+{"instruction": "How would you explain `process.exit codes` to a junior developer?", "input": "", "output": "`process.exit(0)` clean, nonzero failure; flush streams first — abrupt exits truncate piped output."}
+{"instruction": "Give a real-world scenario for `process.exit codes`.", "input": "", "output": "`process.exit(0)` clean, nonzero failure; flush streams first — abrupt exits truncate piped output."}
+{"instruction": "What problem does `process.exit codes` solve?", "input": "", "output": "`process.exit(0)` clean, nonzero failure; flush streams first — abrupt exits truncate piped output."}
+{"instruction": "What does `cluster fork` do?", "input": "", "output": "`cluster.fork()` clones one worker per CPU behind one port; the primary only routes, never serves."}
+{"instruction": "Explain `cluster fork` briefly.", "input": "", "output": "`cluster.fork()` clones one worker per CPU behind one port; the primary only routes, never serves."}
+{"instruction": "When do I use `cluster fork`?", "input": "", "output": "`cluster.fork()` clones one worker per CPU behind one port; the primary only routes, never serves."}
+{"instruction": "Give a practical example of `cluster fork`.", "input": "", "output": "`cluster.fork()` clones one worker per CPU behind one port; the primary only routes, never serves."}
+{"instruction": "What is `cluster fork` for?", "input": "", "output": "`cluster.fork()` clones one worker per CPU behind one port; the primary only routes, never serves."}
+{"instruction": "Apakah fungsi `cluster fork`?", "input": "", "output": "`cluster.fork()` clones one worker per CPU behind one port; the primary only routes, never serves."}
+{"instruction": "Terangkan `cluster fork` secara ringkas.", "input": "", "output": "`cluster.fork()` clones one worker per CPU behind one port; the primary only routes, never serves."}
+{"instruction": "Bila perlu guna `cluster fork`?", "input": "", "output": "`cluster.fork()` clones one worker per CPU behind one port; the primary only routes, never serves."}
+{"instruction": "Beri contoh penggunaan `cluster fork`.", "input": "", "output": "`cluster.fork()` clones one worker per CPU behind one port; the primary only routes, never serves."}
+{"instruction": "`cluster fork` untuk apa?", "input": "", "output": "`cluster.fork()` clones one worker per CPU behind one port; the primary only routes, never serves."}
+{"instruction": "How would you explain `cluster fork` to a junior developer?", "input": "", "output": "`cluster.fork()` clones one worker per CPU behind one port; the primary only routes, never serves."}
+{"instruction": "Give a real-world scenario for `cluster fork`.", "input": "", "output": "`cluster.fork()` clones one worker per CPU behind one port; the primary only routes, never serves."}
+{"instruction": "What problem does `cluster fork` solve?", "input": "", "output": "`cluster.fork()` clones one worker per CPU behind one port; the primary only routes, never serves."}
+{"instruction": "What does `worker threads` do?", "input": "", "output": "Workers run CPU-bound JS off the loop sharing via `postMessage`; SharedArrayBuffer needs cross-origin isolation headers."}
+{"instruction": "Explain `worker threads` briefly.", "input": "", "output": "Workers run CPU-bound JS off the loop sharing via `postMessage`; SharedArrayBuffer needs cross-origin isolation headers."}
+{"instruction": "When do I use `worker threads`?", "input": "", "output": "Workers run CPU-bound JS off the loop sharing via `postMessage`; SharedArrayBuffer needs cross-origin isolation headers."}
+{"instruction": "Give a practical example of `worker threads`.", "input": "", "output": "Workers run CPU-bound JS off the loop sharing via `postMessage`; SharedArrayBuffer needs cross-origin isolation headers."}
+{"instruction": "What is `worker threads` for?", "input": "", "output": "Workers run CPU-bound JS off the loop sharing via `postMessage`; SharedArrayBuffer needs cross-origin isolation headers."}
+{"instruction": "Apakah fungsi `worker threads`?", "input": "", "output": "Workers run CPU-bound JS off the loop sharing via `postMessage`; SharedArrayBuffer needs cross-origin isolation headers."}
+{"instruction": "Terangkan `worker threads` secara ringkas.", "input": "", "output": "Workers run CPU-bound JS off the loop sharing via `postMessage`; SharedArrayBuffer needs cross-origin isolation headers."}
+{"instruction": "Bila perlu guna `worker threads`?", "input": "", "output": "Workers run CPU-bound JS off the loop sharing via `postMessage`; SharedArrayBuffer needs cross-origin isolation headers."}
+{"instruction": "Beri contoh penggunaan `worker threads`.", "input": "", "output": "Workers run CPU-bound JS off the loop sharing via `postMessage`; SharedArrayBuffer needs cross-origin isolation headers."}
+{"instruction": "`worker threads` untuk apa?", "input": "", "output": "Workers run CPU-bound JS off the loop sharing via `postMessage`; SharedArrayBuffer needs cross-origin isolation headers."}
+{"instruction": "How would you explain `worker threads` to a junior developer?", "input": "", "output": "Workers run CPU-bound JS off the loop sharing via `postMessage`; SharedArrayBuffer needs cross-origin isolation headers."}
+{"instruction": "Give a real-world scenario for `worker threads`.", "input": "", "output": "Workers run CPU-bound JS off the loop sharing via `postMessage`; SharedArrayBuffer needs cross-origin isolation headers."}
+{"instruction": "What problem does `worker threads` solve?", "input": "", "output": "Workers run CPU-bound JS off the loop sharing via `postMessage`; SharedArrayBuffer needs cross-origin isolation headers."}
+{"instruction": "What does `fs.watch` do?", "input": "", "output": "`fs.watch` notifies on file change (debounce it — editors emit bursts); chokidar smooths platform quirks."}
+{"instruction": "Explain `fs.watch` briefly.", "input": "", "output": "`fs.watch` notifies on file change (debounce it — editors emit bursts); chokidar smooths platform quirks."}
+{"instruction": "When do I use `fs.watch`?", "input": "", "output": "`fs.watch` notifies on file change (debounce it — editors emit bursts); chokidar smooths platform quirks."}
+{"instruction": "Give a practical example of `fs.watch`.", "input": "", "output": "`fs.watch` notifies on file change (debounce it — editors emit bursts); chokidar smooths platform quirks."}
+{"instruction": "What is `fs.watch` for?", "input": "", "output": "`fs.watch` notifies on file change (debounce it — editors emit bursts); chokidar smooths platform quirks."}
+{"instruction": "Apakah fungsi `fs.watch`?", "input": "", "output": "`fs.watch` notifies on file change (debounce it — editors emit bursts); chokidar smooths platform quirks."}
+{"instruction": "Terangkan `fs.watch` secara ringkas.", "input": "", "output": "`fs.watch` notifies on file change (debounce it — editors emit bursts); chokidar smooths platform quirks."}
+{"instruction": "Bila perlu guna `fs.watch`?", "input": "", "output": "`fs.watch` notifies on file change (debounce it — editors emit bursts); chokidar smooths platform quirks."}
+{"instruction": "Beri contoh penggunaan `fs.watch`.", "input": "", "output": "`fs.watch` notifies on file change (debounce it — editors emit bursts); chokidar smooths platform quirks."}
+{"instruction": "`fs.watch` untuk apa?", "input": "", "output": "`fs.watch` notifies on file change (debounce it — editors emit bursts); chokidar smooths platform quirks."}
+{"instruction": "How would you explain `fs.watch` to a junior developer?", "input": "", "output": "`fs.watch` notifies on file change (debounce it — editors emit bursts); chokidar smooths platform quirks."}
+{"instruction": "Give a real-world scenario for `fs.watch`.", "input": "", "output": "`fs.watch` notifies on file change (debounce it — editors emit bursts); chokidar smooths platform quirks."}
+{"instruction": "What problem does `fs.watch` solve?", "input": "", "output": "`fs.watch` notifies on file change (debounce it — editors emit bursts); chokidar smooths platform quirks."}
+{"instruction": "What does `zlib gzip` do?", "input": "", "output": "Compress responses/logs with `zlib.createGzip()` streams; level trades CPU for bytes on hot paths."}
+{"instruction": "Explain `zlib gzip` briefly.", "input": "", "output": "Compress responses/logs with `zlib.createGzip()` streams; level trades CPU for bytes on hot paths."}
+{"instruction": "When do I use `zlib gzip`?", "input": "", "output": "Compress responses/logs with `zlib.createGzip()` streams; level trades CPU for bytes on hot paths."}
+{"instruction": "Give a practical example of `zlib gzip`.", "input": "", "output": "Compress responses/logs with `zlib.createGzip()` streams; level trades CPU for bytes on hot paths."}
+{"instruction": "What is `zlib gzip` for?", "input": "", "output": "Compress responses/logs with `zlib.createGzip()` streams; level trades CPU for bytes on hot paths."}
+{"instruction": "Apakah fungsi `zlib gzip`?", "input": "", "output": "Compress responses/logs with `zlib.createGzip()` streams; level trades CPU for bytes on hot paths."}
+{"instruction": "Terangkan `zlib gzip` secara ringkas.", "input": "", "output": "Compress responses/logs with `zlib.createGzip()` streams; level trades CPU for bytes on hot paths."}
+{"instruction": "Bila perlu guna `zlib gzip`?", "input": "", "output": "Compress responses/logs with `zlib.createGzip()` streams; level trades CPU for bytes on hot paths."}
+{"instruction": "Beri contoh penggunaan `zlib gzip`.", "input": "", "output": "Compress responses/logs with `zlib.createGzip()` streams; level trades CPU for bytes on hot paths."}
+{"instruction": "`zlib gzip` untuk apa?", "input": "", "output": "Compress responses/logs with `zlib.createGzip()` streams; level trades CPU for bytes on hot paths."}
+{"instruction": "How would you explain `zlib gzip` to a junior developer?", "input": "", "output": "Compress responses/logs with `zlib.createGzip()` streams; level trades CPU for bytes on hot paths."}
+{"instruction": "Give a real-world scenario for `zlib gzip`.", "input": "", "output": "Compress responses/logs with `zlib.createGzip()` streams; level trades CPU for bytes on hot paths."}
+{"instruction": "What problem does `zlib gzip` solve?", "input": "", "output": "Compress responses/logs with `zlib.createGzip()` streams; level trades CPU for bytes on hot paths."}
+{"instruction": "What does `ESM JSON import` do?", "input": "", "output": "`import data from './x.json' with { type: 'json' }` loads config statically; dynamic needs `fs` + `JSON.parse`."}
+{"instruction": "Explain `ESM JSON import` briefly.", "input": "", "output": "`import data from './x.json' with { type: 'json' }` loads config statically; dynamic needs `fs` + `JSON.parse`."}
+{"instruction": "When do I use `ESM JSON import`?", "input": "", "output": "`import data from './x.json' with { type: 'json' }` loads config statically; dynamic needs `fs` + `JSON.parse`."}
+{"instruction": "Give a practical example of `ESM JSON import`.", "input": "", "output": "`import data from './x.json' with { type: 'json' }` loads config statically; dynamic needs `fs` + `JSON.parse`."}
+{"instruction": "What is `ESM JSON import` for?", "input": "", "output": "`import data from './x.json' with { type: 'json' }` loads config statically; dynamic needs `fs` + `JSON.parse`."}
+{"instruction": "Apakah fungsi `ESM JSON import`?", "input": "", "output": "`import data from './x.json' with { type: 'json' }` loads config statically; dynamic needs `fs` + `JSON.parse`."}
+{"instruction": "Terangkan `ESM JSON import` secara ringkas.", "input": "", "output": "`import data from './x.json' with { type: 'json' }` loads config statically; dynamic needs `fs` + `JSON.parse`."}
+{"instruction": "Bila perlu guna `ESM JSON import`?", "input": "", "output": "`import data from './x.json' with { type: 'json' }` loads config statically; dynamic needs `fs` + `JSON.parse`."}
+{"instruction": "Beri contoh penggunaan `ESM JSON import`.", "input": "", "output": "`import data from './x.json' with { type: 'json' }` loads config statically; dynamic needs `fs` + `JSON.parse`."}
+{"instruction": "`ESM JSON import` untuk apa?", "input": "", "output": "`import data from './x.json' with { type: 'json' }` loads config statically; dynamic needs `fs` + `JSON.parse`."}
+{"instruction": "How would you explain `ESM JSON import` to a junior developer?", "input": "", "output": "`import data from './x.json' with { type: 'json' }` loads config statically; dynamic needs `fs` + `JSON.parse`."}
+{"instruction": "Give a real-world scenario for `ESM JSON import`.", "input": "", "output": "`import data from './x.json' with { type: 'json' }` loads config statically; dynamic needs `fs` + `JSON.parse`."}
+{"instruction": "What problem does `ESM JSON import` solve?", "input": "", "output": "`import data from './x.json' with { type: 'json' }` loads config statically; dynamic needs `fs` + `JSON.parse`."}
+{"instruction": "What does `npm run env` do?", "input": "", "output": "`npm run` injects `./node_modules/.bin` into PATH so local CLIs (tsc, vitest) run without global installs."}
+{"instruction": "Explain `npm run env` briefly.", "input": "", "output": "`npm run` injects `./node_modules/.bin` into PATH so local CLIs (tsc, vitest) run without global installs."}
+{"instruction": "When do I use `npm run env`?", "input": "", "output": "`npm run` injects `./node_modules/.bin` into PATH so local CLIs (tsc, vitest) run without global installs."}
+{"instruction": "Give a practical example of `npm run env`.", "input": "", "output": "`npm run` injects `./node_modules/.bin` into PATH so local CLIs (tsc, vitest) run without global installs."}
+{"instruction": "What is `npm run env` for?", "input": "", "output": "`npm run` injects `./node_modules/.bin` into PATH so local CLIs (tsc, vitest) run without global installs."}
+{"instruction": "Apakah fungsi `npm run env`?", "input": "", "output": "`npm run` injects `./node_modules/.bin` into PATH so local CLIs (tsc, vitest) run without global installs."}
+{"instruction": "Terangkan `npm run env` secara ringkas.", "input": "", "output": "`npm run` injects `./node_modules/.bin` into PATH so local CLIs (tsc, vitest) run without global installs."}
+{"instruction": "Bila perlu guna `npm run env`?", "input": "", "output": "`npm run` injects `./node_modules/.bin` into PATH so local CLIs (tsc, vitest) run without global installs."}
+{"instruction": "Beri contoh penggunaan `npm run env`.", "input": "", "output": "`npm run` injects `./node_modules/.bin` into PATH so local CLIs (tsc, vitest) run without global installs."}
+{"instruction": "`npm run env` untuk apa?", "input": "", "output": "`npm run` injects `./node_modules/.bin` into PATH so local CLIs (tsc, vitest) run without global installs."}
+{"instruction": "How would you explain `npm run env` to a junior developer?", "input": "", "output": "`npm run` injects `./node_modules/.bin` into PATH so local CLIs (tsc, vitest) run without global installs."}
+{"instruction": "Give a real-world scenario for `npm run env`.", "input": "", "output": "`npm run` injects `./node_modules/.bin` into PATH so local CLIs (tsc, vitest) run without global installs."}
+{"instruction": "What problem does `npm run env` solve?", "input": "", "output": "`npm run` injects `./node_modules/.bin` into PATH so local CLIs (tsc, vitest) run without global installs."}
+{"instruction": "What does `NODE_ENV` do?", "input": "", "output": "`NODE_ENV=production` gates dev-only middleware/logging; read once at boot into a validated config object."}
+{"instruction": "Explain `NODE_ENV` briefly.", "input": "", "output": "`NODE_ENV=production` gates dev-only middleware/logging; read once at boot into a validated config object."}
+{"instruction": "When do I use `NODE_ENV`?", "input": "", "output": "`NODE_ENV=production` gates dev-only middleware/logging; read once at boot into a validated config object."}
+{"instruction": "Give a practical example of `NODE_ENV`.", "input": "", "output": "`NODE_ENV=production` gates dev-only middleware/logging; read once at boot into a validated config object."}
+{"instruction": "What is `NODE_ENV` for?", "input": "", "output": "`NODE_ENV=production` gates dev-only middleware/logging; read once at boot into a validated config object."}
+{"instruction": "Apakah fungsi `NODE_ENV`?", "input": "", "output": "`NODE_ENV=production` gates dev-only middleware/logging; read once at boot into a validated config object."}
+{"instruction": "Terangkan `NODE_ENV` secara ringkas.", "input": "", "output": "`NODE_ENV=production` gates dev-only middleware/logging; read once at boot into a validated config object."}
+{"instruction": "Bila perlu guna `NODE_ENV`?", "input": "", "output": "`NODE_ENV=production` gates dev-only middleware/logging; read once at boot into a validated config object."}
+{"instruction": "Beri contoh penggunaan `NODE_ENV`.", "input": "", "output": "`NODE_ENV=production` gates dev-only middleware/logging; read once at boot into a validated config object."}
+{"instruction": "`NODE_ENV` untuk apa?", "input": "", "output": "`NODE_ENV=production` gates dev-only middleware/logging; read once at boot into a validated config object."}
+{"instruction": "How would you explain `NODE_ENV` to a junior developer?", "input": "", "output": "`NODE_ENV=production` gates dev-only middleware/logging; read once at boot into a validated config object."}
+{"instruction": "Give a real-world scenario for `NODE_ENV`.", "input": "", "output": "`NODE_ENV=production` gates dev-only middleware/logging; read once at boot into a validated config object."}
+{"instruction": "What problem does `NODE_ENV` solve?", "input": "", "output": "`NODE_ENV=production` gates dev-only middleware/logging; read once at boot into a validated config object."}
+{"instruction": "What does `diagnostics timing` do?", "input": "", "output": "`console.time('sql')`/`timeEnd` profiles blocks; `process.hrtime.bigint()` nanosecond-diffs hot loops."}
+{"instruction": "Explain `diagnostics timing` briefly.", "input": "", "output": "`console.time('sql')`/`timeEnd` profiles blocks; `process.hrtime.bigint()` nanosecond-diffs hot loops."}
+{"instruction": "When do I use `diagnostics timing`?", "input": "", "output": "`console.time('sql')`/`timeEnd` profiles blocks; `process.hrtime.bigint()` nanosecond-diffs hot loops."}
+{"instruction": "Give a practical example of `diagnostics timing`.", "input": "", "output": "`console.time('sql')`/`timeEnd` profiles blocks; `process.hrtime.bigint()` nanosecond-diffs hot loops."}
+{"instruction": "What is `diagnostics timing` for?", "input": "", "output": "`console.time('sql')`/`timeEnd` profiles blocks; `process.hrtime.bigint()` nanosecond-diffs hot loops."}
+{"instruction": "Apakah fungsi `diagnostics timing`?", "input": "", "output": "`console.time('sql')`/`timeEnd` profiles blocks; `process.hrtime.bigint()` nanosecond-diffs hot loops."}
+{"instruction": "Terangkan `diagnostics timing` secara ringkas.", "input": "", "output": "`console.time('sql')`/`timeEnd` profiles blocks; `process.hrtime.bigint()` nanosecond-diffs hot loops."}
+{"instruction": "Bila perlu guna `diagnostics timing`?", "input": "", "output": "`console.time('sql')`/`timeEnd` profiles blocks; `process.hrtime.bigint()` nanosecond-diffs hot loops."}
+{"instruction": "Beri contoh penggunaan `diagnostics timing`.", "input": "", "output": "`console.time('sql')`/`timeEnd` profiles blocks; `process.hrtime.bigint()` nanosecond-diffs hot loops."}
+{"instruction": "`diagnostics timing` untuk apa?", "input": "", "output": "`console.time('sql')`/`timeEnd` profiles blocks; `process.hrtime.bigint()` nanosecond-diffs hot loops."}
+{"instruction": "How would you explain `diagnostics timing` to a junior developer?", "input": "", "output": "`console.time('sql')`/`timeEnd` profiles blocks; `process.hrtime.bigint()` nanosecond-diffs hot loops."}
+{"instruction": "Give a real-world scenario for `diagnostics timing`.", "input": "", "output": "`console.time('sql')`/`timeEnd` profiles blocks; `process.hrtime.bigint()` nanosecond-diffs hot loops."}
+{"instruction": "What problem does `diagnostics timing` solve?", "input": "", "output": "`console.time('sql')`/`timeEnd` profiles blocks; `process.hrtime.bigint()` nanosecond-diffs hot loops."}
+{"instruction": "What does `unhandledRejection` do?", "input": "", "output": "Crash-or-log unhandled rejections explicitly at startup — silent promise failures corrupt state invisibly."}
+{"instruction": "Explain `unhandledRejection` briefly.", "input": "", "output": "Crash-or-log unhandled rejections explicitly at startup — silent promise failures corrupt state invisibly."}
+{"instruction": "When do I use `unhandledRejection`?", "input": "", "output": "Crash-or-log unhandled rejections explicitly at startup — silent promise failures corrupt state invisibly."}
+{"instruction": "Give a practical example of `unhandledRejection`.", "input": "", "output": "Crash-or-log unhandled rejections explicitly at startup — silent promise failures corrupt state invisibly."}
+{"instruction": "What is `unhandledRejection` for?", "input": "", "output": "Crash-or-log unhandled rejections explicitly at startup — silent promise failures corrupt state invisibly."}
+{"instruction": "Apakah fungsi `unhandledRejection`?", "input": "", "output": "Crash-or-log unhandled rejections explicitly at startup — silent promise failures corrupt state invisibly."}
+{"instruction": "Terangkan `unhandledRejection` secara ringkas.", "input": "", "output": "Crash-or-log unhandled rejections explicitly at startup — silent promise failures corrupt state invisibly."}
+{"instruction": "Bila perlu guna `unhandledRejection`?", "input": "", "output": "Crash-or-log unhandled rejections explicitly at startup — silent promise failures corrupt state invisibly."}
+{"instruction": "Beri contoh penggunaan `unhandledRejection`.", "input": "", "output": "Crash-or-log unhandled rejections explicitly at startup — silent promise failures corrupt state invisibly."}
+{"instruction": "`unhandledRejection` untuk apa?", "input": "", "output": "Crash-or-log unhandled rejections explicitly at startup — silent promise failures corrupt state invisibly."}
+{"instruction": "How would you explain `unhandledRejection` to a junior developer?", "input": "", "output": "Crash-or-log unhandled rejections explicitly at startup — silent promise failures corrupt state invisibly."}
+{"instruction": "Give a real-world scenario for `unhandledRejection`.", "input": "", "output": "Crash-or-log unhandled rejections explicitly at startup — silent promise failures corrupt state invisibly."}
+{"instruction": "What problem does `unhandledRejection` solve?", "input": "", "output": "Crash-or-log unhandled rejections explicitly at startup — silent promise failures corrupt state invisibly."}
+{"instruction": "What does `AbortController fetch` do?", "input": "", "output": "Pass `signal` into fetch and `abort()` on supersede; catch AbortError separately from real failures."}
+{"instruction": "Explain `AbortController fetch` briefly.", "input": "", "output": "Pass `signal` into fetch and `abort()` on supersede; catch AbortError separately from real failures."}
+{"instruction": "When do I use `AbortController fetch`?", "input": "", "output": "Pass `signal` into fetch and `abort()` on supersede; catch AbortError separately from real failures."}
+{"instruction": "Give a practical example of `AbortController fetch`.", "input": "", "output": "Pass `signal` into fetch and `abort()` on supersede; catch AbortError separately from real failures."}
+{"instruction": "What is `AbortController fetch` for?", "input": "", "output": "Pass `signal` into fetch and `abort()` on supersede; catch AbortError separately from real failures."}
+{"instruction": "Apakah fungsi `AbortController fetch`?", "input": "", "output": "Pass `signal` into fetch and `abort()` on supersede; catch AbortError separately from real failures."}
+{"instruction": "Terangkan `AbortController fetch` secara ringkas.", "input": "", "output": "Pass `signal` into fetch and `abort()` on supersede; catch AbortError separately from real failures."}
+{"instruction": "Bila perlu guna `AbortController fetch`?", "input": "", "output": "Pass `signal` into fetch and `abort()` on supersede; catch AbortError separately from real failures."}
+{"instruction": "Beri contoh penggunaan `AbortController fetch`.", "input": "", "output": "Pass `signal` into fetch and `abort()` on supersede; catch AbortError separately from real failures."}
+{"instruction": "`AbortController fetch` untuk apa?", "input": "", "output": "Pass `signal` into fetch and `abort()` on supersede; catch AbortError separately from real failures."}
+{"instruction": "How would you explain `AbortController fetch` to a junior developer?", "input": "", "output": "Pass `signal` into fetch and `abort()` on supersede; catch AbortError separately from real failures."}
+{"instruction": "Give a real-world scenario for `AbortController fetch`.", "input": "", "output": "Pass `signal` into fetch and `abort()` on supersede; catch AbortError separately from real failures."}
+{"instruction": "What problem does `AbortController fetch` solve?", "input": "", "output": "Pass `signal` into fetch and `abort()` on supersede; catch AbortError separately from real failures."}
+{"instruction": "What does `readline completer` do?", "input": "", "output": "`readline` accepts a `completer` for tab-completion in CLIs; persist history with a file-backed interface."}
+{"instruction": "Explain `readline completer` briefly.", "input": "", "output": "`readline` accepts a `completer` for tab-completion in CLIs; persist history with a file-backed interface."}
+{"instruction": "When do I use `readline completer`?", "input": "", "output": "`readline` accepts a `completer` for tab-completion in CLIs; persist history with a file-backed interface."}
+{"instruction": "Give a practical example of `readline completer`.", "input": "", "output": "`readline` accepts a `completer` for tab-completion in CLIs; persist history with a file-backed interface."}
+{"instruction": "What is `readline completer` for?", "input": "", "output": "`readline` accepts a `completer` for tab-completion in CLIs; persist history with a file-backed interface."}
+{"instruction": "Apakah fungsi `readline completer`?", "input": "", "output": "`readline` accepts a `completer` for tab-completion in CLIs; persist history with a file-backed interface."}
+{"instruction": "Terangkan `readline completer` secara ringkas.", "input": "", "output": "`readline` accepts a `completer` for tab-completion in CLIs; persist history with a file-backed interface."}
+{"instruction": "Bila perlu guna `readline completer`?", "input": "", "output": "`readline` accepts a `completer` for tab-completion in CLIs; persist history with a file-backed interface."}
+{"instruction": "Beri contoh penggunaan `readline completer`.", "input": "", "output": "`readline` accepts a `completer` for tab-completion in CLIs; persist history with a file-backed interface."}
+{"instruction": "`readline completer` untuk apa?", "input": "", "output": "`readline` accepts a `completer` for tab-completion in CLIs; persist history with a file-backed interface."}
+{"instruction": "How would you explain `readline completer` to a junior developer?", "input": "", "output": "`readline` accepts a `completer` for tab-completion in CLIs; persist history with a file-backed interface."}
+{"instruction": "Give a real-world scenario for `readline completer`.", "input": "", "output": "`readline` accepts a `completer` for tab-completion in CLIs; persist history with a file-backed interface."}
+{"instruction": "What problem does `readline completer` solve?", "input": "", "output": "`readline` accepts a `completer` for tab-completion in CLIs; persist history with a file-backed interface."}
+{"instruction": "What does `worker pool queue` do?", "input": "", "output": "Bounded queues (`p-limit`) cap concurrency on downstream APIs; unbounded `Promise.all` is a self-DDoS."}
+{"instruction": "Explain `worker pool queue` briefly.", "input": "", "output": "Bounded queues (`p-limit`) cap concurrency on downstream APIs; unbounded `Promise.all` is a self-DDoS."}
+{"instruction": "When do I use `worker pool queue`?", "input": "", "output": "Bounded queues (`p-limit`) cap concurrency on downstream APIs; unbounded `Promise.all` is a self-DDoS."}
+{"instruction": "Give a practical example of `worker pool queue`.", "input": "", "output": "Bounded queues (`p-limit`) cap concurrency on downstream APIs; unbounded `Promise.all` is a self-DDoS."}
+{"instruction": "What is `worker pool queue` for?", "input": "", "output": "Bounded queues (`p-limit`) cap concurrency on downstream APIs; unbounded `Promise.all` is a self-DDoS."}
+{"instruction": "Apakah fungsi `worker pool queue`?", "input": "", "output": "Bounded queues (`p-limit`) cap concurrency on downstream APIs; unbounded `Promise.all` is a self-DDoS."}
+{"instruction": "Terangkan `worker pool queue` secara ringkas.", "input": "", "output": "Bounded queues (`p-limit`) cap concurrency on downstream APIs; unbounded `Promise.all` is a self-DDoS."}
+{"instruction": "Bila perlu guna `worker pool queue`?", "input": "", "output": "Bounded queues (`p-limit`) cap concurrency on downstream APIs; unbounded `Promise.all` is a self-DDoS."}
+{"instruction": "Beri contoh penggunaan `worker pool queue`.", "input": "", "output": "Bounded queues (`p-limit`) cap concurrency on downstream APIs; unbounded `Promise.all` is a self-DDoS."}
+{"instruction": "`worker pool queue` untuk apa?", "input": "", "output": "Bounded queues (`p-limit`) cap concurrency on downstream APIs; unbounded `Promise.all` is a self-DDoS."}
+{"instruction": "How would you explain `worker pool queue` to a junior developer?", "input": "", "output": "Bounded queues (`p-limit`) cap concurrency on downstream APIs; unbounded `Promise.all` is a self-DDoS."}
+{"instruction": "Give a real-world scenario for `worker pool queue`.", "input": "", "output": "Bounded queues (`p-limit`) cap concurrency on downstream APIs; unbounded `Promise.all` is a self-DDoS."}
+{"instruction": "What problem does `worker pool queue` solve?", "input": "", "output": "Bounded queues (`p-limit`) cap concurrency on downstream APIs; unbounded `Promise.all` is a self-DDoS."}

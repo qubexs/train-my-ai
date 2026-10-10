@@ -120,3 +120,345 @@
 {"instruction": "When do I use `border-radius 50%`?", "input": "", "output": "50% on squares makes circles (avatars with `object-fit: cover`); pills use half-height radius."}
 {"instruction": "Give a practical example of `border-radius 50%`.", "input": "", "output": "50% on squares makes circles (avatars with `object-fit: cover`); pills use half-height radius."}
 {"instruction": "What is `border-radius 50%` for?", "input": "", "output": "50% on squares makes circles (avatars with `object-fit: cover`); pills use half-height radius."}
+{"instruction": "Apakah fungsi `color background`?", "input": "", "output": "`color` paints text, `background` the box; test contrast 4.5:1 for body text accessibility."}
+{"instruction": "Terangkan `color background` secara ringkas.", "input": "", "output": "`color` paints text, `background` the box; test contrast 4.5:1 for body text accessibility."}
+{"instruction": "Bila perlu guna `color background`?", "input": "", "output": "`color` paints text, `background` the box; test contrast 4.5:1 for body text accessibility."}
+{"instruction": "Beri contoh penggunaan `color background`.", "input": "", "output": "`color` paints text, `background` the box; test contrast 4.5:1 for body text accessibility."}
+{"instruction": "`color background` untuk apa?", "input": "", "output": "`color` paints text, `background` the box; test contrast 4.5:1 for body text accessibility."}
+{"instruction": "How would you explain `color background` to a junior developer?", "input": "", "output": "`color` paints text, `background` the box; test contrast 4.5:1 for body text accessibility."}
+{"instruction": "Give a real-world scenario for `color background`.", "input": "", "output": "`color` paints text, `background` the box; test contrast 4.5:1 for body text accessibility."}
+{"instruction": "What problem does `color background` solve?", "input": "", "output": "`color` paints text, `background` the box; test contrast 4.5:1 for body text accessibility."}
+{"instruction": "Apakah fungsi `font-size rem`?", "input": "", "output": "Size in `rem` (root-relative) so user zoom scales everything; `px` freezes accessibility settings out."}
+{"instruction": "Terangkan `font-size rem` secara ringkas.", "input": "", "output": "Size in `rem` (root-relative) so user zoom scales everything; `px` freezes accessibility settings out."}
+{"instruction": "Bila perlu guna `font-size rem`?", "input": "", "output": "Size in `rem` (root-relative) so user zoom scales everything; `px` freezes accessibility settings out."}
+{"instruction": "Beri contoh penggunaan `font-size rem`.", "input": "", "output": "Size in `rem` (root-relative) so user zoom scales everything; `px` freezes accessibility settings out."}
+{"instruction": "`font-size rem` untuk apa?", "input": "", "output": "Size in `rem` (root-relative) so user zoom scales everything; `px` freezes accessibility settings out."}
+{"instruction": "How would you explain `font-size rem` to a junior developer?", "input": "", "output": "Size in `rem` (root-relative) so user zoom scales everything; `px` freezes accessibility settings out."}
+{"instruction": "Give a real-world scenario for `font-size rem`.", "input": "", "output": "Size in `rem` (root-relative) so user zoom scales everything; `px` freezes accessibility settings out."}
+{"instruction": "What problem does `font-size rem` solve?", "input": "", "output": "Size in `rem` (root-relative) so user zoom scales everything; `px` freezes accessibility settings out."}
+{"instruction": "Apakah fungsi `font-family stack`?", "input": "", "output": "Stacks degrade gracefully (`Inter, system-ui, sans-serif`); web fonts need `font-display: swap`."}
+{"instruction": "Terangkan `font-family stack` secara ringkas.", "input": "", "output": "Stacks degrade gracefully (`Inter, system-ui, sans-serif`); web fonts need `font-display: swap`."}
+{"instruction": "Bila perlu guna `font-family stack`?", "input": "", "output": "Stacks degrade gracefully (`Inter, system-ui, sans-serif`); web fonts need `font-display: swap`."}
+{"instruction": "Beri contoh penggunaan `font-family stack`.", "input": "", "output": "Stacks degrade gracefully (`Inter, system-ui, sans-serif`); web fonts need `font-display: swap`."}
+{"instruction": "`font-family stack` untuk apa?", "input": "", "output": "Stacks degrade gracefully (`Inter, system-ui, sans-serif`); web fonts need `font-display: swap`."}
+{"instruction": "How would you explain `font-family stack` to a junior developer?", "input": "", "output": "Stacks degrade gracefully (`Inter, system-ui, sans-serif`); web fonts need `font-display: swap`."}
+{"instruction": "Give a real-world scenario for `font-family stack`.", "input": "", "output": "Stacks degrade gracefully (`Inter, system-ui, sans-serif`); web fonts need `font-display: swap`."}
+{"instruction": "What problem does `font-family stack` solve?", "input": "", "output": "Stacks degrade gracefully (`Inter, system-ui, sans-serif`); web fonts need `font-display: swap`."}
+{"instruction": "Apakah fungsi `margin padding`?", "input": "", "output": "Margin spaces outside, padding inside; one-direction margins avoid collapse surprises in components."}
+{"instruction": "Terangkan `margin padding` secara ringkas.", "input": "", "output": "Margin spaces outside, padding inside; one-direction margins avoid collapse surprises in components."}
+{"instruction": "Bila perlu guna `margin padding`?", "input": "", "output": "Margin spaces outside, padding inside; one-direction margins avoid collapse surprises in components."}
+{"instruction": "Beri contoh penggunaan `margin padding`.", "input": "", "output": "Margin spaces outside, padding inside; one-direction margins avoid collapse surprises in components."}
+{"instruction": "`margin padding` untuk apa?", "input": "", "output": "Margin spaces outside, padding inside; one-direction margins avoid collapse surprises in components."}
+{"instruction": "How would you explain `margin padding` to a junior developer?", "input": "", "output": "Margin spaces outside, padding inside; one-direction margins avoid collapse surprises in components."}
+{"instruction": "Give a real-world scenario for `margin padding`.", "input": "", "output": "Margin spaces outside, padding inside; one-direction margins avoid collapse surprises in components."}
+{"instruction": "What problem does `margin padding` solve?", "input": "", "output": "Margin spaces outside, padding inside; one-direction margins avoid collapse surprises in components."}
+{"instruction": "Apakah fungsi `border`?", "input": "", "output": "`border: 1px solid #ddd` draws boxes; `border-radius` rounds, `border: none` resets for custom controls."}
+{"instruction": "Terangkan `border` secara ringkas.", "input": "", "output": "`border: 1px solid #ddd` draws boxes; `border-radius` rounds, `border: none` resets for custom controls."}
+{"instruction": "Bila perlu guna `border`?", "input": "", "output": "`border: 1px solid #ddd` draws boxes; `border-radius` rounds, `border: none` resets for custom controls."}
+{"instruction": "Beri contoh penggunaan `border`.", "input": "", "output": "`border: 1px solid #ddd` draws boxes; `border-radius` rounds, `border: none` resets for custom controls."}
+{"instruction": "`border` untuk apa?", "input": "", "output": "`border: 1px solid #ddd` draws boxes; `border-radius` rounds, `border: none` resets for custom controls."}
+{"instruction": "How would you explain `border` to a junior developer?", "input": "", "output": "`border: 1px solid #ddd` draws boxes; `border-radius` rounds, `border: none` resets for custom controls."}
+{"instruction": "Give a real-world scenario for `border`.", "input": "", "output": "`border: 1px solid #ddd` draws boxes; `border-radius` rounds, `border: none` resets for custom controls."}
+{"instruction": "What problem does `border` solve?", "input": "", "output": "`border: 1px solid #ddd` draws boxes; `border-radius` rounds, `border: none` resets for custom controls."}
+{"instruction": "Apakah fungsi `display block inline`?", "input": "", "output": "Block fills width and stacks; inline flows in text; `inline-block` mixes both for pills and badges."}
+{"instruction": "Terangkan `display block inline` secara ringkas.", "input": "", "output": "Block fills width and stacks; inline flows in text; `inline-block` mixes both for pills and badges."}
+{"instruction": "Bila perlu guna `display block inline`?", "input": "", "output": "Block fills width and stacks; inline flows in text; `inline-block` mixes both for pills and badges."}
+{"instruction": "Beri contoh penggunaan `display block inline`.", "input": "", "output": "Block fills width and stacks; inline flows in text; `inline-block` mixes both for pills and badges."}
+{"instruction": "`display block inline` untuk apa?", "input": "", "output": "Block fills width and stacks; inline flows in text; `inline-block` mixes both for pills and badges."}
+{"instruction": "How would you explain `display block inline` to a junior developer?", "input": "", "output": "Block fills width and stacks; inline flows in text; `inline-block` mixes both for pills and badges."}
+{"instruction": "Give a real-world scenario for `display block inline`.", "input": "", "output": "Block fills width and stacks; inline flows in text; `inline-block` mixes both for pills and badges."}
+{"instruction": "What problem does `display block inline` solve?", "input": "", "output": "Block fills width and stacks; inline flows in text; `inline-block` mixes both for pills and badges."}
+{"instruction": "Apakah fungsi `display flex`?", "input": "", "output": "Flex lays out one dimension with `gap` spacing; `flex: 1` children share leftover space proportionally."}
+{"instruction": "Terangkan `display flex` secara ringkas.", "input": "", "output": "Flex lays out one dimension with `gap` spacing; `flex: 1` children share leftover space proportionally."}
+{"instruction": "Bila perlu guna `display flex`?", "input": "", "output": "Flex lays out one dimension with `gap` spacing; `flex: 1` children share leftover space proportionally."}
+{"instruction": "Beri contoh penggunaan `display flex`.", "input": "", "output": "Flex lays out one dimension with `gap` spacing; `flex: 1` children share leftover space proportionally."}
+{"instruction": "`display flex` untuk apa?", "input": "", "output": "Flex lays out one dimension with `gap` spacing; `flex: 1` children share leftover space proportionally."}
+{"instruction": "How would you explain `display flex` to a junior developer?", "input": "", "output": "Flex lays out one dimension with `gap` spacing; `flex: 1` children share leftover space proportionally."}
+{"instruction": "Give a real-world scenario for `display flex`.", "input": "", "output": "Flex lays out one dimension with `gap` spacing; `flex: 1` children share leftover space proportionally."}
+{"instruction": "What problem does `display flex` solve?", "input": "", "output": "Flex lays out one dimension with `gap` spacing; `flex: 1` children share leftover space proportionally."}
+{"instruction": "Apakah fungsi `display grid`?", "input": "", "output": "Grid aligns two dimensions via template columns; `auto-fit minmax()` makes responsive tracks for free."}
+{"instruction": "Terangkan `display grid` secara ringkas.", "input": "", "output": "Grid aligns two dimensions via template columns; `auto-fit minmax()` makes responsive tracks for free."}
+{"instruction": "Bila perlu guna `display grid`?", "input": "", "output": "Grid aligns two dimensions via template columns; `auto-fit minmax()` makes responsive tracks for free."}
+{"instruction": "Beri contoh penggunaan `display grid`.", "input": "", "output": "Grid aligns two dimensions via template columns; `auto-fit minmax()` makes responsive tracks for free."}
+{"instruction": "`display grid` untuk apa?", "input": "", "output": "Grid aligns two dimensions via template columns; `auto-fit minmax()` makes responsive tracks for free."}
+{"instruction": "How would you explain `display grid` to a junior developer?", "input": "", "output": "Grid aligns two dimensions via template columns; `auto-fit minmax()` makes responsive tracks for free."}
+{"instruction": "Give a real-world scenario for `display grid`.", "input": "", "output": "Grid aligns two dimensions via template columns; `auto-fit minmax()` makes responsive tracks for free."}
+{"instruction": "What problem does `display grid` solve?", "input": "", "output": "Grid aligns two dimensions via template columns; `auto-fit minmax()` makes responsive tracks for free."}
+{"instruction": "Apakah fungsi `position relative`?", "input": "", "output": "Relative nudges visually while keeping flow space, and anchors absolute children to itself."}
+{"instruction": "Terangkan `position relative` secara ringkas.", "input": "", "output": "Relative nudges visually while keeping flow space, and anchors absolute children to itself."}
+{"instruction": "Bila perlu guna `position relative`?", "input": "", "output": "Relative nudges visually while keeping flow space, and anchors absolute children to itself."}
+{"instruction": "Beri contoh penggunaan `position relative`.", "input": "", "output": "Relative nudges visually while keeping flow space, and anchors absolute children to itself."}
+{"instruction": "`position relative` untuk apa?", "input": "", "output": "Relative nudges visually while keeping flow space, and anchors absolute children to itself."}
+{"instruction": "How would you explain `position relative` to a junior developer?", "input": "", "output": "Relative nudges visually while keeping flow space, and anchors absolute children to itself."}
+{"instruction": "Give a real-world scenario for `position relative`.", "input": "", "output": "Relative nudges visually while keeping flow space, and anchors absolute children to itself."}
+{"instruction": "What problem does `position relative` solve?", "input": "", "output": "Relative nudges visually while keeping flow space, and anchors absolute children to itself."}
+{"instruction": "Apakah fungsi `position absolute`?", "input": "", "output": "Absolute pins to the nearest positioned ancestor (or page); great for badges, deadly for layouts."}
+{"instruction": "Terangkan `position absolute` secara ringkas.", "input": "", "output": "Absolute pins to the nearest positioned ancestor (or page); great for badges, deadly for layouts."}
+{"instruction": "Bila perlu guna `position absolute`?", "input": "", "output": "Absolute pins to the nearest positioned ancestor (or page); great for badges, deadly for layouts."}
+{"instruction": "Beri contoh penggunaan `position absolute`.", "input": "", "output": "Absolute pins to the nearest positioned ancestor (or page); great for badges, deadly for layouts."}
+{"instruction": "`position absolute` untuk apa?", "input": "", "output": "Absolute pins to the nearest positioned ancestor (or page); great for badges, deadly for layouts."}
+{"instruction": "How would you explain `position absolute` to a junior developer?", "input": "", "output": "Absolute pins to the nearest positioned ancestor (or page); great for badges, deadly for layouts."}
+{"instruction": "Give a real-world scenario for `position absolute`.", "input": "", "output": "Absolute pins to the nearest positioned ancestor (or page); great for badges, deadly for layouts."}
+{"instruction": "What problem does `position absolute` solve?", "input": "", "output": "Absolute pins to the nearest positioned ancestor (or page); great for badges, deadly for layouts."}
+{"instruction": "Apakah fungsi `flex-direction`?", "input": "", "output": "`row` vs `column` sets the main axis; `justify-content` then runs along it, `align-items` across."}
+{"instruction": "Terangkan `flex-direction` secara ringkas.", "input": "", "output": "`row` vs `column` sets the main axis; `justify-content` then runs along it, `align-items` across."}
+{"instruction": "Bila perlu guna `flex-direction`?", "input": "", "output": "`row` vs `column` sets the main axis; `justify-content` then runs along it, `align-items` across."}
+{"instruction": "Beri contoh penggunaan `flex-direction`.", "input": "", "output": "`row` vs `column` sets the main axis; `justify-content` then runs along it, `align-items` across."}
+{"instruction": "`flex-direction` untuk apa?", "input": "", "output": "`row` vs `column` sets the main axis; `justify-content` then runs along it, `align-items` across."}
+{"instruction": "How would you explain `flex-direction` to a junior developer?", "input": "", "output": "`row` vs `column` sets the main axis; `justify-content` then runs along it, `align-items` across."}
+{"instruction": "Give a real-world scenario for `flex-direction`.", "input": "", "output": "`row` vs `column` sets the main axis; `justify-content` then runs along it, `align-items` across."}
+{"instruction": "What problem does `flex-direction` solve?", "input": "", "output": "`row` vs `column` sets the main axis; `justify-content` then runs along it, `align-items` across."}
+{"instruction": "Apakah fungsi `justify-content`?", "input": "", "output": "Distributes along the main axis (`center`, `space-between`); pairs with `align-items` for full centering."}
+{"instruction": "Terangkan `justify-content` secara ringkas.", "input": "", "output": "Distributes along the main axis (`center`, `space-between`); pairs with `align-items` for full centering."}
+{"instruction": "Bila perlu guna `justify-content`?", "input": "", "output": "Distributes along the main axis (`center`, `space-between`); pairs with `align-items` for full centering."}
+{"instruction": "Beri contoh penggunaan `justify-content`.", "input": "", "output": "Distributes along the main axis (`center`, `space-between`); pairs with `align-items` for full centering."}
+{"instruction": "`justify-content` untuk apa?", "input": "", "output": "Distributes along the main axis (`center`, `space-between`); pairs with `align-items` for full centering."}
+{"instruction": "How would you explain `justify-content` to a junior developer?", "input": "", "output": "Distributes along the main axis (`center`, `space-between`); pairs with `align-items` for full centering."}
+{"instruction": "Give a real-world scenario for `justify-content`.", "input": "", "output": "Distributes along the main axis (`center`, `space-between`); pairs with `align-items` for full centering."}
+{"instruction": "What problem does `justify-content` solve?", "input": "", "output": "Distributes along the main axis (`center`, `space-between`); pairs with `align-items` for full centering."}
+{"instruction": "Apakah fungsi `align-items`?", "input": "", "output": "Aligns across the axis (`stretch` default fills); per-child `align-self` overrides exceptions."}
+{"instruction": "Terangkan `align-items` secara ringkas.", "input": "", "output": "Aligns across the axis (`stretch` default fills); per-child `align-self` overrides exceptions."}
+{"instruction": "Bila perlu guna `align-items`?", "input": "", "output": "Aligns across the axis (`stretch` default fills); per-child `align-self` overrides exceptions."}
+{"instruction": "Beri contoh penggunaan `align-items`.", "input": "", "output": "Aligns across the axis (`stretch` default fills); per-child `align-self` overrides exceptions."}
+{"instruction": "`align-items` untuk apa?", "input": "", "output": "Aligns across the axis (`stretch` default fills); per-child `align-self` overrides exceptions."}
+{"instruction": "How would you explain `align-items` to a junior developer?", "input": "", "output": "Aligns across the axis (`stretch` default fills); per-child `align-self` overrides exceptions."}
+{"instruction": "Give a real-world scenario for `align-items`.", "input": "", "output": "Aligns across the axis (`stretch` default fills); per-child `align-self` overrides exceptions."}
+{"instruction": "What problem does `align-items` solve?", "input": "", "output": "Aligns across the axis (`stretch` default fills); per-child `align-self` overrides exceptions."}
+{"instruction": "Apakah fungsi `grid-template-columns`?", "input": "", "output": "`1fr 1fr` splits evenly; `repeat(3, 1fr)` scales; `minmax(200px, 1fr)` keeps floors."}
+{"instruction": "Terangkan `grid-template-columns` secara ringkas.", "input": "", "output": "`1fr 1fr` splits evenly; `repeat(3, 1fr)` scales; `minmax(200px, 1fr)` keeps floors."}
+{"instruction": "Bila perlu guna `grid-template-columns`?", "input": "", "output": "`1fr 1fr` splits evenly; `repeat(3, 1fr)` scales; `minmax(200px, 1fr)` keeps floors."}
+{"instruction": "Beri contoh penggunaan `grid-template-columns`.", "input": "", "output": "`1fr 1fr` splits evenly; `repeat(3, 1fr)` scales; `minmax(200px, 1fr)` keeps floors."}
+{"instruction": "`grid-template-columns` untuk apa?", "input": "", "output": "`1fr 1fr` splits evenly; `repeat(3, 1fr)` scales; `minmax(200px, 1fr)` keeps floors."}
+{"instruction": "How would you explain `grid-template-columns` to a junior developer?", "input": "", "output": "`1fr 1fr` splits evenly; `repeat(3, 1fr)` scales; `minmax(200px, 1fr)` keeps floors."}
+{"instruction": "Give a real-world scenario for `grid-template-columns`.", "input": "", "output": "`1fr 1fr` splits evenly; `repeat(3, 1fr)` scales; `minmax(200px, 1fr)` keeps floors."}
+{"instruction": "What problem does `grid-template-columns` solve?", "input": "", "output": "`1fr 1fr` splits evenly; `repeat(3, 1fr)` scales; `minmax(200px, 1fr)` keeps floors."}
+{"instruction": "Apakah fungsi `media query`?", "input": "", "output": "`@media (min-width: 768px)` enhances upward from mobile base; content-first breakpoints beat device lists."}
+{"instruction": "Terangkan `media query` secara ringkas.", "input": "", "output": "`@media (min-width: 768px)` enhances upward from mobile base; content-first breakpoints beat device lists."}
+{"instruction": "Bila perlu guna `media query`?", "input": "", "output": "`@media (min-width: 768px)` enhances upward from mobile base; content-first breakpoints beat device lists."}
+{"instruction": "Beri contoh penggunaan `media query`.", "input": "", "output": "`@media (min-width: 768px)` enhances upward from mobile base; content-first breakpoints beat device lists."}
+{"instruction": "`media query` untuk apa?", "input": "", "output": "`@media (min-width: 768px)` enhances upward from mobile base; content-first breakpoints beat device lists."}
+{"instruction": "How would you explain `media query` to a junior developer?", "input": "", "output": "`@media (min-width: 768px)` enhances upward from mobile base; content-first breakpoints beat device lists."}
+{"instruction": "Give a real-world scenario for `media query`.", "input": "", "output": "`@media (min-width: 768px)` enhances upward from mobile base; content-first breakpoints beat device lists."}
+{"instruction": "What problem does `media query` solve?", "input": "", "output": "`@media (min-width: 768px)` enhances upward from mobile base; content-first breakpoints beat device lists."}
+{"instruction": "Apakah fungsi `:hover`?", "input": "", "output": "Hover styles need focus equivalents (`:focus-visible`) — touch and keyboard users never hover."}
+{"instruction": "Terangkan `:hover` secara ringkas.", "input": "", "output": "Hover styles need focus equivalents (`:focus-visible`) — touch and keyboard users never hover."}
+{"instruction": "Bila perlu guna `:hover`?", "input": "", "output": "Hover styles need focus equivalents (`:focus-visible`) — touch and keyboard users never hover."}
+{"instruction": "Beri contoh penggunaan `:hover`.", "input": "", "output": "Hover styles need focus equivalents (`:focus-visible`) — touch and keyboard users never hover."}
+{"instruction": "`:hover` untuk apa?", "input": "", "output": "Hover styles need focus equivalents (`:focus-visible`) — touch and keyboard users never hover."}
+{"instruction": "How would you explain `:hover` to a junior developer?", "input": "", "output": "Hover styles need focus equivalents (`:focus-visible`) — touch and keyboard users never hover."}
+{"instruction": "Give a real-world scenario for `:hover`.", "input": "", "output": "Hover styles need focus equivalents (`:focus-visible`) — touch and keyboard users never hover."}
+{"instruction": "What problem does `:hover` solve?", "input": "", "output": "Hover styles need focus equivalents (`:focus-visible`) — touch and keyboard users never hover."}
+{"instruction": "Apakah fungsi `transition`?", "input": "", "output": "Transitions animate state changes (`transition: color .2s`); keep to transform/opacity for smoothness."}
+{"instruction": "Terangkan `transition` secara ringkas.", "input": "", "output": "Transitions animate state changes (`transition: color .2s`); keep to transform/opacity for smoothness."}
+{"instruction": "Bila perlu guna `transition`?", "input": "", "output": "Transitions animate state changes (`transition: color .2s`); keep to transform/opacity for smoothness."}
+{"instruction": "Beri contoh penggunaan `transition`.", "input": "", "output": "Transitions animate state changes (`transition: color .2s`); keep to transform/opacity for smoothness."}
+{"instruction": "`transition` untuk apa?", "input": "", "output": "Transitions animate state changes (`transition: color .2s`); keep to transform/opacity for smoothness."}
+{"instruction": "How would you explain `transition` to a junior developer?", "input": "", "output": "Transitions animate state changes (`transition: color .2s`); keep to transform/opacity for smoothness."}
+{"instruction": "Give a real-world scenario for `transition`.", "input": "", "output": "Transitions animate state changes (`transition: color .2s`); keep to transform/opacity for smoothness."}
+{"instruction": "What problem does `transition` solve?", "input": "", "output": "Transitions animate state changes (`transition: color .2s`); keep to transform/opacity for smoothness."}
+{"instruction": "Apakah fungsi `@keyframes`?", "input": "", "output": "Keyframes script multi-step loops (spinners, pulses); honor `prefers-reduced-motion` for vestibular safety."}
+{"instruction": "Terangkan `@keyframes` secara ringkas.", "input": "", "output": "Keyframes script multi-step loops (spinners, pulses); honor `prefers-reduced-motion` for vestibular safety."}
+{"instruction": "Bila perlu guna `@keyframes`?", "input": "", "output": "Keyframes script multi-step loops (spinners, pulses); honor `prefers-reduced-motion` for vestibular safety."}
+{"instruction": "Beri contoh penggunaan `@keyframes`.", "input": "", "output": "Keyframes script multi-step loops (spinners, pulses); honor `prefers-reduced-motion` for vestibular safety."}
+{"instruction": "`@keyframes` untuk apa?", "input": "", "output": "Keyframes script multi-step loops (spinners, pulses); honor `prefers-reduced-motion` for vestibular safety."}
+{"instruction": "How would you explain `@keyframes` to a junior developer?", "input": "", "output": "Keyframes script multi-step loops (spinners, pulses); honor `prefers-reduced-motion` for vestibular safety."}
+{"instruction": "Give a real-world scenario for `@keyframes`.", "input": "", "output": "Keyframes script multi-step loops (spinners, pulses); honor `prefers-reduced-motion` for vestibular safety."}
+{"instruction": "What problem does `@keyframes` solve?", "input": "", "output": "Keyframes script multi-step loops (spinners, pulses); honor `prefers-reduced-motion` for vestibular safety."}
+{"instruction": "Apakah fungsi `box-shadow`?", "input": "", "output": "Layered shadows (`0 1px 2px, 0 8px 24px`) look natural; animate via pseudo-element opacity, not the property."}
+{"instruction": "Terangkan `box-shadow` secara ringkas.", "input": "", "output": "Layered shadows (`0 1px 2px, 0 8px 24px`) look natural; animate via pseudo-element opacity, not the property."}
+{"instruction": "Bila perlu guna `box-shadow`?", "input": "", "output": "Layered shadows (`0 1px 2px, 0 8px 24px`) look natural; animate via pseudo-element opacity, not the property."}
+{"instruction": "Beri contoh penggunaan `box-shadow`.", "input": "", "output": "Layered shadows (`0 1px 2px, 0 8px 24px`) look natural; animate via pseudo-element opacity, not the property."}
+{"instruction": "`box-shadow` untuk apa?", "input": "", "output": "Layered shadows (`0 1px 2px, 0 8px 24px`) look natural; animate via pseudo-element opacity, not the property."}
+{"instruction": "How would you explain `box-shadow` to a junior developer?", "input": "", "output": "Layered shadows (`0 1px 2px, 0 8px 24px`) look natural; animate via pseudo-element opacity, not the property."}
+{"instruction": "Give a real-world scenario for `box-shadow`.", "input": "", "output": "Layered shadows (`0 1px 2px, 0 8px 24px`) look natural; animate via pseudo-element opacity, not the property."}
+{"instruction": "What problem does `box-shadow` solve?", "input": "", "output": "Layered shadows (`0 1px 2px, 0 8px 24px`) look natural; animate via pseudo-element opacity, not the property."}
+{"instruction": "Apakah fungsi `border-radius 50%`?", "input": "", "output": "50% on squares makes circles (avatars with `object-fit: cover`); pills use half-height radius."}
+{"instruction": "Terangkan `border-radius 50%` secara ringkas.", "input": "", "output": "50% on squares makes circles (avatars with `object-fit: cover`); pills use half-height radius."}
+{"instruction": "Bila perlu guna `border-radius 50%`?", "input": "", "output": "50% on squares makes circles (avatars with `object-fit: cover`); pills use half-height radius."}
+{"instruction": "Beri contoh penggunaan `border-radius 50%`.", "input": "", "output": "50% on squares makes circles (avatars with `object-fit: cover`); pills use half-height radius."}
+{"instruction": "`border-radius 50%` untuk apa?", "input": "", "output": "50% on squares makes circles (avatars with `object-fit: cover`); pills use half-height radius."}
+{"instruction": "How would you explain `border-radius 50%` to a junior developer?", "input": "", "output": "50% on squares makes circles (avatars with `object-fit: cover`); pills use half-height radius."}
+{"instruction": "Give a real-world scenario for `border-radius 50%`.", "input": "", "output": "50% on squares makes circles (avatars with `object-fit: cover`); pills use half-height radius."}
+{"instruction": "What problem does `border-radius 50%` solve?", "input": "", "output": "50% on squares makes circles (avatars with `object-fit: cover`); pills use half-height radius."}
+{"instruction": "What does `margin auto center` do?", "input": "", "output": "`margin: 0 auto` centers fixed-width blocks horizontally; needs explicit width — flex/grid center anything."}
+{"instruction": "Explain `margin auto center` briefly.", "input": "", "output": "`margin: 0 auto` centers fixed-width blocks horizontally; needs explicit width — flex/grid center anything."}
+{"instruction": "When do I use `margin auto center`?", "input": "", "output": "`margin: 0 auto` centers fixed-width blocks horizontally; needs explicit width — flex/grid center anything."}
+{"instruction": "Give a practical example of `margin auto center`.", "input": "", "output": "`margin: 0 auto` centers fixed-width blocks horizontally; needs explicit width — flex/grid center anything."}
+{"instruction": "What is `margin auto center` for?", "input": "", "output": "`margin: 0 auto` centers fixed-width blocks horizontally; needs explicit width — flex/grid center anything."}
+{"instruction": "Apakah fungsi `margin auto center`?", "input": "", "output": "`margin: 0 auto` centers fixed-width blocks horizontally; needs explicit width — flex/grid center anything."}
+{"instruction": "Terangkan `margin auto center` secara ringkas.", "input": "", "output": "`margin: 0 auto` centers fixed-width blocks horizontally; needs explicit width — flex/grid center anything."}
+{"instruction": "Bila perlu guna `margin auto center`?", "input": "", "output": "`margin: 0 auto` centers fixed-width blocks horizontally; needs explicit width — flex/grid center anything."}
+{"instruction": "Beri contoh penggunaan `margin auto center`.", "input": "", "output": "`margin: 0 auto` centers fixed-width blocks horizontally; needs explicit width — flex/grid center anything."}
+{"instruction": "`margin auto center` untuk apa?", "input": "", "output": "`margin: 0 auto` centers fixed-width blocks horizontally; needs explicit width — flex/grid center anything."}
+{"instruction": "How would you explain `margin auto center` to a junior developer?", "input": "", "output": "`margin: 0 auto` centers fixed-width blocks horizontally; needs explicit width — flex/grid center anything."}
+{"instruction": "Give a real-world scenario for `margin auto center`.", "input": "", "output": "`margin: 0 auto` centers fixed-width blocks horizontally; needs explicit width — flex/grid center anything."}
+{"instruction": "What problem does `margin auto center` solve?", "input": "", "output": "`margin: 0 auto` centers fixed-width blocks horizontally; needs explicit width — flex/grid center anything."}
+{"instruction": "What does `padding shorthand` do?", "input": "", "output": "`padding: 10px 20px` sets vertical/horizontal (1-4 values clockwise from top); margins mirror the pattern."}
+{"instruction": "Explain `padding shorthand` briefly.", "input": "", "output": "`padding: 10px 20px` sets vertical/horizontal (1-4 values clockwise from top); margins mirror the pattern."}
+{"instruction": "When do I use `padding shorthand`?", "input": "", "output": "`padding: 10px 20px` sets vertical/horizontal (1-4 values clockwise from top); margins mirror the pattern."}
+{"instruction": "Give a practical example of `padding shorthand`.", "input": "", "output": "`padding: 10px 20px` sets vertical/horizontal (1-4 values clockwise from top); margins mirror the pattern."}
+{"instruction": "What is `padding shorthand` for?", "input": "", "output": "`padding: 10px 20px` sets vertical/horizontal (1-4 values clockwise from top); margins mirror the pattern."}
+{"instruction": "Apakah fungsi `padding shorthand`?", "input": "", "output": "`padding: 10px 20px` sets vertical/horizontal (1-4 values clockwise from top); margins mirror the pattern."}
+{"instruction": "Terangkan `padding shorthand` secara ringkas.", "input": "", "output": "`padding: 10px 20px` sets vertical/horizontal (1-4 values clockwise from top); margins mirror the pattern."}
+{"instruction": "Bila perlu guna `padding shorthand`?", "input": "", "output": "`padding: 10px 20px` sets vertical/horizontal (1-4 values clockwise from top); margins mirror the pattern."}
+{"instruction": "Beri contoh penggunaan `padding shorthand`.", "input": "", "output": "`padding: 10px 20px` sets vertical/horizontal (1-4 values clockwise from top); margins mirror the pattern."}
+{"instruction": "`padding shorthand` untuk apa?", "input": "", "output": "`padding: 10px 20px` sets vertical/horizontal (1-4 values clockwise from top); margins mirror the pattern."}
+{"instruction": "How would you explain `padding shorthand` to a junior developer?", "input": "", "output": "`padding: 10px 20px` sets vertical/horizontal (1-4 values clockwise from top); margins mirror the pattern."}
+{"instruction": "Give a real-world scenario for `padding shorthand`.", "input": "", "output": "`padding: 10px 20px` sets vertical/horizontal (1-4 values clockwise from top); margins mirror the pattern."}
+{"instruction": "What problem does `padding shorthand` solve?", "input": "", "output": "`padding: 10px 20px` sets vertical/horizontal (1-4 values clockwise from top); margins mirror the pattern."}
+{"instruction": "What does `outline vs border` do?", "input": "", "output": "`outline` draws outside without shifting layout (focus rings!); `border` occupies space and rounds."}
+{"instruction": "Explain `outline vs border` briefly.", "input": "", "output": "`outline` draws outside without shifting layout (focus rings!); `border` occupies space and rounds."}
+{"instruction": "When do I use `outline vs border`?", "input": "", "output": "`outline` draws outside without shifting layout (focus rings!); `border` occupies space and rounds."}
+{"instruction": "Give a practical example of `outline vs border`.", "input": "", "output": "`outline` draws outside without shifting layout (focus rings!); `border` occupies space and rounds."}
+{"instruction": "What is `outline vs border` for?", "input": "", "output": "`outline` draws outside without shifting layout (focus rings!); `border` occupies space and rounds."}
+{"instruction": "Apakah fungsi `outline vs border`?", "input": "", "output": "`outline` draws outside without shifting layout (focus rings!); `border` occupies space and rounds."}
+{"instruction": "Terangkan `outline vs border` secara ringkas.", "input": "", "output": "`outline` draws outside without shifting layout (focus rings!); `border` occupies space and rounds."}
+{"instruction": "Bila perlu guna `outline vs border`?", "input": "", "output": "`outline` draws outside without shifting layout (focus rings!); `border` occupies space and rounds."}
+{"instruction": "Beri contoh penggunaan `outline vs border`.", "input": "", "output": "`outline` draws outside without shifting layout (focus rings!); `border` occupies space and rounds."}
+{"instruction": "`outline vs border` untuk apa?", "input": "", "output": "`outline` draws outside without shifting layout (focus rings!); `border` occupies space and rounds."}
+{"instruction": "How would you explain `outline vs border` to a junior developer?", "input": "", "output": "`outline` draws outside without shifting layout (focus rings!); `border` occupies space and rounds."}
+{"instruction": "Give a real-world scenario for `outline vs border`.", "input": "", "output": "`outline` draws outside without shifting layout (focus rings!); `border` occupies space and rounds."}
+{"instruction": "What problem does `outline vs border` solve?", "input": "", "output": "`outline` draws outside without shifting layout (focus rings!); `border` occupies space and rounds."}
+{"instruction": "What does `display none invisible` do?", "input": "", "output": "`display:none` removes from layout and AT; `visibility:hidden` hides visually but reserves space."}
+{"instruction": "Explain `display none invisible` briefly.", "input": "", "output": "`display:none` removes from layout and AT; `visibility:hidden` hides visually but reserves space."}
+{"instruction": "When do I use `display none invisible`?", "input": "", "output": "`display:none` removes from layout and AT; `visibility:hidden` hides visually but reserves space."}
+{"instruction": "Give a practical example of `display none invisible`.", "input": "", "output": "`display:none` removes from layout and AT; `visibility:hidden` hides visually but reserves space."}
+{"instruction": "What is `display none invisible` for?", "input": "", "output": "`display:none` removes from layout and AT; `visibility:hidden` hides visually but reserves space."}
+{"instruction": "Apakah fungsi `display none invisible`?", "input": "", "output": "`display:none` removes from layout and AT; `visibility:hidden` hides visually but reserves space."}
+{"instruction": "Terangkan `display none invisible` secara ringkas.", "input": "", "output": "`display:none` removes from layout and AT; `visibility:hidden` hides visually but reserves space."}
+{"instruction": "Bila perlu guna `display none invisible`?", "input": "", "output": "`display:none` removes from layout and AT; `visibility:hidden` hides visually but reserves space."}
+{"instruction": "Beri contoh penggunaan `display none invisible`.", "input": "", "output": "`display:none` removes from layout and AT; `visibility:hidden` hides visually but reserves space."}
+{"instruction": "`display none invisible` untuk apa?", "input": "", "output": "`display:none` removes from layout and AT; `visibility:hidden` hides visually but reserves space."}
+{"instruction": "How would you explain `display none invisible` to a junior developer?", "input": "", "output": "`display:none` removes from layout and AT; `visibility:hidden` hides visually but reserves space."}
+{"instruction": "Give a real-world scenario for `display none invisible`.", "input": "", "output": "`display:none` removes from layout and AT; `visibility:hidden` hides visually but reserves space."}
+{"instruction": "What problem does `display none invisible` solve?", "input": "", "output": "`display:none` removes from layout and AT; `visibility:hidden` hides visually but reserves space."}
+{"instruction": "What does `flex-wrap` do?", "input": "", "output": "`flex-wrap: wrap` flows overflow onto rows (add `gap`); nowrap (default) squeezes or overflows."}
+{"instruction": "Explain `flex-wrap` briefly.", "input": "", "output": "`flex-wrap: wrap` flows overflow onto rows (add `gap`); nowrap (default) squeezes or overflows."}
+{"instruction": "When do I use `flex-wrap`?", "input": "", "output": "`flex-wrap: wrap` flows overflow onto rows (add `gap`); nowrap (default) squeezes or overflows."}
+{"instruction": "Give a practical example of `flex-wrap`.", "input": "", "output": "`flex-wrap: wrap` flows overflow onto rows (add `gap`); nowrap (default) squeezes or overflows."}
+{"instruction": "What is `flex-wrap` for?", "input": "", "output": "`flex-wrap: wrap` flows overflow onto rows (add `gap`); nowrap (default) squeezes or overflows."}
+{"instruction": "Apakah fungsi `flex-wrap`?", "input": "", "output": "`flex-wrap: wrap` flows overflow onto rows (add `gap`); nowrap (default) squeezes or overflows."}
+{"instruction": "Terangkan `flex-wrap` secara ringkas.", "input": "", "output": "`flex-wrap: wrap` flows overflow onto rows (add `gap`); nowrap (default) squeezes or overflows."}
+{"instruction": "Bila perlu guna `flex-wrap`?", "input": "", "output": "`flex-wrap: wrap` flows overflow onto rows (add `gap`); nowrap (default) squeezes or overflows."}
+{"instruction": "Beri contoh penggunaan `flex-wrap`.", "input": "", "output": "`flex-wrap: wrap` flows overflow onto rows (add `gap`); nowrap (default) squeezes or overflows."}
+{"instruction": "`flex-wrap` untuk apa?", "input": "", "output": "`flex-wrap: wrap` flows overflow onto rows (add `gap`); nowrap (default) squeezes or overflows."}
+{"instruction": "How would you explain `flex-wrap` to a junior developer?", "input": "", "output": "`flex-wrap: wrap` flows overflow onto rows (add `gap`); nowrap (default) squeezes or overflows."}
+{"instruction": "Give a real-world scenario for `flex-wrap`.", "input": "", "output": "`flex-wrap: wrap` flows overflow onto rows (add `gap`); nowrap (default) squeezes or overflows."}
+{"instruction": "What problem does `flex-wrap` solve?", "input": "", "output": "`flex-wrap: wrap` flows overflow onto rows (add `gap`); nowrap (default) squeezes or overflows."}
+{"instruction": "What does `flex-grow` do?", "input": "", "output": "`flex-grow: 2` claims double leftover space vs siblings at 1; `flex-shrink` governs squeeze, `flex-basis` the start size."}
+{"instruction": "Explain `flex-grow` briefly.", "input": "", "output": "`flex-grow: 2` claims double leftover space vs siblings at 1; `flex-shrink` governs squeeze, `flex-basis` the start size."}
+{"instruction": "When do I use `flex-grow`?", "input": "", "output": "`flex-grow: 2` claims double leftover space vs siblings at 1; `flex-shrink` governs squeeze, `flex-basis` the start size."}
+{"instruction": "Give a practical example of `flex-grow`.", "input": "", "output": "`flex-grow: 2` claims double leftover space vs siblings at 1; `flex-shrink` governs squeeze, `flex-basis` the start size."}
+{"instruction": "What is `flex-grow` for?", "input": "", "output": "`flex-grow: 2` claims double leftover space vs siblings at 1; `flex-shrink` governs squeeze, `flex-basis` the start size."}
+{"instruction": "Apakah fungsi `flex-grow`?", "input": "", "output": "`flex-grow: 2` claims double leftover space vs siblings at 1; `flex-shrink` governs squeeze, `flex-basis` the start size."}
+{"instruction": "Terangkan `flex-grow` secara ringkas.", "input": "", "output": "`flex-grow: 2` claims double leftover space vs siblings at 1; `flex-shrink` governs squeeze, `flex-basis` the start size."}
+{"instruction": "Bila perlu guna `flex-grow`?", "input": "", "output": "`flex-grow: 2` claims double leftover space vs siblings at 1; `flex-shrink` governs squeeze, `flex-basis` the start size."}
+{"instruction": "Beri contoh penggunaan `flex-grow`.", "input": "", "output": "`flex-grow: 2` claims double leftover space vs siblings at 1; `flex-shrink` governs squeeze, `flex-basis` the start size."}
+{"instruction": "`flex-grow` untuk apa?", "input": "", "output": "`flex-grow: 2` claims double leftover space vs siblings at 1; `flex-shrink` governs squeeze, `flex-basis` the start size."}
+{"instruction": "How would you explain `flex-grow` to a junior developer?", "input": "", "output": "`flex-grow: 2` claims double leftover space vs siblings at 1; `flex-shrink` governs squeeze, `flex-basis` the start size."}
+{"instruction": "Give a real-world scenario for `flex-grow`.", "input": "", "output": "`flex-grow: 2` claims double leftover space vs siblings at 1; `flex-shrink` governs squeeze, `flex-basis` the start size."}
+{"instruction": "What problem does `flex-grow` solve?", "input": "", "output": "`flex-grow: 2` claims double leftover space vs siblings at 1; `flex-shrink` governs squeeze, `flex-basis` the start size."}
+{"instruction": "What does `sticky vs fixed` do?", "input": "", "output": "`sticky` scrolls normally then pins within its parent (needs offset + room); `fixed` pins to viewport always."}
+{"instruction": "Explain `sticky vs fixed` briefly.", "input": "", "output": "`sticky` scrolls normally then pins within its parent (needs offset + room); `fixed` pins to viewport always."}
+{"instruction": "When do I use `sticky vs fixed`?", "input": "", "output": "`sticky` scrolls normally then pins within its parent (needs offset + room); `fixed` pins to viewport always."}
+{"instruction": "Give a practical example of `sticky vs fixed`.", "input": "", "output": "`sticky` scrolls normally then pins within its parent (needs offset + room); `fixed` pins to viewport always."}
+{"instruction": "What is `sticky vs fixed` for?", "input": "", "output": "`sticky` scrolls normally then pins within its parent (needs offset + room); `fixed` pins to viewport always."}
+{"instruction": "Apakah fungsi `sticky vs fixed`?", "input": "", "output": "`sticky` scrolls normally then pins within its parent (needs offset + room); `fixed` pins to viewport always."}
+{"instruction": "Terangkan `sticky vs fixed` secara ringkas.", "input": "", "output": "`sticky` scrolls normally then pins within its parent (needs offset + room); `fixed` pins to viewport always."}
+{"instruction": "Bila perlu guna `sticky vs fixed`?", "input": "", "output": "`sticky` scrolls normally then pins within its parent (needs offset + room); `fixed` pins to viewport always."}
+{"instruction": "Beri contoh penggunaan `sticky vs fixed`.", "input": "", "output": "`sticky` scrolls normally then pins within its parent (needs offset + room); `fixed` pins to viewport always."}
+{"instruction": "`sticky vs fixed` untuk apa?", "input": "", "output": "`sticky` scrolls normally then pins within its parent (needs offset + room); `fixed` pins to viewport always."}
+{"instruction": "How would you explain `sticky vs fixed` to a junior developer?", "input": "", "output": "`sticky` scrolls normally then pins within its parent (needs offset + room); `fixed` pins to viewport always."}
+{"instruction": "Give a real-world scenario for `sticky vs fixed`.", "input": "", "output": "`sticky` scrolls normally then pins within its parent (needs offset + room); `fixed` pins to viewport always."}
+{"instruction": "What problem does `sticky vs fixed` solve?", "input": "", "output": "`sticky` scrolls normally then pins within its parent (needs offset + room); `fixed` pins to viewport always."}
+{"instruction": "What does `top left offsets` do?", "input": "", "output": "Offsets need positioned elements (`relative/absolute/fixed/sticky`); static ignores them silently — the classic no-op bug."}
+{"instruction": "Explain `top left offsets` briefly.", "input": "", "output": "Offsets need positioned elements (`relative/absolute/fixed/sticky`); static ignores them silently — the classic no-op bug."}
+{"instruction": "When do I use `top left offsets`?", "input": "", "output": "Offsets need positioned elements (`relative/absolute/fixed/sticky`); static ignores them silently — the classic no-op bug."}
+{"instruction": "Give a practical example of `top left offsets`.", "input": "", "output": "Offsets need positioned elements (`relative/absolute/fixed/sticky`); static ignores them silently — the classic no-op bug."}
+{"instruction": "What is `top left offsets` for?", "input": "", "output": "Offsets need positioned elements (`relative/absolute/fixed/sticky`); static ignores them silently — the classic no-op bug."}
+{"instruction": "Apakah fungsi `top left offsets`?", "input": "", "output": "Offsets need positioned elements (`relative/absolute/fixed/sticky`); static ignores them silently — the classic no-op bug."}
+{"instruction": "Terangkan `top left offsets` secara ringkas.", "input": "", "output": "Offsets need positioned elements (`relative/absolute/fixed/sticky`); static ignores them silently — the classic no-op bug."}
+{"instruction": "Bila perlu guna `top left offsets`?", "input": "", "output": "Offsets need positioned elements (`relative/absolute/fixed/sticky`); static ignores them silently — the classic no-op bug."}
+{"instruction": "Beri contoh penggunaan `top left offsets`.", "input": "", "output": "Offsets need positioned elements (`relative/absolute/fixed/sticky`); static ignores them silently — the classic no-op bug."}
+{"instruction": "`top left offsets` untuk apa?", "input": "", "output": "Offsets need positioned elements (`relative/absolute/fixed/sticky`); static ignores them silently — the classic no-op bug."}
+{"instruction": "How would you explain `top left offsets` to a junior developer?", "input": "", "output": "Offsets need positioned elements (`relative/absolute/fixed/sticky`); static ignores them silently — the classic no-op bug."}
+{"instruction": "Give a real-world scenario for `top left offsets`.", "input": "", "output": "Offsets need positioned elements (`relative/absolute/fixed/sticky`); static ignores them silently — the classic no-op bug."}
+{"instruction": "What problem does `top left offsets` solve?", "input": "", "output": "Offsets need positioned elements (`relative/absolute/fixed/sticky`); static ignores them silently — the classic no-op bug."}
+{"instruction": "What does `list-style` do?", "input": "", "output": "`list-style: none` strips bullets (add padding:0 too); custom markers via `::marker` keep semantics."}
+{"instruction": "Explain `list-style` briefly.", "input": "", "output": "`list-style: none` strips bullets (add padding:0 too); custom markers via `::marker` keep semantics."}
+{"instruction": "When do I use `list-style`?", "input": "", "output": "`list-style: none` strips bullets (add padding:0 too); custom markers via `::marker` keep semantics."}
+{"instruction": "Give a practical example of `list-style`.", "input": "", "output": "`list-style: none` strips bullets (add padding:0 too); custom markers via `::marker` keep semantics."}
+{"instruction": "What is `list-style` for?", "input": "", "output": "`list-style: none` strips bullets (add padding:0 too); custom markers via `::marker` keep semantics."}
+{"instruction": "Apakah fungsi `list-style`?", "input": "", "output": "`list-style: none` strips bullets (add padding:0 too); custom markers via `::marker` keep semantics."}
+{"instruction": "Terangkan `list-style` secara ringkas.", "input": "", "output": "`list-style: none` strips bullets (add padding:0 too); custom markers via `::marker` keep semantics."}
+{"instruction": "Bila perlu guna `list-style`?", "input": "", "output": "`list-style: none` strips bullets (add padding:0 too); custom markers via `::marker` keep semantics."}
+{"instruction": "Beri contoh penggunaan `list-style`.", "input": "", "output": "`list-style: none` strips bullets (add padding:0 too); custom markers via `::marker` keep semantics."}
+{"instruction": "`list-style` untuk apa?", "input": "", "output": "`list-style: none` strips bullets (add padding:0 too); custom markers via `::marker` keep semantics."}
+{"instruction": "How would you explain `list-style` to a junior developer?", "input": "", "output": "`list-style: none` strips bullets (add padding:0 too); custom markers via `::marker` keep semantics."}
+{"instruction": "Give a real-world scenario for `list-style`.", "input": "", "output": "`list-style: none` strips bullets (add padding:0 too); custom markers via `::marker` keep semantics."}
+{"instruction": "What problem does `list-style` solve?", "input": "", "output": "`list-style: none` strips bullets (add padding:0 too); custom markers via `::marker` keep semantics."}
+{"instruction": "What does `line-height` do?", "input": "", "output": "Unitless `line-height: 1.5` scales with font size (accessible); fixed px breaks zoomed text rhythm."}
+{"instruction": "Explain `line-height` briefly.", "input": "", "output": "Unitless `line-height: 1.5` scales with font size (accessible); fixed px breaks zoomed text rhythm."}
+{"instruction": "When do I use `line-height`?", "input": "", "output": "Unitless `line-height: 1.5` scales with font size (accessible); fixed px breaks zoomed text rhythm."}
+{"instruction": "Give a practical example of `line-height`.", "input": "", "output": "Unitless `line-height: 1.5` scales with font size (accessible); fixed px breaks zoomed text rhythm."}
+{"instruction": "What is `line-height` for?", "input": "", "output": "Unitless `line-height: 1.5` scales with font size (accessible); fixed px breaks zoomed text rhythm."}
+{"instruction": "Apakah fungsi `line-height`?", "input": "", "output": "Unitless `line-height: 1.5` scales with font size (accessible); fixed px breaks zoomed text rhythm."}
+{"instruction": "Terangkan `line-height` secara ringkas.", "input": "", "output": "Unitless `line-height: 1.5` scales with font size (accessible); fixed px breaks zoomed text rhythm."}
+{"instruction": "Bila perlu guna `line-height`?", "input": "", "output": "Unitless `line-height: 1.5` scales with font size (accessible); fixed px breaks zoomed text rhythm."}
+{"instruction": "Beri contoh penggunaan `line-height`.", "input": "", "output": "Unitless `line-height: 1.5` scales with font size (accessible); fixed px breaks zoomed text rhythm."}
+{"instruction": "`line-height` untuk apa?", "input": "", "output": "Unitless `line-height: 1.5` scales with font size (accessible); fixed px breaks zoomed text rhythm."}
+{"instruction": "How would you explain `line-height` to a junior developer?", "input": "", "output": "Unitless `line-height: 1.5` scales with font size (accessible); fixed px breaks zoomed text rhythm."}
+{"instruction": "Give a real-world scenario for `line-height`.", "input": "", "output": "Unitless `line-height: 1.5` scales with font size (accessible); fixed px breaks zoomed text rhythm."}
+{"instruction": "What problem does `line-height` solve?", "input": "", "output": "Unitless `line-height: 1.5` scales with font size (accessible); fixed px breaks zoomed text rhythm."}
+{"instruction": "What does `cursor pointer` do?", "input": "", "output": "`cursor: pointer` signals clickability on custom controls; `not-allowed` communicates disabled honestly."}
+{"instruction": "Explain `cursor pointer` briefly.", "input": "", "output": "`cursor: pointer` signals clickability on custom controls; `not-allowed` communicates disabled honestly."}
+{"instruction": "When do I use `cursor pointer`?", "input": "", "output": "`cursor: pointer` signals clickability on custom controls; `not-allowed` communicates disabled honestly."}
+{"instruction": "Give a practical example of `cursor pointer`.", "input": "", "output": "`cursor: pointer` signals clickability on custom controls; `not-allowed` communicates disabled honestly."}
+{"instruction": "What is `cursor pointer` for?", "input": "", "output": "`cursor: pointer` signals clickability on custom controls; `not-allowed` communicates disabled honestly."}
+{"instruction": "Apakah fungsi `cursor pointer`?", "input": "", "output": "`cursor: pointer` signals clickability on custom controls; `not-allowed` communicates disabled honestly."}
+{"instruction": "Terangkan `cursor pointer` secara ringkas.", "input": "", "output": "`cursor: pointer` signals clickability on custom controls; `not-allowed` communicates disabled honestly."}
+{"instruction": "Bila perlu guna `cursor pointer`?", "input": "", "output": "`cursor: pointer` signals clickability on custom controls; `not-allowed` communicates disabled honestly."}
+{"instruction": "Beri contoh penggunaan `cursor pointer`.", "input": "", "output": "`cursor: pointer` signals clickability on custom controls; `not-allowed` communicates disabled honestly."}
+{"instruction": "`cursor pointer` untuk apa?", "input": "", "output": "`cursor: pointer` signals clickability on custom controls; `not-allowed` communicates disabled honestly."}
+{"instruction": "How would you explain `cursor pointer` to a junior developer?", "input": "", "output": "`cursor: pointer` signals clickability on custom controls; `not-allowed` communicates disabled honestly."}
+{"instruction": "Give a real-world scenario for `cursor pointer`.", "input": "", "output": "`cursor: pointer` signals clickability on custom controls; `not-allowed` communicates disabled honestly."}
+{"instruction": "What problem does `cursor pointer` solve?", "input": "", "output": "`cursor: pointer` signals clickability on custom controls; `not-allowed` communicates disabled honestly."}
+{"instruction": "What does `user-select` do?", "input": "", "output": "`user-select: none` stops text selection on buttons/labels; never apply to body copy users may need."}
+{"instruction": "Explain `user-select` briefly.", "input": "", "output": "`user-select: none` stops text selection on buttons/labels; never apply to body copy users may need."}
+{"instruction": "When do I use `user-select`?", "input": "", "output": "`user-select: none` stops text selection on buttons/labels; never apply to body copy users may need."}
+{"instruction": "Give a practical example of `user-select`.", "input": "", "output": "`user-select: none` stops text selection on buttons/labels; never apply to body copy users may need."}
+{"instruction": "What is `user-select` for?", "input": "", "output": "`user-select: none` stops text selection on buttons/labels; never apply to body copy users may need."}
+{"instruction": "Apakah fungsi `user-select`?", "input": "", "output": "`user-select: none` stops text selection on buttons/labels; never apply to body copy users may need."}
+{"instruction": "Terangkan `user-select` secara ringkas.", "input": "", "output": "`user-select: none` stops text selection on buttons/labels; never apply to body copy users may need."}
+{"instruction": "Bila perlu guna `user-select`?", "input": "", "output": "`user-select: none` stops text selection on buttons/labels; never apply to body copy users may need."}
+{"instruction": "Beri contoh penggunaan `user-select`.", "input": "", "output": "`user-select: none` stops text selection on buttons/labels; never apply to body copy users may need."}
+{"instruction": "`user-select` untuk apa?", "input": "", "output": "`user-select: none` stops text selection on buttons/labels; never apply to body copy users may need."}
+{"instruction": "How would you explain `user-select` to a junior developer?", "input": "", "output": "`user-select: none` stops text selection on buttons/labels; never apply to body copy users may need."}
+{"instruction": "Give a real-world scenario for `user-select`.", "input": "", "output": "`user-select: none` stops text selection on buttons/labels; never apply to body copy users may need."}
+{"instruction": "What problem does `user-select` solve?", "input": "", "output": "`user-select: none` stops text selection on buttons/labels; never apply to body copy users may need."}
+{"instruction": "What does `scroll-behavior smooth` do?", "input": "", "output": "`scroll-behavior: smooth` animates anchor jumps natively; respect reduced-motion with a media query guard."}
+{"instruction": "Explain `scroll-behavior smooth` briefly.", "input": "", "output": "`scroll-behavior: smooth` animates anchor jumps natively; respect reduced-motion with a media query guard."}
+{"instruction": "When do I use `scroll-behavior smooth`?", "input": "", "output": "`scroll-behavior: smooth` animates anchor jumps natively; respect reduced-motion with a media query guard."}
+{"instruction": "Give a practical example of `scroll-behavior smooth`.", "input": "", "output": "`scroll-behavior: smooth` animates anchor jumps natively; respect reduced-motion with a media query guard."}
+{"instruction": "What is `scroll-behavior smooth` for?", "input": "", "output": "`scroll-behavior: smooth` animates anchor jumps natively; respect reduced-motion with a media query guard."}
+{"instruction": "Apakah fungsi `scroll-behavior smooth`?", "input": "", "output": "`scroll-behavior: smooth` animates anchor jumps natively; respect reduced-motion with a media query guard."}
+{"instruction": "Terangkan `scroll-behavior smooth` secara ringkas.", "input": "", "output": "`scroll-behavior: smooth` animates anchor jumps natively; respect reduced-motion with a media query guard."}
+{"instruction": "Bila perlu guna `scroll-behavior smooth`?", "input": "", "output": "`scroll-behavior: smooth` animates anchor jumps natively; respect reduced-motion with a media query guard."}
+{"instruction": "Beri contoh penggunaan `scroll-behavior smooth`.", "input": "", "output": "`scroll-behavior: smooth` animates anchor jumps natively; respect reduced-motion with a media query guard."}
+{"instruction": "`scroll-behavior smooth` untuk apa?", "input": "", "output": "`scroll-behavior: smooth` animates anchor jumps natively; respect reduced-motion with a media query guard."}
+{"instruction": "How would you explain `scroll-behavior smooth` to a junior developer?", "input": "", "output": "`scroll-behavior: smooth` animates anchor jumps natively; respect reduced-motion with a media query guard."}
+{"instruction": "Give a real-world scenario for `scroll-behavior smooth`.", "input": "", "output": "`scroll-behavior: smooth` animates anchor jumps natively; respect reduced-motion with a media query guard."}
+{"instruction": "What problem does `scroll-behavior smooth` solve?", "input": "", "output": "`scroll-behavior: smooth` animates anchor jumps natively; respect reduced-motion with a media query guard."}
+{"instruction": "What does `filter blur brightness` do?", "input": "", "output": "Filters (`blur()`, `brightness()`, `grayscale()`) style images live; they spawn stacking contexts, so z-index planning follows."}
+{"instruction": "Explain `filter blur brightness` briefly.", "input": "", "output": "Filters (`blur()`, `brightness()`, `grayscale()`) style images live; they spawn stacking contexts, so z-index planning follows."}
+{"instruction": "When do I use `filter blur brightness`?", "input": "", "output": "Filters (`blur()`, `brightness()`, `grayscale()`) style images live; they spawn stacking contexts, so z-index planning follows."}
+{"instruction": "Give a practical example of `filter blur brightness`.", "input": "", "output": "Filters (`blur()`, `brightness()`, `grayscale()`) style images live; they spawn stacking contexts, so z-index planning follows."}
+{"instruction": "What is `filter blur brightness` for?", "input": "", "output": "Filters (`blur()`, `brightness()`, `grayscale()`) style images live; they spawn stacking contexts, so z-index planning follows."}
+{"instruction": "Apakah fungsi `filter blur brightness`?", "input": "", "output": "Filters (`blur()`, `brightness()`, `grayscale()`) style images live; they spawn stacking contexts, so z-index planning follows."}
+{"instruction": "Terangkan `filter blur brightness` secara ringkas.", "input": "", "output": "Filters (`blur()`, `brightness()`, `grayscale()`) style images live; they spawn stacking contexts, so z-index planning follows."}
+{"instruction": "Bila perlu guna `filter blur brightness`?", "input": "", "output": "Filters (`blur()`, `brightness()`, `grayscale()`) style images live; they spawn stacking contexts, so z-index planning follows."}
+{"instruction": "Beri contoh penggunaan `filter blur brightness`.", "input": "", "output": "Filters (`blur()`, `brightness()`, `grayscale()`) style images live; they spawn stacking contexts, so z-index planning follows."}
+{"instruction": "`filter blur brightness` untuk apa?", "input": "", "output": "Filters (`blur()`, `brightness()`, `grayscale()`) style images live; they spawn stacking contexts, so z-index planning follows."}
+{"instruction": "How would you explain `filter blur brightness` to a junior developer?", "input": "", "output": "Filters (`blur()`, `brightness()`, `grayscale()`) style images live; they spawn stacking contexts, so z-index planning follows."}
+{"instruction": "Give a real-world scenario for `filter blur brightness`.", "input": "", "output": "Filters (`blur()`, `brightness()`, `grayscale()`) style images live; they spawn stacking contexts, so z-index planning follows."}
+{"instruction": "What problem does `filter blur brightness` solve?", "input": "", "output": "Filters (`blur()`, `brightness()`, `grayscale()`) style images live; they spawn stacking contexts, so z-index planning follows."}

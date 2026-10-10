@@ -121,3 +121,345 @@
 {"instruction": "When do I use `fieldset legend`?", "input": "", "output": "Group related controls in `fieldset` with a `legend` caption — free semantics for forms and radios."}
 {"instruction": "Give a practical example of `fieldset legend`.", "input": "", "output": "Group related controls in `fieldset` with a `legend` caption — free semantics for forms and radios."}
 {"instruction": "What is `fieldset legend` for?", "input": "", "output": "Group related controls in `fieldset` with a `legend` caption — free semantics for forms and radios."}
+{"instruction": "Apakah fungsi `<!DOCTYPE html>`?", "input": "", "output": "The doctype triggers standards mode; without it browsers fall back to quirks with legacy box behavior."}
+{"instruction": "Terangkan `<!DOCTYPE html>` secara ringkas.", "input": "", "output": "The doctype triggers standards mode; without it browsers fall back to quirks with legacy box behavior."}
+{"instruction": "Bila perlu guna `<!DOCTYPE html>`?", "input": "", "output": "The doctype triggers standards mode; without it browsers fall back to quirks with legacy box behavior."}
+{"instruction": "Beri contoh penggunaan `<!DOCTYPE html>`.", "input": "", "output": "The doctype triggers standards mode; without it browsers fall back to quirks with legacy box behavior."}
+{"instruction": "`<!DOCTYPE html>` untuk apa?", "input": "", "output": "The doctype triggers standards mode; without it browsers fall back to quirks with legacy box behavior."}
+{"instruction": "How would you explain `<!DOCTYPE html>` to a junior developer?", "input": "", "output": "The doctype triggers standards mode; without it browsers fall back to quirks with legacy box behavior."}
+{"instruction": "Give a real-world scenario for `<!DOCTYPE html>`.", "input": "", "output": "The doctype triggers standards mode; without it browsers fall back to quirks with legacy box behavior."}
+{"instruction": "What problem does `<!DOCTYPE html>` solve?", "input": "", "output": "The doctype triggers standards mode; without it browsers fall back to quirks with legacy box behavior."}
+{"instruction": "Apakah fungsi `headings h1-h6`?", "input": "", "output": "One h1 per page, ordered levels — screen readers navigate by this outline, not by font size."}
+{"instruction": "Terangkan `headings h1-h6` secara ringkas.", "input": "", "output": "One h1 per page, ordered levels — screen readers navigate by this outline, not by font size."}
+{"instruction": "Bila perlu guna `headings h1-h6`?", "input": "", "output": "One h1 per page, ordered levels — screen readers navigate by this outline, not by font size."}
+{"instruction": "Beri contoh penggunaan `headings h1-h6`.", "input": "", "output": "One h1 per page, ordered levels — screen readers navigate by this outline, not by font size."}
+{"instruction": "`headings h1-h6` untuk apa?", "input": "", "output": "One h1 per page, ordered levels — screen readers navigate by this outline, not by font size."}
+{"instruction": "How would you explain `headings h1-h6` to a junior developer?", "input": "", "output": "One h1 per page, ordered levels — screen readers navigate by this outline, not by font size."}
+{"instruction": "Give a real-world scenario for `headings h1-h6`.", "input": "", "output": "One h1 per page, ordered levels — screen readers navigate by this outline, not by font size."}
+{"instruction": "What problem does `headings h1-h6` solve?", "input": "", "output": "One h1 per page, ordered levels — screen readers navigate by this outline, not by font size."}
+{"instruction": "Apakah fungsi `p br hr`?", "input": "", "output": "`<p>` paragraphs, `<br>` line breaks, `<hr>` thematic breaks; never fake spacing with empty divs."}
+{"instruction": "Terangkan `p br hr` secara ringkas.", "input": "", "output": "`<p>` paragraphs, `<br>` line breaks, `<hr>` thematic breaks; never fake spacing with empty divs."}
+{"instruction": "Bila perlu guna `p br hr`?", "input": "", "output": "`<p>` paragraphs, `<br>` line breaks, `<hr>` thematic breaks; never fake spacing with empty divs."}
+{"instruction": "Beri contoh penggunaan `p br hr`.", "input": "", "output": "`<p>` paragraphs, `<br>` line breaks, `<hr>` thematic breaks; never fake spacing with empty divs."}
+{"instruction": "`p br hr` untuk apa?", "input": "", "output": "`<p>` paragraphs, `<br>` line breaks, `<hr>` thematic breaks; never fake spacing with empty divs."}
+{"instruction": "How would you explain `p br hr` to a junior developer?", "input": "", "output": "`<p>` paragraphs, `<br>` line breaks, `<hr>` thematic breaks; never fake spacing with empty divs."}
+{"instruction": "Give a real-world scenario for `p br hr`.", "input": "", "output": "`<p>` paragraphs, `<br>` line breaks, `<hr>` thematic breaks; never fake spacing with empty divs."}
+{"instruction": "What problem does `p br hr` solve?", "input": "", "output": "`<p>` paragraphs, `<br>` line breaks, `<hr>` thematic breaks; never fake spacing with empty divs."}
+{"instruction": "Apakah fungsi `a href`?", "input": "", "output": "Anchors navigate (`href`) or jump (`#id`); external blank tabs need `rel=noopener` for safety."}
+{"instruction": "Terangkan `a href` secara ringkas.", "input": "", "output": "Anchors navigate (`href`) or jump (`#id`); external blank tabs need `rel=noopener` for safety."}
+{"instruction": "Bila perlu guna `a href`?", "input": "", "output": "Anchors navigate (`href`) or jump (`#id`); external blank tabs need `rel=noopener` for safety."}
+{"instruction": "Beri contoh penggunaan `a href`.", "input": "", "output": "Anchors navigate (`href`) or jump (`#id`); external blank tabs need `rel=noopener` for safety."}
+{"instruction": "`a href` untuk apa?", "input": "", "output": "Anchors navigate (`href`) or jump (`#id`); external blank tabs need `rel=noopener` for safety."}
+{"instruction": "How would you explain `a href` to a junior developer?", "input": "", "output": "Anchors navigate (`href`) or jump (`#id`); external blank tabs need `rel=noopener` for safety."}
+{"instruction": "Give a real-world scenario for `a href`.", "input": "", "output": "Anchors navigate (`href`) or jump (`#id`); external blank tabs need `rel=noopener` for safety."}
+{"instruction": "What problem does `a href` solve?", "input": "", "output": "Anchors navigate (`href`) or jump (`#id`); external blank tabs need `rel=noopener` for safety."}
+{"instruction": "Apakah fungsi `img src alt`?", "input": "", "output": "Always `alt` (content description or empty for decorative); `srcset` serves right sizes per screen."}
+{"instruction": "Terangkan `img src alt` secara ringkas.", "input": "", "output": "Always `alt` (content description or empty for decorative); `srcset` serves right sizes per screen."}
+{"instruction": "Bila perlu guna `img src alt`?", "input": "", "output": "Always `alt` (content description or empty for decorative); `srcset` serves right sizes per screen."}
+{"instruction": "Beri contoh penggunaan `img src alt`.", "input": "", "output": "Always `alt` (content description or empty for decorative); `srcset` serves right sizes per screen."}
+{"instruction": "`img src alt` untuk apa?", "input": "", "output": "Always `alt` (content description or empty for decorative); `srcset` serves right sizes per screen."}
+{"instruction": "How would you explain `img src alt` to a junior developer?", "input": "", "output": "Always `alt` (content description or empty for decorative); `srcset` serves right sizes per screen."}
+{"instruction": "Give a real-world scenario for `img src alt`.", "input": "", "output": "Always `alt` (content description or empty for decorative); `srcset` serves right sizes per screen."}
+{"instruction": "What problem does `img src alt` solve?", "input": "", "output": "Always `alt` (content description or empty for decorative); `srcset` serves right sizes per screen."}
+{"instruction": "Apakah fungsi `ul ol li`?", "input": "", "output": "`ul` unordered, `ol` meaningful order, `li` items only — nested lists need their own list parent."}
+{"instruction": "Terangkan `ul ol li` secara ringkas.", "input": "", "output": "`ul` unordered, `ol` meaningful order, `li` items only — nested lists need their own list parent."}
+{"instruction": "Bila perlu guna `ul ol li`?", "input": "", "output": "`ul` unordered, `ol` meaningful order, `li` items only — nested lists need their own list parent."}
+{"instruction": "Beri contoh penggunaan `ul ol li`.", "input": "", "output": "`ul` unordered, `ol` meaningful order, `li` items only — nested lists need their own list parent."}
+{"instruction": "`ul ol li` untuk apa?", "input": "", "output": "`ul` unordered, `ol` meaningful order, `li` items only — nested lists need their own list parent."}
+{"instruction": "How would you explain `ul ol li` to a junior developer?", "input": "", "output": "`ul` unordered, `ol` meaningful order, `li` items only — nested lists need their own list parent."}
+{"instruction": "Give a real-world scenario for `ul ol li`.", "input": "", "output": "`ul` unordered, `ol` meaningful order, `li` items only — nested lists need their own list parent."}
+{"instruction": "What problem does `ul ol li` solve?", "input": "", "output": "`ul` unordered, `ol` meaningful order, `li` items only — nested lists need their own list parent."}
+{"instruction": "Apakah fungsi `table tr td`?", "input": "", "output": "Tables are for tabular data with `th` headers; layout tables break screen readers — use CSS grid."}
+{"instruction": "Terangkan `table tr td` secara ringkas.", "input": "", "output": "Tables are for tabular data with `th` headers; layout tables break screen readers — use CSS grid."}
+{"instruction": "Bila perlu guna `table tr td`?", "input": "", "output": "Tables are for tabular data with `th` headers; layout tables break screen readers — use CSS grid."}
+{"instruction": "Beri contoh penggunaan `table tr td`.", "input": "", "output": "Tables are for tabular data with `th` headers; layout tables break screen readers — use CSS grid."}
+{"instruction": "`table tr td` untuk apa?", "input": "", "output": "Tables are for tabular data with `th` headers; layout tables break screen readers — use CSS grid."}
+{"instruction": "How would you explain `table tr td` to a junior developer?", "input": "", "output": "Tables are for tabular data with `th` headers; layout tables break screen readers — use CSS grid."}
+{"instruction": "Give a real-world scenario for `table tr td`.", "input": "", "output": "Tables are for tabular data with `th` headers; layout tables break screen readers — use CSS grid."}
+{"instruction": "What problem does `table tr td` solve?", "input": "", "output": "Tables are for tabular data with `th` headers; layout tables break screen readers — use CSS grid."}
+{"instruction": "Apakah fungsi `form input`?", "input": "", "output": "Forms collect with named inputs; `method`/`action` define submission, labels make fields operable."}
+{"instruction": "Terangkan `form input` secara ringkas.", "input": "", "output": "Forms collect with named inputs; `method`/`action` define submission, labels make fields operable."}
+{"instruction": "Bila perlu guna `form input`?", "input": "", "output": "Forms collect with named inputs; `method`/`action` define submission, labels make fields operable."}
+{"instruction": "Beri contoh penggunaan `form input`.", "input": "", "output": "Forms collect with named inputs; `method`/`action` define submission, labels make fields operable."}
+{"instruction": "`form input` untuk apa?", "input": "", "output": "Forms collect with named inputs; `method`/`action` define submission, labels make fields operable."}
+{"instruction": "How would you explain `form input` to a junior developer?", "input": "", "output": "Forms collect with named inputs; `method`/`action` define submission, labels make fields operable."}
+{"instruction": "Give a real-world scenario for `form input`.", "input": "", "output": "Forms collect with named inputs; `method`/`action` define submission, labels make fields operable."}
+{"instruction": "What problem does `form input` solve?", "input": "", "output": "Forms collect with named inputs; `method`/`action` define submission, labels make fields operable."}
+{"instruction": "Apakah fungsi `button type`?", "input": "", "output": "`type=button` avoids accidental submits inside forms; `submit` sends, `reset` clears (rarely wanted)."}
+{"instruction": "Terangkan `button type` secara ringkas.", "input": "", "output": "`type=button` avoids accidental submits inside forms; `submit` sends, `reset` clears (rarely wanted)."}
+{"instruction": "Bila perlu guna `button type`?", "input": "", "output": "`type=button` avoids accidental submits inside forms; `submit` sends, `reset` clears (rarely wanted)."}
+{"instruction": "Beri contoh penggunaan `button type`.", "input": "", "output": "`type=button` avoids accidental submits inside forms; `submit` sends, `reset` clears (rarely wanted)."}
+{"instruction": "`button type` untuk apa?", "input": "", "output": "`type=button` avoids accidental submits inside forms; `submit` sends, `reset` clears (rarely wanted)."}
+{"instruction": "How would you explain `button type` to a junior developer?", "input": "", "output": "`type=button` avoids accidental submits inside forms; `submit` sends, `reset` clears (rarely wanted)."}
+{"instruction": "Give a real-world scenario for `button type`.", "input": "", "output": "`type=button` avoids accidental submits inside forms; `submit` sends, `reset` clears (rarely wanted)."}
+{"instruction": "What problem does `button type` solve?", "input": "", "output": "`type=button` avoids accidental submits inside forms; `submit` sends, `reset` clears (rarely wanted)."}
+{"instruction": "Apakah fungsi `div vs span`?", "input": "", "output": "`div` blocks, `span` inlines — both meaningless, so prefer semantic tags and reserve these for styling hooks."}
+{"instruction": "Terangkan `div vs span` secara ringkas.", "input": "", "output": "`div` blocks, `span` inlines — both meaningless, so prefer semantic tags and reserve these for styling hooks."}
+{"instruction": "Bila perlu guna `div vs span`?", "input": "", "output": "`div` blocks, `span` inlines — both meaningless, so prefer semantic tags and reserve these for styling hooks."}
+{"instruction": "Beri contoh penggunaan `div vs span`.", "input": "", "output": "`div` blocks, `span` inlines — both meaningless, so prefer semantic tags and reserve these for styling hooks."}
+{"instruction": "`div vs span` untuk apa?", "input": "", "output": "`div` blocks, `span` inlines — both meaningless, so prefer semantic tags and reserve these for styling hooks."}
+{"instruction": "How would you explain `div vs span` to a junior developer?", "input": "", "output": "`div` blocks, `span` inlines — both meaningless, so prefer semantic tags and reserve these for styling hooks."}
+{"instruction": "Give a real-world scenario for `div vs span`.", "input": "", "output": "`div` blocks, `span` inlines — both meaningless, so prefer semantic tags and reserve these for styling hooks."}
+{"instruction": "What problem does `div vs span` solve?", "input": "", "output": "`div` blocks, `span` inlines — both meaningless, so prefer semantic tags and reserve these for styling hooks."}
+{"instruction": "Apakah fungsi `header footer nav main`?", "input": "", "output": "Landmarks let assistive tech jump regions; exactly one `main` holds the page's core content."}
+{"instruction": "Terangkan `header footer nav main` secara ringkas.", "input": "", "output": "Landmarks let assistive tech jump regions; exactly one `main` holds the page's core content."}
+{"instruction": "Bila perlu guna `header footer nav main`?", "input": "", "output": "Landmarks let assistive tech jump regions; exactly one `main` holds the page's core content."}
+{"instruction": "Beri contoh penggunaan `header footer nav main`.", "input": "", "output": "Landmarks let assistive tech jump regions; exactly one `main` holds the page's core content."}
+{"instruction": "`header footer nav main` untuk apa?", "input": "", "output": "Landmarks let assistive tech jump regions; exactly one `main` holds the page's core content."}
+{"instruction": "How would you explain `header footer nav main` to a junior developer?", "input": "", "output": "Landmarks let assistive tech jump regions; exactly one `main` holds the page's core content."}
+{"instruction": "Give a real-world scenario for `header footer nav main`.", "input": "", "output": "Landmarks let assistive tech jump regions; exactly one `main` holds the page's core content."}
+{"instruction": "What problem does `header footer nav main` solve?", "input": "", "output": "Landmarks let assistive tech jump regions; exactly one `main` holds the page's core content."}
+{"instruction": "Apakah fungsi `meta viewport`?", "input": "", "output": "The viewport meta makes mobile render at device width; pair with `charset=utf-8` first in head."}
+{"instruction": "Terangkan `meta viewport` secara ringkas.", "input": "", "output": "The viewport meta makes mobile render at device width; pair with `charset=utf-8` first in head."}
+{"instruction": "Bila perlu guna `meta viewport`?", "input": "", "output": "The viewport meta makes mobile render at device width; pair with `charset=utf-8` first in head."}
+{"instruction": "Beri contoh penggunaan `meta viewport`.", "input": "", "output": "The viewport meta makes mobile render at device width; pair with `charset=utf-8` first in head."}
+{"instruction": "`meta viewport` untuk apa?", "input": "", "output": "The viewport meta makes mobile render at device width; pair with `charset=utf-8` first in head."}
+{"instruction": "How would you explain `meta viewport` to a junior developer?", "input": "", "output": "The viewport meta makes mobile render at device width; pair with `charset=utf-8` first in head."}
+{"instruction": "Give a real-world scenario for `meta viewport`.", "input": "", "output": "The viewport meta makes mobile render at device width; pair with `charset=utf-8` first in head."}
+{"instruction": "What problem does `meta viewport` solve?", "input": "", "output": "The viewport meta makes mobile render at device width; pair with `charset=utf-8` first in head."}
+{"instruction": "Apakah fungsi `title tag`?", "input": "", "output": "Title shows in tabs/search; unique, front-loaded keywords per page under ~60 characters."}
+{"instruction": "Terangkan `title tag` secara ringkas.", "input": "", "output": "Title shows in tabs/search; unique, front-loaded keywords per page under ~60 characters."}
+{"instruction": "Bila perlu guna `title tag`?", "input": "", "output": "Title shows in tabs/search; unique, front-loaded keywords per page under ~60 characters."}
+{"instruction": "Beri contoh penggunaan `title tag`.", "input": "", "output": "Title shows in tabs/search; unique, front-loaded keywords per page under ~60 characters."}
+{"instruction": "`title tag` untuk apa?", "input": "", "output": "Title shows in tabs/search; unique, front-loaded keywords per page under ~60 characters."}
+{"instruction": "How would you explain `title tag` to a junior developer?", "input": "", "output": "Title shows in tabs/search; unique, front-loaded keywords per page under ~60 characters."}
+{"instruction": "Give a real-world scenario for `title tag`.", "input": "", "output": "Title shows in tabs/search; unique, front-loaded keywords per page under ~60 characters."}
+{"instruction": "What problem does `title tag` solve?", "input": "", "output": "Title shows in tabs/search; unique, front-loaded keywords per page under ~60 characters."}
+{"instruction": "Apakah fungsi `script src`?", "input": "", "output": "`defer` scripts run in order after parsing; `async` runs whenever fetched — choose by dependency."}
+{"instruction": "Terangkan `script src` secara ringkas.", "input": "", "output": "`defer` scripts run in order after parsing; `async` runs whenever fetched — choose by dependency."}
+{"instruction": "Bila perlu guna `script src`?", "input": "", "output": "`defer` scripts run in order after parsing; `async` runs whenever fetched — choose by dependency."}
+{"instruction": "Beri contoh penggunaan `script src`.", "input": "", "output": "`defer` scripts run in order after parsing; `async` runs whenever fetched — choose by dependency."}
+{"instruction": "`script src` untuk apa?", "input": "", "output": "`defer` scripts run in order after parsing; `async` runs whenever fetched — choose by dependency."}
+{"instruction": "How would you explain `script src` to a junior developer?", "input": "", "output": "`defer` scripts run in order after parsing; `async` runs whenever fetched — choose by dependency."}
+{"instruction": "Give a real-world scenario for `script src`.", "input": "", "output": "`defer` scripts run in order after parsing; `async` runs whenever fetched — choose by dependency."}
+{"instruction": "What problem does `script src` solve?", "input": "", "output": "`defer` scripts run in order after parsing; `async` runs whenever fetched — choose by dependency."}
+{"instruction": "Apakah fungsi `link stylesheet`?", "input": "", "output": "Stylesheets in head prevent unstyled flashes; `media=print` scopes print-only rules."}
+{"instruction": "Terangkan `link stylesheet` secara ringkas.", "input": "", "output": "Stylesheets in head prevent unstyled flashes; `media=print` scopes print-only rules."}
+{"instruction": "Bila perlu guna `link stylesheet`?", "input": "", "output": "Stylesheets in head prevent unstyled flashes; `media=print` scopes print-only rules."}
+{"instruction": "Beri contoh penggunaan `link stylesheet`.", "input": "", "output": "Stylesheets in head prevent unstyled flashes; `media=print` scopes print-only rules."}
+{"instruction": "`link stylesheet` untuk apa?", "input": "", "output": "Stylesheets in head prevent unstyled flashes; `media=print` scopes print-only rules."}
+{"instruction": "How would you explain `link stylesheet` to a junior developer?", "input": "", "output": "Stylesheets in head prevent unstyled flashes; `media=print` scopes print-only rules."}
+{"instruction": "Give a real-world scenario for `link stylesheet`.", "input": "", "output": "Stylesheets in head prevent unstyled flashes; `media=print` scopes print-only rules."}
+{"instruction": "What problem does `link stylesheet` solve?", "input": "", "output": "Stylesheets in head prevent unstyled flashes; `media=print` scopes print-only rules."}
+{"instruction": "Apakah fungsi `video controls`?", "input": "", "output": "Native video needs `controls` plus `preload=metadata`; caption tracks serve deaf users and SEO."}
+{"instruction": "Terangkan `video controls` secara ringkas.", "input": "", "output": "Native video needs `controls` plus `preload=metadata`; caption tracks serve deaf users and SEO."}
+{"instruction": "Bila perlu guna `video controls`?", "input": "", "output": "Native video needs `controls` plus `preload=metadata`; caption tracks serve deaf users and SEO."}
+{"instruction": "Beri contoh penggunaan `video controls`.", "input": "", "output": "Native video needs `controls` plus `preload=metadata`; caption tracks serve deaf users and SEO."}
+{"instruction": "`video controls` untuk apa?", "input": "", "output": "Native video needs `controls` plus `preload=metadata`; caption tracks serve deaf users and SEO."}
+{"instruction": "How would you explain `video controls` to a junior developer?", "input": "", "output": "Native video needs `controls` plus `preload=metadata`; caption tracks serve deaf users and SEO."}
+{"instruction": "Give a real-world scenario for `video controls`.", "input": "", "output": "Native video needs `controls` plus `preload=metadata`; caption tracks serve deaf users and SEO."}
+{"instruction": "What problem does `video controls` solve?", "input": "", "output": "Native video needs `controls` plus `preload=metadata`; caption tracks serve deaf users and SEO."}
+{"instruction": "Apakah fungsi `audio controls`?", "input": "", "output": "Audio tags stream with built-in UI; offer transcripts — the accessible and searchable equivalent."}
+{"instruction": "Terangkan `audio controls` secara ringkas.", "input": "", "output": "Audio tags stream with built-in UI; offer transcripts — the accessible and searchable equivalent."}
+{"instruction": "Bila perlu guna `audio controls`?", "input": "", "output": "Audio tags stream with built-in UI; offer transcripts — the accessible and searchable equivalent."}
+{"instruction": "Beri contoh penggunaan `audio controls`.", "input": "", "output": "Audio tags stream with built-in UI; offer transcripts — the accessible and searchable equivalent."}
+{"instruction": "`audio controls` untuk apa?", "input": "", "output": "Audio tags stream with built-in UI; offer transcripts — the accessible and searchable equivalent."}
+{"instruction": "How would you explain `audio controls` to a junior developer?", "input": "", "output": "Audio tags stream with built-in UI; offer transcripts — the accessible and searchable equivalent."}
+{"instruction": "Give a real-world scenario for `audio controls`.", "input": "", "output": "Audio tags stream with built-in UI; offer transcripts — the accessible and searchable equivalent."}
+{"instruction": "What problem does `audio controls` solve?", "input": "", "output": "Audio tags stream with built-in UI; offer transcripts — the accessible and searchable equivalent."}
+{"instruction": "Apakah fungsi `select option`?", "input": "", "output": "Native selects work everywhere including mobile pickers; custom dropdowns must reimplement keyboard support."}
+{"instruction": "Terangkan `select option` secara ringkas.", "input": "", "output": "Native selects work everywhere including mobile pickers; custom dropdowns must reimplement keyboard support."}
+{"instruction": "Bila perlu guna `select option`?", "input": "", "output": "Native selects work everywhere including mobile pickers; custom dropdowns must reimplement keyboard support."}
+{"instruction": "Beri contoh penggunaan `select option`.", "input": "", "output": "Native selects work everywhere including mobile pickers; custom dropdowns must reimplement keyboard support."}
+{"instruction": "`select option` untuk apa?", "input": "", "output": "Native selects work everywhere including mobile pickers; custom dropdowns must reimplement keyboard support."}
+{"instruction": "How would you explain `select option` to a junior developer?", "input": "", "output": "Native selects work everywhere including mobile pickers; custom dropdowns must reimplement keyboard support."}
+{"instruction": "Give a real-world scenario for `select option`.", "input": "", "output": "Native selects work everywhere including mobile pickers; custom dropdowns must reimplement keyboard support."}
+{"instruction": "What problem does `select option` solve?", "input": "", "output": "Native selects work everywhere including mobile pickers; custom dropdowns must reimplement keyboard support."}
+{"instruction": "Apakah fungsi `textarea`?", "input": "", "output": "Textareas take `rows`/`maxlength` and resize handles; never single-line `input` for paragraphs."}
+{"instruction": "Terangkan `textarea` secara ringkas.", "input": "", "output": "Textareas take `rows`/`maxlength` and resize handles; never single-line `input` for paragraphs."}
+{"instruction": "Bila perlu guna `textarea`?", "input": "", "output": "Textareas take `rows`/`maxlength` and resize handles; never single-line `input` for paragraphs."}
+{"instruction": "Beri contoh penggunaan `textarea`.", "input": "", "output": "Textareas take `rows`/`maxlength` and resize handles; never single-line `input` for paragraphs."}
+{"instruction": "`textarea` untuk apa?", "input": "", "output": "Textareas take `rows`/`maxlength` and resize handles; never single-line `input` for paragraphs."}
+{"instruction": "How would you explain `textarea` to a junior developer?", "input": "", "output": "Textareas take `rows`/`maxlength` and resize handles; never single-line `input` for paragraphs."}
+{"instruction": "Give a real-world scenario for `textarea`.", "input": "", "output": "Textareas take `rows`/`maxlength` and resize handles; never single-line `input` for paragraphs."}
+{"instruction": "What problem does `textarea` solve?", "input": "", "output": "Textareas take `rows`/`maxlength` and resize handles; never single-line `input` for paragraphs."}
+{"instruction": "Apakah fungsi `fieldset legend`?", "input": "", "output": "Group related controls in `fieldset` with a `legend` caption — free semantics for forms and radios."}
+{"instruction": "Terangkan `fieldset legend` secara ringkas.", "input": "", "output": "Group related controls in `fieldset` with a `legend` caption — free semantics for forms and radios."}
+{"instruction": "Bila perlu guna `fieldset legend`?", "input": "", "output": "Group related controls in `fieldset` with a `legend` caption — free semantics for forms and radios."}
+{"instruction": "Beri contoh penggunaan `fieldset legend`.", "input": "", "output": "Group related controls in `fieldset` with a `legend` caption — free semantics for forms and radios."}
+{"instruction": "`fieldset legend` untuk apa?", "input": "", "output": "Group related controls in `fieldset` with a `legend` caption — free semantics for forms and radios."}
+{"instruction": "How would you explain `fieldset legend` to a junior developer?", "input": "", "output": "Group related controls in `fieldset` with a `legend` caption — free semantics for forms and radios."}
+{"instruction": "Give a real-world scenario for `fieldset legend`.", "input": "", "output": "Group related controls in `fieldset` with a `legend` caption — free semantics for forms and radios."}
+{"instruction": "What problem does `fieldset legend` solve?", "input": "", "output": "Group related controls in `fieldset` with a `legend` caption — free semantics for forms and radios."}
+{"instruction": "What does `strong em` do?", "input": "", "output": "`<strong>`/`<em>` carry meaning (importance/stress) that `<b>`/`<i>` lack; screen readers vocalize the difference."}
+{"instruction": "Explain `strong em` briefly.", "input": "", "output": "`<strong>`/`<em>` carry meaning (importance/stress) that `<b>`/`<i>` lack; screen readers vocalize the difference."}
+{"instruction": "When do I use `strong em`?", "input": "", "output": "`<strong>`/`<em>` carry meaning (importance/stress) that `<b>`/`<i>` lack; screen readers vocalize the difference."}
+{"instruction": "Give a practical example of `strong em`.", "input": "", "output": "`<strong>`/`<em>` carry meaning (importance/stress) that `<b>`/`<i>` lack; screen readers vocalize the difference."}
+{"instruction": "What is `strong em` for?", "input": "", "output": "`<strong>`/`<em>` carry meaning (importance/stress) that `<b>`/`<i>` lack; screen readers vocalize the difference."}
+{"instruction": "Apakah fungsi `strong em`?", "input": "", "output": "`<strong>`/`<em>` carry meaning (importance/stress) that `<b>`/`<i>` lack; screen readers vocalize the difference."}
+{"instruction": "Terangkan `strong em` secara ringkas.", "input": "", "output": "`<strong>`/`<em>` carry meaning (importance/stress) that `<b>`/`<i>` lack; screen readers vocalize the difference."}
+{"instruction": "Bila perlu guna `strong em`?", "input": "", "output": "`<strong>`/`<em>` carry meaning (importance/stress) that `<b>`/`<i>` lack; screen readers vocalize the difference."}
+{"instruction": "Beri contoh penggunaan `strong em`.", "input": "", "output": "`<strong>`/`<em>` carry meaning (importance/stress) that `<b>`/`<i>` lack; screen readers vocalize the difference."}
+{"instruction": "`strong em` untuk apa?", "input": "", "output": "`<strong>`/`<em>` carry meaning (importance/stress) that `<b>`/`<i>` lack; screen readers vocalize the difference."}
+{"instruction": "How would you explain `strong em` to a junior developer?", "input": "", "output": "`<strong>`/`<em>` carry meaning (importance/stress) that `<b>`/`<i>` lack; screen readers vocalize the difference."}
+{"instruction": "Give a real-world scenario for `strong em`.", "input": "", "output": "`<strong>`/`<em>` carry meaning (importance/stress) that `<b>`/`<i>` lack; screen readers vocalize the difference."}
+{"instruction": "What problem does `strong em` solve?", "input": "", "output": "`<strong>`/`<em>` carry meaning (importance/stress) that `<b>`/`<i>` lack; screen readers vocalize the difference."}
+{"instruction": "What does `blockquote cite` do?", "input": "", "output": "`<blockquote cite=url>` marks quotations with source; `<cite>` names the work — semantics citation tools consume."}
+{"instruction": "Explain `blockquote cite` briefly.", "input": "", "output": "`<blockquote cite=url>` marks quotations with source; `<cite>` names the work — semantics citation tools consume."}
+{"instruction": "When do I use `blockquote cite`?", "input": "", "output": "`<blockquote cite=url>` marks quotations with source; `<cite>` names the work — semantics citation tools consume."}
+{"instruction": "Give a practical example of `blockquote cite`.", "input": "", "output": "`<blockquote cite=url>` marks quotations with source; `<cite>` names the work — semantics citation tools consume."}
+{"instruction": "What is `blockquote cite` for?", "input": "", "output": "`<blockquote cite=url>` marks quotations with source; `<cite>` names the work — semantics citation tools consume."}
+{"instruction": "Apakah fungsi `blockquote cite`?", "input": "", "output": "`<blockquote cite=url>` marks quotations with source; `<cite>` names the work — semantics citation tools consume."}
+{"instruction": "Terangkan `blockquote cite` secara ringkas.", "input": "", "output": "`<blockquote cite=url>` marks quotations with source; `<cite>` names the work — semantics citation tools consume."}
+{"instruction": "Bila perlu guna `blockquote cite`?", "input": "", "output": "`<blockquote cite=url>` marks quotations with source; `<cite>` names the work — semantics citation tools consume."}
+{"instruction": "Beri contoh penggunaan `blockquote cite`.", "input": "", "output": "`<blockquote cite=url>` marks quotations with source; `<cite>` names the work — semantics citation tools consume."}
+{"instruction": "`blockquote cite` untuk apa?", "input": "", "output": "`<blockquote cite=url>` marks quotations with source; `<cite>` names the work — semantics citation tools consume."}
+{"instruction": "How would you explain `blockquote cite` to a junior developer?", "input": "", "output": "`<blockquote cite=url>` marks quotations with source; `<cite>` names the work — semantics citation tools consume."}
+{"instruction": "Give a real-world scenario for `blockquote cite`.", "input": "", "output": "`<blockquote cite=url>` marks quotations with source; `<cite>` names the work — semantics citation tools consume."}
+{"instruction": "What problem does `blockquote cite` solve?", "input": "", "output": "`<blockquote cite=url>` marks quotations with source; `<cite>` names the work — semantics citation tools consume."}
+{"instruction": "What does `code pre kbd samp` do?", "input": "", "output": "`<code>` inline snippets, `<pre>` preserves blocks, `<kbd>` user keystrokes, `<samp>` program output — four tags, four jobs."}
+{"instruction": "Explain `code pre kbd samp` briefly.", "input": "", "output": "`<code>` inline snippets, `<pre>` preserves blocks, `<kbd>` user keystrokes, `<samp>` program output — four tags, four jobs."}
+{"instruction": "When do I use `code pre kbd samp`?", "input": "", "output": "`<code>` inline snippets, `<pre>` preserves blocks, `<kbd>` user keystrokes, `<samp>` program output — four tags, four jobs."}
+{"instruction": "Give a practical example of `code pre kbd samp`.", "input": "", "output": "`<code>` inline snippets, `<pre>` preserves blocks, `<kbd>` user keystrokes, `<samp>` program output — four tags, four jobs."}
+{"instruction": "What is `code pre kbd samp` for?", "input": "", "output": "`<code>` inline snippets, `<pre>` preserves blocks, `<kbd>` user keystrokes, `<samp>` program output — four tags, four jobs."}
+{"instruction": "Apakah fungsi `code pre kbd samp`?", "input": "", "output": "`<code>` inline snippets, `<pre>` preserves blocks, `<kbd>` user keystrokes, `<samp>` program output — four tags, four jobs."}
+{"instruction": "Terangkan `code pre kbd samp` secara ringkas.", "input": "", "output": "`<code>` inline snippets, `<pre>` preserves blocks, `<kbd>` user keystrokes, `<samp>` program output — four tags, four jobs."}
+{"instruction": "Bila perlu guna `code pre kbd samp`?", "input": "", "output": "`<code>` inline snippets, `<pre>` preserves blocks, `<kbd>` user keystrokes, `<samp>` program output — four tags, four jobs."}
+{"instruction": "Beri contoh penggunaan `code pre kbd samp`.", "input": "", "output": "`<code>` inline snippets, `<pre>` preserves blocks, `<kbd>` user keystrokes, `<samp>` program output — four tags, four jobs."}
+{"instruction": "`code pre kbd samp` untuk apa?", "input": "", "output": "`<code>` inline snippets, `<pre>` preserves blocks, `<kbd>` user keystrokes, `<samp>` program output — four tags, four jobs."}
+{"instruction": "How would you explain `code pre kbd samp` to a junior developer?", "input": "", "output": "`<code>` inline snippets, `<pre>` preserves blocks, `<kbd>` user keystrokes, `<samp>` program output — four tags, four jobs."}
+{"instruction": "Give a real-world scenario for `code pre kbd samp`.", "input": "", "output": "`<code>` inline snippets, `<pre>` preserves blocks, `<kbd>` user keystrokes, `<samp>` program output — four tags, four jobs."}
+{"instruction": "What problem does `code pre kbd samp` solve?", "input": "", "output": "`<code>` inline snippets, `<pre>` preserves blocks, `<kbd>` user keystrokes, `<samp>` program output — four tags, four jobs."}
+{"instruction": "What does `input types` do?", "input": "", "output": "`type=email|number|date|tel|url|color|range` summon right keyboards and free validation; pick the narrowest that fits."}
+{"instruction": "Explain `input types` briefly.", "input": "", "output": "`type=email|number|date|tel|url|color|range` summon right keyboards and free validation; pick the narrowest that fits."}
+{"instruction": "When do I use `input types`?", "input": "", "output": "`type=email|number|date|tel|url|color|range` summon right keyboards and free validation; pick the narrowest that fits."}
+{"instruction": "Give a practical example of `input types`.", "input": "", "output": "`type=email|number|date|tel|url|color|range` summon right keyboards and free validation; pick the narrowest that fits."}
+{"instruction": "What is `input types` for?", "input": "", "output": "`type=email|number|date|tel|url|color|range` summon right keyboards and free validation; pick the narrowest that fits."}
+{"instruction": "Apakah fungsi `input types`?", "input": "", "output": "`type=email|number|date|tel|url|color|range` summon right keyboards and free validation; pick the narrowest that fits."}
+{"instruction": "Terangkan `input types` secara ringkas.", "input": "", "output": "`type=email|number|date|tel|url|color|range` summon right keyboards and free validation; pick the narrowest that fits."}
+{"instruction": "Bila perlu guna `input types`?", "input": "", "output": "`type=email|number|date|tel|url|color|range` summon right keyboards and free validation; pick the narrowest that fits."}
+{"instruction": "Beri contoh penggunaan `input types`.", "input": "", "output": "`type=email|number|date|tel|url|color|range` summon right keyboards and free validation; pick the narrowest that fits."}
+{"instruction": "`input types` untuk apa?", "input": "", "output": "`type=email|number|date|tel|url|color|range` summon right keyboards and free validation; pick the narrowest that fits."}
+{"instruction": "How would you explain `input types` to a junior developer?", "input": "", "output": "`type=email|number|date|tel|url|color|range` summon right keyboards and free validation; pick the narrowest that fits."}
+{"instruction": "Give a real-world scenario for `input types`.", "input": "", "output": "`type=email|number|date|tel|url|color|range` summon right keyboards and free validation; pick the narrowest that fits."}
+{"instruction": "What problem does `input types` solve?", "input": "", "output": "`type=email|number|date|tel|url|color|range` summon right keyboards and free validation; pick the narrowest that fits."}
+{"instruction": "What does `label for id` do?", "input": "", "output": "`<label for=id>` focuses its control on click (bigger hit area, screen-reader bound); wrapping works too but `for` is explicit."}
+{"instruction": "Explain `label for id` briefly.", "input": "", "output": "`<label for=id>` focuses its control on click (bigger hit area, screen-reader bound); wrapping works too but `for` is explicit."}
+{"instruction": "When do I use `label for id`?", "input": "", "output": "`<label for=id>` focuses its control on click (bigger hit area, screen-reader bound); wrapping works too but `for` is explicit."}
+{"instruction": "Give a practical example of `label for id`.", "input": "", "output": "`<label for=id>` focuses its control on click (bigger hit area, screen-reader bound); wrapping works too but `for` is explicit."}
+{"instruction": "What is `label for id` for?", "input": "", "output": "`<label for=id>` focuses its control on click (bigger hit area, screen-reader bound); wrapping works too but `for` is explicit."}
+{"instruction": "Apakah fungsi `label for id`?", "input": "", "output": "`<label for=id>` focuses its control on click (bigger hit area, screen-reader bound); wrapping works too but `for` is explicit."}
+{"instruction": "Terangkan `label for id` secara ringkas.", "input": "", "output": "`<label for=id>` focuses its control on click (bigger hit area, screen-reader bound); wrapping works too but `for` is explicit."}
+{"instruction": "Bila perlu guna `label for id`?", "input": "", "output": "`<label for=id>` focuses its control on click (bigger hit area, screen-reader bound); wrapping works too but `for` is explicit."}
+{"instruction": "Beri contoh penggunaan `label for id`.", "input": "", "output": "`<label for=id>` focuses its control on click (bigger hit area, screen-reader bound); wrapping works too but `for` is explicit."}
+{"instruction": "`label for id` untuk apa?", "input": "", "output": "`<label for=id>` focuses its control on click (bigger hit area, screen-reader bound); wrapping works too but `for` is explicit."}
+{"instruction": "How would you explain `label for id` to a junior developer?", "input": "", "output": "`<label for=id>` focuses its control on click (bigger hit area, screen-reader bound); wrapping works too but `for` is explicit."}
+{"instruction": "Give a real-world scenario for `label for id`.", "input": "", "output": "`<label for=id>` focuses its control on click (bigger hit area, screen-reader bound); wrapping works too but `for` is explicit."}
+{"instruction": "What problem does `label for id` solve?", "input": "", "output": "`<label for=id>` focuses its control on click (bigger hit area, screen-reader bound); wrapping works too but `for` is explicit."}
+{"instruction": "What does `meter progress` do?", "input": "", "output": "`<meter>` gauges known quantities (disk), `<progress>` task completion — both expose values to assistive tech unlike div bars."}
+{"instruction": "Explain `meter progress` briefly.", "input": "", "output": "`<meter>` gauges known quantities (disk), `<progress>` task completion — both expose values to assistive tech unlike div bars."}
+{"instruction": "When do I use `meter progress`?", "input": "", "output": "`<meter>` gauges known quantities (disk), `<progress>` task completion — both expose values to assistive tech unlike div bars."}
+{"instruction": "Give a practical example of `meter progress`.", "input": "", "output": "`<meter>` gauges known quantities (disk), `<progress>` task completion — both expose values to assistive tech unlike div bars."}
+{"instruction": "What is `meter progress` for?", "input": "", "output": "`<meter>` gauges known quantities (disk), `<progress>` task completion — both expose values to assistive tech unlike div bars."}
+{"instruction": "Apakah fungsi `meter progress`?", "input": "", "output": "`<meter>` gauges known quantities (disk), `<progress>` task completion — both expose values to assistive tech unlike div bars."}
+{"instruction": "Terangkan `meter progress` secara ringkas.", "input": "", "output": "`<meter>` gauges known quantities (disk), `<progress>` task completion — both expose values to assistive tech unlike div bars."}
+{"instruction": "Bila perlu guna `meter progress`?", "input": "", "output": "`<meter>` gauges known quantities (disk), `<progress>` task completion — both expose values to assistive tech unlike div bars."}
+{"instruction": "Beri contoh penggunaan `meter progress`.", "input": "", "output": "`<meter>` gauges known quantities (disk), `<progress>` task completion — both expose values to assistive tech unlike div bars."}
+{"instruction": "`meter progress` untuk apa?", "input": "", "output": "`<meter>` gauges known quantities (disk), `<progress>` task completion — both expose values to assistive tech unlike div bars."}
+{"instruction": "How would you explain `meter progress` to a junior developer?", "input": "", "output": "`<meter>` gauges known quantities (disk), `<progress>` task completion — both expose values to assistive tech unlike div bars."}
+{"instruction": "Give a real-world scenario for `meter progress`.", "input": "", "output": "`<meter>` gauges known quantities (disk), `<progress>` task completion — both expose values to assistive tech unlike div bars."}
+{"instruction": "What problem does `meter progress` solve?", "input": "", "output": "`<meter>` gauges known quantities (disk), `<progress>` task completion — both expose values to assistive tech unlike div bars."}
+{"instruction": "What does `datalist` do?", "input": "", "output": "`<input list=x>` + `<datalist id=x>` suggests options while allowing free text — combobox without JavaScript."}
+{"instruction": "Explain `datalist` briefly.", "input": "", "output": "`<input list=x>` + `<datalist id=x>` suggests options while allowing free text — combobox without JavaScript."}
+{"instruction": "When do I use `datalist`?", "input": "", "output": "`<input list=x>` + `<datalist id=x>` suggests options while allowing free text — combobox without JavaScript."}
+{"instruction": "Give a practical example of `datalist`.", "input": "", "output": "`<input list=x>` + `<datalist id=x>` suggests options while allowing free text — combobox without JavaScript."}
+{"instruction": "What is `datalist` for?", "input": "", "output": "`<input list=x>` + `<datalist id=x>` suggests options while allowing free text — combobox without JavaScript."}
+{"instruction": "Apakah fungsi `datalist`?", "input": "", "output": "`<input list=x>` + `<datalist id=x>` suggests options while allowing free text — combobox without JavaScript."}
+{"instruction": "Terangkan `datalist` secara ringkas.", "input": "", "output": "`<input list=x>` + `<datalist id=x>` suggests options while allowing free text — combobox without JavaScript."}
+{"instruction": "Bila perlu guna `datalist`?", "input": "", "output": "`<input list=x>` + `<datalist id=x>` suggests options while allowing free text — combobox without JavaScript."}
+{"instruction": "Beri contoh penggunaan `datalist`.", "input": "", "output": "`<input list=x>` + `<datalist id=x>` suggests options while allowing free text — combobox without JavaScript."}
+{"instruction": "`datalist` untuk apa?", "input": "", "output": "`<input list=x>` + `<datalist id=x>` suggests options while allowing free text — combobox without JavaScript."}
+{"instruction": "How would you explain `datalist` to a junior developer?", "input": "", "output": "`<input list=x>` + `<datalist id=x>` suggests options while allowing free text — combobox without JavaScript."}
+{"instruction": "Give a real-world scenario for `datalist`.", "input": "", "output": "`<input list=x>` + `<datalist id=x>` suggests options while allowing free text — combobox without JavaScript."}
+{"instruction": "What problem does `datalist` solve?", "input": "", "output": "`<input list=x>` + `<datalist id=x>` suggests options while allowing free text — combobox without JavaScript."}
+{"instruction": "What does `picture source` do?", "input": "", "output": "`<picture>` serves AVIF/WebP with `<img>` fallback plus art-directed crops per breakpoint via `media`."}
+{"instruction": "Explain `picture source` briefly.", "input": "", "output": "`<picture>` serves AVIF/WebP with `<img>` fallback plus art-directed crops per breakpoint via `media`."}
+{"instruction": "When do I use `picture source`?", "input": "", "output": "`<picture>` serves AVIF/WebP with `<img>` fallback plus art-directed crops per breakpoint via `media`."}
+{"instruction": "Give a practical example of `picture source`.", "input": "", "output": "`<picture>` serves AVIF/WebP with `<img>` fallback plus art-directed crops per breakpoint via `media`."}
+{"instruction": "What is `picture source` for?", "input": "", "output": "`<picture>` serves AVIF/WebP with `<img>` fallback plus art-directed crops per breakpoint via `media`."}
+{"instruction": "Apakah fungsi `picture source`?", "input": "", "output": "`<picture>` serves AVIF/WebP with `<img>` fallback plus art-directed crops per breakpoint via `media`."}
+{"instruction": "Terangkan `picture source` secara ringkas.", "input": "", "output": "`<picture>` serves AVIF/WebP with `<img>` fallback plus art-directed crops per breakpoint via `media`."}
+{"instruction": "Bila perlu guna `picture source`?", "input": "", "output": "`<picture>` serves AVIF/WebP with `<img>` fallback plus art-directed crops per breakpoint via `media`."}
+{"instruction": "Beri contoh penggunaan `picture source`.", "input": "", "output": "`<picture>` serves AVIF/WebP with `<img>` fallback plus art-directed crops per breakpoint via `media`."}
+{"instruction": "`picture source` untuk apa?", "input": "", "output": "`<picture>` serves AVIF/WebP with `<img>` fallback plus art-directed crops per breakpoint via `media`."}
+{"instruction": "How would you explain `picture source` to a junior developer?", "input": "", "output": "`<picture>` serves AVIF/WebP with `<img>` fallback plus art-directed crops per breakpoint via `media`."}
+{"instruction": "Give a real-world scenario for `picture source`.", "input": "", "output": "`<picture>` serves AVIF/WebP with `<img>` fallback plus art-directed crops per breakpoint via `media`."}
+{"instruction": "What problem does `picture source` solve?", "input": "", "output": "`<picture>` serves AVIF/WebP with `<img>` fallback plus art-directed crops per breakpoint via `media`."}
+{"instruction": "What does `track subtitles` do?", "input": "", "output": "`<track kind=subtitles srclang=ms>` captions video natively; transcripts alongside serve search and print."}
+{"instruction": "Explain `track subtitles` briefly.", "input": "", "output": "`<track kind=subtitles srclang=ms>` captions video natively; transcripts alongside serve search and print."}
+{"instruction": "When do I use `track subtitles`?", "input": "", "output": "`<track kind=subtitles srclang=ms>` captions video natively; transcripts alongside serve search and print."}
+{"instruction": "Give a practical example of `track subtitles`.", "input": "", "output": "`<track kind=subtitles srclang=ms>` captions video natively; transcripts alongside serve search and print."}
+{"instruction": "What is `track subtitles` for?", "input": "", "output": "`<track kind=subtitles srclang=ms>` captions video natively; transcripts alongside serve search and print."}
+{"instruction": "Apakah fungsi `track subtitles`?", "input": "", "output": "`<track kind=subtitles srclang=ms>` captions video natively; transcripts alongside serve search and print."}
+{"instruction": "Terangkan `track subtitles` secara ringkas.", "input": "", "output": "`<track kind=subtitles srclang=ms>` captions video natively; transcripts alongside serve search and print."}
+{"instruction": "Bila perlu guna `track subtitles`?", "input": "", "output": "`<track kind=subtitles srclang=ms>` captions video natively; transcripts alongside serve search and print."}
+{"instruction": "Beri contoh penggunaan `track subtitles`.", "input": "", "output": "`<track kind=subtitles srclang=ms>` captions video natively; transcripts alongside serve search and print."}
+{"instruction": "`track subtitles` untuk apa?", "input": "", "output": "`<track kind=subtitles srclang=ms>` captions video natively; transcripts alongside serve search and print."}
+{"instruction": "How would you explain `track subtitles` to a junior developer?", "input": "", "output": "`<track kind=subtitles srclang=ms>` captions video natively; transcripts alongside serve search and print."}
+{"instruction": "Give a real-world scenario for `track subtitles`.", "input": "", "output": "`<track kind=subtitles srclang=ms>` captions video natively; transcripts alongside serve search and print."}
+{"instruction": "What problem does `track subtitles` solve?", "input": "", "output": "`<track kind=subtitles srclang=ms>` captions video natively; transcripts alongside serve search and print."}
+{"instruction": "What does `canvas` do?", "input": "", "output": "`<canvas>` is a scriptable bitmap (charts, games) — inherently inaccessible, so mirror state in DOM/ARIA."}
+{"instruction": "Explain `canvas` briefly.", "input": "", "output": "`<canvas>` is a scriptable bitmap (charts, games) — inherently inaccessible, so mirror state in DOM/ARIA."}
+{"instruction": "When do I use `canvas`?", "input": "", "output": "`<canvas>` is a scriptable bitmap (charts, games) — inherently inaccessible, so mirror state in DOM/ARIA."}
+{"instruction": "Give a practical example of `canvas`.", "input": "", "output": "`<canvas>` is a scriptable bitmap (charts, games) — inherently inaccessible, so mirror state in DOM/ARIA."}
+{"instruction": "What is `canvas` for?", "input": "", "output": "`<canvas>` is a scriptable bitmap (charts, games) — inherently inaccessible, so mirror state in DOM/ARIA."}
+{"instruction": "Apakah fungsi `canvas`?", "input": "", "output": "`<canvas>` is a scriptable bitmap (charts, games) — inherently inaccessible, so mirror state in DOM/ARIA."}
+{"instruction": "Terangkan `canvas` secara ringkas.", "input": "", "output": "`<canvas>` is a scriptable bitmap (charts, games) — inherently inaccessible, so mirror state in DOM/ARIA."}
+{"instruction": "Bila perlu guna `canvas`?", "input": "", "output": "`<canvas>` is a scriptable bitmap (charts, games) — inherently inaccessible, so mirror state in DOM/ARIA."}
+{"instruction": "Beri contoh penggunaan `canvas`.", "input": "", "output": "`<canvas>` is a scriptable bitmap (charts, games) — inherently inaccessible, so mirror state in DOM/ARIA."}
+{"instruction": "`canvas` untuk apa?", "input": "", "output": "`<canvas>` is a scriptable bitmap (charts, games) — inherently inaccessible, so mirror state in DOM/ARIA."}
+{"instruction": "How would you explain `canvas` to a junior developer?", "input": "", "output": "`<canvas>` is a scriptable bitmap (charts, games) — inherently inaccessible, so mirror state in DOM/ARIA."}
+{"instruction": "Give a real-world scenario for `canvas`.", "input": "", "output": "`<canvas>` is a scriptable bitmap (charts, games) — inherently inaccessible, so mirror state in DOM/ARIA."}
+{"instruction": "What problem does `canvas` solve?", "input": "", "output": "`<canvas>` is a scriptable bitmap (charts, games) — inherently inaccessible, so mirror state in DOM/ARIA."}
+{"instruction": "What does `svg inline` do?", "input": "", "output": "Inline `<svg>` scales perfectly and styles with CSS; complex art belongs in files, icons inline for zero requests."}
+{"instruction": "Explain `svg inline` briefly.", "input": "", "output": "Inline `<svg>` scales perfectly and styles with CSS; complex art belongs in files, icons inline for zero requests."}
+{"instruction": "When do I use `svg inline`?", "input": "", "output": "Inline `<svg>` scales perfectly and styles with CSS; complex art belongs in files, icons inline for zero requests."}
+{"instruction": "Give a practical example of `svg inline`.", "input": "", "output": "Inline `<svg>` scales perfectly and styles with CSS; complex art belongs in files, icons inline for zero requests."}
+{"instruction": "What is `svg inline` for?", "input": "", "output": "Inline `<svg>` scales perfectly and styles with CSS; complex art belongs in files, icons inline for zero requests."}
+{"instruction": "Apakah fungsi `svg inline`?", "input": "", "output": "Inline `<svg>` scales perfectly and styles with CSS; complex art belongs in files, icons inline for zero requests."}
+{"instruction": "Terangkan `svg inline` secara ringkas.", "input": "", "output": "Inline `<svg>` scales perfectly and styles with CSS; complex art belongs in files, icons inline for zero requests."}
+{"instruction": "Bila perlu guna `svg inline`?", "input": "", "output": "Inline `<svg>` scales perfectly and styles with CSS; complex art belongs in files, icons inline for zero requests."}
+{"instruction": "Beri contoh penggunaan `svg inline`.", "input": "", "output": "Inline `<svg>` scales perfectly and styles with CSS; complex art belongs in files, icons inline for zero requests."}
+{"instruction": "`svg inline` untuk apa?", "input": "", "output": "Inline `<svg>` scales perfectly and styles with CSS; complex art belongs in files, icons inline for zero requests."}
+{"instruction": "How would you explain `svg inline` to a junior developer?", "input": "", "output": "Inline `<svg>` scales perfectly and styles with CSS; complex art belongs in files, icons inline for zero requests."}
+{"instruction": "Give a real-world scenario for `svg inline`.", "input": "", "output": "Inline `<svg>` scales perfectly and styles with CSS; complex art belongs in files, icons inline for zero requests."}
+{"instruction": "What problem does `svg inline` solve?", "input": "", "output": "Inline `<svg>` scales perfectly and styles with CSS; complex art belongs in files, icons inline for zero requests."}
+{"instruction": "What does `template tag` do?", "input": "", "output": "`<template>` holds inert clonable markup (`content.cloneNode`) — lists and dialogs without string HTML."}
+{"instruction": "Explain `template tag` briefly.", "input": "", "output": "`<template>` holds inert clonable markup (`content.cloneNode`) — lists and dialogs without string HTML."}
+{"instruction": "When do I use `template tag`?", "input": "", "output": "`<template>` holds inert clonable markup (`content.cloneNode`) — lists and dialogs without string HTML."}
+{"instruction": "Give a practical example of `template tag`.", "input": "", "output": "`<template>` holds inert clonable markup (`content.cloneNode`) — lists and dialogs without string HTML."}
+{"instruction": "What is `template tag` for?", "input": "", "output": "`<template>` holds inert clonable markup (`content.cloneNode`) — lists and dialogs without string HTML."}
+{"instruction": "Apakah fungsi `template tag`?", "input": "", "output": "`<template>` holds inert clonable markup (`content.cloneNode`) — lists and dialogs without string HTML."}
+{"instruction": "Terangkan `template tag` secara ringkas.", "input": "", "output": "`<template>` holds inert clonable markup (`content.cloneNode`) — lists and dialogs without string HTML."}
+{"instruction": "Bila perlu guna `template tag`?", "input": "", "output": "`<template>` holds inert clonable markup (`content.cloneNode`) — lists and dialogs without string HTML."}
+{"instruction": "Beri contoh penggunaan `template tag`.", "input": "", "output": "`<template>` holds inert clonable markup (`content.cloneNode`) — lists and dialogs without string HTML."}
+{"instruction": "`template tag` untuk apa?", "input": "", "output": "`<template>` holds inert clonable markup (`content.cloneNode`) — lists and dialogs without string HTML."}
+{"instruction": "How would you explain `template tag` to a junior developer?", "input": "", "output": "`<template>` holds inert clonable markup (`content.cloneNode`) — lists and dialogs without string HTML."}
+{"instruction": "Give a real-world scenario for `template tag`.", "input": "", "output": "`<template>` holds inert clonable markup (`content.cloneNode`) — lists and dialogs without string HTML."}
+{"instruction": "What problem does `template tag` solve?", "input": "", "output": "`<template>` holds inert clonable markup (`content.cloneNode`) — lists and dialogs without string HTML."}
+{"instruction": "What does `form action method` do?", "input": "", "output": "`action` targets, `method` verbs (GET idempotent searches, POST mutations); `enctype` multipart for file uploads."}
+{"instruction": "Explain `form action method` briefly.", "input": "", "output": "`action` targets, `method` verbs (GET idempotent searches, POST mutations); `enctype` multipart for file uploads."}
+{"instruction": "When do I use `form action method`?", "input": "", "output": "`action` targets, `method` verbs (GET idempotent searches, POST mutations); `enctype` multipart for file uploads."}
+{"instruction": "Give a practical example of `form action method`.", "input": "", "output": "`action` targets, `method` verbs (GET idempotent searches, POST mutations); `enctype` multipart for file uploads."}
+{"instruction": "What is `form action method` for?", "input": "", "output": "`action` targets, `method` verbs (GET idempotent searches, POST mutations); `enctype` multipart for file uploads."}
+{"instruction": "Apakah fungsi `form action method`?", "input": "", "output": "`action` targets, `method` verbs (GET idempotent searches, POST mutations); `enctype` multipart for file uploads."}
+{"instruction": "Terangkan `form action method` secara ringkas.", "input": "", "output": "`action` targets, `method` verbs (GET idempotent searches, POST mutations); `enctype` multipart for file uploads."}
+{"instruction": "Bila perlu guna `form action method`?", "input": "", "output": "`action` targets, `method` verbs (GET idempotent searches, POST mutations); `enctype` multipart for file uploads."}
+{"instruction": "Beri contoh penggunaan `form action method`.", "input": "", "output": "`action` targets, `method` verbs (GET idempotent searches, POST mutations); `enctype` multipart for file uploads."}
+{"instruction": "`form action method` untuk apa?", "input": "", "output": "`action` targets, `method` verbs (GET idempotent searches, POST mutations); `enctype` multipart for file uploads."}
+{"instruction": "How would you explain `form action method` to a junior developer?", "input": "", "output": "`action` targets, `method` verbs (GET idempotent searches, POST mutations); `enctype` multipart for file uploads."}
+{"instruction": "Give a real-world scenario for `form action method`.", "input": "", "output": "`action` targets, `method` verbs (GET idempotent searches, POST mutations); `enctype` multipart for file uploads."}
+{"instruction": "What problem does `form action method` solve?", "input": "", "output": "`action` targets, `method` verbs (GET idempotent searches, POST mutations); `enctype` multipart for file uploads."}
+{"instruction": "What does `hidden attribute` do?", "input": "", "output": "The `hidden` attribute hides semantically (stronger than CSS `display:none` for AT); toggle the property, not styles."}
+{"instruction": "Explain `hidden attribute` briefly.", "input": "", "output": "The `hidden` attribute hides semantically (stronger than CSS `display:none` for AT); toggle the property, not styles."}
+{"instruction": "When do I use `hidden attribute`?", "input": "", "output": "The `hidden` attribute hides semantically (stronger than CSS `display:none` for AT); toggle the property, not styles."}
+{"instruction": "Give a practical example of `hidden attribute`.", "input": "", "output": "The `hidden` attribute hides semantically (stronger than CSS `display:none` for AT); toggle the property, not styles."}
+{"instruction": "What is `hidden attribute` for?", "input": "", "output": "The `hidden` attribute hides semantically (stronger than CSS `display:none` for AT); toggle the property, not styles."}
+{"instruction": "Apakah fungsi `hidden attribute`?", "input": "", "output": "The `hidden` attribute hides semantically (stronger than CSS `display:none` for AT); toggle the property, not styles."}
+{"instruction": "Terangkan `hidden attribute` secara ringkas.", "input": "", "output": "The `hidden` attribute hides semantically (stronger than CSS `display:none` for AT); toggle the property, not styles."}
+{"instruction": "Bila perlu guna `hidden attribute`?", "input": "", "output": "The `hidden` attribute hides semantically (stronger than CSS `display:none` for AT); toggle the property, not styles."}
+{"instruction": "Beri contoh penggunaan `hidden attribute`.", "input": "", "output": "The `hidden` attribute hides semantically (stronger than CSS `display:none` for AT); toggle the property, not styles."}
+{"instruction": "`hidden attribute` untuk apa?", "input": "", "output": "The `hidden` attribute hides semantically (stronger than CSS `display:none` for AT); toggle the property, not styles."}
+{"instruction": "How would you explain `hidden attribute` to a junior developer?", "input": "", "output": "The `hidden` attribute hides semantically (stronger than CSS `display:none` for AT); toggle the property, not styles."}
+{"instruction": "Give a real-world scenario for `hidden attribute`.", "input": "", "output": "The `hidden` attribute hides semantically (stronger than CSS `display:none` for AT); toggle the property, not styles."}
+{"instruction": "What problem does `hidden attribute` solve?", "input": "", "output": "The `hidden` attribute hides semantically (stronger than CSS `display:none` for AT); toggle the property, not styles."}
