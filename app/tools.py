@@ -84,7 +84,8 @@ def tool_edit(arg) -> str:
 def tool_run(arg, timeout=8) -> str:
     exe = sys.executable if ("import " in arg or "print(" in arg) else "node"
     try:
-        p = subprocess.run([exe, "-e", arg], capture_output=True, text=True, timeout=timeout)
+        p = subprocess.run([exe, "-e", arg], capture_output=True, text=True,
+                           encoding="utf-8", errors="replace", timeout=timeout)
         out = (p.stdout or "") + (("\nSTDERR:\n" + p.stderr) if p.stderr else "")
         return (out.strip() or "(no output)")[:4000]
     except subprocess.TimeoutExpired:
@@ -100,7 +101,8 @@ def tool_bash(arg, timeout=10, allow_all=False, confirm=None) -> str:
     if not allow_all and confirm and not confirm(f"Run shell? `{arg}` [y/N] "):
         return "SKIPPED by user"
     try:
-        p = subprocess.run(arg, shell=True, capture_output=True, text=True, timeout=timeout,
+        p = subprocess.run(arg, shell=True, capture_output=True, text=True,
+                           encoding="utf-8", errors="replace", timeout=timeout,
                            cwd=str(ROOT))
         out = (p.stdout or "") + (f"\n[exit={p.returncode}]\n" if p.returncode else "")
         out += (p.stderr or "")

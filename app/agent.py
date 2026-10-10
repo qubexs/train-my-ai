@@ -44,7 +44,7 @@ def clean(text, name):
     return t.strip()
 
 
-def system_prompt(name, lang, tools_on=True):
+def system_prompt(name, lang, tools_on=True, think=False):
     base = ("Anda ialah {n}, pembantu pengekodan CPU kecil 0.5B. Jawab ringkas dalam Bahasa Melayu. "
             "Jika ditanya siapa anda / siapa cipta anda, jawab tepat seperti ini: Saya {n}, dibina untuk pengekodan. "
             "Jangan sebut Qwen, Alibaba, Tongyi. Anda offline tanpa internet — "
@@ -57,6 +57,12 @@ def system_prompt(name, lang, tools_on=True):
             "if asked for latest news or live data, say honestly you have no access, never invent. "
             "Never repeat the user's question back; answer directly.")
     base = base.format(n=name)
+    if think:
+        base += ("\n\nFikir langkah demi langkah dahulu (Langkah 1... Langkah 2...), "
+                 "kemudian tulis JAWAPAN AKHIR berasingan."
+                 if lang == "ms" else
+                 "\n\nThink step by step first (Step 1... Step 2...), "
+                 "then write a separate FINAL ANSWER.")
     if tools_on:
         base += "\n\n" + TOOL_SPEC
     return base
@@ -75,13 +81,13 @@ def strip_tool_blocks(text):
 
 def run_agent(backend, question, name="XCoder", lang="ms", history=None,
               tools_on=True, max_steps=3, tool_ctx=None, on_tool=None,
-              expert_ctx=""):
+              expert_ctx="", think=False):
     """Returns (final_answer, tps, tools_trace). expert_ctx grounds the model
     on the real active expert + registry so it never invents model names."""
     history = history or []
     tool_ctx = tool_ctx or {}
     messages = list(history[-8:]) + [{"role": "user", "content": question}]
-    system = system_prompt(name, lang, tools_on)
+    system = system_prompt(name, lang, tools_on, think)
     if expert_ctx:
         system += "\n\n" + expert_ctx
     trace, tps = [], None
@@ -99,7 +105,7 @@ def run_agent(backend, question, name="XCoder", lang="ms", history=None,
         messages = messages + [{"role": "assistant", "content": strip_tool_blocks(raw) or "(using tool)"},
                                {"role": "tool", "name": tname, "content": result}]
     # max steps hit: one final pass without tools
-    plain = system_prompt(name, lang, False)
+    plain = system_prompt(name, lang, False, think)
     if expert_ctx:
         plain += "\n\n" + expert_ctx
     raw, tps = backend.chat(plain, messages)

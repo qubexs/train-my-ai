@@ -27,7 +27,7 @@ APP_DIR = (Path(sys.executable).resolve().parent if getattr(sys, "frozen", False
            else Path(__file__).resolve().parent)
 sys.path.insert(0, str(APP_DIR))
 
-__version__ = "0.4.11"
+__version__ = "0.4.12"
 
 LLAMA_TAG = "b11491"
 LLAMA_BASE = f"https://github.com/ggerganov/llama.cpp/releases/download/{LLAMA_TAG}"
@@ -36,7 +36,7 @@ HF_MODEL_URL = ("https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF/resolve/
 MODEL_SIZE = 491400032
 
 from backends import LlamaCliBackend, LmStudioBackend
-from agent import run_agent
+from agent import run_agent, sanitize
 from experts import (GENERAL, add as add_model, detect as detect_domain,
                      fmt_size, resolve as resolve_model, scan as scan_models,
                      STACK2DOMAIN, infer_name_domains, resolve_layout)
@@ -112,6 +112,8 @@ HELP = """Commands:
 /help                 this help
 /lang ms|en           switch language (clears turn cache, keeps session file)
 /tools on|off         enable/disable agentic tool loop
+/think on|off         show Langkah 1... reasoning before final answer
+/plan <tugas>         numbered build plan (maks 6 langkah), then build file by file
 /backend llama|lmstudio|server  tukar enjin inferens
 /server               status resident llama-server (backend server sahaja)
 /model <nama|path|id>  tukar model pakar (satu aktif pada satu masa)
@@ -188,6 +190,7 @@ def build_parser():
     ap.add_argument("--allow-all", action="store_true", help="skip bash confirm (dangerous)")
     ap.add_argument("--max-tokens", type=int, default=500, help="max tokens per answer (code: 800-1000)")
     ap.add_argument("--autoroute", action="store_true", help="auto-switch expert model by question domain")
+    ap.add_argument("--think", action="store_true", help="show step-by-step thinking before answer")
     ap.add_argument("--once", default="", help="one-shot prompt, print answer and exit (for scripts)")
     ap.add_argument("--version", action="version", version=f"%(prog)s {__version__}")
     sub = ap.add_subparsers(dest="cmd")
@@ -306,6 +309,36 @@ def local_action(q, lang):
             f"in it file by file? E.g. `write package.json for the blog`.")
 
 
+PLAN_TEMPLATES = {
+    "web": ["Buat folder projek + `npm init -y`, pasang express + pg",
+            "Tulis server + pool PostgreSQL (sambungan env)",
+            "Tulis laluan CRUD: senarai, baca satu, cipta",
+            "Tulis paparan ringkas (HTML hantar/baca)",
+            "Tulis Dockerfile + compose (app + db + healthcheck)",
+            "Uji setiap fail (`node --check`, curl) + /good"],
+    "data": ["Lakar skema (tabel + kunci + hubungan)",
+             "Tulis migrasi SQL cipta tabel",
+             "Tulisbenih data contoh (seed)",
+             "Tulis query CRUD + uji di psql",
+             "Sandar/restore + /good"],
+    "linux": ["Kenal pasti tugas + arahan terlibat (man --help)",
+              "Cuba arahan selamat dahulu (dry-run, --help)",
+              "Tulis skrip .sh + chmod +x",
+              "Uji dalam folder sandbox + /good"],
+}
+
+
+def plan_fallback(task, lang, dom):
+    steps = PLAN_TEMPLATES.get(dom) or ["Pecah tugas kepada fail terkecil",
+                                        "Siapkan satu fail, uji, /good",
+                                        "Ulang langkah seterusnya",
+                                        "Gabung + uji hujung-ke-hujung"]
+    if lang == "ms":
+        return "\n".join(f"{i}. {s}" for i, s in enumerate(steps, 1))
+    en = {"Buat": "Create", "Tulis": "Write", "Uji": "Test"}
+    return "\n".join(f"{i}. {s}" for i, s in enumerate(steps, 1))
+
+
 def scrub_history(h):
     """Drop degenerate turns (role-play echoes) saved by older versions."""
     out = []
@@ -339,6 +372,7 @@ def repl(args):
     backend = make_backend(args, cli_path, model_path)
     name, lang = args.name, args.lang
     tools_on = not args.no_tools
+    think_on = args.think
     auto_route = args.autoroute
     session = args.session
     history = scrub_history(load_session(session)[-20:])
@@ -374,6 +408,35 @@ def repl(args):
         if q.startswith("/tools"):
             tools_on = q.split()[-1] != "off"
             print(f"tools={'on' if tools_on else 'off'}")
+            continue
+        if q.startswith("/think"):
+            think_on = q.split()[-1] != "off" if len(q.split()) > 1 else True
+            print(f"think={'on' if think_on else 'off'} (reasoning Langkah 1... ditunjuk)")
+            continue
+        if q == "/plan" or q.startswith("/plan "):
+            task = q[len("/plan"):].strip() or "tugas semasa"
+            psys = ("Anda perancang projek. Balas dengan senarai bernombor TEPAT 6 langkah ke bawah "
+                    "(setiap langkah: satu fail atau satu arahan + satu ayat tujuan). "
+                    "Tiada penerangan panjang."
+                    if lang == "ms" else
+                    "You are a project planner. Reply with EXACTLY 6 numbered steps or fewer "
+                    "(each: one file or one command + one purpose sentence). No long prose.")
+            print(f"... merancang ...")
+            try:
+                praw, _ = backend.chat(psys, history[-4:] + [{"role": "user", "content": task}],
+                                       max_tokens=300)
+            except Exception as e:
+                print(f"Ralat: {e}")
+                continue
+            plan = sanitize(praw)
+            import re as _re
+            if not _re.search(r"^\s*\d+\s*[.)]", plan, _re.M):
+                plan = plan_fallback(task, lang, detect_domain(task))
+                print("(rancangan templat — model tidak patuh format langkah)")
+            history += [{"role": "user", "content": "/plan " + task},
+                        {"role": "assistant", "content": plan}]
+            save_turn(session, history[-2:])
+            print(f"\nRancangan {task}:\n{plan}\nBina satu langkah satu masa — sebut 'langkah 1', dll.")
             continue
         if q.startswith("/backend"):
             b = q.split()[-1]
@@ -570,7 +633,7 @@ def repl(args):
                 try:
                     ans, tps, trace = run_agent(backend, q, name=name, lang=lang, history=history,
                                                 tools_on=tools_on, tool_ctx=tool_ctx, on_tool=on_tool,
-                                                expert_ctx=expert_context(cur))
+                                                expert_ctx=expert_context(cur), think=think_on)
                 except Exception as e:
                     print(f"Ralat: {e}")
                     continue
@@ -633,7 +696,7 @@ def main():
         ans, tps, _ = run_agent(backend, args.once, name=args.name, lang=args.lang,
                                 tools_on=not args.no_tools,
                                 tool_ctx={"allow_all": True, "rag_k": 2},
-                                expert_ctx=expert_context(cur))
+                                expert_ctx=expert_context(cur), think=args.think)
         print(ans)
         if backend.kind == "server":
             backend.manager.stop()

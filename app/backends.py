@@ -39,7 +39,8 @@ class LlamaCliBackend:
              "-r", "Pengguna:", "-r", "Pembantu:",
              "-r", "<|im_start|>", "-r", "<|im_end|>",
              "-sys", system, "-p", full],
-            capture_output=True, text=True, timeout=300)
+            capture_output=True, text=True, encoding="utf-8", errors="replace",
+            timeout=300)
         if p.returncode != 0:
             raise RuntimeError((p.stderr or p.stdout)[-1000:])
         blob = p.stdout
