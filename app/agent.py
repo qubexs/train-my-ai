@@ -44,7 +44,7 @@ def clean(text, name):
     return t.strip()
 
 
-def system_prompt(name, lang, tools_on=True, think=False):
+def system_prompt(name, lang, tools_on=True):
     base = ("Anda ialah {n}, pembantu pengekodan CPU kecil 0.5B. Jawab ringkas dalam Bahasa Melayu. "
             "Jika ditanya siapa anda / siapa cipta anda, jawab tepat seperti ini: Saya {n}, dibina untuk pengekodan. "
             "Jangan sebut Qwen, Alibaba, Tongyi. Anda offline tanpa internet — "
@@ -57,15 +57,23 @@ def system_prompt(name, lang, tools_on=True, think=False):
             "if asked for latest news or live data, say honestly you have no access, never invent. "
             "Never repeat the user's question back; answer directly.")
     base = base.format(n=name)
-    if think:
-        base += ("\n\nFikir langkah demi langkah dahulu (Langkah 1... Langkah 2...), "
-                 "kemudian tulis JAWAPAN AKHIR berasingan."
-                 if lang == "ms" else
-                 "\n\nThink step by step first (Step 1... Step 2...), "
-                 "then write a separate FINAL ANSWER.")
+    base += ("\n\nSebelum menjawab, tulis fikiran ringkas (2-4 baris) dahulu, "
+             "kemudian tulis JAWAPAN AKHIR berasingan."
+             if lang == "ms" else
+             "\n\nBefore answering, write brief thinking (2-4 lines) first, "
+             "then write a separate FINAL ANSWER.")
     if tools_on:
         base += "\n\n" + TOOL_SPEC
     return base
+
+
+def split_thinking(text, lang="ms"):
+    """Pisah fikiran vs jawapan akhir. Returns (thinking|None, answer)."""
+    mark = "jawapan akhir" if lang == "ms" else "final answer"
+    parts = re.split(mark, text or "", flags=re.IGNORECASE, maxsplit=1)
+    if len(parts) == 2 and parts[1].strip():
+        return sanitize(parts[0]), parts[1]
+    return None, text
 
 
 def extract_tool_call(text):
@@ -81,21 +89,41 @@ def strip_tool_blocks(text):
 
 def run_agent(backend, question, name="XCoder", lang="ms", history=None,
               tools_on=True, max_steps=3, tool_ctx=None, on_tool=None,
-              expert_ctx="", think=False):
+              expert_ctx="", on_think=None):
     """Returns (final_answer, tps, tools_trace). expert_ctx grounds the model
-    on the real active expert + registry so it never invents model names."""
+    on the real active expert + registry so it never invents model names.
+    Thinking trace is parsed and shown via on_think (always on)."""
     history = history or []
     tool_ctx = tool_ctx or {}
     messages = list(history[-8:]) + [{"role": "user", "content": question}]
-    system = system_prompt(name, lang, tools_on, think)
+    system = system_prompt(name, lang, tools_on)
     if expert_ctx:
         system += "\n\n" + expert_ctx
+    # Fikiran dahulu (panggilan khas, sentiasa ditunjuk): apa yang AI akan buat.
+    if on_think is not None:
+        try:
+            tsys = ("Tulis fikiran ringkas 2-4 baris: apa yang pengguna mahu dan bagaimana anda akan jawab. "
+                    "Jangan jawab lagi, tulis fikiran sahaja."
+                    if lang == "ms" else
+                    "Write brief thinking, 2-4 lines: what the user wants and how you will answer. "
+                    "Do not answer yet, thinking only.")
+            if expert_ctx:
+                tsys += "\n\n" + expert_ctx
+            traw, _ = backend.chat(tsys, messages[-2:], max_tokens=150)
+            thinking = sanitize(strip_tool_blocks(traw))
+            if thinking:
+                on_think(thinking)
+                messages = messages + [{"role": "assistant",
+                                        "content": "(fikiran: " + thinking[:500] + ")"}]
+        except Exception:
+            pass
     trace, tps = [], None
     for _ in range(max_steps + 1):
         raw, tps = backend.chat(system, messages)
         call = extract_tool_call(raw) if tools_on else None
         if not call:
-            return clean(sanitize(raw), name), tps, trace
+            _, answer = split_thinking(raw, lang)
+            return clean(sanitize(answer), name), tps, trace
         tname, targ = call
         fn = DISPATCH.get(tname)
         result = fn(targ, tool_ctx) if fn else f"ERROR: unknown tool {tname}"
@@ -105,8 +133,9 @@ def run_agent(backend, question, name="XCoder", lang="ms", history=None,
         messages = messages + [{"role": "assistant", "content": strip_tool_blocks(raw) or "(using tool)"},
                                {"role": "tool", "name": tname, "content": result}]
     # max steps hit: one final pass without tools
-    plain = system_prompt(name, lang, False, think)
+    plain = system_prompt(name, lang, False)
     if expert_ctx:
         plain += "\n\n" + expert_ctx
     raw, tps = backend.chat(plain, messages)
-    return clean(sanitize(strip_tool_blocks(raw)), name), tps, trace
+    _, answer = split_thinking(strip_tool_blocks(raw), lang)
+    return clean(sanitize(answer), name), tps, trace

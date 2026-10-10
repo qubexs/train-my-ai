@@ -27,7 +27,7 @@ APP_DIR = (Path(sys.executable).resolve().parent if getattr(sys, "frozen", False
            else Path(__file__).resolve().parent)
 sys.path.insert(0, str(APP_DIR))
 
-__version__ = "0.4.12"
+__version__ = "0.4.13"
 
 LLAMA_TAG = "b11491"
 LLAMA_BASE = f"https://github.com/ggerganov/llama.cpp/releases/download/{LLAMA_TAG}"
@@ -112,8 +112,8 @@ HELP = """Commands:
 /help                 this help
 /lang ms|en           switch language (clears turn cache, keeps session file)
 /tools on|off         enable/disable agentic tool loop
-/think on|off         show Langkah 1... reasoning before final answer
 /plan <tugas>         numbered build plan (maks 6 langkah), then build file by file
+(fikiran AI sentiasa ditunjuk automatik sebelum jawapan — tiada arahan khas)
 /backend llama|lmstudio|server  tukar enjin inferens
 /server               status resident llama-server (backend server sahaja)
 /model <nama|path|id>  tukar model pakar (satu aktif pada satu masa)
@@ -190,7 +190,6 @@ def build_parser():
     ap.add_argument("--allow-all", action="store_true", help="skip bash confirm (dangerous)")
     ap.add_argument("--max-tokens", type=int, default=500, help="max tokens per answer (code: 800-1000)")
     ap.add_argument("--autoroute", action="store_true", help="auto-switch expert model by question domain")
-    ap.add_argument("--think", action="store_true", help="show step-by-step thinking before answer")
     ap.add_argument("--once", default="", help="one-shot prompt, print answer and exit (for scripts)")
     ap.add_argument("--version", action="version", version=f"%(prog)s {__version__}")
     sub = ap.add_subparsers(dest="cmd")
@@ -372,7 +371,6 @@ def repl(args):
     backend = make_backend(args, cli_path, model_path)
     name, lang = args.name, args.lang
     tools_on = not args.no_tools
-    think_on = args.think
     auto_route = args.autoroute
     session = args.session
     history = scrub_history(load_session(session)[-20:])
@@ -386,6 +384,9 @@ def repl(args):
     def on_tool(tname, targ, result):
         print(f"[tool:{tname}] {targ[:120]}")
         print((result[:600] + ("..." if len(result) > 600 else "")) + "\n")
+
+    def on_think(thinking):
+        print("\x1b[2m" + f"[berfikir]\n{thinking[:800]}" + "\x1b[0m")
 
     width = shutil.get_terminal_size((80, 20)).columns
     last_qa = [None, None, None]  # (question, answer, domain) for /good /bad
@@ -408,10 +409,6 @@ def repl(args):
         if q.startswith("/tools"):
             tools_on = q.split()[-1] != "off"
             print(f"tools={'on' if tools_on else 'off'}")
-            continue
-        if q.startswith("/think"):
-            think_on = q.split()[-1] != "off" if len(q.split()) > 1 else True
-            print(f"think={'on' if think_on else 'off'} (reasoning Langkah 1... ditunjuk)")
             continue
         if q == "/plan" or q.startswith("/plan "):
             task = q[len("/plan"):].strip() or "tugas semasa"
@@ -633,7 +630,7 @@ def repl(args):
                 try:
                     ans, tps, trace = run_agent(backend, q, name=name, lang=lang, history=history,
                                                 tools_on=tools_on, tool_ctx=tool_ctx, on_tool=on_tool,
-                                                expert_ctx=expert_context(cur), think=think_on)
+                                                expert_ctx=expert_context(cur), on_think=on_think)
                 except Exception as e:
                     print(f"Ralat: {e}")
                     continue
@@ -696,7 +693,8 @@ def main():
         ans, tps, _ = run_agent(backend, args.once, name=args.name, lang=args.lang,
                                 tools_on=not args.no_tools,
                                 tool_ctx={"allow_all": True, "rag_k": 2},
-                                expert_ctx=expert_context(cur), think=args.think)
+                                expert_ctx=expert_context(cur),
+                                on_think=lambda t: print("\x1b[2m[berfikir]\n" + t[:800] + "\x1b[0m"))
         print(ans)
         if backend.kind == "server":
             backend.manager.stop()
