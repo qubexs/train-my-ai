@@ -28,6 +28,24 @@ def _strip_ansi(s):
     return ANSI_RE.sub("", s)
 
 
+def cut_ansi(s, width):
+    """Truncate to visible width, preserving ANSI codes."""
+    out, vis, i = [], 0, 0
+    while i < len(s) and vis < width:
+        m = ANSI_RE.match(s, i)
+        if m:
+            out.append(m.group(0))
+            i = m.end()
+            continue
+        out.append(s[i])
+        vis += 1
+        i += 1
+    # keep trailing reset if the cut landed inside styling
+    tail = ANSI_RE.findall(s[i:])
+    out.extend(t for t in tail if t == C_RESET)
+    return "".join(out)
+
+
 def _bar(text, width, color):
     return color + _strip_ansi(text).ljust(width)[:width] + C_RESET
 
@@ -329,11 +347,11 @@ class UI:
         out = []
         out.append(_bar(" " + self.title.strip() + " ", w, C_TITLE))
         for ln in self.view.page(w, msg_h):
-            out.append(ln)
+            out.append(cut_ansi(ln, w))
         while len(out) < 1 + msg_h:
             out.append("")
-        # blank input box: separator + empty line + cursor, no prompt text
-        out.append(_bar("", w, C_DIM).replace(" ", "─"))
+        # blank input box: separator + empty line, no prompt text
+        out.append(cut_ansi(C_DIM + "─" * w + C_RESET, w))
         text = self.box.text()
         cx = self.box.pos
         if cx >= w:
@@ -341,10 +359,11 @@ class UI:
             shown, cx = text[cut:cut + w], w - 1
         else:
             shown = text
-        out.append(shown + " " * max(0, w - len(shown)))
+        out.append(cut_ansi(shown, w))
         out.append(_bar(" " + self.status.strip() + " ", w, C_STATUS))
-        # cursor sits on the input line (row msg_h+3, 1-indexed)
-        self.screen.write("\x1b[H" + "\n".join(out) + f"\x1b[{msg_h + 3};{cx + 1}H")
+        # home, each line cleared (no ghost text), clear below frame, cursor on input
+        frame = "\x1b[H" + "\x1b[K\n".join(out) + "\x1b[K\x1b[J" + f"\x1b[{msg_h + 3};{cx + 1}H"
+        self.screen.write(frame)
         try:
             self.screen.write("\x1b[?25h")
         except Exception:

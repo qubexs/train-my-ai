@@ -21,7 +21,8 @@ def sanitize(text):
                      r"|^hasil tool\b.*?:",
                     s, re.IGNORECASE):
             continue
-        if re.match(r"^jawab soalan terakhir|^answer the last question",
+        if re.match(r"^jawab soalan terakhir|^answer the last question"
+                    r"|^jangan sebut|^never mention",
                     s, re.IGNORECASE):
             continue
         if s == prev:
