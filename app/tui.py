@@ -12,9 +12,39 @@ import textwrap
 
 ANSI_RE = re.compile(r"\x1b\[[0-9;]*m")
 
+# palette
+C_RESET = "\x1b[0m"
+C_TITLE = "\x1b[1;46;30m"    # bold black on cyan
+C_STATUS = "\x1b[100;97m"    # white on grey
+C_DIM = "\x1b[2m"
+C_GREEN = "\x1b[32m"
+C_YELLOW = "\x1b[33m"
+C_RED = "\x1b[31m"
+C_CYAN = "\x1b[36m"
+C_MAGENTA = "\x1b[35m"
+
 
 def _strip_ansi(s):
     return ANSI_RE.sub("", s)
+
+
+def _bar(text, width, color):
+    return color + _strip_ansi(text).ljust(width)[:width] + C_RESET
+
+
+def tint_line(ln):
+    """Nice colors per message kind (plain lines untouched)."""
+    s = _strip_ansi(ln)
+    t = s.lstrip()
+    if t.startswith("[tool:"):
+        return C_YELLOW + ln + C_RESET
+    if t.startswith(("Ralat", "Blocked", "ERROR", "gagal", "DUPLIKAT", "SKIP")):
+        return C_RED + ln + C_RESET
+    if t.startswith("-> route:") or t.startswith("[consult:") or t.startswith("[server]"):
+        return C_CYAN + ln + C_RESET
+    if t.startswith("OK ") or t.startswith("* = aktif") or t.startswith("model="):
+        return C_GREEN + ln + C_RESET
+    return ln
 
 
 def _enable_windows_ansi():
@@ -85,10 +115,10 @@ class Viewport:
                 continue
             parts = textwrap.wrap(plain, width=width) or [""]
             if len(parts) == 1:
-                wrapped.append(ln)
+                wrapped.append(tint_line(ln))
             else:
                 # keep ANSI on first visual line only; rest plain
-                wrapped.append(ln)
+                wrapped.append(tint_line(ln))
                 wrapped.extend(parts[1:])
         if self.scroll:
             end = max(0, len(wrapped) - self.scroll)
@@ -96,6 +126,14 @@ class Viewport:
             end = len(wrapped)
         start = max(0, end - height)
         return wrapped[start:end]
+
+    def discard_prompt(self):
+        """Drop repl's inline 'anda> ' prompt; keep real questions."""
+        pending = self._partial
+        self._partial = ""
+        if pending.strip() and pending.strip() != "anda>":
+            self.lines.append(pending.strip())
+            self.scroll = 0
 
 
 class InputBox:
@@ -289,34 +327,31 @@ class UI:
         w, h = self.size()
         msg_h = max(1, h - 6)
         out = []
-        out.append(("\x1b[7m" + self.title.ljust(w) + "\x1b[0m")[:w + 9])
+        out.append(_bar(" " + self.title.strip() + " ", w, C_TITLE))
         for ln in self.view.page(w, msg_h):
-            out.append(ln[:w] if len(_strip_ansi(ln)) <= w else ln)
+            out.append(ln)
         while len(out) < 1 + msg_h:
             out.append("")
-        # input box (2 lines: label + text with cursor)
-        label = (self.label or "anda> ")[:w]
+        # blank input box: separator + empty line + cursor, no prompt text
+        out.append(_bar("", w, C_DIM).replace(" ", "─"))
         text = self.box.text()
-        cx = len(self.label or "anda> ") + self.box.pos
-        # horizontal scroll for long lines
+        cx = self.box.pos
         if cx >= w:
             cut = cx - w + 1
-            shown = (self.label or "anda> ") + text
-            shown = shown[cut:cut + w]
-            cx = w - 1
+            shown, cx = text[cut:cut + w], w - 1
         else:
-            shown = (self.label or "anda> ") + text
-        out.append(label)
-        out.append(shown + " " * max(0, w - len(_strip_ansi(shown))))
-        out.append(("\x1b[2m" + self.status.ljust(w) + "\x1b[0m")[:w + 9])
-        self.screen.write("\x1b[H" + "\n".join(out) + f"\x1b[{h};{cx + 1}H")
+            shown = text
+        out.append(shown + " " * max(0, w - len(shown)))
+        out.append(_bar(" " + self.status.strip() + " ", w, C_STATUS))
+        # cursor sits on the input line (row msg_h+3, 1-indexed)
+        self.screen.write("\x1b[H" + "\n".join(out) + f"\x1b[{msg_h + 3};{cx + 1}H")
         try:
             self.screen.write("\x1b[?25h")
         except Exception:
             pass
 
     def read_line(self, label=""):
-        self.label = label
+        self.view.discard_prompt()
         reader = WindowsReader() if os.name == "nt" else PosixReader()
         if os.name != "nt":
             reader.__enter__()
@@ -345,8 +380,7 @@ class UI:
                     continue
                 if self.box.handle(key) == "submit":
                     line = self.box.commit()
-                    self.label = ""
-                    self.view.add(f"anda> {line}")
+                    self.view.add(C_GREEN + "> " + line + C_RESET)
                     self.draw()
                     return line
         finally:
