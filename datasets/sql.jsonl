@@ -321,3 +321,1084 @@
 {"instruction": "Apakah SQL bagi: Jumlah belanja setiap pengguna?", "input": "", "output": "```sql\nSELECT p.nama, SUM(o.jumlah) AS jumlah FROM pengguna p JOIN pesanan o ON o.pengguna_id = p.id GROUP BY p.nama;\n```"}
 {"instruction": "Tuliskan ayat SQL: Jumlah belanja setiap pengguna.", "input": "", "output": "```sql\nSELECT p.nama, SUM(o.jumlah) AS jumlah FROM pengguna p JOIN pesanan o ON o.pengguna_id = p.id GROUP BY p.nama;\n```"}
 {"instruction": "Lengkapkan SQL ini: Jumlah belanja setiap pengguna.", "input": "", "output": "```sql\nSELECT p.nama, SUM(o.jumlah) AS jumlah FROM pengguna p JOIN pesanan o ON o.pengguna_id = p.id GROUP BY p.nama;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Senaraikan semua pengguna.", "input": "", "output": "```sql\nSELECT * FROM pengguna;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Senaraikan semua pengguna?", "input": "", "output": "```sql\nSELECT * FROM pengguna;\n```"}
+{"instruction": "Apakah fungsi query ini: Senaraikan semua pengguna?", "input": "", "output": "```sql\nSELECT * FROM pengguna;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Senaraikan semua pengguna.", "input": "", "output": "```sql\nSELECT * FROM pengguna;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Kira baris dalam pengguna.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pengguna;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Kira baris dalam pengguna?", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pengguna;\n```"}
+{"instruction": "Apakah fungsi query ini: Kira baris dalam pengguna?", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pengguna;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Kira baris dalam pengguna.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pengguna;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Cari pengguna di mana nama bersamaan 'Ali'.", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama = 'Ali';\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Cari pengguna di mana nama bersamaan 'Ali'?", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama = 'Ali';\n```"}
+{"instruction": "Apakah fungsi query ini: Cari pengguna di mana nama bersamaan 'Ali'?", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama = 'Ali';\n```"}
+{"instruction": "Beri contoh sebenar query ini: Cari pengguna di mana nama bersamaan 'Ali'.", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama = 'Ali';\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Susun pengguna mengikut nama menurun, 5 teratas.", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY nama DESC LIMIT 5;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Susun pengguna mengikut nama menurun, 5 teratas?", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY nama DESC LIMIT 5;\n```"}
+{"instruction": "Apakah fungsi query ini: Susun pengguna mengikut nama menurun, 5 teratas?", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY nama DESC LIMIT 5;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Susun pengguna mengikut nama menurun, 5 teratas.", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY nama DESC LIMIT 5;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Jumlahkan nama dalam pengguna berkelompok mengikut emel.", "input": "", "output": "```sql\nSELECT emel, SUM(nama) AS jumlah FROM pengguna GROUP BY emel;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Jumlahkan nama dalam pengguna berkelompok mengikut emel?", "input": "", "output": "```sql\nSELECT emel, SUM(nama) AS jumlah FROM pengguna GROUP BY emel;\n```"}
+{"instruction": "Apakah fungsi query ini: Jumlahkan nama dalam pengguna berkelompok mengikut emel?", "input": "", "output": "```sql\nSELECT emel, SUM(nama) AS jumlah FROM pengguna GROUP BY emel;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Jumlahkan nama dalam pengguna berkelompok mengikut emel.", "input": "", "output": "```sql\nSELECT emel, SUM(nama) AS jumlah FROM pengguna GROUP BY emel;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Kemas kini pengguna: tetapkan nama kepada 'Ali' untuk id 1.", "input": "", "output": "```sql\nUPDATE pengguna SET nama = 'Ali' WHERE id = 1;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Kemas kini pengguna: tetapkan nama kepada 'Ali' untuk id 1?", "input": "", "output": "```sql\nUPDATE pengguna SET nama = 'Ali' WHERE id = 1;\n```"}
+{"instruction": "Apakah fungsi query ini: Kemas kini pengguna: tetapkan nama kepada 'Ali' untuk id 1?", "input": "", "output": "```sql\nUPDATE pengguna SET nama = 'Ali' WHERE id = 1;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Kemas kini pengguna: tetapkan nama kepada 'Ali' untuk id 1.", "input": "", "output": "```sql\nUPDATE pengguna SET nama = 'Ali' WHERE id = 1;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Padam baris id 9 dari pengguna.", "input": "", "output": "```sql\nDELETE FROM pengguna WHERE id = 9;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Padam baris id 9 dari pengguna?", "input": "", "output": "```sql\nDELETE FROM pengguna WHERE id = 9;\n```"}
+{"instruction": "Apakah fungsi query ini: Padam baris id 9 dari pengguna?", "input": "", "output": "```sql\nDELETE FROM pengguna WHERE id = 9;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Padam baris id 9 dari pengguna.", "input": "", "output": "```sql\nDELETE FROM pengguna WHERE id = 9;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Tambah satu baris ke pengguna.", "input": "", "output": "```sql\nINSERT INTO pengguna (nama, emel) VALUES ('Ali', 'ali@x.my');\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Tambah satu baris ke pengguna?", "input": "", "output": "```sql\nINSERT INTO pengguna (nama, emel) VALUES ('Ali', 'ali@x.my');\n```"}
+{"instruction": "Apakah fungsi query ini: Tambah satu baris ke pengguna?", "input": "", "output": "```sql\nINSERT INTO pengguna (nama, emel) VALUES ('Ali', 'ali@x.my');\n```"}
+{"instruction": "Beri contoh sebenar query ini: Tambah satu baris ke pengguna.", "input": "", "output": "```sql\nINSERT INTO pengguna (nama, emel) VALUES ('Ali', 'ali@x.my');\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Purata nama dalam pengguna.", "input": "", "output": "```sql\nSELECT AVG(nama) AS purata FROM pengguna;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Purata nama dalam pengguna?", "input": "", "output": "```sql\nSELECT AVG(nama) AS purata FROM pengguna;\n```"}
+{"instruction": "Apakah fungsi query ini: Purata nama dalam pengguna?", "input": "", "output": "```sql\nSELECT AVG(nama) AS purata FROM pengguna;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Purata nama dalam pengguna.", "input": "", "output": "```sql\nSELECT AVG(nama) AS purata FROM pengguna;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Nilai maksimum nama dalam pengguna.", "input": "", "output": "```sql\nSELECT MAX(nama) AS maks FROM pengguna;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Nilai maksimum nama dalam pengguna?", "input": "", "output": "```sql\nSELECT MAX(nama) AS maks FROM pengguna;\n```"}
+{"instruction": "Apakah fungsi query ini: Nilai maksimum nama dalam pengguna?", "input": "", "output": "```sql\nSELECT MAX(nama) AS maks FROM pengguna;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Nilai maksimum nama dalam pengguna.", "input": "", "output": "```sql\nSELECT MAX(nama) AS maks FROM pengguna;\n```"}
+{"instruction": "Cari pengguna dengan nama mengandungi teks 'a'", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama LIKE '%a%';\n```"}
+{"instruction": "Cari pengguna dengan nama mengandungi teks 'a' — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama LIKE '%a%';\n```"}
+{"instruction": "Tulis query: Cari pengguna dengan nama mengandungi teks 'a'.", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama LIKE '%a%';\n```"}
+{"instruction": "Beri SQL untuk: Cari pengguna dengan nama mengandungi teks 'a'.", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama LIKE '%a%';\n```"}
+{"instruction": "Jawab dengan SQL: Cari pengguna dengan nama mengandungi teks 'a'.", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama LIKE '%a%';\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Cari pengguna dengan nama mengandungi teks 'a'.", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama LIKE '%a%';\n```"}
+{"instruction": "Apakah SQL bagi: Cari pengguna dengan nama mengandungi teks 'a'?", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama LIKE '%a%';\n```"}
+{"instruction": "Tuliskan ayat SQL: Cari pengguna dengan nama mengandungi teks 'a'.", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama LIKE '%a%';\n```"}
+{"instruction": "Lengkapkan SQL ini: Cari pengguna dengan nama mengandungi teks 'a'.", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama LIKE '%a%';\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Cari pengguna dengan nama mengandungi teks 'a'.", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama LIKE '%a%';\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Cari pengguna dengan nama mengandungi teks 'a'?", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama LIKE '%a%';\n```"}
+{"instruction": "Apakah fungsi query ini: Cari pengguna dengan nama mengandungi teks 'a'?", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama LIKE '%a%';\n```"}
+{"instruction": "Beri contoh sebenar query ini: Cari pengguna dengan nama mengandungi teks 'a'.", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama LIKE '%a%';\n```"}
+{"instruction": "Kira pengguna berkelompok mengikut emel yang melebihi 2", "input": "", "output": "```sql\nSELECT emel, COUNT(*) AS n FROM pengguna GROUP BY emel HAVING COUNT(*) > 2;\n```"}
+{"instruction": "Kira pengguna berkelompok mengikut emel yang melebihi 2 — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT emel, COUNT(*) AS n FROM pengguna GROUP BY emel HAVING COUNT(*) > 2;\n```"}
+{"instruction": "Tulis query: Kira pengguna berkelompok mengikut emel yang melebihi 2.", "input": "", "output": "```sql\nSELECT emel, COUNT(*) AS n FROM pengguna GROUP BY emel HAVING COUNT(*) > 2;\n```"}
+{"instruction": "Beri SQL untuk: Kira pengguna berkelompok mengikut emel yang melebihi 2.", "input": "", "output": "```sql\nSELECT emel, COUNT(*) AS n FROM pengguna GROUP BY emel HAVING COUNT(*) > 2;\n```"}
+{"instruction": "Jawab dengan SQL: Kira pengguna berkelompok mengikut emel yang melebihi 2.", "input": "", "output": "```sql\nSELECT emel, COUNT(*) AS n FROM pengguna GROUP BY emel HAVING COUNT(*) > 2;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Kira pengguna berkelompok mengikut emel yang melebihi 2.", "input": "", "output": "```sql\nSELECT emel, COUNT(*) AS n FROM pengguna GROUP BY emel HAVING COUNT(*) > 2;\n```"}
+{"instruction": "Apakah SQL bagi: Kira pengguna berkelompok mengikut emel yang melebihi 2?", "input": "", "output": "```sql\nSELECT emel, COUNT(*) AS n FROM pengguna GROUP BY emel HAVING COUNT(*) > 2;\n```"}
+{"instruction": "Tuliskan ayat SQL: Kira pengguna berkelompok mengikut emel yang melebihi 2.", "input": "", "output": "```sql\nSELECT emel, COUNT(*) AS n FROM pengguna GROUP BY emel HAVING COUNT(*) > 2;\n```"}
+{"instruction": "Lengkapkan SQL ini: Kira pengguna berkelompok mengikut emel yang melebihi 2.", "input": "", "output": "```sql\nSELECT emel, COUNT(*) AS n FROM pengguna GROUP BY emel HAVING COUNT(*) > 2;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Kira pengguna berkelompok mengikut emel yang melebihi 2.", "input": "", "output": "```sql\nSELECT emel, COUNT(*) AS n FROM pengguna GROUP BY emel HAVING COUNT(*) > 2;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Kira pengguna berkelompok mengikut emel yang melebihi 2?", "input": "", "output": "```sql\nSELECT emel, COUNT(*) AS n FROM pengguna GROUP BY emel HAVING COUNT(*) > 2;\n```"}
+{"instruction": "Apakah fungsi query ini: Kira pengguna berkelompok mengikut emel yang melebihi 2?", "input": "", "output": "```sql\nSELECT emel, COUNT(*) AS n FROM pengguna GROUP BY emel HAVING COUNT(*) > 2;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Kira pengguna berkelompok mengikut emel yang melebihi 2.", "input": "", "output": "```sql\nSELECT emel, COUNT(*) AS n FROM pengguna GROUP BY emel HAVING COUNT(*) > 2;\n```"}
+{"instruction": "Ambil 10 pengguna terkini mengikut nama", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY nama DESC LIMIT 10;\n```"}
+{"instruction": "Ambil 10 pengguna terkini mengikut nama — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY nama DESC LIMIT 10;\n```"}
+{"instruction": "Tulis query: Ambil 10 pengguna terkini mengikut nama.", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY nama DESC LIMIT 10;\n```"}
+{"instruction": "Beri SQL untuk: Ambil 10 pengguna terkini mengikut nama.", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY nama DESC LIMIT 10;\n```"}
+{"instruction": "Jawab dengan SQL: Ambil 10 pengguna terkini mengikut nama.", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY nama DESC LIMIT 10;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Ambil 10 pengguna terkini mengikut nama.", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY nama DESC LIMIT 10;\n```"}
+{"instruction": "Apakah SQL bagi: Ambil 10 pengguna terkini mengikut nama?", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY nama DESC LIMIT 10;\n```"}
+{"instruction": "Tuliskan ayat SQL: Ambil 10 pengguna terkini mengikut nama.", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY nama DESC LIMIT 10;\n```"}
+{"instruction": "Lengkapkan SQL ini: Ambil 10 pengguna terkini mengikut nama.", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY nama DESC LIMIT 10;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Ambil 10 pengguna terkini mengikut nama.", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY nama DESC LIMIT 10;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Ambil 10 pengguna terkini mengikut nama?", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY nama DESC LIMIT 10;\n```"}
+{"instruction": "Apakah fungsi query ini: Ambil 10 pengguna terkini mengikut nama?", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY nama DESC LIMIT 10;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Ambil 10 pengguna terkini mengikut nama.", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY nama DESC LIMIT 10;\n```"}
+{"instruction": "Jumlah nama terkecil dan terbesar dalam pengguna", "input": "", "output": "```sql\nSELECT MIN(nama) AS min, MAX(nama) AS maks FROM pengguna;\n```"}
+{"instruction": "Jumlah nama terkecil dan terbesar dalam pengguna — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT MIN(nama) AS min, MAX(nama) AS maks FROM pengguna;\n```"}
+{"instruction": "Tulis query: Jumlah nama terkecil dan terbesar dalam pengguna.", "input": "", "output": "```sql\nSELECT MIN(nama) AS min, MAX(nama) AS maks FROM pengguna;\n```"}
+{"instruction": "Beri SQL untuk: Jumlah nama terkecil dan terbesar dalam pengguna.", "input": "", "output": "```sql\nSELECT MIN(nama) AS min, MAX(nama) AS maks FROM pengguna;\n```"}
+{"instruction": "Jawab dengan SQL: Jumlah nama terkecil dan terbesar dalam pengguna.", "input": "", "output": "```sql\nSELECT MIN(nama) AS min, MAX(nama) AS maks FROM pengguna;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Jumlah nama terkecil dan terbesar dalam pengguna.", "input": "", "output": "```sql\nSELECT MIN(nama) AS min, MAX(nama) AS maks FROM pengguna;\n```"}
+{"instruction": "Apakah SQL bagi: Jumlah nama terkecil dan terbesar dalam pengguna?", "input": "", "output": "```sql\nSELECT MIN(nama) AS min, MAX(nama) AS maks FROM pengguna;\n```"}
+{"instruction": "Tuliskan ayat SQL: Jumlah nama terkecil dan terbesar dalam pengguna.", "input": "", "output": "```sql\nSELECT MIN(nama) AS min, MAX(nama) AS maks FROM pengguna;\n```"}
+{"instruction": "Lengkapkan SQL ini: Jumlah nama terkecil dan terbesar dalam pengguna.", "input": "", "output": "```sql\nSELECT MIN(nama) AS min, MAX(nama) AS maks FROM pengguna;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Jumlah nama terkecil dan terbesar dalam pengguna.", "input": "", "output": "```sql\nSELECT MIN(nama) AS min, MAX(nama) AS maks FROM pengguna;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Jumlah nama terkecil dan terbesar dalam pengguna?", "input": "", "output": "```sql\nSELECT MIN(nama) AS min, MAX(nama) AS maks FROM pengguna;\n```"}
+{"instruction": "Apakah fungsi query ini: Jumlah nama terkecil dan terbesar dalam pengguna?", "input": "", "output": "```sql\nSELECT MIN(nama) AS min, MAX(nama) AS maks FROM pengguna;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Jumlah nama terkecil dan terbesar dalam pengguna.", "input": "", "output": "```sql\nSELECT MIN(nama) AS min, MAX(nama) AS maks FROM pengguna;\n```"}
+{"instruction": "Senaraikan nama unik dalam pengguna", "input": "", "output": "```sql\nSELECT DISTINCT nama FROM pengguna;\n```"}
+{"instruction": "Senaraikan nama unik dalam pengguna — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT DISTINCT nama FROM pengguna;\n```"}
+{"instruction": "Tulis query: Senaraikan nama unik dalam pengguna.", "input": "", "output": "```sql\nSELECT DISTINCT nama FROM pengguna;\n```"}
+{"instruction": "Beri SQL untuk: Senaraikan nama unik dalam pengguna.", "input": "", "output": "```sql\nSELECT DISTINCT nama FROM pengguna;\n```"}
+{"instruction": "Jawab dengan SQL: Senaraikan nama unik dalam pengguna.", "input": "", "output": "```sql\nSELECT DISTINCT nama FROM pengguna;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Senaraikan nama unik dalam pengguna.", "input": "", "output": "```sql\nSELECT DISTINCT nama FROM pengguna;\n```"}
+{"instruction": "Apakah SQL bagi: Senaraikan nama unik dalam pengguna?", "input": "", "output": "```sql\nSELECT DISTINCT nama FROM pengguna;\n```"}
+{"instruction": "Tuliskan ayat SQL: Senaraikan nama unik dalam pengguna.", "input": "", "output": "```sql\nSELECT DISTINCT nama FROM pengguna;\n```"}
+{"instruction": "Lengkapkan SQL ini: Senaraikan nama unik dalam pengguna.", "input": "", "output": "```sql\nSELECT DISTINCT nama FROM pengguna;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Senaraikan nama unik dalam pengguna.", "input": "", "output": "```sql\nSELECT DISTINCT nama FROM pengguna;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Senaraikan nama unik dalam pengguna?", "input": "", "output": "```sql\nSELECT DISTINCT nama FROM pengguna;\n```"}
+{"instruction": "Apakah fungsi query ini: Senaraikan nama unik dalam pengguna?", "input": "", "output": "```sql\nSELECT DISTINCT nama FROM pengguna;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Senaraikan nama unik dalam pengguna.", "input": "", "output": "```sql\nSELECT DISTINCT nama FROM pengguna;\n```"}
+{"instruction": "Cari pengguna di mana nama antara 'a' dan 'z'", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama BETWEEN 'a' AND 'z';\n```"}
+{"instruction": "Cari pengguna di mana nama antara 'a' dan 'z' — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama BETWEEN 'a' AND 'z';\n```"}
+{"instruction": "Tulis query: Cari pengguna di mana nama antara 'a' dan 'z'.", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama BETWEEN 'a' AND 'z';\n```"}
+{"instruction": "Beri SQL untuk: Cari pengguna di mana nama antara 'a' dan 'z'.", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama BETWEEN 'a' AND 'z';\n```"}
+{"instruction": "Jawab dengan SQL: Cari pengguna di mana nama antara 'a' dan 'z'.", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama BETWEEN 'a' AND 'z';\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Cari pengguna di mana nama antara 'a' dan 'z'.", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama BETWEEN 'a' AND 'z';\n```"}
+{"instruction": "Apakah SQL bagi: Cari pengguna di mana nama antara 'a' dan 'z'?", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama BETWEEN 'a' AND 'z';\n```"}
+{"instruction": "Tuliskan ayat SQL: Cari pengguna di mana nama antara 'a' dan 'z'.", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama BETWEEN 'a' AND 'z';\n```"}
+{"instruction": "Lengkapkan SQL ini: Cari pengguna di mana nama antara 'a' dan 'z'.", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama BETWEEN 'a' AND 'z';\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Cari pengguna di mana nama antara 'a' dan 'z'.", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama BETWEEN 'a' AND 'z';\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Cari pengguna di mana nama antara 'a' dan 'z'?", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama BETWEEN 'a' AND 'z';\n```"}
+{"instruction": "Apakah fungsi query ini: Cari pengguna di mana nama antara 'a' dan 'z'?", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama BETWEEN 'a' AND 'z';\n```"}
+{"instruction": "Beri contoh sebenar query ini: Cari pengguna di mana nama antara 'a' dan 'z'.", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama BETWEEN 'a' AND 'z';\n```"}
+{"instruction": "Cari pengguna di mana nama dalam senarai diberi", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama IN ('Ali', 'Abu');\n```"}
+{"instruction": "Cari pengguna di mana nama dalam senarai diberi — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama IN ('Ali', 'Abu');\n```"}
+{"instruction": "Tulis query: Cari pengguna di mana nama dalam senarai diberi.", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama IN ('Ali', 'Abu');\n```"}
+{"instruction": "Beri SQL untuk: Cari pengguna di mana nama dalam senarai diberi.", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama IN ('Ali', 'Abu');\n```"}
+{"instruction": "Jawab dengan SQL: Cari pengguna di mana nama dalam senarai diberi.", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama IN ('Ali', 'Abu');\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Cari pengguna di mana nama dalam senarai diberi.", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama IN ('Ali', 'Abu');\n```"}
+{"instruction": "Apakah SQL bagi: Cari pengguna di mana nama dalam senarai diberi?", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama IN ('Ali', 'Abu');\n```"}
+{"instruction": "Tuliskan ayat SQL: Cari pengguna di mana nama dalam senarai diberi.", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama IN ('Ali', 'Abu');\n```"}
+{"instruction": "Lengkapkan SQL ini: Cari pengguna di mana nama dalam senarai diberi.", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama IN ('Ali', 'Abu');\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Cari pengguna di mana nama dalam senarai diberi.", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama IN ('Ali', 'Abu');\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Cari pengguna di mana nama dalam senarai diberi?", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama IN ('Ali', 'Abu');\n```"}
+{"instruction": "Apakah fungsi query ini: Cari pengguna di mana nama dalam senarai diberi?", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama IN ('Ali', 'Abu');\n```"}
+{"instruction": "Beri contoh sebenar query ini: Cari pengguna di mana nama dalam senarai diberi.", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama IN ('Ali', 'Abu');\n```"}
+{"instruction": "Cari pengguna di mana nama tiada nilai", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama IS NULL;\n```"}
+{"instruction": "Cari pengguna di mana nama tiada nilai — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama IS NULL;\n```"}
+{"instruction": "Tulis query: Cari pengguna di mana nama tiada nilai.", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama IS NULL;\n```"}
+{"instruction": "Beri SQL untuk: Cari pengguna di mana nama tiada nilai.", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama IS NULL;\n```"}
+{"instruction": "Jawab dengan SQL: Cari pengguna di mana nama tiada nilai.", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama IS NULL;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Cari pengguna di mana nama tiada nilai.", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama IS NULL;\n```"}
+{"instruction": "Apakah SQL bagi: Cari pengguna di mana nama tiada nilai?", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama IS NULL;\n```"}
+{"instruction": "Tuliskan ayat SQL: Cari pengguna di mana nama tiada nilai.", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama IS NULL;\n```"}
+{"instruction": "Lengkapkan SQL ini: Cari pengguna di mana nama tiada nilai.", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama IS NULL;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Cari pengguna di mana nama tiada nilai.", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama IS NULL;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Cari pengguna di mana nama tiada nilai?", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama IS NULL;\n```"}
+{"instruction": "Apakah fungsi query ini: Cari pengguna di mana nama tiada nilai?", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama IS NULL;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Cari pengguna di mana nama tiada nilai.", "input": "", "output": "```sql\nSELECT * FROM pengguna WHERE nama IS NULL;\n```"}
+{"instruction": "Kemas kini nama tambah 1 untuk semua pengguna", "input": "", "output": "```sql\nUPDATE pengguna SET nama = nama + 1;\n```"}
+{"instruction": "Kemas kini nama tambah 1 untuk semua pengguna — tunjukkan SQL.", "input": "", "output": "```sql\nUPDATE pengguna SET nama = nama + 1;\n```"}
+{"instruction": "Tulis query: Kemas kini nama tambah 1 untuk semua pengguna.", "input": "", "output": "```sql\nUPDATE pengguna SET nama = nama + 1;\n```"}
+{"instruction": "Beri SQL untuk: Kemas kini nama tambah 1 untuk semua pengguna.", "input": "", "output": "```sql\nUPDATE pengguna SET nama = nama + 1;\n```"}
+{"instruction": "Jawab dengan SQL: Kemas kini nama tambah 1 untuk semua pengguna.", "input": "", "output": "```sql\nUPDATE pengguna SET nama = nama + 1;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Kemas kini nama tambah 1 untuk semua pengguna.", "input": "", "output": "```sql\nUPDATE pengguna SET nama = nama + 1;\n```"}
+{"instruction": "Apakah SQL bagi: Kemas kini nama tambah 1 untuk semua pengguna?", "input": "", "output": "```sql\nUPDATE pengguna SET nama = nama + 1;\n```"}
+{"instruction": "Tuliskan ayat SQL: Kemas kini nama tambah 1 untuk semua pengguna.", "input": "", "output": "```sql\nUPDATE pengguna SET nama = nama + 1;\n```"}
+{"instruction": "Lengkapkan SQL ini: Kemas kini nama tambah 1 untuk semua pengguna.", "input": "", "output": "```sql\nUPDATE pengguna SET nama = nama + 1;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Kemas kini nama tambah 1 untuk semua pengguna.", "input": "", "output": "```sql\nUPDATE pengguna SET nama = nama + 1;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Kemas kini nama tambah 1 untuk semua pengguna?", "input": "", "output": "```sql\nUPDATE pengguna SET nama = nama + 1;\n```"}
+{"instruction": "Apakah fungsi query ini: Kemas kini nama tambah 1 untuk semua pengguna?", "input": "", "output": "```sql\nUPDATE pengguna SET nama = nama + 1;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Kemas kini nama tambah 1 untuk semua pengguna.", "input": "", "output": "```sql\nUPDATE pengguna SET nama = nama + 1;\n```"}
+{"instruction": "Padam semua pengguna dengan nama kosong", "input": "", "output": "```sql\nDELETE FROM pengguna WHERE nama IS NULL OR nama = '';\n```"}
+{"instruction": "Padam semua pengguna dengan nama kosong — tunjukkan SQL.", "input": "", "output": "```sql\nDELETE FROM pengguna WHERE nama IS NULL OR nama = '';\n```"}
+{"instruction": "Tulis query: Padam semua pengguna dengan nama kosong.", "input": "", "output": "```sql\nDELETE FROM pengguna WHERE nama IS NULL OR nama = '';\n```"}
+{"instruction": "Beri SQL untuk: Padam semua pengguna dengan nama kosong.", "input": "", "output": "```sql\nDELETE FROM pengguna WHERE nama IS NULL OR nama = '';\n```"}
+{"instruction": "Jawab dengan SQL: Padam semua pengguna dengan nama kosong.", "input": "", "output": "```sql\nDELETE FROM pengguna WHERE nama IS NULL OR nama = '';\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Padam semua pengguna dengan nama kosong.", "input": "", "output": "```sql\nDELETE FROM pengguna WHERE nama IS NULL OR nama = '';\n```"}
+{"instruction": "Apakah SQL bagi: Padam semua pengguna dengan nama kosong?", "input": "", "output": "```sql\nDELETE FROM pengguna WHERE nama IS NULL OR nama = '';\n```"}
+{"instruction": "Tuliskan ayat SQL: Padam semua pengguna dengan nama kosong.", "input": "", "output": "```sql\nDELETE FROM pengguna WHERE nama IS NULL OR nama = '';\n```"}
+{"instruction": "Lengkapkan SQL ini: Padam semua pengguna dengan nama kosong.", "input": "", "output": "```sql\nDELETE FROM pengguna WHERE nama IS NULL OR nama = '';\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Padam semua pengguna dengan nama kosong.", "input": "", "output": "```sql\nDELETE FROM pengguna WHERE nama IS NULL OR nama = '';\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Padam semua pengguna dengan nama kosong?", "input": "", "output": "```sql\nDELETE FROM pengguna WHERE nama IS NULL OR nama = '';\n```"}
+{"instruction": "Apakah fungsi query ini: Padam semua pengguna dengan nama kosong?", "input": "", "output": "```sql\nDELETE FROM pengguna WHERE nama IS NULL OR nama = '';\n```"}
+{"instruction": "Beri contoh sebenar query ini: Padam semua pengguna dengan nama kosong.", "input": "", "output": "```sql\nDELETE FROM pengguna WHERE nama IS NULL OR nama = '';\n```"}
+{"instruction": "Salin pengguna ke jadual sandaran", "input": "", "output": "```sql\nCREATE TABLE pengguna_sandaran AS SELECT * FROM pengguna;\n```"}
+{"instruction": "Salin pengguna ke jadual sandaran — tunjukkan SQL.", "input": "", "output": "```sql\nCREATE TABLE pengguna_sandaran AS SELECT * FROM pengguna;\n```"}
+{"instruction": "Tulis query: Salin pengguna ke jadual sandaran.", "input": "", "output": "```sql\nCREATE TABLE pengguna_sandaran AS SELECT * FROM pengguna;\n```"}
+{"instruction": "Beri SQL untuk: Salin pengguna ke jadual sandaran.", "input": "", "output": "```sql\nCREATE TABLE pengguna_sandaran AS SELECT * FROM pengguna;\n```"}
+{"instruction": "Jawab dengan SQL: Salin pengguna ke jadual sandaran.", "input": "", "output": "```sql\nCREATE TABLE pengguna_sandaran AS SELECT * FROM pengguna;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Salin pengguna ke jadual sandaran.", "input": "", "output": "```sql\nCREATE TABLE pengguna_sandaran AS SELECT * FROM pengguna;\n```"}
+{"instruction": "Apakah SQL bagi: Salin pengguna ke jadual sandaran?", "input": "", "output": "```sql\nCREATE TABLE pengguna_sandaran AS SELECT * FROM pengguna;\n```"}
+{"instruction": "Tuliskan ayat SQL: Salin pengguna ke jadual sandaran.", "input": "", "output": "```sql\nCREATE TABLE pengguna_sandaran AS SELECT * FROM pengguna;\n```"}
+{"instruction": "Lengkapkan SQL ini: Salin pengguna ke jadual sandaran.", "input": "", "output": "```sql\nCREATE TABLE pengguna_sandaran AS SELECT * FROM pengguna;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Salin pengguna ke jadual sandaran.", "input": "", "output": "```sql\nCREATE TABLE pengguna_sandaran AS SELECT * FROM pengguna;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Salin pengguna ke jadual sandaran?", "input": "", "output": "```sql\nCREATE TABLE pengguna_sandaran AS SELECT * FROM pengguna;\n```"}
+{"instruction": "Apakah fungsi query ini: Salin pengguna ke jadual sandaran?", "input": "", "output": "```sql\nCREATE TABLE pengguna_sandaran AS SELECT * FROM pengguna;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Salin pengguna ke jadual sandaran.", "input": "", "output": "```sql\nCREATE TABLE pengguna_sandaran AS SELECT * FROM pengguna;\n```"}
+{"instruction": "Namakan semula lajur nama dalam pengguna", "input": "", "output": "```sql\nALTER TABLE pengguna RENAME COLUMN nama TO nama_baru;\n```"}
+{"instruction": "Namakan semula lajur nama dalam pengguna — tunjukkan SQL.", "input": "", "output": "```sql\nALTER TABLE pengguna RENAME COLUMN nama TO nama_baru;\n```"}
+{"instruction": "Tulis query: Namakan semula lajur nama dalam pengguna.", "input": "", "output": "```sql\nALTER TABLE pengguna RENAME COLUMN nama TO nama_baru;\n```"}
+{"instruction": "Beri SQL untuk: Namakan semula lajur nama dalam pengguna.", "input": "", "output": "```sql\nALTER TABLE pengguna RENAME COLUMN nama TO nama_baru;\n```"}
+{"instruction": "Jawab dengan SQL: Namakan semula lajur nama dalam pengguna.", "input": "", "output": "```sql\nALTER TABLE pengguna RENAME COLUMN nama TO nama_baru;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Namakan semula lajur nama dalam pengguna.", "input": "", "output": "```sql\nALTER TABLE pengguna RENAME COLUMN nama TO nama_baru;\n```"}
+{"instruction": "Apakah SQL bagi: Namakan semula lajur nama dalam pengguna?", "input": "", "output": "```sql\nALTER TABLE pengguna RENAME COLUMN nama TO nama_baru;\n```"}
+{"instruction": "Tuliskan ayat SQL: Namakan semula lajur nama dalam pengguna.", "input": "", "output": "```sql\nALTER TABLE pengguna RENAME COLUMN nama TO nama_baru;\n```"}
+{"instruction": "Lengkapkan SQL ini: Namakan semula lajur nama dalam pengguna.", "input": "", "output": "```sql\nALTER TABLE pengguna RENAME COLUMN nama TO nama_baru;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Namakan semula lajur nama dalam pengguna.", "input": "", "output": "```sql\nALTER TABLE pengguna RENAME COLUMN nama TO nama_baru;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Namakan semula lajur nama dalam pengguna?", "input": "", "output": "```sql\nALTER TABLE pengguna RENAME COLUMN nama TO nama_baru;\n```"}
+{"instruction": "Apakah fungsi query ini: Namakan semula lajur nama dalam pengguna?", "input": "", "output": "```sql\nALTER TABLE pengguna RENAME COLUMN nama TO nama_baru;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Namakan semula lajur nama dalam pengguna.", "input": "", "output": "```sql\nALTER TABLE pengguna RENAME COLUMN nama TO nama_baru;\n```"}
+{"instruction": "Tambah lajur nota ke pengguna", "input": "", "output": "```sql\nALTER TABLE pengguna ADD COLUMN nota TEXT;\n```"}
+{"instruction": "Tambah lajur nota ke pengguna — tunjukkan SQL.", "input": "", "output": "```sql\nALTER TABLE pengguna ADD COLUMN nota TEXT;\n```"}
+{"instruction": "Tulis query: Tambah lajur nota ke pengguna.", "input": "", "output": "```sql\nALTER TABLE pengguna ADD COLUMN nota TEXT;\n```"}
+{"instruction": "Beri SQL untuk: Tambah lajur nota ke pengguna.", "input": "", "output": "```sql\nALTER TABLE pengguna ADD COLUMN nota TEXT;\n```"}
+{"instruction": "Jawab dengan SQL: Tambah lajur nota ke pengguna.", "input": "", "output": "```sql\nALTER TABLE pengguna ADD COLUMN nota TEXT;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Tambah lajur nota ke pengguna.", "input": "", "output": "```sql\nALTER TABLE pengguna ADD COLUMN nota TEXT;\n```"}
+{"instruction": "Apakah SQL bagi: Tambah lajur nota ke pengguna?", "input": "", "output": "```sql\nALTER TABLE pengguna ADD COLUMN nota TEXT;\n```"}
+{"instruction": "Tuliskan ayat SQL: Tambah lajur nota ke pengguna.", "input": "", "output": "```sql\nALTER TABLE pengguna ADD COLUMN nota TEXT;\n```"}
+{"instruction": "Lengkapkan SQL ini: Tambah lajur nota ke pengguna.", "input": "", "output": "```sql\nALTER TABLE pengguna ADD COLUMN nota TEXT;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Tambah lajur nota ke pengguna.", "input": "", "output": "```sql\nALTER TABLE pengguna ADD COLUMN nota TEXT;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Tambah lajur nota ke pengguna?", "input": "", "output": "```sql\nALTER TABLE pengguna ADD COLUMN nota TEXT;\n```"}
+{"instruction": "Apakah fungsi query ini: Tambah lajur nota ke pengguna?", "input": "", "output": "```sql\nALTER TABLE pengguna ADD COLUMN nota TEXT;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Tambah lajur nota ke pengguna.", "input": "", "output": "```sql\nALTER TABLE pengguna ADD COLUMN nota TEXT;\n```"}
+{"instruction": "Buang lajur nota dari pengguna", "input": "", "output": "```sql\nALTER TABLE pengguna DROP COLUMN nota;\n```"}
+{"instruction": "Buang lajur nota dari pengguna — tunjukkan SQL.", "input": "", "output": "```sql\nALTER TABLE pengguna DROP COLUMN nota;\n```"}
+{"instruction": "Tulis query: Buang lajur nota dari pengguna.", "input": "", "output": "```sql\nALTER TABLE pengguna DROP COLUMN nota;\n```"}
+{"instruction": "Beri SQL untuk: Buang lajur nota dari pengguna.", "input": "", "output": "```sql\nALTER TABLE pengguna DROP COLUMN nota;\n```"}
+{"instruction": "Jawab dengan SQL: Buang lajur nota dari pengguna.", "input": "", "output": "```sql\nALTER TABLE pengguna DROP COLUMN nota;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Buang lajur nota dari pengguna.", "input": "", "output": "```sql\nALTER TABLE pengguna DROP COLUMN nota;\n```"}
+{"instruction": "Apakah SQL bagi: Buang lajur nota dari pengguna?", "input": "", "output": "```sql\nALTER TABLE pengguna DROP COLUMN nota;\n```"}
+{"instruction": "Tuliskan ayat SQL: Buang lajur nota dari pengguna.", "input": "", "output": "```sql\nALTER TABLE pengguna DROP COLUMN nota;\n```"}
+{"instruction": "Lengkapkan SQL ini: Buang lajur nota dari pengguna.", "input": "", "output": "```sql\nALTER TABLE pengguna DROP COLUMN nota;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Buang lajur nota dari pengguna.", "input": "", "output": "```sql\nALTER TABLE pengguna DROP COLUMN nota;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Buang lajur nota dari pengguna?", "input": "", "output": "```sql\nALTER TABLE pengguna DROP COLUMN nota;\n```"}
+{"instruction": "Apakah fungsi query ini: Buang lajur nota dari pengguna?", "input": "", "output": "```sql\nALTER TABLE pengguna DROP COLUMN nota;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Buang lajur nota dari pengguna.", "input": "", "output": "```sql\nALTER TABLE pengguna DROP COLUMN nota;\n```"}
+{"instruction": "Cipta indeks ke atas nama dalam pengguna", "input": "", "output": "```sql\nCREATE INDEX idx_pengguna_nama ON pengguna (nama);\n```"}
+{"instruction": "Cipta indeks ke atas nama dalam pengguna — tunjukkan SQL.", "input": "", "output": "```sql\nCREATE INDEX idx_pengguna_nama ON pengguna (nama);\n```"}
+{"instruction": "Tulis query: Cipta indeks ke atas nama dalam pengguna.", "input": "", "output": "```sql\nCREATE INDEX idx_pengguna_nama ON pengguna (nama);\n```"}
+{"instruction": "Beri SQL untuk: Cipta indeks ke atas nama dalam pengguna.", "input": "", "output": "```sql\nCREATE INDEX idx_pengguna_nama ON pengguna (nama);\n```"}
+{"instruction": "Jawab dengan SQL: Cipta indeks ke atas nama dalam pengguna.", "input": "", "output": "```sql\nCREATE INDEX idx_pengguna_nama ON pengguna (nama);\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Cipta indeks ke atas nama dalam pengguna.", "input": "", "output": "```sql\nCREATE INDEX idx_pengguna_nama ON pengguna (nama);\n```"}
+{"instruction": "Apakah SQL bagi: Cipta indeks ke atas nama dalam pengguna?", "input": "", "output": "```sql\nCREATE INDEX idx_pengguna_nama ON pengguna (nama);\n```"}
+{"instruction": "Tuliskan ayat SQL: Cipta indeks ke atas nama dalam pengguna.", "input": "", "output": "```sql\nCREATE INDEX idx_pengguna_nama ON pengguna (nama);\n```"}
+{"instruction": "Lengkapkan SQL ini: Cipta indeks ke atas nama dalam pengguna.", "input": "", "output": "```sql\nCREATE INDEX idx_pengguna_nama ON pengguna (nama);\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Cipta indeks ke atas nama dalam pengguna.", "input": "", "output": "```sql\nCREATE INDEX idx_pengguna_nama ON pengguna (nama);\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Cipta indeks ke atas nama dalam pengguna?", "input": "", "output": "```sql\nCREATE INDEX idx_pengguna_nama ON pengguna (nama);\n```"}
+{"instruction": "Apakah fungsi query ini: Cipta indeks ke atas nama dalam pengguna?", "input": "", "output": "```sql\nCREATE INDEX idx_pengguna_nama ON pengguna (nama);\n```"}
+{"instruction": "Beri contoh sebenar query ini: Cipta indeks ke atas nama dalam pengguna.", "input": "", "output": "```sql\nCREATE INDEX idx_pengguna_nama ON pengguna (nama);\n```"}
+{"instruction": "Semak pelan query pengguna mengikut nama", "input": "", "output": "```sql\nEXPLAIN SELECT * FROM pengguna WHERE nama = 'Ali';\n```"}
+{"instruction": "Semak pelan query pengguna mengikut nama — tunjukkan SQL.", "input": "", "output": "```sql\nEXPLAIN SELECT * FROM pengguna WHERE nama = 'Ali';\n```"}
+{"instruction": "Tulis query: Semak pelan query pengguna mengikut nama.", "input": "", "output": "```sql\nEXPLAIN SELECT * FROM pengguna WHERE nama = 'Ali';\n```"}
+{"instruction": "Beri SQL untuk: Semak pelan query pengguna mengikut nama.", "input": "", "output": "```sql\nEXPLAIN SELECT * FROM pengguna WHERE nama = 'Ali';\n```"}
+{"instruction": "Jawab dengan SQL: Semak pelan query pengguna mengikut nama.", "input": "", "output": "```sql\nEXPLAIN SELECT * FROM pengguna WHERE nama = 'Ali';\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Semak pelan query pengguna mengikut nama.", "input": "", "output": "```sql\nEXPLAIN SELECT * FROM pengguna WHERE nama = 'Ali';\n```"}
+{"instruction": "Apakah SQL bagi: Semak pelan query pengguna mengikut nama?", "input": "", "output": "```sql\nEXPLAIN SELECT * FROM pengguna WHERE nama = 'Ali';\n```"}
+{"instruction": "Tuliskan ayat SQL: Semak pelan query pengguna mengikut nama.", "input": "", "output": "```sql\nEXPLAIN SELECT * FROM pengguna WHERE nama = 'Ali';\n```"}
+{"instruction": "Lengkapkan SQL ini: Semak pelan query pengguna mengikut nama.", "input": "", "output": "```sql\nEXPLAIN SELECT * FROM pengguna WHERE nama = 'Ali';\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Semak pelan query pengguna mengikut nama.", "input": "", "output": "```sql\nEXPLAIN SELECT * FROM pengguna WHERE nama = 'Ali';\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Semak pelan query pengguna mengikut nama?", "input": "", "output": "```sql\nEXPLAIN SELECT * FROM pengguna WHERE nama = 'Ali';\n```"}
+{"instruction": "Apakah fungsi query ini: Semak pelan query pengguna mengikut nama?", "input": "", "output": "```sql\nEXPLAIN SELECT * FROM pengguna WHERE nama = 'Ali';\n```"}
+{"instruction": "Beri contoh sebenar query ini: Semak pelan query pengguna mengikut nama.", "input": "", "output": "```sql\nEXPLAIN SELECT * FROM pengguna WHERE nama = 'Ali';\n```"}
+{"instruction": "Gabung pengguna dengan dirinya untuk hierarki", "input": "", "output": "```sql\nSELECT a.nama, b.nama FROM pengguna a JOIN pengguna b ON b.emel = a.nama;\n```"}
+{"instruction": "Gabung pengguna dengan dirinya untuk hierarki — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT a.nama, b.nama FROM pengguna a JOIN pengguna b ON b.emel = a.nama;\n```"}
+{"instruction": "Tulis query: Gabung pengguna dengan dirinya untuk hierarki.", "input": "", "output": "```sql\nSELECT a.nama, b.nama FROM pengguna a JOIN pengguna b ON b.emel = a.nama;\n```"}
+{"instruction": "Beri SQL untuk: Gabung pengguna dengan dirinya untuk hierarki.", "input": "", "output": "```sql\nSELECT a.nama, b.nama FROM pengguna a JOIN pengguna b ON b.emel = a.nama;\n```"}
+{"instruction": "Jawab dengan SQL: Gabung pengguna dengan dirinya untuk hierarki.", "input": "", "output": "```sql\nSELECT a.nama, b.nama FROM pengguna a JOIN pengguna b ON b.emel = a.nama;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Gabung pengguna dengan dirinya untuk hierarki.", "input": "", "output": "```sql\nSELECT a.nama, b.nama FROM pengguna a JOIN pengguna b ON b.emel = a.nama;\n```"}
+{"instruction": "Apakah SQL bagi: Gabung pengguna dengan dirinya untuk hierarki?", "input": "", "output": "```sql\nSELECT a.nama, b.nama FROM pengguna a JOIN pengguna b ON b.emel = a.nama;\n```"}
+{"instruction": "Tuliskan ayat SQL: Gabung pengguna dengan dirinya untuk hierarki.", "input": "", "output": "```sql\nSELECT a.nama, b.nama FROM pengguna a JOIN pengguna b ON b.emel = a.nama;\n```"}
+{"instruction": "Lengkapkan SQL ini: Gabung pengguna dengan dirinya untuk hierarki.", "input": "", "output": "```sql\nSELECT a.nama, b.nama FROM pengguna a JOIN pengguna b ON b.emel = a.nama;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Gabung pengguna dengan dirinya untuk hierarki.", "input": "", "output": "```sql\nSELECT a.nama, b.nama FROM pengguna a JOIN pengguna b ON b.emel = a.nama;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Gabung pengguna dengan dirinya untuk hierarki?", "input": "", "output": "```sql\nSELECT a.nama, b.nama FROM pengguna a JOIN pengguna b ON b.emel = a.nama;\n```"}
+{"instruction": "Apakah fungsi query ini: Gabung pengguna dengan dirinya untuk hierarki?", "input": "", "output": "```sql\nSELECT a.nama, b.nama FROM pengguna a JOIN pengguna b ON b.emel = a.nama;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Gabung pengguna dengan dirinya untuk hierarki.", "input": "", "output": "```sql\nSELECT a.nama, b.nama FROM pengguna a JOIN pengguna b ON b.emel = a.nama;\n```"}
+{"instruction": "Kira purata mengikut emel dalam pengguna melebihi 5", "input": "", "output": "```sql\nSELECT emel, AVG(nama) AS purata FROM pengguna GROUP BY emel HAVING AVG(nama) > 5;\n```"}
+{"instruction": "Kira purata mengikut emel dalam pengguna melebihi 5 — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT emel, AVG(nama) AS purata FROM pengguna GROUP BY emel HAVING AVG(nama) > 5;\n```"}
+{"instruction": "Tulis query: Kira purata mengikut emel dalam pengguna melebihi 5.", "input": "", "output": "```sql\nSELECT emel, AVG(nama) AS purata FROM pengguna GROUP BY emel HAVING AVG(nama) > 5;\n```"}
+{"instruction": "Beri SQL untuk: Kira purata mengikut emel dalam pengguna melebihi 5.", "input": "", "output": "```sql\nSELECT emel, AVG(nama) AS purata FROM pengguna GROUP BY emel HAVING AVG(nama) > 5;\n```"}
+{"instruction": "Jawab dengan SQL: Kira purata mengikut emel dalam pengguna melebihi 5.", "input": "", "output": "```sql\nSELECT emel, AVG(nama) AS purata FROM pengguna GROUP BY emel HAVING AVG(nama) > 5;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Kira purata mengikut emel dalam pengguna melebihi 5.", "input": "", "output": "```sql\nSELECT emel, AVG(nama) AS purata FROM pengguna GROUP BY emel HAVING AVG(nama) > 5;\n```"}
+{"instruction": "Apakah SQL bagi: Kira purata mengikut emel dalam pengguna melebihi 5?", "input": "", "output": "```sql\nSELECT emel, AVG(nama) AS purata FROM pengguna GROUP BY emel HAVING AVG(nama) > 5;\n```"}
+{"instruction": "Tuliskan ayat SQL: Kira purata mengikut emel dalam pengguna melebihi 5.", "input": "", "output": "```sql\nSELECT emel, AVG(nama) AS purata FROM pengguna GROUP BY emel HAVING AVG(nama) > 5;\n```"}
+{"instruction": "Lengkapkan SQL ini: Kira purata mengikut emel dalam pengguna melebihi 5.", "input": "", "output": "```sql\nSELECT emel, AVG(nama) AS purata FROM pengguna GROUP BY emel HAVING AVG(nama) > 5;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Kira purata mengikut emel dalam pengguna melebihi 5.", "input": "", "output": "```sql\nSELECT emel, AVG(nama) AS purata FROM pengguna GROUP BY emel HAVING AVG(nama) > 5;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Kira purata mengikut emel dalam pengguna melebihi 5?", "input": "", "output": "```sql\nSELECT emel, AVG(nama) AS purata FROM pengguna GROUP BY emel HAVING AVG(nama) > 5;\n```"}
+{"instruction": "Apakah fungsi query ini: Kira purata mengikut emel dalam pengguna melebihi 5?", "input": "", "output": "```sql\nSELECT emel, AVG(nama) AS purata FROM pengguna GROUP BY emel HAVING AVG(nama) > 5;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Kira purata mengikut emel dalam pengguna melebihi 5.", "input": "", "output": "```sql\nSELECT emel, AVG(nama) AS purata FROM pengguna GROUP BY emel HAVING AVG(nama) > 5;\n```"}
+{"instruction": "Pilih 5 pengguna rawak", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY RANDOM() LIMIT 5;\n```"}
+{"instruction": "Pilih 5 pengguna rawak — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY RANDOM() LIMIT 5;\n```"}
+{"instruction": "Tulis query: Pilih 5 pengguna rawak.", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY RANDOM() LIMIT 5;\n```"}
+{"instruction": "Beri SQL untuk: Pilih 5 pengguna rawak.", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY RANDOM() LIMIT 5;\n```"}
+{"instruction": "Jawab dengan SQL: Pilih 5 pengguna rawak.", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY RANDOM() LIMIT 5;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Pilih 5 pengguna rawak.", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY RANDOM() LIMIT 5;\n```"}
+{"instruction": "Apakah SQL bagi: Pilih 5 pengguna rawak?", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY RANDOM() LIMIT 5;\n```"}
+{"instruction": "Tuliskan ayat SQL: Pilih 5 pengguna rawak.", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY RANDOM() LIMIT 5;\n```"}
+{"instruction": "Lengkapkan SQL ini: Pilih 5 pengguna rawak.", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY RANDOM() LIMIT 5;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Pilih 5 pengguna rawak.", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY RANDOM() LIMIT 5;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Pilih 5 pengguna rawak?", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY RANDOM() LIMIT 5;\n```"}
+{"instruction": "Apakah fungsi query ini: Pilih 5 pengguna rawak?", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY RANDOM() LIMIT 5;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Pilih 5 pengguna rawak.", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY RANDOM() LIMIT 5;\n```"}
+{"instruction": "Hadkan pengguna kepada halaman kedua (10 sehalaman)", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY nama LIMIT 10 OFFSET 10;\n```"}
+{"instruction": "Hadkan pengguna kepada halaman kedua (10 sehalaman) — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY nama LIMIT 10 OFFSET 10;\n```"}
+{"instruction": "Tulis query: Hadkan pengguna kepada halaman kedua (10 sehalaman).", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY nama LIMIT 10 OFFSET 10;\n```"}
+{"instruction": "Beri SQL untuk: Hadkan pengguna kepada halaman kedua (10 sehalaman).", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY nama LIMIT 10 OFFSET 10;\n```"}
+{"instruction": "Jawab dengan SQL: Hadkan pengguna kepada halaman kedua (10 sehalaman).", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY nama LIMIT 10 OFFSET 10;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Hadkan pengguna kepada halaman kedua (10 sehalaman).", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY nama LIMIT 10 OFFSET 10;\n```"}
+{"instruction": "Apakah SQL bagi: Hadkan pengguna kepada halaman kedua (10 sehalaman)?", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY nama LIMIT 10 OFFSET 10;\n```"}
+{"instruction": "Tuliskan ayat SQL: Hadkan pengguna kepada halaman kedua (10 sehalaman).", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY nama LIMIT 10 OFFSET 10;\n```"}
+{"instruction": "Lengkapkan SQL ini: Hadkan pengguna kepada halaman kedua (10 sehalaman).", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY nama LIMIT 10 OFFSET 10;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Hadkan pengguna kepada halaman kedua (10 sehalaman).", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY nama LIMIT 10 OFFSET 10;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Hadkan pengguna kepada halaman kedua (10 sehalaman)?", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY nama LIMIT 10 OFFSET 10;\n```"}
+{"instruction": "Apakah fungsi query ini: Hadkan pengguna kepada halaman kedua (10 sehalaman)?", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY nama LIMIT 10 OFFSET 10;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Hadkan pengguna kepada halaman kedua (10 sehalaman).", "input": "", "output": "```sql\nSELECT * FROM pengguna ORDER BY nama LIMIT 10 OFFSET 10;\n```"}
+{"instruction": "Tukar nama jadi teks dalam pengguna", "input": "", "output": "```sql\nSELECT CAST(nama AS TEXT) AS teks FROM pengguna;\n```"}
+{"instruction": "Tukar nama jadi teks dalam pengguna — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT CAST(nama AS TEXT) AS teks FROM pengguna;\n```"}
+{"instruction": "Tulis query: Tukar nama jadi teks dalam pengguna.", "input": "", "output": "```sql\nSELECT CAST(nama AS TEXT) AS teks FROM pengguna;\n```"}
+{"instruction": "Beri SQL untuk: Tukar nama jadi teks dalam pengguna.", "input": "", "output": "```sql\nSELECT CAST(nama AS TEXT) AS teks FROM pengguna;\n```"}
+{"instruction": "Jawab dengan SQL: Tukar nama jadi teks dalam pengguna.", "input": "", "output": "```sql\nSELECT CAST(nama AS TEXT) AS teks FROM pengguna;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Tukar nama jadi teks dalam pengguna.", "input": "", "output": "```sql\nSELECT CAST(nama AS TEXT) AS teks FROM pengguna;\n```"}
+{"instruction": "Apakah SQL bagi: Tukar nama jadi teks dalam pengguna?", "input": "", "output": "```sql\nSELECT CAST(nama AS TEXT) AS teks FROM pengguna;\n```"}
+{"instruction": "Tuliskan ayat SQL: Tukar nama jadi teks dalam pengguna.", "input": "", "output": "```sql\nSELECT CAST(nama AS TEXT) AS teks FROM pengguna;\n```"}
+{"instruction": "Lengkapkan SQL ini: Tukar nama jadi teks dalam pengguna.", "input": "", "output": "```sql\nSELECT CAST(nama AS TEXT) AS teks FROM pengguna;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Tukar nama jadi teks dalam pengguna.", "input": "", "output": "```sql\nSELECT CAST(nama AS TEXT) AS teks FROM pengguna;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Tukar nama jadi teks dalam pengguna?", "input": "", "output": "```sql\nSELECT CAST(nama AS TEXT) AS teks FROM pengguna;\n```"}
+{"instruction": "Apakah fungsi query ini: Tukar nama jadi teks dalam pengguna?", "input": "", "output": "```sql\nSELECT CAST(nama AS TEXT) AS teks FROM pengguna;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Tukar nama jadi teks dalam pengguna.", "input": "", "output": "```sql\nSELECT CAST(nama AS TEXT) AS teks FROM pengguna;\n```"}
+{"instruction": "Panjang teks nama dalam pengguna", "input": "", "output": "```sql\nSELECT nama, LENGTH(nama) AS panjang FROM pengguna;\n```"}
+{"instruction": "Panjang teks nama dalam pengguna — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT nama, LENGTH(nama) AS panjang FROM pengguna;\n```"}
+{"instruction": "Tulis query: Panjang teks nama dalam pengguna.", "input": "", "output": "```sql\nSELECT nama, LENGTH(nama) AS panjang FROM pengguna;\n```"}
+{"instruction": "Beri SQL untuk: Panjang teks nama dalam pengguna.", "input": "", "output": "```sql\nSELECT nama, LENGTH(nama) AS panjang FROM pengguna;\n```"}
+{"instruction": "Jawab dengan SQL: Panjang teks nama dalam pengguna.", "input": "", "output": "```sql\nSELECT nama, LENGTH(nama) AS panjang FROM pengguna;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Panjang teks nama dalam pengguna.", "input": "", "output": "```sql\nSELECT nama, LENGTH(nama) AS panjang FROM pengguna;\n```"}
+{"instruction": "Apakah SQL bagi: Panjang teks nama dalam pengguna?", "input": "", "output": "```sql\nSELECT nama, LENGTH(nama) AS panjang FROM pengguna;\n```"}
+{"instruction": "Tuliskan ayat SQL: Panjang teks nama dalam pengguna.", "input": "", "output": "```sql\nSELECT nama, LENGTH(nama) AS panjang FROM pengguna;\n```"}
+{"instruction": "Lengkapkan SQL ini: Panjang teks nama dalam pengguna.", "input": "", "output": "```sql\nSELECT nama, LENGTH(nama) AS panjang FROM pengguna;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Panjang teks nama dalam pengguna.", "input": "", "output": "```sql\nSELECT nama, LENGTH(nama) AS panjang FROM pengguna;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Panjang teks nama dalam pengguna?", "input": "", "output": "```sql\nSELECT nama, LENGTH(nama) AS panjang FROM pengguna;\n```"}
+{"instruction": "Apakah fungsi query ini: Panjang teks nama dalam pengguna?", "input": "", "output": "```sql\nSELECT nama, LENGTH(nama) AS panjang FROM pengguna;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Panjang teks nama dalam pengguna.", "input": "", "output": "```sql\nSELECT nama, LENGTH(nama) AS panjang FROM pengguna;\n```"}
+{"instruction": "Gabung dua teks nama dan emel dalam pengguna", "input": "", "output": "```sql\nSELECT nama || ' ' || emel AS penuh FROM pengguna;\n```"}
+{"instruction": "Gabung dua teks nama dan emel dalam pengguna — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT nama || ' ' || emel AS penuh FROM pengguna;\n```"}
+{"instruction": "Tulis query: Gabung dua teks nama dan emel dalam pengguna.", "input": "", "output": "```sql\nSELECT nama || ' ' || emel AS penuh FROM pengguna;\n```"}
+{"instruction": "Beri SQL untuk: Gabung dua teks nama dan emel dalam pengguna.", "input": "", "output": "```sql\nSELECT nama || ' ' || emel AS penuh FROM pengguna;\n```"}
+{"instruction": "Jawab dengan SQL: Gabung dua teks nama dan emel dalam pengguna.", "input": "", "output": "```sql\nSELECT nama || ' ' || emel AS penuh FROM pengguna;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Gabung dua teks nama dan emel dalam pengguna.", "input": "", "output": "```sql\nSELECT nama || ' ' || emel AS penuh FROM pengguna;\n```"}
+{"instruction": "Apakah SQL bagi: Gabung dua teks nama dan emel dalam pengguna?", "input": "", "output": "```sql\nSELECT nama || ' ' || emel AS penuh FROM pengguna;\n```"}
+{"instruction": "Tuliskan ayat SQL: Gabung dua teks nama dan emel dalam pengguna.", "input": "", "output": "```sql\nSELECT nama || ' ' || emel AS penuh FROM pengguna;\n```"}
+{"instruction": "Lengkapkan SQL ini: Gabung dua teks nama dan emel dalam pengguna.", "input": "", "output": "```sql\nSELECT nama || ' ' || emel AS penuh FROM pengguna;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Gabung dua teks nama dan emel dalam pengguna.", "input": "", "output": "```sql\nSELECT nama || ' ' || emel AS penuh FROM pengguna;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Gabung dua teks nama dan emel dalam pengguna?", "input": "", "output": "```sql\nSELECT nama || ' ' || emel AS penuh FROM pengguna;\n```"}
+{"instruction": "Apakah fungsi query ini: Gabung dua teks nama dan emel dalam pengguna?", "input": "", "output": "```sql\nSELECT nama || ' ' || emel AS penuh FROM pengguna;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Gabung dua teks nama dan emel dalam pengguna.", "input": "", "output": "```sql\nSELECT nama || ' ' || emel AS penuh FROM pengguna;\n```"}
+{"instruction": "Tarikh hari ini dalam SQL", "input": "", "output": "```sql\nSELECT CURRENT_DATE;\n```"}
+{"instruction": "Tarikh hari ini dalam SQL — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT CURRENT_DATE;\n```"}
+{"instruction": "Tulis query: Tarikh hari ini dalam SQL.", "input": "", "output": "```sql\nSELECT CURRENT_DATE;\n```"}
+{"instruction": "Beri SQL untuk: Tarikh hari ini dalam SQL.", "input": "", "output": "```sql\nSELECT CURRENT_DATE;\n```"}
+{"instruction": "Jawab dengan SQL: Tarikh hari ini dalam SQL.", "input": "", "output": "```sql\nSELECT CURRENT_DATE;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Tarikh hari ini dalam SQL.", "input": "", "output": "```sql\nSELECT CURRENT_DATE;\n```"}
+{"instruction": "Apakah SQL bagi: Tarikh hari ini dalam SQL?", "input": "", "output": "```sql\nSELECT CURRENT_DATE;\n```"}
+{"instruction": "Tuliskan ayat SQL: Tarikh hari ini dalam SQL.", "input": "", "output": "```sql\nSELECT CURRENT_DATE;\n```"}
+{"instruction": "Lengkapkan SQL ini: Tarikh hari ini dalam SQL.", "input": "", "output": "```sql\nSELECT CURRENT_DATE;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Tarikh hari ini dalam SQL.", "input": "", "output": "```sql\nSELECT CURRENT_DATE;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Tarikh hari ini dalam SQL?", "input": "", "output": "```sql\nSELECT CURRENT_DATE;\n```"}
+{"instruction": "Apakah fungsi query ini: Tarikh hari ini dalam SQL?", "input": "", "output": "```sql\nSELECT CURRENT_DATE;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Tarikh hari ini dalam SQL.", "input": "", "output": "```sql\nSELECT CURRENT_DATE;\n```"}
+{"instruction": "Kira pengguna yang nama tidak kosong", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pengguna WHERE nama IS NOT NULL AND nama <> '';\n```"}
+{"instruction": "Kira pengguna yang nama tidak kosong — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pengguna WHERE nama IS NOT NULL AND nama <> '';\n```"}
+{"instruction": "Tulis query: Kira pengguna yang nama tidak kosong.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pengguna WHERE nama IS NOT NULL AND nama <> '';\n```"}
+{"instruction": "Beri SQL untuk: Kira pengguna yang nama tidak kosong.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pengguna WHERE nama IS NOT NULL AND nama <> '';\n```"}
+{"instruction": "Jawab dengan SQL: Kira pengguna yang nama tidak kosong.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pengguna WHERE nama IS NOT NULL AND nama <> '';\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Kira pengguna yang nama tidak kosong.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pengguna WHERE nama IS NOT NULL AND nama <> '';\n```"}
+{"instruction": "Apakah SQL bagi: Kira pengguna yang nama tidak kosong?", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pengguna WHERE nama IS NOT NULL AND nama <> '';\n```"}
+{"instruction": "Tuliskan ayat SQL: Kira pengguna yang nama tidak kosong.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pengguna WHERE nama IS NOT NULL AND nama <> '';\n```"}
+{"instruction": "Lengkapkan SQL ini: Kira pengguna yang nama tidak kosong.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pengguna WHERE nama IS NOT NULL AND nama <> '';\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Kira pengguna yang nama tidak kosong.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pengguna WHERE nama IS NOT NULL AND nama <> '';\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Kira pengguna yang nama tidak kosong?", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pengguna WHERE nama IS NOT NULL AND nama <> '';\n```"}
+{"instruction": "Apakah fungsi query ini: Kira pengguna yang nama tidak kosong?", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pengguna WHERE nama IS NOT NULL AND nama <> '';\n```"}
+{"instruction": "Beri contoh sebenar query ini: Kira pengguna yang nama tidak kosong.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pengguna WHERE nama IS NOT NULL AND nama <> '';\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Senaraikan semua pesanan.", "input": "", "output": "```sql\nSELECT * FROM pesanan;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Senaraikan semua pesanan?", "input": "", "output": "```sql\nSELECT * FROM pesanan;\n```"}
+{"instruction": "Apakah fungsi query ini: Senaraikan semua pesanan?", "input": "", "output": "```sql\nSELECT * FROM pesanan;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Senaraikan semua pesanan.", "input": "", "output": "```sql\nSELECT * FROM pesanan;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Kira baris dalam pesanan.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pesanan;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Kira baris dalam pesanan?", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pesanan;\n```"}
+{"instruction": "Apakah fungsi query ini: Kira baris dalam pesanan?", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pesanan;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Kira baris dalam pesanan.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pesanan;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Cari pesanan di mana pengguna_id bersamaan 'Ali'.", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id = 'Ali';\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Cari pesanan di mana pengguna_id bersamaan 'Ali'?", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id = 'Ali';\n```"}
+{"instruction": "Apakah fungsi query ini: Cari pesanan di mana pengguna_id bersamaan 'Ali'?", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id = 'Ali';\n```"}
+{"instruction": "Beri contoh sebenar query ini: Cari pesanan di mana pengguna_id bersamaan 'Ali'.", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id = 'Ali';\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Susun pesanan mengikut pengguna_id menurun, 5 teratas.", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY pengguna_id DESC LIMIT 5;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Susun pesanan mengikut pengguna_id menurun, 5 teratas?", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY pengguna_id DESC LIMIT 5;\n```"}
+{"instruction": "Apakah fungsi query ini: Susun pesanan mengikut pengguna_id menurun, 5 teratas?", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY pengguna_id DESC LIMIT 5;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Susun pesanan mengikut pengguna_id menurun, 5 teratas.", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY pengguna_id DESC LIMIT 5;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Jumlahkan pengguna_id dalam pesanan berkelompok mengikut jumlah.", "input": "", "output": "```sql\nSELECT jumlah, SUM(pengguna_id) AS jumlah FROM pesanan GROUP BY jumlah;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Jumlahkan pengguna_id dalam pesanan berkelompok mengikut jumlah?", "input": "", "output": "```sql\nSELECT jumlah, SUM(pengguna_id) AS jumlah FROM pesanan GROUP BY jumlah;\n```"}
+{"instruction": "Apakah fungsi query ini: Jumlahkan pengguna_id dalam pesanan berkelompok mengikut jumlah?", "input": "", "output": "```sql\nSELECT jumlah, SUM(pengguna_id) AS jumlah FROM pesanan GROUP BY jumlah;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Jumlahkan pengguna_id dalam pesanan berkelompok mengikut jumlah.", "input": "", "output": "```sql\nSELECT jumlah, SUM(pengguna_id) AS jumlah FROM pesanan GROUP BY jumlah;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Kemas kini pesanan: tetapkan pengguna_id kepada 'Ali' untuk id 1.", "input": "", "output": "```sql\nUPDATE pesanan SET pengguna_id = 'Ali' WHERE id = 1;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Kemas kini pesanan: tetapkan pengguna_id kepada 'Ali' untuk id 1?", "input": "", "output": "```sql\nUPDATE pesanan SET pengguna_id = 'Ali' WHERE id = 1;\n```"}
+{"instruction": "Apakah fungsi query ini: Kemas kini pesanan: tetapkan pengguna_id kepada 'Ali' untuk id 1?", "input": "", "output": "```sql\nUPDATE pesanan SET pengguna_id = 'Ali' WHERE id = 1;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Kemas kini pesanan: tetapkan pengguna_id kepada 'Ali' untuk id 1.", "input": "", "output": "```sql\nUPDATE pesanan SET pengguna_id = 'Ali' WHERE id = 1;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Padam baris id 9 dari pesanan.", "input": "", "output": "```sql\nDELETE FROM pesanan WHERE id = 9;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Padam baris id 9 dari pesanan?", "input": "", "output": "```sql\nDELETE FROM pesanan WHERE id = 9;\n```"}
+{"instruction": "Apakah fungsi query ini: Padam baris id 9 dari pesanan?", "input": "", "output": "```sql\nDELETE FROM pesanan WHERE id = 9;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Padam baris id 9 dari pesanan.", "input": "", "output": "```sql\nDELETE FROM pesanan WHERE id = 9;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Tambah satu baris ke pesanan.", "input": "", "output": "```sql\nINSERT INTO pesanan (pengguna_id, jumlah) VALUES ('Ali', 'ali@x.my');\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Tambah satu baris ke pesanan?", "input": "", "output": "```sql\nINSERT INTO pesanan (pengguna_id, jumlah) VALUES ('Ali', 'ali@x.my');\n```"}
+{"instruction": "Apakah fungsi query ini: Tambah satu baris ke pesanan?", "input": "", "output": "```sql\nINSERT INTO pesanan (pengguna_id, jumlah) VALUES ('Ali', 'ali@x.my');\n```"}
+{"instruction": "Beri contoh sebenar query ini: Tambah satu baris ke pesanan.", "input": "", "output": "```sql\nINSERT INTO pesanan (pengguna_id, jumlah) VALUES ('Ali', 'ali@x.my');\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Purata pengguna_id dalam pesanan.", "input": "", "output": "```sql\nSELECT AVG(pengguna_id) AS purata FROM pesanan;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Purata pengguna_id dalam pesanan?", "input": "", "output": "```sql\nSELECT AVG(pengguna_id) AS purata FROM pesanan;\n```"}
+{"instruction": "Apakah fungsi query ini: Purata pengguna_id dalam pesanan?", "input": "", "output": "```sql\nSELECT AVG(pengguna_id) AS purata FROM pesanan;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Purata pengguna_id dalam pesanan.", "input": "", "output": "```sql\nSELECT AVG(pengguna_id) AS purata FROM pesanan;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Nilai maksimum pengguna_id dalam pesanan.", "input": "", "output": "```sql\nSELECT MAX(pengguna_id) AS maks FROM pesanan;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Nilai maksimum pengguna_id dalam pesanan?", "input": "", "output": "```sql\nSELECT MAX(pengguna_id) AS maks FROM pesanan;\n```"}
+{"instruction": "Apakah fungsi query ini: Nilai maksimum pengguna_id dalam pesanan?", "input": "", "output": "```sql\nSELECT MAX(pengguna_id) AS maks FROM pesanan;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Nilai maksimum pengguna_id dalam pesanan.", "input": "", "output": "```sql\nSELECT MAX(pengguna_id) AS maks FROM pesanan;\n```"}
+{"instruction": "Cari pesanan dengan pengguna_id mengandungi teks 'a'", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id LIKE '%a%';\n```"}
+{"instruction": "Cari pesanan dengan pengguna_id mengandungi teks 'a' — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id LIKE '%a%';\n```"}
+{"instruction": "Tulis query: Cari pesanan dengan pengguna_id mengandungi teks 'a'.", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id LIKE '%a%';\n```"}
+{"instruction": "Beri SQL untuk: Cari pesanan dengan pengguna_id mengandungi teks 'a'.", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id LIKE '%a%';\n```"}
+{"instruction": "Jawab dengan SQL: Cari pesanan dengan pengguna_id mengandungi teks 'a'.", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id LIKE '%a%';\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Cari pesanan dengan pengguna_id mengandungi teks 'a'.", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id LIKE '%a%';\n```"}
+{"instruction": "Apakah SQL bagi: Cari pesanan dengan pengguna_id mengandungi teks 'a'?", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id LIKE '%a%';\n```"}
+{"instruction": "Tuliskan ayat SQL: Cari pesanan dengan pengguna_id mengandungi teks 'a'.", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id LIKE '%a%';\n```"}
+{"instruction": "Lengkapkan SQL ini: Cari pesanan dengan pengguna_id mengandungi teks 'a'.", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id LIKE '%a%';\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Cari pesanan dengan pengguna_id mengandungi teks 'a'.", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id LIKE '%a%';\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Cari pesanan dengan pengguna_id mengandungi teks 'a'?", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id LIKE '%a%';\n```"}
+{"instruction": "Apakah fungsi query ini: Cari pesanan dengan pengguna_id mengandungi teks 'a'?", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id LIKE '%a%';\n```"}
+{"instruction": "Beri contoh sebenar query ini: Cari pesanan dengan pengguna_id mengandungi teks 'a'.", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id LIKE '%a%';\n```"}
+{"instruction": "Kira pesanan berkelompok mengikut jumlah yang melebihi 2", "input": "", "output": "```sql\nSELECT jumlah, COUNT(*) AS n FROM pesanan GROUP BY jumlah HAVING COUNT(*) > 2;\n```"}
+{"instruction": "Kira pesanan berkelompok mengikut jumlah yang melebihi 2 — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT jumlah, COUNT(*) AS n FROM pesanan GROUP BY jumlah HAVING COUNT(*) > 2;\n```"}
+{"instruction": "Tulis query: Kira pesanan berkelompok mengikut jumlah yang melebihi 2.", "input": "", "output": "```sql\nSELECT jumlah, COUNT(*) AS n FROM pesanan GROUP BY jumlah HAVING COUNT(*) > 2;\n```"}
+{"instruction": "Beri SQL untuk: Kira pesanan berkelompok mengikut jumlah yang melebihi 2.", "input": "", "output": "```sql\nSELECT jumlah, COUNT(*) AS n FROM pesanan GROUP BY jumlah HAVING COUNT(*) > 2;\n```"}
+{"instruction": "Jawab dengan SQL: Kira pesanan berkelompok mengikut jumlah yang melebihi 2.", "input": "", "output": "```sql\nSELECT jumlah, COUNT(*) AS n FROM pesanan GROUP BY jumlah HAVING COUNT(*) > 2;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Kira pesanan berkelompok mengikut jumlah yang melebihi 2.", "input": "", "output": "```sql\nSELECT jumlah, COUNT(*) AS n FROM pesanan GROUP BY jumlah HAVING COUNT(*) > 2;\n```"}
+{"instruction": "Apakah SQL bagi: Kira pesanan berkelompok mengikut jumlah yang melebihi 2?", "input": "", "output": "```sql\nSELECT jumlah, COUNT(*) AS n FROM pesanan GROUP BY jumlah HAVING COUNT(*) > 2;\n```"}
+{"instruction": "Tuliskan ayat SQL: Kira pesanan berkelompok mengikut jumlah yang melebihi 2.", "input": "", "output": "```sql\nSELECT jumlah, COUNT(*) AS n FROM pesanan GROUP BY jumlah HAVING COUNT(*) > 2;\n```"}
+{"instruction": "Lengkapkan SQL ini: Kira pesanan berkelompok mengikut jumlah yang melebihi 2.", "input": "", "output": "```sql\nSELECT jumlah, COUNT(*) AS n FROM pesanan GROUP BY jumlah HAVING COUNT(*) > 2;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Kira pesanan berkelompok mengikut jumlah yang melebihi 2.", "input": "", "output": "```sql\nSELECT jumlah, COUNT(*) AS n FROM pesanan GROUP BY jumlah HAVING COUNT(*) > 2;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Kira pesanan berkelompok mengikut jumlah yang melebihi 2?", "input": "", "output": "```sql\nSELECT jumlah, COUNT(*) AS n FROM pesanan GROUP BY jumlah HAVING COUNT(*) > 2;\n```"}
+{"instruction": "Apakah fungsi query ini: Kira pesanan berkelompok mengikut jumlah yang melebihi 2?", "input": "", "output": "```sql\nSELECT jumlah, COUNT(*) AS n FROM pesanan GROUP BY jumlah HAVING COUNT(*) > 2;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Kira pesanan berkelompok mengikut jumlah yang melebihi 2.", "input": "", "output": "```sql\nSELECT jumlah, COUNT(*) AS n FROM pesanan GROUP BY jumlah HAVING COUNT(*) > 2;\n```"}
+{"instruction": "Ambil 10 pesanan terkini mengikut pengguna_id", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY pengguna_id DESC LIMIT 10;\n```"}
+{"instruction": "Ambil 10 pesanan terkini mengikut pengguna_id — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY pengguna_id DESC LIMIT 10;\n```"}
+{"instruction": "Tulis query: Ambil 10 pesanan terkini mengikut pengguna_id.", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY pengguna_id DESC LIMIT 10;\n```"}
+{"instruction": "Beri SQL untuk: Ambil 10 pesanan terkini mengikut pengguna_id.", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY pengguna_id DESC LIMIT 10;\n```"}
+{"instruction": "Jawab dengan SQL: Ambil 10 pesanan terkini mengikut pengguna_id.", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY pengguna_id DESC LIMIT 10;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Ambil 10 pesanan terkini mengikut pengguna_id.", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY pengguna_id DESC LIMIT 10;\n```"}
+{"instruction": "Apakah SQL bagi: Ambil 10 pesanan terkini mengikut pengguna_id?", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY pengguna_id DESC LIMIT 10;\n```"}
+{"instruction": "Tuliskan ayat SQL: Ambil 10 pesanan terkini mengikut pengguna_id.", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY pengguna_id DESC LIMIT 10;\n```"}
+{"instruction": "Lengkapkan SQL ini: Ambil 10 pesanan terkini mengikut pengguna_id.", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY pengguna_id DESC LIMIT 10;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Ambil 10 pesanan terkini mengikut pengguna_id.", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY pengguna_id DESC LIMIT 10;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Ambil 10 pesanan terkini mengikut pengguna_id?", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY pengguna_id DESC LIMIT 10;\n```"}
+{"instruction": "Apakah fungsi query ini: Ambil 10 pesanan terkini mengikut pengguna_id?", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY pengguna_id DESC LIMIT 10;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Ambil 10 pesanan terkini mengikut pengguna_id.", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY pengguna_id DESC LIMIT 10;\n```"}
+{"instruction": "Jumlah pengguna_id terkecil dan terbesar dalam pesanan", "input": "", "output": "```sql\nSELECT MIN(pengguna_id) AS min, MAX(pengguna_id) AS maks FROM pesanan;\n```"}
+{"instruction": "Jumlah pengguna_id terkecil dan terbesar dalam pesanan — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT MIN(pengguna_id) AS min, MAX(pengguna_id) AS maks FROM pesanan;\n```"}
+{"instruction": "Tulis query: Jumlah pengguna_id terkecil dan terbesar dalam pesanan.", "input": "", "output": "```sql\nSELECT MIN(pengguna_id) AS min, MAX(pengguna_id) AS maks FROM pesanan;\n```"}
+{"instruction": "Beri SQL untuk: Jumlah pengguna_id terkecil dan terbesar dalam pesanan.", "input": "", "output": "```sql\nSELECT MIN(pengguna_id) AS min, MAX(pengguna_id) AS maks FROM pesanan;\n```"}
+{"instruction": "Jawab dengan SQL: Jumlah pengguna_id terkecil dan terbesar dalam pesanan.", "input": "", "output": "```sql\nSELECT MIN(pengguna_id) AS min, MAX(pengguna_id) AS maks FROM pesanan;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Jumlah pengguna_id terkecil dan terbesar dalam pesanan.", "input": "", "output": "```sql\nSELECT MIN(pengguna_id) AS min, MAX(pengguna_id) AS maks FROM pesanan;\n```"}
+{"instruction": "Apakah SQL bagi: Jumlah pengguna_id terkecil dan terbesar dalam pesanan?", "input": "", "output": "```sql\nSELECT MIN(pengguna_id) AS min, MAX(pengguna_id) AS maks FROM pesanan;\n```"}
+{"instruction": "Tuliskan ayat SQL: Jumlah pengguna_id terkecil dan terbesar dalam pesanan.", "input": "", "output": "```sql\nSELECT MIN(pengguna_id) AS min, MAX(pengguna_id) AS maks FROM pesanan;\n```"}
+{"instruction": "Lengkapkan SQL ini: Jumlah pengguna_id terkecil dan terbesar dalam pesanan.", "input": "", "output": "```sql\nSELECT MIN(pengguna_id) AS min, MAX(pengguna_id) AS maks FROM pesanan;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Jumlah pengguna_id terkecil dan terbesar dalam pesanan.", "input": "", "output": "```sql\nSELECT MIN(pengguna_id) AS min, MAX(pengguna_id) AS maks FROM pesanan;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Jumlah pengguna_id terkecil dan terbesar dalam pesanan?", "input": "", "output": "```sql\nSELECT MIN(pengguna_id) AS min, MAX(pengguna_id) AS maks FROM pesanan;\n```"}
+{"instruction": "Apakah fungsi query ini: Jumlah pengguna_id terkecil dan terbesar dalam pesanan?", "input": "", "output": "```sql\nSELECT MIN(pengguna_id) AS min, MAX(pengguna_id) AS maks FROM pesanan;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Jumlah pengguna_id terkecil dan terbesar dalam pesanan.", "input": "", "output": "```sql\nSELECT MIN(pengguna_id) AS min, MAX(pengguna_id) AS maks FROM pesanan;\n```"}
+{"instruction": "Senaraikan pengguna_id unik dalam pesanan", "input": "", "output": "```sql\nSELECT DISTINCT pengguna_id FROM pesanan;\n```"}
+{"instruction": "Senaraikan pengguna_id unik dalam pesanan — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT DISTINCT pengguna_id FROM pesanan;\n```"}
+{"instruction": "Tulis query: Senaraikan pengguna_id unik dalam pesanan.", "input": "", "output": "```sql\nSELECT DISTINCT pengguna_id FROM pesanan;\n```"}
+{"instruction": "Beri SQL untuk: Senaraikan pengguna_id unik dalam pesanan.", "input": "", "output": "```sql\nSELECT DISTINCT pengguna_id FROM pesanan;\n```"}
+{"instruction": "Jawab dengan SQL: Senaraikan pengguna_id unik dalam pesanan.", "input": "", "output": "```sql\nSELECT DISTINCT pengguna_id FROM pesanan;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Senaraikan pengguna_id unik dalam pesanan.", "input": "", "output": "```sql\nSELECT DISTINCT pengguna_id FROM pesanan;\n```"}
+{"instruction": "Apakah SQL bagi: Senaraikan pengguna_id unik dalam pesanan?", "input": "", "output": "```sql\nSELECT DISTINCT pengguna_id FROM pesanan;\n```"}
+{"instruction": "Tuliskan ayat SQL: Senaraikan pengguna_id unik dalam pesanan.", "input": "", "output": "```sql\nSELECT DISTINCT pengguna_id FROM pesanan;\n```"}
+{"instruction": "Lengkapkan SQL ini: Senaraikan pengguna_id unik dalam pesanan.", "input": "", "output": "```sql\nSELECT DISTINCT pengguna_id FROM pesanan;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Senaraikan pengguna_id unik dalam pesanan.", "input": "", "output": "```sql\nSELECT DISTINCT pengguna_id FROM pesanan;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Senaraikan pengguna_id unik dalam pesanan?", "input": "", "output": "```sql\nSELECT DISTINCT pengguna_id FROM pesanan;\n```"}
+{"instruction": "Apakah fungsi query ini: Senaraikan pengguna_id unik dalam pesanan?", "input": "", "output": "```sql\nSELECT DISTINCT pengguna_id FROM pesanan;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Senaraikan pengguna_id unik dalam pesanan.", "input": "", "output": "```sql\nSELECT DISTINCT pengguna_id FROM pesanan;\n```"}
+{"instruction": "Cari pesanan di mana pengguna_id antara 'a' dan 'z'", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id BETWEEN 'a' AND 'z';\n```"}
+{"instruction": "Cari pesanan di mana pengguna_id antara 'a' dan 'z' — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id BETWEEN 'a' AND 'z';\n```"}
+{"instruction": "Tulis query: Cari pesanan di mana pengguna_id antara 'a' dan 'z'.", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id BETWEEN 'a' AND 'z';\n```"}
+{"instruction": "Beri SQL untuk: Cari pesanan di mana pengguna_id antara 'a' dan 'z'.", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id BETWEEN 'a' AND 'z';\n```"}
+{"instruction": "Jawab dengan SQL: Cari pesanan di mana pengguna_id antara 'a' dan 'z'.", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id BETWEEN 'a' AND 'z';\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Cari pesanan di mana pengguna_id antara 'a' dan 'z'.", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id BETWEEN 'a' AND 'z';\n```"}
+{"instruction": "Apakah SQL bagi: Cari pesanan di mana pengguna_id antara 'a' dan 'z'?", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id BETWEEN 'a' AND 'z';\n```"}
+{"instruction": "Tuliskan ayat SQL: Cari pesanan di mana pengguna_id antara 'a' dan 'z'.", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id BETWEEN 'a' AND 'z';\n```"}
+{"instruction": "Lengkapkan SQL ini: Cari pesanan di mana pengguna_id antara 'a' dan 'z'.", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id BETWEEN 'a' AND 'z';\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Cari pesanan di mana pengguna_id antara 'a' dan 'z'.", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id BETWEEN 'a' AND 'z';\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Cari pesanan di mana pengguna_id antara 'a' dan 'z'?", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id BETWEEN 'a' AND 'z';\n```"}
+{"instruction": "Apakah fungsi query ini: Cari pesanan di mana pengguna_id antara 'a' dan 'z'?", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id BETWEEN 'a' AND 'z';\n```"}
+{"instruction": "Beri contoh sebenar query ini: Cari pesanan di mana pengguna_id antara 'a' dan 'z'.", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id BETWEEN 'a' AND 'z';\n```"}
+{"instruction": "Cari pesanan di mana pengguna_id dalam senarai diberi", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id IN ('Ali', 'Abu');\n```"}
+{"instruction": "Cari pesanan di mana pengguna_id dalam senarai diberi — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id IN ('Ali', 'Abu');\n```"}
+{"instruction": "Tulis query: Cari pesanan di mana pengguna_id dalam senarai diberi.", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id IN ('Ali', 'Abu');\n```"}
+{"instruction": "Beri SQL untuk: Cari pesanan di mana pengguna_id dalam senarai diberi.", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id IN ('Ali', 'Abu');\n```"}
+{"instruction": "Jawab dengan SQL: Cari pesanan di mana pengguna_id dalam senarai diberi.", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id IN ('Ali', 'Abu');\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Cari pesanan di mana pengguna_id dalam senarai diberi.", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id IN ('Ali', 'Abu');\n```"}
+{"instruction": "Apakah SQL bagi: Cari pesanan di mana pengguna_id dalam senarai diberi?", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id IN ('Ali', 'Abu');\n```"}
+{"instruction": "Tuliskan ayat SQL: Cari pesanan di mana pengguna_id dalam senarai diberi.", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id IN ('Ali', 'Abu');\n```"}
+{"instruction": "Lengkapkan SQL ini: Cari pesanan di mana pengguna_id dalam senarai diberi.", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id IN ('Ali', 'Abu');\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Cari pesanan di mana pengguna_id dalam senarai diberi.", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id IN ('Ali', 'Abu');\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Cari pesanan di mana pengguna_id dalam senarai diberi?", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id IN ('Ali', 'Abu');\n```"}
+{"instruction": "Apakah fungsi query ini: Cari pesanan di mana pengguna_id dalam senarai diberi?", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id IN ('Ali', 'Abu');\n```"}
+{"instruction": "Beri contoh sebenar query ini: Cari pesanan di mana pengguna_id dalam senarai diberi.", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id IN ('Ali', 'Abu');\n```"}
+{"instruction": "Cari pesanan di mana pengguna_id tiada nilai", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id IS NULL;\n```"}
+{"instruction": "Cari pesanan di mana pengguna_id tiada nilai — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id IS NULL;\n```"}
+{"instruction": "Tulis query: Cari pesanan di mana pengguna_id tiada nilai.", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id IS NULL;\n```"}
+{"instruction": "Beri SQL untuk: Cari pesanan di mana pengguna_id tiada nilai.", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id IS NULL;\n```"}
+{"instruction": "Jawab dengan SQL: Cari pesanan di mana pengguna_id tiada nilai.", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id IS NULL;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Cari pesanan di mana pengguna_id tiada nilai.", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id IS NULL;\n```"}
+{"instruction": "Apakah SQL bagi: Cari pesanan di mana pengguna_id tiada nilai?", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id IS NULL;\n```"}
+{"instruction": "Tuliskan ayat SQL: Cari pesanan di mana pengguna_id tiada nilai.", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id IS NULL;\n```"}
+{"instruction": "Lengkapkan SQL ini: Cari pesanan di mana pengguna_id tiada nilai.", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id IS NULL;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Cari pesanan di mana pengguna_id tiada nilai.", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id IS NULL;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Cari pesanan di mana pengguna_id tiada nilai?", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id IS NULL;\n```"}
+{"instruction": "Apakah fungsi query ini: Cari pesanan di mana pengguna_id tiada nilai?", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id IS NULL;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Cari pesanan di mana pengguna_id tiada nilai.", "input": "", "output": "```sql\nSELECT * FROM pesanan WHERE pengguna_id IS NULL;\n```"}
+{"instruction": "Kemas kini pengguna_id tambah 1 untuk semua pesanan", "input": "", "output": "```sql\nUPDATE pesanan SET pengguna_id = pengguna_id + 1;\n```"}
+{"instruction": "Kemas kini pengguna_id tambah 1 untuk semua pesanan — tunjukkan SQL.", "input": "", "output": "```sql\nUPDATE pesanan SET pengguna_id = pengguna_id + 1;\n```"}
+{"instruction": "Tulis query: Kemas kini pengguna_id tambah 1 untuk semua pesanan.", "input": "", "output": "```sql\nUPDATE pesanan SET pengguna_id = pengguna_id + 1;\n```"}
+{"instruction": "Beri SQL untuk: Kemas kini pengguna_id tambah 1 untuk semua pesanan.", "input": "", "output": "```sql\nUPDATE pesanan SET pengguna_id = pengguna_id + 1;\n```"}
+{"instruction": "Jawab dengan SQL: Kemas kini pengguna_id tambah 1 untuk semua pesanan.", "input": "", "output": "```sql\nUPDATE pesanan SET pengguna_id = pengguna_id + 1;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Kemas kini pengguna_id tambah 1 untuk semua pesanan.", "input": "", "output": "```sql\nUPDATE pesanan SET pengguna_id = pengguna_id + 1;\n```"}
+{"instruction": "Apakah SQL bagi: Kemas kini pengguna_id tambah 1 untuk semua pesanan?", "input": "", "output": "```sql\nUPDATE pesanan SET pengguna_id = pengguna_id + 1;\n```"}
+{"instruction": "Tuliskan ayat SQL: Kemas kini pengguna_id tambah 1 untuk semua pesanan.", "input": "", "output": "```sql\nUPDATE pesanan SET pengguna_id = pengguna_id + 1;\n```"}
+{"instruction": "Lengkapkan SQL ini: Kemas kini pengguna_id tambah 1 untuk semua pesanan.", "input": "", "output": "```sql\nUPDATE pesanan SET pengguna_id = pengguna_id + 1;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Kemas kini pengguna_id tambah 1 untuk semua pesanan.", "input": "", "output": "```sql\nUPDATE pesanan SET pengguna_id = pengguna_id + 1;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Kemas kini pengguna_id tambah 1 untuk semua pesanan?", "input": "", "output": "```sql\nUPDATE pesanan SET pengguna_id = pengguna_id + 1;\n```"}
+{"instruction": "Apakah fungsi query ini: Kemas kini pengguna_id tambah 1 untuk semua pesanan?", "input": "", "output": "```sql\nUPDATE pesanan SET pengguna_id = pengguna_id + 1;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Kemas kini pengguna_id tambah 1 untuk semua pesanan.", "input": "", "output": "```sql\nUPDATE pesanan SET pengguna_id = pengguna_id + 1;\n```"}
+{"instruction": "Padam semua pesanan dengan pengguna_id kosong", "input": "", "output": "```sql\nDELETE FROM pesanan WHERE pengguna_id IS NULL OR pengguna_id = '';\n```"}
+{"instruction": "Padam semua pesanan dengan pengguna_id kosong — tunjukkan SQL.", "input": "", "output": "```sql\nDELETE FROM pesanan WHERE pengguna_id IS NULL OR pengguna_id = '';\n```"}
+{"instruction": "Tulis query: Padam semua pesanan dengan pengguna_id kosong.", "input": "", "output": "```sql\nDELETE FROM pesanan WHERE pengguna_id IS NULL OR pengguna_id = '';\n```"}
+{"instruction": "Beri SQL untuk: Padam semua pesanan dengan pengguna_id kosong.", "input": "", "output": "```sql\nDELETE FROM pesanan WHERE pengguna_id IS NULL OR pengguna_id = '';\n```"}
+{"instruction": "Jawab dengan SQL: Padam semua pesanan dengan pengguna_id kosong.", "input": "", "output": "```sql\nDELETE FROM pesanan WHERE pengguna_id IS NULL OR pengguna_id = '';\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Padam semua pesanan dengan pengguna_id kosong.", "input": "", "output": "```sql\nDELETE FROM pesanan WHERE pengguna_id IS NULL OR pengguna_id = '';\n```"}
+{"instruction": "Apakah SQL bagi: Padam semua pesanan dengan pengguna_id kosong?", "input": "", "output": "```sql\nDELETE FROM pesanan WHERE pengguna_id IS NULL OR pengguna_id = '';\n```"}
+{"instruction": "Tuliskan ayat SQL: Padam semua pesanan dengan pengguna_id kosong.", "input": "", "output": "```sql\nDELETE FROM pesanan WHERE pengguna_id IS NULL OR pengguna_id = '';\n```"}
+{"instruction": "Lengkapkan SQL ini: Padam semua pesanan dengan pengguna_id kosong.", "input": "", "output": "```sql\nDELETE FROM pesanan WHERE pengguna_id IS NULL OR pengguna_id = '';\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Padam semua pesanan dengan pengguna_id kosong.", "input": "", "output": "```sql\nDELETE FROM pesanan WHERE pengguna_id IS NULL OR pengguna_id = '';\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Padam semua pesanan dengan pengguna_id kosong?", "input": "", "output": "```sql\nDELETE FROM pesanan WHERE pengguna_id IS NULL OR pengguna_id = '';\n```"}
+{"instruction": "Apakah fungsi query ini: Padam semua pesanan dengan pengguna_id kosong?", "input": "", "output": "```sql\nDELETE FROM pesanan WHERE pengguna_id IS NULL OR pengguna_id = '';\n```"}
+{"instruction": "Beri contoh sebenar query ini: Padam semua pesanan dengan pengguna_id kosong.", "input": "", "output": "```sql\nDELETE FROM pesanan WHERE pengguna_id IS NULL OR pengguna_id = '';\n```"}
+{"instruction": "Salin pesanan ke jadual sandaran", "input": "", "output": "```sql\nCREATE TABLE pesanan_sandaran AS SELECT * FROM pesanan;\n```"}
+{"instruction": "Salin pesanan ke jadual sandaran — tunjukkan SQL.", "input": "", "output": "```sql\nCREATE TABLE pesanan_sandaran AS SELECT * FROM pesanan;\n```"}
+{"instruction": "Tulis query: Salin pesanan ke jadual sandaran.", "input": "", "output": "```sql\nCREATE TABLE pesanan_sandaran AS SELECT * FROM pesanan;\n```"}
+{"instruction": "Beri SQL untuk: Salin pesanan ke jadual sandaran.", "input": "", "output": "```sql\nCREATE TABLE pesanan_sandaran AS SELECT * FROM pesanan;\n```"}
+{"instruction": "Jawab dengan SQL: Salin pesanan ke jadual sandaran.", "input": "", "output": "```sql\nCREATE TABLE pesanan_sandaran AS SELECT * FROM pesanan;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Salin pesanan ke jadual sandaran.", "input": "", "output": "```sql\nCREATE TABLE pesanan_sandaran AS SELECT * FROM pesanan;\n```"}
+{"instruction": "Apakah SQL bagi: Salin pesanan ke jadual sandaran?", "input": "", "output": "```sql\nCREATE TABLE pesanan_sandaran AS SELECT * FROM pesanan;\n```"}
+{"instruction": "Tuliskan ayat SQL: Salin pesanan ke jadual sandaran.", "input": "", "output": "```sql\nCREATE TABLE pesanan_sandaran AS SELECT * FROM pesanan;\n```"}
+{"instruction": "Lengkapkan SQL ini: Salin pesanan ke jadual sandaran.", "input": "", "output": "```sql\nCREATE TABLE pesanan_sandaran AS SELECT * FROM pesanan;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Salin pesanan ke jadual sandaran.", "input": "", "output": "```sql\nCREATE TABLE pesanan_sandaran AS SELECT * FROM pesanan;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Salin pesanan ke jadual sandaran?", "input": "", "output": "```sql\nCREATE TABLE pesanan_sandaran AS SELECT * FROM pesanan;\n```"}
+{"instruction": "Apakah fungsi query ini: Salin pesanan ke jadual sandaran?", "input": "", "output": "```sql\nCREATE TABLE pesanan_sandaran AS SELECT * FROM pesanan;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Salin pesanan ke jadual sandaran.", "input": "", "output": "```sql\nCREATE TABLE pesanan_sandaran AS SELECT * FROM pesanan;\n```"}
+{"instruction": "Namakan semula lajur pengguna_id dalam pesanan", "input": "", "output": "```sql\nALTER TABLE pesanan RENAME COLUMN pengguna_id TO pengguna_id_baru;\n```"}
+{"instruction": "Namakan semula lajur pengguna_id dalam pesanan — tunjukkan SQL.", "input": "", "output": "```sql\nALTER TABLE pesanan RENAME COLUMN pengguna_id TO pengguna_id_baru;\n```"}
+{"instruction": "Tulis query: Namakan semula lajur pengguna_id dalam pesanan.", "input": "", "output": "```sql\nALTER TABLE pesanan RENAME COLUMN pengguna_id TO pengguna_id_baru;\n```"}
+{"instruction": "Beri SQL untuk: Namakan semula lajur pengguna_id dalam pesanan.", "input": "", "output": "```sql\nALTER TABLE pesanan RENAME COLUMN pengguna_id TO pengguna_id_baru;\n```"}
+{"instruction": "Jawab dengan SQL: Namakan semula lajur pengguna_id dalam pesanan.", "input": "", "output": "```sql\nALTER TABLE pesanan RENAME COLUMN pengguna_id TO pengguna_id_baru;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Namakan semula lajur pengguna_id dalam pesanan.", "input": "", "output": "```sql\nALTER TABLE pesanan RENAME COLUMN pengguna_id TO pengguna_id_baru;\n```"}
+{"instruction": "Apakah SQL bagi: Namakan semula lajur pengguna_id dalam pesanan?", "input": "", "output": "```sql\nALTER TABLE pesanan RENAME COLUMN pengguna_id TO pengguna_id_baru;\n```"}
+{"instruction": "Tuliskan ayat SQL: Namakan semula lajur pengguna_id dalam pesanan.", "input": "", "output": "```sql\nALTER TABLE pesanan RENAME COLUMN pengguna_id TO pengguna_id_baru;\n```"}
+{"instruction": "Lengkapkan SQL ini: Namakan semula lajur pengguna_id dalam pesanan.", "input": "", "output": "```sql\nALTER TABLE pesanan RENAME COLUMN pengguna_id TO pengguna_id_baru;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Namakan semula lajur pengguna_id dalam pesanan.", "input": "", "output": "```sql\nALTER TABLE pesanan RENAME COLUMN pengguna_id TO pengguna_id_baru;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Namakan semula lajur pengguna_id dalam pesanan?", "input": "", "output": "```sql\nALTER TABLE pesanan RENAME COLUMN pengguna_id TO pengguna_id_baru;\n```"}
+{"instruction": "Apakah fungsi query ini: Namakan semula lajur pengguna_id dalam pesanan?", "input": "", "output": "```sql\nALTER TABLE pesanan RENAME COLUMN pengguna_id TO pengguna_id_baru;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Namakan semula lajur pengguna_id dalam pesanan.", "input": "", "output": "```sql\nALTER TABLE pesanan RENAME COLUMN pengguna_id TO pengguna_id_baru;\n```"}
+{"instruction": "Tambah lajur nota ke pesanan", "input": "", "output": "```sql\nALTER TABLE pesanan ADD COLUMN nota TEXT;\n```"}
+{"instruction": "Tambah lajur nota ke pesanan — tunjukkan SQL.", "input": "", "output": "```sql\nALTER TABLE pesanan ADD COLUMN nota TEXT;\n```"}
+{"instruction": "Tulis query: Tambah lajur nota ke pesanan.", "input": "", "output": "```sql\nALTER TABLE pesanan ADD COLUMN nota TEXT;\n```"}
+{"instruction": "Beri SQL untuk: Tambah lajur nota ke pesanan.", "input": "", "output": "```sql\nALTER TABLE pesanan ADD COLUMN nota TEXT;\n```"}
+{"instruction": "Jawab dengan SQL: Tambah lajur nota ke pesanan.", "input": "", "output": "```sql\nALTER TABLE pesanan ADD COLUMN nota TEXT;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Tambah lajur nota ke pesanan.", "input": "", "output": "```sql\nALTER TABLE pesanan ADD COLUMN nota TEXT;\n```"}
+{"instruction": "Apakah SQL bagi: Tambah lajur nota ke pesanan?", "input": "", "output": "```sql\nALTER TABLE pesanan ADD COLUMN nota TEXT;\n```"}
+{"instruction": "Tuliskan ayat SQL: Tambah lajur nota ke pesanan.", "input": "", "output": "```sql\nALTER TABLE pesanan ADD COLUMN nota TEXT;\n```"}
+{"instruction": "Lengkapkan SQL ini: Tambah lajur nota ke pesanan.", "input": "", "output": "```sql\nALTER TABLE pesanan ADD COLUMN nota TEXT;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Tambah lajur nota ke pesanan.", "input": "", "output": "```sql\nALTER TABLE pesanan ADD COLUMN nota TEXT;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Tambah lajur nota ke pesanan?", "input": "", "output": "```sql\nALTER TABLE pesanan ADD COLUMN nota TEXT;\n```"}
+{"instruction": "Apakah fungsi query ini: Tambah lajur nota ke pesanan?", "input": "", "output": "```sql\nALTER TABLE pesanan ADD COLUMN nota TEXT;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Tambah lajur nota ke pesanan.", "input": "", "output": "```sql\nALTER TABLE pesanan ADD COLUMN nota TEXT;\n```"}
+{"instruction": "Buang lajur nota dari pesanan", "input": "", "output": "```sql\nALTER TABLE pesanan DROP COLUMN nota;\n```"}
+{"instruction": "Buang lajur nota dari pesanan — tunjukkan SQL.", "input": "", "output": "```sql\nALTER TABLE pesanan DROP COLUMN nota;\n```"}
+{"instruction": "Tulis query: Buang lajur nota dari pesanan.", "input": "", "output": "```sql\nALTER TABLE pesanan DROP COLUMN nota;\n```"}
+{"instruction": "Beri SQL untuk: Buang lajur nota dari pesanan.", "input": "", "output": "```sql\nALTER TABLE pesanan DROP COLUMN nota;\n```"}
+{"instruction": "Jawab dengan SQL: Buang lajur nota dari pesanan.", "input": "", "output": "```sql\nALTER TABLE pesanan DROP COLUMN nota;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Buang lajur nota dari pesanan.", "input": "", "output": "```sql\nALTER TABLE pesanan DROP COLUMN nota;\n```"}
+{"instruction": "Apakah SQL bagi: Buang lajur nota dari pesanan?", "input": "", "output": "```sql\nALTER TABLE pesanan DROP COLUMN nota;\n```"}
+{"instruction": "Tuliskan ayat SQL: Buang lajur nota dari pesanan.", "input": "", "output": "```sql\nALTER TABLE pesanan DROP COLUMN nota;\n```"}
+{"instruction": "Lengkapkan SQL ini: Buang lajur nota dari pesanan.", "input": "", "output": "```sql\nALTER TABLE pesanan DROP COLUMN nota;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Buang lajur nota dari pesanan.", "input": "", "output": "```sql\nALTER TABLE pesanan DROP COLUMN nota;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Buang lajur nota dari pesanan?", "input": "", "output": "```sql\nALTER TABLE pesanan DROP COLUMN nota;\n```"}
+{"instruction": "Apakah fungsi query ini: Buang lajur nota dari pesanan?", "input": "", "output": "```sql\nALTER TABLE pesanan DROP COLUMN nota;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Buang lajur nota dari pesanan.", "input": "", "output": "```sql\nALTER TABLE pesanan DROP COLUMN nota;\n```"}
+{"instruction": "Cipta indeks ke atas pengguna_id dalam pesanan", "input": "", "output": "```sql\nCREATE INDEX idx_pesanan_pengguna_id ON pesanan (pengguna_id);\n```"}
+{"instruction": "Cipta indeks ke atas pengguna_id dalam pesanan — tunjukkan SQL.", "input": "", "output": "```sql\nCREATE INDEX idx_pesanan_pengguna_id ON pesanan (pengguna_id);\n```"}
+{"instruction": "Tulis query: Cipta indeks ke atas pengguna_id dalam pesanan.", "input": "", "output": "```sql\nCREATE INDEX idx_pesanan_pengguna_id ON pesanan (pengguna_id);\n```"}
+{"instruction": "Beri SQL untuk: Cipta indeks ke atas pengguna_id dalam pesanan.", "input": "", "output": "```sql\nCREATE INDEX idx_pesanan_pengguna_id ON pesanan (pengguna_id);\n```"}
+{"instruction": "Jawab dengan SQL: Cipta indeks ke atas pengguna_id dalam pesanan.", "input": "", "output": "```sql\nCREATE INDEX idx_pesanan_pengguna_id ON pesanan (pengguna_id);\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Cipta indeks ke atas pengguna_id dalam pesanan.", "input": "", "output": "```sql\nCREATE INDEX idx_pesanan_pengguna_id ON pesanan (pengguna_id);\n```"}
+{"instruction": "Apakah SQL bagi: Cipta indeks ke atas pengguna_id dalam pesanan?", "input": "", "output": "```sql\nCREATE INDEX idx_pesanan_pengguna_id ON pesanan (pengguna_id);\n```"}
+{"instruction": "Tuliskan ayat SQL: Cipta indeks ke atas pengguna_id dalam pesanan.", "input": "", "output": "```sql\nCREATE INDEX idx_pesanan_pengguna_id ON pesanan (pengguna_id);\n```"}
+{"instruction": "Lengkapkan SQL ini: Cipta indeks ke atas pengguna_id dalam pesanan.", "input": "", "output": "```sql\nCREATE INDEX idx_pesanan_pengguna_id ON pesanan (pengguna_id);\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Cipta indeks ke atas pengguna_id dalam pesanan.", "input": "", "output": "```sql\nCREATE INDEX idx_pesanan_pengguna_id ON pesanan (pengguna_id);\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Cipta indeks ke atas pengguna_id dalam pesanan?", "input": "", "output": "```sql\nCREATE INDEX idx_pesanan_pengguna_id ON pesanan (pengguna_id);\n```"}
+{"instruction": "Apakah fungsi query ini: Cipta indeks ke atas pengguna_id dalam pesanan?", "input": "", "output": "```sql\nCREATE INDEX idx_pesanan_pengguna_id ON pesanan (pengguna_id);\n```"}
+{"instruction": "Beri contoh sebenar query ini: Cipta indeks ke atas pengguna_id dalam pesanan.", "input": "", "output": "```sql\nCREATE INDEX idx_pesanan_pengguna_id ON pesanan (pengguna_id);\n```"}
+{"instruction": "Semak pelan query pesanan mengikut pengguna_id", "input": "", "output": "```sql\nEXPLAIN SELECT * FROM pesanan WHERE pengguna_id = 'Ali';\n```"}
+{"instruction": "Semak pelan query pesanan mengikut pengguna_id — tunjukkan SQL.", "input": "", "output": "```sql\nEXPLAIN SELECT * FROM pesanan WHERE pengguna_id = 'Ali';\n```"}
+{"instruction": "Tulis query: Semak pelan query pesanan mengikut pengguna_id.", "input": "", "output": "```sql\nEXPLAIN SELECT * FROM pesanan WHERE pengguna_id = 'Ali';\n```"}
+{"instruction": "Beri SQL untuk: Semak pelan query pesanan mengikut pengguna_id.", "input": "", "output": "```sql\nEXPLAIN SELECT * FROM pesanan WHERE pengguna_id = 'Ali';\n```"}
+{"instruction": "Jawab dengan SQL: Semak pelan query pesanan mengikut pengguna_id.", "input": "", "output": "```sql\nEXPLAIN SELECT * FROM pesanan WHERE pengguna_id = 'Ali';\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Semak pelan query pesanan mengikut pengguna_id.", "input": "", "output": "```sql\nEXPLAIN SELECT * FROM pesanan WHERE pengguna_id = 'Ali';\n```"}
+{"instruction": "Apakah SQL bagi: Semak pelan query pesanan mengikut pengguna_id?", "input": "", "output": "```sql\nEXPLAIN SELECT * FROM pesanan WHERE pengguna_id = 'Ali';\n```"}
+{"instruction": "Tuliskan ayat SQL: Semak pelan query pesanan mengikut pengguna_id.", "input": "", "output": "```sql\nEXPLAIN SELECT * FROM pesanan WHERE pengguna_id = 'Ali';\n```"}
+{"instruction": "Lengkapkan SQL ini: Semak pelan query pesanan mengikut pengguna_id.", "input": "", "output": "```sql\nEXPLAIN SELECT * FROM pesanan WHERE pengguna_id = 'Ali';\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Semak pelan query pesanan mengikut pengguna_id.", "input": "", "output": "```sql\nEXPLAIN SELECT * FROM pesanan WHERE pengguna_id = 'Ali';\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Semak pelan query pesanan mengikut pengguna_id?", "input": "", "output": "```sql\nEXPLAIN SELECT * FROM pesanan WHERE pengguna_id = 'Ali';\n```"}
+{"instruction": "Apakah fungsi query ini: Semak pelan query pesanan mengikut pengguna_id?", "input": "", "output": "```sql\nEXPLAIN SELECT * FROM pesanan WHERE pengguna_id = 'Ali';\n```"}
+{"instruction": "Beri contoh sebenar query ini: Semak pelan query pesanan mengikut pengguna_id.", "input": "", "output": "```sql\nEXPLAIN SELECT * FROM pesanan WHERE pengguna_id = 'Ali';\n```"}
+{"instruction": "Gabung pesanan dengan dirinya untuk hierarki", "input": "", "output": "```sql\nSELECT a.pengguna_id, b.pengguna_id FROM pesanan a JOIN pesanan b ON b.jumlah = a.pengguna_id;\n```"}
+{"instruction": "Gabung pesanan dengan dirinya untuk hierarki — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT a.pengguna_id, b.pengguna_id FROM pesanan a JOIN pesanan b ON b.jumlah = a.pengguna_id;\n```"}
+{"instruction": "Tulis query: Gabung pesanan dengan dirinya untuk hierarki.", "input": "", "output": "```sql\nSELECT a.pengguna_id, b.pengguna_id FROM pesanan a JOIN pesanan b ON b.jumlah = a.pengguna_id;\n```"}
+{"instruction": "Beri SQL untuk: Gabung pesanan dengan dirinya untuk hierarki.", "input": "", "output": "```sql\nSELECT a.pengguna_id, b.pengguna_id FROM pesanan a JOIN pesanan b ON b.jumlah = a.pengguna_id;\n```"}
+{"instruction": "Jawab dengan SQL: Gabung pesanan dengan dirinya untuk hierarki.", "input": "", "output": "```sql\nSELECT a.pengguna_id, b.pengguna_id FROM pesanan a JOIN pesanan b ON b.jumlah = a.pengguna_id;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Gabung pesanan dengan dirinya untuk hierarki.", "input": "", "output": "```sql\nSELECT a.pengguna_id, b.pengguna_id FROM pesanan a JOIN pesanan b ON b.jumlah = a.pengguna_id;\n```"}
+{"instruction": "Apakah SQL bagi: Gabung pesanan dengan dirinya untuk hierarki?", "input": "", "output": "```sql\nSELECT a.pengguna_id, b.pengguna_id FROM pesanan a JOIN pesanan b ON b.jumlah = a.pengguna_id;\n```"}
+{"instruction": "Tuliskan ayat SQL: Gabung pesanan dengan dirinya untuk hierarki.", "input": "", "output": "```sql\nSELECT a.pengguna_id, b.pengguna_id FROM pesanan a JOIN pesanan b ON b.jumlah = a.pengguna_id;\n```"}
+{"instruction": "Lengkapkan SQL ini: Gabung pesanan dengan dirinya untuk hierarki.", "input": "", "output": "```sql\nSELECT a.pengguna_id, b.pengguna_id FROM pesanan a JOIN pesanan b ON b.jumlah = a.pengguna_id;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Gabung pesanan dengan dirinya untuk hierarki.", "input": "", "output": "```sql\nSELECT a.pengguna_id, b.pengguna_id FROM pesanan a JOIN pesanan b ON b.jumlah = a.pengguna_id;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Gabung pesanan dengan dirinya untuk hierarki?", "input": "", "output": "```sql\nSELECT a.pengguna_id, b.pengguna_id FROM pesanan a JOIN pesanan b ON b.jumlah = a.pengguna_id;\n```"}
+{"instruction": "Apakah fungsi query ini: Gabung pesanan dengan dirinya untuk hierarki?", "input": "", "output": "```sql\nSELECT a.pengguna_id, b.pengguna_id FROM pesanan a JOIN pesanan b ON b.jumlah = a.pengguna_id;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Gabung pesanan dengan dirinya untuk hierarki.", "input": "", "output": "```sql\nSELECT a.pengguna_id, b.pengguna_id FROM pesanan a JOIN pesanan b ON b.jumlah = a.pengguna_id;\n```"}
+{"instruction": "Kira purata mengikut jumlah dalam pesanan melebihi 5", "input": "", "output": "```sql\nSELECT jumlah, AVG(pengguna_id) AS purata FROM pesanan GROUP BY jumlah HAVING AVG(pengguna_id) > 5;\n```"}
+{"instruction": "Kira purata mengikut jumlah dalam pesanan melebihi 5 — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT jumlah, AVG(pengguna_id) AS purata FROM pesanan GROUP BY jumlah HAVING AVG(pengguna_id) > 5;\n```"}
+{"instruction": "Tulis query: Kira purata mengikut jumlah dalam pesanan melebihi 5.", "input": "", "output": "```sql\nSELECT jumlah, AVG(pengguna_id) AS purata FROM pesanan GROUP BY jumlah HAVING AVG(pengguna_id) > 5;\n```"}
+{"instruction": "Beri SQL untuk: Kira purata mengikut jumlah dalam pesanan melebihi 5.", "input": "", "output": "```sql\nSELECT jumlah, AVG(pengguna_id) AS purata FROM pesanan GROUP BY jumlah HAVING AVG(pengguna_id) > 5;\n```"}
+{"instruction": "Jawab dengan SQL: Kira purata mengikut jumlah dalam pesanan melebihi 5.", "input": "", "output": "```sql\nSELECT jumlah, AVG(pengguna_id) AS purata FROM pesanan GROUP BY jumlah HAVING AVG(pengguna_id) > 5;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Kira purata mengikut jumlah dalam pesanan melebihi 5.", "input": "", "output": "```sql\nSELECT jumlah, AVG(pengguna_id) AS purata FROM pesanan GROUP BY jumlah HAVING AVG(pengguna_id) > 5;\n```"}
+{"instruction": "Apakah SQL bagi: Kira purata mengikut jumlah dalam pesanan melebihi 5?", "input": "", "output": "```sql\nSELECT jumlah, AVG(pengguna_id) AS purata FROM pesanan GROUP BY jumlah HAVING AVG(pengguna_id) > 5;\n```"}
+{"instruction": "Tuliskan ayat SQL: Kira purata mengikut jumlah dalam pesanan melebihi 5.", "input": "", "output": "```sql\nSELECT jumlah, AVG(pengguna_id) AS purata FROM pesanan GROUP BY jumlah HAVING AVG(pengguna_id) > 5;\n```"}
+{"instruction": "Lengkapkan SQL ini: Kira purata mengikut jumlah dalam pesanan melebihi 5.", "input": "", "output": "```sql\nSELECT jumlah, AVG(pengguna_id) AS purata FROM pesanan GROUP BY jumlah HAVING AVG(pengguna_id) > 5;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Kira purata mengikut jumlah dalam pesanan melebihi 5.", "input": "", "output": "```sql\nSELECT jumlah, AVG(pengguna_id) AS purata FROM pesanan GROUP BY jumlah HAVING AVG(pengguna_id) > 5;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Kira purata mengikut jumlah dalam pesanan melebihi 5?", "input": "", "output": "```sql\nSELECT jumlah, AVG(pengguna_id) AS purata FROM pesanan GROUP BY jumlah HAVING AVG(pengguna_id) > 5;\n```"}
+{"instruction": "Apakah fungsi query ini: Kira purata mengikut jumlah dalam pesanan melebihi 5?", "input": "", "output": "```sql\nSELECT jumlah, AVG(pengguna_id) AS purata FROM pesanan GROUP BY jumlah HAVING AVG(pengguna_id) > 5;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Kira purata mengikut jumlah dalam pesanan melebihi 5.", "input": "", "output": "```sql\nSELECT jumlah, AVG(pengguna_id) AS purata FROM pesanan GROUP BY jumlah HAVING AVG(pengguna_id) > 5;\n```"}
+{"instruction": "Pilih 5 pesanan rawak", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY RANDOM() LIMIT 5;\n```"}
+{"instruction": "Pilih 5 pesanan rawak — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY RANDOM() LIMIT 5;\n```"}
+{"instruction": "Tulis query: Pilih 5 pesanan rawak.", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY RANDOM() LIMIT 5;\n```"}
+{"instruction": "Beri SQL untuk: Pilih 5 pesanan rawak.", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY RANDOM() LIMIT 5;\n```"}
+{"instruction": "Jawab dengan SQL: Pilih 5 pesanan rawak.", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY RANDOM() LIMIT 5;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Pilih 5 pesanan rawak.", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY RANDOM() LIMIT 5;\n```"}
+{"instruction": "Apakah SQL bagi: Pilih 5 pesanan rawak?", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY RANDOM() LIMIT 5;\n```"}
+{"instruction": "Tuliskan ayat SQL: Pilih 5 pesanan rawak.", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY RANDOM() LIMIT 5;\n```"}
+{"instruction": "Lengkapkan SQL ini: Pilih 5 pesanan rawak.", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY RANDOM() LIMIT 5;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Pilih 5 pesanan rawak.", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY RANDOM() LIMIT 5;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Pilih 5 pesanan rawak?", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY RANDOM() LIMIT 5;\n```"}
+{"instruction": "Apakah fungsi query ini: Pilih 5 pesanan rawak?", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY RANDOM() LIMIT 5;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Pilih 5 pesanan rawak.", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY RANDOM() LIMIT 5;\n```"}
+{"instruction": "Hadkan pesanan kepada halaman kedua (10 sehalaman)", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY pengguna_id LIMIT 10 OFFSET 10;\n```"}
+{"instruction": "Hadkan pesanan kepada halaman kedua (10 sehalaman) — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY pengguna_id LIMIT 10 OFFSET 10;\n```"}
+{"instruction": "Tulis query: Hadkan pesanan kepada halaman kedua (10 sehalaman).", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY pengguna_id LIMIT 10 OFFSET 10;\n```"}
+{"instruction": "Beri SQL untuk: Hadkan pesanan kepada halaman kedua (10 sehalaman).", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY pengguna_id LIMIT 10 OFFSET 10;\n```"}
+{"instruction": "Jawab dengan SQL: Hadkan pesanan kepada halaman kedua (10 sehalaman).", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY pengguna_id LIMIT 10 OFFSET 10;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Hadkan pesanan kepada halaman kedua (10 sehalaman).", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY pengguna_id LIMIT 10 OFFSET 10;\n```"}
+{"instruction": "Apakah SQL bagi: Hadkan pesanan kepada halaman kedua (10 sehalaman)?", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY pengguna_id LIMIT 10 OFFSET 10;\n```"}
+{"instruction": "Tuliskan ayat SQL: Hadkan pesanan kepada halaman kedua (10 sehalaman).", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY pengguna_id LIMIT 10 OFFSET 10;\n```"}
+{"instruction": "Lengkapkan SQL ini: Hadkan pesanan kepada halaman kedua (10 sehalaman).", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY pengguna_id LIMIT 10 OFFSET 10;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Hadkan pesanan kepada halaman kedua (10 sehalaman).", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY pengguna_id LIMIT 10 OFFSET 10;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Hadkan pesanan kepada halaman kedua (10 sehalaman)?", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY pengguna_id LIMIT 10 OFFSET 10;\n```"}
+{"instruction": "Apakah fungsi query ini: Hadkan pesanan kepada halaman kedua (10 sehalaman)?", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY pengguna_id LIMIT 10 OFFSET 10;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Hadkan pesanan kepada halaman kedua (10 sehalaman).", "input": "", "output": "```sql\nSELECT * FROM pesanan ORDER BY pengguna_id LIMIT 10 OFFSET 10;\n```"}
+{"instruction": "Tukar pengguna_id jadi teks dalam pesanan", "input": "", "output": "```sql\nSELECT CAST(pengguna_id AS TEXT) AS teks FROM pesanan;\n```"}
+{"instruction": "Tukar pengguna_id jadi teks dalam pesanan — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT CAST(pengguna_id AS TEXT) AS teks FROM pesanan;\n```"}
+{"instruction": "Tulis query: Tukar pengguna_id jadi teks dalam pesanan.", "input": "", "output": "```sql\nSELECT CAST(pengguna_id AS TEXT) AS teks FROM pesanan;\n```"}
+{"instruction": "Beri SQL untuk: Tukar pengguna_id jadi teks dalam pesanan.", "input": "", "output": "```sql\nSELECT CAST(pengguna_id AS TEXT) AS teks FROM pesanan;\n```"}
+{"instruction": "Jawab dengan SQL: Tukar pengguna_id jadi teks dalam pesanan.", "input": "", "output": "```sql\nSELECT CAST(pengguna_id AS TEXT) AS teks FROM pesanan;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Tukar pengguna_id jadi teks dalam pesanan.", "input": "", "output": "```sql\nSELECT CAST(pengguna_id AS TEXT) AS teks FROM pesanan;\n```"}
+{"instruction": "Apakah SQL bagi: Tukar pengguna_id jadi teks dalam pesanan?", "input": "", "output": "```sql\nSELECT CAST(pengguna_id AS TEXT) AS teks FROM pesanan;\n```"}
+{"instruction": "Tuliskan ayat SQL: Tukar pengguna_id jadi teks dalam pesanan.", "input": "", "output": "```sql\nSELECT CAST(pengguna_id AS TEXT) AS teks FROM pesanan;\n```"}
+{"instruction": "Lengkapkan SQL ini: Tukar pengguna_id jadi teks dalam pesanan.", "input": "", "output": "```sql\nSELECT CAST(pengguna_id AS TEXT) AS teks FROM pesanan;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Tukar pengguna_id jadi teks dalam pesanan.", "input": "", "output": "```sql\nSELECT CAST(pengguna_id AS TEXT) AS teks FROM pesanan;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Tukar pengguna_id jadi teks dalam pesanan?", "input": "", "output": "```sql\nSELECT CAST(pengguna_id AS TEXT) AS teks FROM pesanan;\n```"}
+{"instruction": "Apakah fungsi query ini: Tukar pengguna_id jadi teks dalam pesanan?", "input": "", "output": "```sql\nSELECT CAST(pengguna_id AS TEXT) AS teks FROM pesanan;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Tukar pengguna_id jadi teks dalam pesanan.", "input": "", "output": "```sql\nSELECT CAST(pengguna_id AS TEXT) AS teks FROM pesanan;\n```"}
+{"instruction": "Panjang teks pengguna_id dalam pesanan", "input": "", "output": "```sql\nSELECT pengguna_id, LENGTH(pengguna_id) AS panjang FROM pesanan;\n```"}
+{"instruction": "Panjang teks pengguna_id dalam pesanan — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT pengguna_id, LENGTH(pengguna_id) AS panjang FROM pesanan;\n```"}
+{"instruction": "Tulis query: Panjang teks pengguna_id dalam pesanan.", "input": "", "output": "```sql\nSELECT pengguna_id, LENGTH(pengguna_id) AS panjang FROM pesanan;\n```"}
+{"instruction": "Beri SQL untuk: Panjang teks pengguna_id dalam pesanan.", "input": "", "output": "```sql\nSELECT pengguna_id, LENGTH(pengguna_id) AS panjang FROM pesanan;\n```"}
+{"instruction": "Jawab dengan SQL: Panjang teks pengguna_id dalam pesanan.", "input": "", "output": "```sql\nSELECT pengguna_id, LENGTH(pengguna_id) AS panjang FROM pesanan;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Panjang teks pengguna_id dalam pesanan.", "input": "", "output": "```sql\nSELECT pengguna_id, LENGTH(pengguna_id) AS panjang FROM pesanan;\n```"}
+{"instruction": "Apakah SQL bagi: Panjang teks pengguna_id dalam pesanan?", "input": "", "output": "```sql\nSELECT pengguna_id, LENGTH(pengguna_id) AS panjang FROM pesanan;\n```"}
+{"instruction": "Tuliskan ayat SQL: Panjang teks pengguna_id dalam pesanan.", "input": "", "output": "```sql\nSELECT pengguna_id, LENGTH(pengguna_id) AS panjang FROM pesanan;\n```"}
+{"instruction": "Lengkapkan SQL ini: Panjang teks pengguna_id dalam pesanan.", "input": "", "output": "```sql\nSELECT pengguna_id, LENGTH(pengguna_id) AS panjang FROM pesanan;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Panjang teks pengguna_id dalam pesanan.", "input": "", "output": "```sql\nSELECT pengguna_id, LENGTH(pengguna_id) AS panjang FROM pesanan;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Panjang teks pengguna_id dalam pesanan?", "input": "", "output": "```sql\nSELECT pengguna_id, LENGTH(pengguna_id) AS panjang FROM pesanan;\n```"}
+{"instruction": "Apakah fungsi query ini: Panjang teks pengguna_id dalam pesanan?", "input": "", "output": "```sql\nSELECT pengguna_id, LENGTH(pengguna_id) AS panjang FROM pesanan;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Panjang teks pengguna_id dalam pesanan.", "input": "", "output": "```sql\nSELECT pengguna_id, LENGTH(pengguna_id) AS panjang FROM pesanan;\n```"}
+{"instruction": "Gabung dua teks pengguna_id dan jumlah dalam pesanan", "input": "", "output": "```sql\nSELECT pengguna_id || ' ' || jumlah AS penuh FROM pesanan;\n```"}
+{"instruction": "Gabung dua teks pengguna_id dan jumlah dalam pesanan — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT pengguna_id || ' ' || jumlah AS penuh FROM pesanan;\n```"}
+{"instruction": "Tulis query: Gabung dua teks pengguna_id dan jumlah dalam pesanan.", "input": "", "output": "```sql\nSELECT pengguna_id || ' ' || jumlah AS penuh FROM pesanan;\n```"}
+{"instruction": "Beri SQL untuk: Gabung dua teks pengguna_id dan jumlah dalam pesanan.", "input": "", "output": "```sql\nSELECT pengguna_id || ' ' || jumlah AS penuh FROM pesanan;\n```"}
+{"instruction": "Jawab dengan SQL: Gabung dua teks pengguna_id dan jumlah dalam pesanan.", "input": "", "output": "```sql\nSELECT pengguna_id || ' ' || jumlah AS penuh FROM pesanan;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Gabung dua teks pengguna_id dan jumlah dalam pesanan.", "input": "", "output": "```sql\nSELECT pengguna_id || ' ' || jumlah AS penuh FROM pesanan;\n```"}
+{"instruction": "Apakah SQL bagi: Gabung dua teks pengguna_id dan jumlah dalam pesanan?", "input": "", "output": "```sql\nSELECT pengguna_id || ' ' || jumlah AS penuh FROM pesanan;\n```"}
+{"instruction": "Tuliskan ayat SQL: Gabung dua teks pengguna_id dan jumlah dalam pesanan.", "input": "", "output": "```sql\nSELECT pengguna_id || ' ' || jumlah AS penuh FROM pesanan;\n```"}
+{"instruction": "Lengkapkan SQL ini: Gabung dua teks pengguna_id dan jumlah dalam pesanan.", "input": "", "output": "```sql\nSELECT pengguna_id || ' ' || jumlah AS penuh FROM pesanan;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Gabung dua teks pengguna_id dan jumlah dalam pesanan.", "input": "", "output": "```sql\nSELECT pengguna_id || ' ' || jumlah AS penuh FROM pesanan;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Gabung dua teks pengguna_id dan jumlah dalam pesanan?", "input": "", "output": "```sql\nSELECT pengguna_id || ' ' || jumlah AS penuh FROM pesanan;\n```"}
+{"instruction": "Apakah fungsi query ini: Gabung dua teks pengguna_id dan jumlah dalam pesanan?", "input": "", "output": "```sql\nSELECT pengguna_id || ' ' || jumlah AS penuh FROM pesanan;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Gabung dua teks pengguna_id dan jumlah dalam pesanan.", "input": "", "output": "```sql\nSELECT pengguna_id || ' ' || jumlah AS penuh FROM pesanan;\n```"}
+{"instruction": "Kira pesanan yang pengguna_id tidak kosong", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pesanan WHERE pengguna_id IS NOT NULL AND pengguna_id <> '';\n```"}
+{"instruction": "Kira pesanan yang pengguna_id tidak kosong — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pesanan WHERE pengguna_id IS NOT NULL AND pengguna_id <> '';\n```"}
+{"instruction": "Tulis query: Kira pesanan yang pengguna_id tidak kosong.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pesanan WHERE pengguna_id IS NOT NULL AND pengguna_id <> '';\n```"}
+{"instruction": "Beri SQL untuk: Kira pesanan yang pengguna_id tidak kosong.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pesanan WHERE pengguna_id IS NOT NULL AND pengguna_id <> '';\n```"}
+{"instruction": "Jawab dengan SQL: Kira pesanan yang pengguna_id tidak kosong.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pesanan WHERE pengguna_id IS NOT NULL AND pengguna_id <> '';\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Kira pesanan yang pengguna_id tidak kosong.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pesanan WHERE pengguna_id IS NOT NULL AND pengguna_id <> '';\n```"}
+{"instruction": "Apakah SQL bagi: Kira pesanan yang pengguna_id tidak kosong?", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pesanan WHERE pengguna_id IS NOT NULL AND pengguna_id <> '';\n```"}
+{"instruction": "Tuliskan ayat SQL: Kira pesanan yang pengguna_id tidak kosong.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pesanan WHERE pengguna_id IS NOT NULL AND pengguna_id <> '';\n```"}
+{"instruction": "Lengkapkan SQL ini: Kira pesanan yang pengguna_id tidak kosong.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pesanan WHERE pengguna_id IS NOT NULL AND pengguna_id <> '';\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Kira pesanan yang pengguna_id tidak kosong.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pesanan WHERE pengguna_id IS NOT NULL AND pengguna_id <> '';\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Kira pesanan yang pengguna_id tidak kosong?", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pesanan WHERE pengguna_id IS NOT NULL AND pengguna_id <> '';\n```"}
+{"instruction": "Apakah fungsi query ini: Kira pesanan yang pengguna_id tidak kosong?", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pesanan WHERE pengguna_id IS NOT NULL AND pengguna_id <> '';\n```"}
+{"instruction": "Beri contoh sebenar query ini: Kira pesanan yang pengguna_id tidak kosong.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM pesanan WHERE pengguna_id IS NOT NULL AND pengguna_id <> '';\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Senaraikan semua produk.", "input": "", "output": "```sql\nSELECT * FROM produk;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Senaraikan semua produk?", "input": "", "output": "```sql\nSELECT * FROM produk;\n```"}
+{"instruction": "Apakah fungsi query ini: Senaraikan semua produk?", "input": "", "output": "```sql\nSELECT * FROM produk;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Senaraikan semua produk.", "input": "", "output": "```sql\nSELECT * FROM produk;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Kira baris dalam produk.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM produk;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Kira baris dalam produk?", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM produk;\n```"}
+{"instruction": "Apakah fungsi query ini: Kira baris dalam produk?", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM produk;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Kira baris dalam produk.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM produk;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Cari produk di mana nama bersamaan 'Ali'.", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama = 'Ali';\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Cari produk di mana nama bersamaan 'Ali'?", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama = 'Ali';\n```"}
+{"instruction": "Apakah fungsi query ini: Cari produk di mana nama bersamaan 'Ali'?", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama = 'Ali';\n```"}
+{"instruction": "Beri contoh sebenar query ini: Cari produk di mana nama bersamaan 'Ali'.", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama = 'Ali';\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Susun produk mengikut nama menurun, 5 teratas.", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY nama DESC LIMIT 5;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Susun produk mengikut nama menurun, 5 teratas?", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY nama DESC LIMIT 5;\n```"}
+{"instruction": "Apakah fungsi query ini: Susun produk mengikut nama menurun, 5 teratas?", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY nama DESC LIMIT 5;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Susun produk mengikut nama menurun, 5 teratas.", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY nama DESC LIMIT 5;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Jumlahkan nama dalam produk berkelompok mengikut harga.", "input": "", "output": "```sql\nSELECT harga, SUM(nama) AS jumlah FROM produk GROUP BY harga;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Jumlahkan nama dalam produk berkelompok mengikut harga?", "input": "", "output": "```sql\nSELECT harga, SUM(nama) AS jumlah FROM produk GROUP BY harga;\n```"}
+{"instruction": "Apakah fungsi query ini: Jumlahkan nama dalam produk berkelompok mengikut harga?", "input": "", "output": "```sql\nSELECT harga, SUM(nama) AS jumlah FROM produk GROUP BY harga;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Jumlahkan nama dalam produk berkelompok mengikut harga.", "input": "", "output": "```sql\nSELECT harga, SUM(nama) AS jumlah FROM produk GROUP BY harga;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Kemas kini produk: tetapkan nama kepada 'Ali' untuk id 1.", "input": "", "output": "```sql\nUPDATE produk SET nama = 'Ali' WHERE id = 1;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Kemas kini produk: tetapkan nama kepada 'Ali' untuk id 1?", "input": "", "output": "```sql\nUPDATE produk SET nama = 'Ali' WHERE id = 1;\n```"}
+{"instruction": "Apakah fungsi query ini: Kemas kini produk: tetapkan nama kepada 'Ali' untuk id 1?", "input": "", "output": "```sql\nUPDATE produk SET nama = 'Ali' WHERE id = 1;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Kemas kini produk: tetapkan nama kepada 'Ali' untuk id 1.", "input": "", "output": "```sql\nUPDATE produk SET nama = 'Ali' WHERE id = 1;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Padam baris id 9 dari produk.", "input": "", "output": "```sql\nDELETE FROM produk WHERE id = 9;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Padam baris id 9 dari produk?", "input": "", "output": "```sql\nDELETE FROM produk WHERE id = 9;\n```"}
+{"instruction": "Apakah fungsi query ini: Padam baris id 9 dari produk?", "input": "", "output": "```sql\nDELETE FROM produk WHERE id = 9;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Padam baris id 9 dari produk.", "input": "", "output": "```sql\nDELETE FROM produk WHERE id = 9;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Tambah satu baris ke produk.", "input": "", "output": "```sql\nINSERT INTO produk (nama, harga) VALUES ('Ali', 'ali@x.my');\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Tambah satu baris ke produk?", "input": "", "output": "```sql\nINSERT INTO produk (nama, harga) VALUES ('Ali', 'ali@x.my');\n```"}
+{"instruction": "Apakah fungsi query ini: Tambah satu baris ke produk?", "input": "", "output": "```sql\nINSERT INTO produk (nama, harga) VALUES ('Ali', 'ali@x.my');\n```"}
+{"instruction": "Beri contoh sebenar query ini: Tambah satu baris ke produk.", "input": "", "output": "```sql\nINSERT INTO produk (nama, harga) VALUES ('Ali', 'ali@x.my');\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Purata nama dalam produk.", "input": "", "output": "```sql\nSELECT AVG(nama) AS purata FROM produk;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Purata nama dalam produk?", "input": "", "output": "```sql\nSELECT AVG(nama) AS purata FROM produk;\n```"}
+{"instruction": "Apakah fungsi query ini: Purata nama dalam produk?", "input": "", "output": "```sql\nSELECT AVG(nama) AS purata FROM produk;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Purata nama dalam produk.", "input": "", "output": "```sql\nSELECT AVG(nama) AS purata FROM produk;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Nilai maksimum nama dalam produk.", "input": "", "output": "```sql\nSELECT MAX(nama) AS maks FROM produk;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Nilai maksimum nama dalam produk?", "input": "", "output": "```sql\nSELECT MAX(nama) AS maks FROM produk;\n```"}
+{"instruction": "Apakah fungsi query ini: Nilai maksimum nama dalam produk?", "input": "", "output": "```sql\nSELECT MAX(nama) AS maks FROM produk;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Nilai maksimum nama dalam produk.", "input": "", "output": "```sql\nSELECT MAX(nama) AS maks FROM produk;\n```"}
+{"instruction": "Cari produk dengan nama mengandungi teks 'a'", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama LIKE '%a%';\n```"}
+{"instruction": "Cari produk dengan nama mengandungi teks 'a' — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama LIKE '%a%';\n```"}
+{"instruction": "Tulis query: Cari produk dengan nama mengandungi teks 'a'.", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama LIKE '%a%';\n```"}
+{"instruction": "Beri SQL untuk: Cari produk dengan nama mengandungi teks 'a'.", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama LIKE '%a%';\n```"}
+{"instruction": "Jawab dengan SQL: Cari produk dengan nama mengandungi teks 'a'.", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama LIKE '%a%';\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Cari produk dengan nama mengandungi teks 'a'.", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama LIKE '%a%';\n```"}
+{"instruction": "Apakah SQL bagi: Cari produk dengan nama mengandungi teks 'a'?", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama LIKE '%a%';\n```"}
+{"instruction": "Tuliskan ayat SQL: Cari produk dengan nama mengandungi teks 'a'.", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama LIKE '%a%';\n```"}
+{"instruction": "Lengkapkan SQL ini: Cari produk dengan nama mengandungi teks 'a'.", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama LIKE '%a%';\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Cari produk dengan nama mengandungi teks 'a'.", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama LIKE '%a%';\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Cari produk dengan nama mengandungi teks 'a'?", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama LIKE '%a%';\n```"}
+{"instruction": "Apakah fungsi query ini: Cari produk dengan nama mengandungi teks 'a'?", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama LIKE '%a%';\n```"}
+{"instruction": "Beri contoh sebenar query ini: Cari produk dengan nama mengandungi teks 'a'.", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama LIKE '%a%';\n```"}
+{"instruction": "Kira produk berkelompok mengikut harga yang melebihi 2", "input": "", "output": "```sql\nSELECT harga, COUNT(*) AS n FROM produk GROUP BY harga HAVING COUNT(*) > 2;\n```"}
+{"instruction": "Kira produk berkelompok mengikut harga yang melebihi 2 — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT harga, COUNT(*) AS n FROM produk GROUP BY harga HAVING COUNT(*) > 2;\n```"}
+{"instruction": "Tulis query: Kira produk berkelompok mengikut harga yang melebihi 2.", "input": "", "output": "```sql\nSELECT harga, COUNT(*) AS n FROM produk GROUP BY harga HAVING COUNT(*) > 2;\n```"}
+{"instruction": "Beri SQL untuk: Kira produk berkelompok mengikut harga yang melebihi 2.", "input": "", "output": "```sql\nSELECT harga, COUNT(*) AS n FROM produk GROUP BY harga HAVING COUNT(*) > 2;\n```"}
+{"instruction": "Jawab dengan SQL: Kira produk berkelompok mengikut harga yang melebihi 2.", "input": "", "output": "```sql\nSELECT harga, COUNT(*) AS n FROM produk GROUP BY harga HAVING COUNT(*) > 2;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Kira produk berkelompok mengikut harga yang melebihi 2.", "input": "", "output": "```sql\nSELECT harga, COUNT(*) AS n FROM produk GROUP BY harga HAVING COUNT(*) > 2;\n```"}
+{"instruction": "Apakah SQL bagi: Kira produk berkelompok mengikut harga yang melebihi 2?", "input": "", "output": "```sql\nSELECT harga, COUNT(*) AS n FROM produk GROUP BY harga HAVING COUNT(*) > 2;\n```"}
+{"instruction": "Tuliskan ayat SQL: Kira produk berkelompok mengikut harga yang melebihi 2.", "input": "", "output": "```sql\nSELECT harga, COUNT(*) AS n FROM produk GROUP BY harga HAVING COUNT(*) > 2;\n```"}
+{"instruction": "Lengkapkan SQL ini: Kira produk berkelompok mengikut harga yang melebihi 2.", "input": "", "output": "```sql\nSELECT harga, COUNT(*) AS n FROM produk GROUP BY harga HAVING COUNT(*) > 2;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Kira produk berkelompok mengikut harga yang melebihi 2.", "input": "", "output": "```sql\nSELECT harga, COUNT(*) AS n FROM produk GROUP BY harga HAVING COUNT(*) > 2;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Kira produk berkelompok mengikut harga yang melebihi 2?", "input": "", "output": "```sql\nSELECT harga, COUNT(*) AS n FROM produk GROUP BY harga HAVING COUNT(*) > 2;\n```"}
+{"instruction": "Apakah fungsi query ini: Kira produk berkelompok mengikut harga yang melebihi 2?", "input": "", "output": "```sql\nSELECT harga, COUNT(*) AS n FROM produk GROUP BY harga HAVING COUNT(*) > 2;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Kira produk berkelompok mengikut harga yang melebihi 2.", "input": "", "output": "```sql\nSELECT harga, COUNT(*) AS n FROM produk GROUP BY harga HAVING COUNT(*) > 2;\n```"}
+{"instruction": "Ambil 10 produk terkini mengikut nama", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY nama DESC LIMIT 10;\n```"}
+{"instruction": "Ambil 10 produk terkini mengikut nama — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY nama DESC LIMIT 10;\n```"}
+{"instruction": "Tulis query: Ambil 10 produk terkini mengikut nama.", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY nama DESC LIMIT 10;\n```"}
+{"instruction": "Beri SQL untuk: Ambil 10 produk terkini mengikut nama.", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY nama DESC LIMIT 10;\n```"}
+{"instruction": "Jawab dengan SQL: Ambil 10 produk terkini mengikut nama.", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY nama DESC LIMIT 10;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Ambil 10 produk terkini mengikut nama.", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY nama DESC LIMIT 10;\n```"}
+{"instruction": "Apakah SQL bagi: Ambil 10 produk terkini mengikut nama?", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY nama DESC LIMIT 10;\n```"}
+{"instruction": "Tuliskan ayat SQL: Ambil 10 produk terkini mengikut nama.", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY nama DESC LIMIT 10;\n```"}
+{"instruction": "Lengkapkan SQL ini: Ambil 10 produk terkini mengikut nama.", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY nama DESC LIMIT 10;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Ambil 10 produk terkini mengikut nama.", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY nama DESC LIMIT 10;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Ambil 10 produk terkini mengikut nama?", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY nama DESC LIMIT 10;\n```"}
+{"instruction": "Apakah fungsi query ini: Ambil 10 produk terkini mengikut nama?", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY nama DESC LIMIT 10;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Ambil 10 produk terkini mengikut nama.", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY nama DESC LIMIT 10;\n```"}
+{"instruction": "Jumlah nama terkecil dan terbesar dalam produk", "input": "", "output": "```sql\nSELECT MIN(nama) AS min, MAX(nama) AS maks FROM produk;\n```"}
+{"instruction": "Jumlah nama terkecil dan terbesar dalam produk — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT MIN(nama) AS min, MAX(nama) AS maks FROM produk;\n```"}
+{"instruction": "Tulis query: Jumlah nama terkecil dan terbesar dalam produk.", "input": "", "output": "```sql\nSELECT MIN(nama) AS min, MAX(nama) AS maks FROM produk;\n```"}
+{"instruction": "Beri SQL untuk: Jumlah nama terkecil dan terbesar dalam produk.", "input": "", "output": "```sql\nSELECT MIN(nama) AS min, MAX(nama) AS maks FROM produk;\n```"}
+{"instruction": "Jawab dengan SQL: Jumlah nama terkecil dan terbesar dalam produk.", "input": "", "output": "```sql\nSELECT MIN(nama) AS min, MAX(nama) AS maks FROM produk;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Jumlah nama terkecil dan terbesar dalam produk.", "input": "", "output": "```sql\nSELECT MIN(nama) AS min, MAX(nama) AS maks FROM produk;\n```"}
+{"instruction": "Apakah SQL bagi: Jumlah nama terkecil dan terbesar dalam produk?", "input": "", "output": "```sql\nSELECT MIN(nama) AS min, MAX(nama) AS maks FROM produk;\n```"}
+{"instruction": "Tuliskan ayat SQL: Jumlah nama terkecil dan terbesar dalam produk.", "input": "", "output": "```sql\nSELECT MIN(nama) AS min, MAX(nama) AS maks FROM produk;\n```"}
+{"instruction": "Lengkapkan SQL ini: Jumlah nama terkecil dan terbesar dalam produk.", "input": "", "output": "```sql\nSELECT MIN(nama) AS min, MAX(nama) AS maks FROM produk;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Jumlah nama terkecil dan terbesar dalam produk.", "input": "", "output": "```sql\nSELECT MIN(nama) AS min, MAX(nama) AS maks FROM produk;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Jumlah nama terkecil dan terbesar dalam produk?", "input": "", "output": "```sql\nSELECT MIN(nama) AS min, MAX(nama) AS maks FROM produk;\n```"}
+{"instruction": "Apakah fungsi query ini: Jumlah nama terkecil dan terbesar dalam produk?", "input": "", "output": "```sql\nSELECT MIN(nama) AS min, MAX(nama) AS maks FROM produk;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Jumlah nama terkecil dan terbesar dalam produk.", "input": "", "output": "```sql\nSELECT MIN(nama) AS min, MAX(nama) AS maks FROM produk;\n```"}
+{"instruction": "Senaraikan nama unik dalam produk", "input": "", "output": "```sql\nSELECT DISTINCT nama FROM produk;\n```"}
+{"instruction": "Senaraikan nama unik dalam produk — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT DISTINCT nama FROM produk;\n```"}
+{"instruction": "Tulis query: Senaraikan nama unik dalam produk.", "input": "", "output": "```sql\nSELECT DISTINCT nama FROM produk;\n```"}
+{"instruction": "Beri SQL untuk: Senaraikan nama unik dalam produk.", "input": "", "output": "```sql\nSELECT DISTINCT nama FROM produk;\n```"}
+{"instruction": "Jawab dengan SQL: Senaraikan nama unik dalam produk.", "input": "", "output": "```sql\nSELECT DISTINCT nama FROM produk;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Senaraikan nama unik dalam produk.", "input": "", "output": "```sql\nSELECT DISTINCT nama FROM produk;\n```"}
+{"instruction": "Apakah SQL bagi: Senaraikan nama unik dalam produk?", "input": "", "output": "```sql\nSELECT DISTINCT nama FROM produk;\n```"}
+{"instruction": "Tuliskan ayat SQL: Senaraikan nama unik dalam produk.", "input": "", "output": "```sql\nSELECT DISTINCT nama FROM produk;\n```"}
+{"instruction": "Lengkapkan SQL ini: Senaraikan nama unik dalam produk.", "input": "", "output": "```sql\nSELECT DISTINCT nama FROM produk;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Senaraikan nama unik dalam produk.", "input": "", "output": "```sql\nSELECT DISTINCT nama FROM produk;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Senaraikan nama unik dalam produk?", "input": "", "output": "```sql\nSELECT DISTINCT nama FROM produk;\n```"}
+{"instruction": "Apakah fungsi query ini: Senaraikan nama unik dalam produk?", "input": "", "output": "```sql\nSELECT DISTINCT nama FROM produk;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Senaraikan nama unik dalam produk.", "input": "", "output": "```sql\nSELECT DISTINCT nama FROM produk;\n```"}
+{"instruction": "Cari produk di mana nama antara 'a' dan 'z'", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama BETWEEN 'a' AND 'z';\n```"}
+{"instruction": "Cari produk di mana nama antara 'a' dan 'z' — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama BETWEEN 'a' AND 'z';\n```"}
+{"instruction": "Tulis query: Cari produk di mana nama antara 'a' dan 'z'.", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama BETWEEN 'a' AND 'z';\n```"}
+{"instruction": "Beri SQL untuk: Cari produk di mana nama antara 'a' dan 'z'.", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama BETWEEN 'a' AND 'z';\n```"}
+{"instruction": "Jawab dengan SQL: Cari produk di mana nama antara 'a' dan 'z'.", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama BETWEEN 'a' AND 'z';\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Cari produk di mana nama antara 'a' dan 'z'.", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama BETWEEN 'a' AND 'z';\n```"}
+{"instruction": "Apakah SQL bagi: Cari produk di mana nama antara 'a' dan 'z'?", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama BETWEEN 'a' AND 'z';\n```"}
+{"instruction": "Tuliskan ayat SQL: Cari produk di mana nama antara 'a' dan 'z'.", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama BETWEEN 'a' AND 'z';\n```"}
+{"instruction": "Lengkapkan SQL ini: Cari produk di mana nama antara 'a' dan 'z'.", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama BETWEEN 'a' AND 'z';\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Cari produk di mana nama antara 'a' dan 'z'.", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama BETWEEN 'a' AND 'z';\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Cari produk di mana nama antara 'a' dan 'z'?", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama BETWEEN 'a' AND 'z';\n```"}
+{"instruction": "Apakah fungsi query ini: Cari produk di mana nama antara 'a' dan 'z'?", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama BETWEEN 'a' AND 'z';\n```"}
+{"instruction": "Beri contoh sebenar query ini: Cari produk di mana nama antara 'a' dan 'z'.", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama BETWEEN 'a' AND 'z';\n```"}
+{"instruction": "Cari produk di mana nama dalam senarai diberi", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama IN ('Ali', 'Abu');\n```"}
+{"instruction": "Cari produk di mana nama dalam senarai diberi — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama IN ('Ali', 'Abu');\n```"}
+{"instruction": "Tulis query: Cari produk di mana nama dalam senarai diberi.", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama IN ('Ali', 'Abu');\n```"}
+{"instruction": "Beri SQL untuk: Cari produk di mana nama dalam senarai diberi.", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama IN ('Ali', 'Abu');\n```"}
+{"instruction": "Jawab dengan SQL: Cari produk di mana nama dalam senarai diberi.", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama IN ('Ali', 'Abu');\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Cari produk di mana nama dalam senarai diberi.", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama IN ('Ali', 'Abu');\n```"}
+{"instruction": "Apakah SQL bagi: Cari produk di mana nama dalam senarai diberi?", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama IN ('Ali', 'Abu');\n```"}
+{"instruction": "Tuliskan ayat SQL: Cari produk di mana nama dalam senarai diberi.", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama IN ('Ali', 'Abu');\n```"}
+{"instruction": "Lengkapkan SQL ini: Cari produk di mana nama dalam senarai diberi.", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama IN ('Ali', 'Abu');\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Cari produk di mana nama dalam senarai diberi.", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama IN ('Ali', 'Abu');\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Cari produk di mana nama dalam senarai diberi?", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama IN ('Ali', 'Abu');\n```"}
+{"instruction": "Apakah fungsi query ini: Cari produk di mana nama dalam senarai diberi?", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama IN ('Ali', 'Abu');\n```"}
+{"instruction": "Beri contoh sebenar query ini: Cari produk di mana nama dalam senarai diberi.", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama IN ('Ali', 'Abu');\n```"}
+{"instruction": "Cari produk di mana nama tiada nilai", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama IS NULL;\n```"}
+{"instruction": "Cari produk di mana nama tiada nilai — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama IS NULL;\n```"}
+{"instruction": "Tulis query: Cari produk di mana nama tiada nilai.", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama IS NULL;\n```"}
+{"instruction": "Beri SQL untuk: Cari produk di mana nama tiada nilai.", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama IS NULL;\n```"}
+{"instruction": "Jawab dengan SQL: Cari produk di mana nama tiada nilai.", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama IS NULL;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Cari produk di mana nama tiada nilai.", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama IS NULL;\n```"}
+{"instruction": "Apakah SQL bagi: Cari produk di mana nama tiada nilai?", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama IS NULL;\n```"}
+{"instruction": "Tuliskan ayat SQL: Cari produk di mana nama tiada nilai.", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama IS NULL;\n```"}
+{"instruction": "Lengkapkan SQL ini: Cari produk di mana nama tiada nilai.", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama IS NULL;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Cari produk di mana nama tiada nilai.", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama IS NULL;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Cari produk di mana nama tiada nilai?", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama IS NULL;\n```"}
+{"instruction": "Apakah fungsi query ini: Cari produk di mana nama tiada nilai?", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama IS NULL;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Cari produk di mana nama tiada nilai.", "input": "", "output": "```sql\nSELECT * FROM produk WHERE nama IS NULL;\n```"}
+{"instruction": "Kemas kini nama tambah 1 untuk semua produk", "input": "", "output": "```sql\nUPDATE produk SET nama = nama + 1;\n```"}
+{"instruction": "Kemas kini nama tambah 1 untuk semua produk — tunjukkan SQL.", "input": "", "output": "```sql\nUPDATE produk SET nama = nama + 1;\n```"}
+{"instruction": "Tulis query: Kemas kini nama tambah 1 untuk semua produk.", "input": "", "output": "```sql\nUPDATE produk SET nama = nama + 1;\n```"}
+{"instruction": "Beri SQL untuk: Kemas kini nama tambah 1 untuk semua produk.", "input": "", "output": "```sql\nUPDATE produk SET nama = nama + 1;\n```"}
+{"instruction": "Jawab dengan SQL: Kemas kini nama tambah 1 untuk semua produk.", "input": "", "output": "```sql\nUPDATE produk SET nama = nama + 1;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Kemas kini nama tambah 1 untuk semua produk.", "input": "", "output": "```sql\nUPDATE produk SET nama = nama + 1;\n```"}
+{"instruction": "Apakah SQL bagi: Kemas kini nama tambah 1 untuk semua produk?", "input": "", "output": "```sql\nUPDATE produk SET nama = nama + 1;\n```"}
+{"instruction": "Tuliskan ayat SQL: Kemas kini nama tambah 1 untuk semua produk.", "input": "", "output": "```sql\nUPDATE produk SET nama = nama + 1;\n```"}
+{"instruction": "Lengkapkan SQL ini: Kemas kini nama tambah 1 untuk semua produk.", "input": "", "output": "```sql\nUPDATE produk SET nama = nama + 1;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Kemas kini nama tambah 1 untuk semua produk.", "input": "", "output": "```sql\nUPDATE produk SET nama = nama + 1;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Kemas kini nama tambah 1 untuk semua produk?", "input": "", "output": "```sql\nUPDATE produk SET nama = nama + 1;\n```"}
+{"instruction": "Apakah fungsi query ini: Kemas kini nama tambah 1 untuk semua produk?", "input": "", "output": "```sql\nUPDATE produk SET nama = nama + 1;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Kemas kini nama tambah 1 untuk semua produk.", "input": "", "output": "```sql\nUPDATE produk SET nama = nama + 1;\n```"}
+{"instruction": "Padam semua produk dengan nama kosong", "input": "", "output": "```sql\nDELETE FROM produk WHERE nama IS NULL OR nama = '';\n```"}
+{"instruction": "Padam semua produk dengan nama kosong — tunjukkan SQL.", "input": "", "output": "```sql\nDELETE FROM produk WHERE nama IS NULL OR nama = '';\n```"}
+{"instruction": "Tulis query: Padam semua produk dengan nama kosong.", "input": "", "output": "```sql\nDELETE FROM produk WHERE nama IS NULL OR nama = '';\n```"}
+{"instruction": "Beri SQL untuk: Padam semua produk dengan nama kosong.", "input": "", "output": "```sql\nDELETE FROM produk WHERE nama IS NULL OR nama = '';\n```"}
+{"instruction": "Jawab dengan SQL: Padam semua produk dengan nama kosong.", "input": "", "output": "```sql\nDELETE FROM produk WHERE nama IS NULL OR nama = '';\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Padam semua produk dengan nama kosong.", "input": "", "output": "```sql\nDELETE FROM produk WHERE nama IS NULL OR nama = '';\n```"}
+{"instruction": "Apakah SQL bagi: Padam semua produk dengan nama kosong?", "input": "", "output": "```sql\nDELETE FROM produk WHERE nama IS NULL OR nama = '';\n```"}
+{"instruction": "Tuliskan ayat SQL: Padam semua produk dengan nama kosong.", "input": "", "output": "```sql\nDELETE FROM produk WHERE nama IS NULL OR nama = '';\n```"}
+{"instruction": "Lengkapkan SQL ini: Padam semua produk dengan nama kosong.", "input": "", "output": "```sql\nDELETE FROM produk WHERE nama IS NULL OR nama = '';\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Padam semua produk dengan nama kosong.", "input": "", "output": "```sql\nDELETE FROM produk WHERE nama IS NULL OR nama = '';\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Padam semua produk dengan nama kosong?", "input": "", "output": "```sql\nDELETE FROM produk WHERE nama IS NULL OR nama = '';\n```"}
+{"instruction": "Apakah fungsi query ini: Padam semua produk dengan nama kosong?", "input": "", "output": "```sql\nDELETE FROM produk WHERE nama IS NULL OR nama = '';\n```"}
+{"instruction": "Beri contoh sebenar query ini: Padam semua produk dengan nama kosong.", "input": "", "output": "```sql\nDELETE FROM produk WHERE nama IS NULL OR nama = '';\n```"}
+{"instruction": "Salin produk ke jadual sandaran", "input": "", "output": "```sql\nCREATE TABLE produk_sandaran AS SELECT * FROM produk;\n```"}
+{"instruction": "Salin produk ke jadual sandaran — tunjukkan SQL.", "input": "", "output": "```sql\nCREATE TABLE produk_sandaran AS SELECT * FROM produk;\n```"}
+{"instruction": "Tulis query: Salin produk ke jadual sandaran.", "input": "", "output": "```sql\nCREATE TABLE produk_sandaran AS SELECT * FROM produk;\n```"}
+{"instruction": "Beri SQL untuk: Salin produk ke jadual sandaran.", "input": "", "output": "```sql\nCREATE TABLE produk_sandaran AS SELECT * FROM produk;\n```"}
+{"instruction": "Jawab dengan SQL: Salin produk ke jadual sandaran.", "input": "", "output": "```sql\nCREATE TABLE produk_sandaran AS SELECT * FROM produk;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Salin produk ke jadual sandaran.", "input": "", "output": "```sql\nCREATE TABLE produk_sandaran AS SELECT * FROM produk;\n```"}
+{"instruction": "Apakah SQL bagi: Salin produk ke jadual sandaran?", "input": "", "output": "```sql\nCREATE TABLE produk_sandaran AS SELECT * FROM produk;\n```"}
+{"instruction": "Tuliskan ayat SQL: Salin produk ke jadual sandaran.", "input": "", "output": "```sql\nCREATE TABLE produk_sandaran AS SELECT * FROM produk;\n```"}
+{"instruction": "Lengkapkan SQL ini: Salin produk ke jadual sandaran.", "input": "", "output": "```sql\nCREATE TABLE produk_sandaran AS SELECT * FROM produk;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Salin produk ke jadual sandaran.", "input": "", "output": "```sql\nCREATE TABLE produk_sandaran AS SELECT * FROM produk;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Salin produk ke jadual sandaran?", "input": "", "output": "```sql\nCREATE TABLE produk_sandaran AS SELECT * FROM produk;\n```"}
+{"instruction": "Apakah fungsi query ini: Salin produk ke jadual sandaran?", "input": "", "output": "```sql\nCREATE TABLE produk_sandaran AS SELECT * FROM produk;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Salin produk ke jadual sandaran.", "input": "", "output": "```sql\nCREATE TABLE produk_sandaran AS SELECT * FROM produk;\n```"}
+{"instruction": "Namakan semula lajur nama dalam produk", "input": "", "output": "```sql\nALTER TABLE produk RENAME COLUMN nama TO nama_baru;\n```"}
+{"instruction": "Namakan semula lajur nama dalam produk — tunjukkan SQL.", "input": "", "output": "```sql\nALTER TABLE produk RENAME COLUMN nama TO nama_baru;\n```"}
+{"instruction": "Tulis query: Namakan semula lajur nama dalam produk.", "input": "", "output": "```sql\nALTER TABLE produk RENAME COLUMN nama TO nama_baru;\n```"}
+{"instruction": "Beri SQL untuk: Namakan semula lajur nama dalam produk.", "input": "", "output": "```sql\nALTER TABLE produk RENAME COLUMN nama TO nama_baru;\n```"}
+{"instruction": "Jawab dengan SQL: Namakan semula lajur nama dalam produk.", "input": "", "output": "```sql\nALTER TABLE produk RENAME COLUMN nama TO nama_baru;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Namakan semula lajur nama dalam produk.", "input": "", "output": "```sql\nALTER TABLE produk RENAME COLUMN nama TO nama_baru;\n```"}
+{"instruction": "Apakah SQL bagi: Namakan semula lajur nama dalam produk?", "input": "", "output": "```sql\nALTER TABLE produk RENAME COLUMN nama TO nama_baru;\n```"}
+{"instruction": "Tuliskan ayat SQL: Namakan semula lajur nama dalam produk.", "input": "", "output": "```sql\nALTER TABLE produk RENAME COLUMN nama TO nama_baru;\n```"}
+{"instruction": "Lengkapkan SQL ini: Namakan semula lajur nama dalam produk.", "input": "", "output": "```sql\nALTER TABLE produk RENAME COLUMN nama TO nama_baru;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Namakan semula lajur nama dalam produk.", "input": "", "output": "```sql\nALTER TABLE produk RENAME COLUMN nama TO nama_baru;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Namakan semula lajur nama dalam produk?", "input": "", "output": "```sql\nALTER TABLE produk RENAME COLUMN nama TO nama_baru;\n```"}
+{"instruction": "Apakah fungsi query ini: Namakan semula lajur nama dalam produk?", "input": "", "output": "```sql\nALTER TABLE produk RENAME COLUMN nama TO nama_baru;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Namakan semula lajur nama dalam produk.", "input": "", "output": "```sql\nALTER TABLE produk RENAME COLUMN nama TO nama_baru;\n```"}
+{"instruction": "Tambah lajur nota ke produk", "input": "", "output": "```sql\nALTER TABLE produk ADD COLUMN nota TEXT;\n```"}
+{"instruction": "Tambah lajur nota ke produk — tunjukkan SQL.", "input": "", "output": "```sql\nALTER TABLE produk ADD COLUMN nota TEXT;\n```"}
+{"instruction": "Tulis query: Tambah lajur nota ke produk.", "input": "", "output": "```sql\nALTER TABLE produk ADD COLUMN nota TEXT;\n```"}
+{"instruction": "Beri SQL untuk: Tambah lajur nota ke produk.", "input": "", "output": "```sql\nALTER TABLE produk ADD COLUMN nota TEXT;\n```"}
+{"instruction": "Jawab dengan SQL: Tambah lajur nota ke produk.", "input": "", "output": "```sql\nALTER TABLE produk ADD COLUMN nota TEXT;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Tambah lajur nota ke produk.", "input": "", "output": "```sql\nALTER TABLE produk ADD COLUMN nota TEXT;\n```"}
+{"instruction": "Apakah SQL bagi: Tambah lajur nota ke produk?", "input": "", "output": "```sql\nALTER TABLE produk ADD COLUMN nota TEXT;\n```"}
+{"instruction": "Tuliskan ayat SQL: Tambah lajur nota ke produk.", "input": "", "output": "```sql\nALTER TABLE produk ADD COLUMN nota TEXT;\n```"}
+{"instruction": "Lengkapkan SQL ini: Tambah lajur nota ke produk.", "input": "", "output": "```sql\nALTER TABLE produk ADD COLUMN nota TEXT;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Tambah lajur nota ke produk.", "input": "", "output": "```sql\nALTER TABLE produk ADD COLUMN nota TEXT;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Tambah lajur nota ke produk?", "input": "", "output": "```sql\nALTER TABLE produk ADD COLUMN nota TEXT;\n```"}
+{"instruction": "Apakah fungsi query ini: Tambah lajur nota ke produk?", "input": "", "output": "```sql\nALTER TABLE produk ADD COLUMN nota TEXT;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Tambah lajur nota ke produk.", "input": "", "output": "```sql\nALTER TABLE produk ADD COLUMN nota TEXT;\n```"}
+{"instruction": "Buang lajur nota dari produk", "input": "", "output": "```sql\nALTER TABLE produk DROP COLUMN nota;\n```"}
+{"instruction": "Buang lajur nota dari produk — tunjukkan SQL.", "input": "", "output": "```sql\nALTER TABLE produk DROP COLUMN nota;\n```"}
+{"instruction": "Tulis query: Buang lajur nota dari produk.", "input": "", "output": "```sql\nALTER TABLE produk DROP COLUMN nota;\n```"}
+{"instruction": "Beri SQL untuk: Buang lajur nota dari produk.", "input": "", "output": "```sql\nALTER TABLE produk DROP COLUMN nota;\n```"}
+{"instruction": "Jawab dengan SQL: Buang lajur nota dari produk.", "input": "", "output": "```sql\nALTER TABLE produk DROP COLUMN nota;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Buang lajur nota dari produk.", "input": "", "output": "```sql\nALTER TABLE produk DROP COLUMN nota;\n```"}
+{"instruction": "Apakah SQL bagi: Buang lajur nota dari produk?", "input": "", "output": "```sql\nALTER TABLE produk DROP COLUMN nota;\n```"}
+{"instruction": "Tuliskan ayat SQL: Buang lajur nota dari produk.", "input": "", "output": "```sql\nALTER TABLE produk DROP COLUMN nota;\n```"}
+{"instruction": "Lengkapkan SQL ini: Buang lajur nota dari produk.", "input": "", "output": "```sql\nALTER TABLE produk DROP COLUMN nota;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Buang lajur nota dari produk.", "input": "", "output": "```sql\nALTER TABLE produk DROP COLUMN nota;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Buang lajur nota dari produk?", "input": "", "output": "```sql\nALTER TABLE produk DROP COLUMN nota;\n```"}
+{"instruction": "Apakah fungsi query ini: Buang lajur nota dari produk?", "input": "", "output": "```sql\nALTER TABLE produk DROP COLUMN nota;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Buang lajur nota dari produk.", "input": "", "output": "```sql\nALTER TABLE produk DROP COLUMN nota;\n```"}
+{"instruction": "Cipta indeks ke atas nama dalam produk", "input": "", "output": "```sql\nCREATE INDEX idx_produk_nama ON produk (nama);\n```"}
+{"instruction": "Cipta indeks ke atas nama dalam produk — tunjukkan SQL.", "input": "", "output": "```sql\nCREATE INDEX idx_produk_nama ON produk (nama);\n```"}
+{"instruction": "Tulis query: Cipta indeks ke atas nama dalam produk.", "input": "", "output": "```sql\nCREATE INDEX idx_produk_nama ON produk (nama);\n```"}
+{"instruction": "Beri SQL untuk: Cipta indeks ke atas nama dalam produk.", "input": "", "output": "```sql\nCREATE INDEX idx_produk_nama ON produk (nama);\n```"}
+{"instruction": "Jawab dengan SQL: Cipta indeks ke atas nama dalam produk.", "input": "", "output": "```sql\nCREATE INDEX idx_produk_nama ON produk (nama);\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Cipta indeks ke atas nama dalam produk.", "input": "", "output": "```sql\nCREATE INDEX idx_produk_nama ON produk (nama);\n```"}
+{"instruction": "Apakah SQL bagi: Cipta indeks ke atas nama dalam produk?", "input": "", "output": "```sql\nCREATE INDEX idx_produk_nama ON produk (nama);\n```"}
+{"instruction": "Tuliskan ayat SQL: Cipta indeks ke atas nama dalam produk.", "input": "", "output": "```sql\nCREATE INDEX idx_produk_nama ON produk (nama);\n```"}
+{"instruction": "Lengkapkan SQL ini: Cipta indeks ke atas nama dalam produk.", "input": "", "output": "```sql\nCREATE INDEX idx_produk_nama ON produk (nama);\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Cipta indeks ke atas nama dalam produk.", "input": "", "output": "```sql\nCREATE INDEX idx_produk_nama ON produk (nama);\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Cipta indeks ke atas nama dalam produk?", "input": "", "output": "```sql\nCREATE INDEX idx_produk_nama ON produk (nama);\n```"}
+{"instruction": "Apakah fungsi query ini: Cipta indeks ke atas nama dalam produk?", "input": "", "output": "```sql\nCREATE INDEX idx_produk_nama ON produk (nama);\n```"}
+{"instruction": "Beri contoh sebenar query ini: Cipta indeks ke atas nama dalam produk.", "input": "", "output": "```sql\nCREATE INDEX idx_produk_nama ON produk (nama);\n```"}
+{"instruction": "Semak pelan query produk mengikut nama", "input": "", "output": "```sql\nEXPLAIN SELECT * FROM produk WHERE nama = 'Ali';\n```"}
+{"instruction": "Semak pelan query produk mengikut nama — tunjukkan SQL.", "input": "", "output": "```sql\nEXPLAIN SELECT * FROM produk WHERE nama = 'Ali';\n```"}
+{"instruction": "Tulis query: Semak pelan query produk mengikut nama.", "input": "", "output": "```sql\nEXPLAIN SELECT * FROM produk WHERE nama = 'Ali';\n```"}
+{"instruction": "Beri SQL untuk: Semak pelan query produk mengikut nama.", "input": "", "output": "```sql\nEXPLAIN SELECT * FROM produk WHERE nama = 'Ali';\n```"}
+{"instruction": "Jawab dengan SQL: Semak pelan query produk mengikut nama.", "input": "", "output": "```sql\nEXPLAIN SELECT * FROM produk WHERE nama = 'Ali';\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Semak pelan query produk mengikut nama.", "input": "", "output": "```sql\nEXPLAIN SELECT * FROM produk WHERE nama = 'Ali';\n```"}
+{"instruction": "Apakah SQL bagi: Semak pelan query produk mengikut nama?", "input": "", "output": "```sql\nEXPLAIN SELECT * FROM produk WHERE nama = 'Ali';\n```"}
+{"instruction": "Tuliskan ayat SQL: Semak pelan query produk mengikut nama.", "input": "", "output": "```sql\nEXPLAIN SELECT * FROM produk WHERE nama = 'Ali';\n```"}
+{"instruction": "Lengkapkan SQL ini: Semak pelan query produk mengikut nama.", "input": "", "output": "```sql\nEXPLAIN SELECT * FROM produk WHERE nama = 'Ali';\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Semak pelan query produk mengikut nama.", "input": "", "output": "```sql\nEXPLAIN SELECT * FROM produk WHERE nama = 'Ali';\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Semak pelan query produk mengikut nama?", "input": "", "output": "```sql\nEXPLAIN SELECT * FROM produk WHERE nama = 'Ali';\n```"}
+{"instruction": "Apakah fungsi query ini: Semak pelan query produk mengikut nama?", "input": "", "output": "```sql\nEXPLAIN SELECT * FROM produk WHERE nama = 'Ali';\n```"}
+{"instruction": "Beri contoh sebenar query ini: Semak pelan query produk mengikut nama.", "input": "", "output": "```sql\nEXPLAIN SELECT * FROM produk WHERE nama = 'Ali';\n```"}
+{"instruction": "Gabung produk dengan dirinya untuk hierarki", "input": "", "output": "```sql\nSELECT a.nama, b.nama FROM produk a JOIN produk b ON b.harga = a.nama;\n```"}
+{"instruction": "Gabung produk dengan dirinya untuk hierarki — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT a.nama, b.nama FROM produk a JOIN produk b ON b.harga = a.nama;\n```"}
+{"instruction": "Tulis query: Gabung produk dengan dirinya untuk hierarki.", "input": "", "output": "```sql\nSELECT a.nama, b.nama FROM produk a JOIN produk b ON b.harga = a.nama;\n```"}
+{"instruction": "Beri SQL untuk: Gabung produk dengan dirinya untuk hierarki.", "input": "", "output": "```sql\nSELECT a.nama, b.nama FROM produk a JOIN produk b ON b.harga = a.nama;\n```"}
+{"instruction": "Jawab dengan SQL: Gabung produk dengan dirinya untuk hierarki.", "input": "", "output": "```sql\nSELECT a.nama, b.nama FROM produk a JOIN produk b ON b.harga = a.nama;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Gabung produk dengan dirinya untuk hierarki.", "input": "", "output": "```sql\nSELECT a.nama, b.nama FROM produk a JOIN produk b ON b.harga = a.nama;\n```"}
+{"instruction": "Apakah SQL bagi: Gabung produk dengan dirinya untuk hierarki?", "input": "", "output": "```sql\nSELECT a.nama, b.nama FROM produk a JOIN produk b ON b.harga = a.nama;\n```"}
+{"instruction": "Tuliskan ayat SQL: Gabung produk dengan dirinya untuk hierarki.", "input": "", "output": "```sql\nSELECT a.nama, b.nama FROM produk a JOIN produk b ON b.harga = a.nama;\n```"}
+{"instruction": "Lengkapkan SQL ini: Gabung produk dengan dirinya untuk hierarki.", "input": "", "output": "```sql\nSELECT a.nama, b.nama FROM produk a JOIN produk b ON b.harga = a.nama;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Gabung produk dengan dirinya untuk hierarki.", "input": "", "output": "```sql\nSELECT a.nama, b.nama FROM produk a JOIN produk b ON b.harga = a.nama;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Gabung produk dengan dirinya untuk hierarki?", "input": "", "output": "```sql\nSELECT a.nama, b.nama FROM produk a JOIN produk b ON b.harga = a.nama;\n```"}
+{"instruction": "Apakah fungsi query ini: Gabung produk dengan dirinya untuk hierarki?", "input": "", "output": "```sql\nSELECT a.nama, b.nama FROM produk a JOIN produk b ON b.harga = a.nama;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Gabung produk dengan dirinya untuk hierarki.", "input": "", "output": "```sql\nSELECT a.nama, b.nama FROM produk a JOIN produk b ON b.harga = a.nama;\n```"}
+{"instruction": "Kira purata mengikut harga dalam produk melebihi 5", "input": "", "output": "```sql\nSELECT harga, AVG(nama) AS purata FROM produk GROUP BY harga HAVING AVG(nama) > 5;\n```"}
+{"instruction": "Kira purata mengikut harga dalam produk melebihi 5 — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT harga, AVG(nama) AS purata FROM produk GROUP BY harga HAVING AVG(nama) > 5;\n```"}
+{"instruction": "Tulis query: Kira purata mengikut harga dalam produk melebihi 5.", "input": "", "output": "```sql\nSELECT harga, AVG(nama) AS purata FROM produk GROUP BY harga HAVING AVG(nama) > 5;\n```"}
+{"instruction": "Beri SQL untuk: Kira purata mengikut harga dalam produk melebihi 5.", "input": "", "output": "```sql\nSELECT harga, AVG(nama) AS purata FROM produk GROUP BY harga HAVING AVG(nama) > 5;\n```"}
+{"instruction": "Jawab dengan SQL: Kira purata mengikut harga dalam produk melebihi 5.", "input": "", "output": "```sql\nSELECT harga, AVG(nama) AS purata FROM produk GROUP BY harga HAVING AVG(nama) > 5;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Kira purata mengikut harga dalam produk melebihi 5.", "input": "", "output": "```sql\nSELECT harga, AVG(nama) AS purata FROM produk GROUP BY harga HAVING AVG(nama) > 5;\n```"}
+{"instruction": "Apakah SQL bagi: Kira purata mengikut harga dalam produk melebihi 5?", "input": "", "output": "```sql\nSELECT harga, AVG(nama) AS purata FROM produk GROUP BY harga HAVING AVG(nama) > 5;\n```"}
+{"instruction": "Tuliskan ayat SQL: Kira purata mengikut harga dalam produk melebihi 5.", "input": "", "output": "```sql\nSELECT harga, AVG(nama) AS purata FROM produk GROUP BY harga HAVING AVG(nama) > 5;\n```"}
+{"instruction": "Lengkapkan SQL ini: Kira purata mengikut harga dalam produk melebihi 5.", "input": "", "output": "```sql\nSELECT harga, AVG(nama) AS purata FROM produk GROUP BY harga HAVING AVG(nama) > 5;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Kira purata mengikut harga dalam produk melebihi 5.", "input": "", "output": "```sql\nSELECT harga, AVG(nama) AS purata FROM produk GROUP BY harga HAVING AVG(nama) > 5;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Kira purata mengikut harga dalam produk melebihi 5?", "input": "", "output": "```sql\nSELECT harga, AVG(nama) AS purata FROM produk GROUP BY harga HAVING AVG(nama) > 5;\n```"}
+{"instruction": "Apakah fungsi query ini: Kira purata mengikut harga dalam produk melebihi 5?", "input": "", "output": "```sql\nSELECT harga, AVG(nama) AS purata FROM produk GROUP BY harga HAVING AVG(nama) > 5;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Kira purata mengikut harga dalam produk melebihi 5.", "input": "", "output": "```sql\nSELECT harga, AVG(nama) AS purata FROM produk GROUP BY harga HAVING AVG(nama) > 5;\n```"}
+{"instruction": "Pilih 5 produk rawak", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY RANDOM() LIMIT 5;\n```"}
+{"instruction": "Pilih 5 produk rawak — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY RANDOM() LIMIT 5;\n```"}
+{"instruction": "Tulis query: Pilih 5 produk rawak.", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY RANDOM() LIMIT 5;\n```"}
+{"instruction": "Beri SQL untuk: Pilih 5 produk rawak.", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY RANDOM() LIMIT 5;\n```"}
+{"instruction": "Jawab dengan SQL: Pilih 5 produk rawak.", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY RANDOM() LIMIT 5;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Pilih 5 produk rawak.", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY RANDOM() LIMIT 5;\n```"}
+{"instruction": "Apakah SQL bagi: Pilih 5 produk rawak?", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY RANDOM() LIMIT 5;\n```"}
+{"instruction": "Tuliskan ayat SQL: Pilih 5 produk rawak.", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY RANDOM() LIMIT 5;\n```"}
+{"instruction": "Lengkapkan SQL ini: Pilih 5 produk rawak.", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY RANDOM() LIMIT 5;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Pilih 5 produk rawak.", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY RANDOM() LIMIT 5;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Pilih 5 produk rawak?", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY RANDOM() LIMIT 5;\n```"}
+{"instruction": "Apakah fungsi query ini: Pilih 5 produk rawak?", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY RANDOM() LIMIT 5;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Pilih 5 produk rawak.", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY RANDOM() LIMIT 5;\n```"}
+{"instruction": "Hadkan produk kepada halaman kedua (10 sehalaman)", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY nama LIMIT 10 OFFSET 10;\n```"}
+{"instruction": "Hadkan produk kepada halaman kedua (10 sehalaman) — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY nama LIMIT 10 OFFSET 10;\n```"}
+{"instruction": "Tulis query: Hadkan produk kepada halaman kedua (10 sehalaman).", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY nama LIMIT 10 OFFSET 10;\n```"}
+{"instruction": "Beri SQL untuk: Hadkan produk kepada halaman kedua (10 sehalaman).", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY nama LIMIT 10 OFFSET 10;\n```"}
+{"instruction": "Jawab dengan SQL: Hadkan produk kepada halaman kedua (10 sehalaman).", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY nama LIMIT 10 OFFSET 10;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Hadkan produk kepada halaman kedua (10 sehalaman).", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY nama LIMIT 10 OFFSET 10;\n```"}
+{"instruction": "Apakah SQL bagi: Hadkan produk kepada halaman kedua (10 sehalaman)?", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY nama LIMIT 10 OFFSET 10;\n```"}
+{"instruction": "Tuliskan ayat SQL: Hadkan produk kepada halaman kedua (10 sehalaman).", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY nama LIMIT 10 OFFSET 10;\n```"}
+{"instruction": "Lengkapkan SQL ini: Hadkan produk kepada halaman kedua (10 sehalaman).", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY nama LIMIT 10 OFFSET 10;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Hadkan produk kepada halaman kedua (10 sehalaman).", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY nama LIMIT 10 OFFSET 10;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Hadkan produk kepada halaman kedua (10 sehalaman)?", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY nama LIMIT 10 OFFSET 10;\n```"}
+{"instruction": "Apakah fungsi query ini: Hadkan produk kepada halaman kedua (10 sehalaman)?", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY nama LIMIT 10 OFFSET 10;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Hadkan produk kepada halaman kedua (10 sehalaman).", "input": "", "output": "```sql\nSELECT * FROM produk ORDER BY nama LIMIT 10 OFFSET 10;\n```"}
+{"instruction": "Tukar nama jadi teks dalam produk", "input": "", "output": "```sql\nSELECT CAST(nama AS TEXT) AS teks FROM produk;\n```"}
+{"instruction": "Tukar nama jadi teks dalam produk — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT CAST(nama AS TEXT) AS teks FROM produk;\n```"}
+{"instruction": "Tulis query: Tukar nama jadi teks dalam produk.", "input": "", "output": "```sql\nSELECT CAST(nama AS TEXT) AS teks FROM produk;\n```"}
+{"instruction": "Beri SQL untuk: Tukar nama jadi teks dalam produk.", "input": "", "output": "```sql\nSELECT CAST(nama AS TEXT) AS teks FROM produk;\n```"}
+{"instruction": "Jawab dengan SQL: Tukar nama jadi teks dalam produk.", "input": "", "output": "```sql\nSELECT CAST(nama AS TEXT) AS teks FROM produk;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Tukar nama jadi teks dalam produk.", "input": "", "output": "```sql\nSELECT CAST(nama AS TEXT) AS teks FROM produk;\n```"}
+{"instruction": "Apakah SQL bagi: Tukar nama jadi teks dalam produk?", "input": "", "output": "```sql\nSELECT CAST(nama AS TEXT) AS teks FROM produk;\n```"}
+{"instruction": "Tuliskan ayat SQL: Tukar nama jadi teks dalam produk.", "input": "", "output": "```sql\nSELECT CAST(nama AS TEXT) AS teks FROM produk;\n```"}
+{"instruction": "Lengkapkan SQL ini: Tukar nama jadi teks dalam produk.", "input": "", "output": "```sql\nSELECT CAST(nama AS TEXT) AS teks FROM produk;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Tukar nama jadi teks dalam produk.", "input": "", "output": "```sql\nSELECT CAST(nama AS TEXT) AS teks FROM produk;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Tukar nama jadi teks dalam produk?", "input": "", "output": "```sql\nSELECT CAST(nama AS TEXT) AS teks FROM produk;\n```"}
+{"instruction": "Apakah fungsi query ini: Tukar nama jadi teks dalam produk?", "input": "", "output": "```sql\nSELECT CAST(nama AS TEXT) AS teks FROM produk;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Tukar nama jadi teks dalam produk.", "input": "", "output": "```sql\nSELECT CAST(nama AS TEXT) AS teks FROM produk;\n```"}
+{"instruction": "Panjang teks nama dalam produk", "input": "", "output": "```sql\nSELECT nama, LENGTH(nama) AS panjang FROM produk;\n```"}
+{"instruction": "Panjang teks nama dalam produk — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT nama, LENGTH(nama) AS panjang FROM produk;\n```"}
+{"instruction": "Tulis query: Panjang teks nama dalam produk.", "input": "", "output": "```sql\nSELECT nama, LENGTH(nama) AS panjang FROM produk;\n```"}
+{"instruction": "Beri SQL untuk: Panjang teks nama dalam produk.", "input": "", "output": "```sql\nSELECT nama, LENGTH(nama) AS panjang FROM produk;\n```"}
+{"instruction": "Jawab dengan SQL: Panjang teks nama dalam produk.", "input": "", "output": "```sql\nSELECT nama, LENGTH(nama) AS panjang FROM produk;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Panjang teks nama dalam produk.", "input": "", "output": "```sql\nSELECT nama, LENGTH(nama) AS panjang FROM produk;\n```"}
+{"instruction": "Apakah SQL bagi: Panjang teks nama dalam produk?", "input": "", "output": "```sql\nSELECT nama, LENGTH(nama) AS panjang FROM produk;\n```"}
+{"instruction": "Tuliskan ayat SQL: Panjang teks nama dalam produk.", "input": "", "output": "```sql\nSELECT nama, LENGTH(nama) AS panjang FROM produk;\n```"}
+{"instruction": "Lengkapkan SQL ini: Panjang teks nama dalam produk.", "input": "", "output": "```sql\nSELECT nama, LENGTH(nama) AS panjang FROM produk;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Panjang teks nama dalam produk.", "input": "", "output": "```sql\nSELECT nama, LENGTH(nama) AS panjang FROM produk;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Panjang teks nama dalam produk?", "input": "", "output": "```sql\nSELECT nama, LENGTH(nama) AS panjang FROM produk;\n```"}
+{"instruction": "Apakah fungsi query ini: Panjang teks nama dalam produk?", "input": "", "output": "```sql\nSELECT nama, LENGTH(nama) AS panjang FROM produk;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Panjang teks nama dalam produk.", "input": "", "output": "```sql\nSELECT nama, LENGTH(nama) AS panjang FROM produk;\n```"}
+{"instruction": "Gabung dua teks nama dan harga dalam produk", "input": "", "output": "```sql\nSELECT nama || ' ' || harga AS penuh FROM produk;\n```"}
+{"instruction": "Gabung dua teks nama dan harga dalam produk — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT nama || ' ' || harga AS penuh FROM produk;\n```"}
+{"instruction": "Tulis query: Gabung dua teks nama dan harga dalam produk.", "input": "", "output": "```sql\nSELECT nama || ' ' || harga AS penuh FROM produk;\n```"}
+{"instruction": "Beri SQL untuk: Gabung dua teks nama dan harga dalam produk.", "input": "", "output": "```sql\nSELECT nama || ' ' || harga AS penuh FROM produk;\n```"}
+{"instruction": "Jawab dengan SQL: Gabung dua teks nama dan harga dalam produk.", "input": "", "output": "```sql\nSELECT nama || ' ' || harga AS penuh FROM produk;\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Gabung dua teks nama dan harga dalam produk.", "input": "", "output": "```sql\nSELECT nama || ' ' || harga AS penuh FROM produk;\n```"}
+{"instruction": "Apakah SQL bagi: Gabung dua teks nama dan harga dalam produk?", "input": "", "output": "```sql\nSELECT nama || ' ' || harga AS penuh FROM produk;\n```"}
+{"instruction": "Tuliskan ayat SQL: Gabung dua teks nama dan harga dalam produk.", "input": "", "output": "```sql\nSELECT nama || ' ' || harga AS penuh FROM produk;\n```"}
+{"instruction": "Lengkapkan SQL ini: Gabung dua teks nama dan harga dalam produk.", "input": "", "output": "```sql\nSELECT nama || ' ' || harga AS penuh FROM produk;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Gabung dua teks nama dan harga dalam produk.", "input": "", "output": "```sql\nSELECT nama || ' ' || harga AS penuh FROM produk;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Gabung dua teks nama dan harga dalam produk?", "input": "", "output": "```sql\nSELECT nama || ' ' || harga AS penuh FROM produk;\n```"}
+{"instruction": "Apakah fungsi query ini: Gabung dua teks nama dan harga dalam produk?", "input": "", "output": "```sql\nSELECT nama || ' ' || harga AS penuh FROM produk;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Gabung dua teks nama dan harga dalam produk.", "input": "", "output": "```sql\nSELECT nama || ' ' || harga AS penuh FROM produk;\n```"}
+{"instruction": "Kira produk yang nama tidak kosong", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM produk WHERE nama IS NOT NULL AND nama <> '';\n```"}
+{"instruction": "Kira produk yang nama tidak kosong — tunjukkan SQL.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM produk WHERE nama IS NOT NULL AND nama <> '';\n```"}
+{"instruction": "Tulis query: Kira produk yang nama tidak kosong.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM produk WHERE nama IS NOT NULL AND nama <> '';\n```"}
+{"instruction": "Beri SQL untuk: Kira produk yang nama tidak kosong.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM produk WHERE nama IS NOT NULL AND nama <> '';\n```"}
+{"instruction": "Jawab dengan SQL: Kira produk yang nama tidak kosong.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM produk WHERE nama IS NOT NULL AND nama <> '';\n```"}
+{"instruction": "Tunjukkan cara dalam SQL: Kira produk yang nama tidak kosong.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM produk WHERE nama IS NOT NULL AND nama <> '';\n```"}
+{"instruction": "Apakah SQL bagi: Kira produk yang nama tidak kosong?", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM produk WHERE nama IS NOT NULL AND nama <> '';\n```"}
+{"instruction": "Tuliskan ayat SQL: Kira produk yang nama tidak kosong.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM produk WHERE nama IS NOT NULL AND nama <> '';\n```"}
+{"instruction": "Lengkapkan SQL ini: Kira produk yang nama tidak kosong.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM produk WHERE nama IS NOT NULL AND nama <> '';\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Kira produk yang nama tidak kosong.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM produk WHERE nama IS NOT NULL AND nama <> '';\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Kira produk yang nama tidak kosong?", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM produk WHERE nama IS NOT NULL AND nama <> '';\n```"}
+{"instruction": "Apakah fungsi query ini: Kira produk yang nama tidak kosong?", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM produk WHERE nama IS NOT NULL AND nama <> '';\n```"}
+{"instruction": "Beri contoh sebenar query ini: Kira produk yang nama tidak kosong.", "input": "", "output": "```sql\nSELECT COUNT(*) AS kiraan FROM produk WHERE nama IS NOT NULL AND nama <> '';\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Sertai pesanan dengan nama pengguna.", "input": "", "output": "```sql\nSELECT o.id, p.nama FROM pesanan o JOIN pengguna p ON p.id = o.pengguna_id;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Sertai pesanan dengan nama pengguna?", "input": "", "output": "```sql\nSELECT o.id, p.nama FROM pesanan o JOIN pengguna p ON p.id = o.pengguna_id;\n```"}
+{"instruction": "Apakah fungsi query ini: Sertai pesanan dengan nama pengguna?", "input": "", "output": "```sql\nSELECT o.id, p.nama FROM pesanan o JOIN pengguna p ON p.id = o.pengguna_id;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Sertai pesanan dengan nama pengguna.", "input": "", "output": "```sql\nSELECT o.id, p.nama FROM pesanan o JOIN pengguna p ON p.id = o.pengguna_id;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Sertai produk dengan baki stok rendah.", "input": "", "output": "```sql\nSELECT nama, stok FROM produk WHERE stok < 10 ORDER BY stok;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Sertai produk dengan baki stok rendah?", "input": "", "output": "```sql\nSELECT nama, stok FROM produk WHERE stok < 10 ORDER BY stok;\n```"}
+{"instruction": "Apakah fungsi query ini: Sertai produk dengan baki stok rendah?", "input": "", "output": "```sql\nSELECT nama, stok FROM produk WHERE stok < 10 ORDER BY stok;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Sertai produk dengan baki stok rendah.", "input": "", "output": "```sql\nSELECT nama, stok FROM produk WHERE stok < 10 ORDER BY stok;\n```"}
+{"instruction": "Terangkan SQL ini dalam satu minit: Jumlah belanja setiap pengguna.", "input": "", "output": "```sql\nSELECT p.nama, SUM(o.jumlah) AS jumlah FROM pengguna p JOIN pesanan o ON o.pengguna_id = p.id GROUP BY p.nama;\n```"}
+{"instruction": "Bilakah masa yang sesuai untuk SQL ini: Jumlah belanja setiap pengguna?", "input": "", "output": "```sql\nSELECT p.nama, SUM(o.jumlah) AS jumlah FROM pengguna p JOIN pesanan o ON o.pengguna_id = p.id GROUP BY p.nama;\n```"}
+{"instruction": "Apakah fungsi query ini: Jumlah belanja setiap pengguna?", "input": "", "output": "```sql\nSELECT p.nama, SUM(o.jumlah) AS jumlah FROM pengguna p JOIN pesanan o ON o.pengguna_id = p.id GROUP BY p.nama;\n```"}
+{"instruction": "Beri contoh sebenar query ini: Jumlah belanja setiap pengguna.", "input": "", "output": "```sql\nSELECT p.nama, SUM(o.jumlah) AS jumlah FROM pengguna p JOIN pesanan o ON o.pengguna_id = p.id GROUP BY p.nama;\n```"}

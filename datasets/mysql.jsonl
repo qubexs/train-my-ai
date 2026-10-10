@@ -462,3 +462,564 @@
 {"instruction": "How would you explain `FOREIGN KEY ADD` to a junior developer?", "input": "", "output": "`ADD CONSTRAINT fk FOREIGN KEY (x) REFERENCES t(id)` enforces links; index the child column or every write scans."}
 {"instruction": "Give a real-world scenario for `FOREIGN KEY ADD`.", "input": "", "output": "`ADD CONSTRAINT fk FOREIGN KEY (x) REFERENCES t(id)` enforces links; index the child column or every write scans."}
 {"instruction": "What problem does `FOREIGN KEY ADD` solve?", "input": "", "output": "`ADD CONSTRAINT fk FOREIGN KEY (x) REFERENCES t(id)` enforces links; index the child column or every write scans."}
+{"instruction": "Terangkan `SHOW DATABASES` dalam satu minit.", "input": "", "output": "Lists databases you may access; `USE kedai;` then scopes unqualified tables to it."}
+{"instruction": "Apa yang perlu saya tahu tentang `SHOW DATABASES`?", "input": "", "output": "Lists databases you may access; `USE kedai;` then scopes unqualified tables to it."}
+{"instruction": "Bagaimanakah `SHOW DATABASES` berfungsi?", "input": "", "output": "Lists databases you may access; `USE kedai;` then scopes unqualified tables to it."}
+{"instruction": "Bilakah masa yang sesuai untuk `SHOW DATABASES`?", "input": "", "output": "Lists databases you may access; `USE kedai;` then scopes unqualified tables to it."}
+{"instruction": "Terangkan `CREATE DATABASE` dalam satu minit.", "input": "", "output": "`CREATE DATABASE kedai CHARACTER SET utf8mb4;` — charset at creation avoids later conversions."}
+{"instruction": "Apa yang perlu saya tahu tentang `CREATE DATABASE`?", "input": "", "output": "`CREATE DATABASE kedai CHARACTER SET utf8mb4;` — charset at creation avoids later conversions."}
+{"instruction": "Bagaimanakah `CREATE DATABASE` berfungsi?", "input": "", "output": "`CREATE DATABASE kedai CHARACTER SET utf8mb4;` — charset at creation avoids later conversions."}
+{"instruction": "Bilakah masa yang sesuai untuk `CREATE DATABASE`?", "input": "", "output": "`CREATE DATABASE kedai CHARACTER SET utf8mb4;` — charset at creation avoids later conversions."}
+{"instruction": "Terangkan `USE database` dalam satu minit.", "input": "", "output": "`USE` sets the session default so short table names resolve; scripts should still qualify in joins."}
+{"instruction": "Apa yang perlu saya tahu tentang `USE database`?", "input": "", "output": "`USE` sets the session default so short table names resolve; scripts should still qualify in joins."}
+{"instruction": "Bagaimanakah `USE database` berfungsi?", "input": "", "output": "`USE` sets the session default so short table names resolve; scripts should still qualify in joins."}
+{"instruction": "Bilakah masa yang sesuai untuk `USE database`?", "input": "", "output": "`USE` sets the session default so short table names resolve; scripts should still qualify in joins."}
+{"instruction": "Terangkan `SHOW TABLES` dalam satu minit.", "input": "", "output": "Lists tables in scope; `DESCRIBE t` then details columns, keys and defaults."}
+{"instruction": "Apa yang perlu saya tahu tentang `SHOW TABLES`?", "input": "", "output": "Lists tables in scope; `DESCRIBE t` then details columns, keys and defaults."}
+{"instruction": "Bagaimanakah `SHOW TABLES` berfungsi?", "input": "", "output": "Lists tables in scope; `DESCRIBE t` then details columns, keys and defaults."}
+{"instruction": "Bilakah masa yang sesuai untuk `SHOW TABLES`?", "input": "", "output": "Lists tables in scope; `DESCRIBE t` then details columns, keys and defaults."}
+{"instruction": "Terangkan `SELECT * WHERE` dalam satu minit.", "input": "", "output": "`SELECT cols FROM t WHERE cond` filters rows; list columns explicitly instead of `*` in app code."}
+{"instruction": "Apa yang perlu saya tahu tentang `SELECT * WHERE`?", "input": "", "output": "`SELECT cols FROM t WHERE cond` filters rows; list columns explicitly instead of `*` in app code."}
+{"instruction": "Bagaimanakah `SELECT * WHERE` berfungsi?", "input": "", "output": "`SELECT cols FROM t WHERE cond` filters rows; list columns explicitly instead of `*` in app code."}
+{"instruction": "Bilakah masa yang sesuai untuk `SELECT * WHERE`?", "input": "", "output": "`SELECT cols FROM t WHERE cond` filters rows; list columns explicitly instead of `*` in app code."}
+{"instruction": "Terangkan `ORDER BY LIMIT` dalam satu minit.", "input": "", "output": "`ORDER BY x DESC LIMIT 20` pages deterministically — but always pair LIMIT with ORDER BY."}
+{"instruction": "Apa yang perlu saya tahu tentang `ORDER BY LIMIT`?", "input": "", "output": "`ORDER BY x DESC LIMIT 20` pages deterministically — but always pair LIMIT with ORDER BY."}
+{"instruction": "Bagaimanakah `ORDER BY LIMIT` berfungsi?", "input": "", "output": "`ORDER BY x DESC LIMIT 20` pages deterministically — but always pair LIMIT with ORDER BY."}
+{"instruction": "Bilakah masa yang sesuai untuk `ORDER BY LIMIT`?", "input": "", "output": "`ORDER BY x DESC LIMIT 20` pages deterministically — but always pair LIMIT with ORDER BY."}
+{"instruction": "Terangkan `INSERT INTO` dalam satu minit.", "input": "", "output": "Name columns explicitly (`INSERT INTO t (a,b) VALUES...`); positional inserts rot on schema change."}
+{"instruction": "Apa yang perlu saya tahu tentang `INSERT INTO`?", "input": "", "output": "Name columns explicitly (`INSERT INTO t (a,b) VALUES...`); positional inserts rot on schema change."}
+{"instruction": "Bagaimanakah `INSERT INTO` berfungsi?", "input": "", "output": "Name columns explicitly (`INSERT INTO t (a,b) VALUES...`); positional inserts rot on schema change."}
+{"instruction": "Bilakah masa yang sesuai untuk `INSERT INTO`?", "input": "", "output": "Name columns explicitly (`INSERT INTO t (a,b) VALUES...`); positional inserts rot on schema change."}
+{"instruction": "Terangkan `UPDATE WHERE` dalam satu minit.", "input": "", "output": "UPDATE without WHERE rewrites the table — develop the WHERE as SELECT first, then convert."}
+{"instruction": "Apa yang perlu saya tahu tentang `UPDATE WHERE`?", "input": "", "output": "UPDATE without WHERE rewrites the table — develop the WHERE as SELECT first, then convert."}
+{"instruction": "Bagaimanakah `UPDATE WHERE` berfungsi?", "input": "", "output": "UPDATE without WHERE rewrites the table — develop the WHERE as SELECT first, then convert."}
+{"instruction": "Bilakah masa yang sesuai untuk `UPDATE WHERE`?", "input": "", "output": "UPDATE without WHERE rewrites the table — develop the WHERE as SELECT first, then convert."}
+{"instruction": "Terangkan `DELETE WHERE` dalam satu minit.", "input": "", "output": "Same discipline as UPDATE; prefer soft-delete flags for business records you may need back."}
+{"instruction": "Apa yang perlu saya tahu tentang `DELETE WHERE`?", "input": "", "output": "Same discipline as UPDATE; prefer soft-delete flags for business records you may need back."}
+{"instruction": "Bagaimanakah `DELETE WHERE` berfungsi?", "input": "", "output": "Same discipline as UPDATE; prefer soft-delete flags for business records you may need back."}
+{"instruction": "Bilakah masa yang sesuai untuk `DELETE WHERE`?", "input": "", "output": "Same discipline as UPDATE; prefer soft-delete flags for business records you may need back."}
+{"instruction": "Terangkan `CREATE TABLE` dalam satu minit.", "input": "", "output": "Declare PK, NOT NULLs, sane defaults and InnoDB up front; altering later on big tables is painful."}
+{"instruction": "Apa yang perlu saya tahu tentang `CREATE TABLE`?", "input": "", "output": "Declare PK, NOT NULLs, sane defaults and InnoDB up front; altering later on big tables is painful."}
+{"instruction": "Bagaimanakah `CREATE TABLE` berfungsi?", "input": "", "output": "Declare PK, NOT NULLs, sane defaults and InnoDB up front; altering later on big tables is painful."}
+{"instruction": "Bilakah masa yang sesuai untuk `CREATE TABLE`?", "input": "", "output": "Declare PK, NOT NULLs, sane defaults and InnoDB up front; altering later on big tables is painful."}
+{"instruction": "Terangkan `primary key` dalam satu minit.", "input": "", "output": "Auto-increment integer PKs are the default sane choice; UUIDs suit distributed writes at a cost."}
+{"instruction": "Apa yang perlu saya tahu tentang `primary key`?", "input": "", "output": "Auto-increment integer PKs are the default sane choice; UUIDs suit distributed writes at a cost."}
+{"instruction": "Bagaimanakah `primary key` berfungsi?", "input": "", "output": "Auto-increment integer PKs are the default sane choice; UUIDs suit distributed writes at a cost."}
+{"instruction": "Bilakah masa yang sesuai untuk `primary key`?", "input": "", "output": "Auto-increment integer PKs are the default sane choice; UUIDs suit distributed writes at a cost."}
+{"instruction": "Terangkan `JOIN INNER LEFT` dalam satu minit.", "input": "", "output": "INNER keeps matches both sides; LEFT keeps all left rows (NULLs where unmatched) — know which you asked."}
+{"instruction": "Apa yang perlu saya tahu tentang `JOIN INNER LEFT`?", "input": "", "output": "INNER keeps matches both sides; LEFT keeps all left rows (NULLs where unmatched) — know which you asked."}
+{"instruction": "Bagaimanakah `JOIN INNER LEFT` berfungsi?", "input": "", "output": "INNER keeps matches both sides; LEFT keeps all left rows (NULLs where unmatched) — know which you asked."}
+{"instruction": "Bilakah masa yang sesuai untuk `JOIN INNER LEFT`?", "input": "", "output": "INNER keeps matches both sides; LEFT keeps all left rows (NULLs where unmatched) — know which you asked."}
+{"instruction": "Terangkan `GROUP BY COUNT` dalam satu minit.", "input": "", "output": "Aggregate per group with COUNT/SUM/AVG; HAVING (not WHERE) filters the grouped results."}
+{"instruction": "Apa yang perlu saya tahu tentang `GROUP BY COUNT`?", "input": "", "output": "Aggregate per group with COUNT/SUM/AVG; HAVING (not WHERE) filters the grouped results."}
+{"instruction": "Bagaimanakah `GROUP BY COUNT` berfungsi?", "input": "", "output": "Aggregate per group with COUNT/SUM/AVG; HAVING (not WHERE) filters the grouped results."}
+{"instruction": "Bilakah masa yang sesuai untuk `GROUP BY COUNT`?", "input": "", "output": "Aggregate per group with COUNT/SUM/AVG; HAVING (not WHERE) filters the grouped results."}
+{"instruction": "Terangkan `CREATE INDEX` dalam satu minit.", "input": "", "output": "Index WHERE/JOIN/ORDER columns (`(a,b)` composite in query order); EXPLAIN verifies `ref` over `ALL`."}
+{"instruction": "Apa yang perlu saya tahu tentang `CREATE INDEX`?", "input": "", "output": "Index WHERE/JOIN/ORDER columns (`(a,b)` composite in query order); EXPLAIN verifies `ref` over `ALL`."}
+{"instruction": "Bagaimanakah `CREATE INDEX` berfungsi?", "input": "", "output": "Index WHERE/JOIN/ORDER columns (`(a,b)` composite in query order); EXPLAIN verifies `ref` over `ALL`."}
+{"instruction": "Bilakah masa yang sesuai untuk `CREATE INDEX`?", "input": "", "output": "Index WHERE/JOIN/ORDER columns (`(a,b)` composite in query order); EXPLAIN verifies `ref` over `ALL`."}
+{"instruction": "Terangkan `mysqldump` dalam satu minit.", "input": "", "output": "`mysqldump --single-transaction db | gzip` backs up consistently; test restores or backups are fiction."}
+{"instruction": "Apa yang perlu saya tahu tentang `mysqldump`?", "input": "", "output": "`mysqldump --single-transaction db | gzip` backs up consistently; test restores or backups are fiction."}
+{"instruction": "Bagaimanakah `mysqldump` berfungsi?", "input": "", "output": "`mysqldump --single-transaction db | gzip` backs up consistently; test restores or backups are fiction."}
+{"instruction": "Bilakah masa yang sesuai untuk `mysqldump`?", "input": "", "output": "`mysqldump --single-transaction db | gzip` backs up consistently; test restores or backups are fiction."}
+{"instruction": "Terangkan `mysql -u -p` dalam satu minit.", "input": "", "output": "`mysql -u app -p db` connects interactively (`-h` host, `-P` port); history files can leak — prefer config files."}
+{"instruction": "Apa yang perlu saya tahu tentang `mysql -u -p`?", "input": "", "output": "`mysql -u app -p db` connects interactively (`-h` host, `-P` port); history files can leak — prefer config files."}
+{"instruction": "Bagaimanakah `mysql -u -p` berfungsi?", "input": "", "output": "`mysql -u app -p db` connects interactively (`-h` host, `-P` port); history files can leak — prefer config files."}
+{"instruction": "Bilakah masa yang sesuai untuk `mysql -u -p`?", "input": "", "output": "`mysql -u app -p db` connects interactively (`-h` host, `-P` port); history files can leak — prefer config files."}
+{"instruction": "Terangkan `GRANT SELECT` dalam satu minit.", "input": "", "output": "Grant least privilege per app/host (`GRANT SELECT ON db.*`); `FLUSH PRIVILEGES` applies grant-table edits."}
+{"instruction": "Apa yang perlu saya tahu tentang `GRANT SELECT`?", "input": "", "output": "Grant least privilege per app/host (`GRANT SELECT ON db.*`); `FLUSH PRIVILEGES` applies grant-table edits."}
+{"instruction": "Bagaimanakah `GRANT SELECT` berfungsi?", "input": "", "output": "Grant least privilege per app/host (`GRANT SELECT ON db.*`); `FLUSH PRIVILEGES` applies grant-table edits."}
+{"instruction": "Bilakah masa yang sesuai untuk `GRANT SELECT`?", "input": "", "output": "Grant least privilege per app/host (`GRANT SELECT ON db.*`); `FLUSH PRIVILEGES` applies grant-table edits."}
+{"instruction": "Terangkan `utf8mb4` dalam satu minit.", "input": "", "output": "utf8mb4 stores full Unicode (emoji included); legacy `utf8` is 3-byte and corrupts the rest."}
+{"instruction": "Apa yang perlu saya tahu tentang `utf8mb4`?", "input": "", "output": "utf8mb4 stores full Unicode (emoji included); legacy `utf8` is 3-byte and corrupts the rest."}
+{"instruction": "Bagaimanakah `utf8mb4` berfungsi?", "input": "", "output": "utf8mb4 stores full Unicode (emoji included); legacy `utf8` is 3-byte and corrupts the rest."}
+{"instruction": "Bilakah masa yang sesuai untuk `utf8mb4`?", "input": "", "output": "utf8mb4 stores full Unicode (emoji included); legacy `utf8` is 3-byte and corrupts the rest."}
+{"instruction": "Terangkan `slow query log` dalam satu minit.", "input": "", "output": "Enable slow log (`long_query_time=1`) and mine it with mysqldumpslow; fix with indexes before hardware."}
+{"instruction": "Apa yang perlu saya tahu tentang `slow query log`?", "input": "", "output": "Enable slow log (`long_query_time=1`) and mine it with mysqldumpslow; fix with indexes before hardware."}
+{"instruction": "Bagaimanakah `slow query log` berfungsi?", "input": "", "output": "Enable slow log (`long_query_time=1`) and mine it with mysqldumpslow; fix with indexes before hardware."}
+{"instruction": "Bilakah masa yang sesuai untuk `slow query log`?", "input": "", "output": "Enable slow log (`long_query_time=1`) and mine it with mysqldumpslow; fix with indexes before hardware."}
+{"instruction": "Terangkan `SHOW PROCESSLIST` dalam satu minit.", "input": "", "output": "Shows live connections and their queries; `KILL id` stops runaways — diagnose before restarting."}
+{"instruction": "Apa yang perlu saya tahu tentang `SHOW PROCESSLIST`?", "input": "", "output": "Shows live connections and their queries; `KILL id` stops runaways — diagnose before restarting."}
+{"instruction": "Bagaimanakah `SHOW PROCESSLIST` berfungsi?", "input": "", "output": "Shows live connections and their queries; `KILL id` stops runaways — diagnose before restarting."}
+{"instruction": "Bilakah masa yang sesuai untuk `SHOW PROCESSLIST`?", "input": "", "output": "Shows live connections and their queries; `KILL id` stops runaways — diagnose before restarting."}
+{"instruction": "Terangkan `USE database` dalam satu minit.", "input": "", "output": "`USE kedai;` scopes unqualified tables; scripts should still qualify names in joins for clarity."}
+{"instruction": "Apa yang perlu saya tahu tentang `USE database`?", "input": "", "output": "`USE kedai;` scopes unqualified tables; scripts should still qualify names in joins for clarity."}
+{"instruction": "Bagaimanakah `USE database` berfungsi?", "input": "", "output": "`USE kedai;` scopes unqualified tables; scripts should still qualify names in joins for clarity."}
+{"instruction": "Bilakah masa yang sesuai untuk `USE database`?", "input": "", "output": "`USE kedai;` scopes unqualified tables; scripts should still qualify names in joins for clarity."}
+{"instruction": "Terangkan `DESCRIBE table` dalam satu minit.", "input": "", "output": "`DESCRIBE t` (or `SHOW COLUMNS`) reveals types, nullability, keys and defaults — schema archaeology 101."}
+{"instruction": "Apa yang perlu saya tahu tentang `DESCRIBE table`?", "input": "", "output": "`DESCRIBE t` (or `SHOW COLUMNS`) reveals types, nullability, keys and defaults — schema archaeology 101."}
+{"instruction": "Bagaimanakah `DESCRIBE table` berfungsi?", "input": "", "output": "`DESCRIBE t` (or `SHOW COLUMNS`) reveals types, nullability, keys and defaults — schema archaeology 101."}
+{"instruction": "Bilakah masa yang sesuai untuk `DESCRIBE table`?", "input": "", "output": "`DESCRIBE t` (or `SHOW COLUMNS`) reveals types, nullability, keys and defaults — schema archaeology 101."}
+{"instruction": "Terangkan `information_schema` dalam satu minit.", "input": "", "output": "Query `information_schema.tables/columns` for cross-DB metadata scripts (audits, doc generators)."}
+{"instruction": "Apa yang perlu saya tahu tentang `information_schema`?", "input": "", "output": "Query `information_schema.tables/columns` for cross-DB metadata scripts (audits, doc generators)."}
+{"instruction": "Bagaimanakah `information_schema` berfungsi?", "input": "", "output": "Query `information_schema.tables/columns` for cross-DB metadata scripts (audits, doc generators)."}
+{"instruction": "Bilakah masa yang sesuai untuk `information_schema`?", "input": "", "output": "Query `information_schema.tables/columns` for cross-DB metadata scripts (audits, doc generators)."}
+{"instruction": "Terangkan `SHOW CREATE TABLE` dalam satu minit.", "input": "", "output": "Reveals the full DDL including engine, charset and keys — the authoritative source when docs lie."}
+{"instruction": "Apa yang perlu saya tahu tentang `SHOW CREATE TABLE`?", "input": "", "output": "Reveals the full DDL including engine, charset and keys — the authoritative source when docs lie."}
+{"instruction": "Bagaimanakah `SHOW CREATE TABLE` berfungsi?", "input": "", "output": "Reveals the full DDL including engine, charset and keys — the authoritative source when docs lie."}
+{"instruction": "Bilakah masa yang sesuai untuk `SHOW CREATE TABLE`?", "input": "", "output": "Reveals the full DDL including engine, charset and keys — the authoritative source when docs lie."}
+{"instruction": "Terangkan `RENAME TABLE` dalam satu minit.", "input": "", "output": "`RENAME TABLE lama TO baru` is atomic and fast; update code references in the same deploy or break."}
+{"instruction": "Apa yang perlu saya tahu tentang `RENAME TABLE`?", "input": "", "output": "`RENAME TABLE lama TO baru` is atomic and fast; update code references in the same deploy or break."}
+{"instruction": "Bagaimanakah `RENAME TABLE` berfungsi?", "input": "", "output": "`RENAME TABLE lama TO baru` is atomic and fast; update code references in the same deploy or break."}
+{"instruction": "Bilakah masa yang sesuai untuk `RENAME TABLE`?", "input": "", "output": "`RENAME TABLE lama TO baru` is atomic and fast; update code references in the same deploy or break."}
+{"instruction": "Terangkan `ADD COLUMN` dalam satu minit.", "input": "", "output": "`ADD COLUMN x INT DEFAULT 0` backfills instantly on modern MySQL; adding NOT NULL without default rewrites."}
+{"instruction": "Apa yang perlu saya tahu tentang `ADD COLUMN`?", "input": "", "output": "`ADD COLUMN x INT DEFAULT 0` backfills instantly on modern MySQL; adding NOT NULL without default rewrites."}
+{"instruction": "Bagaimanakah `ADD COLUMN` berfungsi?", "input": "", "output": "`ADD COLUMN x INT DEFAULT 0` backfills instantly on modern MySQL; adding NOT NULL without default rewrites."}
+{"instruction": "Bilakah masa yang sesuai untuk `ADD COLUMN`?", "input": "", "output": "`ADD COLUMN x INT DEFAULT 0` backfills instantly on modern MySQL; adding NOT NULL without default rewrites."}
+{"instruction": "Terangkan `DROP COLUMN` dalam satu minit.", "input": "", "output": "Dropping is instant metadata-wise on new versions but locks old ones — off-peak plus backups first."}
+{"instruction": "Apa yang perlu saya tahu tentang `DROP COLUMN`?", "input": "", "output": "Dropping is instant metadata-wise on new versions but locks old ones — off-peak plus backups first."}
+{"instruction": "Bagaimanakah `DROP COLUMN` berfungsi?", "input": "", "output": "Dropping is instant metadata-wise on new versions but locks old ones — off-peak plus backups first."}
+{"instruction": "Bilakah masa yang sesuai untuk `DROP COLUMN`?", "input": "", "output": "Dropping is instant metadata-wise on new versions but locks old ones — off-peak plus backups first."}
+{"instruction": "Terangkan `ADD INDEX` dalam satu minit.", "input": "", "output": "`ADD INDEX (a, b)` speeds WHERE/JOIN/ORDER on those columns in that order; verify with EXPLAIN."}
+{"instruction": "Apa yang perlu saya tahu tentang `ADD INDEX`?", "input": "", "output": "`ADD INDEX (a, b)` speeds WHERE/JOIN/ORDER on those columns in that order; verify with EXPLAIN."}
+{"instruction": "Bagaimanakah `ADD INDEX` berfungsi?", "input": "", "output": "`ADD INDEX (a, b)` speeds WHERE/JOIN/ORDER on those columns in that order; verify with EXPLAIN."}
+{"instruction": "Bilakah masa yang sesuai untuk `ADD INDEX`?", "input": "", "output": "`ADD INDEX (a, b)` speeds WHERE/JOIN/ORDER on those columns in that order; verify with EXPLAIN."}
+{"instruction": "Terangkan `TRUNCATE` dalam satu minit.", "input": "", "output": "Instant full clear without row WAL; cannot WHERE, resets auto-increment — staging/test tool, never prod habit."}
+{"instruction": "Apa yang perlu saya tahu tentang `TRUNCATE`?", "input": "", "output": "Instant full clear without row WAL; cannot WHERE, resets auto-increment — staging/test tool, never prod habit."}
+{"instruction": "Bagaimanakah `TRUNCATE` berfungsi?", "input": "", "output": "Instant full clear without row WAL; cannot WHERE, resets auto-increment — staging/test tool, never prod habit."}
+{"instruction": "Bilakah masa yang sesuai untuk `TRUNCATE`?", "input": "", "output": "Instant full clear without row WAL; cannot WHERE, resets auto-increment — staging/test tool, never prod habit."}
+{"instruction": "Terangkan `REPLACE INTO` dalam satu minit.", "input": "", "output": "`REPLACE` deletes-then-inserts on key clash (burns auto-increment ids); prefer ON DUPLICATE KEY for upserts."}
+{"instruction": "Apa yang perlu saya tahu tentang `REPLACE INTO`?", "input": "", "output": "`REPLACE` deletes-then-inserts on key clash (burns auto-increment ids); prefer ON DUPLICATE KEY for upserts."}
+{"instruction": "Bagaimanakah `REPLACE INTO` berfungsi?", "input": "", "output": "`REPLACE` deletes-then-inserts on key clash (burns auto-increment ids); prefer ON DUPLICATE KEY for upserts."}
+{"instruction": "Bilakah masa yang sesuai untuk `REPLACE INTO`?", "input": "", "output": "`REPLACE` deletes-then-inserts on key clash (burns auto-increment ids); prefer ON DUPLICATE KEY for upserts."}
+{"instruction": "Terangkan `ON DUPLICATE KEY` dalam satu minit.", "input": "", "output": "`... ON DUPLICATE KEY UPDATE bil = bil + VALUES(bil)` upserts atomically — no read-modify-write races."}
+{"instruction": "Apa yang perlu saya tahu tentang `ON DUPLICATE KEY`?", "input": "", "output": "`... ON DUPLICATE KEY UPDATE bil = bil + VALUES(bil)` upserts atomically — no read-modify-write races."}
+{"instruction": "Bagaimanakah `ON DUPLICATE KEY` berfungsi?", "input": "", "output": "`... ON DUPLICATE KEY UPDATE bil = bil + VALUES(bil)` upserts atomically — no read-modify-write races."}
+{"instruction": "Bilakah masa yang sesuai untuk `ON DUPLICATE KEY`?", "input": "", "output": "`... ON DUPLICATE KEY UPDATE bil = bil + VALUES(bil)` upserts atomically — no read-modify-write races."}
+{"instruction": "Terangkan `LOAD DATA INFILE` dalam satu minit.", "input": "", "output": "Bulk-loads CSVs orders of magnitude faster than INSERT loops; `LOCAL` reads client-side files."}
+{"instruction": "Apa yang perlu saya tahu tentang `LOAD DATA INFILE`?", "input": "", "output": "Bulk-loads CSVs orders of magnitude faster than INSERT loops; `LOCAL` reads client-side files."}
+{"instruction": "Bagaimanakah `LOAD DATA INFILE` berfungsi?", "input": "", "output": "Bulk-loads CSVs orders of magnitude faster than INSERT loops; `LOCAL` reads client-side files."}
+{"instruction": "Bilakah masa yang sesuai untuk `LOAD DATA INFILE`?", "input": "", "output": "Bulk-loads CSVs orders of magnitude faster than INSERT loops; `LOCAL` reads client-side files."}
+{"instruction": "Terangkan `OPTIMIZE TABLE` dalam satu minit.", "input": "", "output": "Reclaims fragmented space after heavy churn (rebuilds table — locks without online DDL); ANALYZE refreshes stats cheaply."}
+{"instruction": "Apa yang perlu saya tahu tentang `OPTIMIZE TABLE`?", "input": "", "output": "Reclaims fragmented space after heavy churn (rebuilds table — locks without online DDL); ANALYZE refreshes stats cheaply."}
+{"instruction": "Bagaimanakah `OPTIMIZE TABLE` berfungsi?", "input": "", "output": "Reclaims fragmented space after heavy churn (rebuilds table — locks without online DDL); ANALYZE refreshes stats cheaply."}
+{"instruction": "Bilakah masa yang sesuai untuk `OPTIMIZE TABLE`?", "input": "", "output": "Reclaims fragmented space after heavy churn (rebuilds table — locks without online DDL); ANALYZE refreshes stats cheaply."}
+{"instruction": "Terangkan `FOREIGN KEY ADD` dalam satu minit.", "input": "", "output": "`ADD CONSTRAINT fk FOREIGN KEY (x) REFERENCES t(id)` enforces links; index the child column or every write scans."}
+{"instruction": "Apa yang perlu saya tahu tentang `FOREIGN KEY ADD`?", "input": "", "output": "`ADD CONSTRAINT fk FOREIGN KEY (x) REFERENCES t(id)` enforces links; index the child column or every write scans."}
+{"instruction": "Bagaimanakah `FOREIGN KEY ADD` berfungsi?", "input": "", "output": "`ADD CONSTRAINT fk FOREIGN KEY (x) REFERENCES t(id)` enforces links; index the child column or every write scans."}
+{"instruction": "Bilakah masa yang sesuai untuk `FOREIGN KEY ADD`?", "input": "", "output": "`ADD CONSTRAINT fk FOREIGN KEY (x) REFERENCES t(id)` enforces links; index the child column or every write scans."}
+{"instruction": "What does `SHOW WARNINGS` do?", "input": "", "output": "`SHOW WARNINGS` explains truncated/adjusted writes right after the statement; `SHOW ERRORS` filters to failures."}
+{"instruction": "Explain `SHOW WARNINGS` briefly.", "input": "", "output": "`SHOW WARNINGS` explains truncated/adjusted writes right after the statement; `SHOW ERRORS` filters to failures."}
+{"instruction": "When do I use `SHOW WARNINGS`?", "input": "", "output": "`SHOW WARNINGS` explains truncated/adjusted writes right after the statement; `SHOW ERRORS` filters to failures."}
+{"instruction": "Give a practical example of `SHOW WARNINGS`.", "input": "", "output": "`SHOW WARNINGS` explains truncated/adjusted writes right after the statement; `SHOW ERRORS` filters to failures."}
+{"instruction": "What is `SHOW WARNINGS` for?", "input": "", "output": "`SHOW WARNINGS` explains truncated/adjusted writes right after the statement; `SHOW ERRORS` filters to failures."}
+{"instruction": "Apakah fungsi `SHOW WARNINGS`?", "input": "", "output": "`SHOW WARNINGS` explains truncated/adjusted writes right after the statement; `SHOW ERRORS` filters to failures."}
+{"instruction": "Terangkan `SHOW WARNINGS` secara ringkas.", "input": "", "output": "`SHOW WARNINGS` explains truncated/adjusted writes right after the statement; `SHOW ERRORS` filters to failures."}
+{"instruction": "Bila perlu guna `SHOW WARNINGS`?", "input": "", "output": "`SHOW WARNINGS` explains truncated/adjusted writes right after the statement; `SHOW ERRORS` filters to failures."}
+{"instruction": "Beri contoh penggunaan `SHOW WARNINGS`.", "input": "", "output": "`SHOW WARNINGS` explains truncated/adjusted writes right after the statement; `SHOW ERRORS` filters to failures."}
+{"instruction": "`SHOW WARNINGS` untuk apa?", "input": "", "output": "`SHOW WARNINGS` explains truncated/adjusted writes right after the statement; `SHOW ERRORS` filters to failures."}
+{"instruction": "How would you explain `SHOW WARNINGS` to a junior developer?", "input": "", "output": "`SHOW WARNINGS` explains truncated/adjusted writes right after the statement; `SHOW ERRORS` filters to failures."}
+{"instruction": "Give a real-world scenario for `SHOW WARNINGS`.", "input": "", "output": "`SHOW WARNINGS` explains truncated/adjusted writes right after the statement; `SHOW ERRORS` filters to failures."}
+{"instruction": "What problem does `SHOW WARNINGS` solve?", "input": "", "output": "`SHOW WARNINGS` explains truncated/adjusted writes right after the statement; `SHOW ERRORS` filters to failures."}
+{"instruction": "Terangkan `SHOW WARNINGS` dalam satu minit.", "input": "", "output": "`SHOW WARNINGS` explains truncated/adjusted writes right after the statement; `SHOW ERRORS` filters to failures."}
+{"instruction": "Apa yang perlu saya tahu tentang `SHOW WARNINGS`?", "input": "", "output": "`SHOW WARNINGS` explains truncated/adjusted writes right after the statement; `SHOW ERRORS` filters to failures."}
+{"instruction": "Bagaimanakah `SHOW WARNINGS` berfungsi?", "input": "", "output": "`SHOW WARNINGS` explains truncated/adjusted writes right after the statement; `SHOW ERRORS` filters to failures."}
+{"instruction": "Bilakah masa yang sesuai untuk `SHOW WARNINGS`?", "input": "", "output": "`SHOW WARNINGS` explains truncated/adjusted writes right after the statement; `SHOW ERRORS` filters to failures."}
+{"instruction": "What does `TABLE STATUS` do?", "input": "", "output": "`SHOW TABLE STATUS` reveals engine, rows estimate, data/index sizes and collation per table — capacity planning input."}
+{"instruction": "Explain `TABLE STATUS` briefly.", "input": "", "output": "`SHOW TABLE STATUS` reveals engine, rows estimate, data/index sizes and collation per table — capacity planning input."}
+{"instruction": "When do I use `TABLE STATUS`?", "input": "", "output": "`SHOW TABLE STATUS` reveals engine, rows estimate, data/index sizes and collation per table — capacity planning input."}
+{"instruction": "Give a practical example of `TABLE STATUS`.", "input": "", "output": "`SHOW TABLE STATUS` reveals engine, rows estimate, data/index sizes and collation per table — capacity planning input."}
+{"instruction": "What is `TABLE STATUS` for?", "input": "", "output": "`SHOW TABLE STATUS` reveals engine, rows estimate, data/index sizes and collation per table — capacity planning input."}
+{"instruction": "Apakah fungsi `TABLE STATUS`?", "input": "", "output": "`SHOW TABLE STATUS` reveals engine, rows estimate, data/index sizes and collation per table — capacity planning input."}
+{"instruction": "Terangkan `TABLE STATUS` secara ringkas.", "input": "", "output": "`SHOW TABLE STATUS` reveals engine, rows estimate, data/index sizes and collation per table — capacity planning input."}
+{"instruction": "Bila perlu guna `TABLE STATUS`?", "input": "", "output": "`SHOW TABLE STATUS` reveals engine, rows estimate, data/index sizes and collation per table — capacity planning input."}
+{"instruction": "Beri contoh penggunaan `TABLE STATUS`.", "input": "", "output": "`SHOW TABLE STATUS` reveals engine, rows estimate, data/index sizes and collation per table — capacity planning input."}
+{"instruction": "`TABLE STATUS` untuk apa?", "input": "", "output": "`SHOW TABLE STATUS` reveals engine, rows estimate, data/index sizes and collation per table — capacity planning input."}
+{"instruction": "How would you explain `TABLE STATUS` to a junior developer?", "input": "", "output": "`SHOW TABLE STATUS` reveals engine, rows estimate, data/index sizes and collation per table — capacity planning input."}
+{"instruction": "Give a real-world scenario for `TABLE STATUS`.", "input": "", "output": "`SHOW TABLE STATUS` reveals engine, rows estimate, data/index sizes and collation per table — capacity planning input."}
+{"instruction": "What problem does `TABLE STATUS` solve?", "input": "", "output": "`SHOW TABLE STATUS` reveals engine, rows estimate, data/index sizes and collation per table — capacity planning input."}
+{"instruction": "Terangkan `TABLE STATUS` dalam satu minit.", "input": "", "output": "`SHOW TABLE STATUS` reveals engine, rows estimate, data/index sizes and collation per table — capacity planning input."}
+{"instruction": "Apa yang perlu saya tahu tentang `TABLE STATUS`?", "input": "", "output": "`SHOW TABLE STATUS` reveals engine, rows estimate, data/index sizes and collation per table — capacity planning input."}
+{"instruction": "Bagaimanakah `TABLE STATUS` berfungsi?", "input": "", "output": "`SHOW TABLE STATUS` reveals engine, rows estimate, data/index sizes and collation per table — capacity planning input."}
+{"instruction": "Bilakah masa yang sesuai untuk `TABLE STATUS`?", "input": "", "output": "`SHOW TABLE STATUS` reveals engine, rows estimate, data/index sizes and collation per table — capacity planning input."}
+{"instruction": "What does `KILL QUERY` do?", "input": "", "output": "`KILL QUERY id` stops one runaway statement (connection lives); `KILL id` drops the connection — prefer the former."}
+{"instruction": "Explain `KILL QUERY` briefly.", "input": "", "output": "`KILL QUERY id` stops one runaway statement (connection lives); `KILL id` drops the connection — prefer the former."}
+{"instruction": "When do I use `KILL QUERY`?", "input": "", "output": "`KILL QUERY id` stops one runaway statement (connection lives); `KILL id` drops the connection — prefer the former."}
+{"instruction": "Give a practical example of `KILL QUERY`.", "input": "", "output": "`KILL QUERY id` stops one runaway statement (connection lives); `KILL id` drops the connection — prefer the former."}
+{"instruction": "What is `KILL QUERY` for?", "input": "", "output": "`KILL QUERY id` stops one runaway statement (connection lives); `KILL id` drops the connection — prefer the former."}
+{"instruction": "Apakah fungsi `KILL QUERY`?", "input": "", "output": "`KILL QUERY id` stops one runaway statement (connection lives); `KILL id` drops the connection — prefer the former."}
+{"instruction": "Terangkan `KILL QUERY` secara ringkas.", "input": "", "output": "`KILL QUERY id` stops one runaway statement (connection lives); `KILL id` drops the connection — prefer the former."}
+{"instruction": "Bila perlu guna `KILL QUERY`?", "input": "", "output": "`KILL QUERY id` stops one runaway statement (connection lives); `KILL id` drops the connection — prefer the former."}
+{"instruction": "Beri contoh penggunaan `KILL QUERY`.", "input": "", "output": "`KILL QUERY id` stops one runaway statement (connection lives); `KILL id` drops the connection — prefer the former."}
+{"instruction": "`KILL QUERY` untuk apa?", "input": "", "output": "`KILL QUERY id` stops one runaway statement (connection lives); `KILL id` drops the connection — prefer the former."}
+{"instruction": "How would you explain `KILL QUERY` to a junior developer?", "input": "", "output": "`KILL QUERY id` stops one runaway statement (connection lives); `KILL id` drops the connection — prefer the former."}
+{"instruction": "Give a real-world scenario for `KILL QUERY`.", "input": "", "output": "`KILL QUERY id` stops one runaway statement (connection lives); `KILL id` drops the connection — prefer the former."}
+{"instruction": "What problem does `KILL QUERY` solve?", "input": "", "output": "`KILL QUERY id` stops one runaway statement (connection lives); `KILL id` drops the connection — prefer the former."}
+{"instruction": "Terangkan `KILL QUERY` dalam satu minit.", "input": "", "output": "`KILL QUERY id` stops one runaway statement (connection lives); `KILL id` drops the connection — prefer the former."}
+{"instruction": "Apa yang perlu saya tahu tentang `KILL QUERY`?", "input": "", "output": "`KILL QUERY id` stops one runaway statement (connection lives); `KILL id` drops the connection — prefer the former."}
+{"instruction": "Bagaimanakah `KILL QUERY` berfungsi?", "input": "", "output": "`KILL QUERY id` stops one runaway statement (connection lives); `KILL id` drops the connection — prefer the former."}
+{"instruction": "Bilakah masa yang sesuai untuk `KILL QUERY`?", "input": "", "output": "`KILL QUERY id` stops one runaway statement (connection lives); `KILL id` drops the connection — prefer the former."}
+{"instruction": "What does `sql_mode strict` do?", "input": "", "output": "`STRICT_TRANS_TABLES` rejects bad data instead of silently truncating; check `SELECT @@sql_mode` when inserts misbehave."}
+{"instruction": "Explain `sql_mode strict` briefly.", "input": "", "output": "`STRICT_TRANS_TABLES` rejects bad data instead of silently truncating; check `SELECT @@sql_mode` when inserts misbehave."}
+{"instruction": "When do I use `sql_mode strict`?", "input": "", "output": "`STRICT_TRANS_TABLES` rejects bad data instead of silently truncating; check `SELECT @@sql_mode` when inserts misbehave."}
+{"instruction": "Give a practical example of `sql_mode strict`.", "input": "", "output": "`STRICT_TRANS_TABLES` rejects bad data instead of silently truncating; check `SELECT @@sql_mode` when inserts misbehave."}
+{"instruction": "What is `sql_mode strict` for?", "input": "", "output": "`STRICT_TRANS_TABLES` rejects bad data instead of silently truncating; check `SELECT @@sql_mode` when inserts misbehave."}
+{"instruction": "Apakah fungsi `sql_mode strict`?", "input": "", "output": "`STRICT_TRANS_TABLES` rejects bad data instead of silently truncating; check `SELECT @@sql_mode` when inserts misbehave."}
+{"instruction": "Terangkan `sql_mode strict` secara ringkas.", "input": "", "output": "`STRICT_TRANS_TABLES` rejects bad data instead of silently truncating; check `SELECT @@sql_mode` when inserts misbehave."}
+{"instruction": "Bila perlu guna `sql_mode strict`?", "input": "", "output": "`STRICT_TRANS_TABLES` rejects bad data instead of silently truncating; check `SELECT @@sql_mode` when inserts misbehave."}
+{"instruction": "Beri contoh penggunaan `sql_mode strict`.", "input": "", "output": "`STRICT_TRANS_TABLES` rejects bad data instead of silently truncating; check `SELECT @@sql_mode` when inserts misbehave."}
+{"instruction": "`sql_mode strict` untuk apa?", "input": "", "output": "`STRICT_TRANS_TABLES` rejects bad data instead of silently truncating; check `SELECT @@sql_mode` when inserts misbehave."}
+{"instruction": "How would you explain `sql_mode strict` to a junior developer?", "input": "", "output": "`STRICT_TRANS_TABLES` rejects bad data instead of silently truncating; check `SELECT @@sql_mode` when inserts misbehave."}
+{"instruction": "Give a real-world scenario for `sql_mode strict`.", "input": "", "output": "`STRICT_TRANS_TABLES` rejects bad data instead of silently truncating; check `SELECT @@sql_mode` when inserts misbehave."}
+{"instruction": "What problem does `sql_mode strict` solve?", "input": "", "output": "`STRICT_TRANS_TABLES` rejects bad data instead of silently truncating; check `SELECT @@sql_mode` when inserts misbehave."}
+{"instruction": "Terangkan `sql_mode strict` dalam satu minit.", "input": "", "output": "`STRICT_TRANS_TABLES` rejects bad data instead of silently truncating; check `SELECT @@sql_mode` when inserts misbehave."}
+{"instruction": "Apa yang perlu saya tahu tentang `sql_mode strict`?", "input": "", "output": "`STRICT_TRANS_TABLES` rejects bad data instead of silently truncating; check `SELECT @@sql_mode` when inserts misbehave."}
+{"instruction": "Bagaimanakah `sql_mode strict` berfungsi?", "input": "", "output": "`STRICT_TRANS_TABLES` rejects bad data instead of silently truncating; check `SELECT @@sql_mode` when inserts misbehave."}
+{"instruction": "Bilakah masa yang sesuai untuk `sql_mode strict`?", "input": "", "output": "`STRICT_TRANS_TABLES` rejects bad data instead of silently truncating; check `SELECT @@sql_mode` when inserts misbehave."}
+{"instruction": "What does `time zone convert` do?", "input": "", "output": "`CONVERT_TZ(ts, '+00:00', '+08:00')` shifts zones in queries; store UTC + named zones (`mysql_tzinfo_to_sql` loaded)."}
+{"instruction": "Explain `time zone convert` briefly.", "input": "", "output": "`CONVERT_TZ(ts, '+00:00', '+08:00')` shifts zones in queries; store UTC + named zones (`mysql_tzinfo_to_sql` loaded)."}
+{"instruction": "When do I use `time zone convert`?", "input": "", "output": "`CONVERT_TZ(ts, '+00:00', '+08:00')` shifts zones in queries; store UTC + named zones (`mysql_tzinfo_to_sql` loaded)."}
+{"instruction": "Give a practical example of `time zone convert`.", "input": "", "output": "`CONVERT_TZ(ts, '+00:00', '+08:00')` shifts zones in queries; store UTC + named zones (`mysql_tzinfo_to_sql` loaded)."}
+{"instruction": "What is `time zone convert` for?", "input": "", "output": "`CONVERT_TZ(ts, '+00:00', '+08:00')` shifts zones in queries; store UTC + named zones (`mysql_tzinfo_to_sql` loaded)."}
+{"instruction": "Apakah fungsi `time zone convert`?", "input": "", "output": "`CONVERT_TZ(ts, '+00:00', '+08:00')` shifts zones in queries; store UTC + named zones (`mysql_tzinfo_to_sql` loaded)."}
+{"instruction": "Terangkan `time zone convert` secara ringkas.", "input": "", "output": "`CONVERT_TZ(ts, '+00:00', '+08:00')` shifts zones in queries; store UTC + named zones (`mysql_tzinfo_to_sql` loaded)."}
+{"instruction": "Bila perlu guna `time zone convert`?", "input": "", "output": "`CONVERT_TZ(ts, '+00:00', '+08:00')` shifts zones in queries; store UTC + named zones (`mysql_tzinfo_to_sql` loaded)."}
+{"instruction": "Beri contoh penggunaan `time zone convert`.", "input": "", "output": "`CONVERT_TZ(ts, '+00:00', '+08:00')` shifts zones in queries; store UTC + named zones (`mysql_tzinfo_to_sql` loaded)."}
+{"instruction": "`time zone convert` untuk apa?", "input": "", "output": "`CONVERT_TZ(ts, '+00:00', '+08:00')` shifts zones in queries; store UTC + named zones (`mysql_tzinfo_to_sql` loaded)."}
+{"instruction": "How would you explain `time zone convert` to a junior developer?", "input": "", "output": "`CONVERT_TZ(ts, '+00:00', '+08:00')` shifts zones in queries; store UTC + named zones (`mysql_tzinfo_to_sql` loaded)."}
+{"instruction": "Give a real-world scenario for `time zone convert`.", "input": "", "output": "`CONVERT_TZ(ts, '+00:00', '+08:00')` shifts zones in queries; store UTC + named zones (`mysql_tzinfo_to_sql` loaded)."}
+{"instruction": "What problem does `time zone convert` solve?", "input": "", "output": "`CONVERT_TZ(ts, '+00:00', '+08:00')` shifts zones in queries; store UTC + named zones (`mysql_tzinfo_to_sql` loaded)."}
+{"instruction": "Terangkan `time zone convert` dalam satu minit.", "input": "", "output": "`CONVERT_TZ(ts, '+00:00', '+08:00')` shifts zones in queries; store UTC + named zones (`mysql_tzinfo_to_sql` loaded)."}
+{"instruction": "Apa yang perlu saya tahu tentang `time zone convert`?", "input": "", "output": "`CONVERT_TZ(ts, '+00:00', '+08:00')` shifts zones in queries; store UTC + named zones (`mysql_tzinfo_to_sql` loaded)."}
+{"instruction": "Bagaimanakah `time zone convert` berfungsi?", "input": "", "output": "`CONVERT_TZ(ts, '+00:00', '+08:00')` shifts zones in queries; store UTC + named zones (`mysql_tzinfo_to_sql` loaded)."}
+{"instruction": "Bilakah masa yang sesuai untuk `time zone convert`?", "input": "", "output": "`CONVERT_TZ(ts, '+00:00', '+08:00')` shifts zones in queries; store UTC + named zones (`mysql_tzinfo_to_sql` loaded)."}
+{"instruction": "What does `GROUP_CONCAT` do?", "input": "", "output": "`GROUP_CONCAT(nama SEPARATOR ', ')` flattens groups to strings (watch `group_concat_max_len` truncation on big sets)."}
+{"instruction": "Explain `GROUP_CONCAT` briefly.", "input": "", "output": "`GROUP_CONCAT(nama SEPARATOR ', ')` flattens groups to strings (watch `group_concat_max_len` truncation on big sets)."}
+{"instruction": "When do I use `GROUP_CONCAT`?", "input": "", "output": "`GROUP_CONCAT(nama SEPARATOR ', ')` flattens groups to strings (watch `group_concat_max_len` truncation on big sets)."}
+{"instruction": "Give a practical example of `GROUP_CONCAT`.", "input": "", "output": "`GROUP_CONCAT(nama SEPARATOR ', ')` flattens groups to strings (watch `group_concat_max_len` truncation on big sets)."}
+{"instruction": "What is `GROUP_CONCAT` for?", "input": "", "output": "`GROUP_CONCAT(nama SEPARATOR ', ')` flattens groups to strings (watch `group_concat_max_len` truncation on big sets)."}
+{"instruction": "Apakah fungsi `GROUP_CONCAT`?", "input": "", "output": "`GROUP_CONCAT(nama SEPARATOR ', ')` flattens groups to strings (watch `group_concat_max_len` truncation on big sets)."}
+{"instruction": "Terangkan `GROUP_CONCAT` secara ringkas.", "input": "", "output": "`GROUP_CONCAT(nama SEPARATOR ', ')` flattens groups to strings (watch `group_concat_max_len` truncation on big sets)."}
+{"instruction": "Bila perlu guna `GROUP_CONCAT`?", "input": "", "output": "`GROUP_CONCAT(nama SEPARATOR ', ')` flattens groups to strings (watch `group_concat_max_len` truncation on big sets)."}
+{"instruction": "Beri contoh penggunaan `GROUP_CONCAT`.", "input": "", "output": "`GROUP_CONCAT(nama SEPARATOR ', ')` flattens groups to strings (watch `group_concat_max_len` truncation on big sets)."}
+{"instruction": "`GROUP_CONCAT` untuk apa?", "input": "", "output": "`GROUP_CONCAT(nama SEPARATOR ', ')` flattens groups to strings (watch `group_concat_max_len` truncation on big sets)."}
+{"instruction": "How would you explain `GROUP_CONCAT` to a junior developer?", "input": "", "output": "`GROUP_CONCAT(nama SEPARATOR ', ')` flattens groups to strings (watch `group_concat_max_len` truncation on big sets)."}
+{"instruction": "Give a real-world scenario for `GROUP_CONCAT`.", "input": "", "output": "`GROUP_CONCAT(nama SEPARATOR ', ')` flattens groups to strings (watch `group_concat_max_len` truncation on big sets)."}
+{"instruction": "What problem does `GROUP_CONCAT` solve?", "input": "", "output": "`GROUP_CONCAT(nama SEPARATOR ', ')` flattens groups to strings (watch `group_concat_max_len` truncation on big sets)."}
+{"instruction": "Terangkan `GROUP_CONCAT` dalam satu minit.", "input": "", "output": "`GROUP_CONCAT(nama SEPARATOR ', ')` flattens groups to strings (watch `group_concat_max_len` truncation on big sets)."}
+{"instruction": "Apa yang perlu saya tahu tentang `GROUP_CONCAT`?", "input": "", "output": "`GROUP_CONCAT(nama SEPARATOR ', ')` flattens groups to strings (watch `group_concat_max_len` truncation on big sets)."}
+{"instruction": "Bagaimanakah `GROUP_CONCAT` berfungsi?", "input": "", "output": "`GROUP_CONCAT(nama SEPARATOR ', ')` flattens groups to strings (watch `group_concat_max_len` truncation on big sets)."}
+{"instruction": "Bilakah masa yang sesuai untuk `GROUP_CONCAT`?", "input": "", "output": "`GROUP_CONCAT(nama SEPARATOR ', ')` flattens groups to strings (watch `group_concat_max_len` truncation on big sets)."}
+{"instruction": "What does `IFNULL COALESCE` do?", "input": "", "output": "`IFNULL(a, b)`/`COALESCE(a, b, c)` substitute the first non-null — display defaults without app code."}
+{"instruction": "Explain `IFNULL COALESCE` briefly.", "input": "", "output": "`IFNULL(a, b)`/`COALESCE(a, b, c)` substitute the first non-null — display defaults without app code."}
+{"instruction": "When do I use `IFNULL COALESCE`?", "input": "", "output": "`IFNULL(a, b)`/`COALESCE(a, b, c)` substitute the first non-null — display defaults without app code."}
+{"instruction": "Give a practical example of `IFNULL COALESCE`.", "input": "", "output": "`IFNULL(a, b)`/`COALESCE(a, b, c)` substitute the first non-null — display defaults without app code."}
+{"instruction": "What is `IFNULL COALESCE` for?", "input": "", "output": "`IFNULL(a, b)`/`COALESCE(a, b, c)` substitute the first non-null — display defaults without app code."}
+{"instruction": "Apakah fungsi `IFNULL COALESCE`?", "input": "", "output": "`IFNULL(a, b)`/`COALESCE(a, b, c)` substitute the first non-null — display defaults without app code."}
+{"instruction": "Terangkan `IFNULL COALESCE` secara ringkas.", "input": "", "output": "`IFNULL(a, b)`/`COALESCE(a, b, c)` substitute the first non-null — display defaults without app code."}
+{"instruction": "Bila perlu guna `IFNULL COALESCE`?", "input": "", "output": "`IFNULL(a, b)`/`COALESCE(a, b, c)` substitute the first non-null — display defaults without app code."}
+{"instruction": "Beri contoh penggunaan `IFNULL COALESCE`.", "input": "", "output": "`IFNULL(a, b)`/`COALESCE(a, b, c)` substitute the first non-null — display defaults without app code."}
+{"instruction": "`IFNULL COALESCE` untuk apa?", "input": "", "output": "`IFNULL(a, b)`/`COALESCE(a, b, c)` substitute the first non-null — display defaults without app code."}
+{"instruction": "How would you explain `IFNULL COALESCE` to a junior developer?", "input": "", "output": "`IFNULL(a, b)`/`COALESCE(a, b, c)` substitute the first non-null — display defaults without app code."}
+{"instruction": "Give a real-world scenario for `IFNULL COALESCE`.", "input": "", "output": "`IFNULL(a, b)`/`COALESCE(a, b, c)` substitute the first non-null — display defaults without app code."}
+{"instruction": "What problem does `IFNULL COALESCE` solve?", "input": "", "output": "`IFNULL(a, b)`/`COALESCE(a, b, c)` substitute the first non-null — display defaults without app code."}
+{"instruction": "Terangkan `IFNULL COALESCE` dalam satu minit.", "input": "", "output": "`IFNULL(a, b)`/`COALESCE(a, b, c)` substitute the first non-null — display defaults without app code."}
+{"instruction": "Apa yang perlu saya tahu tentang `IFNULL COALESCE`?", "input": "", "output": "`IFNULL(a, b)`/`COALESCE(a, b, c)` substitute the first non-null — display defaults without app code."}
+{"instruction": "Bagaimanakah `IFNULL COALESCE` berfungsi?", "input": "", "output": "`IFNULL(a, b)`/`COALESCE(a, b, c)` substitute the first non-null — display defaults without app code."}
+{"instruction": "Bilakah masa yang sesuai untuk `IFNULL COALESCE`?", "input": "", "output": "`IFNULL(a, b)`/`COALESCE(a, b, c)` substitute the first non-null — display defaults without app code."}
+{"instruction": "What does `CASE expression` do?", "input": "", "output": "`CASE WHEN stok=0 THEN 'habis' ELSE 'ok' END` labels rows in-query; nest for tiered business rules."}
+{"instruction": "Explain `CASE expression` briefly.", "input": "", "output": "`CASE WHEN stok=0 THEN 'habis' ELSE 'ok' END` labels rows in-query; nest for tiered business rules."}
+{"instruction": "When do I use `CASE expression`?", "input": "", "output": "`CASE WHEN stok=0 THEN 'habis' ELSE 'ok' END` labels rows in-query; nest for tiered business rules."}
+{"instruction": "Give a practical example of `CASE expression`.", "input": "", "output": "`CASE WHEN stok=0 THEN 'habis' ELSE 'ok' END` labels rows in-query; nest for tiered business rules."}
+{"instruction": "What is `CASE expression` for?", "input": "", "output": "`CASE WHEN stok=0 THEN 'habis' ELSE 'ok' END` labels rows in-query; nest for tiered business rules."}
+{"instruction": "Apakah fungsi `CASE expression`?", "input": "", "output": "`CASE WHEN stok=0 THEN 'habis' ELSE 'ok' END` labels rows in-query; nest for tiered business rules."}
+{"instruction": "Terangkan `CASE expression` secara ringkas.", "input": "", "output": "`CASE WHEN stok=0 THEN 'habis' ELSE 'ok' END` labels rows in-query; nest for tiered business rules."}
+{"instruction": "Bila perlu guna `CASE expression`?", "input": "", "output": "`CASE WHEN stok=0 THEN 'habis' ELSE 'ok' END` labels rows in-query; nest for tiered business rules."}
+{"instruction": "Beri contoh penggunaan `CASE expression`.", "input": "", "output": "`CASE WHEN stok=0 THEN 'habis' ELSE 'ok' END` labels rows in-query; nest for tiered business rules."}
+{"instruction": "`CASE expression` untuk apa?", "input": "", "output": "`CASE WHEN stok=0 THEN 'habis' ELSE 'ok' END` labels rows in-query; nest for tiered business rules."}
+{"instruction": "How would you explain `CASE expression` to a junior developer?", "input": "", "output": "`CASE WHEN stok=0 THEN 'habis' ELSE 'ok' END` labels rows in-query; nest for tiered business rules."}
+{"instruction": "Give a real-world scenario for `CASE expression`.", "input": "", "output": "`CASE WHEN stok=0 THEN 'habis' ELSE 'ok' END` labels rows in-query; nest for tiered business rules."}
+{"instruction": "What problem does `CASE expression` solve?", "input": "", "output": "`CASE WHEN stok=0 THEN 'habis' ELSE 'ok' END` labels rows in-query; nest for tiered business rules."}
+{"instruction": "Terangkan `CASE expression` dalam satu minit.", "input": "", "output": "`CASE WHEN stok=0 THEN 'habis' ELSE 'ok' END` labels rows in-query; nest for tiered business rules."}
+{"instruction": "Apa yang perlu saya tahu tentang `CASE expression`?", "input": "", "output": "`CASE WHEN stok=0 THEN 'habis' ELSE 'ok' END` labels rows in-query; nest for tiered business rules."}
+{"instruction": "Bagaimanakah `CASE expression` berfungsi?", "input": "", "output": "`CASE WHEN stok=0 THEN 'habis' ELSE 'ok' END` labels rows in-query; nest for tiered business rules."}
+{"instruction": "Bilakah masa yang sesuai untuk `CASE expression`?", "input": "", "output": "`CASE WHEN stok=0 THEN 'habis' ELSE 'ok' END` labels rows in-query; nest for tiered business rules."}
+{"instruction": "What does `INTERSECT EXCEPT` do?", "input": "", "output": "MySQL 8.0.31+ supports `INTERSECT`/`EXCEPT` set ops; older versions emulate with joins/anti-joins."}
+{"instruction": "Explain `INTERSECT EXCEPT` briefly.", "input": "", "output": "MySQL 8.0.31+ supports `INTERSECT`/`EXCEPT` set ops; older versions emulate with joins/anti-joins."}
+{"instruction": "When do I use `INTERSECT EXCEPT`?", "input": "", "output": "MySQL 8.0.31+ supports `INTERSECT`/`EXCEPT` set ops; older versions emulate with joins/anti-joins."}
+{"instruction": "Give a practical example of `INTERSECT EXCEPT`.", "input": "", "output": "MySQL 8.0.31+ supports `INTERSECT`/`EXCEPT` set ops; older versions emulate with joins/anti-joins."}
+{"instruction": "What is `INTERSECT EXCEPT` for?", "input": "", "output": "MySQL 8.0.31+ supports `INTERSECT`/`EXCEPT` set ops; older versions emulate with joins/anti-joins."}
+{"instruction": "Apakah fungsi `INTERSECT EXCEPT`?", "input": "", "output": "MySQL 8.0.31+ supports `INTERSECT`/`EXCEPT` set ops; older versions emulate with joins/anti-joins."}
+{"instruction": "Terangkan `INTERSECT EXCEPT` secara ringkas.", "input": "", "output": "MySQL 8.0.31+ supports `INTERSECT`/`EXCEPT` set ops; older versions emulate with joins/anti-joins."}
+{"instruction": "Bila perlu guna `INTERSECT EXCEPT`?", "input": "", "output": "MySQL 8.0.31+ supports `INTERSECT`/`EXCEPT` set ops; older versions emulate with joins/anti-joins."}
+{"instruction": "Beri contoh penggunaan `INTERSECT EXCEPT`.", "input": "", "output": "MySQL 8.0.31+ supports `INTERSECT`/`EXCEPT` set ops; older versions emulate with joins/anti-joins."}
+{"instruction": "`INTERSECT EXCEPT` untuk apa?", "input": "", "output": "MySQL 8.0.31+ supports `INTERSECT`/`EXCEPT` set ops; older versions emulate with joins/anti-joins."}
+{"instruction": "How would you explain `INTERSECT EXCEPT` to a junior developer?", "input": "", "output": "MySQL 8.0.31+ supports `INTERSECT`/`EXCEPT` set ops; older versions emulate with joins/anti-joins."}
+{"instruction": "Give a real-world scenario for `INTERSECT EXCEPT`.", "input": "", "output": "MySQL 8.0.31+ supports `INTERSECT`/`EXCEPT` set ops; older versions emulate with joins/anti-joins."}
+{"instruction": "What problem does `INTERSECT EXCEPT` solve?", "input": "", "output": "MySQL 8.0.31+ supports `INTERSECT`/`EXCEPT` set ops; older versions emulate with joins/anti-joins."}
+{"instruction": "Terangkan `INTERSECT EXCEPT` dalam satu minit.", "input": "", "output": "MySQL 8.0.31+ supports `INTERSECT`/`EXCEPT` set ops; older versions emulate with joins/anti-joins."}
+{"instruction": "Apa yang perlu saya tahu tentang `INTERSECT EXCEPT`?", "input": "", "output": "MySQL 8.0.31+ supports `INTERSECT`/`EXCEPT` set ops; older versions emulate with joins/anti-joins."}
+{"instruction": "Bagaimanakah `INTERSECT EXCEPT` berfungsi?", "input": "", "output": "MySQL 8.0.31+ supports `INTERSECT`/`EXCEPT` set ops; older versions emulate with joins/anti-joins."}
+{"instruction": "Bilakah masa yang sesuai untuk `INTERSECT EXCEPT`?", "input": "", "output": "MySQL 8.0.31+ supports `INTERSECT`/`EXCEPT` set ops; older versions emulate with joins/anti-joins."}
+{"instruction": "What does `window ROW_NUMBER` do?", "input": "", "output": "`ROW_NUMBER() OVER (PARTITION BY bandar ORDER BY jualan DESC)` ranks within groups — top-N-per-group in one pass (8.0+)."}
+{"instruction": "Explain `window ROW_NUMBER` briefly.", "input": "", "output": "`ROW_NUMBER() OVER (PARTITION BY bandar ORDER BY jualan DESC)` ranks within groups — top-N-per-group in one pass (8.0+)."}
+{"instruction": "When do I use `window ROW_NUMBER`?", "input": "", "output": "`ROW_NUMBER() OVER (PARTITION BY bandar ORDER BY jualan DESC)` ranks within groups — top-N-per-group in one pass (8.0+)."}
+{"instruction": "Give a practical example of `window ROW_NUMBER`.", "input": "", "output": "`ROW_NUMBER() OVER (PARTITION BY bandar ORDER BY jualan DESC)` ranks within groups — top-N-per-group in one pass (8.0+)."}
+{"instruction": "What is `window ROW_NUMBER` for?", "input": "", "output": "`ROW_NUMBER() OVER (PARTITION BY bandar ORDER BY jualan DESC)` ranks within groups — top-N-per-group in one pass (8.0+)."}
+{"instruction": "Apakah fungsi `window ROW_NUMBER`?", "input": "", "output": "`ROW_NUMBER() OVER (PARTITION BY bandar ORDER BY jualan DESC)` ranks within groups — top-N-per-group in one pass (8.0+)."}
+{"instruction": "Terangkan `window ROW_NUMBER` secara ringkas.", "input": "", "output": "`ROW_NUMBER() OVER (PARTITION BY bandar ORDER BY jualan DESC)` ranks within groups — top-N-per-group in one pass (8.0+)."}
+{"instruction": "Bila perlu guna `window ROW_NUMBER`?", "input": "", "output": "`ROW_NUMBER() OVER (PARTITION BY bandar ORDER BY jualan DESC)` ranks within groups — top-N-per-group in one pass (8.0+)."}
+{"instruction": "Beri contoh penggunaan `window ROW_NUMBER`.", "input": "", "output": "`ROW_NUMBER() OVER (PARTITION BY bandar ORDER BY jualan DESC)` ranks within groups — top-N-per-group in one pass (8.0+)."}
+{"instruction": "`window ROW_NUMBER` untuk apa?", "input": "", "output": "`ROW_NUMBER() OVER (PARTITION BY bandar ORDER BY jualan DESC)` ranks within groups — top-N-per-group in one pass (8.0+)."}
+{"instruction": "How would you explain `window ROW_NUMBER` to a junior developer?", "input": "", "output": "`ROW_NUMBER() OVER (PARTITION BY bandar ORDER BY jualan DESC)` ranks within groups — top-N-per-group in one pass (8.0+)."}
+{"instruction": "Give a real-world scenario for `window ROW_NUMBER`.", "input": "", "output": "`ROW_NUMBER() OVER (PARTITION BY bandar ORDER BY jualan DESC)` ranks within groups — top-N-per-group in one pass (8.0+)."}
+{"instruction": "What problem does `window ROW_NUMBER` solve?", "input": "", "output": "`ROW_NUMBER() OVER (PARTITION BY bandar ORDER BY jualan DESC)` ranks within groups — top-N-per-group in one pass (8.0+)."}
+{"instruction": "Terangkan `window ROW_NUMBER` dalam satu minit.", "input": "", "output": "`ROW_NUMBER() OVER (PARTITION BY bandar ORDER BY jualan DESC)` ranks within groups — top-N-per-group in one pass (8.0+)."}
+{"instruction": "Apa yang perlu saya tahu tentang `window ROW_NUMBER`?", "input": "", "output": "`ROW_NUMBER() OVER (PARTITION BY bandar ORDER BY jualan DESC)` ranks within groups — top-N-per-group in one pass (8.0+)."}
+{"instruction": "Bagaimanakah `window ROW_NUMBER` berfungsi?", "input": "", "output": "`ROW_NUMBER() OVER (PARTITION BY bandar ORDER BY jualan DESC)` ranks within groups — top-N-per-group in one pass (8.0+)."}
+{"instruction": "Bilakah masa yang sesuai untuk `window ROW_NUMBER`?", "input": "", "output": "`ROW_NUMBER() OVER (PARTITION BY bandar ORDER BY jualan DESC)` ranks within groups — top-N-per-group in one pass (8.0+)."}
+{"instruction": "What does `recursive CTE` do?", "input": "", "output": "`WITH RECURSIVE r AS (SELECT ... UNION ALL SELECT ... FROM r ...)` walks hierarchies/graphs in SQL (8.0+)."}
+{"instruction": "Explain `recursive CTE` briefly.", "input": "", "output": "`WITH RECURSIVE r AS (SELECT ... UNION ALL SELECT ... FROM r ...)` walks hierarchies/graphs in SQL (8.0+)."}
+{"instruction": "When do I use `recursive CTE`?", "input": "", "output": "`WITH RECURSIVE r AS (SELECT ... UNION ALL SELECT ... FROM r ...)` walks hierarchies/graphs in SQL (8.0+)."}
+{"instruction": "Give a practical example of `recursive CTE`.", "input": "", "output": "`WITH RECURSIVE r AS (SELECT ... UNION ALL SELECT ... FROM r ...)` walks hierarchies/graphs in SQL (8.0+)."}
+{"instruction": "What is `recursive CTE` for?", "input": "", "output": "`WITH RECURSIVE r AS (SELECT ... UNION ALL SELECT ... FROM r ...)` walks hierarchies/graphs in SQL (8.0+)."}
+{"instruction": "Apakah fungsi `recursive CTE`?", "input": "", "output": "`WITH RECURSIVE r AS (SELECT ... UNION ALL SELECT ... FROM r ...)` walks hierarchies/graphs in SQL (8.0+)."}
+{"instruction": "Terangkan `recursive CTE` secara ringkas.", "input": "", "output": "`WITH RECURSIVE r AS (SELECT ... UNION ALL SELECT ... FROM r ...)` walks hierarchies/graphs in SQL (8.0+)."}
+{"instruction": "Bila perlu guna `recursive CTE`?", "input": "", "output": "`WITH RECURSIVE r AS (SELECT ... UNION ALL SELECT ... FROM r ...)` walks hierarchies/graphs in SQL (8.0+)."}
+{"instruction": "Beri contoh penggunaan `recursive CTE`.", "input": "", "output": "`WITH RECURSIVE r AS (SELECT ... UNION ALL SELECT ... FROM r ...)` walks hierarchies/graphs in SQL (8.0+)."}
+{"instruction": "`recursive CTE` untuk apa?", "input": "", "output": "`WITH RECURSIVE r AS (SELECT ... UNION ALL SELECT ... FROM r ...)` walks hierarchies/graphs in SQL (8.0+)."}
+{"instruction": "How would you explain `recursive CTE` to a junior developer?", "input": "", "output": "`WITH RECURSIVE r AS (SELECT ... UNION ALL SELECT ... FROM r ...)` walks hierarchies/graphs in SQL (8.0+)."}
+{"instruction": "Give a real-world scenario for `recursive CTE`.", "input": "", "output": "`WITH RECURSIVE r AS (SELECT ... UNION ALL SELECT ... FROM r ...)` walks hierarchies/graphs in SQL (8.0+)."}
+{"instruction": "What problem does `recursive CTE` solve?", "input": "", "output": "`WITH RECURSIVE r AS (SELECT ... UNION ALL SELECT ... FROM r ...)` walks hierarchies/graphs in SQL (8.0+)."}
+{"instruction": "Terangkan `recursive CTE` dalam satu minit.", "input": "", "output": "`WITH RECURSIVE r AS (SELECT ... UNION ALL SELECT ... FROM r ...)` walks hierarchies/graphs in SQL (8.0+)."}
+{"instruction": "Apa yang perlu saya tahu tentang `recursive CTE`?", "input": "", "output": "`WITH RECURSIVE r AS (SELECT ... UNION ALL SELECT ... FROM r ...)` walks hierarchies/graphs in SQL (8.0+)."}
+{"instruction": "Bagaimanakah `recursive CTE` berfungsi?", "input": "", "output": "`WITH RECURSIVE r AS (SELECT ... UNION ALL SELECT ... FROM r ...)` walks hierarchies/graphs in SQL (8.0+)."}
+{"instruction": "Bilakah masa yang sesuai untuk `recursive CTE`?", "input": "", "output": "`WITH RECURSIVE r AS (SELECT ... UNION ALL SELECT ... FROM r ...)` walks hierarchies/graphs in SQL (8.0+)."}
+{"instruction": "What does `JSON_EXTRACT path` do?", "input": "", "output": "`JSON_EXTRACT(data, '$.nama')` (or `->`/`->>` operators) queries JSON columns; index generated columns for speed."}
+{"instruction": "Explain `JSON_EXTRACT path` briefly.", "input": "", "output": "`JSON_EXTRACT(data, '$.nama')` (or `->`/`->>` operators) queries JSON columns; index generated columns for speed."}
+{"instruction": "When do I use `JSON_EXTRACT path`?", "input": "", "output": "`JSON_EXTRACT(data, '$.nama')` (or `->`/`->>` operators) queries JSON columns; index generated columns for speed."}
+{"instruction": "Give a practical example of `JSON_EXTRACT path`.", "input": "", "output": "`JSON_EXTRACT(data, '$.nama')` (or `->`/`->>` operators) queries JSON columns; index generated columns for speed."}
+{"instruction": "What is `JSON_EXTRACT path` for?", "input": "", "output": "`JSON_EXTRACT(data, '$.nama')` (or `->`/`->>` operators) queries JSON columns; index generated columns for speed."}
+{"instruction": "Apakah fungsi `JSON_EXTRACT path`?", "input": "", "output": "`JSON_EXTRACT(data, '$.nama')` (or `->`/`->>` operators) queries JSON columns; index generated columns for speed."}
+{"instruction": "Terangkan `JSON_EXTRACT path` secara ringkas.", "input": "", "output": "`JSON_EXTRACT(data, '$.nama')` (or `->`/`->>` operators) queries JSON columns; index generated columns for speed."}
+{"instruction": "Bila perlu guna `JSON_EXTRACT path`?", "input": "", "output": "`JSON_EXTRACT(data, '$.nama')` (or `->`/`->>` operators) queries JSON columns; index generated columns for speed."}
+{"instruction": "Beri contoh penggunaan `JSON_EXTRACT path`.", "input": "", "output": "`JSON_EXTRACT(data, '$.nama')` (or `->`/`->>` operators) queries JSON columns; index generated columns for speed."}
+{"instruction": "`JSON_EXTRACT path` untuk apa?", "input": "", "output": "`JSON_EXTRACT(data, '$.nama')` (or `->`/`->>` operators) queries JSON columns; index generated columns for speed."}
+{"instruction": "How would you explain `JSON_EXTRACT path` to a junior developer?", "input": "", "output": "`JSON_EXTRACT(data, '$.nama')` (or `->`/`->>` operators) queries JSON columns; index generated columns for speed."}
+{"instruction": "Give a real-world scenario for `JSON_EXTRACT path`.", "input": "", "output": "`JSON_EXTRACT(data, '$.nama')` (or `->`/`->>` operators) queries JSON columns; index generated columns for speed."}
+{"instruction": "What problem does `JSON_EXTRACT path` solve?", "input": "", "output": "`JSON_EXTRACT(data, '$.nama')` (or `->`/`->>` operators) queries JSON columns; index generated columns for speed."}
+{"instruction": "Terangkan `JSON_EXTRACT path` dalam satu minit.", "input": "", "output": "`JSON_EXTRACT(data, '$.nama')` (or `->`/`->>` operators) queries JSON columns; index generated columns for speed."}
+{"instruction": "Apa yang perlu saya tahu tentang `JSON_EXTRACT path`?", "input": "", "output": "`JSON_EXTRACT(data, '$.nama')` (or `->`/`->>` operators) queries JSON columns; index generated columns for speed."}
+{"instruction": "Bagaimanakah `JSON_EXTRACT path` berfungsi?", "input": "", "output": "`JSON_EXTRACT(data, '$.nama')` (or `->`/`->>` operators) queries JSON columns; index generated columns for speed."}
+{"instruction": "Bilakah masa yang sesuai untuk `JSON_EXTRACT path`?", "input": "", "output": "`JSON_EXTRACT(data, '$.nama')` (or `->`/`->>` operators) queries JSON columns; index generated columns for speed."}
+{"instruction": "What does `generated columns` do?", "input": "", "output": "`penuh VARCHAR(200) GENERATED ALWAYS AS (concat(a,b)) STORED` computes at write; VIRTUAL saves space, STORED indexes."}
+{"instruction": "Explain `generated columns` briefly.", "input": "", "output": "`penuh VARCHAR(200) GENERATED ALWAYS AS (concat(a,b)) STORED` computes at write; VIRTUAL saves space, STORED indexes."}
+{"instruction": "When do I use `generated columns`?", "input": "", "output": "`penuh VARCHAR(200) GENERATED ALWAYS AS (concat(a,b)) STORED` computes at write; VIRTUAL saves space, STORED indexes."}
+{"instruction": "Give a practical example of `generated columns`.", "input": "", "output": "`penuh VARCHAR(200) GENERATED ALWAYS AS (concat(a,b)) STORED` computes at write; VIRTUAL saves space, STORED indexes."}
+{"instruction": "What is `generated columns` for?", "input": "", "output": "`penuh VARCHAR(200) GENERATED ALWAYS AS (concat(a,b)) STORED` computes at write; VIRTUAL saves space, STORED indexes."}
+{"instruction": "Apakah fungsi `generated columns`?", "input": "", "output": "`penuh VARCHAR(200) GENERATED ALWAYS AS (concat(a,b)) STORED` computes at write; VIRTUAL saves space, STORED indexes."}
+{"instruction": "Terangkan `generated columns` secara ringkas.", "input": "", "output": "`penuh VARCHAR(200) GENERATED ALWAYS AS (concat(a,b)) STORED` computes at write; VIRTUAL saves space, STORED indexes."}
+{"instruction": "Bila perlu guna `generated columns`?", "input": "", "output": "`penuh VARCHAR(200) GENERATED ALWAYS AS (concat(a,b)) STORED` computes at write; VIRTUAL saves space, STORED indexes."}
+{"instruction": "Beri contoh penggunaan `generated columns`.", "input": "", "output": "`penuh VARCHAR(200) GENERATED ALWAYS AS (concat(a,b)) STORED` computes at write; VIRTUAL saves space, STORED indexes."}
+{"instruction": "`generated columns` untuk apa?", "input": "", "output": "`penuh VARCHAR(200) GENERATED ALWAYS AS (concat(a,b)) STORED` computes at write; VIRTUAL saves space, STORED indexes."}
+{"instruction": "How would you explain `generated columns` to a junior developer?", "input": "", "output": "`penuh VARCHAR(200) GENERATED ALWAYS AS (concat(a,b)) STORED` computes at write; VIRTUAL saves space, STORED indexes."}
+{"instruction": "Give a real-world scenario for `generated columns`.", "input": "", "output": "`penuh VARCHAR(200) GENERATED ALWAYS AS (concat(a,b)) STORED` computes at write; VIRTUAL saves space, STORED indexes."}
+{"instruction": "What problem does `generated columns` solve?", "input": "", "output": "`penuh VARCHAR(200) GENERATED ALWAYS AS (concat(a,b)) STORED` computes at write; VIRTUAL saves space, STORED indexes."}
+{"instruction": "Terangkan `generated columns` dalam satu minit.", "input": "", "output": "`penuh VARCHAR(200) GENERATED ALWAYS AS (concat(a,b)) STORED` computes at write; VIRTUAL saves space, STORED indexes."}
+{"instruction": "Apa yang perlu saya tahu tentang `generated columns`?", "input": "", "output": "`penuh VARCHAR(200) GENERATED ALWAYS AS (concat(a,b)) STORED` computes at write; VIRTUAL saves space, STORED indexes."}
+{"instruction": "Bagaimanakah `generated columns` berfungsi?", "input": "", "output": "`penuh VARCHAR(200) GENERATED ALWAYS AS (concat(a,b)) STORED` computes at write; VIRTUAL saves space, STORED indexes."}
+{"instruction": "Bilakah masa yang sesuai untuk `generated columns`?", "input": "", "output": "`penuh VARCHAR(200) GENERATED ALWAYS AS (concat(a,b)) STORED` computes at write; VIRTUAL saves space, STORED indexes."}
+{"instruction": "What does `CHECK constraints` do?", "input": "", "output": "`CHECK (harga >= 0)` enforced since 8.0.16 (parsed-but-ignored before!) — verify version before relying."}
+{"instruction": "Explain `CHECK constraints` briefly.", "input": "", "output": "`CHECK (harga >= 0)` enforced since 8.0.16 (parsed-but-ignored before!) — verify version before relying."}
+{"instruction": "When do I use `CHECK constraints`?", "input": "", "output": "`CHECK (harga >= 0)` enforced since 8.0.16 (parsed-but-ignored before!) — verify version before relying."}
+{"instruction": "Give a practical example of `CHECK constraints`.", "input": "", "output": "`CHECK (harga >= 0)` enforced since 8.0.16 (parsed-but-ignored before!) — verify version before relying."}
+{"instruction": "What is `CHECK constraints` for?", "input": "", "output": "`CHECK (harga >= 0)` enforced since 8.0.16 (parsed-but-ignored before!) — verify version before relying."}
+{"instruction": "Apakah fungsi `CHECK constraints`?", "input": "", "output": "`CHECK (harga >= 0)` enforced since 8.0.16 (parsed-but-ignored before!) — verify version before relying."}
+{"instruction": "Terangkan `CHECK constraints` secara ringkas.", "input": "", "output": "`CHECK (harga >= 0)` enforced since 8.0.16 (parsed-but-ignored before!) — verify version before relying."}
+{"instruction": "Bila perlu guna `CHECK constraints`?", "input": "", "output": "`CHECK (harga >= 0)` enforced since 8.0.16 (parsed-but-ignored before!) — verify version before relying."}
+{"instruction": "Beri contoh penggunaan `CHECK constraints`.", "input": "", "output": "`CHECK (harga >= 0)` enforced since 8.0.16 (parsed-but-ignored before!) — verify version before relying."}
+{"instruction": "`CHECK constraints` untuk apa?", "input": "", "output": "`CHECK (harga >= 0)` enforced since 8.0.16 (parsed-but-ignored before!) — verify version before relying."}
+{"instruction": "How would you explain `CHECK constraints` to a junior developer?", "input": "", "output": "`CHECK (harga >= 0)` enforced since 8.0.16 (parsed-but-ignored before!) — verify version before relying."}
+{"instruction": "Give a real-world scenario for `CHECK constraints`.", "input": "", "output": "`CHECK (harga >= 0)` enforced since 8.0.16 (parsed-but-ignored before!) — verify version before relying."}
+{"instruction": "What problem does `CHECK constraints` solve?", "input": "", "output": "`CHECK (harga >= 0)` enforced since 8.0.16 (parsed-but-ignored before!) — verify version before relying."}
+{"instruction": "Terangkan `CHECK constraints` dalam satu minit.", "input": "", "output": "`CHECK (harga >= 0)` enforced since 8.0.16 (parsed-but-ignored before!) — verify version before relying."}
+{"instruction": "Apa yang perlu saya tahu tentang `CHECK constraints`?", "input": "", "output": "`CHECK (harga >= 0)` enforced since 8.0.16 (parsed-but-ignored before!) — verify version before relying."}
+{"instruction": "Bagaimanakah `CHECK constraints` berfungsi?", "input": "", "output": "`CHECK (harga >= 0)` enforced since 8.0.16 (parsed-but-ignored before!) — verify version before relying."}
+{"instruction": "Bilakah masa yang sesuai untuk `CHECK constraints`?", "input": "", "output": "`CHECK (harga >= 0)` enforced since 8.0.16 (parsed-but-ignored before!) — verify version before relying."}
+{"instruction": "What does `SHOW FULL TABLES` do?", "input": "", "output": "`SHOW FULL TABLES WHERE Table_type = 'VIEW'` separates views from base tables during audits."}
+{"instruction": "Explain `SHOW FULL TABLES` briefly.", "input": "", "output": "`SHOW FULL TABLES WHERE Table_type = 'VIEW'` separates views from base tables during audits."}
+{"instruction": "When do I use `SHOW FULL TABLES`?", "input": "", "output": "`SHOW FULL TABLES WHERE Table_type = 'VIEW'` separates views from base tables during audits."}
+{"instruction": "Give a practical example of `SHOW FULL TABLES`.", "input": "", "output": "`SHOW FULL TABLES WHERE Table_type = 'VIEW'` separates views from base tables during audits."}
+{"instruction": "What is `SHOW FULL TABLES` for?", "input": "", "output": "`SHOW FULL TABLES WHERE Table_type = 'VIEW'` separates views from base tables during audits."}
+{"instruction": "Apakah fungsi `SHOW FULL TABLES`?", "input": "", "output": "`SHOW FULL TABLES WHERE Table_type = 'VIEW'` separates views from base tables during audits."}
+{"instruction": "Terangkan `SHOW FULL TABLES` secara ringkas.", "input": "", "output": "`SHOW FULL TABLES WHERE Table_type = 'VIEW'` separates views from base tables during audits."}
+{"instruction": "Bila perlu guna `SHOW FULL TABLES`?", "input": "", "output": "`SHOW FULL TABLES WHERE Table_type = 'VIEW'` separates views from base tables during audits."}
+{"instruction": "Beri contoh penggunaan `SHOW FULL TABLES`.", "input": "", "output": "`SHOW FULL TABLES WHERE Table_type = 'VIEW'` separates views from base tables during audits."}
+{"instruction": "`SHOW FULL TABLES` untuk apa?", "input": "", "output": "`SHOW FULL TABLES WHERE Table_type = 'VIEW'` separates views from base tables during audits."}
+{"instruction": "How would you explain `SHOW FULL TABLES` to a junior developer?", "input": "", "output": "`SHOW FULL TABLES WHERE Table_type = 'VIEW'` separates views from base tables during audits."}
+{"instruction": "Give a real-world scenario for `SHOW FULL TABLES`.", "input": "", "output": "`SHOW FULL TABLES WHERE Table_type = 'VIEW'` separates views from base tables during audits."}
+{"instruction": "What problem does `SHOW FULL TABLES` solve?", "input": "", "output": "`SHOW FULL TABLES WHERE Table_type = 'VIEW'` separates views from base tables during audits."}
+{"instruction": "Terangkan `SHOW FULL TABLES` dalam satu minit.", "input": "", "output": "`SHOW FULL TABLES WHERE Table_type = 'VIEW'` separates views from base tables during audits."}
+{"instruction": "Apa yang perlu saya tahu tentang `SHOW FULL TABLES`?", "input": "", "output": "`SHOW FULL TABLES WHERE Table_type = 'VIEW'` separates views from base tables during audits."}
+{"instruction": "Bagaimanakah `SHOW FULL TABLES` berfungsi?", "input": "", "output": "`SHOW FULL TABLES WHERE Table_type = 'VIEW'` separates views from base tables during audits."}
+{"instruction": "Bilakah masa yang sesuai untuk `SHOW FULL TABLES`?", "input": "", "output": "`SHOW FULL TABLES WHERE Table_type = 'VIEW'` separates views from base tables during audits."}
+{"instruction": "What does `SHOW CREATE VIEW` do?", "input": "", "output": "`SHOW CREATE VIEW v` reveals definition plus definer/security context — permission bugs hide here."}
+{"instruction": "Explain `SHOW CREATE VIEW` briefly.", "input": "", "output": "`SHOW CREATE VIEW v` reveals definition plus definer/security context — permission bugs hide here."}
+{"instruction": "When do I use `SHOW CREATE VIEW`?", "input": "", "output": "`SHOW CREATE VIEW v` reveals definition plus definer/security context — permission bugs hide here."}
+{"instruction": "Give a practical example of `SHOW CREATE VIEW`.", "input": "", "output": "`SHOW CREATE VIEW v` reveals definition plus definer/security context — permission bugs hide here."}
+{"instruction": "What is `SHOW CREATE VIEW` for?", "input": "", "output": "`SHOW CREATE VIEW v` reveals definition plus definer/security context — permission bugs hide here."}
+{"instruction": "Apakah fungsi `SHOW CREATE VIEW`?", "input": "", "output": "`SHOW CREATE VIEW v` reveals definition plus definer/security context — permission bugs hide here."}
+{"instruction": "Terangkan `SHOW CREATE VIEW` secara ringkas.", "input": "", "output": "`SHOW CREATE VIEW v` reveals definition plus definer/security context — permission bugs hide here."}
+{"instruction": "Bila perlu guna `SHOW CREATE VIEW`?", "input": "", "output": "`SHOW CREATE VIEW v` reveals definition plus definer/security context — permission bugs hide here."}
+{"instruction": "Beri contoh penggunaan `SHOW CREATE VIEW`.", "input": "", "output": "`SHOW CREATE VIEW v` reveals definition plus definer/security context — permission bugs hide here."}
+{"instruction": "`SHOW CREATE VIEW` untuk apa?", "input": "", "output": "`SHOW CREATE VIEW v` reveals definition plus definer/security context — permission bugs hide here."}
+{"instruction": "How would you explain `SHOW CREATE VIEW` to a junior developer?", "input": "", "output": "`SHOW CREATE VIEW v` reveals definition plus definer/security context — permission bugs hide here."}
+{"instruction": "Give a real-world scenario for `SHOW CREATE VIEW`.", "input": "", "output": "`SHOW CREATE VIEW v` reveals definition plus definer/security context — permission bugs hide here."}
+{"instruction": "What problem does `SHOW CREATE VIEW` solve?", "input": "", "output": "`SHOW CREATE VIEW v` reveals definition plus definer/security context — permission bugs hide here."}
+{"instruction": "Terangkan `SHOW CREATE VIEW` dalam satu minit.", "input": "", "output": "`SHOW CREATE VIEW v` reveals definition plus definer/security context — permission bugs hide here."}
+{"instruction": "Apa yang perlu saya tahu tentang `SHOW CREATE VIEW`?", "input": "", "output": "`SHOW CREATE VIEW v` reveals definition plus definer/security context — permission bugs hide here."}
+{"instruction": "Bagaimanakah `SHOW CREATE VIEW` berfungsi?", "input": "", "output": "`SHOW CREATE VIEW v` reveals definition plus definer/security context — permission bugs hide here."}
+{"instruction": "Bilakah masa yang sesuai untuk `SHOW CREATE VIEW`?", "input": "", "output": "`SHOW CREATE VIEW v` reveals definition plus definer/security context — permission bugs hide here."}
+{"instruction": "What does `ALTER TABLE algorithm` do?", "input": "", "output": "`ALGORITHM=INPLACE, LOCK=NONE` keeps big tables online; default copies and locks — specify deliberately."}
+{"instruction": "Explain `ALTER TABLE algorithm` briefly.", "input": "", "output": "`ALGORITHM=INPLACE, LOCK=NONE` keeps big tables online; default copies and locks — specify deliberately."}
+{"instruction": "When do I use `ALTER TABLE algorithm`?", "input": "", "output": "`ALGORITHM=INPLACE, LOCK=NONE` keeps big tables online; default copies and locks — specify deliberately."}
+{"instruction": "Give a practical example of `ALTER TABLE algorithm`.", "input": "", "output": "`ALGORITHM=INPLACE, LOCK=NONE` keeps big tables online; default copies and locks — specify deliberately."}
+{"instruction": "What is `ALTER TABLE algorithm` for?", "input": "", "output": "`ALGORITHM=INPLACE, LOCK=NONE` keeps big tables online; default copies and locks — specify deliberately."}
+{"instruction": "Apakah fungsi `ALTER TABLE algorithm`?", "input": "", "output": "`ALGORITHM=INPLACE, LOCK=NONE` keeps big tables online; default copies and locks — specify deliberately."}
+{"instruction": "Terangkan `ALTER TABLE algorithm` secara ringkas.", "input": "", "output": "`ALGORITHM=INPLACE, LOCK=NONE` keeps big tables online; default copies and locks — specify deliberately."}
+{"instruction": "Bila perlu guna `ALTER TABLE algorithm`?", "input": "", "output": "`ALGORITHM=INPLACE, LOCK=NONE` keeps big tables online; default copies and locks — specify deliberately."}
+{"instruction": "Beri contoh penggunaan `ALTER TABLE algorithm`.", "input": "", "output": "`ALGORITHM=INPLACE, LOCK=NONE` keeps big tables online; default copies and locks — specify deliberately."}
+{"instruction": "`ALTER TABLE algorithm` untuk apa?", "input": "", "output": "`ALGORITHM=INPLACE, LOCK=NONE` keeps big tables online; default copies and locks — specify deliberately."}
+{"instruction": "How would you explain `ALTER TABLE algorithm` to a junior developer?", "input": "", "output": "`ALGORITHM=INPLACE, LOCK=NONE` keeps big tables online; default copies and locks — specify deliberately."}
+{"instruction": "Give a real-world scenario for `ALTER TABLE algorithm`.", "input": "", "output": "`ALGORITHM=INPLACE, LOCK=NONE` keeps big tables online; default copies and locks — specify deliberately."}
+{"instruction": "What problem does `ALTER TABLE algorithm` solve?", "input": "", "output": "`ALGORITHM=INPLACE, LOCK=NONE` keeps big tables online; default copies and locks — specify deliberately."}
+{"instruction": "Terangkan `ALTER TABLE algorithm` dalam satu minit.", "input": "", "output": "`ALGORITHM=INPLACE, LOCK=NONE` keeps big tables online; default copies and locks — specify deliberately."}
+{"instruction": "Apa yang perlu saya tahu tentang `ALTER TABLE algorithm`?", "input": "", "output": "`ALGORITHM=INPLACE, LOCK=NONE` keeps big tables online; default copies and locks — specify deliberately."}
+{"instruction": "Bagaimanakah `ALTER TABLE algorithm` berfungsi?", "input": "", "output": "`ALGORITHM=INPLACE, LOCK=NONE` keeps big tables online; default copies and locks — specify deliberately."}
+{"instruction": "Bilakah masa yang sesuai untuk `ALTER TABLE algorithm`?", "input": "", "output": "`ALGORITHM=INPLACE, LOCK=NONE` keeps big tables online; default copies and locks — specify deliberately."}
+{"instruction": "What does `RENAME COLUMN` do?", "input": "", "output": "`RENAME COLUMN lama TO baru` (8.0+) preserves data; `CHANGE` redeclares full type and risks silent alteration."}
+{"instruction": "Explain `RENAME COLUMN` briefly.", "input": "", "output": "`RENAME COLUMN lama TO baru` (8.0+) preserves data; `CHANGE` redeclares full type and risks silent alteration."}
+{"instruction": "When do I use `RENAME COLUMN`?", "input": "", "output": "`RENAME COLUMN lama TO baru` (8.0+) preserves data; `CHANGE` redeclares full type and risks silent alteration."}
+{"instruction": "Give a practical example of `RENAME COLUMN`.", "input": "", "output": "`RENAME COLUMN lama TO baru` (8.0+) preserves data; `CHANGE` redeclares full type and risks silent alteration."}
+{"instruction": "What is `RENAME COLUMN` for?", "input": "", "output": "`RENAME COLUMN lama TO baru` (8.0+) preserves data; `CHANGE` redeclares full type and risks silent alteration."}
+{"instruction": "Apakah fungsi `RENAME COLUMN`?", "input": "", "output": "`RENAME COLUMN lama TO baru` (8.0+) preserves data; `CHANGE` redeclares full type and risks silent alteration."}
+{"instruction": "Terangkan `RENAME COLUMN` secara ringkas.", "input": "", "output": "`RENAME COLUMN lama TO baru` (8.0+) preserves data; `CHANGE` redeclares full type and risks silent alteration."}
+{"instruction": "Bila perlu guna `RENAME COLUMN`?", "input": "", "output": "`RENAME COLUMN lama TO baru` (8.0+) preserves data; `CHANGE` redeclares full type and risks silent alteration."}
+{"instruction": "Beri contoh penggunaan `RENAME COLUMN`.", "input": "", "output": "`RENAME COLUMN lama TO baru` (8.0+) preserves data; `CHANGE` redeclares full type and risks silent alteration."}
+{"instruction": "`RENAME COLUMN` untuk apa?", "input": "", "output": "`RENAME COLUMN lama TO baru` (8.0+) preserves data; `CHANGE` redeclares full type and risks silent alteration."}
+{"instruction": "How would you explain `RENAME COLUMN` to a junior developer?", "input": "", "output": "`RENAME COLUMN lama TO baru` (8.0+) preserves data; `CHANGE` redeclares full type and risks silent alteration."}
+{"instruction": "Give a real-world scenario for `RENAME COLUMN`.", "input": "", "output": "`RENAME COLUMN lama TO baru` (8.0+) preserves data; `CHANGE` redeclares full type and risks silent alteration."}
+{"instruction": "What problem does `RENAME COLUMN` solve?", "input": "", "output": "`RENAME COLUMN lama TO baru` (8.0+) preserves data; `CHANGE` redeclares full type and risks silent alteration."}
+{"instruction": "Terangkan `RENAME COLUMN` dalam satu minit.", "input": "", "output": "`RENAME COLUMN lama TO baru` (8.0+) preserves data; `CHANGE` redeclares full type and risks silent alteration."}
+{"instruction": "Apa yang perlu saya tahu tentang `RENAME COLUMN`?", "input": "", "output": "`RENAME COLUMN lama TO baru` (8.0+) preserves data; `CHANGE` redeclares full type and risks silent alteration."}
+{"instruction": "Bagaimanakah `RENAME COLUMN` berfungsi?", "input": "", "output": "`RENAME COLUMN lama TO baru` (8.0+) preserves data; `CHANGE` redeclares full type and risks silent alteration."}
+{"instruction": "Bilakah masa yang sesuai untuk `RENAME COLUMN`?", "input": "", "output": "`RENAME COLUMN lama TO baru` (8.0+) preserves data; `CHANGE` redeclares full type and risks silent alteration."}
+{"instruction": "What does `ADD PRIMARY KEY` do?", "input": "", "output": "`ADD PRIMARY KEY (id)` on existing tables validates uniqueness first — duplicates abort with row details."}
+{"instruction": "Explain `ADD PRIMARY KEY` briefly.", "input": "", "output": "`ADD PRIMARY KEY (id)` on existing tables validates uniqueness first — duplicates abort with row details."}
+{"instruction": "When do I use `ADD PRIMARY KEY`?", "input": "", "output": "`ADD PRIMARY KEY (id)` on existing tables validates uniqueness first — duplicates abort with row details."}
+{"instruction": "Give a practical example of `ADD PRIMARY KEY`.", "input": "", "output": "`ADD PRIMARY KEY (id)` on existing tables validates uniqueness first — duplicates abort with row details."}
+{"instruction": "What is `ADD PRIMARY KEY` for?", "input": "", "output": "`ADD PRIMARY KEY (id)` on existing tables validates uniqueness first — duplicates abort with row details."}
+{"instruction": "Apakah fungsi `ADD PRIMARY KEY`?", "input": "", "output": "`ADD PRIMARY KEY (id)` on existing tables validates uniqueness first — duplicates abort with row details."}
+{"instruction": "Terangkan `ADD PRIMARY KEY` secara ringkas.", "input": "", "output": "`ADD PRIMARY KEY (id)` on existing tables validates uniqueness first — duplicates abort with row details."}
+{"instruction": "Bila perlu guna `ADD PRIMARY KEY`?", "input": "", "output": "`ADD PRIMARY KEY (id)` on existing tables validates uniqueness first — duplicates abort with row details."}
+{"instruction": "Beri contoh penggunaan `ADD PRIMARY KEY`.", "input": "", "output": "`ADD PRIMARY KEY (id)` on existing tables validates uniqueness first — duplicates abort with row details."}
+{"instruction": "`ADD PRIMARY KEY` untuk apa?", "input": "", "output": "`ADD PRIMARY KEY (id)` on existing tables validates uniqueness first — duplicates abort with row details."}
+{"instruction": "How would you explain `ADD PRIMARY KEY` to a junior developer?", "input": "", "output": "`ADD PRIMARY KEY (id)` on existing tables validates uniqueness first — duplicates abort with row details."}
+{"instruction": "Give a real-world scenario for `ADD PRIMARY KEY`.", "input": "", "output": "`ADD PRIMARY KEY (id)` on existing tables validates uniqueness first — duplicates abort with row details."}
+{"instruction": "What problem does `ADD PRIMARY KEY` solve?", "input": "", "output": "`ADD PRIMARY KEY (id)` on existing tables validates uniqueness first — duplicates abort with row details."}
+{"instruction": "Terangkan `ADD PRIMARY KEY` dalam satu minit.", "input": "", "output": "`ADD PRIMARY KEY (id)` on existing tables validates uniqueness first — duplicates abort with row details."}
+{"instruction": "Apa yang perlu saya tahu tentang `ADD PRIMARY KEY`?", "input": "", "output": "`ADD PRIMARY KEY (id)` on existing tables validates uniqueness first — duplicates abort with row details."}
+{"instruction": "Bagaimanakah `ADD PRIMARY KEY` berfungsi?", "input": "", "output": "`ADD PRIMARY KEY (id)` on existing tables validates uniqueness first — duplicates abort with row details."}
+{"instruction": "Bilakah masa yang sesuai untuk `ADD PRIMARY KEY`?", "input": "", "output": "`ADD PRIMARY KEY (id)` on existing tables validates uniqueness first — duplicates abort with row details."}
+{"instruction": "What does `DROP PRIMARY KEY` do?", "input": "", "output": "Dropping clusters forces full reorganization on InnoDB; plan maintenance windows for giant tables."}
+{"instruction": "Explain `DROP PRIMARY KEY` briefly.", "input": "", "output": "Dropping clusters forces full reorganization on InnoDB; plan maintenance windows for giant tables."}
+{"instruction": "When do I use `DROP PRIMARY KEY`?", "input": "", "output": "Dropping clusters forces full reorganization on InnoDB; plan maintenance windows for giant tables."}
+{"instruction": "Give a practical example of `DROP PRIMARY KEY`.", "input": "", "output": "Dropping clusters forces full reorganization on InnoDB; plan maintenance windows for giant tables."}
+{"instruction": "What is `DROP PRIMARY KEY` for?", "input": "", "output": "Dropping clusters forces full reorganization on InnoDB; plan maintenance windows for giant tables."}
+{"instruction": "Apakah fungsi `DROP PRIMARY KEY`?", "input": "", "output": "Dropping clusters forces full reorganization on InnoDB; plan maintenance windows for giant tables."}
+{"instruction": "Terangkan `DROP PRIMARY KEY` secara ringkas.", "input": "", "output": "Dropping clusters forces full reorganization on InnoDB; plan maintenance windows for giant tables."}
+{"instruction": "Bila perlu guna `DROP PRIMARY KEY`?", "input": "", "output": "Dropping clusters forces full reorganization on InnoDB; plan maintenance windows for giant tables."}
+{"instruction": "Beri contoh penggunaan `DROP PRIMARY KEY`.", "input": "", "output": "Dropping clusters forces full reorganization on InnoDB; plan maintenance windows for giant tables."}
+{"instruction": "`DROP PRIMARY KEY` untuk apa?", "input": "", "output": "Dropping clusters forces full reorganization on InnoDB; plan maintenance windows for giant tables."}
+{"instruction": "How would you explain `DROP PRIMARY KEY` to a junior developer?", "input": "", "output": "Dropping clusters forces full reorganization on InnoDB; plan maintenance windows for giant tables."}
+{"instruction": "Give a real-world scenario for `DROP PRIMARY KEY`.", "input": "", "output": "Dropping clusters forces full reorganization on InnoDB; plan maintenance windows for giant tables."}
+{"instruction": "What problem does `DROP PRIMARY KEY` solve?", "input": "", "output": "Dropping clusters forces full reorganization on InnoDB; plan maintenance windows for giant tables."}
+{"instruction": "Terangkan `DROP PRIMARY KEY` dalam satu minit.", "input": "", "output": "Dropping clusters forces full reorganization on InnoDB; plan maintenance windows for giant tables."}
+{"instruction": "Apa yang perlu saya tahu tentang `DROP PRIMARY KEY`?", "input": "", "output": "Dropping clusters forces full reorganization on InnoDB; plan maintenance windows for giant tables."}
+{"instruction": "Bagaimanakah `DROP PRIMARY KEY` berfungsi?", "input": "", "output": "Dropping clusters forces full reorganization on InnoDB; plan maintenance windows for giant tables."}
+{"instruction": "Bilakah masa yang sesuai untuk `DROP PRIMARY KEY`?", "input": "", "output": "Dropping clusters forces full reorganization on InnoDB; plan maintenance windows for giant tables."}
+{"instruction": "What does `ADD UNIQUE` do?", "input": "", "output": "`ADD UNIQUE KEY (emel)` enforces one-account-per-email at the lowest level — app checks race, constraints don't."}
+{"instruction": "Explain `ADD UNIQUE` briefly.", "input": "", "output": "`ADD UNIQUE KEY (emel)` enforces one-account-per-email at the lowest level — app checks race, constraints don't."}
+{"instruction": "When do I use `ADD UNIQUE`?", "input": "", "output": "`ADD UNIQUE KEY (emel)` enforces one-account-per-email at the lowest level — app checks race, constraints don't."}
+{"instruction": "Give a practical example of `ADD UNIQUE`.", "input": "", "output": "`ADD UNIQUE KEY (emel)` enforces one-account-per-email at the lowest level — app checks race, constraints don't."}
+{"instruction": "What is `ADD UNIQUE` for?", "input": "", "output": "`ADD UNIQUE KEY (emel)` enforces one-account-per-email at the lowest level — app checks race, constraints don't."}
+{"instruction": "Apakah fungsi `ADD UNIQUE`?", "input": "", "output": "`ADD UNIQUE KEY (emel)` enforces one-account-per-email at the lowest level — app checks race, constraints don't."}
+{"instruction": "Terangkan `ADD UNIQUE` secara ringkas.", "input": "", "output": "`ADD UNIQUE KEY (emel)` enforces one-account-per-email at the lowest level — app checks race, constraints don't."}
+{"instruction": "Bila perlu guna `ADD UNIQUE`?", "input": "", "output": "`ADD UNIQUE KEY (emel)` enforces one-account-per-email at the lowest level — app checks race, constraints don't."}
+{"instruction": "Beri contoh penggunaan `ADD UNIQUE`.", "input": "", "output": "`ADD UNIQUE KEY (emel)` enforces one-account-per-email at the lowest level — app checks race, constraints don't."}
+{"instruction": "`ADD UNIQUE` untuk apa?", "input": "", "output": "`ADD UNIQUE KEY (emel)` enforces one-account-per-email at the lowest level — app checks race, constraints don't."}
+{"instruction": "How would you explain `ADD UNIQUE` to a junior developer?", "input": "", "output": "`ADD UNIQUE KEY (emel)` enforces one-account-per-email at the lowest level — app checks race, constraints don't."}
+{"instruction": "Give a real-world scenario for `ADD UNIQUE`.", "input": "", "output": "`ADD UNIQUE KEY (emel)` enforces one-account-per-email at the lowest level — app checks race, constraints don't."}
+{"instruction": "What problem does `ADD UNIQUE` solve?", "input": "", "output": "`ADD UNIQUE KEY (emel)` enforces one-account-per-email at the lowest level — app checks race, constraints don't."}
+{"instruction": "Terangkan `ADD UNIQUE` dalam satu minit.", "input": "", "output": "`ADD UNIQUE KEY (emel)` enforces one-account-per-email at the lowest level — app checks race, constraints don't."}
+{"instruction": "Apa yang perlu saya tahu tentang `ADD UNIQUE`?", "input": "", "output": "`ADD UNIQUE KEY (emel)` enforces one-account-per-email at the lowest level — app checks race, constraints don't."}
+{"instruction": "Bagaimanakah `ADD UNIQUE` berfungsi?", "input": "", "output": "`ADD UNIQUE KEY (emel)` enforces one-account-per-email at the lowest level — app checks race, constraints don't."}
+{"instruction": "Bilakah masa yang sesuai untuk `ADD UNIQUE`?", "input": "", "output": "`ADD UNIQUE KEY (emel)` enforces one-account-per-email at the lowest level — app checks race, constraints don't."}
+{"instruction": "What does `DROP INDEX` do?", "input": "", "output": "`DROP INDEX idx ON t` reverts bad index bets; measure before/after — removal is also an optimization."}
+{"instruction": "Explain `DROP INDEX` briefly.", "input": "", "output": "`DROP INDEX idx ON t` reverts bad index bets; measure before/after — removal is also an optimization."}
+{"instruction": "When do I use `DROP INDEX`?", "input": "", "output": "`DROP INDEX idx ON t` reverts bad index bets; measure before/after — removal is also an optimization."}
+{"instruction": "Give a practical example of `DROP INDEX`.", "input": "", "output": "`DROP INDEX idx ON t` reverts bad index bets; measure before/after — removal is also an optimization."}
+{"instruction": "What is `DROP INDEX` for?", "input": "", "output": "`DROP INDEX idx ON t` reverts bad index bets; measure before/after — removal is also an optimization."}
+{"instruction": "Apakah fungsi `DROP INDEX`?", "input": "", "output": "`DROP INDEX idx ON t` reverts bad index bets; measure before/after — removal is also an optimization."}
+{"instruction": "Terangkan `DROP INDEX` secara ringkas.", "input": "", "output": "`DROP INDEX idx ON t` reverts bad index bets; measure before/after — removal is also an optimization."}
+{"instruction": "Bila perlu guna `DROP INDEX`?", "input": "", "output": "`DROP INDEX idx ON t` reverts bad index bets; measure before/after — removal is also an optimization."}
+{"instruction": "Beri contoh penggunaan `DROP INDEX`.", "input": "", "output": "`DROP INDEX idx ON t` reverts bad index bets; measure before/after — removal is also an optimization."}
+{"instruction": "`DROP INDEX` untuk apa?", "input": "", "output": "`DROP INDEX idx ON t` reverts bad index bets; measure before/after — removal is also an optimization."}
+{"instruction": "How would you explain `DROP INDEX` to a junior developer?", "input": "", "output": "`DROP INDEX idx ON t` reverts bad index bets; measure before/after — removal is also an optimization."}
+{"instruction": "Give a real-world scenario for `DROP INDEX`.", "input": "", "output": "`DROP INDEX idx ON t` reverts bad index bets; measure before/after — removal is also an optimization."}
+{"instruction": "What problem does `DROP INDEX` solve?", "input": "", "output": "`DROP INDEX idx ON t` reverts bad index bets; measure before/after — removal is also an optimization."}
+{"instruction": "Terangkan `DROP INDEX` dalam satu minit.", "input": "", "output": "`DROP INDEX idx ON t` reverts bad index bets; measure before/after — removal is also an optimization."}
+{"instruction": "Apa yang perlu saya tahu tentang `DROP INDEX`?", "input": "", "output": "`DROP INDEX idx ON t` reverts bad index bets; measure before/after — removal is also an optimization."}
+{"instruction": "Bagaimanakah `DROP INDEX` berfungsi?", "input": "", "output": "`DROP INDEX idx ON t` reverts bad index bets; measure before/after — removal is also an optimization."}
+{"instruction": "Bilakah masa yang sesuai untuk `DROP INDEX`?", "input": "", "output": "`DROP INDEX idx ON t` reverts bad index bets; measure before/after — removal is also an optimization."}
+{"instruction": "What does `SHOW INDEX cardinality` do?", "input": "", "output": "Cardinality estimates guide the optimizer; low-cardinality leading columns waste composite indexes."}
+{"instruction": "Explain `SHOW INDEX cardinality` briefly.", "input": "", "output": "Cardinality estimates guide the optimizer; low-cardinality leading columns waste composite indexes."}
+{"instruction": "When do I use `SHOW INDEX cardinality`?", "input": "", "output": "Cardinality estimates guide the optimizer; low-cardinality leading columns waste composite indexes."}
+{"instruction": "Give a practical example of `SHOW INDEX cardinality`.", "input": "", "output": "Cardinality estimates guide the optimizer; low-cardinality leading columns waste composite indexes."}
+{"instruction": "What is `SHOW INDEX cardinality` for?", "input": "", "output": "Cardinality estimates guide the optimizer; low-cardinality leading columns waste composite indexes."}
+{"instruction": "Apakah fungsi `SHOW INDEX cardinality`?", "input": "", "output": "Cardinality estimates guide the optimizer; low-cardinality leading columns waste composite indexes."}
+{"instruction": "Terangkan `SHOW INDEX cardinality` secara ringkas.", "input": "", "output": "Cardinality estimates guide the optimizer; low-cardinality leading columns waste composite indexes."}
+{"instruction": "Bila perlu guna `SHOW INDEX cardinality`?", "input": "", "output": "Cardinality estimates guide the optimizer; low-cardinality leading columns waste composite indexes."}
+{"instruction": "Beri contoh penggunaan `SHOW INDEX cardinality`.", "input": "", "output": "Cardinality estimates guide the optimizer; low-cardinality leading columns waste composite indexes."}
+{"instruction": "`SHOW INDEX cardinality` untuk apa?", "input": "", "output": "Cardinality estimates guide the optimizer; low-cardinality leading columns waste composite indexes."}
+{"instruction": "How would you explain `SHOW INDEX cardinality` to a junior developer?", "input": "", "output": "Cardinality estimates guide the optimizer; low-cardinality leading columns waste composite indexes."}
+{"instruction": "Give a real-world scenario for `SHOW INDEX cardinality`.", "input": "", "output": "Cardinality estimates guide the optimizer; low-cardinality leading columns waste composite indexes."}
+{"instruction": "What problem does `SHOW INDEX cardinality` solve?", "input": "", "output": "Cardinality estimates guide the optimizer; low-cardinality leading columns waste composite indexes."}
+{"instruction": "Terangkan `SHOW INDEX cardinality` dalam satu minit.", "input": "", "output": "Cardinality estimates guide the optimizer; low-cardinality leading columns waste composite indexes."}
+{"instruction": "Apa yang perlu saya tahu tentang `SHOW INDEX cardinality`?", "input": "", "output": "Cardinality estimates guide the optimizer; low-cardinality leading columns waste composite indexes."}
+{"instruction": "Bagaimanakah `SHOW INDEX cardinality` berfungsi?", "input": "", "output": "Cardinality estimates guide the optimizer; low-cardinality leading columns waste composite indexes."}
+{"instruction": "Bilakah masa yang sesuai untuk `SHOW INDEX cardinality`?", "input": "", "output": "Cardinality estimates guide the optimizer; low-cardinality leading columns waste composite indexes."}
+{"instruction": "What does `ANALYZE TABLE` do?", "input": "", "output": "`ANALYZE TABLE t` refreshes optimizer statistics after bulk loads; stale stats pick full scans over indexes."}
+{"instruction": "Explain `ANALYZE TABLE` briefly.", "input": "", "output": "`ANALYZE TABLE t` refreshes optimizer statistics after bulk loads; stale stats pick full scans over indexes."}
+{"instruction": "When do I use `ANALYZE TABLE`?", "input": "", "output": "`ANALYZE TABLE t` refreshes optimizer statistics after bulk loads; stale stats pick full scans over indexes."}
+{"instruction": "Give a practical example of `ANALYZE TABLE`.", "input": "", "output": "`ANALYZE TABLE t` refreshes optimizer statistics after bulk loads; stale stats pick full scans over indexes."}
+{"instruction": "What is `ANALYZE TABLE` for?", "input": "", "output": "`ANALYZE TABLE t` refreshes optimizer statistics after bulk loads; stale stats pick full scans over indexes."}
+{"instruction": "Apakah fungsi `ANALYZE TABLE`?", "input": "", "output": "`ANALYZE TABLE t` refreshes optimizer statistics after bulk loads; stale stats pick full scans over indexes."}
+{"instruction": "Terangkan `ANALYZE TABLE` secara ringkas.", "input": "", "output": "`ANALYZE TABLE t` refreshes optimizer statistics after bulk loads; stale stats pick full scans over indexes."}
+{"instruction": "Bila perlu guna `ANALYZE TABLE`?", "input": "", "output": "`ANALYZE TABLE t` refreshes optimizer statistics after bulk loads; stale stats pick full scans over indexes."}
+{"instruction": "Beri contoh penggunaan `ANALYZE TABLE`.", "input": "", "output": "`ANALYZE TABLE t` refreshes optimizer statistics after bulk loads; stale stats pick full scans over indexes."}
+{"instruction": "`ANALYZE TABLE` untuk apa?", "input": "", "output": "`ANALYZE TABLE t` refreshes optimizer statistics after bulk loads; stale stats pick full scans over indexes."}
+{"instruction": "How would you explain `ANALYZE TABLE` to a junior developer?", "input": "", "output": "`ANALYZE TABLE t` refreshes optimizer statistics after bulk loads; stale stats pick full scans over indexes."}
+{"instruction": "Give a real-world scenario for `ANALYZE TABLE`.", "input": "", "output": "`ANALYZE TABLE t` refreshes optimizer statistics after bulk loads; stale stats pick full scans over indexes."}
+{"instruction": "What problem does `ANALYZE TABLE` solve?", "input": "", "output": "`ANALYZE TABLE t` refreshes optimizer statistics after bulk loads; stale stats pick full scans over indexes."}
+{"instruction": "Terangkan `ANALYZE TABLE` dalam satu minit.", "input": "", "output": "`ANALYZE TABLE t` refreshes optimizer statistics after bulk loads; stale stats pick full scans over indexes."}
+{"instruction": "Apa yang perlu saya tahu tentang `ANALYZE TABLE`?", "input": "", "output": "`ANALYZE TABLE t` refreshes optimizer statistics after bulk loads; stale stats pick full scans over indexes."}
+{"instruction": "Bagaimanakah `ANALYZE TABLE` berfungsi?", "input": "", "output": "`ANALYZE TABLE t` refreshes optimizer statistics after bulk loads; stale stats pick full scans over indexes."}
+{"instruction": "Bilakah masa yang sesuai untuk `ANALYZE TABLE`?", "input": "", "output": "`ANALYZE TABLE t` refreshes optimizer statistics after bulk loads; stale stats pick full scans over indexes."}
+{"instruction": "What does `CHECK TABLE` do?", "input": "", "output": "`CHECK TABLE t` verifies integrity post-crash; `REPAIR` (MyISAM) or dump-reload (InnoDB) follows findings."}
+{"instruction": "Explain `CHECK TABLE` briefly.", "input": "", "output": "`CHECK TABLE t` verifies integrity post-crash; `REPAIR` (MyISAM) or dump-reload (InnoDB) follows findings."}
+{"instruction": "When do I use `CHECK TABLE`?", "input": "", "output": "`CHECK TABLE t` verifies integrity post-crash; `REPAIR` (MyISAM) or dump-reload (InnoDB) follows findings."}
+{"instruction": "Give a practical example of `CHECK TABLE`.", "input": "", "output": "`CHECK TABLE t` verifies integrity post-crash; `REPAIR` (MyISAM) or dump-reload (InnoDB) follows findings."}
+{"instruction": "What is `CHECK TABLE` for?", "input": "", "output": "`CHECK TABLE t` verifies integrity post-crash; `REPAIR` (MyISAM) or dump-reload (InnoDB) follows findings."}
+{"instruction": "Apakah fungsi `CHECK TABLE`?", "input": "", "output": "`CHECK TABLE t` verifies integrity post-crash; `REPAIR` (MyISAM) or dump-reload (InnoDB) follows findings."}
+{"instruction": "Terangkan `CHECK TABLE` secara ringkas.", "input": "", "output": "`CHECK TABLE t` verifies integrity post-crash; `REPAIR` (MyISAM) or dump-reload (InnoDB) follows findings."}
+{"instruction": "Bila perlu guna `CHECK TABLE`?", "input": "", "output": "`CHECK TABLE t` verifies integrity post-crash; `REPAIR` (MyISAM) or dump-reload (InnoDB) follows findings."}
+{"instruction": "Beri contoh penggunaan `CHECK TABLE`.", "input": "", "output": "`CHECK TABLE t` verifies integrity post-crash; `REPAIR` (MyISAM) or dump-reload (InnoDB) follows findings."}
+{"instruction": "`CHECK TABLE` untuk apa?", "input": "", "output": "`CHECK TABLE t` verifies integrity post-crash; `REPAIR` (MyISAM) or dump-reload (InnoDB) follows findings."}
+{"instruction": "How would you explain `CHECK TABLE` to a junior developer?", "input": "", "output": "`CHECK TABLE t` verifies integrity post-crash; `REPAIR` (MyISAM) or dump-reload (InnoDB) follows findings."}
+{"instruction": "Give a real-world scenario for `CHECK TABLE`.", "input": "", "output": "`CHECK TABLE t` verifies integrity post-crash; `REPAIR` (MyISAM) or dump-reload (InnoDB) follows findings."}
+{"instruction": "What problem does `CHECK TABLE` solve?", "input": "", "output": "`CHECK TABLE t` verifies integrity post-crash; `REPAIR` (MyISAM) or dump-reload (InnoDB) follows findings."}
+{"instruction": "Terangkan `CHECK TABLE` dalam satu minit.", "input": "", "output": "`CHECK TABLE t` verifies integrity post-crash; `REPAIR` (MyISAM) or dump-reload (InnoDB) follows findings."}
+{"instruction": "Apa yang perlu saya tahu tentang `CHECK TABLE`?", "input": "", "output": "`CHECK TABLE t` verifies integrity post-crash; `REPAIR` (MyISAM) or dump-reload (InnoDB) follows findings."}
+{"instruction": "Bagaimanakah `CHECK TABLE` berfungsi?", "input": "", "output": "`CHECK TABLE t` verifies integrity post-crash; `REPAIR` (MyISAM) or dump-reload (InnoDB) follows findings."}
+{"instruction": "Bilakah masa yang sesuai untuk `CHECK TABLE`?", "input": "", "output": "`CHECK TABLE t` verifies integrity post-crash; `REPAIR` (MyISAM) or dump-reload (InnoDB) follows findings."}

@@ -474,3 +474,615 @@
 {"instruction": "How would you explain `mount umount` to a junior developer?", "input": "", "output": "`mount /dev/sdb1 /data` attaches storage; `umount` detaches (fails if busy — find culprits with `lsof`)."}
 {"instruction": "Give a real-world scenario for `mount umount`.", "input": "", "output": "`mount /dev/sdb1 /data` attaches storage; `umount` detaches (fails if busy — find culprits with `lsof`)."}
 {"instruction": "What problem does `mount umount` solve?", "input": "", "output": "`mount /dev/sdb1 /data` attaches storage; `umount` detaches (fails if busy — find culprits with `lsof`)."}
+{"instruction": "Terangkan `ls -la` dalam satu minit.", "input": "", "output": "`ls -la` lists all files with details; `-l` long format, `-a` includes hidden dotfiles."}
+{"instruction": "Apa yang perlu saya tahu tentang `ls -la`?", "input": "", "output": "`ls -la` lists all files with details; `-l` long format, `-a` includes hidden dotfiles."}
+{"instruction": "Bagaimanakah `ls -la` berfungsi?", "input": "", "output": "`ls -la` lists all files with details; `-l` long format, `-a` includes hidden dotfiles."}
+{"instruction": "Bilakah masa yang sesuai untuk `ls -la`?", "input": "", "output": "`ls -la` lists all files with details; `-l` long format, `-a` includes hidden dotfiles."}
+{"instruction": "Terangkan `df -h` dalam satu minit.", "input": "", "output": "`df -h` shows disk usage per filesystem in human units; add `-i` to check inode exhaustion."}
+{"instruction": "Apa yang perlu saya tahu tentang `df -h`?", "input": "", "output": "`df -h` shows disk usage per filesystem in human units; add `-i` to check inode exhaustion."}
+{"instruction": "Bagaimanakah `df -h` berfungsi?", "input": "", "output": "`df -h` shows disk usage per filesystem in human units; add `-i` to check inode exhaustion."}
+{"instruction": "Bilakah masa yang sesuai untuk `df -h`?", "input": "", "output": "`df -h` shows disk usage per filesystem in human units; add `-i` to check inode exhaustion."}
+{"instruction": "Terangkan `du -sh *` dalam satu minit.", "input": "", "output": "`du -sh *` ranks directory sizes; pipe to `sort -h` for biggest-first cleanup hunting."}
+{"instruction": "Apa yang perlu saya tahu tentang `du -sh *`?", "input": "", "output": "`du -sh *` ranks directory sizes; pipe to `sort -h` for biggest-first cleanup hunting."}
+{"instruction": "Bagaimanakah `du -sh *` berfungsi?", "input": "", "output": "`du -sh *` ranks directory sizes; pipe to `sort -h` for biggest-first cleanup hunting."}
+{"instruction": "Bilakah masa yang sesuai untuk `du -sh *`?", "input": "", "output": "`du -sh *` ranks directory sizes; pipe to `sort -h` for biggest-first cleanup hunting."}
+{"instruction": "Terangkan `free -h` dalam satu minit.", "input": "", "output": "`free -h` shows RAM/swap; watch the `available` column, not `free`, for real headroom."}
+{"instruction": "Apa yang perlu saya tahu tentang `free -h`?", "input": "", "output": "`free -h` shows RAM/swap; watch the `available` column, not `free`, for real headroom."}
+{"instruction": "Bagaimanakah `free -h` berfungsi?", "input": "", "output": "`free -h` shows RAM/swap; watch the `available` column, not `free`, for real headroom."}
+{"instruction": "Bilakah masa yang sesuai untuk `free -h`?", "input": "", "output": "`free -h` shows RAM/swap; watch the `available` column, not `free`, for real headroom."}
+{"instruction": "Terangkan `ps aux` dalam satu minit.", "input": "", "output": "`ps aux` lists all processes with CPU/mem; pipe to `sort` or pair with `top` for live view."}
+{"instruction": "Apa yang perlu saya tahu tentang `ps aux`?", "input": "", "output": "`ps aux` lists all processes with CPU/mem; pipe to `sort` or pair with `top` for live view."}
+{"instruction": "Bagaimanakah `ps aux` berfungsi?", "input": "", "output": "`ps aux` lists all processes with CPU/mem; pipe to `sort` or pair with `top` for live view."}
+{"instruction": "Bilakah masa yang sesuai untuk `ps aux`?", "input": "", "output": "`ps aux` lists all processes with CPU/mem; pipe to `sort` or pair with `top` for live view."}
+{"instruction": "Terangkan `top` dalam satu minit.", "input": "", "output": "`top` is the live process monitor (CPU, mem, load); press `q` to quit, `M` sorts by memory."}
+{"instruction": "Apa yang perlu saya tahu tentang `top`?", "input": "", "output": "`top` is the live process monitor (CPU, mem, load); press `q` to quit, `M` sorts by memory."}
+{"instruction": "Bagaimanakah `top` berfungsi?", "input": "", "output": "`top` is the live process monitor (CPU, mem, load); press `q` to quit, `M` sorts by memory."}
+{"instruction": "Bilakah masa yang sesuai untuk `top`?", "input": "", "output": "`top` is the live process monitor (CPU, mem, load); press `q` to quit, `M` sorts by memory."}
+{"instruction": "Terangkan `kill PID` dalam satu minit.", "input": "", "output": "`kill PID` sends SIGTERM for graceful exit; `-9` (SIGKILL) forces when stuck."}
+{"instruction": "Apa yang perlu saya tahu tentang `kill PID`?", "input": "", "output": "`kill PID` sends SIGTERM for graceful exit; `-9` (SIGKILL) forces when stuck."}
+{"instruction": "Bagaimanakah `kill PID` berfungsi?", "input": "", "output": "`kill PID` sends SIGTERM for graceful exit; `-9` (SIGKILL) forces when stuck."}
+{"instruction": "Bilakah masa yang sesuai untuk `kill PID`?", "input": "", "output": "`kill PID` sends SIGTERM for graceful exit; `-9` (SIGKILL) forces when stuck."}
+{"instruction": "Terangkan `pkill -f pola` dalam satu minit.", "input": "", "output": "`pkill -f` kills by full command match — quote the pattern and double-check with `pgrep -f` first."}
+{"instruction": "Apa yang perlu saya tahu tentang `pkill -f pola`?", "input": "", "output": "`pkill -f` kills by full command match — quote the pattern and double-check with `pgrep -f` first."}
+{"instruction": "Bagaimanakah `pkill -f pola` berfungsi?", "input": "", "output": "`pkill -f` kills by full command match — quote the pattern and double-check with `pgrep -f` first."}
+{"instruction": "Bilakah masa yang sesuai untuk `pkill -f pola`?", "input": "", "output": "`pkill -f` kills by full command match — quote the pattern and double-check with `pgrep -f` first."}
+{"instruction": "Terangkan `chmod 755 skrip.sh` dalam satu minit.", "input": "", "output": "`755` = rwxr-xr-x: owner full, others read+execute; scripts need +x, data files must not have it."}
+{"instruction": "Apa yang perlu saya tahu tentang `chmod 755 skrip.sh`?", "input": "", "output": "`755` = rwxr-xr-x: owner full, others read+execute; scripts need +x, data files must not have it."}
+{"instruction": "Bagaimanakah `chmod 755 skrip.sh` berfungsi?", "input": "", "output": "`755` = rwxr-xr-x: owner full, others read+execute; scripts need +x, data files must not have it."}
+{"instruction": "Bilakah masa yang sesuai untuk `chmod 755 skrip.sh`?", "input": "", "output": "`755` = rwxr-xr-x: owner full, others read+execute; scripts need +x, data files must not have it."}
+{"instruction": "Terangkan `chown -R app:app /srv` dalam satu minit.", "input": "", "output": "`chown -R` changes owner recursively; beware symlinks and system dirs."}
+{"instruction": "Apa yang perlu saya tahu tentang `chown -R app:app /srv`?", "input": "", "output": "`chown -R` changes owner recursively; beware symlinks and system dirs."}
+{"instruction": "Bagaimanakah `chown -R app:app /srv` berfungsi?", "input": "", "output": "`chown -R` changes owner recursively; beware symlinks and system dirs."}
+{"instruction": "Bilakah masa yang sesuai untuk `chown -R app:app /srv`?", "input": "", "output": "`chown -R` changes owner recursively; beware symlinks and system dirs."}
+{"instruction": "Terangkan `tar xzf app.tgz` dalam satu minit.", "input": "", "output": "`tar xzf` extracts gzip archives; list first with `tzf` and use `-C dir` to control destination."}
+{"instruction": "Apa yang perlu saya tahu tentang `tar xzf app.tgz`?", "input": "", "output": "`tar xzf` extracts gzip archives; list first with `tzf` and use `-C dir` to control destination."}
+{"instruction": "Bagaimanakah `tar xzf app.tgz` berfungsi?", "input": "", "output": "`tar xzf` extracts gzip archives; list first with `tzf` and use `-C dir` to control destination."}
+{"instruction": "Bilakah masa yang sesuai untuk `tar xzf app.tgz`?", "input": "", "output": "`tar xzf` extracts gzip archives; list first with `tzf` and use `-C dir` to control destination."}
+{"instruction": "Terangkan `grep -r teks .` dalam satu minit.", "input": "", "output": "`grep -r` searches recursively; add `-i` (case), `-n` (line numbers), `--include='*.py'` to narrow."}
+{"instruction": "Apa yang perlu saya tahu tentang `grep -r teks .`?", "input": "", "output": "`grep -r` searches recursively; add `-i` (case), `-n` (line numbers), `--include='*.py'` to narrow."}
+{"instruction": "Bagaimanakah `grep -r teks .` berfungsi?", "input": "", "output": "`grep -r` searches recursively; add `-i` (case), `-n` (line numbers), `--include='*.py'` to narrow."}
+{"instruction": "Bilakah masa yang sesuai untuk `grep -r teks .`?", "input": "", "output": "`grep -r` searches recursively; add `-i` (case), `-n` (line numbers), `--include='*.py'` to narrow."}
+{"instruction": "Terangkan `find . -name '*.log'` dalam satu minit.", "input": "", "output": "`find` locates by name/time/size; `-exec cmd {} +` acts on matches without xargs."}
+{"instruction": "Apa yang perlu saya tahu tentang `find . -name '*.log'`?", "input": "", "output": "`find` locates by name/time/size; `-exec cmd {} +` acts on matches without xargs."}
+{"instruction": "Bagaimanakah `find . -name '*.log'` berfungsi?", "input": "", "output": "`find` locates by name/time/size; `-exec cmd {} +` acts on matches without xargs."}
+{"instruction": "Bilakah masa yang sesuai untuk `find . -name '*.log'`?", "input": "", "output": "`find` locates by name/time/size; `-exec cmd {} +` acts on matches without xargs."}
+{"instruction": "Terangkan `ssh user@hos` dalam satu minit.", "input": "", "output": "`ssh` opens a secure shell; keys (`ssh-keygen`, `ssh-copy-id`) replace passwords."}
+{"instruction": "Apa yang perlu saya tahu tentang `ssh user@hos`?", "input": "", "output": "`ssh` opens a secure shell; keys (`ssh-keygen`, `ssh-copy-id`) replace passwords."}
+{"instruction": "Bagaimanakah `ssh user@hos` berfungsi?", "input": "", "output": "`ssh` opens a secure shell; keys (`ssh-keygen`, `ssh-copy-id`) replace passwords."}
+{"instruction": "Bilakah masa yang sesuai untuk `ssh user@hos`?", "input": "", "output": "`ssh` opens a secure shell; keys (`ssh-keygen`, `ssh-copy-id`) replace passwords."}
+{"instruction": "Terangkan `systemctl restart nginx` dalam satu minit.", "input": "", "output": "`systemctl restart` reloads a service; `enable` persists across boot, `status` shows logs."}
+{"instruction": "Apa yang perlu saya tahu tentang `systemctl restart nginx`?", "input": "", "output": "`systemctl restart` reloads a service; `enable` persists across boot, `status` shows logs."}
+{"instruction": "Bagaimanakah `systemctl restart nginx` berfungsi?", "input": "", "output": "`systemctl restart` reloads a service; `enable` persists across boot, `status` shows logs."}
+{"instruction": "Bilakah masa yang sesuai untuk `systemctl restart nginx`?", "input": "", "output": "`systemctl restart` reloads a service; `enable` persists across boot, `status` shows logs."}
+{"instruction": "Terangkan `journalctl -f` dalam satu minit.", "input": "", "output": "`journalctl -f` tails system logs; `-u unit` and `--since` narrow to incidents."}
+{"instruction": "Apa yang perlu saya tahu tentang `journalctl -f`?", "input": "", "output": "`journalctl -f` tails system logs; `-u unit` and `--since` narrow to incidents."}
+{"instruction": "Bagaimanakah `journalctl -f` berfungsi?", "input": "", "output": "`journalctl -f` tails system logs; `-u unit` and `--since` narrow to incidents."}
+{"instruction": "Bilakah masa yang sesuai untuk `journalctl -f`?", "input": "", "output": "`journalctl -f` tails system logs; `-u unit` and `--since` narrow to incidents."}
+{"instruction": "Terangkan `ufw allow 22/tcp` dalam satu minit.", "input": "", "output": "`ufw allow` opens firewall ports; always allow SSH before `ufw enable` or get locked out."}
+{"instruction": "Apa yang perlu saya tahu tentang `ufw allow 22/tcp`?", "input": "", "output": "`ufw allow` opens firewall ports; always allow SSH before `ufw enable` or get locked out."}
+{"instruction": "Bagaimanakah `ufw allow 22/tcp` berfungsi?", "input": "", "output": "`ufw allow` opens firewall ports; always allow SSH before `ufw enable` or get locked out."}
+{"instruction": "Bilakah masa yang sesuai untuk `ufw allow 22/tcp`?", "input": "", "output": "`ufw allow` opens firewall ports; always allow SSH before `ufw enable` or get locked out."}
+{"instruction": "Terangkan `crontab -e` dalam satu minit.", "input": "", "output": "`crontab -e` edits your schedule (minute hour day month weekday); cron env is minimal, use absolute paths."}
+{"instruction": "Apa yang perlu saya tahu tentang `crontab -e`?", "input": "", "output": "`crontab -e` edits your schedule (minute hour day month weekday); cron env is minimal, use absolute paths."}
+{"instruction": "Bagaimanakah `crontab -e` berfungsi?", "input": "", "output": "`crontab -e` edits your schedule (minute hour day month weekday); cron env is minimal, use absolute paths."}
+{"instruction": "Bilakah masa yang sesuai untuk `crontab -e`?", "input": "", "output": "`crontab -e` edits your schedule (minute hour day month weekday); cron env is minimal, use absolute paths."}
+{"instruction": "Terangkan `ln -s asal pautan` dalam satu minit.", "input": "", "output": "`ln -s` makes a pointer (breaks if target moves); hard links share inodes on one filesystem."}
+{"instruction": "Apa yang perlu saya tahu tentang `ln -s asal pautan`?", "input": "", "output": "`ln -s` makes a pointer (breaks if target moves); hard links share inodes on one filesystem."}
+{"instruction": "Bagaimanakah `ln -s asal pautan` berfungsi?", "input": "", "output": "`ln -s` makes a pointer (breaks if target moves); hard links share inodes on one filesystem."}
+{"instruction": "Bilakah masa yang sesuai untuk `ln -s asal pautan`?", "input": "", "output": "`ln -s` makes a pointer (breaks if target moves); hard links share inodes on one filesystem."}
+{"instruction": "Terangkan `uname -a` dalam satu minit.", "input": "", "output": "`uname -a` prints kernel, hostname and architecture — first line of any bug report."}
+{"instruction": "Apa yang perlu saya tahu tentang `uname -a`?", "input": "", "output": "`uname -a` prints kernel, hostname and architecture — first line of any bug report."}
+{"instruction": "Bagaimanakah `uname -a` berfungsi?", "input": "", "output": "`uname -a` prints kernel, hostname and architecture — first line of any bug report."}
+{"instruction": "Bilakah masa yang sesuai untuk `uname -a`?", "input": "", "output": "`uname -a` prints kernel, hostname and architecture — first line of any bug report."}
+{"instruction": "Terangkan `history` dalam satu minit.", "input": "", "output": "`history` recalls past commands; `!42` reruns number 42, `!!` repeats last — verify before rerunning destructive ones."}
+{"instruction": "Apa yang perlu saya tahu tentang `history`?", "input": "", "output": "`history` recalls past commands; `!42` reruns number 42, `!!` repeats last — verify before rerunning destructive ones."}
+{"instruction": "Bagaimanakah `history` berfungsi?", "input": "", "output": "`history` recalls past commands; `!42` reruns number 42, `!!` repeats last — verify before rerunning destructive ones."}
+{"instruction": "Bilakah masa yang sesuai untuk `history`?", "input": "", "output": "`history` recalls past commands; `!42` reruns number 42, `!!` repeats last — verify before rerunning destructive ones."}
+{"instruction": "Terangkan `alias ll` dalam satu minit.", "input": "", "output": "`alias ll='ls -la'` shortens favorites; persist in ~/.bashrc, reload with `source ~/.bashrc`."}
+{"instruction": "Apa yang perlu saya tahu tentang `alias ll`?", "input": "", "output": "`alias ll='ls -la'` shortens favorites; persist in ~/.bashrc, reload with `source ~/.bashrc`."}
+{"instruction": "Bagaimanakah `alias ll` berfungsi?", "input": "", "output": "`alias ll='ls -la'` shortens favorites; persist in ~/.bashrc, reload with `source ~/.bashrc`."}
+{"instruction": "Bilakah masa yang sesuai untuk `alias ll`?", "input": "", "output": "`alias ll='ls -la'` shortens favorites; persist in ~/.bashrc, reload with `source ~/.bashrc`."}
+{"instruction": "Terangkan `export PATH` dalam satu minit.", "input": "", "output": "`export PATH=$PATH:/opt/bin` extends lookup; verify with `which cmd` and persist in shell rc files."}
+{"instruction": "Apa yang perlu saya tahu tentang `export PATH`?", "input": "", "output": "`export PATH=$PATH:/opt/bin` extends lookup; verify with `which cmd` and persist in shell rc files."}
+{"instruction": "Bagaimanakah `export PATH` berfungsi?", "input": "", "output": "`export PATH=$PATH:/opt/bin` extends lookup; verify with `which cmd` and persist in shell rc files."}
+{"instruction": "Bilakah masa yang sesuai untuk `export PATH`?", "input": "", "output": "`export PATH=$PATH:/opt/bin` extends lookup; verify with `which cmd` and persist in shell rc files."}
+{"instruction": "Terangkan `echo $?` dalam satu minit.", "input": "", "output": "`echo $?` prints the last exit code (0 success); scripts branch on it immediately before it gets clobbered."}
+{"instruction": "Apa yang perlu saya tahu tentang `echo $?`?", "input": "", "output": "`echo $?` prints the last exit code (0 success); scripts branch on it immediately before it gets clobbered."}
+{"instruction": "Bagaimanakah `echo $?` berfungsi?", "input": "", "output": "`echo $?` prints the last exit code (0 success); scripts branch on it immediately before it gets clobbered."}
+{"instruction": "Bilakah masa yang sesuai untuk `echo $?`?", "input": "", "output": "`echo $?` prints the last exit code (0 success); scripts branch on it immediately before it gets clobbered."}
+{"instruction": "Terangkan `whoami id` dalam satu minit.", "input": "", "output": "`whoami`/`id` show user, groups and ids — first check when permissions mysteriously deny."}
+{"instruction": "Apa yang perlu saya tahu tentang `whoami id`?", "input": "", "output": "`whoami`/`id` show user, groups and ids — first check when permissions mysteriously deny."}
+{"instruction": "Bagaimanakah `whoami id` berfungsi?", "input": "", "output": "`whoami`/`id` show user, groups and ids — first check when permissions mysteriously deny."}
+{"instruction": "Bilakah masa yang sesuai untuk `whoami id`?", "input": "", "output": "`whoami`/`id` show user, groups and ids — first check when permissions mysteriously deny."}
+{"instruction": "Terangkan `uptime w` dalam satu minit.", "input": "", "output": "`uptime`/`w` show load averages (1/5/15 min) and logged users; load ≈ CPU count means saturated."}
+{"instruction": "Apa yang perlu saya tahu tentang `uptime w`?", "input": "", "output": "`uptime`/`w` show load averages (1/5/15 min) and logged users; load ≈ CPU count means saturated."}
+{"instruction": "Bagaimanakah `uptime w` berfungsi?", "input": "", "output": "`uptime`/`w` show load averages (1/5/15 min) and logged users; load ≈ CPU count means saturated."}
+{"instruction": "Bilakah masa yang sesuai untuk `uptime w`?", "input": "", "output": "`uptime`/`w` show load averages (1/5/15 min) and logged users; load ≈ CPU count means saturated."}
+{"instruction": "Terangkan `date` dalam satu minit.", "input": "", "output": "`date` prints/sets clock (`date -u` UTC); logs in UTC avoid timezone archaeology later."}
+{"instruction": "Apa yang perlu saya tahu tentang `date`?", "input": "", "output": "`date` prints/sets clock (`date -u` UTC); logs in UTC avoid timezone archaeology later."}
+{"instruction": "Bagaimanakah `date` berfungsi?", "input": "", "output": "`date` prints/sets clock (`date -u` UTC); logs in UTC avoid timezone archaeology later."}
+{"instruction": "Bilakah masa yang sesuai untuk `date`?", "input": "", "output": "`date` prints/sets clock (`date -u` UTC); logs in UTC avoid timezone archaeology later."}
+{"instruction": "Terangkan `df -i` dalam satu minit.", "input": "", "output": "`df -i` reveals inode exhaustion — full with free space means millions of tiny files (caches, sessions)."}
+{"instruction": "Apa yang perlu saya tahu tentang `df -i`?", "input": "", "output": "`df -i` reveals inode exhaustion — full with free space means millions of tiny files (caches, sessions)."}
+{"instruction": "Bagaimanakah `df -i` berfungsi?", "input": "", "output": "`df -i` reveals inode exhaustion — full with free space means millions of tiny files (caches, sessions)."}
+{"instruction": "Bilakah masa yang sesuai untuk `df -i`?", "input": "", "output": "`df -i` reveals inode exhaustion — full with free space means millions of tiny files (caches, sessions)."}
+{"instruction": "Terangkan `du --max-depth=1` dalam satu minit.", "input": "", "output": "`du -h --max-depth=1 | sort -h` drills one level at a time toward the hog without full scans."}
+{"instruction": "Apa yang perlu saya tahu tentang `du --max-depth=1`?", "input": "", "output": "`du -h --max-depth=1 | sort -h` drills one level at a time toward the hog without full scans."}
+{"instruction": "Bagaimanakah `du --max-depth=1` berfungsi?", "input": "", "output": "`du -h --max-depth=1 | sort -h` drills one level at a time toward the hog without full scans."}
+{"instruction": "Bilakah masa yang sesuai untuk `du --max-depth=1`?", "input": "", "output": "`du -h --max-depth=1 | sort -h` drills one level at a time toward the hog without full scans."}
+{"instruction": "Terangkan `sudo !!` dalam satu minit.", "input": "", "output": "`sudo !!` reruns the last command as root after permission-denied — the most typed sudo pattern."}
+{"instruction": "Apa yang perlu saya tahu tentang `sudo !!`?", "input": "", "output": "`sudo !!` reruns the last command as root after permission-denied — the most typed sudo pattern."}
+{"instruction": "Bagaimanakah `sudo !!` berfungsi?", "input": "", "output": "`sudo !!` reruns the last command as root after permission-denied — the most typed sudo pattern."}
+{"instruction": "Bilakah masa yang sesuai untuk `sudo !!`?", "input": "", "output": "`sudo !!` reruns the last command as root after permission-denied — the most typed sudo pattern."}
+{"instruction": "Terangkan `apt update upgrade` dalam satu minit.", "input": "", "output": "`apt update` refreshes lists, `upgrade` installs; `-y` automates, autoremove cleans strays."}
+{"instruction": "Apa yang perlu saya tahu tentang `apt update upgrade`?", "input": "", "output": "`apt update` refreshes lists, `upgrade` installs; `-y` automates, autoremove cleans strays."}
+{"instruction": "Bagaimanakah `apt update upgrade` berfungsi?", "input": "", "output": "`apt update` refreshes lists, `upgrade` installs; `-y` automates, autoremove cleans strays."}
+{"instruction": "Bilakah masa yang sesuai untuk `apt update upgrade`?", "input": "", "output": "`apt update` refreshes lists, `upgrade` installs; `-y` automates, autoremove cleans strays."}
+{"instruction": "Terangkan `systemctl enable --now` dalam satu minit.", "input": "", "output": "`--now` enables plus starts in one shot; `is-enabled`/`is-active` verify each half."}
+{"instruction": "Apa yang perlu saya tahu tentang `systemctl enable --now`?", "input": "", "output": "`--now` enables plus starts in one shot; `is-enabled`/`is-active` verify each half."}
+{"instruction": "Bagaimanakah `systemctl enable --now` berfungsi?", "input": "", "output": "`--now` enables plus starts in one shot; `is-enabled`/`is-active` verify each half."}
+{"instruction": "Bilakah masa yang sesuai untuk `systemctl enable --now`?", "input": "", "output": "`--now` enables plus starts in one shot; `is-enabled`/`is-active` verify each half."}
+{"instruction": "Terangkan `lsblk` dalam satu minit.", "input": "", "output": "`lsblk` maps disks, partitions and mountpoints as a tree — partitioning mistakes show up here first."}
+{"instruction": "Apa yang perlu saya tahu tentang `lsblk`?", "input": "", "output": "`lsblk` maps disks, partitions and mountpoints as a tree — partitioning mistakes show up here first."}
+{"instruction": "Bagaimanakah `lsblk` berfungsi?", "input": "", "output": "`lsblk` maps disks, partitions and mountpoints as a tree — partitioning mistakes show up here first."}
+{"instruction": "Bilakah masa yang sesuai untuk `lsblk`?", "input": "", "output": "`lsblk` maps disks, partitions and mountpoints as a tree — partitioning mistakes show up here first."}
+{"instruction": "Terangkan `mount umount` dalam satu minit.", "input": "", "output": "`mount /dev/sdb1 /data` attaches storage; `umount` detaches (fails if busy — find culprits with `lsof`)."}
+{"instruction": "Apa yang perlu saya tahu tentang `mount umount`?", "input": "", "output": "`mount /dev/sdb1 /data` attaches storage; `umount` detaches (fails if busy — find culprits with `lsof`)."}
+{"instruction": "Bagaimanakah `mount umount` berfungsi?", "input": "", "output": "`mount /dev/sdb1 /data` attaches storage; `umount` detaches (fails if busy — find culprits with `lsof`)."}
+{"instruction": "Bilakah masa yang sesuai untuk `mount umount`?", "input": "", "output": "`mount /dev/sdb1 /data` attaches storage; `umount` detaches (fails if busy — find culprits with `lsof`)."}
+{"instruction": "What does `ss -tlnp` do?", "input": "", "output": "`ss -tlnp` shows listening TCP ports with owning processes — faster modern `netstat`; pair with firewall rules."}
+{"instruction": "Explain `ss -tlnp` briefly.", "input": "", "output": "`ss -tlnp` shows listening TCP ports with owning processes — faster modern `netstat`; pair with firewall rules."}
+{"instruction": "When do I use `ss -tlnp`?", "input": "", "output": "`ss -tlnp` shows listening TCP ports with owning processes — faster modern `netstat`; pair with firewall rules."}
+{"instruction": "Give a practical example of `ss -tlnp`.", "input": "", "output": "`ss -tlnp` shows listening TCP ports with owning processes — faster modern `netstat`; pair with firewall rules."}
+{"instruction": "What is `ss -tlnp` for?", "input": "", "output": "`ss -tlnp` shows listening TCP ports with owning processes — faster modern `netstat`; pair with firewall rules."}
+{"instruction": "Apakah fungsi `ss -tlnp`?", "input": "", "output": "`ss -tlnp` shows listening TCP ports with owning processes — faster modern `netstat`; pair with firewall rules."}
+{"instruction": "Terangkan `ss -tlnp` secara ringkas.", "input": "", "output": "`ss -tlnp` shows listening TCP ports with owning processes — faster modern `netstat`; pair with firewall rules."}
+{"instruction": "Bila perlu guna `ss -tlnp`?", "input": "", "output": "`ss -tlnp` shows listening TCP ports with owning processes — faster modern `netstat`; pair with firewall rules."}
+{"instruction": "Beri contoh penggunaan `ss -tlnp`.", "input": "", "output": "`ss -tlnp` shows listening TCP ports with owning processes — faster modern `netstat`; pair with firewall rules."}
+{"instruction": "`ss -tlnp` untuk apa?", "input": "", "output": "`ss -tlnp` shows listening TCP ports with owning processes — faster modern `netstat`; pair with firewall rules."}
+{"instruction": "How would you explain `ss -tlnp` to a junior developer?", "input": "", "output": "`ss -tlnp` shows listening TCP ports with owning processes — faster modern `netstat`; pair with firewall rules."}
+{"instruction": "Give a real-world scenario for `ss -tlnp`.", "input": "", "output": "`ss -tlnp` shows listening TCP ports with owning processes — faster modern `netstat`; pair with firewall rules."}
+{"instruction": "What problem does `ss -tlnp` solve?", "input": "", "output": "`ss -tlnp` shows listening TCP ports with owning processes — faster modern `netstat`; pair with firewall rules."}
+{"instruction": "Terangkan `ss -tlnp` dalam satu minit.", "input": "", "output": "`ss -tlnp` shows listening TCP ports with owning processes — faster modern `netstat`; pair with firewall rules."}
+{"instruction": "Apa yang perlu saya tahu tentang `ss -tlnp`?", "input": "", "output": "`ss -tlnp` shows listening TCP ports with owning processes — faster modern `netstat`; pair with firewall rules."}
+{"instruction": "Bagaimanakah `ss -tlnp` berfungsi?", "input": "", "output": "`ss -tlnp` shows listening TCP ports with owning processes — faster modern `netstat`; pair with firewall rules."}
+{"instruction": "Bilakah masa yang sesuai untuk `ss -tlnp`?", "input": "", "output": "`ss -tlnp` shows listening TCP ports with owning processes — faster modern `netstat`; pair with firewall rules."}
+{"instruction": "What does `lsof -i` do?", "input": "", "output": "`lsof -i :8080` reveals who holds a port; `lsof +D /data` lists open files under a tree before unmounting."}
+{"instruction": "Explain `lsof -i` briefly.", "input": "", "output": "`lsof -i :8080` reveals who holds a port; `lsof +D /data` lists open files under a tree before unmounting."}
+{"instruction": "When do I use `lsof -i`?", "input": "", "output": "`lsof -i :8080` reveals who holds a port; `lsof +D /data` lists open files under a tree before unmounting."}
+{"instruction": "Give a practical example of `lsof -i`.", "input": "", "output": "`lsof -i :8080` reveals who holds a port; `lsof +D /data` lists open files under a tree before unmounting."}
+{"instruction": "What is `lsof -i` for?", "input": "", "output": "`lsof -i :8080` reveals who holds a port; `lsof +D /data` lists open files under a tree before unmounting."}
+{"instruction": "Apakah fungsi `lsof -i`?", "input": "", "output": "`lsof -i :8080` reveals who holds a port; `lsof +D /data` lists open files under a tree before unmounting."}
+{"instruction": "Terangkan `lsof -i` secara ringkas.", "input": "", "output": "`lsof -i :8080` reveals who holds a port; `lsof +D /data` lists open files under a tree before unmounting."}
+{"instruction": "Bila perlu guna `lsof -i`?", "input": "", "output": "`lsof -i :8080` reveals who holds a port; `lsof +D /data` lists open files under a tree before unmounting."}
+{"instruction": "Beri contoh penggunaan `lsof -i`.", "input": "", "output": "`lsof -i :8080` reveals who holds a port; `lsof +D /data` lists open files under a tree before unmounting."}
+{"instruction": "`lsof -i` untuk apa?", "input": "", "output": "`lsof -i :8080` reveals who holds a port; `lsof +D /data` lists open files under a tree before unmounting."}
+{"instruction": "How would you explain `lsof -i` to a junior developer?", "input": "", "output": "`lsof -i :8080` reveals who holds a port; `lsof +D /data` lists open files under a tree before unmounting."}
+{"instruction": "Give a real-world scenario for `lsof -i`.", "input": "", "output": "`lsof -i :8080` reveals who holds a port; `lsof +D /data` lists open files under a tree before unmounting."}
+{"instruction": "What problem does `lsof -i` solve?", "input": "", "output": "`lsof -i :8080` reveals who holds a port; `lsof +D /data` lists open files under a tree before unmounting."}
+{"instruction": "Terangkan `lsof -i` dalam satu minit.", "input": "", "output": "`lsof -i :8080` reveals who holds a port; `lsof +D /data` lists open files under a tree before unmounting."}
+{"instruction": "Apa yang perlu saya tahu tentang `lsof -i`?", "input": "", "output": "`lsof -i :8080` reveals who holds a port; `lsof +D /data` lists open files under a tree before unmounting."}
+{"instruction": "Bagaimanakah `lsof -i` berfungsi?", "input": "", "output": "`lsof -i :8080` reveals who holds a port; `lsof +D /data` lists open files under a tree before unmounting."}
+{"instruction": "Bilakah masa yang sesuai untuk `lsof -i`?", "input": "", "output": "`lsof -i :8080` reveals who holds a port; `lsof +D /data` lists open files under a tree before unmounting."}
+{"instruction": "What does `dmesg tail` do?", "input": "", "output": "`dmesg | tail` shows kernel messages (OOM kills, USB, driver errors); `-T` human timestamps, `-l err` filters."}
+{"instruction": "Explain `dmesg tail` briefly.", "input": "", "output": "`dmesg | tail` shows kernel messages (OOM kills, USB, driver errors); `-T` human timestamps, `-l err` filters."}
+{"instruction": "When do I use `dmesg tail`?", "input": "", "output": "`dmesg | tail` shows kernel messages (OOM kills, USB, driver errors); `-T` human timestamps, `-l err` filters."}
+{"instruction": "Give a practical example of `dmesg tail`.", "input": "", "output": "`dmesg | tail` shows kernel messages (OOM kills, USB, driver errors); `-T` human timestamps, `-l err` filters."}
+{"instruction": "What is `dmesg tail` for?", "input": "", "output": "`dmesg | tail` shows kernel messages (OOM kills, USB, driver errors); `-T` human timestamps, `-l err` filters."}
+{"instruction": "Apakah fungsi `dmesg tail`?", "input": "", "output": "`dmesg | tail` shows kernel messages (OOM kills, USB, driver errors); `-T` human timestamps, `-l err` filters."}
+{"instruction": "Terangkan `dmesg tail` secara ringkas.", "input": "", "output": "`dmesg | tail` shows kernel messages (OOM kills, USB, driver errors); `-T` human timestamps, `-l err` filters."}
+{"instruction": "Bila perlu guna `dmesg tail`?", "input": "", "output": "`dmesg | tail` shows kernel messages (OOM kills, USB, driver errors); `-T` human timestamps, `-l err` filters."}
+{"instruction": "Beri contoh penggunaan `dmesg tail`.", "input": "", "output": "`dmesg | tail` shows kernel messages (OOM kills, USB, driver errors); `-T` human timestamps, `-l err` filters."}
+{"instruction": "`dmesg tail` untuk apa?", "input": "", "output": "`dmesg | tail` shows kernel messages (OOM kills, USB, driver errors); `-T` human timestamps, `-l err` filters."}
+{"instruction": "How would you explain `dmesg tail` to a junior developer?", "input": "", "output": "`dmesg | tail` shows kernel messages (OOM kills, USB, driver errors); `-T` human timestamps, `-l err` filters."}
+{"instruction": "Give a real-world scenario for `dmesg tail`.", "input": "", "output": "`dmesg | tail` shows kernel messages (OOM kills, USB, driver errors); `-T` human timestamps, `-l err` filters."}
+{"instruction": "What problem does `dmesg tail` solve?", "input": "", "output": "`dmesg | tail` shows kernel messages (OOM kills, USB, driver errors); `-T` human timestamps, `-l err` filters."}
+{"instruction": "Terangkan `dmesg tail` dalam satu minit.", "input": "", "output": "`dmesg | tail` shows kernel messages (OOM kills, USB, driver errors); `-T` human timestamps, `-l err` filters."}
+{"instruction": "Apa yang perlu saya tahu tentang `dmesg tail`?", "input": "", "output": "`dmesg | tail` shows kernel messages (OOM kills, USB, driver errors); `-T` human timestamps, `-l err` filters."}
+{"instruction": "Bagaimanakah `dmesg tail` berfungsi?", "input": "", "output": "`dmesg | tail` shows kernel messages (OOM kills, USB, driver errors); `-T` human timestamps, `-l err` filters."}
+{"instruction": "Bilakah masa yang sesuai untuk `dmesg tail`?", "input": "", "output": "`dmesg | tail` shows kernel messages (OOM kills, USB, driver errors); `-T` human timestamps, `-l err` filters."}
+{"instruction": "What does `nproc lscpu` do?", "input": "", "output": "`nproc` counts CPUs for `-j` parallelism; `lscpu` details architecture, sockets and flags for sizing."}
+{"instruction": "Explain `nproc lscpu` briefly.", "input": "", "output": "`nproc` counts CPUs for `-j` parallelism; `lscpu` details architecture, sockets and flags for sizing."}
+{"instruction": "When do I use `nproc lscpu`?", "input": "", "output": "`nproc` counts CPUs for `-j` parallelism; `lscpu` details architecture, sockets and flags for sizing."}
+{"instruction": "Give a practical example of `nproc lscpu`.", "input": "", "output": "`nproc` counts CPUs for `-j` parallelism; `lscpu` details architecture, sockets and flags for sizing."}
+{"instruction": "What is `nproc lscpu` for?", "input": "", "output": "`nproc` counts CPUs for `-j` parallelism; `lscpu` details architecture, sockets and flags for sizing."}
+{"instruction": "Apakah fungsi `nproc lscpu`?", "input": "", "output": "`nproc` counts CPUs for `-j` parallelism; `lscpu` details architecture, sockets and flags for sizing."}
+{"instruction": "Terangkan `nproc lscpu` secara ringkas.", "input": "", "output": "`nproc` counts CPUs for `-j` parallelism; `lscpu` details architecture, sockets and flags for sizing."}
+{"instruction": "Bila perlu guna `nproc lscpu`?", "input": "", "output": "`nproc` counts CPUs for `-j` parallelism; `lscpu` details architecture, sockets and flags for sizing."}
+{"instruction": "Beri contoh penggunaan `nproc lscpu`.", "input": "", "output": "`nproc` counts CPUs for `-j` parallelism; `lscpu` details architecture, sockets and flags for sizing."}
+{"instruction": "`nproc lscpu` untuk apa?", "input": "", "output": "`nproc` counts CPUs for `-j` parallelism; `lscpu` details architecture, sockets and flags for sizing."}
+{"instruction": "How would you explain `nproc lscpu` to a junior developer?", "input": "", "output": "`nproc` counts CPUs for `-j` parallelism; `lscpu` details architecture, sockets and flags for sizing."}
+{"instruction": "Give a real-world scenario for `nproc lscpu`.", "input": "", "output": "`nproc` counts CPUs for `-j` parallelism; `lscpu` details architecture, sockets and flags for sizing."}
+{"instruction": "What problem does `nproc lscpu` solve?", "input": "", "output": "`nproc` counts CPUs for `-j` parallelism; `lscpu` details architecture, sockets and flags for sizing."}
+{"instruction": "Terangkan `nproc lscpu` dalam satu minit.", "input": "", "output": "`nproc` counts CPUs for `-j` parallelism; `lscpu` details architecture, sockets and flags for sizing."}
+{"instruction": "Apa yang perlu saya tahu tentang `nproc lscpu`?", "input": "", "output": "`nproc` counts CPUs for `-j` parallelism; `lscpu` details architecture, sockets and flags for sizing."}
+{"instruction": "Bagaimanakah `nproc lscpu` berfungsi?", "input": "", "output": "`nproc` counts CPUs for `-j` parallelism; `lscpu` details architecture, sockets and flags for sizing."}
+{"instruction": "Bilakah masa yang sesuai untuk `nproc lscpu`?", "input": "", "output": "`nproc` counts CPUs for `-j` parallelism; `lscpu` details architecture, sockets and flags for sizing."}
+{"instruction": "What does `ls -l decode` do?", "input": "", "output": "`-rwxr-xr--` reads owner/group/other × read/write/exec; leading `d/l/-` marks dir/link/file."}
+{"instruction": "Explain `ls -l decode` briefly.", "input": "", "output": "`-rwxr-xr--` reads owner/group/other × read/write/exec; leading `d/l/-` marks dir/link/file."}
+{"instruction": "When do I use `ls -l decode`?", "input": "", "output": "`-rwxr-xr--` reads owner/group/other × read/write/exec; leading `d/l/-` marks dir/link/file."}
+{"instruction": "Give a practical example of `ls -l decode`.", "input": "", "output": "`-rwxr-xr--` reads owner/group/other × read/write/exec; leading `d/l/-` marks dir/link/file."}
+{"instruction": "What is `ls -l decode` for?", "input": "", "output": "`-rwxr-xr--` reads owner/group/other × read/write/exec; leading `d/l/-` marks dir/link/file."}
+{"instruction": "Apakah fungsi `ls -l decode`?", "input": "", "output": "`-rwxr-xr--` reads owner/group/other × read/write/exec; leading `d/l/-` marks dir/link/file."}
+{"instruction": "Terangkan `ls -l decode` secara ringkas.", "input": "", "output": "`-rwxr-xr--` reads owner/group/other × read/write/exec; leading `d/l/-` marks dir/link/file."}
+{"instruction": "Bila perlu guna `ls -l decode`?", "input": "", "output": "`-rwxr-xr--` reads owner/group/other × read/write/exec; leading `d/l/-` marks dir/link/file."}
+{"instruction": "Beri contoh penggunaan `ls -l decode`.", "input": "", "output": "`-rwxr-xr--` reads owner/group/other × read/write/exec; leading `d/l/-` marks dir/link/file."}
+{"instruction": "`ls -l decode` untuk apa?", "input": "", "output": "`-rwxr-xr--` reads owner/group/other × read/write/exec; leading `d/l/-` marks dir/link/file."}
+{"instruction": "How would you explain `ls -l decode` to a junior developer?", "input": "", "output": "`-rwxr-xr--` reads owner/group/other × read/write/exec; leading `d/l/-` marks dir/link/file."}
+{"instruction": "Give a real-world scenario for `ls -l decode`.", "input": "", "output": "`-rwxr-xr--` reads owner/group/other × read/write/exec; leading `d/l/-` marks dir/link/file."}
+{"instruction": "What problem does `ls -l decode` solve?", "input": "", "output": "`-rwxr-xr--` reads owner/group/other × read/write/exec; leading `d/l/-` marks dir/link/file."}
+{"instruction": "Terangkan `ls -l decode` dalam satu minit.", "input": "", "output": "`-rwxr-xr--` reads owner/group/other × read/write/exec; leading `d/l/-` marks dir/link/file."}
+{"instruction": "Apa yang perlu saya tahu tentang `ls -l decode`?", "input": "", "output": "`-rwxr-xr--` reads owner/group/other × read/write/exec; leading `d/l/-` marks dir/link/file."}
+{"instruction": "Bagaimanakah `ls -l decode` berfungsi?", "input": "", "output": "`-rwxr-xr--` reads owner/group/other × read/write/exec; leading `d/l/-` marks dir/link/file."}
+{"instruction": "Bilakah masa yang sesuai untuk `ls -l decode`?", "input": "", "output": "`-rwxr-xr--` reads owner/group/other × read/write/exec; leading `d/l/-` marks dir/link/file."}
+{"instruction": "What does `file type` do?", "input": "", "output": "`file app.bin` sniffs magic bytes (ELF, PNG, text) regardless of extension — trust bytes, not names."}
+{"instruction": "Explain `file type` briefly.", "input": "", "output": "`file app.bin` sniffs magic bytes (ELF, PNG, text) regardless of extension — trust bytes, not names."}
+{"instruction": "When do I use `file type`?", "input": "", "output": "`file app.bin` sniffs magic bytes (ELF, PNG, text) regardless of extension — trust bytes, not names."}
+{"instruction": "Give a practical example of `file type`.", "input": "", "output": "`file app.bin` sniffs magic bytes (ELF, PNG, text) regardless of extension — trust bytes, not names."}
+{"instruction": "What is `file type` for?", "input": "", "output": "`file app.bin` sniffs magic bytes (ELF, PNG, text) regardless of extension — trust bytes, not names."}
+{"instruction": "Apakah fungsi `file type`?", "input": "", "output": "`file app.bin` sniffs magic bytes (ELF, PNG, text) regardless of extension — trust bytes, not names."}
+{"instruction": "Terangkan `file type` secara ringkas.", "input": "", "output": "`file app.bin` sniffs magic bytes (ELF, PNG, text) regardless of extension — trust bytes, not names."}
+{"instruction": "Bila perlu guna `file type`?", "input": "", "output": "`file app.bin` sniffs magic bytes (ELF, PNG, text) regardless of extension — trust bytes, not names."}
+{"instruction": "Beri contoh penggunaan `file type`.", "input": "", "output": "`file app.bin` sniffs magic bytes (ELF, PNG, text) regardless of extension — trust bytes, not names."}
+{"instruction": "`file type` untuk apa?", "input": "", "output": "`file app.bin` sniffs magic bytes (ELF, PNG, text) regardless of extension — trust bytes, not names."}
+{"instruction": "How would you explain `file type` to a junior developer?", "input": "", "output": "`file app.bin` sniffs magic bytes (ELF, PNG, text) regardless of extension — trust bytes, not names."}
+{"instruction": "Give a real-world scenario for `file type`.", "input": "", "output": "`file app.bin` sniffs magic bytes (ELF, PNG, text) regardless of extension — trust bytes, not names."}
+{"instruction": "What problem does `file type` solve?", "input": "", "output": "`file app.bin` sniffs magic bytes (ELF, PNG, text) regardless of extension — trust bytes, not names."}
+{"instruction": "Terangkan `file type` dalam satu minit.", "input": "", "output": "`file app.bin` sniffs magic bytes (ELF, PNG, text) regardless of extension — trust bytes, not names."}
+{"instruction": "Apa yang perlu saya tahu tentang `file type`?", "input": "", "output": "`file app.bin` sniffs magic bytes (ELF, PNG, text) regardless of extension — trust bytes, not names."}
+{"instruction": "Bagaimanakah `file type` berfungsi?", "input": "", "output": "`file app.bin` sniffs magic bytes (ELF, PNG, text) regardless of extension — trust bytes, not names."}
+{"instruction": "Bilakah masa yang sesuai untuk `file type`?", "input": "", "output": "`file app.bin` sniffs magic bytes (ELF, PNG, text) regardless of extension — trust bytes, not names."}
+{"instruction": "What does `which whereis` do?", "input": "", "output": "`which python` finds the executed binary via PATH; `whereis` adds man pages and sources."}
+{"instruction": "Explain `which whereis` briefly.", "input": "", "output": "`which python` finds the executed binary via PATH; `whereis` adds man pages and sources."}
+{"instruction": "When do I use `which whereis`?", "input": "", "output": "`which python` finds the executed binary via PATH; `whereis` adds man pages and sources."}
+{"instruction": "Give a practical example of `which whereis`.", "input": "", "output": "`which python` finds the executed binary via PATH; `whereis` adds man pages and sources."}
+{"instruction": "What is `which whereis` for?", "input": "", "output": "`which python` finds the executed binary via PATH; `whereis` adds man pages and sources."}
+{"instruction": "Apakah fungsi `which whereis`?", "input": "", "output": "`which python` finds the executed binary via PATH; `whereis` adds man pages and sources."}
+{"instruction": "Terangkan `which whereis` secara ringkas.", "input": "", "output": "`which python` finds the executed binary via PATH; `whereis` adds man pages and sources."}
+{"instruction": "Bila perlu guna `which whereis`?", "input": "", "output": "`which python` finds the executed binary via PATH; `whereis` adds man pages and sources."}
+{"instruction": "Beri contoh penggunaan `which whereis`.", "input": "", "output": "`which python` finds the executed binary via PATH; `whereis` adds man pages and sources."}
+{"instruction": "`which whereis` untuk apa?", "input": "", "output": "`which python` finds the executed binary via PATH; `whereis` adds man pages and sources."}
+{"instruction": "How would you explain `which whereis` to a junior developer?", "input": "", "output": "`which python` finds the executed binary via PATH; `whereis` adds man pages and sources."}
+{"instruction": "Give a real-world scenario for `which whereis`.", "input": "", "output": "`which python` finds the executed binary via PATH; `whereis` adds man pages and sources."}
+{"instruction": "What problem does `which whereis` solve?", "input": "", "output": "`which python` finds the executed binary via PATH; `whereis` adds man pages and sources."}
+{"instruction": "Terangkan `which whereis` dalam satu minit.", "input": "", "output": "`which python` finds the executed binary via PATH; `whereis` adds man pages and sources."}
+{"instruction": "Apa yang perlu saya tahu tentang `which whereis`?", "input": "", "output": "`which python` finds the executed binary via PATH; `whereis` adds man pages and sources."}
+{"instruction": "Bagaimanakah `which whereis` berfungsi?", "input": "", "output": "`which python` finds the executed binary via PATH; `whereis` adds man pages and sources."}
+{"instruction": "Bilakah masa yang sesuai untuk `which whereis`?", "input": "", "output": "`which python` finds the executed binary via PATH; `whereis` adds man pages and sources."}
+{"instruction": "What does `env printenv` do?", "input": "", "output": "`env`/`printenv` dump environment; `VAR=x cmd` scopes one-shot vars without exporting globally."}
+{"instruction": "Explain `env printenv` briefly.", "input": "", "output": "`env`/`printenv` dump environment; `VAR=x cmd` scopes one-shot vars without exporting globally."}
+{"instruction": "When do I use `env printenv`?", "input": "", "output": "`env`/`printenv` dump environment; `VAR=x cmd` scopes one-shot vars without exporting globally."}
+{"instruction": "Give a practical example of `env printenv`.", "input": "", "output": "`env`/`printenv` dump environment; `VAR=x cmd` scopes one-shot vars without exporting globally."}
+{"instruction": "What is `env printenv` for?", "input": "", "output": "`env`/`printenv` dump environment; `VAR=x cmd` scopes one-shot vars without exporting globally."}
+{"instruction": "Apakah fungsi `env printenv`?", "input": "", "output": "`env`/`printenv` dump environment; `VAR=x cmd` scopes one-shot vars without exporting globally."}
+{"instruction": "Terangkan `env printenv` secara ringkas.", "input": "", "output": "`env`/`printenv` dump environment; `VAR=x cmd` scopes one-shot vars without exporting globally."}
+{"instruction": "Bila perlu guna `env printenv`?", "input": "", "output": "`env`/`printenv` dump environment; `VAR=x cmd` scopes one-shot vars without exporting globally."}
+{"instruction": "Beri contoh penggunaan `env printenv`.", "input": "", "output": "`env`/`printenv` dump environment; `VAR=x cmd` scopes one-shot vars without exporting globally."}
+{"instruction": "`env printenv` untuk apa?", "input": "", "output": "`env`/`printenv` dump environment; `VAR=x cmd` scopes one-shot vars without exporting globally."}
+{"instruction": "How would you explain `env printenv` to a junior developer?", "input": "", "output": "`env`/`printenv` dump environment; `VAR=x cmd` scopes one-shot vars without exporting globally."}
+{"instruction": "Give a real-world scenario for `env printenv`.", "input": "", "output": "`env`/`printenv` dump environment; `VAR=x cmd` scopes one-shot vars without exporting globally."}
+{"instruction": "What problem does `env printenv` solve?", "input": "", "output": "`env`/`printenv` dump environment; `VAR=x cmd` scopes one-shot vars without exporting globally."}
+{"instruction": "Terangkan `env printenv` dalam satu minit.", "input": "", "output": "`env`/`printenv` dump environment; `VAR=x cmd` scopes one-shot vars without exporting globally."}
+{"instruction": "Apa yang perlu saya tahu tentang `env printenv`?", "input": "", "output": "`env`/`printenv` dump environment; `VAR=x cmd` scopes one-shot vars without exporting globally."}
+{"instruction": "Bagaimanakah `env printenv` berfungsi?", "input": "", "output": "`env`/`printenv` dump environment; `VAR=x cmd` scopes one-shot vars without exporting globally."}
+{"instruction": "Bilakah masa yang sesuai untuk `env printenv`?", "input": "", "output": "`env`/`printenv` dump environment; `VAR=x cmd` scopes one-shot vars without exporting globally."}
+{"instruction": "What does `watch -n1` do?", "input": "", "output": "`watch -n1 'df -h'` reruns commands live for monitoring; `-d` highlights diffs between refreshes."}
+{"instruction": "Explain `watch -n1` briefly.", "input": "", "output": "`watch -n1 'df -h'` reruns commands live for monitoring; `-d` highlights diffs between refreshes."}
+{"instruction": "When do I use `watch -n1`?", "input": "", "output": "`watch -n1 'df -h'` reruns commands live for monitoring; `-d` highlights diffs between refreshes."}
+{"instruction": "Give a practical example of `watch -n1`.", "input": "", "output": "`watch -n1 'df -h'` reruns commands live for monitoring; `-d` highlights diffs between refreshes."}
+{"instruction": "What is `watch -n1` for?", "input": "", "output": "`watch -n1 'df -h'` reruns commands live for monitoring; `-d` highlights diffs between refreshes."}
+{"instruction": "Apakah fungsi `watch -n1`?", "input": "", "output": "`watch -n1 'df -h'` reruns commands live for monitoring; `-d` highlights diffs between refreshes."}
+{"instruction": "Terangkan `watch -n1` secara ringkas.", "input": "", "output": "`watch -n1 'df -h'` reruns commands live for monitoring; `-d` highlights diffs between refreshes."}
+{"instruction": "Bila perlu guna `watch -n1`?", "input": "", "output": "`watch -n1 'df -h'` reruns commands live for monitoring; `-d` highlights diffs between refreshes."}
+{"instruction": "Beri contoh penggunaan `watch -n1`.", "input": "", "output": "`watch -n1 'df -h'` reruns commands live for monitoring; `-d` highlights diffs between refreshes."}
+{"instruction": "`watch -n1` untuk apa?", "input": "", "output": "`watch -n1 'df -h'` reruns commands live for monitoring; `-d` highlights diffs between refreshes."}
+{"instruction": "How would you explain `watch -n1` to a junior developer?", "input": "", "output": "`watch -n1 'df -h'` reruns commands live for monitoring; `-d` highlights diffs between refreshes."}
+{"instruction": "Give a real-world scenario for `watch -n1`.", "input": "", "output": "`watch -n1 'df -h'` reruns commands live for monitoring; `-d` highlights diffs between refreshes."}
+{"instruction": "What problem does `watch -n1` solve?", "input": "", "output": "`watch -n1 'df -h'` reruns commands live for monitoring; `-d` highlights diffs between refreshes."}
+{"instruction": "Terangkan `watch -n1` dalam satu minit.", "input": "", "output": "`watch -n1 'df -h'` reruns commands live for monitoring; `-d` highlights diffs between refreshes."}
+{"instruction": "Apa yang perlu saya tahu tentang `watch -n1`?", "input": "", "output": "`watch -n1 'df -h'` reruns commands live for monitoring; `-d` highlights diffs between refreshes."}
+{"instruction": "Bagaimanakah `watch -n1` berfungsi?", "input": "", "output": "`watch -n1 'df -h'` reruns commands live for monitoring; `-d` highlights diffs between refreshes."}
+{"instruction": "Bilakah masa yang sesuai untuk `watch -n1`?", "input": "", "output": "`watch -n1 'df -h'` reruns commands live for monitoring; `-d` highlights diffs between refreshes."}
+{"instruction": "What does `sleep nohup` do?", "input": "", "output": "`sleep 300` pauses scripts; `nohup cmd &` survives logout (output to nohup.out) — screen/tmux for interactive."}
+{"instruction": "Explain `sleep nohup` briefly.", "input": "", "output": "`sleep 300` pauses scripts; `nohup cmd &` survives logout (output to nohup.out) — screen/tmux for interactive."}
+{"instruction": "When do I use `sleep nohup`?", "input": "", "output": "`sleep 300` pauses scripts; `nohup cmd &` survives logout (output to nohup.out) — screen/tmux for interactive."}
+{"instruction": "Give a practical example of `sleep nohup`.", "input": "", "output": "`sleep 300` pauses scripts; `nohup cmd &` survives logout (output to nohup.out) — screen/tmux for interactive."}
+{"instruction": "What is `sleep nohup` for?", "input": "", "output": "`sleep 300` pauses scripts; `nohup cmd &` survives logout (output to nohup.out) — screen/tmux for interactive."}
+{"instruction": "Apakah fungsi `sleep nohup`?", "input": "", "output": "`sleep 300` pauses scripts; `nohup cmd &` survives logout (output to nohup.out) — screen/tmux for interactive."}
+{"instruction": "Terangkan `sleep nohup` secara ringkas.", "input": "", "output": "`sleep 300` pauses scripts; `nohup cmd &` survives logout (output to nohup.out) — screen/tmux for interactive."}
+{"instruction": "Bila perlu guna `sleep nohup`?", "input": "", "output": "`sleep 300` pauses scripts; `nohup cmd &` survives logout (output to nohup.out) — screen/tmux for interactive."}
+{"instruction": "Beri contoh penggunaan `sleep nohup`.", "input": "", "output": "`sleep 300` pauses scripts; `nohup cmd &` survives logout (output to nohup.out) — screen/tmux for interactive."}
+{"instruction": "`sleep nohup` untuk apa?", "input": "", "output": "`sleep 300` pauses scripts; `nohup cmd &` survives logout (output to nohup.out) — screen/tmux for interactive."}
+{"instruction": "How would you explain `sleep nohup` to a junior developer?", "input": "", "output": "`sleep 300` pauses scripts; `nohup cmd &` survives logout (output to nohup.out) — screen/tmux for interactive."}
+{"instruction": "Give a real-world scenario for `sleep nohup`.", "input": "", "output": "`sleep 300` pauses scripts; `nohup cmd &` survives logout (output to nohup.out) — screen/tmux for interactive."}
+{"instruction": "What problem does `sleep nohup` solve?", "input": "", "output": "`sleep 300` pauses scripts; `nohup cmd &` survives logout (output to nohup.out) — screen/tmux for interactive."}
+{"instruction": "Terangkan `sleep nohup` dalam satu minit.", "input": "", "output": "`sleep 300` pauses scripts; `nohup cmd &` survives logout (output to nohup.out) — screen/tmux for interactive."}
+{"instruction": "Apa yang perlu saya tahu tentang `sleep nohup`?", "input": "", "output": "`sleep 300` pauses scripts; `nohup cmd &` survives logout (output to nohup.out) — screen/tmux for interactive."}
+{"instruction": "Bagaimanakah `sleep nohup` berfungsi?", "input": "", "output": "`sleep 300` pauses scripts; `nohup cmd &` survives logout (output to nohup.out) — screen/tmux for interactive."}
+{"instruction": "Bilakah masa yang sesuai untuk `sleep nohup`?", "input": "", "output": "`sleep 300` pauses scripts; `nohup cmd &` survives logout (output to nohup.out) — screen/tmux for interactive."}
+{"instruction": "What does `jobs fg bg` do?", "input": "", "output": "`jobs` lists backgrounded tasks; `fg %1` resumes foreground, `bg` continues paused ones — shell multitasking."}
+{"instruction": "Explain `jobs fg bg` briefly.", "input": "", "output": "`jobs` lists backgrounded tasks; `fg %1` resumes foreground, `bg` continues paused ones — shell multitasking."}
+{"instruction": "When do I use `jobs fg bg`?", "input": "", "output": "`jobs` lists backgrounded tasks; `fg %1` resumes foreground, `bg` continues paused ones — shell multitasking."}
+{"instruction": "Give a practical example of `jobs fg bg`.", "input": "", "output": "`jobs` lists backgrounded tasks; `fg %1` resumes foreground, `bg` continues paused ones — shell multitasking."}
+{"instruction": "What is `jobs fg bg` for?", "input": "", "output": "`jobs` lists backgrounded tasks; `fg %1` resumes foreground, `bg` continues paused ones — shell multitasking."}
+{"instruction": "Apakah fungsi `jobs fg bg`?", "input": "", "output": "`jobs` lists backgrounded tasks; `fg %1` resumes foreground, `bg` continues paused ones — shell multitasking."}
+{"instruction": "Terangkan `jobs fg bg` secara ringkas.", "input": "", "output": "`jobs` lists backgrounded tasks; `fg %1` resumes foreground, `bg` continues paused ones — shell multitasking."}
+{"instruction": "Bila perlu guna `jobs fg bg`?", "input": "", "output": "`jobs` lists backgrounded tasks; `fg %1` resumes foreground, `bg` continues paused ones — shell multitasking."}
+{"instruction": "Beri contoh penggunaan `jobs fg bg`.", "input": "", "output": "`jobs` lists backgrounded tasks; `fg %1` resumes foreground, `bg` continues paused ones — shell multitasking."}
+{"instruction": "`jobs fg bg` untuk apa?", "input": "", "output": "`jobs` lists backgrounded tasks; `fg %1` resumes foreground, `bg` continues paused ones — shell multitasking."}
+{"instruction": "How would you explain `jobs fg bg` to a junior developer?", "input": "", "output": "`jobs` lists backgrounded tasks; `fg %1` resumes foreground, `bg` continues paused ones — shell multitasking."}
+{"instruction": "Give a real-world scenario for `jobs fg bg`.", "input": "", "output": "`jobs` lists backgrounded tasks; `fg %1` resumes foreground, `bg` continues paused ones — shell multitasking."}
+{"instruction": "What problem does `jobs fg bg` solve?", "input": "", "output": "`jobs` lists backgrounded tasks; `fg %1` resumes foreground, `bg` continues paused ones — shell multitasking."}
+{"instruction": "Terangkan `jobs fg bg` dalam satu minit.", "input": "", "output": "`jobs` lists backgrounded tasks; `fg %1` resumes foreground, `bg` continues paused ones — shell multitasking."}
+{"instruction": "Apa yang perlu saya tahu tentang `jobs fg bg`?", "input": "", "output": "`jobs` lists backgrounded tasks; `fg %1` resumes foreground, `bg` continues paused ones — shell multitasking."}
+{"instruction": "Bagaimanakah `jobs fg bg` berfungsi?", "input": "", "output": "`jobs` lists backgrounded tasks; `fg %1` resumes foreground, `bg` continues paused ones — shell multitasking."}
+{"instruction": "Bilakah masa yang sesuai untuk `jobs fg bg`?", "input": "", "output": "`jobs` lists backgrounded tasks; `fg %1` resumes foreground, `bg` continues paused ones — shell multitasking."}
+{"instruction": "What does `clear reset` do?", "input": "", "output": "`clear` wipes scrollback cosmetically; `reset` reinitializes garbled terminals (binary output accidents)."}
+{"instruction": "Explain `clear reset` briefly.", "input": "", "output": "`clear` wipes scrollback cosmetically; `reset` reinitializes garbled terminals (binary output accidents)."}
+{"instruction": "When do I use `clear reset`?", "input": "", "output": "`clear` wipes scrollback cosmetically; `reset` reinitializes garbled terminals (binary output accidents)."}
+{"instruction": "Give a practical example of `clear reset`.", "input": "", "output": "`clear` wipes scrollback cosmetically; `reset` reinitializes garbled terminals (binary output accidents)."}
+{"instruction": "What is `clear reset` for?", "input": "", "output": "`clear` wipes scrollback cosmetically; `reset` reinitializes garbled terminals (binary output accidents)."}
+{"instruction": "Apakah fungsi `clear reset`?", "input": "", "output": "`clear` wipes scrollback cosmetically; `reset` reinitializes garbled terminals (binary output accidents)."}
+{"instruction": "Terangkan `clear reset` secara ringkas.", "input": "", "output": "`clear` wipes scrollback cosmetically; `reset` reinitializes garbled terminals (binary output accidents)."}
+{"instruction": "Bila perlu guna `clear reset`?", "input": "", "output": "`clear` wipes scrollback cosmetically; `reset` reinitializes garbled terminals (binary output accidents)."}
+{"instruction": "Beri contoh penggunaan `clear reset`.", "input": "", "output": "`clear` wipes scrollback cosmetically; `reset` reinitializes garbled terminals (binary output accidents)."}
+{"instruction": "`clear reset` untuk apa?", "input": "", "output": "`clear` wipes scrollback cosmetically; `reset` reinitializes garbled terminals (binary output accidents)."}
+{"instruction": "How would you explain `clear reset` to a junior developer?", "input": "", "output": "`clear` wipes scrollback cosmetically; `reset` reinitializes garbled terminals (binary output accidents)."}
+{"instruction": "Give a real-world scenario for `clear reset`.", "input": "", "output": "`clear` wipes scrollback cosmetically; `reset` reinitializes garbled terminals (binary output accidents)."}
+{"instruction": "What problem does `clear reset` solve?", "input": "", "output": "`clear` wipes scrollback cosmetically; `reset` reinitializes garbled terminals (binary output accidents)."}
+{"instruction": "Terangkan `clear reset` dalam satu minit.", "input": "", "output": "`clear` wipes scrollback cosmetically; `reset` reinitializes garbled terminals (binary output accidents)."}
+{"instruction": "Apa yang perlu saya tahu tentang `clear reset`?", "input": "", "output": "`clear` wipes scrollback cosmetically; `reset` reinitializes garbled terminals (binary output accidents)."}
+{"instruction": "Bagaimanakah `clear reset` berfungsi?", "input": "", "output": "`clear` wipes scrollback cosmetically; `reset` reinitializes garbled terminals (binary output accidents)."}
+{"instruction": "Bilakah masa yang sesuai untuk `clear reset`?", "input": "", "output": "`clear` wipes scrollback cosmetically; `reset` reinitializes garbled terminals (binary output accidents)."}
+{"instruction": "What does `man sections apropos` do?", "input": "", "output": "`man 5 passwd` picks sections (1 commands, 5 formats, 8 admin); `apropos disk` searches descriptions."}
+{"instruction": "Explain `man sections apropos` briefly.", "input": "", "output": "`man 5 passwd` picks sections (1 commands, 5 formats, 8 admin); `apropos disk` searches descriptions."}
+{"instruction": "When do I use `man sections apropos`?", "input": "", "output": "`man 5 passwd` picks sections (1 commands, 5 formats, 8 admin); `apropos disk` searches descriptions."}
+{"instruction": "Give a practical example of `man sections apropos`.", "input": "", "output": "`man 5 passwd` picks sections (1 commands, 5 formats, 8 admin); `apropos disk` searches descriptions."}
+{"instruction": "What is `man sections apropos` for?", "input": "", "output": "`man 5 passwd` picks sections (1 commands, 5 formats, 8 admin); `apropos disk` searches descriptions."}
+{"instruction": "Apakah fungsi `man sections apropos`?", "input": "", "output": "`man 5 passwd` picks sections (1 commands, 5 formats, 8 admin); `apropos disk` searches descriptions."}
+{"instruction": "Terangkan `man sections apropos` secara ringkas.", "input": "", "output": "`man 5 passwd` picks sections (1 commands, 5 formats, 8 admin); `apropos disk` searches descriptions."}
+{"instruction": "Bila perlu guna `man sections apropos`?", "input": "", "output": "`man 5 passwd` picks sections (1 commands, 5 formats, 8 admin); `apropos disk` searches descriptions."}
+{"instruction": "Beri contoh penggunaan `man sections apropos`.", "input": "", "output": "`man 5 passwd` picks sections (1 commands, 5 formats, 8 admin); `apropos disk` searches descriptions."}
+{"instruction": "`man sections apropos` untuk apa?", "input": "", "output": "`man 5 passwd` picks sections (1 commands, 5 formats, 8 admin); `apropos disk` searches descriptions."}
+{"instruction": "How would you explain `man sections apropos` to a junior developer?", "input": "", "output": "`man 5 passwd` picks sections (1 commands, 5 formats, 8 admin); `apropos disk` searches descriptions."}
+{"instruction": "Give a real-world scenario for `man sections apropos`.", "input": "", "output": "`man 5 passwd` picks sections (1 commands, 5 formats, 8 admin); `apropos disk` searches descriptions."}
+{"instruction": "What problem does `man sections apropos` solve?", "input": "", "output": "`man 5 passwd` picks sections (1 commands, 5 formats, 8 admin); `apropos disk` searches descriptions."}
+{"instruction": "Terangkan `man sections apropos` dalam satu minit.", "input": "", "output": "`man 5 passwd` picks sections (1 commands, 5 formats, 8 admin); `apropos disk` searches descriptions."}
+{"instruction": "Apa yang perlu saya tahu tentang `man sections apropos`?", "input": "", "output": "`man 5 passwd` picks sections (1 commands, 5 formats, 8 admin); `apropos disk` searches descriptions."}
+{"instruction": "Bagaimanakah `man sections apropos` berfungsi?", "input": "", "output": "`man 5 passwd` picks sections (1 commands, 5 formats, 8 admin); `apropos disk` searches descriptions."}
+{"instruction": "Bilakah masa yang sesuai untuk `man sections apropos`?", "input": "", "output": "`man 5 passwd` picks sections (1 commands, 5 formats, 8 admin); `apropos disk` searches descriptions."}
+{"instruction": "What does `stat details` do?", "input": "", "output": "`stat file` shows size, blocks, access/change times and inodes — deeper than `ls -l` for forensics."}
+{"instruction": "Explain `stat details` briefly.", "input": "", "output": "`stat file` shows size, blocks, access/change times and inodes — deeper than `ls -l` for forensics."}
+{"instruction": "When do I use `stat details`?", "input": "", "output": "`stat file` shows size, blocks, access/change times and inodes — deeper than `ls -l` for forensics."}
+{"instruction": "Give a practical example of `stat details`.", "input": "", "output": "`stat file` shows size, blocks, access/change times and inodes — deeper than `ls -l` for forensics."}
+{"instruction": "What is `stat details` for?", "input": "", "output": "`stat file` shows size, blocks, access/change times and inodes — deeper than `ls -l` for forensics."}
+{"instruction": "Apakah fungsi `stat details`?", "input": "", "output": "`stat file` shows size, blocks, access/change times and inodes — deeper than `ls -l` for forensics."}
+{"instruction": "Terangkan `stat details` secara ringkas.", "input": "", "output": "`stat file` shows size, blocks, access/change times and inodes — deeper than `ls -l` for forensics."}
+{"instruction": "Bila perlu guna `stat details`?", "input": "", "output": "`stat file` shows size, blocks, access/change times and inodes — deeper than `ls -l` for forensics."}
+{"instruction": "Beri contoh penggunaan `stat details`.", "input": "", "output": "`stat file` shows size, blocks, access/change times and inodes — deeper than `ls -l` for forensics."}
+{"instruction": "`stat details` untuk apa?", "input": "", "output": "`stat file` shows size, blocks, access/change times and inodes — deeper than `ls -l` for forensics."}
+{"instruction": "How would you explain `stat details` to a junior developer?", "input": "", "output": "`stat file` shows size, blocks, access/change times and inodes — deeper than `ls -l` for forensics."}
+{"instruction": "Give a real-world scenario for `stat details`.", "input": "", "output": "`stat file` shows size, blocks, access/change times and inodes — deeper than `ls -l` for forensics."}
+{"instruction": "What problem does `stat details` solve?", "input": "", "output": "`stat file` shows size, blocks, access/change times and inodes — deeper than `ls -l` for forensics."}
+{"instruction": "Terangkan `stat details` dalam satu minit.", "input": "", "output": "`stat file` shows size, blocks, access/change times and inodes — deeper than `ls -l` for forensics."}
+{"instruction": "Apa yang perlu saya tahu tentang `stat details`?", "input": "", "output": "`stat file` shows size, blocks, access/change times and inodes — deeper than `ls -l` for forensics."}
+{"instruction": "Bagaimanakah `stat details` berfungsi?", "input": "", "output": "`stat file` shows size, blocks, access/change times and inodes — deeper than `ls -l` for forensics."}
+{"instruction": "Bilakah masa yang sesuai untuk `stat details`?", "input": "", "output": "`stat file` shows size, blocks, access/change times and inodes — deeper than `ls -l` for forensics."}
+{"instruction": "What does `hostnamectl` do?", "input": "", "output": "`hostnamectl` shows/transient-sets hostname, chassis and OS info; `hostname new` changes live only."}
+{"instruction": "Explain `hostnamectl` briefly.", "input": "", "output": "`hostnamectl` shows/transient-sets hostname, chassis and OS info; `hostname new` changes live only."}
+{"instruction": "When do I use `hostnamectl`?", "input": "", "output": "`hostnamectl` shows/transient-sets hostname, chassis and OS info; `hostname new` changes live only."}
+{"instruction": "Give a practical example of `hostnamectl`.", "input": "", "output": "`hostnamectl` shows/transient-sets hostname, chassis and OS info; `hostname new` changes live only."}
+{"instruction": "What is `hostnamectl` for?", "input": "", "output": "`hostnamectl` shows/transient-sets hostname, chassis and OS info; `hostname new` changes live only."}
+{"instruction": "Apakah fungsi `hostnamectl`?", "input": "", "output": "`hostnamectl` shows/transient-sets hostname, chassis and OS info; `hostname new` changes live only."}
+{"instruction": "Terangkan `hostnamectl` secara ringkas.", "input": "", "output": "`hostnamectl` shows/transient-sets hostname, chassis and OS info; `hostname new` changes live only."}
+{"instruction": "Bila perlu guna `hostnamectl`?", "input": "", "output": "`hostnamectl` shows/transient-sets hostname, chassis and OS info; `hostname new` changes live only."}
+{"instruction": "Beri contoh penggunaan `hostnamectl`.", "input": "", "output": "`hostnamectl` shows/transient-sets hostname, chassis and OS info; `hostname new` changes live only."}
+{"instruction": "`hostnamectl` untuk apa?", "input": "", "output": "`hostnamectl` shows/transient-sets hostname, chassis and OS info; `hostname new` changes live only."}
+{"instruction": "How would you explain `hostnamectl` to a junior developer?", "input": "", "output": "`hostnamectl` shows/transient-sets hostname, chassis and OS info; `hostname new` changes live only."}
+{"instruction": "Give a real-world scenario for `hostnamectl`.", "input": "", "output": "`hostnamectl` shows/transient-sets hostname, chassis and OS info; `hostname new` changes live only."}
+{"instruction": "What problem does `hostnamectl` solve?", "input": "", "output": "`hostnamectl` shows/transient-sets hostname, chassis and OS info; `hostname new` changes live only."}
+{"instruction": "Terangkan `hostnamectl` dalam satu minit.", "input": "", "output": "`hostnamectl` shows/transient-sets hostname, chassis and OS info; `hostname new` changes live only."}
+{"instruction": "Apa yang perlu saya tahu tentang `hostnamectl`?", "input": "", "output": "`hostnamectl` shows/transient-sets hostname, chassis and OS info; `hostname new` changes live only."}
+{"instruction": "Bagaimanakah `hostnamectl` berfungsi?", "input": "", "output": "`hostnamectl` shows/transient-sets hostname, chassis and OS info; `hostname new` changes live only."}
+{"instruction": "Bilakah masa yang sesuai untuk `hostnamectl`?", "input": "", "output": "`hostnamectl` shows/transient-sets hostname, chassis and OS info; `hostname new` changes live only."}
+{"instruction": "What does `timedatectl` do?", "input": "", "output": "`timedatectl` manages clock, timezone and NTP sync; `set-timezone Asia/Kuala_Lumpur` localizes logs."}
+{"instruction": "Explain `timedatectl` briefly.", "input": "", "output": "`timedatectl` manages clock, timezone and NTP sync; `set-timezone Asia/Kuala_Lumpur` localizes logs."}
+{"instruction": "When do I use `timedatectl`?", "input": "", "output": "`timedatectl` manages clock, timezone and NTP sync; `set-timezone Asia/Kuala_Lumpur` localizes logs."}
+{"instruction": "Give a practical example of `timedatectl`.", "input": "", "output": "`timedatectl` manages clock, timezone and NTP sync; `set-timezone Asia/Kuala_Lumpur` localizes logs."}
+{"instruction": "What is `timedatectl` for?", "input": "", "output": "`timedatectl` manages clock, timezone and NTP sync; `set-timezone Asia/Kuala_Lumpur` localizes logs."}
+{"instruction": "Apakah fungsi `timedatectl`?", "input": "", "output": "`timedatectl` manages clock, timezone and NTP sync; `set-timezone Asia/Kuala_Lumpur` localizes logs."}
+{"instruction": "Terangkan `timedatectl` secara ringkas.", "input": "", "output": "`timedatectl` manages clock, timezone and NTP sync; `set-timezone Asia/Kuala_Lumpur` localizes logs."}
+{"instruction": "Bila perlu guna `timedatectl`?", "input": "", "output": "`timedatectl` manages clock, timezone and NTP sync; `set-timezone Asia/Kuala_Lumpur` localizes logs."}
+{"instruction": "Beri contoh penggunaan `timedatectl`.", "input": "", "output": "`timedatectl` manages clock, timezone and NTP sync; `set-timezone Asia/Kuala_Lumpur` localizes logs."}
+{"instruction": "`timedatectl` untuk apa?", "input": "", "output": "`timedatectl` manages clock, timezone and NTP sync; `set-timezone Asia/Kuala_Lumpur` localizes logs."}
+{"instruction": "How would you explain `timedatectl` to a junior developer?", "input": "", "output": "`timedatectl` manages clock, timezone and NTP sync; `set-timezone Asia/Kuala_Lumpur` localizes logs."}
+{"instruction": "Give a real-world scenario for `timedatectl`.", "input": "", "output": "`timedatectl` manages clock, timezone and NTP sync; `set-timezone Asia/Kuala_Lumpur` localizes logs."}
+{"instruction": "What problem does `timedatectl` solve?", "input": "", "output": "`timedatectl` manages clock, timezone and NTP sync; `set-timezone Asia/Kuala_Lumpur` localizes logs."}
+{"instruction": "Terangkan `timedatectl` dalam satu minit.", "input": "", "output": "`timedatectl` manages clock, timezone and NTP sync; `set-timezone Asia/Kuala_Lumpur` localizes logs."}
+{"instruction": "Apa yang perlu saya tahu tentang `timedatectl`?", "input": "", "output": "`timedatectl` manages clock, timezone and NTP sync; `set-timezone Asia/Kuala_Lumpur` localizes logs."}
+{"instruction": "Bagaimanakah `timedatectl` berfungsi?", "input": "", "output": "`timedatectl` manages clock, timezone and NTP sync; `set-timezone Asia/Kuala_Lumpur` localizes logs."}
+{"instruction": "Bilakah masa yang sesuai untuk `timedatectl`?", "input": "", "output": "`timedatectl` manages clock, timezone and NTP sync; `set-timezone Asia/Kuala_Lumpur` localizes logs."}
+{"instruction": "What does `localectl keyboard` do?", "input": "", "output": "`localectl` sets locale/keymap system-wide; mismatched locales garble sorting and case rules."}
+{"instruction": "Explain `localectl keyboard` briefly.", "input": "", "output": "`localectl` sets locale/keymap system-wide; mismatched locales garble sorting and case rules."}
+{"instruction": "When do I use `localectl keyboard`?", "input": "", "output": "`localectl` sets locale/keymap system-wide; mismatched locales garble sorting and case rules."}
+{"instruction": "Give a practical example of `localectl keyboard`.", "input": "", "output": "`localectl` sets locale/keymap system-wide; mismatched locales garble sorting and case rules."}
+{"instruction": "What is `localectl keyboard` for?", "input": "", "output": "`localectl` sets locale/keymap system-wide; mismatched locales garble sorting and case rules."}
+{"instruction": "Apakah fungsi `localectl keyboard`?", "input": "", "output": "`localectl` sets locale/keymap system-wide; mismatched locales garble sorting and case rules."}
+{"instruction": "Terangkan `localectl keyboard` secara ringkas.", "input": "", "output": "`localectl` sets locale/keymap system-wide; mismatched locales garble sorting and case rules."}
+{"instruction": "Bila perlu guna `localectl keyboard`?", "input": "", "output": "`localectl` sets locale/keymap system-wide; mismatched locales garble sorting and case rules."}
+{"instruction": "Beri contoh penggunaan `localectl keyboard`.", "input": "", "output": "`localectl` sets locale/keymap system-wide; mismatched locales garble sorting and case rules."}
+{"instruction": "`localectl keyboard` untuk apa?", "input": "", "output": "`localectl` sets locale/keymap system-wide; mismatched locales garble sorting and case rules."}
+{"instruction": "How would you explain `localectl keyboard` to a junior developer?", "input": "", "output": "`localectl` sets locale/keymap system-wide; mismatched locales garble sorting and case rules."}
+{"instruction": "Give a real-world scenario for `localectl keyboard`.", "input": "", "output": "`localectl` sets locale/keymap system-wide; mismatched locales garble sorting and case rules."}
+{"instruction": "What problem does `localectl keyboard` solve?", "input": "", "output": "`localectl` sets locale/keymap system-wide; mismatched locales garble sorting and case rules."}
+{"instruction": "Terangkan `localectl keyboard` dalam satu minit.", "input": "", "output": "`localectl` sets locale/keymap system-wide; mismatched locales garble sorting and case rules."}
+{"instruction": "Apa yang perlu saya tahu tentang `localectl keyboard`?", "input": "", "output": "`localectl` sets locale/keymap system-wide; mismatched locales garble sorting and case rules."}
+{"instruction": "Bagaimanakah `localectl keyboard` berfungsi?", "input": "", "output": "`localectl` sets locale/keymap system-wide; mismatched locales garble sorting and case rules."}
+{"instruction": "Bilakah masa yang sesuai untuk `localectl keyboard`?", "input": "", "output": "`localectl` sets locale/keymap system-wide; mismatched locales garble sorting and case rules."}
+{"instruction": "What does `lsblk fstab` do?", "input": "", "output": "Match `lsblk` output to `/etc/fstab` UUID entries — mounts by UUID survive device renaming."}
+{"instruction": "Explain `lsblk fstab` briefly.", "input": "", "output": "Match `lsblk` output to `/etc/fstab` UUID entries — mounts by UUID survive device renaming."}
+{"instruction": "When do I use `lsblk fstab`?", "input": "", "output": "Match `lsblk` output to `/etc/fstab` UUID entries — mounts by UUID survive device renaming."}
+{"instruction": "Give a practical example of `lsblk fstab`.", "input": "", "output": "Match `lsblk` output to `/etc/fstab` UUID entries — mounts by UUID survive device renaming."}
+{"instruction": "What is `lsblk fstab` for?", "input": "", "output": "Match `lsblk` output to `/etc/fstab` UUID entries — mounts by UUID survive device renaming."}
+{"instruction": "Apakah fungsi `lsblk fstab`?", "input": "", "output": "Match `lsblk` output to `/etc/fstab` UUID entries — mounts by UUID survive device renaming."}
+{"instruction": "Terangkan `lsblk fstab` secara ringkas.", "input": "", "output": "Match `lsblk` output to `/etc/fstab` UUID entries — mounts by UUID survive device renaming."}
+{"instruction": "Bila perlu guna `lsblk fstab`?", "input": "", "output": "Match `lsblk` output to `/etc/fstab` UUID entries — mounts by UUID survive device renaming."}
+{"instruction": "Beri contoh penggunaan `lsblk fstab`.", "input": "", "output": "Match `lsblk` output to `/etc/fstab` UUID entries — mounts by UUID survive device renaming."}
+{"instruction": "`lsblk fstab` untuk apa?", "input": "", "output": "Match `lsblk` output to `/etc/fstab` UUID entries — mounts by UUID survive device renaming."}
+{"instruction": "How would you explain `lsblk fstab` to a junior developer?", "input": "", "output": "Match `lsblk` output to `/etc/fstab` UUID entries — mounts by UUID survive device renaming."}
+{"instruction": "Give a real-world scenario for `lsblk fstab`.", "input": "", "output": "Match `lsblk` output to `/etc/fstab` UUID entries — mounts by UUID survive device renaming."}
+{"instruction": "What problem does `lsblk fstab` solve?", "input": "", "output": "Match `lsblk` output to `/etc/fstab` UUID entries — mounts by UUID survive device renaming."}
+{"instruction": "Terangkan `lsblk fstab` dalam satu minit.", "input": "", "output": "Match `lsblk` output to `/etc/fstab` UUID entries — mounts by UUID survive device renaming."}
+{"instruction": "Apa yang perlu saya tahu tentang `lsblk fstab`?", "input": "", "output": "Match `lsblk` output to `/etc/fstab` UUID entries — mounts by UUID survive device renaming."}
+{"instruction": "Bagaimanakah `lsblk fstab` berfungsi?", "input": "", "output": "Match `lsblk` output to `/etc/fstab` UUID entries — mounts by UUID survive device renaming."}
+{"instruction": "Bilakah masa yang sesuai untuk `lsblk fstab`?", "input": "", "output": "Match `lsblk` output to `/etc/fstab` UUID entries — mounts by UUID survive device renaming."}
+{"instruction": "What does `blkid labels` do?", "input": "", "output": "`blkid` prints UUIDs/labels/types for fstab and scripts; labels beat `/dev/sdX` roulette."}
+{"instruction": "Explain `blkid labels` briefly.", "input": "", "output": "`blkid` prints UUIDs/labels/types for fstab and scripts; labels beat `/dev/sdX` roulette."}
+{"instruction": "When do I use `blkid labels`?", "input": "", "output": "`blkid` prints UUIDs/labels/types for fstab and scripts; labels beat `/dev/sdX` roulette."}
+{"instruction": "Give a practical example of `blkid labels`.", "input": "", "output": "`blkid` prints UUIDs/labels/types for fstab and scripts; labels beat `/dev/sdX` roulette."}
+{"instruction": "What is `blkid labels` for?", "input": "", "output": "`blkid` prints UUIDs/labels/types for fstab and scripts; labels beat `/dev/sdX` roulette."}
+{"instruction": "Apakah fungsi `blkid labels`?", "input": "", "output": "`blkid` prints UUIDs/labels/types for fstab and scripts; labels beat `/dev/sdX` roulette."}
+{"instruction": "Terangkan `blkid labels` secara ringkas.", "input": "", "output": "`blkid` prints UUIDs/labels/types for fstab and scripts; labels beat `/dev/sdX` roulette."}
+{"instruction": "Bila perlu guna `blkid labels`?", "input": "", "output": "`blkid` prints UUIDs/labels/types for fstab and scripts; labels beat `/dev/sdX` roulette."}
+{"instruction": "Beri contoh penggunaan `blkid labels`.", "input": "", "output": "`blkid` prints UUIDs/labels/types for fstab and scripts; labels beat `/dev/sdX` roulette."}
+{"instruction": "`blkid labels` untuk apa?", "input": "", "output": "`blkid` prints UUIDs/labels/types for fstab and scripts; labels beat `/dev/sdX` roulette."}
+{"instruction": "How would you explain `blkid labels` to a junior developer?", "input": "", "output": "`blkid` prints UUIDs/labels/types for fstab and scripts; labels beat `/dev/sdX` roulette."}
+{"instruction": "Give a real-world scenario for `blkid labels`.", "input": "", "output": "`blkid` prints UUIDs/labels/types for fstab and scripts; labels beat `/dev/sdX` roulette."}
+{"instruction": "What problem does `blkid labels` solve?", "input": "", "output": "`blkid` prints UUIDs/labels/types for fstab and scripts; labels beat `/dev/sdX` roulette."}
+{"instruction": "Terangkan `blkid labels` dalam satu minit.", "input": "", "output": "`blkid` prints UUIDs/labels/types for fstab and scripts; labels beat `/dev/sdX` roulette."}
+{"instruction": "Apa yang perlu saya tahu tentang `blkid labels`?", "input": "", "output": "`blkid` prints UUIDs/labels/types for fstab and scripts; labels beat `/dev/sdX` roulette."}
+{"instruction": "Bagaimanakah `blkid labels` berfungsi?", "input": "", "output": "`blkid` prints UUIDs/labels/types for fstab and scripts; labels beat `/dev/sdX` roulette."}
+{"instruction": "Bilakah masa yang sesuai untuk `blkid labels`?", "input": "", "output": "`blkid` prints UUIDs/labels/types for fstab and scripts; labels beat `/dev/sdX` roulette."}
+{"instruction": "What does `dmesg -T errors` do?", "input": "", "output": "`dmesg -T -l err,warn` surfaces kernel trouble (disks, OOM, drivers) with human timestamps."}
+{"instruction": "Explain `dmesg -T errors` briefly.", "input": "", "output": "`dmesg -T -l err,warn` surfaces kernel trouble (disks, OOM, drivers) with human timestamps."}
+{"instruction": "When do I use `dmesg -T errors`?", "input": "", "output": "`dmesg -T -l err,warn` surfaces kernel trouble (disks, OOM, drivers) with human timestamps."}
+{"instruction": "Give a practical example of `dmesg -T errors`.", "input": "", "output": "`dmesg -T -l err,warn` surfaces kernel trouble (disks, OOM, drivers) with human timestamps."}
+{"instruction": "What is `dmesg -T errors` for?", "input": "", "output": "`dmesg -T -l err,warn` surfaces kernel trouble (disks, OOM, drivers) with human timestamps."}
+{"instruction": "Apakah fungsi `dmesg -T errors`?", "input": "", "output": "`dmesg -T -l err,warn` surfaces kernel trouble (disks, OOM, drivers) with human timestamps."}
+{"instruction": "Terangkan `dmesg -T errors` secara ringkas.", "input": "", "output": "`dmesg -T -l err,warn` surfaces kernel trouble (disks, OOM, drivers) with human timestamps."}
+{"instruction": "Bila perlu guna `dmesg -T errors`?", "input": "", "output": "`dmesg -T -l err,warn` surfaces kernel trouble (disks, OOM, drivers) with human timestamps."}
+{"instruction": "Beri contoh penggunaan `dmesg -T errors`.", "input": "", "output": "`dmesg -T -l err,warn` surfaces kernel trouble (disks, OOM, drivers) with human timestamps."}
+{"instruction": "`dmesg -T errors` untuk apa?", "input": "", "output": "`dmesg -T -l err,warn` surfaces kernel trouble (disks, OOM, drivers) with human timestamps."}
+{"instruction": "How would you explain `dmesg -T errors` to a junior developer?", "input": "", "output": "`dmesg -T -l err,warn` surfaces kernel trouble (disks, OOM, drivers) with human timestamps."}
+{"instruction": "Give a real-world scenario for `dmesg -T errors`.", "input": "", "output": "`dmesg -T -l err,warn` surfaces kernel trouble (disks, OOM, drivers) with human timestamps."}
+{"instruction": "What problem does `dmesg -T errors` solve?", "input": "", "output": "`dmesg -T -l err,warn` surfaces kernel trouble (disks, OOM, drivers) with human timestamps."}
+{"instruction": "Terangkan `dmesg -T errors` dalam satu minit.", "input": "", "output": "`dmesg -T -l err,warn` surfaces kernel trouble (disks, OOM, drivers) with human timestamps."}
+{"instruction": "Apa yang perlu saya tahu tentang `dmesg -T errors`?", "input": "", "output": "`dmesg -T -l err,warn` surfaces kernel trouble (disks, OOM, drivers) with human timestamps."}
+{"instruction": "Bagaimanakah `dmesg -T errors` berfungsi?", "input": "", "output": "`dmesg -T -l err,warn` surfaces kernel trouble (disks, OOM, drivers) with human timestamps."}
+{"instruction": "Bilakah masa yang sesuai untuk `dmesg -T errors`?", "input": "", "output": "`dmesg -T -l err,warn` surfaces kernel trouble (disks, OOM, drivers) with human timestamps."}
+{"instruction": "What does `lscpu flags` do?", "input": "", "output": "`lscpu` flags (avx, aes) decide binary compatibility; `nproc --all` counts for build parallelism."}
+{"instruction": "Explain `lscpu flags` briefly.", "input": "", "output": "`lscpu` flags (avx, aes) decide binary compatibility; `nproc --all` counts for build parallelism."}
+{"instruction": "When do I use `lscpu flags`?", "input": "", "output": "`lscpu` flags (avx, aes) decide binary compatibility; `nproc --all` counts for build parallelism."}
+{"instruction": "Give a practical example of `lscpu flags`.", "input": "", "output": "`lscpu` flags (avx, aes) decide binary compatibility; `nproc --all` counts for build parallelism."}
+{"instruction": "What is `lscpu flags` for?", "input": "", "output": "`lscpu` flags (avx, aes) decide binary compatibility; `nproc --all` counts for build parallelism."}
+{"instruction": "Apakah fungsi `lscpu flags`?", "input": "", "output": "`lscpu` flags (avx, aes) decide binary compatibility; `nproc --all` counts for build parallelism."}
+{"instruction": "Terangkan `lscpu flags` secara ringkas.", "input": "", "output": "`lscpu` flags (avx, aes) decide binary compatibility; `nproc --all` counts for build parallelism."}
+{"instruction": "Bila perlu guna `lscpu flags`?", "input": "", "output": "`lscpu` flags (avx, aes) decide binary compatibility; `nproc --all` counts for build parallelism."}
+{"instruction": "Beri contoh penggunaan `lscpu flags`.", "input": "", "output": "`lscpu` flags (avx, aes) decide binary compatibility; `nproc --all` counts for build parallelism."}
+{"instruction": "`lscpu flags` untuk apa?", "input": "", "output": "`lscpu` flags (avx, aes) decide binary compatibility; `nproc --all` counts for build parallelism."}
+{"instruction": "How would you explain `lscpu flags` to a junior developer?", "input": "", "output": "`lscpu` flags (avx, aes) decide binary compatibility; `nproc --all` counts for build parallelism."}
+{"instruction": "Give a real-world scenario for `lscpu flags`.", "input": "", "output": "`lscpu` flags (avx, aes) decide binary compatibility; `nproc --all` counts for build parallelism."}
+{"instruction": "What problem does `lscpu flags` solve?", "input": "", "output": "`lscpu` flags (avx, aes) decide binary compatibility; `nproc --all` counts for build parallelism."}
+{"instruction": "Terangkan `lscpu flags` dalam satu minit.", "input": "", "output": "`lscpu` flags (avx, aes) decide binary compatibility; `nproc --all` counts for build parallelism."}
+{"instruction": "Apa yang perlu saya tahu tentang `lscpu flags`?", "input": "", "output": "`lscpu` flags (avx, aes) decide binary compatibility; `nproc --all` counts for build parallelism."}
+{"instruction": "Bagaimanakah `lscpu flags` berfungsi?", "input": "", "output": "`lscpu` flags (avx, aes) decide binary compatibility; `nproc --all` counts for build parallelism."}
+{"instruction": "Bilakah masa yang sesuai untuk `lscpu flags`?", "input": "", "output": "`lscpu` flags (avx, aes) decide binary compatibility; `nproc --all` counts for build parallelism."}
+{"instruction": "What does `free buffers cache` do?", "input": "", "output": "Linux borrows free RAM for cache (reclaimable) — `available` is the honest number, not `free`."}
+{"instruction": "Explain `free buffers cache` briefly.", "input": "", "output": "Linux borrows free RAM for cache (reclaimable) — `available` is the honest number, not `free`."}
+{"instruction": "When do I use `free buffers cache`?", "input": "", "output": "Linux borrows free RAM for cache (reclaimable) — `available` is the honest number, not `free`."}
+{"instruction": "Give a practical example of `free buffers cache`.", "input": "", "output": "Linux borrows free RAM for cache (reclaimable) — `available` is the honest number, not `free`."}
+{"instruction": "What is `free buffers cache` for?", "input": "", "output": "Linux borrows free RAM for cache (reclaimable) — `available` is the honest number, not `free`."}
+{"instruction": "Apakah fungsi `free buffers cache`?", "input": "", "output": "Linux borrows free RAM for cache (reclaimable) — `available` is the honest number, not `free`."}
+{"instruction": "Terangkan `free buffers cache` secara ringkas.", "input": "", "output": "Linux borrows free RAM for cache (reclaimable) — `available` is the honest number, not `free`."}
+{"instruction": "Bila perlu guna `free buffers cache`?", "input": "", "output": "Linux borrows free RAM for cache (reclaimable) — `available` is the honest number, not `free`."}
+{"instruction": "Beri contoh penggunaan `free buffers cache`.", "input": "", "output": "Linux borrows free RAM for cache (reclaimable) — `available` is the honest number, not `free`."}
+{"instruction": "`free buffers cache` untuk apa?", "input": "", "output": "Linux borrows free RAM for cache (reclaimable) — `available` is the honest number, not `free`."}
+{"instruction": "How would you explain `free buffers cache` to a junior developer?", "input": "", "output": "Linux borrows free RAM for cache (reclaimable) — `available` is the honest number, not `free`."}
+{"instruction": "Give a real-world scenario for `free buffers cache`.", "input": "", "output": "Linux borrows free RAM for cache (reclaimable) — `available` is the honest number, not `free`."}
+{"instruction": "What problem does `free buffers cache` solve?", "input": "", "output": "Linux borrows free RAM for cache (reclaimable) — `available` is the honest number, not `free`."}
+{"instruction": "Terangkan `free buffers cache` dalam satu minit.", "input": "", "output": "Linux borrows free RAM for cache (reclaimable) — `available` is the honest number, not `free`."}
+{"instruction": "Apa yang perlu saya tahu tentang `free buffers cache`?", "input": "", "output": "Linux borrows free RAM for cache (reclaimable) — `available` is the honest number, not `free`."}
+{"instruction": "Bagaimanakah `free buffers cache` berfungsi?", "input": "", "output": "Linux borrows free RAM for cache (reclaimable) — `available` is the honest number, not `free`."}
+{"instruction": "Bilakah masa yang sesuai untuk `free buffers cache`?", "input": "", "output": "Linux borrows free RAM for cache (reclaimable) — `available` is the honest number, not `free`."}
+{"instruction": "What does `vmstat 1` do?", "input": "", "output": "`vmstat 1` streams CPU/memory/IO/swap per second; `si/so` swapping plus high `wa` means disk-bound pain."}
+{"instruction": "Explain `vmstat 1` briefly.", "input": "", "output": "`vmstat 1` streams CPU/memory/IO/swap per second; `si/so` swapping plus high `wa` means disk-bound pain."}
+{"instruction": "When do I use `vmstat 1`?", "input": "", "output": "`vmstat 1` streams CPU/memory/IO/swap per second; `si/so` swapping plus high `wa` means disk-bound pain."}
+{"instruction": "Give a practical example of `vmstat 1`.", "input": "", "output": "`vmstat 1` streams CPU/memory/IO/swap per second; `si/so` swapping plus high `wa` means disk-bound pain."}
+{"instruction": "What is `vmstat 1` for?", "input": "", "output": "`vmstat 1` streams CPU/memory/IO/swap per second; `si/so` swapping plus high `wa` means disk-bound pain."}
+{"instruction": "Apakah fungsi `vmstat 1`?", "input": "", "output": "`vmstat 1` streams CPU/memory/IO/swap per second; `si/so` swapping plus high `wa` means disk-bound pain."}
+{"instruction": "Terangkan `vmstat 1` secara ringkas.", "input": "", "output": "`vmstat 1` streams CPU/memory/IO/swap per second; `si/so` swapping plus high `wa` means disk-bound pain."}
+{"instruction": "Bila perlu guna `vmstat 1`?", "input": "", "output": "`vmstat 1` streams CPU/memory/IO/swap per second; `si/so` swapping plus high `wa` means disk-bound pain."}
+{"instruction": "Beri contoh penggunaan `vmstat 1`.", "input": "", "output": "`vmstat 1` streams CPU/memory/IO/swap per second; `si/so` swapping plus high `wa` means disk-bound pain."}
+{"instruction": "`vmstat 1` untuk apa?", "input": "", "output": "`vmstat 1` streams CPU/memory/IO/swap per second; `si/so` swapping plus high `wa` means disk-bound pain."}
+{"instruction": "How would you explain `vmstat 1` to a junior developer?", "input": "", "output": "`vmstat 1` streams CPU/memory/IO/swap per second; `si/so` swapping plus high `wa` means disk-bound pain."}
+{"instruction": "Give a real-world scenario for `vmstat 1`.", "input": "", "output": "`vmstat 1` streams CPU/memory/IO/swap per second; `si/so` swapping plus high `wa` means disk-bound pain."}
+{"instruction": "What problem does `vmstat 1` solve?", "input": "", "output": "`vmstat 1` streams CPU/memory/IO/swap per second; `si/so` swapping plus high `wa` means disk-bound pain."}
+{"instruction": "Terangkan `vmstat 1` dalam satu minit.", "input": "", "output": "`vmstat 1` streams CPU/memory/IO/swap per second; `si/so` swapping plus high `wa` means disk-bound pain."}
+{"instruction": "Apa yang perlu saya tahu tentang `vmstat 1`?", "input": "", "output": "`vmstat 1` streams CPU/memory/IO/swap per second; `si/so` swapping plus high `wa` means disk-bound pain."}
+{"instruction": "Bagaimanakah `vmstat 1` berfungsi?", "input": "", "output": "`vmstat 1` streams CPU/memory/IO/swap per second; `si/so` swapping plus high `wa` means disk-bound pain."}
+{"instruction": "Bilakah masa yang sesuai untuk `vmstat 1`?", "input": "", "output": "`vmstat 1` streams CPU/memory/IO/swap per second; `si/so` swapping plus high `wa` means disk-bound pain."}
+{"instruction": "What does `iostat -x` do?", "input": "", "output": "`iostat -x 1` per-device utilization and await times; `%util` near 100 pinpoints the bottleneck disk."}
+{"instruction": "Explain `iostat -x` briefly.", "input": "", "output": "`iostat -x 1` per-device utilization and await times; `%util` near 100 pinpoints the bottleneck disk."}
+{"instruction": "When do I use `iostat -x`?", "input": "", "output": "`iostat -x 1` per-device utilization and await times; `%util` near 100 pinpoints the bottleneck disk."}
+{"instruction": "Give a practical example of `iostat -x`.", "input": "", "output": "`iostat -x 1` per-device utilization and await times; `%util` near 100 pinpoints the bottleneck disk."}
+{"instruction": "What is `iostat -x` for?", "input": "", "output": "`iostat -x 1` per-device utilization and await times; `%util` near 100 pinpoints the bottleneck disk."}
+{"instruction": "Apakah fungsi `iostat -x`?", "input": "", "output": "`iostat -x 1` per-device utilization and await times; `%util` near 100 pinpoints the bottleneck disk."}
+{"instruction": "Terangkan `iostat -x` secara ringkas.", "input": "", "output": "`iostat -x 1` per-device utilization and await times; `%util` near 100 pinpoints the bottleneck disk."}
+{"instruction": "Bila perlu guna `iostat -x`?", "input": "", "output": "`iostat -x 1` per-device utilization and await times; `%util` near 100 pinpoints the bottleneck disk."}
+{"instruction": "Beri contoh penggunaan `iostat -x`.", "input": "", "output": "`iostat -x 1` per-device utilization and await times; `%util` near 100 pinpoints the bottleneck disk."}
+{"instruction": "`iostat -x` untuk apa?", "input": "", "output": "`iostat -x 1` per-device utilization and await times; `%util` near 100 pinpoints the bottleneck disk."}
+{"instruction": "How would you explain `iostat -x` to a junior developer?", "input": "", "output": "`iostat -x 1` per-device utilization and await times; `%util` near 100 pinpoints the bottleneck disk."}
+{"instruction": "Give a real-world scenario for `iostat -x`.", "input": "", "output": "`iostat -x 1` per-device utilization and await times; `%util` near 100 pinpoints the bottleneck disk."}
+{"instruction": "What problem does `iostat -x` solve?", "input": "", "output": "`iostat -x 1` per-device utilization and await times; `%util` near 100 pinpoints the bottleneck disk."}
+{"instruction": "Terangkan `iostat -x` dalam satu minit.", "input": "", "output": "`iostat -x 1` per-device utilization and await times; `%util` near 100 pinpoints the bottleneck disk."}
+{"instruction": "Apa yang perlu saya tahu tentang `iostat -x`?", "input": "", "output": "`iostat -x 1` per-device utilization and await times; `%util` near 100 pinpoints the bottleneck disk."}
+{"instruction": "Bagaimanakah `iostat -x` berfungsi?", "input": "", "output": "`iostat -x 1` per-device utilization and await times; `%util` near 100 pinpoints the bottleneck disk."}
+{"instruction": "Bilakah masa yang sesuai untuk `iostat -x`?", "input": "", "output": "`iostat -x 1` per-device utilization and await times; `%util` near 100 pinpoints the bottleneck disk."}
+{"instruction": "What does `sar history` do?", "input": "", "output": "`sar -u -f /var/log/sysstat/saDD` replays yesterday's CPU; sysstat must be installed and enabled first."}
+{"instruction": "Explain `sar history` briefly.", "input": "", "output": "`sar -u -f /var/log/sysstat/saDD` replays yesterday's CPU; sysstat must be installed and enabled first."}
+{"instruction": "When do I use `sar history`?", "input": "", "output": "`sar -u -f /var/log/sysstat/saDD` replays yesterday's CPU; sysstat must be installed and enabled first."}
+{"instruction": "Give a practical example of `sar history`.", "input": "", "output": "`sar -u -f /var/log/sysstat/saDD` replays yesterday's CPU; sysstat must be installed and enabled first."}
+{"instruction": "What is `sar history` for?", "input": "", "output": "`sar -u -f /var/log/sysstat/saDD` replays yesterday's CPU; sysstat must be installed and enabled first."}
+{"instruction": "Apakah fungsi `sar history`?", "input": "", "output": "`sar -u -f /var/log/sysstat/saDD` replays yesterday's CPU; sysstat must be installed and enabled first."}
+{"instruction": "Terangkan `sar history` secara ringkas.", "input": "", "output": "`sar -u -f /var/log/sysstat/saDD` replays yesterday's CPU; sysstat must be installed and enabled first."}
+{"instruction": "Bila perlu guna `sar history`?", "input": "", "output": "`sar -u -f /var/log/sysstat/saDD` replays yesterday's CPU; sysstat must be installed and enabled first."}
+{"instruction": "Beri contoh penggunaan `sar history`.", "input": "", "output": "`sar -u -f /var/log/sysstat/saDD` replays yesterday's CPU; sysstat must be installed and enabled first."}
+{"instruction": "`sar history` untuk apa?", "input": "", "output": "`sar -u -f /var/log/sysstat/saDD` replays yesterday's CPU; sysstat must be installed and enabled first."}
+{"instruction": "How would you explain `sar history` to a junior developer?", "input": "", "output": "`sar -u -f /var/log/sysstat/saDD` replays yesterday's CPU; sysstat must be installed and enabled first."}
+{"instruction": "Give a real-world scenario for `sar history`.", "input": "", "output": "`sar -u -f /var/log/sysstat/saDD` replays yesterday's CPU; sysstat must be installed and enabled first."}
+{"instruction": "What problem does `sar history` solve?", "input": "", "output": "`sar -u -f /var/log/sysstat/saDD` replays yesterday's CPU; sysstat must be installed and enabled first."}
+{"instruction": "Terangkan `sar history` dalam satu minit.", "input": "", "output": "`sar -u -f /var/log/sysstat/saDD` replays yesterday's CPU; sysstat must be installed and enabled first."}
+{"instruction": "Apa yang perlu saya tahu tentang `sar history`?", "input": "", "output": "`sar -u -f /var/log/sysstat/saDD` replays yesterday's CPU; sysstat must be installed and enabled first."}
+{"instruction": "Bagaimanakah `sar history` berfungsi?", "input": "", "output": "`sar -u -f /var/log/sysstat/saDD` replays yesterday's CPU; sysstat must be installed and enabled first."}
+{"instruction": "Bilakah masa yang sesuai untuk `sar history`?", "input": "", "output": "`sar -u -f /var/log/sysstat/saDD` replays yesterday's CPU; sysstat must be installed and enabled first."}
+{"instruction": "What does `uptime load meaning` do?", "input": "", "output": "Load 4.0 on 4 CPUs is full, on 16 is idle — always divide by core count before panicking."}
+{"instruction": "Explain `uptime load meaning` briefly.", "input": "", "output": "Load 4.0 on 4 CPUs is full, on 16 is idle — always divide by core count before panicking."}
+{"instruction": "When do I use `uptime load meaning`?", "input": "", "output": "Load 4.0 on 4 CPUs is full, on 16 is idle — always divide by core count before panicking."}
+{"instruction": "Give a practical example of `uptime load meaning`.", "input": "", "output": "Load 4.0 on 4 CPUs is full, on 16 is idle — always divide by core count before panicking."}
+{"instruction": "What is `uptime load meaning` for?", "input": "", "output": "Load 4.0 on 4 CPUs is full, on 16 is idle — always divide by core count before panicking."}
+{"instruction": "Apakah fungsi `uptime load meaning`?", "input": "", "output": "Load 4.0 on 4 CPUs is full, on 16 is idle — always divide by core count before panicking."}
+{"instruction": "Terangkan `uptime load meaning` secara ringkas.", "input": "", "output": "Load 4.0 on 4 CPUs is full, on 16 is idle — always divide by core count before panicking."}
+{"instruction": "Bila perlu guna `uptime load meaning`?", "input": "", "output": "Load 4.0 on 4 CPUs is full, on 16 is idle — always divide by core count before panicking."}
+{"instruction": "Beri contoh penggunaan `uptime load meaning`.", "input": "", "output": "Load 4.0 on 4 CPUs is full, on 16 is idle — always divide by core count before panicking."}
+{"instruction": "`uptime load meaning` untuk apa?", "input": "", "output": "Load 4.0 on 4 CPUs is full, on 16 is idle — always divide by core count before panicking."}
+{"instruction": "How would you explain `uptime load meaning` to a junior developer?", "input": "", "output": "Load 4.0 on 4 CPUs is full, on 16 is idle — always divide by core count before panicking."}
+{"instruction": "Give a real-world scenario for `uptime load meaning`.", "input": "", "output": "Load 4.0 on 4 CPUs is full, on 16 is idle — always divide by core count before panicking."}
+{"instruction": "What problem does `uptime load meaning` solve?", "input": "", "output": "Load 4.0 on 4 CPUs is full, on 16 is idle — always divide by core count before panicking."}
+{"instruction": "Terangkan `uptime load meaning` dalam satu minit.", "input": "", "output": "Load 4.0 on 4 CPUs is full, on 16 is idle — always divide by core count before panicking."}
+{"instruction": "Apa yang perlu saya tahu tentang `uptime load meaning`?", "input": "", "output": "Load 4.0 on 4 CPUs is full, on 16 is idle — always divide by core count before panicking."}
+{"instruction": "Bagaimanakah `uptime load meaning` berfungsi?", "input": "", "output": "Load 4.0 on 4 CPUs is full, on 16 is idle — always divide by core count before panicking."}
+{"instruction": "Bilakah masa yang sesuai untuk `uptime load meaning`?", "input": "", "output": "Load 4.0 on 4 CPUs is full, on 16 is idle — always divide by core count before panicking."}
+{"instruction": "What does `who last wtmp` do?", "input": "", "output": "`who`/`w` show logins now; `last` reads wtmp history (logins, reboots, crashes) for audits."}
+{"instruction": "Explain `who last wtmp` briefly.", "input": "", "output": "`who`/`w` show logins now; `last` reads wtmp history (logins, reboots, crashes) for audits."}
+{"instruction": "When do I use `who last wtmp`?", "input": "", "output": "`who`/`w` show logins now; `last` reads wtmp history (logins, reboots, crashes) for audits."}
+{"instruction": "Give a practical example of `who last wtmp`.", "input": "", "output": "`who`/`w` show logins now; `last` reads wtmp history (logins, reboots, crashes) for audits."}
+{"instruction": "What is `who last wtmp` for?", "input": "", "output": "`who`/`w` show logins now; `last` reads wtmp history (logins, reboots, crashes) for audits."}
+{"instruction": "Apakah fungsi `who last wtmp`?", "input": "", "output": "`who`/`w` show logins now; `last` reads wtmp history (logins, reboots, crashes) for audits."}
+{"instruction": "Terangkan `who last wtmp` secara ringkas.", "input": "", "output": "`who`/`w` show logins now; `last` reads wtmp history (logins, reboots, crashes) for audits."}
+{"instruction": "Bila perlu guna `who last wtmp`?", "input": "", "output": "`who`/`w` show logins now; `last` reads wtmp history (logins, reboots, crashes) for audits."}
+{"instruction": "Beri contoh penggunaan `who last wtmp`.", "input": "", "output": "`who`/`w` show logins now; `last` reads wtmp history (logins, reboots, crashes) for audits."}
+{"instruction": "`who last wtmp` untuk apa?", "input": "", "output": "`who`/`w` show logins now; `last` reads wtmp history (logins, reboots, crashes) for audits."}
+{"instruction": "How would you explain `who last wtmp` to a junior developer?", "input": "", "output": "`who`/`w` show logins now; `last` reads wtmp history (logins, reboots, crashes) for audits."}
+{"instruction": "Give a real-world scenario for `who last wtmp`.", "input": "", "output": "`who`/`w` show logins now; `last` reads wtmp history (logins, reboots, crashes) for audits."}
+{"instruction": "What problem does `who last wtmp` solve?", "input": "", "output": "`who`/`w` show logins now; `last` reads wtmp history (logins, reboots, crashes) for audits."}
+{"instruction": "Terangkan `who last wtmp` dalam satu minit.", "input": "", "output": "`who`/`w` show logins now; `last` reads wtmp history (logins, reboots, crashes) for audits."}
+{"instruction": "Apa yang perlu saya tahu tentang `who last wtmp`?", "input": "", "output": "`who`/`w` show logins now; `last` reads wtmp history (logins, reboots, crashes) for audits."}
+{"instruction": "Bagaimanakah `who last wtmp` berfungsi?", "input": "", "output": "`who`/`w` show logins now; `last` reads wtmp history (logins, reboots, crashes) for audits."}
+{"instruction": "Bilakah masa yang sesuai untuk `who last wtmp`?", "input": "", "output": "`who`/`w` show logins now; `last` reads wtmp history (logins, reboots, crashes) for audits."}
+{"instruction": "What does `id groups sudo` do?", "input": "", "output": "`id` lists your groups; missing `sudo`/`docker` membership explains most permission mysteries."}
+{"instruction": "Explain `id groups sudo` briefly.", "input": "", "output": "`id` lists your groups; missing `sudo`/`docker` membership explains most permission mysteries."}
+{"instruction": "When do I use `id groups sudo`?", "input": "", "output": "`id` lists your groups; missing `sudo`/`docker` membership explains most permission mysteries."}
+{"instruction": "Give a practical example of `id groups sudo`.", "input": "", "output": "`id` lists your groups; missing `sudo`/`docker` membership explains most permission mysteries."}
+{"instruction": "What is `id groups sudo` for?", "input": "", "output": "`id` lists your groups; missing `sudo`/`docker` membership explains most permission mysteries."}
+{"instruction": "Apakah fungsi `id groups sudo`?", "input": "", "output": "`id` lists your groups; missing `sudo`/`docker` membership explains most permission mysteries."}
+{"instruction": "Terangkan `id groups sudo` secara ringkas.", "input": "", "output": "`id` lists your groups; missing `sudo`/`docker` membership explains most permission mysteries."}
+{"instruction": "Bila perlu guna `id groups sudo`?", "input": "", "output": "`id` lists your groups; missing `sudo`/`docker` membership explains most permission mysteries."}
+{"instruction": "Beri contoh penggunaan `id groups sudo`.", "input": "", "output": "`id` lists your groups; missing `sudo`/`docker` membership explains most permission mysteries."}
+{"instruction": "`id groups sudo` untuk apa?", "input": "", "output": "`id` lists your groups; missing `sudo`/`docker` membership explains most permission mysteries."}
+{"instruction": "How would you explain `id groups sudo` to a junior developer?", "input": "", "output": "`id` lists your groups; missing `sudo`/`docker` membership explains most permission mysteries."}
+{"instruction": "Give a real-world scenario for `id groups sudo`.", "input": "", "output": "`id` lists your groups; missing `sudo`/`docker` membership explains most permission mysteries."}
+{"instruction": "What problem does `id groups sudo` solve?", "input": "", "output": "`id` lists your groups; missing `sudo`/`docker` membership explains most permission mysteries."}
+{"instruction": "Terangkan `id groups sudo` dalam satu minit.", "input": "", "output": "`id` lists your groups; missing `sudo`/`docker` membership explains most permission mysteries."}
+{"instruction": "Apa yang perlu saya tahu tentang `id groups sudo`?", "input": "", "output": "`id` lists your groups; missing `sudo`/`docker` membership explains most permission mysteries."}
+{"instruction": "Bagaimanakah `id groups sudo` berfungsi?", "input": "", "output": "`id` lists your groups; missing `sudo`/`docker` membership explains most permission mysteries."}
+{"instruction": "Bilakah masa yang sesuai untuk `id groups sudo`?", "input": "", "output": "`id` lists your groups; missing `sudo`/`docker` membership explains most permission mysteries."}

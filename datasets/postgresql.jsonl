@@ -465,3 +465,564 @@
 {"instruction": "How would you explain `\\q quit` to a junior developer?", "input": "", "output": "`\\q` (or Ctrl-D) exits psql; unsaved `\\e` editor buffers warn first — check before killing long sessions."}
 {"instruction": "Give a real-world scenario for `\\q quit`.", "input": "", "output": "`\\q` (or Ctrl-D) exits psql; unsaved `\\e` editor buffers warn first — check before killing long sessions."}
 {"instruction": "What problem does `\\q quit` solve?", "input": "", "output": "`\\q` (or Ctrl-D) exits psql; unsaved `\\e` editor buffers warn first — check before killing long sessions."}
+{"instruction": "Terangkan `psql -U app` dalam satu minit.", "input": "", "output": "`psql -U app -d kedai` connects; `-h/-p` for remotes; `.pgpass` avoids password prompts in scripts."}
+{"instruction": "Apa yang perlu saya tahu tentang `psql -U app`?", "input": "", "output": "`psql -U app -d kedai` connects; `-h/-p` for remotes; `.pgpass` avoids password prompts in scripts."}
+{"instruction": "Bagaimanakah `psql -U app` berfungsi?", "input": "", "output": "`psql -U app -d kedai` connects; `-h/-p` for remotes; `.pgpass` avoids password prompts in scripts."}
+{"instruction": "Bilakah masa yang sesuai untuk `psql -U app`?", "input": "", "output": "`psql -U app -d kedai` connects; `-h/-p` for remotes; `.pgpass` avoids password prompts in scripts."}
+{"instruction": "Terangkan `\\l \\c \\dt` dalam satu minit.", "input": "", "output": "Backslash commands navigate: `\\l` databases, `\\c` switch, `\\dt` tables, `\\d t` columns."}
+{"instruction": "Apa yang perlu saya tahu tentang `\\l \\c \\dt`?", "input": "", "output": "Backslash commands navigate: `\\l` databases, `\\c` switch, `\\dt` tables, `\\d t` columns."}
+{"instruction": "Bagaimanakah `\\l \\c \\dt` berfungsi?", "input": "", "output": "Backslash commands navigate: `\\l` databases, `\\c` switch, `\\dt` tables, `\\d t` columns."}
+{"instruction": "Bilakah masa yang sesuai untuk `\\l \\c \\dt`?", "input": "", "output": "Backslash commands navigate: `\\l` databases, `\\c` switch, `\\dt` tables, `\\d t` columns."}
+{"instruction": "Terangkan `CREATE DATABASE` dalam satu minit.", "input": "", "output": "`createdb kedai` or SQL with OWNER set to the app role — migrations then need no superuser."}
+{"instruction": "Apa yang perlu saya tahu tentang `CREATE DATABASE`?", "input": "", "output": "`createdb kedai` or SQL with OWNER set to the app role — migrations then need no superuser."}
+{"instruction": "Bagaimanakah `CREATE DATABASE` berfungsi?", "input": "", "output": "`createdb kedai` or SQL with OWNER set to the app role — migrations then need no superuser."}
+{"instruction": "Bilakah masa yang sesuai untuk `CREATE DATABASE`?", "input": "", "output": "`createdb kedai` or SQL with OWNER set to the app role — migrations then need no superuser."}
+{"instruction": "Terangkan `CREATE TABLE` dalam satu minit.", "input": "", "output": "Declare PKs, NOT NULLs and defaults up front; `GENERATED ... AS IDENTITY` beats legacy SERIAL."}
+{"instruction": "Apa yang perlu saya tahu tentang `CREATE TABLE`?", "input": "", "output": "Declare PKs, NOT NULLs and defaults up front; `GENERATED ... AS IDENTITY` beats legacy SERIAL."}
+{"instruction": "Bagaimanakah `CREATE TABLE` berfungsi?", "input": "", "output": "Declare PKs, NOT NULLs and defaults up front; `GENERATED ... AS IDENTITY` beats legacy SERIAL."}
+{"instruction": "Bilakah masa yang sesuai untuk `CREATE TABLE`?", "input": "", "output": "Declare PKs, NOT NULLs and defaults up front; `GENERATED ... AS IDENTITY` beats legacy SERIAL."}
+{"instruction": "Terangkan `SERIAL IDENTITY UUID` dalam satu minit.", "input": "", "output": "IDENTITY is the modern auto-key; UUIDs (`gen_random_uuid()`) suit public/distributed ids; JSONB for semi-structure."}
+{"instruction": "Apa yang perlu saya tahu tentang `SERIAL IDENTITY UUID`?", "input": "", "output": "IDENTITY is the modern auto-key; UUIDs (`gen_random_uuid()`) suit public/distributed ids; JSONB for semi-structure."}
+{"instruction": "Bagaimanakah `SERIAL IDENTITY UUID` berfungsi?", "input": "", "output": "IDENTITY is the modern auto-key; UUIDs (`gen_random_uuid()`) suit public/distributed ids; JSONB for semi-structure."}
+{"instruction": "Bilakah masa yang sesuai untuk `SERIAL IDENTITY UUID`?", "input": "", "output": "IDENTITY is the modern auto-key; UUIDs (`gen_random_uuid()`) suit public/distributed ids; JSONB for semi-structure."}
+{"instruction": "Terangkan `INSERT RETURNING` dalam satu minit.", "input": "", "output": "`RETURNING id` fetches generated values in one round trip — no follow-up SELECT, no races."}
+{"instruction": "Apa yang perlu saya tahu tentang `INSERT RETURNING`?", "input": "", "output": "`RETURNING id` fetches generated values in one round trip — no follow-up SELECT, no races."}
+{"instruction": "Bagaimanakah `INSERT RETURNING` berfungsi?", "input": "", "output": "`RETURNING id` fetches generated values in one round trip — no follow-up SELECT, no races."}
+{"instruction": "Bilakah masa yang sesuai untuk `INSERT RETURNING`?", "input": "", "output": "`RETURNING id` fetches generated values in one round trip — no follow-up SELECT, no races."}
+{"instruction": "Terangkan `SELECT WHERE` dalam satu minit.", "input": "", "output": "Filter early with indexed WHERE; `ILIKE` for case-insensitive, `IN (...)` for sets, `BETWEEN` for ranges."}
+{"instruction": "Apa yang perlu saya tahu tentang `SELECT WHERE`?", "input": "", "output": "Filter early with indexed WHERE; `ILIKE` for case-insensitive, `IN (...)` for sets, `BETWEEN` for ranges."}
+{"instruction": "Bagaimanakah `SELECT WHERE` berfungsi?", "input": "", "output": "Filter early with indexed WHERE; `ILIKE` for case-insensitive, `IN (...)` for sets, `BETWEEN` for ranges."}
+{"instruction": "Bilakah masa yang sesuai untuk `SELECT WHERE`?", "input": "", "output": "Filter early with indexed WHERE; `ILIKE` for case-insensitive, `IN (...)` for sets, `BETWEEN` for ranges."}
+{"instruction": "Terangkan `UPDATE DELETE` dalam satu minit.", "input": "", "output": "Same rule as MySQL: develop WHERE as SELECT first; wrap multi-statement changes in transactions."}
+{"instruction": "Apa yang perlu saya tahu tentang `UPDATE DELETE`?", "input": "", "output": "Same rule as MySQL: develop WHERE as SELECT first; wrap multi-statement changes in transactions."}
+{"instruction": "Bagaimanakah `UPDATE DELETE` berfungsi?", "input": "", "output": "Same rule as MySQL: develop WHERE as SELECT first; wrap multi-statement changes in transactions."}
+{"instruction": "Bilakah masa yang sesuai untuk `UPDATE DELETE`?", "input": "", "output": "Same rule as MySQL: develop WHERE as SELECT first; wrap multi-statement changes in transactions."}
+{"instruction": "Terangkan `JOIN` dalam satu minit.", "input": "", "output": "INNER/LEFT semantics mirror MySQL; `USING (id)` shortens equi-joins on same-named keys."}
+{"instruction": "Apa yang perlu saya tahu tentang `JOIN`?", "input": "", "output": "INNER/LEFT semantics mirror MySQL; `USING (id)` shortens equi-joins on same-named keys."}
+{"instruction": "Bagaimanakah `JOIN` berfungsi?", "input": "", "output": "INNER/LEFT semantics mirror MySQL; `USING (id)` shortens equi-joins on same-named keys."}
+{"instruction": "Bilakah masa yang sesuai untuk `JOIN`?", "input": "", "output": "INNER/LEFT semantics mirror MySQL; `USING (id)` shortens equi-joins on same-named keys."}
+{"instruction": "Terangkan `GROUP BY HAVING` dalam satu minit.", "input": "", "output": "Aggregate then filter groups with HAVING; `FILTER (WHERE ...)` pivots multiple aggregates in one pass."}
+{"instruction": "Apa yang perlu saya tahu tentang `GROUP BY HAVING`?", "input": "", "output": "Aggregate then filter groups with HAVING; `FILTER (WHERE ...)` pivots multiple aggregates in one pass."}
+{"instruction": "Bagaimanakah `GROUP BY HAVING` berfungsi?", "input": "", "output": "Aggregate then filter groups with HAVING; `FILTER (WHERE ...)` pivots multiple aggregates in one pass."}
+{"instruction": "Bilakah masa yang sesuai untuk `GROUP BY HAVING`?", "input": "", "output": "Aggregate then filter groups with HAVING; `FILTER (WHERE ...)` pivots multiple aggregates in one pass."}
+{"instruction": "Terangkan `ORDER BY LIMIT` dalam satu minit.", "input": "", "output": "Pair LIMIT with deterministic ORDER BY (add id tiebreak); keyset (`WHERE id >`) beats OFFSET at scale."}
+{"instruction": "Apa yang perlu saya tahu tentang `ORDER BY LIMIT`?", "input": "", "output": "Pair LIMIT with deterministic ORDER BY (add id tiebreak); keyset (`WHERE id >`) beats OFFSET at scale."}
+{"instruction": "Bagaimanakah `ORDER BY LIMIT` berfungsi?", "input": "", "output": "Pair LIMIT with deterministic ORDER BY (add id tiebreak); keyset (`WHERE id >`) beats OFFSET at scale."}
+{"instruction": "Bilakah masa yang sesuai untuk `ORDER BY LIMIT`?", "input": "", "output": "Pair LIMIT with deterministic ORDER BY (add id tiebreak); keyset (`WHERE id >`) beats OFFSET at scale."}
+{"instruction": "Terangkan `CTE WITH` dalam satu minit.", "input": "", "output": "WITH names subqueries as readable steps; chain several comma-separated; PG12+ inlines them well."}
+{"instruction": "Apa yang perlu saya tahu tentang `CTE WITH`?", "input": "", "output": "WITH names subqueries as readable steps; chain several comma-separated; PG12+ inlines them well."}
+{"instruction": "Bagaimanakah `CTE WITH` berfungsi?", "input": "", "output": "WITH names subqueries as readable steps; chain several comma-separated; PG12+ inlines them well."}
+{"instruction": "Bilakah masa yang sesuai untuk `CTE WITH`?", "input": "", "output": "WITH names subqueries as readable steps; chain several comma-separated; PG12+ inlines them well."}
+{"instruction": "Terangkan `window ROW_NUMBER` dalam satu minit.", "input": "", "output": "Windows compute across related rows without collapsing them — rankings, running totals, lags."}
+{"instruction": "Apa yang perlu saya tahu tentang `window ROW_NUMBER`?", "input": "", "output": "Windows compute across related rows without collapsing them — rankings, running totals, lags."}
+{"instruction": "Bagaimanakah `window ROW_NUMBER` berfungsi?", "input": "", "output": "Windows compute across related rows without collapsing them — rankings, running totals, lags."}
+{"instruction": "Bilakah masa yang sesuai untuk `window ROW_NUMBER`?", "input": "", "output": "Windows compute across related rows without collapsing them — rankings, running totals, lags."}
+{"instruction": "Terangkan `EXPLAIN ANALYZE` dalam satu minit.", "input": "", "output": "Shows real plan + timings; seek Seq Scans on big tables, add btree/GIN/BRIN indexes, re-measure."}
+{"instruction": "Apa yang perlu saya tahu tentang `EXPLAIN ANALYZE`?", "input": "", "output": "Shows real plan + timings; seek Seq Scans on big tables, add btree/GIN/BRIN indexes, re-measure."}
+{"instruction": "Bagaimanakah `EXPLAIN ANALYZE` berfungsi?", "input": "", "output": "Shows real plan + timings; seek Seq Scans on big tables, add btree/GIN/BRIN indexes, re-measure."}
+{"instruction": "Bilakah masa yang sesuai untuk `EXPLAIN ANALYZE`?", "input": "", "output": "Shows real plan + timings; seek Seq Scans on big tables, add btree/GIN/BRIN indexes, re-measure."}
+{"instruction": "Terangkan `CREATE INDEX` dalam satu minit.", "input": "", "output": "Btree default, GIN for JSONB/full-text, BRIN for append-only time series; partial indexes shrink hot paths."}
+{"instruction": "Apa yang perlu saya tahu tentang `CREATE INDEX`?", "input": "", "output": "Btree default, GIN for JSONB/full-text, BRIN for append-only time series; partial indexes shrink hot paths."}
+{"instruction": "Bagaimanakah `CREATE INDEX` berfungsi?", "input": "", "output": "Btree default, GIN for JSONB/full-text, BRIN for append-only time series; partial indexes shrink hot paths."}
+{"instruction": "Bilakah masa yang sesuai untuk `CREATE INDEX`?", "input": "", "output": "Btree default, GIN for JSONB/full-text, BRIN for append-only time series; partial indexes shrink hot paths."}
+{"instruction": "Terangkan `pg_dump pg_restore` dalam satu minit.", "input": "", "output": "Custom format (`-Fc`) enables selective restores; pair base backups with WAL archiving for PITR."}
+{"instruction": "Apa yang perlu saya tahu tentang `pg_dump pg_restore`?", "input": "", "output": "Custom format (`-Fc`) enables selective restores; pair base backups with WAL archiving for PITR."}
+{"instruction": "Bagaimanakah `pg_dump pg_restore` berfungsi?", "input": "", "output": "Custom format (`-Fc`) enables selective restores; pair base backups with WAL archiving for PITR."}
+{"instruction": "Bilakah masa yang sesuai untuk `pg_dump pg_restore`?", "input": "", "output": "Custom format (`-Fc`) enables selective restores; pair base backups with WAL archiving for PITR."}
+{"instruction": "Terangkan `ALTER TABLE` dalam satu minit.", "input": "", "output": "Add nullable columns freely; backfill, then add NOT NULL — rewrites need maintenance windows on big tables."}
+{"instruction": "Apa yang perlu saya tahu tentang `ALTER TABLE`?", "input": "", "output": "Add nullable columns freely; backfill, then add NOT NULL — rewrites need maintenance windows on big tables."}
+{"instruction": "Bagaimanakah `ALTER TABLE` berfungsi?", "input": "", "output": "Add nullable columns freely; backfill, then add NOT NULL — rewrites need maintenance windows on big tables."}
+{"instruction": "Bilakah masa yang sesuai untuk `ALTER TABLE`?", "input": "", "output": "Add nullable columns freely; backfill, then add NOT NULL — rewrites need maintenance windows on big tables."}
+{"instruction": "Terangkan `TRUNCATE` dalam satu minit.", "input": "", "output": "Instant full clears without row WAL; needs no WHERE by design; `RESTART IDENTITY` resets sequences."}
+{"instruction": "Apa yang perlu saya tahu tentang `TRUNCATE`?", "input": "", "output": "Instant full clears without row WAL; needs no WHERE by design; `RESTART IDENTITY` resets sequences."}
+{"instruction": "Bagaimanakah `TRUNCATE` berfungsi?", "input": "", "output": "Instant full clears without row WAL; needs no WHERE by design; `RESTART IDENTITY` resets sequences."}
+{"instruction": "Bilakah masa yang sesuai untuk `TRUNCATE`?", "input": "", "output": "Instant full clears without row WAL; needs no WHERE by design; `RESTART IDENTITY` resets sequences."}
+{"instruction": "Terangkan `COPY CSV` dalam satu minit.", "input": "", "output": "Server-side `\\copy` moves bulk data hundreds of times faster than row INSERTs; mind superuser vs client paths."}
+{"instruction": "Apa yang perlu saya tahu tentang `COPY CSV`?", "input": "", "output": "Server-side `\\copy` moves bulk data hundreds of times faster than row INSERTs; mind superuser vs client paths."}
+{"instruction": "Bagaimanakah `COPY CSV` berfungsi?", "input": "", "output": "Server-side `\\copy` moves bulk data hundreds of times faster than row INSERTs; mind superuser vs client paths."}
+{"instruction": "Bilakah masa yang sesuai untuk `COPY CSV`?", "input": "", "output": "Server-side `\\copy` moves bulk data hundreds of times faster than row INSERTs; mind superuser vs client paths."}
+{"instruction": "Terangkan `roles pg_hba` dalam satu minit.", "input": "", "output": "Roles + `pg_hba.conf` (first match wins, prefer scram-sha-256) gate access; `SELECT pg_reload_conf()` applies."}
+{"instruction": "Apa yang perlu saya tahu tentang `roles pg_hba`?", "input": "", "output": "Roles + `pg_hba.conf` (first match wins, prefer scram-sha-256) gate access; `SELECT pg_reload_conf()` applies."}
+{"instruction": "Bagaimanakah `roles pg_hba` berfungsi?", "input": "", "output": "Roles + `pg_hba.conf` (first match wins, prefer scram-sha-256) gate access; `SELECT pg_reload_conf()` applies."}
+{"instruction": "Bilakah masa yang sesuai untuk `roles pg_hba`?", "input": "", "output": "Roles + `pg_hba.conf` (first match wins, prefer scram-sha-256) gate access; `SELECT pg_reload_conf()` applies."}
+{"instruction": "Terangkan `\\dt \\du` dalam satu minit.", "input": "", "output": "`\\dt` tables, `\\du` roles, `\\dv` views, `\\df` functions — meta-commands beat memorizing catalog queries."}
+{"instruction": "Apa yang perlu saya tahu tentang `\\dt \\du`?", "input": "", "output": "`\\dt` tables, `\\du` roles, `\\dv` views, `\\df` functions — meta-commands beat memorizing catalog queries."}
+{"instruction": "Bagaimanakah `\\dt \\du` berfungsi?", "input": "", "output": "`\\dt` tables, `\\du` roles, `\\dv` views, `\\df` functions — meta-commands beat memorizing catalog queries."}
+{"instruction": "Bilakah masa yang sesuai untuk `\\dt \\du`?", "input": "", "output": "`\\dt` tables, `\\du` roles, `\\dv` views, `\\df` functions — meta-commands beat memorizing catalog queries."}
+{"instruction": "Terangkan `\\x expanded` dalam satu minit.", "input": "", "output": "`\\x on` pivots wide rows vertical for readable inspection; `\\timing` shows every query's milliseconds."}
+{"instruction": "Apa yang perlu saya tahu tentang `\\x expanded`?", "input": "", "output": "`\\x on` pivots wide rows vertical for readable inspection; `\\timing` shows every query's milliseconds."}
+{"instruction": "Bagaimanakah `\\x expanded` berfungsi?", "input": "", "output": "`\\x on` pivots wide rows vertical for readable inspection; `\\timing` shows every query's milliseconds."}
+{"instruction": "Bilakah masa yang sesuai untuk `\\x expanded`?", "input": "", "output": "`\\x on` pivots wide rows vertical for readable inspection; `\\timing` shows every query's milliseconds."}
+{"instruction": "Terangkan `\\copy vs COPY` dalam satu minit.", "input": "", "output": "`\\copy` moves files client-side (no superuser); server `COPY` needs filesystem rights — know which side you're on."}
+{"instruction": "Apa yang perlu saya tahu tentang `\\copy vs COPY`?", "input": "", "output": "`\\copy` moves files client-side (no superuser); server `COPY` needs filesystem rights — know which side you're on."}
+{"instruction": "Bagaimanakah `\\copy vs COPY` berfungsi?", "input": "", "output": "`\\copy` moves files client-side (no superuser); server `COPY` needs filesystem rights — know which side you're on."}
+{"instruction": "Bilakah masa yang sesuai untuk `\\copy vs COPY`?", "input": "", "output": "`\\copy` moves files client-side (no superuser); server `COPY` needs filesystem rights — know which side you're on."}
+{"instruction": "Terangkan `\\i file.sql` dalam satu minit.", "input": "", "output": "`\\i` runs script files inside psql (migrations, seeds); `\\o out.txt` redirects all output to a file."}
+{"instruction": "Apa yang perlu saya tahu tentang `\\i file.sql`?", "input": "", "output": "`\\i` runs script files inside psql (migrations, seeds); `\\o out.txt` redirects all output to a file."}
+{"instruction": "Bagaimanakah `\\i file.sql` berfungsi?", "input": "", "output": "`\\i` runs script files inside psql (migrations, seeds); `\\o out.txt` redirects all output to a file."}
+{"instruction": "Bilakah masa yang sesuai untuk `\\i file.sql`?", "input": "", "output": "`\\i` runs script files inside psql (migrations, seeds); `\\o out.txt` redirects all output to a file."}
+{"instruction": "Terangkan `DISTINCT ON` dalam satu minit.", "input": "", "output": "`DISTINCT ON (bandar)` keeps one row per group (first by ORDER BY) — Postgres-only expressiveness for latest-per-group."}
+{"instruction": "Apa yang perlu saya tahu tentang `DISTINCT ON`?", "input": "", "output": "`DISTINCT ON (bandar)` keeps one row per group (first by ORDER BY) — Postgres-only expressiveness for latest-per-group."}
+{"instruction": "Bagaimanakah `DISTINCT ON` berfungsi?", "input": "", "output": "`DISTINCT ON (bandar)` keeps one row per group (first by ORDER BY) — Postgres-only expressiveness for latest-per-group."}
+{"instruction": "Bilakah masa yang sesuai untuk `DISTINCT ON`?", "input": "", "output": "`DISTINCT ON (bandar)` keeps one row per group (first by ORDER BY) — Postgres-only expressiveness for latest-per-group."}
+{"instruction": "Terangkan `FETCH FIRST` dalam satu minit.", "input": "", "output": "`FETCH FIRST 10 ROWS ONLY` is standard-SQL LIMIT; `OFFSET` pairs the same pagination caveats (prefer keyset)."}
+{"instruction": "Apa yang perlu saya tahu tentang `FETCH FIRST`?", "input": "", "output": "`FETCH FIRST 10 ROWS ONLY` is standard-SQL LIMIT; `OFFSET` pairs the same pagination caveats (prefer keyset)."}
+{"instruction": "Bagaimanakah `FETCH FIRST` berfungsi?", "input": "", "output": "`FETCH FIRST 10 ROWS ONLY` is standard-SQL LIMIT; `OFFSET` pairs the same pagination caveats (prefer keyset)."}
+{"instruction": "Bilakah masa yang sesuai untuk `FETCH FIRST`?", "input": "", "output": "`FETCH FIRST 10 ROWS ONLY` is standard-SQL LIMIT; `OFFSET` pairs the same pagination caveats (prefer keyset)."}
+{"instruction": "Terangkan `UNION INTERSECT EXCEPT` dalam satu minit.", "input": "", "output": "Set operators combine query shapes (matching columns); INTERSECT/EXCEPT filter overlaps/differences — UNION dedupes unless ALL."}
+{"instruction": "Apa yang perlu saya tahu tentang `UNION INTERSECT EXCEPT`?", "input": "", "output": "Set operators combine query shapes (matching columns); INTERSECT/EXCEPT filter overlaps/differences — UNION dedupes unless ALL."}
+{"instruction": "Bagaimanakah `UNION INTERSECT EXCEPT` berfungsi?", "input": "", "output": "Set operators combine query shapes (matching columns); INTERSECT/EXCEPT filter overlaps/differences — UNION dedupes unless ALL."}
+{"instruction": "Bilakah masa yang sesuai untuk `UNION INTERSECT EXCEPT`?", "input": "", "output": "Set operators combine query shapes (matching columns); INTERSECT/EXCEPT filter overlaps/differences — UNION dedupes unless ALL."}
+{"instruction": "Terangkan `generate_series` dalam satu minit.", "input": "", "output": "`generate_series(1, 100)` fabricates rows for tests/calendars without tables — scaffolding for gaps-and-islands analysis."}
+{"instruction": "Apa yang perlu saya tahu tentang `generate_series`?", "input": "", "output": "`generate_series(1, 100)` fabricates rows for tests/calendars without tables — scaffolding for gaps-and-islands analysis."}
+{"instruction": "Bagaimanakah `generate_series` berfungsi?", "input": "", "output": "`generate_series(1, 100)` fabricates rows for tests/calendars without tables — scaffolding for gaps-and-islands analysis."}
+{"instruction": "Bilakah masa yang sesuai untuk `generate_series`?", "input": "", "output": "`generate_series(1, 100)` fabricates rows for tests/calendars without tables — scaffolding for gaps-and-islands analysis."}
+{"instruction": "Terangkan `date_trunc` dalam satu minit.", "input": "", "output": "`date_trunc('month', dibuat)` buckets timestamps; group by it for monthly reports in one pass."}
+{"instruction": "Apa yang perlu saya tahu tentang `date_trunc`?", "input": "", "output": "`date_trunc('month', dibuat)` buckets timestamps; group by it for monthly reports in one pass."}
+{"instruction": "Bagaimanakah `date_trunc` berfungsi?", "input": "", "output": "`date_trunc('month', dibuat)` buckets timestamps; group by it for monthly reports in one pass."}
+{"instruction": "Bilakah masa yang sesuai untuk `date_trunc`?", "input": "", "output": "`date_trunc('month', dibuat)` buckets timestamps; group by it for monthly reports in one pass."}
+{"instruction": "Terangkan `:: cast` dalam satu minit.", "input": "", "output": "`harga::numeric` / `created::date` convert inline; failing casts abort — use `TRY_CAST`-style CASE guards for dirty data."}
+{"instruction": "Apa yang perlu saya tahu tentang `:: cast`?", "input": "", "output": "`harga::numeric` / `created::date` convert inline; failing casts abort — use `TRY_CAST`-style CASE guards for dirty data."}
+{"instruction": "Bagaimanakah `:: cast` berfungsi?", "input": "", "output": "`harga::numeric` / `created::date` convert inline; failing casts abort — use `TRY_CAST`-style CASE guards for dirty data."}
+{"instruction": "Bilakah masa yang sesuai untuk `:: cast`?", "input": "", "output": "`harga::numeric` / `created::date` convert inline; failing casts abort — use `TRY_CAST`-style CASE guards for dirty data."}
+{"instruction": "Terangkan `ARRAY unnest` dalam satu minit.", "input": "", "output": "Native arrays (`text[]`) with `unnest()` explode to rows; GIN indexes them — think twice before normalizing tiny sets."}
+{"instruction": "Apa yang perlu saya tahu tentang `ARRAY unnest`?", "input": "", "output": "Native arrays (`text[]`) with `unnest()` explode to rows; GIN indexes them — think twice before normalizing tiny sets."}
+{"instruction": "Bagaimanakah `ARRAY unnest` berfungsi?", "input": "", "output": "Native arrays (`text[]`) with `unnest()` explode to rows; GIN indexes them — think twice before normalizing tiny sets."}
+{"instruction": "Bilakah masa yang sesuai untuk `ARRAY unnest`?", "input": "", "output": "Native arrays (`text[]`) with `unnest()` explode to rows; GIN indexes them — think twice before normalizing tiny sets."}
+{"instruction": "Terangkan `information_schema pg` dalam satu minit.", "input": "", "output": "`information_schema` stays portable; `pg_catalog`/`pg_stat_*` expose Postgres-specific health (bloat, locks, waits)."}
+{"instruction": "Apa yang perlu saya tahu tentang `information_schema pg`?", "input": "", "output": "`information_schema` stays portable; `pg_catalog`/`pg_stat_*` expose Postgres-specific health (bloat, locks, waits)."}
+{"instruction": "Bagaimanakah `information_schema pg` berfungsi?", "input": "", "output": "`information_schema` stays portable; `pg_catalog`/`pg_stat_*` expose Postgres-specific health (bloat, locks, waits)."}
+{"instruction": "Bilakah masa yang sesuai untuk `information_schema pg`?", "input": "", "output": "`information_schema` stays portable; `pg_catalog`/`pg_stat_*` expose Postgres-specific health (bloat, locks, waits)."}
+{"instruction": "Terangkan `\\password` dalam satu minit.", "input": "", "output": "`\\password app` rotates role passwords interactively (scram-hashed, never plaintext in history); rotate service accounts quarterly."}
+{"instruction": "Apa yang perlu saya tahu tentang `\\password`?", "input": "", "output": "`\\password app` rotates role passwords interactively (scram-hashed, never plaintext in history); rotate service accounts quarterly."}
+{"instruction": "Bagaimanakah `\\password` berfungsi?", "input": "", "output": "`\\password app` rotates role passwords interactively (scram-hashed, never plaintext in history); rotate service accounts quarterly."}
+{"instruction": "Bilakah masa yang sesuai untuk `\\password`?", "input": "", "output": "`\\password app` rotates role passwords interactively (scram-hashed, never plaintext in history); rotate service accounts quarterly."}
+{"instruction": "Terangkan `\\q quit` dalam satu minit.", "input": "", "output": "`\\q` (or Ctrl-D) exits psql; unsaved `\\e` editor buffers warn first — check before killing long sessions."}
+{"instruction": "Apa yang perlu saya tahu tentang `\\q quit`?", "input": "", "output": "`\\q` (or Ctrl-D) exits psql; unsaved `\\e` editor buffers warn first — check before killing long sessions."}
+{"instruction": "Bagaimanakah `\\q quit` berfungsi?", "input": "", "output": "`\\q` (or Ctrl-D) exits psql; unsaved `\\e` editor buffers warn first — check before killing long sessions."}
+{"instruction": "Bilakah masa yang sesuai untuk `\\q quit`?", "input": "", "output": "`\\q` (or Ctrl-D) exits psql; unsaved `\\e` editor buffers warn first — check before killing long sessions."}
+{"instruction": "What does `\\dn schemas` do?", "input": "", "output": "`\\dn` lists schemas; `SET search_path TO app, public` scopes unqualified names per session/role."}
+{"instruction": "Explain `\\dn schemas` briefly.", "input": "", "output": "`\\dn` lists schemas; `SET search_path TO app, public` scopes unqualified names per session/role."}
+{"instruction": "When do I use `\\dn schemas`?", "input": "", "output": "`\\dn` lists schemas; `SET search_path TO app, public` scopes unqualified names per session/role."}
+{"instruction": "Give a practical example of `\\dn schemas`.", "input": "", "output": "`\\dn` lists schemas; `SET search_path TO app, public` scopes unqualified names per session/role."}
+{"instruction": "What is `\\dn schemas` for?", "input": "", "output": "`\\dn` lists schemas; `SET search_path TO app, public` scopes unqualified names per session/role."}
+{"instruction": "Apakah fungsi `\\dn schemas`?", "input": "", "output": "`\\dn` lists schemas; `SET search_path TO app, public` scopes unqualified names per session/role."}
+{"instruction": "Terangkan `\\dn schemas` secara ringkas.", "input": "", "output": "`\\dn` lists schemas; `SET search_path TO app, public` scopes unqualified names per session/role."}
+{"instruction": "Bila perlu guna `\\dn schemas`?", "input": "", "output": "`\\dn` lists schemas; `SET search_path TO app, public` scopes unqualified names per session/role."}
+{"instruction": "Beri contoh penggunaan `\\dn schemas`.", "input": "", "output": "`\\dn` lists schemas; `SET search_path TO app, public` scopes unqualified names per session/role."}
+{"instruction": "`\\dn schemas` untuk apa?", "input": "", "output": "`\\dn` lists schemas; `SET search_path TO app, public` scopes unqualified names per session/role."}
+{"instruction": "How would you explain `\\dn schemas` to a junior developer?", "input": "", "output": "`\\dn` lists schemas; `SET search_path TO app, public` scopes unqualified names per session/role."}
+{"instruction": "Give a real-world scenario for `\\dn schemas`.", "input": "", "output": "`\\dn` lists schemas; `SET search_path TO app, public` scopes unqualified names per session/role."}
+{"instruction": "What problem does `\\dn schemas` solve?", "input": "", "output": "`\\dn` lists schemas; `SET search_path TO app, public` scopes unqualified names per session/role."}
+{"instruction": "Terangkan `\\dn schemas` dalam satu minit.", "input": "", "output": "`\\dn` lists schemas; `SET search_path TO app, public` scopes unqualified names per session/role."}
+{"instruction": "Apa yang perlu saya tahu tentang `\\dn schemas`?", "input": "", "output": "`\\dn` lists schemas; `SET search_path TO app, public` scopes unqualified names per session/role."}
+{"instruction": "Bagaimanakah `\\dn schemas` berfungsi?", "input": "", "output": "`\\dn` lists schemas; `SET search_path TO app, public` scopes unqualified names per session/role."}
+{"instruction": "Bilakah masa yang sesuai untuk `\\dn schemas`?", "input": "", "output": "`\\dn` lists schemas; `SET search_path TO app, public` scopes unqualified names per session/role."}
+{"instruction": "What does `\\df functions` do?", "input": "", "output": "`\\df` lists functions with signatures; `\\sf nama` shows source — debugging stored logic without dumps."}
+{"instruction": "Explain `\\df functions` briefly.", "input": "", "output": "`\\df` lists functions with signatures; `\\sf nama` shows source — debugging stored logic without dumps."}
+{"instruction": "When do I use `\\df functions`?", "input": "", "output": "`\\df` lists functions with signatures; `\\sf nama` shows source — debugging stored logic without dumps."}
+{"instruction": "Give a practical example of `\\df functions`.", "input": "", "output": "`\\df` lists functions with signatures; `\\sf nama` shows source — debugging stored logic without dumps."}
+{"instruction": "What is `\\df functions` for?", "input": "", "output": "`\\df` lists functions with signatures; `\\sf nama` shows source — debugging stored logic without dumps."}
+{"instruction": "Apakah fungsi `\\df functions`?", "input": "", "output": "`\\df` lists functions with signatures; `\\sf nama` shows source — debugging stored logic without dumps."}
+{"instruction": "Terangkan `\\df functions` secara ringkas.", "input": "", "output": "`\\df` lists functions with signatures; `\\sf nama` shows source — debugging stored logic without dumps."}
+{"instruction": "Bila perlu guna `\\df functions`?", "input": "", "output": "`\\df` lists functions with signatures; `\\sf nama` shows source — debugging stored logic without dumps."}
+{"instruction": "Beri contoh penggunaan `\\df functions`.", "input": "", "output": "`\\df` lists functions with signatures; `\\sf nama` shows source — debugging stored logic without dumps."}
+{"instruction": "`\\df functions` untuk apa?", "input": "", "output": "`\\df` lists functions with signatures; `\\sf nama` shows source — debugging stored logic without dumps."}
+{"instruction": "How would you explain `\\df functions` to a junior developer?", "input": "", "output": "`\\df` lists functions with signatures; `\\sf nama` shows source — debugging stored logic without dumps."}
+{"instruction": "Give a real-world scenario for `\\df functions`.", "input": "", "output": "`\\df` lists functions with signatures; `\\sf nama` shows source — debugging stored logic without dumps."}
+{"instruction": "What problem does `\\df functions` solve?", "input": "", "output": "`\\df` lists functions with signatures; `\\sf nama` shows source — debugging stored logic without dumps."}
+{"instruction": "Terangkan `\\df functions` dalam satu minit.", "input": "", "output": "`\\df` lists functions with signatures; `\\sf nama` shows source — debugging stored logic without dumps."}
+{"instruction": "Apa yang perlu saya tahu tentang `\\df functions`?", "input": "", "output": "`\\df` lists functions with signatures; `\\sf nama` shows source — debugging stored logic without dumps."}
+{"instruction": "Bagaimanakah `\\df functions` berfungsi?", "input": "", "output": "`\\df` lists functions with signatures; `\\sf nama` shows source — debugging stored logic without dumps."}
+{"instruction": "Bilakah masa yang sesuai untuk `\\df functions`?", "input": "", "output": "`\\df` lists functions with signatures; `\\sf nama` shows source — debugging stored logic without dumps."}
+{"instruction": "What does `\\timing` do?", "input": "", "output": "`\\timing on` prints every statement's milliseconds; first step of any 'slow query' complaint."}
+{"instruction": "Explain `\\timing` briefly.", "input": "", "output": "`\\timing on` prints every statement's milliseconds; first step of any 'slow query' complaint."}
+{"instruction": "When do I use `\\timing`?", "input": "", "output": "`\\timing on` prints every statement's milliseconds; first step of any 'slow query' complaint."}
+{"instruction": "Give a practical example of `\\timing`.", "input": "", "output": "`\\timing on` prints every statement's milliseconds; first step of any 'slow query' complaint."}
+{"instruction": "What is `\\timing` for?", "input": "", "output": "`\\timing on` prints every statement's milliseconds; first step of any 'slow query' complaint."}
+{"instruction": "Apakah fungsi `\\timing`?", "input": "", "output": "`\\timing on` prints every statement's milliseconds; first step of any 'slow query' complaint."}
+{"instruction": "Terangkan `\\timing` secara ringkas.", "input": "", "output": "`\\timing on` prints every statement's milliseconds; first step of any 'slow query' complaint."}
+{"instruction": "Bila perlu guna `\\timing`?", "input": "", "output": "`\\timing on` prints every statement's milliseconds; first step of any 'slow query' complaint."}
+{"instruction": "Beri contoh penggunaan `\\timing`.", "input": "", "output": "`\\timing on` prints every statement's milliseconds; first step of any 'slow query' complaint."}
+{"instruction": "`\\timing` untuk apa?", "input": "", "output": "`\\timing on` prints every statement's milliseconds; first step of any 'slow query' complaint."}
+{"instruction": "How would you explain `\\timing` to a junior developer?", "input": "", "output": "`\\timing on` prints every statement's milliseconds; first step of any 'slow query' complaint."}
+{"instruction": "Give a real-world scenario for `\\timing`.", "input": "", "output": "`\\timing on` prints every statement's milliseconds; first step of any 'slow query' complaint."}
+{"instruction": "What problem does `\\timing` solve?", "input": "", "output": "`\\timing on` prints every statement's milliseconds; first step of any 'slow query' complaint."}
+{"instruction": "Terangkan `\\timing` dalam satu minit.", "input": "", "output": "`\\timing on` prints every statement's milliseconds; first step of any 'slow query' complaint."}
+{"instruction": "Apa yang perlu saya tahu tentang `\\timing`?", "input": "", "output": "`\\timing on` prints every statement's milliseconds; first step of any 'slow query' complaint."}
+{"instruction": "Bagaimanakah `\\timing` berfungsi?", "input": "", "output": "`\\timing on` prints every statement's milliseconds; first step of any 'slow query' complaint."}
+{"instruction": "Bilakah masa yang sesuai untuk `\\timing`?", "input": "", "output": "`\\timing on` prints every statement's milliseconds; first step of any 'slow query' complaint."}
+{"instruction": "What does `\\watch repeat` do?", "input": "", "output": "`\\watch 2` reruns the query every 2s (live dashboards, lock-watching); Ctrl-C stops, query stays."}
+{"instruction": "Explain `\\watch repeat` briefly.", "input": "", "output": "`\\watch 2` reruns the query every 2s (live dashboards, lock-watching); Ctrl-C stops, query stays."}
+{"instruction": "When do I use `\\watch repeat`?", "input": "", "output": "`\\watch 2` reruns the query every 2s (live dashboards, lock-watching); Ctrl-C stops, query stays."}
+{"instruction": "Give a practical example of `\\watch repeat`.", "input": "", "output": "`\\watch 2` reruns the query every 2s (live dashboards, lock-watching); Ctrl-C stops, query stays."}
+{"instruction": "What is `\\watch repeat` for?", "input": "", "output": "`\\watch 2` reruns the query every 2s (live dashboards, lock-watching); Ctrl-C stops, query stays."}
+{"instruction": "Apakah fungsi `\\watch repeat`?", "input": "", "output": "`\\watch 2` reruns the query every 2s (live dashboards, lock-watching); Ctrl-C stops, query stays."}
+{"instruction": "Terangkan `\\watch repeat` secara ringkas.", "input": "", "output": "`\\watch 2` reruns the query every 2s (live dashboards, lock-watching); Ctrl-C stops, query stays."}
+{"instruction": "Bila perlu guna `\\watch repeat`?", "input": "", "output": "`\\watch 2` reruns the query every 2s (live dashboards, lock-watching); Ctrl-C stops, query stays."}
+{"instruction": "Beri contoh penggunaan `\\watch repeat`.", "input": "", "output": "`\\watch 2` reruns the query every 2s (live dashboards, lock-watching); Ctrl-C stops, query stays."}
+{"instruction": "`\\watch repeat` untuk apa?", "input": "", "output": "`\\watch 2` reruns the query every 2s (live dashboards, lock-watching); Ctrl-C stops, query stays."}
+{"instruction": "How would you explain `\\watch repeat` to a junior developer?", "input": "", "output": "`\\watch 2` reruns the query every 2s (live dashboards, lock-watching); Ctrl-C stops, query stays."}
+{"instruction": "Give a real-world scenario for `\\watch repeat`.", "input": "", "output": "`\\watch 2` reruns the query every 2s (live dashboards, lock-watching); Ctrl-C stops, query stays."}
+{"instruction": "What problem does `\\watch repeat` solve?", "input": "", "output": "`\\watch 2` reruns the query every 2s (live dashboards, lock-watching); Ctrl-C stops, query stays."}
+{"instruction": "Terangkan `\\watch repeat` dalam satu minit.", "input": "", "output": "`\\watch 2` reruns the query every 2s (live dashboards, lock-watching); Ctrl-C stops, query stays."}
+{"instruction": "Apa yang perlu saya tahu tentang `\\watch repeat`?", "input": "", "output": "`\\watch 2` reruns the query every 2s (live dashboards, lock-watching); Ctrl-C stops, query stays."}
+{"instruction": "Bagaimanakah `\\watch repeat` berfungsi?", "input": "", "output": "`\\watch 2` reruns the query every 2s (live dashboards, lock-watching); Ctrl-C stops, query stays."}
+{"instruction": "Bilakah masa yang sesuai untuk `\\watch repeat`?", "input": "", "output": "`\\watch 2` reruns the query every 2s (live dashboards, lock-watching); Ctrl-C stops, query stays."}
+{"instruction": "What does `\\gexec generated` do?", "input": "", "output": "`\\gexec` executes query results as SQL (mass DDL from catalog queries); dry-run with plain SELECT first."}
+{"instruction": "Explain `\\gexec generated` briefly.", "input": "", "output": "`\\gexec` executes query results as SQL (mass DDL from catalog queries); dry-run with plain SELECT first."}
+{"instruction": "When do I use `\\gexec generated`?", "input": "", "output": "`\\gexec` executes query results as SQL (mass DDL from catalog queries); dry-run with plain SELECT first."}
+{"instruction": "Give a practical example of `\\gexec generated`.", "input": "", "output": "`\\gexec` executes query results as SQL (mass DDL from catalog queries); dry-run with plain SELECT first."}
+{"instruction": "What is `\\gexec generated` for?", "input": "", "output": "`\\gexec` executes query results as SQL (mass DDL from catalog queries); dry-run with plain SELECT first."}
+{"instruction": "Apakah fungsi `\\gexec generated`?", "input": "", "output": "`\\gexec` executes query results as SQL (mass DDL from catalog queries); dry-run with plain SELECT first."}
+{"instruction": "Terangkan `\\gexec generated` secara ringkas.", "input": "", "output": "`\\gexec` executes query results as SQL (mass DDL from catalog queries); dry-run with plain SELECT first."}
+{"instruction": "Bila perlu guna `\\gexec generated`?", "input": "", "output": "`\\gexec` executes query results as SQL (mass DDL from catalog queries); dry-run with plain SELECT first."}
+{"instruction": "Beri contoh penggunaan `\\gexec generated`.", "input": "", "output": "`\\gexec` executes query results as SQL (mass DDL from catalog queries); dry-run with plain SELECT first."}
+{"instruction": "`\\gexec generated` untuk apa?", "input": "", "output": "`\\gexec` executes query results as SQL (mass DDL from catalog queries); dry-run with plain SELECT first."}
+{"instruction": "How would you explain `\\gexec generated` to a junior developer?", "input": "", "output": "`\\gexec` executes query results as SQL (mass DDL from catalog queries); dry-run with plain SELECT first."}
+{"instruction": "Give a real-world scenario for `\\gexec generated`.", "input": "", "output": "`\\gexec` executes query results as SQL (mass DDL from catalog queries); dry-run with plain SELECT first."}
+{"instruction": "What problem does `\\gexec generated` solve?", "input": "", "output": "`\\gexec` executes query results as SQL (mass DDL from catalog queries); dry-run with plain SELECT first."}
+{"instruction": "Terangkan `\\gexec generated` dalam satu minit.", "input": "", "output": "`\\gexec` executes query results as SQL (mass DDL from catalog queries); dry-run with plain SELECT first."}
+{"instruction": "Apa yang perlu saya tahu tentang `\\gexec generated`?", "input": "", "output": "`\\gexec` executes query results as SQL (mass DDL from catalog queries); dry-run with plain SELECT first."}
+{"instruction": "Bagaimanakah `\\gexec generated` berfungsi?", "input": "", "output": "`\\gexec` executes query results as SQL (mass DDL from catalog queries); dry-run with plain SELECT first."}
+{"instruction": "Bilakah masa yang sesuai untuk `\\gexec generated`?", "input": "", "output": "`\\gexec` executes query results as SQL (mass DDL from catalog queries); dry-run with plain SELECT first."}
+{"instruction": "What does `partitioning declarative` do?", "input": "", "output": "`PARTITION BY RANGE (dibuat)` + monthly partitions keeps billions queryable; detach/drop old partitions instead of DELETE."}
+{"instruction": "Explain `partitioning declarative` briefly.", "input": "", "output": "`PARTITION BY RANGE (dibuat)` + monthly partitions keeps billions queryable; detach/drop old partitions instead of DELETE."}
+{"instruction": "When do I use `partitioning declarative`?", "input": "", "output": "`PARTITION BY RANGE (dibuat)` + monthly partitions keeps billions queryable; detach/drop old partitions instead of DELETE."}
+{"instruction": "Give a practical example of `partitioning declarative`.", "input": "", "output": "`PARTITION BY RANGE (dibuat)` + monthly partitions keeps billions queryable; detach/drop old partitions instead of DELETE."}
+{"instruction": "What is `partitioning declarative` for?", "input": "", "output": "`PARTITION BY RANGE (dibuat)` + monthly partitions keeps billions queryable; detach/drop old partitions instead of DELETE."}
+{"instruction": "Apakah fungsi `partitioning declarative`?", "input": "", "output": "`PARTITION BY RANGE (dibuat)` + monthly partitions keeps billions queryable; detach/drop old partitions instead of DELETE."}
+{"instruction": "Terangkan `partitioning declarative` secara ringkas.", "input": "", "output": "`PARTITION BY RANGE (dibuat)` + monthly partitions keeps billions queryable; detach/drop old partitions instead of DELETE."}
+{"instruction": "Bila perlu guna `partitioning declarative`?", "input": "", "output": "`PARTITION BY RANGE (dibuat)` + monthly partitions keeps billions queryable; detach/drop old partitions instead of DELETE."}
+{"instruction": "Beri contoh penggunaan `partitioning declarative`.", "input": "", "output": "`PARTITION BY RANGE (dibuat)` + monthly partitions keeps billions queryable; detach/drop old partitions instead of DELETE."}
+{"instruction": "`partitioning declarative` untuk apa?", "input": "", "output": "`PARTITION BY RANGE (dibuat)` + monthly partitions keeps billions queryable; detach/drop old partitions instead of DELETE."}
+{"instruction": "How would you explain `partitioning declarative` to a junior developer?", "input": "", "output": "`PARTITION BY RANGE (dibuat)` + monthly partitions keeps billions queryable; detach/drop old partitions instead of DELETE."}
+{"instruction": "Give a real-world scenario for `partitioning declarative`.", "input": "", "output": "`PARTITION BY RANGE (dibuat)` + monthly partitions keeps billions queryable; detach/drop old partitions instead of DELETE."}
+{"instruction": "What problem does `partitioning declarative` solve?", "input": "", "output": "`PARTITION BY RANGE (dibuat)` + monthly partitions keeps billions queryable; detach/drop old partitions instead of DELETE."}
+{"instruction": "Terangkan `partitioning declarative` dalam satu minit.", "input": "", "output": "`PARTITION BY RANGE (dibuat)` + monthly partitions keeps billions queryable; detach/drop old partitions instead of DELETE."}
+{"instruction": "Apa yang perlu saya tahu tentang `partitioning declarative`?", "input": "", "output": "`PARTITION BY RANGE (dibuat)` + monthly partitions keeps billions queryable; detach/drop old partitions instead of DELETE."}
+{"instruction": "Bagaimanakah `partitioning declarative` berfungsi?", "input": "", "output": "`PARTITION BY RANGE (dibuat)` + monthly partitions keeps billions queryable; detach/drop old partitions instead of DELETE."}
+{"instruction": "Bilakah masa yang sesuai untuk `partitioning declarative`?", "input": "", "output": "`PARTITION BY RANGE (dibuat)` + monthly partitions keeps billions queryable; detach/drop old partitions instead of DELETE."}
+{"instruction": "What does `pub/sub logical` do?", "input": "", "output": "`CREATE PUBLICATION`/`SUBSCRIPTION` replicates tables selectively across instances (upgrades, fan-out) — lighter than full streaming replica setups."}
+{"instruction": "Explain `pub/sub logical` briefly.", "input": "", "output": "`CREATE PUBLICATION`/`SUBSCRIPTION` replicates tables selectively across instances (upgrades, fan-out) — lighter than full streaming replica setups."}
+{"instruction": "When do I use `pub/sub logical`?", "input": "", "output": "`CREATE PUBLICATION`/`SUBSCRIPTION` replicates tables selectively across instances (upgrades, fan-out) — lighter than full streaming replica setups."}
+{"instruction": "Give a practical example of `pub/sub logical`.", "input": "", "output": "`CREATE PUBLICATION`/`SUBSCRIPTION` replicates tables selectively across instances (upgrades, fan-out) — lighter than full streaming replica setups."}
+{"instruction": "What is `pub/sub logical` for?", "input": "", "output": "`CREATE PUBLICATION`/`SUBSCRIPTION` replicates tables selectively across instances (upgrades, fan-out) — lighter than full streaming replica setups."}
+{"instruction": "Apakah fungsi `pub/sub logical`?", "input": "", "output": "`CREATE PUBLICATION`/`SUBSCRIPTION` replicates tables selectively across instances (upgrades, fan-out) — lighter than full streaming replica setups."}
+{"instruction": "Terangkan `pub/sub logical` secara ringkas.", "input": "", "output": "`CREATE PUBLICATION`/`SUBSCRIPTION` replicates tables selectively across instances (upgrades, fan-out) — lighter than full streaming replica setups."}
+{"instruction": "Bila perlu guna `pub/sub logical`?", "input": "", "output": "`CREATE PUBLICATION`/`SUBSCRIPTION` replicates tables selectively across instances (upgrades, fan-out) — lighter than full streaming replica setups."}
+{"instruction": "Beri contoh penggunaan `pub/sub logical`.", "input": "", "output": "`CREATE PUBLICATION`/`SUBSCRIPTION` replicates tables selectively across instances (upgrades, fan-out) — lighter than full streaming replica setups."}
+{"instruction": "`pub/sub logical` untuk apa?", "input": "", "output": "`CREATE PUBLICATION`/`SUBSCRIPTION` replicates tables selectively across instances (upgrades, fan-out) — lighter than full streaming replica setups."}
+{"instruction": "How would you explain `pub/sub logical` to a junior developer?", "input": "", "output": "`CREATE PUBLICATION`/`SUBSCRIPTION` replicates tables selectively across instances (upgrades, fan-out) — lighter than full streaming replica setups."}
+{"instruction": "Give a real-world scenario for `pub/sub logical`.", "input": "", "output": "`CREATE PUBLICATION`/`SUBSCRIPTION` replicates tables selectively across instances (upgrades, fan-out) — lighter than full streaming replica setups."}
+{"instruction": "What problem does `pub/sub logical` solve?", "input": "", "output": "`CREATE PUBLICATION`/`SUBSCRIPTION` replicates tables selectively across instances (upgrades, fan-out) — lighter than full streaming replica setups."}
+{"instruction": "Terangkan `pub/sub logical` dalam satu minit.", "input": "", "output": "`CREATE PUBLICATION`/`SUBSCRIPTION` replicates tables selectively across instances (upgrades, fan-out) — lighter than full streaming replica setups."}
+{"instruction": "Apa yang perlu saya tahu tentang `pub/sub logical`?", "input": "", "output": "`CREATE PUBLICATION`/`SUBSCRIPTION` replicates tables selectively across instances (upgrades, fan-out) — lighter than full streaming replica setups."}
+{"instruction": "Bagaimanakah `pub/sub logical` berfungsi?", "input": "", "output": "`CREATE PUBLICATION`/`SUBSCRIPTION` replicates tables selectively across instances (upgrades, fan-out) — lighter than full streaming replica setups."}
+{"instruction": "Bilakah masa yang sesuai untuk `pub/sub logical`?", "input": "", "output": "`CREATE PUBLICATION`/`SUBSCRIPTION` replicates tables selectively across instances (upgrades, fan-out) — lighter than full streaming replica setups."}
+{"instruction": "What does `pg_stat_activity` do?", "input": "", "output": "`SELECT pid, query, state FROM pg_stat_activity` shows live workload; `pg_terminate_backend(pid)` kills runaways gracefully-ish."}
+{"instruction": "Explain `pg_stat_activity` briefly.", "input": "", "output": "`SELECT pid, query, state FROM pg_stat_activity` shows live workload; `pg_terminate_backend(pid)` kills runaways gracefully-ish."}
+{"instruction": "When do I use `pg_stat_activity`?", "input": "", "output": "`SELECT pid, query, state FROM pg_stat_activity` shows live workload; `pg_terminate_backend(pid)` kills runaways gracefully-ish."}
+{"instruction": "Give a practical example of `pg_stat_activity`.", "input": "", "output": "`SELECT pid, query, state FROM pg_stat_activity` shows live workload; `pg_terminate_backend(pid)` kills runaways gracefully-ish."}
+{"instruction": "What is `pg_stat_activity` for?", "input": "", "output": "`SELECT pid, query, state FROM pg_stat_activity` shows live workload; `pg_terminate_backend(pid)` kills runaways gracefully-ish."}
+{"instruction": "Apakah fungsi `pg_stat_activity`?", "input": "", "output": "`SELECT pid, query, state FROM pg_stat_activity` shows live workload; `pg_terminate_backend(pid)` kills runaways gracefully-ish."}
+{"instruction": "Terangkan `pg_stat_activity` secara ringkas.", "input": "", "output": "`SELECT pid, query, state FROM pg_stat_activity` shows live workload; `pg_terminate_backend(pid)` kills runaways gracefully-ish."}
+{"instruction": "Bila perlu guna `pg_stat_activity`?", "input": "", "output": "`SELECT pid, query, state FROM pg_stat_activity` shows live workload; `pg_terminate_backend(pid)` kills runaways gracefully-ish."}
+{"instruction": "Beri contoh penggunaan `pg_stat_activity`.", "input": "", "output": "`SELECT pid, query, state FROM pg_stat_activity` shows live workload; `pg_terminate_backend(pid)` kills runaways gracefully-ish."}
+{"instruction": "`pg_stat_activity` untuk apa?", "input": "", "output": "`SELECT pid, query, state FROM pg_stat_activity` shows live workload; `pg_terminate_backend(pid)` kills runaways gracefully-ish."}
+{"instruction": "How would you explain `pg_stat_activity` to a junior developer?", "input": "", "output": "`SELECT pid, query, state FROM pg_stat_activity` shows live workload; `pg_terminate_backend(pid)` kills runaways gracefully-ish."}
+{"instruction": "Give a real-world scenario for `pg_stat_activity`.", "input": "", "output": "`SELECT pid, query, state FROM pg_stat_activity` shows live workload; `pg_terminate_backend(pid)` kills runaways gracefully-ish."}
+{"instruction": "What problem does `pg_stat_activity` solve?", "input": "", "output": "`SELECT pid, query, state FROM pg_stat_activity` shows live workload; `pg_terminate_backend(pid)` kills runaways gracefully-ish."}
+{"instruction": "Terangkan `pg_stat_activity` dalam satu minit.", "input": "", "output": "`SELECT pid, query, state FROM pg_stat_activity` shows live workload; `pg_terminate_backend(pid)` kills runaways gracefully-ish."}
+{"instruction": "Apa yang perlu saya tahu tentang `pg_stat_activity`?", "input": "", "output": "`SELECT pid, query, state FROM pg_stat_activity` shows live workload; `pg_terminate_backend(pid)` kills runaways gracefully-ish."}
+{"instruction": "Bagaimanakah `pg_stat_activity` berfungsi?", "input": "", "output": "`SELECT pid, query, state FROM pg_stat_activity` shows live workload; `pg_terminate_backend(pid)` kills runaways gracefully-ish."}
+{"instruction": "Bilakah masa yang sesuai untuk `pg_stat_activity`?", "input": "", "output": "`SELECT pid, query, state FROM pg_stat_activity` shows live workload; `pg_terminate_backend(pid)` kills runaways gracefully-ish."}
+{"instruction": "What does `exclusion constraints` do?", "input": "", "output": "`EXCLUDE USING gist (bilik WITH =, masa WITH &&)` forbids overlapping bookings — constraints beyond unique, enforced at write."}
+{"instruction": "Explain `exclusion constraints` briefly.", "input": "", "output": "`EXCLUDE USING gist (bilik WITH =, masa WITH &&)` forbids overlapping bookings — constraints beyond unique, enforced at write."}
+{"instruction": "When do I use `exclusion constraints`?", "input": "", "output": "`EXCLUDE USING gist (bilik WITH =, masa WITH &&)` forbids overlapping bookings — constraints beyond unique, enforced at write."}
+{"instruction": "Give a practical example of `exclusion constraints`.", "input": "", "output": "`EXCLUDE USING gist (bilik WITH =, masa WITH &&)` forbids overlapping bookings — constraints beyond unique, enforced at write."}
+{"instruction": "What is `exclusion constraints` for?", "input": "", "output": "`EXCLUDE USING gist (bilik WITH =, masa WITH &&)` forbids overlapping bookings — constraints beyond unique, enforced at write."}
+{"instruction": "Apakah fungsi `exclusion constraints`?", "input": "", "output": "`EXCLUDE USING gist (bilik WITH =, masa WITH &&)` forbids overlapping bookings — constraints beyond unique, enforced at write."}
+{"instruction": "Terangkan `exclusion constraints` secara ringkas.", "input": "", "output": "`EXCLUDE USING gist (bilik WITH =, masa WITH &&)` forbids overlapping bookings — constraints beyond unique, enforced at write."}
+{"instruction": "Bila perlu guna `exclusion constraints`?", "input": "", "output": "`EXCLUDE USING gist (bilik WITH =, masa WITH &&)` forbids overlapping bookings — constraints beyond unique, enforced at write."}
+{"instruction": "Beri contoh penggunaan `exclusion constraints`.", "input": "", "output": "`EXCLUDE USING gist (bilik WITH =, masa WITH &&)` forbids overlapping bookings — constraints beyond unique, enforced at write."}
+{"instruction": "`exclusion constraints` untuk apa?", "input": "", "output": "`EXCLUDE USING gist (bilik WITH =, masa WITH &&)` forbids overlapping bookings — constraints beyond unique, enforced at write."}
+{"instruction": "How would you explain `exclusion constraints` to a junior developer?", "input": "", "output": "`EXCLUDE USING gist (bilik WITH =, masa WITH &&)` forbids overlapping bookings — constraints beyond unique, enforced at write."}
+{"instruction": "Give a real-world scenario for `exclusion constraints`.", "input": "", "output": "`EXCLUDE USING gist (bilik WITH =, masa WITH &&)` forbids overlapping bookings — constraints beyond unique, enforced at write."}
+{"instruction": "What problem does `exclusion constraints` solve?", "input": "", "output": "`EXCLUDE USING gist (bilik WITH =, masa WITH &&)` forbids overlapping bookings — constraints beyond unique, enforced at write."}
+{"instruction": "Terangkan `exclusion constraints` dalam satu minit.", "input": "", "output": "`EXCLUDE USING gist (bilik WITH =, masa WITH &&)` forbids overlapping bookings — constraints beyond unique, enforced at write."}
+{"instruction": "Apa yang perlu saya tahu tentang `exclusion constraints`?", "input": "", "output": "`EXCLUDE USING gist (bilik WITH =, masa WITH &&)` forbids overlapping bookings — constraints beyond unique, enforced at write."}
+{"instruction": "Bagaimanakah `exclusion constraints` berfungsi?", "input": "", "output": "`EXCLUDE USING gist (bilik WITH =, masa WITH &&)` forbids overlapping bookings — constraints beyond unique, enforced at write."}
+{"instruction": "Bilakah masa yang sesuai untuk `exclusion constraints`?", "input": "", "output": "`EXCLUDE USING gist (bilik WITH =, masa WITH &&)` forbids overlapping bookings — constraints beyond unique, enforced at write."}
+{"instruction": "What does `pgbouncer pooling` do?", "input": "", "output": "PgBouncer transaction-pooling multiplexes thousands of app connections into tens of server ones; prepared statements need care in transaction mode."}
+{"instruction": "Explain `pgbouncer pooling` briefly.", "input": "", "output": "PgBouncer transaction-pooling multiplexes thousands of app connections into tens of server ones; prepared statements need care in transaction mode."}
+{"instruction": "When do I use `pgbouncer pooling`?", "input": "", "output": "PgBouncer transaction-pooling multiplexes thousands of app connections into tens of server ones; prepared statements need care in transaction mode."}
+{"instruction": "Give a practical example of `pgbouncer pooling`.", "input": "", "output": "PgBouncer transaction-pooling multiplexes thousands of app connections into tens of server ones; prepared statements need care in transaction mode."}
+{"instruction": "What is `pgbouncer pooling` for?", "input": "", "output": "PgBouncer transaction-pooling multiplexes thousands of app connections into tens of server ones; prepared statements need care in transaction mode."}
+{"instruction": "Apakah fungsi `pgbouncer pooling`?", "input": "", "output": "PgBouncer transaction-pooling multiplexes thousands of app connections into tens of server ones; prepared statements need care in transaction mode."}
+{"instruction": "Terangkan `pgbouncer pooling` secara ringkas.", "input": "", "output": "PgBouncer transaction-pooling multiplexes thousands of app connections into tens of server ones; prepared statements need care in transaction mode."}
+{"instruction": "Bila perlu guna `pgbouncer pooling`?", "input": "", "output": "PgBouncer transaction-pooling multiplexes thousands of app connections into tens of server ones; prepared statements need care in transaction mode."}
+{"instruction": "Beri contoh penggunaan `pgbouncer pooling`.", "input": "", "output": "PgBouncer transaction-pooling multiplexes thousands of app connections into tens of server ones; prepared statements need care in transaction mode."}
+{"instruction": "`pgbouncer pooling` untuk apa?", "input": "", "output": "PgBouncer transaction-pooling multiplexes thousands of app connections into tens of server ones; prepared statements need care in transaction mode."}
+{"instruction": "How would you explain `pgbouncer pooling` to a junior developer?", "input": "", "output": "PgBouncer transaction-pooling multiplexes thousands of app connections into tens of server ones; prepared statements need care in transaction mode."}
+{"instruction": "Give a real-world scenario for `pgbouncer pooling`.", "input": "", "output": "PgBouncer transaction-pooling multiplexes thousands of app connections into tens of server ones; prepared statements need care in transaction mode."}
+{"instruction": "What problem does `pgbouncer pooling` solve?", "input": "", "output": "PgBouncer transaction-pooling multiplexes thousands of app connections into tens of server ones; prepared statements need care in transaction mode."}
+{"instruction": "Terangkan `pgbouncer pooling` dalam satu minit.", "input": "", "output": "PgBouncer transaction-pooling multiplexes thousands of app connections into tens of server ones; prepared statements need care in transaction mode."}
+{"instruction": "Apa yang perlu saya tahu tentang `pgbouncer pooling`?", "input": "", "output": "PgBouncer transaction-pooling multiplexes thousands of app connections into tens of server ones; prepared statements need care in transaction mode."}
+{"instruction": "Bagaimanakah `pgbouncer pooling` berfungsi?", "input": "", "output": "PgBouncer transaction-pooling multiplexes thousands of app connections into tens of server ones; prepared statements need care in transaction mode."}
+{"instruction": "Bilakah masa yang sesuai untuk `pgbouncer pooling`?", "input": "", "output": "PgBouncer transaction-pooling multiplexes thousands of app connections into tens of server ones; prepared statements need care in transaction mode."}
+{"instruction": "What does `\\pset null pager` do?", "input": "", "output": "`\\pset null '[kosong]'` marks NULLs visibly; `\\pset pager off` streams huge results without `less` traps."}
+{"instruction": "Explain `\\pset null pager` briefly.", "input": "", "output": "`\\pset null '[kosong]'` marks NULLs visibly; `\\pset pager off` streams huge results without `less` traps."}
+{"instruction": "When do I use `\\pset null pager`?", "input": "", "output": "`\\pset null '[kosong]'` marks NULLs visibly; `\\pset pager off` streams huge results without `less` traps."}
+{"instruction": "Give a practical example of `\\pset null pager`.", "input": "", "output": "`\\pset null '[kosong]'` marks NULLs visibly; `\\pset pager off` streams huge results without `less` traps."}
+{"instruction": "What is `\\pset null pager` for?", "input": "", "output": "`\\pset null '[kosong]'` marks NULLs visibly; `\\pset pager off` streams huge results without `less` traps."}
+{"instruction": "Apakah fungsi `\\pset null pager`?", "input": "", "output": "`\\pset null '[kosong]'` marks NULLs visibly; `\\pset pager off` streams huge results without `less` traps."}
+{"instruction": "Terangkan `\\pset null pager` secara ringkas.", "input": "", "output": "`\\pset null '[kosong]'` marks NULLs visibly; `\\pset pager off` streams huge results without `less` traps."}
+{"instruction": "Bila perlu guna `\\pset null pager`?", "input": "", "output": "`\\pset null '[kosong]'` marks NULLs visibly; `\\pset pager off` streams huge results without `less` traps."}
+{"instruction": "Beri contoh penggunaan `\\pset null pager`.", "input": "", "output": "`\\pset null '[kosong]'` marks NULLs visibly; `\\pset pager off` streams huge results without `less` traps."}
+{"instruction": "`\\pset null pager` untuk apa?", "input": "", "output": "`\\pset null '[kosong]'` marks NULLs visibly; `\\pset pager off` streams huge results without `less` traps."}
+{"instruction": "How would you explain `\\pset null pager` to a junior developer?", "input": "", "output": "`\\pset null '[kosong]'` marks NULLs visibly; `\\pset pager off` streams huge results without `less` traps."}
+{"instruction": "Give a real-world scenario for `\\pset null pager`.", "input": "", "output": "`\\pset null '[kosong]'` marks NULLs visibly; `\\pset pager off` streams huge results without `less` traps."}
+{"instruction": "What problem does `\\pset null pager` solve?", "input": "", "output": "`\\pset null '[kosong]'` marks NULLs visibly; `\\pset pager off` streams huge results without `less` traps."}
+{"instruction": "Terangkan `\\pset null pager` dalam satu minit.", "input": "", "output": "`\\pset null '[kosong]'` marks NULLs visibly; `\\pset pager off` streams huge results without `less` traps."}
+{"instruction": "Apa yang perlu saya tahu tentang `\\pset null pager`?", "input": "", "output": "`\\pset null '[kosong]'` marks NULLs visibly; `\\pset pager off` streams huge results without `less` traps."}
+{"instruction": "Bagaimanakah `\\pset null pager` berfungsi?", "input": "", "output": "`\\pset null '[kosong]'` marks NULLs visibly; `\\pset pager off` streams huge results without `less` traps."}
+{"instruction": "Bilakah masa yang sesuai untuk `\\pset null pager`?", "input": "", "output": "`\\pset null '[kosong]'` marks NULLs visibly; `\\pset pager off` streams huge results without `less` traps."}
+{"instruction": "What does `\\ef edit function` do?", "input": "", "output": "`\\ef nama_fungsi` opens the definition in $EDITOR for quick patch-and-reload cycles during development."}
+{"instruction": "Explain `\\ef edit function` briefly.", "input": "", "output": "`\\ef nama_fungsi` opens the definition in $EDITOR for quick patch-and-reload cycles during development."}
+{"instruction": "When do I use `\\ef edit function`?", "input": "", "output": "`\\ef nama_fungsi` opens the definition in $EDITOR for quick patch-and-reload cycles during development."}
+{"instruction": "Give a practical example of `\\ef edit function`.", "input": "", "output": "`\\ef nama_fungsi` opens the definition in $EDITOR for quick patch-and-reload cycles during development."}
+{"instruction": "What is `\\ef edit function` for?", "input": "", "output": "`\\ef nama_fungsi` opens the definition in $EDITOR for quick patch-and-reload cycles during development."}
+{"instruction": "Apakah fungsi `\\ef edit function`?", "input": "", "output": "`\\ef nama_fungsi` opens the definition in $EDITOR for quick patch-and-reload cycles during development."}
+{"instruction": "Terangkan `\\ef edit function` secara ringkas.", "input": "", "output": "`\\ef nama_fungsi` opens the definition in $EDITOR for quick patch-and-reload cycles during development."}
+{"instruction": "Bila perlu guna `\\ef edit function`?", "input": "", "output": "`\\ef nama_fungsi` opens the definition in $EDITOR for quick patch-and-reload cycles during development."}
+{"instruction": "Beri contoh penggunaan `\\ef edit function`.", "input": "", "output": "`\\ef nama_fungsi` opens the definition in $EDITOR for quick patch-and-reload cycles during development."}
+{"instruction": "`\\ef edit function` untuk apa?", "input": "", "output": "`\\ef nama_fungsi` opens the definition in $EDITOR for quick patch-and-reload cycles during development."}
+{"instruction": "How would you explain `\\ef edit function` to a junior developer?", "input": "", "output": "`\\ef nama_fungsi` opens the definition in $EDITOR for quick patch-and-reload cycles during development."}
+{"instruction": "Give a real-world scenario for `\\ef edit function`.", "input": "", "output": "`\\ef nama_fungsi` opens the definition in $EDITOR for quick patch-and-reload cycles during development."}
+{"instruction": "What problem does `\\ef edit function` solve?", "input": "", "output": "`\\ef nama_fungsi` opens the definition in $EDITOR for quick patch-and-reload cycles during development."}
+{"instruction": "Terangkan `\\ef edit function` dalam satu minit.", "input": "", "output": "`\\ef nama_fungsi` opens the definition in $EDITOR for quick patch-and-reload cycles during development."}
+{"instruction": "Apa yang perlu saya tahu tentang `\\ef edit function`?", "input": "", "output": "`\\ef nama_fungsi` opens the definition in $EDITOR for quick patch-and-reload cycles during development."}
+{"instruction": "Bagaimanakah `\\ef edit function` berfungsi?", "input": "", "output": "`\\ef nama_fungsi` opens the definition in $EDITOR for quick patch-and-reload cycles during development."}
+{"instruction": "Bilakah masa yang sesuai untuk `\\ef edit function`?", "input": "", "output": "`\\ef nama_fungsi` opens the definition in $EDITOR for quick patch-and-reload cycles during development."}
+{"instruction": "What does `listen notify` do?", "input": "", "output": "`LISTEN saluran;` + `NOTIFY saluran, 'muatan'` gives Postgres-native pub/sub for cache invalidation and job wakes."}
+{"instruction": "Explain `listen notify` briefly.", "input": "", "output": "`LISTEN saluran;` + `NOTIFY saluran, 'muatan'` gives Postgres-native pub/sub for cache invalidation and job wakes."}
+{"instruction": "When do I use `listen notify`?", "input": "", "output": "`LISTEN saluran;` + `NOTIFY saluran, 'muatan'` gives Postgres-native pub/sub for cache invalidation and job wakes."}
+{"instruction": "Give a practical example of `listen notify`.", "input": "", "output": "`LISTEN saluran;` + `NOTIFY saluran, 'muatan'` gives Postgres-native pub/sub for cache invalidation and job wakes."}
+{"instruction": "What is `listen notify` for?", "input": "", "output": "`LISTEN saluran;` + `NOTIFY saluran, 'muatan'` gives Postgres-native pub/sub for cache invalidation and job wakes."}
+{"instruction": "Apakah fungsi `listen notify`?", "input": "", "output": "`LISTEN saluran;` + `NOTIFY saluran, 'muatan'` gives Postgres-native pub/sub for cache invalidation and job wakes."}
+{"instruction": "Terangkan `listen notify` secara ringkas.", "input": "", "output": "`LISTEN saluran;` + `NOTIFY saluran, 'muatan'` gives Postgres-native pub/sub for cache invalidation and job wakes."}
+{"instruction": "Bila perlu guna `listen notify`?", "input": "", "output": "`LISTEN saluran;` + `NOTIFY saluran, 'muatan'` gives Postgres-native pub/sub for cache invalidation and job wakes."}
+{"instruction": "Beri contoh penggunaan `listen notify`.", "input": "", "output": "`LISTEN saluran;` + `NOTIFY saluran, 'muatan'` gives Postgres-native pub/sub for cache invalidation and job wakes."}
+{"instruction": "`listen notify` untuk apa?", "input": "", "output": "`LISTEN saluran;` + `NOTIFY saluran, 'muatan'` gives Postgres-native pub/sub for cache invalidation and job wakes."}
+{"instruction": "How would you explain `listen notify` to a junior developer?", "input": "", "output": "`LISTEN saluran;` + `NOTIFY saluran, 'muatan'` gives Postgres-native pub/sub for cache invalidation and job wakes."}
+{"instruction": "Give a real-world scenario for `listen notify`.", "input": "", "output": "`LISTEN saluran;` + `NOTIFY saluran, 'muatan'` gives Postgres-native pub/sub for cache invalidation and job wakes."}
+{"instruction": "What problem does `listen notify` solve?", "input": "", "output": "`LISTEN saluran;` + `NOTIFY saluran, 'muatan'` gives Postgres-native pub/sub for cache invalidation and job wakes."}
+{"instruction": "Terangkan `listen notify` dalam satu minit.", "input": "", "output": "`LISTEN saluran;` + `NOTIFY saluran, 'muatan'` gives Postgres-native pub/sub for cache invalidation and job wakes."}
+{"instruction": "Apa yang perlu saya tahu tentang `listen notify`?", "input": "", "output": "`LISTEN saluran;` + `NOTIFY saluran, 'muatan'` gives Postgres-native pub/sub for cache invalidation and job wakes."}
+{"instruction": "Bagaimanakah `listen notify` berfungsi?", "input": "", "output": "`LISTEN saluran;` + `NOTIFY saluran, 'muatan'` gives Postgres-native pub/sub for cache invalidation and job wakes."}
+{"instruction": "Bilakah masa yang sesuai untuk `listen notify`?", "input": "", "output": "`LISTEN saluran;` + `NOTIFY saluran, 'muatan'` gives Postgres-native pub/sub for cache invalidation and job wakes."}
+{"instruction": "What does `\\crosstabview` do?", "input": "", "output": "`\\crosstabview` pivots query output into matrices right in psql — quick reports without spreadsheet round-trips."}
+{"instruction": "Explain `\\crosstabview` briefly.", "input": "", "output": "`\\crosstabview` pivots query output into matrices right in psql — quick reports without spreadsheet round-trips."}
+{"instruction": "When do I use `\\crosstabview`?", "input": "", "output": "`\\crosstabview` pivots query output into matrices right in psql — quick reports without spreadsheet round-trips."}
+{"instruction": "Give a practical example of `\\crosstabview`.", "input": "", "output": "`\\crosstabview` pivots query output into matrices right in psql — quick reports without spreadsheet round-trips."}
+{"instruction": "What is `\\crosstabview` for?", "input": "", "output": "`\\crosstabview` pivots query output into matrices right in psql — quick reports without spreadsheet round-trips."}
+{"instruction": "Apakah fungsi `\\crosstabview`?", "input": "", "output": "`\\crosstabview` pivots query output into matrices right in psql — quick reports without spreadsheet round-trips."}
+{"instruction": "Terangkan `\\crosstabview` secara ringkas.", "input": "", "output": "`\\crosstabview` pivots query output into matrices right in psql — quick reports without spreadsheet round-trips."}
+{"instruction": "Bila perlu guna `\\crosstabview`?", "input": "", "output": "`\\crosstabview` pivots query output into matrices right in psql — quick reports without spreadsheet round-trips."}
+{"instruction": "Beri contoh penggunaan `\\crosstabview`.", "input": "", "output": "`\\crosstabview` pivots query output into matrices right in psql — quick reports without spreadsheet round-trips."}
+{"instruction": "`\\crosstabview` untuk apa?", "input": "", "output": "`\\crosstabview` pivots query output into matrices right in psql — quick reports without spreadsheet round-trips."}
+{"instruction": "How would you explain `\\crosstabview` to a junior developer?", "input": "", "output": "`\\crosstabview` pivots query output into matrices right in psql — quick reports without spreadsheet round-trips."}
+{"instruction": "Give a real-world scenario for `\\crosstabview`.", "input": "", "output": "`\\crosstabview` pivots query output into matrices right in psql — quick reports without spreadsheet round-trips."}
+{"instruction": "What problem does `\\crosstabview` solve?", "input": "", "output": "`\\crosstabview` pivots query output into matrices right in psql — quick reports without spreadsheet round-trips."}
+{"instruction": "Terangkan `\\crosstabview` dalam satu minit.", "input": "", "output": "`\\crosstabview` pivots query output into matrices right in psql — quick reports without spreadsheet round-trips."}
+{"instruction": "Apa yang perlu saya tahu tentang `\\crosstabview`?", "input": "", "output": "`\\crosstabview` pivots query output into matrices right in psql — quick reports without spreadsheet round-trips."}
+{"instruction": "Bagaimanakah `\\crosstabview` berfungsi?", "input": "", "output": "`\\crosstabview` pivots query output into matrices right in psql — quick reports without spreadsheet round-trips."}
+{"instruction": "Bilakah masa yang sesuai untuk `\\crosstabview`?", "input": "", "output": "`\\crosstabview` pivots query output into matrices right in psql — quick reports without spreadsheet round-trips."}
+{"instruction": "What does `\\d+ details` do?", "input": "", "output": "`\\d+ tabel` adds size/descriptions to structure output; `\\dt+` sizes all tables for capacity reviews."}
+{"instruction": "Explain `\\d+ details` briefly.", "input": "", "output": "`\\d+ tabel` adds size/descriptions to structure output; `\\dt+` sizes all tables for capacity reviews."}
+{"instruction": "When do I use `\\d+ details`?", "input": "", "output": "`\\d+ tabel` adds size/descriptions to structure output; `\\dt+` sizes all tables for capacity reviews."}
+{"instruction": "Give a practical example of `\\d+ details`.", "input": "", "output": "`\\d+ tabel` adds size/descriptions to structure output; `\\dt+` sizes all tables for capacity reviews."}
+{"instruction": "What is `\\d+ details` for?", "input": "", "output": "`\\d+ tabel` adds size/descriptions to structure output; `\\dt+` sizes all tables for capacity reviews."}
+{"instruction": "Apakah fungsi `\\d+ details`?", "input": "", "output": "`\\d+ tabel` adds size/descriptions to structure output; `\\dt+` sizes all tables for capacity reviews."}
+{"instruction": "Terangkan `\\d+ details` secara ringkas.", "input": "", "output": "`\\d+ tabel` adds size/descriptions to structure output; `\\dt+` sizes all tables for capacity reviews."}
+{"instruction": "Bila perlu guna `\\d+ details`?", "input": "", "output": "`\\d+ tabel` adds size/descriptions to structure output; `\\dt+` sizes all tables for capacity reviews."}
+{"instruction": "Beri contoh penggunaan `\\d+ details`.", "input": "", "output": "`\\d+ tabel` adds size/descriptions to structure output; `\\dt+` sizes all tables for capacity reviews."}
+{"instruction": "`\\d+ details` untuk apa?", "input": "", "output": "`\\d+ tabel` adds size/descriptions to structure output; `\\dt+` sizes all tables for capacity reviews."}
+{"instruction": "How would you explain `\\d+ details` to a junior developer?", "input": "", "output": "`\\d+ tabel` adds size/descriptions to structure output; `\\dt+` sizes all tables for capacity reviews."}
+{"instruction": "Give a real-world scenario for `\\d+ details`.", "input": "", "output": "`\\d+ tabel` adds size/descriptions to structure output; `\\dt+` sizes all tables for capacity reviews."}
+{"instruction": "What problem does `\\d+ details` solve?", "input": "", "output": "`\\d+ tabel` adds size/descriptions to structure output; `\\dt+` sizes all tables for capacity reviews."}
+{"instruction": "Terangkan `\\d+ details` dalam satu minit.", "input": "", "output": "`\\d+ tabel` adds size/descriptions to structure output; `\\dt+` sizes all tables for capacity reviews."}
+{"instruction": "Apa yang perlu saya tahu tentang `\\d+ details`?", "input": "", "output": "`\\d+ tabel` adds size/descriptions to structure output; `\\dt+` sizes all tables for capacity reviews."}
+{"instruction": "Bagaimanakah `\\d+ details` berfungsi?", "input": "", "output": "`\\d+ tabel` adds size/descriptions to structure output; `\\dt+` sizes all tables for capacity reviews."}
+{"instruction": "Bilakah masa yang sesuai untuk `\\d+ details`?", "input": "", "output": "`\\d+ tabel` adds size/descriptions to structure output; `\\dt+` sizes all tables for capacity reviews."}
+{"instruction": "What does `\\l+ sizes` do?", "input": "", "output": "`\\l+` shows database sizes on disk — growth anomalies surface here before disks fill."}
+{"instruction": "Explain `\\l+ sizes` briefly.", "input": "", "output": "`\\l+` shows database sizes on disk — growth anomalies surface here before disks fill."}
+{"instruction": "When do I use `\\l+ sizes`?", "input": "", "output": "`\\l+` shows database sizes on disk — growth anomalies surface here before disks fill."}
+{"instruction": "Give a practical example of `\\l+ sizes`.", "input": "", "output": "`\\l+` shows database sizes on disk — growth anomalies surface here before disks fill."}
+{"instruction": "What is `\\l+ sizes` for?", "input": "", "output": "`\\l+` shows database sizes on disk — growth anomalies surface here before disks fill."}
+{"instruction": "Apakah fungsi `\\l+ sizes`?", "input": "", "output": "`\\l+` shows database sizes on disk — growth anomalies surface here before disks fill."}
+{"instruction": "Terangkan `\\l+ sizes` secara ringkas.", "input": "", "output": "`\\l+` shows database sizes on disk — growth anomalies surface here before disks fill."}
+{"instruction": "Bila perlu guna `\\l+ sizes`?", "input": "", "output": "`\\l+` shows database sizes on disk — growth anomalies surface here before disks fill."}
+{"instruction": "Beri contoh penggunaan `\\l+ sizes`.", "input": "", "output": "`\\l+` shows database sizes on disk — growth anomalies surface here before disks fill."}
+{"instruction": "`\\l+ sizes` untuk apa?", "input": "", "output": "`\\l+` shows database sizes on disk — growth anomalies surface here before disks fill."}
+{"instruction": "How would you explain `\\l+ sizes` to a junior developer?", "input": "", "output": "`\\l+` shows database sizes on disk — growth anomalies surface here before disks fill."}
+{"instruction": "Give a real-world scenario for `\\l+ sizes`.", "input": "", "output": "`\\l+` shows database sizes on disk — growth anomalies surface here before disks fill."}
+{"instruction": "What problem does `\\l+ sizes` solve?", "input": "", "output": "`\\l+` shows database sizes on disk — growth anomalies surface here before disks fill."}
+{"instruction": "Terangkan `\\l+ sizes` dalam satu minit.", "input": "", "output": "`\\l+` shows database sizes on disk — growth anomalies surface here before disks fill."}
+{"instruction": "Apa yang perlu saya tahu tentang `\\l+ sizes`?", "input": "", "output": "`\\l+` shows database sizes on disk — growth anomalies surface here before disks fill."}
+{"instruction": "Bagaimanakah `\\l+ sizes` berfungsi?", "input": "", "output": "`\\l+` shows database sizes on disk — growth anomalies surface here before disks fill."}
+{"instruction": "Bilakah masa yang sesuai untuk `\\l+ sizes`?", "input": "", "output": "`\\l+` shows database sizes on disk — growth anomalies surface here before disks fill."}
+{"instruction": "What does `\\conninfo` do?", "input": "", "output": "`\\conninfo` prints user/db/host/port/SSL state of the live session — verify before destructive work."}
+{"instruction": "Explain `\\conninfo` briefly.", "input": "", "output": "`\\conninfo` prints user/db/host/port/SSL state of the live session — verify before destructive work."}
+{"instruction": "When do I use `\\conninfo`?", "input": "", "output": "`\\conninfo` prints user/db/host/port/SSL state of the live session — verify before destructive work."}
+{"instruction": "Give a practical example of `\\conninfo`.", "input": "", "output": "`\\conninfo` prints user/db/host/port/SSL state of the live session — verify before destructive work."}
+{"instruction": "What is `\\conninfo` for?", "input": "", "output": "`\\conninfo` prints user/db/host/port/SSL state of the live session — verify before destructive work."}
+{"instruction": "Apakah fungsi `\\conninfo`?", "input": "", "output": "`\\conninfo` prints user/db/host/port/SSL state of the live session — verify before destructive work."}
+{"instruction": "Terangkan `\\conninfo` secara ringkas.", "input": "", "output": "`\\conninfo` prints user/db/host/port/SSL state of the live session — verify before destructive work."}
+{"instruction": "Bila perlu guna `\\conninfo`?", "input": "", "output": "`\\conninfo` prints user/db/host/port/SSL state of the live session — verify before destructive work."}
+{"instruction": "Beri contoh penggunaan `\\conninfo`.", "input": "", "output": "`\\conninfo` prints user/db/host/port/SSL state of the live session — verify before destructive work."}
+{"instruction": "`\\conninfo` untuk apa?", "input": "", "output": "`\\conninfo` prints user/db/host/port/SSL state of the live session — verify before destructive work."}
+{"instruction": "How would you explain `\\conninfo` to a junior developer?", "input": "", "output": "`\\conninfo` prints user/db/host/port/SSL state of the live session — verify before destructive work."}
+{"instruction": "Give a real-world scenario for `\\conninfo`.", "input": "", "output": "`\\conninfo` prints user/db/host/port/SSL state of the live session — verify before destructive work."}
+{"instruction": "What problem does `\\conninfo` solve?", "input": "", "output": "`\\conninfo` prints user/db/host/port/SSL state of the live session — verify before destructive work."}
+{"instruction": "Terangkan `\\conninfo` dalam satu minit.", "input": "", "output": "`\\conninfo` prints user/db/host/port/SSL state of the live session — verify before destructive work."}
+{"instruction": "Apa yang perlu saya tahu tentang `\\conninfo`?", "input": "", "output": "`\\conninfo` prints user/db/host/port/SSL state of the live session — verify before destructive work."}
+{"instruction": "Bagaimanakah `\\conninfo` berfungsi?", "input": "", "output": "`\\conninfo` prints user/db/host/port/SSL state of the live session — verify before destructive work."}
+{"instruction": "Bilakah masa yang sesuai untuk `\\conninfo`?", "input": "", "output": "`\\conninfo` prints user/db/host/port/SSL state of the live session — verify before destructive work."}
+{"instruction": "What does `\\set variables` do?", "input": "", "output": "`\\set env prod` + `:'env'` interpolates psql variables into scripts (environment-parameterized migrations)."}
+{"instruction": "Explain `\\set variables` briefly.", "input": "", "output": "`\\set env prod` + `:'env'` interpolates psql variables into scripts (environment-parameterized migrations)."}
+{"instruction": "When do I use `\\set variables`?", "input": "", "output": "`\\set env prod` + `:'env'` interpolates psql variables into scripts (environment-parameterized migrations)."}
+{"instruction": "Give a practical example of `\\set variables`.", "input": "", "output": "`\\set env prod` + `:'env'` interpolates psql variables into scripts (environment-parameterized migrations)."}
+{"instruction": "What is `\\set variables` for?", "input": "", "output": "`\\set env prod` + `:'env'` interpolates psql variables into scripts (environment-parameterized migrations)."}
+{"instruction": "Apakah fungsi `\\set variables`?", "input": "", "output": "`\\set env prod` + `:'env'` interpolates psql variables into scripts (environment-parameterized migrations)."}
+{"instruction": "Terangkan `\\set variables` secara ringkas.", "input": "", "output": "`\\set env prod` + `:'env'` interpolates psql variables into scripts (environment-parameterized migrations)."}
+{"instruction": "Bila perlu guna `\\set variables`?", "input": "", "output": "`\\set env prod` + `:'env'` interpolates psql variables into scripts (environment-parameterized migrations)."}
+{"instruction": "Beri contoh penggunaan `\\set variables`.", "input": "", "output": "`\\set env prod` + `:'env'` interpolates psql variables into scripts (environment-parameterized migrations)."}
+{"instruction": "`\\set variables` untuk apa?", "input": "", "output": "`\\set env prod` + `:'env'` interpolates psql variables into scripts (environment-parameterized migrations)."}
+{"instruction": "How would you explain `\\set variables` to a junior developer?", "input": "", "output": "`\\set env prod` + `:'env'` interpolates psql variables into scripts (environment-parameterized migrations)."}
+{"instruction": "Give a real-world scenario for `\\set variables`.", "input": "", "output": "`\\set env prod` + `:'env'` interpolates psql variables into scripts (environment-parameterized migrations)."}
+{"instruction": "What problem does `\\set variables` solve?", "input": "", "output": "`\\set env prod` + `:'env'` interpolates psql variables into scripts (environment-parameterized migrations)."}
+{"instruction": "Terangkan `\\set variables` dalam satu minit.", "input": "", "output": "`\\set env prod` + `:'env'` interpolates psql variables into scripts (environment-parameterized migrations)."}
+{"instruction": "Apa yang perlu saya tahu tentang `\\set variables`?", "input": "", "output": "`\\set env prod` + `:'env'` interpolates psql variables into scripts (environment-parameterized migrations)."}
+{"instruction": "Bagaimanakah `\\set variables` berfungsi?", "input": "", "output": "`\\set env prod` + `:'env'` interpolates psql variables into scripts (environment-parameterized migrations)."}
+{"instruction": "Bilakah masa yang sesuai untuk `\\set variables`?", "input": "", "output": "`\\set env prod` + `:'env'` interpolates psql variables into scripts (environment-parameterized migrations)."}
+{"instruction": "What does `\\bind params` do?", "input": "", "output": "`\\bind` supplies `$1` parameters for prepared re-runs; `\\bind_named` documents them in scripts."}
+{"instruction": "Explain `\\bind params` briefly.", "input": "", "output": "`\\bind` supplies `$1` parameters for prepared re-runs; `\\bind_named` documents them in scripts."}
+{"instruction": "When do I use `\\bind params`?", "input": "", "output": "`\\bind` supplies `$1` parameters for prepared re-runs; `\\bind_named` documents them in scripts."}
+{"instruction": "Give a practical example of `\\bind params`.", "input": "", "output": "`\\bind` supplies `$1` parameters for prepared re-runs; `\\bind_named` documents them in scripts."}
+{"instruction": "What is `\\bind params` for?", "input": "", "output": "`\\bind` supplies `$1` parameters for prepared re-runs; `\\bind_named` documents them in scripts."}
+{"instruction": "Apakah fungsi `\\bind params`?", "input": "", "output": "`\\bind` supplies `$1` parameters for prepared re-runs; `\\bind_named` documents them in scripts."}
+{"instruction": "Terangkan `\\bind params` secara ringkas.", "input": "", "output": "`\\bind` supplies `$1` parameters for prepared re-runs; `\\bind_named` documents them in scripts."}
+{"instruction": "Bila perlu guna `\\bind params`?", "input": "", "output": "`\\bind` supplies `$1` parameters for prepared re-runs; `\\bind_named` documents them in scripts."}
+{"instruction": "Beri contoh penggunaan `\\bind params`.", "input": "", "output": "`\\bind` supplies `$1` parameters for prepared re-runs; `\\bind_named` documents them in scripts."}
+{"instruction": "`\\bind params` untuk apa?", "input": "", "output": "`\\bind` supplies `$1` parameters for prepared re-runs; `\\bind_named` documents them in scripts."}
+{"instruction": "How would you explain `\\bind params` to a junior developer?", "input": "", "output": "`\\bind` supplies `$1` parameters for prepared re-runs; `\\bind_named` documents them in scripts."}
+{"instruction": "Give a real-world scenario for `\\bind params`.", "input": "", "output": "`\\bind` supplies `$1` parameters for prepared re-runs; `\\bind_named` documents them in scripts."}
+{"instruction": "What problem does `\\bind params` solve?", "input": "", "output": "`\\bind` supplies `$1` parameters for prepared re-runs; `\\bind_named` documents them in scripts."}
+{"instruction": "Terangkan `\\bind params` dalam satu minit.", "input": "", "output": "`\\bind` supplies `$1` parameters for prepared re-runs; `\\bind_named` documents them in scripts."}
+{"instruction": "Apa yang perlu saya tahu tentang `\\bind params`?", "input": "", "output": "`\\bind` supplies `$1` parameters for prepared re-runs; `\\bind_named` documents them in scripts."}
+{"instruction": "Bagaimanakah `\\bind params` berfungsi?", "input": "", "output": "`\\bind` supplies `$1` parameters for prepared re-runs; `\\bind_named` documents them in scripts."}
+{"instruction": "Bilakah masa yang sesuai untuk `\\bind params`?", "input": "", "output": "`\\bind` supplies `$1` parameters for prepared re-runs; `\\bind_named` documents them in scripts."}
+{"instruction": "What does `\\echo messages` do?", "input": "", "output": "`\\echo` annotates script output (`\\qecho` stays silent); `--echo-all`/`-a` echoes full sessions for logs."}
+{"instruction": "Explain `\\echo messages` briefly.", "input": "", "output": "`\\echo` annotates script output (`\\qecho` stays silent); `--echo-all`/`-a` echoes full sessions for logs."}
+{"instruction": "When do I use `\\echo messages`?", "input": "", "output": "`\\echo` annotates script output (`\\qecho` stays silent); `--echo-all`/`-a` echoes full sessions for logs."}
+{"instruction": "Give a practical example of `\\echo messages`.", "input": "", "output": "`\\echo` annotates script output (`\\qecho` stays silent); `--echo-all`/`-a` echoes full sessions for logs."}
+{"instruction": "What is `\\echo messages` for?", "input": "", "output": "`\\echo` annotates script output (`\\qecho` stays silent); `--echo-all`/`-a` echoes full sessions for logs."}
+{"instruction": "Apakah fungsi `\\echo messages`?", "input": "", "output": "`\\echo` annotates script output (`\\qecho` stays silent); `--echo-all`/`-a` echoes full sessions for logs."}
+{"instruction": "Terangkan `\\echo messages` secara ringkas.", "input": "", "output": "`\\echo` annotates script output (`\\qecho` stays silent); `--echo-all`/`-a` echoes full sessions for logs."}
+{"instruction": "Bila perlu guna `\\echo messages`?", "input": "", "output": "`\\echo` annotates script output (`\\qecho` stays silent); `--echo-all`/`-a` echoes full sessions for logs."}
+{"instruction": "Beri contoh penggunaan `\\echo messages`.", "input": "", "output": "`\\echo` annotates script output (`\\qecho` stays silent); `--echo-all`/`-a` echoes full sessions for logs."}
+{"instruction": "`\\echo messages` untuk apa?", "input": "", "output": "`\\echo` annotates script output (`\\qecho` stays silent); `--echo-all`/`-a` echoes full sessions for logs."}
+{"instruction": "How would you explain `\\echo messages` to a junior developer?", "input": "", "output": "`\\echo` annotates script output (`\\qecho` stays silent); `--echo-all`/`-a` echoes full sessions for logs."}
+{"instruction": "Give a real-world scenario for `\\echo messages`.", "input": "", "output": "`\\echo` annotates script output (`\\qecho` stays silent); `--echo-all`/`-a` echoes full sessions for logs."}
+{"instruction": "What problem does `\\echo messages` solve?", "input": "", "output": "`\\echo` annotates script output (`\\qecho` stays silent); `--echo-all`/`-a` echoes full sessions for logs."}
+{"instruction": "Terangkan `\\echo messages` dalam satu minit.", "input": "", "output": "`\\echo` annotates script output (`\\qecho` stays silent); `--echo-all`/`-a` echoes full sessions for logs."}
+{"instruction": "Apa yang perlu saya tahu tentang `\\echo messages`?", "input": "", "output": "`\\echo` annotates script output (`\\qecho` stays silent); `--echo-all`/`-a` echoes full sessions for logs."}
+{"instruction": "Bagaimanakah `\\echo messages` berfungsi?", "input": "", "output": "`\\echo` annotates script output (`\\qecho` stays silent); `--echo-all`/`-a` echoes full sessions for logs."}
+{"instruction": "Bilakah masa yang sesuai untuk `\\echo messages`?", "input": "", "output": "`\\echo` annotates script output (`\\qecho` stays silent); `--echo-all`/`-a` echoes full sessions for logs."}
+{"instruction": "What does `\\warn notice` do?", "input": "", "output": "`\\warn` writes to stderr without aborting scripts — progress markers that survive output redirects."}
+{"instruction": "Explain `\\warn notice` briefly.", "input": "", "output": "`\\warn` writes to stderr without aborting scripts — progress markers that survive output redirects."}
+{"instruction": "When do I use `\\warn notice`?", "input": "", "output": "`\\warn` writes to stderr without aborting scripts — progress markers that survive output redirects."}
+{"instruction": "Give a practical example of `\\warn notice`.", "input": "", "output": "`\\warn` writes to stderr without aborting scripts — progress markers that survive output redirects."}
+{"instruction": "What is `\\warn notice` for?", "input": "", "output": "`\\warn` writes to stderr without aborting scripts — progress markers that survive output redirects."}
+{"instruction": "Apakah fungsi `\\warn notice`?", "input": "", "output": "`\\warn` writes to stderr without aborting scripts — progress markers that survive output redirects."}
+{"instruction": "Terangkan `\\warn notice` secara ringkas.", "input": "", "output": "`\\warn` writes to stderr without aborting scripts — progress markers that survive output redirects."}
+{"instruction": "Bila perlu guna `\\warn notice`?", "input": "", "output": "`\\warn` writes to stderr without aborting scripts — progress markers that survive output redirects."}
+{"instruction": "Beri contoh penggunaan `\\warn notice`.", "input": "", "output": "`\\warn` writes to stderr without aborting scripts — progress markers that survive output redirects."}
+{"instruction": "`\\warn notice` untuk apa?", "input": "", "output": "`\\warn` writes to stderr without aborting scripts — progress markers that survive output redirects."}
+{"instruction": "How would you explain `\\warn notice` to a junior developer?", "input": "", "output": "`\\warn` writes to stderr without aborting scripts — progress markers that survive output redirects."}
+{"instruction": "Give a real-world scenario for `\\warn notice`.", "input": "", "output": "`\\warn` writes to stderr without aborting scripts — progress markers that survive output redirects."}
+{"instruction": "What problem does `\\warn notice` solve?", "input": "", "output": "`\\warn` writes to stderr without aborting scripts — progress markers that survive output redirects."}
+{"instruction": "Terangkan `\\warn notice` dalam satu minit.", "input": "", "output": "`\\warn` writes to stderr without aborting scripts — progress markers that survive output redirects."}
+{"instruction": "Apa yang perlu saya tahu tentang `\\warn notice`?", "input": "", "output": "`\\warn` writes to stderr without aborting scripts — progress markers that survive output redirects."}
+{"instruction": "Bagaimanakah `\\warn notice` berfungsi?", "input": "", "output": "`\\warn` writes to stderr without aborting scripts — progress markers that survive output redirects."}
+{"instruction": "Bilakah masa yang sesuai untuk `\\warn notice`?", "input": "", "output": "`\\warn` writes to stderr without aborting scripts — progress markers that survive output redirects."}
+{"instruction": "What does `\\gdesc describe` do?", "input": "", "output": "`\\gdesc` describes the would-be result columns without running the query — cheap shape checks."}
+{"instruction": "Explain `\\gdesc describe` briefly.", "input": "", "output": "`\\gdesc` describes the would-be result columns without running the query — cheap shape checks."}
+{"instruction": "When do I use `\\gdesc describe`?", "input": "", "output": "`\\gdesc` describes the would-be result columns without running the query — cheap shape checks."}
+{"instruction": "Give a practical example of `\\gdesc describe`.", "input": "", "output": "`\\gdesc` describes the would-be result columns without running the query — cheap shape checks."}
+{"instruction": "What is `\\gdesc describe` for?", "input": "", "output": "`\\gdesc` describes the would-be result columns without running the query — cheap shape checks."}
+{"instruction": "Apakah fungsi `\\gdesc describe`?", "input": "", "output": "`\\gdesc` describes the would-be result columns without running the query — cheap shape checks."}
+{"instruction": "Terangkan `\\gdesc describe` secara ringkas.", "input": "", "output": "`\\gdesc` describes the would-be result columns without running the query — cheap shape checks."}
+{"instruction": "Bila perlu guna `\\gdesc describe`?", "input": "", "output": "`\\gdesc` describes the would-be result columns without running the query — cheap shape checks."}
+{"instruction": "Beri contoh penggunaan `\\gdesc describe`.", "input": "", "output": "`\\gdesc` describes the would-be result columns without running the query — cheap shape checks."}
+{"instruction": "`\\gdesc describe` untuk apa?", "input": "", "output": "`\\gdesc` describes the would-be result columns without running the query — cheap shape checks."}
+{"instruction": "How would you explain `\\gdesc describe` to a junior developer?", "input": "", "output": "`\\gdesc` describes the would-be result columns without running the query — cheap shape checks."}
+{"instruction": "Give a real-world scenario for `\\gdesc describe`.", "input": "", "output": "`\\gdesc` describes the would-be result columns without running the query — cheap shape checks."}
+{"instruction": "What problem does `\\gdesc describe` solve?", "input": "", "output": "`\\gdesc` describes the would-be result columns without running the query — cheap shape checks."}
+{"instruction": "Terangkan `\\gdesc describe` dalam satu minit.", "input": "", "output": "`\\gdesc` describes the would-be result columns without running the query — cheap shape checks."}
+{"instruction": "Apa yang perlu saya tahu tentang `\\gdesc describe`?", "input": "", "output": "`\\gdesc` describes the would-be result columns without running the query — cheap shape checks."}
+{"instruction": "Bagaimanakah `\\gdesc describe` berfungsi?", "input": "", "output": "`\\gdesc` describes the would-be result columns without running the query — cheap shape checks."}
+{"instruction": "Bilakah masa yang sesuai untuk `\\gdesc describe`?", "input": "", "output": "`\\gdesc` describes the would-be result columns without running the query — cheap shape checks."}
+{"instruction": "What does `\\gx expanded auto` do?", "input": "", "output": "`\\gx` auto-switches expanded/plain per width — readable psql output on narrow and wide terminals alike."}
+{"instruction": "Explain `\\gx expanded auto` briefly.", "input": "", "output": "`\\gx` auto-switches expanded/plain per width — readable psql output on narrow and wide terminals alike."}
+{"instruction": "When do I use `\\gx expanded auto`?", "input": "", "output": "`\\gx` auto-switches expanded/plain per width — readable psql output on narrow and wide terminals alike."}
+{"instruction": "Give a practical example of `\\gx expanded auto`.", "input": "", "output": "`\\gx` auto-switches expanded/plain per width — readable psql output on narrow and wide terminals alike."}
+{"instruction": "What is `\\gx expanded auto` for?", "input": "", "output": "`\\gx` auto-switches expanded/plain per width — readable psql output on narrow and wide terminals alike."}
+{"instruction": "Apakah fungsi `\\gx expanded auto`?", "input": "", "output": "`\\gx` auto-switches expanded/plain per width — readable psql output on narrow and wide terminals alike."}
+{"instruction": "Terangkan `\\gx expanded auto` secara ringkas.", "input": "", "output": "`\\gx` auto-switches expanded/plain per width — readable psql output on narrow and wide terminals alike."}
+{"instruction": "Bila perlu guna `\\gx expanded auto`?", "input": "", "output": "`\\gx` auto-switches expanded/plain per width — readable psql output on narrow and wide terminals alike."}
+{"instruction": "Beri contoh penggunaan `\\gx expanded auto`.", "input": "", "output": "`\\gx` auto-switches expanded/plain per width — readable psql output on narrow and wide terminals alike."}
+{"instruction": "`\\gx expanded auto` untuk apa?", "input": "", "output": "`\\gx` auto-switches expanded/plain per width — readable psql output on narrow and wide terminals alike."}
+{"instruction": "How would you explain `\\gx expanded auto` to a junior developer?", "input": "", "output": "`\\gx` auto-switches expanded/plain per width — readable psql output on narrow and wide terminals alike."}
+{"instruction": "Give a real-world scenario for `\\gx expanded auto`.", "input": "", "output": "`\\gx` auto-switches expanded/plain per width — readable psql output on narrow and wide terminals alike."}
+{"instruction": "What problem does `\\gx expanded auto` solve?", "input": "", "output": "`\\gx` auto-switches expanded/plain per width — readable psql output on narrow and wide terminals alike."}
+{"instruction": "Terangkan `\\gx expanded auto` dalam satu minit.", "input": "", "output": "`\\gx` auto-switches expanded/plain per width — readable psql output on narrow and wide terminals alike."}
+{"instruction": "Apa yang perlu saya tahu tentang `\\gx expanded auto`?", "input": "", "output": "`\\gx` auto-switches expanded/plain per width — readable psql output on narrow and wide terminals alike."}
+{"instruction": "Bagaimanakah `\\gx expanded auto` berfungsi?", "input": "", "output": "`\\gx` auto-switches expanded/plain per width — readable psql output on narrow and wide terminals alike."}
+{"instruction": "Bilakah masa yang sesuai untuk `\\gx expanded auto`?", "input": "", "output": "`\\gx` auto-switches expanded/plain per width — readable psql output on narrow and wide terminals alike."}
+{"instruction": "What does `\\watch count` do?", "input": "", "output": "`\\watch 5 -c 3` repeats thrice (bounded watches for scripts); plain `\\watch` loops until Ctrl-C."}
+{"instruction": "Explain `\\watch count` briefly.", "input": "", "output": "`\\watch 5 -c 3` repeats thrice (bounded watches for scripts); plain `\\watch` loops until Ctrl-C."}
+{"instruction": "When do I use `\\watch count`?", "input": "", "output": "`\\watch 5 -c 3` repeats thrice (bounded watches for scripts); plain `\\watch` loops until Ctrl-C."}
+{"instruction": "Give a practical example of `\\watch count`.", "input": "", "output": "`\\watch 5 -c 3` repeats thrice (bounded watches for scripts); plain `\\watch` loops until Ctrl-C."}
+{"instruction": "What is `\\watch count` for?", "input": "", "output": "`\\watch 5 -c 3` repeats thrice (bounded watches for scripts); plain `\\watch` loops until Ctrl-C."}
+{"instruction": "Apakah fungsi `\\watch count`?", "input": "", "output": "`\\watch 5 -c 3` repeats thrice (bounded watches for scripts); plain `\\watch` loops until Ctrl-C."}
+{"instruction": "Terangkan `\\watch count` secara ringkas.", "input": "", "output": "`\\watch 5 -c 3` repeats thrice (bounded watches for scripts); plain `\\watch` loops until Ctrl-C."}
+{"instruction": "Bila perlu guna `\\watch count`?", "input": "", "output": "`\\watch 5 -c 3` repeats thrice (bounded watches for scripts); plain `\\watch` loops until Ctrl-C."}
+{"instruction": "Beri contoh penggunaan `\\watch count`.", "input": "", "output": "`\\watch 5 -c 3` repeats thrice (bounded watches for scripts); plain `\\watch` loops until Ctrl-C."}
+{"instruction": "`\\watch count` untuk apa?", "input": "", "output": "`\\watch 5 -c 3` repeats thrice (bounded watches for scripts); plain `\\watch` loops until Ctrl-C."}
+{"instruction": "How would you explain `\\watch count` to a junior developer?", "input": "", "output": "`\\watch 5 -c 3` repeats thrice (bounded watches for scripts); plain `\\watch` loops until Ctrl-C."}
+{"instruction": "Give a real-world scenario for `\\watch count`.", "input": "", "output": "`\\watch 5 -c 3` repeats thrice (bounded watches for scripts); plain `\\watch` loops until Ctrl-C."}
+{"instruction": "What problem does `\\watch count` solve?", "input": "", "output": "`\\watch 5 -c 3` repeats thrice (bounded watches for scripts); plain `\\watch` loops until Ctrl-C."}
+{"instruction": "Terangkan `\\watch count` dalam satu minit.", "input": "", "output": "`\\watch 5 -c 3` repeats thrice (bounded watches for scripts); plain `\\watch` loops until Ctrl-C."}
+{"instruction": "Apa yang perlu saya tahu tentang `\\watch count`?", "input": "", "output": "`\\watch 5 -c 3` repeats thrice (bounded watches for scripts); plain `\\watch` loops until Ctrl-C."}
+{"instruction": "Bagaimanakah `\\watch count` berfungsi?", "input": "", "output": "`\\watch 5 -c 3` repeats thrice (bounded watches for scripts); plain `\\watch` loops until Ctrl-C."}
+{"instruction": "Bilakah masa yang sesuai untuk `\\watch count`?", "input": "", "output": "`\\watch 5 -c 3` repeats thrice (bounded watches for scripts); plain `\\watch` loops until Ctrl-C."}
+{"instruction": "What does `\\copy program` do?", "input": "", "output": "`\\copy ... FROM PROGRAM 'cmd'` streams command output directly into tables — ETL without temp files."}
+{"instruction": "Explain `\\copy program` briefly.", "input": "", "output": "`\\copy ... FROM PROGRAM 'cmd'` streams command output directly into tables — ETL without temp files."}
+{"instruction": "When do I use `\\copy program`?", "input": "", "output": "`\\copy ... FROM PROGRAM 'cmd'` streams command output directly into tables — ETL without temp files."}
+{"instruction": "Give a practical example of `\\copy program`.", "input": "", "output": "`\\copy ... FROM PROGRAM 'cmd'` streams command output directly into tables — ETL without temp files."}
+{"instruction": "What is `\\copy program` for?", "input": "", "output": "`\\copy ... FROM PROGRAM 'cmd'` streams command output directly into tables — ETL without temp files."}
+{"instruction": "Apakah fungsi `\\copy program`?", "input": "", "output": "`\\copy ... FROM PROGRAM 'cmd'` streams command output directly into tables — ETL without temp files."}
+{"instruction": "Terangkan `\\copy program` secara ringkas.", "input": "", "output": "`\\copy ... FROM PROGRAM 'cmd'` streams command output directly into tables — ETL without temp files."}
+{"instruction": "Bila perlu guna `\\copy program`?", "input": "", "output": "`\\copy ... FROM PROGRAM 'cmd'` streams command output directly into tables — ETL without temp files."}
+{"instruction": "Beri contoh penggunaan `\\copy program`.", "input": "", "output": "`\\copy ... FROM PROGRAM 'cmd'` streams command output directly into tables — ETL without temp files."}
+{"instruction": "`\\copy program` untuk apa?", "input": "", "output": "`\\copy ... FROM PROGRAM 'cmd'` streams command output directly into tables — ETL without temp files."}
+{"instruction": "How would you explain `\\copy program` to a junior developer?", "input": "", "output": "`\\copy ... FROM PROGRAM 'cmd'` streams command output directly into tables — ETL without temp files."}
+{"instruction": "Give a real-world scenario for `\\copy program`.", "input": "", "output": "`\\copy ... FROM PROGRAM 'cmd'` streams command output directly into tables — ETL without temp files."}
+{"instruction": "What problem does `\\copy program` solve?", "input": "", "output": "`\\copy ... FROM PROGRAM 'cmd'` streams command output directly into tables — ETL without temp files."}
+{"instruction": "Terangkan `\\copy program` dalam satu minit.", "input": "", "output": "`\\copy ... FROM PROGRAM 'cmd'` streams command output directly into tables — ETL without temp files."}
+{"instruction": "Apa yang perlu saya tahu tentang `\\copy program`?", "input": "", "output": "`\\copy ... FROM PROGRAM 'cmd'` streams command output directly into tables — ETL without temp files."}
+{"instruction": "Bagaimanakah `\\copy program` berfungsi?", "input": "", "output": "`\\copy ... FROM PROGRAM 'cmd'` streams command output directly into tables — ETL without temp files."}
+{"instruction": "Bilakah masa yang sesuai untuk `\\copy program`?", "input": "", "output": "`\\copy ... FROM PROGRAM 'cmd'` streams command output directly into tables — ETL without temp files."}

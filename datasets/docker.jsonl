@@ -1011,3 +1011,319 @@
 {"instruction": "How would you explain `compose extends` to a junior developer?", "input": "", "output": "Inherits another service's definition to avoid repeating env/logging/resource stanzas."}
 {"instruction": "Give a real-world scenario for `compose extends`.", "input": "", "output": "Inherits another service's definition to avoid repeating env/logging/resource stanzas."}
 {"instruction": "What problem does `compose extends` solve?", "input": "", "output": "Inherits another service's definition to avoid repeating env/logging/resource stanzas."}
+{"instruction": "Terangkan `docker ps -a` dalam satu minit.", "input": "", "output": "`docker ps` lists running containers; `-a` includes stopped ones with exit codes."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker ps -a`?", "input": "", "output": "`docker ps` lists running containers; `-a` includes stopped ones with exit codes."}
+{"instruction": "Bagaimanakah `docker ps -a` berfungsi?", "input": "", "output": "`docker ps` lists running containers; `-a` includes stopped ones with exit codes."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker ps -a`?", "input": "", "output": "`docker ps` lists running containers; `-a` includes stopped ones with exit codes."}
+{"instruction": "Terangkan `docker ps -q` dalam satu minit.", "input": "", "output": "`-q` prints only container IDs — made for scripting: `docker rm $(docker ps -aq -f status=exited)`."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker ps -q`?", "input": "", "output": "`-q` prints only container IDs — made for scripting: `docker rm $(docker ps -aq -f status=exited)`."}
+{"instruction": "Bagaimanakah `docker ps -q` berfungsi?", "input": "", "output": "`-q` prints only container IDs — made for scripting: `docker rm $(docker ps -aq -f status=exited)`."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker ps -q`?", "input": "", "output": "`-q` prints only container IDs — made for scripting: `docker rm $(docker ps -aq -f status=exited)`."}
+{"instruction": "Terangkan `docker ps --format` dalam satu minit.", "input": "", "output": "`--format 'table {{.Names}}\\t{{.Status}}'` renders scriptable columns instead of the default table."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker ps --format`?", "input": "", "output": "`--format 'table {{.Names}}\\t{{.Status}}'` renders scriptable columns instead of the default table."}
+{"instruction": "Bagaimanakah `docker ps --format` berfungsi?", "input": "", "output": "`--format 'table {{.Names}}\\t{{.Status}}'` renders scriptable columns instead of the default table."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker ps --format`?", "input": "", "output": "`--format 'table {{.Names}}\\t{{.Status}}'` renders scriptable columns instead of the default table."}
+{"instruction": "Terangkan `docker images -a` dalam satu minit.", "input": "", "output": "`docker images` lists tagged images; `-a` also shows untagged intermediate layers."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker images -a`?", "input": "", "output": "`docker images` lists tagged images; `-a` also shows untagged intermediate layers."}
+{"instruction": "Bagaimanakah `docker images -a` berfungsi?", "input": "", "output": "`docker images` lists tagged images; `-a` also shows untagged intermediate layers."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker images -a`?", "input": "", "output": "`docker images` lists tagged images; `-a` also shows untagged intermediate layers."}
+{"instruction": "Terangkan `docker images --digests` dalam satu minit.", "input": "", "output": "`--digests` adds content hashes so you can pin exact bytes, not mutable tags."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker images --digests`?", "input": "", "output": "`--digests` adds content hashes so you can pin exact bytes, not mutable tags."}
+{"instruction": "Bagaimanakah `docker images --digests` berfungsi?", "input": "", "output": "`--digests` adds content hashes so you can pin exact bytes, not mutable tags."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker images --digests`?", "input": "", "output": "`--digests` adds content hashes so you can pin exact bytes, not mutable tags."}
+{"instruction": "Terangkan `docker logs -f` dalam satu minit.", "input": "", "output": "`-f` follows log output live, like `tail -f`, until Ctrl-C."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker logs -f`?", "input": "", "output": "`-f` follows log output live, like `tail -f`, until Ctrl-C."}
+{"instruction": "Bagaimanakah `docker logs -f` berfungsi?", "input": "", "output": "`-f` follows log output live, like `tail -f`, until Ctrl-C."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker logs -f`?", "input": "", "output": "`-f` follows log output live, like `tail -f`, until Ctrl-C."}
+{"instruction": "Terangkan `docker logs --tail` dalam satu minit.", "input": "", "output": "`--tail 100` shows only the last 100 lines — essential on chatty services before following."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker logs --tail`?", "input": "", "output": "`--tail 100` shows only the last 100 lines — essential on chatty services before following."}
+{"instruction": "Bagaimanakah `docker logs --tail` berfungsi?", "input": "", "output": "`--tail 100` shows only the last 100 lines — essential on chatty services before following."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker logs --tail`?", "input": "", "output": "`--tail 100` shows only the last 100 lines — essential on chatty services before following."}
+{"instruction": "Terangkan `docker logs --since` dalam satu minit.", "input": "", "output": "`--since 30m` slices logs by time; pair with `--until` for incident windows."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker logs --since`?", "input": "", "output": "`--since 30m` slices logs by time; pair with `--until` for incident windows."}
+{"instruction": "Bagaimanakah `docker logs --since` berfungsi?", "input": "", "output": "`--since 30m` slices logs by time; pair with `--until` for incident windows."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker logs --since`?", "input": "", "output": "`--since 30m` slices logs by time; pair with `--until` for incident windows."}
+{"instruction": "Terangkan `docker logs -t` dalam satu minit.", "input": "", "output": "`-t` prefixes each line with an RFC3339 timestamp for correlating across services."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker logs -t`?", "input": "", "output": "`-t` prefixes each line with an RFC3339 timestamp for correlating across services."}
+{"instruction": "Bagaimanakah `docker logs -t` berfungsi?", "input": "", "output": "`-t` prefixes each line with an RFC3339 timestamp for correlating across services."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker logs -t`?", "input": "", "output": "`-t` prefixes each line with an RFC3339 timestamp for correlating across services."}
+{"instruction": "Terangkan `docker exec -it` dalam satu minit.", "input": "", "output": "`-it` allocates an interactive TTY shell inside a running container: `docker exec -it web sh`."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker exec -it`?", "input": "", "output": "`-it` allocates an interactive TTY shell inside a running container: `docker exec -it web sh`."}
+{"instruction": "Bagaimanakah `docker exec -it` berfungsi?", "input": "", "output": "`-it` allocates an interactive TTY shell inside a running container: `docker exec -it web sh`."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker exec -it`?", "input": "", "output": "`-it` allocates an interactive TTY shell inside a running container: `docker exec -it web sh`."}
+{"instruction": "Terangkan `docker exec -u` dalam satu minit.", "input": "", "output": "`-u postgres` runs the command as another user — for DB shells without image changes."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker exec -u`?", "input": "", "output": "`-u postgres` runs the command as another user — for DB shells without image changes."}
+{"instruction": "Bagaimanakah `docker exec -u` berfungsi?", "input": "", "output": "`-u postgres` runs the command as another user — for DB shells without image changes."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker exec -u`?", "input": "", "output": "`-u postgres` runs the command as another user — for DB shells without image changes."}
+{"instruction": "Terangkan `docker run -d` dalam satu minit.", "input": "", "output": "`-d` detaches: the container runs in background and the terminal returns immediately."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker run -d`?", "input": "", "output": "`-d` detaches: the container runs in background and the terminal returns immediately."}
+{"instruction": "Bagaimanakah `docker run -d` berfungsi?", "input": "", "output": "`-d` detaches: the container runs in background and the terminal returns immediately."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker run -d`?", "input": "", "output": "`-d` detaches: the container runs in background and the terminal returns immediately."}
+{"instruction": "Terangkan `docker run --rm` dalam satu minit.", "input": "", "output": "`--rm` deletes the container on exit — hygiene for one-shot jobs so stopped containers never pile up."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker run --rm`?", "input": "", "output": "`--rm` deletes the container on exit — hygiene for one-shot jobs so stopped containers never pile up."}
+{"instruction": "Bagaimanakah `docker run --rm` berfungsi?", "input": "", "output": "`--rm` deletes the container on exit — hygiene for one-shot jobs so stopped containers never pile up."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker run --rm`?", "input": "", "output": "`--rm` deletes the container on exit — hygiene for one-shot jobs so stopped containers never pile up."}
+{"instruction": "Terangkan `docker run -p` dalam satu minit.", "input": "", "output": "`-p 8080:80` publishes container port 80 on host 8080; prefix `127.0.0.1:` for loopback-only binding."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker run -p`?", "input": "", "output": "`-p 8080:80` publishes container port 80 on host 8080; prefix `127.0.0.1:` for loopback-only binding."}
+{"instruction": "Bagaimanakah `docker run -p` berfungsi?", "input": "", "output": "`-p 8080:80` publishes container port 80 on host 8080; prefix `127.0.0.1:` for loopback-only binding."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker run -p`?", "input": "", "output": "`-p 8080:80` publishes container port 80 on host 8080; prefix `127.0.0.1:` for loopback-only binding."}
+{"instruction": "Terangkan `docker run -v` dalam satu minit.", "input": "", "output": "`-v data:/data` mounts a named volume; `-v ./src:/app` bind-mounts host code for dev reload."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker run -v`?", "input": "", "output": "`-v data:/data` mounts a named volume; `-v ./src:/app` bind-mounts host code for dev reload."}
+{"instruction": "Bagaimanakah `docker run -v` berfungsi?", "input": "", "output": "`-v data:/data` mounts a named volume; `-v ./src:/app` bind-mounts host code for dev reload."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker run -v`?", "input": "", "output": "`-v data:/data` mounts a named volume; `-v ./src:/app` bind-mounts host code for dev reload."}
+{"instruction": "Terangkan `docker run -e` dalam satu minit.", "input": "", "output": "`-e KEY=val` sets container env vars; secrets belong in files/`--env-file`, never `-e` in shell history."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker run -e`?", "input": "", "output": "`-e KEY=val` sets container env vars; secrets belong in files/`--env-file`, never `-e` in shell history."}
+{"instruction": "Bagaimanakah `docker run -e` berfungsi?", "input": "", "output": "`-e KEY=val` sets container env vars; secrets belong in files/`--env-file`, never `-e` in shell history."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker run -e`?", "input": "", "output": "`-e KEY=val` sets container env vars; secrets belong in files/`--env-file`, never `-e` in shell history."}
+{"instruction": "Terangkan `docker run --restart` dalam satu minit.", "input": "", "output": "`--restart unless-stopped` revives crashed containers and survives host reboots."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker run --restart`?", "input": "", "output": "`--restart unless-stopped` revives crashed containers and survives host reboots."}
+{"instruction": "Bagaimanakah `docker run --restart` berfungsi?", "input": "", "output": "`--restart unless-stopped` revives crashed containers and survives host reboots."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker run --restart`?", "input": "", "output": "`--restart unless-stopped` revives crashed containers and survives host reboots."}
+{"instruction": "Terangkan `docker run --memory` dalam satu minit.", "input": "", "output": "`--memory 512m` caps RAM; exceeding it OOM-kills the container (check OOMKilled in inspect)."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker run --memory`?", "input": "", "output": "`--memory 512m` caps RAM; exceeding it OOM-kills the container (check OOMKilled in inspect)."}
+{"instruction": "Bagaimanakah `docker run --memory` berfungsi?", "input": "", "output": "`--memory 512m` caps RAM; exceeding it OOM-kills the container (check OOMKilled in inspect)."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker run --memory`?", "input": "", "output": "`--memory 512m` caps RAM; exceeding it OOM-kills the container (check OOMKilled in inspect)."}
+{"instruction": "Terangkan `docker run --cpus` dalam satu minit.", "input": "", "output": "`--cpus 1.5` caps CPU quota — noisy neighbors stop stealing cycles."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker run --cpus`?", "input": "", "output": "`--cpus 1.5` caps CPU quota — noisy neighbors stop stealing cycles."}
+{"instruction": "Bagaimanakah `docker run --cpus` berfungsi?", "input": "", "output": "`--cpus 1.5` caps CPU quota — noisy neighbors stop stealing cycles."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker run --cpus`?", "input": "", "output": "`--cpus 1.5` caps CPU quota — noisy neighbors stop stealing cycles."}
+{"instruction": "Terangkan `docker build -t` dalam satu minit.", "input": "", "output": "`-t user/app:1.0` names the result; always tag explicitly instead of accepting `latest`."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker build -t`?", "input": "", "output": "`-t user/app:1.0` names the result; always tag explicitly instead of accepting `latest`."}
+{"instruction": "Bagaimanakah `docker build -t` berfungsi?", "input": "", "output": "`-t user/app:1.0` names the result; always tag explicitly instead of accepting `latest`."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker build -t`?", "input": "", "output": "`-t user/app:1.0` names the result; always tag explicitly instead of accepting `latest`."}
+{"instruction": "Terangkan `docker build -f` dalam satu minit.", "input": "", "output": "`-f docker/Dockerfile.prod .` builds a non-default Dockerfile path with repo-root context."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker build -f`?", "input": "", "output": "`-f docker/Dockerfile.prod .` builds a non-default Dockerfile path with repo-root context."}
+{"instruction": "Bagaimanakah `docker build -f` berfungsi?", "input": "", "output": "`-f docker/Dockerfile.prod .` builds a non-default Dockerfile path with repo-root context."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker build -f`?", "input": "", "output": "`-f docker/Dockerfile.prod .` builds a non-default Dockerfile path with repo-root context."}
+{"instruction": "Terangkan `docker build --target` dalam satu minit.", "input": "", "output": "`--target debug` builds only up to a named stage — for debug images without shipping shells."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker build --target`?", "input": "", "output": "`--target debug` builds only up to a named stage — for debug images without shipping shells."}
+{"instruction": "Bagaimanakah `docker build --target` berfungsi?", "input": "", "output": "`--target debug` builds only up to a named stage — for debug images without shipping shells."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker build --target`?", "input": "", "output": "`--target debug` builds only up to a named stage — for debug images without shipping shells."}
+{"instruction": "Terangkan `docker build --no-cache` dalam satu minit.", "input": "", "output": "`--no-cache` ignores all layer cache; use to verify clean-room reproducibility, not daily."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker build --no-cache`?", "input": "", "output": "`--no-cache` ignores all layer cache; use to verify clean-room reproducibility, not daily."}
+{"instruction": "Bagaimanakah `docker build --no-cache` berfungsi?", "input": "", "output": "`--no-cache` ignores all layer cache; use to verify clean-room reproducibility, not daily."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker build --no-cache`?", "input": "", "output": "`--no-cache` ignores all layer cache; use to verify clean-room reproducibility, not daily."}
+{"instruction": "Terangkan `docker build --build-arg` dalam satu minit.", "input": "", "output": "`--build-arg VERSION=1.2` injects build-time vars (never secrets — they persist in history)."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker build --build-arg`?", "input": "", "output": "`--build-arg VERSION=1.2` injects build-time vars (never secrets — they persist in history)."}
+{"instruction": "Bagaimanakah `docker build --build-arg` berfungsi?", "input": "", "output": "`--build-arg VERSION=1.2` injects build-time vars (never secrets — they persist in history)."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker build --build-arg`?", "input": "", "output": "`--build-arg VERSION=1.2` injects build-time vars (never secrets — they persist in history)."}
+{"instruction": "Terangkan `docker stop -t` dalam satu minit.", "input": "", "output": "`-t 30` extends the SIGTERM grace period before SIGKILL for slow-draining apps."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker stop -t`?", "input": "", "output": "`-t 30` extends the SIGTERM grace period before SIGKILL for slow-draining apps."}
+{"instruction": "Bagaimanakah `docker stop -t` berfungsi?", "input": "", "output": "`-t 30` extends the SIGTERM grace period before SIGKILL for slow-draining apps."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker stop -t`?", "input": "", "output": "`-t 30` extends the SIGTERM grace period before SIGKILL for slow-draining apps."}
+{"instruction": "Terangkan `docker rm -f` dalam satu minit.", "input": "", "output": "`-f` kills a running container before removing — for stuck ones; prefer stop for graceful apps."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker rm -f`?", "input": "", "output": "`-f` kills a running container before removing — for stuck ones; prefer stop for graceful apps."}
+{"instruction": "Bagaimanakah `docker rm -f` berfungsi?", "input": "", "output": "`-f` kills a running container before removing — for stuck ones; prefer stop for graceful apps."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker rm -f`?", "input": "", "output": "`-f` kills a running container before removing — for stuck ones; prefer stop for graceful apps."}
+{"instruction": "Terangkan `docker rm -v` dalam satu minit.", "input": "", "output": "`-v` also removes anonymous volumes; named volumes survive (by design)."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker rm -v`?", "input": "", "output": "`-v` also removes anonymous volumes; named volumes survive (by design)."}
+{"instruction": "Bagaimanakah `docker rm -v` berfungsi?", "input": "", "output": "`-v` also removes anonymous volumes; named volumes survive (by design)."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker rm -v`?", "input": "", "output": "`-v` also removes anonymous volumes; named volumes survive (by design)."}
+{"instruction": "Terangkan `docker rmi -f` dalam satu minit.", "input": "", "output": "`-f` force-untags; layers vanish only when unreferenced by tags and containers."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker rmi -f`?", "input": "", "output": "`-f` force-untags; layers vanish only when unreferenced by tags and containers."}
+{"instruction": "Bagaimanakah `docker rmi -f` berfungsi?", "input": "", "output": "`-f` force-untags; layers vanish only when unreferenced by tags and containers."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker rmi -f`?", "input": "", "output": "`-f` force-untags; layers vanish only when unreferenced by tags and containers."}
+{"instruction": "Terangkan `docker network ls` dalam satu minit.", "input": "", "output": "Lists bridge/host/none plus user-defined and overlay networks with scope and driver."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker network ls`?", "input": "", "output": "Lists bridge/host/none plus user-defined and overlay networks with scope and driver."}
+{"instruction": "Bagaimanakah `docker network ls` berfungsi?", "input": "", "output": "Lists bridge/host/none plus user-defined and overlay networks with scope and driver."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker network ls`?", "input": "", "output": "Lists bridge/host/none plus user-defined and overlay networks with scope and driver."}
+{"instruction": "Terangkan `docker network create` dalam satu minit.", "input": "", "output": "`docker network create appnet` makes a user-defined bridge with automatic container DNS."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker network create`?", "input": "", "output": "`docker network create appnet` makes a user-defined bridge with automatic container DNS."}
+{"instruction": "Bagaimanakah `docker network create` berfungsi?", "input": "", "output": "`docker network create appnet` makes a user-defined bridge with automatic container DNS."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker network create`?", "input": "", "output": "`docker network create appnet` makes a user-defined bridge with automatic container DNS."}
+{"instruction": "Terangkan `docker network connect` dalam satu minit.", "input": "", "output": "Attaches a running container to another network live, optionally with `--alias`."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker network connect`?", "input": "", "output": "Attaches a running container to another network live, optionally with `--alias`."}
+{"instruction": "Bagaimanakah `docker network connect` berfungsi?", "input": "", "output": "Attaches a running container to another network live, optionally with `--alias`."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker network connect`?", "input": "", "output": "Attaches a running container to another network live, optionally with `--alias`."}
+{"instruction": "Terangkan `docker network prune` dalam satu minit.", "input": "", "output": "Deletes unused networks — review first, stopped Compose projects count as unused."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker network prune`?", "input": "", "output": "Deletes unused networks — review first, stopped Compose projects count as unused."}
+{"instruction": "Bagaimanakah `docker network prune` berfungsi?", "input": "", "output": "Deletes unused networks — review first, stopped Compose projects count as unused."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker network prune`?", "input": "", "output": "Deletes unused networks — review first, stopped Compose projects count as unused."}
+{"instruction": "Terangkan `docker volume create` dalam satu minit.", "input": "", "output": "Creates a managed named volume; pair with `--opt type=nfs` for shared storage."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker volume create`?", "input": "", "output": "Creates a managed named volume; pair with `--opt type=nfs` for shared storage."}
+{"instruction": "Bagaimanakah `docker volume create` berfungsi?", "input": "", "output": "Creates a managed named volume; pair with `--opt type=nfs` for shared storage."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker volume create`?", "input": "", "output": "Creates a managed named volume; pair with `--opt type=nfs` for shared storage."}
+{"instruction": "Terangkan `docker volume inspect` dalam satu minit.", "input": "", "output": "Shows mountpoint, driver and options — start here when data seems to vanish."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker volume inspect`?", "input": "", "output": "Shows mountpoint, driver and options — start here when data seems to vanish."}
+{"instruction": "Bagaimanakah `docker volume inspect` berfungsi?", "input": "", "output": "Shows mountpoint, driver and options — start here when data seems to vanish."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker volume inspect`?", "input": "", "output": "Shows mountpoint, driver and options — start here when data seems to vanish."}
+{"instruction": "Terangkan `docker volume prune` dalam satu minit.", "input": "", "output": "Deletes ALL unused volumes including named data — the most dangerous prune; never script blindly."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker volume prune`?", "input": "", "output": "Deletes ALL unused volumes including named data — the most dangerous prune; never script blindly."}
+{"instruction": "Bagaimanakah `docker volume prune` berfungsi?", "input": "", "output": "Deletes ALL unused volumes including named data — the most dangerous prune; never script blindly."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker volume prune`?", "input": "", "output": "Deletes ALL unused volumes including named data — the most dangerous prune; never script blindly."}
+{"instruction": "Terangkan `docker system df` dalam satu minit.", "input": "", "output": "Reports reclaimable space per object type (images, containers, volumes, build cache)."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker system df`?", "input": "", "output": "Reports reclaimable space per object type (images, containers, volumes, build cache)."}
+{"instruction": "Bagaimanakah `docker system df` berfungsi?", "input": "", "output": "Reports reclaimable space per object type (images, containers, volumes, build cache)."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker system df`?", "input": "", "output": "Reports reclaimable space per object type (images, containers, volumes, build cache)."}
+{"instruction": "Terangkan `docker system prune` dalam satu minit.", "input": "", "output": "One-shot cleanup of stopped containers, unused networks and dangling images (add `-a --volumes` cautiously)."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker system prune`?", "input": "", "output": "One-shot cleanup of stopped containers, unused networks and dangling images (add `-a --volumes` cautiously)."}
+{"instruction": "Bagaimanakah `docker system prune` berfungsi?", "input": "", "output": "One-shot cleanup of stopped containers, unused networks and dangling images (add `-a --volumes` cautiously)."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker system prune`?", "input": "", "output": "One-shot cleanup of stopped containers, unused networks and dangling images (add `-a --volumes` cautiously)."}
+{"instruction": "Terangkan `docker stats --no-stream` dalam satu minit.", "input": "", "output": "Single snapshot of CPU/mem/IO per container — for monitoring scripts, not humans."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker stats --no-stream`?", "input": "", "output": "Single snapshot of CPU/mem/IO per container — for monitoring scripts, not humans."}
+{"instruction": "Bagaimanakah `docker stats --no-stream` berfungsi?", "input": "", "output": "Single snapshot of CPU/mem/IO per container — for monitoring scripts, not humans."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker stats --no-stream`?", "input": "", "output": "Single snapshot of CPU/mem/IO per container — for monitoring scripts, not humans."}
+{"instruction": "Terangkan `docker inspect -f` dalam satu minit.", "input": "", "output": "`-f '{{.State.Status}}'` extracts fields with Go templates — the scriptable alternative to grep."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker inspect -f`?", "input": "", "output": "`-f '{{.State.Status}}'` extracts fields with Go templates — the scriptable alternative to grep."}
+{"instruction": "Bagaimanakah `docker inspect -f` berfungsi?", "input": "", "output": "`-f '{{.State.Status}}'` extracts fields with Go templates — the scriptable alternative to grep."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker inspect -f`?", "input": "", "output": "`-f '{{.State.Status}}'` extracts fields with Go templates — the scriptable alternative to grep."}
+{"instruction": "Terangkan `docker cp` dalam satu minit.", "input": "", "output": "`docker cp web:/app/out ./out` copies files both directions without exec or ssh."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker cp`?", "input": "", "output": "`docker cp web:/app/out ./out` copies files both directions without exec or ssh."}
+{"instruction": "Bagaimanakah `docker cp` berfungsi?", "input": "", "output": "`docker cp web:/app/out ./out` copies files both directions without exec or ssh."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker cp`?", "input": "", "output": "`docker cp web:/app/out ./out` copies files both directions without exec or ssh."}
+{"instruction": "Terangkan `docker tag` dalam satu minit.", "input": "", "output": "Adds an alias (`docker tag src:1 dst:2`); pushing then uploads shared layers once."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker tag`?", "input": "", "output": "Adds an alias (`docker tag src:1 dst:2`); pushing then uploads shared layers once."}
+{"instruction": "Bagaimanakah `docker tag` berfungsi?", "input": "", "output": "Adds an alias (`docker tag src:1 dst:2`); pushing then uploads shared layers once."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker tag`?", "input": "", "output": "Adds an alias (`docker tag src:1 dst:2`); pushing then uploads shared layers once."}
+{"instruction": "Terangkan `docker push` dalam satu minit.", "input": "", "output": "Uploads tagged layers to a registry; log in first and prefer explicit version tags."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker push`?", "input": "", "output": "Uploads tagged layers to a registry; log in first and prefer explicit version tags."}
+{"instruction": "Bagaimanakah `docker push` berfungsi?", "input": "", "output": "Uploads tagged layers to a registry; log in first and prefer explicit version tags."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker push`?", "input": "", "output": "Uploads tagged layers to a registry; log in first and prefer explicit version tags."}
+{"instruction": "Terangkan `docker pull -q` dalam satu minit.", "input": "", "output": "`-q` suppresses progress bars for CI logs; default pull fetches missing layers only."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker pull -q`?", "input": "", "output": "`-q` suppresses progress bars for CI logs; default pull fetches missing layers only."}
+{"instruction": "Bagaimanakah `docker pull -q` berfungsi?", "input": "", "output": "`-q` suppresses progress bars for CI logs; default pull fetches missing layers only."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker pull -q`?", "input": "", "output": "`-q` suppresses progress bars for CI logs; default pull fetches missing layers only."}
+{"instruction": "Terangkan `docker login` dalam satu minit.", "input": "", "output": "Stores registry credentials (use credential helpers, not raw base64 auths in dotfiles)."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker login`?", "input": "", "output": "Stores registry credentials (use credential helpers, not raw base64 auths in dotfiles)."}
+{"instruction": "Bagaimanakah `docker login` berfungsi?", "input": "", "output": "Stores registry credentials (use credential helpers, not raw base64 auths in dotfiles)."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker login`?", "input": "", "output": "Stores registry credentials (use credential helpers, not raw base64 auths in dotfiles)."}
+{"instruction": "Terangkan `docker context ls` dalam satu minit.", "input": "", "output": "Lists fast-switchable daemon endpoints (local, ssh hosts) for multi-host work."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker context ls`?", "input": "", "output": "Lists fast-switchable daemon endpoints (local, ssh hosts) for multi-host work."}
+{"instruction": "Bagaimanakah `docker context ls` berfungsi?", "input": "", "output": "Lists fast-switchable daemon endpoints (local, ssh hosts) for multi-host work."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker context ls`?", "input": "", "output": "Lists fast-switchable daemon endpoints (local, ssh hosts) for multi-host work."}
+{"instruction": "Terangkan `docker compose up -d` dalam satu minit.", "input": "", "output": "Starts the whole stack detached, creating networks and volumes as declared."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker compose up -d`?", "input": "", "output": "Starts the whole stack detached, creating networks and volumes as declared."}
+{"instruction": "Bagaimanakah `docker compose up -d` berfungsi?", "input": "", "output": "Starts the whole stack detached, creating networks and volumes as declared."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker compose up -d`?", "input": "", "output": "Starts the whole stack detached, creating networks and volumes as declared."}
+{"instruction": "Terangkan `docker compose down -v` dalam satu minit.", "input": "", "output": "`down` stops and removes containers/nets; `-v` also deletes named volumes (data loss!)."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker compose down -v`?", "input": "", "output": "`down` stops and removes containers/nets; `-v` also deletes named volumes (data loss!)."}
+{"instruction": "Bagaimanakah `docker compose down -v` berfungsi?", "input": "", "output": "`down` stops and removes containers/nets; `-v` also deletes named volumes (data loss!)."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker compose down -v`?", "input": "", "output": "`down` stops and removes containers/nets; `-v` also deletes named volumes (data loss!)."}
+{"instruction": "Terangkan `docker compose logs -f` dalam satu minit.", "input": "", "output": "Aggregated, prefixed logs of all services with `-f` follow and `--tail` slicing."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker compose logs -f`?", "input": "", "output": "Aggregated, prefixed logs of all services with `-f` follow and `--tail` slicing."}
+{"instruction": "Bagaimanakah `docker compose logs -f` berfungsi?", "input": "", "output": "Aggregated, prefixed logs of all services with `-f` follow and `--tail` slicing."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker compose logs -f`?", "input": "", "output": "Aggregated, prefixed logs of all services with `-f` follow and `--tail` slicing."}
+{"instruction": "Terangkan `docker compose exec` dalam satu minit.", "input": "", "output": "Runs one-offs inside a service container (`compose exec db psql`) without new containers."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker compose exec`?", "input": "", "output": "Runs one-offs inside a service container (`compose exec db psql`) without new containers."}
+{"instruction": "Bagaimanakah `docker compose exec` berfungsi?", "input": "", "output": "Runs one-offs inside a service container (`compose exec db psql`) without new containers."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker compose exec`?", "input": "", "output": "Runs one-offs inside a service container (`compose exec db psql`) without new containers."}
+{"instruction": "Terangkan `docker compose run --rm` dalam satu minit.", "input": "", "output": "One-off containers from a service definition, removed on exit — for migrations and shells."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker compose run --rm`?", "input": "", "output": "One-off containers from a service definition, removed on exit — for migrations and shells."}
+{"instruction": "Bagaimanakah `docker compose run --rm` berfungsi?", "input": "", "output": "One-off containers from a service definition, removed on exit — for migrations and shells."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker compose run --rm`?", "input": "", "output": "One-off containers from a service definition, removed on exit — for migrations and shells."}
+{"instruction": "Terangkan `docker compose build --pull` dalam satu minit.", "input": "", "output": "Rebuilds with freshly pulled bases so stale cached tags cannot silently ship."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker compose build --pull`?", "input": "", "output": "Rebuilds with freshly pulled bases so stale cached tags cannot silently ship."}
+{"instruction": "Bagaimanakah `docker compose build --pull` berfungsi?", "input": "", "output": "Rebuilds with freshly pulled bases so stale cached tags cannot silently ship."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker compose build --pull`?", "input": "", "output": "Rebuilds with freshly pulled bases so stale cached tags cannot silently ship."}
+{"instruction": "Terangkan `docker compose restart` dalam satu minit.", "input": "", "output": "Restarts service containers in dependency order without recreating them."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker compose restart`?", "input": "", "output": "Restarts service containers in dependency order without recreating them."}
+{"instruction": "Bagaimanakah `docker compose restart` berfungsi?", "input": "", "output": "Restarts service containers in dependency order without recreating them."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker compose restart`?", "input": "", "output": "Restarts service containers in dependency order without recreating them."}
+{"instruction": "Terangkan `docker compose port` dalam satu minit.", "input": "", "output": "`compose port web 80` prints the mapped host port — for dynamic `-p 80` assignments."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker compose port`?", "input": "", "output": "`compose port web 80` prints the mapped host port — for dynamic `-p 80` assignments."}
+{"instruction": "Bagaimanakah `docker compose port` berfungsi?", "input": "", "output": "`compose port web 80` prints the mapped host port — for dynamic `-p 80` assignments."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker compose port`?", "input": "", "output": "`compose port web 80` prints the mapped host port — for dynamic `-p 80` assignments."}
+{"instruction": "Terangkan `docker compose config` dalam satu minit.", "input": "", "output": "Renders the fully merged, interpolated model — the best multi-file debugging tool."}
+{"instruction": "Apa yang perlu saya tahu tentang `docker compose config`?", "input": "", "output": "Renders the fully merged, interpolated model — the best multi-file debugging tool."}
+{"instruction": "Bagaimanakah `docker compose config` berfungsi?", "input": "", "output": "Renders the fully merged, interpolated model — the best multi-file debugging tool."}
+{"instruction": "Bilakah masa yang sesuai untuk `docker compose config`?", "input": "", "output": "Renders the fully merged, interpolated model — the best multi-file debugging tool."}
+{"instruction": "Terangkan `compose image` dalam satu minit.", "input": "", "output": "Pins the exact image (always tag versions, never bare names relying on latest)."}
+{"instruction": "Apa yang perlu saya tahu tentang `compose image`?", "input": "", "output": "Pins the exact image (always tag versions, never bare names relying on latest)."}
+{"instruction": "Bagaimanakah `compose image` berfungsi?", "input": "", "output": "Pins the exact image (always tag versions, never bare names relying on latest)."}
+{"instruction": "Bilakah masa yang sesuai untuk `compose image`?", "input": "", "output": "Pins the exact image (always tag versions, never bare names relying on latest)."}
+{"instruction": "Terangkan `compose build` dalam satu minit.", "input": "", "output": "Builds from a context+dockerfile instead of pulling; combine with `image:` so built images are tagged."}
+{"instruction": "Apa yang perlu saya tahu tentang `compose build`?", "input": "", "output": "Builds from a context+dockerfile instead of pulling; combine with `image:` so built images are tagged."}
+{"instruction": "Bagaimanakah `compose build` berfungsi?", "input": "", "output": "Builds from a context+dockerfile instead of pulling; combine with `image:` so built images are tagged."}
+{"instruction": "Bilakah masa yang sesuai untuk `compose build`?", "input": "", "output": "Builds from a context+dockerfile instead of pulling; combine with `image:` so built images are tagged."}
+{"instruction": "Terangkan `compose ports` dalam satu minit.", "input": "", "output": "Publishes `HOST:CONTAINER` mappings; short syntax `- \"8080:80\"` needs quoting in YAML."}
+{"instruction": "Apa yang perlu saya tahu tentang `compose ports`?", "input": "", "output": "Publishes `HOST:CONTAINER` mappings; short syntax `- \"8080:80\"` needs quoting in YAML."}
+{"instruction": "Bagaimanakah `compose ports` berfungsi?", "input": "", "output": "Publishes `HOST:CONTAINER` mappings; short syntax `- \"8080:80\"` needs quoting in YAML."}
+{"instruction": "Bilakah masa yang sesuai untuk `compose ports`?", "input": "", "output": "Publishes `HOST:CONTAINER` mappings; short syntax `- \"8080:80\"` needs quoting in YAML."}
+{"instruction": "Terangkan `compose environment` dalam satu minit.", "input": "", "output": "Inline KEY=value map; secrets belong in `env_file` or `secrets`, and `.env` never commits."}
+{"instruction": "Apa yang perlu saya tahu tentang `compose environment`?", "input": "", "output": "Inline KEY=value map; secrets belong in `env_file` or `secrets`, and `.env` never commits."}
+{"instruction": "Bagaimanakah `compose environment` berfungsi?", "input": "", "output": "Inline KEY=value map; secrets belong in `env_file` or `secrets`, and `.env` never commits."}
+{"instruction": "Bilakah masa yang sesuai untuk `compose environment`?", "input": "", "output": "Inline KEY=value map; secrets belong in `env_file` or `secrets`, and `.env` never commits."}
+{"instruction": "Terangkan `compose env_file` dalam satu minit.", "input": "", "output": "Loads vars from a file kept out of git; explicit `environment:` still wins on conflict."}
+{"instruction": "Apa yang perlu saya tahu tentang `compose env_file`?", "input": "", "output": "Loads vars from a file kept out of git; explicit `environment:` still wins on conflict."}
+{"instruction": "Bagaimanakah `compose env_file` berfungsi?", "input": "", "output": "Loads vars from a file kept out of git; explicit `environment:` still wins on conflict."}
+{"instruction": "Bilakah masa yang sesuai untuk `compose env_file`?", "input": "", "output": "Loads vars from a file kept out of git; explicit `environment:` still wins on conflict."}
+{"instruction": "Terangkan `compose volumes` dalam satu minit.", "input": "", "output": "Mounts `named:/path` or `./host:/path`; add `:ro` for configs that must stay immutable."}
+{"instruction": "Apa yang perlu saya tahu tentang `compose volumes`?", "input": "", "output": "Mounts `named:/path` or `./host:/path`; add `:ro` for configs that must stay immutable."}
+{"instruction": "Bagaimanakah `compose volumes` berfungsi?", "input": "", "output": "Mounts `named:/path` or `./host:/path`; add `:ro` for configs that must stay immutable."}
+{"instruction": "Bilakah masa yang sesuai untuk `compose volumes`?", "input": "", "output": "Mounts `named:/path` or `./host:/path`; add `:ro` for configs that must stay immutable."}
+{"instruction": "Terangkan `compose depends_on` dalam satu minit.", "input": "", "output": "Orders startup only; add `condition: service_healthy` plus app retries for true readiness."}
+{"instruction": "Apa yang perlu saya tahu tentang `compose depends_on`?", "input": "", "output": "Orders startup only; add `condition: service_healthy` plus app retries for true readiness."}
+{"instruction": "Bagaimanakah `compose depends_on` berfungsi?", "input": "", "output": "Orders startup only; add `condition: service_healthy` plus app retries for true readiness."}
+{"instruction": "Bilakah masa yang sesuai untuk `compose depends_on`?", "input": "", "output": "Orders startup only; add `condition: service_healthy` plus app retries for true readiness."}
+{"instruction": "Terangkan `compose restart` dalam satu minit.", "input": "", "output": "`unless-stopped` for services; Compose ignores Swarm-only `deploy.resources` — use `mem_limit/cpus` here."}
+{"instruction": "Apa yang perlu saya tahu tentang `compose restart`?", "input": "", "output": "`unless-stopped` for services; Compose ignores Swarm-only `deploy.resources` — use `mem_limit/cpus` here."}
+{"instruction": "Bagaimanakah `compose restart` berfungsi?", "input": "", "output": "`unless-stopped` for services; Compose ignores Swarm-only `deploy.resources` — use `mem_limit/cpus` here."}
+{"instruction": "Bilakah masa yang sesuai untuk `compose restart`?", "input": "", "output": "`unless-stopped` for services; Compose ignores Swarm-only `deploy.resources` — use `mem_limit/cpus` here."}
+{"instruction": "Terangkan `compose healthcheck` dalam satu minit.", "input": "", "output": "Declares `test/interval/timeout/retries/start_period`; powers `depends_on` conditions and `up --wait`."}
+{"instruction": "Apa yang perlu saya tahu tentang `compose healthcheck`?", "input": "", "output": "Declares `test/interval/timeout/retries/start_period`; powers `depends_on` conditions and `up --wait`."}
+{"instruction": "Bagaimanakah `compose healthcheck` berfungsi?", "input": "", "output": "Declares `test/interval/timeout/retries/start_period`; powers `depends_on` conditions and `up --wait`."}
+{"instruction": "Bilakah masa yang sesuai untuk `compose healthcheck`?", "input": "", "output": "Declares `test/interval/timeout/retries/start_period`; powers `depends_on` conditions and `up --wait`."}
+{"instruction": "Terangkan `compose networks` dalam satu minit.", "input": "", "output": "Attaches user-defined networks for automatic DNS; default bridge gives no name resolution."}
+{"instruction": "Apa yang perlu saya tahu tentang `compose networks`?", "input": "", "output": "Attaches user-defined networks for automatic DNS; default bridge gives no name resolution."}
+{"instruction": "Bagaimanakah `compose networks` berfungsi?", "input": "", "output": "Attaches user-defined networks for automatic DNS; default bridge gives no name resolution."}
+{"instruction": "Bilakah masa yang sesuai untuk `compose networks`?", "input": "", "output": "Attaches user-defined networks for automatic DNS; default bridge gives no name resolution."}
+{"instruction": "Terangkan `compose profiles` dalam satu minit.", "input": "", "output": "Marks optional services started only with `--profile name` (debug tools, seeders)."}
+{"instruction": "Apa yang perlu saya tahu tentang `compose profiles`?", "input": "", "output": "Marks optional services started only with `--profile name` (debug tools, seeders)."}
+{"instruction": "Bagaimanakah `compose profiles` berfungsi?", "input": "", "output": "Marks optional services started only with `--profile name` (debug tools, seeders)."}
+{"instruction": "Bilakah masa yang sesuai untuk `compose profiles`?", "input": "", "output": "Marks optional services started only with `--profile name` (debug tools, seeders)."}
+{"instruction": "Terangkan `compose command` dalam satu minit.", "input": "", "output": "Overrides the image CMD per service; keep `entrypoint` for the fixed binary."}
+{"instruction": "Apa yang perlu saya tahu tentang `compose command`?", "input": "", "output": "Overrides the image CMD per service; keep `entrypoint` for the fixed binary."}
+{"instruction": "Bagaimanakah `compose command` berfungsi?", "input": "", "output": "Overrides the image CMD per service; keep `entrypoint` for the fixed binary."}
+{"instruction": "Bilakah masa yang sesuai untuk `compose command`?", "input": "", "output": "Overrides the image CMD per service; keep `entrypoint` for the fixed binary."}
+{"instruction": "Terangkan `compose user` dalam satu minit.", "input": "", "output": "Runs as `uid:gid` without rebuilding (e.g. match host ownership for bind mounts)."}
+{"instruction": "Apa yang perlu saya tahu tentang `compose user`?", "input": "", "output": "Runs as `uid:gid` without rebuilding (e.g. match host ownership for bind mounts)."}
+{"instruction": "Bagaimanakah `compose user` berfungsi?", "input": "", "output": "Runs as `uid:gid` without rebuilding (e.g. match host ownership for bind mounts)."}
+{"instruction": "Bilakah masa yang sesuai untuk `compose user`?", "input": "", "output": "Runs as `uid:gid` without rebuilding (e.g. match host ownership for bind mounts)."}
+{"instruction": "Terangkan `compose working_dir` dalam satu minit.", "input": "", "output": "Overrides WORKDIR for runtimes needing a different cwd than the image default."}
+{"instruction": "Apa yang perlu saya tahu tentang `compose working_dir`?", "input": "", "output": "Overrides WORKDIR for runtimes needing a different cwd than the image default."}
+{"instruction": "Bagaimanakah `compose working_dir` berfungsi?", "input": "", "output": "Overrides WORKDIR for runtimes needing a different cwd than the image default."}
+{"instruction": "Bilakah masa yang sesuai untuk `compose working_dir`?", "input": "", "output": "Overrides WORKDIR for runtimes needing a different cwd than the image default."}
+{"instruction": "Terangkan `compose stop_grace_period` dalam satu minit.", "input": "", "output": "Per-service SIGTERM window (e.g. `30s`) for slow-draining apps instead of global `-t`."}
+{"instruction": "Apa yang perlu saya tahu tentang `compose stop_grace_period`?", "input": "", "output": "Per-service SIGTERM window (e.g. `30s`) for slow-draining apps instead of global `-t`."}
+{"instruction": "Bagaimanakah `compose stop_grace_period` berfungsi?", "input": "", "output": "Per-service SIGTERM window (e.g. `30s`) for slow-draining apps instead of global `-t`."}
+{"instruction": "Bilakah masa yang sesuai untuk `compose stop_grace_period`?", "input": "", "output": "Per-service SIGTERM window (e.g. `30s`) for slow-draining apps instead of global `-t`."}
+{"instruction": "Terangkan `compose logging` dalam satu minit.", "input": "", "output": "Per-service driver/options (`max-size/max-file`) so one chatty service cannot fill the disk."}
+{"instruction": "Apa yang perlu saya tahu tentang `compose logging`?", "input": "", "output": "Per-service driver/options (`max-size/max-file`) so one chatty service cannot fill the disk."}
+{"instruction": "Bagaimanakah `compose logging` berfungsi?", "input": "", "output": "Per-service driver/options (`max-size/max-file`) so one chatty service cannot fill the disk."}
+{"instruction": "Bilakah masa yang sesuai untuk `compose logging`?", "input": "", "output": "Per-service driver/options (`max-size/max-file`) so one chatty service cannot fill the disk."}
+{"instruction": "Terangkan `compose deploy` dalam satu minit.", "input": "", "output": "Swarm-only (replicas, update_config, placement); silently ignored by plain `compose up`."}
+{"instruction": "Apa yang perlu saya tahu tentang `compose deploy`?", "input": "", "output": "Swarm-only (replicas, update_config, placement); silently ignored by plain `compose up`."}
+{"instruction": "Bagaimanakah `compose deploy` berfungsi?", "input": "", "output": "Swarm-only (replicas, update_config, placement); silently ignored by plain `compose up`."}
+{"instruction": "Bilakah masa yang sesuai untuk `compose deploy`?", "input": "", "output": "Swarm-only (replicas, update_config, placement); silently ignored by plain `compose up`."}
+{"instruction": "Terangkan `compose secrets` dalam satu minit.", "input": "", "output": "Mounts swarm/compose secrets as files under /run/secrets — never env vars for real secrets."}
+{"instruction": "Apa yang perlu saya tahu tentang `compose secrets`?", "input": "", "output": "Mounts swarm/compose secrets as files under /run/secrets — never env vars for real secrets."}
+{"instruction": "Bagaimanakah `compose secrets` berfungsi?", "input": "", "output": "Mounts swarm/compose secrets as files under /run/secrets — never env vars for real secrets."}
+{"instruction": "Bilakah masa yang sesuai untuk `compose secrets`?", "input": "", "output": "Mounts swarm/compose secrets as files under /run/secrets — never env vars for real secrets."}
+{"instruction": "Terangkan `compose configs` dalam satu minit.", "input": "", "output": "Mounts config files (nginx.conf) without rebuilding images on config change."}
+{"instruction": "Apa yang perlu saya tahu tentang `compose configs`?", "input": "", "output": "Mounts config files (nginx.conf) without rebuilding images on config change."}
+{"instruction": "Bagaimanakah `compose configs` berfungsi?", "input": "", "output": "Mounts config files (nginx.conf) without rebuilding images on config change."}
+{"instruction": "Bilakah masa yang sesuai untuk `compose configs`?", "input": "", "output": "Mounts config files (nginx.conf) without rebuilding images on config change."}
+{"instruction": "Terangkan `compose extra_hosts` dalam satu minit.", "input": "", "output": "Injects host entries (`host.docker.internal:host-gateway`) for host access from containers."}
+{"instruction": "Apa yang perlu saya tahu tentang `compose extra_hosts`?", "input": "", "output": "Injects host entries (`host.docker.internal:host-gateway`) for host access from containers."}
+{"instruction": "Bagaimanakah `compose extra_hosts` berfungsi?", "input": "", "output": "Injects host entries (`host.docker.internal:host-gateway`) for host access from containers."}
+{"instruction": "Bilakah masa yang sesuai untuk `compose extra_hosts`?", "input": "", "output": "Injects host entries (`host.docker.internal:host-gateway`) for host access from containers."}
+{"instruction": "Terangkan `compose init` dalam satu minit.", "input": "", "output": "`init: true` adds tini for zombie reaping and signal forwarding per service."}
+{"instruction": "Apa yang perlu saya tahu tentang `compose init`?", "input": "", "output": "`init: true` adds tini for zombie reaping and signal forwarding per service."}
+{"instruction": "Bagaimanakah `compose init` berfungsi?", "input": "", "output": "`init: true` adds tini for zombie reaping and signal forwarding per service."}
+{"instruction": "Bilakah masa yang sesuai untuk `compose init`?", "input": "", "output": "`init: true` adds tini for zombie reaping and signal forwarding per service."}
+{"instruction": "Terangkan `compose platform` dalam satu minit.", "input": "", "output": "Pins `linux/amd64` when images are arch-sensitive (Apple Silicon pulling amd64-only images)."}
+{"instruction": "Apa yang perlu saya tahu tentang `compose platform`?", "input": "", "output": "Pins `linux/amd64` when images are arch-sensitive (Apple Silicon pulling amd64-only images)."}
+{"instruction": "Bagaimanakah `compose platform` berfungsi?", "input": "", "output": "Pins `linux/amd64` when images are arch-sensitive (Apple Silicon pulling amd64-only images)."}
+{"instruction": "Bilakah masa yang sesuai untuk `compose platform`?", "input": "", "output": "Pins `linux/amd64` when images are arch-sensitive (Apple Silicon pulling amd64-only images)."}
+{"instruction": "Terangkan `compose pull_policy` dalam satu minit.", "input": "", "output": "`always/missing/never/build` controls freshness; `always` in deploy scripts kills stale-tag bugs."}
+{"instruction": "Apa yang perlu saya tahu tentang `compose pull_policy`?", "input": "", "output": "`always/missing/never/build` controls freshness; `always` in deploy scripts kills stale-tag bugs."}
+{"instruction": "Bagaimanakah `compose pull_policy` berfungsi?", "input": "", "output": "`always/missing/never/build` controls freshness; `always` in deploy scripts kills stale-tag bugs."}
+{"instruction": "Bilakah masa yang sesuai untuk `compose pull_policy`?", "input": "", "output": "`always/missing/never/build` controls freshness; `always` in deploy scripts kills stale-tag bugs."}
+{"instruction": "Terangkan `compose container_name` dalam satu minit.", "input": "", "output": "Fixes the name but forbids scaling that service — omit it unless something must address it statically."}
+{"instruction": "Apa yang perlu saya tahu tentang `compose container_name`?", "input": "", "output": "Fixes the name but forbids scaling that service — omit it unless something must address it statically."}
+{"instruction": "Bagaimanakah `compose container_name` berfungsi?", "input": "", "output": "Fixes the name but forbids scaling that service — omit it unless something must address it statically."}
+{"instruction": "Bilakah masa yang sesuai untuk `compose container_name`?", "input": "", "output": "Fixes the name but forbids scaling that service — omit it unless something must address it statically."}
+{"instruction": "Terangkan `compose extends` dalam satu minit.", "input": "", "output": "Inherits another service's definition to avoid repeating env/logging/resource stanzas."}
+{"instruction": "Apa yang perlu saya tahu tentang `compose extends`?", "input": "", "output": "Inherits another service's definition to avoid repeating env/logging/resource stanzas."}
+{"instruction": "Bagaimanakah `compose extends` berfungsi?", "input": "", "output": "Inherits another service's definition to avoid repeating env/logging/resource stanzas."}
+{"instruction": "Bilakah masa yang sesuai untuk `compose extends`?", "input": "", "output": "Inherits another service's definition to avoid repeating env/logging/resource stanzas."}

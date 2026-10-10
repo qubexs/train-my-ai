@@ -494,3 +494,564 @@
 {"instruction": "How would you explain `Date now` to a junior developer?", "input": "", "output": "`Date.now()` timestamps in ms for timing; `new Date()` objects format via `toISOString`/`toLocaleString`."}
 {"instruction": "Give a real-world scenario for `Date now`.", "input": "", "output": "`Date.now()` timestamps in ms for timing; `new Date()` objects format via `toISOString`/`toLocaleString`."}
 {"instruction": "What problem does `Date now` solve?", "input": "", "output": "`Date.now()` timestamps in ms for timing; `new Date()` objects format via `toISOString`/`toLocaleString`."}
+{"instruction": "Terangkan `Array.map` dalam satu minit.", "input": "", "output": "`map` transforms each element and returns a new array; original untouched — the functional workhorse."}
+{"instruction": "Apa yang perlu saya tahu tentang `Array.map`?", "input": "", "output": "`map` transforms each element and returns a new array; original untouched — the functional workhorse."}
+{"instruction": "Bagaimanakah `Array.map` berfungsi?", "input": "", "output": "`map` transforms each element and returns a new array; original untouched — the functional workhorse."}
+{"instruction": "Bilakah masa yang sesuai untuk `Array.map`?", "input": "", "output": "`map` transforms each element and returns a new array; original untouched — the functional workhorse."}
+{"instruction": "Terangkan `Array.filter` dalam satu minit.", "input": "", "output": "`filter` keeps elements passing the test; chain after map for transform-then-select pipelines."}
+{"instruction": "Apa yang perlu saya tahu tentang `Array.filter`?", "input": "", "output": "`filter` keeps elements passing the test; chain after map for transform-then-select pipelines."}
+{"instruction": "Bagaimanakah `Array.filter` berfungsi?", "input": "", "output": "`filter` keeps elements passing the test; chain after map for transform-then-select pipelines."}
+{"instruction": "Bilakah masa yang sesuai untuk `Array.filter`?", "input": "", "output": "`filter` keeps elements passing the test; chain after map for transform-then-select pipelines."}
+{"instruction": "Terangkan `Array.reduce` dalam satu minit.", "input": "", "output": "`reduce` folds to one value with an accumulator; always pass the initial value to avoid edge bugs."}
+{"instruction": "Apa yang perlu saya tahu tentang `Array.reduce`?", "input": "", "output": "`reduce` folds to one value with an accumulator; always pass the initial value to avoid edge bugs."}
+{"instruction": "Bagaimanakah `Array.reduce` berfungsi?", "input": "", "output": "`reduce` folds to one value with an accumulator; always pass the initial value to avoid edge bugs."}
+{"instruction": "Bilakah masa yang sesuai untuk `Array.reduce`?", "input": "", "output": "`reduce` folds to one value with an accumulator; always pass the initial value to avoid edge bugs."}
+{"instruction": "Terangkan `Array.find` dalam satu minit.", "input": "", "output": "`find` returns the first match (or undefined); `findIndex` gives its position for splicing."}
+{"instruction": "Apa yang perlu saya tahu tentang `Array.find`?", "input": "", "output": "`find` returns the first match (or undefined); `findIndex` gives its position for splicing."}
+{"instruction": "Bagaimanakah `Array.find` berfungsi?", "input": "", "output": "`find` returns the first match (or undefined); `findIndex` gives its position for splicing."}
+{"instruction": "Bilakah masa yang sesuai untuk `Array.find`?", "input": "", "output": "`find` returns the first match (or undefined); `findIndex` gives its position for splicing."}
+{"instruction": "Terangkan `Array.includes` dalam satu minit.", "input": "", "output": "`includes` answers membership directly; second arg sets the start index for searches."}
+{"instruction": "Apa yang perlu saya tahu tentang `Array.includes`?", "input": "", "output": "`includes` answers membership directly; second arg sets the start index for searches."}
+{"instruction": "Bagaimanakah `Array.includes` berfungsi?", "input": "", "output": "`includes` answers membership directly; second arg sets the start index for searches."}
+{"instruction": "Bilakah masa yang sesuai untuk `Array.includes`?", "input": "", "output": "`includes` answers membership directly; second arg sets the start index for searches."}
+{"instruction": "Terangkan `slice vs splice` dalam satu minit.", "input": "", "output": "`slice` copies a range immutably; `splice` mutates in place for insert/delete — never confuse them."}
+{"instruction": "Apa yang perlu saya tahu tentang `slice vs splice`?", "input": "", "output": "`slice` copies a range immutably; `splice` mutates in place for insert/delete — never confuse them."}
+{"instruction": "Bagaimanakah `slice vs splice` berfungsi?", "input": "", "output": "`slice` copies a range immutably; `splice` mutates in place for insert/delete — never confuse them."}
+{"instruction": "Bilakah masa yang sesuai untuk `slice vs splice`?", "input": "", "output": "`slice` copies a range immutably; `splice` mutates in place for insert/delete — never confuse them."}
+{"instruction": "Terangkan `push and pop` dalam satu minit.", "input": "", "output": "`push` appends (returns length), `pop` removes the end; `shift`/`unshift` work the front slower."}
+{"instruction": "Apa yang perlu saya tahu tentang `push and pop`?", "input": "", "output": "`push` appends (returns length), `pop` removes the end; `shift`/`unshift` work the front slower."}
+{"instruction": "Bagaimanakah `push and pop` berfungsi?", "input": "", "output": "`push` appends (returns length), `pop` removes the end; `shift`/`unshift` work the front slower."}
+{"instruction": "Bilakah masa yang sesuai untuk `push and pop`?", "input": "", "output": "`push` appends (returns length), `pop` removes the end; `shift`/`unshift` work the front slower."}
+{"instruction": "Terangkan `join and split` dalam satu minit.", "input": "", "output": "`join('-')` glues with a separator; `split(',')` breaks strings apart — CSV lines in one call."}
+{"instruction": "Apa yang perlu saya tahu tentang `join and split`?", "input": "", "output": "`join('-')` glues with a separator; `split(',')` breaks strings apart — CSV lines in one call."}
+{"instruction": "Bagaimanakah `join and split` berfungsi?", "input": "", "output": "`join('-')` glues with a separator; `split(',')` breaks strings apart — CSV lines in one call."}
+{"instruction": "Bilakah masa yang sesuai untuk `join and split`?", "input": "", "output": "`join('-')` glues with a separator; `split(',')` breaks strings apart — CSV lines in one call."}
+{"instruction": "Terangkan `Object.keys/values/entries` dalam satu minit.", "input": "", "output": "These list an object's keys, values or pairs for loops; `Object.fromEntries` rebuilds objects."}
+{"instruction": "Apa yang perlu saya tahu tentang `Object.keys/values/entries`?", "input": "", "output": "These list an object's keys, values or pairs for loops; `Object.fromEntries` rebuilds objects."}
+{"instruction": "Bagaimanakah `Object.keys/values/entries` berfungsi?", "input": "", "output": "These list an object's keys, values or pairs for loops; `Object.fromEntries` rebuilds objects."}
+{"instruction": "Bilakah masa yang sesuai untuk `Object.keys/values/entries`?", "input": "", "output": "These list an object's keys, values or pairs for loops; `Object.fromEntries` rebuilds objects."}
+{"instruction": "Terangkan `JSON.parse/stringify` dalam satu minit.", "input": "", "output": "`parse` revives objects (wrap in try/catch); `stringify` serializes — functions and undefined drop silently."}
+{"instruction": "Apa yang perlu saya tahu tentang `JSON.parse/stringify`?", "input": "", "output": "`parse` revives objects (wrap in try/catch); `stringify` serializes — functions and undefined drop silently."}
+{"instruction": "Bagaimanakah `JSON.parse/stringify` berfungsi?", "input": "", "output": "`parse` revives objects (wrap in try/catch); `stringify` serializes — functions and undefined drop silently."}
+{"instruction": "Bilakah masa yang sesuai untuk `JSON.parse/stringify`?", "input": "", "output": "`parse` revives objects (wrap in try/catch); `stringify` serializes — functions and undefined drop silently."}
+{"instruction": "Terangkan `typeof` dalam satu minit.", "input": "", "output": "`typeof` names primitives (`typeof []` is misleadingly `object` — use Array.isArray); `instanceof` checks prototypes."}
+{"instruction": "Apa yang perlu saya tahu tentang `typeof`?", "input": "", "output": "`typeof` names primitives (`typeof []` is misleadingly `object` — use Array.isArray); `instanceof` checks prototypes."}
+{"instruction": "Bagaimanakah `typeof` berfungsi?", "input": "", "output": "`typeof` names primitives (`typeof []` is misleadingly `object` — use Array.isArray); `instanceof` checks prototypes."}
+{"instruction": "Bilakah masa yang sesuai untuk `typeof`?", "input": "", "output": "`typeof` names primitives (`typeof []` is misleadingly `object` — use Array.isArray); `instanceof` checks prototypes."}
+{"instruction": "Terangkan `template literals` dalam satu minit.", "input": "", "output": "Backticks embed `${expr}` and span lines; tagged templates power SQL/HTML builders safely."}
+{"instruction": "Apa yang perlu saya tahu tentang `template literals`?", "input": "", "output": "Backticks embed `${expr}` and span lines; tagged templates power SQL/HTML builders safely."}
+{"instruction": "Bagaimanakah `template literals` berfungsi?", "input": "", "output": "Backticks embed `${expr}` and span lines; tagged templates power SQL/HTML builders safely."}
+{"instruction": "Bilakah masa yang sesuai untuk `template literals`?", "input": "", "output": "Backticks embed `${expr}` and span lines; tagged templates power SQL/HTML builders safely."}
+{"instruction": "Terangkan `arrow functions` dalam satu minit.", "input": "", "output": "Arrows bind outer `this` lexically and suit callbacks; they cannot be constructors (no `new`)."}
+{"instruction": "Apa yang perlu saya tahu tentang `arrow functions`?", "input": "", "output": "Arrows bind outer `this` lexically and suit callbacks; they cannot be constructors (no `new`)."}
+{"instruction": "Bagaimanakah `arrow functions` berfungsi?", "input": "", "output": "Arrows bind outer `this` lexically and suit callbacks; they cannot be constructors (no `new`)."}
+{"instruction": "Bilakah masa yang sesuai untuk `arrow functions`?", "input": "", "output": "Arrows bind outer `this` lexically and suit callbacks; they cannot be constructors (no `new`)."}
+{"instruction": "Terangkan `spread ...` dalam satu minit.", "input": "", "output": "Spread expands iterables into calls/arrays/objects; shallow only — nested objects stay shared."}
+{"instruction": "Apa yang perlu saya tahu tentang `spread ...`?", "input": "", "output": "Spread expands iterables into calls/arrays/objects; shallow only — nested objects stay shared."}
+{"instruction": "Bagaimanakah `spread ...` berfungsi?", "input": "", "output": "Spread expands iterables into calls/arrays/objects; shallow only — nested objects stay shared."}
+{"instruction": "Bilakah masa yang sesuai untuk `spread ...`?", "input": "", "output": "Spread expands iterables into calls/arrays/objects; shallow only — nested objects stay shared."}
+{"instruction": "Terangkan `destructuring` dalam satu minit.", "input": "", "output": "Pull fields positionally (`[a, b]`) or by name (`{x}`) with defaults; rest (`...r`) gathers leftovers."}
+{"instruction": "Apa yang perlu saya tahu tentang `destructuring`?", "input": "", "output": "Pull fields positionally (`[a, b]`) or by name (`{x}`) with defaults; rest (`...r`) gathers leftovers."}
+{"instruction": "Bagaimanakah `destructuring` berfungsi?", "input": "", "output": "Pull fields positionally (`[a, b]`) or by name (`{x}`) with defaults; rest (`...r`) gathers leftovers."}
+{"instruction": "Bilakah masa yang sesuai untuk `destructuring`?", "input": "", "output": "Pull fields positionally (`[a, b]`) or by name (`{x}`) with defaults; rest (`...r`) gathers leftovers."}
+{"instruction": "Terangkan `optional chaining ?.` dalam satu minit.", "input": "", "output": "`?.` stops at null/undefined instead of throwing — safe deep access without guard pyramids."}
+{"instruction": "Apa yang perlu saya tahu tentang `optional chaining ?.`?", "input": "", "output": "`?.` stops at null/undefined instead of throwing — safe deep access without guard pyramids."}
+{"instruction": "Bagaimanakah `optional chaining ?.` berfungsi?", "input": "", "output": "`?.` stops at null/undefined instead of throwing — safe deep access without guard pyramids."}
+{"instruction": "Bilakah masa yang sesuai untuk `optional chaining ?.`?", "input": "", "output": "`?.` stops at null/undefined instead of throwing — safe deep access without guard pyramids."}
+{"instruction": "Terangkan `nullish ??` dalam satu minit.", "input": "", "output": "`??` defaults only null/undefined, unlike `||` which also swallows 0, '' and false."}
+{"instruction": "Apa yang perlu saya tahu tentang `nullish ??`?", "input": "", "output": "`??` defaults only null/undefined, unlike `||` which also swallows 0, '' and false."}
+{"instruction": "Bagaimanakah `nullish ??` berfungsi?", "input": "", "output": "`??` defaults only null/undefined, unlike `||` which also swallows 0, '' and false."}
+{"instruction": "Bilakah masa yang sesuai untuk `nullish ??`?", "input": "", "output": "`??` defaults only null/undefined, unlike `||` which also swallows 0, '' and false."}
+{"instruction": "Terangkan `promises then/catch` dalam satu minit.", "input": "", "output": "Promises model future values; always end chains with `.catch` — unhandled rejections crash processes."}
+{"instruction": "Apa yang perlu saya tahu tentang `promises then/catch`?", "input": "", "output": "Promises model future values; always end chains with `.catch` — unhandled rejections crash processes."}
+{"instruction": "Bagaimanakah `promises then/catch` berfungsi?", "input": "", "output": "Promises model future values; always end chains with `.catch` — unhandled rejections crash processes."}
+{"instruction": "Bilakah masa yang sesuai untuk `promises then/catch`?", "input": "", "output": "Promises model future values; always end chains with `.catch` — unhandled rejections crash processes."}
+{"instruction": "Terangkan `setTimeout/clearTimeout` dalam satu minit.", "input": "", "output": "`setTimeout` defers once (keep the id to cancel); `setInterval` repeats until cleared."}
+{"instruction": "Apa yang perlu saya tahu tentang `setTimeout/clearTimeout`?", "input": "", "output": "`setTimeout` defers once (keep the id to cancel); `setInterval` repeats until cleared."}
+{"instruction": "Bagaimanakah `setTimeout/clearTimeout` berfungsi?", "input": "", "output": "`setTimeout` defers once (keep the id to cancel); `setInterval` repeats until cleared."}
+{"instruction": "Bilakah masa yang sesuai untuk `setTimeout/clearTimeout`?", "input": "", "output": "`setTimeout` defers once (keep the id to cancel); `setInterval` repeats until cleared."}
+{"instruction": "Terangkan `localStorage` dalam satu minit.", "input": "", "output": "`localStorage` persists strings per origin (~5MB); JSON-encode objects and guard quota errors."}
+{"instruction": "Apa yang perlu saya tahu tentang `localStorage`?", "input": "", "output": "`localStorage` persists strings per origin (~5MB); JSON-encode objects and guard quota errors."}
+{"instruction": "Bagaimanakah `localStorage` berfungsi?", "input": "", "output": "`localStorage` persists strings per origin (~5MB); JSON-encode objects and guard quota errors."}
+{"instruction": "Bilakah masa yang sesuai untuk `localStorage`?", "input": "", "output": "`localStorage` persists strings per origin (~5MB); JSON-encode objects and guard quota errors."}
+{"instruction": "Terangkan `fetch API` dalam satu minit.", "input": "", "output": "`fetch(url)` returns promises; check `response.ok` since HTTP errors don't reject — only network failures do."}
+{"instruction": "Apa yang perlu saya tahu tentang `fetch API`?", "input": "", "output": "`fetch(url)` returns promises; check `response.ok` since HTTP errors don't reject — only network failures do."}
+{"instruction": "Bagaimanakah `fetch API` berfungsi?", "input": "", "output": "`fetch(url)` returns promises; check `response.ok` since HTTP errors don't reject — only network failures do."}
+{"instruction": "Bilakah masa yang sesuai untuk `fetch API`?", "input": "", "output": "`fetch(url)` returns promises; check `response.ok` since HTTP errors don't reject — only network failures do."}
+{"instruction": "Terangkan `addEventListener` dalam satu minit.", "input": "", "output": "One listener per element beats inline `onclick`; `{ once: true }` auto-removes single-shot handlers."}
+{"instruction": "Apa yang perlu saya tahu tentang `addEventListener`?", "input": "", "output": "One listener per element beats inline `onclick`; `{ once: true }` auto-removes single-shot handlers."}
+{"instruction": "Bagaimanakah `addEventListener` berfungsi?", "input": "", "output": "One listener per element beats inline `onclick`; `{ once: true }` auto-removes single-shot handlers."}
+{"instruction": "Bilakah masa yang sesuai untuk `addEventListener`?", "input": "", "output": "One listener per element beats inline `onclick`; `{ once: true }` auto-removes single-shot handlers."}
+{"instruction": "Terangkan `querySelector` dalam satu minit.", "input": "", "output": "`querySelector('.item')` grabs first CSS match, `querySelectorAll` all (static NodeList, not live)."}
+{"instruction": "Apa yang perlu saya tahu tentang `querySelector`?", "input": "", "output": "`querySelector('.item')` grabs first CSS match, `querySelectorAll` all (static NodeList, not live)."}
+{"instruction": "Bagaimanakah `querySelector` berfungsi?", "input": "", "output": "`querySelector('.item')` grabs first CSS match, `querySelectorAll` all (static NodeList, not live)."}
+{"instruction": "Bilakah masa yang sesuai untuk `querySelector`?", "input": "", "output": "`querySelector('.item')` grabs first CSS match, `querySelectorAll` all (static NodeList, not live)."}
+{"instruction": "Terangkan `classList toggle` dalam satu minit.", "input": "", "output": "`el.classList.toggle('on')` flips classes idempotently; second arg forces state — no string surgery."}
+{"instruction": "Apa yang perlu saya tahu tentang `classList toggle`?", "input": "", "output": "`el.classList.toggle('on')` flips classes idempotently; second arg forces state — no string surgery."}
+{"instruction": "Bagaimanakah `classList toggle` berfungsi?", "input": "", "output": "`el.classList.toggle('on')` flips classes idempotently; second arg forces state — no string surgery."}
+{"instruction": "Bilakah masa yang sesuai untuk `classList toggle`?", "input": "", "output": "`el.classList.toggle('on')` flips classes idempotently; second arg forces state — no string surgery."}
+{"instruction": "Terangkan `createElement append` dalam satu minit.", "input": "", "output": "`document.createElement` + `appendChild` builds DOM safely; `innerHTML` with user data invites XSS."}
+{"instruction": "Apa yang perlu saya tahu tentang `createElement append`?", "input": "", "output": "`document.createElement` + `appendChild` builds DOM safely; `innerHTML` with user data invites XSS."}
+{"instruction": "Bagaimanakah `createElement append` berfungsi?", "input": "", "output": "`document.createElement` + `appendChild` builds DOM safely; `innerHTML` with user data invites XSS."}
+{"instruction": "Bilakah masa yang sesuai untuk `createElement append`?", "input": "", "output": "`document.createElement` + `appendChild` builds DOM safely; `innerHTML` with user data invites XSS."}
+{"instruction": "Terangkan `Array.from` dalam satu minit.", "input": "", "output": "`Array.from({length: 5}, (_, i) => i)` manufactures ranges; second arg maps during construction."}
+{"instruction": "Apa yang perlu saya tahu tentang `Array.from`?", "input": "", "output": "`Array.from({length: 5}, (_, i) => i)` manufactures ranges; second arg maps during construction."}
+{"instruction": "Bagaimanakah `Array.from` berfungsi?", "input": "", "output": "`Array.from({length: 5}, (_, i) => i)` manufactures ranges; second arg maps during construction."}
+{"instruction": "Bilakah masa yang sesuai untuk `Array.from`?", "input": "", "output": "`Array.from({length: 5}, (_, i) => i)` manufactures ranges; second arg maps during construction."}
+{"instruction": "Terangkan `flat flatMap` dalam satu minit.", "input": "", "output": "`flat()` unwraps one level (Infinity for all); `flatMap` maps then flattens — filter+map in one pass."}
+{"instruction": "Apa yang perlu saya tahu tentang `flat flatMap`?", "input": "", "output": "`flat()` unwraps one level (Infinity for all); `flatMap` maps then flattens — filter+map in one pass."}
+{"instruction": "Bagaimanakah `flat flatMap` berfungsi?", "input": "", "output": "`flat()` unwraps one level (Infinity for all); `flatMap` maps then flattens — filter+map in one pass."}
+{"instruction": "Bilakah masa yang sesuai untuk `flat flatMap`?", "input": "", "output": "`flat()` unwraps one level (Infinity for all); `flatMap` maps then flattens — filter+map in one pass."}
+{"instruction": "Terangkan `sort compare` dalam satu minit.", "input": "", "output": "`sort()` stringifies by default (`[10, 9]` → wrong); always pass `(a, b) => a - b` for numbers."}
+{"instruction": "Apa yang perlu saya tahu tentang `sort compare`?", "input": "", "output": "`sort()` stringifies by default (`[10, 9]` → wrong); always pass `(a, b) => a - b` for numbers."}
+{"instruction": "Bagaimanakah `sort compare` berfungsi?", "input": "", "output": "`sort()` stringifies by default (`[10, 9]` → wrong); always pass `(a, b) => a - b` for numbers."}
+{"instruction": "Bilakah masa yang sesuai untuk `sort compare`?", "input": "", "output": "`sort()` stringifies by default (`[10, 9]` → wrong); always pass `(a, b) => a - b` for numbers."}
+{"instruction": "Terangkan `reverse` dalam satu minit.", "input": "", "output": "`reverse()` flips in place (mutates!); copy first (`[...a].reverse()`) when the original must survive."}
+{"instruction": "Apa yang perlu saya tahu tentang `reverse`?", "input": "", "output": "`reverse()` flips in place (mutates!); copy first (`[...a].reverse()`) when the original must survive."}
+{"instruction": "Bagaimanakah `reverse` berfungsi?", "input": "", "output": "`reverse()` flips in place (mutates!); copy first (`[...a].reverse()`) when the original must survive."}
+{"instruction": "Bilakah masa yang sesuai untuk `reverse`?", "input": "", "output": "`reverse()` flips in place (mutates!); copy first (`[...a].reverse()`) when the original must survive."}
+{"instruction": "Terangkan `indexOf` dalam satu minit.", "input": "", "output": "`indexOf` returns position or -1; `includes` reads better for pure membership questions."}
+{"instruction": "Apa yang perlu saya tahu tentang `indexOf`?", "input": "", "output": "`indexOf` returns position or -1; `includes` reads better for pure membership questions."}
+{"instruction": "Bagaimanakah `indexOf` berfungsi?", "input": "", "output": "`indexOf` returns position or -1; `includes` reads better for pure membership questions."}
+{"instruction": "Bilakah masa yang sesuai untuk `indexOf`?", "input": "", "output": "`indexOf` returns position or -1; `includes` reads better for pure membership questions."}
+{"instruction": "Terangkan `charAt substring` dalam satu minit.", "input": "", "output": "`charAt(i)`/`substring(a, b)` extract safely (out-of-range yields ''); negative indices need `slice`."}
+{"instruction": "Apa yang perlu saya tahu tentang `charAt substring`?", "input": "", "output": "`charAt(i)`/`substring(a, b)` extract safely (out-of-range yields ''); negative indices need `slice`."}
+{"instruction": "Bagaimanakah `charAt substring` berfungsi?", "input": "", "output": "`charAt(i)`/`substring(a, b)` extract safely (out-of-range yields ''); negative indices need `slice`."}
+{"instruction": "Bilakah masa yang sesuai untuk `charAt substring`?", "input": "", "output": "`charAt(i)`/`substring(a, b)` extract safely (out-of-range yields ''); negative indices need `slice`."}
+{"instruction": "Terangkan `touPPerCase trim` dalam satu minit.", "input": "", "output": "`toUpperCase/toLowerCase` normalize case; `trim()` strips edge whitespace before validating input."}
+{"instruction": "Apa yang perlu saya tahu tentang `touPPerCase trim`?", "input": "", "output": "`toUpperCase/toLowerCase` normalize case; `trim()` strips edge whitespace before validating input."}
+{"instruction": "Bagaimanakah `touPPerCase trim` berfungsi?", "input": "", "output": "`toUpperCase/toLowerCase` normalize case; `trim()` strips edge whitespace before validating input."}
+{"instruction": "Bilakah masa yang sesuai untuk `touPPerCase trim`?", "input": "", "output": "`toUpperCase/toLowerCase` normalize case; `trim()` strips edge whitespace before validating input."}
+{"instruction": "Terangkan `Math.random floor` dalam satu minit.", "input": "", "output": "`Math.floor(Math.random() * n)` rolls 0..n-1; crypto needs `crypto.getRandomValues`, not Math."}
+{"instruction": "Apa yang perlu saya tahu tentang `Math.random floor`?", "input": "", "output": "`Math.floor(Math.random() * n)` rolls 0..n-1; crypto needs `crypto.getRandomValues`, not Math."}
+{"instruction": "Bagaimanakah `Math.random floor` berfungsi?", "input": "", "output": "`Math.floor(Math.random() * n)` rolls 0..n-1; crypto needs `crypto.getRandomValues`, not Math."}
+{"instruction": "Bilakah masa yang sesuai untuk `Math.random floor`?", "input": "", "output": "`Math.floor(Math.random() * n)` rolls 0..n-1; crypto needs `crypto.getRandomValues`, not Math."}
+{"instruction": "Terangkan `Date now` dalam satu minit.", "input": "", "output": "`Date.now()` timestamps in ms for timing; `new Date()` objects format via `toISOString`/`toLocaleString`."}
+{"instruction": "Apa yang perlu saya tahu tentang `Date now`?", "input": "", "output": "`Date.now()` timestamps in ms for timing; `new Date()` objects format via `toISOString`/`toLocaleString`."}
+{"instruction": "Bagaimanakah `Date now` berfungsi?", "input": "", "output": "`Date.now()` timestamps in ms for timing; `new Date()` objects format via `toISOString`/`toLocaleString`."}
+{"instruction": "Bilakah masa yang sesuai untuk `Date now`?", "input": "", "output": "`Date.now()` timestamps in ms for timing; `new Date()` objects format via `toISOString`/`toLocaleString`."}
+{"instruction": "What does `Number() conversion` do?", "input": "", "output": "`Number('42')` strict-converts (junk → NaN); `parseInt` tolerates suffixes — validate input first either way."}
+{"instruction": "Explain `Number() conversion` briefly.", "input": "", "output": "`Number('42')` strict-converts (junk → NaN); `parseInt` tolerates suffixes — validate input first either way."}
+{"instruction": "When do I use `Number() conversion`?", "input": "", "output": "`Number('42')` strict-converts (junk → NaN); `parseInt` tolerates suffixes — validate input first either way."}
+{"instruction": "Give a practical example of `Number() conversion`.", "input": "", "output": "`Number('42')` strict-converts (junk → NaN); `parseInt` tolerates suffixes — validate input first either way."}
+{"instruction": "What is `Number() conversion` for?", "input": "", "output": "`Number('42')` strict-converts (junk → NaN); `parseInt` tolerates suffixes — validate input first either way."}
+{"instruction": "Apakah fungsi `Number() conversion`?", "input": "", "output": "`Number('42')` strict-converts (junk → NaN); `parseInt` tolerates suffixes — validate input first either way."}
+{"instruction": "Terangkan `Number() conversion` secara ringkas.", "input": "", "output": "`Number('42')` strict-converts (junk → NaN); `parseInt` tolerates suffixes — validate input first either way."}
+{"instruction": "Bila perlu guna `Number() conversion`?", "input": "", "output": "`Number('42')` strict-converts (junk → NaN); `parseInt` tolerates suffixes — validate input first either way."}
+{"instruction": "Beri contoh penggunaan `Number() conversion`.", "input": "", "output": "`Number('42')` strict-converts (junk → NaN); `parseInt` tolerates suffixes — validate input first either way."}
+{"instruction": "`Number() conversion` untuk apa?", "input": "", "output": "`Number('42')` strict-converts (junk → NaN); `parseInt` tolerates suffixes — validate input first either way."}
+{"instruction": "How would you explain `Number() conversion` to a junior developer?", "input": "", "output": "`Number('42')` strict-converts (junk → NaN); `parseInt` tolerates suffixes — validate input first either way."}
+{"instruction": "Give a real-world scenario for `Number() conversion`.", "input": "", "output": "`Number('42')` strict-converts (junk → NaN); `parseInt` tolerates suffixes — validate input first either way."}
+{"instruction": "What problem does `Number() conversion` solve?", "input": "", "output": "`Number('42')` strict-converts (junk → NaN); `parseInt` tolerates suffixes — validate input first either way."}
+{"instruction": "Terangkan `Number() conversion` dalam satu minit.", "input": "", "output": "`Number('42')` strict-converts (junk → NaN); `parseInt` tolerates suffixes — validate input first either way."}
+{"instruction": "Apa yang perlu saya tahu tentang `Number() conversion`?", "input": "", "output": "`Number('42')` strict-converts (junk → NaN); `parseInt` tolerates suffixes — validate input first either way."}
+{"instruction": "Bagaimanakah `Number() conversion` berfungsi?", "input": "", "output": "`Number('42')` strict-converts (junk → NaN); `parseInt` tolerates suffixes — validate input first either way."}
+{"instruction": "Bilakah masa yang sesuai untuk `Number() conversion`?", "input": "", "output": "`Number('42')` strict-converts (junk → NaN); `parseInt` tolerates suffixes — validate input first either way."}
+{"instruction": "What does `String() template` do?", "input": "", "output": "Backticks interpolate `${x}` and multiline; `String(x)` converts explicitly where `+` would concatenate."}
+{"instruction": "Explain `String() template` briefly.", "input": "", "output": "Backticks interpolate `${x}` and multiline; `String(x)` converts explicitly where `+` would concatenate."}
+{"instruction": "When do I use `String() template`?", "input": "", "output": "Backticks interpolate `${x}` and multiline; `String(x)` converts explicitly where `+` would concatenate."}
+{"instruction": "Give a practical example of `String() template`.", "input": "", "output": "Backticks interpolate `${x}` and multiline; `String(x)` converts explicitly where `+` would concatenate."}
+{"instruction": "What is `String() template` for?", "input": "", "output": "Backticks interpolate `${x}` and multiline; `String(x)` converts explicitly where `+` would concatenate."}
+{"instruction": "Apakah fungsi `String() template`?", "input": "", "output": "Backticks interpolate `${x}` and multiline; `String(x)` converts explicitly where `+` would concatenate."}
+{"instruction": "Terangkan `String() template` secara ringkas.", "input": "", "output": "Backticks interpolate `${x}` and multiline; `String(x)` converts explicitly where `+` would concatenate."}
+{"instruction": "Bila perlu guna `String() template`?", "input": "", "output": "Backticks interpolate `${x}` and multiline; `String(x)` converts explicitly where `+` would concatenate."}
+{"instruction": "Beri contoh penggunaan `String() template`.", "input": "", "output": "Backticks interpolate `${x}` and multiline; `String(x)` converts explicitly where `+` would concatenate."}
+{"instruction": "`String() template` untuk apa?", "input": "", "output": "Backticks interpolate `${x}` and multiline; `String(x)` converts explicitly where `+` would concatenate."}
+{"instruction": "How would you explain `String() template` to a junior developer?", "input": "", "output": "Backticks interpolate `${x}` and multiline; `String(x)` converts explicitly where `+` would concatenate."}
+{"instruction": "Give a real-world scenario for `String() template`.", "input": "", "output": "Backticks interpolate `${x}` and multiline; `String(x)` converts explicitly where `+` would concatenate."}
+{"instruction": "What problem does `String() template` solve?", "input": "", "output": "Backticks interpolate `${x}` and multiline; `String(x)` converts explicitly where `+` would concatenate."}
+{"instruction": "Terangkan `String() template` dalam satu minit.", "input": "", "output": "Backticks interpolate `${x}` and multiline; `String(x)` converts explicitly where `+` would concatenate."}
+{"instruction": "Apa yang perlu saya tahu tentang `String() template`?", "input": "", "output": "Backticks interpolate `${x}` and multiline; `String(x)` converts explicitly where `+` would concatenate."}
+{"instruction": "Bagaimanakah `String() template` berfungsi?", "input": "", "output": "Backticks interpolate `${x}` and multiline; `String(x)` converts explicitly where `+` would concatenate."}
+{"instruction": "Bilakah masa yang sesuai untuk `String() template`?", "input": "", "output": "Backticks interpolate `${x}` and multiline; `String(x)` converts explicitly where `+` would concatenate."}
+{"instruction": "What does `Boolean() double-bang` do?", "input": "", "output": "`Boolean(x)`/`!!x` test truthiness (falsy: 0, '', null, undefined, NaN); `if (x)` is usually enough."}
+{"instruction": "Explain `Boolean() double-bang` briefly.", "input": "", "output": "`Boolean(x)`/`!!x` test truthiness (falsy: 0, '', null, undefined, NaN); `if (x)` is usually enough."}
+{"instruction": "When do I use `Boolean() double-bang`?", "input": "", "output": "`Boolean(x)`/`!!x` test truthiness (falsy: 0, '', null, undefined, NaN); `if (x)` is usually enough."}
+{"instruction": "Give a practical example of `Boolean() double-bang`.", "input": "", "output": "`Boolean(x)`/`!!x` test truthiness (falsy: 0, '', null, undefined, NaN); `if (x)` is usually enough."}
+{"instruction": "What is `Boolean() double-bang` for?", "input": "", "output": "`Boolean(x)`/`!!x` test truthiness (falsy: 0, '', null, undefined, NaN); `if (x)` is usually enough."}
+{"instruction": "Apakah fungsi `Boolean() double-bang`?", "input": "", "output": "`Boolean(x)`/`!!x` test truthiness (falsy: 0, '', null, undefined, NaN); `if (x)` is usually enough."}
+{"instruction": "Terangkan `Boolean() double-bang` secara ringkas.", "input": "", "output": "`Boolean(x)`/`!!x` test truthiness (falsy: 0, '', null, undefined, NaN); `if (x)` is usually enough."}
+{"instruction": "Bila perlu guna `Boolean() double-bang`?", "input": "", "output": "`Boolean(x)`/`!!x` test truthiness (falsy: 0, '', null, undefined, NaN); `if (x)` is usually enough."}
+{"instruction": "Beri contoh penggunaan `Boolean() double-bang`.", "input": "", "output": "`Boolean(x)`/`!!x` test truthiness (falsy: 0, '', null, undefined, NaN); `if (x)` is usually enough."}
+{"instruction": "`Boolean() double-bang` untuk apa?", "input": "", "output": "`Boolean(x)`/`!!x` test truthiness (falsy: 0, '', null, undefined, NaN); `if (x)` is usually enough."}
+{"instruction": "How would you explain `Boolean() double-bang` to a junior developer?", "input": "", "output": "`Boolean(x)`/`!!x` test truthiness (falsy: 0, '', null, undefined, NaN); `if (x)` is usually enough."}
+{"instruction": "Give a real-world scenario for `Boolean() double-bang`.", "input": "", "output": "`Boolean(x)`/`!!x` test truthiness (falsy: 0, '', null, undefined, NaN); `if (x)` is usually enough."}
+{"instruction": "What problem does `Boolean() double-bang` solve?", "input": "", "output": "`Boolean(x)`/`!!x` test truthiness (falsy: 0, '', null, undefined, NaN); `if (x)` is usually enough."}
+{"instruction": "Terangkan `Boolean() double-bang` dalam satu minit.", "input": "", "output": "`Boolean(x)`/`!!x` test truthiness (falsy: 0, '', null, undefined, NaN); `if (x)` is usually enough."}
+{"instruction": "Apa yang perlu saya tahu tentang `Boolean() double-bang`?", "input": "", "output": "`Boolean(x)`/`!!x` test truthiness (falsy: 0, '', null, undefined, NaN); `if (x)` is usually enough."}
+{"instruction": "Bagaimanakah `Boolean() double-bang` berfungsi?", "input": "", "output": "`Boolean(x)`/`!!x` test truthiness (falsy: 0, '', null, undefined, NaN); `if (x)` is usually enough."}
+{"instruction": "Bilakah masa yang sesuai untuk `Boolean() double-bang`?", "input": "", "output": "`Boolean(x)`/`!!x` test truthiness (falsy: 0, '', null, undefined, NaN); `if (x)` is usually enough."}
+{"instruction": "What does `Array.of fill` do?", "input": "", "output": "`Array.of(1,2)` avoids the `new Array(n)` length trap; `.fill(0)` seeds fixed buffers before mapping."}
+{"instruction": "Explain `Array.of fill` briefly.", "input": "", "output": "`Array.of(1,2)` avoids the `new Array(n)` length trap; `.fill(0)` seeds fixed buffers before mapping."}
+{"instruction": "When do I use `Array.of fill`?", "input": "", "output": "`Array.of(1,2)` avoids the `new Array(n)` length trap; `.fill(0)` seeds fixed buffers before mapping."}
+{"instruction": "Give a practical example of `Array.of fill`.", "input": "", "output": "`Array.of(1,2)` avoids the `new Array(n)` length trap; `.fill(0)` seeds fixed buffers before mapping."}
+{"instruction": "What is `Array.of fill` for?", "input": "", "output": "`Array.of(1,2)` avoids the `new Array(n)` length trap; `.fill(0)` seeds fixed buffers before mapping."}
+{"instruction": "Apakah fungsi `Array.of fill`?", "input": "", "output": "`Array.of(1,2)` avoids the `new Array(n)` length trap; `.fill(0)` seeds fixed buffers before mapping."}
+{"instruction": "Terangkan `Array.of fill` secara ringkas.", "input": "", "output": "`Array.of(1,2)` avoids the `new Array(n)` length trap; `.fill(0)` seeds fixed buffers before mapping."}
+{"instruction": "Bila perlu guna `Array.of fill`?", "input": "", "output": "`Array.of(1,2)` avoids the `new Array(n)` length trap; `.fill(0)` seeds fixed buffers before mapping."}
+{"instruction": "Beri contoh penggunaan `Array.of fill`.", "input": "", "output": "`Array.of(1,2)` avoids the `new Array(n)` length trap; `.fill(0)` seeds fixed buffers before mapping."}
+{"instruction": "`Array.of fill` untuk apa?", "input": "", "output": "`Array.of(1,2)` avoids the `new Array(n)` length trap; `.fill(0)` seeds fixed buffers before mapping."}
+{"instruction": "How would you explain `Array.of fill` to a junior developer?", "input": "", "output": "`Array.of(1,2)` avoids the `new Array(n)` length trap; `.fill(0)` seeds fixed buffers before mapping."}
+{"instruction": "Give a real-world scenario for `Array.of fill`.", "input": "", "output": "`Array.of(1,2)` avoids the `new Array(n)` length trap; `.fill(0)` seeds fixed buffers before mapping."}
+{"instruction": "What problem does `Array.of fill` solve?", "input": "", "output": "`Array.of(1,2)` avoids the `new Array(n)` length trap; `.fill(0)` seeds fixed buffers before mapping."}
+{"instruction": "Terangkan `Array.of fill` dalam satu minit.", "input": "", "output": "`Array.of(1,2)` avoids the `new Array(n)` length trap; `.fill(0)` seeds fixed buffers before mapping."}
+{"instruction": "Apa yang perlu saya tahu tentang `Array.of fill`?", "input": "", "output": "`Array.of(1,2)` avoids the `new Array(n)` length trap; `.fill(0)` seeds fixed buffers before mapping."}
+{"instruction": "Bagaimanakah `Array.of fill` berfungsi?", "input": "", "output": "`Array.of(1,2)` avoids the `new Array(n)` length trap; `.fill(0)` seeds fixed buffers before mapping."}
+{"instruction": "Bilakah masa yang sesuai untuk `Array.of fill`?", "input": "", "output": "`Array.of(1,2)` avoids the `new Array(n)` length trap; `.fill(0)` seeds fixed buffers before mapping."}
+{"instruction": "What does `Array concat spread` do?", "input": "", "output": "`a.concat(b)` or `[...a, ...b]` merge immutably; `push(...b)` mutates the target in place."}
+{"instruction": "Explain `Array concat spread` briefly.", "input": "", "output": "`a.concat(b)` or `[...a, ...b]` merge immutably; `push(...b)` mutates the target in place."}
+{"instruction": "When do I use `Array concat spread`?", "input": "", "output": "`a.concat(b)` or `[...a, ...b]` merge immutably; `push(...b)` mutates the target in place."}
+{"instruction": "Give a practical example of `Array concat spread`.", "input": "", "output": "`a.concat(b)` or `[...a, ...b]` merge immutably; `push(...b)` mutates the target in place."}
+{"instruction": "What is `Array concat spread` for?", "input": "", "output": "`a.concat(b)` or `[...a, ...b]` merge immutably; `push(...b)` mutates the target in place."}
+{"instruction": "Apakah fungsi `Array concat spread`?", "input": "", "output": "`a.concat(b)` or `[...a, ...b]` merge immutably; `push(...b)` mutates the target in place."}
+{"instruction": "Terangkan `Array concat spread` secara ringkas.", "input": "", "output": "`a.concat(b)` or `[...a, ...b]` merge immutably; `push(...b)` mutates the target in place."}
+{"instruction": "Bila perlu guna `Array concat spread`?", "input": "", "output": "`a.concat(b)` or `[...a, ...b]` merge immutably; `push(...b)` mutates the target in place."}
+{"instruction": "Beri contoh penggunaan `Array concat spread`.", "input": "", "output": "`a.concat(b)` or `[...a, ...b]` merge immutably; `push(...b)` mutates the target in place."}
+{"instruction": "`Array concat spread` untuk apa?", "input": "", "output": "`a.concat(b)` or `[...a, ...b]` merge immutably; `push(...b)` mutates the target in place."}
+{"instruction": "How would you explain `Array concat spread` to a junior developer?", "input": "", "output": "`a.concat(b)` or `[...a, ...b]` merge immutably; `push(...b)` mutates the target in place."}
+{"instruction": "Give a real-world scenario for `Array concat spread`.", "input": "", "output": "`a.concat(b)` or `[...a, ...b]` merge immutably; `push(...b)` mutates the target in place."}
+{"instruction": "What problem does `Array concat spread` solve?", "input": "", "output": "`a.concat(b)` or `[...a, ...b]` merge immutably; `push(...b)` mutates the target in place."}
+{"instruction": "Terangkan `Array concat spread` dalam satu minit.", "input": "", "output": "`a.concat(b)` or `[...a, ...b]` merge immutably; `push(...b)` mutates the target in place."}
+{"instruction": "Apa yang perlu saya tahu tentang `Array concat spread`?", "input": "", "output": "`a.concat(b)` or `[...a, ...b]` merge immutably; `push(...b)` mutates the target in place."}
+{"instruction": "Bagaimanakah `Array concat spread` berfungsi?", "input": "", "output": "`a.concat(b)` or `[...a, ...b]` merge immutably; `push(...b)` mutates the target in place."}
+{"instruction": "Bilakah masa yang sesuai untuk `Array concat spread`?", "input": "", "output": "`a.concat(b)` or `[...a, ...b]` merge immutably; `push(...b)` mutates the target in place."}
+{"instruction": "What does `String slice split join` do?", "input": "", "output": "`slice/split/join` chain text pipelines (`s.split(',').map(trim).join(';')`) without temp vars."}
+{"instruction": "Explain `String slice split join` briefly.", "input": "", "output": "`slice/split/join` chain text pipelines (`s.split(',').map(trim).join(';')`) without temp vars."}
+{"instruction": "When do I use `String slice split join`?", "input": "", "output": "`slice/split/join` chain text pipelines (`s.split(',').map(trim).join(';')`) without temp vars."}
+{"instruction": "Give a practical example of `String slice split join`.", "input": "", "output": "`slice/split/join` chain text pipelines (`s.split(',').map(trim).join(';')`) without temp vars."}
+{"instruction": "What is `String slice split join` for?", "input": "", "output": "`slice/split/join` chain text pipelines (`s.split(',').map(trim).join(';')`) without temp vars."}
+{"instruction": "Apakah fungsi `String slice split join`?", "input": "", "output": "`slice/split/join` chain text pipelines (`s.split(',').map(trim).join(';')`) without temp vars."}
+{"instruction": "Terangkan `String slice split join` secara ringkas.", "input": "", "output": "`slice/split/join` chain text pipelines (`s.split(',').map(trim).join(';')`) without temp vars."}
+{"instruction": "Bila perlu guna `String slice split join`?", "input": "", "output": "`slice/split/join` chain text pipelines (`s.split(',').map(trim).join(';')`) without temp vars."}
+{"instruction": "Beri contoh penggunaan `String slice split join`.", "input": "", "output": "`slice/split/join` chain text pipelines (`s.split(',').map(trim).join(';')`) without temp vars."}
+{"instruction": "`String slice split join` untuk apa?", "input": "", "output": "`slice/split/join` chain text pipelines (`s.split(',').map(trim).join(';')`) without temp vars."}
+{"instruction": "How would you explain `String slice split join` to a junior developer?", "input": "", "output": "`slice/split/join` chain text pipelines (`s.split(',').map(trim).join(';')`) without temp vars."}
+{"instruction": "Give a real-world scenario for `String slice split join`.", "input": "", "output": "`slice/split/join` chain text pipelines (`s.split(',').map(trim).join(';')`) without temp vars."}
+{"instruction": "What problem does `String slice split join` solve?", "input": "", "output": "`slice/split/join` chain text pipelines (`s.split(',').map(trim).join(';')`) without temp vars."}
+{"instruction": "Terangkan `String slice split join` dalam satu minit.", "input": "", "output": "`slice/split/join` chain text pipelines (`s.split(',').map(trim).join(';')`) without temp vars."}
+{"instruction": "Apa yang perlu saya tahu tentang `String slice split join`?", "input": "", "output": "`slice/split/join` chain text pipelines (`s.split(',').map(trim).join(';')`) without temp vars."}
+{"instruction": "Bagaimanakah `String slice split join` berfungsi?", "input": "", "output": "`slice/split/join` chain text pipelines (`s.split(',').map(trim).join(';')`) without temp vars."}
+{"instruction": "Bilakah masa yang sesuai untuk `String slice split join`?", "input": "", "output": "`slice/split/join` chain text pipelines (`s.split(',').map(trim).join(';')`) without temp vars."}
+{"instruction": "What does `Number toFixed` do?", "input": "", "output": "`(2.5).toFixed(2)` → `'2.50'` for money display (returns string!); compute in cents, format at edges."}
+{"instruction": "Explain `Number toFixed` briefly.", "input": "", "output": "`(2.5).toFixed(2)` → `'2.50'` for money display (returns string!); compute in cents, format at edges."}
+{"instruction": "When do I use `Number toFixed`?", "input": "", "output": "`(2.5).toFixed(2)` → `'2.50'` for money display (returns string!); compute in cents, format at edges."}
+{"instruction": "Give a practical example of `Number toFixed`.", "input": "", "output": "`(2.5).toFixed(2)` → `'2.50'` for money display (returns string!); compute in cents, format at edges."}
+{"instruction": "What is `Number toFixed` for?", "input": "", "output": "`(2.5).toFixed(2)` → `'2.50'` for money display (returns string!); compute in cents, format at edges."}
+{"instruction": "Apakah fungsi `Number toFixed`?", "input": "", "output": "`(2.5).toFixed(2)` → `'2.50'` for money display (returns string!); compute in cents, format at edges."}
+{"instruction": "Terangkan `Number toFixed` secara ringkas.", "input": "", "output": "`(2.5).toFixed(2)` → `'2.50'` for money display (returns string!); compute in cents, format at edges."}
+{"instruction": "Bila perlu guna `Number toFixed`?", "input": "", "output": "`(2.5).toFixed(2)` → `'2.50'` for money display (returns string!); compute in cents, format at edges."}
+{"instruction": "Beri contoh penggunaan `Number toFixed`.", "input": "", "output": "`(2.5).toFixed(2)` → `'2.50'` for money display (returns string!); compute in cents, format at edges."}
+{"instruction": "`Number toFixed` untuk apa?", "input": "", "output": "`(2.5).toFixed(2)` → `'2.50'` for money display (returns string!); compute in cents, format at edges."}
+{"instruction": "How would you explain `Number toFixed` to a junior developer?", "input": "", "output": "`(2.5).toFixed(2)` → `'2.50'` for money display (returns string!); compute in cents, format at edges."}
+{"instruction": "Give a real-world scenario for `Number toFixed`.", "input": "", "output": "`(2.5).toFixed(2)` → `'2.50'` for money display (returns string!); compute in cents, format at edges."}
+{"instruction": "What problem does `Number toFixed` solve?", "input": "", "output": "`(2.5).toFixed(2)` → `'2.50'` for money display (returns string!); compute in cents, format at edges."}
+{"instruction": "Terangkan `Number toFixed` dalam satu minit.", "input": "", "output": "`(2.5).toFixed(2)` → `'2.50'` for money display (returns string!); compute in cents, format at edges."}
+{"instruction": "Apa yang perlu saya tahu tentang `Number toFixed`?", "input": "", "output": "`(2.5).toFixed(2)` → `'2.50'` for money display (returns string!); compute in cents, format at edges."}
+{"instruction": "Bagaimanakah `Number toFixed` berfungsi?", "input": "", "output": "`(2.5).toFixed(2)` → `'2.50'` for money display (returns string!); compute in cents, format at edges."}
+{"instruction": "Bilakah masa yang sesuai untuk `Number toFixed`?", "input": "", "output": "`(2.5).toFixed(2)` → `'2.50'` for money display (returns string!); compute in cents, format at edges."}
+{"instruction": "What does `Math.min max` do?", "input": "", "output": "`Math.min(...arr)` spreads for extrema (huge arrays risk stack — reduce instead); `Math.max` mirrors."}
+{"instruction": "Explain `Math.min max` briefly.", "input": "", "output": "`Math.min(...arr)` spreads for extrema (huge arrays risk stack — reduce instead); `Math.max` mirrors."}
+{"instruction": "When do I use `Math.min max`?", "input": "", "output": "`Math.min(...arr)` spreads for extrema (huge arrays risk stack — reduce instead); `Math.max` mirrors."}
+{"instruction": "Give a practical example of `Math.min max`.", "input": "", "output": "`Math.min(...arr)` spreads for extrema (huge arrays risk stack — reduce instead); `Math.max` mirrors."}
+{"instruction": "What is `Math.min max` for?", "input": "", "output": "`Math.min(...arr)` spreads for extrema (huge arrays risk stack — reduce instead); `Math.max` mirrors."}
+{"instruction": "Apakah fungsi `Math.min max`?", "input": "", "output": "`Math.min(...arr)` spreads for extrema (huge arrays risk stack — reduce instead); `Math.max` mirrors."}
+{"instruction": "Terangkan `Math.min max` secara ringkas.", "input": "", "output": "`Math.min(...arr)` spreads for extrema (huge arrays risk stack — reduce instead); `Math.max` mirrors."}
+{"instruction": "Bila perlu guna `Math.min max`?", "input": "", "output": "`Math.min(...arr)` spreads for extrema (huge arrays risk stack — reduce instead); `Math.max` mirrors."}
+{"instruction": "Beri contoh penggunaan `Math.min max`.", "input": "", "output": "`Math.min(...arr)` spreads for extrema (huge arrays risk stack — reduce instead); `Math.max` mirrors."}
+{"instruction": "`Math.min max` untuk apa?", "input": "", "output": "`Math.min(...arr)` spreads for extrema (huge arrays risk stack — reduce instead); `Math.max` mirrors."}
+{"instruction": "How would you explain `Math.min max` to a junior developer?", "input": "", "output": "`Math.min(...arr)` spreads for extrema (huge arrays risk stack — reduce instead); `Math.max` mirrors."}
+{"instruction": "Give a real-world scenario for `Math.min max`.", "input": "", "output": "`Math.min(...arr)` spreads for extrema (huge arrays risk stack — reduce instead); `Math.max` mirrors."}
+{"instruction": "What problem does `Math.min max` solve?", "input": "", "output": "`Math.min(...arr)` spreads for extrema (huge arrays risk stack — reduce instead); `Math.max` mirrors."}
+{"instruction": "Terangkan `Math.min max` dalam satu minit.", "input": "", "output": "`Math.min(...arr)` spreads for extrema (huge arrays risk stack — reduce instead); `Math.max` mirrors."}
+{"instruction": "Apa yang perlu saya tahu tentang `Math.min max`?", "input": "", "output": "`Math.min(...arr)` spreads for extrema (huge arrays risk stack — reduce instead); `Math.max` mirrors."}
+{"instruction": "Bagaimanakah `Math.min max` berfungsi?", "input": "", "output": "`Math.min(...arr)` spreads for extrema (huge arrays risk stack — reduce instead); `Math.max` mirrors."}
+{"instruction": "Bilakah masa yang sesuai untuk `Math.min max`?", "input": "", "output": "`Math.min(...arr)` spreads for extrema (huge arrays risk stack — reduce instead); `Math.max` mirrors."}
+{"instruction": "What does `Object.values entries loop` do?", "input": "", "output": "`for (const [k, v] of Object.entries(o))` walks pairs directly — cleaner than keys-then-lookup."}
+{"instruction": "Explain `Object.values entries loop` briefly.", "input": "", "output": "`for (const [k, v] of Object.entries(o))` walks pairs directly — cleaner than keys-then-lookup."}
+{"instruction": "When do I use `Object.values entries loop`?", "input": "", "output": "`for (const [k, v] of Object.entries(o))` walks pairs directly — cleaner than keys-then-lookup."}
+{"instruction": "Give a practical example of `Object.values entries loop`.", "input": "", "output": "`for (const [k, v] of Object.entries(o))` walks pairs directly — cleaner than keys-then-lookup."}
+{"instruction": "What is `Object.values entries loop` for?", "input": "", "output": "`for (const [k, v] of Object.entries(o))` walks pairs directly — cleaner than keys-then-lookup."}
+{"instruction": "Apakah fungsi `Object.values entries loop`?", "input": "", "output": "`for (const [k, v] of Object.entries(o))` walks pairs directly — cleaner than keys-then-lookup."}
+{"instruction": "Terangkan `Object.values entries loop` secara ringkas.", "input": "", "output": "`for (const [k, v] of Object.entries(o))` walks pairs directly — cleaner than keys-then-lookup."}
+{"instruction": "Bila perlu guna `Object.values entries loop`?", "input": "", "output": "`for (const [k, v] of Object.entries(o))` walks pairs directly — cleaner than keys-then-lookup."}
+{"instruction": "Beri contoh penggunaan `Object.values entries loop`.", "input": "", "output": "`for (const [k, v] of Object.entries(o))` walks pairs directly — cleaner than keys-then-lookup."}
+{"instruction": "`Object.values entries loop` untuk apa?", "input": "", "output": "`for (const [k, v] of Object.entries(o))` walks pairs directly — cleaner than keys-then-lookup."}
+{"instruction": "How would you explain `Object.values entries loop` to a junior developer?", "input": "", "output": "`for (const [k, v] of Object.entries(o))` walks pairs directly — cleaner than keys-then-lookup."}
+{"instruction": "Give a real-world scenario for `Object.values entries loop`.", "input": "", "output": "`for (const [k, v] of Object.entries(o))` walks pairs directly — cleaner than keys-then-lookup."}
+{"instruction": "What problem does `Object.values entries loop` solve?", "input": "", "output": "`for (const [k, v] of Object.entries(o))` walks pairs directly — cleaner than keys-then-lookup."}
+{"instruction": "Terangkan `Object.values entries loop` dalam satu minit.", "input": "", "output": "`for (const [k, v] of Object.entries(o))` walks pairs directly — cleaner than keys-then-lookup."}
+{"instruction": "Apa yang perlu saya tahu tentang `Object.values entries loop`?", "input": "", "output": "`for (const [k, v] of Object.entries(o))` walks pairs directly — cleaner than keys-then-lookup."}
+{"instruction": "Bagaimanakah `Object.values entries loop` berfungsi?", "input": "", "output": "`for (const [k, v] of Object.entries(o))` walks pairs directly — cleaner than keys-then-lookup."}
+{"instruction": "Bilakah masa yang sesuai untuk `Object.values entries loop`?", "input": "", "output": "`for (const [k, v] of Object.entries(o))` walks pairs directly — cleaner than keys-then-lookup."}
+{"instruction": "What does `delete operator` do?", "input": "", "output": "`delete o.k` removes own properties (arrays: prefer `splice`); `delete` on variables is a SyntaxError in strict mode."}
+{"instruction": "Explain `delete operator` briefly.", "input": "", "output": "`delete o.k` removes own properties (arrays: prefer `splice`); `delete` on variables is a SyntaxError in strict mode."}
+{"instruction": "When do I use `delete operator`?", "input": "", "output": "`delete o.k` removes own properties (arrays: prefer `splice`); `delete` on variables is a SyntaxError in strict mode."}
+{"instruction": "Give a practical example of `delete operator`.", "input": "", "output": "`delete o.k` removes own properties (arrays: prefer `splice`); `delete` on variables is a SyntaxError in strict mode."}
+{"instruction": "What is `delete operator` for?", "input": "", "output": "`delete o.k` removes own properties (arrays: prefer `splice`); `delete` on variables is a SyntaxError in strict mode."}
+{"instruction": "Apakah fungsi `delete operator`?", "input": "", "output": "`delete o.k` removes own properties (arrays: prefer `splice`); `delete` on variables is a SyntaxError in strict mode."}
+{"instruction": "Terangkan `delete operator` secara ringkas.", "input": "", "output": "`delete o.k` removes own properties (arrays: prefer `splice`); `delete` on variables is a SyntaxError in strict mode."}
+{"instruction": "Bila perlu guna `delete operator`?", "input": "", "output": "`delete o.k` removes own properties (arrays: prefer `splice`); `delete` on variables is a SyntaxError in strict mode."}
+{"instruction": "Beri contoh penggunaan `delete operator`.", "input": "", "output": "`delete o.k` removes own properties (arrays: prefer `splice`); `delete` on variables is a SyntaxError in strict mode."}
+{"instruction": "`delete operator` untuk apa?", "input": "", "output": "`delete o.k` removes own properties (arrays: prefer `splice`); `delete` on variables is a SyntaxError in strict mode."}
+{"instruction": "How would you explain `delete operator` to a junior developer?", "input": "", "output": "`delete o.k` removes own properties (arrays: prefer `splice`); `delete` on variables is a SyntaxError in strict mode."}
+{"instruction": "Give a real-world scenario for `delete operator`.", "input": "", "output": "`delete o.k` removes own properties (arrays: prefer `splice`); `delete` on variables is a SyntaxError in strict mode."}
+{"instruction": "What problem does `delete operator` solve?", "input": "", "output": "`delete o.k` removes own properties (arrays: prefer `splice`); `delete` on variables is a SyntaxError in strict mode."}
+{"instruction": "Terangkan `delete operator` dalam satu minit.", "input": "", "output": "`delete o.k` removes own properties (arrays: prefer `splice`); `delete` on variables is a SyntaxError in strict mode."}
+{"instruction": "Apa yang perlu saya tahu tentang `delete operator`?", "input": "", "output": "`delete o.k` removes own properties (arrays: prefer `splice`); `delete` on variables is a SyntaxError in strict mode."}
+{"instruction": "Bagaimanakah `delete operator` berfungsi?", "input": "", "output": "`delete o.k` removes own properties (arrays: prefer `splice`); `delete` on variables is a SyntaxError in strict mode."}
+{"instruction": "Bilakah masa yang sesuai untuk `delete operator`?", "input": "", "output": "`delete o.k` removes own properties (arrays: prefer `splice`); `delete` on variables is a SyntaxError in strict mode."}
+{"instruction": "What does `in operator` do?", "input": "", "output": "`'k' in o` checks key existence including prototype chain; `hasOwnProperty` restricts to own keys."}
+{"instruction": "Explain `in operator` briefly.", "input": "", "output": "`'k' in o` checks key existence including prototype chain; `hasOwnProperty` restricts to own keys."}
+{"instruction": "When do I use `in operator`?", "input": "", "output": "`'k' in o` checks key existence including prototype chain; `hasOwnProperty` restricts to own keys."}
+{"instruction": "Give a practical example of `in operator`.", "input": "", "output": "`'k' in o` checks key existence including prototype chain; `hasOwnProperty` restricts to own keys."}
+{"instruction": "What is `in operator` for?", "input": "", "output": "`'k' in o` checks key existence including prototype chain; `hasOwnProperty` restricts to own keys."}
+{"instruction": "Apakah fungsi `in operator`?", "input": "", "output": "`'k' in o` checks key existence including prototype chain; `hasOwnProperty` restricts to own keys."}
+{"instruction": "Terangkan `in operator` secara ringkas.", "input": "", "output": "`'k' in o` checks key existence including prototype chain; `hasOwnProperty` restricts to own keys."}
+{"instruction": "Bila perlu guna `in operator`?", "input": "", "output": "`'k' in o` checks key existence including prototype chain; `hasOwnProperty` restricts to own keys."}
+{"instruction": "Beri contoh penggunaan `in operator`.", "input": "", "output": "`'k' in o` checks key existence including prototype chain; `hasOwnProperty` restricts to own keys."}
+{"instruction": "`in operator` untuk apa?", "input": "", "output": "`'k' in o` checks key existence including prototype chain; `hasOwnProperty` restricts to own keys."}
+{"instruction": "How would you explain `in operator` to a junior developer?", "input": "", "output": "`'k' in o` checks key existence including prototype chain; `hasOwnProperty` restricts to own keys."}
+{"instruction": "Give a real-world scenario for `in operator`.", "input": "", "output": "`'k' in o` checks key existence including prototype chain; `hasOwnProperty` restricts to own keys."}
+{"instruction": "What problem does `in operator` solve?", "input": "", "output": "`'k' in o` checks key existence including prototype chain; `hasOwnProperty` restricts to own keys."}
+{"instruction": "Terangkan `in operator` dalam satu minit.", "input": "", "output": "`'k' in o` checks key existence including prototype chain; `hasOwnProperty` restricts to own keys."}
+{"instruction": "Apa yang perlu saya tahu tentang `in operator`?", "input": "", "output": "`'k' in o` checks key existence including prototype chain; `hasOwnProperty` restricts to own keys."}
+{"instruction": "Bagaimanakah `in operator` berfungsi?", "input": "", "output": "`'k' in o` checks key existence including prototype chain; `hasOwnProperty` restricts to own keys."}
+{"instruction": "Bilakah masa yang sesuai untuk `in operator`?", "input": "", "output": "`'k' in o` checks key existence including prototype chain; `hasOwnProperty` restricts to own keys."}
+{"instruction": "What does `void operator` do?", "input": "", "output": "`void expr` evaluates and returns undefined — bookmarklets and terse arrow bodies, rarely app code."}
+{"instruction": "Explain `void operator` briefly.", "input": "", "output": "`void expr` evaluates and returns undefined — bookmarklets and terse arrow bodies, rarely app code."}
+{"instruction": "When do I use `void operator`?", "input": "", "output": "`void expr` evaluates and returns undefined — bookmarklets and terse arrow bodies, rarely app code."}
+{"instruction": "Give a practical example of `void operator`.", "input": "", "output": "`void expr` evaluates and returns undefined — bookmarklets and terse arrow bodies, rarely app code."}
+{"instruction": "What is `void operator` for?", "input": "", "output": "`void expr` evaluates and returns undefined — bookmarklets and terse arrow bodies, rarely app code."}
+{"instruction": "Apakah fungsi `void operator`?", "input": "", "output": "`void expr` evaluates and returns undefined — bookmarklets and terse arrow bodies, rarely app code."}
+{"instruction": "Terangkan `void operator` secara ringkas.", "input": "", "output": "`void expr` evaluates and returns undefined — bookmarklets and terse arrow bodies, rarely app code."}
+{"instruction": "Bila perlu guna `void operator`?", "input": "", "output": "`void expr` evaluates and returns undefined — bookmarklets and terse arrow bodies, rarely app code."}
+{"instruction": "Beri contoh penggunaan `void operator`.", "input": "", "output": "`void expr` evaluates and returns undefined — bookmarklets and terse arrow bodies, rarely app code."}
+{"instruction": "`void operator` untuk apa?", "input": "", "output": "`void expr` evaluates and returns undefined — bookmarklets and terse arrow bodies, rarely app code."}
+{"instruction": "How would you explain `void operator` to a junior developer?", "input": "", "output": "`void expr` evaluates and returns undefined — bookmarklets and terse arrow bodies, rarely app code."}
+{"instruction": "Give a real-world scenario for `void operator`.", "input": "", "output": "`void expr` evaluates and returns undefined — bookmarklets and terse arrow bodies, rarely app code."}
+{"instruction": "What problem does `void operator` solve?", "input": "", "output": "`void expr` evaluates and returns undefined — bookmarklets and terse arrow bodies, rarely app code."}
+{"instruction": "Terangkan `void operator` dalam satu minit.", "input": "", "output": "`void expr` evaluates and returns undefined — bookmarklets and terse arrow bodies, rarely app code."}
+{"instruction": "Apa yang perlu saya tahu tentang `void operator`?", "input": "", "output": "`void expr` evaluates and returns undefined — bookmarklets and terse arrow bodies, rarely app code."}
+{"instruction": "Bagaimanakah `void operator` berfungsi?", "input": "", "output": "`void expr` evaluates and returns undefined — bookmarklets and terse arrow bodies, rarely app code."}
+{"instruction": "Bilakah masa yang sesuai untuk `void operator`?", "input": "", "output": "`void expr` evaluates and returns undefined — bookmarklets and terse arrow bodies, rarely app code."}
+{"instruction": "What does `comma operator` do?", "input": "", "output": "`(a(), b())` sequences expressions returning the last; confusable in `for(;;)` headers — use sparingly."}
+{"instruction": "Explain `comma operator` briefly.", "input": "", "output": "`(a(), b())` sequences expressions returning the last; confusable in `for(;;)` headers — use sparingly."}
+{"instruction": "When do I use `comma operator`?", "input": "", "output": "`(a(), b())` sequences expressions returning the last; confusable in `for(;;)` headers — use sparingly."}
+{"instruction": "Give a practical example of `comma operator`.", "input": "", "output": "`(a(), b())` sequences expressions returning the last; confusable in `for(;;)` headers — use sparingly."}
+{"instruction": "What is `comma operator` for?", "input": "", "output": "`(a(), b())` sequences expressions returning the last; confusable in `for(;;)` headers — use sparingly."}
+{"instruction": "Apakah fungsi `comma operator`?", "input": "", "output": "`(a(), b())` sequences expressions returning the last; confusable in `for(;;)` headers — use sparingly."}
+{"instruction": "Terangkan `comma operator` secara ringkas.", "input": "", "output": "`(a(), b())` sequences expressions returning the last; confusable in `for(;;)` headers — use sparingly."}
+{"instruction": "Bila perlu guna `comma operator`?", "input": "", "output": "`(a(), b())` sequences expressions returning the last; confusable in `for(;;)` headers — use sparingly."}
+{"instruction": "Beri contoh penggunaan `comma operator`.", "input": "", "output": "`(a(), b())` sequences expressions returning the last; confusable in `for(;;)` headers — use sparingly."}
+{"instruction": "`comma operator` untuk apa?", "input": "", "output": "`(a(), b())` sequences expressions returning the last; confusable in `for(;;)` headers — use sparingly."}
+{"instruction": "How would you explain `comma operator` to a junior developer?", "input": "", "output": "`(a(), b())` sequences expressions returning the last; confusable in `for(;;)` headers — use sparingly."}
+{"instruction": "Give a real-world scenario for `comma operator`.", "input": "", "output": "`(a(), b())` sequences expressions returning the last; confusable in `for(;;)` headers — use sparingly."}
+{"instruction": "What problem does `comma operator` solve?", "input": "", "output": "`(a(), b())` sequences expressions returning the last; confusable in `for(;;)` headers — use sparingly."}
+{"instruction": "Terangkan `comma operator` dalam satu minit.", "input": "", "output": "`(a(), b())` sequences expressions returning the last; confusable in `for(;;)` headers — use sparingly."}
+{"instruction": "Apa yang perlu saya tahu tentang `comma operator`?", "input": "", "output": "`(a(), b())` sequences expressions returning the last; confusable in `for(;;)` headers — use sparingly."}
+{"instruction": "Bagaimanakah `comma operator` berfungsi?", "input": "", "output": "`(a(), b())` sequences expressions returning the last; confusable in `for(;;)` headers — use sparingly."}
+{"instruction": "Bilakah masa yang sesuai untuk `comma operator`?", "input": "", "output": "`(a(), b())` sequences expressions returning the last; confusable in `for(;;)` headers — use sparingly."}
+{"instruction": "What does `labelled break` do?", "input": "", "output": "`outer: for... { break outer; }` escapes nested loops by name; refactor to functions when labels multiply."}
+{"instruction": "Explain `labelled break` briefly.", "input": "", "output": "`outer: for... { break outer; }` escapes nested loops by name; refactor to functions when labels multiply."}
+{"instruction": "When do I use `labelled break`?", "input": "", "output": "`outer: for... { break outer; }` escapes nested loops by name; refactor to functions when labels multiply."}
+{"instruction": "Give a practical example of `labelled break`.", "input": "", "output": "`outer: for... { break outer; }` escapes nested loops by name; refactor to functions when labels multiply."}
+{"instruction": "What is `labelled break` for?", "input": "", "output": "`outer: for... { break outer; }` escapes nested loops by name; refactor to functions when labels multiply."}
+{"instruction": "Apakah fungsi `labelled break`?", "input": "", "output": "`outer: for... { break outer; }` escapes nested loops by name; refactor to functions when labels multiply."}
+{"instruction": "Terangkan `labelled break` secara ringkas.", "input": "", "output": "`outer: for... { break outer; }` escapes nested loops by name; refactor to functions when labels multiply."}
+{"instruction": "Bila perlu guna `labelled break`?", "input": "", "output": "`outer: for... { break outer; }` escapes nested loops by name; refactor to functions when labels multiply."}
+{"instruction": "Beri contoh penggunaan `labelled break`.", "input": "", "output": "`outer: for... { break outer; }` escapes nested loops by name; refactor to functions when labels multiply."}
+{"instruction": "`labelled break` untuk apa?", "input": "", "output": "`outer: for... { break outer; }` escapes nested loops by name; refactor to functions when labels multiply."}
+{"instruction": "How would you explain `labelled break` to a junior developer?", "input": "", "output": "`outer: for... { break outer; }` escapes nested loops by name; refactor to functions when labels multiply."}
+{"instruction": "Give a real-world scenario for `labelled break`.", "input": "", "output": "`outer: for... { break outer; }` escapes nested loops by name; refactor to functions when labels multiply."}
+{"instruction": "What problem does `labelled break` solve?", "input": "", "output": "`outer: for... { break outer; }` escapes nested loops by name; refactor to functions when labels multiply."}
+{"instruction": "Terangkan `labelled break` dalam satu minit.", "input": "", "output": "`outer: for... { break outer; }` escapes nested loops by name; refactor to functions when labels multiply."}
+{"instruction": "Apa yang perlu saya tahu tentang `labelled break`?", "input": "", "output": "`outer: for... { break outer; }` escapes nested loops by name; refactor to functions when labels multiply."}
+{"instruction": "Bagaimanakah `labelled break` berfungsi?", "input": "", "output": "`outer: for... { break outer; }` escapes nested loops by name; refactor to functions when labels multiply."}
+{"instruction": "Bilakah masa yang sesuai untuk `labelled break`?", "input": "", "output": "`outer: for... { break outer; }` escapes nested loops by name; refactor to functions when labels multiply."}
+{"instruction": "What does `for await` do?", "input": "", "output": "`for await (const x of stream)` consumes async iterables sequentially — paginated APIs and file lines elegantly."}
+{"instruction": "Explain `for await` briefly.", "input": "", "output": "`for await (const x of stream)` consumes async iterables sequentially — paginated APIs and file lines elegantly."}
+{"instruction": "When do I use `for await`?", "input": "", "output": "`for await (const x of stream)` consumes async iterables sequentially — paginated APIs and file lines elegantly."}
+{"instruction": "Give a practical example of `for await`.", "input": "", "output": "`for await (const x of stream)` consumes async iterables sequentially — paginated APIs and file lines elegantly."}
+{"instruction": "What is `for await` for?", "input": "", "output": "`for await (const x of stream)` consumes async iterables sequentially — paginated APIs and file lines elegantly."}
+{"instruction": "Apakah fungsi `for await`?", "input": "", "output": "`for await (const x of stream)` consumes async iterables sequentially — paginated APIs and file lines elegantly."}
+{"instruction": "Terangkan `for await` secara ringkas.", "input": "", "output": "`for await (const x of stream)` consumes async iterables sequentially — paginated APIs and file lines elegantly."}
+{"instruction": "Bila perlu guna `for await`?", "input": "", "output": "`for await (const x of stream)` consumes async iterables sequentially — paginated APIs and file lines elegantly."}
+{"instruction": "Beri contoh penggunaan `for await`.", "input": "", "output": "`for await (const x of stream)` consumes async iterables sequentially — paginated APIs and file lines elegantly."}
+{"instruction": "`for await` untuk apa?", "input": "", "output": "`for await (const x of stream)` consumes async iterables sequentially — paginated APIs and file lines elegantly."}
+{"instruction": "How would you explain `for await` to a junior developer?", "input": "", "output": "`for await (const x of stream)` consumes async iterables sequentially — paginated APIs and file lines elegantly."}
+{"instruction": "Give a real-world scenario for `for await`.", "input": "", "output": "`for await (const x of stream)` consumes async iterables sequentially — paginated APIs and file lines elegantly."}
+{"instruction": "What problem does `for await` solve?", "input": "", "output": "`for await (const x of stream)` consumes async iterables sequentially — paginated APIs and file lines elegantly."}
+{"instruction": "Terangkan `for await` dalam satu minit.", "input": "", "output": "`for await (const x of stream)` consumes async iterables sequentially — paginated APIs and file lines elegantly."}
+{"instruction": "Apa yang perlu saya tahu tentang `for await`?", "input": "", "output": "`for await (const x of stream)` consumes async iterables sequentially — paginated APIs and file lines elegantly."}
+{"instruction": "Bagaimanakah `for await` berfungsi?", "input": "", "output": "`for await (const x of stream)` consumes async iterables sequentially — paginated APIs and file lines elegantly."}
+{"instruction": "Bilakah masa yang sesuai untuk `for await`?", "input": "", "output": "`for await (const x of stream)` consumes async iterables sequentially — paginated APIs and file lines elegantly."}
+{"instruction": "What does `Promise.allSettled results` do?", "input": "", "output": "Inspect `.status` per result (`fulfilled`/`rejected`) for bulk jobs where partial success is the norm."}
+{"instruction": "Explain `Promise.allSettled results` briefly.", "input": "", "output": "Inspect `.status` per result (`fulfilled`/`rejected`) for bulk jobs where partial success is the norm."}
+{"instruction": "When do I use `Promise.allSettled results`?", "input": "", "output": "Inspect `.status` per result (`fulfilled`/`rejected`) for bulk jobs where partial success is the norm."}
+{"instruction": "Give a practical example of `Promise.allSettled results`.", "input": "", "output": "Inspect `.status` per result (`fulfilled`/`rejected`) for bulk jobs where partial success is the norm."}
+{"instruction": "What is `Promise.allSettled results` for?", "input": "", "output": "Inspect `.status` per result (`fulfilled`/`rejected`) for bulk jobs where partial success is the norm."}
+{"instruction": "Apakah fungsi `Promise.allSettled results`?", "input": "", "output": "Inspect `.status` per result (`fulfilled`/`rejected`) for bulk jobs where partial success is the norm."}
+{"instruction": "Terangkan `Promise.allSettled results` secara ringkas.", "input": "", "output": "Inspect `.status` per result (`fulfilled`/`rejected`) for bulk jobs where partial success is the norm."}
+{"instruction": "Bila perlu guna `Promise.allSettled results`?", "input": "", "output": "Inspect `.status` per result (`fulfilled`/`rejected`) for bulk jobs where partial success is the norm."}
+{"instruction": "Beri contoh penggunaan `Promise.allSettled results`.", "input": "", "output": "Inspect `.status` per result (`fulfilled`/`rejected`) for bulk jobs where partial success is the norm."}
+{"instruction": "`Promise.allSettled results` untuk apa?", "input": "", "output": "Inspect `.status` per result (`fulfilled`/`rejected`) for bulk jobs where partial success is the norm."}
+{"instruction": "How would you explain `Promise.allSettled results` to a junior developer?", "input": "", "output": "Inspect `.status` per result (`fulfilled`/`rejected`) for bulk jobs where partial success is the norm."}
+{"instruction": "Give a real-world scenario for `Promise.allSettled results`.", "input": "", "output": "Inspect `.status` per result (`fulfilled`/`rejected`) for bulk jobs where partial success is the norm."}
+{"instruction": "What problem does `Promise.allSettled results` solve?", "input": "", "output": "Inspect `.status` per result (`fulfilled`/`rejected`) for bulk jobs where partial success is the norm."}
+{"instruction": "Terangkan `Promise.allSettled results` dalam satu minit.", "input": "", "output": "Inspect `.status` per result (`fulfilled`/`rejected`) for bulk jobs where partial success is the norm."}
+{"instruction": "Apa yang perlu saya tahu tentang `Promise.allSettled results`?", "input": "", "output": "Inspect `.status` per result (`fulfilled`/`rejected`) for bulk jobs where partial success is the norm."}
+{"instruction": "Bagaimanakah `Promise.allSettled results` berfungsi?", "input": "", "output": "Inspect `.status` per result (`fulfilled`/`rejected`) for bulk jobs where partial success is the norm."}
+{"instruction": "Bilakah masa yang sesuai untuk `Promise.allSettled results`?", "input": "", "output": "Inspect `.status` per result (`fulfilled`/`rejected`) for bulk jobs where partial success is the norm."}
+{"instruction": "What does `AggregateError` do?", "input": "", "output": "`Promise.any` rejects with AggregateError holding `.errors` — inspect all failures, not just the first."}
+{"instruction": "Explain `AggregateError` briefly.", "input": "", "output": "`Promise.any` rejects with AggregateError holding `.errors` — inspect all failures, not just the first."}
+{"instruction": "When do I use `AggregateError`?", "input": "", "output": "`Promise.any` rejects with AggregateError holding `.errors` — inspect all failures, not just the first."}
+{"instruction": "Give a practical example of `AggregateError`.", "input": "", "output": "`Promise.any` rejects with AggregateError holding `.errors` — inspect all failures, not just the first."}
+{"instruction": "What is `AggregateError` for?", "input": "", "output": "`Promise.any` rejects with AggregateError holding `.errors` — inspect all failures, not just the first."}
+{"instruction": "Apakah fungsi `AggregateError`?", "input": "", "output": "`Promise.any` rejects with AggregateError holding `.errors` — inspect all failures, not just the first."}
+{"instruction": "Terangkan `AggregateError` secara ringkas.", "input": "", "output": "`Promise.any` rejects with AggregateError holding `.errors` — inspect all failures, not just the first."}
+{"instruction": "Bila perlu guna `AggregateError`?", "input": "", "output": "`Promise.any` rejects with AggregateError holding `.errors` — inspect all failures, not just the first."}
+{"instruction": "Beri contoh penggunaan `AggregateError`.", "input": "", "output": "`Promise.any` rejects with AggregateError holding `.errors` — inspect all failures, not just the first."}
+{"instruction": "`AggregateError` untuk apa?", "input": "", "output": "`Promise.any` rejects with AggregateError holding `.errors` — inspect all failures, not just the first."}
+{"instruction": "How would you explain `AggregateError` to a junior developer?", "input": "", "output": "`Promise.any` rejects with AggregateError holding `.errors` — inspect all failures, not just the first."}
+{"instruction": "Give a real-world scenario for `AggregateError`.", "input": "", "output": "`Promise.any` rejects with AggregateError holding `.errors` — inspect all failures, not just the first."}
+{"instruction": "What problem does `AggregateError` solve?", "input": "", "output": "`Promise.any` rejects with AggregateError holding `.errors` — inspect all failures, not just the first."}
+{"instruction": "Terangkan `AggregateError` dalam satu minit.", "input": "", "output": "`Promise.any` rejects with AggregateError holding `.errors` — inspect all failures, not just the first."}
+{"instruction": "Apa yang perlu saya tahu tentang `AggregateError`?", "input": "", "output": "`Promise.any` rejects with AggregateError holding `.errors` — inspect all failures, not just the first."}
+{"instruction": "Bagaimanakah `AggregateError` berfungsi?", "input": "", "output": "`Promise.any` rejects with AggregateError holding `.errors` — inspect all failures, not just the first."}
+{"instruction": "Bilakah masa yang sesuai untuk `AggregateError`?", "input": "", "output": "`Promise.any` rejects with AggregateError holding `.errors` — inspect all failures, not just the first."}
+{"instruction": "What does `queueMicrotask` do?", "input": "", "output": "`queueMicrotask(fn)` defers past current execution cheaply; misuse starves rendering like promise chains."}
+{"instruction": "Explain `queueMicrotask` briefly.", "input": "", "output": "`queueMicrotask(fn)` defers past current execution cheaply; misuse starves rendering like promise chains."}
+{"instruction": "When do I use `queueMicrotask`?", "input": "", "output": "`queueMicrotask(fn)` defers past current execution cheaply; misuse starves rendering like promise chains."}
+{"instruction": "Give a practical example of `queueMicrotask`.", "input": "", "output": "`queueMicrotask(fn)` defers past current execution cheaply; misuse starves rendering like promise chains."}
+{"instruction": "What is `queueMicrotask` for?", "input": "", "output": "`queueMicrotask(fn)` defers past current execution cheaply; misuse starves rendering like promise chains."}
+{"instruction": "Apakah fungsi `queueMicrotask`?", "input": "", "output": "`queueMicrotask(fn)` defers past current execution cheaply; misuse starves rendering like promise chains."}
+{"instruction": "Terangkan `queueMicrotask` secara ringkas.", "input": "", "output": "`queueMicrotask(fn)` defers past current execution cheaply; misuse starves rendering like promise chains."}
+{"instruction": "Bila perlu guna `queueMicrotask`?", "input": "", "output": "`queueMicrotask(fn)` defers past current execution cheaply; misuse starves rendering like promise chains."}
+{"instruction": "Beri contoh penggunaan `queueMicrotask`.", "input": "", "output": "`queueMicrotask(fn)` defers past current execution cheaply; misuse starves rendering like promise chains."}
+{"instruction": "`queueMicrotask` untuk apa?", "input": "", "output": "`queueMicrotask(fn)` defers past current execution cheaply; misuse starves rendering like promise chains."}
+{"instruction": "How would you explain `queueMicrotask` to a junior developer?", "input": "", "output": "`queueMicrotask(fn)` defers past current execution cheaply; misuse starves rendering like promise chains."}
+{"instruction": "Give a real-world scenario for `queueMicrotask`.", "input": "", "output": "`queueMicrotask(fn)` defers past current execution cheaply; misuse starves rendering like promise chains."}
+{"instruction": "What problem does `queueMicrotask` solve?", "input": "", "output": "`queueMicrotask(fn)` defers past current execution cheaply; misuse starves rendering like promise chains."}
+{"instruction": "Terangkan `queueMicrotask` dalam satu minit.", "input": "", "output": "`queueMicrotask(fn)` defers past current execution cheaply; misuse starves rendering like promise chains."}
+{"instruction": "Apa yang perlu saya tahu tentang `queueMicrotask`?", "input": "", "output": "`queueMicrotask(fn)` defers past current execution cheaply; misuse starves rendering like promise chains."}
+{"instruction": "Bagaimanakah `queueMicrotask` berfungsi?", "input": "", "output": "`queueMicrotask(fn)` defers past current execution cheaply; misuse starves rendering like promise chains."}
+{"instruction": "Bilakah masa yang sesuai untuk `queueMicrotask`?", "input": "", "output": "`queueMicrotask(fn)` defers past current execution cheaply; misuse starves rendering like promise chains."}
+{"instruction": "What does `structuredClone limits` do?", "input": "", "output": "Clones most builtins but not functions/DOM nodes — know the boundary before trusting deep copies."}
+{"instruction": "Explain `structuredClone limits` briefly.", "input": "", "output": "Clones most builtins but not functions/DOM nodes — know the boundary before trusting deep copies."}
+{"instruction": "When do I use `structuredClone limits`?", "input": "", "output": "Clones most builtins but not functions/DOM nodes — know the boundary before trusting deep copies."}
+{"instruction": "Give a practical example of `structuredClone limits`.", "input": "", "output": "Clones most builtins but not functions/DOM nodes — know the boundary before trusting deep copies."}
+{"instruction": "What is `structuredClone limits` for?", "input": "", "output": "Clones most builtins but not functions/DOM nodes — know the boundary before trusting deep copies."}
+{"instruction": "Apakah fungsi `structuredClone limits`?", "input": "", "output": "Clones most builtins but not functions/DOM nodes — know the boundary before trusting deep copies."}
+{"instruction": "Terangkan `structuredClone limits` secara ringkas.", "input": "", "output": "Clones most builtins but not functions/DOM nodes — know the boundary before trusting deep copies."}
+{"instruction": "Bila perlu guna `structuredClone limits`?", "input": "", "output": "Clones most builtins but not functions/DOM nodes — know the boundary before trusting deep copies."}
+{"instruction": "Beri contoh penggunaan `structuredClone limits`.", "input": "", "output": "Clones most builtins but not functions/DOM nodes — know the boundary before trusting deep copies."}
+{"instruction": "`structuredClone limits` untuk apa?", "input": "", "output": "Clones most builtins but not functions/DOM nodes — know the boundary before trusting deep copies."}
+{"instruction": "How would you explain `structuredClone limits` to a junior developer?", "input": "", "output": "Clones most builtins but not functions/DOM nodes — know the boundary before trusting deep copies."}
+{"instruction": "Give a real-world scenario for `structuredClone limits`.", "input": "", "output": "Clones most builtins but not functions/DOM nodes — know the boundary before trusting deep copies."}
+{"instruction": "What problem does `structuredClone limits` solve?", "input": "", "output": "Clones most builtins but not functions/DOM nodes — know the boundary before trusting deep copies."}
+{"instruction": "Terangkan `structuredClone limits` dalam satu minit.", "input": "", "output": "Clones most builtins but not functions/DOM nodes — know the boundary before trusting deep copies."}
+{"instruction": "Apa yang perlu saya tahu tentang `structuredClone limits`?", "input": "", "output": "Clones most builtins but not functions/DOM nodes — know the boundary before trusting deep copies."}
+{"instruction": "Bagaimanakah `structuredClone limits` berfungsi?", "input": "", "output": "Clones most builtins but not functions/DOM nodes — know the boundary before trusting deep copies."}
+{"instruction": "Bilakah masa yang sesuai untuk `structuredClone limits`?", "input": "", "output": "Clones most builtins but not functions/DOM nodes — know the boundary before trusting deep copies."}
+{"instruction": "What does `ArrayBuffer views` do?", "input": "", "output": "Typed arrays (`new Uint8Array(buf)`) + DataView parse binary protocols; endianness flags matter here."}
+{"instruction": "Explain `ArrayBuffer views` briefly.", "input": "", "output": "Typed arrays (`new Uint8Array(buf)`) + DataView parse binary protocols; endianness flags matter here."}
+{"instruction": "When do I use `ArrayBuffer views`?", "input": "", "output": "Typed arrays (`new Uint8Array(buf)`) + DataView parse binary protocols; endianness flags matter here."}
+{"instruction": "Give a practical example of `ArrayBuffer views`.", "input": "", "output": "Typed arrays (`new Uint8Array(buf)`) + DataView parse binary protocols; endianness flags matter here."}
+{"instruction": "What is `ArrayBuffer views` for?", "input": "", "output": "Typed arrays (`new Uint8Array(buf)`) + DataView parse binary protocols; endianness flags matter here."}
+{"instruction": "Apakah fungsi `ArrayBuffer views`?", "input": "", "output": "Typed arrays (`new Uint8Array(buf)`) + DataView parse binary protocols; endianness flags matter here."}
+{"instruction": "Terangkan `ArrayBuffer views` secara ringkas.", "input": "", "output": "Typed arrays (`new Uint8Array(buf)`) + DataView parse binary protocols; endianness flags matter here."}
+{"instruction": "Bila perlu guna `ArrayBuffer views`?", "input": "", "output": "Typed arrays (`new Uint8Array(buf)`) + DataView parse binary protocols; endianness flags matter here."}
+{"instruction": "Beri contoh penggunaan `ArrayBuffer views`.", "input": "", "output": "Typed arrays (`new Uint8Array(buf)`) + DataView parse binary protocols; endianness flags matter here."}
+{"instruction": "`ArrayBuffer views` untuk apa?", "input": "", "output": "Typed arrays (`new Uint8Array(buf)`) + DataView parse binary protocols; endianness flags matter here."}
+{"instruction": "How would you explain `ArrayBuffer views` to a junior developer?", "input": "", "output": "Typed arrays (`new Uint8Array(buf)`) + DataView parse binary protocols; endianness flags matter here."}
+{"instruction": "Give a real-world scenario for `ArrayBuffer views`.", "input": "", "output": "Typed arrays (`new Uint8Array(buf)`) + DataView parse binary protocols; endianness flags matter here."}
+{"instruction": "What problem does `ArrayBuffer views` solve?", "input": "", "output": "Typed arrays (`new Uint8Array(buf)`) + DataView parse binary protocols; endianness flags matter here."}
+{"instruction": "Terangkan `ArrayBuffer views` dalam satu minit.", "input": "", "output": "Typed arrays (`new Uint8Array(buf)`) + DataView parse binary protocols; endianness flags matter here."}
+{"instruction": "Apa yang perlu saya tahu tentang `ArrayBuffer views`?", "input": "", "output": "Typed arrays (`new Uint8Array(buf)`) + DataView parse binary protocols; endianness flags matter here."}
+{"instruction": "Bagaimanakah `ArrayBuffer views` berfungsi?", "input": "", "output": "Typed arrays (`new Uint8Array(buf)`) + DataView parse binary protocols; endianness flags matter here."}
+{"instruction": "Bilakah masa yang sesuai untuk `ArrayBuffer views`?", "input": "", "output": "Typed arrays (`new Uint8Array(buf)`) + DataView parse binary protocols; endianness flags matter here."}
+{"instruction": "What does `WeakMap WeakSet` do?", "input": "", "output": "Weak collections hold ephemerally (metadata keyed by objects) and never block garbage collection."}
+{"instruction": "Explain `WeakMap WeakSet` briefly.", "input": "", "output": "Weak collections hold ephemerally (metadata keyed by objects) and never block garbage collection."}
+{"instruction": "When do I use `WeakMap WeakSet`?", "input": "", "output": "Weak collections hold ephemerally (metadata keyed by objects) and never block garbage collection."}
+{"instruction": "Give a practical example of `WeakMap WeakSet`.", "input": "", "output": "Weak collections hold ephemerally (metadata keyed by objects) and never block garbage collection."}
+{"instruction": "What is `WeakMap WeakSet` for?", "input": "", "output": "Weak collections hold ephemerally (metadata keyed by objects) and never block garbage collection."}
+{"instruction": "Apakah fungsi `WeakMap WeakSet`?", "input": "", "output": "Weak collections hold ephemerally (metadata keyed by objects) and never block garbage collection."}
+{"instruction": "Terangkan `WeakMap WeakSet` secara ringkas.", "input": "", "output": "Weak collections hold ephemerally (metadata keyed by objects) and never block garbage collection."}
+{"instruction": "Bila perlu guna `WeakMap WeakSet`?", "input": "", "output": "Weak collections hold ephemerally (metadata keyed by objects) and never block garbage collection."}
+{"instruction": "Beri contoh penggunaan `WeakMap WeakSet`.", "input": "", "output": "Weak collections hold ephemerally (metadata keyed by objects) and never block garbage collection."}
+{"instruction": "`WeakMap WeakSet` untuk apa?", "input": "", "output": "Weak collections hold ephemerally (metadata keyed by objects) and never block garbage collection."}
+{"instruction": "How would you explain `WeakMap WeakSet` to a junior developer?", "input": "", "output": "Weak collections hold ephemerally (metadata keyed by objects) and never block garbage collection."}
+{"instruction": "Give a real-world scenario for `WeakMap WeakSet`.", "input": "", "output": "Weak collections hold ephemerally (metadata keyed by objects) and never block garbage collection."}
+{"instruction": "What problem does `WeakMap WeakSet` solve?", "input": "", "output": "Weak collections hold ephemerally (metadata keyed by objects) and never block garbage collection."}
+{"instruction": "Terangkan `WeakMap WeakSet` dalam satu minit.", "input": "", "output": "Weak collections hold ephemerally (metadata keyed by objects) and never block garbage collection."}
+{"instruction": "Apa yang perlu saya tahu tentang `WeakMap WeakSet`?", "input": "", "output": "Weak collections hold ephemerally (metadata keyed by objects) and never block garbage collection."}
+{"instruction": "Bagaimanakah `WeakMap WeakSet` berfungsi?", "input": "", "output": "Weak collections hold ephemerally (metadata keyed by objects) and never block garbage collection."}
+{"instruction": "Bilakah masa yang sesuai untuk `WeakMap WeakSet`?", "input": "", "output": "Weak collections hold ephemerally (metadata keyed by objects) and never block garbage collection."}
+{"instruction": "What does `FinalizationRegistry` do?", "input": "", "output": "Cleanup callbacks post-GC for native handles — nondeterministic timing, last resort after explicit dispose."}
+{"instruction": "Explain `FinalizationRegistry` briefly.", "input": "", "output": "Cleanup callbacks post-GC for native handles — nondeterministic timing, last resort after explicit dispose."}
+{"instruction": "When do I use `FinalizationRegistry`?", "input": "", "output": "Cleanup callbacks post-GC for native handles — nondeterministic timing, last resort after explicit dispose."}
+{"instruction": "Give a practical example of `FinalizationRegistry`.", "input": "", "output": "Cleanup callbacks post-GC for native handles — nondeterministic timing, last resort after explicit dispose."}
+{"instruction": "What is `FinalizationRegistry` for?", "input": "", "output": "Cleanup callbacks post-GC for native handles — nondeterministic timing, last resort after explicit dispose."}
+{"instruction": "Apakah fungsi `FinalizationRegistry`?", "input": "", "output": "Cleanup callbacks post-GC for native handles — nondeterministic timing, last resort after explicit dispose."}
+{"instruction": "Terangkan `FinalizationRegistry` secara ringkas.", "input": "", "output": "Cleanup callbacks post-GC for native handles — nondeterministic timing, last resort after explicit dispose."}
+{"instruction": "Bila perlu guna `FinalizationRegistry`?", "input": "", "output": "Cleanup callbacks post-GC for native handles — nondeterministic timing, last resort after explicit dispose."}
+{"instruction": "Beri contoh penggunaan `FinalizationRegistry`.", "input": "", "output": "Cleanup callbacks post-GC for native handles — nondeterministic timing, last resort after explicit dispose."}
+{"instruction": "`FinalizationRegistry` untuk apa?", "input": "", "output": "Cleanup callbacks post-GC for native handles — nondeterministic timing, last resort after explicit dispose."}
+{"instruction": "How would you explain `FinalizationRegistry` to a junior developer?", "input": "", "output": "Cleanup callbacks post-GC for native handles — nondeterministic timing, last resort after explicit dispose."}
+{"instruction": "Give a real-world scenario for `FinalizationRegistry`.", "input": "", "output": "Cleanup callbacks post-GC for native handles — nondeterministic timing, last resort after explicit dispose."}
+{"instruction": "What problem does `FinalizationRegistry` solve?", "input": "", "output": "Cleanup callbacks post-GC for native handles — nondeterministic timing, last resort after explicit dispose."}
+{"instruction": "Terangkan `FinalizationRegistry` dalam satu minit.", "input": "", "output": "Cleanup callbacks post-GC for native handles — nondeterministic timing, last resort after explicit dispose."}
+{"instruction": "Apa yang perlu saya tahu tentang `FinalizationRegistry`?", "input": "", "output": "Cleanup callbacks post-GC for native handles — nondeterministic timing, last resort after explicit dispose."}
+{"instruction": "Bagaimanakah `FinalizationRegistry` berfungsi?", "input": "", "output": "Cleanup callbacks post-GC for native handles — nondeterministic timing, last resort after explicit dispose."}
+{"instruction": "Bilakah masa yang sesuai untuk `FinalizationRegistry`?", "input": "", "output": "Cleanup callbacks post-GC for native handles — nondeterministic timing, last resort after explicit dispose."}
+{"instruction": "What does `Intl.NumberFormat` do?", "input": "", "output": "`Intl.NumberFormat('ms-MY', {style:'currency',currency:'MYR'})` localizes money/dates/units correctly."}
+{"instruction": "Explain `Intl.NumberFormat` briefly.", "input": "", "output": "`Intl.NumberFormat('ms-MY', {style:'currency',currency:'MYR'})` localizes money/dates/units correctly."}
+{"instruction": "When do I use `Intl.NumberFormat`?", "input": "", "output": "`Intl.NumberFormat('ms-MY', {style:'currency',currency:'MYR'})` localizes money/dates/units correctly."}
+{"instruction": "Give a practical example of `Intl.NumberFormat`.", "input": "", "output": "`Intl.NumberFormat('ms-MY', {style:'currency',currency:'MYR'})` localizes money/dates/units correctly."}
+{"instruction": "What is `Intl.NumberFormat` for?", "input": "", "output": "`Intl.NumberFormat('ms-MY', {style:'currency',currency:'MYR'})` localizes money/dates/units correctly."}
+{"instruction": "Apakah fungsi `Intl.NumberFormat`?", "input": "", "output": "`Intl.NumberFormat('ms-MY', {style:'currency',currency:'MYR'})` localizes money/dates/units correctly."}
+{"instruction": "Terangkan `Intl.NumberFormat` secara ringkas.", "input": "", "output": "`Intl.NumberFormat('ms-MY', {style:'currency',currency:'MYR'})` localizes money/dates/units correctly."}
+{"instruction": "Bila perlu guna `Intl.NumberFormat`?", "input": "", "output": "`Intl.NumberFormat('ms-MY', {style:'currency',currency:'MYR'})` localizes money/dates/units correctly."}
+{"instruction": "Beri contoh penggunaan `Intl.NumberFormat`.", "input": "", "output": "`Intl.NumberFormat('ms-MY', {style:'currency',currency:'MYR'})` localizes money/dates/units correctly."}
+{"instruction": "`Intl.NumberFormat` untuk apa?", "input": "", "output": "`Intl.NumberFormat('ms-MY', {style:'currency',currency:'MYR'})` localizes money/dates/units correctly."}
+{"instruction": "How would you explain `Intl.NumberFormat` to a junior developer?", "input": "", "output": "`Intl.NumberFormat('ms-MY', {style:'currency',currency:'MYR'})` localizes money/dates/units correctly."}
+{"instruction": "Give a real-world scenario for `Intl.NumberFormat`.", "input": "", "output": "`Intl.NumberFormat('ms-MY', {style:'currency',currency:'MYR'})` localizes money/dates/units correctly."}
+{"instruction": "What problem does `Intl.NumberFormat` solve?", "input": "", "output": "`Intl.NumberFormat('ms-MY', {style:'currency',currency:'MYR'})` localizes money/dates/units correctly."}
+{"instruction": "Terangkan `Intl.NumberFormat` dalam satu minit.", "input": "", "output": "`Intl.NumberFormat('ms-MY', {style:'currency',currency:'MYR'})` localizes money/dates/units correctly."}
+{"instruction": "Apa yang perlu saya tahu tentang `Intl.NumberFormat`?", "input": "", "output": "`Intl.NumberFormat('ms-MY', {style:'currency',currency:'MYR'})` localizes money/dates/units correctly."}
+{"instruction": "Bagaimanakah `Intl.NumberFormat` berfungsi?", "input": "", "output": "`Intl.NumberFormat('ms-MY', {style:'currency',currency:'MYR'})` localizes money/dates/units correctly."}
+{"instruction": "Bilakah masa yang sesuai untuk `Intl.NumberFormat`?", "input": "", "output": "`Intl.NumberFormat('ms-MY', {style:'currency',currency:'MYR'})` localizes money/dates/units correctly."}
+{"instruction": "What does `Intl.ListFormat` do?", "input": "", "output": "Join lists locale-aware (`A, B dan C` vs `A, B, and C`) — punctuation rules differ per language."}
+{"instruction": "Explain `Intl.ListFormat` briefly.", "input": "", "output": "Join lists locale-aware (`A, B dan C` vs `A, B, and C`) — punctuation rules differ per language."}
+{"instruction": "When do I use `Intl.ListFormat`?", "input": "", "output": "Join lists locale-aware (`A, B dan C` vs `A, B, and C`) — punctuation rules differ per language."}
+{"instruction": "Give a practical example of `Intl.ListFormat`.", "input": "", "output": "Join lists locale-aware (`A, B dan C` vs `A, B, and C`) — punctuation rules differ per language."}
+{"instruction": "What is `Intl.ListFormat` for?", "input": "", "output": "Join lists locale-aware (`A, B dan C` vs `A, B, and C`) — punctuation rules differ per language."}
+{"instruction": "Apakah fungsi `Intl.ListFormat`?", "input": "", "output": "Join lists locale-aware (`A, B dan C` vs `A, B, and C`) — punctuation rules differ per language."}
+{"instruction": "Terangkan `Intl.ListFormat` secara ringkas.", "input": "", "output": "Join lists locale-aware (`A, B dan C` vs `A, B, and C`) — punctuation rules differ per language."}
+{"instruction": "Bila perlu guna `Intl.ListFormat`?", "input": "", "output": "Join lists locale-aware (`A, B dan C` vs `A, B, and C`) — punctuation rules differ per language."}
+{"instruction": "Beri contoh penggunaan `Intl.ListFormat`.", "input": "", "output": "Join lists locale-aware (`A, B dan C` vs `A, B, and C`) — punctuation rules differ per language."}
+{"instruction": "`Intl.ListFormat` untuk apa?", "input": "", "output": "Join lists locale-aware (`A, B dan C` vs `A, B, and C`) — punctuation rules differ per language."}
+{"instruction": "How would you explain `Intl.ListFormat` to a junior developer?", "input": "", "output": "Join lists locale-aware (`A, B dan C` vs `A, B, and C`) — punctuation rules differ per language."}
+{"instruction": "Give a real-world scenario for `Intl.ListFormat`.", "input": "", "output": "Join lists locale-aware (`A, B dan C` vs `A, B, and C`) — punctuation rules differ per language."}
+{"instruction": "What problem does `Intl.ListFormat` solve?", "input": "", "output": "Join lists locale-aware (`A, B dan C` vs `A, B, and C`) — punctuation rules differ per language."}
+{"instruction": "Terangkan `Intl.ListFormat` dalam satu minit.", "input": "", "output": "Join lists locale-aware (`A, B dan C` vs `A, B, and C`) — punctuation rules differ per language."}
+{"instruction": "Apa yang perlu saya tahu tentang `Intl.ListFormat`?", "input": "", "output": "Join lists locale-aware (`A, B dan C` vs `A, B, and C`) — punctuation rules differ per language."}
+{"instruction": "Bagaimanakah `Intl.ListFormat` berfungsi?", "input": "", "output": "Join lists locale-aware (`A, B dan C` vs `A, B, and C`) — punctuation rules differ per language."}
+{"instruction": "Bilakah masa yang sesuai untuk `Intl.ListFormat`?", "input": "", "output": "Join lists locale-aware (`A, B dan C` vs `A, B, and C`) — punctuation rules differ per language."}
+{"instruction": "What does `Intl.RelativeTimeFormat` do?", "input": "", "output": "`format(-2, 'day')` → '2 days ago' localized — relative timestamps without date libraries."}
+{"instruction": "Explain `Intl.RelativeTimeFormat` briefly.", "input": "", "output": "`format(-2, 'day')` → '2 days ago' localized — relative timestamps without date libraries."}
+{"instruction": "When do I use `Intl.RelativeTimeFormat`?", "input": "", "output": "`format(-2, 'day')` → '2 days ago' localized — relative timestamps without date libraries."}
+{"instruction": "Give a practical example of `Intl.RelativeTimeFormat`.", "input": "", "output": "`format(-2, 'day')` → '2 days ago' localized — relative timestamps without date libraries."}
+{"instruction": "What is `Intl.RelativeTimeFormat` for?", "input": "", "output": "`format(-2, 'day')` → '2 days ago' localized — relative timestamps without date libraries."}
+{"instruction": "Apakah fungsi `Intl.RelativeTimeFormat`?", "input": "", "output": "`format(-2, 'day')` → '2 days ago' localized — relative timestamps without date libraries."}
+{"instruction": "Terangkan `Intl.RelativeTimeFormat` secara ringkas.", "input": "", "output": "`format(-2, 'day')` → '2 days ago' localized — relative timestamps without date libraries."}
+{"instruction": "Bila perlu guna `Intl.RelativeTimeFormat`?", "input": "", "output": "`format(-2, 'day')` → '2 days ago' localized — relative timestamps without date libraries."}
+{"instruction": "Beri contoh penggunaan `Intl.RelativeTimeFormat`.", "input": "", "output": "`format(-2, 'day')` → '2 days ago' localized — relative timestamps without date libraries."}
+{"instruction": "`Intl.RelativeTimeFormat` untuk apa?", "input": "", "output": "`format(-2, 'day')` → '2 days ago' localized — relative timestamps without date libraries."}
+{"instruction": "How would you explain `Intl.RelativeTimeFormat` to a junior developer?", "input": "", "output": "`format(-2, 'day')` → '2 days ago' localized — relative timestamps without date libraries."}
+{"instruction": "Give a real-world scenario for `Intl.RelativeTimeFormat`.", "input": "", "output": "`format(-2, 'day')` → '2 days ago' localized — relative timestamps without date libraries."}
+{"instruction": "What problem does `Intl.RelativeTimeFormat` solve?", "input": "", "output": "`format(-2, 'day')` → '2 days ago' localized — relative timestamps without date libraries."}
+{"instruction": "Terangkan `Intl.RelativeTimeFormat` dalam satu minit.", "input": "", "output": "`format(-2, 'day')` → '2 days ago' localized — relative timestamps without date libraries."}
+{"instruction": "Apa yang perlu saya tahu tentang `Intl.RelativeTimeFormat`?", "input": "", "output": "`format(-2, 'day')` → '2 days ago' localized — relative timestamps without date libraries."}
+{"instruction": "Bagaimanakah `Intl.RelativeTimeFormat` berfungsi?", "input": "", "output": "`format(-2, 'day')` → '2 days ago' localized — relative timestamps without date libraries."}
+{"instruction": "Bilakah masa yang sesuai untuk `Intl.RelativeTimeFormat`?", "input": "", "output": "`format(-2, 'day')` → '2 days ago' localized — relative timestamps without date libraries."}
