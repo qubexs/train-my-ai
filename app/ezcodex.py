@@ -27,7 +27,7 @@ APP_DIR = (Path(sys.executable).resolve().parent if getattr(sys, "frozen", False
            else Path(__file__).resolve().parent)
 sys.path.insert(0, str(APP_DIR))
 
-__version__ = "0.4.15"
+__version__ = "0.4.16"
 
 LLAMA_TAG = "b11491"
 LLAMA_BASE = f"https://github.com/ggerganov/llama.cpp/releases/download/{LLAMA_TAG}"
@@ -121,7 +121,7 @@ HELP = """Commands:
 /model add <url|fail> [--name N] [--domains a,b]  daftar model baharu
 /model import [fail] [--from dir]  auto-import GGUF terbaru + aktifkan
 /models               senarai semua model pakar + domain
-/route on|off         auto-tukar pakar ikut domain soalan
+/route on|off         auto-tukar pakar ikut domain (lalai: sentiasa on)
 /session <name>       switch session file (sessions/<name>.jsonl)
 /sessions             list sessions
 /context              show context usage of current session
@@ -191,7 +191,8 @@ def build_parser():
     ap.add_argument("--no-tools", action="store_true", help="disable agentic tool loop")
     ap.add_argument("--allow-all", action="store_true", help="skip bash confirm (dangerous)")
     ap.add_argument("--max-tokens", type=int, default=500, help="max tokens per answer (code: 800-1000)")
-    ap.add_argument("--autoroute", action="store_true", help="auto-switch expert model by question domain")
+    ap.add_argument("--autoroute", default=True, action=argparse.BooleanOptionalAction,
+                    help="auto-switch expert model by question domain (default on)")
     ap.add_argument("--once", default="", help="one-shot prompt, print answer and exit (for scripts)")
     ap.add_argument("--version", action="version", version=f"%(prog)s {__version__}")
     sub = ap.add_subparsers(dest="cmd")
