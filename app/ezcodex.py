@@ -27,7 +27,7 @@ APP_DIR = (Path(sys.executable).resolve().parent if getattr(sys, "frozen", False
            else Path(__file__).resolve().parent)
 sys.path.insert(0, str(APP_DIR))
 
-__version__ = "0.4.20"
+__version__ = "0.4.21"
 
 LLAMA_TAG = "b11491"
 LLAMA_BASE = f"https://github.com/ggerganov/llama.cpp/releases/download/{LLAMA_TAG}"
@@ -196,6 +196,8 @@ def build_parser():
     ap.add_argument("--max-tokens", type=int, default=500, help="max tokens per answer (code: 800-1000)")
     ap.add_argument("--autoroute", default=True, action=argparse.BooleanOptionalAction,
                     help="auto-switch expert model by question domain (default on)")
+    ap.add_argument("--tui", default=True, action=argparse.BooleanOptionalAction,
+                    help="fullscreen opencode-style view (default on when TTY)")
     ap.add_argument("--once", default="", help="one-shot prompt, print answer and exit (for scripts)")
     ap.add_argument("--version", action="version", version=f"%(prog)s {__version__}")
     sub = ap.add_subparsers(dest="cmd")
@@ -826,6 +828,12 @@ def main():
         print(ans)
         if backend.kind == "server":
             backend.manager.stop()
+        return
+    if args.tui and sys.stdin.isatty() and sys.stdout.isatty():
+        from tui import run_tui
+        title = f" XCoder {__version__} [{args.backend}] lang={args.lang} "
+        status = " PgUp/PgDn skrol | Up/Dn sejarah | Ctrl-D keluar | /help perintah "
+        run_tui(lambda: repl(args), title, status)
         return
     repl(args)
 

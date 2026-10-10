@@ -72,14 +72,15 @@ def auto_import(models_dir, src_dir=None):
         return entry, f"auto-import {cand.name} -> {entry['name']} [{','.join(doms)}]"
     return None, "semua GGUF dalam Downloads sudah didaftar"
 
-# Fine-grained stacks (order matters: specific before generic on ties).
+# Fine-grained stacks (order matters: specific before generic on ties;
+# nodejs before javascript because "package.json" contains ".js").
 STACKS = {
     "typescript": ["typescript", ".ts", "interface ", ": number", ": string",
                    "enum ", " tsx", "generic "],
-    "javascript": ["javascript", ".js", "console.log", "function ", "=>",
-                   "const ", "let ", " js "],
     "nodejs": ["nodejs", "node.js", "node:", "express", "npm", "package.json",
                "hono", "fastify", "nextjs"],
+    "javascript": ["javascript", ".js", "console.log", "function ", "=>",
+                   "const ", "let ", " js "],
     "html": ["html", ".html", "<div", "<html", "tag html"],
     "tailwind": ["tailwind"],
     "css": ["css", ".css", "flexbox", "stylesheet", "grid "],
