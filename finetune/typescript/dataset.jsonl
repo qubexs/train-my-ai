@@ -1,0 +1,1014 @@
+{"instruction": "Tulis fungsi tambah TypeScript", "input": "", "output": "```ts\nexport function tambah(a: number, b: number): number {\n  return a + b;\n}\n```\nAnotasi `: number` pada parameter dan pulangan membolehkan pengkompil tangkap salah jenis sebelum jalan."}
+{"instruction": "TypeScript function with default parameter", "input": "", "output": "```ts\nexport function salam(nama = \"tetamu\"): string {\n  return `Helo, ${nama}!`;\n}\n```\nNilai lalai menjadikan parameter pilihan; jenisnya diinferens automatik sebagai string."}
+{"instruction": "TypeScript interface pengguna", "input": "", "output": "```ts\ninterface Pengguna {\n  nama: string;\n  umur: number;\n}\nconst ali: Pengguna = { nama: 'Ali', umur: 20 };\n```\nInterface mengunci bentuk objek — medan tiada atau salah jenis ditolak semasa compile."}
+{"instruction": "TypeScript array string", "input": "", "output": "```ts\nconst nama: string[] = ['Ali', 'Abu'];\nconsole.log(nama.length); // 2\n```\n`string[]`jamin semua elemen string; `push(5)` akan ralat compile."}
+{"instruction": "TypeScript union type", "input": "", "output": "```ts\ntype ID = string | number;\nconst id: ID = 77;\n```\nUnion benarkan beberapa jenis; sempitkan dengan `typeof id === \"string\"` sebelum guna method spesifik."}
+{"instruction": "TypeScript null check", "input": "", "output": "```ts\nfunction hello(nama?: string): string {\n  return `Helo, ${nama ?? 'tetamu'}!`;\n}\n```\n`?` tandakan pilihan (jenis + undefined); `??` ganti hanya null/undefined, bukan 0 atau string kosong."}
+{"instruction": "TypeScript enum peranan", "input": "", "output": "```ts\nenum Peranan { Admin, Pengguna }\nconst r: Peranan = Peranan.Admin;\n```\nEnum menamakan set nilai tetap; untuk kes ringkas, union literal `'admin' | 'pengguna'` lebih ringan."}
+{"instruction": "What does TypeScript strict mode buy me?", "input": "", "output": "Strict mode (`\"strict\": true`) turns on null checks, no-implicit-any and strict property initialization together — catching at compile time the undefined-is-not-a-function crashes that plague JS. Turn it on for every new project; migrating old code, enable flags one by one starting with `strictNullChecks`."}
+{"instruction": "TypeScript interface vs type — which?", "input": "", "output": "Interfaces describe object shapes and merge on repeat declaration (good for extending libs); `type` aliases cover unions, tuples and primitives. Rule: `interface` for public object contracts, `type` for everything else. Both vanish at runtime — never rely on them for validation."}
+{"instruction": "TypeScript generics example", "input": "", "output": "```ts\nfunction pertama<T>(senarai: T[]): T | undefined {\n  return senarai[0];\n}\nconst n = pertama([1, 2]); // number | undefined\n```\nGenerics keep the function reusable without falling back to `any` — the caller’s type flows through to the return."}
+{"instruction": "When do I use unknown instead of any?", "input": "", "output": "Always prefer `unknown` for untrusted data (API responses, JSON.parse): unlike `any`, the compiler forces narrowing (`typeof x === \"string\"`) before use. `any` silently disables checking and spreads — treat every `any` as tech debt with an expiry date."}
+{"instruction": "Essential tsconfig strict flags?", "input": "", "output": "```json\n{ \"compilerOptions\": {\n  \"strict\": true,\n  \"noUncheckedIndexedAccess\": true,\n  \"exactOptionalPropertyTypes\": true\n}}\n```\n`noUncheckedIndexedAccess` adds undefined to index signatures (catches arr[i] bugs); exact optionals stop assigning undefined where only absence is meant. Pair with `\"target\": \"ES2022\"` for modern runtimes."}
+{"instruction": "TypeScript utility types Partial Pick Omit Record?", "input": "", "output": "```ts\ntype Draf = Partial<Pengguna>;          // semua medan pilihan\ntype NamaSahaja = Pick<Pengguna, \"nama\">;\ntype TanpaUmur = Omit<Pengguna, \"umur\">;\nconst skor: Record<string, number> = { ali: 9 };\n```\nDerive variants from one source interface instead of redeclaring shapes — changes propagate automatically."}
+{"instruction": "tsx vs ts-node vs tsc for running TypeScript?", "input": "", "output": "Use `tsx` for dev/run (esbuild-powered, near-instant, handles ESM+TS); `ts-node` is slower and fiddly with ESM. Ship with `tsc` emit for type-checked builds. So: tsx while coding, `tsc --noEmit` in CI for checking, `tsc` for the production bundle."}
+{"instruction": "What are .d.ts files and @types packages?", "input": "", "output": "Libraries without bundled types get community declarations via `npm i -D @types/node` — `.d.ts` files describing shapes with zero runtime code. If types are missing, write a local `global.d.ts` with `declare module \"pustaka-x\"`. Check `types` field in package.json first; modern packages ship their own."}
+{"instruction": "TypeScript types vanish at runtime — so how do I validate API input?", "input": "", "output": "Compile-time types erase, so validate at boundaries with a schema library (zod/valibot): parse once, get both runtime safety and inferred static types. Never trust `as` casts on network data — casts assert without checking. One schema at each system edge beats dozens of defensive checks inside."}
+{"instruction": "How do TypeScript decorators work?", "input": "", "output": "```ts\nfunction Log(_t: any, kunci: string) {\n  console.log(`akses: ${kunci}`);\n}\nclass Bank {\n  @Log baki = 0;\n}\n```\nDekorator (`experimentalDecorators`) balut class/method/property — lazim di NestJS/Angular untuk metadata. Elak logik berat di dalamnya; ia jalan sekali semasa definisi, bukan setiap panggilan."}
+{"instruction": "TypeScript abstract class vs interface?", "input": "", "output": "```ts\nabstract class Bentuk {\n  abstract luas(): number;\n  nama = \"bentuk\";\n}\n```\nAbstract class boleh ada implementasi + state dan diwarisi (`extends`), interface hanya kontrak. Satu class satu warisan — komposisi (has-a) mengatasi warisan dalam untuk guna semula."}
+{"instruction": "TypeScript readonly and tuples?", "input": "", "output": "```ts\nconst KOORD: readonly [number, number] = [1, 2];\ninterface Akaun { readonly id: string; }\n```\n`readonly` sekat tulis selepas bina; tuple kunci panjang + jenis setiap posisi. `as const` jadikan literal tidak boleh ubah sepenuhnya."}
+{"instruction": "When do I use TypeScript never?", "input": "", "output": "```ts\nfunction mustahil(x: never): never { throw new Error(\"tak tercapai\"); }\n```\n`never` untuk kod yang tidak sepatutnya jalan — semakan exhaustiveness switch: `default: mustahil(nilai)` gagal compile jika kes baharu tiada pengendalian. Jangan keliru dengan `void` (pulang undefined)."}
+{"instruction": "TypeScript function overloads?", "input": "", "output": "```ts\nfunction cari(id: number): Pengguna;\nfunction cari(nama: string): Pengguna[];\nfunction cari(x: unknown): unknown { /* ... */ }\n```\nTandatangan overload beri API fleksibel ditaip tepat; implementasi tunggal sembunyi di bawah. Jika overload bertambah lebih tiga, pertimbang parameter objek."}
+{"instruction": "What does the satisfies operator do?", "input": "", "output": "```ts\nconst cfg = { port: 3000, hos: \"x\" } satisfies Config;\n```\n`satisfies` semak objek menepati jenis TANPA luaskan jenisnya — autolengkap kekal literal (`3000`, bukan `number`). Alternatif `as Config` senyap buang maklumat jenis literal."}
+{"instruction": "TypeScript keyof and typeof?", "input": "", "output": "```ts\nfunction ambil<T, K extends keyof T>(obj: T, kunci: K): T[K] {\n  return obj[kunci];\n}\n```\n`keyof T` ialah union kunci; `typeof pembolehubah` ambil jenisnya untuk guna semula. Gabungan ini asas utiliti selamat-jenis seperti `get(obj, key)`."}
+{"instruction": "TypeScript mapped types?", "input": "", "output": "```ts\ntype Pilihan<T> = { [K in keyof T]?: T[K] };\n```\nMapped type jana jenis baharu dengan mengubah setiap kunci (pilihan/bacaan-sahaja/boleh-null). Inilah cara Partial/Readonly dibina — tulis sendiri untuk transformasi domain berulang."}
+{"instruction": "How do I type async/await properly?", "input": "", "output": "```ts\nasync function muat(id: string): Promise<Pengguna> {\n  const r = await fetch(`/api/${id}`);\n  if (!r.ok) throw new Error(`HTTP ${r.status}`);\n  return r.json();\n}\n```\nPulang `Promise<T>` eksplisit; tangani bukan-OK sebelum `.json()` (fetch hanya reject pada ralat rangkaian). Panggil dengan try/catch di sempadan, bukan setiap baris."}
+{"instruction": "Discriminated unions for state machines?", "input": "", "output": "```ts\ntype Muat = { status: \"mula\" } | { status: \"ok\"; data: Pengguna } | { status: \"ralat\"; mesej: string };\n```\nMedan literal sepunya (`status`) benarkan switch dipersempit automatik — cawangan salah jenis ditolak compile. Corak terbaik untuk keadaan muat/ralat UI tanpa boolean bertabur."}
+{"instruction": "How do tsconfig paths clean up imports?", "input": "", "output": "```json\n{ \"compilerOptions\": { \"baseUrl\": \".\", \"paths\": { \"@/*\": [\"src/*\"] } } }\n```\n`import { x } from \"@/util\"` ganti `../../../util` rapuh. Ingat: tsc tidak tulis semula laluan semasa emit — guna tsc-alias atau bundler yang faham paths untuk runtime."}
+{"instruction": "How do I migrate JS to TS incrementally?", "input": "", "output": "Hidupkan `allowJs` + `checkJs: false`, tukar fail ke `.ts` satu demi satu mengikut sempadan modul, betulkan ralat yang timbul. Mula dengan `strict: false`, naikkan bendera beransur (`noImplicitAny` dahulu). Jangan tulis semula serentak — migrasi besar-besaran gagal separuh jalan."}
+{"instruction": "What does `interface` do?", "input": "", "output": "Interfaces lock object shapes; missing or mistyped fields fail at compile, not in production."}
+{"instruction": "Explain `interface` briefly.", "input": "", "output": "Interfaces lock object shapes; missing or mistyped fields fail at compile, not in production."}
+{"instruction": "When do I use `interface`?", "input": "", "output": "Interfaces lock object shapes; missing or mistyped fields fail at compile, not in production."}
+{"instruction": "Give a practical example of `interface`.", "input": "", "output": "Interfaces lock object shapes; missing or mistyped fields fail at compile, not in production."}
+{"instruction": "What is `interface` for?", "input": "", "output": "Interfaces lock object shapes; missing or mistyped fields fail at compile, not in production."}
+{"instruction": "What does `type alias` do?", "input": "", "output": "Type aliases name unions, tuples and primitives; one source of truth beats repeated annotations."}
+{"instruction": "Explain `type alias` briefly.", "input": "", "output": "Type aliases name unions, tuples and primitives; one source of truth beats repeated annotations."}
+{"instruction": "When do I use `type alias`?", "input": "", "output": "Type aliases name unions, tuples and primitives; one source of truth beats repeated annotations."}
+{"instruction": "Give a practical example of `type alias`.", "input": "", "output": "Type aliases name unions, tuples and primitives; one source of truth beats repeated annotations."}
+{"instruction": "What is `type alias` for?", "input": "", "output": "Type aliases name unions, tuples and primitives; one source of truth beats repeated annotations."}
+{"instruction": "What does `enum` do?", "input": "", "output": "Enums name fixed value sets; for tiny cases a union of literals is lighter and tree-shakes better."}
+{"instruction": "Explain `enum` briefly.", "input": "", "output": "Enums name fixed value sets; for tiny cases a union of literals is lighter and tree-shakes better."}
+{"instruction": "When do I use `enum`?", "input": "", "output": "Enums name fixed value sets; for tiny cases a union of literals is lighter and tree-shakes better."}
+{"instruction": "Give a practical example of `enum`.", "input": "", "output": "Enums name fixed value sets; for tiny cases a union of literals is lighter and tree-shakes better."}
+{"instruction": "What is `enum` for?", "input": "", "output": "Enums name fixed value sets; for tiny cases a union of literals is lighter and tree-shakes better."}
+{"instruction": "What does `generics <T>` do?", "input": "", "output": "Generics keep functions reusable without `any` — caller types flow through to the return type."}
+{"instruction": "Explain `generics <T>` briefly.", "input": "", "output": "Generics keep functions reusable without `any` — caller types flow through to the return type."}
+{"instruction": "When do I use `generics <T>`?", "input": "", "output": "Generics keep functions reusable without `any` — caller types flow through to the return type."}
+{"instruction": "Give a practical example of `generics <T>`.", "input": "", "output": "Generics keep functions reusable without `any` — caller types flow through to the return type."}
+{"instruction": "What is `generics <T>` for?", "input": "", "output": "Generics keep functions reusable without `any` — caller types flow through to the return type."}
+{"instruction": "What does `union string | number` do?", "input": "", "output": "Unions admit several types; narrow with `typeof` checks before using specific methods."}
+{"instruction": "Explain `union string | number` briefly.", "input": "", "output": "Unions admit several types; narrow with `typeof` checks before using specific methods."}
+{"instruction": "When do I use `union string | number`?", "input": "", "output": "Unions admit several types; narrow with `typeof` checks before using specific methods."}
+{"instruction": "Give a practical example of `union string | number`.", "input": "", "output": "Unions admit several types; narrow with `typeof` checks before using specific methods."}
+{"instruction": "What is `union string | number` for?", "input": "", "output": "Unions admit several types; narrow with `typeof` checks before using specific methods."}
+{"instruction": "What does `optional ?` do?", "input": "", "output": "`?` marks fields/params optional (type plus undefined); pair with `??` defaults at use sites."}
+{"instruction": "Explain `optional ?` briefly.", "input": "", "output": "`?` marks fields/params optional (type plus undefined); pair with `??` defaults at use sites."}
+{"instruction": "When do I use `optional ?`?", "input": "", "output": "`?` marks fields/params optional (type plus undefined); pair with `??` defaults at use sites."}
+{"instruction": "Give a practical example of `optional ?`.", "input": "", "output": "`?` marks fields/params optional (type plus undefined); pair with `??` defaults at use sites."}
+{"instruction": "What is `optional ?` for?", "input": "", "output": "`?` marks fields/params optional (type plus undefined); pair with `??` defaults at use sites."}
+{"instruction": "What does `readonly` do?", "input": "", "output": "`readonly` blocks writes after construction; `as const` freezes literals for config objects."}
+{"instruction": "Explain `readonly` briefly.", "input": "", "output": "`readonly` blocks writes after construction; `as const` freezes literals for config objects."}
+{"instruction": "When do I use `readonly`?", "input": "", "output": "`readonly` blocks writes after construction; `as const` freezes literals for config objects."}
+{"instruction": "Give a practical example of `readonly`.", "input": "", "output": "`readonly` blocks writes after construction; `as const` freezes literals for config objects."}
+{"instruction": "What is `readonly` for?", "input": "", "output": "`readonly` blocks writes after construction; `as const` freezes literals for config objects."}
+{"instruction": "What does `tuple [string, number]` do?", "input": "", "output": "Tuples fix length and per-slot types; `readonly` tuples suit function returns of pairs."}
+{"instruction": "Explain `tuple [string, number]` briefly.", "input": "", "output": "Tuples fix length and per-slot types; `readonly` tuples suit function returns of pairs."}
+{"instruction": "When do I use `tuple [string, number]`?", "input": "", "output": "Tuples fix length and per-slot types; `readonly` tuples suit function returns of pairs."}
+{"instruction": "Give a practical example of `tuple [string, number]`.", "input": "", "output": "Tuples fix length and per-slot types; `readonly` tuples suit function returns of pairs."}
+{"instruction": "What is `tuple [string, number]` for?", "input": "", "output": "Tuples fix length and per-slot types; `readonly` tuples suit function returns of pairs."}
+{"instruction": "What does `Record<K,V>` do?", "input": "", "output": "`Record<string, number>` types dictionaries; `Partial/Pick/Omit` derive variants from one interface."}
+{"instruction": "Explain `Record<K,V>` briefly.", "input": "", "output": "`Record<string, number>` types dictionaries; `Partial/Pick/Omit` derive variants from one interface."}
+{"instruction": "When do I use `Record<K,V>`?", "input": "", "output": "`Record<string, number>` types dictionaries; `Partial/Pick/Omit` derive variants from one interface."}
+{"instruction": "Give a practical example of `Record<K,V>`.", "input": "", "output": "`Record<string, number>` types dictionaries; `Partial/Pick/Omit` derive variants from one interface."}
+{"instruction": "What is `Record<K,V>` for?", "input": "", "output": "`Record<string, number>` types dictionaries; `Partial/Pick/Omit` derive variants from one interface."}
+{"instruction": "What does `unknown vs any` do?", "input": "", "output": "`unknown` forces narrowing before use; `any` disables checking entirely — treat as tech debt."}
+{"instruction": "Explain `unknown vs any` briefly.", "input": "", "output": "`unknown` forces narrowing before use; `any` disables checking entirely — treat as tech debt."}
+{"instruction": "When do I use `unknown vs any`?", "input": "", "output": "`unknown` forces narrowing before use; `any` disables checking entirely — treat as tech debt."}
+{"instruction": "Give a practical example of `unknown vs any`.", "input": "", "output": "`unknown` forces narrowing before use; `any` disables checking entirely — treat as tech debt."}
+{"instruction": "What is `unknown vs any` for?", "input": "", "output": "`unknown` forces narrowing before use; `any` disables checking entirely — treat as tech debt."}
+{"instruction": "What does `never` do?", "input": "", "output": "`never` marks unreachable code; use it in switch defaults so new cases fail compilation loudly."}
+{"instruction": "Explain `never` briefly.", "input": "", "output": "`never` marks unreachable code; use it in switch defaults so new cases fail compilation loudly."}
+{"instruction": "When do I use `never`?", "input": "", "output": "`never` marks unreachable code; use it in switch defaults so new cases fail compilation loudly."}
+{"instruction": "Give a practical example of `never`.", "input": "", "output": "`never` marks unreachable code; use it in switch defaults so new cases fail compilation loudly."}
+{"instruction": "What is `never` for?", "input": "", "output": "`never` marks unreachable code; use it in switch defaults so new cases fail compilation loudly."}
+{"instruction": "What does `as cast` do?", "input": "", "output": "`as` asserts without checking — safe only after validation; prefer narrowing or schema parsing."}
+{"instruction": "Explain `as cast` briefly.", "input": "", "output": "`as` asserts without checking — safe only after validation; prefer narrowing or schema parsing."}
+{"instruction": "When do I use `as cast`?", "input": "", "output": "`as` asserts without checking — safe only after validation; prefer narrowing or schema parsing."}
+{"instruction": "Give a practical example of `as cast`.", "input": "", "output": "`as` asserts without checking — safe only after validation; prefer narrowing or schema parsing."}
+{"instruction": "What is `as cast` for?", "input": "", "output": "`as` asserts without checking — safe only after validation; prefer narrowing or schema parsing."}
+{"instruction": "What does `implements` do?", "input": "", "output": "`class X implements Y` verifies conformance at compile; structural typing still allows compatible shapes."}
+{"instruction": "Explain `implements` briefly.", "input": "", "output": "`class X implements Y` verifies conformance at compile; structural typing still allows compatible shapes."}
+{"instruction": "When do I use `implements`?", "input": "", "output": "`class X implements Y` verifies conformance at compile; structural typing still allows compatible shapes."}
+{"instruction": "Give a practical example of `implements`.", "input": "", "output": "`class X implements Y` verifies conformance at compile; structural typing still allows compatible shapes."}
+{"instruction": "What is `implements` for?", "input": "", "output": "`class X implements Y` verifies conformance at compile; structural typing still allows compatible shapes."}
+{"instruction": "What does `abstract class` do?", "input": "", "output": "Abstract classes mix contracts with shared implementation; one inheritance chain per class only."}
+{"instruction": "Explain `abstract class` briefly.", "input": "", "output": "Abstract classes mix contracts with shared implementation; one inheritance chain per class only."}
+{"instruction": "When do I use `abstract class`?", "input": "", "output": "Abstract classes mix contracts with shared implementation; one inheritance chain per class only."}
+{"instruction": "Give a practical example of `abstract class`.", "input": "", "output": "Abstract classes mix contracts with shared implementation; one inheritance chain per class only."}
+{"instruction": "What is `abstract class` for?", "input": "", "output": "Abstract classes mix contracts with shared implementation; one inheritance chain per class only."}
+{"instruction": "What does `namespace` do?", "input": "", "output": "Namespaces group legacy globals; modern code prefers ES modules — use only when integrating old scripts."}
+{"instruction": "Explain `namespace` briefly.", "input": "", "output": "Namespaces group legacy globals; modern code prefers ES modules — use only when integrating old scripts."}
+{"instruction": "When do I use `namespace`?", "input": "", "output": "Namespaces group legacy globals; modern code prefers ES modules — use only when integrating old scripts."}
+{"instruction": "Give a practical example of `namespace`.", "input": "", "output": "Namespaces group legacy globals; modern code prefers ES modules — use only when integrating old scripts."}
+{"instruction": "What is `namespace` for?", "input": "", "output": "Namespaces group legacy globals; modern code prefers ES modules — use only when integrating old scripts."}
+{"instruction": "What does `decorators @` do?", "input": "", "output": "Decorators attach metadata at definition time (NestJS/Angular); keep them side-effect free."}
+{"instruction": "Explain `decorators @` briefly.", "input": "", "output": "Decorators attach metadata at definition time (NestJS/Angular); keep them side-effect free."}
+{"instruction": "When do I use `decorators @`?", "input": "", "output": "Decorators attach metadata at definition time (NestJS/Angular); keep them side-effect free."}
+{"instruction": "Give a practical example of `decorators @`.", "input": "", "output": "Decorators attach metadata at definition time (NestJS/Angular); keep them side-effect free."}
+{"instruction": "What is `decorators @` for?", "input": "", "output": "Decorators attach metadata at definition time (NestJS/Angular); keep them side-effect free."}
+{"instruction": "What does `strict mode` do?", "input": "", "output": "Strict mode catches null/any/property bugs at compile; migrate old code flag by flag."}
+{"instruction": "Explain `strict mode` briefly.", "input": "", "output": "Strict mode catches null/any/property bugs at compile; migrate old code flag by flag."}
+{"instruction": "When do I use `strict mode`?", "input": "", "output": "Strict mode catches null/any/property bugs at compile; migrate old code flag by flag."}
+{"instruction": "Give a practical example of `strict mode`.", "input": "", "output": "Strict mode catches null/any/property bugs at compile; migrate old code flag by flag."}
+{"instruction": "What is `strict mode` for?", "input": "", "output": "Strict mode catches null/any/property bugs at compile; migrate old code flag by flag."}
+{"instruction": "What does `tsconfig paths` do?", "input": "", "output": "`paths` aliases (`@/*`) kill `../../../` imports; bundlers need matching config to resolve at runtime."}
+{"instruction": "Explain `tsconfig paths` briefly.", "input": "", "output": "`paths` aliases (`@/*`) kill `../../../` imports; bundlers need matching config to resolve at runtime."}
+{"instruction": "When do I use `tsconfig paths`?", "input": "", "output": "`paths` aliases (`@/*`) kill `../../../` imports; bundlers need matching config to resolve at runtime."}
+{"instruction": "Give a practical example of `tsconfig paths`.", "input": "", "output": "`paths` aliases (`@/*`) kill `../../../` imports; bundlers need matching config to resolve at runtime."}
+{"instruction": "What is `tsconfig paths` for?", "input": "", "output": "`paths` aliases (`@/*`) kill `../../../` imports; bundlers need matching config to resolve at runtime."}
+{"instruction": "What does `declaration .d.ts` do?", "input": "", "output": "Declaration files describe untyped JS for the checker; `@types/*` packages provide community ones."}
+{"instruction": "Explain `declaration .d.ts` briefly.", "input": "", "output": "Declaration files describe untyped JS for the checker; `@types/*` packages provide community ones."}
+{"instruction": "When do I use `declaration .d.ts`?", "input": "", "output": "Declaration files describe untyped JS for the checker; `@types/*` packages provide community ones."}
+{"instruction": "Give a practical example of `declaration .d.ts`.", "input": "", "output": "Declaration files describe untyped JS for the checker; `@types/*` packages provide community ones."}
+{"instruction": "What is `declaration .d.ts` for?", "input": "", "output": "Declaration files describe untyped JS for the checker; `@types/*` packages provide community ones."}
+{"instruction": "What does `satisfies` do?", "input": "", "output": "`satisfies` validates shape while keeping literal types; `as` widens and hides information."}
+{"instruction": "Explain `satisfies` briefly.", "input": "", "output": "`satisfies` validates shape while keeping literal types; `as` widens and hides information."}
+{"instruction": "When do I use `satisfies`?", "input": "", "output": "`satisfies` validates shape while keeping literal types; `as` widens and hides information."}
+{"instruction": "Give a practical example of `satisfies`.", "input": "", "output": "`satisfies` validates shape while keeping literal types; `as` widens and hides information."}
+{"instruction": "What is `satisfies` for?", "input": "", "output": "`satisfies` validates shape while keeping literal types; `as` widens and hides information."}
+{"instruction": "Apakah fungsi `interface`?", "input": "", "output": "Interfaces lock object shapes; missing or mistyped fields fail at compile, not in production."}
+{"instruction": "Terangkan `interface` secara ringkas.", "input": "", "output": "Interfaces lock object shapes; missing or mistyped fields fail at compile, not in production."}
+{"instruction": "Bila perlu guna `interface`?", "input": "", "output": "Interfaces lock object shapes; missing or mistyped fields fail at compile, not in production."}
+{"instruction": "Beri contoh penggunaan `interface`.", "input": "", "output": "Interfaces lock object shapes; missing or mistyped fields fail at compile, not in production."}
+{"instruction": "`interface` untuk apa?", "input": "", "output": "Interfaces lock object shapes; missing or mistyped fields fail at compile, not in production."}
+{"instruction": "How would you explain `interface` to a junior developer?", "input": "", "output": "Interfaces lock object shapes; missing or mistyped fields fail at compile, not in production."}
+{"instruction": "Give a real-world scenario for `interface`.", "input": "", "output": "Interfaces lock object shapes; missing or mistyped fields fail at compile, not in production."}
+{"instruction": "What problem does `interface` solve?", "input": "", "output": "Interfaces lock object shapes; missing or mistyped fields fail at compile, not in production."}
+{"instruction": "Apakah fungsi `type alias`?", "input": "", "output": "Type aliases name unions, tuples and primitives; one source of truth beats repeated annotations."}
+{"instruction": "Terangkan `type alias` secara ringkas.", "input": "", "output": "Type aliases name unions, tuples and primitives; one source of truth beats repeated annotations."}
+{"instruction": "Bila perlu guna `type alias`?", "input": "", "output": "Type aliases name unions, tuples and primitives; one source of truth beats repeated annotations."}
+{"instruction": "Beri contoh penggunaan `type alias`.", "input": "", "output": "Type aliases name unions, tuples and primitives; one source of truth beats repeated annotations."}
+{"instruction": "`type alias` untuk apa?", "input": "", "output": "Type aliases name unions, tuples and primitives; one source of truth beats repeated annotations."}
+{"instruction": "How would you explain `type alias` to a junior developer?", "input": "", "output": "Type aliases name unions, tuples and primitives; one source of truth beats repeated annotations."}
+{"instruction": "Give a real-world scenario for `type alias`.", "input": "", "output": "Type aliases name unions, tuples and primitives; one source of truth beats repeated annotations."}
+{"instruction": "What problem does `type alias` solve?", "input": "", "output": "Type aliases name unions, tuples and primitives; one source of truth beats repeated annotations."}
+{"instruction": "Apakah fungsi `enum`?", "input": "", "output": "Enums name fixed value sets; for tiny cases a union of literals is lighter and tree-shakes better."}
+{"instruction": "Terangkan `enum` secara ringkas.", "input": "", "output": "Enums name fixed value sets; for tiny cases a union of literals is lighter and tree-shakes better."}
+{"instruction": "Bila perlu guna `enum`?", "input": "", "output": "Enums name fixed value sets; for tiny cases a union of literals is lighter and tree-shakes better."}
+{"instruction": "Beri contoh penggunaan `enum`.", "input": "", "output": "Enums name fixed value sets; for tiny cases a union of literals is lighter and tree-shakes better."}
+{"instruction": "`enum` untuk apa?", "input": "", "output": "Enums name fixed value sets; for tiny cases a union of literals is lighter and tree-shakes better."}
+{"instruction": "How would you explain `enum` to a junior developer?", "input": "", "output": "Enums name fixed value sets; for tiny cases a union of literals is lighter and tree-shakes better."}
+{"instruction": "Give a real-world scenario for `enum`.", "input": "", "output": "Enums name fixed value sets; for tiny cases a union of literals is lighter and tree-shakes better."}
+{"instruction": "What problem does `enum` solve?", "input": "", "output": "Enums name fixed value sets; for tiny cases a union of literals is lighter and tree-shakes better."}
+{"instruction": "Apakah fungsi `generics <T>`?", "input": "", "output": "Generics keep functions reusable without `any` — caller types flow through to the return type."}
+{"instruction": "Terangkan `generics <T>` secara ringkas.", "input": "", "output": "Generics keep functions reusable without `any` — caller types flow through to the return type."}
+{"instruction": "Bila perlu guna `generics <T>`?", "input": "", "output": "Generics keep functions reusable without `any` — caller types flow through to the return type."}
+{"instruction": "Beri contoh penggunaan `generics <T>`.", "input": "", "output": "Generics keep functions reusable without `any` — caller types flow through to the return type."}
+{"instruction": "`generics <T>` untuk apa?", "input": "", "output": "Generics keep functions reusable without `any` — caller types flow through to the return type."}
+{"instruction": "How would you explain `generics <T>` to a junior developer?", "input": "", "output": "Generics keep functions reusable without `any` — caller types flow through to the return type."}
+{"instruction": "Give a real-world scenario for `generics <T>`.", "input": "", "output": "Generics keep functions reusable without `any` — caller types flow through to the return type."}
+{"instruction": "What problem does `generics <T>` solve?", "input": "", "output": "Generics keep functions reusable without `any` — caller types flow through to the return type."}
+{"instruction": "Apakah fungsi `union string | number`?", "input": "", "output": "Unions admit several types; narrow with `typeof` checks before using specific methods."}
+{"instruction": "Terangkan `union string | number` secara ringkas.", "input": "", "output": "Unions admit several types; narrow with `typeof` checks before using specific methods."}
+{"instruction": "Bila perlu guna `union string | number`?", "input": "", "output": "Unions admit several types; narrow with `typeof` checks before using specific methods."}
+{"instruction": "Beri contoh penggunaan `union string | number`.", "input": "", "output": "Unions admit several types; narrow with `typeof` checks before using specific methods."}
+{"instruction": "`union string | number` untuk apa?", "input": "", "output": "Unions admit several types; narrow with `typeof` checks before using specific methods."}
+{"instruction": "How would you explain `union string | number` to a junior developer?", "input": "", "output": "Unions admit several types; narrow with `typeof` checks before using specific methods."}
+{"instruction": "Give a real-world scenario for `union string | number`.", "input": "", "output": "Unions admit several types; narrow with `typeof` checks before using specific methods."}
+{"instruction": "What problem does `union string | number` solve?", "input": "", "output": "Unions admit several types; narrow with `typeof` checks before using specific methods."}
+{"instruction": "Apakah fungsi `optional ?`?", "input": "", "output": "`?` marks fields/params optional (type plus undefined); pair with `??` defaults at use sites."}
+{"instruction": "Terangkan `optional ?` secara ringkas.", "input": "", "output": "`?` marks fields/params optional (type plus undefined); pair with `??` defaults at use sites."}
+{"instruction": "Bila perlu guna `optional ?`?", "input": "", "output": "`?` marks fields/params optional (type plus undefined); pair with `??` defaults at use sites."}
+{"instruction": "Beri contoh penggunaan `optional ?`.", "input": "", "output": "`?` marks fields/params optional (type plus undefined); pair with `??` defaults at use sites."}
+{"instruction": "`optional ?` untuk apa?", "input": "", "output": "`?` marks fields/params optional (type plus undefined); pair with `??` defaults at use sites."}
+{"instruction": "How would you explain `optional ?` to a junior developer?", "input": "", "output": "`?` marks fields/params optional (type plus undefined); pair with `??` defaults at use sites."}
+{"instruction": "Give a real-world scenario for `optional ?`.", "input": "", "output": "`?` marks fields/params optional (type plus undefined); pair with `??` defaults at use sites."}
+{"instruction": "What problem does `optional ?` solve?", "input": "", "output": "`?` marks fields/params optional (type plus undefined); pair with `??` defaults at use sites."}
+{"instruction": "Apakah fungsi `readonly`?", "input": "", "output": "`readonly` blocks writes after construction; `as const` freezes literals for config objects."}
+{"instruction": "Terangkan `readonly` secara ringkas.", "input": "", "output": "`readonly` blocks writes after construction; `as const` freezes literals for config objects."}
+{"instruction": "Bila perlu guna `readonly`?", "input": "", "output": "`readonly` blocks writes after construction; `as const` freezes literals for config objects."}
+{"instruction": "Beri contoh penggunaan `readonly`.", "input": "", "output": "`readonly` blocks writes after construction; `as const` freezes literals for config objects."}
+{"instruction": "`readonly` untuk apa?", "input": "", "output": "`readonly` blocks writes after construction; `as const` freezes literals for config objects."}
+{"instruction": "How would you explain `readonly` to a junior developer?", "input": "", "output": "`readonly` blocks writes after construction; `as const` freezes literals for config objects."}
+{"instruction": "Give a real-world scenario for `readonly`.", "input": "", "output": "`readonly` blocks writes after construction; `as const` freezes literals for config objects."}
+{"instruction": "What problem does `readonly` solve?", "input": "", "output": "`readonly` blocks writes after construction; `as const` freezes literals for config objects."}
+{"instruction": "Apakah fungsi `tuple [string, number]`?", "input": "", "output": "Tuples fix length and per-slot types; `readonly` tuples suit function returns of pairs."}
+{"instruction": "Terangkan `tuple [string, number]` secara ringkas.", "input": "", "output": "Tuples fix length and per-slot types; `readonly` tuples suit function returns of pairs."}
+{"instruction": "Bila perlu guna `tuple [string, number]`?", "input": "", "output": "Tuples fix length and per-slot types; `readonly` tuples suit function returns of pairs."}
+{"instruction": "Beri contoh penggunaan `tuple [string, number]`.", "input": "", "output": "Tuples fix length and per-slot types; `readonly` tuples suit function returns of pairs."}
+{"instruction": "`tuple [string, number]` untuk apa?", "input": "", "output": "Tuples fix length and per-slot types; `readonly` tuples suit function returns of pairs."}
+{"instruction": "How would you explain `tuple [string, number]` to a junior developer?", "input": "", "output": "Tuples fix length and per-slot types; `readonly` tuples suit function returns of pairs."}
+{"instruction": "Give a real-world scenario for `tuple [string, number]`.", "input": "", "output": "Tuples fix length and per-slot types; `readonly` tuples suit function returns of pairs."}
+{"instruction": "What problem does `tuple [string, number]` solve?", "input": "", "output": "Tuples fix length and per-slot types; `readonly` tuples suit function returns of pairs."}
+{"instruction": "Apakah fungsi `Record<K,V>`?", "input": "", "output": "`Record<string, number>` types dictionaries; `Partial/Pick/Omit` derive variants from one interface."}
+{"instruction": "Terangkan `Record<K,V>` secara ringkas.", "input": "", "output": "`Record<string, number>` types dictionaries; `Partial/Pick/Omit` derive variants from one interface."}
+{"instruction": "Bila perlu guna `Record<K,V>`?", "input": "", "output": "`Record<string, number>` types dictionaries; `Partial/Pick/Omit` derive variants from one interface."}
+{"instruction": "Beri contoh penggunaan `Record<K,V>`.", "input": "", "output": "`Record<string, number>` types dictionaries; `Partial/Pick/Omit` derive variants from one interface."}
+{"instruction": "`Record<K,V>` untuk apa?", "input": "", "output": "`Record<string, number>` types dictionaries; `Partial/Pick/Omit` derive variants from one interface."}
+{"instruction": "How would you explain `Record<K,V>` to a junior developer?", "input": "", "output": "`Record<string, number>` types dictionaries; `Partial/Pick/Omit` derive variants from one interface."}
+{"instruction": "Give a real-world scenario for `Record<K,V>`.", "input": "", "output": "`Record<string, number>` types dictionaries; `Partial/Pick/Omit` derive variants from one interface."}
+{"instruction": "What problem does `Record<K,V>` solve?", "input": "", "output": "`Record<string, number>` types dictionaries; `Partial/Pick/Omit` derive variants from one interface."}
+{"instruction": "Apakah fungsi `unknown vs any`?", "input": "", "output": "`unknown` forces narrowing before use; `any` disables checking entirely — treat as tech debt."}
+{"instruction": "Terangkan `unknown vs any` secara ringkas.", "input": "", "output": "`unknown` forces narrowing before use; `any` disables checking entirely — treat as tech debt."}
+{"instruction": "Bila perlu guna `unknown vs any`?", "input": "", "output": "`unknown` forces narrowing before use; `any` disables checking entirely — treat as tech debt."}
+{"instruction": "Beri contoh penggunaan `unknown vs any`.", "input": "", "output": "`unknown` forces narrowing before use; `any` disables checking entirely — treat as tech debt."}
+{"instruction": "`unknown vs any` untuk apa?", "input": "", "output": "`unknown` forces narrowing before use; `any` disables checking entirely — treat as tech debt."}
+{"instruction": "How would you explain `unknown vs any` to a junior developer?", "input": "", "output": "`unknown` forces narrowing before use; `any` disables checking entirely — treat as tech debt."}
+{"instruction": "Give a real-world scenario for `unknown vs any`.", "input": "", "output": "`unknown` forces narrowing before use; `any` disables checking entirely — treat as tech debt."}
+{"instruction": "What problem does `unknown vs any` solve?", "input": "", "output": "`unknown` forces narrowing before use; `any` disables checking entirely — treat as tech debt."}
+{"instruction": "Apakah fungsi `never`?", "input": "", "output": "`never` marks unreachable code; use it in switch defaults so new cases fail compilation loudly."}
+{"instruction": "Terangkan `never` secara ringkas.", "input": "", "output": "`never` marks unreachable code; use it in switch defaults so new cases fail compilation loudly."}
+{"instruction": "Bila perlu guna `never`?", "input": "", "output": "`never` marks unreachable code; use it in switch defaults so new cases fail compilation loudly."}
+{"instruction": "Beri contoh penggunaan `never`.", "input": "", "output": "`never` marks unreachable code; use it in switch defaults so new cases fail compilation loudly."}
+{"instruction": "`never` untuk apa?", "input": "", "output": "`never` marks unreachable code; use it in switch defaults so new cases fail compilation loudly."}
+{"instruction": "How would you explain `never` to a junior developer?", "input": "", "output": "`never` marks unreachable code; use it in switch defaults so new cases fail compilation loudly."}
+{"instruction": "Give a real-world scenario for `never`.", "input": "", "output": "`never` marks unreachable code; use it in switch defaults so new cases fail compilation loudly."}
+{"instruction": "What problem does `never` solve?", "input": "", "output": "`never` marks unreachable code; use it in switch defaults so new cases fail compilation loudly."}
+{"instruction": "Apakah fungsi `as cast`?", "input": "", "output": "`as` asserts without checking — safe only after validation; prefer narrowing or schema parsing."}
+{"instruction": "Terangkan `as cast` secara ringkas.", "input": "", "output": "`as` asserts without checking — safe only after validation; prefer narrowing or schema parsing."}
+{"instruction": "Bila perlu guna `as cast`?", "input": "", "output": "`as` asserts without checking — safe only after validation; prefer narrowing or schema parsing."}
+{"instruction": "Beri contoh penggunaan `as cast`.", "input": "", "output": "`as` asserts without checking — safe only after validation; prefer narrowing or schema parsing."}
+{"instruction": "`as cast` untuk apa?", "input": "", "output": "`as` asserts without checking — safe only after validation; prefer narrowing or schema parsing."}
+{"instruction": "How would you explain `as cast` to a junior developer?", "input": "", "output": "`as` asserts without checking — safe only after validation; prefer narrowing or schema parsing."}
+{"instruction": "Give a real-world scenario for `as cast`.", "input": "", "output": "`as` asserts without checking — safe only after validation; prefer narrowing or schema parsing."}
+{"instruction": "What problem does `as cast` solve?", "input": "", "output": "`as` asserts without checking — safe only after validation; prefer narrowing or schema parsing."}
+{"instruction": "Apakah fungsi `implements`?", "input": "", "output": "`class X implements Y` verifies conformance at compile; structural typing still allows compatible shapes."}
+{"instruction": "Terangkan `implements` secara ringkas.", "input": "", "output": "`class X implements Y` verifies conformance at compile; structural typing still allows compatible shapes."}
+{"instruction": "Bila perlu guna `implements`?", "input": "", "output": "`class X implements Y` verifies conformance at compile; structural typing still allows compatible shapes."}
+{"instruction": "Beri contoh penggunaan `implements`.", "input": "", "output": "`class X implements Y` verifies conformance at compile; structural typing still allows compatible shapes."}
+{"instruction": "`implements` untuk apa?", "input": "", "output": "`class X implements Y` verifies conformance at compile; structural typing still allows compatible shapes."}
+{"instruction": "How would you explain `implements` to a junior developer?", "input": "", "output": "`class X implements Y` verifies conformance at compile; structural typing still allows compatible shapes."}
+{"instruction": "Give a real-world scenario for `implements`.", "input": "", "output": "`class X implements Y` verifies conformance at compile; structural typing still allows compatible shapes."}
+{"instruction": "What problem does `implements` solve?", "input": "", "output": "`class X implements Y` verifies conformance at compile; structural typing still allows compatible shapes."}
+{"instruction": "Apakah fungsi `abstract class`?", "input": "", "output": "Abstract classes mix contracts with shared implementation; one inheritance chain per class only."}
+{"instruction": "Terangkan `abstract class` secara ringkas.", "input": "", "output": "Abstract classes mix contracts with shared implementation; one inheritance chain per class only."}
+{"instruction": "Bila perlu guna `abstract class`?", "input": "", "output": "Abstract classes mix contracts with shared implementation; one inheritance chain per class only."}
+{"instruction": "Beri contoh penggunaan `abstract class`.", "input": "", "output": "Abstract classes mix contracts with shared implementation; one inheritance chain per class only."}
+{"instruction": "`abstract class` untuk apa?", "input": "", "output": "Abstract classes mix contracts with shared implementation; one inheritance chain per class only."}
+{"instruction": "How would you explain `abstract class` to a junior developer?", "input": "", "output": "Abstract classes mix contracts with shared implementation; one inheritance chain per class only."}
+{"instruction": "Give a real-world scenario for `abstract class`.", "input": "", "output": "Abstract classes mix contracts with shared implementation; one inheritance chain per class only."}
+{"instruction": "What problem does `abstract class` solve?", "input": "", "output": "Abstract classes mix contracts with shared implementation; one inheritance chain per class only."}
+{"instruction": "Apakah fungsi `namespace`?", "input": "", "output": "Namespaces group legacy globals; modern code prefers ES modules — use only when integrating old scripts."}
+{"instruction": "Terangkan `namespace` secara ringkas.", "input": "", "output": "Namespaces group legacy globals; modern code prefers ES modules — use only when integrating old scripts."}
+{"instruction": "Bila perlu guna `namespace`?", "input": "", "output": "Namespaces group legacy globals; modern code prefers ES modules — use only when integrating old scripts."}
+{"instruction": "Beri contoh penggunaan `namespace`.", "input": "", "output": "Namespaces group legacy globals; modern code prefers ES modules — use only when integrating old scripts."}
+{"instruction": "`namespace` untuk apa?", "input": "", "output": "Namespaces group legacy globals; modern code prefers ES modules — use only when integrating old scripts."}
+{"instruction": "How would you explain `namespace` to a junior developer?", "input": "", "output": "Namespaces group legacy globals; modern code prefers ES modules — use only when integrating old scripts."}
+{"instruction": "Give a real-world scenario for `namespace`.", "input": "", "output": "Namespaces group legacy globals; modern code prefers ES modules — use only when integrating old scripts."}
+{"instruction": "What problem does `namespace` solve?", "input": "", "output": "Namespaces group legacy globals; modern code prefers ES modules — use only when integrating old scripts."}
+{"instruction": "Apakah fungsi `decorators @`?", "input": "", "output": "Decorators attach metadata at definition time (NestJS/Angular); keep them side-effect free."}
+{"instruction": "Terangkan `decorators @` secara ringkas.", "input": "", "output": "Decorators attach metadata at definition time (NestJS/Angular); keep them side-effect free."}
+{"instruction": "Bila perlu guna `decorators @`?", "input": "", "output": "Decorators attach metadata at definition time (NestJS/Angular); keep them side-effect free."}
+{"instruction": "Beri contoh penggunaan `decorators @`.", "input": "", "output": "Decorators attach metadata at definition time (NestJS/Angular); keep them side-effect free."}
+{"instruction": "`decorators @` untuk apa?", "input": "", "output": "Decorators attach metadata at definition time (NestJS/Angular); keep them side-effect free."}
+{"instruction": "How would you explain `decorators @` to a junior developer?", "input": "", "output": "Decorators attach metadata at definition time (NestJS/Angular); keep them side-effect free."}
+{"instruction": "Give a real-world scenario for `decorators @`.", "input": "", "output": "Decorators attach metadata at definition time (NestJS/Angular); keep them side-effect free."}
+{"instruction": "What problem does `decorators @` solve?", "input": "", "output": "Decorators attach metadata at definition time (NestJS/Angular); keep them side-effect free."}
+{"instruction": "Apakah fungsi `strict mode`?", "input": "", "output": "Strict mode catches null/any/property bugs at compile; migrate old code flag by flag."}
+{"instruction": "Terangkan `strict mode` secara ringkas.", "input": "", "output": "Strict mode catches null/any/property bugs at compile; migrate old code flag by flag."}
+{"instruction": "Bila perlu guna `strict mode`?", "input": "", "output": "Strict mode catches null/any/property bugs at compile; migrate old code flag by flag."}
+{"instruction": "Beri contoh penggunaan `strict mode`.", "input": "", "output": "Strict mode catches null/any/property bugs at compile; migrate old code flag by flag."}
+{"instruction": "`strict mode` untuk apa?", "input": "", "output": "Strict mode catches null/any/property bugs at compile; migrate old code flag by flag."}
+{"instruction": "How would you explain `strict mode` to a junior developer?", "input": "", "output": "Strict mode catches null/any/property bugs at compile; migrate old code flag by flag."}
+{"instruction": "Give a real-world scenario for `strict mode`.", "input": "", "output": "Strict mode catches null/any/property bugs at compile; migrate old code flag by flag."}
+{"instruction": "What problem does `strict mode` solve?", "input": "", "output": "Strict mode catches null/any/property bugs at compile; migrate old code flag by flag."}
+{"instruction": "Apakah fungsi `tsconfig paths`?", "input": "", "output": "`paths` aliases (`@/*`) kill `../../../` imports; bundlers need matching config to resolve at runtime."}
+{"instruction": "Terangkan `tsconfig paths` secara ringkas.", "input": "", "output": "`paths` aliases (`@/*`) kill `../../../` imports; bundlers need matching config to resolve at runtime."}
+{"instruction": "Bila perlu guna `tsconfig paths`?", "input": "", "output": "`paths` aliases (`@/*`) kill `../../../` imports; bundlers need matching config to resolve at runtime."}
+{"instruction": "Beri contoh penggunaan `tsconfig paths`.", "input": "", "output": "`paths` aliases (`@/*`) kill `../../../` imports; bundlers need matching config to resolve at runtime."}
+{"instruction": "`tsconfig paths` untuk apa?", "input": "", "output": "`paths` aliases (`@/*`) kill `../../../` imports; bundlers need matching config to resolve at runtime."}
+{"instruction": "How would you explain `tsconfig paths` to a junior developer?", "input": "", "output": "`paths` aliases (`@/*`) kill `../../../` imports; bundlers need matching config to resolve at runtime."}
+{"instruction": "Give a real-world scenario for `tsconfig paths`.", "input": "", "output": "`paths` aliases (`@/*`) kill `../../../` imports; bundlers need matching config to resolve at runtime."}
+{"instruction": "What problem does `tsconfig paths` solve?", "input": "", "output": "`paths` aliases (`@/*`) kill `../../../` imports; bundlers need matching config to resolve at runtime."}
+{"instruction": "Apakah fungsi `declaration .d.ts`?", "input": "", "output": "Declaration files describe untyped JS for the checker; `@types/*` packages provide community ones."}
+{"instruction": "Terangkan `declaration .d.ts` secara ringkas.", "input": "", "output": "Declaration files describe untyped JS for the checker; `@types/*` packages provide community ones."}
+{"instruction": "Bila perlu guna `declaration .d.ts`?", "input": "", "output": "Declaration files describe untyped JS for the checker; `@types/*` packages provide community ones."}
+{"instruction": "Beri contoh penggunaan `declaration .d.ts`.", "input": "", "output": "Declaration files describe untyped JS for the checker; `@types/*` packages provide community ones."}
+{"instruction": "`declaration .d.ts` untuk apa?", "input": "", "output": "Declaration files describe untyped JS for the checker; `@types/*` packages provide community ones."}
+{"instruction": "How would you explain `declaration .d.ts` to a junior developer?", "input": "", "output": "Declaration files describe untyped JS for the checker; `@types/*` packages provide community ones."}
+{"instruction": "Give a real-world scenario for `declaration .d.ts`.", "input": "", "output": "Declaration files describe untyped JS for the checker; `@types/*` packages provide community ones."}
+{"instruction": "What problem does `declaration .d.ts` solve?", "input": "", "output": "Declaration files describe untyped JS for the checker; `@types/*` packages provide community ones."}
+{"instruction": "Apakah fungsi `satisfies`?", "input": "", "output": "`satisfies` validates shape while keeping literal types; `as` widens and hides information."}
+{"instruction": "Terangkan `satisfies` secara ringkas.", "input": "", "output": "`satisfies` validates shape while keeping literal types; `as` widens and hides information."}
+{"instruction": "Bila perlu guna `satisfies`?", "input": "", "output": "`satisfies` validates shape while keeping literal types; `as` widens and hides information."}
+{"instruction": "Beri contoh penggunaan `satisfies`.", "input": "", "output": "`satisfies` validates shape while keeping literal types; `as` widens and hides information."}
+{"instruction": "`satisfies` untuk apa?", "input": "", "output": "`satisfies` validates shape while keeping literal types; `as` widens and hides information."}
+{"instruction": "How would you explain `satisfies` to a junior developer?", "input": "", "output": "`satisfies` validates shape while keeping literal types; `as` widens and hides information."}
+{"instruction": "Give a real-world scenario for `satisfies`.", "input": "", "output": "`satisfies` validates shape while keeping literal types; `as` widens and hides information."}
+{"instruction": "What problem does `satisfies` solve?", "input": "", "output": "`satisfies` validates shape while keeping literal types; `as` widens and hides information."}
+{"instruction": "What does `Pick` do?", "input": "", "output": "`Pick<T, 'a' | 'b'>` carves a subtype with named fields; `Omit` drops them — both derive, never redeclare."}
+{"instruction": "Explain `Pick` briefly.", "input": "", "output": "`Pick<T, 'a' | 'b'>` carves a subtype with named fields; `Omit` drops them — both derive, never redeclare."}
+{"instruction": "When do I use `Pick`?", "input": "", "output": "`Pick<T, 'a' | 'b'>` carves a subtype with named fields; `Omit` drops them — both derive, never redeclare."}
+{"instruction": "Give a practical example of `Pick`.", "input": "", "output": "`Pick<T, 'a' | 'b'>` carves a subtype with named fields; `Omit` drops them — both derive, never redeclare."}
+{"instruction": "What is `Pick` for?", "input": "", "output": "`Pick<T, 'a' | 'b'>` carves a subtype with named fields; `Omit` drops them — both derive, never redeclare."}
+{"instruction": "Apakah fungsi `Pick`?", "input": "", "output": "`Pick<T, 'a' | 'b'>` carves a subtype with named fields; `Omit` drops them — both derive, never redeclare."}
+{"instruction": "Terangkan `Pick` secara ringkas.", "input": "", "output": "`Pick<T, 'a' | 'b'>` carves a subtype with named fields; `Omit` drops them — both derive, never redeclare."}
+{"instruction": "Bila perlu guna `Pick`?", "input": "", "output": "`Pick<T, 'a' | 'b'>` carves a subtype with named fields; `Omit` drops them — both derive, never redeclare."}
+{"instruction": "Beri contoh penggunaan `Pick`.", "input": "", "output": "`Pick<T, 'a' | 'b'>` carves a subtype with named fields; `Omit` drops them — both derive, never redeclare."}
+{"instruction": "`Pick` untuk apa?", "input": "", "output": "`Pick<T, 'a' | 'b'>` carves a subtype with named fields; `Omit` drops them — both derive, never redeclare."}
+{"instruction": "How would you explain `Pick` to a junior developer?", "input": "", "output": "`Pick<T, 'a' | 'b'>` carves a subtype with named fields; `Omit` drops them — both derive, never redeclare."}
+{"instruction": "Give a real-world scenario for `Pick`.", "input": "", "output": "`Pick<T, 'a' | 'b'>` carves a subtype with named fields; `Omit` drops them — both derive, never redeclare."}
+{"instruction": "What problem does `Pick` solve?", "input": "", "output": "`Pick<T, 'a' | 'b'>` carves a subtype with named fields; `Omit` drops them — both derive, never redeclare."}
+{"instruction": "What does `Omit` do?", "input": "", "output": "`Omit<Response, 'secret'>` strips sensitive fields for public shapes; the source stays canonical."}
+{"instruction": "Explain `Omit` briefly.", "input": "", "output": "`Omit<Response, 'secret'>` strips sensitive fields for public shapes; the source stays canonical."}
+{"instruction": "When do I use `Omit`?", "input": "", "output": "`Omit<Response, 'secret'>` strips sensitive fields for public shapes; the source stays canonical."}
+{"instruction": "Give a practical example of `Omit`.", "input": "", "output": "`Omit<Response, 'secret'>` strips sensitive fields for public shapes; the source stays canonical."}
+{"instruction": "What is `Omit` for?", "input": "", "output": "`Omit<Response, 'secret'>` strips sensitive fields for public shapes; the source stays canonical."}
+{"instruction": "Apakah fungsi `Omit`?", "input": "", "output": "`Omit<Response, 'secret'>` strips sensitive fields for public shapes; the source stays canonical."}
+{"instruction": "Terangkan `Omit` secara ringkas.", "input": "", "output": "`Omit<Response, 'secret'>` strips sensitive fields for public shapes; the source stays canonical."}
+{"instruction": "Bila perlu guna `Omit`?", "input": "", "output": "`Omit<Response, 'secret'>` strips sensitive fields for public shapes; the source stays canonical."}
+{"instruction": "Beri contoh penggunaan `Omit`.", "input": "", "output": "`Omit<Response, 'secret'>` strips sensitive fields for public shapes; the source stays canonical."}
+{"instruction": "`Omit` untuk apa?", "input": "", "output": "`Omit<Response, 'secret'>` strips sensitive fields for public shapes; the source stays canonical."}
+{"instruction": "How would you explain `Omit` to a junior developer?", "input": "", "output": "`Omit<Response, 'secret'>` strips sensitive fields for public shapes; the source stays canonical."}
+{"instruction": "Give a real-world scenario for `Omit`.", "input": "", "output": "`Omit<Response, 'secret'>` strips sensitive fields for public shapes; the source stays canonical."}
+{"instruction": "What problem does `Omit` solve?", "input": "", "output": "`Omit<Response, 'secret'>` strips sensitive fields for public shapes; the source stays canonical."}
+{"instruction": "What does `Partial` do?", "input": "", "output": "`Partial<T>` makes every field optional — for updates/patches; `Required<T>` reverses it for completed states."}
+{"instruction": "Explain `Partial` briefly.", "input": "", "output": "`Partial<T>` makes every field optional — for updates/patches; `Required<T>` reverses it for completed states."}
+{"instruction": "When do I use `Partial`?", "input": "", "output": "`Partial<T>` makes every field optional — for updates/patches; `Required<T>` reverses it for completed states."}
+{"instruction": "Give a practical example of `Partial`.", "input": "", "output": "`Partial<T>` makes every field optional — for updates/patches; `Required<T>` reverses it for completed states."}
+{"instruction": "What is `Partial` for?", "input": "", "output": "`Partial<T>` makes every field optional — for updates/patches; `Required<T>` reverses it for completed states."}
+{"instruction": "Apakah fungsi `Partial`?", "input": "", "output": "`Partial<T>` makes every field optional — for updates/patches; `Required<T>` reverses it for completed states."}
+{"instruction": "Terangkan `Partial` secara ringkas.", "input": "", "output": "`Partial<T>` makes every field optional — for updates/patches; `Required<T>` reverses it for completed states."}
+{"instruction": "Bila perlu guna `Partial`?", "input": "", "output": "`Partial<T>` makes every field optional — for updates/patches; `Required<T>` reverses it for completed states."}
+{"instruction": "Beri contoh penggunaan `Partial`.", "input": "", "output": "`Partial<T>` makes every field optional — for updates/patches; `Required<T>` reverses it for completed states."}
+{"instruction": "`Partial` untuk apa?", "input": "", "output": "`Partial<T>` makes every field optional — for updates/patches; `Required<T>` reverses it for completed states."}
+{"instruction": "How would you explain `Partial` to a junior developer?", "input": "", "output": "`Partial<T>` makes every field optional — for updates/patches; `Required<T>` reverses it for completed states."}
+{"instruction": "Give a real-world scenario for `Partial`.", "input": "", "output": "`Partial<T>` makes every field optional — for updates/patches; `Required<T>` reverses it for completed states."}
+{"instruction": "What problem does `Partial` solve?", "input": "", "output": "`Partial<T>` makes every field optional — for updates/patches; `Required<T>` reverses it for completed states."}
+{"instruction": "What does `Required Readonly` do?", "input": "", "output": "`Required` fills optionals, `Readonly` freezes writes; compose them (`Readonly<Partial<T>>`) for draft snapshots."}
+{"instruction": "Explain `Required Readonly` briefly.", "input": "", "output": "`Required` fills optionals, `Readonly` freezes writes; compose them (`Readonly<Partial<T>>`) for draft snapshots."}
+{"instruction": "When do I use `Required Readonly`?", "input": "", "output": "`Required` fills optionals, `Readonly` freezes writes; compose them (`Readonly<Partial<T>>`) for draft snapshots."}
+{"instruction": "Give a practical example of `Required Readonly`.", "input": "", "output": "`Required` fills optionals, `Readonly` freezes writes; compose them (`Readonly<Partial<T>>`) for draft snapshots."}
+{"instruction": "What is `Required Readonly` for?", "input": "", "output": "`Required` fills optionals, `Readonly` freezes writes; compose them (`Readonly<Partial<T>>`) for draft snapshots."}
+{"instruction": "Apakah fungsi `Required Readonly`?", "input": "", "output": "`Required` fills optionals, `Readonly` freezes writes; compose them (`Readonly<Partial<T>>`) for draft snapshots."}
+{"instruction": "Terangkan `Required Readonly` secara ringkas.", "input": "", "output": "`Required` fills optionals, `Readonly` freezes writes; compose them (`Readonly<Partial<T>>`) for draft snapshots."}
+{"instruction": "Bila perlu guna `Required Readonly`?", "input": "", "output": "`Required` fills optionals, `Readonly` freezes writes; compose them (`Readonly<Partial<T>>`) for draft snapshots."}
+{"instruction": "Beri contoh penggunaan `Required Readonly`.", "input": "", "output": "`Required` fills optionals, `Readonly` freezes writes; compose them (`Readonly<Partial<T>>`) for draft snapshots."}
+{"instruction": "`Required Readonly` untuk apa?", "input": "", "output": "`Required` fills optionals, `Readonly` freezes writes; compose them (`Readonly<Partial<T>>`) for draft snapshots."}
+{"instruction": "How would you explain `Required Readonly` to a junior developer?", "input": "", "output": "`Required` fills optionals, `Readonly` freezes writes; compose them (`Readonly<Partial<T>>`) for draft snapshots."}
+{"instruction": "Give a real-world scenario for `Required Readonly`.", "input": "", "output": "`Required` fills optionals, `Readonly` freezes writes; compose them (`Readonly<Partial<T>>`) for draft snapshots."}
+{"instruction": "What problem does `Required Readonly` solve?", "input": "", "output": "`Required` fills optionals, `Readonly` freezes writes; compose them (`Readonly<Partial<T>>`) for draft snapshots."}
+{"instruction": "What does `Exclude Extract` do?", "input": "", "output": "`Exclude<A, B>` removes members, `Extract` keeps the overlap — set algebra over union types."}
+{"instruction": "Explain `Exclude Extract` briefly.", "input": "", "output": "`Exclude<A, B>` removes members, `Extract` keeps the overlap — set algebra over union types."}
+{"instruction": "When do I use `Exclude Extract`?", "input": "", "output": "`Exclude<A, B>` removes members, `Extract` keeps the overlap — set algebra over union types."}
+{"instruction": "Give a practical example of `Exclude Extract`.", "input": "", "output": "`Exclude<A, B>` removes members, `Extract` keeps the overlap — set algebra over union types."}
+{"instruction": "What is `Exclude Extract` for?", "input": "", "output": "`Exclude<A, B>` removes members, `Extract` keeps the overlap — set algebra over union types."}
+{"instruction": "Apakah fungsi `Exclude Extract`?", "input": "", "output": "`Exclude<A, B>` removes members, `Extract` keeps the overlap — set algebra over union types."}
+{"instruction": "Terangkan `Exclude Extract` secara ringkas.", "input": "", "output": "`Exclude<A, B>` removes members, `Extract` keeps the overlap — set algebra over union types."}
+{"instruction": "Bila perlu guna `Exclude Extract`?", "input": "", "output": "`Exclude<A, B>` removes members, `Extract` keeps the overlap — set algebra over union types."}
+{"instruction": "Beri contoh penggunaan `Exclude Extract`.", "input": "", "output": "`Exclude<A, B>` removes members, `Extract` keeps the overlap — set algebra over union types."}
+{"instruction": "`Exclude Extract` untuk apa?", "input": "", "output": "`Exclude<A, B>` removes members, `Extract` keeps the overlap — set algebra over union types."}
+{"instruction": "How would you explain `Exclude Extract` to a junior developer?", "input": "", "output": "`Exclude<A, B>` removes members, `Extract` keeps the overlap — set algebra over union types."}
+{"instruction": "Give a real-world scenario for `Exclude Extract`.", "input": "", "output": "`Exclude<A, B>` removes members, `Extract` keeps the overlap — set algebra over union types."}
+{"instruction": "What problem does `Exclude Extract` solve?", "input": "", "output": "`Exclude<A, B>` removes members, `Extract` keeps the overlap — set algebra over union types."}
+{"instruction": "What does `ReturnType Parameters` do?", "input": "", "output": "`ReturnType<typeof f>`/`Parameters<typeof f>` mirror function shapes so wrappers never drift from implementations."}
+{"instruction": "Explain `ReturnType Parameters` briefly.", "input": "", "output": "`ReturnType<typeof f>`/`Parameters<typeof f>` mirror function shapes so wrappers never drift from implementations."}
+{"instruction": "When do I use `ReturnType Parameters`?", "input": "", "output": "`ReturnType<typeof f>`/`Parameters<typeof f>` mirror function shapes so wrappers never drift from implementations."}
+{"instruction": "Give a practical example of `ReturnType Parameters`.", "input": "", "output": "`ReturnType<typeof f>`/`Parameters<typeof f>` mirror function shapes so wrappers never drift from implementations."}
+{"instruction": "What is `ReturnType Parameters` for?", "input": "", "output": "`ReturnType<typeof f>`/`Parameters<typeof f>` mirror function shapes so wrappers never drift from implementations."}
+{"instruction": "Apakah fungsi `ReturnType Parameters`?", "input": "", "output": "`ReturnType<typeof f>`/`Parameters<typeof f>` mirror function shapes so wrappers never drift from implementations."}
+{"instruction": "Terangkan `ReturnType Parameters` secara ringkas.", "input": "", "output": "`ReturnType<typeof f>`/`Parameters<typeof f>` mirror function shapes so wrappers never drift from implementations."}
+{"instruction": "Bila perlu guna `ReturnType Parameters`?", "input": "", "output": "`ReturnType<typeof f>`/`Parameters<typeof f>` mirror function shapes so wrappers never drift from implementations."}
+{"instruction": "Beri contoh penggunaan `ReturnType Parameters`.", "input": "", "output": "`ReturnType<typeof f>`/`Parameters<typeof f>` mirror function shapes so wrappers never drift from implementations."}
+{"instruction": "`ReturnType Parameters` untuk apa?", "input": "", "output": "`ReturnType<typeof f>`/`Parameters<typeof f>` mirror function shapes so wrappers never drift from implementations."}
+{"instruction": "How would you explain `ReturnType Parameters` to a junior developer?", "input": "", "output": "`ReturnType<typeof f>`/`Parameters<typeof f>` mirror function shapes so wrappers never drift from implementations."}
+{"instruction": "Give a real-world scenario for `ReturnType Parameters`.", "input": "", "output": "`ReturnType<typeof f>`/`Parameters<typeof f>` mirror function shapes so wrappers never drift from implementations."}
+{"instruction": "What problem does `ReturnType Parameters` solve?", "input": "", "output": "`ReturnType<typeof f>`/`Parameters<typeof f>` mirror function shapes so wrappers never drift from implementations."}
+{"instruction": "What does `non-null !` do?", "input": "", "output": "Postfix `!` asserts non-null to the checker — a lie the compiler believes; prefer narrowing or explicit throws."}
+{"instruction": "Explain `non-null !` briefly.", "input": "", "output": "Postfix `!` asserts non-null to the checker — a lie the compiler believes; prefer narrowing or explicit throws."}
+{"instruction": "When do I use `non-null !`?", "input": "", "output": "Postfix `!` asserts non-null to the checker — a lie the compiler believes; prefer narrowing or explicit throws."}
+{"instruction": "Give a practical example of `non-null !`.", "input": "", "output": "Postfix `!` asserts non-null to the checker — a lie the compiler believes; prefer narrowing or explicit throws."}
+{"instruction": "What is `non-null !` for?", "input": "", "output": "Postfix `!` asserts non-null to the checker — a lie the compiler believes; prefer narrowing or explicit throws."}
+{"instruction": "Apakah fungsi `non-null !`?", "input": "", "output": "Postfix `!` asserts non-null to the checker — a lie the compiler believes; prefer narrowing or explicit throws."}
+{"instruction": "Terangkan `non-null !` secara ringkas.", "input": "", "output": "Postfix `!` asserts non-null to the checker — a lie the compiler believes; prefer narrowing or explicit throws."}
+{"instruction": "Bila perlu guna `non-null !`?", "input": "", "output": "Postfix `!` asserts non-null to the checker — a lie the compiler believes; prefer narrowing or explicit throws."}
+{"instruction": "Beri contoh penggunaan `non-null !`.", "input": "", "output": "Postfix `!` asserts non-null to the checker — a lie the compiler believes; prefer narrowing or explicit throws."}
+{"instruction": "`non-null !` untuk apa?", "input": "", "output": "Postfix `!` asserts non-null to the checker — a lie the compiler believes; prefer narrowing or explicit throws."}
+{"instruction": "How would you explain `non-null !` to a junior developer?", "input": "", "output": "Postfix `!` asserts non-null to the checker — a lie the compiler believes; prefer narrowing or explicit throws."}
+{"instruction": "Give a real-world scenario for `non-null !`.", "input": "", "output": "Postfix `!` asserts non-null to the checker — a lie the compiler believes; prefer narrowing or explicit throws."}
+{"instruction": "What problem does `non-null !` solve?", "input": "", "output": "Postfix `!` asserts non-null to the checker — a lie the compiler believes; prefer narrowing or explicit throws."}
+{"instruction": "What does `void` do?", "input": "", "output": "`void` means returns-nothing-useful (callbacks, setters); `undefined` is a value, `never` is unreachable — three ideas, not one."}
+{"instruction": "Explain `void` briefly.", "input": "", "output": "`void` means returns-nothing-useful (callbacks, setters); `undefined` is a value, `never` is unreachable — three ideas, not one."}
+{"instruction": "When do I use `void`?", "input": "", "output": "`void` means returns-nothing-useful (callbacks, setters); `undefined` is a value, `never` is unreachable — three ideas, not one."}
+{"instruction": "Give a practical example of `void`.", "input": "", "output": "`void` means returns-nothing-useful (callbacks, setters); `undefined` is a value, `never` is unreachable — three ideas, not one."}
+{"instruction": "What is `void` for?", "input": "", "output": "`void` means returns-nothing-useful (callbacks, setters); `undefined` is a value, `never` is unreachable — three ideas, not one."}
+{"instruction": "Apakah fungsi `void`?", "input": "", "output": "`void` means returns-nothing-useful (callbacks, setters); `undefined` is a value, `never` is unreachable — three ideas, not one."}
+{"instruction": "Terangkan `void` secara ringkas.", "input": "", "output": "`void` means returns-nothing-useful (callbacks, setters); `undefined` is a value, `never` is unreachable — three ideas, not one."}
+{"instruction": "Bila perlu guna `void`?", "input": "", "output": "`void` means returns-nothing-useful (callbacks, setters); `undefined` is a value, `never` is unreachable — three ideas, not one."}
+{"instruction": "Beri contoh penggunaan `void`.", "input": "", "output": "`void` means returns-nothing-useful (callbacks, setters); `undefined` is a value, `never` is unreachable — three ideas, not one."}
+{"instruction": "`void` untuk apa?", "input": "", "output": "`void` means returns-nothing-useful (callbacks, setters); `undefined` is a value, `never` is unreachable — three ideas, not one."}
+{"instruction": "How would you explain `void` to a junior developer?", "input": "", "output": "`void` means returns-nothing-useful (callbacks, setters); `undefined` is a value, `never` is unreachable — three ideas, not one."}
+{"instruction": "Give a real-world scenario for `void`.", "input": "", "output": "`void` means returns-nothing-useful (callbacks, setters); `undefined` is a value, `never` is unreachable — three ideas, not one."}
+{"instruction": "What problem does `void` solve?", "input": "", "output": "`void` means returns-nothing-useful (callbacks, setters); `undefined` is a value, `never` is unreachable — three ideas, not one."}
+{"instruction": "What does `overloads` do?", "input": "", "output": "Overload signatures give precise call shapes over one implementation; beyond three, an options object reads better."}
+{"instruction": "Explain `overloads` briefly.", "input": "", "output": "Overload signatures give precise call shapes over one implementation; beyond three, an options object reads better."}
+{"instruction": "When do I use `overloads`?", "input": "", "output": "Overload signatures give precise call shapes over one implementation; beyond three, an options object reads better."}
+{"instruction": "Give a practical example of `overloads`.", "input": "", "output": "Overload signatures give precise call shapes over one implementation; beyond three, an options object reads better."}
+{"instruction": "What is `overloads` for?", "input": "", "output": "Overload signatures give precise call shapes over one implementation; beyond three, an options object reads better."}
+{"instruction": "Apakah fungsi `overloads`?", "input": "", "output": "Overload signatures give precise call shapes over one implementation; beyond three, an options object reads better."}
+{"instruction": "Terangkan `overloads` secara ringkas.", "input": "", "output": "Overload signatures give precise call shapes over one implementation; beyond three, an options object reads better."}
+{"instruction": "Bila perlu guna `overloads`?", "input": "", "output": "Overload signatures give precise call shapes over one implementation; beyond three, an options object reads better."}
+{"instruction": "Beri contoh penggunaan `overloads`.", "input": "", "output": "Overload signatures give precise call shapes over one implementation; beyond three, an options object reads better."}
+{"instruction": "`overloads` untuk apa?", "input": "", "output": "Overload signatures give precise call shapes over one implementation; beyond three, an options object reads better."}
+{"instruction": "How would you explain `overloads` to a junior developer?", "input": "", "output": "Overload signatures give precise call shapes over one implementation; beyond three, an options object reads better."}
+{"instruction": "Give a real-world scenario for `overloads`.", "input": "", "output": "Overload signatures give precise call shapes over one implementation; beyond three, an options object reads better."}
+{"instruction": "What problem does `overloads` solve?", "input": "", "output": "Overload signatures give precise call shapes over one implementation; beyond three, an options object reads better."}
+{"instruction": "What does `const assertions` do?", "input": "", "output": "`as const` freezes literals (`'get'`, not `string`) for discriminators and config maps checked exhaustively."}
+{"instruction": "Explain `const assertions` briefly.", "input": "", "output": "`as const` freezes literals (`'get'`, not `string`) for discriminators and config maps checked exhaustively."}
+{"instruction": "When do I use `const assertions`?", "input": "", "output": "`as const` freezes literals (`'get'`, not `string`) for discriminators and config maps checked exhaustively."}
+{"instruction": "Give a practical example of `const assertions`.", "input": "", "output": "`as const` freezes literals (`'get'`, not `string`) for discriminators and config maps checked exhaustively."}
+{"instruction": "What is `const assertions` for?", "input": "", "output": "`as const` freezes literals (`'get'`, not `string`) for discriminators and config maps checked exhaustively."}
+{"instruction": "Apakah fungsi `const assertions`?", "input": "", "output": "`as const` freezes literals (`'get'`, not `string`) for discriminators and config maps checked exhaustively."}
+{"instruction": "Terangkan `const assertions` secara ringkas.", "input": "", "output": "`as const` freezes literals (`'get'`, not `string`) for discriminators and config maps checked exhaustively."}
+{"instruction": "Bila perlu guna `const assertions`?", "input": "", "output": "`as const` freezes literals (`'get'`, not `string`) for discriminators and config maps checked exhaustively."}
+{"instruction": "Beri contoh penggunaan `const assertions`.", "input": "", "output": "`as const` freezes literals (`'get'`, not `string`) for discriminators and config maps checked exhaustively."}
+{"instruction": "`const assertions` untuk apa?", "input": "", "output": "`as const` freezes literals (`'get'`, not `string`) for discriminators and config maps checked exhaustively."}
+{"instruction": "How would you explain `const assertions` to a junior developer?", "input": "", "output": "`as const` freezes literals (`'get'`, not `string`) for discriminators and config maps checked exhaustively."}
+{"instruction": "Give a real-world scenario for `const assertions`.", "input": "", "output": "`as const` freezes literals (`'get'`, not `string`) for discriminators and config maps checked exhaustively."}
+{"instruction": "What problem does `const assertions` solve?", "input": "", "output": "`as const` freezes literals (`'get'`, not `string`) for discriminators and config maps checked exhaustively."}
+{"instruction": "What does `template literal types` do?", "input": "", "output": "`` `GET /${Resource}` `` types URL patterns at compile; typos in route strings become errors, not 404s."}
+{"instruction": "Explain `template literal types` briefly.", "input": "", "output": "`` `GET /${Resource}` `` types URL patterns at compile; typos in route strings become errors, not 404s."}
+{"instruction": "When do I use `template literal types`?", "input": "", "output": "`` `GET /${Resource}` `` types URL patterns at compile; typos in route strings become errors, not 404s."}
+{"instruction": "Give a practical example of `template literal types`.", "input": "", "output": "`` `GET /${Resource}` `` types URL patterns at compile; typos in route strings become errors, not 404s."}
+{"instruction": "What is `template literal types` for?", "input": "", "output": "`` `GET /${Resource}` `` types URL patterns at compile; typos in route strings become errors, not 404s."}
+{"instruction": "Apakah fungsi `template literal types`?", "input": "", "output": "`` `GET /${Resource}` `` types URL patterns at compile; typos in route strings become errors, not 404s."}
+{"instruction": "Terangkan `template literal types` secara ringkas.", "input": "", "output": "`` `GET /${Resource}` `` types URL patterns at compile; typos in route strings become errors, not 404s."}
+{"instruction": "Bila perlu guna `template literal types`?", "input": "", "output": "`` `GET /${Resource}` `` types URL patterns at compile; typos in route strings become errors, not 404s."}
+{"instruction": "Beri contoh penggunaan `template literal types`.", "input": "", "output": "`` `GET /${Resource}` `` types URL patterns at compile; typos in route strings become errors, not 404s."}
+{"instruction": "`template literal types` untuk apa?", "input": "", "output": "`` `GET /${Resource}` `` types URL patterns at compile; typos in route strings become errors, not 404s."}
+{"instruction": "How would you explain `template literal types` to a junior developer?", "input": "", "output": "`` `GET /${Resource}` `` types URL patterns at compile; typos in route strings become errors, not 404s."}
+{"instruction": "Give a real-world scenario for `template literal types`.", "input": "", "output": "`` `GET /${Resource}` `` types URL patterns at compile; typos in route strings become errors, not 404s."}
+{"instruction": "What problem does `template literal types` solve?", "input": "", "output": "`` `GET /${Resource}` `` types URL patterns at compile; typos in route strings become errors, not 404s."}
+{"instruction": "What does `conditional types` do?", "input": "", "output": "`T extends U ? A : B` branches on types — the machinery behind Exclude/ReturnType; distribute over unions carefully."}
+{"instruction": "Explain `conditional types` briefly.", "input": "", "output": "`T extends U ? A : B` branches on types — the machinery behind Exclude/ReturnType; distribute over unions carefully."}
+{"instruction": "When do I use `conditional types`?", "input": "", "output": "`T extends U ? A : B` branches on types — the machinery behind Exclude/ReturnType; distribute over unions carefully."}
+{"instruction": "Give a practical example of `conditional types`.", "input": "", "output": "`T extends U ? A : B` branches on types — the machinery behind Exclude/ReturnType; distribute over unions carefully."}
+{"instruction": "What is `conditional types` for?", "input": "", "output": "`T extends U ? A : B` branches on types — the machinery behind Exclude/ReturnType; distribute over unions carefully."}
+{"instruction": "Apakah fungsi `conditional types`?", "input": "", "output": "`T extends U ? A : B` branches on types — the machinery behind Exclude/ReturnType; distribute over unions carefully."}
+{"instruction": "Terangkan `conditional types` secara ringkas.", "input": "", "output": "`T extends U ? A : B` branches on types — the machinery behind Exclude/ReturnType; distribute over unions carefully."}
+{"instruction": "Bila perlu guna `conditional types`?", "input": "", "output": "`T extends U ? A : B` branches on types — the machinery behind Exclude/ReturnType; distribute over unions carefully."}
+{"instruction": "Beri contoh penggunaan `conditional types`.", "input": "", "output": "`T extends U ? A : B` branches on types — the machinery behind Exclude/ReturnType; distribute over unions carefully."}
+{"instruction": "`conditional types` untuk apa?", "input": "", "output": "`T extends U ? A : B` branches on types — the machinery behind Exclude/ReturnType; distribute over unions carefully."}
+{"instruction": "How would you explain `conditional types` to a junior developer?", "input": "", "output": "`T extends U ? A : B` branches on types — the machinery behind Exclude/ReturnType; distribute over unions carefully."}
+{"instruction": "Give a real-world scenario for `conditional types`.", "input": "", "output": "`T extends U ? A : B` branches on types — the machinery behind Exclude/ReturnType; distribute over unions carefully."}
+{"instruction": "What problem does `conditional types` solve?", "input": "", "output": "`T extends U ? A : B` branches on types — the machinery behind Exclude/ReturnType; distribute over unions carefully."}
+{"instruction": "What does `index signatures` do?", "input": "", "output": "`{ [k: string]: number }` types open dictionaries; `Record` is the tidy alias, `Map` the runtime equivalent."}
+{"instruction": "Explain `index signatures` briefly.", "input": "", "output": "`{ [k: string]: number }` types open dictionaries; `Record` is the tidy alias, `Map` the runtime equivalent."}
+{"instruction": "When do I use `index signatures`?", "input": "", "output": "`{ [k: string]: number }` types open dictionaries; `Record` is the tidy alias, `Map` the runtime equivalent."}
+{"instruction": "Give a practical example of `index signatures`.", "input": "", "output": "`{ [k: string]: number }` types open dictionaries; `Record` is the tidy alias, `Map` the runtime equivalent."}
+{"instruction": "What is `index signatures` for?", "input": "", "output": "`{ [k: string]: number }` types open dictionaries; `Record` is the tidy alias, `Map` the runtime equivalent."}
+{"instruction": "Apakah fungsi `index signatures`?", "input": "", "output": "`{ [k: string]: number }` types open dictionaries; `Record` is the tidy alias, `Map` the runtime equivalent."}
+{"instruction": "Terangkan `index signatures` secara ringkas.", "input": "", "output": "`{ [k: string]: number }` types open dictionaries; `Record` is the tidy alias, `Map` the runtime equivalent."}
+{"instruction": "Bila perlu guna `index signatures`?", "input": "", "output": "`{ [k: string]: number }` types open dictionaries; `Record` is the tidy alias, `Map` the runtime equivalent."}
+{"instruction": "Beri contoh penggunaan `index signatures`.", "input": "", "output": "`{ [k: string]: number }` types open dictionaries; `Record` is the tidy alias, `Map` the runtime equivalent."}
+{"instruction": "`index signatures` untuk apa?", "input": "", "output": "`{ [k: string]: number }` types open dictionaries; `Record` is the tidy alias, `Map` the runtime equivalent."}
+{"instruction": "How would you explain `index signatures` to a junior developer?", "input": "", "output": "`{ [k: string]: number }` types open dictionaries; `Record` is the tidy alias, `Map` the runtime equivalent."}
+{"instruction": "Give a real-world scenario for `index signatures`.", "input": "", "output": "`{ [k: string]: number }` types open dictionaries; `Record` is the tidy alias, `Map` the runtime equivalent."}
+{"instruction": "What problem does `index signatures` solve?", "input": "", "output": "`{ [k: string]: number }` types open dictionaries; `Record` is the tidy alias, `Map` the runtime equivalent."}
+{"instruction": "What does `noUncheckedIndexedAccess` do?", "input": "", "output": "This flag adds `| undefined` to every index access — array/dict reads must handle missing, killing a whole bug class."}
+{"instruction": "Explain `noUncheckedIndexedAccess` briefly.", "input": "", "output": "This flag adds `| undefined` to every index access — array/dict reads must handle missing, killing a whole bug class."}
+{"instruction": "When do I use `noUncheckedIndexedAccess`?", "input": "", "output": "This flag adds `| undefined` to every index access — array/dict reads must handle missing, killing a whole bug class."}
+{"instruction": "Give a practical example of `noUncheckedIndexedAccess`.", "input": "", "output": "This flag adds `| undefined` to every index access — array/dict reads must handle missing, killing a whole bug class."}
+{"instruction": "What is `noUncheckedIndexedAccess` for?", "input": "", "output": "This flag adds `| undefined` to every index access — array/dict reads must handle missing, killing a whole bug class."}
+{"instruction": "Apakah fungsi `noUncheckedIndexedAccess`?", "input": "", "output": "This flag adds `| undefined` to every index access — array/dict reads must handle missing, killing a whole bug class."}
+{"instruction": "Terangkan `noUncheckedIndexedAccess` secara ringkas.", "input": "", "output": "This flag adds `| undefined` to every index access — array/dict reads must handle missing, killing a whole bug class."}
+{"instruction": "Bila perlu guna `noUncheckedIndexedAccess`?", "input": "", "output": "This flag adds `| undefined` to every index access — array/dict reads must handle missing, killing a whole bug class."}
+{"instruction": "Beri contoh penggunaan `noUncheckedIndexedAccess`.", "input": "", "output": "This flag adds `| undefined` to every index access — array/dict reads must handle missing, killing a whole bug class."}
+{"instruction": "`noUncheckedIndexedAccess` untuk apa?", "input": "", "output": "This flag adds `| undefined` to every index access — array/dict reads must handle missing, killing a whole bug class."}
+{"instruction": "How would you explain `noUncheckedIndexedAccess` to a junior developer?", "input": "", "output": "This flag adds `| undefined` to every index access — array/dict reads must handle missing, killing a whole bug class."}
+{"instruction": "Give a real-world scenario for `noUncheckedIndexedAccess`.", "input": "", "output": "This flag adds `| undefined` to every index access — array/dict reads must handle missing, killing a whole bug class."}
+{"instruction": "What problem does `noUncheckedIndexedAccess` solve?", "input": "", "output": "This flag adds `| undefined` to every index access — array/dict reads must handle missing, killing a whole bug class."}
+{"instruction": "Terangkan `interface` dalam satu minit.", "input": "", "output": "Interfaces lock object shapes; missing or mistyped fields fail at compile, not in production."}
+{"instruction": "Apa yang perlu saya tahu tentang `interface`?", "input": "", "output": "Interfaces lock object shapes; missing or mistyped fields fail at compile, not in production."}
+{"instruction": "Bagaimanakah `interface` berfungsi?", "input": "", "output": "Interfaces lock object shapes; missing or mistyped fields fail at compile, not in production."}
+{"instruction": "Bilakah masa yang sesuai untuk `interface`?", "input": "", "output": "Interfaces lock object shapes; missing or mistyped fields fail at compile, not in production."}
+{"instruction": "Terangkan `type alias` dalam satu minit.", "input": "", "output": "Type aliases name unions, tuples and primitives; one source of truth beats repeated annotations."}
+{"instruction": "Apa yang perlu saya tahu tentang `type alias`?", "input": "", "output": "Type aliases name unions, tuples and primitives; one source of truth beats repeated annotations."}
+{"instruction": "Bagaimanakah `type alias` berfungsi?", "input": "", "output": "Type aliases name unions, tuples and primitives; one source of truth beats repeated annotations."}
+{"instruction": "Bilakah masa yang sesuai untuk `type alias`?", "input": "", "output": "Type aliases name unions, tuples and primitives; one source of truth beats repeated annotations."}
+{"instruction": "Terangkan `enum` dalam satu minit.", "input": "", "output": "Enums name fixed value sets; for tiny cases a union of literals is lighter and tree-shakes better."}
+{"instruction": "Apa yang perlu saya tahu tentang `enum`?", "input": "", "output": "Enums name fixed value sets; for tiny cases a union of literals is lighter and tree-shakes better."}
+{"instruction": "Bagaimanakah `enum` berfungsi?", "input": "", "output": "Enums name fixed value sets; for tiny cases a union of literals is lighter and tree-shakes better."}
+{"instruction": "Bilakah masa yang sesuai untuk `enum`?", "input": "", "output": "Enums name fixed value sets; for tiny cases a union of literals is lighter and tree-shakes better."}
+{"instruction": "Terangkan `generics <T>` dalam satu minit.", "input": "", "output": "Generics keep functions reusable without `any` — caller types flow through to the return type."}
+{"instruction": "Apa yang perlu saya tahu tentang `generics <T>`?", "input": "", "output": "Generics keep functions reusable without `any` — caller types flow through to the return type."}
+{"instruction": "Bagaimanakah `generics <T>` berfungsi?", "input": "", "output": "Generics keep functions reusable without `any` — caller types flow through to the return type."}
+{"instruction": "Bilakah masa yang sesuai untuk `generics <T>`?", "input": "", "output": "Generics keep functions reusable without `any` — caller types flow through to the return type."}
+{"instruction": "Terangkan `union string | number` dalam satu minit.", "input": "", "output": "Unions admit several types; narrow with `typeof` checks before using specific methods."}
+{"instruction": "Apa yang perlu saya tahu tentang `union string | number`?", "input": "", "output": "Unions admit several types; narrow with `typeof` checks before using specific methods."}
+{"instruction": "Bagaimanakah `union string | number` berfungsi?", "input": "", "output": "Unions admit several types; narrow with `typeof` checks before using specific methods."}
+{"instruction": "Bilakah masa yang sesuai untuk `union string | number`?", "input": "", "output": "Unions admit several types; narrow with `typeof` checks before using specific methods."}
+{"instruction": "Terangkan `optional ?` dalam satu minit.", "input": "", "output": "`?` marks fields/params optional (type plus undefined); pair with `??` defaults at use sites."}
+{"instruction": "Apa yang perlu saya tahu tentang `optional ?`?", "input": "", "output": "`?` marks fields/params optional (type plus undefined); pair with `??` defaults at use sites."}
+{"instruction": "Bagaimanakah `optional ?` berfungsi?", "input": "", "output": "`?` marks fields/params optional (type plus undefined); pair with `??` defaults at use sites."}
+{"instruction": "Bilakah masa yang sesuai untuk `optional ?`?", "input": "", "output": "`?` marks fields/params optional (type plus undefined); pair with `??` defaults at use sites."}
+{"instruction": "Terangkan `readonly` dalam satu minit.", "input": "", "output": "`readonly` blocks writes after construction; `as const` freezes literals for config objects."}
+{"instruction": "Apa yang perlu saya tahu tentang `readonly`?", "input": "", "output": "`readonly` blocks writes after construction; `as const` freezes literals for config objects."}
+{"instruction": "Bagaimanakah `readonly` berfungsi?", "input": "", "output": "`readonly` blocks writes after construction; `as const` freezes literals for config objects."}
+{"instruction": "Bilakah masa yang sesuai untuk `readonly`?", "input": "", "output": "`readonly` blocks writes after construction; `as const` freezes literals for config objects."}
+{"instruction": "Terangkan `tuple [string, number]` dalam satu minit.", "input": "", "output": "Tuples fix length and per-slot types; `readonly` tuples suit function returns of pairs."}
+{"instruction": "Apa yang perlu saya tahu tentang `tuple [string, number]`?", "input": "", "output": "Tuples fix length and per-slot types; `readonly` tuples suit function returns of pairs."}
+{"instruction": "Bagaimanakah `tuple [string, number]` berfungsi?", "input": "", "output": "Tuples fix length and per-slot types; `readonly` tuples suit function returns of pairs."}
+{"instruction": "Bilakah masa yang sesuai untuk `tuple [string, number]`?", "input": "", "output": "Tuples fix length and per-slot types; `readonly` tuples suit function returns of pairs."}
+{"instruction": "Terangkan `Record<K,V>` dalam satu minit.", "input": "", "output": "`Record<string, number>` types dictionaries; `Partial/Pick/Omit` derive variants from one interface."}
+{"instruction": "Apa yang perlu saya tahu tentang `Record<K,V>`?", "input": "", "output": "`Record<string, number>` types dictionaries; `Partial/Pick/Omit` derive variants from one interface."}
+{"instruction": "Bagaimanakah `Record<K,V>` berfungsi?", "input": "", "output": "`Record<string, number>` types dictionaries; `Partial/Pick/Omit` derive variants from one interface."}
+{"instruction": "Bilakah masa yang sesuai untuk `Record<K,V>`?", "input": "", "output": "`Record<string, number>` types dictionaries; `Partial/Pick/Omit` derive variants from one interface."}
+{"instruction": "Terangkan `unknown vs any` dalam satu minit.", "input": "", "output": "`unknown` forces narrowing before use; `any` disables checking entirely — treat as tech debt."}
+{"instruction": "Apa yang perlu saya tahu tentang `unknown vs any`?", "input": "", "output": "`unknown` forces narrowing before use; `any` disables checking entirely — treat as tech debt."}
+{"instruction": "Bagaimanakah `unknown vs any` berfungsi?", "input": "", "output": "`unknown` forces narrowing before use; `any` disables checking entirely — treat as tech debt."}
+{"instruction": "Bilakah masa yang sesuai untuk `unknown vs any`?", "input": "", "output": "`unknown` forces narrowing before use; `any` disables checking entirely — treat as tech debt."}
+{"instruction": "Terangkan `never` dalam satu minit.", "input": "", "output": "`never` marks unreachable code; use it in switch defaults so new cases fail compilation loudly."}
+{"instruction": "Apa yang perlu saya tahu tentang `never`?", "input": "", "output": "`never` marks unreachable code; use it in switch defaults so new cases fail compilation loudly."}
+{"instruction": "Bagaimanakah `never` berfungsi?", "input": "", "output": "`never` marks unreachable code; use it in switch defaults so new cases fail compilation loudly."}
+{"instruction": "Bilakah masa yang sesuai untuk `never`?", "input": "", "output": "`never` marks unreachable code; use it in switch defaults so new cases fail compilation loudly."}
+{"instruction": "Terangkan `as cast` dalam satu minit.", "input": "", "output": "`as` asserts without checking — safe only after validation; prefer narrowing or schema parsing."}
+{"instruction": "Apa yang perlu saya tahu tentang `as cast`?", "input": "", "output": "`as` asserts without checking — safe only after validation; prefer narrowing or schema parsing."}
+{"instruction": "Bagaimanakah `as cast` berfungsi?", "input": "", "output": "`as` asserts without checking — safe only after validation; prefer narrowing or schema parsing."}
+{"instruction": "Bilakah masa yang sesuai untuk `as cast`?", "input": "", "output": "`as` asserts without checking — safe only after validation; prefer narrowing or schema parsing."}
+{"instruction": "Terangkan `implements` dalam satu minit.", "input": "", "output": "`class X implements Y` verifies conformance at compile; structural typing still allows compatible shapes."}
+{"instruction": "Apa yang perlu saya tahu tentang `implements`?", "input": "", "output": "`class X implements Y` verifies conformance at compile; structural typing still allows compatible shapes."}
+{"instruction": "Bagaimanakah `implements` berfungsi?", "input": "", "output": "`class X implements Y` verifies conformance at compile; structural typing still allows compatible shapes."}
+{"instruction": "Bilakah masa yang sesuai untuk `implements`?", "input": "", "output": "`class X implements Y` verifies conformance at compile; structural typing still allows compatible shapes."}
+{"instruction": "Terangkan `abstract class` dalam satu minit.", "input": "", "output": "Abstract classes mix contracts with shared implementation; one inheritance chain per class only."}
+{"instruction": "Apa yang perlu saya tahu tentang `abstract class`?", "input": "", "output": "Abstract classes mix contracts with shared implementation; one inheritance chain per class only."}
+{"instruction": "Bagaimanakah `abstract class` berfungsi?", "input": "", "output": "Abstract classes mix contracts with shared implementation; one inheritance chain per class only."}
+{"instruction": "Bilakah masa yang sesuai untuk `abstract class`?", "input": "", "output": "Abstract classes mix contracts with shared implementation; one inheritance chain per class only."}
+{"instruction": "Terangkan `namespace` dalam satu minit.", "input": "", "output": "Namespaces group legacy globals; modern code prefers ES modules — use only when integrating old scripts."}
+{"instruction": "Apa yang perlu saya tahu tentang `namespace`?", "input": "", "output": "Namespaces group legacy globals; modern code prefers ES modules — use only when integrating old scripts."}
+{"instruction": "Bagaimanakah `namespace` berfungsi?", "input": "", "output": "Namespaces group legacy globals; modern code prefers ES modules — use only when integrating old scripts."}
+{"instruction": "Bilakah masa yang sesuai untuk `namespace`?", "input": "", "output": "Namespaces group legacy globals; modern code prefers ES modules — use only when integrating old scripts."}
+{"instruction": "Terangkan `decorators @` dalam satu minit.", "input": "", "output": "Decorators attach metadata at definition time (NestJS/Angular); keep them side-effect free."}
+{"instruction": "Apa yang perlu saya tahu tentang `decorators @`?", "input": "", "output": "Decorators attach metadata at definition time (NestJS/Angular); keep them side-effect free."}
+{"instruction": "Bagaimanakah `decorators @` berfungsi?", "input": "", "output": "Decorators attach metadata at definition time (NestJS/Angular); keep them side-effect free."}
+{"instruction": "Bilakah masa yang sesuai untuk `decorators @`?", "input": "", "output": "Decorators attach metadata at definition time (NestJS/Angular); keep them side-effect free."}
+{"instruction": "Terangkan `strict mode` dalam satu minit.", "input": "", "output": "Strict mode catches null/any/property bugs at compile; migrate old code flag by flag."}
+{"instruction": "Apa yang perlu saya tahu tentang `strict mode`?", "input": "", "output": "Strict mode catches null/any/property bugs at compile; migrate old code flag by flag."}
+{"instruction": "Bagaimanakah `strict mode` berfungsi?", "input": "", "output": "Strict mode catches null/any/property bugs at compile; migrate old code flag by flag."}
+{"instruction": "Bilakah masa yang sesuai untuk `strict mode`?", "input": "", "output": "Strict mode catches null/any/property bugs at compile; migrate old code flag by flag."}
+{"instruction": "Terangkan `tsconfig paths` dalam satu minit.", "input": "", "output": "`paths` aliases (`@/*`) kill `../../../` imports; bundlers need matching config to resolve at runtime."}
+{"instruction": "Apa yang perlu saya tahu tentang `tsconfig paths`?", "input": "", "output": "`paths` aliases (`@/*`) kill `../../../` imports; bundlers need matching config to resolve at runtime."}
+{"instruction": "Bagaimanakah `tsconfig paths` berfungsi?", "input": "", "output": "`paths` aliases (`@/*`) kill `../../../` imports; bundlers need matching config to resolve at runtime."}
+{"instruction": "Bilakah masa yang sesuai untuk `tsconfig paths`?", "input": "", "output": "`paths` aliases (`@/*`) kill `../../../` imports; bundlers need matching config to resolve at runtime."}
+{"instruction": "Terangkan `declaration .d.ts` dalam satu minit.", "input": "", "output": "Declaration files describe untyped JS for the checker; `@types/*` packages provide community ones."}
+{"instruction": "Apa yang perlu saya tahu tentang `declaration .d.ts`?", "input": "", "output": "Declaration files describe untyped JS for the checker; `@types/*` packages provide community ones."}
+{"instruction": "Bagaimanakah `declaration .d.ts` berfungsi?", "input": "", "output": "Declaration files describe untyped JS for the checker; `@types/*` packages provide community ones."}
+{"instruction": "Bilakah masa yang sesuai untuk `declaration .d.ts`?", "input": "", "output": "Declaration files describe untyped JS for the checker; `@types/*` packages provide community ones."}
+{"instruction": "Terangkan `satisfies` dalam satu minit.", "input": "", "output": "`satisfies` validates shape while keeping literal types; `as` widens and hides information."}
+{"instruction": "Apa yang perlu saya tahu tentang `satisfies`?", "input": "", "output": "`satisfies` validates shape while keeping literal types; `as` widens and hides information."}
+{"instruction": "Bagaimanakah `satisfies` berfungsi?", "input": "", "output": "`satisfies` validates shape while keeping literal types; `as` widens and hides information."}
+{"instruction": "Bilakah masa yang sesuai untuk `satisfies`?", "input": "", "output": "`satisfies` validates shape while keeping literal types; `as` widens and hides information."}
+{"instruction": "Terangkan `Pick` dalam satu minit.", "input": "", "output": "`Pick<T, 'a' | 'b'>` carves a subtype with named fields; `Omit` drops them — both derive, never redeclare."}
+{"instruction": "Apa yang perlu saya tahu tentang `Pick`?", "input": "", "output": "`Pick<T, 'a' | 'b'>` carves a subtype with named fields; `Omit` drops them — both derive, never redeclare."}
+{"instruction": "Bagaimanakah `Pick` berfungsi?", "input": "", "output": "`Pick<T, 'a' | 'b'>` carves a subtype with named fields; `Omit` drops them — both derive, never redeclare."}
+{"instruction": "Bilakah masa yang sesuai untuk `Pick`?", "input": "", "output": "`Pick<T, 'a' | 'b'>` carves a subtype with named fields; `Omit` drops them — both derive, never redeclare."}
+{"instruction": "Terangkan `Omit` dalam satu minit.", "input": "", "output": "`Omit<Response, 'secret'>` strips sensitive fields for public shapes; the source stays canonical."}
+{"instruction": "Apa yang perlu saya tahu tentang `Omit`?", "input": "", "output": "`Omit<Response, 'secret'>` strips sensitive fields for public shapes; the source stays canonical."}
+{"instruction": "Bagaimanakah `Omit` berfungsi?", "input": "", "output": "`Omit<Response, 'secret'>` strips sensitive fields for public shapes; the source stays canonical."}
+{"instruction": "Bilakah masa yang sesuai untuk `Omit`?", "input": "", "output": "`Omit<Response, 'secret'>` strips sensitive fields for public shapes; the source stays canonical."}
+{"instruction": "Terangkan `Partial` dalam satu minit.", "input": "", "output": "`Partial<T>` makes every field optional — for updates/patches; `Required<T>` reverses it for completed states."}
+{"instruction": "Apa yang perlu saya tahu tentang `Partial`?", "input": "", "output": "`Partial<T>` makes every field optional — for updates/patches; `Required<T>` reverses it for completed states."}
+{"instruction": "Bagaimanakah `Partial` berfungsi?", "input": "", "output": "`Partial<T>` makes every field optional — for updates/patches; `Required<T>` reverses it for completed states."}
+{"instruction": "Bilakah masa yang sesuai untuk `Partial`?", "input": "", "output": "`Partial<T>` makes every field optional — for updates/patches; `Required<T>` reverses it for completed states."}
+{"instruction": "Terangkan `Required Readonly` dalam satu minit.", "input": "", "output": "`Required` fills optionals, `Readonly` freezes writes; compose them (`Readonly<Partial<T>>`) for draft snapshots."}
+{"instruction": "Apa yang perlu saya tahu tentang `Required Readonly`?", "input": "", "output": "`Required` fills optionals, `Readonly` freezes writes; compose them (`Readonly<Partial<T>>`) for draft snapshots."}
+{"instruction": "Bagaimanakah `Required Readonly` berfungsi?", "input": "", "output": "`Required` fills optionals, `Readonly` freezes writes; compose them (`Readonly<Partial<T>>`) for draft snapshots."}
+{"instruction": "Bilakah masa yang sesuai untuk `Required Readonly`?", "input": "", "output": "`Required` fills optionals, `Readonly` freezes writes; compose them (`Readonly<Partial<T>>`) for draft snapshots."}
+{"instruction": "Terangkan `Exclude Extract` dalam satu minit.", "input": "", "output": "`Exclude<A, B>` removes members, `Extract` keeps the overlap — set algebra over union types."}
+{"instruction": "Apa yang perlu saya tahu tentang `Exclude Extract`?", "input": "", "output": "`Exclude<A, B>` removes members, `Extract` keeps the overlap — set algebra over union types."}
+{"instruction": "Bagaimanakah `Exclude Extract` berfungsi?", "input": "", "output": "`Exclude<A, B>` removes members, `Extract` keeps the overlap — set algebra over union types."}
+{"instruction": "Bilakah masa yang sesuai untuk `Exclude Extract`?", "input": "", "output": "`Exclude<A, B>` removes members, `Extract` keeps the overlap — set algebra over union types."}
+{"instruction": "Terangkan `ReturnType Parameters` dalam satu minit.", "input": "", "output": "`ReturnType<typeof f>`/`Parameters<typeof f>` mirror function shapes so wrappers never drift from implementations."}
+{"instruction": "Apa yang perlu saya tahu tentang `ReturnType Parameters`?", "input": "", "output": "`ReturnType<typeof f>`/`Parameters<typeof f>` mirror function shapes so wrappers never drift from implementations."}
+{"instruction": "Bagaimanakah `ReturnType Parameters` berfungsi?", "input": "", "output": "`ReturnType<typeof f>`/`Parameters<typeof f>` mirror function shapes so wrappers never drift from implementations."}
+{"instruction": "Bilakah masa yang sesuai untuk `ReturnType Parameters`?", "input": "", "output": "`ReturnType<typeof f>`/`Parameters<typeof f>` mirror function shapes so wrappers never drift from implementations."}
+{"instruction": "Terangkan `non-null !` dalam satu minit.", "input": "", "output": "Postfix `!` asserts non-null to the checker — a lie the compiler believes; prefer narrowing or explicit throws."}
+{"instruction": "Apa yang perlu saya tahu tentang `non-null !`?", "input": "", "output": "Postfix `!` asserts non-null to the checker — a lie the compiler believes; prefer narrowing or explicit throws."}
+{"instruction": "Bagaimanakah `non-null !` berfungsi?", "input": "", "output": "Postfix `!` asserts non-null to the checker — a lie the compiler believes; prefer narrowing or explicit throws."}
+{"instruction": "Bilakah masa yang sesuai untuk `non-null !`?", "input": "", "output": "Postfix `!` asserts non-null to the checker — a lie the compiler believes; prefer narrowing or explicit throws."}
+{"instruction": "Terangkan `void` dalam satu minit.", "input": "", "output": "`void` means returns-nothing-useful (callbacks, setters); `undefined` is a value, `never` is unreachable — three ideas, not one."}
+{"instruction": "Apa yang perlu saya tahu tentang `void`?", "input": "", "output": "`void` means returns-nothing-useful (callbacks, setters); `undefined` is a value, `never` is unreachable — three ideas, not one."}
+{"instruction": "Bagaimanakah `void` berfungsi?", "input": "", "output": "`void` means returns-nothing-useful (callbacks, setters); `undefined` is a value, `never` is unreachable — three ideas, not one."}
+{"instruction": "Bilakah masa yang sesuai untuk `void`?", "input": "", "output": "`void` means returns-nothing-useful (callbacks, setters); `undefined` is a value, `never` is unreachable — three ideas, not one."}
+{"instruction": "Terangkan `overloads` dalam satu minit.", "input": "", "output": "Overload signatures give precise call shapes over one implementation; beyond three, an options object reads better."}
+{"instruction": "Apa yang perlu saya tahu tentang `overloads`?", "input": "", "output": "Overload signatures give precise call shapes over one implementation; beyond three, an options object reads better."}
+{"instruction": "Bagaimanakah `overloads` berfungsi?", "input": "", "output": "Overload signatures give precise call shapes over one implementation; beyond three, an options object reads better."}
+{"instruction": "Bilakah masa yang sesuai untuk `overloads`?", "input": "", "output": "Overload signatures give precise call shapes over one implementation; beyond three, an options object reads better."}
+{"instruction": "Terangkan `const assertions` dalam satu minit.", "input": "", "output": "`as const` freezes literals (`'get'`, not `string`) for discriminators and config maps checked exhaustively."}
+{"instruction": "Apa yang perlu saya tahu tentang `const assertions`?", "input": "", "output": "`as const` freezes literals (`'get'`, not `string`) for discriminators and config maps checked exhaustively."}
+{"instruction": "Bagaimanakah `const assertions` berfungsi?", "input": "", "output": "`as const` freezes literals (`'get'`, not `string`) for discriminators and config maps checked exhaustively."}
+{"instruction": "Bilakah masa yang sesuai untuk `const assertions`?", "input": "", "output": "`as const` freezes literals (`'get'`, not `string`) for discriminators and config maps checked exhaustively."}
+{"instruction": "Terangkan `template literal types` dalam satu minit.", "input": "", "output": "`` `GET /${Resource}` `` types URL patterns at compile; typos in route strings become errors, not 404s."}
+{"instruction": "Apa yang perlu saya tahu tentang `template literal types`?", "input": "", "output": "`` `GET /${Resource}` `` types URL patterns at compile; typos in route strings become errors, not 404s."}
+{"instruction": "Bagaimanakah `template literal types` berfungsi?", "input": "", "output": "`` `GET /${Resource}` `` types URL patterns at compile; typos in route strings become errors, not 404s."}
+{"instruction": "Bilakah masa yang sesuai untuk `template literal types`?", "input": "", "output": "`` `GET /${Resource}` `` types URL patterns at compile; typos in route strings become errors, not 404s."}
+{"instruction": "Terangkan `conditional types` dalam satu minit.", "input": "", "output": "`T extends U ? A : B` branches on types — the machinery behind Exclude/ReturnType; distribute over unions carefully."}
+{"instruction": "Apa yang perlu saya tahu tentang `conditional types`?", "input": "", "output": "`T extends U ? A : B` branches on types — the machinery behind Exclude/ReturnType; distribute over unions carefully."}
+{"instruction": "Bagaimanakah `conditional types` berfungsi?", "input": "", "output": "`T extends U ? A : B` branches on types — the machinery behind Exclude/ReturnType; distribute over unions carefully."}
+{"instruction": "Bilakah masa yang sesuai untuk `conditional types`?", "input": "", "output": "`T extends U ? A : B` branches on types — the machinery behind Exclude/ReturnType; distribute over unions carefully."}
+{"instruction": "Terangkan `index signatures` dalam satu minit.", "input": "", "output": "`{ [k: string]: number }` types open dictionaries; `Record` is the tidy alias, `Map` the runtime equivalent."}
+{"instruction": "Apa yang perlu saya tahu tentang `index signatures`?", "input": "", "output": "`{ [k: string]: number }` types open dictionaries; `Record` is the tidy alias, `Map` the runtime equivalent."}
+{"instruction": "Bagaimanakah `index signatures` berfungsi?", "input": "", "output": "`{ [k: string]: number }` types open dictionaries; `Record` is the tidy alias, `Map` the runtime equivalent."}
+{"instruction": "Bilakah masa yang sesuai untuk `index signatures`?", "input": "", "output": "`{ [k: string]: number }` types open dictionaries; `Record` is the tidy alias, `Map` the runtime equivalent."}
+{"instruction": "Terangkan `noUncheckedIndexedAccess` dalam satu minit.", "input": "", "output": "This flag adds `| undefined` to every index access — array/dict reads must handle missing, killing a whole bug class."}
+{"instruction": "Apa yang perlu saya tahu tentang `noUncheckedIndexedAccess`?", "input": "", "output": "This flag adds `| undefined` to every index access — array/dict reads must handle missing, killing a whole bug class."}
+{"instruction": "Bagaimanakah `noUncheckedIndexedAccess` berfungsi?", "input": "", "output": "This flag adds `| undefined` to every index access — array/dict reads must handle missing, killing a whole bug class."}
+{"instruction": "Bilakah masa yang sesuai untuk `noUncheckedIndexedAccess`?", "input": "", "output": "This flag adds `| undefined` to every index access — array/dict reads must handle missing, killing a whole bug class."}
+{"instruction": "What does `exactOptionalPropertyTypes` do?", "input": "", "output": "Exact optionals distinguish absent from explicit-undefined; API shapes stay honest across boundaries."}
+{"instruction": "Explain `exactOptionalPropertyTypes` briefly.", "input": "", "output": "Exact optionals distinguish absent from explicit-undefined; API shapes stay honest across boundaries."}
+{"instruction": "When do I use `exactOptionalPropertyTypes`?", "input": "", "output": "Exact optionals distinguish absent from explicit-undefined; API shapes stay honest across boundaries."}
+{"instruction": "Give a practical example of `exactOptionalPropertyTypes`.", "input": "", "output": "Exact optionals distinguish absent from explicit-undefined; API shapes stay honest across boundaries."}
+{"instruction": "What is `exactOptionalPropertyTypes` for?", "input": "", "output": "Exact optionals distinguish absent from explicit-undefined; API shapes stay honest across boundaries."}
+{"instruction": "Apakah fungsi `exactOptionalPropertyTypes`?", "input": "", "output": "Exact optionals distinguish absent from explicit-undefined; API shapes stay honest across boundaries."}
+{"instruction": "Terangkan `exactOptionalPropertyTypes` secara ringkas.", "input": "", "output": "Exact optionals distinguish absent from explicit-undefined; API shapes stay honest across boundaries."}
+{"instruction": "Bila perlu guna `exactOptionalPropertyTypes`?", "input": "", "output": "Exact optionals distinguish absent from explicit-undefined; API shapes stay honest across boundaries."}
+{"instruction": "Beri contoh penggunaan `exactOptionalPropertyTypes`.", "input": "", "output": "Exact optionals distinguish absent from explicit-undefined; API shapes stay honest across boundaries."}
+{"instruction": "`exactOptionalPropertyTypes` untuk apa?", "input": "", "output": "Exact optionals distinguish absent from explicit-undefined; API shapes stay honest across boundaries."}
+{"instruction": "How would you explain `exactOptionalPropertyTypes` to a junior developer?", "input": "", "output": "Exact optionals distinguish absent from explicit-undefined; API shapes stay honest across boundaries."}
+{"instruction": "Give a real-world scenario for `exactOptionalPropertyTypes`.", "input": "", "output": "Exact optionals distinguish absent from explicit-undefined; API shapes stay honest across boundaries."}
+{"instruction": "What problem does `exactOptionalPropertyTypes` solve?", "input": "", "output": "Exact optionals distinguish absent from explicit-undefined; API shapes stay honest across boundaries."}
+{"instruction": "Terangkan `exactOptionalPropertyTypes` dalam satu minit.", "input": "", "output": "Exact optionals distinguish absent from explicit-undefined; API shapes stay honest across boundaries."}
+{"instruction": "Apa yang perlu saya tahu tentang `exactOptionalPropertyTypes`?", "input": "", "output": "Exact optionals distinguish absent from explicit-undefined; API shapes stay honest across boundaries."}
+{"instruction": "Bagaimanakah `exactOptionalPropertyTypes` berfungsi?", "input": "", "output": "Exact optionals distinguish absent from explicit-undefined; API shapes stay honest across boundaries."}
+{"instruction": "Bilakah masa yang sesuai untuk `exactOptionalPropertyTypes`?", "input": "", "output": "Exact optionals distinguish absent from explicit-undefined; API shapes stay honest across boundaries."}
+{"instruction": "What does `noImplicitReturns` do?", "input": "", "output": "`noImplicitReturns` forces every code path to return (or never) — half-returning functions fail loudly."}
+{"instruction": "Explain `noImplicitReturns` briefly.", "input": "", "output": "`noImplicitReturns` forces every code path to return (or never) — half-returning functions fail loudly."}
+{"instruction": "When do I use `noImplicitReturns`?", "input": "", "output": "`noImplicitReturns` forces every code path to return (or never) — half-returning functions fail loudly."}
+{"instruction": "Give a practical example of `noImplicitReturns`.", "input": "", "output": "`noImplicitReturns` forces every code path to return (or never) — half-returning functions fail loudly."}
+{"instruction": "What is `noImplicitReturns` for?", "input": "", "output": "`noImplicitReturns` forces every code path to return (or never) — half-returning functions fail loudly."}
+{"instruction": "Apakah fungsi `noImplicitReturns`?", "input": "", "output": "`noImplicitReturns` forces every code path to return (or never) — half-returning functions fail loudly."}
+{"instruction": "Terangkan `noImplicitReturns` secara ringkas.", "input": "", "output": "`noImplicitReturns` forces every code path to return (or never) — half-returning functions fail loudly."}
+{"instruction": "Bila perlu guna `noImplicitReturns`?", "input": "", "output": "`noImplicitReturns` forces every code path to return (or never) — half-returning functions fail loudly."}
+{"instruction": "Beri contoh penggunaan `noImplicitReturns`.", "input": "", "output": "`noImplicitReturns` forces every code path to return (or never) — half-returning functions fail loudly."}
+{"instruction": "`noImplicitReturns` untuk apa?", "input": "", "output": "`noImplicitReturns` forces every code path to return (or never) — half-returning functions fail loudly."}
+{"instruction": "How would you explain `noImplicitReturns` to a junior developer?", "input": "", "output": "`noImplicitReturns` forces every code path to return (or never) — half-returning functions fail loudly."}
+{"instruction": "Give a real-world scenario for `noImplicitReturns`.", "input": "", "output": "`noImplicitReturns` forces every code path to return (or never) — half-returning functions fail loudly."}
+{"instruction": "What problem does `noImplicitReturns` solve?", "input": "", "output": "`noImplicitReturns` forces every code path to return (or never) — half-returning functions fail loudly."}
+{"instruction": "Terangkan `noImplicitReturns` dalam satu minit.", "input": "", "output": "`noImplicitReturns` forces every code path to return (or never) — half-returning functions fail loudly."}
+{"instruction": "Apa yang perlu saya tahu tentang `noImplicitReturns`?", "input": "", "output": "`noImplicitReturns` forces every code path to return (or never) — half-returning functions fail loudly."}
+{"instruction": "Bagaimanakah `noImplicitReturns` berfungsi?", "input": "", "output": "`noImplicitReturns` forces every code path to return (or never) — half-returning functions fail loudly."}
+{"instruction": "Bilakah masa yang sesuai untuk `noImplicitReturns`?", "input": "", "output": "`noImplicitReturns` forces every code path to return (or never) — half-returning functions fail loudly."}
+{"instruction": "What does `noFallthroughCasesInSwitch` do?", "input": "", "output": "Switch cases must break/return/throw or be empty-intentional — silent fallthrough becomes an error."}
+{"instruction": "Explain `noFallthroughCasesInSwitch` briefly.", "input": "", "output": "Switch cases must break/return/throw or be empty-intentional — silent fallthrough becomes an error."}
+{"instruction": "When do I use `noFallthroughCasesInSwitch`?", "input": "", "output": "Switch cases must break/return/throw or be empty-intentional — silent fallthrough becomes an error."}
+{"instruction": "Give a practical example of `noFallthroughCasesInSwitch`.", "input": "", "output": "Switch cases must break/return/throw or be empty-intentional — silent fallthrough becomes an error."}
+{"instruction": "What is `noFallthroughCasesInSwitch` for?", "input": "", "output": "Switch cases must break/return/throw or be empty-intentional — silent fallthrough becomes an error."}
+{"instruction": "Apakah fungsi `noFallthroughCasesInSwitch`?", "input": "", "output": "Switch cases must break/return/throw or be empty-intentional — silent fallthrough becomes an error."}
+{"instruction": "Terangkan `noFallthroughCasesInSwitch` secara ringkas.", "input": "", "output": "Switch cases must break/return/throw or be empty-intentional — silent fallthrough becomes an error."}
+{"instruction": "Bila perlu guna `noFallthroughCasesInSwitch`?", "input": "", "output": "Switch cases must break/return/throw or be empty-intentional — silent fallthrough becomes an error."}
+{"instruction": "Beri contoh penggunaan `noFallthroughCasesInSwitch`.", "input": "", "output": "Switch cases must break/return/throw or be empty-intentional — silent fallthrough becomes an error."}
+{"instruction": "`noFallthroughCasesInSwitch` untuk apa?", "input": "", "output": "Switch cases must break/return/throw or be empty-intentional — silent fallthrough becomes an error."}
+{"instruction": "How would you explain `noFallthroughCasesInSwitch` to a junior developer?", "input": "", "output": "Switch cases must break/return/throw or be empty-intentional — silent fallthrough becomes an error."}
+{"instruction": "Give a real-world scenario for `noFallthroughCasesInSwitch`.", "input": "", "output": "Switch cases must break/return/throw or be empty-intentional — silent fallthrough becomes an error."}
+{"instruction": "What problem does `noFallthroughCasesInSwitch` solve?", "input": "", "output": "Switch cases must break/return/throw or be empty-intentional — silent fallthrough becomes an error."}
+{"instruction": "Terangkan `noFallthroughCasesInSwitch` dalam satu minit.", "input": "", "output": "Switch cases must break/return/throw or be empty-intentional — silent fallthrough becomes an error."}
+{"instruction": "Apa yang perlu saya tahu tentang `noFallthroughCasesInSwitch`?", "input": "", "output": "Switch cases must break/return/throw or be empty-intentional — silent fallthrough becomes an error."}
+{"instruction": "Bagaimanakah `noFallthroughCasesInSwitch` berfungsi?", "input": "", "output": "Switch cases must break/return/throw or be empty-intentional — silent fallthrough becomes an error."}
+{"instruction": "Bilakah masa yang sesuai untuk `noFallthroughCasesInSwitch`?", "input": "", "output": "Switch cases must break/return/throw or be empty-intentional — silent fallthrough becomes an error."}
+{"instruction": "What does `resolveJsonModule` do?", "input": "", "output": "`resolveJsonModule` imports `.json` typed (shape inferred); `esModuleInterop` smooths CJS/ESM interop."}
+{"instruction": "Explain `resolveJsonModule` briefly.", "input": "", "output": "`resolveJsonModule` imports `.json` typed (shape inferred); `esModuleInterop` smooths CJS/ESM interop."}
+{"instruction": "When do I use `resolveJsonModule`?", "input": "", "output": "`resolveJsonModule` imports `.json` typed (shape inferred); `esModuleInterop` smooths CJS/ESM interop."}
+{"instruction": "Give a practical example of `resolveJsonModule`.", "input": "", "output": "`resolveJsonModule` imports `.json` typed (shape inferred); `esModuleInterop` smooths CJS/ESM interop."}
+{"instruction": "What is `resolveJsonModule` for?", "input": "", "output": "`resolveJsonModule` imports `.json` typed (shape inferred); `esModuleInterop` smooths CJS/ESM interop."}
+{"instruction": "Apakah fungsi `resolveJsonModule`?", "input": "", "output": "`resolveJsonModule` imports `.json` typed (shape inferred); `esModuleInterop` smooths CJS/ESM interop."}
+{"instruction": "Terangkan `resolveJsonModule` secara ringkas.", "input": "", "output": "`resolveJsonModule` imports `.json` typed (shape inferred); `esModuleInterop` smooths CJS/ESM interop."}
+{"instruction": "Bila perlu guna `resolveJsonModule`?", "input": "", "output": "`resolveJsonModule` imports `.json` typed (shape inferred); `esModuleInterop` smooths CJS/ESM interop."}
+{"instruction": "Beri contoh penggunaan `resolveJsonModule`.", "input": "", "output": "`resolveJsonModule` imports `.json` typed (shape inferred); `esModuleInterop` smooths CJS/ESM interop."}
+{"instruction": "`resolveJsonModule` untuk apa?", "input": "", "output": "`resolveJsonModule` imports `.json` typed (shape inferred); `esModuleInterop` smooths CJS/ESM interop."}
+{"instruction": "How would you explain `resolveJsonModule` to a junior developer?", "input": "", "output": "`resolveJsonModule` imports `.json` typed (shape inferred); `esModuleInterop` smooths CJS/ESM interop."}
+{"instruction": "Give a real-world scenario for `resolveJsonModule`.", "input": "", "output": "`resolveJsonModule` imports `.json` typed (shape inferred); `esModuleInterop` smooths CJS/ESM interop."}
+{"instruction": "What problem does `resolveJsonModule` solve?", "input": "", "output": "`resolveJsonModule` imports `.json` typed (shape inferred); `esModuleInterop` smooths CJS/ESM interop."}
+{"instruction": "Terangkan `resolveJsonModule` dalam satu minit.", "input": "", "output": "`resolveJsonModule` imports `.json` typed (shape inferred); `esModuleInterop` smooths CJS/ESM interop."}
+{"instruction": "Apa yang perlu saya tahu tentang `resolveJsonModule`?", "input": "", "output": "`resolveJsonModule` imports `.json` typed (shape inferred); `esModuleInterop` smooths CJS/ESM interop."}
+{"instruction": "Bagaimanakah `resolveJsonModule` berfungsi?", "input": "", "output": "`resolveJsonModule` imports `.json` typed (shape inferred); `esModuleInterop` smooths CJS/ESM interop."}
+{"instruction": "Bilakah masa yang sesuai untuk `resolveJsonModule`?", "input": "", "output": "`resolveJsonModule` imports `.json` typed (shape inferred); `esModuleInterop` smooths CJS/ESM interop."}
+{"instruction": "What does `skipLibCheck` do?", "input": "", "output": "`skipLibCheck` ignores `.d.ts` type errors (faster, pragmatic); your own code stays fully checked."}
+{"instruction": "Explain `skipLibCheck` briefly.", "input": "", "output": "`skipLibCheck` ignores `.d.ts` type errors (faster, pragmatic); your own code stays fully checked."}
+{"instruction": "When do I use `skipLibCheck`?", "input": "", "output": "`skipLibCheck` ignores `.d.ts` type errors (faster, pragmatic); your own code stays fully checked."}
+{"instruction": "Give a practical example of `skipLibCheck`.", "input": "", "output": "`skipLibCheck` ignores `.d.ts` type errors (faster, pragmatic); your own code stays fully checked."}
+{"instruction": "What is `skipLibCheck` for?", "input": "", "output": "`skipLibCheck` ignores `.d.ts` type errors (faster, pragmatic); your own code stays fully checked."}
+{"instruction": "Apakah fungsi `skipLibCheck`?", "input": "", "output": "`skipLibCheck` ignores `.d.ts` type errors (faster, pragmatic); your own code stays fully checked."}
+{"instruction": "Terangkan `skipLibCheck` secara ringkas.", "input": "", "output": "`skipLibCheck` ignores `.d.ts` type errors (faster, pragmatic); your own code stays fully checked."}
+{"instruction": "Bila perlu guna `skipLibCheck`?", "input": "", "output": "`skipLibCheck` ignores `.d.ts` type errors (faster, pragmatic); your own code stays fully checked."}
+{"instruction": "Beri contoh penggunaan `skipLibCheck`.", "input": "", "output": "`skipLibCheck` ignores `.d.ts` type errors (faster, pragmatic); your own code stays fully checked."}
+{"instruction": "`skipLibCheck` untuk apa?", "input": "", "output": "`skipLibCheck` ignores `.d.ts` type errors (faster, pragmatic); your own code stays fully checked."}
+{"instruction": "How would you explain `skipLibCheck` to a junior developer?", "input": "", "output": "`skipLibCheck` ignores `.d.ts` type errors (faster, pragmatic); your own code stays fully checked."}
+{"instruction": "Give a real-world scenario for `skipLibCheck`.", "input": "", "output": "`skipLibCheck` ignores `.d.ts` type errors (faster, pragmatic); your own code stays fully checked."}
+{"instruction": "What problem does `skipLibCheck` solve?", "input": "", "output": "`skipLibCheck` ignores `.d.ts` type errors (faster, pragmatic); your own code stays fully checked."}
+{"instruction": "Terangkan `skipLibCheck` dalam satu minit.", "input": "", "output": "`skipLibCheck` ignores `.d.ts` type errors (faster, pragmatic); your own code stays fully checked."}
+{"instruction": "Apa yang perlu saya tahu tentang `skipLibCheck`?", "input": "", "output": "`skipLibCheck` ignores `.d.ts` type errors (faster, pragmatic); your own code stays fully checked."}
+{"instruction": "Bagaimanakah `skipLibCheck` berfungsi?", "input": "", "output": "`skipLibCheck` ignores `.d.ts` type errors (faster, pragmatic); your own code stays fully checked."}
+{"instruction": "Bilakah masa yang sesuai untuk `skipLibCheck`?", "input": "", "output": "`skipLibCheck` ignores `.d.ts` type errors (faster, pragmatic); your own code stays fully checked."}
+{"instruction": "What does `declaration sourceMap` do?", "input": "", "output": "`declaration` emits types for library consumers; `sourceMap` maps stack traces back to TS originals."}
+{"instruction": "Explain `declaration sourceMap` briefly.", "input": "", "output": "`declaration` emits types for library consumers; `sourceMap` maps stack traces back to TS originals."}
+{"instruction": "When do I use `declaration sourceMap`?", "input": "", "output": "`declaration` emits types for library consumers; `sourceMap` maps stack traces back to TS originals."}
+{"instruction": "Give a practical example of `declaration sourceMap`.", "input": "", "output": "`declaration` emits types for library consumers; `sourceMap` maps stack traces back to TS originals."}
+{"instruction": "What is `declaration sourceMap` for?", "input": "", "output": "`declaration` emits types for library consumers; `sourceMap` maps stack traces back to TS originals."}
+{"instruction": "Apakah fungsi `declaration sourceMap`?", "input": "", "output": "`declaration` emits types for library consumers; `sourceMap` maps stack traces back to TS originals."}
+{"instruction": "Terangkan `declaration sourceMap` secara ringkas.", "input": "", "output": "`declaration` emits types for library consumers; `sourceMap` maps stack traces back to TS originals."}
+{"instruction": "Bila perlu guna `declaration sourceMap`?", "input": "", "output": "`declaration` emits types for library consumers; `sourceMap` maps stack traces back to TS originals."}
+{"instruction": "Beri contoh penggunaan `declaration sourceMap`.", "input": "", "output": "`declaration` emits types for library consumers; `sourceMap` maps stack traces back to TS originals."}
+{"instruction": "`declaration sourceMap` untuk apa?", "input": "", "output": "`declaration` emits types for library consumers; `sourceMap` maps stack traces back to TS originals."}
+{"instruction": "How would you explain `declaration sourceMap` to a junior developer?", "input": "", "output": "`declaration` emits types for library consumers; `sourceMap` maps stack traces back to TS originals."}
+{"instruction": "Give a real-world scenario for `declaration sourceMap`.", "input": "", "output": "`declaration` emits types for library consumers; `sourceMap` maps stack traces back to TS originals."}
+{"instruction": "What problem does `declaration sourceMap` solve?", "input": "", "output": "`declaration` emits types for library consumers; `sourceMap` maps stack traces back to TS originals."}
+{"instruction": "Terangkan `declaration sourceMap` dalam satu minit.", "input": "", "output": "`declaration` emits types for library consumers; `sourceMap` maps stack traces back to TS originals."}
+{"instruction": "Apa yang perlu saya tahu tentang `declaration sourceMap`?", "input": "", "output": "`declaration` emits types for library consumers; `sourceMap` maps stack traces back to TS originals."}
+{"instruction": "Bagaimanakah `declaration sourceMap` berfungsi?", "input": "", "output": "`declaration` emits types for library consumers; `sourceMap` maps stack traces back to TS originals."}
+{"instruction": "Bilakah masa yang sesuai untuk `declaration sourceMap`?", "input": "", "output": "`declaration` emits types for library consumers; `sourceMap` maps stack traces back to TS originals."}
+{"instruction": "What does `outDir rootDir` do?", "input": "", "output": "`rootDir: src` + `outDir: dist` mirror structure into build output; stray roots reveal misplaced files."}
+{"instruction": "Explain `outDir rootDir` briefly.", "input": "", "output": "`rootDir: src` + `outDir: dist` mirror structure into build output; stray roots reveal misplaced files."}
+{"instruction": "When do I use `outDir rootDir`?", "input": "", "output": "`rootDir: src` + `outDir: dist` mirror structure into build output; stray roots reveal misplaced files."}
+{"instruction": "Give a practical example of `outDir rootDir`.", "input": "", "output": "`rootDir: src` + `outDir: dist` mirror structure into build output; stray roots reveal misplaced files."}
+{"instruction": "What is `outDir rootDir` for?", "input": "", "output": "`rootDir: src` + `outDir: dist` mirror structure into build output; stray roots reveal misplaced files."}
+{"instruction": "Apakah fungsi `outDir rootDir`?", "input": "", "output": "`rootDir: src` + `outDir: dist` mirror structure into build output; stray roots reveal misplaced files."}
+{"instruction": "Terangkan `outDir rootDir` secara ringkas.", "input": "", "output": "`rootDir: src` + `outDir: dist` mirror structure into build output; stray roots reveal misplaced files."}
+{"instruction": "Bila perlu guna `outDir rootDir`?", "input": "", "output": "`rootDir: src` + `outDir: dist` mirror structure into build output; stray roots reveal misplaced files."}
+{"instruction": "Beri contoh penggunaan `outDir rootDir`.", "input": "", "output": "`rootDir: src` + `outDir: dist` mirror structure into build output; stray roots reveal misplaced files."}
+{"instruction": "`outDir rootDir` untuk apa?", "input": "", "output": "`rootDir: src` + `outDir: dist` mirror structure into build output; stray roots reveal misplaced files."}
+{"instruction": "How would you explain `outDir rootDir` to a junior developer?", "input": "", "output": "`rootDir: src` + `outDir: dist` mirror structure into build output; stray roots reveal misplaced files."}
+{"instruction": "Give a real-world scenario for `outDir rootDir`.", "input": "", "output": "`rootDir: src` + `outDir: dist` mirror structure into build output; stray roots reveal misplaced files."}
+{"instruction": "What problem does `outDir rootDir` solve?", "input": "", "output": "`rootDir: src` + `outDir: dist` mirror structure into build output; stray roots reveal misplaced files."}
+{"instruction": "Terangkan `outDir rootDir` dalam satu minit.", "input": "", "output": "`rootDir: src` + `outDir: dist` mirror structure into build output; stray roots reveal misplaced files."}
+{"instruction": "Apa yang perlu saya tahu tentang `outDir rootDir`?", "input": "", "output": "`rootDir: src` + `outDir: dist` mirror structure into build output; stray roots reveal misplaced files."}
+{"instruction": "Bagaimanakah `outDir rootDir` berfungsi?", "input": "", "output": "`rootDir: src` + `outDir: dist` mirror structure into build output; stray roots reveal misplaced files."}
+{"instruction": "Bilakah masa yang sesuai untuk `outDir rootDir`?", "input": "", "output": "`rootDir: src` + `outDir: dist` mirror structure into build output; stray roots reveal misplaced files."}
+{"instruction": "What does `lib target` do?", "input": "", "output": "`target` sets emitted JS level, `lib` the available APIs (DOM/workers); Node projects drop DOM lib deliberately."}
+{"instruction": "Explain `lib target` briefly.", "input": "", "output": "`target` sets emitted JS level, `lib` the available APIs (DOM/workers); Node projects drop DOM lib deliberately."}
+{"instruction": "When do I use `lib target`?", "input": "", "output": "`target` sets emitted JS level, `lib` the available APIs (DOM/workers); Node projects drop DOM lib deliberately."}
+{"instruction": "Give a practical example of `lib target`.", "input": "", "output": "`target` sets emitted JS level, `lib` the available APIs (DOM/workers); Node projects drop DOM lib deliberately."}
+{"instruction": "What is `lib target` for?", "input": "", "output": "`target` sets emitted JS level, `lib` the available APIs (DOM/workers); Node projects drop DOM lib deliberately."}
+{"instruction": "Apakah fungsi `lib target`?", "input": "", "output": "`target` sets emitted JS level, `lib` the available APIs (DOM/workers); Node projects drop DOM lib deliberately."}
+{"instruction": "Terangkan `lib target` secara ringkas.", "input": "", "output": "`target` sets emitted JS level, `lib` the available APIs (DOM/workers); Node projects drop DOM lib deliberately."}
+{"instruction": "Bila perlu guna `lib target`?", "input": "", "output": "`target` sets emitted JS level, `lib` the available APIs (DOM/workers); Node projects drop DOM lib deliberately."}
+{"instruction": "Beri contoh penggunaan `lib target`.", "input": "", "output": "`target` sets emitted JS level, `lib` the available APIs (DOM/workers); Node projects drop DOM lib deliberately."}
+{"instruction": "`lib target` untuk apa?", "input": "", "output": "`target` sets emitted JS level, `lib` the available APIs (DOM/workers); Node projects drop DOM lib deliberately."}
+{"instruction": "How would you explain `lib target` to a junior developer?", "input": "", "output": "`target` sets emitted JS level, `lib` the available APIs (DOM/workers); Node projects drop DOM lib deliberately."}
+{"instruction": "Give a real-world scenario for `lib target`.", "input": "", "output": "`target` sets emitted JS level, `lib` the available APIs (DOM/workers); Node projects drop DOM lib deliberately."}
+{"instruction": "What problem does `lib target` solve?", "input": "", "output": "`target` sets emitted JS level, `lib` the available APIs (DOM/workers); Node projects drop DOM lib deliberately."}
+{"instruction": "Terangkan `lib target` dalam satu minit.", "input": "", "output": "`target` sets emitted JS level, `lib` the available APIs (DOM/workers); Node projects drop DOM lib deliberately."}
+{"instruction": "Apa yang perlu saya tahu tentang `lib target`?", "input": "", "output": "`target` sets emitted JS level, `lib` the available APIs (DOM/workers); Node projects drop DOM lib deliberately."}
+{"instruction": "Bagaimanakah `lib target` berfungsi?", "input": "", "output": "`target` sets emitted JS level, `lib` the available APIs (DOM/workers); Node projects drop DOM lib deliberately."}
+{"instruction": "Bilakah masa yang sesuai untuk `lib target`?", "input": "", "output": "`target` sets emitted JS level, `lib` the available APIs (DOM/workers); Node projects drop DOM lib deliberately."}
+{"instruction": "What does `module nodenext` do?", "input": "", "output": "`module: nodenext` matches Node's ESM/CJS resolution exactly (extensions required); `bundler` mode suits Vite/webpack."}
+{"instruction": "Explain `module nodenext` briefly.", "input": "", "output": "`module: nodenext` matches Node's ESM/CJS resolution exactly (extensions required); `bundler` mode suits Vite/webpack."}
+{"instruction": "When do I use `module nodenext`?", "input": "", "output": "`module: nodenext` matches Node's ESM/CJS resolution exactly (extensions required); `bundler` mode suits Vite/webpack."}
+{"instruction": "Give a practical example of `module nodenext`.", "input": "", "output": "`module: nodenext` matches Node's ESM/CJS resolution exactly (extensions required); `bundler` mode suits Vite/webpack."}
+{"instruction": "What is `module nodenext` for?", "input": "", "output": "`module: nodenext` matches Node's ESM/CJS resolution exactly (extensions required); `bundler` mode suits Vite/webpack."}
+{"instruction": "Apakah fungsi `module nodenext`?", "input": "", "output": "`module: nodenext` matches Node's ESM/CJS resolution exactly (extensions required); `bundler` mode suits Vite/webpack."}
+{"instruction": "Terangkan `module nodenext` secara ringkas.", "input": "", "output": "`module: nodenext` matches Node's ESM/CJS resolution exactly (extensions required); `bundler` mode suits Vite/webpack."}
+{"instruction": "Bila perlu guna `module nodenext`?", "input": "", "output": "`module: nodenext` matches Node's ESM/CJS resolution exactly (extensions required); `bundler` mode suits Vite/webpack."}
+{"instruction": "Beri contoh penggunaan `module nodenext`.", "input": "", "output": "`module: nodenext` matches Node's ESM/CJS resolution exactly (extensions required); `bundler` mode suits Vite/webpack."}
+{"instruction": "`module nodenext` untuk apa?", "input": "", "output": "`module: nodenext` matches Node's ESM/CJS resolution exactly (extensions required); `bundler` mode suits Vite/webpack."}
+{"instruction": "How would you explain `module nodenext` to a junior developer?", "input": "", "output": "`module: nodenext` matches Node's ESM/CJS resolution exactly (extensions required); `bundler` mode suits Vite/webpack."}
+{"instruction": "Give a real-world scenario for `module nodenext`.", "input": "", "output": "`module: nodenext` matches Node's ESM/CJS resolution exactly (extensions required); `bundler` mode suits Vite/webpack."}
+{"instruction": "What problem does `module nodenext` solve?", "input": "", "output": "`module: nodenext` matches Node's ESM/CJS resolution exactly (extensions required); `bundler` mode suits Vite/webpack."}
+{"instruction": "Terangkan `module nodenext` dalam satu minit.", "input": "", "output": "`module: nodenext` matches Node's ESM/CJS resolution exactly (extensions required); `bundler` mode suits Vite/webpack."}
+{"instruction": "Apa yang perlu saya tahu tentang `module nodenext`?", "input": "", "output": "`module: nodenext` matches Node's ESM/CJS resolution exactly (extensions required); `bundler` mode suits Vite/webpack."}
+{"instruction": "Bagaimanakah `module nodenext` berfungsi?", "input": "", "output": "`module: nodenext` matches Node's ESM/CJS resolution exactly (extensions required); `bundler` mode suits Vite/webpack."}
+{"instruction": "Bilakah masa yang sesuai untuk `module nodenext`?", "input": "", "output": "`module: nodenext` matches Node's ESM/CJS resolution exactly (extensions required); `bundler` mode suits Vite/webpack."}
+{"instruction": "What does `types field` do?", "input": "", "output": "`types: [...]` whitelists global @types packages — stray globals stop leaking into every file."}
+{"instruction": "Explain `types field` briefly.", "input": "", "output": "`types: [...]` whitelists global @types packages — stray globals stop leaking into every file."}
+{"instruction": "When do I use `types field`?", "input": "", "output": "`types: [...]` whitelists global @types packages — stray globals stop leaking into every file."}
+{"instruction": "Give a practical example of `types field`.", "input": "", "output": "`types: [...]` whitelists global @types packages — stray globals stop leaking into every file."}
+{"instruction": "What is `types field` for?", "input": "", "output": "`types: [...]` whitelists global @types packages — stray globals stop leaking into every file."}
+{"instruction": "Apakah fungsi `types field`?", "input": "", "output": "`types: [...]` whitelists global @types packages — stray globals stop leaking into every file."}
+{"instruction": "Terangkan `types field` secara ringkas.", "input": "", "output": "`types: [...]` whitelists global @types packages — stray globals stop leaking into every file."}
+{"instruction": "Bila perlu guna `types field`?", "input": "", "output": "`types: [...]` whitelists global @types packages — stray globals stop leaking into every file."}
+{"instruction": "Beri contoh penggunaan `types field`.", "input": "", "output": "`types: [...]` whitelists global @types packages — stray globals stop leaking into every file."}
+{"instruction": "`types field` untuk apa?", "input": "", "output": "`types: [...]` whitelists global @types packages — stray globals stop leaking into every file."}
+{"instruction": "How would you explain `types field` to a junior developer?", "input": "", "output": "`types: [...]` whitelists global @types packages — stray globals stop leaking into every file."}
+{"instruction": "Give a real-world scenario for `types field`.", "input": "", "output": "`types: [...]` whitelists global @types packages — stray globals stop leaking into every file."}
+{"instruction": "What problem does `types field` solve?", "input": "", "output": "`types: [...]` whitelists global @types packages — stray globals stop leaking into every file."}
+{"instruction": "Terangkan `types field` dalam satu minit.", "input": "", "output": "`types: [...]` whitelists global @types packages — stray globals stop leaking into every file."}
+{"instruction": "Apa yang perlu saya tahu tentang `types field`?", "input": "", "output": "`types: [...]` whitelists global @types packages — stray globals stop leaking into every file."}
+{"instruction": "Bagaimanakah `types field` berfungsi?", "input": "", "output": "`types: [...]` whitelists global @types packages — stray globals stop leaking into every file."}
+{"instruction": "Bilakah masa yang sesuai untuk `types field`?", "input": "", "output": "`types: [...]` whitelists global @types packages — stray globals stop leaking into every file."}
+{"instruction": "What does `asserts signature` do?", "input": "", "output": "`function asserts x is string(x: unknown)` narrows callers on return; throwing validators as types."}
+{"instruction": "Explain `asserts signature` briefly.", "input": "", "output": "`function asserts x is string(x: unknown)` narrows callers on return; throwing validators as types."}
+{"instruction": "When do I use `asserts signature`?", "input": "", "output": "`function asserts x is string(x: unknown)` narrows callers on return; throwing validators as types."}
+{"instruction": "Give a practical example of `asserts signature`.", "input": "", "output": "`function asserts x is string(x: unknown)` narrows callers on return; throwing validators as types."}
+{"instruction": "What is `asserts signature` for?", "input": "", "output": "`function asserts x is string(x: unknown)` narrows callers on return; throwing validators as types."}
+{"instruction": "Apakah fungsi `asserts signature`?", "input": "", "output": "`function asserts x is string(x: unknown)` narrows callers on return; throwing validators as types."}
+{"instruction": "Terangkan `asserts signature` secara ringkas.", "input": "", "output": "`function asserts x is string(x: unknown)` narrows callers on return; throwing validators as types."}
+{"instruction": "Bila perlu guna `asserts signature`?", "input": "", "output": "`function asserts x is string(x: unknown)` narrows callers on return; throwing validators as types."}
+{"instruction": "Beri contoh penggunaan `asserts signature`.", "input": "", "output": "`function asserts x is string(x: unknown)` narrows callers on return; throwing validators as types."}
+{"instruction": "`asserts signature` untuk apa?", "input": "", "output": "`function asserts x is string(x: unknown)` narrows callers on return; throwing validators as types."}
+{"instruction": "How would you explain `asserts signature` to a junior developer?", "input": "", "output": "`function asserts x is string(x: unknown)` narrows callers on return; throwing validators as types."}
+{"instruction": "Give a real-world scenario for `asserts signature`.", "input": "", "output": "`function asserts x is string(x: unknown)` narrows callers on return; throwing validators as types."}
+{"instruction": "What problem does `asserts signature` solve?", "input": "", "output": "`function asserts x is string(x: unknown)` narrows callers on return; throwing validators as types."}
+{"instruction": "Terangkan `asserts signature` dalam satu minit.", "input": "", "output": "`function asserts x is string(x: unknown)` narrows callers on return; throwing validators as types."}
+{"instruction": "Apa yang perlu saya tahu tentang `asserts signature`?", "input": "", "output": "`function asserts x is string(x: unknown)` narrows callers on return; throwing validators as types."}
+{"instruction": "Bagaimanakah `asserts signature` berfungsi?", "input": "", "output": "`function asserts x is string(x: unknown)` narrows callers on return; throwing validators as types."}
+{"instruction": "Bilakah masa yang sesuai untuk `asserts signature`?", "input": "", "output": "`function asserts x is string(x: unknown)` narrows callers on return; throwing validators as types."}
+{"instruction": "What does `const type params` do?", "input": "", "output": "`function f<const T>(x: T)` preserves literal narrowness through generics without `as const` spam."}
+{"instruction": "Explain `const type params` briefly.", "input": "", "output": "`function f<const T>(x: T)` preserves literal narrowness through generics without `as const` spam."}
+{"instruction": "When do I use `const type params`?", "input": "", "output": "`function f<const T>(x: T)` preserves literal narrowness through generics without `as const` spam."}
+{"instruction": "Give a practical example of `const type params`.", "input": "", "output": "`function f<const T>(x: T)` preserves literal narrowness through generics without `as const` spam."}
+{"instruction": "What is `const type params` for?", "input": "", "output": "`function f<const T>(x: T)` preserves literal narrowness through generics without `as const` spam."}
+{"instruction": "Apakah fungsi `const type params`?", "input": "", "output": "`function f<const T>(x: T)` preserves literal narrowness through generics without `as const` spam."}
+{"instruction": "Terangkan `const type params` secara ringkas.", "input": "", "output": "`function f<const T>(x: T)` preserves literal narrowness through generics without `as const` spam."}
+{"instruction": "Bila perlu guna `const type params`?", "input": "", "output": "`function f<const T>(x: T)` preserves literal narrowness through generics without `as const` spam."}
+{"instruction": "Beri contoh penggunaan `const type params`.", "input": "", "output": "`function f<const T>(x: T)` preserves literal narrowness through generics without `as const` spam."}
+{"instruction": "`const type params` untuk apa?", "input": "", "output": "`function f<const T>(x: T)` preserves literal narrowness through generics without `as const` spam."}
+{"instruction": "How would you explain `const type params` to a junior developer?", "input": "", "output": "`function f<const T>(x: T)` preserves literal narrowness through generics without `as const` spam."}
+{"instruction": "Give a real-world scenario for `const type params`.", "input": "", "output": "`function f<const T>(x: T)` preserves literal narrowness through generics without `as const` spam."}
+{"instruction": "What problem does `const type params` solve?", "input": "", "output": "`function f<const T>(x: T)` preserves literal narrowness through generics without `as const` spam."}
+{"instruction": "Terangkan `const type params` dalam satu minit.", "input": "", "output": "`function f<const T>(x: T)` preserves literal narrowness through generics without `as const` spam."}
+{"instruction": "Apa yang perlu saya tahu tentang `const type params`?", "input": "", "output": "`function f<const T>(x: T)` preserves literal narrowness through generics without `as const` spam."}
+{"instruction": "Bagaimanakah `const type params` berfungsi?", "input": "", "output": "`function f<const T>(x: T)` preserves literal narrowness through generics without `as const` spam."}
+{"instruction": "Bilakah masa yang sesuai untuk `const type params`?", "input": "", "output": "`function f<const T>(x: T)` preserves literal narrowness through generics without `as const` spam."}
+{"instruction": "What does `satisfies vs as` do?", "input": "", "output": "Prefer `satisfies` (checks yet keeps literals) over `as` (blind trust); casts are tech debt with interest."}
+{"instruction": "Explain `satisfies vs as` briefly.", "input": "", "output": "Prefer `satisfies` (checks yet keeps literals) over `as` (blind trust); casts are tech debt with interest."}
+{"instruction": "When do I use `satisfies vs as`?", "input": "", "output": "Prefer `satisfies` (checks yet keeps literals) over `as` (blind trust); casts are tech debt with interest."}
+{"instruction": "Give a practical example of `satisfies vs as`.", "input": "", "output": "Prefer `satisfies` (checks yet keeps literals) over `as` (blind trust); casts are tech debt with interest."}
+{"instruction": "What is `satisfies vs as` for?", "input": "", "output": "Prefer `satisfies` (checks yet keeps literals) over `as` (blind trust); casts are tech debt with interest."}
+{"instruction": "Apakah fungsi `satisfies vs as`?", "input": "", "output": "Prefer `satisfies` (checks yet keeps literals) over `as` (blind trust); casts are tech debt with interest."}
+{"instruction": "Terangkan `satisfies vs as` secara ringkas.", "input": "", "output": "Prefer `satisfies` (checks yet keeps literals) over `as` (blind trust); casts are tech debt with interest."}
+{"instruction": "Bila perlu guna `satisfies vs as`?", "input": "", "output": "Prefer `satisfies` (checks yet keeps literals) over `as` (blind trust); casts are tech debt with interest."}
+{"instruction": "Beri contoh penggunaan `satisfies vs as`.", "input": "", "output": "Prefer `satisfies` (checks yet keeps literals) over `as` (blind trust); casts are tech debt with interest."}
+{"instruction": "`satisfies vs as` untuk apa?", "input": "", "output": "Prefer `satisfies` (checks yet keeps literals) over `as` (blind trust); casts are tech debt with interest."}
+{"instruction": "How would you explain `satisfies vs as` to a junior developer?", "input": "", "output": "Prefer `satisfies` (checks yet keeps literals) over `as` (blind trust); casts are tech debt with interest."}
+{"instruction": "Give a real-world scenario for `satisfies vs as`.", "input": "", "output": "Prefer `satisfies` (checks yet keeps literals) over `as` (blind trust); casts are tech debt with interest."}
+{"instruction": "What problem does `satisfies vs as` solve?", "input": "", "output": "Prefer `satisfies` (checks yet keeps literals) over `as` (blind trust); casts are tech debt with interest."}
+{"instruction": "Terangkan `satisfies vs as` dalam satu minit.", "input": "", "output": "Prefer `satisfies` (checks yet keeps literals) over `as` (blind trust); casts are tech debt with interest."}
+{"instruction": "Apa yang perlu saya tahu tentang `satisfies vs as`?", "input": "", "output": "Prefer `satisfies` (checks yet keeps literals) over `as` (blind trust); casts are tech debt with interest."}
+{"instruction": "Bagaimanakah `satisfies vs as` berfungsi?", "input": "", "output": "Prefer `satisfies` (checks yet keeps literals) over `as` (blind trust); casts are tech debt with interest."}
+{"instruction": "Bilakah masa yang sesuai untuk `satisfies vs as`?", "input": "", "output": "Prefer `satisfies` (checks yet keeps literals) over `as` (blind trust); casts are tech debt with interest."}
+{"instruction": "What does `erasableSyntaxOnly` do?", "input": "", "output": "New flag banning runtime enums/namespaces/parameter-properties — future-proof code toward erasable types."}
+{"instruction": "Explain `erasableSyntaxOnly` briefly.", "input": "", "output": "New flag banning runtime enums/namespaces/parameter-properties — future-proof code toward erasable types."}
+{"instruction": "When do I use `erasableSyntaxOnly`?", "input": "", "output": "New flag banning runtime enums/namespaces/parameter-properties — future-proof code toward erasable types."}
+{"instruction": "Give a practical example of `erasableSyntaxOnly`.", "input": "", "output": "New flag banning runtime enums/namespaces/parameter-properties — future-proof code toward erasable types."}
+{"instruction": "What is `erasableSyntaxOnly` for?", "input": "", "output": "New flag banning runtime enums/namespaces/parameter-properties — future-proof code toward erasable types."}
+{"instruction": "Apakah fungsi `erasableSyntaxOnly`?", "input": "", "output": "New flag banning runtime enums/namespaces/parameter-properties — future-proof code toward erasable types."}
+{"instruction": "Terangkan `erasableSyntaxOnly` secara ringkas.", "input": "", "output": "New flag banning runtime enums/namespaces/parameter-properties — future-proof code toward erasable types."}
+{"instruction": "Bila perlu guna `erasableSyntaxOnly`?", "input": "", "output": "New flag banning runtime enums/namespaces/parameter-properties — future-proof code toward erasable types."}
+{"instruction": "Beri contoh penggunaan `erasableSyntaxOnly`.", "input": "", "output": "New flag banning runtime enums/namespaces/parameter-properties — future-proof code toward erasable types."}
+{"instruction": "`erasableSyntaxOnly` untuk apa?", "input": "", "output": "New flag banning runtime enums/namespaces/parameter-properties — future-proof code toward erasable types."}
+{"instruction": "How would you explain `erasableSyntaxOnly` to a junior developer?", "input": "", "output": "New flag banning runtime enums/namespaces/parameter-properties — future-proof code toward erasable types."}
+{"instruction": "Give a real-world scenario for `erasableSyntaxOnly`.", "input": "", "output": "New flag banning runtime enums/namespaces/parameter-properties — future-proof code toward erasable types."}
+{"instruction": "What problem does `erasableSyntaxOnly` solve?", "input": "", "output": "New flag banning runtime enums/namespaces/parameter-properties — future-proof code toward erasable types."}
+{"instruction": "Terangkan `erasableSyntaxOnly` dalam satu minit.", "input": "", "output": "New flag banning runtime enums/namespaces/parameter-properties — future-proof code toward erasable types."}
+{"instruction": "Apa yang perlu saya tahu tentang `erasableSyntaxOnly`?", "input": "", "output": "New flag banning runtime enums/namespaces/parameter-properties — future-proof code toward erasable types."}
+{"instruction": "Bagaimanakah `erasableSyntaxOnly` berfungsi?", "input": "", "output": "New flag banning runtime enums/namespaces/parameter-properties — future-proof code toward erasable types."}
+{"instruction": "Bilakah masa yang sesuai untuk `erasableSyntaxOnly`?", "input": "", "output": "New flag banning runtime enums/namespaces/parameter-properties — future-proof code toward erasable types."}
+{"instruction": "What does `noPropertyAccessFromIndexSignature` do?", "input": "", "output": "Forces bracket access for index-signature fields (`o['k']` not `o.k`) — honest about dynamic keys."}
+{"instruction": "Explain `noPropertyAccessFromIndexSignature` briefly.", "input": "", "output": "Forces bracket access for index-signature fields (`o['k']` not `o.k`) — honest about dynamic keys."}
+{"instruction": "When do I use `noPropertyAccessFromIndexSignature`?", "input": "", "output": "Forces bracket access for index-signature fields (`o['k']` not `o.k`) — honest about dynamic keys."}
+{"instruction": "Give a practical example of `noPropertyAccessFromIndexSignature`.", "input": "", "output": "Forces bracket access for index-signature fields (`o['k']` not `o.k`) — honest about dynamic keys."}
+{"instruction": "What is `noPropertyAccessFromIndexSignature` for?", "input": "", "output": "Forces bracket access for index-signature fields (`o['k']` not `o.k`) — honest about dynamic keys."}
+{"instruction": "Apakah fungsi `noPropertyAccessFromIndexSignature`?", "input": "", "output": "Forces bracket access for index-signature fields (`o['k']` not `o.k`) — honest about dynamic keys."}
+{"instruction": "Terangkan `noPropertyAccessFromIndexSignature` secara ringkas.", "input": "", "output": "Forces bracket access for index-signature fields (`o['k']` not `o.k`) — honest about dynamic keys."}
+{"instruction": "Bila perlu guna `noPropertyAccessFromIndexSignature`?", "input": "", "output": "Forces bracket access for index-signature fields (`o['k']` not `o.k`) — honest about dynamic keys."}
+{"instruction": "Beri contoh penggunaan `noPropertyAccessFromIndexSignature`.", "input": "", "output": "Forces bracket access for index-signature fields (`o['k']` not `o.k`) — honest about dynamic keys."}
+{"instruction": "`noPropertyAccessFromIndexSignature` untuk apa?", "input": "", "output": "Forces bracket access for index-signature fields (`o['k']` not `o.k`) — honest about dynamic keys."}
+{"instruction": "How would you explain `noPropertyAccessFromIndexSignature` to a junior developer?", "input": "", "output": "Forces bracket access for index-signature fields (`o['k']` not `o.k`) — honest about dynamic keys."}
+{"instruction": "Give a real-world scenario for `noPropertyAccessFromIndexSignature`.", "input": "", "output": "Forces bracket access for index-signature fields (`o['k']` not `o.k`) — honest about dynamic keys."}
+{"instruction": "What problem does `noPropertyAccessFromIndexSignature` solve?", "input": "", "output": "Forces bracket access for index-signature fields (`o['k']` not `o.k`) — honest about dynamic keys."}
+{"instruction": "Terangkan `noPropertyAccessFromIndexSignature` dalam satu minit.", "input": "", "output": "Forces bracket access for index-signature fields (`o['k']` not `o.k`) — honest about dynamic keys."}
+{"instruction": "Apa yang perlu saya tahu tentang `noPropertyAccessFromIndexSignature`?", "input": "", "output": "Forces bracket access for index-signature fields (`o['k']` not `o.k`) — honest about dynamic keys."}
+{"instruction": "Bagaimanakah `noPropertyAccessFromIndexSignature` berfungsi?", "input": "", "output": "Forces bracket access for index-signature fields (`o['k']` not `o.k`) — honest about dynamic keys."}
+{"instruction": "Bilakah masa yang sesuai untuk `noPropertyAccessFromIndexSignature`?", "input": "", "output": "Forces bracket access for index-signature fields (`o['k']` not `o.k`) — honest about dynamic keys."}
+{"instruction": "What does `allowArbitraryExtensions` do?", "input": "", "output": "Import `.css`/`.html` as typed modules under new TS; bundler decides runtime meaning, types stay sound."}
+{"instruction": "Explain `allowArbitraryExtensions` briefly.", "input": "", "output": "Import `.css`/`.html` as typed modules under new TS; bundler decides runtime meaning, types stay sound."}
+{"instruction": "When do I use `allowArbitraryExtensions`?", "input": "", "output": "Import `.css`/`.html` as typed modules under new TS; bundler decides runtime meaning, types stay sound."}
+{"instruction": "Give a practical example of `allowArbitraryExtensions`.", "input": "", "output": "Import `.css`/`.html` as typed modules under new TS; bundler decides runtime meaning, types stay sound."}
+{"instruction": "What is `allowArbitraryExtensions` for?", "input": "", "output": "Import `.css`/`.html` as typed modules under new TS; bundler decides runtime meaning, types stay sound."}
+{"instruction": "Apakah fungsi `allowArbitraryExtensions`?", "input": "", "output": "Import `.css`/`.html` as typed modules under new TS; bundler decides runtime meaning, types stay sound."}
+{"instruction": "Terangkan `allowArbitraryExtensions` secara ringkas.", "input": "", "output": "Import `.css`/`.html` as typed modules under new TS; bundler decides runtime meaning, types stay sound."}
+{"instruction": "Bila perlu guna `allowArbitraryExtensions`?", "input": "", "output": "Import `.css`/`.html` as typed modules under new TS; bundler decides runtime meaning, types stay sound."}
+{"instruction": "Beri contoh penggunaan `allowArbitraryExtensions`.", "input": "", "output": "Import `.css`/`.html` as typed modules under new TS; bundler decides runtime meaning, types stay sound."}
+{"instruction": "`allowArbitraryExtensions` untuk apa?", "input": "", "output": "Import `.css`/`.html` as typed modules under new TS; bundler decides runtime meaning, types stay sound."}
+{"instruction": "How would you explain `allowArbitraryExtensions` to a junior developer?", "input": "", "output": "Import `.css`/`.html` as typed modules under new TS; bundler decides runtime meaning, types stay sound."}
+{"instruction": "Give a real-world scenario for `allowArbitraryExtensions`.", "input": "", "output": "Import `.css`/`.html` as typed modules under new TS; bundler decides runtime meaning, types stay sound."}
+{"instruction": "What problem does `allowArbitraryExtensions` solve?", "input": "", "output": "Import `.css`/`.html` as typed modules under new TS; bundler decides runtime meaning, types stay sound."}
+{"instruction": "Terangkan `allowArbitraryExtensions` dalam satu minit.", "input": "", "output": "Import `.css`/`.html` as typed modules under new TS; bundler decides runtime meaning, types stay sound."}
+{"instruction": "Apa yang perlu saya tahu tentang `allowArbitraryExtensions`?", "input": "", "output": "Import `.css`/`.html` as typed modules under new TS; bundler decides runtime meaning, types stay sound."}
+{"instruction": "Bagaimanakah `allowArbitraryExtensions` berfungsi?", "input": "", "output": "Import `.css`/`.html` as typed modules under new TS; bundler decides runtime meaning, types stay sound."}
+{"instruction": "Bilakah masa yang sesuai untuk `allowArbitraryExtensions`?", "input": "", "output": "Import `.css`/`.html` as typed modules under new TS; bundler decides runtime meaning, types stay sound."}
+{"instruction": "What does `moduleResolution bundler` do?", "input": "", "output": "`bundler` mode matches Vite/webpack (extensionless, package exports); `node16/nodenext` matches Node exactly."}
+{"instruction": "Explain `moduleResolution bundler` briefly.", "input": "", "output": "`bundler` mode matches Vite/webpack (extensionless, package exports); `node16/nodenext` matches Node exactly."}
+{"instruction": "When do I use `moduleResolution bundler`?", "input": "", "output": "`bundler` mode matches Vite/webpack (extensionless, package exports); `node16/nodenext` matches Node exactly."}
+{"instruction": "Give a practical example of `moduleResolution bundler`.", "input": "", "output": "`bundler` mode matches Vite/webpack (extensionless, package exports); `node16/nodenext` matches Node exactly."}
+{"instruction": "What is `moduleResolution bundler` for?", "input": "", "output": "`bundler` mode matches Vite/webpack (extensionless, package exports); `node16/nodenext` matches Node exactly."}
+{"instruction": "Apakah fungsi `moduleResolution bundler`?", "input": "", "output": "`bundler` mode matches Vite/webpack (extensionless, package exports); `node16/nodenext` matches Node exactly."}
+{"instruction": "Terangkan `moduleResolution bundler` secara ringkas.", "input": "", "output": "`bundler` mode matches Vite/webpack (extensionless, package exports); `node16/nodenext` matches Node exactly."}
+{"instruction": "Bila perlu guna `moduleResolution bundler`?", "input": "", "output": "`bundler` mode matches Vite/webpack (extensionless, package exports); `node16/nodenext` matches Node exactly."}
+{"instruction": "Beri contoh penggunaan `moduleResolution bundler`.", "input": "", "output": "`bundler` mode matches Vite/webpack (extensionless, package exports); `node16/nodenext` matches Node exactly."}
+{"instruction": "`moduleResolution bundler` untuk apa?", "input": "", "output": "`bundler` mode matches Vite/webpack (extensionless, package exports); `node16/nodenext` matches Node exactly."}
+{"instruction": "How would you explain `moduleResolution bundler` to a junior developer?", "input": "", "output": "`bundler` mode matches Vite/webpack (extensionless, package exports); `node16/nodenext` matches Node exactly."}
+{"instruction": "Give a real-world scenario for `moduleResolution bundler`.", "input": "", "output": "`bundler` mode matches Vite/webpack (extensionless, package exports); `node16/nodenext` matches Node exactly."}
+{"instruction": "What problem does `moduleResolution bundler` solve?", "input": "", "output": "`bundler` mode matches Vite/webpack (extensionless, package exports); `node16/nodenext` matches Node exactly."}
+{"instruction": "Terangkan `moduleResolution bundler` dalam satu minit.", "input": "", "output": "`bundler` mode matches Vite/webpack (extensionless, package exports); `node16/nodenext` matches Node exactly."}
+{"instruction": "Apa yang perlu saya tahu tentang `moduleResolution bundler`?", "input": "", "output": "`bundler` mode matches Vite/webpack (extensionless, package exports); `node16/nodenext` matches Node exactly."}
+{"instruction": "Bagaimanakah `moduleResolution bundler` berfungsi?", "input": "", "output": "`bundler` mode matches Vite/webpack (extensionless, package exports); `node16/nodenext` matches Node exactly."}
+{"instruction": "Bilakah masa yang sesuai untuk `moduleResolution bundler`?", "input": "", "output": "`bundler` mode matches Vite/webpack (extensionless, package exports); `node16/nodenext` matches Node exactly."}
+{"instruction": "What does `customConditions` do?", "input": "", "output": "`customConditions: ['edge']` resolves export variants per runtime — edge/node/browser builds from one package."}
+{"instruction": "Explain `customConditions` briefly.", "input": "", "output": "`customConditions: ['edge']` resolves export variants per runtime — edge/node/browser builds from one package."}
+{"instruction": "When do I use `customConditions`?", "input": "", "output": "`customConditions: ['edge']` resolves export variants per runtime — edge/node/browser builds from one package."}
+{"instruction": "Give a practical example of `customConditions`.", "input": "", "output": "`customConditions: ['edge']` resolves export variants per runtime — edge/node/browser builds from one package."}
+{"instruction": "What is `customConditions` for?", "input": "", "output": "`customConditions: ['edge']` resolves export variants per runtime — edge/node/browser builds from one package."}
+{"instruction": "Apakah fungsi `customConditions`?", "input": "", "output": "`customConditions: ['edge']` resolves export variants per runtime — edge/node/browser builds from one package."}
+{"instruction": "Terangkan `customConditions` secara ringkas.", "input": "", "output": "`customConditions: ['edge']` resolves export variants per runtime — edge/node/browser builds from one package."}
+{"instruction": "Bila perlu guna `customConditions`?", "input": "", "output": "`customConditions: ['edge']` resolves export variants per runtime — edge/node/browser builds from one package."}
+{"instruction": "Beri contoh penggunaan `customConditions`.", "input": "", "output": "`customConditions: ['edge']` resolves export variants per runtime — edge/node/browser builds from one package."}
+{"instruction": "`customConditions` untuk apa?", "input": "", "output": "`customConditions: ['edge']` resolves export variants per runtime — edge/node/browser builds from one package."}
+{"instruction": "How would you explain `customConditions` to a junior developer?", "input": "", "output": "`customConditions: ['edge']` resolves export variants per runtime — edge/node/browser builds from one package."}
+{"instruction": "Give a real-world scenario for `customConditions`.", "input": "", "output": "`customConditions: ['edge']` resolves export variants per runtime — edge/node/browser builds from one package."}
+{"instruction": "What problem does `customConditions` solve?", "input": "", "output": "`customConditions: ['edge']` resolves export variants per runtime — edge/node/browser builds from one package."}
+{"instruction": "Terangkan `customConditions` dalam satu minit.", "input": "", "output": "`customConditions: ['edge']` resolves export variants per runtime — edge/node/browser builds from one package."}
+{"instruction": "Apa yang perlu saya tahu tentang `customConditions`?", "input": "", "output": "`customConditions: ['edge']` resolves export variants per runtime — edge/node/browser builds from one package."}
+{"instruction": "Bagaimanakah `customConditions` berfungsi?", "input": "", "output": "`customConditions: ['edge']` resolves export variants per runtime — edge/node/browser builds from one package."}
+{"instruction": "Bilakah masa yang sesuai untuk `customConditions`?", "input": "", "output": "`customConditions: ['edge']` resolves export variants per runtime — edge/node/browser builds from one package."}
+{"instruction": "What does `verbatim module syntax` do?", "input": "", "output": "Keeps `import type` elisions explicit so emitted JS never accidentally imports erased types at runtime."}
+{"instruction": "Explain `verbatim module syntax` briefly.", "input": "", "output": "Keeps `import type` elisions explicit so emitted JS never accidentally imports erased types at runtime."}
+{"instruction": "When do I use `verbatim module syntax`?", "input": "", "output": "Keeps `import type` elisions explicit so emitted JS never accidentally imports erased types at runtime."}
+{"instruction": "Give a practical example of `verbatim module syntax`.", "input": "", "output": "Keeps `import type` elisions explicit so emitted JS never accidentally imports erased types at runtime."}
+{"instruction": "What is `verbatim module syntax` for?", "input": "", "output": "Keeps `import type` elisions explicit so emitted JS never accidentally imports erased types at runtime."}
+{"instruction": "Apakah fungsi `verbatim module syntax`?", "input": "", "output": "Keeps `import type` elisions explicit so emitted JS never accidentally imports erased types at runtime."}
+{"instruction": "Terangkan `verbatim module syntax` secara ringkas.", "input": "", "output": "Keeps `import type` elisions explicit so emitted JS never accidentally imports erased types at runtime."}
+{"instruction": "Bila perlu guna `verbatim module syntax`?", "input": "", "output": "Keeps `import type` elisions explicit so emitted JS never accidentally imports erased types at runtime."}
+{"instruction": "Beri contoh penggunaan `verbatim module syntax`.", "input": "", "output": "Keeps `import type` elisions explicit so emitted JS never accidentally imports erased types at runtime."}
+{"instruction": "`verbatim module syntax` untuk apa?", "input": "", "output": "Keeps `import type` elisions explicit so emitted JS never accidentally imports erased types at runtime."}
+{"instruction": "How would you explain `verbatim module syntax` to a junior developer?", "input": "", "output": "Keeps `import type` elisions explicit so emitted JS never accidentally imports erased types at runtime."}
+{"instruction": "Give a real-world scenario for `verbatim module syntax`.", "input": "", "output": "Keeps `import type` elisions explicit so emitted JS never accidentally imports erased types at runtime."}
+{"instruction": "What problem does `verbatim module syntax` solve?", "input": "", "output": "Keeps `import type` elisions explicit so emitted JS never accidentally imports erased types at runtime."}
+{"instruction": "Terangkan `verbatim module syntax` dalam satu minit.", "input": "", "output": "Keeps `import type` elisions explicit so emitted JS never accidentally imports erased types at runtime."}
+{"instruction": "Apa yang perlu saya tahu tentang `verbatim module syntax`?", "input": "", "output": "Keeps `import type` elisions explicit so emitted JS never accidentally imports erased types at runtime."}
+{"instruction": "Bagaimanakah `verbatim module syntax` berfungsi?", "input": "", "output": "Keeps `import type` elisions explicit so emitted JS never accidentally imports erased types at runtime."}
+{"instruction": "Bilakah masa yang sesuai untuk `verbatim module syntax`?", "input": "", "output": "Keeps `import type` elisions explicit so emitted JS never accidentally imports erased types at runtime."}
+{"instruction": "What does `isolatedModules` do?", "input": "", "output": "Each file must transpile standalone (no const-enum cross-file, no re-export ambiguity) — required by esbuild/swc."}
+{"instruction": "Explain `isolatedModules` briefly.", "input": "", "output": "Each file must transpile standalone (no const-enum cross-file, no re-export ambiguity) — required by esbuild/swc."}
+{"instruction": "When do I use `isolatedModules`?", "input": "", "output": "Each file must transpile standalone (no const-enum cross-file, no re-export ambiguity) — required by esbuild/swc."}
+{"instruction": "Give a practical example of `isolatedModules`.", "input": "", "output": "Each file must transpile standalone (no const-enum cross-file, no re-export ambiguity) — required by esbuild/swc."}
+{"instruction": "What is `isolatedModules` for?", "input": "", "output": "Each file must transpile standalone (no const-enum cross-file, no re-export ambiguity) — required by esbuild/swc."}
+{"instruction": "Apakah fungsi `isolatedModules`?", "input": "", "output": "Each file must transpile standalone (no const-enum cross-file, no re-export ambiguity) — required by esbuild/swc."}
+{"instruction": "Terangkan `isolatedModules` secara ringkas.", "input": "", "output": "Each file must transpile standalone (no const-enum cross-file, no re-export ambiguity) — required by esbuild/swc."}
+{"instruction": "Bila perlu guna `isolatedModules`?", "input": "", "output": "Each file must transpile standalone (no const-enum cross-file, no re-export ambiguity) — required by esbuild/swc."}
+{"instruction": "Beri contoh penggunaan `isolatedModules`.", "input": "", "output": "Each file must transpile standalone (no const-enum cross-file, no re-export ambiguity) — required by esbuild/swc."}
+{"instruction": "`isolatedModules` untuk apa?", "input": "", "output": "Each file must transpile standalone (no const-enum cross-file, no re-export ambiguity) — required by esbuild/swc."}
+{"instruction": "How would you explain `isolatedModules` to a junior developer?", "input": "", "output": "Each file must transpile standalone (no const-enum cross-file, no re-export ambiguity) — required by esbuild/swc."}
+{"instruction": "Give a real-world scenario for `isolatedModules`.", "input": "", "output": "Each file must transpile standalone (no const-enum cross-file, no re-export ambiguity) — required by esbuild/swc."}
+{"instruction": "What problem does `isolatedModules` solve?", "input": "", "output": "Each file must transpile standalone (no const-enum cross-file, no re-export ambiguity) — required by esbuild/swc."}
+{"instruction": "Terangkan `isolatedModules` dalam satu minit.", "input": "", "output": "Each file must transpile standalone (no const-enum cross-file, no re-export ambiguity) — required by esbuild/swc."}
+{"instruction": "Apa yang perlu saya tahu tentang `isolatedModules`?", "input": "", "output": "Each file must transpile standalone (no const-enum cross-file, no re-export ambiguity) — required by esbuild/swc."}
+{"instruction": "Bagaimanakah `isolatedModules` berfungsi?", "input": "", "output": "Each file must transpile standalone (no const-enum cross-file, no re-export ambiguity) — required by esbuild/swc."}
+{"instruction": "Bilakah masa yang sesuai untuk `isolatedModules`?", "input": "", "output": "Each file must transpile standalone (no const-enum cross-file, no re-export ambiguity) — required by esbuild/swc."}
+{"instruction": "What does `rewriteRelativeImportExtensions` do?", "input": "", "output": "Rewrites `./x.js` to `./x.ts` automatically for source-accurate imports under nodenext resolution."}
+{"instruction": "Explain `rewriteRelativeImportExtensions` briefly.", "input": "", "output": "Rewrites `./x.js` to `./x.ts` automatically for source-accurate imports under nodenext resolution."}
+{"instruction": "When do I use `rewriteRelativeImportExtensions`?", "input": "", "output": "Rewrites `./x.js` to `./x.ts` automatically for source-accurate imports under nodenext resolution."}
+{"instruction": "Give a practical example of `rewriteRelativeImportExtensions`.", "input": "", "output": "Rewrites `./x.js` to `./x.ts` automatically for source-accurate imports under nodenext resolution."}
+{"instruction": "What is `rewriteRelativeImportExtensions` for?", "input": "", "output": "Rewrites `./x.js` to `./x.ts` automatically for source-accurate imports under nodenext resolution."}
+{"instruction": "Apakah fungsi `rewriteRelativeImportExtensions`?", "input": "", "output": "Rewrites `./x.js` to `./x.ts` automatically for source-accurate imports under nodenext resolution."}
+{"instruction": "Terangkan `rewriteRelativeImportExtensions` secara ringkas.", "input": "", "output": "Rewrites `./x.js` to `./x.ts` automatically for source-accurate imports under nodenext resolution."}
+{"instruction": "Bila perlu guna `rewriteRelativeImportExtensions`?", "input": "", "output": "Rewrites `./x.js` to `./x.ts` automatically for source-accurate imports under nodenext resolution."}
+{"instruction": "Beri contoh penggunaan `rewriteRelativeImportExtensions`.", "input": "", "output": "Rewrites `./x.js` to `./x.ts` automatically for source-accurate imports under nodenext resolution."}
+{"instruction": "`rewriteRelativeImportExtensions` untuk apa?", "input": "", "output": "Rewrites `./x.js` to `./x.ts` automatically for source-accurate imports under nodenext resolution."}
+{"instruction": "How would you explain `rewriteRelativeImportExtensions` to a junior developer?", "input": "", "output": "Rewrites `./x.js` to `./x.ts` automatically for source-accurate imports under nodenext resolution."}
+{"instruction": "Give a real-world scenario for `rewriteRelativeImportExtensions`.", "input": "", "output": "Rewrites `./x.js` to `./x.ts` automatically for source-accurate imports under nodenext resolution."}
+{"instruction": "What problem does `rewriteRelativeImportExtensions` solve?", "input": "", "output": "Rewrites `./x.js` to `./x.ts` automatically for source-accurate imports under nodenext resolution."}
+{"instruction": "Terangkan `rewriteRelativeImportExtensions` dalam satu minit.", "input": "", "output": "Rewrites `./x.js` to `./x.ts` automatically for source-accurate imports under nodenext resolution."}
+{"instruction": "Apa yang perlu saya tahu tentang `rewriteRelativeImportExtensions`?", "input": "", "output": "Rewrites `./x.js` to `./x.ts` automatically for source-accurate imports under nodenext resolution."}
+{"instruction": "Bagaimanakah `rewriteRelativeImportExtensions` berfungsi?", "input": "", "output": "Rewrites `./x.js` to `./x.ts` automatically for source-accurate imports under nodenext resolution."}
+{"instruction": "Bilakah masa yang sesuai untuk `rewriteRelativeImportExtensions`?", "input": "", "output": "Rewrites `./x.js` to `./x.ts` automatically for source-accurate imports under nodenext resolution."}
+{"instruction": "What does `noUncheckedSideEffectImports` do?", "input": "", "output": "Flags side-effect imports lacking attribution — tree-shaking honesty for CSS/polyfill imports."}
+{"instruction": "Explain `noUncheckedSideEffectImports` briefly.", "input": "", "output": "Flags side-effect imports lacking attribution — tree-shaking honesty for CSS/polyfill imports."}
+{"instruction": "When do I use `noUncheckedSideEffectImports`?", "input": "", "output": "Flags side-effect imports lacking attribution — tree-shaking honesty for CSS/polyfill imports."}
+{"instruction": "Give a practical example of `noUncheckedSideEffectImports`.", "input": "", "output": "Flags side-effect imports lacking attribution — tree-shaking honesty for CSS/polyfill imports."}
+{"instruction": "What is `noUncheckedSideEffectImports` for?", "input": "", "output": "Flags side-effect imports lacking attribution — tree-shaking honesty for CSS/polyfill imports."}
+{"instruction": "Apakah fungsi `noUncheckedSideEffectImports`?", "input": "", "output": "Flags side-effect imports lacking attribution — tree-shaking honesty for CSS/polyfill imports."}
+{"instruction": "Terangkan `noUncheckedSideEffectImports` secara ringkas.", "input": "", "output": "Flags side-effect imports lacking attribution — tree-shaking honesty for CSS/polyfill imports."}
+{"instruction": "Bila perlu guna `noUncheckedSideEffectImports`?", "input": "", "output": "Flags side-effect imports lacking attribution — tree-shaking honesty for CSS/polyfill imports."}
+{"instruction": "Beri contoh penggunaan `noUncheckedSideEffectImports`.", "input": "", "output": "Flags side-effect imports lacking attribution — tree-shaking honesty for CSS/polyfill imports."}
+{"instruction": "`noUncheckedSideEffectImports` untuk apa?", "input": "", "output": "Flags side-effect imports lacking attribution — tree-shaking honesty for CSS/polyfill imports."}
+{"instruction": "How would you explain `noUncheckedSideEffectImports` to a junior developer?", "input": "", "output": "Flags side-effect imports lacking attribution — tree-shaking honesty for CSS/polyfill imports."}
+{"instruction": "Give a real-world scenario for `noUncheckedSideEffectImports`.", "input": "", "output": "Flags side-effect imports lacking attribution — tree-shaking honesty for CSS/polyfill imports."}
+{"instruction": "What problem does `noUncheckedSideEffectImports` solve?", "input": "", "output": "Flags side-effect imports lacking attribution — tree-shaking honesty for CSS/polyfill imports."}
+{"instruction": "Terangkan `noUncheckedSideEffectImports` dalam satu minit.", "input": "", "output": "Flags side-effect imports lacking attribution — tree-shaking honesty for CSS/polyfill imports."}
+{"instruction": "Apa yang perlu saya tahu tentang `noUncheckedSideEffectImports`?", "input": "", "output": "Flags side-effect imports lacking attribution — tree-shaking honesty for CSS/polyfill imports."}
+{"instruction": "Bagaimanakah `noUncheckedSideEffectImports` berfungsi?", "input": "", "output": "Flags side-effect imports lacking attribution — tree-shaking honesty for CSS/polyfill imports."}
+{"instruction": "Bilakah masa yang sesuai untuk `noUncheckedSideEffectImports`?", "input": "", "output": "Flags side-effect imports lacking attribution — tree-shaking honesty for CSS/polyfill imports."}
+{"instruction": "What does `exactOptionalPropertyTypes deep` do?", "input": "", "output": "Pairs with nested Partial patterns for API patch types where absent ≠ explicit-undefined matters."}
+{"instruction": "Explain `exactOptionalPropertyTypes deep` briefly.", "input": "", "output": "Pairs with nested Partial patterns for API patch types where absent ≠ explicit-undefined matters."}
+{"instruction": "When do I use `exactOptionalPropertyTypes deep`?", "input": "", "output": "Pairs with nested Partial patterns for API patch types where absent ≠ explicit-undefined matters."}
+{"instruction": "Give a practical example of `exactOptionalPropertyTypes deep`.", "input": "", "output": "Pairs with nested Partial patterns for API patch types where absent ≠ explicit-undefined matters."}
+{"instruction": "What is `exactOptionalPropertyTypes deep` for?", "input": "", "output": "Pairs with nested Partial patterns for API patch types where absent ≠ explicit-undefined matters."}
+{"instruction": "Apakah fungsi `exactOptionalPropertyTypes deep`?", "input": "", "output": "Pairs with nested Partial patterns for API patch types where absent ≠ explicit-undefined matters."}
+{"instruction": "Terangkan `exactOptionalPropertyTypes deep` secara ringkas.", "input": "", "output": "Pairs with nested Partial patterns for API patch types where absent ≠ explicit-undefined matters."}
+{"instruction": "Bila perlu guna `exactOptionalPropertyTypes deep`?", "input": "", "output": "Pairs with nested Partial patterns for API patch types where absent ≠ explicit-undefined matters."}
+{"instruction": "Beri contoh penggunaan `exactOptionalPropertyTypes deep`.", "input": "", "output": "Pairs with nested Partial patterns for API patch types where absent ≠ explicit-undefined matters."}
+{"instruction": "`exactOptionalPropertyTypes deep` untuk apa?", "input": "", "output": "Pairs with nested Partial patterns for API patch types where absent ≠ explicit-undefined matters."}
+{"instruction": "How would you explain `exactOptionalPropertyTypes deep` to a junior developer?", "input": "", "output": "Pairs with nested Partial patterns for API patch types where absent ≠ explicit-undefined matters."}
+{"instruction": "Give a real-world scenario for `exactOptionalPropertyTypes deep`.", "input": "", "output": "Pairs with nested Partial patterns for API patch types where absent ≠ explicit-undefined matters."}
+{"instruction": "What problem does `exactOptionalPropertyTypes deep` solve?", "input": "", "output": "Pairs with nested Partial patterns for API patch types where absent ≠ explicit-undefined matters."}
+{"instruction": "Terangkan `exactOptionalPropertyTypes deep` dalam satu minit.", "input": "", "output": "Pairs with nested Partial patterns for API patch types where absent ≠ explicit-undefined matters."}
+{"instruction": "Apa yang perlu saya tahu tentang `exactOptionalPropertyTypes deep`?", "input": "", "output": "Pairs with nested Partial patterns for API patch types where absent ≠ explicit-undefined matters."}
+{"instruction": "Bagaimanakah `exactOptionalPropertyTypes deep` berfungsi?", "input": "", "output": "Pairs with nested Partial patterns for API patch types where absent ≠ explicit-undefined matters."}
+{"instruction": "Bilakah masa yang sesuai untuk `exactOptionalPropertyTypes deep`?", "input": "", "output": "Pairs with nested Partial patterns for API patch types where absent ≠ explicit-undefined matters."}
+{"instruction": "What does `template literal inference` do?", "input": "", "output": "`infer` inside template types (`type R = S extends `${A}:${B}` ? ...`) parses string DSLs at compile time."}
+{"instruction": "Explain `template literal inference` briefly.", "input": "", "output": "`infer` inside template types (`type R = S extends `${A}:${B}` ? ...`) parses string DSLs at compile time."}
+{"instruction": "When do I use `template literal inference`?", "input": "", "output": "`infer` inside template types (`type R = S extends `${A}:${B}` ? ...`) parses string DSLs at compile time."}
+{"instruction": "Give a practical example of `template literal inference`.", "input": "", "output": "`infer` inside template types (`type R = S extends `${A}:${B}` ? ...`) parses string DSLs at compile time."}
+{"instruction": "What is `template literal inference` for?", "input": "", "output": "`infer` inside template types (`type R = S extends `${A}:${B}` ? ...`) parses string DSLs at compile time."}
+{"instruction": "Apakah fungsi `template literal inference`?", "input": "", "output": "`infer` inside template types (`type R = S extends `${A}:${B}` ? ...`) parses string DSLs at compile time."}
+{"instruction": "Terangkan `template literal inference` secara ringkas.", "input": "", "output": "`infer` inside template types (`type R = S extends `${A}:${B}` ? ...`) parses string DSLs at compile time."}
+{"instruction": "Bila perlu guna `template literal inference`?", "input": "", "output": "`infer` inside template types (`type R = S extends `${A}:${B}` ? ...`) parses string DSLs at compile time."}
+{"instruction": "Beri contoh penggunaan `template literal inference`.", "input": "", "output": "`infer` inside template types (`type R = S extends `${A}:${B}` ? ...`) parses string DSLs at compile time."}
+{"instruction": "`template literal inference` untuk apa?", "input": "", "output": "`infer` inside template types (`type R = S extends `${A}:${B}` ? ...`) parses string DSLs at compile time."}
+{"instruction": "How would you explain `template literal inference` to a junior developer?", "input": "", "output": "`infer` inside template types (`type R = S extends `${A}:${B}` ? ...`) parses string DSLs at compile time."}
+{"instruction": "Give a real-world scenario for `template literal inference`.", "input": "", "output": "`infer` inside template types (`type R = S extends `${A}:${B}` ? ...`) parses string DSLs at compile time."}
+{"instruction": "What problem does `template literal inference` solve?", "input": "", "output": "`infer` inside template types (`type R = S extends `${A}:${B}` ? ...`) parses string DSLs at compile time."}
+{"instruction": "Terangkan `template literal inference` dalam satu minit.", "input": "", "output": "`infer` inside template types (`type R = S extends `${A}:${B}` ? ...`) parses string DSLs at compile time."}
+{"instruction": "Apa yang perlu saya tahu tentang `template literal inference`?", "input": "", "output": "`infer` inside template types (`type R = S extends `${A}:${B}` ? ...`) parses string DSLs at compile time."}
+{"instruction": "Bagaimanakah `template literal inference` berfungsi?", "input": "", "output": "`infer` inside template types (`type R = S extends `${A}:${B}` ? ...`) parses string DSLs at compile time."}
+{"instruction": "Bilakah masa yang sesuai untuk `template literal inference`?", "input": "", "output": "`infer` inside template types (`type R = S extends `${A}:${B}` ? ...`) parses string DSLs at compile time."}

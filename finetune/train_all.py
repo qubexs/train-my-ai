@@ -130,12 +130,20 @@ def main():
             stack = f.stem
             plan.append((f"xcoder-{stack}", [stack],
                          [STACK2DOMAIN.get(stack, GENERAL)]))
+        ft = ROOT / "finetune"
+        use_ft = all((ft / s / "dataset.jsonl").exists() for _, ss, _ in plan for s in ss)
+        data_root = ft if use_ft else ds_dir
+    else:
+        data_root = None
     for name, stacks, doms in plan:
         if only and name not in only:
             continue
         gguf = models_dir / f"{name}-0.5b-{QUANT}.gguf"
-        files = [ds_dir / f"{s}.jsonl" for s in stacks]
-        files = [f for f in files if f.exists()]
+        if a.per_stack and data_root is not None and (data_root / stacks[0] / "dataset.jsonl").exists():
+            files = [data_root / stacks[0] / "dataset.jsonl"]
+        else:
+            files = [ds_dir / f"{s}.jsonl" for s in stacks]
+            files = [f for f in files if f.exists()]
         rows = sum(count_rows(f) for f in files)
         ready = gguf.exists() and gguf.stat().st_size > 50_000_000
         if ready and not a.retrain:

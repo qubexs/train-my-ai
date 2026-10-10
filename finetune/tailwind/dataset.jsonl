@@ -1,0 +1,1028 @@
+{"instruction": "How do I set up Tailwind CSS?", "input": "", "output": "Install the CLI (`npm i -D tailwindcss @tailwindcss/cli`) with `@import \"tailwindcss\";` in your CSS, or the classic config route (`tailwindcss init`, content paths, directives). The engine scans source files and generates only used utilities — production CSS stays kilobytes, not megabytes."}
+{"instruction": "What is utility-first CSS in Tailwind?", "input": "", "output": "```html\n<button class=\"rounded-lg bg-blue-600 px-4 py-2 font-bold text-white hover:bg-blue-700\">Simpan</button>\n```\nStyle by composing small utilities in markup instead of naming custom classes. Reads verbose at first, but eliminates dead CSS, naming debates and specificity wars — the stylesheet is generated from what you actually use."}
+{"instruction": "How do responsive prefixes work in Tailwind?", "input": "", "output": "```html\n<div class=\"grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-4\">...</div>\n```\nPrefixes are mobile-first min-width breakpoints (`sm: md: lg: xl: 2xl:`) — unprefixed is the phone base, larger screens add on. Same pattern for states: `hover: focus: disabled:` compose freely (`md:hover:bg-blue-800`)."}
+{"instruction": "How do I do dark mode in Tailwind?", "input": "", "output": "Use class strategy (`darkMode: \"class\"` in v3; v4 `custom-variant dark`) so a `.dark` ancestor toggles: `<div class=\"bg-white text-black dark:bg-black dark:text-white\">`. Pair with the app's theme store + `prefers-color-scheme` default. Never ship dark: variants without a toggle — half your users get the wrong theme."}
+{"instruction": "Tailwind flex vs grid utilities?", "input": "", "output": "Flex for one-dimensional rows/columns (`flex items-center justify-between gap-4`); grid for two-dimensional layouts (`grid grid-cols-3 gap-4`). Centering: `flex items-center justify-center` or `grid place-items-center`. Reach for grid when both axes need alignment — flex spacers (`ml-auto`) signal a grid job."}
+{"instruction": "How do I extend Tailwind theme colors and fonts?", "input": "", "output": "```js\n// tailwind.config.js\ntheme: { extend: { colors: { utama: \"#2563eb\" }, fontFamily: { sans: [\"Inter\"] } } }\n```\n`extend` adds without deleting defaults (top-level `colors` replaces everything). Then `bg-utama font-sans` work everywhere. Keep design tokens here — scattered arbitrary values (`bg-[#2563eb]`) defeat the system."}
+{"instruction": "When should I use @apply in Tailwind?", "input": "", "output": "```css\n.btn-utama { @apply rounded-lg bg-blue-600 px-4 py-2 text-white; }\n```\nUse @apply for genuinely repeated component patterns to cut markup noise — but overuse recreates the custom-CSS problems Tailwind removes (dead code, specificity). Rule: three repetitions of identical utility chains earns an @apply or a framework component."}
+{"instruction": "Why is my Tailwind production CSS huge?", "input": "", "output": "The `content` paths miss your templates, so nothing purges — set them to cover every file with classes (`./src/**/*.{html,js,ts,jsx,tsx}`). Dev builds look big (JIT in memory); production `build` output should be tens of KB. If still large, grep for dynamic class construction (`bg-${color}`) which the scanner cannot see — safelist those."}
+{"instruction": "What does `flex` do?", "input": "", "output": "`flex` lays one dimension with `gap`; `flex-1` children share leftover space proportionally."}
+{"instruction": "Explain `flex` briefly.", "input": "", "output": "`flex` lays one dimension with `gap`; `flex-1` children share leftover space proportionally."}
+{"instruction": "When do I use `flex`?", "input": "", "output": "`flex` lays one dimension with `gap`; `flex-1` children share leftover space proportionally."}
+{"instruction": "Give a practical example of `flex`.", "input": "", "output": "`flex` lays one dimension with `gap`; `flex-1` children share leftover space proportionally."}
+{"instruction": "What is `flex` for?", "input": "", "output": "`flex` lays one dimension with `gap`; `flex-1` children share leftover space proportionally."}
+{"instruction": "What does `grid` do?", "input": "", "output": "`grid grid-cols-3 gap-4` aligns two dimensions; `md:` prefixes adapt columns per breakpoint."}
+{"instruction": "Explain `grid` briefly.", "input": "", "output": "`grid grid-cols-3 gap-4` aligns two dimensions; `md:` prefixes adapt columns per breakpoint."}
+{"instruction": "When do I use `grid`?", "input": "", "output": "`grid grid-cols-3 gap-4` aligns two dimensions; `md:` prefixes adapt columns per breakpoint."}
+{"instruction": "Give a practical example of `grid`.", "input": "", "output": "`grid grid-cols-3 gap-4` aligns two dimensions; `md:` prefixes adapt columns per breakpoint."}
+{"instruction": "What is `grid` for?", "input": "", "output": "`grid grid-cols-3 gap-4` aligns two dimensions; `md:` prefixes adapt columns per breakpoint."}
+{"instruction": "What does `text-center text-xl` do?", "input": "", "output": "Type scale (`text-sm`..`text-4xl`), weights (`font-bold`) and alignment compose without custom CSS."}
+{"instruction": "Explain `text-center text-xl` briefly.", "input": "", "output": "Type scale (`text-sm`..`text-4xl`), weights (`font-bold`) and alignment compose without custom CSS."}
+{"instruction": "When do I use `text-center text-xl`?", "input": "", "output": "Type scale (`text-sm`..`text-4xl`), weights (`font-bold`) and alignment compose without custom CSS."}
+{"instruction": "Give a practical example of `text-center text-xl`.", "input": "", "output": "Type scale (`text-sm`..`text-4xl`), weights (`font-bold`) and alignment compose without custom CSS."}
+{"instruction": "What is `text-center text-xl` for?", "input": "", "output": "Type scale (`text-sm`..`text-4xl`), weights (`font-bold`) and alignment compose without custom CSS."}
+{"instruction": "What does `bg-blue-600` do?", "input": "", "output": "Palette colors with shades (`bg-blue-600 hover:bg-blue-700`); extend theme for brand tokens."}
+{"instruction": "Explain `bg-blue-600` briefly.", "input": "", "output": "Palette colors with shades (`bg-blue-600 hover:bg-blue-700`); extend theme for brand tokens."}
+{"instruction": "When do I use `bg-blue-600`?", "input": "", "output": "Palette colors with shades (`bg-blue-600 hover:bg-blue-700`); extend theme for brand tokens."}
+{"instruction": "Give a practical example of `bg-blue-600`.", "input": "", "output": "Palette colors with shades (`bg-blue-600 hover:bg-blue-700`); extend theme for brand tokens."}
+{"instruction": "What is `bg-blue-600` for?", "input": "", "output": "Palette colors with shades (`bg-blue-600 hover:bg-blue-700`); extend theme for brand tokens."}
+{"instruction": "What does `p-4 m-2` do?", "input": "", "output": "Spacing scale (`p-4` padding, `m-2` margin, `space-x-4` between children) replaces guesswork pixels."}
+{"instruction": "Explain `p-4 m-2` briefly.", "input": "", "output": "Spacing scale (`p-4` padding, `m-2` margin, `space-x-4` between children) replaces guesswork pixels."}
+{"instruction": "When do I use `p-4 m-2`?", "input": "", "output": "Spacing scale (`p-4` padding, `m-2` margin, `space-x-4` between children) replaces guesswork pixels."}
+{"instruction": "Give a practical example of `p-4 m-2`.", "input": "", "output": "Spacing scale (`p-4` padding, `m-2` margin, `space-x-4` between children) replaces guesswork pixels."}
+{"instruction": "What is `p-4 m-2` for?", "input": "", "output": "Spacing scale (`p-4` padding, `m-2` margin, `space-x-4` between children) replaces guesswork pixels."}
+{"instruction": "What does `rounded-lg shadow` do?", "input": "", "output": "Radius (`rounded`, `rounded-full` pills) plus layered `shadow` utilities build cards in two classes."}
+{"instruction": "Explain `rounded-lg shadow` briefly.", "input": "", "output": "Radius (`rounded`, `rounded-full` pills) plus layered `shadow` utilities build cards in two classes."}
+{"instruction": "When do I use `rounded-lg shadow`?", "input": "", "output": "Radius (`rounded`, `rounded-full` pills) plus layered `shadow` utilities build cards in two classes."}
+{"instruction": "Give a practical example of `rounded-lg shadow`.", "input": "", "output": "Radius (`rounded`, `rounded-full` pills) plus layered `shadow` utilities build cards in two classes."}
+{"instruction": "What is `rounded-lg shadow` for?", "input": "", "output": "Radius (`rounded`, `rounded-full` pills) plus layered `shadow` utilities build cards in two classes."}
+{"instruction": "What does `hover:` do?", "input": "", "output": "State variants (`hover: focus: disabled:`) compose freely; always pair hover with focus for keyboard users."}
+{"instruction": "Explain `hover:` briefly.", "input": "", "output": "State variants (`hover: focus: disabled:`) compose freely; always pair hover with focus for keyboard users."}
+{"instruction": "When do I use `hover:`?", "input": "", "output": "State variants (`hover: focus: disabled:`) compose freely; always pair hover with focus for keyboard users."}
+{"instruction": "Give a practical example of `hover:`.", "input": "", "output": "State variants (`hover: focus: disabled:`) compose freely; always pair hover with focus for keyboard users."}
+{"instruction": "What is `hover:` for?", "input": "", "output": "State variants (`hover: focus: disabled:`) compose freely; always pair hover with focus for keyboard users."}
+{"instruction": "What does `md:` do?", "input": "", "output": "Mobile-first breakpoints (`sm md lg xl 2xl`) layer enhancements upward from the phone base."}
+{"instruction": "Explain `md:` briefly.", "input": "", "output": "Mobile-first breakpoints (`sm md lg xl 2xl`) layer enhancements upward from the phone base."}
+{"instruction": "When do I use `md:`?", "input": "", "output": "Mobile-first breakpoints (`sm md lg xl 2xl`) layer enhancements upward from the phone base."}
+{"instruction": "Give a practical example of `md:`.", "input": "", "output": "Mobile-first breakpoints (`sm md lg xl 2xl`) layer enhancements upward from the phone base."}
+{"instruction": "What is `md:` for?", "input": "", "output": "Mobile-first breakpoints (`sm md lg xl 2xl`) layer enhancements upward from the phone base."}
+{"instruction": "What does `flex-col flex-row` do?", "input": "", "output": "Direction switch reflows the same markup; responsive (`flex-col md:flex-row`) without duplicate HTML."}
+{"instruction": "Explain `flex-col flex-row` briefly.", "input": "", "output": "Direction switch reflows the same markup; responsive (`flex-col md:flex-row`) without duplicate HTML."}
+{"instruction": "When do I use `flex-col flex-row`?", "input": "", "output": "Direction switch reflows the same markup; responsive (`flex-col md:flex-row`) without duplicate HTML."}
+{"instruction": "Give a practical example of `flex-col flex-row`.", "input": "", "output": "Direction switch reflows the same markup; responsive (`flex-col md:flex-row`) without duplicate HTML."}
+{"instruction": "What is `flex-col flex-row` for?", "input": "", "output": "Direction switch reflows the same markup; responsive (`flex-col md:flex-row`) without duplicate HTML."}
+{"instruction": "What does `items-center justify-center` do?", "input": "", "output": "Cross/main-axis centering pair — the two-class answer to vertical centering."}
+{"instruction": "Explain `items-center justify-center` briefly.", "input": "", "output": "Cross/main-axis centering pair — the two-class answer to vertical centering."}
+{"instruction": "When do I use `items-center justify-center`?", "input": "", "output": "Cross/main-axis centering pair — the two-class answer to vertical centering."}
+{"instruction": "Give a practical example of `items-center justify-center`.", "input": "", "output": "Cross/main-axis centering pair — the two-class answer to vertical centering."}
+{"instruction": "What is `items-center justify-center` for?", "input": "", "output": "Cross/main-axis centering pair — the two-class answer to vertical centering."}
+{"instruction": "What does `gap-4` do?", "input": "", "output": "`gap` spaces grid/flex children uniformly; replaces margin hacks and last-child exceptions."}
+{"instruction": "Explain `gap-4` briefly.", "input": "", "output": "`gap` spaces grid/flex children uniformly; replaces margin hacks and last-child exceptions."}
+{"instruction": "When do I use `gap-4`?", "input": "", "output": "`gap` spaces grid/flex children uniformly; replaces margin hacks and last-child exceptions."}
+{"instruction": "Give a practical example of `gap-4`.", "input": "", "output": "`gap` spaces grid/flex children uniformly; replaces margin hacks and last-child exceptions."}
+{"instruction": "What is `gap-4` for?", "input": "", "output": "`gap` spaces grid/flex children uniformly; replaces margin hacks and last-child exceptions."}
+{"instruction": "What does `border` do?", "input": "", "output": "`border border-gray-200` outlines; per-side (`border-t`) and divide utilities for lists."}
+{"instruction": "Explain `border` briefly.", "input": "", "output": "`border border-gray-200` outlines; per-side (`border-t`) and divide utilities for lists."}
+{"instruction": "When do I use `border`?", "input": "", "output": "`border border-gray-200` outlines; per-side (`border-t`) and divide utilities for lists."}
+{"instruction": "Give a practical example of `border`.", "input": "", "output": "`border border-gray-200` outlines; per-side (`border-t`) and divide utilities for lists."}
+{"instruction": "What is `border` for?", "input": "", "output": "`border border-gray-200` outlines; per-side (`border-t`) and divide utilities for lists."}
+{"instruction": "What does `w-full h-64` do?", "input": "", "output": "Sizing scale with fractions (`w-1/2`), viewport units and `max-w-*` containers for readable lines."}
+{"instruction": "Explain `w-full h-64` briefly.", "input": "", "output": "Sizing scale with fractions (`w-1/2`), viewport units and `max-w-*` containers for readable lines."}
+{"instruction": "When do I use `w-full h-64`?", "input": "", "output": "Sizing scale with fractions (`w-1/2`), viewport units and `max-w-*` containers for readable lines."}
+{"instruction": "Give a practical example of `w-full h-64`.", "input": "", "output": "Sizing scale with fractions (`w-1/2`), viewport units and `max-w-*` containers for readable lines."}
+{"instruction": "What is `w-full h-64` for?", "input": "", "output": "Sizing scale with fractions (`w-1/2`), viewport units and `max-w-*` containers for readable lines."}
+{"instruction": "What does `hidden block` do?", "input": "", "output": "Display swaps per breakpoint (`hidden md:block`); `invisible` keeps layout space unlike `hidden`."}
+{"instruction": "Explain `hidden block` briefly.", "input": "", "output": "Display swaps per breakpoint (`hidden md:block`); `invisible` keeps layout space unlike `hidden`."}
+{"instruction": "When do I use `hidden block`?", "input": "", "output": "Display swaps per breakpoint (`hidden md:block`); `invisible` keeps layout space unlike `hidden`."}
+{"instruction": "Give a practical example of `hidden block`.", "input": "", "output": "Display swaps per breakpoint (`hidden md:block`); `invisible` keeps layout space unlike `hidden`."}
+{"instruction": "What is `hidden block` for?", "input": "", "output": "Display swaps per breakpoint (`hidden md:block`); `invisible` keeps layout space unlike `hidden`."}
+{"instruction": "What does `container mx-auto` do?", "input": "", "output": "`container mx-auto px-4` centers content with gutters — the standard page shell."}
+{"instruction": "Explain `container mx-auto` briefly.", "input": "", "output": "`container mx-auto px-4` centers content with gutters — the standard page shell."}
+{"instruction": "When do I use `container mx-auto`?", "input": "", "output": "`container mx-auto px-4` centers content with gutters — the standard page shell."}
+{"instruction": "Give a practical example of `container mx-auto`.", "input": "", "output": "`container mx-auto px-4` centers content with gutters — the standard page shell."}
+{"instruction": "What is `container mx-auto` for?", "input": "", "output": "`container mx-auto px-4` centers content with gutters — the standard page shell."}
+{"instruction": "What does `space-x-4` do?", "input": "", "output": "`space-x/y` gaps siblings without wrapper classes; RTL-aware variants exist for mirrored layouts."}
+{"instruction": "Explain `space-x-4` briefly.", "input": "", "output": "`space-x/y` gaps siblings without wrapper classes; RTL-aware variants exist for mirrored layouts."}
+{"instruction": "When do I use `space-x-4`?", "input": "", "output": "`space-x/y` gaps siblings without wrapper classes; RTL-aware variants exist for mirrored layouts."}
+{"instruction": "Give a practical example of `space-x-4`.", "input": "", "output": "`space-x/y` gaps siblings without wrapper classes; RTL-aware variants exist for mirrored layouts."}
+{"instruction": "What is `space-x-4` for?", "input": "", "output": "`space-x/y` gaps siblings without wrapper classes; RTL-aware variants exist for mirrored layouts."}
+{"instruction": "What does `divide-y` do?", "input": "", "output": "`divide-y` draws rules between children only — cleaner than borders on every item."}
+{"instruction": "Explain `divide-y` briefly.", "input": "", "output": "`divide-y` draws rules between children only — cleaner than borders on every item."}
+{"instruction": "When do I use `divide-y`?", "input": "", "output": "`divide-y` draws rules between children only — cleaner than borders on every item."}
+{"instruction": "Give a practical example of `divide-y`.", "input": "", "output": "`divide-y` draws rules between children only — cleaner than borders on every item."}
+{"instruction": "What is `divide-y` for?", "input": "", "output": "`divide-y` draws rules between children only — cleaner than borders on every item."}
+{"instruction": "What does `dark:` do?", "input": "", "output": "Dark variants keyed off class strategy toggle whole themes with one ancestor class."}
+{"instruction": "Explain `dark:` briefly.", "input": "", "output": "Dark variants keyed off class strategy toggle whole themes with one ancestor class."}
+{"instruction": "When do I use `dark:`?", "input": "", "output": "Dark variants keyed off class strategy toggle whole themes with one ancestor class."}
+{"instruction": "Give a practical example of `dark:`.", "input": "", "output": "Dark variants keyed off class strategy toggle whole themes with one ancestor class."}
+{"instruction": "What is `dark:` for?", "input": "", "output": "Dark variants keyed off class strategy toggle whole themes with one ancestor class."}
+{"instruction": "What does `transition` do?", "input": "", "output": "`transition` + `duration-200` animate state changes; restrict to transform/opacity for smoothness."}
+{"instruction": "Explain `transition` briefly.", "input": "", "output": "`transition` + `duration-200` animate state changes; restrict to transform/opacity for smoothness."}
+{"instruction": "When do I use `transition`?", "input": "", "output": "`transition` + `duration-200` animate state changes; restrict to transform/opacity for smoothness."}
+{"instruction": "Give a practical example of `transition`.", "input": "", "output": "`transition` + `duration-200` animate state changes; restrict to transform/opacity for smoothness."}
+{"instruction": "What is `transition` for?", "input": "", "output": "`transition` + `duration-200` animate state changes; restrict to transform/opacity for smoothness."}
+{"instruction": "What does `animate-spin` do?", "input": "", "output": "Built-in keyframes (`spin ping pulse bounce`) cover loaders; custom ones extend via config."}
+{"instruction": "Explain `animate-spin` briefly.", "input": "", "output": "Built-in keyframes (`spin ping pulse bounce`) cover loaders; custom ones extend via config."}
+{"instruction": "When do I use `animate-spin`?", "input": "", "output": "Built-in keyframes (`spin ping pulse bounce`) cover loaders; custom ones extend via config."}
+{"instruction": "Give a practical example of `animate-spin`.", "input": "", "output": "Built-in keyframes (`spin ping pulse bounce`) cover loaders; custom ones extend via config."}
+{"instruction": "What is `animate-spin` for?", "input": "", "output": "Built-in keyframes (`spin ping pulse bounce`) cover loaders; custom ones extend via config."}
+{"instruction": "Apakah fungsi `flex`?", "input": "", "output": "`flex` lays one dimension with `gap`; `flex-1` children share leftover space proportionally."}
+{"instruction": "Terangkan `flex` secara ringkas.", "input": "", "output": "`flex` lays one dimension with `gap`; `flex-1` children share leftover space proportionally."}
+{"instruction": "Bila perlu guna `flex`?", "input": "", "output": "`flex` lays one dimension with `gap`; `flex-1` children share leftover space proportionally."}
+{"instruction": "Beri contoh penggunaan `flex`.", "input": "", "output": "`flex` lays one dimension with `gap`; `flex-1` children share leftover space proportionally."}
+{"instruction": "`flex` untuk apa?", "input": "", "output": "`flex` lays one dimension with `gap`; `flex-1` children share leftover space proportionally."}
+{"instruction": "How would you explain `flex` to a junior developer?", "input": "", "output": "`flex` lays one dimension with `gap`; `flex-1` children share leftover space proportionally."}
+{"instruction": "Give a real-world scenario for `flex`.", "input": "", "output": "`flex` lays one dimension with `gap`; `flex-1` children share leftover space proportionally."}
+{"instruction": "What problem does `flex` solve?", "input": "", "output": "`flex` lays one dimension with `gap`; `flex-1` children share leftover space proportionally."}
+{"instruction": "Apakah fungsi `grid`?", "input": "", "output": "`grid grid-cols-3 gap-4` aligns two dimensions; `md:` prefixes adapt columns per breakpoint."}
+{"instruction": "Terangkan `grid` secara ringkas.", "input": "", "output": "`grid grid-cols-3 gap-4` aligns two dimensions; `md:` prefixes adapt columns per breakpoint."}
+{"instruction": "Bila perlu guna `grid`?", "input": "", "output": "`grid grid-cols-3 gap-4` aligns two dimensions; `md:` prefixes adapt columns per breakpoint."}
+{"instruction": "Beri contoh penggunaan `grid`.", "input": "", "output": "`grid grid-cols-3 gap-4` aligns two dimensions; `md:` prefixes adapt columns per breakpoint."}
+{"instruction": "`grid` untuk apa?", "input": "", "output": "`grid grid-cols-3 gap-4` aligns two dimensions; `md:` prefixes adapt columns per breakpoint."}
+{"instruction": "How would you explain `grid` to a junior developer?", "input": "", "output": "`grid grid-cols-3 gap-4` aligns two dimensions; `md:` prefixes adapt columns per breakpoint."}
+{"instruction": "Give a real-world scenario for `grid`.", "input": "", "output": "`grid grid-cols-3 gap-4` aligns two dimensions; `md:` prefixes adapt columns per breakpoint."}
+{"instruction": "What problem does `grid` solve?", "input": "", "output": "`grid grid-cols-3 gap-4` aligns two dimensions; `md:` prefixes adapt columns per breakpoint."}
+{"instruction": "Apakah fungsi `text-center text-xl`?", "input": "", "output": "Type scale (`text-sm`..`text-4xl`), weights (`font-bold`) and alignment compose without custom CSS."}
+{"instruction": "Terangkan `text-center text-xl` secara ringkas.", "input": "", "output": "Type scale (`text-sm`..`text-4xl`), weights (`font-bold`) and alignment compose without custom CSS."}
+{"instruction": "Bila perlu guna `text-center text-xl`?", "input": "", "output": "Type scale (`text-sm`..`text-4xl`), weights (`font-bold`) and alignment compose without custom CSS."}
+{"instruction": "Beri contoh penggunaan `text-center text-xl`.", "input": "", "output": "Type scale (`text-sm`..`text-4xl`), weights (`font-bold`) and alignment compose without custom CSS."}
+{"instruction": "`text-center text-xl` untuk apa?", "input": "", "output": "Type scale (`text-sm`..`text-4xl`), weights (`font-bold`) and alignment compose without custom CSS."}
+{"instruction": "How would you explain `text-center text-xl` to a junior developer?", "input": "", "output": "Type scale (`text-sm`..`text-4xl`), weights (`font-bold`) and alignment compose without custom CSS."}
+{"instruction": "Give a real-world scenario for `text-center text-xl`.", "input": "", "output": "Type scale (`text-sm`..`text-4xl`), weights (`font-bold`) and alignment compose without custom CSS."}
+{"instruction": "What problem does `text-center text-xl` solve?", "input": "", "output": "Type scale (`text-sm`..`text-4xl`), weights (`font-bold`) and alignment compose without custom CSS."}
+{"instruction": "Apakah fungsi `bg-blue-600`?", "input": "", "output": "Palette colors with shades (`bg-blue-600 hover:bg-blue-700`); extend theme for brand tokens."}
+{"instruction": "Terangkan `bg-blue-600` secara ringkas.", "input": "", "output": "Palette colors with shades (`bg-blue-600 hover:bg-blue-700`); extend theme for brand tokens."}
+{"instruction": "Bila perlu guna `bg-blue-600`?", "input": "", "output": "Palette colors with shades (`bg-blue-600 hover:bg-blue-700`); extend theme for brand tokens."}
+{"instruction": "Beri contoh penggunaan `bg-blue-600`.", "input": "", "output": "Palette colors with shades (`bg-blue-600 hover:bg-blue-700`); extend theme for brand tokens."}
+{"instruction": "`bg-blue-600` untuk apa?", "input": "", "output": "Palette colors with shades (`bg-blue-600 hover:bg-blue-700`); extend theme for brand tokens."}
+{"instruction": "How would you explain `bg-blue-600` to a junior developer?", "input": "", "output": "Palette colors with shades (`bg-blue-600 hover:bg-blue-700`); extend theme for brand tokens."}
+{"instruction": "Give a real-world scenario for `bg-blue-600`.", "input": "", "output": "Palette colors with shades (`bg-blue-600 hover:bg-blue-700`); extend theme for brand tokens."}
+{"instruction": "What problem does `bg-blue-600` solve?", "input": "", "output": "Palette colors with shades (`bg-blue-600 hover:bg-blue-700`); extend theme for brand tokens."}
+{"instruction": "Apakah fungsi `p-4 m-2`?", "input": "", "output": "Spacing scale (`p-4` padding, `m-2` margin, `space-x-4` between children) replaces guesswork pixels."}
+{"instruction": "Terangkan `p-4 m-2` secara ringkas.", "input": "", "output": "Spacing scale (`p-4` padding, `m-2` margin, `space-x-4` between children) replaces guesswork pixels."}
+{"instruction": "Bila perlu guna `p-4 m-2`?", "input": "", "output": "Spacing scale (`p-4` padding, `m-2` margin, `space-x-4` between children) replaces guesswork pixels."}
+{"instruction": "Beri contoh penggunaan `p-4 m-2`.", "input": "", "output": "Spacing scale (`p-4` padding, `m-2` margin, `space-x-4` between children) replaces guesswork pixels."}
+{"instruction": "`p-4 m-2` untuk apa?", "input": "", "output": "Spacing scale (`p-4` padding, `m-2` margin, `space-x-4` between children) replaces guesswork pixels."}
+{"instruction": "How would you explain `p-4 m-2` to a junior developer?", "input": "", "output": "Spacing scale (`p-4` padding, `m-2` margin, `space-x-4` between children) replaces guesswork pixels."}
+{"instruction": "Give a real-world scenario for `p-4 m-2`.", "input": "", "output": "Spacing scale (`p-4` padding, `m-2` margin, `space-x-4` between children) replaces guesswork pixels."}
+{"instruction": "What problem does `p-4 m-2` solve?", "input": "", "output": "Spacing scale (`p-4` padding, `m-2` margin, `space-x-4` between children) replaces guesswork pixels."}
+{"instruction": "Apakah fungsi `rounded-lg shadow`?", "input": "", "output": "Radius (`rounded`, `rounded-full` pills) plus layered `shadow` utilities build cards in two classes."}
+{"instruction": "Terangkan `rounded-lg shadow` secara ringkas.", "input": "", "output": "Radius (`rounded`, `rounded-full` pills) plus layered `shadow` utilities build cards in two classes."}
+{"instruction": "Bila perlu guna `rounded-lg shadow`?", "input": "", "output": "Radius (`rounded`, `rounded-full` pills) plus layered `shadow` utilities build cards in two classes."}
+{"instruction": "Beri contoh penggunaan `rounded-lg shadow`.", "input": "", "output": "Radius (`rounded`, `rounded-full` pills) plus layered `shadow` utilities build cards in two classes."}
+{"instruction": "`rounded-lg shadow` untuk apa?", "input": "", "output": "Radius (`rounded`, `rounded-full` pills) plus layered `shadow` utilities build cards in two classes."}
+{"instruction": "How would you explain `rounded-lg shadow` to a junior developer?", "input": "", "output": "Radius (`rounded`, `rounded-full` pills) plus layered `shadow` utilities build cards in two classes."}
+{"instruction": "Give a real-world scenario for `rounded-lg shadow`.", "input": "", "output": "Radius (`rounded`, `rounded-full` pills) plus layered `shadow` utilities build cards in two classes."}
+{"instruction": "What problem does `rounded-lg shadow` solve?", "input": "", "output": "Radius (`rounded`, `rounded-full` pills) plus layered `shadow` utilities build cards in two classes."}
+{"instruction": "Apakah fungsi `hover:`?", "input": "", "output": "State variants (`hover: focus: disabled:`) compose freely; always pair hover with focus for keyboard users."}
+{"instruction": "Terangkan `hover:` secara ringkas.", "input": "", "output": "State variants (`hover: focus: disabled:`) compose freely; always pair hover with focus for keyboard users."}
+{"instruction": "Bila perlu guna `hover:`?", "input": "", "output": "State variants (`hover: focus: disabled:`) compose freely; always pair hover with focus for keyboard users."}
+{"instruction": "Beri contoh penggunaan `hover:`.", "input": "", "output": "State variants (`hover: focus: disabled:`) compose freely; always pair hover with focus for keyboard users."}
+{"instruction": "`hover:` untuk apa?", "input": "", "output": "State variants (`hover: focus: disabled:`) compose freely; always pair hover with focus for keyboard users."}
+{"instruction": "How would you explain `hover:` to a junior developer?", "input": "", "output": "State variants (`hover: focus: disabled:`) compose freely; always pair hover with focus for keyboard users."}
+{"instruction": "Give a real-world scenario for `hover:`.", "input": "", "output": "State variants (`hover: focus: disabled:`) compose freely; always pair hover with focus for keyboard users."}
+{"instruction": "What problem does `hover:` solve?", "input": "", "output": "State variants (`hover: focus: disabled:`) compose freely; always pair hover with focus for keyboard users."}
+{"instruction": "Apakah fungsi `md:`?", "input": "", "output": "Mobile-first breakpoints (`sm md lg xl 2xl`) layer enhancements upward from the phone base."}
+{"instruction": "Terangkan `md:` secara ringkas.", "input": "", "output": "Mobile-first breakpoints (`sm md lg xl 2xl`) layer enhancements upward from the phone base."}
+{"instruction": "Bila perlu guna `md:`?", "input": "", "output": "Mobile-first breakpoints (`sm md lg xl 2xl`) layer enhancements upward from the phone base."}
+{"instruction": "Beri contoh penggunaan `md:`.", "input": "", "output": "Mobile-first breakpoints (`sm md lg xl 2xl`) layer enhancements upward from the phone base."}
+{"instruction": "`md:` untuk apa?", "input": "", "output": "Mobile-first breakpoints (`sm md lg xl 2xl`) layer enhancements upward from the phone base."}
+{"instruction": "How would you explain `md:` to a junior developer?", "input": "", "output": "Mobile-first breakpoints (`sm md lg xl 2xl`) layer enhancements upward from the phone base."}
+{"instruction": "Give a real-world scenario for `md:`.", "input": "", "output": "Mobile-first breakpoints (`sm md lg xl 2xl`) layer enhancements upward from the phone base."}
+{"instruction": "What problem does `md:` solve?", "input": "", "output": "Mobile-first breakpoints (`sm md lg xl 2xl`) layer enhancements upward from the phone base."}
+{"instruction": "Apakah fungsi `flex-col flex-row`?", "input": "", "output": "Direction switch reflows the same markup; responsive (`flex-col md:flex-row`) without duplicate HTML."}
+{"instruction": "Terangkan `flex-col flex-row` secara ringkas.", "input": "", "output": "Direction switch reflows the same markup; responsive (`flex-col md:flex-row`) without duplicate HTML."}
+{"instruction": "Bila perlu guna `flex-col flex-row`?", "input": "", "output": "Direction switch reflows the same markup; responsive (`flex-col md:flex-row`) without duplicate HTML."}
+{"instruction": "Beri contoh penggunaan `flex-col flex-row`.", "input": "", "output": "Direction switch reflows the same markup; responsive (`flex-col md:flex-row`) without duplicate HTML."}
+{"instruction": "`flex-col flex-row` untuk apa?", "input": "", "output": "Direction switch reflows the same markup; responsive (`flex-col md:flex-row`) without duplicate HTML."}
+{"instruction": "How would you explain `flex-col flex-row` to a junior developer?", "input": "", "output": "Direction switch reflows the same markup; responsive (`flex-col md:flex-row`) without duplicate HTML."}
+{"instruction": "Give a real-world scenario for `flex-col flex-row`.", "input": "", "output": "Direction switch reflows the same markup; responsive (`flex-col md:flex-row`) without duplicate HTML."}
+{"instruction": "What problem does `flex-col flex-row` solve?", "input": "", "output": "Direction switch reflows the same markup; responsive (`flex-col md:flex-row`) without duplicate HTML."}
+{"instruction": "Apakah fungsi `items-center justify-center`?", "input": "", "output": "Cross/main-axis centering pair — the two-class answer to vertical centering."}
+{"instruction": "Terangkan `items-center justify-center` secara ringkas.", "input": "", "output": "Cross/main-axis centering pair — the two-class answer to vertical centering."}
+{"instruction": "Bila perlu guna `items-center justify-center`?", "input": "", "output": "Cross/main-axis centering pair — the two-class answer to vertical centering."}
+{"instruction": "Beri contoh penggunaan `items-center justify-center`.", "input": "", "output": "Cross/main-axis centering pair — the two-class answer to vertical centering."}
+{"instruction": "`items-center justify-center` untuk apa?", "input": "", "output": "Cross/main-axis centering pair — the two-class answer to vertical centering."}
+{"instruction": "How would you explain `items-center justify-center` to a junior developer?", "input": "", "output": "Cross/main-axis centering pair — the two-class answer to vertical centering."}
+{"instruction": "Give a real-world scenario for `items-center justify-center`.", "input": "", "output": "Cross/main-axis centering pair — the two-class answer to vertical centering."}
+{"instruction": "What problem does `items-center justify-center` solve?", "input": "", "output": "Cross/main-axis centering pair — the two-class answer to vertical centering."}
+{"instruction": "Apakah fungsi `gap-4`?", "input": "", "output": "`gap` spaces grid/flex children uniformly; replaces margin hacks and last-child exceptions."}
+{"instruction": "Terangkan `gap-4` secara ringkas.", "input": "", "output": "`gap` spaces grid/flex children uniformly; replaces margin hacks and last-child exceptions."}
+{"instruction": "Bila perlu guna `gap-4`?", "input": "", "output": "`gap` spaces grid/flex children uniformly; replaces margin hacks and last-child exceptions."}
+{"instruction": "Beri contoh penggunaan `gap-4`.", "input": "", "output": "`gap` spaces grid/flex children uniformly; replaces margin hacks and last-child exceptions."}
+{"instruction": "`gap-4` untuk apa?", "input": "", "output": "`gap` spaces grid/flex children uniformly; replaces margin hacks and last-child exceptions."}
+{"instruction": "How would you explain `gap-4` to a junior developer?", "input": "", "output": "`gap` spaces grid/flex children uniformly; replaces margin hacks and last-child exceptions."}
+{"instruction": "Give a real-world scenario for `gap-4`.", "input": "", "output": "`gap` spaces grid/flex children uniformly; replaces margin hacks and last-child exceptions."}
+{"instruction": "What problem does `gap-4` solve?", "input": "", "output": "`gap` spaces grid/flex children uniformly; replaces margin hacks and last-child exceptions."}
+{"instruction": "Apakah fungsi `border`?", "input": "", "output": "`border border-gray-200` outlines; per-side (`border-t`) and divide utilities for lists."}
+{"instruction": "Terangkan `border` secara ringkas.", "input": "", "output": "`border border-gray-200` outlines; per-side (`border-t`) and divide utilities for lists."}
+{"instruction": "Bila perlu guna `border`?", "input": "", "output": "`border border-gray-200` outlines; per-side (`border-t`) and divide utilities for lists."}
+{"instruction": "Beri contoh penggunaan `border`.", "input": "", "output": "`border border-gray-200` outlines; per-side (`border-t`) and divide utilities for lists."}
+{"instruction": "`border` untuk apa?", "input": "", "output": "`border border-gray-200` outlines; per-side (`border-t`) and divide utilities for lists."}
+{"instruction": "How would you explain `border` to a junior developer?", "input": "", "output": "`border border-gray-200` outlines; per-side (`border-t`) and divide utilities for lists."}
+{"instruction": "Give a real-world scenario for `border`.", "input": "", "output": "`border border-gray-200` outlines; per-side (`border-t`) and divide utilities for lists."}
+{"instruction": "What problem does `border` solve?", "input": "", "output": "`border border-gray-200` outlines; per-side (`border-t`) and divide utilities for lists."}
+{"instruction": "Apakah fungsi `w-full h-64`?", "input": "", "output": "Sizing scale with fractions (`w-1/2`), viewport units and `max-w-*` containers for readable lines."}
+{"instruction": "Terangkan `w-full h-64` secara ringkas.", "input": "", "output": "Sizing scale with fractions (`w-1/2`), viewport units and `max-w-*` containers for readable lines."}
+{"instruction": "Bila perlu guna `w-full h-64`?", "input": "", "output": "Sizing scale with fractions (`w-1/2`), viewport units and `max-w-*` containers for readable lines."}
+{"instruction": "Beri contoh penggunaan `w-full h-64`.", "input": "", "output": "Sizing scale with fractions (`w-1/2`), viewport units and `max-w-*` containers for readable lines."}
+{"instruction": "`w-full h-64` untuk apa?", "input": "", "output": "Sizing scale with fractions (`w-1/2`), viewport units and `max-w-*` containers for readable lines."}
+{"instruction": "How would you explain `w-full h-64` to a junior developer?", "input": "", "output": "Sizing scale with fractions (`w-1/2`), viewport units and `max-w-*` containers for readable lines."}
+{"instruction": "Give a real-world scenario for `w-full h-64`.", "input": "", "output": "Sizing scale with fractions (`w-1/2`), viewport units and `max-w-*` containers for readable lines."}
+{"instruction": "What problem does `w-full h-64` solve?", "input": "", "output": "Sizing scale with fractions (`w-1/2`), viewport units and `max-w-*` containers for readable lines."}
+{"instruction": "Apakah fungsi `hidden block`?", "input": "", "output": "Display swaps per breakpoint (`hidden md:block`); `invisible` keeps layout space unlike `hidden`."}
+{"instruction": "Terangkan `hidden block` secara ringkas.", "input": "", "output": "Display swaps per breakpoint (`hidden md:block`); `invisible` keeps layout space unlike `hidden`."}
+{"instruction": "Bila perlu guna `hidden block`?", "input": "", "output": "Display swaps per breakpoint (`hidden md:block`); `invisible` keeps layout space unlike `hidden`."}
+{"instruction": "Beri contoh penggunaan `hidden block`.", "input": "", "output": "Display swaps per breakpoint (`hidden md:block`); `invisible` keeps layout space unlike `hidden`."}
+{"instruction": "`hidden block` untuk apa?", "input": "", "output": "Display swaps per breakpoint (`hidden md:block`); `invisible` keeps layout space unlike `hidden`."}
+{"instruction": "How would you explain `hidden block` to a junior developer?", "input": "", "output": "Display swaps per breakpoint (`hidden md:block`); `invisible` keeps layout space unlike `hidden`."}
+{"instruction": "Give a real-world scenario for `hidden block`.", "input": "", "output": "Display swaps per breakpoint (`hidden md:block`); `invisible` keeps layout space unlike `hidden`."}
+{"instruction": "What problem does `hidden block` solve?", "input": "", "output": "Display swaps per breakpoint (`hidden md:block`); `invisible` keeps layout space unlike `hidden`."}
+{"instruction": "Apakah fungsi `container mx-auto`?", "input": "", "output": "`container mx-auto px-4` centers content with gutters — the standard page shell."}
+{"instruction": "Terangkan `container mx-auto` secara ringkas.", "input": "", "output": "`container mx-auto px-4` centers content with gutters — the standard page shell."}
+{"instruction": "Bila perlu guna `container mx-auto`?", "input": "", "output": "`container mx-auto px-4` centers content with gutters — the standard page shell."}
+{"instruction": "Beri contoh penggunaan `container mx-auto`.", "input": "", "output": "`container mx-auto px-4` centers content with gutters — the standard page shell."}
+{"instruction": "`container mx-auto` untuk apa?", "input": "", "output": "`container mx-auto px-4` centers content with gutters — the standard page shell."}
+{"instruction": "How would you explain `container mx-auto` to a junior developer?", "input": "", "output": "`container mx-auto px-4` centers content with gutters — the standard page shell."}
+{"instruction": "Give a real-world scenario for `container mx-auto`.", "input": "", "output": "`container mx-auto px-4` centers content with gutters — the standard page shell."}
+{"instruction": "What problem does `container mx-auto` solve?", "input": "", "output": "`container mx-auto px-4` centers content with gutters — the standard page shell."}
+{"instruction": "Apakah fungsi `space-x-4`?", "input": "", "output": "`space-x/y` gaps siblings without wrapper classes; RTL-aware variants exist for mirrored layouts."}
+{"instruction": "Terangkan `space-x-4` secara ringkas.", "input": "", "output": "`space-x/y` gaps siblings without wrapper classes; RTL-aware variants exist for mirrored layouts."}
+{"instruction": "Bila perlu guna `space-x-4`?", "input": "", "output": "`space-x/y` gaps siblings without wrapper classes; RTL-aware variants exist for mirrored layouts."}
+{"instruction": "Beri contoh penggunaan `space-x-4`.", "input": "", "output": "`space-x/y` gaps siblings without wrapper classes; RTL-aware variants exist for mirrored layouts."}
+{"instruction": "`space-x-4` untuk apa?", "input": "", "output": "`space-x/y` gaps siblings without wrapper classes; RTL-aware variants exist for mirrored layouts."}
+{"instruction": "How would you explain `space-x-4` to a junior developer?", "input": "", "output": "`space-x/y` gaps siblings without wrapper classes; RTL-aware variants exist for mirrored layouts."}
+{"instruction": "Give a real-world scenario for `space-x-4`.", "input": "", "output": "`space-x/y` gaps siblings without wrapper classes; RTL-aware variants exist for mirrored layouts."}
+{"instruction": "What problem does `space-x-4` solve?", "input": "", "output": "`space-x/y` gaps siblings without wrapper classes; RTL-aware variants exist for mirrored layouts."}
+{"instruction": "Apakah fungsi `divide-y`?", "input": "", "output": "`divide-y` draws rules between children only — cleaner than borders on every item."}
+{"instruction": "Terangkan `divide-y` secara ringkas.", "input": "", "output": "`divide-y` draws rules between children only — cleaner than borders on every item."}
+{"instruction": "Bila perlu guna `divide-y`?", "input": "", "output": "`divide-y` draws rules between children only — cleaner than borders on every item."}
+{"instruction": "Beri contoh penggunaan `divide-y`.", "input": "", "output": "`divide-y` draws rules between children only — cleaner than borders on every item."}
+{"instruction": "`divide-y` untuk apa?", "input": "", "output": "`divide-y` draws rules between children only — cleaner than borders on every item."}
+{"instruction": "How would you explain `divide-y` to a junior developer?", "input": "", "output": "`divide-y` draws rules between children only — cleaner than borders on every item."}
+{"instruction": "Give a real-world scenario for `divide-y`.", "input": "", "output": "`divide-y` draws rules between children only — cleaner than borders on every item."}
+{"instruction": "What problem does `divide-y` solve?", "input": "", "output": "`divide-y` draws rules between children only — cleaner than borders on every item."}
+{"instruction": "Apakah fungsi `dark:`?", "input": "", "output": "Dark variants keyed off class strategy toggle whole themes with one ancestor class."}
+{"instruction": "Terangkan `dark:` secara ringkas.", "input": "", "output": "Dark variants keyed off class strategy toggle whole themes with one ancestor class."}
+{"instruction": "Bila perlu guna `dark:`?", "input": "", "output": "Dark variants keyed off class strategy toggle whole themes with one ancestor class."}
+{"instruction": "Beri contoh penggunaan `dark:`.", "input": "", "output": "Dark variants keyed off class strategy toggle whole themes with one ancestor class."}
+{"instruction": "`dark:` untuk apa?", "input": "", "output": "Dark variants keyed off class strategy toggle whole themes with one ancestor class."}
+{"instruction": "How would you explain `dark:` to a junior developer?", "input": "", "output": "Dark variants keyed off class strategy toggle whole themes with one ancestor class."}
+{"instruction": "Give a real-world scenario for `dark:`.", "input": "", "output": "Dark variants keyed off class strategy toggle whole themes with one ancestor class."}
+{"instruction": "What problem does `dark:` solve?", "input": "", "output": "Dark variants keyed off class strategy toggle whole themes with one ancestor class."}
+{"instruction": "Apakah fungsi `transition`?", "input": "", "output": "`transition` + `duration-200` animate state changes; restrict to transform/opacity for smoothness."}
+{"instruction": "Terangkan `transition` secara ringkas.", "input": "", "output": "`transition` + `duration-200` animate state changes; restrict to transform/opacity for smoothness."}
+{"instruction": "Bila perlu guna `transition`?", "input": "", "output": "`transition` + `duration-200` animate state changes; restrict to transform/opacity for smoothness."}
+{"instruction": "Beri contoh penggunaan `transition`.", "input": "", "output": "`transition` + `duration-200` animate state changes; restrict to transform/opacity for smoothness."}
+{"instruction": "`transition` untuk apa?", "input": "", "output": "`transition` + `duration-200` animate state changes; restrict to transform/opacity for smoothness."}
+{"instruction": "How would you explain `transition` to a junior developer?", "input": "", "output": "`transition` + `duration-200` animate state changes; restrict to transform/opacity for smoothness."}
+{"instruction": "Give a real-world scenario for `transition`.", "input": "", "output": "`transition` + `duration-200` animate state changes; restrict to transform/opacity for smoothness."}
+{"instruction": "What problem does `transition` solve?", "input": "", "output": "`transition` + `duration-200` animate state changes; restrict to transform/opacity for smoothness."}
+{"instruction": "Apakah fungsi `animate-spin`?", "input": "", "output": "Built-in keyframes (`spin ping pulse bounce`) cover loaders; custom ones extend via config."}
+{"instruction": "Terangkan `animate-spin` secara ringkas.", "input": "", "output": "Built-in keyframes (`spin ping pulse bounce`) cover loaders; custom ones extend via config."}
+{"instruction": "Bila perlu guna `animate-spin`?", "input": "", "output": "Built-in keyframes (`spin ping pulse bounce`) cover loaders; custom ones extend via config."}
+{"instruction": "Beri contoh penggunaan `animate-spin`.", "input": "", "output": "Built-in keyframes (`spin ping pulse bounce`) cover loaders; custom ones extend via config."}
+{"instruction": "`animate-spin` untuk apa?", "input": "", "output": "Built-in keyframes (`spin ping pulse bounce`) cover loaders; custom ones extend via config."}
+{"instruction": "How would you explain `animate-spin` to a junior developer?", "input": "", "output": "Built-in keyframes (`spin ping pulse bounce`) cover loaders; custom ones extend via config."}
+{"instruction": "Give a real-world scenario for `animate-spin`.", "input": "", "output": "Built-in keyframes (`spin ping pulse bounce`) cover loaders; custom ones extend via config."}
+{"instruction": "What problem does `animate-spin` solve?", "input": "", "output": "Built-in keyframes (`spin ping pulse bounce`) cover loaders; custom ones extend via config."}
+{"instruction": "What does `prose typography` do?", "input": "", "output": "The typography plugin (`prose`) styles raw HTML/Markdown readably; tune `prose-lg`/`prose-invert` per context."}
+{"instruction": "Explain `prose typography` briefly.", "input": "", "output": "The typography plugin (`prose`) styles raw HTML/Markdown readably; tune `prose-lg`/`prose-invert` per context."}
+{"instruction": "When do I use `prose typography`?", "input": "", "output": "The typography plugin (`prose`) styles raw HTML/Markdown readably; tune `prose-lg`/`prose-invert` per context."}
+{"instruction": "Give a practical example of `prose typography`.", "input": "", "output": "The typography plugin (`prose`) styles raw HTML/Markdown readably; tune `prose-lg`/`prose-invert` per context."}
+{"instruction": "What is `prose typography` for?", "input": "", "output": "The typography plugin (`prose`) styles raw HTML/Markdown readably; tune `prose-lg`/`prose-invert` per context."}
+{"instruction": "Apakah fungsi `prose typography`?", "input": "", "output": "The typography plugin (`prose`) styles raw HTML/Markdown readably; tune `prose-lg`/`prose-invert` per context."}
+{"instruction": "Terangkan `prose typography` secara ringkas.", "input": "", "output": "The typography plugin (`prose`) styles raw HTML/Markdown readably; tune `prose-lg`/`prose-invert` per context."}
+{"instruction": "Bila perlu guna `prose typography`?", "input": "", "output": "The typography plugin (`prose`) styles raw HTML/Markdown readably; tune `prose-lg`/`prose-invert` per context."}
+{"instruction": "Beri contoh penggunaan `prose typography`.", "input": "", "output": "The typography plugin (`prose`) styles raw HTML/Markdown readably; tune `prose-lg`/`prose-invert` per context."}
+{"instruction": "`prose typography` untuk apa?", "input": "", "output": "The typography plugin (`prose`) styles raw HTML/Markdown readably; tune `prose-lg`/`prose-invert` per context."}
+{"instruction": "How would you explain `prose typography` to a junior developer?", "input": "", "output": "The typography plugin (`prose`) styles raw HTML/Markdown readably; tune `prose-lg`/`prose-invert` per context."}
+{"instruction": "Give a real-world scenario for `prose typography`.", "input": "", "output": "The typography plugin (`prose`) styles raw HTML/Markdown readably; tune `prose-lg`/`prose-invert` per context."}
+{"instruction": "What problem does `prose typography` solve?", "input": "", "output": "The typography plugin (`prose`) styles raw HTML/Markdown readably; tune `prose-lg`/`prose-invert` per context."}
+{"instruction": "What does `line-clamp` do?", "input": "", "output": "`line-clamp-3` truncates to N lines with ellipsis — cards and previews without JS measuring."}
+{"instruction": "Explain `line-clamp` briefly.", "input": "", "output": "`line-clamp-3` truncates to N lines with ellipsis — cards and previews without JS measuring."}
+{"instruction": "When do I use `line-clamp`?", "input": "", "output": "`line-clamp-3` truncates to N lines with ellipsis — cards and previews without JS measuring."}
+{"instruction": "Give a practical example of `line-clamp`.", "input": "", "output": "`line-clamp-3` truncates to N lines with ellipsis — cards and previews without JS measuring."}
+{"instruction": "What is `line-clamp` for?", "input": "", "output": "`line-clamp-3` truncates to N lines with ellipsis — cards and previews without JS measuring."}
+{"instruction": "Apakah fungsi `line-clamp`?", "input": "", "output": "`line-clamp-3` truncates to N lines with ellipsis — cards and previews without JS measuring."}
+{"instruction": "Terangkan `line-clamp` secara ringkas.", "input": "", "output": "`line-clamp-3` truncates to N lines with ellipsis — cards and previews without JS measuring."}
+{"instruction": "Bila perlu guna `line-clamp`?", "input": "", "output": "`line-clamp-3` truncates to N lines with ellipsis — cards and previews without JS measuring."}
+{"instruction": "Beri contoh penggunaan `line-clamp`.", "input": "", "output": "`line-clamp-3` truncates to N lines with ellipsis — cards and previews without JS measuring."}
+{"instruction": "`line-clamp` untuk apa?", "input": "", "output": "`line-clamp-3` truncates to N lines with ellipsis — cards and previews without JS measuring."}
+{"instruction": "How would you explain `line-clamp` to a junior developer?", "input": "", "output": "`line-clamp-3` truncates to N lines with ellipsis — cards and previews without JS measuring."}
+{"instruction": "Give a real-world scenario for `line-clamp`.", "input": "", "output": "`line-clamp-3` truncates to N lines with ellipsis — cards and previews without JS measuring."}
+{"instruction": "What problem does `line-clamp` solve?", "input": "", "output": "`line-clamp-3` truncates to N lines with ellipsis — cards and previews without JS measuring."}
+{"instruction": "What does `aspect-video square` do?", "input": "", "output": "`aspect-video`/`aspect-square` reserve media ratios (no layout shift); arbitrary `aspect-[4/3]` for customs."}
+{"instruction": "Explain `aspect-video square` briefly.", "input": "", "output": "`aspect-video`/`aspect-square` reserve media ratios (no layout shift); arbitrary `aspect-[4/3]` for customs."}
+{"instruction": "When do I use `aspect-video square`?", "input": "", "output": "`aspect-video`/`aspect-square` reserve media ratios (no layout shift); arbitrary `aspect-[4/3]` for customs."}
+{"instruction": "Give a practical example of `aspect-video square`.", "input": "", "output": "`aspect-video`/`aspect-square` reserve media ratios (no layout shift); arbitrary `aspect-[4/3]` for customs."}
+{"instruction": "What is `aspect-video square` for?", "input": "", "output": "`aspect-video`/`aspect-square` reserve media ratios (no layout shift); arbitrary `aspect-[4/3]` for customs."}
+{"instruction": "Apakah fungsi `aspect-video square`?", "input": "", "output": "`aspect-video`/`aspect-square` reserve media ratios (no layout shift); arbitrary `aspect-[4/3]` for customs."}
+{"instruction": "Terangkan `aspect-video square` secara ringkas.", "input": "", "output": "`aspect-video`/`aspect-square` reserve media ratios (no layout shift); arbitrary `aspect-[4/3]` for customs."}
+{"instruction": "Bila perlu guna `aspect-video square`?", "input": "", "output": "`aspect-video`/`aspect-square` reserve media ratios (no layout shift); arbitrary `aspect-[4/3]` for customs."}
+{"instruction": "Beri contoh penggunaan `aspect-video square`.", "input": "", "output": "`aspect-video`/`aspect-square` reserve media ratios (no layout shift); arbitrary `aspect-[4/3]` for customs."}
+{"instruction": "`aspect-video square` untuk apa?", "input": "", "output": "`aspect-video`/`aspect-square` reserve media ratios (no layout shift); arbitrary `aspect-[4/3]` for customs."}
+{"instruction": "How would you explain `aspect-video square` to a junior developer?", "input": "", "output": "`aspect-video`/`aspect-square` reserve media ratios (no layout shift); arbitrary `aspect-[4/3]` for customs."}
+{"instruction": "Give a real-world scenario for `aspect-video square`.", "input": "", "output": "`aspect-video`/`aspect-square` reserve media ratios (no layout shift); arbitrary `aspect-[4/3]` for customs."}
+{"instruction": "What problem does `aspect-video square` solve?", "input": "", "output": "`aspect-video`/`aspect-square` reserve media ratios (no layout shift); arbitrary `aspect-[4/3]` for customs."}
+{"instruction": "What does `columns break` do?", "input": "", "output": "`columns-3` magazine-flows content; `break-inside-avoid` keeps cards from splitting across columns."}
+{"instruction": "Explain `columns break` briefly.", "input": "", "output": "`columns-3` magazine-flows content; `break-inside-avoid` keeps cards from splitting across columns."}
+{"instruction": "When do I use `columns break`?", "input": "", "output": "`columns-3` magazine-flows content; `break-inside-avoid` keeps cards from splitting across columns."}
+{"instruction": "Give a practical example of `columns break`.", "input": "", "output": "`columns-3` magazine-flows content; `break-inside-avoid` keeps cards from splitting across columns."}
+{"instruction": "What is `columns break` for?", "input": "", "output": "`columns-3` magazine-flows content; `break-inside-avoid` keeps cards from splitting across columns."}
+{"instruction": "Apakah fungsi `columns break`?", "input": "", "output": "`columns-3` magazine-flows content; `break-inside-avoid` keeps cards from splitting across columns."}
+{"instruction": "Terangkan `columns break` secara ringkas.", "input": "", "output": "`columns-3` magazine-flows content; `break-inside-avoid` keeps cards from splitting across columns."}
+{"instruction": "Bila perlu guna `columns break`?", "input": "", "output": "`columns-3` magazine-flows content; `break-inside-avoid` keeps cards from splitting across columns."}
+{"instruction": "Beri contoh penggunaan `columns break`.", "input": "", "output": "`columns-3` magazine-flows content; `break-inside-avoid` keeps cards from splitting across columns."}
+{"instruction": "`columns break` untuk apa?", "input": "", "output": "`columns-3` magazine-flows content; `break-inside-avoid` keeps cards from splitting across columns."}
+{"instruction": "How would you explain `columns break` to a junior developer?", "input": "", "output": "`columns-3` magazine-flows content; `break-inside-avoid` keeps cards from splitting across columns."}
+{"instruction": "Give a real-world scenario for `columns break`.", "input": "", "output": "`columns-3` magazine-flows content; `break-inside-avoid` keeps cards from splitting across columns."}
+{"instruction": "What problem does `columns break` solve?", "input": "", "output": "`columns-3` magazine-flows content; `break-inside-avoid` keeps cards from splitting across columns."}
+{"instruction": "What does `ring offset` do?", "input": "", "output": "`ring-2 ring-offset-2` focus halos that don't shift layout (unlike borders); brand-color the ring."}
+{"instruction": "Explain `ring offset` briefly.", "input": "", "output": "`ring-2 ring-offset-2` focus halos that don't shift layout (unlike borders); brand-color the ring."}
+{"instruction": "When do I use `ring offset`?", "input": "", "output": "`ring-2 ring-offset-2` focus halos that don't shift layout (unlike borders); brand-color the ring."}
+{"instruction": "Give a practical example of `ring offset`.", "input": "", "output": "`ring-2 ring-offset-2` focus halos that don't shift layout (unlike borders); brand-color the ring."}
+{"instruction": "What is `ring offset` for?", "input": "", "output": "`ring-2 ring-offset-2` focus halos that don't shift layout (unlike borders); brand-color the ring."}
+{"instruction": "Apakah fungsi `ring offset`?", "input": "", "output": "`ring-2 ring-offset-2` focus halos that don't shift layout (unlike borders); brand-color the ring."}
+{"instruction": "Terangkan `ring offset` secara ringkas.", "input": "", "output": "`ring-2 ring-offset-2` focus halos that don't shift layout (unlike borders); brand-color the ring."}
+{"instruction": "Bila perlu guna `ring offset`?", "input": "", "output": "`ring-2 ring-offset-2` focus halos that don't shift layout (unlike borders); brand-color the ring."}
+{"instruction": "Beri contoh penggunaan `ring offset`.", "input": "", "output": "`ring-2 ring-offset-2` focus halos that don't shift layout (unlike borders); brand-color the ring."}
+{"instruction": "`ring offset` untuk apa?", "input": "", "output": "`ring-2 ring-offset-2` focus halos that don't shift layout (unlike borders); brand-color the ring."}
+{"instruction": "How would you explain `ring offset` to a junior developer?", "input": "", "output": "`ring-2 ring-offset-2` focus halos that don't shift layout (unlike borders); brand-color the ring."}
+{"instruction": "Give a real-world scenario for `ring offset`.", "input": "", "output": "`ring-2 ring-offset-2` focus halos that don't shift layout (unlike borders); brand-color the ring."}
+{"instruction": "What problem does `ring offset` solve?", "input": "", "output": "`ring-2 ring-offset-2` focus halos that don't shift layout (unlike borders); brand-color the ring."}
+{"instruction": "What does `placeholder:` do?", "input": "", "output": "`placeholder:text-gray-400` styles hint text; `placeholder-shown:` variants react to empty inputs."}
+{"instruction": "Explain `placeholder:` briefly.", "input": "", "output": "`placeholder:text-gray-400` styles hint text; `placeholder-shown:` variants react to empty inputs."}
+{"instruction": "When do I use `placeholder:`?", "input": "", "output": "`placeholder:text-gray-400` styles hint text; `placeholder-shown:` variants react to empty inputs."}
+{"instruction": "Give a practical example of `placeholder:`.", "input": "", "output": "`placeholder:text-gray-400` styles hint text; `placeholder-shown:` variants react to empty inputs."}
+{"instruction": "What is `placeholder:` for?", "input": "", "output": "`placeholder:text-gray-400` styles hint text; `placeholder-shown:` variants react to empty inputs."}
+{"instruction": "Apakah fungsi `placeholder:`?", "input": "", "output": "`placeholder:text-gray-400` styles hint text; `placeholder-shown:` variants react to empty inputs."}
+{"instruction": "Terangkan `placeholder:` secara ringkas.", "input": "", "output": "`placeholder:text-gray-400` styles hint text; `placeholder-shown:` variants react to empty inputs."}
+{"instruction": "Bila perlu guna `placeholder:`?", "input": "", "output": "`placeholder:text-gray-400` styles hint text; `placeholder-shown:` variants react to empty inputs."}
+{"instruction": "Beri contoh penggunaan `placeholder:`.", "input": "", "output": "`placeholder:text-gray-400` styles hint text; `placeholder-shown:` variants react to empty inputs."}
+{"instruction": "`placeholder:` untuk apa?", "input": "", "output": "`placeholder:text-gray-400` styles hint text; `placeholder-shown:` variants react to empty inputs."}
+{"instruction": "How would you explain `placeholder:` to a junior developer?", "input": "", "output": "`placeholder:text-gray-400` styles hint text; `placeholder-shown:` variants react to empty inputs."}
+{"instruction": "Give a real-world scenario for `placeholder:`.", "input": "", "output": "`placeholder:text-gray-400` styles hint text; `placeholder-shown:` variants react to empty inputs."}
+{"instruction": "What problem does `placeholder:` solve?", "input": "", "output": "`placeholder:text-gray-400` styles hint text; `placeholder-shown:` variants react to empty inputs."}
+{"instruction": "What does `file: variant` do?", "input": "", "output": "`file:mr-4 file:rounded file:bg-blue-50` styles native file buttons — no custom upload widgets needed."}
+{"instruction": "Explain `file: variant` briefly.", "input": "", "output": "`file:mr-4 file:rounded file:bg-blue-50` styles native file buttons — no custom upload widgets needed."}
+{"instruction": "When do I use `file: variant`?", "input": "", "output": "`file:mr-4 file:rounded file:bg-blue-50` styles native file buttons — no custom upload widgets needed."}
+{"instruction": "Give a practical example of `file: variant`.", "input": "", "output": "`file:mr-4 file:rounded file:bg-blue-50` styles native file buttons — no custom upload widgets needed."}
+{"instruction": "What is `file: variant` for?", "input": "", "output": "`file:mr-4 file:rounded file:bg-blue-50` styles native file buttons — no custom upload widgets needed."}
+{"instruction": "Apakah fungsi `file: variant`?", "input": "", "output": "`file:mr-4 file:rounded file:bg-blue-50` styles native file buttons — no custom upload widgets needed."}
+{"instruction": "Terangkan `file: variant` secara ringkas.", "input": "", "output": "`file:mr-4 file:rounded file:bg-blue-50` styles native file buttons — no custom upload widgets needed."}
+{"instruction": "Bila perlu guna `file: variant`?", "input": "", "output": "`file:mr-4 file:rounded file:bg-blue-50` styles native file buttons — no custom upload widgets needed."}
+{"instruction": "Beri contoh penggunaan `file: variant`.", "input": "", "output": "`file:mr-4 file:rounded file:bg-blue-50` styles native file buttons — no custom upload widgets needed."}
+{"instruction": "`file: variant` untuk apa?", "input": "", "output": "`file:mr-4 file:rounded file:bg-blue-50` styles native file buttons — no custom upload widgets needed."}
+{"instruction": "How would you explain `file: variant` to a junior developer?", "input": "", "output": "`file:mr-4 file:rounded file:bg-blue-50` styles native file buttons — no custom upload widgets needed."}
+{"instruction": "Give a real-world scenario for `file: variant`.", "input": "", "output": "`file:mr-4 file:rounded file:bg-blue-50` styles native file buttons — no custom upload widgets needed."}
+{"instruction": "What problem does `file: variant` solve?", "input": "", "output": "`file:mr-4 file:rounded file:bg-blue-50` styles native file buttons — no custom upload widgets needed."}
+{"instruction": "What does `first last odd even` do?", "input": "", "output": "Positional variants stripe lists (`odd:bg-gray-50`) and trim edges (`first:pt-0`) without extra classes."}
+{"instruction": "Explain `first last odd even` briefly.", "input": "", "output": "Positional variants stripe lists (`odd:bg-gray-50`) and trim edges (`first:pt-0`) without extra classes."}
+{"instruction": "When do I use `first last odd even`?", "input": "", "output": "Positional variants stripe lists (`odd:bg-gray-50`) and trim edges (`first:pt-0`) without extra classes."}
+{"instruction": "Give a practical example of `first last odd even`.", "input": "", "output": "Positional variants stripe lists (`odd:bg-gray-50`) and trim edges (`first:pt-0`) without extra classes."}
+{"instruction": "What is `first last odd even` for?", "input": "", "output": "Positional variants stripe lists (`odd:bg-gray-50`) and trim edges (`first:pt-0`) without extra classes."}
+{"instruction": "Apakah fungsi `first last odd even`?", "input": "", "output": "Positional variants stripe lists (`odd:bg-gray-50`) and trim edges (`first:pt-0`) without extra classes."}
+{"instruction": "Terangkan `first last odd even` secara ringkas.", "input": "", "output": "Positional variants stripe lists (`odd:bg-gray-50`) and trim edges (`first:pt-0`) without extra classes."}
+{"instruction": "Bila perlu guna `first last odd even`?", "input": "", "output": "Positional variants stripe lists (`odd:bg-gray-50`) and trim edges (`first:pt-0`) without extra classes."}
+{"instruction": "Beri contoh penggunaan `first last odd even`.", "input": "", "output": "Positional variants stripe lists (`odd:bg-gray-50`) and trim edges (`first:pt-0`) without extra classes."}
+{"instruction": "`first last odd even` untuk apa?", "input": "", "output": "Positional variants stripe lists (`odd:bg-gray-50`) and trim edges (`first:pt-0`) without extra classes."}
+{"instruction": "How would you explain `first last odd even` to a junior developer?", "input": "", "output": "Positional variants stripe lists (`odd:bg-gray-50`) and trim edges (`first:pt-0`) without extra classes."}
+{"instruction": "Give a real-world scenario for `first last odd even`.", "input": "", "output": "Positional variants stripe lists (`odd:bg-gray-50`) and trim edges (`first:pt-0`) without extra classes."}
+{"instruction": "What problem does `first last odd even` solve?", "input": "", "output": "Positional variants stripe lists (`odd:bg-gray-50`) and trim edges (`first:pt-0`) without extra classes."}
+{"instruction": "What does `group-hover` do?", "input": "", "output": "Parent `group` + child `group-hover:` reveals actions on hover — tooltips and overlays declaratively."}
+{"instruction": "Explain `group-hover` briefly.", "input": "", "output": "Parent `group` + child `group-hover:` reveals actions on hover — tooltips and overlays declaratively."}
+{"instruction": "When do I use `group-hover`?", "input": "", "output": "Parent `group` + child `group-hover:` reveals actions on hover — tooltips and overlays declaratively."}
+{"instruction": "Give a practical example of `group-hover`.", "input": "", "output": "Parent `group` + child `group-hover:` reveals actions on hover — tooltips and overlays declaratively."}
+{"instruction": "What is `group-hover` for?", "input": "", "output": "Parent `group` + child `group-hover:` reveals actions on hover — tooltips and overlays declaratively."}
+{"instruction": "Apakah fungsi `group-hover`?", "input": "", "output": "Parent `group` + child `group-hover:` reveals actions on hover — tooltips and overlays declaratively."}
+{"instruction": "Terangkan `group-hover` secara ringkas.", "input": "", "output": "Parent `group` + child `group-hover:` reveals actions on hover — tooltips and overlays declaratively."}
+{"instruction": "Bila perlu guna `group-hover`?", "input": "", "output": "Parent `group` + child `group-hover:` reveals actions on hover — tooltips and overlays declaratively."}
+{"instruction": "Beri contoh penggunaan `group-hover`.", "input": "", "output": "Parent `group` + child `group-hover:` reveals actions on hover — tooltips and overlays declaratively."}
+{"instruction": "`group-hover` untuk apa?", "input": "", "output": "Parent `group` + child `group-hover:` reveals actions on hover — tooltips and overlays declaratively."}
+{"instruction": "How would you explain `group-hover` to a junior developer?", "input": "", "output": "Parent `group` + child `group-hover:` reveals actions on hover — tooltips and overlays declaratively."}
+{"instruction": "Give a real-world scenario for `group-hover`.", "input": "", "output": "Parent `group` + child `group-hover:` reveals actions on hover — tooltips and overlays declaratively."}
+{"instruction": "What problem does `group-hover` solve?", "input": "", "output": "Parent `group` + child `group-hover:` reveals actions on hover — tooltips and overlays declaratively."}
+{"instruction": "What does `peer-checked` do?", "input": "", "output": "Sibling `peer` + `peer-checked:` styles custom radios/toggles from hidden native inputs — accessible by construction."}
+{"instruction": "Explain `peer-checked` briefly.", "input": "", "output": "Sibling `peer` + `peer-checked:` styles custom radios/toggles from hidden native inputs — accessible by construction."}
+{"instruction": "When do I use `peer-checked`?", "input": "", "output": "Sibling `peer` + `peer-checked:` styles custom radios/toggles from hidden native inputs — accessible by construction."}
+{"instruction": "Give a practical example of `peer-checked`.", "input": "", "output": "Sibling `peer` + `peer-checked:` styles custom radios/toggles from hidden native inputs — accessible by construction."}
+{"instruction": "What is `peer-checked` for?", "input": "", "output": "Sibling `peer` + `peer-checked:` styles custom radios/toggles from hidden native inputs — accessible by construction."}
+{"instruction": "Apakah fungsi `peer-checked`?", "input": "", "output": "Sibling `peer` + `peer-checked:` styles custom radios/toggles from hidden native inputs — accessible by construction."}
+{"instruction": "Terangkan `peer-checked` secara ringkas.", "input": "", "output": "Sibling `peer` + `peer-checked:` styles custom radios/toggles from hidden native inputs — accessible by construction."}
+{"instruction": "Bila perlu guna `peer-checked`?", "input": "", "output": "Sibling `peer` + `peer-checked:` styles custom radios/toggles from hidden native inputs — accessible by construction."}
+{"instruction": "Beri contoh penggunaan `peer-checked`.", "input": "", "output": "Sibling `peer` + `peer-checked:` styles custom radios/toggles from hidden native inputs — accessible by construction."}
+{"instruction": "`peer-checked` untuk apa?", "input": "", "output": "Sibling `peer` + `peer-checked:` styles custom radios/toggles from hidden native inputs — accessible by construction."}
+{"instruction": "How would you explain `peer-checked` to a junior developer?", "input": "", "output": "Sibling `peer` + `peer-checked:` styles custom radios/toggles from hidden native inputs — accessible by construction."}
+{"instruction": "Give a real-world scenario for `peer-checked`.", "input": "", "output": "Sibling `peer` + `peer-checked:` styles custom radios/toggles from hidden native inputs — accessible by construction."}
+{"instruction": "What problem does `peer-checked` solve?", "input": "", "output": "Sibling `peer` + `peer-checked:` styles custom radios/toggles from hidden native inputs — accessible by construction."}
+{"instruction": "What does `has-[:checked]` do?", "input": "", "output": "`has-[input:checked]:bg-blue-50` styles ancestors by descendant state — parent selectors without JS."}
+{"instruction": "Explain `has-[:checked]` briefly.", "input": "", "output": "`has-[input:checked]:bg-blue-50` styles ancestors by descendant state — parent selectors without JS."}
+{"instruction": "When do I use `has-[:checked]`?", "input": "", "output": "`has-[input:checked]:bg-blue-50` styles ancestors by descendant state — parent selectors without JS."}
+{"instruction": "Give a practical example of `has-[:checked]`.", "input": "", "output": "`has-[input:checked]:bg-blue-50` styles ancestors by descendant state — parent selectors without JS."}
+{"instruction": "What is `has-[:checked]` for?", "input": "", "output": "`has-[input:checked]:bg-blue-50` styles ancestors by descendant state — parent selectors without JS."}
+{"instruction": "Apakah fungsi `has-[:checked]`?", "input": "", "output": "`has-[input:checked]:bg-blue-50` styles ancestors by descendant state — parent selectors without JS."}
+{"instruction": "Terangkan `has-[:checked]` secara ringkas.", "input": "", "output": "`has-[input:checked]:bg-blue-50` styles ancestors by descendant state — parent selectors without JS."}
+{"instruction": "Bila perlu guna `has-[:checked]`?", "input": "", "output": "`has-[input:checked]:bg-blue-50` styles ancestors by descendant state — parent selectors without JS."}
+{"instruction": "Beri contoh penggunaan `has-[:checked]`.", "input": "", "output": "`has-[input:checked]:bg-blue-50` styles ancestors by descendant state — parent selectors without JS."}
+{"instruction": "`has-[:checked]` untuk apa?", "input": "", "output": "`has-[input:checked]:bg-blue-50` styles ancestors by descendant state — parent selectors without JS."}
+{"instruction": "How would you explain `has-[:checked]` to a junior developer?", "input": "", "output": "`has-[input:checked]:bg-blue-50` styles ancestors by descendant state — parent selectors without JS."}
+{"instruction": "Give a real-world scenario for `has-[:checked]`.", "input": "", "output": "`has-[input:checked]:bg-blue-50` styles ancestors by descendant state — parent selectors without JS."}
+{"instruction": "What problem does `has-[:checked]` solve?", "input": "", "output": "`has-[input:checked]:bg-blue-50` styles ancestors by descendant state — parent selectors without JS."}
+{"instruction": "What does `aria-* variants` do?", "input": "", "output": "`aria-expanded:`/`aria-disabled:` mirror component state accessibly; pair with real ARIA attributes, not divs."}
+{"instruction": "Explain `aria-* variants` briefly.", "input": "", "output": "`aria-expanded:`/`aria-disabled:` mirror component state accessibly; pair with real ARIA attributes, not divs."}
+{"instruction": "When do I use `aria-* variants`?", "input": "", "output": "`aria-expanded:`/`aria-disabled:` mirror component state accessibly; pair with real ARIA attributes, not divs."}
+{"instruction": "Give a practical example of `aria-* variants`.", "input": "", "output": "`aria-expanded:`/`aria-disabled:` mirror component state accessibly; pair with real ARIA attributes, not divs."}
+{"instruction": "What is `aria-* variants` for?", "input": "", "output": "`aria-expanded:`/`aria-disabled:` mirror component state accessibly; pair with real ARIA attributes, not divs."}
+{"instruction": "Apakah fungsi `aria-* variants`?", "input": "", "output": "`aria-expanded:`/`aria-disabled:` mirror component state accessibly; pair with real ARIA attributes, not divs."}
+{"instruction": "Terangkan `aria-* variants` secara ringkas.", "input": "", "output": "`aria-expanded:`/`aria-disabled:` mirror component state accessibly; pair with real ARIA attributes, not divs."}
+{"instruction": "Bila perlu guna `aria-* variants`?", "input": "", "output": "`aria-expanded:`/`aria-disabled:` mirror component state accessibly; pair with real ARIA attributes, not divs."}
+{"instruction": "Beri contoh penggunaan `aria-* variants`.", "input": "", "output": "`aria-expanded:`/`aria-disabled:` mirror component state accessibly; pair with real ARIA attributes, not divs."}
+{"instruction": "`aria-* variants` untuk apa?", "input": "", "output": "`aria-expanded:`/`aria-disabled:` mirror component state accessibly; pair with real ARIA attributes, not divs."}
+{"instruction": "How would you explain `aria-* variants` to a junior developer?", "input": "", "output": "`aria-expanded:`/`aria-disabled:` mirror component state accessibly; pair with real ARIA attributes, not divs."}
+{"instruction": "Give a real-world scenario for `aria-* variants`.", "input": "", "output": "`aria-expanded:`/`aria-disabled:` mirror component state accessibly; pair with real ARIA attributes, not divs."}
+{"instruction": "What problem does `aria-* variants` solve?", "input": "", "output": "`aria-expanded:`/`aria-disabled:` mirror component state accessibly; pair with real ARIA attributes, not divs."}
+{"instruction": "What does `data-* variants` do?", "input": "", "output": "`data-[size=lg]:text-lg` keys styles off data attributes — server-rendered variants without JS toggles."}
+{"instruction": "Explain `data-* variants` briefly.", "input": "", "output": "`data-[size=lg]:text-lg` keys styles off data attributes — server-rendered variants without JS toggles."}
+{"instruction": "When do I use `data-* variants`?", "input": "", "output": "`data-[size=lg]:text-lg` keys styles off data attributes — server-rendered variants without JS toggles."}
+{"instruction": "Give a practical example of `data-* variants`.", "input": "", "output": "`data-[size=lg]:text-lg` keys styles off data attributes — server-rendered variants without JS toggles."}
+{"instruction": "What is `data-* variants` for?", "input": "", "output": "`data-[size=lg]:text-lg` keys styles off data attributes — server-rendered variants without JS toggles."}
+{"instruction": "Apakah fungsi `data-* variants`?", "input": "", "output": "`data-[size=lg]:text-lg` keys styles off data attributes — server-rendered variants without JS toggles."}
+{"instruction": "Terangkan `data-* variants` secara ringkas.", "input": "", "output": "`data-[size=lg]:text-lg` keys styles off data attributes — server-rendered variants without JS toggles."}
+{"instruction": "Bila perlu guna `data-* variants`?", "input": "", "output": "`data-[size=lg]:text-lg` keys styles off data attributes — server-rendered variants without JS toggles."}
+{"instruction": "Beri contoh penggunaan `data-* variants`.", "input": "", "output": "`data-[size=lg]:text-lg` keys styles off data attributes — server-rendered variants without JS toggles."}
+{"instruction": "`data-* variants` untuk apa?", "input": "", "output": "`data-[size=lg]:text-lg` keys styles off data attributes — server-rendered variants without JS toggles."}
+{"instruction": "How would you explain `data-* variants` to a junior developer?", "input": "", "output": "`data-[size=lg]:text-lg` keys styles off data attributes — server-rendered variants without JS toggles."}
+{"instruction": "Give a real-world scenario for `data-* variants`.", "input": "", "output": "`data-[size=lg]:text-lg` keys styles off data attributes — server-rendered variants without JS toggles."}
+{"instruction": "What problem does `data-* variants` solve?", "input": "", "output": "`data-[size=lg]:text-lg` keys styles off data attributes — server-rendered variants without JS toggles."}
+{"instruction": "What does `open: details` do?", "input": "", "output": "`open:` styles expanded `<details>` natively (accordions, dropdowns); combine with `group-open:` markers."}
+{"instruction": "Explain `open: details` briefly.", "input": "", "output": "`open:` styles expanded `<details>` natively (accordions, dropdowns); combine with `group-open:` markers."}
+{"instruction": "When do I use `open: details`?", "input": "", "output": "`open:` styles expanded `<details>` natively (accordions, dropdowns); combine with `group-open:` markers."}
+{"instruction": "Give a practical example of `open: details`.", "input": "", "output": "`open:` styles expanded `<details>` natively (accordions, dropdowns); combine with `group-open:` markers."}
+{"instruction": "What is `open: details` for?", "input": "", "output": "`open:` styles expanded `<details>` natively (accordions, dropdowns); combine with `group-open:` markers."}
+{"instruction": "Apakah fungsi `open: details`?", "input": "", "output": "`open:` styles expanded `<details>` natively (accordions, dropdowns); combine with `group-open:` markers."}
+{"instruction": "Terangkan `open: details` secara ringkas.", "input": "", "output": "`open:` styles expanded `<details>` natively (accordions, dropdowns); combine with `group-open:` markers."}
+{"instruction": "Bila perlu guna `open: details`?", "input": "", "output": "`open:` styles expanded `<details>` natively (accordions, dropdowns); combine with `group-open:` markers."}
+{"instruction": "Beri contoh penggunaan `open: details`.", "input": "", "output": "`open:` styles expanded `<details>` natively (accordions, dropdowns); combine with `group-open:` markers."}
+{"instruction": "`open: details` untuk apa?", "input": "", "output": "`open:` styles expanded `<details>` natively (accordions, dropdowns); combine with `group-open:` markers."}
+{"instruction": "How would you explain `open: details` to a junior developer?", "input": "", "output": "`open:` styles expanded `<details>` natively (accordions, dropdowns); combine with `group-open:` markers."}
+{"instruction": "Give a real-world scenario for `open: details`.", "input": "", "output": "`open:` styles expanded `<details>` natively (accordions, dropdowns); combine with `group-open:` markers."}
+{"instruction": "What problem does `open: details` solve?", "input": "", "output": "`open:` styles expanded `<details>` natively (accordions, dropdowns); combine with `group-open:` markers."}
+{"instruction": "What does `print: variant` do?", "input": "", "output": "`print:hidden` strips nav/ads on paper while `print:block` reveals print-only summaries — one codebase, two media."}
+{"instruction": "Explain `print: variant` briefly.", "input": "", "output": "`print:hidden` strips nav/ads on paper while `print:block` reveals print-only summaries — one codebase, two media."}
+{"instruction": "When do I use `print: variant`?", "input": "", "output": "`print:hidden` strips nav/ads on paper while `print:block` reveals print-only summaries — one codebase, two media."}
+{"instruction": "Give a practical example of `print: variant`.", "input": "", "output": "`print:hidden` strips nav/ads on paper while `print:block` reveals print-only summaries — one codebase, two media."}
+{"instruction": "What is `print: variant` for?", "input": "", "output": "`print:hidden` strips nav/ads on paper while `print:block` reveals print-only summaries — one codebase, two media."}
+{"instruction": "Apakah fungsi `print: variant`?", "input": "", "output": "`print:hidden` strips nav/ads on paper while `print:block` reveals print-only summaries — one codebase, two media."}
+{"instruction": "Terangkan `print: variant` secara ringkas.", "input": "", "output": "`print:hidden` strips nav/ads on paper while `print:block` reveals print-only summaries — one codebase, two media."}
+{"instruction": "Bila perlu guna `print: variant`?", "input": "", "output": "`print:hidden` strips nav/ads on paper while `print:block` reveals print-only summaries — one codebase, two media."}
+{"instruction": "Beri contoh penggunaan `print: variant`.", "input": "", "output": "`print:hidden` strips nav/ads on paper while `print:block` reveals print-only summaries — one codebase, two media."}
+{"instruction": "`print: variant` untuk apa?", "input": "", "output": "`print:hidden` strips nav/ads on paper while `print:block` reveals print-only summaries — one codebase, two media."}
+{"instruction": "How would you explain `print: variant` to a junior developer?", "input": "", "output": "`print:hidden` strips nav/ads on paper while `print:block` reveals print-only summaries — one codebase, two media."}
+{"instruction": "Give a real-world scenario for `print: variant`.", "input": "", "output": "`print:hidden` strips nav/ads on paper while `print:block` reveals print-only summaries — one codebase, two media."}
+{"instruction": "What problem does `print: variant` solve?", "input": "", "output": "`print:hidden` strips nav/ads on paper while `print:block` reveals print-only summaries — one codebase, two media."}
+{"instruction": "Terangkan `flex` dalam satu minit.", "input": "", "output": "`flex` lays one dimension with `gap`; `flex-1` children share leftover space proportionally."}
+{"instruction": "Apa yang perlu saya tahu tentang `flex`?", "input": "", "output": "`flex` lays one dimension with `gap`; `flex-1` children share leftover space proportionally."}
+{"instruction": "Bagaimanakah `flex` berfungsi?", "input": "", "output": "`flex` lays one dimension with `gap`; `flex-1` children share leftover space proportionally."}
+{"instruction": "Bilakah masa yang sesuai untuk `flex`?", "input": "", "output": "`flex` lays one dimension with `gap`; `flex-1` children share leftover space proportionally."}
+{"instruction": "Terangkan `grid` dalam satu minit.", "input": "", "output": "`grid grid-cols-3 gap-4` aligns two dimensions; `md:` prefixes adapt columns per breakpoint."}
+{"instruction": "Apa yang perlu saya tahu tentang `grid`?", "input": "", "output": "`grid grid-cols-3 gap-4` aligns two dimensions; `md:` prefixes adapt columns per breakpoint."}
+{"instruction": "Bagaimanakah `grid` berfungsi?", "input": "", "output": "`grid grid-cols-3 gap-4` aligns two dimensions; `md:` prefixes adapt columns per breakpoint."}
+{"instruction": "Bilakah masa yang sesuai untuk `grid`?", "input": "", "output": "`grid grid-cols-3 gap-4` aligns two dimensions; `md:` prefixes adapt columns per breakpoint."}
+{"instruction": "Terangkan `text-center text-xl` dalam satu minit.", "input": "", "output": "Type scale (`text-sm`..`text-4xl`), weights (`font-bold`) and alignment compose without custom CSS."}
+{"instruction": "Apa yang perlu saya tahu tentang `text-center text-xl`?", "input": "", "output": "Type scale (`text-sm`..`text-4xl`), weights (`font-bold`) and alignment compose without custom CSS."}
+{"instruction": "Bagaimanakah `text-center text-xl` berfungsi?", "input": "", "output": "Type scale (`text-sm`..`text-4xl`), weights (`font-bold`) and alignment compose without custom CSS."}
+{"instruction": "Bilakah masa yang sesuai untuk `text-center text-xl`?", "input": "", "output": "Type scale (`text-sm`..`text-4xl`), weights (`font-bold`) and alignment compose without custom CSS."}
+{"instruction": "Terangkan `bg-blue-600` dalam satu minit.", "input": "", "output": "Palette colors with shades (`bg-blue-600 hover:bg-blue-700`); extend theme for brand tokens."}
+{"instruction": "Apa yang perlu saya tahu tentang `bg-blue-600`?", "input": "", "output": "Palette colors with shades (`bg-blue-600 hover:bg-blue-700`); extend theme for brand tokens."}
+{"instruction": "Bagaimanakah `bg-blue-600` berfungsi?", "input": "", "output": "Palette colors with shades (`bg-blue-600 hover:bg-blue-700`); extend theme for brand tokens."}
+{"instruction": "Bilakah masa yang sesuai untuk `bg-blue-600`?", "input": "", "output": "Palette colors with shades (`bg-blue-600 hover:bg-blue-700`); extend theme for brand tokens."}
+{"instruction": "Terangkan `p-4 m-2` dalam satu minit.", "input": "", "output": "Spacing scale (`p-4` padding, `m-2` margin, `space-x-4` between children) replaces guesswork pixels."}
+{"instruction": "Apa yang perlu saya tahu tentang `p-4 m-2`?", "input": "", "output": "Spacing scale (`p-4` padding, `m-2` margin, `space-x-4` between children) replaces guesswork pixels."}
+{"instruction": "Bagaimanakah `p-4 m-2` berfungsi?", "input": "", "output": "Spacing scale (`p-4` padding, `m-2` margin, `space-x-4` between children) replaces guesswork pixels."}
+{"instruction": "Bilakah masa yang sesuai untuk `p-4 m-2`?", "input": "", "output": "Spacing scale (`p-4` padding, `m-2` margin, `space-x-4` between children) replaces guesswork pixels."}
+{"instruction": "Terangkan `rounded-lg shadow` dalam satu minit.", "input": "", "output": "Radius (`rounded`, `rounded-full` pills) plus layered `shadow` utilities build cards in two classes."}
+{"instruction": "Apa yang perlu saya tahu tentang `rounded-lg shadow`?", "input": "", "output": "Radius (`rounded`, `rounded-full` pills) plus layered `shadow` utilities build cards in two classes."}
+{"instruction": "Bagaimanakah `rounded-lg shadow` berfungsi?", "input": "", "output": "Radius (`rounded`, `rounded-full` pills) plus layered `shadow` utilities build cards in two classes."}
+{"instruction": "Bilakah masa yang sesuai untuk `rounded-lg shadow`?", "input": "", "output": "Radius (`rounded`, `rounded-full` pills) plus layered `shadow` utilities build cards in two classes."}
+{"instruction": "Terangkan `hover:` dalam satu minit.", "input": "", "output": "State variants (`hover: focus: disabled:`) compose freely; always pair hover with focus for keyboard users."}
+{"instruction": "Apa yang perlu saya tahu tentang `hover:`?", "input": "", "output": "State variants (`hover: focus: disabled:`) compose freely; always pair hover with focus for keyboard users."}
+{"instruction": "Bagaimanakah `hover:` berfungsi?", "input": "", "output": "State variants (`hover: focus: disabled:`) compose freely; always pair hover with focus for keyboard users."}
+{"instruction": "Bilakah masa yang sesuai untuk `hover:`?", "input": "", "output": "State variants (`hover: focus: disabled:`) compose freely; always pair hover with focus for keyboard users."}
+{"instruction": "Terangkan `md:` dalam satu minit.", "input": "", "output": "Mobile-first breakpoints (`sm md lg xl 2xl`) layer enhancements upward from the phone base."}
+{"instruction": "Apa yang perlu saya tahu tentang `md:`?", "input": "", "output": "Mobile-first breakpoints (`sm md lg xl 2xl`) layer enhancements upward from the phone base."}
+{"instruction": "Bagaimanakah `md:` berfungsi?", "input": "", "output": "Mobile-first breakpoints (`sm md lg xl 2xl`) layer enhancements upward from the phone base."}
+{"instruction": "Bilakah masa yang sesuai untuk `md:`?", "input": "", "output": "Mobile-first breakpoints (`sm md lg xl 2xl`) layer enhancements upward from the phone base."}
+{"instruction": "Terangkan `flex-col flex-row` dalam satu minit.", "input": "", "output": "Direction switch reflows the same markup; responsive (`flex-col md:flex-row`) without duplicate HTML."}
+{"instruction": "Apa yang perlu saya tahu tentang `flex-col flex-row`?", "input": "", "output": "Direction switch reflows the same markup; responsive (`flex-col md:flex-row`) without duplicate HTML."}
+{"instruction": "Bagaimanakah `flex-col flex-row` berfungsi?", "input": "", "output": "Direction switch reflows the same markup; responsive (`flex-col md:flex-row`) without duplicate HTML."}
+{"instruction": "Bilakah masa yang sesuai untuk `flex-col flex-row`?", "input": "", "output": "Direction switch reflows the same markup; responsive (`flex-col md:flex-row`) without duplicate HTML."}
+{"instruction": "Terangkan `items-center justify-center` dalam satu minit.", "input": "", "output": "Cross/main-axis centering pair — the two-class answer to vertical centering."}
+{"instruction": "Apa yang perlu saya tahu tentang `items-center justify-center`?", "input": "", "output": "Cross/main-axis centering pair — the two-class answer to vertical centering."}
+{"instruction": "Bagaimanakah `items-center justify-center` berfungsi?", "input": "", "output": "Cross/main-axis centering pair — the two-class answer to vertical centering."}
+{"instruction": "Bilakah masa yang sesuai untuk `items-center justify-center`?", "input": "", "output": "Cross/main-axis centering pair — the two-class answer to vertical centering."}
+{"instruction": "Terangkan `gap-4` dalam satu minit.", "input": "", "output": "`gap` spaces grid/flex children uniformly; replaces margin hacks and last-child exceptions."}
+{"instruction": "Apa yang perlu saya tahu tentang `gap-4`?", "input": "", "output": "`gap` spaces grid/flex children uniformly; replaces margin hacks and last-child exceptions."}
+{"instruction": "Bagaimanakah `gap-4` berfungsi?", "input": "", "output": "`gap` spaces grid/flex children uniformly; replaces margin hacks and last-child exceptions."}
+{"instruction": "Bilakah masa yang sesuai untuk `gap-4`?", "input": "", "output": "`gap` spaces grid/flex children uniformly; replaces margin hacks and last-child exceptions."}
+{"instruction": "Terangkan `border` dalam satu minit.", "input": "", "output": "`border border-gray-200` outlines; per-side (`border-t`) and divide utilities for lists."}
+{"instruction": "Apa yang perlu saya tahu tentang `border`?", "input": "", "output": "`border border-gray-200` outlines; per-side (`border-t`) and divide utilities for lists."}
+{"instruction": "Bagaimanakah `border` berfungsi?", "input": "", "output": "`border border-gray-200` outlines; per-side (`border-t`) and divide utilities for lists."}
+{"instruction": "Bilakah masa yang sesuai untuk `border`?", "input": "", "output": "`border border-gray-200` outlines; per-side (`border-t`) and divide utilities for lists."}
+{"instruction": "Terangkan `w-full h-64` dalam satu minit.", "input": "", "output": "Sizing scale with fractions (`w-1/2`), viewport units and `max-w-*` containers for readable lines."}
+{"instruction": "Apa yang perlu saya tahu tentang `w-full h-64`?", "input": "", "output": "Sizing scale with fractions (`w-1/2`), viewport units and `max-w-*` containers for readable lines."}
+{"instruction": "Bagaimanakah `w-full h-64` berfungsi?", "input": "", "output": "Sizing scale with fractions (`w-1/2`), viewport units and `max-w-*` containers for readable lines."}
+{"instruction": "Bilakah masa yang sesuai untuk `w-full h-64`?", "input": "", "output": "Sizing scale with fractions (`w-1/2`), viewport units and `max-w-*` containers for readable lines."}
+{"instruction": "Terangkan `hidden block` dalam satu minit.", "input": "", "output": "Display swaps per breakpoint (`hidden md:block`); `invisible` keeps layout space unlike `hidden`."}
+{"instruction": "Apa yang perlu saya tahu tentang `hidden block`?", "input": "", "output": "Display swaps per breakpoint (`hidden md:block`); `invisible` keeps layout space unlike `hidden`."}
+{"instruction": "Bagaimanakah `hidden block` berfungsi?", "input": "", "output": "Display swaps per breakpoint (`hidden md:block`); `invisible` keeps layout space unlike `hidden`."}
+{"instruction": "Bilakah masa yang sesuai untuk `hidden block`?", "input": "", "output": "Display swaps per breakpoint (`hidden md:block`); `invisible` keeps layout space unlike `hidden`."}
+{"instruction": "Terangkan `container mx-auto` dalam satu minit.", "input": "", "output": "`container mx-auto px-4` centers content with gutters — the standard page shell."}
+{"instruction": "Apa yang perlu saya tahu tentang `container mx-auto`?", "input": "", "output": "`container mx-auto px-4` centers content with gutters — the standard page shell."}
+{"instruction": "Bagaimanakah `container mx-auto` berfungsi?", "input": "", "output": "`container mx-auto px-4` centers content with gutters — the standard page shell."}
+{"instruction": "Bilakah masa yang sesuai untuk `container mx-auto`?", "input": "", "output": "`container mx-auto px-4` centers content with gutters — the standard page shell."}
+{"instruction": "Terangkan `space-x-4` dalam satu minit.", "input": "", "output": "`space-x/y` gaps siblings without wrapper classes; RTL-aware variants exist for mirrored layouts."}
+{"instruction": "Apa yang perlu saya tahu tentang `space-x-4`?", "input": "", "output": "`space-x/y` gaps siblings without wrapper classes; RTL-aware variants exist for mirrored layouts."}
+{"instruction": "Bagaimanakah `space-x-4` berfungsi?", "input": "", "output": "`space-x/y` gaps siblings without wrapper classes; RTL-aware variants exist for mirrored layouts."}
+{"instruction": "Bilakah masa yang sesuai untuk `space-x-4`?", "input": "", "output": "`space-x/y` gaps siblings without wrapper classes; RTL-aware variants exist for mirrored layouts."}
+{"instruction": "Terangkan `divide-y` dalam satu minit.", "input": "", "output": "`divide-y` draws rules between children only — cleaner than borders on every item."}
+{"instruction": "Apa yang perlu saya tahu tentang `divide-y`?", "input": "", "output": "`divide-y` draws rules between children only — cleaner than borders on every item."}
+{"instruction": "Bagaimanakah `divide-y` berfungsi?", "input": "", "output": "`divide-y` draws rules between children only — cleaner than borders on every item."}
+{"instruction": "Bilakah masa yang sesuai untuk `divide-y`?", "input": "", "output": "`divide-y` draws rules between children only — cleaner than borders on every item."}
+{"instruction": "Terangkan `dark:` dalam satu minit.", "input": "", "output": "Dark variants keyed off class strategy toggle whole themes with one ancestor class."}
+{"instruction": "Apa yang perlu saya tahu tentang `dark:`?", "input": "", "output": "Dark variants keyed off class strategy toggle whole themes with one ancestor class."}
+{"instruction": "Bagaimanakah `dark:` berfungsi?", "input": "", "output": "Dark variants keyed off class strategy toggle whole themes with one ancestor class."}
+{"instruction": "Bilakah masa yang sesuai untuk `dark:`?", "input": "", "output": "Dark variants keyed off class strategy toggle whole themes with one ancestor class."}
+{"instruction": "Terangkan `transition` dalam satu minit.", "input": "", "output": "`transition` + `duration-200` animate state changes; restrict to transform/opacity for smoothness."}
+{"instruction": "Apa yang perlu saya tahu tentang `transition`?", "input": "", "output": "`transition` + `duration-200` animate state changes; restrict to transform/opacity for smoothness."}
+{"instruction": "Bagaimanakah `transition` berfungsi?", "input": "", "output": "`transition` + `duration-200` animate state changes; restrict to transform/opacity for smoothness."}
+{"instruction": "Bilakah masa yang sesuai untuk `transition`?", "input": "", "output": "`transition` + `duration-200` animate state changes; restrict to transform/opacity for smoothness."}
+{"instruction": "Terangkan `animate-spin` dalam satu minit.", "input": "", "output": "Built-in keyframes (`spin ping pulse bounce`) cover loaders; custom ones extend via config."}
+{"instruction": "Apa yang perlu saya tahu tentang `animate-spin`?", "input": "", "output": "Built-in keyframes (`spin ping pulse bounce`) cover loaders; custom ones extend via config."}
+{"instruction": "Bagaimanakah `animate-spin` berfungsi?", "input": "", "output": "Built-in keyframes (`spin ping pulse bounce`) cover loaders; custom ones extend via config."}
+{"instruction": "Bilakah masa yang sesuai untuk `animate-spin`?", "input": "", "output": "Built-in keyframes (`spin ping pulse bounce`) cover loaders; custom ones extend via config."}
+{"instruction": "Terangkan `prose typography` dalam satu minit.", "input": "", "output": "The typography plugin (`prose`) styles raw HTML/Markdown readably; tune `prose-lg`/`prose-invert` per context."}
+{"instruction": "Apa yang perlu saya tahu tentang `prose typography`?", "input": "", "output": "The typography plugin (`prose`) styles raw HTML/Markdown readably; tune `prose-lg`/`prose-invert` per context."}
+{"instruction": "Bagaimanakah `prose typography` berfungsi?", "input": "", "output": "The typography plugin (`prose`) styles raw HTML/Markdown readably; tune `prose-lg`/`prose-invert` per context."}
+{"instruction": "Bilakah masa yang sesuai untuk `prose typography`?", "input": "", "output": "The typography plugin (`prose`) styles raw HTML/Markdown readably; tune `prose-lg`/`prose-invert` per context."}
+{"instruction": "Terangkan `line-clamp` dalam satu minit.", "input": "", "output": "`line-clamp-3` truncates to N lines with ellipsis — cards and previews without JS measuring."}
+{"instruction": "Apa yang perlu saya tahu tentang `line-clamp`?", "input": "", "output": "`line-clamp-3` truncates to N lines with ellipsis — cards and previews without JS measuring."}
+{"instruction": "Bagaimanakah `line-clamp` berfungsi?", "input": "", "output": "`line-clamp-3` truncates to N lines with ellipsis — cards and previews without JS measuring."}
+{"instruction": "Bilakah masa yang sesuai untuk `line-clamp`?", "input": "", "output": "`line-clamp-3` truncates to N lines with ellipsis — cards and previews without JS measuring."}
+{"instruction": "Terangkan `aspect-video square` dalam satu minit.", "input": "", "output": "`aspect-video`/`aspect-square` reserve media ratios (no layout shift); arbitrary `aspect-[4/3]` for customs."}
+{"instruction": "Apa yang perlu saya tahu tentang `aspect-video square`?", "input": "", "output": "`aspect-video`/`aspect-square` reserve media ratios (no layout shift); arbitrary `aspect-[4/3]` for customs."}
+{"instruction": "Bagaimanakah `aspect-video square` berfungsi?", "input": "", "output": "`aspect-video`/`aspect-square` reserve media ratios (no layout shift); arbitrary `aspect-[4/3]` for customs."}
+{"instruction": "Bilakah masa yang sesuai untuk `aspect-video square`?", "input": "", "output": "`aspect-video`/`aspect-square` reserve media ratios (no layout shift); arbitrary `aspect-[4/3]` for customs."}
+{"instruction": "Terangkan `columns break` dalam satu minit.", "input": "", "output": "`columns-3` magazine-flows content; `break-inside-avoid` keeps cards from splitting across columns."}
+{"instruction": "Apa yang perlu saya tahu tentang `columns break`?", "input": "", "output": "`columns-3` magazine-flows content; `break-inside-avoid` keeps cards from splitting across columns."}
+{"instruction": "Bagaimanakah `columns break` berfungsi?", "input": "", "output": "`columns-3` magazine-flows content; `break-inside-avoid` keeps cards from splitting across columns."}
+{"instruction": "Bilakah masa yang sesuai untuk `columns break`?", "input": "", "output": "`columns-3` magazine-flows content; `break-inside-avoid` keeps cards from splitting across columns."}
+{"instruction": "Terangkan `ring offset` dalam satu minit.", "input": "", "output": "`ring-2 ring-offset-2` focus halos that don't shift layout (unlike borders); brand-color the ring."}
+{"instruction": "Apa yang perlu saya tahu tentang `ring offset`?", "input": "", "output": "`ring-2 ring-offset-2` focus halos that don't shift layout (unlike borders); brand-color the ring."}
+{"instruction": "Bagaimanakah `ring offset` berfungsi?", "input": "", "output": "`ring-2 ring-offset-2` focus halos that don't shift layout (unlike borders); brand-color the ring."}
+{"instruction": "Bilakah masa yang sesuai untuk `ring offset`?", "input": "", "output": "`ring-2 ring-offset-2` focus halos that don't shift layout (unlike borders); brand-color the ring."}
+{"instruction": "Terangkan `placeholder:` dalam satu minit.", "input": "", "output": "`placeholder:text-gray-400` styles hint text; `placeholder-shown:` variants react to empty inputs."}
+{"instruction": "Apa yang perlu saya tahu tentang `placeholder:`?", "input": "", "output": "`placeholder:text-gray-400` styles hint text; `placeholder-shown:` variants react to empty inputs."}
+{"instruction": "Bagaimanakah `placeholder:` berfungsi?", "input": "", "output": "`placeholder:text-gray-400` styles hint text; `placeholder-shown:` variants react to empty inputs."}
+{"instruction": "Bilakah masa yang sesuai untuk `placeholder:`?", "input": "", "output": "`placeholder:text-gray-400` styles hint text; `placeholder-shown:` variants react to empty inputs."}
+{"instruction": "Terangkan `file: variant` dalam satu minit.", "input": "", "output": "`file:mr-4 file:rounded file:bg-blue-50` styles native file buttons — no custom upload widgets needed."}
+{"instruction": "Apa yang perlu saya tahu tentang `file: variant`?", "input": "", "output": "`file:mr-4 file:rounded file:bg-blue-50` styles native file buttons — no custom upload widgets needed."}
+{"instruction": "Bagaimanakah `file: variant` berfungsi?", "input": "", "output": "`file:mr-4 file:rounded file:bg-blue-50` styles native file buttons — no custom upload widgets needed."}
+{"instruction": "Bilakah masa yang sesuai untuk `file: variant`?", "input": "", "output": "`file:mr-4 file:rounded file:bg-blue-50` styles native file buttons — no custom upload widgets needed."}
+{"instruction": "Terangkan `first last odd even` dalam satu minit.", "input": "", "output": "Positional variants stripe lists (`odd:bg-gray-50`) and trim edges (`first:pt-0`) without extra classes."}
+{"instruction": "Apa yang perlu saya tahu tentang `first last odd even`?", "input": "", "output": "Positional variants stripe lists (`odd:bg-gray-50`) and trim edges (`first:pt-0`) without extra classes."}
+{"instruction": "Bagaimanakah `first last odd even` berfungsi?", "input": "", "output": "Positional variants stripe lists (`odd:bg-gray-50`) and trim edges (`first:pt-0`) without extra classes."}
+{"instruction": "Bilakah masa yang sesuai untuk `first last odd even`?", "input": "", "output": "Positional variants stripe lists (`odd:bg-gray-50`) and trim edges (`first:pt-0`) without extra classes."}
+{"instruction": "Terangkan `group-hover` dalam satu minit.", "input": "", "output": "Parent `group` + child `group-hover:` reveals actions on hover — tooltips and overlays declaratively."}
+{"instruction": "Apa yang perlu saya tahu tentang `group-hover`?", "input": "", "output": "Parent `group` + child `group-hover:` reveals actions on hover — tooltips and overlays declaratively."}
+{"instruction": "Bagaimanakah `group-hover` berfungsi?", "input": "", "output": "Parent `group` + child `group-hover:` reveals actions on hover — tooltips and overlays declaratively."}
+{"instruction": "Bilakah masa yang sesuai untuk `group-hover`?", "input": "", "output": "Parent `group` + child `group-hover:` reveals actions on hover — tooltips and overlays declaratively."}
+{"instruction": "Terangkan `peer-checked` dalam satu minit.", "input": "", "output": "Sibling `peer` + `peer-checked:` styles custom radios/toggles from hidden native inputs — accessible by construction."}
+{"instruction": "Apa yang perlu saya tahu tentang `peer-checked`?", "input": "", "output": "Sibling `peer` + `peer-checked:` styles custom radios/toggles from hidden native inputs — accessible by construction."}
+{"instruction": "Bagaimanakah `peer-checked` berfungsi?", "input": "", "output": "Sibling `peer` + `peer-checked:` styles custom radios/toggles from hidden native inputs — accessible by construction."}
+{"instruction": "Bilakah masa yang sesuai untuk `peer-checked`?", "input": "", "output": "Sibling `peer` + `peer-checked:` styles custom radios/toggles from hidden native inputs — accessible by construction."}
+{"instruction": "Terangkan `has-[:checked]` dalam satu minit.", "input": "", "output": "`has-[input:checked]:bg-blue-50` styles ancestors by descendant state — parent selectors without JS."}
+{"instruction": "Apa yang perlu saya tahu tentang `has-[:checked]`?", "input": "", "output": "`has-[input:checked]:bg-blue-50` styles ancestors by descendant state — parent selectors without JS."}
+{"instruction": "Bagaimanakah `has-[:checked]` berfungsi?", "input": "", "output": "`has-[input:checked]:bg-blue-50` styles ancestors by descendant state — parent selectors without JS."}
+{"instruction": "Bilakah masa yang sesuai untuk `has-[:checked]`?", "input": "", "output": "`has-[input:checked]:bg-blue-50` styles ancestors by descendant state — parent selectors without JS."}
+{"instruction": "Terangkan `aria-* variants` dalam satu minit.", "input": "", "output": "`aria-expanded:`/`aria-disabled:` mirror component state accessibly; pair with real ARIA attributes, not divs."}
+{"instruction": "Apa yang perlu saya tahu tentang `aria-* variants`?", "input": "", "output": "`aria-expanded:`/`aria-disabled:` mirror component state accessibly; pair with real ARIA attributes, not divs."}
+{"instruction": "Bagaimanakah `aria-* variants` berfungsi?", "input": "", "output": "`aria-expanded:`/`aria-disabled:` mirror component state accessibly; pair with real ARIA attributes, not divs."}
+{"instruction": "Bilakah masa yang sesuai untuk `aria-* variants`?", "input": "", "output": "`aria-expanded:`/`aria-disabled:` mirror component state accessibly; pair with real ARIA attributes, not divs."}
+{"instruction": "Terangkan `data-* variants` dalam satu minit.", "input": "", "output": "`data-[size=lg]:text-lg` keys styles off data attributes — server-rendered variants without JS toggles."}
+{"instruction": "Apa yang perlu saya tahu tentang `data-* variants`?", "input": "", "output": "`data-[size=lg]:text-lg` keys styles off data attributes — server-rendered variants without JS toggles."}
+{"instruction": "Bagaimanakah `data-* variants` berfungsi?", "input": "", "output": "`data-[size=lg]:text-lg` keys styles off data attributes — server-rendered variants without JS toggles."}
+{"instruction": "Bilakah masa yang sesuai untuk `data-* variants`?", "input": "", "output": "`data-[size=lg]:text-lg` keys styles off data attributes — server-rendered variants without JS toggles."}
+{"instruction": "Terangkan `open: details` dalam satu minit.", "input": "", "output": "`open:` styles expanded `<details>` natively (accordions, dropdowns); combine with `group-open:` markers."}
+{"instruction": "Apa yang perlu saya tahu tentang `open: details`?", "input": "", "output": "`open:` styles expanded `<details>` natively (accordions, dropdowns); combine with `group-open:` markers."}
+{"instruction": "Bagaimanakah `open: details` berfungsi?", "input": "", "output": "`open:` styles expanded `<details>` natively (accordions, dropdowns); combine with `group-open:` markers."}
+{"instruction": "Bilakah masa yang sesuai untuk `open: details`?", "input": "", "output": "`open:` styles expanded `<details>` natively (accordions, dropdowns); combine with `group-open:` markers."}
+{"instruction": "Terangkan `print: variant` dalam satu minit.", "input": "", "output": "`print:hidden` strips nav/ads on paper while `print:block` reveals print-only summaries — one codebase, two media."}
+{"instruction": "Apa yang perlu saya tahu tentang `print: variant`?", "input": "", "output": "`print:hidden` strips nav/ads on paper while `print:block` reveals print-only summaries — one codebase, two media."}
+{"instruction": "Bagaimanakah `print: variant` berfungsi?", "input": "", "output": "`print:hidden` strips nav/ads on paper while `print:block` reveals print-only summaries — one codebase, two media."}
+{"instruction": "Bilakah masa yang sesuai untuk `print: variant`?", "input": "", "output": "`print:hidden` strips nav/ads on paper while `print:block` reveals print-only summaries — one codebase, two media."}
+{"instruction": "What does `font-mono serif` do?", "input": "", "output": "`font-mono` for code, `font-serif` for editorial — `font-sans` default suits UI; load at most two families for speed."}
+{"instruction": "Explain `font-mono serif` briefly.", "input": "", "output": "`font-mono` for code, `font-serif` for editorial — `font-sans` default suits UI; load at most two families for speed."}
+{"instruction": "When do I use `font-mono serif`?", "input": "", "output": "`font-mono` for code, `font-serif` for editorial — `font-sans` default suits UI; load at most two families for speed."}
+{"instruction": "Give a practical example of `font-mono serif`.", "input": "", "output": "`font-mono` for code, `font-serif` for editorial — `font-sans` default suits UI; load at most two families for speed."}
+{"instruction": "What is `font-mono serif` for?", "input": "", "output": "`font-mono` for code, `font-serif` for editorial — `font-sans` default suits UI; load at most two families for speed."}
+{"instruction": "Apakah fungsi `font-mono serif`?", "input": "", "output": "`font-mono` for code, `font-serif` for editorial — `font-sans` default suits UI; load at most two families for speed."}
+{"instruction": "Terangkan `font-mono serif` secara ringkas.", "input": "", "output": "`font-mono` for code, `font-serif` for editorial — `font-sans` default suits UI; load at most two families for speed."}
+{"instruction": "Bila perlu guna `font-mono serif`?", "input": "", "output": "`font-mono` for code, `font-serif` for editorial — `font-sans` default suits UI; load at most two families for speed."}
+{"instruction": "Beri contoh penggunaan `font-mono serif`.", "input": "", "output": "`font-mono` for code, `font-serif` for editorial — `font-sans` default suits UI; load at most two families for speed."}
+{"instruction": "`font-mono serif` untuk apa?", "input": "", "output": "`font-mono` for code, `font-serif` for editorial — `font-sans` default suits UI; load at most two families for speed."}
+{"instruction": "How would you explain `font-mono serif` to a junior developer?", "input": "", "output": "`font-mono` for code, `font-serif` for editorial — `font-sans` default suits UI; load at most two families for speed."}
+{"instruction": "Give a real-world scenario for `font-mono serif`.", "input": "", "output": "`font-mono` for code, `font-serif` for editorial — `font-sans` default suits UI; load at most two families for speed."}
+{"instruction": "What problem does `font-mono serif` solve?", "input": "", "output": "`font-mono` for code, `font-serif` for editorial — `font-sans` default suits UI; load at most two families for speed."}
+{"instruction": "Terangkan `font-mono serif` dalam satu minit.", "input": "", "output": "`font-mono` for code, `font-serif` for editorial — `font-sans` default suits UI; load at most two families for speed."}
+{"instruction": "Apa yang perlu saya tahu tentang `font-mono serif`?", "input": "", "output": "`font-mono` for code, `font-serif` for editorial — `font-sans` default suits UI; load at most two families for speed."}
+{"instruction": "Bagaimanakah `font-mono serif` berfungsi?", "input": "", "output": "`font-mono` for code, `font-serif` for editorial — `font-sans` default suits UI; load at most two families for speed."}
+{"instruction": "Bilakah masa yang sesuai untuk `font-mono serif`?", "input": "", "output": "`font-mono` for code, `font-serif` for editorial — `font-sans` default suits UI; load at most two families for speed."}
+{"instruction": "What does `tracking leading` do?", "input": "", "output": "`tracking-wide` letterspaces labels, `leading-relaxed` opens body copy; tight display type pairs `tracking-tight` + large size."}
+{"instruction": "Explain `tracking leading` briefly.", "input": "", "output": "`tracking-wide` letterspaces labels, `leading-relaxed` opens body copy; tight display type pairs `tracking-tight` + large size."}
+{"instruction": "When do I use `tracking leading`?", "input": "", "output": "`tracking-wide` letterspaces labels, `leading-relaxed` opens body copy; tight display type pairs `tracking-tight` + large size."}
+{"instruction": "Give a practical example of `tracking leading`.", "input": "", "output": "`tracking-wide` letterspaces labels, `leading-relaxed` opens body copy; tight display type pairs `tracking-tight` + large size."}
+{"instruction": "What is `tracking leading` for?", "input": "", "output": "`tracking-wide` letterspaces labels, `leading-relaxed` opens body copy; tight display type pairs `tracking-tight` + large size."}
+{"instruction": "Apakah fungsi `tracking leading`?", "input": "", "output": "`tracking-wide` letterspaces labels, `leading-relaxed` opens body copy; tight display type pairs `tracking-tight` + large size."}
+{"instruction": "Terangkan `tracking leading` secara ringkas.", "input": "", "output": "`tracking-wide` letterspaces labels, `leading-relaxed` opens body copy; tight display type pairs `tracking-tight` + large size."}
+{"instruction": "Bila perlu guna `tracking leading`?", "input": "", "output": "`tracking-wide` letterspaces labels, `leading-relaxed` opens body copy; tight display type pairs `tracking-tight` + large size."}
+{"instruction": "Beri contoh penggunaan `tracking leading`.", "input": "", "output": "`tracking-wide` letterspaces labels, `leading-relaxed` opens body copy; tight display type pairs `tracking-tight` + large size."}
+{"instruction": "`tracking leading` untuk apa?", "input": "", "output": "`tracking-wide` letterspaces labels, `leading-relaxed` opens body copy; tight display type pairs `tracking-tight` + large size."}
+{"instruction": "How would you explain `tracking leading` to a junior developer?", "input": "", "output": "`tracking-wide` letterspaces labels, `leading-relaxed` opens body copy; tight display type pairs `tracking-tight` + large size."}
+{"instruction": "Give a real-world scenario for `tracking leading`.", "input": "", "output": "`tracking-wide` letterspaces labels, `leading-relaxed` opens body copy; tight display type pairs `tracking-tight` + large size."}
+{"instruction": "What problem does `tracking leading` solve?", "input": "", "output": "`tracking-wide` letterspaces labels, `leading-relaxed` opens body copy; tight display type pairs `tracking-tight` + large size."}
+{"instruction": "Terangkan `tracking leading` dalam satu minit.", "input": "", "output": "`tracking-wide` letterspaces labels, `leading-relaxed` opens body copy; tight display type pairs `tracking-tight` + large size."}
+{"instruction": "Apa yang perlu saya tahu tentang `tracking leading`?", "input": "", "output": "`tracking-wide` letterspaces labels, `leading-relaxed` opens body copy; tight display type pairs `tracking-tight` + large size."}
+{"instruction": "Bagaimanakah `tracking leading` berfungsi?", "input": "", "output": "`tracking-wide` letterspaces labels, `leading-relaxed` opens body copy; tight display type pairs `tracking-tight` + large size."}
+{"instruction": "Bilakah masa yang sesuai untuk `tracking leading`?", "input": "", "output": "`tracking-wide` letterspaces labels, `leading-relaxed` opens body copy; tight display type pairs `tracking-tight` + large size."}
+{"instruction": "What does `text-transform` do?", "input": "", "output": "`uppercase`/`capitalize` transform display only (source stays clean for copy-paste/search); never store transformed."}
+{"instruction": "Explain `text-transform` briefly.", "input": "", "output": "`uppercase`/`capitalize` transform display only (source stays clean for copy-paste/search); never store transformed."}
+{"instruction": "When do I use `text-transform`?", "input": "", "output": "`uppercase`/`capitalize` transform display only (source stays clean for copy-paste/search); never store transformed."}
+{"instruction": "Give a practical example of `text-transform`.", "input": "", "output": "`uppercase`/`capitalize` transform display only (source stays clean for copy-paste/search); never store transformed."}
+{"instruction": "What is `text-transform` for?", "input": "", "output": "`uppercase`/`capitalize` transform display only (source stays clean for copy-paste/search); never store transformed."}
+{"instruction": "Apakah fungsi `text-transform`?", "input": "", "output": "`uppercase`/`capitalize` transform display only (source stays clean for copy-paste/search); never store transformed."}
+{"instruction": "Terangkan `text-transform` secara ringkas.", "input": "", "output": "`uppercase`/`capitalize` transform display only (source stays clean for copy-paste/search); never store transformed."}
+{"instruction": "Bila perlu guna `text-transform`?", "input": "", "output": "`uppercase`/`capitalize` transform display only (source stays clean for copy-paste/search); never store transformed."}
+{"instruction": "Beri contoh penggunaan `text-transform`.", "input": "", "output": "`uppercase`/`capitalize` transform display only (source stays clean for copy-paste/search); never store transformed."}
+{"instruction": "`text-transform` untuk apa?", "input": "", "output": "`uppercase`/`capitalize` transform display only (source stays clean for copy-paste/search); never store transformed."}
+{"instruction": "How would you explain `text-transform` to a junior developer?", "input": "", "output": "`uppercase`/`capitalize` transform display only (source stays clean for copy-paste/search); never store transformed."}
+{"instruction": "Give a real-world scenario for `text-transform`.", "input": "", "output": "`uppercase`/`capitalize` transform display only (source stays clean for copy-paste/search); never store transformed."}
+{"instruction": "What problem does `text-transform` solve?", "input": "", "output": "`uppercase`/`capitalize` transform display only (source stays clean for copy-paste/search); never store transformed."}
+{"instruction": "Terangkan `text-transform` dalam satu minit.", "input": "", "output": "`uppercase`/`capitalize` transform display only (source stays clean for copy-paste/search); never store transformed."}
+{"instruction": "Apa yang perlu saya tahu tentang `text-transform`?", "input": "", "output": "`uppercase`/`capitalize` transform display only (source stays clean for copy-paste/search); never store transformed."}
+{"instruction": "Bagaimanakah `text-transform` berfungsi?", "input": "", "output": "`uppercase`/`capitalize` transform display only (source stays clean for copy-paste/search); never store transformed."}
+{"instruction": "Bilakah masa yang sesuai untuk `text-transform`?", "input": "", "output": "`uppercase`/`capitalize` transform display only (source stays clean for copy-paste/search); never store transformed."}
+{"instruction": "What does `truncate` do?", "input": "", "output": "`truncate` single-line ellipsis (needs width + overflow hidden); `line-clamp-N` handles multi-line."}
+{"instruction": "Explain `truncate` briefly.", "input": "", "output": "`truncate` single-line ellipsis (needs width + overflow hidden); `line-clamp-N` handles multi-line."}
+{"instruction": "When do I use `truncate`?", "input": "", "output": "`truncate` single-line ellipsis (needs width + overflow hidden); `line-clamp-N` handles multi-line."}
+{"instruction": "Give a practical example of `truncate`.", "input": "", "output": "`truncate` single-line ellipsis (needs width + overflow hidden); `line-clamp-N` handles multi-line."}
+{"instruction": "What is `truncate` for?", "input": "", "output": "`truncate` single-line ellipsis (needs width + overflow hidden); `line-clamp-N` handles multi-line."}
+{"instruction": "Apakah fungsi `truncate`?", "input": "", "output": "`truncate` single-line ellipsis (needs width + overflow hidden); `line-clamp-N` handles multi-line."}
+{"instruction": "Terangkan `truncate` secara ringkas.", "input": "", "output": "`truncate` single-line ellipsis (needs width + overflow hidden); `line-clamp-N` handles multi-line."}
+{"instruction": "Bila perlu guna `truncate`?", "input": "", "output": "`truncate` single-line ellipsis (needs width + overflow hidden); `line-clamp-N` handles multi-line."}
+{"instruction": "Beri contoh penggunaan `truncate`.", "input": "", "output": "`truncate` single-line ellipsis (needs width + overflow hidden); `line-clamp-N` handles multi-line."}
+{"instruction": "`truncate` untuk apa?", "input": "", "output": "`truncate` single-line ellipsis (needs width + overflow hidden); `line-clamp-N` handles multi-line."}
+{"instruction": "How would you explain `truncate` to a junior developer?", "input": "", "output": "`truncate` single-line ellipsis (needs width + overflow hidden); `line-clamp-N` handles multi-line."}
+{"instruction": "Give a real-world scenario for `truncate`.", "input": "", "output": "`truncate` single-line ellipsis (needs width + overflow hidden); `line-clamp-N` handles multi-line."}
+{"instruction": "What problem does `truncate` solve?", "input": "", "output": "`truncate` single-line ellipsis (needs width + overflow hidden); `line-clamp-N` handles multi-line."}
+{"instruction": "Terangkan `truncate` dalam satu minit.", "input": "", "output": "`truncate` single-line ellipsis (needs width + overflow hidden); `line-clamp-N` handles multi-line."}
+{"instruction": "Apa yang perlu saya tahu tentang `truncate`?", "input": "", "output": "`truncate` single-line ellipsis (needs width + overflow hidden); `line-clamp-N` handles multi-line."}
+{"instruction": "Bagaimanakah `truncate` berfungsi?", "input": "", "output": "`truncate` single-line ellipsis (needs width + overflow hidden); `line-clamp-N` handles multi-line."}
+{"instruction": "Bilakah masa yang sesuai untuk `truncate`?", "input": "", "output": "`truncate` single-line ellipsis (needs width + overflow hidden); `line-clamp-N` handles multi-line."}
+{"instruction": "What does `list-disc inside` do?", "input": "", "output": "`list-disc`/`list-decimal` restore markers after resets; `list-inside` wraps text under bullets instead of hanging."}
+{"instruction": "Explain `list-disc inside` briefly.", "input": "", "output": "`list-disc`/`list-decimal` restore markers after resets; `list-inside` wraps text under bullets instead of hanging."}
+{"instruction": "When do I use `list-disc inside`?", "input": "", "output": "`list-disc`/`list-decimal` restore markers after resets; `list-inside` wraps text under bullets instead of hanging."}
+{"instruction": "Give a practical example of `list-disc inside`.", "input": "", "output": "`list-disc`/`list-decimal` restore markers after resets; `list-inside` wraps text under bullets instead of hanging."}
+{"instruction": "What is `list-disc inside` for?", "input": "", "output": "`list-disc`/`list-decimal` restore markers after resets; `list-inside` wraps text under bullets instead of hanging."}
+{"instruction": "Apakah fungsi `list-disc inside`?", "input": "", "output": "`list-disc`/`list-decimal` restore markers after resets; `list-inside` wraps text under bullets instead of hanging."}
+{"instruction": "Terangkan `list-disc inside` secara ringkas.", "input": "", "output": "`list-disc`/`list-decimal` restore markers after resets; `list-inside` wraps text under bullets instead of hanging."}
+{"instruction": "Bila perlu guna `list-disc inside`?", "input": "", "output": "`list-disc`/`list-decimal` restore markers after resets; `list-inside` wraps text under bullets instead of hanging."}
+{"instruction": "Beri contoh penggunaan `list-disc inside`.", "input": "", "output": "`list-disc`/`list-decimal` restore markers after resets; `list-inside` wraps text under bullets instead of hanging."}
+{"instruction": "`list-disc inside` untuk apa?", "input": "", "output": "`list-disc`/`list-decimal` restore markers after resets; `list-inside` wraps text under bullets instead of hanging."}
+{"instruction": "How would you explain `list-disc inside` to a junior developer?", "input": "", "output": "`list-disc`/`list-decimal` restore markers after resets; `list-inside` wraps text under bullets instead of hanging."}
+{"instruction": "Give a real-world scenario for `list-disc inside`.", "input": "", "output": "`list-disc`/`list-decimal` restore markers after resets; `list-inside` wraps text under bullets instead of hanging."}
+{"instruction": "What problem does `list-disc inside` solve?", "input": "", "output": "`list-disc`/`list-decimal` restore markers after resets; `list-inside` wraps text under bullets instead of hanging."}
+{"instruction": "Terangkan `list-disc inside` dalam satu minit.", "input": "", "output": "`list-disc`/`list-decimal` restore markers after resets; `list-inside` wraps text under bullets instead of hanging."}
+{"instruction": "Apa yang perlu saya tahu tentang `list-disc inside`?", "input": "", "output": "`list-disc`/`list-decimal` restore markers after resets; `list-inside` wraps text under bullets instead of hanging."}
+{"instruction": "Bagaimanakah `list-disc inside` berfungsi?", "input": "", "output": "`list-disc`/`list-decimal` restore markers after resets; `list-inside` wraps text under bullets instead of hanging."}
+{"instruction": "Bilakah masa yang sesuai untuk `list-disc inside`?", "input": "", "output": "`list-disc`/`list-decimal` restore markers after resets; `list-inside` wraps text under bullets instead of hanging."}
+{"instruction": "What does `table-fixed collapse` do?", "input": "", "output": "`table-fixed` + `w-full` equalizes columns predictably; `border-collapse` merges double borders cleanly."}
+{"instruction": "Explain `table-fixed collapse` briefly.", "input": "", "output": "`table-fixed` + `w-full` equalizes columns predictably; `border-collapse` merges double borders cleanly."}
+{"instruction": "When do I use `table-fixed collapse`?", "input": "", "output": "`table-fixed` + `w-full` equalizes columns predictably; `border-collapse` merges double borders cleanly."}
+{"instruction": "Give a practical example of `table-fixed collapse`.", "input": "", "output": "`table-fixed` + `w-full` equalizes columns predictably; `border-collapse` merges double borders cleanly."}
+{"instruction": "What is `table-fixed collapse` for?", "input": "", "output": "`table-fixed` + `w-full` equalizes columns predictably; `border-collapse` merges double borders cleanly."}
+{"instruction": "Apakah fungsi `table-fixed collapse`?", "input": "", "output": "`table-fixed` + `w-full` equalizes columns predictably; `border-collapse` merges double borders cleanly."}
+{"instruction": "Terangkan `table-fixed collapse` secara ringkas.", "input": "", "output": "`table-fixed` + `w-full` equalizes columns predictably; `border-collapse` merges double borders cleanly."}
+{"instruction": "Bila perlu guna `table-fixed collapse`?", "input": "", "output": "`table-fixed` + `w-full` equalizes columns predictably; `border-collapse` merges double borders cleanly."}
+{"instruction": "Beri contoh penggunaan `table-fixed collapse`.", "input": "", "output": "`table-fixed` + `w-full` equalizes columns predictably; `border-collapse` merges double borders cleanly."}
+{"instruction": "`table-fixed collapse` untuk apa?", "input": "", "output": "`table-fixed` + `w-full` equalizes columns predictably; `border-collapse` merges double borders cleanly."}
+{"instruction": "How would you explain `table-fixed collapse` to a junior developer?", "input": "", "output": "`table-fixed` + `w-full` equalizes columns predictably; `border-collapse` merges double borders cleanly."}
+{"instruction": "Give a real-world scenario for `table-fixed collapse`.", "input": "", "output": "`table-fixed` + `w-full` equalizes columns predictably; `border-collapse` merges double borders cleanly."}
+{"instruction": "What problem does `table-fixed collapse` solve?", "input": "", "output": "`table-fixed` + `w-full` equalizes columns predictably; `border-collapse` merges double borders cleanly."}
+{"instruction": "Terangkan `table-fixed collapse` dalam satu minit.", "input": "", "output": "`table-fixed` + `w-full` equalizes columns predictably; `border-collapse` merges double borders cleanly."}
+{"instruction": "Apa yang perlu saya tahu tentang `table-fixed collapse`?", "input": "", "output": "`table-fixed` + `w-full` equalizes columns predictably; `border-collapse` merges double borders cleanly."}
+{"instruction": "Bagaimanakah `table-fixed collapse` berfungsi?", "input": "", "output": "`table-fixed` + `w-full` equalizes columns predictably; `border-collapse` merges double borders cleanly."}
+{"instruction": "Bilakah masa yang sesuai untuk `table-fixed collapse`?", "input": "", "output": "`table-fixed` + `w-full` equalizes columns predictably; `border-collapse` merges double borders cleanly."}
+{"instruction": "What does `outline focus` do?", "input": "", "output": "`outline-none` must pair custom `:focus-visible` rings — removing focus visibility breaks keyboard users entirely."}
+{"instruction": "Explain `outline focus` briefly.", "input": "", "output": "`outline-none` must pair custom `:focus-visible` rings — removing focus visibility breaks keyboard users entirely."}
+{"instruction": "When do I use `outline focus`?", "input": "", "output": "`outline-none` must pair custom `:focus-visible` rings — removing focus visibility breaks keyboard users entirely."}
+{"instruction": "Give a practical example of `outline focus`.", "input": "", "output": "`outline-none` must pair custom `:focus-visible` rings — removing focus visibility breaks keyboard users entirely."}
+{"instruction": "What is `outline focus` for?", "input": "", "output": "`outline-none` must pair custom `:focus-visible` rings — removing focus visibility breaks keyboard users entirely."}
+{"instruction": "Apakah fungsi `outline focus`?", "input": "", "output": "`outline-none` must pair custom `:focus-visible` rings — removing focus visibility breaks keyboard users entirely."}
+{"instruction": "Terangkan `outline focus` secara ringkas.", "input": "", "output": "`outline-none` must pair custom `:focus-visible` rings — removing focus visibility breaks keyboard users entirely."}
+{"instruction": "Bila perlu guna `outline focus`?", "input": "", "output": "`outline-none` must pair custom `:focus-visible` rings — removing focus visibility breaks keyboard users entirely."}
+{"instruction": "Beri contoh penggunaan `outline focus`.", "input": "", "output": "`outline-none` must pair custom `:focus-visible` rings — removing focus visibility breaks keyboard users entirely."}
+{"instruction": "`outline focus` untuk apa?", "input": "", "output": "`outline-none` must pair custom `:focus-visible` rings — removing focus visibility breaks keyboard users entirely."}
+{"instruction": "How would you explain `outline focus` to a junior developer?", "input": "", "output": "`outline-none` must pair custom `:focus-visible` rings — removing focus visibility breaks keyboard users entirely."}
+{"instruction": "Give a real-world scenario for `outline focus`.", "input": "", "output": "`outline-none` must pair custom `:focus-visible` rings — removing focus visibility breaks keyboard users entirely."}
+{"instruction": "What problem does `outline focus` solve?", "input": "", "output": "`outline-none` must pair custom `:focus-visible` rings — removing focus visibility breaks keyboard users entirely."}
+{"instruction": "Terangkan `outline focus` dalam satu minit.", "input": "", "output": "`outline-none` must pair custom `:focus-visible` rings — removing focus visibility breaks keyboard users entirely."}
+{"instruction": "Apa yang perlu saya tahu tentang `outline focus`?", "input": "", "output": "`outline-none` must pair custom `:focus-visible` rings — removing focus visibility breaks keyboard users entirely."}
+{"instruction": "Bagaimanakah `outline focus` berfungsi?", "input": "", "output": "`outline-none` must pair custom `:focus-visible` rings — removing focus visibility breaks keyboard users entirely."}
+{"instruction": "Bilakah masa yang sesuai untuk `outline focus`?", "input": "", "output": "`outline-none` must pair custom `:focus-visible` rings — removing focus visibility breaks keyboard users entirely."}
+{"instruction": "What does `shadow scale` do?", "input": "", "output": "`shadow-sm`→`shadow-2xl` scale elevation semantically (cards→modals); one scale per depth level keeps hierarchy honest."}
+{"instruction": "Explain `shadow scale` briefly.", "input": "", "output": "`shadow-sm`→`shadow-2xl` scale elevation semantically (cards→modals); one scale per depth level keeps hierarchy honest."}
+{"instruction": "When do I use `shadow scale`?", "input": "", "output": "`shadow-sm`→`shadow-2xl` scale elevation semantically (cards→modals); one scale per depth level keeps hierarchy honest."}
+{"instruction": "Give a practical example of `shadow scale`.", "input": "", "output": "`shadow-sm`→`shadow-2xl` scale elevation semantically (cards→modals); one scale per depth level keeps hierarchy honest."}
+{"instruction": "What is `shadow scale` for?", "input": "", "output": "`shadow-sm`→`shadow-2xl` scale elevation semantically (cards→modals); one scale per depth level keeps hierarchy honest."}
+{"instruction": "Apakah fungsi `shadow scale`?", "input": "", "output": "`shadow-sm`→`shadow-2xl` scale elevation semantically (cards→modals); one scale per depth level keeps hierarchy honest."}
+{"instruction": "Terangkan `shadow scale` secara ringkas.", "input": "", "output": "`shadow-sm`→`shadow-2xl` scale elevation semantically (cards→modals); one scale per depth level keeps hierarchy honest."}
+{"instruction": "Bila perlu guna `shadow scale`?", "input": "", "output": "`shadow-sm`→`shadow-2xl` scale elevation semantically (cards→modals); one scale per depth level keeps hierarchy honest."}
+{"instruction": "Beri contoh penggunaan `shadow scale`.", "input": "", "output": "`shadow-sm`→`shadow-2xl` scale elevation semantically (cards→modals); one scale per depth level keeps hierarchy honest."}
+{"instruction": "`shadow scale` untuk apa?", "input": "", "output": "`shadow-sm`→`shadow-2xl` scale elevation semantically (cards→modals); one scale per depth level keeps hierarchy honest."}
+{"instruction": "How would you explain `shadow scale` to a junior developer?", "input": "", "output": "`shadow-sm`→`shadow-2xl` scale elevation semantically (cards→modals); one scale per depth level keeps hierarchy honest."}
+{"instruction": "Give a real-world scenario for `shadow scale`.", "input": "", "output": "`shadow-sm`→`shadow-2xl` scale elevation semantically (cards→modals); one scale per depth level keeps hierarchy honest."}
+{"instruction": "What problem does `shadow scale` solve?", "input": "", "output": "`shadow-sm`→`shadow-2xl` scale elevation semantically (cards→modals); one scale per depth level keeps hierarchy honest."}
+{"instruction": "Terangkan `shadow scale` dalam satu minit.", "input": "", "output": "`shadow-sm`→`shadow-2xl` scale elevation semantically (cards→modals); one scale per depth level keeps hierarchy honest."}
+{"instruction": "Apa yang perlu saya tahu tentang `shadow scale`?", "input": "", "output": "`shadow-sm`→`shadow-2xl` scale elevation semantically (cards→modals); one scale per depth level keeps hierarchy honest."}
+{"instruction": "Bagaimanakah `shadow scale` berfungsi?", "input": "", "output": "`shadow-sm`→`shadow-2xl` scale elevation semantically (cards→modals); one scale per depth level keeps hierarchy honest."}
+{"instruction": "Bilakah masa yang sesuai untuk `shadow scale`?", "input": "", "output": "`shadow-sm`→`shadow-2xl` scale elevation semantically (cards→modals); one scale per depth level keeps hierarchy honest."}
+{"instruction": "What does `filters basic` do?", "input": "", "output": "`blur-sm`/`brightness-90`/`grayscale` style media live; combine carefully — each filter costs GPU compositing."}
+{"instruction": "Explain `filters basic` briefly.", "input": "", "output": "`blur-sm`/`brightness-90`/`grayscale` style media live; combine carefully — each filter costs GPU compositing."}
+{"instruction": "When do I use `filters basic`?", "input": "", "output": "`blur-sm`/`brightness-90`/`grayscale` style media live; combine carefully — each filter costs GPU compositing."}
+{"instruction": "Give a practical example of `filters basic`.", "input": "", "output": "`blur-sm`/`brightness-90`/`grayscale` style media live; combine carefully — each filter costs GPU compositing."}
+{"instruction": "What is `filters basic` for?", "input": "", "output": "`blur-sm`/`brightness-90`/`grayscale` style media live; combine carefully — each filter costs GPU compositing."}
+{"instruction": "Apakah fungsi `filters basic`?", "input": "", "output": "`blur-sm`/`brightness-90`/`grayscale` style media live; combine carefully — each filter costs GPU compositing."}
+{"instruction": "Terangkan `filters basic` secara ringkas.", "input": "", "output": "`blur-sm`/`brightness-90`/`grayscale` style media live; combine carefully — each filter costs GPU compositing."}
+{"instruction": "Bila perlu guna `filters basic`?", "input": "", "output": "`blur-sm`/`brightness-90`/`grayscale` style media live; combine carefully — each filter costs GPU compositing."}
+{"instruction": "Beri contoh penggunaan `filters basic`.", "input": "", "output": "`blur-sm`/`brightness-90`/`grayscale` style media live; combine carefully — each filter costs GPU compositing."}
+{"instruction": "`filters basic` untuk apa?", "input": "", "output": "`blur-sm`/`brightness-90`/`grayscale` style media live; combine carefully — each filter costs GPU compositing."}
+{"instruction": "How would you explain `filters basic` to a junior developer?", "input": "", "output": "`blur-sm`/`brightness-90`/`grayscale` style media live; combine carefully — each filter costs GPU compositing."}
+{"instruction": "Give a real-world scenario for `filters basic`.", "input": "", "output": "`blur-sm`/`brightness-90`/`grayscale` style media live; combine carefully — each filter costs GPU compositing."}
+{"instruction": "What problem does `filters basic` solve?", "input": "", "output": "`blur-sm`/`brightness-90`/`grayscale` style media live; combine carefully — each filter costs GPU compositing."}
+{"instruction": "Terangkan `filters basic` dalam satu minit.", "input": "", "output": "`blur-sm`/`brightness-90`/`grayscale` style media live; combine carefully — each filter costs GPU compositing."}
+{"instruction": "Apa yang perlu saya tahu tentang `filters basic`?", "input": "", "output": "`blur-sm`/`brightness-90`/`grayscale` style media live; combine carefully — each filter costs GPU compositing."}
+{"instruction": "Bagaimanakah `filters basic` berfungsi?", "input": "", "output": "`blur-sm`/`brightness-90`/`grayscale` style media live; combine carefully — each filter costs GPU compositing."}
+{"instruction": "Bilakah masa yang sesuai untuk `filters basic`?", "input": "", "output": "`blur-sm`/`brightness-90`/`grayscale` style media live; combine carefully — each filter costs GPU compositing."}
+{"instruction": "What does `backdrop-blur` do?", "input": "", "output": "`backdrop-blur-md bg-white/70` frosted-glass navbars/modals; needs translucency underneath to read as glass."}
+{"instruction": "Explain `backdrop-blur` briefly.", "input": "", "output": "`backdrop-blur-md bg-white/70` frosted-glass navbars/modals; needs translucency underneath to read as glass."}
+{"instruction": "When do I use `backdrop-blur`?", "input": "", "output": "`backdrop-blur-md bg-white/70` frosted-glass navbars/modals; needs translucency underneath to read as glass."}
+{"instruction": "Give a practical example of `backdrop-blur`.", "input": "", "output": "`backdrop-blur-md bg-white/70` frosted-glass navbars/modals; needs translucency underneath to read as glass."}
+{"instruction": "What is `backdrop-blur` for?", "input": "", "output": "`backdrop-blur-md bg-white/70` frosted-glass navbars/modals; needs translucency underneath to read as glass."}
+{"instruction": "Apakah fungsi `backdrop-blur`?", "input": "", "output": "`backdrop-blur-md bg-white/70` frosted-glass navbars/modals; needs translucency underneath to read as glass."}
+{"instruction": "Terangkan `backdrop-blur` secara ringkas.", "input": "", "output": "`backdrop-blur-md bg-white/70` frosted-glass navbars/modals; needs translucency underneath to read as glass."}
+{"instruction": "Bila perlu guna `backdrop-blur`?", "input": "", "output": "`backdrop-blur-md bg-white/70` frosted-glass navbars/modals; needs translucency underneath to read as glass."}
+{"instruction": "Beri contoh penggunaan `backdrop-blur`.", "input": "", "output": "`backdrop-blur-md bg-white/70` frosted-glass navbars/modals; needs translucency underneath to read as glass."}
+{"instruction": "`backdrop-blur` untuk apa?", "input": "", "output": "`backdrop-blur-md bg-white/70` frosted-glass navbars/modals; needs translucency underneath to read as glass."}
+{"instruction": "How would you explain `backdrop-blur` to a junior developer?", "input": "", "output": "`backdrop-blur-md bg-white/70` frosted-glass navbars/modals; needs translucency underneath to read as glass."}
+{"instruction": "Give a real-world scenario for `backdrop-blur`.", "input": "", "output": "`backdrop-blur-md bg-white/70` frosted-glass navbars/modals; needs translucency underneath to read as glass."}
+{"instruction": "What problem does `backdrop-blur` solve?", "input": "", "output": "`backdrop-blur-md bg-white/70` frosted-glass navbars/modals; needs translucency underneath to read as glass."}
+{"instruction": "Terangkan `backdrop-blur` dalam satu minit.", "input": "", "output": "`backdrop-blur-md bg-white/70` frosted-glass navbars/modals; needs translucency underneath to read as glass."}
+{"instruction": "Apa yang perlu saya tahu tentang `backdrop-blur`?", "input": "", "output": "`backdrop-blur-md bg-white/70` frosted-glass navbars/modals; needs translucency underneath to read as glass."}
+{"instruction": "Bagaimanakah `backdrop-blur` berfungsi?", "input": "", "output": "`backdrop-blur-md bg-white/70` frosted-glass navbars/modals; needs translucency underneath to read as glass."}
+{"instruction": "Bilakah masa yang sesuai untuk `backdrop-blur`?", "input": "", "output": "`backdrop-blur-md bg-white/70` frosted-glass navbars/modals; needs translucency underneath to read as glass."}
+{"instruction": "What does `bg-gradient` do?", "input": "", "output": "`bg-gradient-to-r from-blue-600 to-purple-600` covers heroes; `via-*` midpoints enrich; `bg-clip-text` fills glyphs."}
+{"instruction": "Explain `bg-gradient` briefly.", "input": "", "output": "`bg-gradient-to-r from-blue-600 to-purple-600` covers heroes; `via-*` midpoints enrich; `bg-clip-text` fills glyphs."}
+{"instruction": "When do I use `bg-gradient`?", "input": "", "output": "`bg-gradient-to-r from-blue-600 to-purple-600` covers heroes; `via-*` midpoints enrich; `bg-clip-text` fills glyphs."}
+{"instruction": "Give a practical example of `bg-gradient`.", "input": "", "output": "`bg-gradient-to-r from-blue-600 to-purple-600` covers heroes; `via-*` midpoints enrich; `bg-clip-text` fills glyphs."}
+{"instruction": "What is `bg-gradient` for?", "input": "", "output": "`bg-gradient-to-r from-blue-600 to-purple-600` covers heroes; `via-*` midpoints enrich; `bg-clip-text` fills glyphs."}
+{"instruction": "Apakah fungsi `bg-gradient`?", "input": "", "output": "`bg-gradient-to-r from-blue-600 to-purple-600` covers heroes; `via-*` midpoints enrich; `bg-clip-text` fills glyphs."}
+{"instruction": "Terangkan `bg-gradient` secara ringkas.", "input": "", "output": "`bg-gradient-to-r from-blue-600 to-purple-600` covers heroes; `via-*` midpoints enrich; `bg-clip-text` fills glyphs."}
+{"instruction": "Bila perlu guna `bg-gradient`?", "input": "", "output": "`bg-gradient-to-r from-blue-600 to-purple-600` covers heroes; `via-*` midpoints enrich; `bg-clip-text` fills glyphs."}
+{"instruction": "Beri contoh penggunaan `bg-gradient`.", "input": "", "output": "`bg-gradient-to-r from-blue-600 to-purple-600` covers heroes; `via-*` midpoints enrich; `bg-clip-text` fills glyphs."}
+{"instruction": "`bg-gradient` untuk apa?", "input": "", "output": "`bg-gradient-to-r from-blue-600 to-purple-600` covers heroes; `via-*` midpoints enrich; `bg-clip-text` fills glyphs."}
+{"instruction": "How would you explain `bg-gradient` to a junior developer?", "input": "", "output": "`bg-gradient-to-r from-blue-600 to-purple-600` covers heroes; `via-*` midpoints enrich; `bg-clip-text` fills glyphs."}
+{"instruction": "Give a real-world scenario for `bg-gradient`.", "input": "", "output": "`bg-gradient-to-r from-blue-600 to-purple-600` covers heroes; `via-*` midpoints enrich; `bg-clip-text` fills glyphs."}
+{"instruction": "What problem does `bg-gradient` solve?", "input": "", "output": "`bg-gradient-to-r from-blue-600 to-purple-600` covers heroes; `via-*` midpoints enrich; `bg-clip-text` fills glyphs."}
+{"instruction": "Terangkan `bg-gradient` dalam satu minit.", "input": "", "output": "`bg-gradient-to-r from-blue-600 to-purple-600` covers heroes; `via-*` midpoints enrich; `bg-clip-text` fills glyphs."}
+{"instruction": "Apa yang perlu saya tahu tentang `bg-gradient`?", "input": "", "output": "`bg-gradient-to-r from-blue-600 to-purple-600` covers heroes; `via-*` midpoints enrich; `bg-clip-text` fills glyphs."}
+{"instruction": "Bagaimanakah `bg-gradient` berfungsi?", "input": "", "output": "`bg-gradient-to-r from-blue-600 to-purple-600` covers heroes; `via-*` midpoints enrich; `bg-clip-text` fills glyphs."}
+{"instruction": "Bilakah masa yang sesuai untuk `bg-gradient`?", "input": "", "output": "`bg-gradient-to-r from-blue-600 to-purple-600` covers heroes; `via-*` midpoints enrich; `bg-clip-text` fills glyphs."}
+{"instruction": "What does `object-cover center` do?", "input": "", "output": "`object-cover object-center` crops media to frames (avatars, heroes); `object-contain` letterboxes instead."}
+{"instruction": "Explain `object-cover center` briefly.", "input": "", "output": "`object-cover object-center` crops media to frames (avatars, heroes); `object-contain` letterboxes instead."}
+{"instruction": "When do I use `object-cover center`?", "input": "", "output": "`object-cover object-center` crops media to frames (avatars, heroes); `object-contain` letterboxes instead."}
+{"instruction": "Give a practical example of `object-cover center`.", "input": "", "output": "`object-cover object-center` crops media to frames (avatars, heroes); `object-contain` letterboxes instead."}
+{"instruction": "What is `object-cover center` for?", "input": "", "output": "`object-cover object-center` crops media to frames (avatars, heroes); `object-contain` letterboxes instead."}
+{"instruction": "Apakah fungsi `object-cover center`?", "input": "", "output": "`object-cover object-center` crops media to frames (avatars, heroes); `object-contain` letterboxes instead."}
+{"instruction": "Terangkan `object-cover center` secara ringkas.", "input": "", "output": "`object-cover object-center` crops media to frames (avatars, heroes); `object-contain` letterboxes instead."}
+{"instruction": "Bila perlu guna `object-cover center`?", "input": "", "output": "`object-cover object-center` crops media to frames (avatars, heroes); `object-contain` letterboxes instead."}
+{"instruction": "Beri contoh penggunaan `object-cover center`.", "input": "", "output": "`object-cover object-center` crops media to frames (avatars, heroes); `object-contain` letterboxes instead."}
+{"instruction": "`object-cover center` untuk apa?", "input": "", "output": "`object-cover object-center` crops media to frames (avatars, heroes); `object-contain` letterboxes instead."}
+{"instruction": "How would you explain `object-cover center` to a junior developer?", "input": "", "output": "`object-cover object-center` crops media to frames (avatars, heroes); `object-contain` letterboxes instead."}
+{"instruction": "Give a real-world scenario for `object-cover center`.", "input": "", "output": "`object-cover object-center` crops media to frames (avatars, heroes); `object-contain` letterboxes instead."}
+{"instruction": "What problem does `object-cover center` solve?", "input": "", "output": "`object-cover object-center` crops media to frames (avatars, heroes); `object-contain` letterboxes instead."}
+{"instruction": "Terangkan `object-cover center` dalam satu minit.", "input": "", "output": "`object-cover object-center` crops media to frames (avatars, heroes); `object-contain` letterboxes instead."}
+{"instruction": "Apa yang perlu saya tahu tentang `object-cover center`?", "input": "", "output": "`object-cover object-center` crops media to frames (avatars, heroes); `object-contain` letterboxes instead."}
+{"instruction": "Bagaimanakah `object-cover center` berfungsi?", "input": "", "output": "`object-cover object-center` crops media to frames (avatars, heroes); `object-contain` letterboxes instead."}
+{"instruction": "Bilakah masa yang sesuai untuk `object-cover center`?", "input": "", "output": "`object-cover object-center` crops media to frames (avatars, heroes); `object-contain` letterboxes instead."}
+{"instruction": "What does `min-w-0 flex` do?", "input": "", "output": "`min-w-0` lets flex children shrink past content size (the truncated-text-in-flex fix everyone googles)."}
+{"instruction": "Explain `min-w-0 flex` briefly.", "input": "", "output": "`min-w-0` lets flex children shrink past content size (the truncated-text-in-flex fix everyone googles)."}
+{"instruction": "When do I use `min-w-0 flex`?", "input": "", "output": "`min-w-0` lets flex children shrink past content size (the truncated-text-in-flex fix everyone googles)."}
+{"instruction": "Give a practical example of `min-w-0 flex`.", "input": "", "output": "`min-w-0` lets flex children shrink past content size (the truncated-text-in-flex fix everyone googles)."}
+{"instruction": "What is `min-w-0 flex` for?", "input": "", "output": "`min-w-0` lets flex children shrink past content size (the truncated-text-in-flex fix everyone googles)."}
+{"instruction": "Apakah fungsi `min-w-0 flex`?", "input": "", "output": "`min-w-0` lets flex children shrink past content size (the truncated-text-in-flex fix everyone googles)."}
+{"instruction": "Terangkan `min-w-0 flex` secara ringkas.", "input": "", "output": "`min-w-0` lets flex children shrink past content size (the truncated-text-in-flex fix everyone googles)."}
+{"instruction": "Bila perlu guna `min-w-0 flex`?", "input": "", "output": "`min-w-0` lets flex children shrink past content size (the truncated-text-in-flex fix everyone googles)."}
+{"instruction": "Beri contoh penggunaan `min-w-0 flex`.", "input": "", "output": "`min-w-0` lets flex children shrink past content size (the truncated-text-in-flex fix everyone googles)."}
+{"instruction": "`min-w-0 flex` untuk apa?", "input": "", "output": "`min-w-0` lets flex children shrink past content size (the truncated-text-in-flex fix everyone googles)."}
+{"instruction": "How would you explain `min-w-0 flex` to a junior developer?", "input": "", "output": "`min-w-0` lets flex children shrink past content size (the truncated-text-in-flex fix everyone googles)."}
+{"instruction": "Give a real-world scenario for `min-w-0 flex`.", "input": "", "output": "`min-w-0` lets flex children shrink past content size (the truncated-text-in-flex fix everyone googles)."}
+{"instruction": "What problem does `min-w-0 flex` solve?", "input": "", "output": "`min-w-0` lets flex children shrink past content size (the truncated-text-in-flex fix everyone googles)."}
+{"instruction": "Terangkan `min-w-0 flex` dalam satu minit.", "input": "", "output": "`min-w-0` lets flex children shrink past content size (the truncated-text-in-flex fix everyone googles)."}
+{"instruction": "Apa yang perlu saya tahu tentang `min-w-0 flex`?", "input": "", "output": "`min-w-0` lets flex children shrink past content size (the truncated-text-in-flex fix everyone googles)."}
+{"instruction": "Bagaimanakah `min-w-0 flex` berfungsi?", "input": "", "output": "`min-w-0` lets flex children shrink past content size (the truncated-text-in-flex fix everyone googles)."}
+{"instruction": "Bilakah masa yang sesuai untuk `min-w-0 flex`?", "input": "", "output": "`min-w-0` lets flex children shrink past content size (the truncated-text-in-flex fix everyone googles)."}
+{"instruction": "What does `max-w-prose` do?", "input": "", "output": "`max-w-prose` (~65ch) caps reading measure; `max-w-screen-*` bounds full-bleed sections per breakpoint."}
+{"instruction": "Explain `max-w-prose` briefly.", "input": "", "output": "`max-w-prose` (~65ch) caps reading measure; `max-w-screen-*` bounds full-bleed sections per breakpoint."}
+{"instruction": "When do I use `max-w-prose`?", "input": "", "output": "`max-w-prose` (~65ch) caps reading measure; `max-w-screen-*` bounds full-bleed sections per breakpoint."}
+{"instruction": "Give a practical example of `max-w-prose`.", "input": "", "output": "`max-w-prose` (~65ch) caps reading measure; `max-w-screen-*` bounds full-bleed sections per breakpoint."}
+{"instruction": "What is `max-w-prose` for?", "input": "", "output": "`max-w-prose` (~65ch) caps reading measure; `max-w-screen-*` bounds full-bleed sections per breakpoint."}
+{"instruction": "Apakah fungsi `max-w-prose`?", "input": "", "output": "`max-w-prose` (~65ch) caps reading measure; `max-w-screen-*` bounds full-bleed sections per breakpoint."}
+{"instruction": "Terangkan `max-w-prose` secara ringkas.", "input": "", "output": "`max-w-prose` (~65ch) caps reading measure; `max-w-screen-*` bounds full-bleed sections per breakpoint."}
+{"instruction": "Bila perlu guna `max-w-prose`?", "input": "", "output": "`max-w-prose` (~65ch) caps reading measure; `max-w-screen-*` bounds full-bleed sections per breakpoint."}
+{"instruction": "Beri contoh penggunaan `max-w-prose`.", "input": "", "output": "`max-w-prose` (~65ch) caps reading measure; `max-w-screen-*` bounds full-bleed sections per breakpoint."}
+{"instruction": "`max-w-prose` untuk apa?", "input": "", "output": "`max-w-prose` (~65ch) caps reading measure; `max-w-screen-*` bounds full-bleed sections per breakpoint."}
+{"instruction": "How would you explain `max-w-prose` to a junior developer?", "input": "", "output": "`max-w-prose` (~65ch) caps reading measure; `max-w-screen-*` bounds full-bleed sections per breakpoint."}
+{"instruction": "Give a real-world scenario for `max-w-prose`.", "input": "", "output": "`max-w-prose` (~65ch) caps reading measure; `max-w-screen-*` bounds full-bleed sections per breakpoint."}
+{"instruction": "What problem does `max-w-prose` solve?", "input": "", "output": "`max-w-prose` (~65ch) caps reading measure; `max-w-screen-*` bounds full-bleed sections per breakpoint."}
+{"instruction": "Terangkan `max-w-prose` dalam satu minit.", "input": "", "output": "`max-w-prose` (~65ch) caps reading measure; `max-w-screen-*` bounds full-bleed sections per breakpoint."}
+{"instruction": "Apa yang perlu saya tahu tentang `max-w-prose`?", "input": "", "output": "`max-w-prose` (~65ch) caps reading measure; `max-w-screen-*` bounds full-bleed sections per breakpoint."}
+{"instruction": "Bagaimanakah `max-w-prose` berfungsi?", "input": "", "output": "`max-w-prose` (~65ch) caps reading measure; `max-w-screen-*` bounds full-bleed sections per breakpoint."}
+{"instruction": "Bilakah masa yang sesuai untuk `max-w-prose`?", "input": "", "output": "`max-w-prose` (~65ch) caps reading measure; `max-w-screen-*` bounds full-bleed sections per breakpoint."}
+{"instruction": "What does `size-* square` do?", "input": "", "output": "`size-12` sets width+height together (avatars, icons); `size-full`/`size-auto` cover edge cases uniformly."}
+{"instruction": "Explain `size-* square` briefly.", "input": "", "output": "`size-12` sets width+height together (avatars, icons); `size-full`/`size-auto` cover edge cases uniformly."}
+{"instruction": "When do I use `size-* square`?", "input": "", "output": "`size-12` sets width+height together (avatars, icons); `size-full`/`size-auto` cover edge cases uniformly."}
+{"instruction": "Give a practical example of `size-* square`.", "input": "", "output": "`size-12` sets width+height together (avatars, icons); `size-full`/`size-auto` cover edge cases uniformly."}
+{"instruction": "What is `size-* square` for?", "input": "", "output": "`size-12` sets width+height together (avatars, icons); `size-full`/`size-auto` cover edge cases uniformly."}
+{"instruction": "Apakah fungsi `size-* square`?", "input": "", "output": "`size-12` sets width+height together (avatars, icons); `size-full`/`size-auto` cover edge cases uniformly."}
+{"instruction": "Terangkan `size-* square` secara ringkas.", "input": "", "output": "`size-12` sets width+height together (avatars, icons); `size-full`/`size-auto` cover edge cases uniformly."}
+{"instruction": "Bila perlu guna `size-* square`?", "input": "", "output": "`size-12` sets width+height together (avatars, icons); `size-full`/`size-auto` cover edge cases uniformly."}
+{"instruction": "Beri contoh penggunaan `size-* square`.", "input": "", "output": "`size-12` sets width+height together (avatars, icons); `size-full`/`size-auto` cover edge cases uniformly."}
+{"instruction": "`size-* square` untuk apa?", "input": "", "output": "`size-12` sets width+height together (avatars, icons); `size-full`/`size-auto` cover edge cases uniformly."}
+{"instruction": "How would you explain `size-* square` to a junior developer?", "input": "", "output": "`size-12` sets width+height together (avatars, icons); `size-full`/`size-auto` cover edge cases uniformly."}
+{"instruction": "Give a real-world scenario for `size-* square`.", "input": "", "output": "`size-12` sets width+height together (avatars, icons); `size-full`/`size-auto` cover edge cases uniformly."}
+{"instruction": "What problem does `size-* square` solve?", "input": "", "output": "`size-12` sets width+height together (avatars, icons); `size-full`/`size-auto` cover edge cases uniformly."}
+{"instruction": "Terangkan `size-* square` dalam satu minit.", "input": "", "output": "`size-12` sets width+height together (avatars, icons); `size-full`/`size-auto` cover edge cases uniformly."}
+{"instruction": "Apa yang perlu saya tahu tentang `size-* square`?", "input": "", "output": "`size-12` sets width+height together (avatars, icons); `size-full`/`size-auto` cover edge cases uniformly."}
+{"instruction": "Bagaimanakah `size-* square` berfungsi?", "input": "", "output": "`size-12` sets width+height together (avatars, icons); `size-full`/`size-auto` cover edge cases uniformly."}
+{"instruction": "Bilakah masa yang sesuai untuk `size-* square`?", "input": "", "output": "`size-12` sets width+height together (avatars, icons); `size-full`/`size-auto` cover edge cases uniformly."}
+{"instruction": "What does `min-h-screen` do?", "input": "", "output": "`min-h-screen` heroes fill viewports while growing with content — `h-screen` clips overflow instead."}
+{"instruction": "Explain `min-h-screen` briefly.", "input": "", "output": "`min-h-screen` heroes fill viewports while growing with content — `h-screen` clips overflow instead."}
+{"instruction": "When do I use `min-h-screen`?", "input": "", "output": "`min-h-screen` heroes fill viewports while growing with content — `h-screen` clips overflow instead."}
+{"instruction": "Give a practical example of `min-h-screen`.", "input": "", "output": "`min-h-screen` heroes fill viewports while growing with content — `h-screen` clips overflow instead."}
+{"instruction": "What is `min-h-screen` for?", "input": "", "output": "`min-h-screen` heroes fill viewports while growing with content — `h-screen` clips overflow instead."}
+{"instruction": "Apakah fungsi `min-h-screen`?", "input": "", "output": "`min-h-screen` heroes fill viewports while growing with content — `h-screen` clips overflow instead."}
+{"instruction": "Terangkan `min-h-screen` secara ringkas.", "input": "", "output": "`min-h-screen` heroes fill viewports while growing with content — `h-screen` clips overflow instead."}
+{"instruction": "Bila perlu guna `min-h-screen`?", "input": "", "output": "`min-h-screen` heroes fill viewports while growing with content — `h-screen` clips overflow instead."}
+{"instruction": "Beri contoh penggunaan `min-h-screen`.", "input": "", "output": "`min-h-screen` heroes fill viewports while growing with content — `h-screen` clips overflow instead."}
+{"instruction": "`min-h-screen` untuk apa?", "input": "", "output": "`min-h-screen` heroes fill viewports while growing with content — `h-screen` clips overflow instead."}
+{"instruction": "How would you explain `min-h-screen` to a junior developer?", "input": "", "output": "`min-h-screen` heroes fill viewports while growing with content — `h-screen` clips overflow instead."}
+{"instruction": "Give a real-world scenario for `min-h-screen`.", "input": "", "output": "`min-h-screen` heroes fill viewports while growing with content — `h-screen` clips overflow instead."}
+{"instruction": "What problem does `min-h-screen` solve?", "input": "", "output": "`min-h-screen` heroes fill viewports while growing with content — `h-screen` clips overflow instead."}
+{"instruction": "Terangkan `min-h-screen` dalam satu minit.", "input": "", "output": "`min-h-screen` heroes fill viewports while growing with content — `h-screen` clips overflow instead."}
+{"instruction": "Apa yang perlu saya tahu tentang `min-h-screen`?", "input": "", "output": "`min-h-screen` heroes fill viewports while growing with content — `h-screen` clips overflow instead."}
+{"instruction": "Bagaimanakah `min-h-screen` berfungsi?", "input": "", "output": "`min-h-screen` heroes fill viewports while growing with content — `h-screen` clips overflow instead."}
+{"instruction": "Bilakah masa yang sesuai untuk `min-h-screen`?", "input": "", "output": "`min-h-screen` heroes fill viewports while growing with content — `h-screen` clips overflow instead."}
+{"instruction": "What does `inset-x-0` do?", "input": "", "output": "`inset-x-0` stretches absolutely-positioned bars edge to edge; pairs with `top-0`/`bottom-0` pinning."}
+{"instruction": "Explain `inset-x-0` briefly.", "input": "", "output": "`inset-x-0` stretches absolutely-positioned bars edge to edge; pairs with `top-0`/`bottom-0` pinning."}
+{"instruction": "When do I use `inset-x-0`?", "input": "", "output": "`inset-x-0` stretches absolutely-positioned bars edge to edge; pairs with `top-0`/`bottom-0` pinning."}
+{"instruction": "Give a practical example of `inset-x-0`.", "input": "", "output": "`inset-x-0` stretches absolutely-positioned bars edge to edge; pairs with `top-0`/`bottom-0` pinning."}
+{"instruction": "What is `inset-x-0` for?", "input": "", "output": "`inset-x-0` stretches absolutely-positioned bars edge to edge; pairs with `top-0`/`bottom-0` pinning."}
+{"instruction": "Apakah fungsi `inset-x-0`?", "input": "", "output": "`inset-x-0` stretches absolutely-positioned bars edge to edge; pairs with `top-0`/`bottom-0` pinning."}
+{"instruction": "Terangkan `inset-x-0` secara ringkas.", "input": "", "output": "`inset-x-0` stretches absolutely-positioned bars edge to edge; pairs with `top-0`/`bottom-0` pinning."}
+{"instruction": "Bila perlu guna `inset-x-0`?", "input": "", "output": "`inset-x-0` stretches absolutely-positioned bars edge to edge; pairs with `top-0`/`bottom-0` pinning."}
+{"instruction": "Beri contoh penggunaan `inset-x-0`.", "input": "", "output": "`inset-x-0` stretches absolutely-positioned bars edge to edge; pairs with `top-0`/`bottom-0` pinning."}
+{"instruction": "`inset-x-0` untuk apa?", "input": "", "output": "`inset-x-0` stretches absolutely-positioned bars edge to edge; pairs with `top-0`/`bottom-0` pinning."}
+{"instruction": "How would you explain `inset-x-0` to a junior developer?", "input": "", "output": "`inset-x-0` stretches absolutely-positioned bars edge to edge; pairs with `top-0`/`bottom-0` pinning."}
+{"instruction": "Give a real-world scenario for `inset-x-0`.", "input": "", "output": "`inset-x-0` stretches absolutely-positioned bars edge to edge; pairs with `top-0`/`bottom-0` pinning."}
+{"instruction": "What problem does `inset-x-0` solve?", "input": "", "output": "`inset-x-0` stretches absolutely-positioned bars edge to edge; pairs with `top-0`/`bottom-0` pinning."}
+{"instruction": "Terangkan `inset-x-0` dalam satu minit.", "input": "", "output": "`inset-x-0` stretches absolutely-positioned bars edge to edge; pairs with `top-0`/`bottom-0` pinning."}
+{"instruction": "Apa yang perlu saya tahu tentang `inset-x-0`?", "input": "", "output": "`inset-x-0` stretches absolutely-positioned bars edge to edge; pairs with `top-0`/`bottom-0` pinning."}
+{"instruction": "Bagaimanakah `inset-x-0` berfungsi?", "input": "", "output": "`inset-x-0` stretches absolutely-positioned bars edge to edge; pairs with `top-0`/`bottom-0` pinning."}
+{"instruction": "Bilakah masa yang sesuai untuk `inset-x-0`?", "input": "", "output": "`inset-x-0` stretches absolutely-positioned bars edge to edge; pairs with `top-0`/`bottom-0` pinning."}
+{"instruction": "What does `z-index scale` do?", "input": "", "output": "`z-0`→`z-50` layer intentionally (dropdowns above content, modals above all); arbitrary `z-[999]` signals missing hierarchy."}
+{"instruction": "Explain `z-index scale` briefly.", "input": "", "output": "`z-0`→`z-50` layer intentionally (dropdowns above content, modals above all); arbitrary `z-[999]` signals missing hierarchy."}
+{"instruction": "When do I use `z-index scale`?", "input": "", "output": "`z-0`→`z-50` layer intentionally (dropdowns above content, modals above all); arbitrary `z-[999]` signals missing hierarchy."}
+{"instruction": "Give a practical example of `z-index scale`.", "input": "", "output": "`z-0`→`z-50` layer intentionally (dropdowns above content, modals above all); arbitrary `z-[999]` signals missing hierarchy."}
+{"instruction": "What is `z-index scale` for?", "input": "", "output": "`z-0`→`z-50` layer intentionally (dropdowns above content, modals above all); arbitrary `z-[999]` signals missing hierarchy."}
+{"instruction": "Apakah fungsi `z-index scale`?", "input": "", "output": "`z-0`→`z-50` layer intentionally (dropdowns above content, modals above all); arbitrary `z-[999]` signals missing hierarchy."}
+{"instruction": "Terangkan `z-index scale` secara ringkas.", "input": "", "output": "`z-0`→`z-50` layer intentionally (dropdowns above content, modals above all); arbitrary `z-[999]` signals missing hierarchy."}
+{"instruction": "Bila perlu guna `z-index scale`?", "input": "", "output": "`z-0`→`z-50` layer intentionally (dropdowns above content, modals above all); arbitrary `z-[999]` signals missing hierarchy."}
+{"instruction": "Beri contoh penggunaan `z-index scale`.", "input": "", "output": "`z-0`→`z-50` layer intentionally (dropdowns above content, modals above all); arbitrary `z-[999]` signals missing hierarchy."}
+{"instruction": "`z-index scale` untuk apa?", "input": "", "output": "`z-0`→`z-50` layer intentionally (dropdowns above content, modals above all); arbitrary `z-[999]` signals missing hierarchy."}
+{"instruction": "How would you explain `z-index scale` to a junior developer?", "input": "", "output": "`z-0`→`z-50` layer intentionally (dropdowns above content, modals above all); arbitrary `z-[999]` signals missing hierarchy."}
+{"instruction": "Give a real-world scenario for `z-index scale`.", "input": "", "output": "`z-0`→`z-50` layer intentionally (dropdowns above content, modals above all); arbitrary `z-[999]` signals missing hierarchy."}
+{"instruction": "What problem does `z-index scale` solve?", "input": "", "output": "`z-0`→`z-50` layer intentionally (dropdowns above content, modals above all); arbitrary `z-[999]` signals missing hierarchy."}
+{"instruction": "Terangkan `z-index scale` dalam satu minit.", "input": "", "output": "`z-0`→`z-50` layer intentionally (dropdowns above content, modals above all); arbitrary `z-[999]` signals missing hierarchy."}
+{"instruction": "Apa yang perlu saya tahu tentang `z-index scale`?", "input": "", "output": "`z-0`→`z-50` layer intentionally (dropdowns above content, modals above all); arbitrary `z-[999]` signals missing hierarchy."}
+{"instruction": "Bagaimanakah `z-index scale` berfungsi?", "input": "", "output": "`z-0`→`z-50` layer intentionally (dropdowns above content, modals above all); arbitrary `z-[999]` signals missing hierarchy."}
+{"instruction": "Bilakah masa yang sesuai untuk `z-index scale`?", "input": "", "output": "`z-0`→`z-50` layer intentionally (dropdowns above content, modals above all); arbitrary `z-[999]` signals missing hierarchy."}
+{"instruction": "What does `order utilities` do?", "input": "", "output": "`order-first`/`order-last`/`order-N` resequence flex/grid visually (DOM/AT order unchanged — use honestly)."}
+{"instruction": "Explain `order utilities` briefly.", "input": "", "output": "`order-first`/`order-last`/`order-N` resequence flex/grid visually (DOM/AT order unchanged — use honestly)."}
+{"instruction": "When do I use `order utilities`?", "input": "", "output": "`order-first`/`order-last`/`order-N` resequence flex/grid visually (DOM/AT order unchanged — use honestly)."}
+{"instruction": "Give a practical example of `order utilities`.", "input": "", "output": "`order-first`/`order-last`/`order-N` resequence flex/grid visually (DOM/AT order unchanged — use honestly)."}
+{"instruction": "What is `order utilities` for?", "input": "", "output": "`order-first`/`order-last`/`order-N` resequence flex/grid visually (DOM/AT order unchanged — use honestly)."}
+{"instruction": "Apakah fungsi `order utilities`?", "input": "", "output": "`order-first`/`order-last`/`order-N` resequence flex/grid visually (DOM/AT order unchanged — use honestly)."}
+{"instruction": "Terangkan `order utilities` secara ringkas.", "input": "", "output": "`order-first`/`order-last`/`order-N` resequence flex/grid visually (DOM/AT order unchanged — use honestly)."}
+{"instruction": "Bila perlu guna `order utilities`?", "input": "", "output": "`order-first`/`order-last`/`order-N` resequence flex/grid visually (DOM/AT order unchanged — use honestly)."}
+{"instruction": "Beri contoh penggunaan `order utilities`.", "input": "", "output": "`order-first`/`order-last`/`order-N` resequence flex/grid visually (DOM/AT order unchanged — use honestly)."}
+{"instruction": "`order utilities` untuk apa?", "input": "", "output": "`order-first`/`order-last`/`order-N` resequence flex/grid visually (DOM/AT order unchanged — use honestly)."}
+{"instruction": "How would you explain `order utilities` to a junior developer?", "input": "", "output": "`order-first`/`order-last`/`order-N` resequence flex/grid visually (DOM/AT order unchanged — use honestly)."}
+{"instruction": "Give a real-world scenario for `order utilities`.", "input": "", "output": "`order-first`/`order-last`/`order-N` resequence flex/grid visually (DOM/AT order unchanged — use honestly)."}
+{"instruction": "What problem does `order utilities` solve?", "input": "", "output": "`order-first`/`order-last`/`order-N` resequence flex/grid visually (DOM/AT order unchanged — use honestly)."}
+{"instruction": "Terangkan `order utilities` dalam satu minit.", "input": "", "output": "`order-first`/`order-last`/`order-N` resequence flex/grid visually (DOM/AT order unchanged — use honestly)."}
+{"instruction": "Apa yang perlu saya tahu tentang `order utilities`?", "input": "", "output": "`order-first`/`order-last`/`order-N` resequence flex/grid visually (DOM/AT order unchanged — use honestly)."}
+{"instruction": "Bagaimanakah `order utilities` berfungsi?", "input": "", "output": "`order-first`/`order-last`/`order-N` resequence flex/grid visually (DOM/AT order unchanged — use honestly)."}
+{"instruction": "Bilakah masa yang sesuai untuk `order utilities`?", "input": "", "output": "`order-first`/`order-last`/`order-N` resequence flex/grid visually (DOM/AT order unchanged — use honestly)."}
+{"instruction": "What does `grow shrink basis` do?", "input": "", "output": "`grow`/`shrink`/`basis-1/2` tune flex allocation per item without custom CSS flex shorthand."}
+{"instruction": "Explain `grow shrink basis` briefly.", "input": "", "output": "`grow`/`shrink`/`basis-1/2` tune flex allocation per item without custom CSS flex shorthand."}
+{"instruction": "When do I use `grow shrink basis`?", "input": "", "output": "`grow`/`shrink`/`basis-1/2` tune flex allocation per item without custom CSS flex shorthand."}
+{"instruction": "Give a practical example of `grow shrink basis`.", "input": "", "output": "`grow`/`shrink`/`basis-1/2` tune flex allocation per item without custom CSS flex shorthand."}
+{"instruction": "What is `grow shrink basis` for?", "input": "", "output": "`grow`/`shrink`/`basis-1/2` tune flex allocation per item without custom CSS flex shorthand."}
+{"instruction": "Apakah fungsi `grow shrink basis`?", "input": "", "output": "`grow`/`shrink`/`basis-1/2` tune flex allocation per item without custom CSS flex shorthand."}
+{"instruction": "Terangkan `grow shrink basis` secara ringkas.", "input": "", "output": "`grow`/`shrink`/`basis-1/2` tune flex allocation per item without custom CSS flex shorthand."}
+{"instruction": "Bila perlu guna `grow shrink basis`?", "input": "", "output": "`grow`/`shrink`/`basis-1/2` tune flex allocation per item without custom CSS flex shorthand."}
+{"instruction": "Beri contoh penggunaan `grow shrink basis`.", "input": "", "output": "`grow`/`shrink`/`basis-1/2` tune flex allocation per item without custom CSS flex shorthand."}
+{"instruction": "`grow shrink basis` untuk apa?", "input": "", "output": "`grow`/`shrink`/`basis-1/2` tune flex allocation per item without custom CSS flex shorthand."}
+{"instruction": "How would you explain `grow shrink basis` to a junior developer?", "input": "", "output": "`grow`/`shrink`/`basis-1/2` tune flex allocation per item without custom CSS flex shorthand."}
+{"instruction": "Give a real-world scenario for `grow shrink basis`.", "input": "", "output": "`grow`/`shrink`/`basis-1/2` tune flex allocation per item without custom CSS flex shorthand."}
+{"instruction": "What problem does `grow shrink basis` solve?", "input": "", "output": "`grow`/`shrink`/`basis-1/2` tune flex allocation per item without custom CSS flex shorthand."}
+{"instruction": "Terangkan `grow shrink basis` dalam satu minit.", "input": "", "output": "`grow`/`shrink`/`basis-1/2` tune flex allocation per item without custom CSS flex shorthand."}
+{"instruction": "Apa yang perlu saya tahu tentang `grow shrink basis`?", "input": "", "output": "`grow`/`shrink`/`basis-1/2` tune flex allocation per item without custom CSS flex shorthand."}
+{"instruction": "Bagaimanakah `grow shrink basis` berfungsi?", "input": "", "output": "`grow`/`shrink`/`basis-1/2` tune flex allocation per item without custom CSS flex shorthand."}
+{"instruction": "Bilakah masa yang sesuai untuk `grow shrink basis`?", "input": "", "output": "`grow`/`shrink`/`basis-1/2` tune flex allocation per item without custom CSS flex shorthand."}
+{"instruction": "What does `overflow-auto hidden` do?", "input": "", "output": "`overflow-auto` scrolls on demand, `overflow-hidden` clips (dropdowns need visible ancestors!) — check parents first."}
+{"instruction": "Explain `overflow-auto hidden` briefly.", "input": "", "output": "`overflow-auto` scrolls on demand, `overflow-hidden` clips (dropdowns need visible ancestors!) — check parents first."}
+{"instruction": "When do I use `overflow-auto hidden`?", "input": "", "output": "`overflow-auto` scrolls on demand, `overflow-hidden` clips (dropdowns need visible ancestors!) — check parents first."}
+{"instruction": "Give a practical example of `overflow-auto hidden`.", "input": "", "output": "`overflow-auto` scrolls on demand, `overflow-hidden` clips (dropdowns need visible ancestors!) — check parents first."}
+{"instruction": "What is `overflow-auto hidden` for?", "input": "", "output": "`overflow-auto` scrolls on demand, `overflow-hidden` clips (dropdowns need visible ancestors!) — check parents first."}
+{"instruction": "Apakah fungsi `overflow-auto hidden`?", "input": "", "output": "`overflow-auto` scrolls on demand, `overflow-hidden` clips (dropdowns need visible ancestors!) — check parents first."}
+{"instruction": "Terangkan `overflow-auto hidden` secara ringkas.", "input": "", "output": "`overflow-auto` scrolls on demand, `overflow-hidden` clips (dropdowns need visible ancestors!) — check parents first."}
+{"instruction": "Bila perlu guna `overflow-auto hidden`?", "input": "", "output": "`overflow-auto` scrolls on demand, `overflow-hidden` clips (dropdowns need visible ancestors!) — check parents first."}
+{"instruction": "Beri contoh penggunaan `overflow-auto hidden`.", "input": "", "output": "`overflow-auto` scrolls on demand, `overflow-hidden` clips (dropdowns need visible ancestors!) — check parents first."}
+{"instruction": "`overflow-auto hidden` untuk apa?", "input": "", "output": "`overflow-auto` scrolls on demand, `overflow-hidden` clips (dropdowns need visible ancestors!) — check parents first."}
+{"instruction": "How would you explain `overflow-auto hidden` to a junior developer?", "input": "", "output": "`overflow-auto` scrolls on demand, `overflow-hidden` clips (dropdowns need visible ancestors!) — check parents first."}
+{"instruction": "Give a real-world scenario for `overflow-auto hidden`.", "input": "", "output": "`overflow-auto` scrolls on demand, `overflow-hidden` clips (dropdowns need visible ancestors!) — check parents first."}
+{"instruction": "What problem does `overflow-auto hidden` solve?", "input": "", "output": "`overflow-auto` scrolls on demand, `overflow-hidden` clips (dropdowns need visible ancestors!) — check parents first."}
+{"instruction": "Terangkan `overflow-auto hidden` dalam satu minit.", "input": "", "output": "`overflow-auto` scrolls on demand, `overflow-hidden` clips (dropdowns need visible ancestors!) — check parents first."}
+{"instruction": "Apa yang perlu saya tahu tentang `overflow-auto hidden`?", "input": "", "output": "`overflow-auto` scrolls on demand, `overflow-hidden` clips (dropdowns need visible ancestors!) — check parents first."}
+{"instruction": "Bagaimanakah `overflow-auto hidden` berfungsi?", "input": "", "output": "`overflow-auto` scrolls on demand, `overflow-hidden` clips (dropdowns need visible ancestors!) — check parents first."}
+{"instruction": "Bilakah masa yang sesuai untuk `overflow-auto hidden`?", "input": "", "output": "`overflow-auto` scrolls on demand, `overflow-hidden` clips (dropdowns need visible ancestors!) — check parents first."}
+{"instruction": "What does `whitespace text` do?", "input": "", "output": "`whitespace-nowrap` single-lines, `whitespace-pre-wrap` preserves formatting with wrapping."}
+{"instruction": "Explain `whitespace text` briefly.", "input": "", "output": "`whitespace-nowrap` single-lines, `whitespace-pre-wrap` preserves formatting with wrapping."}
+{"instruction": "When do I use `whitespace text`?", "input": "", "output": "`whitespace-nowrap` single-lines, `whitespace-pre-wrap` preserves formatting with wrapping."}
+{"instruction": "Give a practical example of `whitespace text`.", "input": "", "output": "`whitespace-nowrap` single-lines, `whitespace-pre-wrap` preserves formatting with wrapping."}
+{"instruction": "What is `whitespace text` for?", "input": "", "output": "`whitespace-nowrap` single-lines, `whitespace-pre-wrap` preserves formatting with wrapping."}
+{"instruction": "Apakah fungsi `whitespace text`?", "input": "", "output": "`whitespace-nowrap` single-lines, `whitespace-pre-wrap` preserves formatting with wrapping."}
+{"instruction": "Terangkan `whitespace text` secara ringkas.", "input": "", "output": "`whitespace-nowrap` single-lines, `whitespace-pre-wrap` preserves formatting with wrapping."}
+{"instruction": "Bila perlu guna `whitespace text`?", "input": "", "output": "`whitespace-nowrap` single-lines, `whitespace-pre-wrap` preserves formatting with wrapping."}
+{"instruction": "Beri contoh penggunaan `whitespace text`.", "input": "", "output": "`whitespace-nowrap` single-lines, `whitespace-pre-wrap` preserves formatting with wrapping."}
+{"instruction": "`whitespace text` untuk apa?", "input": "", "output": "`whitespace-nowrap` single-lines, `whitespace-pre-wrap` preserves formatting with wrapping."}
+{"instruction": "How would you explain `whitespace text` to a junior developer?", "input": "", "output": "`whitespace-nowrap` single-lines, `whitespace-pre-wrap` preserves formatting with wrapping."}
+{"instruction": "Give a real-world scenario for `whitespace text`.", "input": "", "output": "`whitespace-nowrap` single-lines, `whitespace-pre-wrap` preserves formatting with wrapping."}
+{"instruction": "What problem does `whitespace text` solve?", "input": "", "output": "`whitespace-nowrap` single-lines, `whitespace-pre-wrap` preserves formatting with wrapping."}
+{"instruction": "Terangkan `whitespace text` dalam satu minit.", "input": "", "output": "`whitespace-nowrap` single-lines, `whitespace-pre-wrap` preserves formatting with wrapping."}
+{"instruction": "Apa yang perlu saya tahu tentang `whitespace text`?", "input": "", "output": "`whitespace-nowrap` single-lines, `whitespace-pre-wrap` preserves formatting with wrapping."}
+{"instruction": "Bagaimanakah `whitespace text` berfungsi?", "input": "", "output": "`whitespace-nowrap` single-lines, `whitespace-pre-wrap` preserves formatting with wrapping."}
+{"instruction": "Bilakah masa yang sesuai untuk `whitespace text`?", "input": "", "output": "`whitespace-nowrap` single-lines, `whitespace-pre-wrap` preserves formatting with wrapping."}
+{"instruction": "What does `break-words all` do?", "input": "", "output": "`break-words` wraps long tokens safely; `break-all` is harsher (CJK contexts); `truncate` single-lines with ellipsis."}
+{"instruction": "Explain `break-words all` briefly.", "input": "", "output": "`break-words` wraps long tokens safely; `break-all` is harsher (CJK contexts); `truncate` single-lines with ellipsis."}
+{"instruction": "When do I use `break-words all`?", "input": "", "output": "`break-words` wraps long tokens safely; `break-all` is harsher (CJK contexts); `truncate` single-lines with ellipsis."}
+{"instruction": "Give a practical example of `break-words all`.", "input": "", "output": "`break-words` wraps long tokens safely; `break-all` is harsher (CJK contexts); `truncate` single-lines with ellipsis."}
+{"instruction": "What is `break-words all` for?", "input": "", "output": "`break-words` wraps long tokens safely; `break-all` is harsher (CJK contexts); `truncate` single-lines with ellipsis."}
+{"instruction": "Apakah fungsi `break-words all`?", "input": "", "output": "`break-words` wraps long tokens safely; `break-all` is harsher (CJK contexts); `truncate` single-lines with ellipsis."}
+{"instruction": "Terangkan `break-words all` secara ringkas.", "input": "", "output": "`break-words` wraps long tokens safely; `break-all` is harsher (CJK contexts); `truncate` single-lines with ellipsis."}
+{"instruction": "Bila perlu guna `break-words all`?", "input": "", "output": "`break-words` wraps long tokens safely; `break-all` is harsher (CJK contexts); `truncate` single-lines with ellipsis."}
+{"instruction": "Beri contoh penggunaan `break-words all`.", "input": "", "output": "`break-words` wraps long tokens safely; `break-all` is harsher (CJK contexts); `truncate` single-lines with ellipsis."}
+{"instruction": "`break-words all` untuk apa?", "input": "", "output": "`break-words` wraps long tokens safely; `break-all` is harsher (CJK contexts); `truncate` single-lines with ellipsis."}
+{"instruction": "How would you explain `break-words all` to a junior developer?", "input": "", "output": "`break-words` wraps long tokens safely; `break-all` is harsher (CJK contexts); `truncate` single-lines with ellipsis."}
+{"instruction": "Give a real-world scenario for `break-words all`.", "input": "", "output": "`break-words` wraps long tokens safely; `break-all` is harsher (CJK contexts); `truncate` single-lines with ellipsis."}
+{"instruction": "What problem does `break-words all` solve?", "input": "", "output": "`break-words` wraps long tokens safely; `break-all` is harsher (CJK contexts); `truncate` single-lines with ellipsis."}
+{"instruction": "Terangkan `break-words all` dalam satu minit.", "input": "", "output": "`break-words` wraps long tokens safely; `break-all` is harsher (CJK contexts); `truncate` single-lines with ellipsis."}
+{"instruction": "Apa yang perlu saya tahu tentang `break-words all`?", "input": "", "output": "`break-words` wraps long tokens safely; `break-all` is harsher (CJK contexts); `truncate` single-lines with ellipsis."}
+{"instruction": "Bagaimanakah `break-words all` berfungsi?", "input": "", "output": "`break-words` wraps long tokens safely; `break-all` is harsher (CJK contexts); `truncate` single-lines with ellipsis."}
+{"instruction": "Bilakah masa yang sesuai untuk `break-words all`?", "input": "", "output": "`break-words` wraps long tokens safely; `break-all` is harsher (CJK contexts); `truncate` single-lines with ellipsis."}
+{"instruction": "What does `align utilities` do?", "input": "", "output": "`align-middle`/`align-top` fix inline image/text baselines; `align-sub/super` handle chemical-style notation."}
+{"instruction": "Explain `align utilities` briefly.", "input": "", "output": "`align-middle`/`align-top` fix inline image/text baselines; `align-sub/super` handle chemical-style notation."}
+{"instruction": "When do I use `align utilities`?", "input": "", "output": "`align-middle`/`align-top` fix inline image/text baselines; `align-sub/super` handle chemical-style notation."}
+{"instruction": "Give a practical example of `align utilities`.", "input": "", "output": "`align-middle`/`align-top` fix inline image/text baselines; `align-sub/super` handle chemical-style notation."}
+{"instruction": "What is `align utilities` for?", "input": "", "output": "`align-middle`/`align-top` fix inline image/text baselines; `align-sub/super` handle chemical-style notation."}
+{"instruction": "Apakah fungsi `align utilities`?", "input": "", "output": "`align-middle`/`align-top` fix inline image/text baselines; `align-sub/super` handle chemical-style notation."}
+{"instruction": "Terangkan `align utilities` secara ringkas.", "input": "", "output": "`align-middle`/`align-top` fix inline image/text baselines; `align-sub/super` handle chemical-style notation."}
+{"instruction": "Bila perlu guna `align utilities`?", "input": "", "output": "`align-middle`/`align-top` fix inline image/text baselines; `align-sub/super` handle chemical-style notation."}
+{"instruction": "Beri contoh penggunaan `align utilities`.", "input": "", "output": "`align-middle`/`align-top` fix inline image/text baselines; `align-sub/super` handle chemical-style notation."}
+{"instruction": "`align utilities` untuk apa?", "input": "", "output": "`align-middle`/`align-top` fix inline image/text baselines; `align-sub/super` handle chemical-style notation."}
+{"instruction": "How would you explain `align utilities` to a junior developer?", "input": "", "output": "`align-middle`/`align-top` fix inline image/text baselines; `align-sub/super` handle chemical-style notation."}
+{"instruction": "Give a real-world scenario for `align utilities`.", "input": "", "output": "`align-middle`/`align-top` fix inline image/text baselines; `align-sub/super` handle chemical-style notation."}
+{"instruction": "What problem does `align utilities` solve?", "input": "", "output": "`align-middle`/`align-top` fix inline image/text baselines; `align-sub/super` handle chemical-style notation."}
+{"instruction": "Terangkan `align utilities` dalam satu minit.", "input": "", "output": "`align-middle`/`align-top` fix inline image/text baselines; `align-sub/super` handle chemical-style notation."}
+{"instruction": "Apa yang perlu saya tahu tentang `align utilities`?", "input": "", "output": "`align-middle`/`align-top` fix inline image/text baselines; `align-sub/super` handle chemical-style notation."}
+{"instruction": "Bagaimanakah `align utilities` berfungsi?", "input": "", "output": "`align-middle`/`align-top` fix inline image/text baselines; `align-sub/super` handle chemical-style notation."}
+{"instruction": "Bilakah masa yang sesuai untuk `align utilities`?", "input": "", "output": "`align-middle`/`align-top` fix inline image/text baselines; `align-sub/super` handle chemical-style notation."}
+{"instruction": "What does `columns utilities` do?", "input": "", "output": "`columns-3`/`columns-sm` magazine-flow with `gap-*`; `break-inside-avoid` keeps cards whole across columns."}
+{"instruction": "Explain `columns utilities` briefly.", "input": "", "output": "`columns-3`/`columns-sm` magazine-flow with `gap-*`; `break-inside-avoid` keeps cards whole across columns."}
+{"instruction": "When do I use `columns utilities`?", "input": "", "output": "`columns-3`/`columns-sm` magazine-flow with `gap-*`; `break-inside-avoid` keeps cards whole across columns."}
+{"instruction": "Give a practical example of `columns utilities`.", "input": "", "output": "`columns-3`/`columns-sm` magazine-flow with `gap-*`; `break-inside-avoid` keeps cards whole across columns."}
+{"instruction": "What is `columns utilities` for?", "input": "", "output": "`columns-3`/`columns-sm` magazine-flow with `gap-*`; `break-inside-avoid` keeps cards whole across columns."}
+{"instruction": "Apakah fungsi `columns utilities`?", "input": "", "output": "`columns-3`/`columns-sm` magazine-flow with `gap-*`; `break-inside-avoid` keeps cards whole across columns."}
+{"instruction": "Terangkan `columns utilities` secara ringkas.", "input": "", "output": "`columns-3`/`columns-sm` magazine-flow with `gap-*`; `break-inside-avoid` keeps cards whole across columns."}
+{"instruction": "Bila perlu guna `columns utilities`?", "input": "", "output": "`columns-3`/`columns-sm` magazine-flow with `gap-*`; `break-inside-avoid` keeps cards whole across columns."}
+{"instruction": "Beri contoh penggunaan `columns utilities`.", "input": "", "output": "`columns-3`/`columns-sm` magazine-flow with `gap-*`; `break-inside-avoid` keeps cards whole across columns."}
+{"instruction": "`columns utilities` untuk apa?", "input": "", "output": "`columns-3`/`columns-sm` magazine-flow with `gap-*`; `break-inside-avoid` keeps cards whole across columns."}
+{"instruction": "How would you explain `columns utilities` to a junior developer?", "input": "", "output": "`columns-3`/`columns-sm` magazine-flow with `gap-*`; `break-inside-avoid` keeps cards whole across columns."}
+{"instruction": "Give a real-world scenario for `columns utilities`.", "input": "", "output": "`columns-3`/`columns-sm` magazine-flow with `gap-*`; `break-inside-avoid` keeps cards whole across columns."}
+{"instruction": "What problem does `columns utilities` solve?", "input": "", "output": "`columns-3`/`columns-sm` magazine-flow with `gap-*`; `break-inside-avoid` keeps cards whole across columns."}
+{"instruction": "Terangkan `columns utilities` dalam satu minit.", "input": "", "output": "`columns-3`/`columns-sm` magazine-flow with `gap-*`; `break-inside-avoid` keeps cards whole across columns."}
+{"instruction": "Apa yang perlu saya tahu tentang `columns utilities`?", "input": "", "output": "`columns-3`/`columns-sm` magazine-flow with `gap-*`; `break-inside-avoid` keeps cards whole across columns."}
+{"instruction": "Bagaimanakah `columns utilities` berfungsi?", "input": "", "output": "`columns-3`/`columns-sm` magazine-flow with `gap-*`; `break-inside-avoid` keeps cards whole across columns."}
+{"instruction": "Bilakah masa yang sesuai untuk `columns utilities`?", "input": "", "output": "`columns-3`/`columns-sm` magazine-flow with `gap-*`; `break-inside-avoid` keeps cards whole across columns."}

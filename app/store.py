@@ -164,6 +164,28 @@ def merge_stacks(root=".", domain=None):
             for r in merged:
                 f.write(json.dumps(r, ensure_ascii=False) + "\n")
         out[dom] = len(merged)
+    # per-stack copies (validated, training-ready): finetune/<stack>/dataset.jsonl
+    for s in sorted(cfg["stacks"]):
+        src = root / "datasets" / f"{s}.jsonl"
+        rows = []
+        if src.exists():
+            seen = set()
+            for line in src.read_text(encoding="utf-8").splitlines():
+                try:
+                    r = json.loads(line)
+                except ValueError:
+                    continue
+                q, a = (r.get("instruction") or "").strip(), (r.get("output") or "").strip()
+                if not q or not a or (q, a) in seen:
+                    continue
+                seen.add((q, a))
+                rows.append({"instruction": q, "input": (r.get("input") or "").strip(),
+                             "output": a})
+        dest = root / "finetune" / s / "dataset.jsonl"
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        with dest.open("w", encoding="utf-8") as f:
+            for r in rows:
+                f.write(json.dumps(r, ensure_ascii=False) + "\n")
     return out
 
 
