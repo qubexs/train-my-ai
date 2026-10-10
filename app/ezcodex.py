@@ -27,7 +27,7 @@ APP_DIR = (Path(sys.executable).resolve().parent if getattr(sys, "frozen", False
            else Path(__file__).resolve().parent)
 sys.path.insert(0, str(APP_DIR))
 
-__version__ = "0.4.19"
+__version__ = "0.4.20"
 
 LLAMA_TAG = "b11491"
 LLAMA_BASE = f"https://github.com/ggerganov/llama.cpp/releases/download/{LLAMA_TAG}"
@@ -38,7 +38,8 @@ MODEL_SIZE = 491400032
 from backends import LlamaCliBackend, LmStudioBackend
 from agent import run_agent, sanitize
 from experts import (GENERAL, add as add_model, detect as detect_domain,
-                     fmt_size, resolve as resolve_model, scan as scan_models,
+                     detect_stack, fmt_size, resolve as resolve_model,
+                     scan as scan_models,
                      STACK2DOMAIN, infer_name_domains, resolve_layout)
 from store import load_session, save_turn, list_sessions, log_training, export_sft, export_pretrain_corpus
 from store import clear_session, context_stats
@@ -242,6 +243,21 @@ def match_cur(model_path_str):
         if m.get("file") and str(model_path_str or "").replace("\\", "/").endswith(m["file"]):
             return {"name": m["name"], "domains": m.get("domains", [GENERAL])}
     return {"name": "base", "domains": [GENERAL]}
+
+
+def pick_expert(domain, stack):
+    """Pilih pakar terbaik: utamakan nama sepadan stack (xcoder-nodejs untuk
+    soalan nodejs), elak pakar rawak dalam domain sama."""
+    cands = [m for m in scan_models(MODELS_DIR)
+             if m.get("file") and (MODELS_DIR / m["file"]).is_file()
+             and domain in m.get("domains", [])]
+    if not cands:
+        return None
+    if stack != GENERAL:
+        for m in cands:
+            if stack in m["name"].lower():
+                return m
+    return cands[0]
 
 
 def expert_context(cur):
@@ -456,7 +472,9 @@ def repl(args):
                 continue
             plan = sanitize(praw)
             import re as _re
-            if not _re.search(r"^\s*\d+\s*[.)]", plan, _re.M):
+            n_steps = len(_re.findall(r"^\s*\d+\s*[.)]", plan, _re.M))
+            if (not _re.search(r"^\s*\d+\s*[.)]", plan, _re.M) or n_steps > 8
+                    or _re.search(r"tepat\s+\d+", plan, _re.I)):
                 plan = plan_fallback(task, lang, detect_domain(task))
                 print("(rancangan templat — model tidak patuh format langkah)")
             history += [{"role": "user", "content": "/plan " + task},
@@ -721,10 +739,7 @@ def repl(args):
             else:
                 if auto_route and backend.kind in ("llama-cli", "llama", "server") and dom != GENERAL \
                         and dom not in cur.get("domains", []):
-                    cand = next((m for m in scan_models(MODELS_DIR)
-                                 if dom in m.get("domains", [])
-                                 and m.get("file")
-                                 and (MODELS_DIR / m.get("file", "")).is_file()), None)
+                    cand = pick_expert(dom, detect_stack(q))
                     if cand:
                         if backend.kind == "server":
                             print(f"-> route: {cand['name']} [{dom}] Loading model...")
