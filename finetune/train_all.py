@@ -130,7 +130,7 @@ def main():
             stack = f.stem
             plan.append((f"xcoder-{stack}", [stack],
                          [STACK2DOMAIN.get(stack, GENERAL)]))
-        ft = ROOT / "finetune"
+        ft = ROOT / "finetune" / "stacks"
         use_ft = all((ft / s / "dataset.jsonl").exists() for _, ss, _ in plan for s in ss)
         data_root = ft if use_ft else ds_dir
     else:
