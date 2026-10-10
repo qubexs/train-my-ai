@@ -1026,3 +1026,241 @@
 {"instruction": "Apa yang perlu saya tahu tentang `\\copy program`?", "input": "", "output": "`\\copy ... FROM PROGRAM 'cmd'` streams command output directly into tables — ETL without temp files."}
 {"instruction": "Bagaimanakah `\\copy program` berfungsi?", "input": "", "output": "`\\copy ... FROM PROGRAM 'cmd'` streams command output directly into tables — ETL without temp files."}
 {"instruction": "Bilakah masa yang sesuai untuk `\\copy program`?", "input": "", "output": "`\\copy ... FROM PROGRAM 'cmd'` streams command output directly into tables — ETL without temp files."}
+{"instruction": "What does `\\set AUTOCOMMIT` do?", "input": "", "output": "`\\set AUTOCOMMIT off` batches interactive work into explicit transactions; scripts should manage COMMIT explicitly."}
+{"instruction": "Explain `\\set AUTOCOMMIT` briefly.", "input": "", "output": "`\\set AUTOCOMMIT off` batches interactive work into explicit transactions; scripts should manage COMMIT explicitly."}
+{"instruction": "When do I use `\\set AUTOCOMMIT`?", "input": "", "output": "`\\set AUTOCOMMIT off` batches interactive work into explicit transactions; scripts should manage COMMIT explicitly."}
+{"instruction": "Give a practical example of `\\set AUTOCOMMIT`.", "input": "", "output": "`\\set AUTOCOMMIT off` batches interactive work into explicit transactions; scripts should manage COMMIT explicitly."}
+{"instruction": "What is `\\set AUTOCOMMIT` for?", "input": "", "output": "`\\set AUTOCOMMIT off` batches interactive work into explicit transactions; scripts should manage COMMIT explicitly."}
+{"instruction": "Apakah fungsi `\\set AUTOCOMMIT`?", "input": "", "output": "`\\set AUTOCOMMIT off` batches interactive work into explicit transactions; scripts should manage COMMIT explicitly."}
+{"instruction": "Terangkan `\\set AUTOCOMMIT` secara ringkas.", "input": "", "output": "`\\set AUTOCOMMIT off` batches interactive work into explicit transactions; scripts should manage COMMIT explicitly."}
+{"instruction": "Bila perlu guna `\\set AUTOCOMMIT`?", "input": "", "output": "`\\set AUTOCOMMIT off` batches interactive work into explicit transactions; scripts should manage COMMIT explicitly."}
+{"instruction": "Beri contoh penggunaan `\\set AUTOCOMMIT`.", "input": "", "output": "`\\set AUTOCOMMIT off` batches interactive work into explicit transactions; scripts should manage COMMIT explicitly."}
+{"instruction": "`\\set AUTOCOMMIT` untuk apa?", "input": "", "output": "`\\set AUTOCOMMIT off` batches interactive work into explicit transactions; scripts should manage COMMIT explicitly."}
+{"instruction": "How would you explain `\\set AUTOCOMMIT` to a junior developer?", "input": "", "output": "`\\set AUTOCOMMIT off` batches interactive work into explicit transactions; scripts should manage COMMIT explicitly."}
+{"instruction": "Give a real-world scenario for `\\set AUTOCOMMIT`.", "input": "", "output": "`\\set AUTOCOMMIT off` batches interactive work into explicit transactions; scripts should manage COMMIT explicitly."}
+{"instruction": "What problem does `\\set AUTOCOMMIT` solve?", "input": "", "output": "`\\set AUTOCOMMIT off` batches interactive work into explicit transactions; scripts should manage COMMIT explicitly."}
+{"instruction": "Terangkan `\\set AUTOCOMMIT` dalam satu minit.", "input": "", "output": "`\\set AUTOCOMMIT off` batches interactive work into explicit transactions; scripts should manage COMMIT explicitly."}
+{"instruction": "Apa yang perlu saya tahu tentang `\\set AUTOCOMMIT`?", "input": "", "output": "`\\set AUTOCOMMIT off` batches interactive work into explicit transactions; scripts should manage COMMIT explicitly."}
+{"instruction": "Bagaimanakah `\\set AUTOCOMMIT` berfungsi?", "input": "", "output": "`\\set AUTOCOMMIT off` batches interactive work into explicit transactions; scripts should manage COMMIT explicitly."}
+{"instruction": "Bilakah masa yang sesuai untuk `\\set AUTOCOMMIT`?", "input": "", "output": "`\\set AUTOCOMMIT off` batches interactive work into explicit transactions; scripts should manage COMMIT explicitly."}
+{"instruction": "What does `\\pset footer` do?", "input": "", "output": "`\\pset footer off` hides row counts for clean script output; `aligned`/`unaligned` toggle human vs machine formats."}
+{"instruction": "Explain `\\pset footer` briefly.", "input": "", "output": "`\\pset footer off` hides row counts for clean script output; `aligned`/`unaligned` toggle human vs machine formats."}
+{"instruction": "When do I use `\\pset footer`?", "input": "", "output": "`\\pset footer off` hides row counts for clean script output; `aligned`/`unaligned` toggle human vs machine formats."}
+{"instruction": "Give a practical example of `\\pset footer`.", "input": "", "output": "`\\pset footer off` hides row counts for clean script output; `aligned`/`unaligned` toggle human vs machine formats."}
+{"instruction": "What is `\\pset footer` for?", "input": "", "output": "`\\pset footer off` hides row counts for clean script output; `aligned`/`unaligned` toggle human vs machine formats."}
+{"instruction": "Apakah fungsi `\\pset footer`?", "input": "", "output": "`\\pset footer off` hides row counts for clean script output; `aligned`/`unaligned` toggle human vs machine formats."}
+{"instruction": "Terangkan `\\pset footer` secara ringkas.", "input": "", "output": "`\\pset footer off` hides row counts for clean script output; `aligned`/`unaligned` toggle human vs machine formats."}
+{"instruction": "Bila perlu guna `\\pset footer`?", "input": "", "output": "`\\pset footer off` hides row counts for clean script output; `aligned`/`unaligned` toggle human vs machine formats."}
+{"instruction": "Beri contoh penggunaan `\\pset footer`.", "input": "", "output": "`\\pset footer off` hides row counts for clean script output; `aligned`/`unaligned` toggle human vs machine formats."}
+{"instruction": "`\\pset footer` untuk apa?", "input": "", "output": "`\\pset footer off` hides row counts for clean script output; `aligned`/`unaligned` toggle human vs machine formats."}
+{"instruction": "How would you explain `\\pset footer` to a junior developer?", "input": "", "output": "`\\pset footer off` hides row counts for clean script output; `aligned`/`unaligned` toggle human vs machine formats."}
+{"instruction": "Give a real-world scenario for `\\pset footer`.", "input": "", "output": "`\\pset footer off` hides row counts for clean script output; `aligned`/`unaligned` toggle human vs machine formats."}
+{"instruction": "What problem does `\\pset footer` solve?", "input": "", "output": "`\\pset footer off` hides row counts for clean script output; `aligned`/`unaligned` toggle human vs machine formats."}
+{"instruction": "Terangkan `\\pset footer` dalam satu minit.", "input": "", "output": "`\\pset footer off` hides row counts for clean script output; `aligned`/`unaligned` toggle human vs machine formats."}
+{"instruction": "Apa yang perlu saya tahu tentang `\\pset footer`?", "input": "", "output": "`\\pset footer off` hides row counts for clean script output; `aligned`/`unaligned` toggle human vs machine formats."}
+{"instruction": "Bagaimanakah `\\pset footer` berfungsi?", "input": "", "output": "`\\pset footer off` hides row counts for clean script output; `aligned`/`unaligned` toggle human vs machine formats."}
+{"instruction": "Bilakah masa yang sesuai untuk `\\pset footer`?", "input": "", "output": "`\\pset footer off` hides row counts for clean script output; `aligned`/`unaligned` toggle human vs machine formats."}
+{"instruction": "What does `\\pset null string` do?", "input": "", "output": "Distinguish NULL (`[null]`) from empty strings visually — misread nulls corrupt ad-hoc analysis silently."}
+{"instruction": "Explain `\\pset null string` briefly.", "input": "", "output": "Distinguish NULL (`[null]`) from empty strings visually — misread nulls corrupt ad-hoc analysis silently."}
+{"instruction": "When do I use `\\pset null string`?", "input": "", "output": "Distinguish NULL (`[null]`) from empty strings visually — misread nulls corrupt ad-hoc analysis silently."}
+{"instruction": "Give a practical example of `\\pset null string`.", "input": "", "output": "Distinguish NULL (`[null]`) from empty strings visually — misread nulls corrupt ad-hoc analysis silently."}
+{"instruction": "What is `\\pset null string` for?", "input": "", "output": "Distinguish NULL (`[null]`) from empty strings visually — misread nulls corrupt ad-hoc analysis silently."}
+{"instruction": "Apakah fungsi `\\pset null string`?", "input": "", "output": "Distinguish NULL (`[null]`) from empty strings visually — misread nulls corrupt ad-hoc analysis silently."}
+{"instruction": "Terangkan `\\pset null string` secara ringkas.", "input": "", "output": "Distinguish NULL (`[null]`) from empty strings visually — misread nulls corrupt ad-hoc analysis silently."}
+{"instruction": "Bila perlu guna `\\pset null string`?", "input": "", "output": "Distinguish NULL (`[null]`) from empty strings visually — misread nulls corrupt ad-hoc analysis silently."}
+{"instruction": "Beri contoh penggunaan `\\pset null string`.", "input": "", "output": "Distinguish NULL (`[null]`) from empty strings visually — misread nulls corrupt ad-hoc analysis silently."}
+{"instruction": "`\\pset null string` untuk apa?", "input": "", "output": "Distinguish NULL (`[null]`) from empty strings visually — misread nulls corrupt ad-hoc analysis silently."}
+{"instruction": "How would you explain `\\pset null string` to a junior developer?", "input": "", "output": "Distinguish NULL (`[null]`) from empty strings visually — misread nulls corrupt ad-hoc analysis silently."}
+{"instruction": "Give a real-world scenario for `\\pset null string`.", "input": "", "output": "Distinguish NULL (`[null]`) from empty strings visually — misread nulls corrupt ad-hoc analysis silently."}
+{"instruction": "What problem does `\\pset null string` solve?", "input": "", "output": "Distinguish NULL (`[null]`) from empty strings visually — misread nulls corrupt ad-hoc analysis silently."}
+{"instruction": "Terangkan `\\pset null string` dalam satu minit.", "input": "", "output": "Distinguish NULL (`[null]`) from empty strings visually — misread nulls corrupt ad-hoc analysis silently."}
+{"instruction": "Apa yang perlu saya tahu tentang `\\pset null string`?", "input": "", "output": "Distinguish NULL (`[null]`) from empty strings visually — misread nulls corrupt ad-hoc analysis silently."}
+{"instruction": "Bagaimanakah `\\pset null string` berfungsi?", "input": "", "output": "Distinguish NULL (`[null]`) from empty strings visually — misread nulls corrupt ad-hoc analysis silently."}
+{"instruction": "Bilakah masa yang sesuai untuk `\\pset null string`?", "input": "", "output": "Distinguish NULL (`[null]`) from empty strings visually — misread nulls corrupt ad-hoc analysis silently."}
+{"instruction": "What does `\\echo queries` do?", "input": "", "output": "`\\echo :VERSION` prints psql/meta variables for script headers; `\\qecho` stays silent in logs."}
+{"instruction": "Explain `\\echo queries` briefly.", "input": "", "output": "`\\echo :VERSION` prints psql/meta variables for script headers; `\\qecho` stays silent in logs."}
+{"instruction": "When do I use `\\echo queries`?", "input": "", "output": "`\\echo :VERSION` prints psql/meta variables for script headers; `\\qecho` stays silent in logs."}
+{"instruction": "Give a practical example of `\\echo queries`.", "input": "", "output": "`\\echo :VERSION` prints psql/meta variables for script headers; `\\qecho` stays silent in logs."}
+{"instruction": "What is `\\echo queries` for?", "input": "", "output": "`\\echo :VERSION` prints psql/meta variables for script headers; `\\qecho` stays silent in logs."}
+{"instruction": "Apakah fungsi `\\echo queries`?", "input": "", "output": "`\\echo :VERSION` prints psql/meta variables for script headers; `\\qecho` stays silent in logs."}
+{"instruction": "Terangkan `\\echo queries` secara ringkas.", "input": "", "output": "`\\echo :VERSION` prints psql/meta variables for script headers; `\\qecho` stays silent in logs."}
+{"instruction": "Bila perlu guna `\\echo queries`?", "input": "", "output": "`\\echo :VERSION` prints psql/meta variables for script headers; `\\qecho` stays silent in logs."}
+{"instruction": "Beri contoh penggunaan `\\echo queries`.", "input": "", "output": "`\\echo :VERSION` prints psql/meta variables for script headers; `\\qecho` stays silent in logs."}
+{"instruction": "`\\echo queries` untuk apa?", "input": "", "output": "`\\echo :VERSION` prints psql/meta variables for script headers; `\\qecho` stays silent in logs."}
+{"instruction": "How would you explain `\\echo queries` to a junior developer?", "input": "", "output": "`\\echo :VERSION` prints psql/meta variables for script headers; `\\qecho` stays silent in logs."}
+{"instruction": "Give a real-world scenario for `\\echo queries`.", "input": "", "output": "`\\echo :VERSION` prints psql/meta variables for script headers; `\\qecho` stays silent in logs."}
+{"instruction": "What problem does `\\echo queries` solve?", "input": "", "output": "`\\echo :VERSION` prints psql/meta variables for script headers; `\\qecho` stays silent in logs."}
+{"instruction": "Terangkan `\\echo queries` dalam satu minit.", "input": "", "output": "`\\echo :VERSION` prints psql/meta variables for script headers; `\\qecho` stays silent in logs."}
+{"instruction": "Apa yang perlu saya tahu tentang `\\echo queries`?", "input": "", "output": "`\\echo :VERSION` prints psql/meta variables for script headers; `\\qecho` stays silent in logs."}
+{"instruction": "Bagaimanakah `\\echo queries` berfungsi?", "input": "", "output": "`\\echo :VERSION` prints psql/meta variables for script headers; `\\qecho` stays silent in logs."}
+{"instruction": "Bilakah masa yang sesuai untuk `\\echo queries`?", "input": "", "output": "`\\echo :VERSION` prints psql/meta variables for script headers; `\\qecho` stays silent in logs."}
+{"instruction": "What does `\\gexec pitfalls` do?", "input": "", "output": "Generated DDL via `\\gexec` needs transaction wrapping — half-applied generations leave schemas inconsistent."}
+{"instruction": "Explain `\\gexec pitfalls` briefly.", "input": "", "output": "Generated DDL via `\\gexec` needs transaction wrapping — half-applied generations leave schemas inconsistent."}
+{"instruction": "When do I use `\\gexec pitfalls`?", "input": "", "output": "Generated DDL via `\\gexec` needs transaction wrapping — half-applied generations leave schemas inconsistent."}
+{"instruction": "Give a practical example of `\\gexec pitfalls`.", "input": "", "output": "Generated DDL via `\\gexec` needs transaction wrapping — half-applied generations leave schemas inconsistent."}
+{"instruction": "What is `\\gexec pitfalls` for?", "input": "", "output": "Generated DDL via `\\gexec` needs transaction wrapping — half-applied generations leave schemas inconsistent."}
+{"instruction": "Apakah fungsi `\\gexec pitfalls`?", "input": "", "output": "Generated DDL via `\\gexec` needs transaction wrapping — half-applied generations leave schemas inconsistent."}
+{"instruction": "Terangkan `\\gexec pitfalls` secara ringkas.", "input": "", "output": "Generated DDL via `\\gexec` needs transaction wrapping — half-applied generations leave schemas inconsistent."}
+{"instruction": "Bila perlu guna `\\gexec pitfalls`?", "input": "", "output": "Generated DDL via `\\gexec` needs transaction wrapping — half-applied generations leave schemas inconsistent."}
+{"instruction": "Beri contoh penggunaan `\\gexec pitfalls`.", "input": "", "output": "Generated DDL via `\\gexec` needs transaction wrapping — half-applied generations leave schemas inconsistent."}
+{"instruction": "`\\gexec pitfalls` untuk apa?", "input": "", "output": "Generated DDL via `\\gexec` needs transaction wrapping — half-applied generations leave schemas inconsistent."}
+{"instruction": "How would you explain `\\gexec pitfalls` to a junior developer?", "input": "", "output": "Generated DDL via `\\gexec` needs transaction wrapping — half-applied generations leave schemas inconsistent."}
+{"instruction": "Give a real-world scenario for `\\gexec pitfalls`.", "input": "", "output": "Generated DDL via `\\gexec` needs transaction wrapping — half-applied generations leave schemas inconsistent."}
+{"instruction": "What problem does `\\gexec pitfalls` solve?", "input": "", "output": "Generated DDL via `\\gexec` needs transaction wrapping — half-applied generations leave schemas inconsistent."}
+{"instruction": "Terangkan `\\gexec pitfalls` dalam satu minit.", "input": "", "output": "Generated DDL via `\\gexec` needs transaction wrapping — half-applied generations leave schemas inconsistent."}
+{"instruction": "Apa yang perlu saya tahu tentang `\\gexec pitfalls`?", "input": "", "output": "Generated DDL via `\\gexec` needs transaction wrapping — half-applied generations leave schemas inconsistent."}
+{"instruction": "Bagaimanakah `\\gexec pitfalls` berfungsi?", "input": "", "output": "Generated DDL via `\\gexec` needs transaction wrapping — half-applied generations leave schemas inconsistent."}
+{"instruction": "Bilakah masa yang sesuai untuk `\\gexec pitfalls`?", "input": "", "output": "Generated DDL via `\\gexec` needs transaction wrapping — half-applied generations leave schemas inconsistent."}
+{"instruction": "What does `\\watch interval drift` do?", "input": "", "output": "Long `\\watch` intervals drift on slow queries (interval starts after completion); measure actual cadence, don't assume."}
+{"instruction": "Explain `\\watch interval drift` briefly.", "input": "", "output": "Long `\\watch` intervals drift on slow queries (interval starts after completion); measure actual cadence, don't assume."}
+{"instruction": "When do I use `\\watch interval drift`?", "input": "", "output": "Long `\\watch` intervals drift on slow queries (interval starts after completion); measure actual cadence, don't assume."}
+{"instruction": "Give a practical example of `\\watch interval drift`.", "input": "", "output": "Long `\\watch` intervals drift on slow queries (interval starts after completion); measure actual cadence, don't assume."}
+{"instruction": "What is `\\watch interval drift` for?", "input": "", "output": "Long `\\watch` intervals drift on slow queries (interval starts after completion); measure actual cadence, don't assume."}
+{"instruction": "Apakah fungsi `\\watch interval drift`?", "input": "", "output": "Long `\\watch` intervals drift on slow queries (interval starts after completion); measure actual cadence, don't assume."}
+{"instruction": "Terangkan `\\watch interval drift` secara ringkas.", "input": "", "output": "Long `\\watch` intervals drift on slow queries (interval starts after completion); measure actual cadence, don't assume."}
+{"instruction": "Bila perlu guna `\\watch interval drift`?", "input": "", "output": "Long `\\watch` intervals drift on slow queries (interval starts after completion); measure actual cadence, don't assume."}
+{"instruction": "Beri contoh penggunaan `\\watch interval drift`.", "input": "", "output": "Long `\\watch` intervals drift on slow queries (interval starts after completion); measure actual cadence, don't assume."}
+{"instruction": "`\\watch interval drift` untuk apa?", "input": "", "output": "Long `\\watch` intervals drift on slow queries (interval starts after completion); measure actual cadence, don't assume."}
+{"instruction": "How would you explain `\\watch interval drift` to a junior developer?", "input": "", "output": "Long `\\watch` intervals drift on slow queries (interval starts after completion); measure actual cadence, don't assume."}
+{"instruction": "Give a real-world scenario for `\\watch interval drift`.", "input": "", "output": "Long `\\watch` intervals drift on slow queries (interval starts after completion); measure actual cadence, don't assume."}
+{"instruction": "What problem does `\\watch interval drift` solve?", "input": "", "output": "Long `\\watch` intervals drift on slow queries (interval starts after completion); measure actual cadence, don't assume."}
+{"instruction": "Terangkan `\\watch interval drift` dalam satu minit.", "input": "", "output": "Long `\\watch` intervals drift on slow queries (interval starts after completion); measure actual cadence, don't assume."}
+{"instruction": "Apa yang perlu saya tahu tentang `\\watch interval drift`?", "input": "", "output": "Long `\\watch` intervals drift on slow queries (interval starts after completion); measure actual cadence, don't assume."}
+{"instruction": "Bagaimanakah `\\watch interval drift` berfungsi?", "input": "", "output": "Long `\\watch` intervals drift on slow queries (interval starts after completion); measure actual cadence, don't assume."}
+{"instruction": "Bilakah masa yang sesuai untuk `\\watch interval drift`?", "input": "", "output": "Long `\\watch` intervals drift on slow queries (interval starts after completion); measure actual cadence, don't assume."}
+{"instruction": "What does `\\crosstabview sort` do?", "input": "", "output": "Sort input explicitly — crosstab column order follows first-seen values, and unstable sorts reshuffle reports."}
+{"instruction": "Explain `\\crosstabview sort` briefly.", "input": "", "output": "Sort input explicitly — crosstab column order follows first-seen values, and unstable sorts reshuffle reports."}
+{"instruction": "When do I use `\\crosstabview sort`?", "input": "", "output": "Sort input explicitly — crosstab column order follows first-seen values, and unstable sorts reshuffle reports."}
+{"instruction": "Give a practical example of `\\crosstabview sort`.", "input": "", "output": "Sort input explicitly — crosstab column order follows first-seen values, and unstable sorts reshuffle reports."}
+{"instruction": "What is `\\crosstabview sort` for?", "input": "", "output": "Sort input explicitly — crosstab column order follows first-seen values, and unstable sorts reshuffle reports."}
+{"instruction": "Apakah fungsi `\\crosstabview sort`?", "input": "", "output": "Sort input explicitly — crosstab column order follows first-seen values, and unstable sorts reshuffle reports."}
+{"instruction": "Terangkan `\\crosstabview sort` secara ringkas.", "input": "", "output": "Sort input explicitly — crosstab column order follows first-seen values, and unstable sorts reshuffle reports."}
+{"instruction": "Bila perlu guna `\\crosstabview sort`?", "input": "", "output": "Sort input explicitly — crosstab column order follows first-seen values, and unstable sorts reshuffle reports."}
+{"instruction": "Beri contoh penggunaan `\\crosstabview sort`.", "input": "", "output": "Sort input explicitly — crosstab column order follows first-seen values, and unstable sorts reshuffle reports."}
+{"instruction": "`\\crosstabview sort` untuk apa?", "input": "", "output": "Sort input explicitly — crosstab column order follows first-seen values, and unstable sorts reshuffle reports."}
+{"instruction": "How would you explain `\\crosstabview sort` to a junior developer?", "input": "", "output": "Sort input explicitly — crosstab column order follows first-seen values, and unstable sorts reshuffle reports."}
+{"instruction": "Give a real-world scenario for `\\crosstabview sort`.", "input": "", "output": "Sort input explicitly — crosstab column order follows first-seen values, and unstable sorts reshuffle reports."}
+{"instruction": "What problem does `\\crosstabview sort` solve?", "input": "", "output": "Sort input explicitly — crosstab column order follows first-seen values, and unstable sorts reshuffle reports."}
+{"instruction": "Terangkan `\\crosstabview sort` dalam satu minit.", "input": "", "output": "Sort input explicitly — crosstab column order follows first-seen values, and unstable sorts reshuffle reports."}
+{"instruction": "Apa yang perlu saya tahu tentang `\\crosstabview sort`?", "input": "", "output": "Sort input explicitly — crosstab column order follows first-seen values, and unstable sorts reshuffle reports."}
+{"instruction": "Bagaimanakah `\\crosstabview sort` berfungsi?", "input": "", "output": "Sort input explicitly — crosstab column order follows first-seen values, and unstable sorts reshuffle reports."}
+{"instruction": "Bilakah masa yang sesuai untuk `\\crosstabview sort`?", "input": "", "output": "Sort input explicitly — crosstab column order follows first-seen values, and unstable sorts reshuffle reports."}
+{"instruction": "What does `\\copy csv header` do?", "input": "", "output": "`\\copy t FROM 'f.csv' CSV HEADER` skips headers; mismatched columns error fast — validate headers before bulk loads."}
+{"instruction": "Explain `\\copy csv header` briefly.", "input": "", "output": "`\\copy t FROM 'f.csv' CSV HEADER` skips headers; mismatched columns error fast — validate headers before bulk loads."}
+{"instruction": "When do I use `\\copy csv header`?", "input": "", "output": "`\\copy t FROM 'f.csv' CSV HEADER` skips headers; mismatched columns error fast — validate headers before bulk loads."}
+{"instruction": "Give a practical example of `\\copy csv header`.", "input": "", "output": "`\\copy t FROM 'f.csv' CSV HEADER` skips headers; mismatched columns error fast — validate headers before bulk loads."}
+{"instruction": "What is `\\copy csv header` for?", "input": "", "output": "`\\copy t FROM 'f.csv' CSV HEADER` skips headers; mismatched columns error fast — validate headers before bulk loads."}
+{"instruction": "Apakah fungsi `\\copy csv header`?", "input": "", "output": "`\\copy t FROM 'f.csv' CSV HEADER` skips headers; mismatched columns error fast — validate headers before bulk loads."}
+{"instruction": "Terangkan `\\copy csv header` secara ringkas.", "input": "", "output": "`\\copy t FROM 'f.csv' CSV HEADER` skips headers; mismatched columns error fast — validate headers before bulk loads."}
+{"instruction": "Bila perlu guna `\\copy csv header`?", "input": "", "output": "`\\copy t FROM 'f.csv' CSV HEADER` skips headers; mismatched columns error fast — validate headers before bulk loads."}
+{"instruction": "Beri contoh penggunaan `\\copy csv header`.", "input": "", "output": "`\\copy t FROM 'f.csv' CSV HEADER` skips headers; mismatched columns error fast — validate headers before bulk loads."}
+{"instruction": "`\\copy csv header` untuk apa?", "input": "", "output": "`\\copy t FROM 'f.csv' CSV HEADER` skips headers; mismatched columns error fast — validate headers before bulk loads."}
+{"instruction": "How would you explain `\\copy csv header` to a junior developer?", "input": "", "output": "`\\copy t FROM 'f.csv' CSV HEADER` skips headers; mismatched columns error fast — validate headers before bulk loads."}
+{"instruction": "Give a real-world scenario for `\\copy csv header`.", "input": "", "output": "`\\copy t FROM 'f.csv' CSV HEADER` skips headers; mismatched columns error fast — validate headers before bulk loads."}
+{"instruction": "What problem does `\\copy csv header` solve?", "input": "", "output": "`\\copy t FROM 'f.csv' CSV HEADER` skips headers; mismatched columns error fast — validate headers before bulk loads."}
+{"instruction": "Terangkan `\\copy csv header` dalam satu minit.", "input": "", "output": "`\\copy t FROM 'f.csv' CSV HEADER` skips headers; mismatched columns error fast — validate headers before bulk loads."}
+{"instruction": "Apa yang perlu saya tahu tentang `\\copy csv header`?", "input": "", "output": "`\\copy t FROM 'f.csv' CSV HEADER` skips headers; mismatched columns error fast — validate headers before bulk loads."}
+{"instruction": "Bagaimanakah `\\copy csv header` berfungsi?", "input": "", "output": "`\\copy t FROM 'f.csv' CSV HEADER` skips headers; mismatched columns error fast — validate headers before bulk loads."}
+{"instruction": "Bilakah masa yang sesuai untuk `\\copy csv header`?", "input": "", "output": "`\\copy t FROM 'f.csv' CSV HEADER` skips headers; mismatched columns error fast — validate headers before bulk loads."}
+{"instruction": "What does `\\copy null string` do?", "input": "", "output": "`\\copy ... NULL AS ''` maps empties explicitly; default NULL handling surprises CSV round-trips otherwise."}
+{"instruction": "Explain `\\copy null string` briefly.", "input": "", "output": "`\\copy ... NULL AS ''` maps empties explicitly; default NULL handling surprises CSV round-trips otherwise."}
+{"instruction": "When do I use `\\copy null string`?", "input": "", "output": "`\\copy ... NULL AS ''` maps empties explicitly; default NULL handling surprises CSV round-trips otherwise."}
+{"instruction": "Give a practical example of `\\copy null string`.", "input": "", "output": "`\\copy ... NULL AS ''` maps empties explicitly; default NULL handling surprises CSV round-trips otherwise."}
+{"instruction": "What is `\\copy null string` for?", "input": "", "output": "`\\copy ... NULL AS ''` maps empties explicitly; default NULL handling surprises CSV round-trips otherwise."}
+{"instruction": "Apakah fungsi `\\copy null string`?", "input": "", "output": "`\\copy ... NULL AS ''` maps empties explicitly; default NULL handling surprises CSV round-trips otherwise."}
+{"instruction": "Terangkan `\\copy null string` secara ringkas.", "input": "", "output": "`\\copy ... NULL AS ''` maps empties explicitly; default NULL handling surprises CSV round-trips otherwise."}
+{"instruction": "Bila perlu guna `\\copy null string`?", "input": "", "output": "`\\copy ... NULL AS ''` maps empties explicitly; default NULL handling surprises CSV round-trips otherwise."}
+{"instruction": "Beri contoh penggunaan `\\copy null string`.", "input": "", "output": "`\\copy ... NULL AS ''` maps empties explicitly; default NULL handling surprises CSV round-trips otherwise."}
+{"instruction": "`\\copy null string` untuk apa?", "input": "", "output": "`\\copy ... NULL AS ''` maps empties explicitly; default NULL handling surprises CSV round-trips otherwise."}
+{"instruction": "How would you explain `\\copy null string` to a junior developer?", "input": "", "output": "`\\copy ... NULL AS ''` maps empties explicitly; default NULL handling surprises CSV round-trips otherwise."}
+{"instruction": "Give a real-world scenario for `\\copy null string`.", "input": "", "output": "`\\copy ... NULL AS ''` maps empties explicitly; default NULL handling surprises CSV round-trips otherwise."}
+{"instruction": "What problem does `\\copy null string` solve?", "input": "", "output": "`\\copy ... NULL AS ''` maps empties explicitly; default NULL handling surprises CSV round-trips otherwise."}
+{"instruction": "Terangkan `\\copy null string` dalam satu minit.", "input": "", "output": "`\\copy ... NULL AS ''` maps empties explicitly; default NULL handling surprises CSV round-trips otherwise."}
+{"instruction": "Apa yang perlu saya tahu tentang `\\copy null string`?", "input": "", "output": "`\\copy ... NULL AS ''` maps empties explicitly; default NULL handling surprises CSV round-trips otherwise."}
+{"instruction": "Bagaimanakah `\\copy null string` berfungsi?", "input": "", "output": "`\\copy ... NULL AS ''` maps empties explicitly; default NULL handling surprises CSV round-trips otherwise."}
+{"instruction": "Bilakah masa yang sesuai untuk `\\copy null string`?", "input": "", "output": "`\\copy ... NULL AS ''` maps empties explicitly; default NULL handling surprises CSV round-trips otherwise."}
+{"instruction": "What does `\\copy quote escape` do?", "input": "", "output": "Custom `QUOTE`/`ESCAPE`/`DELIMITER` handle legacy exports; document the exact flags alongside every recurring import."}
+{"instruction": "Explain `\\copy quote escape` briefly.", "input": "", "output": "Custom `QUOTE`/`ESCAPE`/`DELIMITER` handle legacy exports; document the exact flags alongside every recurring import."}
+{"instruction": "When do I use `\\copy quote escape`?", "input": "", "output": "Custom `QUOTE`/`ESCAPE`/`DELIMITER` handle legacy exports; document the exact flags alongside every recurring import."}
+{"instruction": "Give a practical example of `\\copy quote escape`.", "input": "", "output": "Custom `QUOTE`/`ESCAPE`/`DELIMITER` handle legacy exports; document the exact flags alongside every recurring import."}
+{"instruction": "What is `\\copy quote escape` for?", "input": "", "output": "Custom `QUOTE`/`ESCAPE`/`DELIMITER` handle legacy exports; document the exact flags alongside every recurring import."}
+{"instruction": "Apakah fungsi `\\copy quote escape`?", "input": "", "output": "Custom `QUOTE`/`ESCAPE`/`DELIMITER` handle legacy exports; document the exact flags alongside every recurring import."}
+{"instruction": "Terangkan `\\copy quote escape` secara ringkas.", "input": "", "output": "Custom `QUOTE`/`ESCAPE`/`DELIMITER` handle legacy exports; document the exact flags alongside every recurring import."}
+{"instruction": "Bila perlu guna `\\copy quote escape`?", "input": "", "output": "Custom `QUOTE`/`ESCAPE`/`DELIMITER` handle legacy exports; document the exact flags alongside every recurring import."}
+{"instruction": "Beri contoh penggunaan `\\copy quote escape`.", "input": "", "output": "Custom `QUOTE`/`ESCAPE`/`DELIMITER` handle legacy exports; document the exact flags alongside every recurring import."}
+{"instruction": "`\\copy quote escape` untuk apa?", "input": "", "output": "Custom `QUOTE`/`ESCAPE`/`DELIMITER` handle legacy exports; document the exact flags alongside every recurring import."}
+{"instruction": "How would you explain `\\copy quote escape` to a junior developer?", "input": "", "output": "Custom `QUOTE`/`ESCAPE`/`DELIMITER` handle legacy exports; document the exact flags alongside every recurring import."}
+{"instruction": "Give a real-world scenario for `\\copy quote escape`.", "input": "", "output": "Custom `QUOTE`/`ESCAPE`/`DELIMITER` handle legacy exports; document the exact flags alongside every recurring import."}
+{"instruction": "What problem does `\\copy quote escape` solve?", "input": "", "output": "Custom `QUOTE`/`ESCAPE`/`DELIMITER` handle legacy exports; document the exact flags alongside every recurring import."}
+{"instruction": "Terangkan `\\copy quote escape` dalam satu minit.", "input": "", "output": "Custom `QUOTE`/`ESCAPE`/`DELIMITER` handle legacy exports; document the exact flags alongside every recurring import."}
+{"instruction": "Apa yang perlu saya tahu tentang `\\copy quote escape`?", "input": "", "output": "Custom `QUOTE`/`ESCAPE`/`DELIMITER` handle legacy exports; document the exact flags alongside every recurring import."}
+{"instruction": "Bagaimanakah `\\copy quote escape` berfungsi?", "input": "", "output": "Custom `QUOTE`/`ESCAPE`/`DELIMITER` handle legacy exports; document the exact flags alongside every recurring import."}
+{"instruction": "Bilakah masa yang sesuai untuk `\\copy quote escape`?", "input": "", "output": "Custom `QUOTE`/`ESCAPE`/`DELIMITER` handle legacy exports; document the exact flags alongside every recurring import."}
+{"instruction": "What does `\\copy encoding` do?", "input": "", "output": "`\\copy ... ENCODING 'UTF8'` declares source encoding; mojibake imports trace to unstated encodings."}
+{"instruction": "Explain `\\copy encoding` briefly.", "input": "", "output": "`\\copy ... ENCODING 'UTF8'` declares source encoding; mojibake imports trace to unstated encodings."}
+{"instruction": "When do I use `\\copy encoding`?", "input": "", "output": "`\\copy ... ENCODING 'UTF8'` declares source encoding; mojibake imports trace to unstated encodings."}
+{"instruction": "Give a practical example of `\\copy encoding`.", "input": "", "output": "`\\copy ... ENCODING 'UTF8'` declares source encoding; mojibake imports trace to unstated encodings."}
+{"instruction": "What is `\\copy encoding` for?", "input": "", "output": "`\\copy ... ENCODING 'UTF8'` declares source encoding; mojibake imports trace to unstated encodings."}
+{"instruction": "Apakah fungsi `\\copy encoding`?", "input": "", "output": "`\\copy ... ENCODING 'UTF8'` declares source encoding; mojibake imports trace to unstated encodings."}
+{"instruction": "Terangkan `\\copy encoding` secara ringkas.", "input": "", "output": "`\\copy ... ENCODING 'UTF8'` declares source encoding; mojibake imports trace to unstated encodings."}
+{"instruction": "Bila perlu guna `\\copy encoding`?", "input": "", "output": "`\\copy ... ENCODING 'UTF8'` declares source encoding; mojibake imports trace to unstated encodings."}
+{"instruction": "Beri contoh penggunaan `\\copy encoding`.", "input": "", "output": "`\\copy ... ENCODING 'UTF8'` declares source encoding; mojibake imports trace to unstated encodings."}
+{"instruction": "`\\copy encoding` untuk apa?", "input": "", "output": "`\\copy ... ENCODING 'UTF8'` declares source encoding; mojibake imports trace to unstated encodings."}
+{"instruction": "How would you explain `\\copy encoding` to a junior developer?", "input": "", "output": "`\\copy ... ENCODING 'UTF8'` declares source encoding; mojibake imports trace to unstated encodings."}
+{"instruction": "Give a real-world scenario for `\\copy encoding`.", "input": "", "output": "`\\copy ... ENCODING 'UTF8'` declares source encoding; mojibake imports trace to unstated encodings."}
+{"instruction": "What problem does `\\copy encoding` solve?", "input": "", "output": "`\\copy ... ENCODING 'UTF8'` declares source encoding; mojibake imports trace to unstated encodings."}
+{"instruction": "Terangkan `\\copy encoding` dalam satu minit.", "input": "", "output": "`\\copy ... ENCODING 'UTF8'` declares source encoding; mojibake imports trace to unstated encodings."}
+{"instruction": "Apa yang perlu saya tahu tentang `\\copy encoding`?", "input": "", "output": "`\\copy ... ENCODING 'UTF8'` declares source encoding; mojibake imports trace to unstated encodings."}
+{"instruction": "Bagaimanakah `\\copy encoding` berfungsi?", "input": "", "output": "`\\copy ... ENCODING 'UTF8'` declares source encoding; mojibake imports trace to unstated encodings."}
+{"instruction": "Bilakah masa yang sesuai untuk `\\copy encoding`?", "input": "", "output": "`\\copy ... ENCODING 'UTF8'` declares source encoding; mojibake imports trace to unstated encodings."}
+{"instruction": "What does `\\lo_import blobs` do?", "input": "", "output": "`\\lo_import/\\lo_export` move large objects (oid-linked blobs); `VACUUMLO` garbage-collects orphans afterward."}
+{"instruction": "Explain `\\lo_import blobs` briefly.", "input": "", "output": "`\\lo_import/\\lo_export` move large objects (oid-linked blobs); `VACUUMLO` garbage-collects orphans afterward."}
+{"instruction": "When do I use `\\lo_import blobs`?", "input": "", "output": "`\\lo_import/\\lo_export` move large objects (oid-linked blobs); `VACUUMLO` garbage-collects orphans afterward."}
+{"instruction": "Give a practical example of `\\lo_import blobs`.", "input": "", "output": "`\\lo_import/\\lo_export` move large objects (oid-linked blobs); `VACUUMLO` garbage-collects orphans afterward."}
+{"instruction": "What is `\\lo_import blobs` for?", "input": "", "output": "`\\lo_import/\\lo_export` move large objects (oid-linked blobs); `VACUUMLO` garbage-collects orphans afterward."}
+{"instruction": "Apakah fungsi `\\lo_import blobs`?", "input": "", "output": "`\\lo_import/\\lo_export` move large objects (oid-linked blobs); `VACUUMLO` garbage-collects orphans afterward."}
+{"instruction": "Terangkan `\\lo_import blobs` secara ringkas.", "input": "", "output": "`\\lo_import/\\lo_export` move large objects (oid-linked blobs); `VACUUMLO` garbage-collects orphans afterward."}
+{"instruction": "Bila perlu guna `\\lo_import blobs`?", "input": "", "output": "`\\lo_import/\\lo_export` move large objects (oid-linked blobs); `VACUUMLO` garbage-collects orphans afterward."}
+{"instruction": "Beri contoh penggunaan `\\lo_import blobs`.", "input": "", "output": "`\\lo_import/\\lo_export` move large objects (oid-linked blobs); `VACUUMLO` garbage-collects orphans afterward."}
+{"instruction": "`\\lo_import blobs` untuk apa?", "input": "", "output": "`\\lo_import/\\lo_export` move large objects (oid-linked blobs); `VACUUMLO` garbage-collects orphans afterward."}
+{"instruction": "How would you explain `\\lo_import blobs` to a junior developer?", "input": "", "output": "`\\lo_import/\\lo_export` move large objects (oid-linked blobs); `VACUUMLO` garbage-collects orphans afterward."}
+{"instruction": "Give a real-world scenario for `\\lo_import blobs`.", "input": "", "output": "`\\lo_import/\\lo_export` move large objects (oid-linked blobs); `VACUUMLO` garbage-collects orphans afterward."}
+{"instruction": "What problem does `\\lo_import blobs` solve?", "input": "", "output": "`\\lo_import/\\lo_export` move large objects (oid-linked blobs); `VACUUMLO` garbage-collects orphans afterward."}
+{"instruction": "Terangkan `\\lo_import blobs` dalam satu minit.", "input": "", "output": "`\\lo_import/\\lo_export` move large objects (oid-linked blobs); `VACUUMLO` garbage-collects orphans afterward."}
+{"instruction": "Apa yang perlu saya tahu tentang `\\lo_import blobs`?", "input": "", "output": "`\\lo_import/\\lo_export` move large objects (oid-linked blobs); `VACUUMLO` garbage-collects orphans afterward."}
+{"instruction": "Bagaimanakah `\\lo_import blobs` berfungsi?", "input": "", "output": "`\\lo_import/\\lo_export` move large objects (oid-linked blobs); `VACUUMLO` garbage-collects orphans afterward."}
+{"instruction": "Bilakah masa yang sesuai untuk `\\lo_import blobs`?", "input": "", "output": "`\\lo_import/\\lo_export` move large objects (oid-linked blobs); `VACUUMLO` garbage-collects orphans afterward."}
+{"instruction": "What does `\\df+ source` do?", "input": "", "output": "`\\df+` shows function volatility/cost/rows estimates — planner-relevant metadata, not just signatures."}
+{"instruction": "Explain `\\df+ source` briefly.", "input": "", "output": "`\\df+` shows function volatility/cost/rows estimates — planner-relevant metadata, not just signatures."}
+{"instruction": "When do I use `\\df+ source`?", "input": "", "output": "`\\df+` shows function volatility/cost/rows estimates — planner-relevant metadata, not just signatures."}
+{"instruction": "Give a practical example of `\\df+ source`.", "input": "", "output": "`\\df+` shows function volatility/cost/rows estimates — planner-relevant metadata, not just signatures."}
+{"instruction": "What is `\\df+ source` for?", "input": "", "output": "`\\df+` shows function volatility/cost/rows estimates — planner-relevant metadata, not just signatures."}
+{"instruction": "Apakah fungsi `\\df+ source`?", "input": "", "output": "`\\df+` shows function volatility/cost/rows estimates — planner-relevant metadata, not just signatures."}
+{"instruction": "Terangkan `\\df+ source` secara ringkas.", "input": "", "output": "`\\df+` shows function volatility/cost/rows estimates — planner-relevant metadata, not just signatures."}
+{"instruction": "Bila perlu guna `\\df+ source`?", "input": "", "output": "`\\df+` shows function volatility/cost/rows estimates — planner-relevant metadata, not just signatures."}
+{"instruction": "Beri contoh penggunaan `\\df+ source`.", "input": "", "output": "`\\df+` shows function volatility/cost/rows estimates — planner-relevant metadata, not just signatures."}
+{"instruction": "`\\df+ source` untuk apa?", "input": "", "output": "`\\df+` shows function volatility/cost/rows estimates — planner-relevant metadata, not just signatures."}
+{"instruction": "How would you explain `\\df+ source` to a junior developer?", "input": "", "output": "`\\df+` shows function volatility/cost/rows estimates — planner-relevant metadata, not just signatures."}
+{"instruction": "Give a real-world scenario for `\\df+ source`.", "input": "", "output": "`\\df+` shows function volatility/cost/rows estimates — planner-relevant metadata, not just signatures."}
+{"instruction": "What problem does `\\df+ source` solve?", "input": "", "output": "`\\df+` shows function volatility/cost/rows estimates — planner-relevant metadata, not just signatures."}
+{"instruction": "Terangkan `\\df+ source` dalam satu minit.", "input": "", "output": "`\\df+` shows function volatility/cost/rows estimates — planner-relevant metadata, not just signatures."}
+{"instruction": "Apa yang perlu saya tahu tentang `\\df+ source`?", "input": "", "output": "`\\df+` shows function volatility/cost/rows estimates — planner-relevant metadata, not just signatures."}
+{"instruction": "Bagaimanakah `\\df+ source` berfungsi?", "input": "", "output": "`\\df+` shows function volatility/cost/rows estimates — planner-relevant metadata, not just signatures."}
+{"instruction": "Bilakah masa yang sesuai untuk `\\df+ source`?", "input": "", "output": "`\\df+` shows function volatility/cost/rows estimates — planner-relevant metadata, not just signatures."}
+{"instruction": "What does `\\d+ indexes` do?", "input": "", "output": "`\\d+` reveals index definitions, replica identity and access methods per table — the full physical picture."}
+{"instruction": "Explain `\\d+ indexes` briefly.", "input": "", "output": "`\\d+` reveals index definitions, replica identity and access methods per table — the full physical picture."}
+{"instruction": "When do I use `\\d+ indexes`?", "input": "", "output": "`\\d+` reveals index definitions, replica identity and access methods per table — the full physical picture."}
+{"instruction": "Give a practical example of `\\d+ indexes`.", "input": "", "output": "`\\d+` reveals index definitions, replica identity and access methods per table — the full physical picture."}
+{"instruction": "What is `\\d+ indexes` for?", "input": "", "output": "`\\d+` reveals index definitions, replica identity and access methods per table — the full physical picture."}
+{"instruction": "Apakah fungsi `\\d+ indexes`?", "input": "", "output": "`\\d+` reveals index definitions, replica identity and access methods per table — the full physical picture."}
+{"instruction": "Terangkan `\\d+ indexes` secara ringkas.", "input": "", "output": "`\\d+` reveals index definitions, replica identity and access methods per table — the full physical picture."}
+{"instruction": "Bila perlu guna `\\d+ indexes`?", "input": "", "output": "`\\d+` reveals index definitions, replica identity and access methods per table — the full physical picture."}
+{"instruction": "Beri contoh penggunaan `\\d+ indexes`.", "input": "", "output": "`\\d+` reveals index definitions, replica identity and access methods per table — the full physical picture."}
+{"instruction": "`\\d+ indexes` untuk apa?", "input": "", "output": "`\\d+` reveals index definitions, replica identity and access methods per table — the full physical picture."}
+{"instruction": "How would you explain `\\d+ indexes` to a junior developer?", "input": "", "output": "`\\d+` reveals index definitions, replica identity and access methods per table — the full physical picture."}
+{"instruction": "Give a real-world scenario for `\\d+ indexes`.", "input": "", "output": "`\\d+` reveals index definitions, replica identity and access methods per table — the full physical picture."}
+{"instruction": "What problem does `\\d+ indexes` solve?", "input": "", "output": "`\\d+` reveals index definitions, replica identity and access methods per table — the full physical picture."}
+{"instruction": "Terangkan `\\d+ indexes` dalam satu minit.", "input": "", "output": "`\\d+` reveals index definitions, replica identity and access methods per table — the full physical picture."}
+{"instruction": "Apa yang perlu saya tahu tentang `\\d+ indexes`?", "input": "", "output": "`\\d+` reveals index definitions, replica identity and access methods per table — the full physical picture."}
+{"instruction": "Bagaimanakah `\\d+ indexes` berfungsi?", "input": "", "output": "`\\d+` reveals index definitions, replica identity and access methods per table — the full physical picture."}
+{"instruction": "Bilakah masa yang sesuai untuk `\\d+ indexes`?", "input": "", "output": "`\\d+` reveals index definitions, replica identity and access methods per table — the full physical picture."}

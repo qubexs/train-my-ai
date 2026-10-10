@@ -1290,3 +1290,258 @@
 {"instruction": "Apa yang perlu saya tahu tentang `top-level await limits`?", "input": "", "output": "Top-level await works in modules only (blocks dependents — slow imports serialize startup); dynamic `import()` keeps it lazy. Never gate independent modules on each other's awaits."}
 {"instruction": "Bagaimanakah `top-level await limits` berfungsi?", "input": "", "output": "Top-level await works in modules only (blocks dependents — slow imports serialize startup); dynamic `import()` keeps it lazy. Never gate independent modules on each other's awaits."}
 {"instruction": "Bilakah masa yang sesuai untuk `top-level await limits`?", "input": "", "output": "Top-level await works in modules only (blocks dependents — slow imports serialize startup); dynamic `import()` keeps it lazy. Never gate independent modules on each other's awaits."}
+{"instruction": "What does `navigator onLine` do?", "input": "", "output": "`navigator.onLine` gates offline behavior; `online/offline` events toggle cached modes live."}
+{"instruction": "Explain `navigator onLine` briefly.", "input": "", "output": "`navigator.onLine` gates offline behavior; `online/offline` events toggle cached modes live."}
+{"instruction": "When do I use `navigator onLine`?", "input": "", "output": "`navigator.onLine` gates offline behavior; `online/offline` events toggle cached modes live."}
+{"instruction": "Give a practical example of `navigator onLine`.", "input": "", "output": "`navigator.onLine` gates offline behavior; `online/offline` events toggle cached modes live."}
+{"instruction": "What is `navigator onLine` for?", "input": "", "output": "`navigator.onLine` gates offline behavior; `online/offline` events toggle cached modes live."}
+{"instruction": "Apakah fungsi `navigator onLine`?", "input": "", "output": "`navigator.onLine` gates offline behavior; `online/offline` events toggle cached modes live."}
+{"instruction": "Terangkan `navigator onLine` secara ringkas.", "input": "", "output": "`navigator.onLine` gates offline behavior; `online/offline` events toggle cached modes live."}
+{"instruction": "Bila perlu guna `navigator onLine`?", "input": "", "output": "`navigator.onLine` gates offline behavior; `online/offline` events toggle cached modes live."}
+{"instruction": "Beri contoh penggunaan `navigator onLine`.", "input": "", "output": "`navigator.onLine` gates offline behavior; `online/offline` events toggle cached modes live."}
+{"instruction": "`navigator onLine` untuk apa?", "input": "", "output": "`navigator.onLine` gates offline behavior; `online/offline` events toggle cached modes live."}
+{"instruction": "How would you explain `navigator onLine` to a junior developer?", "input": "", "output": "`navigator.onLine` gates offline behavior; `online/offline` events toggle cached modes live."}
+{"instruction": "Give a real-world scenario for `navigator onLine`.", "input": "", "output": "`navigator.onLine` gates offline behavior; `online/offline` events toggle cached modes live."}
+{"instruction": "What problem does `navigator onLine` solve?", "input": "", "output": "`navigator.onLine` gates offline behavior; `online/offline` events toggle cached modes live."}
+{"instruction": "Terangkan `navigator onLine` dalam satu minit.", "input": "", "output": "`navigator.onLine` gates offline behavior; `online/offline` events toggle cached modes live."}
+{"instruction": "Apa yang perlu saya tahu tentang `navigator onLine`?", "input": "", "output": "`navigator.onLine` gates offline behavior; `online/offline` events toggle cached modes live."}
+{"instruction": "Bagaimanakah `navigator onLine` berfungsi?", "input": "", "output": "`navigator.onLine` gates offline behavior; `online/offline` events toggle cached modes live."}
+{"instruction": "Bilakah masa yang sesuai untuk `navigator onLine`?", "input": "", "output": "`navigator.onLine` gates offline behavior; `online/offline` events toggle cached modes live."}
+{"instruction": "What does `matchMedia queries` do?", "input": "", "output": "`matchMedia('(max-width: 600px)').matches` drives JS breakpoints in sync with CSS media queries."}
+{"instruction": "Explain `matchMedia queries` briefly.", "input": "", "output": "`matchMedia('(max-width: 600px)').matches` drives JS breakpoints in sync with CSS media queries."}
+{"instruction": "When do I use `matchMedia queries`?", "input": "", "output": "`matchMedia('(max-width: 600px)').matches` drives JS breakpoints in sync with CSS media queries."}
+{"instruction": "Give a practical example of `matchMedia queries`.", "input": "", "output": "`matchMedia('(max-width: 600px)').matches` drives JS breakpoints in sync with CSS media queries."}
+{"instruction": "What is `matchMedia queries` for?", "input": "", "output": "`matchMedia('(max-width: 600px)').matches` drives JS breakpoints in sync with CSS media queries."}
+{"instruction": "Apakah fungsi `matchMedia queries`?", "input": "", "output": "`matchMedia('(max-width: 600px)').matches` drives JS breakpoints in sync with CSS media queries."}
+{"instruction": "Terangkan `matchMedia queries` secara ringkas.", "input": "", "output": "`matchMedia('(max-width: 600px)').matches` drives JS breakpoints in sync with CSS media queries."}
+{"instruction": "Bila perlu guna `matchMedia queries`?", "input": "", "output": "`matchMedia('(max-width: 600px)').matches` drives JS breakpoints in sync with CSS media queries."}
+{"instruction": "Beri contoh penggunaan `matchMedia queries`.", "input": "", "output": "`matchMedia('(max-width: 600px)').matches` drives JS breakpoints in sync with CSS media queries."}
+{"instruction": "`matchMedia queries` untuk apa?", "input": "", "output": "`matchMedia('(max-width: 600px)').matches` drives JS breakpoints in sync with CSS media queries."}
+{"instruction": "How would you explain `matchMedia queries` to a junior developer?", "input": "", "output": "`matchMedia('(max-width: 600px)').matches` drives JS breakpoints in sync with CSS media queries."}
+{"instruction": "Give a real-world scenario for `matchMedia queries`.", "input": "", "output": "`matchMedia('(max-width: 600px)').matches` drives JS breakpoints in sync with CSS media queries."}
+{"instruction": "What problem does `matchMedia queries` solve?", "input": "", "output": "`matchMedia('(max-width: 600px)').matches` drives JS breakpoints in sync with CSS media queries."}
+{"instruction": "Terangkan `matchMedia queries` dalam satu minit.", "input": "", "output": "`matchMedia('(max-width: 600px)').matches` drives JS breakpoints in sync with CSS media queries."}
+{"instruction": "Apa yang perlu saya tahu tentang `matchMedia queries`?", "input": "", "output": "`matchMedia('(max-width: 600px)').matches` drives JS breakpoints in sync with CSS media queries."}
+{"instruction": "Bagaimanakah `matchMedia queries` berfungsi?", "input": "", "output": "`matchMedia('(max-width: 600px)').matches` drives JS breakpoints in sync with CSS media queries."}
+{"instruction": "Bilakah masa yang sesuai untuk `matchMedia queries`?", "input": "", "output": "`matchMedia('(max-width: 600px)').matches` drives JS breakpoints in sync with CSS media queries."}
+{"instruction": "What does `ResizeObserver` do?", "input": "", "output": "`ResizeObserver` reacts to element size changes (responsive components); `window.resize` only sees viewports."}
+{"instruction": "Explain `ResizeObserver` briefly.", "input": "", "output": "`ResizeObserver` reacts to element size changes (responsive components); `window.resize` only sees viewports."}
+{"instruction": "When do I use `ResizeObserver`?", "input": "", "output": "`ResizeObserver` reacts to element size changes (responsive components); `window.resize` only sees viewports."}
+{"instruction": "Give a practical example of `ResizeObserver`.", "input": "", "output": "`ResizeObserver` reacts to element size changes (responsive components); `window.resize` only sees viewports."}
+{"instruction": "What is `ResizeObserver` for?", "input": "", "output": "`ResizeObserver` reacts to element size changes (responsive components); `window.resize` only sees viewports."}
+{"instruction": "Apakah fungsi `ResizeObserver`?", "input": "", "output": "`ResizeObserver` reacts to element size changes (responsive components); `window.resize` only sees viewports."}
+{"instruction": "Terangkan `ResizeObserver` secara ringkas.", "input": "", "output": "`ResizeObserver` reacts to element size changes (responsive components); `window.resize` only sees viewports."}
+{"instruction": "Bila perlu guna `ResizeObserver`?", "input": "", "output": "`ResizeObserver` reacts to element size changes (responsive components); `window.resize` only sees viewports."}
+{"instruction": "Beri contoh penggunaan `ResizeObserver`.", "input": "", "output": "`ResizeObserver` reacts to element size changes (responsive components); `window.resize` only sees viewports."}
+{"instruction": "`ResizeObserver` untuk apa?", "input": "", "output": "`ResizeObserver` reacts to element size changes (responsive components); `window.resize` only sees viewports."}
+{"instruction": "How would you explain `ResizeObserver` to a junior developer?", "input": "", "output": "`ResizeObserver` reacts to element size changes (responsive components); `window.resize` only sees viewports."}
+{"instruction": "Give a real-world scenario for `ResizeObserver`.", "input": "", "output": "`ResizeObserver` reacts to element size changes (responsive components); `window.resize` only sees viewports."}
+{"instruction": "What problem does `ResizeObserver` solve?", "input": "", "output": "`ResizeObserver` reacts to element size changes (responsive components); `window.resize` only sees viewports."}
+{"instruction": "Terangkan `ResizeObserver` dalam satu minit.", "input": "", "output": "`ResizeObserver` reacts to element size changes (responsive components); `window.resize` only sees viewports."}
+{"instruction": "Apa yang perlu saya tahu tentang `ResizeObserver`?", "input": "", "output": "`ResizeObserver` reacts to element size changes (responsive components); `window.resize` only sees viewports."}
+{"instruction": "Bagaimanakah `ResizeObserver` berfungsi?", "input": "", "output": "`ResizeObserver` reacts to element size changes (responsive components); `window.resize` only sees viewports."}
+{"instruction": "Bilakah masa yang sesuai untuk `ResizeObserver`?", "input": "", "output": "`ResizeObserver` reacts to element size changes (responsive components); `window.resize` only sees viewports."}
+{"instruction": "What does `IntersectionObserver` do?", "input": "", "output": "Lazy-load/animate on visibility with thresholds; `unobserve` after firing to free observers."}
+{"instruction": "Explain `IntersectionObserver` briefly.", "input": "", "output": "Lazy-load/animate on visibility with thresholds; `unobserve` after firing to free observers."}
+{"instruction": "When do I use `IntersectionObserver`?", "input": "", "output": "Lazy-load/animate on visibility with thresholds; `unobserve` after firing to free observers."}
+{"instruction": "Give a practical example of `IntersectionObserver`.", "input": "", "output": "Lazy-load/animate on visibility with thresholds; `unobserve` after firing to free observers."}
+{"instruction": "What is `IntersectionObserver` for?", "input": "", "output": "Lazy-load/animate on visibility with thresholds; `unobserve` after firing to free observers."}
+{"instruction": "Apakah fungsi `IntersectionObserver`?", "input": "", "output": "Lazy-load/animate on visibility with thresholds; `unobserve` after firing to free observers."}
+{"instruction": "Terangkan `IntersectionObserver` secara ringkas.", "input": "", "output": "Lazy-load/animate on visibility with thresholds; `unobserve` after firing to free observers."}
+{"instruction": "Bila perlu guna `IntersectionObserver`?", "input": "", "output": "Lazy-load/animate on visibility with thresholds; `unobserve` after firing to free observers."}
+{"instruction": "Beri contoh penggunaan `IntersectionObserver`.", "input": "", "output": "Lazy-load/animate on visibility with thresholds; `unobserve` after firing to free observers."}
+{"instruction": "`IntersectionObserver` untuk apa?", "input": "", "output": "Lazy-load/animate on visibility with thresholds; `unobserve` after firing to free observers."}
+{"instruction": "How would you explain `IntersectionObserver` to a junior developer?", "input": "", "output": "Lazy-load/animate on visibility with thresholds; `unobserve` after firing to free observers."}
+{"instruction": "Give a real-world scenario for `IntersectionObserver`.", "input": "", "output": "Lazy-load/animate on visibility with thresholds; `unobserve` after firing to free observers."}
+{"instruction": "What problem does `IntersectionObserver` solve?", "input": "", "output": "Lazy-load/animate on visibility with thresholds; `unobserve` after firing to free observers."}
+{"instruction": "Terangkan `IntersectionObserver` dalam satu minit.", "input": "", "output": "Lazy-load/animate on visibility with thresholds; `unobserve` after firing to free observers."}
+{"instruction": "Apa yang perlu saya tahu tentang `IntersectionObserver`?", "input": "", "output": "Lazy-load/animate on visibility with thresholds; `unobserve` after firing to free observers."}
+{"instruction": "Bagaimanakah `IntersectionObserver` berfungsi?", "input": "", "output": "Lazy-load/animate on visibility with thresholds; `unobserve` after firing to free observers."}
+{"instruction": "Bilakah masa yang sesuai untuk `IntersectionObserver`?", "input": "", "output": "Lazy-load/animate on visibility with thresholds; `unobserve` after firing to free observers."}
+{"instruction": "What does `MutationObserver` do?", "input": "", "output": "Watch DOM mutations (third-party widgets, editors) with subtree/attribute filters — polling's replacement."}
+{"instruction": "Explain `MutationObserver` briefly.", "input": "", "output": "Watch DOM mutations (third-party widgets, editors) with subtree/attribute filters — polling's replacement."}
+{"instruction": "When do I use `MutationObserver`?", "input": "", "output": "Watch DOM mutations (third-party widgets, editors) with subtree/attribute filters — polling's replacement."}
+{"instruction": "Give a practical example of `MutationObserver`.", "input": "", "output": "Watch DOM mutations (third-party widgets, editors) with subtree/attribute filters — polling's replacement."}
+{"instruction": "What is `MutationObserver` for?", "input": "", "output": "Watch DOM mutations (third-party widgets, editors) with subtree/attribute filters — polling's replacement."}
+{"instruction": "Apakah fungsi `MutationObserver`?", "input": "", "output": "Watch DOM mutations (third-party widgets, editors) with subtree/attribute filters — polling's replacement."}
+{"instruction": "Terangkan `MutationObserver` secara ringkas.", "input": "", "output": "Watch DOM mutations (third-party widgets, editors) with subtree/attribute filters — polling's replacement."}
+{"instruction": "Bila perlu guna `MutationObserver`?", "input": "", "output": "Watch DOM mutations (third-party widgets, editors) with subtree/attribute filters — polling's replacement."}
+{"instruction": "Beri contoh penggunaan `MutationObserver`.", "input": "", "output": "Watch DOM mutations (third-party widgets, editors) with subtree/attribute filters — polling's replacement."}
+{"instruction": "`MutationObserver` untuk apa?", "input": "", "output": "Watch DOM mutations (third-party widgets, editors) with subtree/attribute filters — polling's replacement."}
+{"instruction": "How would you explain `MutationObserver` to a junior developer?", "input": "", "output": "Watch DOM mutations (third-party widgets, editors) with subtree/attribute filters — polling's replacement."}
+{"instruction": "Give a real-world scenario for `MutationObserver`.", "input": "", "output": "Watch DOM mutations (third-party widgets, editors) with subtree/attribute filters — polling's replacement."}
+{"instruction": "What problem does `MutationObserver` solve?", "input": "", "output": "Watch DOM mutations (third-party widgets, editors) with subtree/attribute filters — polling's replacement."}
+{"instruction": "Terangkan `MutationObserver` dalam satu minit.", "input": "", "output": "Watch DOM mutations (third-party widgets, editors) with subtree/attribute filters — polling's replacement."}
+{"instruction": "Apa yang perlu saya tahu tentang `MutationObserver`?", "input": "", "output": "Watch DOM mutations (third-party widgets, editors) with subtree/attribute filters — polling's replacement."}
+{"instruction": "Bagaimanakah `MutationObserver` berfungsi?", "input": "", "output": "Watch DOM mutations (third-party widgets, editors) with subtree/attribute filters — polling's replacement."}
+{"instruction": "Bilakah masa yang sesuai untuk `MutationObserver`?", "input": "", "output": "Watch DOM mutations (third-party widgets, editors) with subtree/attribute filters — polling's replacement."}
+{"instruction": "What does `requestIdleCallback` do?", "input": "", "output": "Defer non-urgent work to idle time with timeout fallbacks; `requestAnimationFrame` owns visual updates."}
+{"instruction": "Explain `requestIdleCallback` briefly.", "input": "", "output": "Defer non-urgent work to idle time with timeout fallbacks; `requestAnimationFrame` owns visual updates."}
+{"instruction": "When do I use `requestIdleCallback`?", "input": "", "output": "Defer non-urgent work to idle time with timeout fallbacks; `requestAnimationFrame` owns visual updates."}
+{"instruction": "Give a practical example of `requestIdleCallback`.", "input": "", "output": "Defer non-urgent work to idle time with timeout fallbacks; `requestAnimationFrame` owns visual updates."}
+{"instruction": "What is `requestIdleCallback` for?", "input": "", "output": "Defer non-urgent work to idle time with timeout fallbacks; `requestAnimationFrame` owns visual updates."}
+{"instruction": "Apakah fungsi `requestIdleCallback`?", "input": "", "output": "Defer non-urgent work to idle time with timeout fallbacks; `requestAnimationFrame` owns visual updates."}
+{"instruction": "Terangkan `requestIdleCallback` secara ringkas.", "input": "", "output": "Defer non-urgent work to idle time with timeout fallbacks; `requestAnimationFrame` owns visual updates."}
+{"instruction": "Bila perlu guna `requestIdleCallback`?", "input": "", "output": "Defer non-urgent work to idle time with timeout fallbacks; `requestAnimationFrame` owns visual updates."}
+{"instruction": "Beri contoh penggunaan `requestIdleCallback`.", "input": "", "output": "Defer non-urgent work to idle time with timeout fallbacks; `requestAnimationFrame` owns visual updates."}
+{"instruction": "`requestIdleCallback` untuk apa?", "input": "", "output": "Defer non-urgent work to idle time with timeout fallbacks; `requestAnimationFrame` owns visual updates."}
+{"instruction": "How would you explain `requestIdleCallback` to a junior developer?", "input": "", "output": "Defer non-urgent work to idle time with timeout fallbacks; `requestAnimationFrame` owns visual updates."}
+{"instruction": "Give a real-world scenario for `requestIdleCallback`.", "input": "", "output": "Defer non-urgent work to idle time with timeout fallbacks; `requestAnimationFrame` owns visual updates."}
+{"instruction": "What problem does `requestIdleCallback` solve?", "input": "", "output": "Defer non-urgent work to idle time with timeout fallbacks; `requestAnimationFrame` owns visual updates."}
+{"instruction": "Terangkan `requestIdleCallback` dalam satu minit.", "input": "", "output": "Defer non-urgent work to idle time with timeout fallbacks; `requestAnimationFrame` owns visual updates."}
+{"instruction": "Apa yang perlu saya tahu tentang `requestIdleCallback`?", "input": "", "output": "Defer non-urgent work to idle time with timeout fallbacks; `requestAnimationFrame` owns visual updates."}
+{"instruction": "Bagaimanakah `requestIdleCallback` berfungsi?", "input": "", "output": "Defer non-urgent work to idle time with timeout fallbacks; `requestAnimationFrame` owns visual updates."}
+{"instruction": "Bilakah masa yang sesuai untuk `requestIdleCallback`?", "input": "", "output": "Defer non-urgent work to idle time with timeout fallbacks; `requestAnimationFrame` owns visual updates."}
+{"instruction": "What does `scheduler.yield` do?", "input": "", "output": "`scheduler.yield()` (modern) yields to the event loop mid-task; `setTimeout(0)` is the legacy equivalent."}
+{"instruction": "Explain `scheduler.yield` briefly.", "input": "", "output": "`scheduler.yield()` (modern) yields to the event loop mid-task; `setTimeout(0)` is the legacy equivalent."}
+{"instruction": "When do I use `scheduler.yield`?", "input": "", "output": "`scheduler.yield()` (modern) yields to the event loop mid-task; `setTimeout(0)` is the legacy equivalent."}
+{"instruction": "Give a practical example of `scheduler.yield`.", "input": "", "output": "`scheduler.yield()` (modern) yields to the event loop mid-task; `setTimeout(0)` is the legacy equivalent."}
+{"instruction": "What is `scheduler.yield` for?", "input": "", "output": "`scheduler.yield()` (modern) yields to the event loop mid-task; `setTimeout(0)` is the legacy equivalent."}
+{"instruction": "Apakah fungsi `scheduler.yield`?", "input": "", "output": "`scheduler.yield()` (modern) yields to the event loop mid-task; `setTimeout(0)` is the legacy equivalent."}
+{"instruction": "Terangkan `scheduler.yield` secara ringkas.", "input": "", "output": "`scheduler.yield()` (modern) yields to the event loop mid-task; `setTimeout(0)` is the legacy equivalent."}
+{"instruction": "Bila perlu guna `scheduler.yield`?", "input": "", "output": "`scheduler.yield()` (modern) yields to the event loop mid-task; `setTimeout(0)` is the legacy equivalent."}
+{"instruction": "Beri contoh penggunaan `scheduler.yield`.", "input": "", "output": "`scheduler.yield()` (modern) yields to the event loop mid-task; `setTimeout(0)` is the legacy equivalent."}
+{"instruction": "`scheduler.yield` untuk apa?", "input": "", "output": "`scheduler.yield()` (modern) yields to the event loop mid-task; `setTimeout(0)` is the legacy equivalent."}
+{"instruction": "How would you explain `scheduler.yield` to a junior developer?", "input": "", "output": "`scheduler.yield()` (modern) yields to the event loop mid-task; `setTimeout(0)` is the legacy equivalent."}
+{"instruction": "Give a real-world scenario for `scheduler.yield`.", "input": "", "output": "`scheduler.yield()` (modern) yields to the event loop mid-task; `setTimeout(0)` is the legacy equivalent."}
+{"instruction": "What problem does `scheduler.yield` solve?", "input": "", "output": "`scheduler.yield()` (modern) yields to the event loop mid-task; `setTimeout(0)` is the legacy equivalent."}
+{"instruction": "Terangkan `scheduler.yield` dalam satu minit.", "input": "", "output": "`scheduler.yield()` (modern) yields to the event loop mid-task; `setTimeout(0)` is the legacy equivalent."}
+{"instruction": "Apa yang perlu saya tahu tentang `scheduler.yield`?", "input": "", "output": "`scheduler.yield()` (modern) yields to the event loop mid-task; `setTimeout(0)` is the legacy equivalent."}
+{"instruction": "Bagaimanakah `scheduler.yield` berfungsi?", "input": "", "output": "`scheduler.yield()` (modern) yields to the event loop mid-task; `setTimeout(0)` is the legacy equivalent."}
+{"instruction": "Bilakah masa yang sesuai untuk `scheduler.yield`?", "input": "", "output": "`scheduler.yield()` (modern) yields to the event loop mid-task; `setTimeout(0)` is the legacy equivalent."}
+{"instruction": "What does `structuredClone limits2` do?", "input": "", "output": "Clones Dates/Maps/Sets/Buffers but not functions/DOM — know the boundary before trusting deep copies."}
+{"instruction": "Explain `structuredClone limits2` briefly.", "input": "", "output": "Clones Dates/Maps/Sets/Buffers but not functions/DOM — know the boundary before trusting deep copies."}
+{"instruction": "When do I use `structuredClone limits2`?", "input": "", "output": "Clones Dates/Maps/Sets/Buffers but not functions/DOM — know the boundary before trusting deep copies."}
+{"instruction": "Give a practical example of `structuredClone limits2`.", "input": "", "output": "Clones Dates/Maps/Sets/Buffers but not functions/DOM — know the boundary before trusting deep copies."}
+{"instruction": "What is `structuredClone limits2` for?", "input": "", "output": "Clones Dates/Maps/Sets/Buffers but not functions/DOM — know the boundary before trusting deep copies."}
+{"instruction": "Apakah fungsi `structuredClone limits2`?", "input": "", "output": "Clones Dates/Maps/Sets/Buffers but not functions/DOM — know the boundary before trusting deep copies."}
+{"instruction": "Terangkan `structuredClone limits2` secara ringkas.", "input": "", "output": "Clones Dates/Maps/Sets/Buffers but not functions/DOM — know the boundary before trusting deep copies."}
+{"instruction": "Bila perlu guna `structuredClone limits2`?", "input": "", "output": "Clones Dates/Maps/Sets/Buffers but not functions/DOM — know the boundary before trusting deep copies."}
+{"instruction": "Beri contoh penggunaan `structuredClone limits2`.", "input": "", "output": "Clones Dates/Maps/Sets/Buffers but not functions/DOM — know the boundary before trusting deep copies."}
+{"instruction": "`structuredClone limits2` untuk apa?", "input": "", "output": "Clones Dates/Maps/Sets/Buffers but not functions/DOM — know the boundary before trusting deep copies."}
+{"instruction": "How would you explain `structuredClone limits2` to a junior developer?", "input": "", "output": "Clones Dates/Maps/Sets/Buffers but not functions/DOM — know the boundary before trusting deep copies."}
+{"instruction": "Give a real-world scenario for `structuredClone limits2`.", "input": "", "output": "Clones Dates/Maps/Sets/Buffers but not functions/DOM — know the boundary before trusting deep copies."}
+{"instruction": "What problem does `structuredClone limits2` solve?", "input": "", "output": "Clones Dates/Maps/Sets/Buffers but not functions/DOM — know the boundary before trusting deep copies."}
+{"instruction": "Terangkan `structuredClone limits2` dalam satu minit.", "input": "", "output": "Clones Dates/Maps/Sets/Buffers but not functions/DOM — know the boundary before trusting deep copies."}
+{"instruction": "Apa yang perlu saya tahu tentang `structuredClone limits2`?", "input": "", "output": "Clones Dates/Maps/Sets/Buffers but not functions/DOM — know the boundary before trusting deep copies."}
+{"instruction": "Bagaimanakah `structuredClone limits2` berfungsi?", "input": "", "output": "Clones Dates/Maps/Sets/Buffers but not functions/DOM — know the boundary before trusting deep copies."}
+{"instruction": "Bilakah masa yang sesuai untuk `structuredClone limits2`?", "input": "", "output": "Clones Dates/Maps/Sets/Buffers but not functions/DOM — know the boundary before trusting deep copies."}
+{"instruction": "What does `Error stack trace` do?", "input": "", "output": "`new Error().stack` pinpoints throw sites; `cause` chains origins — log both, never bare messages."}
+{"instruction": "Explain `Error stack trace` briefly.", "input": "", "output": "`new Error().stack` pinpoints throw sites; `cause` chains origins — log both, never bare messages."}
+{"instruction": "When do I use `Error stack trace`?", "input": "", "output": "`new Error().stack` pinpoints throw sites; `cause` chains origins — log both, never bare messages."}
+{"instruction": "Give a practical example of `Error stack trace`.", "input": "", "output": "`new Error().stack` pinpoints throw sites; `cause` chains origins — log both, never bare messages."}
+{"instruction": "What is `Error stack trace` for?", "input": "", "output": "`new Error().stack` pinpoints throw sites; `cause` chains origins — log both, never bare messages."}
+{"instruction": "Apakah fungsi `Error stack trace`?", "input": "", "output": "`new Error().stack` pinpoints throw sites; `cause` chains origins — log both, never bare messages."}
+{"instruction": "Terangkan `Error stack trace` secara ringkas.", "input": "", "output": "`new Error().stack` pinpoints throw sites; `cause` chains origins — log both, never bare messages."}
+{"instruction": "Bila perlu guna `Error stack trace`?", "input": "", "output": "`new Error().stack` pinpoints throw sites; `cause` chains origins — log both, never bare messages."}
+{"instruction": "Beri contoh penggunaan `Error stack trace`.", "input": "", "output": "`new Error().stack` pinpoints throw sites; `cause` chains origins — log both, never bare messages."}
+{"instruction": "`Error stack trace` untuk apa?", "input": "", "output": "`new Error().stack` pinpoints throw sites; `cause` chains origins — log both, never bare messages."}
+{"instruction": "How would you explain `Error stack trace` to a junior developer?", "input": "", "output": "`new Error().stack` pinpoints throw sites; `cause` chains origins — log both, never bare messages."}
+{"instruction": "Give a real-world scenario for `Error stack trace`.", "input": "", "output": "`new Error().stack` pinpoints throw sites; `cause` chains origins — log both, never bare messages."}
+{"instruction": "What problem does `Error stack trace` solve?", "input": "", "output": "`new Error().stack` pinpoints throw sites; `cause` chains origins — log both, never bare messages."}
+{"instruction": "Terangkan `Error stack trace` dalam satu minit.", "input": "", "output": "`new Error().stack` pinpoints throw sites; `cause` chains origins — log both, never bare messages."}
+{"instruction": "Apa yang perlu saya tahu tentang `Error stack trace`?", "input": "", "output": "`new Error().stack` pinpoints throw sites; `cause` chains origins — log both, never bare messages."}
+{"instruction": "Bagaimanakah `Error stack trace` berfungsi?", "input": "", "output": "`new Error().stack` pinpoints throw sites; `cause` chains origins — log both, never bare messages."}
+{"instruction": "Bilakah masa yang sesuai untuk `Error stack trace`?", "input": "", "output": "`new Error().stack` pinpoints throw sites; `cause` chains origins — log both, never bare messages."}
+{"instruction": "What does `console.table time` do?", "input": "", "output": "`console.table(rows)` inspects arrays readably; `time/timeEnd` profiles blocks without profilers."}
+{"instruction": "Explain `console.table time` briefly.", "input": "", "output": "`console.table(rows)` inspects arrays readably; `time/timeEnd` profiles blocks without profilers."}
+{"instruction": "When do I use `console.table time`?", "input": "", "output": "`console.table(rows)` inspects arrays readably; `time/timeEnd` profiles blocks without profilers."}
+{"instruction": "Give a practical example of `console.table time`.", "input": "", "output": "`console.table(rows)` inspects arrays readably; `time/timeEnd` profiles blocks without profilers."}
+{"instruction": "What is `console.table time` for?", "input": "", "output": "`console.table(rows)` inspects arrays readably; `time/timeEnd` profiles blocks without profilers."}
+{"instruction": "Apakah fungsi `console.table time`?", "input": "", "output": "`console.table(rows)` inspects arrays readably; `time/timeEnd` profiles blocks without profilers."}
+{"instruction": "Terangkan `console.table time` secara ringkas.", "input": "", "output": "`console.table(rows)` inspects arrays readably; `time/timeEnd` profiles blocks without profilers."}
+{"instruction": "Bila perlu guna `console.table time`?", "input": "", "output": "`console.table(rows)` inspects arrays readably; `time/timeEnd` profiles blocks without profilers."}
+{"instruction": "Beri contoh penggunaan `console.table time`.", "input": "", "output": "`console.table(rows)` inspects arrays readably; `time/timeEnd` profiles blocks without profilers."}
+{"instruction": "`console.table time` untuk apa?", "input": "", "output": "`console.table(rows)` inspects arrays readably; `time/timeEnd` profiles blocks without profilers."}
+{"instruction": "How would you explain `console.table time` to a junior developer?", "input": "", "output": "`console.table(rows)` inspects arrays readably; `time/timeEnd` profiles blocks without profilers."}
+{"instruction": "Give a real-world scenario for `console.table time`.", "input": "", "output": "`console.table(rows)` inspects arrays readably; `time/timeEnd` profiles blocks without profilers."}
+{"instruction": "What problem does `console.table time` solve?", "input": "", "output": "`console.table(rows)` inspects arrays readably; `time/timeEnd` profiles blocks without profilers."}
+{"instruction": "Terangkan `console.table time` dalam satu minit.", "input": "", "output": "`console.table(rows)` inspects arrays readably; `time/timeEnd` profiles blocks without profilers."}
+{"instruction": "Apa yang perlu saya tahu tentang `console.table time`?", "input": "", "output": "`console.table(rows)` inspects arrays readably; `time/timeEnd` profiles blocks without profilers."}
+{"instruction": "Bagaimanakah `console.table time` berfungsi?", "input": "", "output": "`console.table(rows)` inspects arrays readably; `time/timeEnd` profiles blocks without profilers."}
+{"instruction": "Bilakah masa yang sesuai untuk `console.table time`?", "input": "", "output": "`console.table(rows)` inspects arrays readably; `time/timeEnd` profiles blocks without profilers."}
+{"instruction": "What does `URLSearchParams` do?", "input": "", "output": "`new URLSearchParams(location.search).get('q')` parses queries safely — hand-rolled splits break on encoding."}
+{"instruction": "Explain `URLSearchParams` briefly.", "input": "", "output": "`new URLSearchParams(location.search).get('q')` parses queries safely — hand-rolled splits break on encoding."}
+{"instruction": "When do I use `URLSearchParams`?", "input": "", "output": "`new URLSearchParams(location.search).get('q')` parses queries safely — hand-rolled splits break on encoding."}
+{"instruction": "Give a practical example of `URLSearchParams`.", "input": "", "output": "`new URLSearchParams(location.search).get('q')` parses queries safely — hand-rolled splits break on encoding."}
+{"instruction": "What is `URLSearchParams` for?", "input": "", "output": "`new URLSearchParams(location.search).get('q')` parses queries safely — hand-rolled splits break on encoding."}
+{"instruction": "Apakah fungsi `URLSearchParams`?", "input": "", "output": "`new URLSearchParams(location.search).get('q')` parses queries safely — hand-rolled splits break on encoding."}
+{"instruction": "Terangkan `URLSearchParams` secara ringkas.", "input": "", "output": "`new URLSearchParams(location.search).get('q')` parses queries safely — hand-rolled splits break on encoding."}
+{"instruction": "Bila perlu guna `URLSearchParams`?", "input": "", "output": "`new URLSearchParams(location.search).get('q')` parses queries safely — hand-rolled splits break on encoding."}
+{"instruction": "Beri contoh penggunaan `URLSearchParams`.", "input": "", "output": "`new URLSearchParams(location.search).get('q')` parses queries safely — hand-rolled splits break on encoding."}
+{"instruction": "`URLSearchParams` untuk apa?", "input": "", "output": "`new URLSearchParams(location.search).get('q')` parses queries safely — hand-rolled splits break on encoding."}
+{"instruction": "How would you explain `URLSearchParams` to a junior developer?", "input": "", "output": "`new URLSearchParams(location.search).get('q')` parses queries safely — hand-rolled splits break on encoding."}
+{"instruction": "Give a real-world scenario for `URLSearchParams`.", "input": "", "output": "`new URLSearchParams(location.search).get('q')` parses queries safely — hand-rolled splits break on encoding."}
+{"instruction": "What problem does `URLSearchParams` solve?", "input": "", "output": "`new URLSearchParams(location.search).get('q')` parses queries safely — hand-rolled splits break on encoding."}
+{"instruction": "Terangkan `URLSearchParams` dalam satu minit.", "input": "", "output": "`new URLSearchParams(location.search).get('q')` parses queries safely — hand-rolled splits break on encoding."}
+{"instruction": "Apa yang perlu saya tahu tentang `URLSearchParams`?", "input": "", "output": "`new URLSearchParams(location.search).get('q')` parses queries safely — hand-rolled splits break on encoding."}
+{"instruction": "Bagaimanakah `URLSearchParams` berfungsi?", "input": "", "output": "`new URLSearchParams(location.search).get('q')` parses queries safely — hand-rolled splits break on encoding."}
+{"instruction": "Bilakah masa yang sesuai untuk `URLSearchParams`?", "input": "", "output": "`new URLSearchParams(location.search).get('q')` parses queries safely — hand-rolled splits break on encoding."}
+{"instruction": "What does `history pushState` do?", "input": "", "output": "`history.pushState` navigates SPAs without reloads; `popstate` handles back-button coherence."}
+{"instruction": "Explain `history pushState` briefly.", "input": "", "output": "`history.pushState` navigates SPAs without reloads; `popstate` handles back-button coherence."}
+{"instruction": "When do I use `history pushState`?", "input": "", "output": "`history.pushState` navigates SPAs without reloads; `popstate` handles back-button coherence."}
+{"instruction": "Give a practical example of `history pushState`.", "input": "", "output": "`history.pushState` navigates SPAs without reloads; `popstate` handles back-button coherence."}
+{"instruction": "What is `history pushState` for?", "input": "", "output": "`history.pushState` navigates SPAs without reloads; `popstate` handles back-button coherence."}
+{"instruction": "Apakah fungsi `history pushState`?", "input": "", "output": "`history.pushState` navigates SPAs without reloads; `popstate` handles back-button coherence."}
+{"instruction": "Terangkan `history pushState` secara ringkas.", "input": "", "output": "`history.pushState` navigates SPAs without reloads; `popstate` handles back-button coherence."}
+{"instruction": "Bila perlu guna `history pushState`?", "input": "", "output": "`history.pushState` navigates SPAs without reloads; `popstate` handles back-button coherence."}
+{"instruction": "Beri contoh penggunaan `history pushState`.", "input": "", "output": "`history.pushState` navigates SPAs without reloads; `popstate` handles back-button coherence."}
+{"instruction": "`history pushState` untuk apa?", "input": "", "output": "`history.pushState` navigates SPAs without reloads; `popstate` handles back-button coherence."}
+{"instruction": "How would you explain `history pushState` to a junior developer?", "input": "", "output": "`history.pushState` navigates SPAs without reloads; `popstate` handles back-button coherence."}
+{"instruction": "Give a real-world scenario for `history pushState`.", "input": "", "output": "`history.pushState` navigates SPAs without reloads; `popstate` handles back-button coherence."}
+{"instruction": "What problem does `history pushState` solve?", "input": "", "output": "`history.pushState` navigates SPAs without reloads; `popstate` handles back-button coherence."}
+{"instruction": "Terangkan `history pushState` dalam satu minit.", "input": "", "output": "`history.pushState` navigates SPAs without reloads; `popstate` handles back-button coherence."}
+{"instruction": "Apa yang perlu saya tahu tentang `history pushState`?", "input": "", "output": "`history.pushState` navigates SPAs without reloads; `popstate` handles back-button coherence."}
+{"instruction": "Bagaimanakah `history pushState` berfungsi?", "input": "", "output": "`history.pushState` navigates SPAs without reloads; `popstate` handles back-button coherence."}
+{"instruction": "Bilakah masa yang sesuai untuk `history pushState`?", "input": "", "output": "`history.pushState` navigates SPAs without reloads; `popstate` handles back-button coherence."}
+{"instruction": "What does `navigator clipboard async` do?", "input": "", "output": "Async clipboard needs secure contexts + permissions; `execCommand` fallback for legacy embeds."}
+{"instruction": "Explain `navigator clipboard async` briefly.", "input": "", "output": "Async clipboard needs secure contexts + permissions; `execCommand` fallback for legacy embeds."}
+{"instruction": "When do I use `navigator clipboard async`?", "input": "", "output": "Async clipboard needs secure contexts + permissions; `execCommand` fallback for legacy embeds."}
+{"instruction": "Give a practical example of `navigator clipboard async`.", "input": "", "output": "Async clipboard needs secure contexts + permissions; `execCommand` fallback for legacy embeds."}
+{"instruction": "What is `navigator clipboard async` for?", "input": "", "output": "Async clipboard needs secure contexts + permissions; `execCommand` fallback for legacy embeds."}
+{"instruction": "Apakah fungsi `navigator clipboard async`?", "input": "", "output": "Async clipboard needs secure contexts + permissions; `execCommand` fallback for legacy embeds."}
+{"instruction": "Terangkan `navigator clipboard async` secara ringkas.", "input": "", "output": "Async clipboard needs secure contexts + permissions; `execCommand` fallback for legacy embeds."}
+{"instruction": "Bila perlu guna `navigator clipboard async`?", "input": "", "output": "Async clipboard needs secure contexts + permissions; `execCommand` fallback for legacy embeds."}
+{"instruction": "Beri contoh penggunaan `navigator clipboard async`.", "input": "", "output": "Async clipboard needs secure contexts + permissions; `execCommand` fallback for legacy embeds."}
+{"instruction": "`navigator clipboard async` untuk apa?", "input": "", "output": "Async clipboard needs secure contexts + permissions; `execCommand` fallback for legacy embeds."}
+{"instruction": "How would you explain `navigator clipboard async` to a junior developer?", "input": "", "output": "Async clipboard needs secure contexts + permissions; `execCommand` fallback for legacy embeds."}
+{"instruction": "Give a real-world scenario for `navigator clipboard async`.", "input": "", "output": "Async clipboard needs secure contexts + permissions; `execCommand` fallback for legacy embeds."}
+{"instruction": "What problem does `navigator clipboard async` solve?", "input": "", "output": "Async clipboard needs secure contexts + permissions; `execCommand` fallback for legacy embeds."}
+{"instruction": "Terangkan `navigator clipboard async` dalam satu minit.", "input": "", "output": "Async clipboard needs secure contexts + permissions; `execCommand` fallback for legacy embeds."}
+{"instruction": "Apa yang perlu saya tahu tentang `navigator clipboard async`?", "input": "", "output": "Async clipboard needs secure contexts + permissions; `execCommand` fallback for legacy embeds."}
+{"instruction": "Bagaimanakah `navigator clipboard async` berfungsi?", "input": "", "output": "Async clipboard needs secure contexts + permissions; `execCommand` fallback for legacy embeds."}
+{"instruction": "Bilakah masa yang sesuai untuk `navigator clipboard async`?", "input": "", "output": "Async clipboard needs secure contexts + permissions; `execCommand` fallback for legacy embeds."}
+{"instruction": "What does `WebSocket basics` do?", "input": "", "output": "`new WebSocket(url)` streams bidirectionally (`onmessage`, `send`, `close`); reconnect with backoff, heartbeat for liveness."}
+{"instruction": "Explain `WebSocket basics` briefly.", "input": "", "output": "`new WebSocket(url)` streams bidirectionally (`onmessage`, `send`, `close`); reconnect with backoff, heartbeat for liveness."}
+{"instruction": "When do I use `WebSocket basics`?", "input": "", "output": "`new WebSocket(url)` streams bidirectionally (`onmessage`, `send`, `close`); reconnect with backoff, heartbeat for liveness."}
+{"instruction": "Give a practical example of `WebSocket basics`.", "input": "", "output": "`new WebSocket(url)` streams bidirectionally (`onmessage`, `send`, `close`); reconnect with backoff, heartbeat for liveness."}
+{"instruction": "What is `WebSocket basics` for?", "input": "", "output": "`new WebSocket(url)` streams bidirectionally (`onmessage`, `send`, `close`); reconnect with backoff, heartbeat for liveness."}
+{"instruction": "Apakah fungsi `WebSocket basics`?", "input": "", "output": "`new WebSocket(url)` streams bidirectionally (`onmessage`, `send`, `close`); reconnect with backoff, heartbeat for liveness."}
+{"instruction": "Terangkan `WebSocket basics` secara ringkas.", "input": "", "output": "`new WebSocket(url)` streams bidirectionally (`onmessage`, `send`, `close`); reconnect with backoff, heartbeat for liveness."}
+{"instruction": "Bila perlu guna `WebSocket basics`?", "input": "", "output": "`new WebSocket(url)` streams bidirectionally (`onmessage`, `send`, `close`); reconnect with backoff, heartbeat for liveness."}
+{"instruction": "Beri contoh penggunaan `WebSocket basics`.", "input": "", "output": "`new WebSocket(url)` streams bidirectionally (`onmessage`, `send`, `close`); reconnect with backoff, heartbeat for liveness."}
+{"instruction": "`WebSocket basics` untuk apa?", "input": "", "output": "`new WebSocket(url)` streams bidirectionally (`onmessage`, `send`, `close`); reconnect with backoff, heartbeat for liveness."}
+{"instruction": "How would you explain `WebSocket basics` to a junior developer?", "input": "", "output": "`new WebSocket(url)` streams bidirectionally (`onmessage`, `send`, `close`); reconnect with backoff, heartbeat for liveness."}
+{"instruction": "Give a real-world scenario for `WebSocket basics`.", "input": "", "output": "`new WebSocket(url)` streams bidirectionally (`onmessage`, `send`, `close`); reconnect with backoff, heartbeat for liveness."}
+{"instruction": "What problem does `WebSocket basics` solve?", "input": "", "output": "`new WebSocket(url)` streams bidirectionally (`onmessage`, `send`, `close`); reconnect with backoff, heartbeat for liveness."}
+{"instruction": "Terangkan `WebSocket basics` dalam satu minit.", "input": "", "output": "`new WebSocket(url)` streams bidirectionally (`onmessage`, `send`, `close`); reconnect with backoff, heartbeat for liveness."}
+{"instruction": "Apa yang perlu saya tahu tentang `WebSocket basics`?", "input": "", "output": "`new WebSocket(url)` streams bidirectionally (`onmessage`, `send`, `close`); reconnect with backoff, heartbeat for liveness."}
+{"instruction": "Bagaimanakah `WebSocket basics` berfungsi?", "input": "", "output": "`new WebSocket(url)` streams bidirectionally (`onmessage`, `send`, `close`); reconnect with backoff, heartbeat for liveness."}
+{"instruction": "Bilakah masa yang sesuai untuk `WebSocket basics`?", "input": "", "output": "`new WebSocket(url)` streams bidirectionally (`onmessage`, `send`, `close`); reconnect with backoff, heartbeat for liveness."}
+{"instruction": "What does `EventSource SSE` do?", "input": "", "output": "`EventSource` streams server→client over HTTP (live feeds) with auto-reconnect; WebSockets when clients must talk back."}
+{"instruction": "Explain `EventSource SSE` briefly.", "input": "", "output": "`EventSource` streams server→client over HTTP (live feeds) with auto-reconnect; WebSockets when clients must talk back."}
+{"instruction": "When do I use `EventSource SSE`?", "input": "", "output": "`EventSource` streams server→client over HTTP (live feeds) with auto-reconnect; WebSockets when clients must talk back."}
+{"instruction": "Give a practical example of `EventSource SSE`.", "input": "", "output": "`EventSource` streams server→client over HTTP (live feeds) with auto-reconnect; WebSockets when clients must talk back."}
+{"instruction": "What is `EventSource SSE` for?", "input": "", "output": "`EventSource` streams server→client over HTTP (live feeds) with auto-reconnect; WebSockets when clients must talk back."}
+{"instruction": "Apakah fungsi `EventSource SSE`?", "input": "", "output": "`EventSource` streams server→client over HTTP (live feeds) with auto-reconnect; WebSockets when clients must talk back."}
+{"instruction": "Terangkan `EventSource SSE` secara ringkas.", "input": "", "output": "`EventSource` streams server→client over HTTP (live feeds) with auto-reconnect; WebSockets when clients must talk back."}
+{"instruction": "Bila perlu guna `EventSource SSE`?", "input": "", "output": "`EventSource` streams server→client over HTTP (live feeds) with auto-reconnect; WebSockets when clients must talk back."}
+{"instruction": "Beri contoh penggunaan `EventSource SSE`.", "input": "", "output": "`EventSource` streams server→client over HTTP (live feeds) with auto-reconnect; WebSockets when clients must talk back."}
+{"instruction": "`EventSource SSE` untuk apa?", "input": "", "output": "`EventSource` streams server→client over HTTP (live feeds) with auto-reconnect; WebSockets when clients must talk back."}
+{"instruction": "How would you explain `EventSource SSE` to a junior developer?", "input": "", "output": "`EventSource` streams server→client over HTTP (live feeds) with auto-reconnect; WebSockets when clients must talk back."}
+{"instruction": "Give a real-world scenario for `EventSource SSE`.", "input": "", "output": "`EventSource` streams server→client over HTTP (live feeds) with auto-reconnect; WebSockets when clients must talk back."}
+{"instruction": "What problem does `EventSource SSE` solve?", "input": "", "output": "`EventSource` streams server→client over HTTP (live feeds) with auto-reconnect; WebSockets when clients must talk back."}
+{"instruction": "Terangkan `EventSource SSE` dalam satu minit.", "input": "", "output": "`EventSource` streams server→client over HTTP (live feeds) with auto-reconnect; WebSockets when clients must talk back."}
+{"instruction": "Apa yang perlu saya tahu tentang `EventSource SSE`?", "input": "", "output": "`EventSource` streams server→client over HTTP (live feeds) with auto-reconnect; WebSockets when clients must talk back."}
+{"instruction": "Bagaimanakah `EventSource SSE` berfungsi?", "input": "", "output": "`EventSource` streams server→client over HTTP (live feeds) with auto-reconnect; WebSockets when clients must talk back."}
+{"instruction": "Bilakah masa yang sesuai untuk `EventSource SSE`?", "input": "", "output": "`EventSource` streams server→client over HTTP (live feeds) with auto-reconnect; WebSockets when clients must talk back."}

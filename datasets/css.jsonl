@@ -1142,3 +1142,241 @@
 {"instruction": "Apa yang perlu saya tahu tentang `subgrid tracks`?", "input": "", "output": "`grid-template-columns: subgrid` aligns nested grids to parent tracks; fallback: explicit matching templates for older engines."}
 {"instruction": "Bagaimanakah `subgrid tracks` berfungsi?", "input": "", "output": "`grid-template-columns: subgrid` aligns nested grids to parent tracks; fallback: explicit matching templates for older engines."}
 {"instruction": "Bilakah masa yang sesuai untuk `subgrid tracks`?", "input": "", "output": "`grid-template-columns: subgrid` aligns nested grids to parent tracks; fallback: explicit matching templates for older engines."}
+{"instruction": "What does `gap row column` do?", "input": "", "output": "`gap` sets both axes at once; `row-gap`/`column-gap` tune independently — replaces margin hacks on grid/flex children."}
+{"instruction": "Explain `gap row column` briefly.", "input": "", "output": "`gap` sets both axes at once; `row-gap`/`column-gap` tune independently — replaces margin hacks on grid/flex children."}
+{"instruction": "When do I use `gap row column`?", "input": "", "output": "`gap` sets both axes at once; `row-gap`/`column-gap` tune independently — replaces margin hacks on grid/flex children."}
+{"instruction": "Give a practical example of `gap row column`.", "input": "", "output": "`gap` sets both axes at once; `row-gap`/`column-gap` tune independently — replaces margin hacks on grid/flex children."}
+{"instruction": "What is `gap row column` for?", "input": "", "output": "`gap` sets both axes at once; `row-gap`/`column-gap` tune independently — replaces margin hacks on grid/flex children."}
+{"instruction": "Apakah fungsi `gap row column`?", "input": "", "output": "`gap` sets both axes at once; `row-gap`/`column-gap` tune independently — replaces margin hacks on grid/flex children."}
+{"instruction": "Terangkan `gap row column` secara ringkas.", "input": "", "output": "`gap` sets both axes at once; `row-gap`/`column-gap` tune independently — replaces margin hacks on grid/flex children."}
+{"instruction": "Bila perlu guna `gap row column`?", "input": "", "output": "`gap` sets both axes at once; `row-gap`/`column-gap` tune independently — replaces margin hacks on grid/flex children."}
+{"instruction": "Beri contoh penggunaan `gap row column`.", "input": "", "output": "`gap` sets both axes at once; `row-gap`/`column-gap` tune independently — replaces margin hacks on grid/flex children."}
+{"instruction": "`gap row column` untuk apa?", "input": "", "output": "`gap` sets both axes at once; `row-gap`/`column-gap` tune independently — replaces margin hacks on grid/flex children."}
+{"instruction": "How would you explain `gap row column` to a junior developer?", "input": "", "output": "`gap` sets both axes at once; `row-gap`/`column-gap` tune independently — replaces margin hacks on grid/flex children."}
+{"instruction": "Give a real-world scenario for `gap row column`.", "input": "", "output": "`gap` sets both axes at once; `row-gap`/`column-gap` tune independently — replaces margin hacks on grid/flex children."}
+{"instruction": "What problem does `gap row column` solve?", "input": "", "output": "`gap` sets both axes at once; `row-gap`/`column-gap` tune independently — replaces margin hacks on grid/flex children."}
+{"instruction": "Terangkan `gap row column` dalam satu minit.", "input": "", "output": "`gap` sets both axes at once; `row-gap`/`column-gap` tune independently — replaces margin hacks on grid/flex children."}
+{"instruction": "Apa yang perlu saya tahu tentang `gap row column`?", "input": "", "output": "`gap` sets both axes at once; `row-gap`/`column-gap` tune independently — replaces margin hacks on grid/flex children."}
+{"instruction": "Bagaimanakah `gap row column` berfungsi?", "input": "", "output": "`gap` sets both axes at once; `row-gap`/`column-gap` tune independently — replaces margin hacks on grid/flex children."}
+{"instruction": "Bilakah masa yang sesuai untuk `gap row column`?", "input": "", "output": "`gap` sets both axes at once; `row-gap`/`column-gap` tune independently — replaces margin hacks on grid/flex children."}
+{"instruction": "What does `place-self justify-self` do?", "input": "", "output": "Per-item overrides (`justify-self: end` pushes one card right) without wrapper divs or extra classes."}
+{"instruction": "Explain `place-self justify-self` briefly.", "input": "", "output": "Per-item overrides (`justify-self: end` pushes one card right) without wrapper divs or extra classes."}
+{"instruction": "When do I use `place-self justify-self`?", "input": "", "output": "Per-item overrides (`justify-self: end` pushes one card right) without wrapper divs or extra classes."}
+{"instruction": "Give a practical example of `place-self justify-self`.", "input": "", "output": "Per-item overrides (`justify-self: end` pushes one card right) without wrapper divs or extra classes."}
+{"instruction": "What is `place-self justify-self` for?", "input": "", "output": "Per-item overrides (`justify-self: end` pushes one card right) without wrapper divs or extra classes."}
+{"instruction": "Apakah fungsi `place-self justify-self`?", "input": "", "output": "Per-item overrides (`justify-self: end` pushes one card right) without wrapper divs or extra classes."}
+{"instruction": "Terangkan `place-self justify-self` secara ringkas.", "input": "", "output": "Per-item overrides (`justify-self: end` pushes one card right) without wrapper divs or extra classes."}
+{"instruction": "Bila perlu guna `place-self justify-self`?", "input": "", "output": "Per-item overrides (`justify-self: end` pushes one card right) without wrapper divs or extra classes."}
+{"instruction": "Beri contoh penggunaan `place-self justify-self`.", "input": "", "output": "Per-item overrides (`justify-self: end` pushes one card right) without wrapper divs or extra classes."}
+{"instruction": "`place-self justify-self` untuk apa?", "input": "", "output": "Per-item overrides (`justify-self: end` pushes one card right) without wrapper divs or extra classes."}
+{"instruction": "How would you explain `place-self justify-self` to a junior developer?", "input": "", "output": "Per-item overrides (`justify-self: end` pushes one card right) without wrapper divs or extra classes."}
+{"instruction": "Give a real-world scenario for `place-self justify-self`.", "input": "", "output": "Per-item overrides (`justify-self: end` pushes one card right) without wrapper divs or extra classes."}
+{"instruction": "What problem does `place-self justify-self` solve?", "input": "", "output": "Per-item overrides (`justify-self: end` pushes one card right) without wrapper divs or extra classes."}
+{"instruction": "Terangkan `place-self justify-self` dalam satu minit.", "input": "", "output": "Per-item overrides (`justify-self: end` pushes one card right) without wrapper divs or extra classes."}
+{"instruction": "Apa yang perlu saya tahu tentang `place-self justify-self`?", "input": "", "output": "Per-item overrides (`justify-self: end` pushes one card right) without wrapper divs or extra classes."}
+{"instruction": "Bagaimanakah `place-self justify-self` berfungsi?", "input": "", "output": "Per-item overrides (`justify-self: end` pushes one card right) without wrapper divs or extra classes."}
+{"instruction": "Bilakah masa yang sesuai untuk `place-self justify-self`?", "input": "", "output": "Per-item overrides (`justify-self: end` pushes one card right) without wrapper divs or extra classes."}
+{"instruction": "What does `align-content` do?", "input": "", "output": "`align-content` distributes whole track groups (multi-row grids); single-row grids need `align-items` instead — common mixup."}
+{"instruction": "Explain `align-content` briefly.", "input": "", "output": "`align-content` distributes whole track groups (multi-row grids); single-row grids need `align-items` instead — common mixup."}
+{"instruction": "When do I use `align-content`?", "input": "", "output": "`align-content` distributes whole track groups (multi-row grids); single-row grids need `align-items` instead — common mixup."}
+{"instruction": "Give a practical example of `align-content`.", "input": "", "output": "`align-content` distributes whole track groups (multi-row grids); single-row grids need `align-items` instead — common mixup."}
+{"instruction": "What is `align-content` for?", "input": "", "output": "`align-content` distributes whole track groups (multi-row grids); single-row grids need `align-items` instead — common mixup."}
+{"instruction": "Apakah fungsi `align-content`?", "input": "", "output": "`align-content` distributes whole track groups (multi-row grids); single-row grids need `align-items` instead — common mixup."}
+{"instruction": "Terangkan `align-content` secara ringkas.", "input": "", "output": "`align-content` distributes whole track groups (multi-row grids); single-row grids need `align-items` instead — common mixup."}
+{"instruction": "Bila perlu guna `align-content`?", "input": "", "output": "`align-content` distributes whole track groups (multi-row grids); single-row grids need `align-items` instead — common mixup."}
+{"instruction": "Beri contoh penggunaan `align-content`.", "input": "", "output": "`align-content` distributes whole track groups (multi-row grids); single-row grids need `align-items` instead — common mixup."}
+{"instruction": "`align-content` untuk apa?", "input": "", "output": "`align-content` distributes whole track groups (multi-row grids); single-row grids need `align-items` instead — common mixup."}
+{"instruction": "How would you explain `align-content` to a junior developer?", "input": "", "output": "`align-content` distributes whole track groups (multi-row grids); single-row grids need `align-items` instead — common mixup."}
+{"instruction": "Give a real-world scenario for `align-content`.", "input": "", "output": "`align-content` distributes whole track groups (multi-row grids); single-row grids need `align-items` instead — common mixup."}
+{"instruction": "What problem does `align-content` solve?", "input": "", "output": "`align-content` distributes whole track groups (multi-row grids); single-row grids need `align-items` instead — common mixup."}
+{"instruction": "Terangkan `align-content` dalam satu minit.", "input": "", "output": "`align-content` distributes whole track groups (multi-row grids); single-row grids need `align-items` instead — common mixup."}
+{"instruction": "Apa yang perlu saya tahu tentang `align-content`?", "input": "", "output": "`align-content` distributes whole track groups (multi-row grids); single-row grids need `align-items` instead — common mixup."}
+{"instruction": "Bagaimanakah `align-content` berfungsi?", "input": "", "output": "`align-content` distributes whole track groups (multi-row grids); single-row grids need `align-items` instead — common mixup."}
+{"instruction": "Bilakah masa yang sesuai untuk `align-content`?", "input": "", "output": "`align-content` distributes whole track groups (multi-row grids); single-row grids need `align-items` instead — common mixup."}
+{"instruction": "What does `grid-auto-columns` do?", "input": "", "output": "`grid-auto-columns: minmax(0, 1fr)` sizes implicit tracks sanely; default `auto` blows out on long content."}
+{"instruction": "Explain `grid-auto-columns` briefly.", "input": "", "output": "`grid-auto-columns: minmax(0, 1fr)` sizes implicit tracks sanely; default `auto` blows out on long content."}
+{"instruction": "When do I use `grid-auto-columns`?", "input": "", "output": "`grid-auto-columns: minmax(0, 1fr)` sizes implicit tracks sanely; default `auto` blows out on long content."}
+{"instruction": "Give a practical example of `grid-auto-columns`.", "input": "", "output": "`grid-auto-columns: minmax(0, 1fr)` sizes implicit tracks sanely; default `auto` blows out on long content."}
+{"instruction": "What is `grid-auto-columns` for?", "input": "", "output": "`grid-auto-columns: minmax(0, 1fr)` sizes implicit tracks sanely; default `auto` blows out on long content."}
+{"instruction": "Apakah fungsi `grid-auto-columns`?", "input": "", "output": "`grid-auto-columns: minmax(0, 1fr)` sizes implicit tracks sanely; default `auto` blows out on long content."}
+{"instruction": "Terangkan `grid-auto-columns` secara ringkas.", "input": "", "output": "`grid-auto-columns: minmax(0, 1fr)` sizes implicit tracks sanely; default `auto` blows out on long content."}
+{"instruction": "Bila perlu guna `grid-auto-columns`?", "input": "", "output": "`grid-auto-columns: minmax(0, 1fr)` sizes implicit tracks sanely; default `auto` blows out on long content."}
+{"instruction": "Beri contoh penggunaan `grid-auto-columns`.", "input": "", "output": "`grid-auto-columns: minmax(0, 1fr)` sizes implicit tracks sanely; default `auto` blows out on long content."}
+{"instruction": "`grid-auto-columns` untuk apa?", "input": "", "output": "`grid-auto-columns: minmax(0, 1fr)` sizes implicit tracks sanely; default `auto` blows out on long content."}
+{"instruction": "How would you explain `grid-auto-columns` to a junior developer?", "input": "", "output": "`grid-auto-columns: minmax(0, 1fr)` sizes implicit tracks sanely; default `auto` blows out on long content."}
+{"instruction": "Give a real-world scenario for `grid-auto-columns`.", "input": "", "output": "`grid-auto-columns: minmax(0, 1fr)` sizes implicit tracks sanely; default `auto` blows out on long content."}
+{"instruction": "What problem does `grid-auto-columns` solve?", "input": "", "output": "`grid-auto-columns: minmax(0, 1fr)` sizes implicit tracks sanely; default `auto` blows out on long content."}
+{"instruction": "Terangkan `grid-auto-columns` dalam satu minit.", "input": "", "output": "`grid-auto-columns: minmax(0, 1fr)` sizes implicit tracks sanely; default `auto` blows out on long content."}
+{"instruction": "Apa yang perlu saya tahu tentang `grid-auto-columns`?", "input": "", "output": "`grid-auto-columns: minmax(0, 1fr)` sizes implicit tracks sanely; default `auto` blows out on long content."}
+{"instruction": "Bagaimanakah `grid-auto-columns` berfungsi?", "input": "", "output": "`grid-auto-columns: minmax(0, 1fr)` sizes implicit tracks sanely; default `auto` blows out on long content."}
+{"instruction": "Bilakah masa yang sesuai untuk `grid-auto-columns`?", "input": "", "output": "`grid-auto-columns: minmax(0, 1fr)` sizes implicit tracks sanely; default `auto` blows out on long content."}
+{"instruction": "What does `minmax() floors` do?", "input": "", "output": "`minmax(200px, 1fr)` guarantees minimums while sharing leftovers — responsive without breakpoints for many layouts."}
+{"instruction": "Explain `minmax() floors` briefly.", "input": "", "output": "`minmax(200px, 1fr)` guarantees minimums while sharing leftovers — responsive without breakpoints for many layouts."}
+{"instruction": "When do I use `minmax() floors`?", "input": "", "output": "`minmax(200px, 1fr)` guarantees minimums while sharing leftovers — responsive without breakpoints for many layouts."}
+{"instruction": "Give a practical example of `minmax() floors`.", "input": "", "output": "`minmax(200px, 1fr)` guarantees minimums while sharing leftovers — responsive without breakpoints for many layouts."}
+{"instruction": "What is `minmax() floors` for?", "input": "", "output": "`minmax(200px, 1fr)` guarantees minimums while sharing leftovers — responsive without breakpoints for many layouts."}
+{"instruction": "Apakah fungsi `minmax() floors`?", "input": "", "output": "`minmax(200px, 1fr)` guarantees minimums while sharing leftovers — responsive without breakpoints for many layouts."}
+{"instruction": "Terangkan `minmax() floors` secara ringkas.", "input": "", "output": "`minmax(200px, 1fr)` guarantees minimums while sharing leftovers — responsive without breakpoints for many layouts."}
+{"instruction": "Bila perlu guna `minmax() floors`?", "input": "", "output": "`minmax(200px, 1fr)` guarantees minimums while sharing leftovers — responsive without breakpoints for many layouts."}
+{"instruction": "Beri contoh penggunaan `minmax() floors`.", "input": "", "output": "`minmax(200px, 1fr)` guarantees minimums while sharing leftovers — responsive without breakpoints for many layouts."}
+{"instruction": "`minmax() floors` untuk apa?", "input": "", "output": "`minmax(200px, 1fr)` guarantees minimums while sharing leftovers — responsive without breakpoints for many layouts."}
+{"instruction": "How would you explain `minmax() floors` to a junior developer?", "input": "", "output": "`minmax(200px, 1fr)` guarantees minimums while sharing leftovers — responsive without breakpoints for many layouts."}
+{"instruction": "Give a real-world scenario for `minmax() floors`.", "input": "", "output": "`minmax(200px, 1fr)` guarantees minimums while sharing leftovers — responsive without breakpoints for many layouts."}
+{"instruction": "What problem does `minmax() floors` solve?", "input": "", "output": "`minmax(200px, 1fr)` guarantees minimums while sharing leftovers — responsive without breakpoints for many layouts."}
+{"instruction": "Terangkan `minmax() floors` dalam satu minit.", "input": "", "output": "`minmax(200px, 1fr)` guarantees minimums while sharing leftovers — responsive without breakpoints for many layouts."}
+{"instruction": "Apa yang perlu saya tahu tentang `minmax() floors`?", "input": "", "output": "`minmax(200px, 1fr)` guarantees minimums while sharing leftovers — responsive without breakpoints for many layouts."}
+{"instruction": "Bagaimanakah `minmax() floors` berfungsi?", "input": "", "output": "`minmax(200px, 1fr)` guarantees minimums while sharing leftovers — responsive without breakpoints for many layouts."}
+{"instruction": "Bilakah masa yang sesuai untuk `minmax() floors`?", "input": "", "output": "`minmax(200px, 1fr)` guarantees minimums while sharing leftovers — responsive without breakpoints for many layouts."}
+{"instruction": "What does `fit-content()` do?", "input": "", "output": "`width: fit-content` shrink-wraps to content (buttons, badges); `max-content` refuses wrapping entirely."}
+{"instruction": "Explain `fit-content()` briefly.", "input": "", "output": "`width: fit-content` shrink-wraps to content (buttons, badges); `max-content` refuses wrapping entirely."}
+{"instruction": "When do I use `fit-content()`?", "input": "", "output": "`width: fit-content` shrink-wraps to content (buttons, badges); `max-content` refuses wrapping entirely."}
+{"instruction": "Give a practical example of `fit-content()`.", "input": "", "output": "`width: fit-content` shrink-wraps to content (buttons, badges); `max-content` refuses wrapping entirely."}
+{"instruction": "What is `fit-content()` for?", "input": "", "output": "`width: fit-content` shrink-wraps to content (buttons, badges); `max-content` refuses wrapping entirely."}
+{"instruction": "Apakah fungsi `fit-content()`?", "input": "", "output": "`width: fit-content` shrink-wraps to content (buttons, badges); `max-content` refuses wrapping entirely."}
+{"instruction": "Terangkan `fit-content()` secara ringkas.", "input": "", "output": "`width: fit-content` shrink-wraps to content (buttons, badges); `max-content` refuses wrapping entirely."}
+{"instruction": "Bila perlu guna `fit-content()`?", "input": "", "output": "`width: fit-content` shrink-wraps to content (buttons, badges); `max-content` refuses wrapping entirely."}
+{"instruction": "Beri contoh penggunaan `fit-content()`.", "input": "", "output": "`width: fit-content` shrink-wraps to content (buttons, badges); `max-content` refuses wrapping entirely."}
+{"instruction": "`fit-content()` untuk apa?", "input": "", "output": "`width: fit-content` shrink-wraps to content (buttons, badges); `max-content` refuses wrapping entirely."}
+{"instruction": "How would you explain `fit-content()` to a junior developer?", "input": "", "output": "`width: fit-content` shrink-wraps to content (buttons, badges); `max-content` refuses wrapping entirely."}
+{"instruction": "Give a real-world scenario for `fit-content()`.", "input": "", "output": "`width: fit-content` shrink-wraps to content (buttons, badges); `max-content` refuses wrapping entirely."}
+{"instruction": "What problem does `fit-content()` solve?", "input": "", "output": "`width: fit-content` shrink-wraps to content (buttons, badges); `max-content` refuses wrapping entirely."}
+{"instruction": "Terangkan `fit-content()` dalam satu minit.", "input": "", "output": "`width: fit-content` shrink-wraps to content (buttons, badges); `max-content` refuses wrapping entirely."}
+{"instruction": "Apa yang perlu saya tahu tentang `fit-content()`?", "input": "", "output": "`width: fit-content` shrink-wraps to content (buttons, badges); `max-content` refuses wrapping entirely."}
+{"instruction": "Bagaimanakah `fit-content()` berfungsi?", "input": "", "output": "`width: fit-content` shrink-wraps to content (buttons, badges); `max-content` refuses wrapping entirely."}
+{"instruction": "Bilakah masa yang sesuai untuk `fit-content()`?", "input": "", "output": "`width: fit-content` shrink-wraps to content (buttons, badges); `max-content` refuses wrapping entirely."}
+{"instruction": "What does `repeat() notation` do?", "input": "", "output": "`repeat(12, 1fr)` and `repeat(auto-fill, ...)` compress declarations; counted repeats beat pasted tracks."}
+{"instruction": "Explain `repeat() notation` briefly.", "input": "", "output": "`repeat(12, 1fr)` and `repeat(auto-fill, ...)` compress declarations; counted repeats beat pasted tracks."}
+{"instruction": "When do I use `repeat() notation`?", "input": "", "output": "`repeat(12, 1fr)` and `repeat(auto-fill, ...)` compress declarations; counted repeats beat pasted tracks."}
+{"instruction": "Give a practical example of `repeat() notation`.", "input": "", "output": "`repeat(12, 1fr)` and `repeat(auto-fill, ...)` compress declarations; counted repeats beat pasted tracks."}
+{"instruction": "What is `repeat() notation` for?", "input": "", "output": "`repeat(12, 1fr)` and `repeat(auto-fill, ...)` compress declarations; counted repeats beat pasted tracks."}
+{"instruction": "Apakah fungsi `repeat() notation`?", "input": "", "output": "`repeat(12, 1fr)` and `repeat(auto-fill, ...)` compress declarations; counted repeats beat pasted tracks."}
+{"instruction": "Terangkan `repeat() notation` secara ringkas.", "input": "", "output": "`repeat(12, 1fr)` and `repeat(auto-fill, ...)` compress declarations; counted repeats beat pasted tracks."}
+{"instruction": "Bila perlu guna `repeat() notation`?", "input": "", "output": "`repeat(12, 1fr)` and `repeat(auto-fill, ...)` compress declarations; counted repeats beat pasted tracks."}
+{"instruction": "Beri contoh penggunaan `repeat() notation`.", "input": "", "output": "`repeat(12, 1fr)` and `repeat(auto-fill, ...)` compress declarations; counted repeats beat pasted tracks."}
+{"instruction": "`repeat() notation` untuk apa?", "input": "", "output": "`repeat(12, 1fr)` and `repeat(auto-fill, ...)` compress declarations; counted repeats beat pasted tracks."}
+{"instruction": "How would you explain `repeat() notation` to a junior developer?", "input": "", "output": "`repeat(12, 1fr)` and `repeat(auto-fill, ...)` compress declarations; counted repeats beat pasted tracks."}
+{"instruction": "Give a real-world scenario for `repeat() notation`.", "input": "", "output": "`repeat(12, 1fr)` and `repeat(auto-fill, ...)` compress declarations; counted repeats beat pasted tracks."}
+{"instruction": "What problem does `repeat() notation` solve?", "input": "", "output": "`repeat(12, 1fr)` and `repeat(auto-fill, ...)` compress declarations; counted repeats beat pasted tracks."}
+{"instruction": "Terangkan `repeat() notation` dalam satu minit.", "input": "", "output": "`repeat(12, 1fr)` and `repeat(auto-fill, ...)` compress declarations; counted repeats beat pasted tracks."}
+{"instruction": "Apa yang perlu saya tahu tentang `repeat() notation`?", "input": "", "output": "`repeat(12, 1fr)` and `repeat(auto-fill, ...)` compress declarations; counted repeats beat pasted tracks."}
+{"instruction": "Bagaimanakah `repeat() notation` berfungsi?", "input": "", "output": "`repeat(12, 1fr)` and `repeat(auto-fill, ...)` compress declarations; counted repeats beat pasted tracks."}
+{"instruction": "Bilakah masa yang sesuai untuk `repeat() notation`?", "input": "", "output": "`repeat(12, 1fr)` and `repeat(auto-fill, ...)` compress declarations; counted repeats beat pasted tracks."}
+{"instruction": "What does `grid-template-areas` do?", "input": "", "output": "Named areas (`'head head' 'nav main'`) draw layouts as ASCII art — readable, reorderable, self-documenting."}
+{"instruction": "Explain `grid-template-areas` briefly.", "input": "", "output": "Named areas (`'head head' 'nav main'`) draw layouts as ASCII art — readable, reorderable, self-documenting."}
+{"instruction": "When do I use `grid-template-areas`?", "input": "", "output": "Named areas (`'head head' 'nav main'`) draw layouts as ASCII art — readable, reorderable, self-documenting."}
+{"instruction": "Give a practical example of `grid-template-areas`.", "input": "", "output": "Named areas (`'head head' 'nav main'`) draw layouts as ASCII art — readable, reorderable, self-documenting."}
+{"instruction": "What is `grid-template-areas` for?", "input": "", "output": "Named areas (`'head head' 'nav main'`) draw layouts as ASCII art — readable, reorderable, self-documenting."}
+{"instruction": "Apakah fungsi `grid-template-areas`?", "input": "", "output": "Named areas (`'head head' 'nav main'`) draw layouts as ASCII art — readable, reorderable, self-documenting."}
+{"instruction": "Terangkan `grid-template-areas` secara ringkas.", "input": "", "output": "Named areas (`'head head' 'nav main'`) draw layouts as ASCII art — readable, reorderable, self-documenting."}
+{"instruction": "Bila perlu guna `grid-template-areas`?", "input": "", "output": "Named areas (`'head head' 'nav main'`) draw layouts as ASCII art — readable, reorderable, self-documenting."}
+{"instruction": "Beri contoh penggunaan `grid-template-areas`.", "input": "", "output": "Named areas (`'head head' 'nav main'`) draw layouts as ASCII art — readable, reorderable, self-documenting."}
+{"instruction": "`grid-template-areas` untuk apa?", "input": "", "output": "Named areas (`'head head' 'nav main'`) draw layouts as ASCII art — readable, reorderable, self-documenting."}
+{"instruction": "How would you explain `grid-template-areas` to a junior developer?", "input": "", "output": "Named areas (`'head head' 'nav main'`) draw layouts as ASCII art — readable, reorderable, self-documenting."}
+{"instruction": "Give a real-world scenario for `grid-template-areas`.", "input": "", "output": "Named areas (`'head head' 'nav main'`) draw layouts as ASCII art — readable, reorderable, self-documenting."}
+{"instruction": "What problem does `grid-template-areas` solve?", "input": "", "output": "Named areas (`'head head' 'nav main'`) draw layouts as ASCII art — readable, reorderable, self-documenting."}
+{"instruction": "Terangkan `grid-template-areas` dalam satu minit.", "input": "", "output": "Named areas (`'head head' 'nav main'`) draw layouts as ASCII art — readable, reorderable, self-documenting."}
+{"instruction": "Apa yang perlu saya tahu tentang `grid-template-areas`?", "input": "", "output": "Named areas (`'head head' 'nav main'`) draw layouts as ASCII art — readable, reorderable, self-documenting."}
+{"instruction": "Bagaimanakah `grid-template-areas` berfungsi?", "input": "", "output": "Named areas (`'head head' 'nav main'`) draw layouts as ASCII art — readable, reorderable, self-documenting."}
+{"instruction": "Bilakah masa yang sesuai untuk `grid-template-areas`?", "input": "", "output": "Named areas (`'head head' 'nav main'`) draw layouts as ASCII art — readable, reorderable, self-documenting."}
+{"instruction": "What does `order property` do?", "input": "", "output": "`order` re-sequences visually (DOM/AT order unchanged — use honestly, never to fake logical order)."}
+{"instruction": "Explain `order property` briefly.", "input": "", "output": "`order` re-sequences visually (DOM/AT order unchanged — use honestly, never to fake logical order)."}
+{"instruction": "When do I use `order property`?", "input": "", "output": "`order` re-sequences visually (DOM/AT order unchanged — use honestly, never to fake logical order)."}
+{"instruction": "Give a practical example of `order property`.", "input": "", "output": "`order` re-sequences visually (DOM/AT order unchanged — use honestly, never to fake logical order)."}
+{"instruction": "What is `order property` for?", "input": "", "output": "`order` re-sequences visually (DOM/AT order unchanged — use honestly, never to fake logical order)."}
+{"instruction": "Apakah fungsi `order property`?", "input": "", "output": "`order` re-sequences visually (DOM/AT order unchanged — use honestly, never to fake logical order)."}
+{"instruction": "Terangkan `order property` secara ringkas.", "input": "", "output": "`order` re-sequences visually (DOM/AT order unchanged — use honestly, never to fake logical order)."}
+{"instruction": "Bila perlu guna `order property`?", "input": "", "output": "`order` re-sequences visually (DOM/AT order unchanged — use honestly, never to fake logical order)."}
+{"instruction": "Beri contoh penggunaan `order property`.", "input": "", "output": "`order` re-sequences visually (DOM/AT order unchanged — use honestly, never to fake logical order)."}
+{"instruction": "`order property` untuk apa?", "input": "", "output": "`order` re-sequences visually (DOM/AT order unchanged — use honestly, never to fake logical order)."}
+{"instruction": "How would you explain `order property` to a junior developer?", "input": "", "output": "`order` re-sequences visually (DOM/AT order unchanged — use honestly, never to fake logical order)."}
+{"instruction": "Give a real-world scenario for `order property`.", "input": "", "output": "`order` re-sequences visually (DOM/AT order unchanged — use honestly, never to fake logical order)."}
+{"instruction": "What problem does `order property` solve?", "input": "", "output": "`order` re-sequences visually (DOM/AT order unchanged — use honestly, never to fake logical order)."}
+{"instruction": "Terangkan `order property` dalam satu minit.", "input": "", "output": "`order` re-sequences visually (DOM/AT order unchanged — use honestly, never to fake logical order)."}
+{"instruction": "Apa yang perlu saya tahu tentang `order property`?", "input": "", "output": "`order` re-sequences visually (DOM/AT order unchanged — use honestly, never to fake logical order)."}
+{"instruction": "Bagaimanakah `order property` berfungsi?", "input": "", "output": "`order` re-sequences visually (DOM/AT order unchanged — use honestly, never to fake logical order)."}
+{"instruction": "Bilakah masa yang sesuai untuk `order property`?", "input": "", "output": "`order` re-sequences visually (DOM/AT order unchanged — use honestly, never to fake logical order)."}
+{"instruction": "What does `z-index grid items` do?", "input": "", "output": "Grid items paint above backgrounds by default; explicit `z-index` only for overlaps — most grids need none."}
+{"instruction": "Explain `z-index grid items` briefly.", "input": "", "output": "Grid items paint above backgrounds by default; explicit `z-index` only for overlaps — most grids need none."}
+{"instruction": "When do I use `z-index grid items`?", "input": "", "output": "Grid items paint above backgrounds by default; explicit `z-index` only for overlaps — most grids need none."}
+{"instruction": "Give a practical example of `z-index grid items`.", "input": "", "output": "Grid items paint above backgrounds by default; explicit `z-index` only for overlaps — most grids need none."}
+{"instruction": "What is `z-index grid items` for?", "input": "", "output": "Grid items paint above backgrounds by default; explicit `z-index` only for overlaps — most grids need none."}
+{"instruction": "Apakah fungsi `z-index grid items`?", "input": "", "output": "Grid items paint above backgrounds by default; explicit `z-index` only for overlaps — most grids need none."}
+{"instruction": "Terangkan `z-index grid items` secara ringkas.", "input": "", "output": "Grid items paint above backgrounds by default; explicit `z-index` only for overlaps — most grids need none."}
+{"instruction": "Bila perlu guna `z-index grid items`?", "input": "", "output": "Grid items paint above backgrounds by default; explicit `z-index` only for overlaps — most grids need none."}
+{"instruction": "Beri contoh penggunaan `z-index grid items`.", "input": "", "output": "Grid items paint above backgrounds by default; explicit `z-index` only for overlaps — most grids need none."}
+{"instruction": "`z-index grid items` untuk apa?", "input": "", "output": "Grid items paint above backgrounds by default; explicit `z-index` only for overlaps — most grids need none."}
+{"instruction": "How would you explain `z-index grid items` to a junior developer?", "input": "", "output": "Grid items paint above backgrounds by default; explicit `z-index` only for overlaps — most grids need none."}
+{"instruction": "Give a real-world scenario for `z-index grid items`.", "input": "", "output": "Grid items paint above backgrounds by default; explicit `z-index` only for overlaps — most grids need none."}
+{"instruction": "What problem does `z-index grid items` solve?", "input": "", "output": "Grid items paint above backgrounds by default; explicit `z-index` only for overlaps — most grids need none."}
+{"instruction": "Terangkan `z-index grid items` dalam satu minit.", "input": "", "output": "Grid items paint above backgrounds by default; explicit `z-index` only for overlaps — most grids need none."}
+{"instruction": "Apa yang perlu saya tahu tentang `z-index grid items`?", "input": "", "output": "Grid items paint above backgrounds by default; explicit `z-index` only for overlaps — most grids need none."}
+{"instruction": "Bagaimanakah `z-index grid items` berfungsi?", "input": "", "output": "Grid items paint above backgrounds by default; explicit `z-index` only for overlaps — most grids need none."}
+{"instruction": "Bilakah masa yang sesuai untuk `z-index grid items`?", "input": "", "output": "Grid items paint above backgrounds by default; explicit `z-index` only for overlaps — most grids need none."}
+{"instruction": "What does `aspect-ratio media` do?", "input": "", "output": "`aspect-ratio: 16/9` on iframes/videos kills layout shift; width 100% + ratio replaces padding hacks."}
+{"instruction": "Explain `aspect-ratio media` briefly.", "input": "", "output": "`aspect-ratio: 16/9` on iframes/videos kills layout shift; width 100% + ratio replaces padding hacks."}
+{"instruction": "When do I use `aspect-ratio media`?", "input": "", "output": "`aspect-ratio: 16/9` on iframes/videos kills layout shift; width 100% + ratio replaces padding hacks."}
+{"instruction": "Give a practical example of `aspect-ratio media`.", "input": "", "output": "`aspect-ratio: 16/9` on iframes/videos kills layout shift; width 100% + ratio replaces padding hacks."}
+{"instruction": "What is `aspect-ratio media` for?", "input": "", "output": "`aspect-ratio: 16/9` on iframes/videos kills layout shift; width 100% + ratio replaces padding hacks."}
+{"instruction": "Apakah fungsi `aspect-ratio media`?", "input": "", "output": "`aspect-ratio: 16/9` on iframes/videos kills layout shift; width 100% + ratio replaces padding hacks."}
+{"instruction": "Terangkan `aspect-ratio media` secara ringkas.", "input": "", "output": "`aspect-ratio: 16/9` on iframes/videos kills layout shift; width 100% + ratio replaces padding hacks."}
+{"instruction": "Bila perlu guna `aspect-ratio media`?", "input": "", "output": "`aspect-ratio: 16/9` on iframes/videos kills layout shift; width 100% + ratio replaces padding hacks."}
+{"instruction": "Beri contoh penggunaan `aspect-ratio media`.", "input": "", "output": "`aspect-ratio: 16/9` on iframes/videos kills layout shift; width 100% + ratio replaces padding hacks."}
+{"instruction": "`aspect-ratio media` untuk apa?", "input": "", "output": "`aspect-ratio: 16/9` on iframes/videos kills layout shift; width 100% + ratio replaces padding hacks."}
+{"instruction": "How would you explain `aspect-ratio media` to a junior developer?", "input": "", "output": "`aspect-ratio: 16/9` on iframes/videos kills layout shift; width 100% + ratio replaces padding hacks."}
+{"instruction": "Give a real-world scenario for `aspect-ratio media`.", "input": "", "output": "`aspect-ratio: 16/9` on iframes/videos kills layout shift; width 100% + ratio replaces padding hacks."}
+{"instruction": "What problem does `aspect-ratio media` solve?", "input": "", "output": "`aspect-ratio: 16/9` on iframes/videos kills layout shift; width 100% + ratio replaces padding hacks."}
+{"instruction": "Terangkan `aspect-ratio media` dalam satu minit.", "input": "", "output": "`aspect-ratio: 16/9` on iframes/videos kills layout shift; width 100% + ratio replaces padding hacks."}
+{"instruction": "Apa yang perlu saya tahu tentang `aspect-ratio media`?", "input": "", "output": "`aspect-ratio: 16/9` on iframes/videos kills layout shift; width 100% + ratio replaces padding hacks."}
+{"instruction": "Bagaimanakah `aspect-ratio media` berfungsi?", "input": "", "output": "`aspect-ratio: 16/9` on iframes/videos kills layout shift; width 100% + ratio replaces padding hacks."}
+{"instruction": "Bilakah masa yang sesuai untuk `aspect-ratio media`?", "input": "", "output": "`aspect-ratio: 16/9` on iframes/videos kills layout shift; width 100% + ratio replaces padding hacks."}
+{"instruction": "What does `object-fit cover` do?", "input": "", "output": "`object-fit: cover` crops media to frames (avatars, heroes); `object-position` steers the crop focus."}
+{"instruction": "Explain `object-fit cover` briefly.", "input": "", "output": "`object-fit: cover` crops media to frames (avatars, heroes); `object-position` steers the crop focus."}
+{"instruction": "When do I use `object-fit cover`?", "input": "", "output": "`object-fit: cover` crops media to frames (avatars, heroes); `object-position` steers the crop focus."}
+{"instruction": "Give a practical example of `object-fit cover`.", "input": "", "output": "`object-fit: cover` crops media to frames (avatars, heroes); `object-position` steers the crop focus."}
+{"instruction": "What is `object-fit cover` for?", "input": "", "output": "`object-fit: cover` crops media to frames (avatars, heroes); `object-position` steers the crop focus."}
+{"instruction": "Apakah fungsi `object-fit cover`?", "input": "", "output": "`object-fit: cover` crops media to frames (avatars, heroes); `object-position` steers the crop focus."}
+{"instruction": "Terangkan `object-fit cover` secara ringkas.", "input": "", "output": "`object-fit: cover` crops media to frames (avatars, heroes); `object-position` steers the crop focus."}
+{"instruction": "Bila perlu guna `object-fit cover`?", "input": "", "output": "`object-fit: cover` crops media to frames (avatars, heroes); `object-position` steers the crop focus."}
+{"instruction": "Beri contoh penggunaan `object-fit cover`.", "input": "", "output": "`object-fit: cover` crops media to frames (avatars, heroes); `object-position` steers the crop focus."}
+{"instruction": "`object-fit cover` untuk apa?", "input": "", "output": "`object-fit: cover` crops media to frames (avatars, heroes); `object-position` steers the crop focus."}
+{"instruction": "How would you explain `object-fit cover` to a junior developer?", "input": "", "output": "`object-fit: cover` crops media to frames (avatars, heroes); `object-position` steers the crop focus."}
+{"instruction": "Give a real-world scenario for `object-fit cover`.", "input": "", "output": "`object-fit: cover` crops media to frames (avatars, heroes); `object-position` steers the crop focus."}
+{"instruction": "What problem does `object-fit cover` solve?", "input": "", "output": "`object-fit: cover` crops media to frames (avatars, heroes); `object-position` steers the crop focus."}
+{"instruction": "Terangkan `object-fit cover` dalam satu minit.", "input": "", "output": "`object-fit: cover` crops media to frames (avatars, heroes); `object-position` steers the crop focus."}
+{"instruction": "Apa yang perlu saya tahu tentang `object-fit cover`?", "input": "", "output": "`object-fit: cover` crops media to frames (avatars, heroes); `object-position` steers the crop focus."}
+{"instruction": "Bagaimanakah `object-fit cover` berfungsi?", "input": "", "output": "`object-fit: cover` crops media to frames (avatars, heroes); `object-position` steers the crop focus."}
+{"instruction": "Bilakah masa yang sesuai untuk `object-fit cover`?", "input": "", "output": "`object-fit: cover` crops media to frames (avatars, heroes); `object-position` steers the crop focus."}
+{"instruction": "What does `overflow overlay` do?", "input": "", "output": "`overflow: overlay` (WebKit) scrollbars float without layout shift; standard `auto` remains the portable default."}
+{"instruction": "Explain `overflow overlay` briefly.", "input": "", "output": "`overflow: overlay` (WebKit) scrollbars float without layout shift; standard `auto` remains the portable default."}
+{"instruction": "When do I use `overflow overlay`?", "input": "", "output": "`overflow: overlay` (WebKit) scrollbars float without layout shift; standard `auto` remains the portable default."}
+{"instruction": "Give a practical example of `overflow overlay`.", "input": "", "output": "`overflow: overlay` (WebKit) scrollbars float without layout shift; standard `auto` remains the portable default."}
+{"instruction": "What is `overflow overlay` for?", "input": "", "output": "`overflow: overlay` (WebKit) scrollbars float without layout shift; standard `auto` remains the portable default."}
+{"instruction": "Apakah fungsi `overflow overlay`?", "input": "", "output": "`overflow: overlay` (WebKit) scrollbars float without layout shift; standard `auto` remains the portable default."}
+{"instruction": "Terangkan `overflow overlay` secara ringkas.", "input": "", "output": "`overflow: overlay` (WebKit) scrollbars float without layout shift; standard `auto` remains the portable default."}
+{"instruction": "Bila perlu guna `overflow overlay`?", "input": "", "output": "`overflow: overlay` (WebKit) scrollbars float without layout shift; standard `auto` remains the portable default."}
+{"instruction": "Beri contoh penggunaan `overflow overlay`.", "input": "", "output": "`overflow: overlay` (WebKit) scrollbars float without layout shift; standard `auto` remains the portable default."}
+{"instruction": "`overflow overlay` untuk apa?", "input": "", "output": "`overflow: overlay` (WebKit) scrollbars float without layout shift; standard `auto` remains the portable default."}
+{"instruction": "How would you explain `overflow overlay` to a junior developer?", "input": "", "output": "`overflow: overlay` (WebKit) scrollbars float without layout shift; standard `auto` remains the portable default."}
+{"instruction": "Give a real-world scenario for `overflow overlay`.", "input": "", "output": "`overflow: overlay` (WebKit) scrollbars float without layout shift; standard `auto` remains the portable default."}
+{"instruction": "What problem does `overflow overlay` solve?", "input": "", "output": "`overflow: overlay` (WebKit) scrollbars float without layout shift; standard `auto` remains the portable default."}
+{"instruction": "Terangkan `overflow overlay` dalam satu minit.", "input": "", "output": "`overflow: overlay` (WebKit) scrollbars float without layout shift; standard `auto` remains the portable default."}
+{"instruction": "Apa yang perlu saya tahu tentang `overflow overlay`?", "input": "", "output": "`overflow: overlay` (WebKit) scrollbars float without layout shift; standard `auto` remains the portable default."}
+{"instruction": "Bagaimanakah `overflow overlay` berfungsi?", "input": "", "output": "`overflow: overlay` (WebKit) scrollbars float without layout shift; standard `auto` remains the portable default."}
+{"instruction": "Bilakah masa yang sesuai untuk `overflow overlay`?", "input": "", "output": "`overflow: overlay` (WebKit) scrollbars float without layout shift; standard `auto` remains the portable default."}
+{"instruction": "What does `scrollbar-gutter` do?", "input": "", "output": "`scrollbar-gutter: stable` reserves space always — no layout jump when content grows scrollable."}
+{"instruction": "Explain `scrollbar-gutter` briefly.", "input": "", "output": "`scrollbar-gutter: stable` reserves space always — no layout jump when content grows scrollable."}
+{"instruction": "When do I use `scrollbar-gutter`?", "input": "", "output": "`scrollbar-gutter: stable` reserves space always — no layout jump when content grows scrollable."}
+{"instruction": "Give a practical example of `scrollbar-gutter`.", "input": "", "output": "`scrollbar-gutter: stable` reserves space always — no layout jump when content grows scrollable."}
+{"instruction": "What is `scrollbar-gutter` for?", "input": "", "output": "`scrollbar-gutter: stable` reserves space always — no layout jump when content grows scrollable."}
+{"instruction": "Apakah fungsi `scrollbar-gutter`?", "input": "", "output": "`scrollbar-gutter: stable` reserves space always — no layout jump when content grows scrollable."}
+{"instruction": "Terangkan `scrollbar-gutter` secara ringkas.", "input": "", "output": "`scrollbar-gutter: stable` reserves space always — no layout jump when content grows scrollable."}
+{"instruction": "Bila perlu guna `scrollbar-gutter`?", "input": "", "output": "`scrollbar-gutter: stable` reserves space always — no layout jump when content grows scrollable."}
+{"instruction": "Beri contoh penggunaan `scrollbar-gutter`.", "input": "", "output": "`scrollbar-gutter: stable` reserves space always — no layout jump when content grows scrollable."}
+{"instruction": "`scrollbar-gutter` untuk apa?", "input": "", "output": "`scrollbar-gutter: stable` reserves space always — no layout jump when content grows scrollable."}
+{"instruction": "How would you explain `scrollbar-gutter` to a junior developer?", "input": "", "output": "`scrollbar-gutter: stable` reserves space always — no layout jump when content grows scrollable."}
+{"instruction": "Give a real-world scenario for `scrollbar-gutter`.", "input": "", "output": "`scrollbar-gutter: stable` reserves space always — no layout jump when content grows scrollable."}
+{"instruction": "What problem does `scrollbar-gutter` solve?", "input": "", "output": "`scrollbar-gutter: stable` reserves space always — no layout jump when content grows scrollable."}
+{"instruction": "Terangkan `scrollbar-gutter` dalam satu minit.", "input": "", "output": "`scrollbar-gutter: stable` reserves space always — no layout jump when content grows scrollable."}
+{"instruction": "Apa yang perlu saya tahu tentang `scrollbar-gutter`?", "input": "", "output": "`scrollbar-gutter: stable` reserves space always — no layout jump when content grows scrollable."}
+{"instruction": "Bagaimanakah `scrollbar-gutter` berfungsi?", "input": "", "output": "`scrollbar-gutter: stable` reserves space always — no layout jump when content grows scrollable."}
+{"instruction": "Bilakah masa yang sesuai untuk `scrollbar-gutter`?", "input": "", "output": "`scrollbar-gutter: stable` reserves space always — no layout jump when content grows scrollable."}

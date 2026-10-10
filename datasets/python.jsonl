@@ -1026,3 +1026,258 @@
 {"instruction": "Apa yang perlu saya tahu tentang `dataclass slots`?", "input": "", "output": "`@dataclass(slots=True)` drops dict overhead per instance; frozen+slots gives near-tuple memory with names."}
 {"instruction": "Bagaimanakah `dataclass slots` berfungsi?", "input": "", "output": "`@dataclass(slots=True)` drops dict overhead per instance; frozen+slots gives near-tuple memory with names."}
 {"instruction": "Bilakah masa yang sesuai untuk `dataclass slots`?", "input": "", "output": "`@dataclass(slots=True)` drops dict overhead per instance; frozen+slots gives near-tuple memory with names."}
+{"instruction": "What does `venv vs conda uv` do?", "input": "", "output": "venv (stdlib, light), conda (binary deps, heavy), uv (Rust-fast resolver) — pick per project's native needs."}
+{"instruction": "Explain `venv vs conda uv` briefly.", "input": "", "output": "venv (stdlib, light), conda (binary deps, heavy), uv (Rust-fast resolver) — pick per project's native needs."}
+{"instruction": "When do I use `venv vs conda uv`?", "input": "", "output": "venv (stdlib, light), conda (binary deps, heavy), uv (Rust-fast resolver) — pick per project's native needs."}
+{"instruction": "Give a practical example of `venv vs conda uv`.", "input": "", "output": "venv (stdlib, light), conda (binary deps, heavy), uv (Rust-fast resolver) — pick per project's native needs."}
+{"instruction": "What is `venv vs conda uv` for?", "input": "", "output": "venv (stdlib, light), conda (binary deps, heavy), uv (Rust-fast resolver) — pick per project's native needs."}
+{"instruction": "Apakah fungsi `venv vs conda uv`?", "input": "", "output": "venv (stdlib, light), conda (binary deps, heavy), uv (Rust-fast resolver) — pick per project's native needs."}
+{"instruction": "Terangkan `venv vs conda uv` secara ringkas.", "input": "", "output": "venv (stdlib, light), conda (binary deps, heavy), uv (Rust-fast resolver) — pick per project's native needs."}
+{"instruction": "Bila perlu guna `venv vs conda uv`?", "input": "", "output": "venv (stdlib, light), conda (binary deps, heavy), uv (Rust-fast resolver) — pick per project's native needs."}
+{"instruction": "Beri contoh penggunaan `venv vs conda uv`.", "input": "", "output": "venv (stdlib, light), conda (binary deps, heavy), uv (Rust-fast resolver) — pick per project's native needs."}
+{"instruction": "`venv vs conda uv` untuk apa?", "input": "", "output": "venv (stdlib, light), conda (binary deps, heavy), uv (Rust-fast resolver) — pick per project's native needs."}
+{"instruction": "How would you explain `venv vs conda uv` to a junior developer?", "input": "", "output": "venv (stdlib, light), conda (binary deps, heavy), uv (Rust-fast resolver) — pick per project's native needs."}
+{"instruction": "Give a real-world scenario for `venv vs conda uv`.", "input": "", "output": "venv (stdlib, light), conda (binary deps, heavy), uv (Rust-fast resolver) — pick per project's native needs."}
+{"instruction": "What problem does `venv vs conda uv` solve?", "input": "", "output": "venv (stdlib, light), conda (binary deps, heavy), uv (Rust-fast resolver) — pick per project's native needs."}
+{"instruction": "Terangkan `venv vs conda uv` dalam satu minit.", "input": "", "output": "venv (stdlib, light), conda (binary deps, heavy), uv (Rust-fast resolver) — pick per project's native needs."}
+{"instruction": "Apa yang perlu saya tahu tentang `venv vs conda uv`?", "input": "", "output": "venv (stdlib, light), conda (binary deps, heavy), uv (Rust-fast resolver) — pick per project's native needs."}
+{"instruction": "Bagaimanakah `venv vs conda uv` berfungsi?", "input": "", "output": "venv (stdlib, light), conda (binary deps, heavy), uv (Rust-fast resolver) — pick per project's native needs."}
+{"instruction": "Bilakah masa yang sesuai untuk `venv vs conda uv`?", "input": "", "output": "venv (stdlib, light), conda (binary deps, heavy), uv (Rust-fast resolver) — pick per project's native needs."}
+{"instruction": "What does `pip index url` do?", "input": "", "output": "`--index-url` points at private mirrors (offline/air-gapped); `--extra-index-url` adds fallbacks carefully."}
+{"instruction": "Explain `pip index url` briefly.", "input": "", "output": "`--index-url` points at private mirrors (offline/air-gapped); `--extra-index-url` adds fallbacks carefully."}
+{"instruction": "When do I use `pip index url`?", "input": "", "output": "`--index-url` points at private mirrors (offline/air-gapped); `--extra-index-url` adds fallbacks carefully."}
+{"instruction": "Give a practical example of `pip index url`.", "input": "", "output": "`--index-url` points at private mirrors (offline/air-gapped); `--extra-index-url` adds fallbacks carefully."}
+{"instruction": "What is `pip index url` for?", "input": "", "output": "`--index-url` points at private mirrors (offline/air-gapped); `--extra-index-url` adds fallbacks carefully."}
+{"instruction": "Apakah fungsi `pip index url`?", "input": "", "output": "`--index-url` points at private mirrors (offline/air-gapped); `--extra-index-url` adds fallbacks carefully."}
+{"instruction": "Terangkan `pip index url` secara ringkas.", "input": "", "output": "`--index-url` points at private mirrors (offline/air-gapped); `--extra-index-url` adds fallbacks carefully."}
+{"instruction": "Bila perlu guna `pip index url`?", "input": "", "output": "`--index-url` points at private mirrors (offline/air-gapped); `--extra-index-url` adds fallbacks carefully."}
+{"instruction": "Beri contoh penggunaan `pip index url`.", "input": "", "output": "`--index-url` points at private mirrors (offline/air-gapped); `--extra-index-url` adds fallbacks carefully."}
+{"instruction": "`pip index url` untuk apa?", "input": "", "output": "`--index-url` points at private mirrors (offline/air-gapped); `--extra-index-url` adds fallbacks carefully."}
+{"instruction": "How would you explain `pip index url` to a junior developer?", "input": "", "output": "`--index-url` points at private mirrors (offline/air-gapped); `--extra-index-url` adds fallbacks carefully."}
+{"instruction": "Give a real-world scenario for `pip index url`.", "input": "", "output": "`--index-url` points at private mirrors (offline/air-gapped); `--extra-index-url` adds fallbacks carefully."}
+{"instruction": "What problem does `pip index url` solve?", "input": "", "output": "`--index-url` points at private mirrors (offline/air-gapped); `--extra-index-url` adds fallbacks carefully."}
+{"instruction": "Terangkan `pip index url` dalam satu minit.", "input": "", "output": "`--index-url` points at private mirrors (offline/air-gapped); `--extra-index-url` adds fallbacks carefully."}
+{"instruction": "Apa yang perlu saya tahu tentang `pip index url`?", "input": "", "output": "`--index-url` points at private mirrors (offline/air-gapped); `--extra-index-url` adds fallbacks carefully."}
+{"instruction": "Bagaimanakah `pip index url` berfungsi?", "input": "", "output": "`--index-url` points at private mirrors (offline/air-gapped); `--extra-index-url` adds fallbacks carefully."}
+{"instruction": "Bilakah masa yang sesuai untuk `pip index url`?", "input": "", "output": "`--index-url` points at private mirrors (offline/air-gapped); `--extra-index-url` adds fallbacks carefully."}
+{"instruction": "What does `requirements pinning` do?", "input": "", "output": "Pin `==` after testing (`pip freeze`), ranges in libraries; hash-checking (`--require-hashes`) hardens deploys."}
+{"instruction": "Explain `requirements pinning` briefly.", "input": "", "output": "Pin `==` after testing (`pip freeze`), ranges in libraries; hash-checking (`--require-hashes`) hardens deploys."}
+{"instruction": "When do I use `requirements pinning`?", "input": "", "output": "Pin `==` after testing (`pip freeze`), ranges in libraries; hash-checking (`--require-hashes`) hardens deploys."}
+{"instruction": "Give a practical example of `requirements pinning`.", "input": "", "output": "Pin `==` after testing (`pip freeze`), ranges in libraries; hash-checking (`--require-hashes`) hardens deploys."}
+{"instruction": "What is `requirements pinning` for?", "input": "", "output": "Pin `==` after testing (`pip freeze`), ranges in libraries; hash-checking (`--require-hashes`) hardens deploys."}
+{"instruction": "Apakah fungsi `requirements pinning`?", "input": "", "output": "Pin `==` after testing (`pip freeze`), ranges in libraries; hash-checking (`--require-hashes`) hardens deploys."}
+{"instruction": "Terangkan `requirements pinning` secara ringkas.", "input": "", "output": "Pin `==` after testing (`pip freeze`), ranges in libraries; hash-checking (`--require-hashes`) hardens deploys."}
+{"instruction": "Bila perlu guna `requirements pinning`?", "input": "", "output": "Pin `==` after testing (`pip freeze`), ranges in libraries; hash-checking (`--require-hashes`) hardens deploys."}
+{"instruction": "Beri contoh penggunaan `requirements pinning`.", "input": "", "output": "Pin `==` after testing (`pip freeze`), ranges in libraries; hash-checking (`--require-hashes`) hardens deploys."}
+{"instruction": "`requirements pinning` untuk apa?", "input": "", "output": "Pin `==` after testing (`pip freeze`), ranges in libraries; hash-checking (`--require-hashes`) hardens deploys."}
+{"instruction": "How would you explain `requirements pinning` to a junior developer?", "input": "", "output": "Pin `==` after testing (`pip freeze`), ranges in libraries; hash-checking (`--require-hashes`) hardens deploys."}
+{"instruction": "Give a real-world scenario for `requirements pinning`.", "input": "", "output": "Pin `==` after testing (`pip freeze`), ranges in libraries; hash-checking (`--require-hashes`) hardens deploys."}
+{"instruction": "What problem does `requirements pinning` solve?", "input": "", "output": "Pin `==` after testing (`pip freeze`), ranges in libraries; hash-checking (`--require-hashes`) hardens deploys."}
+{"instruction": "Terangkan `requirements pinning` dalam satu minit.", "input": "", "output": "Pin `==` after testing (`pip freeze`), ranges in libraries; hash-checking (`--require-hashes`) hardens deploys."}
+{"instruction": "Apa yang perlu saya tahu tentang `requirements pinning`?", "input": "", "output": "Pin `==` after testing (`pip freeze`), ranges in libraries; hash-checking (`--require-hashes`) hardens deploys."}
+{"instruction": "Bagaimanakah `requirements pinning` berfungsi?", "input": "", "output": "Pin `==` after testing (`pip freeze`), ranges in libraries; hash-checking (`--require-hashes`) hardens deploys."}
+{"instruction": "Bilakah masa yang sesuai untuk `requirements pinning`?", "input": "", "output": "Pin `==` after testing (`pip freeze`), ranges in libraries; hash-checking (`--require-hashes`) hardens deploys."}
+{"instruction": "What does `pyproject build` do?", "input": "", "output": "`[build-system] requires/setuptools` declares build backends; `[project]` replaces setup.py metadata declaratively."}
+{"instruction": "Explain `pyproject build` briefly.", "input": "", "output": "`[build-system] requires/setuptools` declares build backends; `[project]` replaces setup.py metadata declaratively."}
+{"instruction": "When do I use `pyproject build`?", "input": "", "output": "`[build-system] requires/setuptools` declares build backends; `[project]` replaces setup.py metadata declaratively."}
+{"instruction": "Give a practical example of `pyproject build`.", "input": "", "output": "`[build-system] requires/setuptools` declares build backends; `[project]` replaces setup.py metadata declaratively."}
+{"instruction": "What is `pyproject build` for?", "input": "", "output": "`[build-system] requires/setuptools` declares build backends; `[project]` replaces setup.py metadata declaratively."}
+{"instruction": "Apakah fungsi `pyproject build`?", "input": "", "output": "`[build-system] requires/setuptools` declares build backends; `[project]` replaces setup.py metadata declaratively."}
+{"instruction": "Terangkan `pyproject build` secara ringkas.", "input": "", "output": "`[build-system] requires/setuptools` declares build backends; `[project]` replaces setup.py metadata declaratively."}
+{"instruction": "Bila perlu guna `pyproject build`?", "input": "", "output": "`[build-system] requires/setuptools` declares build backends; `[project]` replaces setup.py metadata declaratively."}
+{"instruction": "Beri contoh penggunaan `pyproject build`.", "input": "", "output": "`[build-system] requires/setuptools` declares build backends; `[project]` replaces setup.py metadata declaratively."}
+{"instruction": "`pyproject build` untuk apa?", "input": "", "output": "`[build-system] requires/setuptools` declares build backends; `[project]` replaces setup.py metadata declaratively."}
+{"instruction": "How would you explain `pyproject build` to a junior developer?", "input": "", "output": "`[build-system] requires/setuptools` declares build backends; `[project]` replaces setup.py metadata declaratively."}
+{"instruction": "Give a real-world scenario for `pyproject build`.", "input": "", "output": "`[build-system] requires/setuptools` declares build backends; `[project]` replaces setup.py metadata declaratively."}
+{"instruction": "What problem does `pyproject build` solve?", "input": "", "output": "`[build-system] requires/setuptools` declares build backends; `[project]` replaces setup.py metadata declaratively."}
+{"instruction": "Terangkan `pyproject build` dalam satu minit.", "input": "", "output": "`[build-system] requires/setuptools` declares build backends; `[project]` replaces setup.py metadata declaratively."}
+{"instruction": "Apa yang perlu saya tahu tentang `pyproject build`?", "input": "", "output": "`[build-system] requires/setuptools` declares build backends; `[project]` replaces setup.py metadata declaratively."}
+{"instruction": "Bagaimanakah `pyproject build` berfungsi?", "input": "", "output": "`[build-system] requires/setuptools` declares build backends; `[project]` replaces setup.py metadata declaratively."}
+{"instruction": "Bilakah masa yang sesuai untuk `pyproject build`?", "input": "", "output": "`[build-system] requires/setuptools` declares build backends; `[project]` replaces setup.py metadata declaratively."}
+{"instruction": "What does `__main__ guard` do?", "input": "", "output": "`if __name__ == '__main__':` separates importable logic from script entry — every module stays reusable."}
+{"instruction": "Explain `__main__ guard` briefly.", "input": "", "output": "`if __name__ == '__main__':` separates importable logic from script entry — every module stays reusable."}
+{"instruction": "When do I use `__main__ guard`?", "input": "", "output": "`if __name__ == '__main__':` separates importable logic from script entry — every module stays reusable."}
+{"instruction": "Give a practical example of `__main__ guard`.", "input": "", "output": "`if __name__ == '__main__':` separates importable logic from script entry — every module stays reusable."}
+{"instruction": "What is `__main__ guard` for?", "input": "", "output": "`if __name__ == '__main__':` separates importable logic from script entry — every module stays reusable."}
+{"instruction": "Apakah fungsi `__main__ guard`?", "input": "", "output": "`if __name__ == '__main__':` separates importable logic from script entry — every module stays reusable."}
+{"instruction": "Terangkan `__main__ guard` secara ringkas.", "input": "", "output": "`if __name__ == '__main__':` separates importable logic from script entry — every module stays reusable."}
+{"instruction": "Bila perlu guna `__main__ guard`?", "input": "", "output": "`if __name__ == '__main__':` separates importable logic from script entry — every module stays reusable."}
+{"instruction": "Beri contoh penggunaan `__main__ guard`.", "input": "", "output": "`if __name__ == '__main__':` separates importable logic from script entry — every module stays reusable."}
+{"instruction": "`__main__ guard` untuk apa?", "input": "", "output": "`if __name__ == '__main__':` separates importable logic from script entry — every module stays reusable."}
+{"instruction": "How would you explain `__main__ guard` to a junior developer?", "input": "", "output": "`if __name__ == '__main__':` separates importable logic from script entry — every module stays reusable."}
+{"instruction": "Give a real-world scenario for `__main__ guard`.", "input": "", "output": "`if __name__ == '__main__':` separates importable logic from script entry — every module stays reusable."}
+{"instruction": "What problem does `__main__ guard` solve?", "input": "", "output": "`if __name__ == '__main__':` separates importable logic from script entry — every module stays reusable."}
+{"instruction": "Terangkan `__main__ guard` dalam satu minit.", "input": "", "output": "`if __name__ == '__main__':` separates importable logic from script entry — every module stays reusable."}
+{"instruction": "Apa yang perlu saya tahu tentang `__main__ guard`?", "input": "", "output": "`if __name__ == '__main__':` separates importable logic from script entry — every module stays reusable."}
+{"instruction": "Bagaimanakah `__main__ guard` berfungsi?", "input": "", "output": "`if __name__ == '__main__':` separates importable logic from script entry — every module stays reusable."}
+{"instruction": "Bilakah masa yang sesuai untuk `__main__ guard`?", "input": "", "output": "`if __name__ == '__main__':` separates importable logic from script entry — every module stays reusable."}
+{"instruction": "What does `__init__ packages` do?", "input": "", "output": "`__init__.py` marks packages (implicit namespaces since 3.3 need none); relative imports (`.sibling`) stay internal."}
+{"instruction": "Explain `__init__ packages` briefly.", "input": "", "output": "`__init__.py` marks packages (implicit namespaces since 3.3 need none); relative imports (`.sibling`) stay internal."}
+{"instruction": "When do I use `__init__ packages`?", "input": "", "output": "`__init__.py` marks packages (implicit namespaces since 3.3 need none); relative imports (`.sibling`) stay internal."}
+{"instruction": "Give a practical example of `__init__ packages`.", "input": "", "output": "`__init__.py` marks packages (implicit namespaces since 3.3 need none); relative imports (`.sibling`) stay internal."}
+{"instruction": "What is `__init__ packages` for?", "input": "", "output": "`__init__.py` marks packages (implicit namespaces since 3.3 need none); relative imports (`.sibling`) stay internal."}
+{"instruction": "Apakah fungsi `__init__ packages`?", "input": "", "output": "`__init__.py` marks packages (implicit namespaces since 3.3 need none); relative imports (`.sibling`) stay internal."}
+{"instruction": "Terangkan `__init__ packages` secara ringkas.", "input": "", "output": "`__init__.py` marks packages (implicit namespaces since 3.3 need none); relative imports (`.sibling`) stay internal."}
+{"instruction": "Bila perlu guna `__init__ packages`?", "input": "", "output": "`__init__.py` marks packages (implicit namespaces since 3.3 need none); relative imports (`.sibling`) stay internal."}
+{"instruction": "Beri contoh penggunaan `__init__ packages`.", "input": "", "output": "`__init__.py` marks packages (implicit namespaces since 3.3 need none); relative imports (`.sibling`) stay internal."}
+{"instruction": "`__init__ packages` untuk apa?", "input": "", "output": "`__init__.py` marks packages (implicit namespaces since 3.3 need none); relative imports (`.sibling`) stay internal."}
+{"instruction": "How would you explain `__init__ packages` to a junior developer?", "input": "", "output": "`__init__.py` marks packages (implicit namespaces since 3.3 need none); relative imports (`.sibling`) stay internal."}
+{"instruction": "Give a real-world scenario for `__init__ packages`.", "input": "", "output": "`__init__.py` marks packages (implicit namespaces since 3.3 need none); relative imports (`.sibling`) stay internal."}
+{"instruction": "What problem does `__init__ packages` solve?", "input": "", "output": "`__init__.py` marks packages (implicit namespaces since 3.3 need none); relative imports (`.sibling`) stay internal."}
+{"instruction": "Terangkan `__init__ packages` dalam satu minit.", "input": "", "output": "`__init__.py` marks packages (implicit namespaces since 3.3 need none); relative imports (`.sibling`) stay internal."}
+{"instruction": "Apa yang perlu saya tahu tentang `__init__ packages`?", "input": "", "output": "`__init__.py` marks packages (implicit namespaces since 3.3 need none); relative imports (`.sibling`) stay internal."}
+{"instruction": "Bagaimanakah `__init__ packages` berfungsi?", "input": "", "output": "`__init__.py` marks packages (implicit namespaces since 3.3 need none); relative imports (`.sibling`) stay internal."}
+{"instruction": "Bilakah masa yang sesuai untuk `__init__ packages`?", "input": "", "output": "`__init__.py` marks packages (implicit namespaces since 3.3 need none); relative imports (`.sibling`) stay internal."}
+{"instruction": "What does `PYTHONPATH pitfalls` do?", "input": "", "output": "`PYTHONPATH` shims break reproducibility across machines — venvs + installs replace it in real projects."}
+{"instruction": "Explain `PYTHONPATH pitfalls` briefly.", "input": "", "output": "`PYTHONPATH` shims break reproducibility across machines — venvs + installs replace it in real projects."}
+{"instruction": "When do I use `PYTHONPATH pitfalls`?", "input": "", "output": "`PYTHONPATH` shims break reproducibility across machines — venvs + installs replace it in real projects."}
+{"instruction": "Give a practical example of `PYTHONPATH pitfalls`.", "input": "", "output": "`PYTHONPATH` shims break reproducibility across machines — venvs + installs replace it in real projects."}
+{"instruction": "What is `PYTHONPATH pitfalls` for?", "input": "", "output": "`PYTHONPATH` shims break reproducibility across machines — venvs + installs replace it in real projects."}
+{"instruction": "Apakah fungsi `PYTHONPATH pitfalls`?", "input": "", "output": "`PYTHONPATH` shims break reproducibility across machines — venvs + installs replace it in real projects."}
+{"instruction": "Terangkan `PYTHONPATH pitfalls` secara ringkas.", "input": "", "output": "`PYTHONPATH` shims break reproducibility across machines — venvs + installs replace it in real projects."}
+{"instruction": "Bila perlu guna `PYTHONPATH pitfalls`?", "input": "", "output": "`PYTHONPATH` shims break reproducibility across machines — venvs + installs replace it in real projects."}
+{"instruction": "Beri contoh penggunaan `PYTHONPATH pitfalls`.", "input": "", "output": "`PYTHONPATH` shims break reproducibility across machines — venvs + installs replace it in real projects."}
+{"instruction": "`PYTHONPATH pitfalls` untuk apa?", "input": "", "output": "`PYTHONPATH` shims break reproducibility across machines — venvs + installs replace it in real projects."}
+{"instruction": "How would you explain `PYTHONPATH pitfalls` to a junior developer?", "input": "", "output": "`PYTHONPATH` shims break reproducibility across machines — venvs + installs replace it in real projects."}
+{"instruction": "Give a real-world scenario for `PYTHONPATH pitfalls`.", "input": "", "output": "`PYTHONPATH` shims break reproducibility across machines — venvs + installs replace it in real projects."}
+{"instruction": "What problem does `PYTHONPATH pitfalls` solve?", "input": "", "output": "`PYTHONPATH` shims break reproducibility across machines — venvs + installs replace it in real projects."}
+{"instruction": "Terangkan `PYTHONPATH pitfalls` dalam satu minit.", "input": "", "output": "`PYTHONPATH` shims break reproducibility across machines — venvs + installs replace it in real projects."}
+{"instruction": "Apa yang perlu saya tahu tentang `PYTHONPATH pitfalls`?", "input": "", "output": "`PYTHONPATH` shims break reproducibility across machines — venvs + installs replace it in real projects."}
+{"instruction": "Bagaimanakah `PYTHONPATH pitfalls` berfungsi?", "input": "", "output": "`PYTHONPATH` shims break reproducibility across machines — venvs + installs replace it in real projects."}
+{"instruction": "Bilakah masa yang sesuai untuk `PYTHONPATH pitfalls`?", "input": "", "output": "`PYTHONPATH` shims break reproducibility across machines — venvs + installs replace it in real projects."}
+{"instruction": "What does `-m execution` do?", "input": "", "output": "`python -m pkg.mod` runs with package context (relative imports work); script paths don't — always `-m` in projects."}
+{"instruction": "Explain `-m execution` briefly.", "input": "", "output": "`python -m pkg.mod` runs with package context (relative imports work); script paths don't — always `-m` in projects."}
+{"instruction": "When do I use `-m execution`?", "input": "", "output": "`python -m pkg.mod` runs with package context (relative imports work); script paths don't — always `-m` in projects."}
+{"instruction": "Give a practical example of `-m execution`.", "input": "", "output": "`python -m pkg.mod` runs with package context (relative imports work); script paths don't — always `-m` in projects."}
+{"instruction": "What is `-m execution` for?", "input": "", "output": "`python -m pkg.mod` runs with package context (relative imports work); script paths don't — always `-m` in projects."}
+{"instruction": "Apakah fungsi `-m execution`?", "input": "", "output": "`python -m pkg.mod` runs with package context (relative imports work); script paths don't — always `-m` in projects."}
+{"instruction": "Terangkan `-m execution` secara ringkas.", "input": "", "output": "`python -m pkg.mod` runs with package context (relative imports work); script paths don't — always `-m` in projects."}
+{"instruction": "Bila perlu guna `-m execution`?", "input": "", "output": "`python -m pkg.mod` runs with package context (relative imports work); script paths don't — always `-m` in projects."}
+{"instruction": "Beri contoh penggunaan `-m execution`.", "input": "", "output": "`python -m pkg.mod` runs with package context (relative imports work); script paths don't — always `-m` in projects."}
+{"instruction": "`-m execution` untuk apa?", "input": "", "output": "`python -m pkg.mod` runs with package context (relative imports work); script paths don't — always `-m` in projects."}
+{"instruction": "How would you explain `-m execution` to a junior developer?", "input": "", "output": "`python -m pkg.mod` runs with package context (relative imports work); script paths don't — always `-m` in projects."}
+{"instruction": "Give a real-world scenario for `-m execution`.", "input": "", "output": "`python -m pkg.mod` runs with package context (relative imports work); script paths don't — always `-m` in projects."}
+{"instruction": "What problem does `-m execution` solve?", "input": "", "output": "`python -m pkg.mod` runs with package context (relative imports work); script paths don't — always `-m` in projects."}
+{"instruction": "Terangkan `-m execution` dalam satu minit.", "input": "", "output": "`python -m pkg.mod` runs with package context (relative imports work); script paths don't — always `-m` in projects."}
+{"instruction": "Apa yang perlu saya tahu tentang `-m execution`?", "input": "", "output": "`python -m pkg.mod` runs with package context (relative imports work); script paths don't — always `-m` in projects."}
+{"instruction": "Bagaimanakah `-m execution` berfungsi?", "input": "", "output": "`python -m pkg.mod` runs with package context (relative imports work); script paths don't — always `-m` in projects."}
+{"instruction": "Bilakah masa yang sesuai untuk `-m execution`?", "input": "", "output": "`python -m pkg.mod` runs with package context (relative imports work); script paths don't — always `-m` in projects."}
+{"instruction": "What does `-O optimize asserts` do?", "input": "", "output": "`python -O` strips asserts and `__debug__` blocks — never gate production logic on assert."}
+{"instruction": "Explain `-O optimize asserts` briefly.", "input": "", "output": "`python -O` strips asserts and `__debug__` blocks — never gate production logic on assert."}
+{"instruction": "When do I use `-O optimize asserts`?", "input": "", "output": "`python -O` strips asserts and `__debug__` blocks — never gate production logic on assert."}
+{"instruction": "Give a practical example of `-O optimize asserts`.", "input": "", "output": "`python -O` strips asserts and `__debug__` blocks — never gate production logic on assert."}
+{"instruction": "What is `-O optimize asserts` for?", "input": "", "output": "`python -O` strips asserts and `__debug__` blocks — never gate production logic on assert."}
+{"instruction": "Apakah fungsi `-O optimize asserts`?", "input": "", "output": "`python -O` strips asserts and `__debug__` blocks — never gate production logic on assert."}
+{"instruction": "Terangkan `-O optimize asserts` secara ringkas.", "input": "", "output": "`python -O` strips asserts and `__debug__` blocks — never gate production logic on assert."}
+{"instruction": "Bila perlu guna `-O optimize asserts`?", "input": "", "output": "`python -O` strips asserts and `__debug__` blocks — never gate production logic on assert."}
+{"instruction": "Beri contoh penggunaan `-O optimize asserts`.", "input": "", "output": "`python -O` strips asserts and `__debug__` blocks — never gate production logic on assert."}
+{"instruction": "`-O optimize asserts` untuk apa?", "input": "", "output": "`python -O` strips asserts and `__debug__` blocks — never gate production logic on assert."}
+{"instruction": "How would you explain `-O optimize asserts` to a junior developer?", "input": "", "output": "`python -O` strips asserts and `__debug__` blocks — never gate production logic on assert."}
+{"instruction": "Give a real-world scenario for `-O optimize asserts`.", "input": "", "output": "`python -O` strips asserts and `__debug__` blocks — never gate production logic on assert."}
+{"instruction": "What problem does `-O optimize asserts` solve?", "input": "", "output": "`python -O` strips asserts and `__debug__` blocks — never gate production logic on assert."}
+{"instruction": "Terangkan `-O optimize asserts` dalam satu minit.", "input": "", "output": "`python -O` strips asserts and `__debug__` blocks — never gate production logic on assert."}
+{"instruction": "Apa yang perlu saya tahu tentang `-O optimize asserts`?", "input": "", "output": "`python -O` strips asserts and `__debug__` blocks — never gate production logic on assert."}
+{"instruction": "Bagaimanakah `-O optimize asserts` berfungsi?", "input": "", "output": "`python -O` strips asserts and `__debug__` blocks — never gate production logic on assert."}
+{"instruction": "Bilakah masa yang sesuai untuk `-O optimize asserts`?", "input": "", "output": "`python -O` strips asserts and `__debug__` blocks — never gate production logic on assert."}
+{"instruction": "What does `-u unbuffered logs` do?", "input": "", "output": "`python -u` (or PYTHONUNBUFFERED) streams container logs live; buffered output hides crashes in orchestrators."}
+{"instruction": "Explain `-u unbuffered logs` briefly.", "input": "", "output": "`python -u` (or PYTHONUNBUFFERED) streams container logs live; buffered output hides crashes in orchestrators."}
+{"instruction": "When do I use `-u unbuffered logs`?", "input": "", "output": "`python -u` (or PYTHONUNBUFFERED) streams container logs live; buffered output hides crashes in orchestrators."}
+{"instruction": "Give a practical example of `-u unbuffered logs`.", "input": "", "output": "`python -u` (or PYTHONUNBUFFERED) streams container logs live; buffered output hides crashes in orchestrators."}
+{"instruction": "What is `-u unbuffered logs` for?", "input": "", "output": "`python -u` (or PYTHONUNBUFFERED) streams container logs live; buffered output hides crashes in orchestrators."}
+{"instruction": "Apakah fungsi `-u unbuffered logs`?", "input": "", "output": "`python -u` (or PYTHONUNBUFFERED) streams container logs live; buffered output hides crashes in orchestrators."}
+{"instruction": "Terangkan `-u unbuffered logs` secara ringkas.", "input": "", "output": "`python -u` (or PYTHONUNBUFFERED) streams container logs live; buffered output hides crashes in orchestrators."}
+{"instruction": "Bila perlu guna `-u unbuffered logs`?", "input": "", "output": "`python -u` (or PYTHONUNBUFFERED) streams container logs live; buffered output hides crashes in orchestrators."}
+{"instruction": "Beri contoh penggunaan `-u unbuffered logs`.", "input": "", "output": "`python -u` (or PYTHONUNBUFFERED) streams container logs live; buffered output hides crashes in orchestrators."}
+{"instruction": "`-u unbuffered logs` untuk apa?", "input": "", "output": "`python -u` (or PYTHONUNBUFFERED) streams container logs live; buffered output hides crashes in orchestrators."}
+{"instruction": "How would you explain `-u unbuffered logs` to a junior developer?", "input": "", "output": "`python -u` (or PYTHONUNBUFFERED) streams container logs live; buffered output hides crashes in orchestrators."}
+{"instruction": "Give a real-world scenario for `-u unbuffered logs`.", "input": "", "output": "`python -u` (or PYTHONUNBUFFERED) streams container logs live; buffered output hides crashes in orchestrators."}
+{"instruction": "What problem does `-u unbuffered logs` solve?", "input": "", "output": "`python -u` (or PYTHONUNBUFFERED) streams container logs live; buffered output hides crashes in orchestrators."}
+{"instruction": "Terangkan `-u unbuffered logs` dalam satu minit.", "input": "", "output": "`python -u` (or PYTHONUNBUFFERED) streams container logs live; buffered output hides crashes in orchestrators."}
+{"instruction": "Apa yang perlu saya tahu tentang `-u unbuffered logs`?", "input": "", "output": "`python -u` (or PYTHONUNBUFFERED) streams container logs live; buffered output hides crashes in orchestrators."}
+{"instruction": "Bagaimanakah `-u unbuffered logs` berfungsi?", "input": "", "output": "`python -u` (or PYTHONUNBUFFERED) streams container logs live; buffered output hides crashes in orchestrators."}
+{"instruction": "Bilakah masa yang sesuai untuk `-u unbuffered logs`?", "input": "", "output": "`python -u` (or PYTHONUNBUFFERED) streams container logs live; buffered output hides crashes in orchestrators."}
+{"instruction": "What does `faulthandler timeout` do?", "input": "", "output": "`faulthandler.dump_traceback_later(60)` exposes hangs in production logs without debuggers attached."}
+{"instruction": "Explain `faulthandler timeout` briefly.", "input": "", "output": "`faulthandler.dump_traceback_later(60)` exposes hangs in production logs without debuggers attached."}
+{"instruction": "When do I use `faulthandler timeout`?", "input": "", "output": "`faulthandler.dump_traceback_later(60)` exposes hangs in production logs without debuggers attached."}
+{"instruction": "Give a practical example of `faulthandler timeout`.", "input": "", "output": "`faulthandler.dump_traceback_later(60)` exposes hangs in production logs without debuggers attached."}
+{"instruction": "What is `faulthandler timeout` for?", "input": "", "output": "`faulthandler.dump_traceback_later(60)` exposes hangs in production logs without debuggers attached."}
+{"instruction": "Apakah fungsi `faulthandler timeout`?", "input": "", "output": "`faulthandler.dump_traceback_later(60)` exposes hangs in production logs without debuggers attached."}
+{"instruction": "Terangkan `faulthandler timeout` secara ringkas.", "input": "", "output": "`faulthandler.dump_traceback_later(60)` exposes hangs in production logs without debuggers attached."}
+{"instruction": "Bila perlu guna `faulthandler timeout`?", "input": "", "output": "`faulthandler.dump_traceback_later(60)` exposes hangs in production logs without debuggers attached."}
+{"instruction": "Beri contoh penggunaan `faulthandler timeout`.", "input": "", "output": "`faulthandler.dump_traceback_later(60)` exposes hangs in production logs without debuggers attached."}
+{"instruction": "`faulthandler timeout` untuk apa?", "input": "", "output": "`faulthandler.dump_traceback_later(60)` exposes hangs in production logs without debuggers attached."}
+{"instruction": "How would you explain `faulthandler timeout` to a junior developer?", "input": "", "output": "`faulthandler.dump_traceback_later(60)` exposes hangs in production logs without debuggers attached."}
+{"instruction": "Give a real-world scenario for `faulthandler timeout`.", "input": "", "output": "`faulthandler.dump_traceback_later(60)` exposes hangs in production logs without debuggers attached."}
+{"instruction": "What problem does `faulthandler timeout` solve?", "input": "", "output": "`faulthandler.dump_traceback_later(60)` exposes hangs in production logs without debuggers attached."}
+{"instruction": "Terangkan `faulthandler timeout` dalam satu minit.", "input": "", "output": "`faulthandler.dump_traceback_later(60)` exposes hangs in production logs without debuggers attached."}
+{"instruction": "Apa yang perlu saya tahu tentang `faulthandler timeout`?", "input": "", "output": "`faulthandler.dump_traceback_later(60)` exposes hangs in production logs without debuggers attached."}
+{"instruction": "Bagaimanakah `faulthandler timeout` berfungsi?", "input": "", "output": "`faulthandler.dump_traceback_later(60)` exposes hangs in production logs without debuggers attached."}
+{"instruction": "Bilakah masa yang sesuai untuk `faulthandler timeout`?", "input": "", "output": "`faulthandler.dump_traceback_later(60)` exposes hangs in production logs without debuggers attached."}
+{"instruction": "What does `tracemalloc top` do?", "input": "", "output": "`tracemalloc.start()` + `take_snapshot().statistics('lineno')` finds memory growth line by line."}
+{"instruction": "Explain `tracemalloc top` briefly.", "input": "", "output": "`tracemalloc.start()` + `take_snapshot().statistics('lineno')` finds memory growth line by line."}
+{"instruction": "When do I use `tracemalloc top`?", "input": "", "output": "`tracemalloc.start()` + `take_snapshot().statistics('lineno')` finds memory growth line by line."}
+{"instruction": "Give a practical example of `tracemalloc top`.", "input": "", "output": "`tracemalloc.start()` + `take_snapshot().statistics('lineno')` finds memory growth line by line."}
+{"instruction": "What is `tracemalloc top` for?", "input": "", "output": "`tracemalloc.start()` + `take_snapshot().statistics('lineno')` finds memory growth line by line."}
+{"instruction": "Apakah fungsi `tracemalloc top`?", "input": "", "output": "`tracemalloc.start()` + `take_snapshot().statistics('lineno')` finds memory growth line by line."}
+{"instruction": "Terangkan `tracemalloc top` secara ringkas.", "input": "", "output": "`tracemalloc.start()` + `take_snapshot().statistics('lineno')` finds memory growth line by line."}
+{"instruction": "Bila perlu guna `tracemalloc top`?", "input": "", "output": "`tracemalloc.start()` + `take_snapshot().statistics('lineno')` finds memory growth line by line."}
+{"instruction": "Beri contoh penggunaan `tracemalloc top`.", "input": "", "output": "`tracemalloc.start()` + `take_snapshot().statistics('lineno')` finds memory growth line by line."}
+{"instruction": "`tracemalloc top` untuk apa?", "input": "", "output": "`tracemalloc.start()` + `take_snapshot().statistics('lineno')` finds memory growth line by line."}
+{"instruction": "How would you explain `tracemalloc top` to a junior developer?", "input": "", "output": "`tracemalloc.start()` + `take_snapshot().statistics('lineno')` finds memory growth line by line."}
+{"instruction": "Give a real-world scenario for `tracemalloc top`.", "input": "", "output": "`tracemalloc.start()` + `take_snapshot().statistics('lineno')` finds memory growth line by line."}
+{"instruction": "What problem does `tracemalloc top` solve?", "input": "", "output": "`tracemalloc.start()` + `take_snapshot().statistics('lineno')` finds memory growth line by line."}
+{"instruction": "Terangkan `tracemalloc top` dalam satu minit.", "input": "", "output": "`tracemalloc.start()` + `take_snapshot().statistics('lineno')` finds memory growth line by line."}
+{"instruction": "Apa yang perlu saya tahu tentang `tracemalloc top`?", "input": "", "output": "`tracemalloc.start()` + `take_snapshot().statistics('lineno')` finds memory growth line by line."}
+{"instruction": "Bagaimanakah `tracemalloc top` berfungsi?", "input": "", "output": "`tracemalloc.start()` + `take_snapshot().statistics('lineno')` finds memory growth line by line."}
+{"instruction": "Bilakah masa yang sesuai untuk `tracemalloc top`?", "input": "", "output": "`tracemalloc.start()` + `take_snapshot().statistics('lineno')` finds memory growth line by line."}
+{"instruction": "What does `cProfile snakeviz` do?", "input": "", "output": "`cProfile` + `pstats` (or snakeviz) profiles hot paths; `timeit` micro-benchmarks snippets correctly."}
+{"instruction": "Explain `cProfile snakeviz` briefly.", "input": "", "output": "`cProfile` + `pstats` (or snakeviz) profiles hot paths; `timeit` micro-benchmarks snippets correctly."}
+{"instruction": "When do I use `cProfile snakeviz`?", "input": "", "output": "`cProfile` + `pstats` (or snakeviz) profiles hot paths; `timeit` micro-benchmarks snippets correctly."}
+{"instruction": "Give a practical example of `cProfile snakeviz`.", "input": "", "output": "`cProfile` + `pstats` (or snakeviz) profiles hot paths; `timeit` micro-benchmarks snippets correctly."}
+{"instruction": "What is `cProfile snakeviz` for?", "input": "", "output": "`cProfile` + `pstats` (or snakeviz) profiles hot paths; `timeit` micro-benchmarks snippets correctly."}
+{"instruction": "Apakah fungsi `cProfile snakeviz`?", "input": "", "output": "`cProfile` + `pstats` (or snakeviz) profiles hot paths; `timeit` micro-benchmarks snippets correctly."}
+{"instruction": "Terangkan `cProfile snakeviz` secara ringkas.", "input": "", "output": "`cProfile` + `pstats` (or snakeviz) profiles hot paths; `timeit` micro-benchmarks snippets correctly."}
+{"instruction": "Bila perlu guna `cProfile snakeviz`?", "input": "", "output": "`cProfile` + `pstats` (or snakeviz) profiles hot paths; `timeit` micro-benchmarks snippets correctly."}
+{"instruction": "Beri contoh penggunaan `cProfile snakeviz`.", "input": "", "output": "`cProfile` + `pstats` (or snakeviz) profiles hot paths; `timeit` micro-benchmarks snippets correctly."}
+{"instruction": "`cProfile snakeviz` untuk apa?", "input": "", "output": "`cProfile` + `pstats` (or snakeviz) profiles hot paths; `timeit` micro-benchmarks snippets correctly."}
+{"instruction": "How would you explain `cProfile snakeviz` to a junior developer?", "input": "", "output": "`cProfile` + `pstats` (or snakeviz) profiles hot paths; `timeit` micro-benchmarks snippets correctly."}
+{"instruction": "Give a real-world scenario for `cProfile snakeviz`.", "input": "", "output": "`cProfile` + `pstats` (or snakeviz) profiles hot paths; `timeit` micro-benchmarks snippets correctly."}
+{"instruction": "What problem does `cProfile snakeviz` solve?", "input": "", "output": "`cProfile` + `pstats` (or snakeviz) profiles hot paths; `timeit` micro-benchmarks snippets correctly."}
+{"instruction": "Terangkan `cProfile snakeviz` dalam satu minit.", "input": "", "output": "`cProfile` + `pstats` (or snakeviz) profiles hot paths; `timeit` micro-benchmarks snippets correctly."}
+{"instruction": "Apa yang perlu saya tahu tentang `cProfile snakeviz`?", "input": "", "output": "`cProfile` + `pstats` (or snakeviz) profiles hot paths; `timeit` micro-benchmarks snippets correctly."}
+{"instruction": "Bagaimanakah `cProfile snakeviz` berfungsi?", "input": "", "output": "`cProfile` + `pstats` (or snakeviz) profiles hot paths; `timeit` micro-benchmarks snippets correctly."}
+{"instruction": "Bilakah masa yang sesuai untuk `cProfile snakeviz`?", "input": "", "output": "`cProfile` + `pstats` (or snakeviz) profiles hot paths; `timeit` micro-benchmarks snippets correctly."}
+{"instruction": "What does `multiprocessing spawn` do?", "input": "", "output": "Windows/macOS spawn (fresh interpreters, slower start, picklable targets only); fork inherits (fast, Unix-only)."}
+{"instruction": "Explain `multiprocessing spawn` briefly.", "input": "", "output": "Windows/macOS spawn (fresh interpreters, slower start, picklable targets only); fork inherits (fast, Unix-only)."}
+{"instruction": "When do I use `multiprocessing spawn`?", "input": "", "output": "Windows/macOS spawn (fresh interpreters, slower start, picklable targets only); fork inherits (fast, Unix-only)."}
+{"instruction": "Give a practical example of `multiprocessing spawn`.", "input": "", "output": "Windows/macOS spawn (fresh interpreters, slower start, picklable targets only); fork inherits (fast, Unix-only)."}
+{"instruction": "What is `multiprocessing spawn` for?", "input": "", "output": "Windows/macOS spawn (fresh interpreters, slower start, picklable targets only); fork inherits (fast, Unix-only)."}
+{"instruction": "Apakah fungsi `multiprocessing spawn`?", "input": "", "output": "Windows/macOS spawn (fresh interpreters, slower start, picklable targets only); fork inherits (fast, Unix-only)."}
+{"instruction": "Terangkan `multiprocessing spawn` secara ringkas.", "input": "", "output": "Windows/macOS spawn (fresh interpreters, slower start, picklable targets only); fork inherits (fast, Unix-only)."}
+{"instruction": "Bila perlu guna `multiprocessing spawn`?", "input": "", "output": "Windows/macOS spawn (fresh interpreters, slower start, picklable targets only); fork inherits (fast, Unix-only)."}
+{"instruction": "Beri contoh penggunaan `multiprocessing spawn`.", "input": "", "output": "Windows/macOS spawn (fresh interpreters, slower start, picklable targets only); fork inherits (fast, Unix-only)."}
+{"instruction": "`multiprocessing spawn` untuk apa?", "input": "", "output": "Windows/macOS spawn (fresh interpreters, slower start, picklable targets only); fork inherits (fast, Unix-only)."}
+{"instruction": "How would you explain `multiprocessing spawn` to a junior developer?", "input": "", "output": "Windows/macOS spawn (fresh interpreters, slower start, picklable targets only); fork inherits (fast, Unix-only)."}
+{"instruction": "Give a real-world scenario for `multiprocessing spawn`.", "input": "", "output": "Windows/macOS spawn (fresh interpreters, slower start, picklable targets only); fork inherits (fast, Unix-only)."}
+{"instruction": "What problem does `multiprocessing spawn` solve?", "input": "", "output": "Windows/macOS spawn (fresh interpreters, slower start, picklable targets only); fork inherits (fast, Unix-only)."}
+{"instruction": "Terangkan `multiprocessing spawn` dalam satu minit.", "input": "", "output": "Windows/macOS spawn (fresh interpreters, slower start, picklable targets only); fork inherits (fast, Unix-only)."}
+{"instruction": "Apa yang perlu saya tahu tentang `multiprocessing spawn`?", "input": "", "output": "Windows/macOS spawn (fresh interpreters, slower start, picklable targets only); fork inherits (fast, Unix-only)."}
+{"instruction": "Bagaimanakah `multiprocessing spawn` berfungsi?", "input": "", "output": "Windows/macOS spawn (fresh interpreters, slower start, picklable targets only); fork inherits (fast, Unix-only)."}
+{"instruction": "Bilakah masa yang sesuai untuk `multiprocessing spawn`?", "input": "", "output": "Windows/macOS spawn (fresh interpreters, slower start, picklable targets only); fork inherits (fast, Unix-only)."}
+{"instruction": "What does `concurrent futures` do?", "input": "", "output": "`ThreadPoolExecutor` for I/O parallelism, `ProcessPoolExecutor` for CPU — `map` preserves order, `as_completed` streams."}
+{"instruction": "Explain `concurrent futures` briefly.", "input": "", "output": "`ThreadPoolExecutor` for I/O parallelism, `ProcessPoolExecutor` for CPU — `map` preserves order, `as_completed` streams."}
+{"instruction": "When do I use `concurrent futures`?", "input": "", "output": "`ThreadPoolExecutor` for I/O parallelism, `ProcessPoolExecutor` for CPU — `map` preserves order, `as_completed` streams."}
+{"instruction": "Give a practical example of `concurrent futures`.", "input": "", "output": "`ThreadPoolExecutor` for I/O parallelism, `ProcessPoolExecutor` for CPU — `map` preserves order, `as_completed` streams."}
+{"instruction": "What is `concurrent futures` for?", "input": "", "output": "`ThreadPoolExecutor` for I/O parallelism, `ProcessPoolExecutor` for CPU — `map` preserves order, `as_completed` streams."}
+{"instruction": "Apakah fungsi `concurrent futures`?", "input": "", "output": "`ThreadPoolExecutor` for I/O parallelism, `ProcessPoolExecutor` for CPU — `map` preserves order, `as_completed` streams."}
+{"instruction": "Terangkan `concurrent futures` secara ringkas.", "input": "", "output": "`ThreadPoolExecutor` for I/O parallelism, `ProcessPoolExecutor` for CPU — `map` preserves order, `as_completed` streams."}
+{"instruction": "Bila perlu guna `concurrent futures`?", "input": "", "output": "`ThreadPoolExecutor` for I/O parallelism, `ProcessPoolExecutor` for CPU — `map` preserves order, `as_completed` streams."}
+{"instruction": "Beri contoh penggunaan `concurrent futures`.", "input": "", "output": "`ThreadPoolExecutor` for I/O parallelism, `ProcessPoolExecutor` for CPU — `map` preserves order, `as_completed` streams."}
+{"instruction": "`concurrent futures` untuk apa?", "input": "", "output": "`ThreadPoolExecutor` for I/O parallelism, `ProcessPoolExecutor` for CPU — `map` preserves order, `as_completed` streams."}
+{"instruction": "How would you explain `concurrent futures` to a junior developer?", "input": "", "output": "`ThreadPoolExecutor` for I/O parallelism, `ProcessPoolExecutor` for CPU — `map` preserves order, `as_completed` streams."}
+{"instruction": "Give a real-world scenario for `concurrent futures`.", "input": "", "output": "`ThreadPoolExecutor` for I/O parallelism, `ProcessPoolExecutor` for CPU — `map` preserves order, `as_completed` streams."}
+{"instruction": "What problem does `concurrent futures` solve?", "input": "", "output": "`ThreadPoolExecutor` for I/O parallelism, `ProcessPoolExecutor` for CPU — `map` preserves order, `as_completed` streams."}
+{"instruction": "Terangkan `concurrent futures` dalam satu minit.", "input": "", "output": "`ThreadPoolExecutor` for I/O parallelism, `ProcessPoolExecutor` for CPU — `map` preserves order, `as_completed` streams."}
+{"instruction": "Apa yang perlu saya tahu tentang `concurrent futures`?", "input": "", "output": "`ThreadPoolExecutor` for I/O parallelism, `ProcessPoolExecutor` for CPU — `map` preserves order, `as_completed` streams."}
+{"instruction": "Bagaimanakah `concurrent futures` berfungsi?", "input": "", "output": "`ThreadPoolExecutor` for I/O parallelism, `ProcessPoolExecutor` for CPU — `map` preserves order, `as_completed` streams."}
+{"instruction": "Bilakah masa yang sesuai untuk `concurrent futures`?", "input": "", "output": "`ThreadPoolExecutor` for I/O parallelism, `ProcessPoolExecutor` for CPU — `map` preserves order, `as_completed` streams."}

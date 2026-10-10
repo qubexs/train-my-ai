@@ -1217,3 +1217,258 @@
 {"instruction": "Apa yang perlu saya tahu tentang `ctype functions`?", "input": "", "output": "`ctype_digit/alpha/alnum()` validate character classes byte-safe (locale-independent, unlike regex shortcuts)."}
 {"instruction": "Bagaimanakah `ctype functions` berfungsi?", "input": "", "output": "`ctype_digit/alpha/alnum()` validate character classes byte-safe (locale-independent, unlike regex shortcuts)."}
 {"instruction": "Bilakah masa yang sesuai untuk `ctype functions`?", "input": "", "output": "`ctype_digit/alpha/alnum()` validate character classes byte-safe (locale-independent, unlike regex shortcuts)."}
+{"instruction": "What does `echo print differences` do?", "input": "", "output": "`echo` takes multiples, returns nothing; `print` returns 1 (usable in expressions) — style, not substance."}
+{"instruction": "Explain `echo print differences` briefly.", "input": "", "output": "`echo` takes multiples, returns nothing; `print` returns 1 (usable in expressions) — style, not substance."}
+{"instruction": "When do I use `echo print differences`?", "input": "", "output": "`echo` takes multiples, returns nothing; `print` returns 1 (usable in expressions) — style, not substance."}
+{"instruction": "Give a practical example of `echo print differences`.", "input": "", "output": "`echo` takes multiples, returns nothing; `print` returns 1 (usable in expressions) — style, not substance."}
+{"instruction": "What is `echo print differences` for?", "input": "", "output": "`echo` takes multiples, returns nothing; `print` returns 1 (usable in expressions) — style, not substance."}
+{"instruction": "Apakah fungsi `echo print differences`?", "input": "", "output": "`echo` takes multiples, returns nothing; `print` returns 1 (usable in expressions) — style, not substance."}
+{"instruction": "Terangkan `echo print differences` secara ringkas.", "input": "", "output": "`echo` takes multiples, returns nothing; `print` returns 1 (usable in expressions) — style, not substance."}
+{"instruction": "Bila perlu guna `echo print differences`?", "input": "", "output": "`echo` takes multiples, returns nothing; `print` returns 1 (usable in expressions) — style, not substance."}
+{"instruction": "Beri contoh penggunaan `echo print differences`.", "input": "", "output": "`echo` takes multiples, returns nothing; `print` returns 1 (usable in expressions) — style, not substance."}
+{"instruction": "`echo print differences` untuk apa?", "input": "", "output": "`echo` takes multiples, returns nothing; `print` returns 1 (usable in expressions) — style, not substance."}
+{"instruction": "How would you explain `echo print differences` to a junior developer?", "input": "", "output": "`echo` takes multiples, returns nothing; `print` returns 1 (usable in expressions) — style, not substance."}
+{"instruction": "Give a real-world scenario for `echo print differences`.", "input": "", "output": "`echo` takes multiples, returns nothing; `print` returns 1 (usable in expressions) — style, not substance."}
+{"instruction": "What problem does `echo print differences` solve?", "input": "", "output": "`echo` takes multiples, returns nothing; `print` returns 1 (usable in expressions) — style, not substance."}
+{"instruction": "Terangkan `echo print differences` dalam satu minit.", "input": "", "output": "`echo` takes multiples, returns nothing; `print` returns 1 (usable in expressions) — style, not substance."}
+{"instruction": "Apa yang perlu saya tahu tentang `echo print differences`?", "input": "", "output": "`echo` takes multiples, returns nothing; `print` returns 1 (usable in expressions) — style, not substance."}
+{"instruction": "Bagaimanakah `echo print differences` berfungsi?", "input": "", "output": "`echo` takes multiples, returns nothing; `print` returns 1 (usable in expressions) — style, not substance."}
+{"instruction": "Bilakah masa yang sesuai untuk `echo print differences`?", "input": "", "output": "`echo` takes multiples, returns nothing; `print` returns 1 (usable in expressions) — style, not substance."}
+{"instruction": "What does `heredoc nowdoc` do?", "input": "", "output": "`<<<SQL ... SQL;` interpolates, `<<<'SQL'` doesn't — SQL blobs and templates without quote-escaping hell."}
+{"instruction": "Explain `heredoc nowdoc` briefly.", "input": "", "output": "`<<<SQL ... SQL;` interpolates, `<<<'SQL'` doesn't — SQL blobs and templates without quote-escaping hell."}
+{"instruction": "When do I use `heredoc nowdoc`?", "input": "", "output": "`<<<SQL ... SQL;` interpolates, `<<<'SQL'` doesn't — SQL blobs and templates without quote-escaping hell."}
+{"instruction": "Give a practical example of `heredoc nowdoc`.", "input": "", "output": "`<<<SQL ... SQL;` interpolates, `<<<'SQL'` doesn't — SQL blobs and templates without quote-escaping hell."}
+{"instruction": "What is `heredoc nowdoc` for?", "input": "", "output": "`<<<SQL ... SQL;` interpolates, `<<<'SQL'` doesn't — SQL blobs and templates without quote-escaping hell."}
+{"instruction": "Apakah fungsi `heredoc nowdoc`?", "input": "", "output": "`<<<SQL ... SQL;` interpolates, `<<<'SQL'` doesn't — SQL blobs and templates without quote-escaping hell."}
+{"instruction": "Terangkan `heredoc nowdoc` secara ringkas.", "input": "", "output": "`<<<SQL ... SQL;` interpolates, `<<<'SQL'` doesn't — SQL blobs and templates without quote-escaping hell."}
+{"instruction": "Bila perlu guna `heredoc nowdoc`?", "input": "", "output": "`<<<SQL ... SQL;` interpolates, `<<<'SQL'` doesn't — SQL blobs and templates without quote-escaping hell."}
+{"instruction": "Beri contoh penggunaan `heredoc nowdoc`.", "input": "", "output": "`<<<SQL ... SQL;` interpolates, `<<<'SQL'` doesn't — SQL blobs and templates without quote-escaping hell."}
+{"instruction": "`heredoc nowdoc` untuk apa?", "input": "", "output": "`<<<SQL ... SQL;` interpolates, `<<<'SQL'` doesn't — SQL blobs and templates without quote-escaping hell."}
+{"instruction": "How would you explain `heredoc nowdoc` to a junior developer?", "input": "", "output": "`<<<SQL ... SQL;` interpolates, `<<<'SQL'` doesn't — SQL blobs and templates without quote-escaping hell."}
+{"instruction": "Give a real-world scenario for `heredoc nowdoc`.", "input": "", "output": "`<<<SQL ... SQL;` interpolates, `<<<'SQL'` doesn't — SQL blobs and templates without quote-escaping hell."}
+{"instruction": "What problem does `heredoc nowdoc` solve?", "input": "", "output": "`<<<SQL ... SQL;` interpolates, `<<<'SQL'` doesn't — SQL blobs and templates without quote-escaping hell."}
+{"instruction": "Terangkan `heredoc nowdoc` dalam satu minit.", "input": "", "output": "`<<<SQL ... SQL;` interpolates, `<<<'SQL'` doesn't — SQL blobs and templates without quote-escaping hell."}
+{"instruction": "Apa yang perlu saya tahu tentang `heredoc nowdoc`?", "input": "", "output": "`<<<SQL ... SQL;` interpolates, `<<<'SQL'` doesn't — SQL blobs and templates without quote-escaping hell."}
+{"instruction": "Bagaimanakah `heredoc nowdoc` berfungsi?", "input": "", "output": "`<<<SQL ... SQL;` interpolates, `<<<'SQL'` doesn't — SQL blobs and templates without quote-escaping hell."}
+{"instruction": "Bilakah masa yang sesuai untuk `heredoc nowdoc`?", "input": "", "output": "`<<<SQL ... SQL;` interpolates, `<<<'SQL'` doesn't — SQL blobs and templates without quote-escaping hell."}
+{"instruction": "What does `list() destructuring` do?", "input": "", "output": "`[$a, $b] = $row` (short list syntax) unpacks; `list()` legacy form persists in old codebases."}
+{"instruction": "Explain `list() destructuring` briefly.", "input": "", "output": "`[$a, $b] = $row` (short list syntax) unpacks; `list()` legacy form persists in old codebases."}
+{"instruction": "When do I use `list() destructuring`?", "input": "", "output": "`[$a, $b] = $row` (short list syntax) unpacks; `list()` legacy form persists in old codebases."}
+{"instruction": "Give a practical example of `list() destructuring`.", "input": "", "output": "`[$a, $b] = $row` (short list syntax) unpacks; `list()` legacy form persists in old codebases."}
+{"instruction": "What is `list() destructuring` for?", "input": "", "output": "`[$a, $b] = $row` (short list syntax) unpacks; `list()` legacy form persists in old codebases."}
+{"instruction": "Apakah fungsi `list() destructuring`?", "input": "", "output": "`[$a, $b] = $row` (short list syntax) unpacks; `list()` legacy form persists in old codebases."}
+{"instruction": "Terangkan `list() destructuring` secara ringkas.", "input": "", "output": "`[$a, $b] = $row` (short list syntax) unpacks; `list()` legacy form persists in old codebases."}
+{"instruction": "Bila perlu guna `list() destructuring`?", "input": "", "output": "`[$a, $b] = $row` (short list syntax) unpacks; `list()` legacy form persists in old codebases."}
+{"instruction": "Beri contoh penggunaan `list() destructuring`.", "input": "", "output": "`[$a, $b] = $row` (short list syntax) unpacks; `list()` legacy form persists in old codebases."}
+{"instruction": "`list() destructuring` untuk apa?", "input": "", "output": "`[$a, $b] = $row` (short list syntax) unpacks; `list()` legacy form persists in old codebases."}
+{"instruction": "How would you explain `list() destructuring` to a junior developer?", "input": "", "output": "`[$a, $b] = $row` (short list syntax) unpacks; `list()` legacy form persists in old codebases."}
+{"instruction": "Give a real-world scenario for `list() destructuring`.", "input": "", "output": "`[$a, $b] = $row` (short list syntax) unpacks; `list()` legacy form persists in old codebases."}
+{"instruction": "What problem does `list() destructuring` solve?", "input": "", "output": "`[$a, $b] = $row` (short list syntax) unpacks; `list()` legacy form persists in old codebases."}
+{"instruction": "Terangkan `list() destructuring` dalam satu minit.", "input": "", "output": "`[$a, $b] = $row` (short list syntax) unpacks; `list()` legacy form persists in old codebases."}
+{"instruction": "Apa yang perlu saya tahu tentang `list() destructuring`?", "input": "", "output": "`[$a, $b] = $row` (short list syntax) unpacks; `list()` legacy form persists in old codebases."}
+{"instruction": "Bagaimanakah `list() destructuring` berfungsi?", "input": "", "output": "`[$a, $b] = $row` (short list syntax) unpacks; `list()` legacy form persists in old codebases."}
+{"instruction": "Bilakah masa yang sesuai untuk `list() destructuring`?", "input": "", "output": "`[$a, $b] = $row` (short list syntax) unpacks; `list()` legacy form persists in old codebases."}
+{"instruction": "What does `compact extract` do?", "input": "", "output": "`compact('a','b')` builds arrays from vars; `extract()` reverses (EXTR_SKIP to avoid clobbering) — templating conveniences."}
+{"instruction": "Explain `compact extract` briefly.", "input": "", "output": "`compact('a','b')` builds arrays from vars; `extract()` reverses (EXTR_SKIP to avoid clobbering) — templating conveniences."}
+{"instruction": "When do I use `compact extract`?", "input": "", "output": "`compact('a','b')` builds arrays from vars; `extract()` reverses (EXTR_SKIP to avoid clobbering) — templating conveniences."}
+{"instruction": "Give a practical example of `compact extract`.", "input": "", "output": "`compact('a','b')` builds arrays from vars; `extract()` reverses (EXTR_SKIP to avoid clobbering) — templating conveniences."}
+{"instruction": "What is `compact extract` for?", "input": "", "output": "`compact('a','b')` builds arrays from vars; `extract()` reverses (EXTR_SKIP to avoid clobbering) — templating conveniences."}
+{"instruction": "Apakah fungsi `compact extract`?", "input": "", "output": "`compact('a','b')` builds arrays from vars; `extract()` reverses (EXTR_SKIP to avoid clobbering) — templating conveniences."}
+{"instruction": "Terangkan `compact extract` secara ringkas.", "input": "", "output": "`compact('a','b')` builds arrays from vars; `extract()` reverses (EXTR_SKIP to avoid clobbering) — templating conveniences."}
+{"instruction": "Bila perlu guna `compact extract`?", "input": "", "output": "`compact('a','b')` builds arrays from vars; `extract()` reverses (EXTR_SKIP to avoid clobbering) — templating conveniences."}
+{"instruction": "Beri contoh penggunaan `compact extract`.", "input": "", "output": "`compact('a','b')` builds arrays from vars; `extract()` reverses (EXTR_SKIP to avoid clobbering) — templating conveniences."}
+{"instruction": "`compact extract` untuk apa?", "input": "", "output": "`compact('a','b')` builds arrays from vars; `extract()` reverses (EXTR_SKIP to avoid clobbering) — templating conveniences."}
+{"instruction": "How would you explain `compact extract` to a junior developer?", "input": "", "output": "`compact('a','b')` builds arrays from vars; `extract()` reverses (EXTR_SKIP to avoid clobbering) — templating conveniences."}
+{"instruction": "Give a real-world scenario for `compact extract`.", "input": "", "output": "`compact('a','b')` builds arrays from vars; `extract()` reverses (EXTR_SKIP to avoid clobbering) — templating conveniences."}
+{"instruction": "What problem does `compact extract` solve?", "input": "", "output": "`compact('a','b')` builds arrays from vars; `extract()` reverses (EXTR_SKIP to avoid clobbering) — templating conveniences."}
+{"instruction": "Terangkan `compact extract` dalam satu minit.", "input": "", "output": "`compact('a','b')` builds arrays from vars; `extract()` reverses (EXTR_SKIP to avoid clobbering) — templating conveniences."}
+{"instruction": "Apa yang perlu saya tahu tentang `compact extract`?", "input": "", "output": "`compact('a','b')` builds arrays from vars; `extract()` reverses (EXTR_SKIP to avoid clobbering) — templating conveniences."}
+{"instruction": "Bagaimanakah `compact extract` berfungsi?", "input": "", "output": "`compact('a','b')` builds arrays from vars; `extract()` reverses (EXTR_SKIP to avoid clobbering) — templating conveniences."}
+{"instruction": "Bilakah masa yang sesuai untuk `compact extract`?", "input": "", "output": "`compact('a','b')` builds arrays from vars; `extract()` reverses (EXTR_SKIP to avoid clobbering) — templating conveniences."}
+{"instruction": "What does `array_push merge` do?", "input": "", "output": "`$a[] = $x` appends idiomatically; `array_merge` concatenates (string keys overwrite, numeric reindex)."}
+{"instruction": "Explain `array_push merge` briefly.", "input": "", "output": "`$a[] = $x` appends idiomatically; `array_merge` concatenates (string keys overwrite, numeric reindex)."}
+{"instruction": "When do I use `array_push merge`?", "input": "", "output": "`$a[] = $x` appends idiomatically; `array_merge` concatenates (string keys overwrite, numeric reindex)."}
+{"instruction": "Give a practical example of `array_push merge`.", "input": "", "output": "`$a[] = $x` appends idiomatically; `array_merge` concatenates (string keys overwrite, numeric reindex)."}
+{"instruction": "What is `array_push merge` for?", "input": "", "output": "`$a[] = $x` appends idiomatically; `array_merge` concatenates (string keys overwrite, numeric reindex)."}
+{"instruction": "Apakah fungsi `array_push merge`?", "input": "", "output": "`$a[] = $x` appends idiomatically; `array_merge` concatenates (string keys overwrite, numeric reindex)."}
+{"instruction": "Terangkan `array_push merge` secara ringkas.", "input": "", "output": "`$a[] = $x` appends idiomatically; `array_merge` concatenates (string keys overwrite, numeric reindex)."}
+{"instruction": "Bila perlu guna `array_push merge`?", "input": "", "output": "`$a[] = $x` appends idiomatically; `array_merge` concatenates (string keys overwrite, numeric reindex)."}
+{"instruction": "Beri contoh penggunaan `array_push merge`.", "input": "", "output": "`$a[] = $x` appends idiomatically; `array_merge` concatenates (string keys overwrite, numeric reindex)."}
+{"instruction": "`array_push merge` untuk apa?", "input": "", "output": "`$a[] = $x` appends idiomatically; `array_merge` concatenates (string keys overwrite, numeric reindex)."}
+{"instruction": "How would you explain `array_push merge` to a junior developer?", "input": "", "output": "`$a[] = $x` appends idiomatically; `array_merge` concatenates (string keys overwrite, numeric reindex)."}
+{"instruction": "Give a real-world scenario for `array_push merge`.", "input": "", "output": "`$a[] = $x` appends idiomatically; `array_merge` concatenates (string keys overwrite, numeric reindex)."}
+{"instruction": "What problem does `array_push merge` solve?", "input": "", "output": "`$a[] = $x` appends idiomatically; `array_merge` concatenates (string keys overwrite, numeric reindex)."}
+{"instruction": "Terangkan `array_push merge` dalam satu minit.", "input": "", "output": "`$a[] = $x` appends idiomatically; `array_merge` concatenates (string keys overwrite, numeric reindex)."}
+{"instruction": "Apa yang perlu saya tahu tentang `array_push merge`?", "input": "", "output": "`$a[] = $x` appends idiomatically; `array_merge` concatenates (string keys overwrite, numeric reindex)."}
+{"instruction": "Bagaimanakah `array_push merge` berfungsi?", "input": "", "output": "`$a[] = $x` appends idiomatically; `array_merge` concatenates (string keys overwrite, numeric reindex)."}
+{"instruction": "Bilakah masa yang sesuai untuk `array_push merge`?", "input": "", "output": "`$a[] = $x` appends idiomatically; `array_merge` concatenates (string keys overwrite, numeric reindex)."}
+{"instruction": "What does `array_filter map` do?", "input": "", "output": "`array_filter`/`array_map` transform functionally; `ARRAY_FILTER_USE_BOTH` passes keys too."}
+{"instruction": "Explain `array_filter map` briefly.", "input": "", "output": "`array_filter`/`array_map` transform functionally; `ARRAY_FILTER_USE_BOTH` passes keys too."}
+{"instruction": "When do I use `array_filter map`?", "input": "", "output": "`array_filter`/`array_map` transform functionally; `ARRAY_FILTER_USE_BOTH` passes keys too."}
+{"instruction": "Give a practical example of `array_filter map`.", "input": "", "output": "`array_filter`/`array_map` transform functionally; `ARRAY_FILTER_USE_BOTH` passes keys too."}
+{"instruction": "What is `array_filter map` for?", "input": "", "output": "`array_filter`/`array_map` transform functionally; `ARRAY_FILTER_USE_BOTH` passes keys too."}
+{"instruction": "Apakah fungsi `array_filter map`?", "input": "", "output": "`array_filter`/`array_map` transform functionally; `ARRAY_FILTER_USE_BOTH` passes keys too."}
+{"instruction": "Terangkan `array_filter map` secara ringkas.", "input": "", "output": "`array_filter`/`array_map` transform functionally; `ARRAY_FILTER_USE_BOTH` passes keys too."}
+{"instruction": "Bila perlu guna `array_filter map`?", "input": "", "output": "`array_filter`/`array_map` transform functionally; `ARRAY_FILTER_USE_BOTH` passes keys too."}
+{"instruction": "Beri contoh penggunaan `array_filter map`.", "input": "", "output": "`array_filter`/`array_map` transform functionally; `ARRAY_FILTER_USE_BOTH` passes keys too."}
+{"instruction": "`array_filter map` untuk apa?", "input": "", "output": "`array_filter`/`array_map` transform functionally; `ARRAY_FILTER_USE_BOTH` passes keys too."}
+{"instruction": "How would you explain `array_filter map` to a junior developer?", "input": "", "output": "`array_filter`/`array_map` transform functionally; `ARRAY_FILTER_USE_BOTH` passes keys too."}
+{"instruction": "Give a real-world scenario for `array_filter map`.", "input": "", "output": "`array_filter`/`array_map` transform functionally; `ARRAY_FILTER_USE_BOTH` passes keys too."}
+{"instruction": "What problem does `array_filter map` solve?", "input": "", "output": "`array_filter`/`array_map` transform functionally; `ARRAY_FILTER_USE_BOTH` passes keys too."}
+{"instruction": "Terangkan `array_filter map` dalam satu minit.", "input": "", "output": "`array_filter`/`array_map` transform functionally; `ARRAY_FILTER_USE_BOTH` passes keys too."}
+{"instruction": "Apa yang perlu saya tahu tentang `array_filter map`?", "input": "", "output": "`array_filter`/`array_map` transform functionally; `ARRAY_FILTER_USE_BOTH` passes keys too."}
+{"instruction": "Bagaimanakah `array_filter map` berfungsi?", "input": "", "output": "`array_filter`/`array_map` transform functionally; `ARRAY_FILTER_USE_BOTH` passes keys too."}
+{"instruction": "Bilakah masa yang sesuai untuk `array_filter map`?", "input": "", "output": "`array_filter`/`array_map` transform functionally; `ARRAY_FILTER_USE_BOTH` passes keys too."}
+{"instruction": "What does `usort spaceship` do?", "input": "", "output": "`usort($a, fn($x,$y) => $x <=> $y)` sorts customly; `<=>` chains multi-key comparators elegantly."}
+{"instruction": "Explain `usort spaceship` briefly.", "input": "", "output": "`usort($a, fn($x,$y) => $x <=> $y)` sorts customly; `<=>` chains multi-key comparators elegantly."}
+{"instruction": "When do I use `usort spaceship`?", "input": "", "output": "`usort($a, fn($x,$y) => $x <=> $y)` sorts customly; `<=>` chains multi-key comparators elegantly."}
+{"instruction": "Give a practical example of `usort spaceship`.", "input": "", "output": "`usort($a, fn($x,$y) => $x <=> $y)` sorts customly; `<=>` chains multi-key comparators elegantly."}
+{"instruction": "What is `usort spaceship` for?", "input": "", "output": "`usort($a, fn($x,$y) => $x <=> $y)` sorts customly; `<=>` chains multi-key comparators elegantly."}
+{"instruction": "Apakah fungsi `usort spaceship`?", "input": "", "output": "`usort($a, fn($x,$y) => $x <=> $y)` sorts customly; `<=>` chains multi-key comparators elegantly."}
+{"instruction": "Terangkan `usort spaceship` secara ringkas.", "input": "", "output": "`usort($a, fn($x,$y) => $x <=> $y)` sorts customly; `<=>` chains multi-key comparators elegantly."}
+{"instruction": "Bila perlu guna `usort spaceship`?", "input": "", "output": "`usort($a, fn($x,$y) => $x <=> $y)` sorts customly; `<=>` chains multi-key comparators elegantly."}
+{"instruction": "Beri contoh penggunaan `usort spaceship`.", "input": "", "output": "`usort($a, fn($x,$y) => $x <=> $y)` sorts customly; `<=>` chains multi-key comparators elegantly."}
+{"instruction": "`usort spaceship` untuk apa?", "input": "", "output": "`usort($a, fn($x,$y) => $x <=> $y)` sorts customly; `<=>` chains multi-key comparators elegantly."}
+{"instruction": "How would you explain `usort spaceship` to a junior developer?", "input": "", "output": "`usort($a, fn($x,$y) => $x <=> $y)` sorts customly; `<=>` chains multi-key comparators elegantly."}
+{"instruction": "Give a real-world scenario for `usort spaceship`.", "input": "", "output": "`usort($a, fn($x,$y) => $x <=> $y)` sorts customly; `<=>` chains multi-key comparators elegantly."}
+{"instruction": "What problem does `usort spaceship` solve?", "input": "", "output": "`usort($a, fn($x,$y) => $x <=> $y)` sorts customly; `<=>` chains multi-key comparators elegantly."}
+{"instruction": "Terangkan `usort spaceship` dalam satu minit.", "input": "", "output": "`usort($a, fn($x,$y) => $x <=> $y)` sorts customly; `<=>` chains multi-key comparators elegantly."}
+{"instruction": "Apa yang perlu saya tahu tentang `usort spaceship`?", "input": "", "output": "`usort($a, fn($x,$y) => $x <=> $y)` sorts customly; `<=>` chains multi-key comparators elegantly."}
+{"instruction": "Bagaimanakah `usort spaceship` berfungsi?", "input": "", "output": "`usort($a, fn($x,$y) => $x <=> $y)` sorts customly; `<=>` chains multi-key comparators elegantly."}
+{"instruction": "Bilakah masa yang sesuai untuk `usort spaceship`?", "input": "", "output": "`usort($a, fn($x,$y) => $x <=> $y)` sorts customly; `<=>` chains multi-key comparators elegantly."}
+{"instruction": "What does `isset empty is_null` do?", "input": "", "output": "`isset` (exists+non-null), `empty` (falsy incl '0'!), `is_null` (exactly null) — three different questions, pick deliberately."}
+{"instruction": "Explain `isset empty is_null` briefly.", "input": "", "output": "`isset` (exists+non-null), `empty` (falsy incl '0'!), `is_null` (exactly null) — three different questions, pick deliberately."}
+{"instruction": "When do I use `isset empty is_null`?", "input": "", "output": "`isset` (exists+non-null), `empty` (falsy incl '0'!), `is_null` (exactly null) — three different questions, pick deliberately."}
+{"instruction": "Give a practical example of `isset empty is_null`.", "input": "", "output": "`isset` (exists+non-null), `empty` (falsy incl '0'!), `is_null` (exactly null) — three different questions, pick deliberately."}
+{"instruction": "What is `isset empty is_null` for?", "input": "", "output": "`isset` (exists+non-null), `empty` (falsy incl '0'!), `is_null` (exactly null) — three different questions, pick deliberately."}
+{"instruction": "Apakah fungsi `isset empty is_null`?", "input": "", "output": "`isset` (exists+non-null), `empty` (falsy incl '0'!), `is_null` (exactly null) — three different questions, pick deliberately."}
+{"instruction": "Terangkan `isset empty is_null` secara ringkas.", "input": "", "output": "`isset` (exists+non-null), `empty` (falsy incl '0'!), `is_null` (exactly null) — three different questions, pick deliberately."}
+{"instruction": "Bila perlu guna `isset empty is_null`?", "input": "", "output": "`isset` (exists+non-null), `empty` (falsy incl '0'!), `is_null` (exactly null) — three different questions, pick deliberately."}
+{"instruction": "Beri contoh penggunaan `isset empty is_null`.", "input": "", "output": "`isset` (exists+non-null), `empty` (falsy incl '0'!), `is_null` (exactly null) — three different questions, pick deliberately."}
+{"instruction": "`isset empty is_null` untuk apa?", "input": "", "output": "`isset` (exists+non-null), `empty` (falsy incl '0'!), `is_null` (exactly null) — three different questions, pick deliberately."}
+{"instruction": "How would you explain `isset empty is_null` to a junior developer?", "input": "", "output": "`isset` (exists+non-null), `empty` (falsy incl '0'!), `is_null` (exactly null) — three different questions, pick deliberately."}
+{"instruction": "Give a real-world scenario for `isset empty is_null`.", "input": "", "output": "`isset` (exists+non-null), `empty` (falsy incl '0'!), `is_null` (exactly null) — three different questions, pick deliberately."}
+{"instruction": "What problem does `isset empty is_null` solve?", "input": "", "output": "`isset` (exists+non-null), `empty` (falsy incl '0'!), `is_null` (exactly null) — three different questions, pick deliberately."}
+{"instruction": "Terangkan `isset empty is_null` dalam satu minit.", "input": "", "output": "`isset` (exists+non-null), `empty` (falsy incl '0'!), `is_null` (exactly null) — three different questions, pick deliberately."}
+{"instruction": "Apa yang perlu saya tahu tentang `isset empty is_null`?", "input": "", "output": "`isset` (exists+non-null), `empty` (falsy incl '0'!), `is_null` (exactly null) — three different questions, pick deliberately."}
+{"instruction": "Bagaimanakah `isset empty is_null` berfungsi?", "input": "", "output": "`isset` (exists+non-null), `empty` (falsy incl '0'!), `is_null` (exactly null) — three different questions, pick deliberately."}
+{"instruction": "Bilakah masa yang sesuai untuk `isset empty is_null`?", "input": "", "output": "`isset` (exists+non-null), `empty` (falsy incl '0'!), `is_null` (exactly null) — three different questions, pick deliberately."}
+{"instruction": "What does `require vs include path` do?", "input": "", "output": "`require` fatals, `include` warns; `_once` variants guard redeclaration — autoloading made both rare anyway."}
+{"instruction": "Explain `require vs include path` briefly.", "input": "", "output": "`require` fatals, `include` warns; `_once` variants guard redeclaration — autoloading made both rare anyway."}
+{"instruction": "When do I use `require vs include path`?", "input": "", "output": "`require` fatals, `include` warns; `_once` variants guard redeclaration — autoloading made both rare anyway."}
+{"instruction": "Give a practical example of `require vs include path`.", "input": "", "output": "`require` fatals, `include` warns; `_once` variants guard redeclaration — autoloading made both rare anyway."}
+{"instruction": "What is `require vs include path` for?", "input": "", "output": "`require` fatals, `include` warns; `_once` variants guard redeclaration — autoloading made both rare anyway."}
+{"instruction": "Apakah fungsi `require vs include path`?", "input": "", "output": "`require` fatals, `include` warns; `_once` variants guard redeclaration — autoloading made both rare anyway."}
+{"instruction": "Terangkan `require vs include path` secara ringkas.", "input": "", "output": "`require` fatals, `include` warns; `_once` variants guard redeclaration — autoloading made both rare anyway."}
+{"instruction": "Bila perlu guna `require vs include path`?", "input": "", "output": "`require` fatals, `include` warns; `_once` variants guard redeclaration — autoloading made both rare anyway."}
+{"instruction": "Beri contoh penggunaan `require vs include path`.", "input": "", "output": "`require` fatals, `include` warns; `_once` variants guard redeclaration — autoloading made both rare anyway."}
+{"instruction": "`require vs include path` untuk apa?", "input": "", "output": "`require` fatals, `include` warns; `_once` variants guard redeclaration — autoloading made both rare anyway."}
+{"instruction": "How would you explain `require vs include path` to a junior developer?", "input": "", "output": "`require` fatals, `include` warns; `_once` variants guard redeclaration — autoloading made both rare anyway."}
+{"instruction": "Give a real-world scenario for `require vs include path`.", "input": "", "output": "`require` fatals, `include` warns; `_once` variants guard redeclaration — autoloading made both rare anyway."}
+{"instruction": "What problem does `require vs include path` solve?", "input": "", "output": "`require` fatals, `include` warns; `_once` variants guard redeclaration — autoloading made both rare anyway."}
+{"instruction": "Terangkan `require vs include path` dalam satu minit.", "input": "", "output": "`require` fatals, `include` warns; `_once` variants guard redeclaration — autoloading made both rare anyway."}
+{"instruction": "Apa yang perlu saya tahu tentang `require vs include path`?", "input": "", "output": "`require` fatals, `include` warns; `_once` variants guard redeclaration — autoloading made both rare anyway."}
+{"instruction": "Bagaimanakah `require vs include path` berfungsi?", "input": "", "output": "`require` fatals, `include` warns; `_once` variants guard redeclaration — autoloading made both rare anyway."}
+{"instruction": "Bilakah masa yang sesuai untuk `require vs include path`?", "input": "", "output": "`require` fatals, `include` warns; `_once` variants guard redeclaration — autoloading made both rare anyway."}
+{"instruction": "What does `__DIR__ __FILE__` do?", "input": "", "output": "Magic constants anchor paths (`__DIR__ . '/x.php'`); `$_SERVER['DOCUMENT_ROOT']` varies by SAPI — prefer the former."}
+{"instruction": "Explain `__DIR__ __FILE__` briefly.", "input": "", "output": "Magic constants anchor paths (`__DIR__ . '/x.php'`); `$_SERVER['DOCUMENT_ROOT']` varies by SAPI — prefer the former."}
+{"instruction": "When do I use `__DIR__ __FILE__`?", "input": "", "output": "Magic constants anchor paths (`__DIR__ . '/x.php'`); `$_SERVER['DOCUMENT_ROOT']` varies by SAPI — prefer the former."}
+{"instruction": "Give a practical example of `__DIR__ __FILE__`.", "input": "", "output": "Magic constants anchor paths (`__DIR__ . '/x.php'`); `$_SERVER['DOCUMENT_ROOT']` varies by SAPI — prefer the former."}
+{"instruction": "What is `__DIR__ __FILE__` for?", "input": "", "output": "Magic constants anchor paths (`__DIR__ . '/x.php'`); `$_SERVER['DOCUMENT_ROOT']` varies by SAPI — prefer the former."}
+{"instruction": "Apakah fungsi `__DIR__ __FILE__`?", "input": "", "output": "Magic constants anchor paths (`__DIR__ . '/x.php'`); `$_SERVER['DOCUMENT_ROOT']` varies by SAPI — prefer the former."}
+{"instruction": "Terangkan `__DIR__ __FILE__` secara ringkas.", "input": "", "output": "Magic constants anchor paths (`__DIR__ . '/x.php'`); `$_SERVER['DOCUMENT_ROOT']` varies by SAPI — prefer the former."}
+{"instruction": "Bila perlu guna `__DIR__ __FILE__`?", "input": "", "output": "Magic constants anchor paths (`__DIR__ . '/x.php'`); `$_SERVER['DOCUMENT_ROOT']` varies by SAPI — prefer the former."}
+{"instruction": "Beri contoh penggunaan `__DIR__ __FILE__`.", "input": "", "output": "Magic constants anchor paths (`__DIR__ . '/x.php'`); `$_SERVER['DOCUMENT_ROOT']` varies by SAPI — prefer the former."}
+{"instruction": "`__DIR__ __FILE__` untuk apa?", "input": "", "output": "Magic constants anchor paths (`__DIR__ . '/x.php'`); `$_SERVER['DOCUMENT_ROOT']` varies by SAPI — prefer the former."}
+{"instruction": "How would you explain `__DIR__ __FILE__` to a junior developer?", "input": "", "output": "Magic constants anchor paths (`__DIR__ . '/x.php'`); `$_SERVER['DOCUMENT_ROOT']` varies by SAPI — prefer the former."}
+{"instruction": "Give a real-world scenario for `__DIR__ __FILE__`.", "input": "", "output": "Magic constants anchor paths (`__DIR__ . '/x.php'`); `$_SERVER['DOCUMENT_ROOT']` varies by SAPI — prefer the former."}
+{"instruction": "What problem does `__DIR__ __FILE__` solve?", "input": "", "output": "Magic constants anchor paths (`__DIR__ . '/x.php'`); `$_SERVER['DOCUMENT_ROOT']` varies by SAPI — prefer the former."}
+{"instruction": "Terangkan `__DIR__ __FILE__` dalam satu minit.", "input": "", "output": "Magic constants anchor paths (`__DIR__ . '/x.php'`); `$_SERVER['DOCUMENT_ROOT']` varies by SAPI — prefer the former."}
+{"instruction": "Apa yang perlu saya tahu tentang `__DIR__ __FILE__`?", "input": "", "output": "Magic constants anchor paths (`__DIR__ . '/x.php'`); `$_SERVER['DOCUMENT_ROOT']` varies by SAPI — prefer the former."}
+{"instruction": "Bagaimanakah `__DIR__ __FILE__` berfungsi?", "input": "", "output": "Magic constants anchor paths (`__DIR__ . '/x.php'`); `$_SERVER['DOCUMENT_ROOT']` varies by SAPI — prefer the former."}
+{"instruction": "Bilakah masa yang sesuai untuk `__DIR__ __FILE__`?", "input": "", "output": "Magic constants anchor paths (`__DIR__ . '/x.php'`); `$_SERVER['DOCUMENT_ROOT']` varies by SAPI — prefer the former."}
+{"instruction": "What does `DIRECTORY_SEPARATOR` do?", "input": "", "output": "`DIRECTORY_SEPARATOR` (or forward slashes everywhere — Windows accepts them) keeps paths portable."}
+{"instruction": "Explain `DIRECTORY_SEPARATOR` briefly.", "input": "", "output": "`DIRECTORY_SEPARATOR` (or forward slashes everywhere — Windows accepts them) keeps paths portable."}
+{"instruction": "When do I use `DIRECTORY_SEPARATOR`?", "input": "", "output": "`DIRECTORY_SEPARATOR` (or forward slashes everywhere — Windows accepts them) keeps paths portable."}
+{"instruction": "Give a practical example of `DIRECTORY_SEPARATOR`.", "input": "", "output": "`DIRECTORY_SEPARATOR` (or forward slashes everywhere — Windows accepts them) keeps paths portable."}
+{"instruction": "What is `DIRECTORY_SEPARATOR` for?", "input": "", "output": "`DIRECTORY_SEPARATOR` (or forward slashes everywhere — Windows accepts them) keeps paths portable."}
+{"instruction": "Apakah fungsi `DIRECTORY_SEPARATOR`?", "input": "", "output": "`DIRECTORY_SEPARATOR` (or forward slashes everywhere — Windows accepts them) keeps paths portable."}
+{"instruction": "Terangkan `DIRECTORY_SEPARATOR` secara ringkas.", "input": "", "output": "`DIRECTORY_SEPARATOR` (or forward slashes everywhere — Windows accepts them) keeps paths portable."}
+{"instruction": "Bila perlu guna `DIRECTORY_SEPARATOR`?", "input": "", "output": "`DIRECTORY_SEPARATOR` (or forward slashes everywhere — Windows accepts them) keeps paths portable."}
+{"instruction": "Beri contoh penggunaan `DIRECTORY_SEPARATOR`.", "input": "", "output": "`DIRECTORY_SEPARATOR` (or forward slashes everywhere — Windows accepts them) keeps paths portable."}
+{"instruction": "`DIRECTORY_SEPARATOR` untuk apa?", "input": "", "output": "`DIRECTORY_SEPARATOR` (or forward slashes everywhere — Windows accepts them) keeps paths portable."}
+{"instruction": "How would you explain `DIRECTORY_SEPARATOR` to a junior developer?", "input": "", "output": "`DIRECTORY_SEPARATOR` (or forward slashes everywhere — Windows accepts them) keeps paths portable."}
+{"instruction": "Give a real-world scenario for `DIRECTORY_SEPARATOR`.", "input": "", "output": "`DIRECTORY_SEPARATOR` (or forward slashes everywhere — Windows accepts them) keeps paths portable."}
+{"instruction": "What problem does `DIRECTORY_SEPARATOR` solve?", "input": "", "output": "`DIRECTORY_SEPARATOR` (or forward slashes everywhere — Windows accepts them) keeps paths portable."}
+{"instruction": "Terangkan `DIRECTORY_SEPARATOR` dalam satu minit.", "input": "", "output": "`DIRECTORY_SEPARATOR` (or forward slashes everywhere — Windows accepts them) keeps paths portable."}
+{"instruction": "Apa yang perlu saya tahu tentang `DIRECTORY_SEPARATOR`?", "input": "", "output": "`DIRECTORY_SEPARATOR` (or forward slashes everywhere — Windows accepts them) keeps paths portable."}
+{"instruction": "Bagaimanakah `DIRECTORY_SEPARATOR` berfungsi?", "input": "", "output": "`DIRECTORY_SEPARATOR` (or forward slashes everywhere — Windows accepts them) keeps paths portable."}
+{"instruction": "Bilakah masa yang sesuai untuk `DIRECTORY_SEPARATOR`?", "input": "", "output": "`DIRECTORY_SEPARATOR` (or forward slashes everywhere — Windows accepts them) keeps paths portable."}
+{"instruction": "What does `PHP_EOL` do?", "input": "", "output": "`PHP_EOL` matches platform line endings for local files; wire protocols demand explicit `\\r\\n` regardless."}
+{"instruction": "Explain `PHP_EOL` briefly.", "input": "", "output": "`PHP_EOL` matches platform line endings for local files; wire protocols demand explicit `\\r\\n` regardless."}
+{"instruction": "When do I use `PHP_EOL`?", "input": "", "output": "`PHP_EOL` matches platform line endings for local files; wire protocols demand explicit `\\r\\n` regardless."}
+{"instruction": "Give a practical example of `PHP_EOL`.", "input": "", "output": "`PHP_EOL` matches platform line endings for local files; wire protocols demand explicit `\\r\\n` regardless."}
+{"instruction": "What is `PHP_EOL` for?", "input": "", "output": "`PHP_EOL` matches platform line endings for local files; wire protocols demand explicit `\\r\\n` regardless."}
+{"instruction": "Apakah fungsi `PHP_EOL`?", "input": "", "output": "`PHP_EOL` matches platform line endings for local files; wire protocols demand explicit `\\r\\n` regardless."}
+{"instruction": "Terangkan `PHP_EOL` secara ringkas.", "input": "", "output": "`PHP_EOL` matches platform line endings for local files; wire protocols demand explicit `\\r\\n` regardless."}
+{"instruction": "Bila perlu guna `PHP_EOL`?", "input": "", "output": "`PHP_EOL` matches platform line endings for local files; wire protocols demand explicit `\\r\\n` regardless."}
+{"instruction": "Beri contoh penggunaan `PHP_EOL`.", "input": "", "output": "`PHP_EOL` matches platform line endings for local files; wire protocols demand explicit `\\r\\n` regardless."}
+{"instruction": "`PHP_EOL` untuk apa?", "input": "", "output": "`PHP_EOL` matches platform line endings for local files; wire protocols demand explicit `\\r\\n` regardless."}
+{"instruction": "How would you explain `PHP_EOL` to a junior developer?", "input": "", "output": "`PHP_EOL` matches platform line endings for local files; wire protocols demand explicit `\\r\\n` regardless."}
+{"instruction": "Give a real-world scenario for `PHP_EOL`.", "input": "", "output": "`PHP_EOL` matches platform line endings for local files; wire protocols demand explicit `\\r\\n` regardless."}
+{"instruction": "What problem does `PHP_EOL` solve?", "input": "", "output": "`PHP_EOL` matches platform line endings for local files; wire protocols demand explicit `\\r\\n` regardless."}
+{"instruction": "Terangkan `PHP_EOL` dalam satu minit.", "input": "", "output": "`PHP_EOL` matches platform line endings for local files; wire protocols demand explicit `\\r\\n` regardless."}
+{"instruction": "Apa yang perlu saya tahu tentang `PHP_EOL`?", "input": "", "output": "`PHP_EOL` matches platform line endings for local files; wire protocols demand explicit `\\r\\n` regardless."}
+{"instruction": "Bagaimanakah `PHP_EOL` berfungsi?", "input": "", "output": "`PHP_EOL` matches platform line endings for local files; wire protocols demand explicit `\\r\\n` regardless."}
+{"instruction": "Bilakah masa yang sesuai untuk `PHP_EOL`?", "input": "", "output": "`PHP_EOL` matches platform line endings for local files; wire protocols demand explicit `\\r\\n` regardless."}
+{"instruction": "What does `serialize json_encode` do?", "input": "", "output": "`serialize()` preserves PHP types (caches); JSON interoperates — never `unserialize()` untrusted input (object injection)."}
+{"instruction": "Explain `serialize json_encode` briefly.", "input": "", "output": "`serialize()` preserves PHP types (caches); JSON interoperates — never `unserialize()` untrusted input (object injection)."}
+{"instruction": "When do I use `serialize json_encode`?", "input": "", "output": "`serialize()` preserves PHP types (caches); JSON interoperates — never `unserialize()` untrusted input (object injection)."}
+{"instruction": "Give a practical example of `serialize json_encode`.", "input": "", "output": "`serialize()` preserves PHP types (caches); JSON interoperates — never `unserialize()` untrusted input (object injection)."}
+{"instruction": "What is `serialize json_encode` for?", "input": "", "output": "`serialize()` preserves PHP types (caches); JSON interoperates — never `unserialize()` untrusted input (object injection)."}
+{"instruction": "Apakah fungsi `serialize json_encode`?", "input": "", "output": "`serialize()` preserves PHP types (caches); JSON interoperates — never `unserialize()` untrusted input (object injection)."}
+{"instruction": "Terangkan `serialize json_encode` secara ringkas.", "input": "", "output": "`serialize()` preserves PHP types (caches); JSON interoperates — never `unserialize()` untrusted input (object injection)."}
+{"instruction": "Bila perlu guna `serialize json_encode`?", "input": "", "output": "`serialize()` preserves PHP types (caches); JSON interoperates — never `unserialize()` untrusted input (object injection)."}
+{"instruction": "Beri contoh penggunaan `serialize json_encode`.", "input": "", "output": "`serialize()` preserves PHP types (caches); JSON interoperates — never `unserialize()` untrusted input (object injection)."}
+{"instruction": "`serialize json_encode` untuk apa?", "input": "", "output": "`serialize()` preserves PHP types (caches); JSON interoperates — never `unserialize()` untrusted input (object injection)."}
+{"instruction": "How would you explain `serialize json_encode` to a junior developer?", "input": "", "output": "`serialize()` preserves PHP types (caches); JSON interoperates — never `unserialize()` untrusted input (object injection)."}
+{"instruction": "Give a real-world scenario for `serialize json_encode`.", "input": "", "output": "`serialize()` preserves PHP types (caches); JSON interoperates — never `unserialize()` untrusted input (object injection)."}
+{"instruction": "What problem does `serialize json_encode` solve?", "input": "", "output": "`serialize()` preserves PHP types (caches); JSON interoperates — never `unserialize()` untrusted input (object injection)."}
+{"instruction": "Terangkan `serialize json_encode` dalam satu minit.", "input": "", "output": "`serialize()` preserves PHP types (caches); JSON interoperates — never `unserialize()` untrusted input (object injection)."}
+{"instruction": "Apa yang perlu saya tahu tentang `serialize json_encode`?", "input": "", "output": "`serialize()` preserves PHP types (caches); JSON interoperates — never `unserialize()` untrusted input (object injection)."}
+{"instruction": "Bagaimanakah `serialize json_encode` berfungsi?", "input": "", "output": "`serialize()` preserves PHP types (caches); JSON interoperates — never `unserialize()` untrusted input (object injection)."}
+{"instruction": "Bilakah masa yang sesuai untuk `serialize json_encode`?", "input": "", "output": "`serialize()` preserves PHP types (caches); JSON interoperates — never `unserialize()` untrusted input (object injection)."}
+{"instruction": "What does `mb_ functions` do?", "input": "", "output": "`mb_strlen/mb_substr/mb_strtolower` handle UTF-8 (Malay/Jawi text!); byte functions mangle multibyte silently."}
+{"instruction": "Explain `mb_ functions` briefly.", "input": "", "output": "`mb_strlen/mb_substr/mb_strtolower` handle UTF-8 (Malay/Jawi text!); byte functions mangle multibyte silently."}
+{"instruction": "When do I use `mb_ functions`?", "input": "", "output": "`mb_strlen/mb_substr/mb_strtolower` handle UTF-8 (Malay/Jawi text!); byte functions mangle multibyte silently."}
+{"instruction": "Give a practical example of `mb_ functions`.", "input": "", "output": "`mb_strlen/mb_substr/mb_strtolower` handle UTF-8 (Malay/Jawi text!); byte functions mangle multibyte silently."}
+{"instruction": "What is `mb_ functions` for?", "input": "", "output": "`mb_strlen/mb_substr/mb_strtolower` handle UTF-8 (Malay/Jawi text!); byte functions mangle multibyte silently."}
+{"instruction": "Apakah fungsi `mb_ functions`?", "input": "", "output": "`mb_strlen/mb_substr/mb_strtolower` handle UTF-8 (Malay/Jawi text!); byte functions mangle multibyte silently."}
+{"instruction": "Terangkan `mb_ functions` secara ringkas.", "input": "", "output": "`mb_strlen/mb_substr/mb_strtolower` handle UTF-8 (Malay/Jawi text!); byte functions mangle multibyte silently."}
+{"instruction": "Bila perlu guna `mb_ functions`?", "input": "", "output": "`mb_strlen/mb_substr/mb_strtolower` handle UTF-8 (Malay/Jawi text!); byte functions mangle multibyte silently."}
+{"instruction": "Beri contoh penggunaan `mb_ functions`.", "input": "", "output": "`mb_strlen/mb_substr/mb_strtolower` handle UTF-8 (Malay/Jawi text!); byte functions mangle multibyte silently."}
+{"instruction": "`mb_ functions` untuk apa?", "input": "", "output": "`mb_strlen/mb_substr/mb_strtolower` handle UTF-8 (Malay/Jawi text!); byte functions mangle multibyte silently."}
+{"instruction": "How would you explain `mb_ functions` to a junior developer?", "input": "", "output": "`mb_strlen/mb_substr/mb_strtolower` handle UTF-8 (Malay/Jawi text!); byte functions mangle multibyte silently."}
+{"instruction": "Give a real-world scenario for `mb_ functions`.", "input": "", "output": "`mb_strlen/mb_substr/mb_strtolower` handle UTF-8 (Malay/Jawi text!); byte functions mangle multibyte silently."}
+{"instruction": "What problem does `mb_ functions` solve?", "input": "", "output": "`mb_strlen/mb_substr/mb_strtolower` handle UTF-8 (Malay/Jawi text!); byte functions mangle multibyte silently."}
+{"instruction": "Terangkan `mb_ functions` dalam satu minit.", "input": "", "output": "`mb_strlen/mb_substr/mb_strtolower` handle UTF-8 (Malay/Jawi text!); byte functions mangle multibyte silently."}
+{"instruction": "Apa yang perlu saya tahu tentang `mb_ functions`?", "input": "", "output": "`mb_strlen/mb_substr/mb_strtolower` handle UTF-8 (Malay/Jawi text!); byte functions mangle multibyte silently."}
+{"instruction": "Bagaimanakah `mb_ functions` berfungsi?", "input": "", "output": "`mb_strlen/mb_substr/mb_strtolower` handle UTF-8 (Malay/Jawi text!); byte functions mangle multibyte silently."}
+{"instruction": "Bilakah masa yang sesuai untuk `mb_ functions`?", "input": "", "output": "`mb_strlen/mb_substr/mb_strtolower` handle UTF-8 (Malay/Jawi text!); byte functions mangle multibyte silently."}
+{"instruction": "What does `date DateTime` do?", "input": "", "output": "`new DateTimeImmutable('now', new DateTimeZone('Asia/Kuala_Lumpur'))` — immutable + explicit zones end DST double-counting."}
+{"instruction": "Explain `date DateTime` briefly.", "input": "", "output": "`new DateTimeImmutable('now', new DateTimeZone('Asia/Kuala_Lumpur'))` — immutable + explicit zones end DST double-counting."}
+{"instruction": "When do I use `date DateTime`?", "input": "", "output": "`new DateTimeImmutable('now', new DateTimeZone('Asia/Kuala_Lumpur'))` — immutable + explicit zones end DST double-counting."}
+{"instruction": "Give a practical example of `date DateTime`.", "input": "", "output": "`new DateTimeImmutable('now', new DateTimeZone('Asia/Kuala_Lumpur'))` — immutable + explicit zones end DST double-counting."}
+{"instruction": "What is `date DateTime` for?", "input": "", "output": "`new DateTimeImmutable('now', new DateTimeZone('Asia/Kuala_Lumpur'))` — immutable + explicit zones end DST double-counting."}
+{"instruction": "Apakah fungsi `date DateTime`?", "input": "", "output": "`new DateTimeImmutable('now', new DateTimeZone('Asia/Kuala_Lumpur'))` — immutable + explicit zones end DST double-counting."}
+{"instruction": "Terangkan `date DateTime` secara ringkas.", "input": "", "output": "`new DateTimeImmutable('now', new DateTimeZone('Asia/Kuala_Lumpur'))` — immutable + explicit zones end DST double-counting."}
+{"instruction": "Bila perlu guna `date DateTime`?", "input": "", "output": "`new DateTimeImmutable('now', new DateTimeZone('Asia/Kuala_Lumpur'))` — immutable + explicit zones end DST double-counting."}
+{"instruction": "Beri contoh penggunaan `date DateTime`.", "input": "", "output": "`new DateTimeImmutable('now', new DateTimeZone('Asia/Kuala_Lumpur'))` — immutable + explicit zones end DST double-counting."}
+{"instruction": "`date DateTime` untuk apa?", "input": "", "output": "`new DateTimeImmutable('now', new DateTimeZone('Asia/Kuala_Lumpur'))` — immutable + explicit zones end DST double-counting."}
+{"instruction": "How would you explain `date DateTime` to a junior developer?", "input": "", "output": "`new DateTimeImmutable('now', new DateTimeZone('Asia/Kuala_Lumpur'))` — immutable + explicit zones end DST double-counting."}
+{"instruction": "Give a real-world scenario for `date DateTime`.", "input": "", "output": "`new DateTimeImmutable('now', new DateTimeZone('Asia/Kuala_Lumpur'))` — immutable + explicit zones end DST double-counting."}
+{"instruction": "What problem does `date DateTime` solve?", "input": "", "output": "`new DateTimeImmutable('now', new DateTimeZone('Asia/Kuala_Lumpur'))` — immutable + explicit zones end DST double-counting."}
+{"instruction": "Terangkan `date DateTime` dalam satu minit.", "input": "", "output": "`new DateTimeImmutable('now', new DateTimeZone('Asia/Kuala_Lumpur'))` — immutable + explicit zones end DST double-counting."}
+{"instruction": "Apa yang perlu saya tahu tentang `date DateTime`?", "input": "", "output": "`new DateTimeImmutable('now', new DateTimeZone('Asia/Kuala_Lumpur'))` — immutable + explicit zones end DST double-counting."}
+{"instruction": "Bagaimanakah `date DateTime` berfungsi?", "input": "", "output": "`new DateTimeImmutable('now', new DateTimeZone('Asia/Kuala_Lumpur'))` — immutable + explicit zones end DST double-counting."}
+{"instruction": "Bilakah masa yang sesuai untuk `date DateTime`?", "input": "", "output": "`new DateTimeImmutable('now', new DateTimeZone('Asia/Kuala_Lumpur'))` — immutable + explicit zones end DST double-counting."}

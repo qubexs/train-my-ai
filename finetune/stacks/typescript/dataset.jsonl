@@ -1012,3 +1012,258 @@
 {"instruction": "Apa yang perlu saya tahu tentang `template literal inference`?", "input": "", "output": "`infer` inside template types (`type R = S extends `${A}:${B}` ? ...`) parses string DSLs at compile time."}
 {"instruction": "Bagaimanakah `template literal inference` berfungsi?", "input": "", "output": "`infer` inside template types (`type R = S extends `${A}:${B}` ? ...`) parses string DSLs at compile time."}
 {"instruction": "Bilakah masa yang sesuai untuk `template literal inference`?", "input": "", "output": "`infer` inside template types (`type R = S extends `${A}:${B}` ? ...`) parses string DSLs at compile time."}
+{"instruction": "What does `any unsafe` do?", "input": "", "output": "Explicit `any` opts out of checking (JSON blobs, migrations); `unknown` + narrowing is the disciplined equivalent."}
+{"instruction": "Explain `any unsafe` briefly.", "input": "", "output": "Explicit `any` opts out of checking (JSON blobs, migrations); `unknown` + narrowing is the disciplined equivalent."}
+{"instruction": "When do I use `any unsafe`?", "input": "", "output": "Explicit `any` opts out of checking (JSON blobs, migrations); `unknown` + narrowing is the disciplined equivalent."}
+{"instruction": "Give a practical example of `any unsafe`.", "input": "", "output": "Explicit `any` opts out of checking (JSON blobs, migrations); `unknown` + narrowing is the disciplined equivalent."}
+{"instruction": "What is `any unsafe` for?", "input": "", "output": "Explicit `any` opts out of checking (JSON blobs, migrations); `unknown` + narrowing is the disciplined equivalent."}
+{"instruction": "Apakah fungsi `any unsafe`?", "input": "", "output": "Explicit `any` opts out of checking (JSON blobs, migrations); `unknown` + narrowing is the disciplined equivalent."}
+{"instruction": "Terangkan `any unsafe` secara ringkas.", "input": "", "output": "Explicit `any` opts out of checking (JSON blobs, migrations); `unknown` + narrowing is the disciplined equivalent."}
+{"instruction": "Bila perlu guna `any unsafe`?", "input": "", "output": "Explicit `any` opts out of checking (JSON blobs, migrations); `unknown` + narrowing is the disciplined equivalent."}
+{"instruction": "Beri contoh penggunaan `any unsafe`.", "input": "", "output": "Explicit `any` opts out of checking (JSON blobs, migrations); `unknown` + narrowing is the disciplined equivalent."}
+{"instruction": "`any unsafe` untuk apa?", "input": "", "output": "Explicit `any` opts out of checking (JSON blobs, migrations); `unknown` + narrowing is the disciplined equivalent."}
+{"instruction": "How would you explain `any unsafe` to a junior developer?", "input": "", "output": "Explicit `any` opts out of checking (JSON blobs, migrations); `unknown` + narrowing is the disciplined equivalent."}
+{"instruction": "Give a real-world scenario for `any unsafe`.", "input": "", "output": "Explicit `any` opts out of checking (JSON blobs, migrations); `unknown` + narrowing is the disciplined equivalent."}
+{"instruction": "What problem does `any unsafe` solve?", "input": "", "output": "Explicit `any` opts out of checking (JSON blobs, migrations); `unknown` + narrowing is the disciplined equivalent."}
+{"instruction": "Terangkan `any unsafe` dalam satu minit.", "input": "", "output": "Explicit `any` opts out of checking (JSON blobs, migrations); `unknown` + narrowing is the disciplined equivalent."}
+{"instruction": "Apa yang perlu saya tahu tentang `any unsafe`?", "input": "", "output": "Explicit `any` opts out of checking (JSON blobs, migrations); `unknown` + narrowing is the disciplined equivalent."}
+{"instruction": "Bagaimanakah `any unsafe` berfungsi?", "input": "", "output": "Explicit `any` opts out of checking (JSON blobs, migrations); `unknown` + narrowing is the disciplined equivalent."}
+{"instruction": "Bilakah masa yang sesuai untuk `any unsafe`?", "input": "", "output": "Explicit `any` opts out of checking (JSON blobs, migrations); `unknown` + narrowing is the disciplined equivalent."}
+{"instruction": "What does `object Object {}` do?", "input": "", "output": "`object` (non-primitive), `Object` (boxed, avoid), `{}` (any non-null!) — three spellings, three meanings."}
+{"instruction": "Explain `object Object {}` briefly.", "input": "", "output": "`object` (non-primitive), `Object` (boxed, avoid), `{}` (any non-null!) — three spellings, three meanings."}
+{"instruction": "When do I use `object Object {}`?", "input": "", "output": "`object` (non-primitive), `Object` (boxed, avoid), `{}` (any non-null!) — three spellings, three meanings."}
+{"instruction": "Give a practical example of `object Object {}`.", "input": "", "output": "`object` (non-primitive), `Object` (boxed, avoid), `{}` (any non-null!) — three spellings, three meanings."}
+{"instruction": "What is `object Object {}` for?", "input": "", "output": "`object` (non-primitive), `Object` (boxed, avoid), `{}` (any non-null!) — three spellings, three meanings."}
+{"instruction": "Apakah fungsi `object Object {}`?", "input": "", "output": "`object` (non-primitive), `Object` (boxed, avoid), `{}` (any non-null!) — three spellings, three meanings."}
+{"instruction": "Terangkan `object Object {}` secara ringkas.", "input": "", "output": "`object` (non-primitive), `Object` (boxed, avoid), `{}` (any non-null!) — three spellings, three meanings."}
+{"instruction": "Bila perlu guna `object Object {}`?", "input": "", "output": "`object` (non-primitive), `Object` (boxed, avoid), `{}` (any non-null!) — three spellings, three meanings."}
+{"instruction": "Beri contoh penggunaan `object Object {}`.", "input": "", "output": "`object` (non-primitive), `Object` (boxed, avoid), `{}` (any non-null!) — three spellings, three meanings."}
+{"instruction": "`object Object {}` untuk apa?", "input": "", "output": "`object` (non-primitive), `Object` (boxed, avoid), `{}` (any non-null!) — three spellings, three meanings."}
+{"instruction": "How would you explain `object Object {}` to a junior developer?", "input": "", "output": "`object` (non-primitive), `Object` (boxed, avoid), `{}` (any non-null!) — three spellings, three meanings."}
+{"instruction": "Give a real-world scenario for `object Object {}`.", "input": "", "output": "`object` (non-primitive), `Object` (boxed, avoid), `{}` (any non-null!) — three spellings, three meanings."}
+{"instruction": "What problem does `object Object {}` solve?", "input": "", "output": "`object` (non-primitive), `Object` (boxed, avoid), `{}` (any non-null!) — three spellings, three meanings."}
+{"instruction": "Terangkan `object Object {}` dalam satu minit.", "input": "", "output": "`object` (non-primitive), `Object` (boxed, avoid), `{}` (any non-null!) — three spellings, three meanings."}
+{"instruction": "Apa yang perlu saya tahu tentang `object Object {}`?", "input": "", "output": "`object` (non-primitive), `Object` (boxed, avoid), `{}` (any non-null!) — three spellings, three meanings."}
+{"instruction": "Bagaimanakah `object Object {}` berfungsi?", "input": "", "output": "`object` (non-primitive), `Object` (boxed, avoid), `{}` (any non-null!) — three spellings, three meanings."}
+{"instruction": "Bilakah masa yang sesuai untuk `object Object {}`?", "input": "", "output": "`object` (non-primitive), `Object` (boxed, avoid), `{}` (any non-null!) — three spellings, three meanings."}
+{"instruction": "What does `tuple labels` do?", "input": "", "output": "Labeled tuples (`[name: string, age: number]`) document positions; rest elements (`...string[]`) stay flexible."}
+{"instruction": "Explain `tuple labels` briefly.", "input": "", "output": "Labeled tuples (`[name: string, age: number]`) document positions; rest elements (`...string[]`) stay flexible."}
+{"instruction": "When do I use `tuple labels`?", "input": "", "output": "Labeled tuples (`[name: string, age: number]`) document positions; rest elements (`...string[]`) stay flexible."}
+{"instruction": "Give a practical example of `tuple labels`.", "input": "", "output": "Labeled tuples (`[name: string, age: number]`) document positions; rest elements (`...string[]`) stay flexible."}
+{"instruction": "What is `tuple labels` for?", "input": "", "output": "Labeled tuples (`[name: string, age: number]`) document positions; rest elements (`...string[]`) stay flexible."}
+{"instruction": "Apakah fungsi `tuple labels`?", "input": "", "output": "Labeled tuples (`[name: string, age: number]`) document positions; rest elements (`...string[]`) stay flexible."}
+{"instruction": "Terangkan `tuple labels` secara ringkas.", "input": "", "output": "Labeled tuples (`[name: string, age: number]`) document positions; rest elements (`...string[]`) stay flexible."}
+{"instruction": "Bila perlu guna `tuple labels`?", "input": "", "output": "Labeled tuples (`[name: string, age: number]`) document positions; rest elements (`...string[]`) stay flexible."}
+{"instruction": "Beri contoh penggunaan `tuple labels`.", "input": "", "output": "Labeled tuples (`[name: string, age: number]`) document positions; rest elements (`...string[]`) stay flexible."}
+{"instruction": "`tuple labels` untuk apa?", "input": "", "output": "Labeled tuples (`[name: string, age: number]`) document positions; rest elements (`...string[]`) stay flexible."}
+{"instruction": "How would you explain `tuple labels` to a junior developer?", "input": "", "output": "Labeled tuples (`[name: string, age: number]`) document positions; rest elements (`...string[]`) stay flexible."}
+{"instruction": "Give a real-world scenario for `tuple labels`.", "input": "", "output": "Labeled tuples (`[name: string, age: number]`) document positions; rest elements (`...string[]`) stay flexible."}
+{"instruction": "What problem does `tuple labels` solve?", "input": "", "output": "Labeled tuples (`[name: string, age: number]`) document positions; rest elements (`...string[]`) stay flexible."}
+{"instruction": "Terangkan `tuple labels` dalam satu minit.", "input": "", "output": "Labeled tuples (`[name: string, age: number]`) document positions; rest elements (`...string[]`) stay flexible."}
+{"instruction": "Apa yang perlu saya tahu tentang `tuple labels`?", "input": "", "output": "Labeled tuples (`[name: string, age: number]`) document positions; rest elements (`...string[]`) stay flexible."}
+{"instruction": "Bagaimanakah `tuple labels` berfungsi?", "input": "", "output": "Labeled tuples (`[name: string, age: number]`) document positions; rest elements (`...string[]`) stay flexible."}
+{"instruction": "Bilakah masa yang sesuai untuk `tuple labels`?", "input": "", "output": "Labeled tuples (`[name: string, age: number]`) document positions; rest elements (`...string[]`) stay flexible."}
+{"instruction": "What does `readonly arrays` do?", "input": "", "output": "`readonly string[]` prevents pushes at compile time; `as const` arrays are readonly tuples literally."}
+{"instruction": "Explain `readonly arrays` briefly.", "input": "", "output": "`readonly string[]` prevents pushes at compile time; `as const` arrays are readonly tuples literally."}
+{"instruction": "When do I use `readonly arrays`?", "input": "", "output": "`readonly string[]` prevents pushes at compile time; `as const` arrays are readonly tuples literally."}
+{"instruction": "Give a practical example of `readonly arrays`.", "input": "", "output": "`readonly string[]` prevents pushes at compile time; `as const` arrays are readonly tuples literally."}
+{"instruction": "What is `readonly arrays` for?", "input": "", "output": "`readonly string[]` prevents pushes at compile time; `as const` arrays are readonly tuples literally."}
+{"instruction": "Apakah fungsi `readonly arrays`?", "input": "", "output": "`readonly string[]` prevents pushes at compile time; `as const` arrays are readonly tuples literally."}
+{"instruction": "Terangkan `readonly arrays` secara ringkas.", "input": "", "output": "`readonly string[]` prevents pushes at compile time; `as const` arrays are readonly tuples literally."}
+{"instruction": "Bila perlu guna `readonly arrays`?", "input": "", "output": "`readonly string[]` prevents pushes at compile time; `as const` arrays are readonly tuples literally."}
+{"instruction": "Beri contoh penggunaan `readonly arrays`.", "input": "", "output": "`readonly string[]` prevents pushes at compile time; `as const` arrays are readonly tuples literally."}
+{"instruction": "`readonly arrays` untuk apa?", "input": "", "output": "`readonly string[]` prevents pushes at compile time; `as const` arrays are readonly tuples literally."}
+{"instruction": "How would you explain `readonly arrays` to a junior developer?", "input": "", "output": "`readonly string[]` prevents pushes at compile time; `as const` arrays are readonly tuples literally."}
+{"instruction": "Give a real-world scenario for `readonly arrays`.", "input": "", "output": "`readonly string[]` prevents pushes at compile time; `as const` arrays are readonly tuples literally."}
+{"instruction": "What problem does `readonly arrays` solve?", "input": "", "output": "`readonly string[]` prevents pushes at compile time; `as const` arrays are readonly tuples literally."}
+{"instruction": "Terangkan `readonly arrays` dalam satu minit.", "input": "", "output": "`readonly string[]` prevents pushes at compile time; `as const` arrays are readonly tuples literally."}
+{"instruction": "Apa yang perlu saya tahu tentang `readonly arrays`?", "input": "", "output": "`readonly string[]` prevents pushes at compile time; `as const` arrays are readonly tuples literally."}
+{"instruction": "Bagaimanakah `readonly arrays` berfungsi?", "input": "", "output": "`readonly string[]` prevents pushes at compile time; `as const` arrays are readonly tuples literally."}
+{"instruction": "Bilakah masa yang sesuai untuk `readonly arrays`?", "input": "", "output": "`readonly string[]` prevents pushes at compile time; `as const` arrays are readonly tuples literally."}
+{"instruction": "What does `unique symbol` do?", "input": "", "output": "`unique symbol` types singleton keys (registry patterns); `symbol` alone is too wide for branding."}
+{"instruction": "Explain `unique symbol` briefly.", "input": "", "output": "`unique symbol` types singleton keys (registry patterns); `symbol` alone is too wide for branding."}
+{"instruction": "When do I use `unique symbol`?", "input": "", "output": "`unique symbol` types singleton keys (registry patterns); `symbol` alone is too wide for branding."}
+{"instruction": "Give a practical example of `unique symbol`.", "input": "", "output": "`unique symbol` types singleton keys (registry patterns); `symbol` alone is too wide for branding."}
+{"instruction": "What is `unique symbol` for?", "input": "", "output": "`unique symbol` types singleton keys (registry patterns); `symbol` alone is too wide for branding."}
+{"instruction": "Apakah fungsi `unique symbol`?", "input": "", "output": "`unique symbol` types singleton keys (registry patterns); `symbol` alone is too wide for branding."}
+{"instruction": "Terangkan `unique symbol` secara ringkas.", "input": "", "output": "`unique symbol` types singleton keys (registry patterns); `symbol` alone is too wide for branding."}
+{"instruction": "Bila perlu guna `unique symbol`?", "input": "", "output": "`unique symbol` types singleton keys (registry patterns); `symbol` alone is too wide for branding."}
+{"instruction": "Beri contoh penggunaan `unique symbol`.", "input": "", "output": "`unique symbol` types singleton keys (registry patterns); `symbol` alone is too wide for branding."}
+{"instruction": "`unique symbol` untuk apa?", "input": "", "output": "`unique symbol` types singleton keys (registry patterns); `symbol` alone is too wide for branding."}
+{"instruction": "How would you explain `unique symbol` to a junior developer?", "input": "", "output": "`unique symbol` types singleton keys (registry patterns); `symbol` alone is too wide for branding."}
+{"instruction": "Give a real-world scenario for `unique symbol`.", "input": "", "output": "`unique symbol` types singleton keys (registry patterns); `symbol` alone is too wide for branding."}
+{"instruction": "What problem does `unique symbol` solve?", "input": "", "output": "`unique symbol` types singleton keys (registry patterns); `symbol` alone is too wide for branding."}
+{"instruction": "Terangkan `unique symbol` dalam satu minit.", "input": "", "output": "`unique symbol` types singleton keys (registry patterns); `symbol` alone is too wide for branding."}
+{"instruction": "Apa yang perlu saya tahu tentang `unique symbol`?", "input": "", "output": "`unique symbol` types singleton keys (registry patterns); `symbol` alone is too wide for branding."}
+{"instruction": "Bagaimanakah `unique symbol` berfungsi?", "input": "", "output": "`unique symbol` types singleton keys (registry patterns); `symbol` alone is too wide for branding."}
+{"instruction": "Bilakah masa yang sesuai untuk `unique symbol`?", "input": "", "output": "`unique symbol` types singleton keys (registry patterns); `symbol` alone is too wide for branding."}
+{"instruction": "What does `bigint vs number` do?", "input": "", "output": "`bigint` literals (`10n`) for 64-bit ints (IDs, money-cents); JSON needs custom (de)serializers for them."}
+{"instruction": "Explain `bigint vs number` briefly.", "input": "", "output": "`bigint` literals (`10n`) for 64-bit ints (IDs, money-cents); JSON needs custom (de)serializers for them."}
+{"instruction": "When do I use `bigint vs number`?", "input": "", "output": "`bigint` literals (`10n`) for 64-bit ints (IDs, money-cents); JSON needs custom (de)serializers for them."}
+{"instruction": "Give a practical example of `bigint vs number`.", "input": "", "output": "`bigint` literals (`10n`) for 64-bit ints (IDs, money-cents); JSON needs custom (de)serializers for them."}
+{"instruction": "What is `bigint vs number` for?", "input": "", "output": "`bigint` literals (`10n`) for 64-bit ints (IDs, money-cents); JSON needs custom (de)serializers for them."}
+{"instruction": "Apakah fungsi `bigint vs number`?", "input": "", "output": "`bigint` literals (`10n`) for 64-bit ints (IDs, money-cents); JSON needs custom (de)serializers for them."}
+{"instruction": "Terangkan `bigint vs number` secara ringkas.", "input": "", "output": "`bigint` literals (`10n`) for 64-bit ints (IDs, money-cents); JSON needs custom (de)serializers for them."}
+{"instruction": "Bila perlu guna `bigint vs number`?", "input": "", "output": "`bigint` literals (`10n`) for 64-bit ints (IDs, money-cents); JSON needs custom (de)serializers for them."}
+{"instruction": "Beri contoh penggunaan `bigint vs number`.", "input": "", "output": "`bigint` literals (`10n`) for 64-bit ints (IDs, money-cents); JSON needs custom (de)serializers for them."}
+{"instruction": "`bigint vs number` untuk apa?", "input": "", "output": "`bigint` literals (`10n`) for 64-bit ints (IDs, money-cents); JSON needs custom (de)serializers for them."}
+{"instruction": "How would you explain `bigint vs number` to a junior developer?", "input": "", "output": "`bigint` literals (`10n`) for 64-bit ints (IDs, money-cents); JSON needs custom (de)serializers for them."}
+{"instruction": "Give a real-world scenario for `bigint vs number`.", "input": "", "output": "`bigint` literals (`10n`) for 64-bit ints (IDs, money-cents); JSON needs custom (de)serializers for them."}
+{"instruction": "What problem does `bigint vs number` solve?", "input": "", "output": "`bigint` literals (`10n`) for 64-bit ints (IDs, money-cents); JSON needs custom (de)serializers for them."}
+{"instruction": "Terangkan `bigint vs number` dalam satu minit.", "input": "", "output": "`bigint` literals (`10n`) for 64-bit ints (IDs, money-cents); JSON needs custom (de)serializers for them."}
+{"instruction": "Apa yang perlu saya tahu tentang `bigint vs number`?", "input": "", "output": "`bigint` literals (`10n`) for 64-bit ints (IDs, money-cents); JSON needs custom (de)serializers for them."}
+{"instruction": "Bagaimanakah `bigint vs number` berfungsi?", "input": "", "output": "`bigint` literals (`10n`) for 64-bit ints (IDs, money-cents); JSON needs custom (de)serializers for them."}
+{"instruction": "Bilakah masa yang sesuai untuk `bigint vs number`?", "input": "", "output": "`bigint` literals (`10n`) for 64-bit ints (IDs, money-cents); JSON needs custom (de)serializers for them."}
+{"instruction": "What does `void undefined optional` do?", "input": "", "output": "`void` = returns-nothing; `undefined` = value missing; optional `?` = possibly absent — conflating them corrupts APIs."}
+{"instruction": "Explain `void undefined optional` briefly.", "input": "", "output": "`void` = returns-nothing; `undefined` = value missing; optional `?` = possibly absent — conflating them corrupts APIs."}
+{"instruction": "When do I use `void undefined optional`?", "input": "", "output": "`void` = returns-nothing; `undefined` = value missing; optional `?` = possibly absent — conflating them corrupts APIs."}
+{"instruction": "Give a practical example of `void undefined optional`.", "input": "", "output": "`void` = returns-nothing; `undefined` = value missing; optional `?` = possibly absent — conflating them corrupts APIs."}
+{"instruction": "What is `void undefined optional` for?", "input": "", "output": "`void` = returns-nothing; `undefined` = value missing; optional `?` = possibly absent — conflating them corrupts APIs."}
+{"instruction": "Apakah fungsi `void undefined optional`?", "input": "", "output": "`void` = returns-nothing; `undefined` = value missing; optional `?` = possibly absent — conflating them corrupts APIs."}
+{"instruction": "Terangkan `void undefined optional` secara ringkas.", "input": "", "output": "`void` = returns-nothing; `undefined` = value missing; optional `?` = possibly absent — conflating them corrupts APIs."}
+{"instruction": "Bila perlu guna `void undefined optional`?", "input": "", "output": "`void` = returns-nothing; `undefined` = value missing; optional `?` = possibly absent — conflating them corrupts APIs."}
+{"instruction": "Beri contoh penggunaan `void undefined optional`.", "input": "", "output": "`void` = returns-nothing; `undefined` = value missing; optional `?` = possibly absent — conflating them corrupts APIs."}
+{"instruction": "`void undefined optional` untuk apa?", "input": "", "output": "`void` = returns-nothing; `undefined` = value missing; optional `?` = possibly absent — conflating them corrupts APIs."}
+{"instruction": "How would you explain `void undefined optional` to a junior developer?", "input": "", "output": "`void` = returns-nothing; `undefined` = value missing; optional `?` = possibly absent — conflating them corrupts APIs."}
+{"instruction": "Give a real-world scenario for `void undefined optional`.", "input": "", "output": "`void` = returns-nothing; `undefined` = value missing; optional `?` = possibly absent — conflating them corrupts APIs."}
+{"instruction": "What problem does `void undefined optional` solve?", "input": "", "output": "`void` = returns-nothing; `undefined` = value missing; optional `?` = possibly absent — conflating them corrupts APIs."}
+{"instruction": "Terangkan `void undefined optional` dalam satu minit.", "input": "", "output": "`void` = returns-nothing; `undefined` = value missing; optional `?` = possibly absent — conflating them corrupts APIs."}
+{"instruction": "Apa yang perlu saya tahu tentang `void undefined optional`?", "input": "", "output": "`void` = returns-nothing; `undefined` = value missing; optional `?` = possibly absent — conflating them corrupts APIs."}
+{"instruction": "Bagaimanakah `void undefined optional` berfungsi?", "input": "", "output": "`void` = returns-nothing; `undefined` = value missing; optional `?` = possibly absent — conflating them corrupts APIs."}
+{"instruction": "Bilakah masa yang sesuai untuk `void undefined optional`?", "input": "", "output": "`void` = returns-nothing; `undefined` = value missing; optional `?` = possibly absent — conflating them corrupts APIs."}
+{"instruction": "What does `never[] empty` do?", "input": "", "output": "`never[]` types provably-empty arrays; pushing errors until narrowed — exhaustiveness for collections."}
+{"instruction": "Explain `never[] empty` briefly.", "input": "", "output": "`never[]` types provably-empty arrays; pushing errors until narrowed — exhaustiveness for collections."}
+{"instruction": "When do I use `never[] empty`?", "input": "", "output": "`never[]` types provably-empty arrays; pushing errors until narrowed — exhaustiveness for collections."}
+{"instruction": "Give a practical example of `never[] empty`.", "input": "", "output": "`never[]` types provably-empty arrays; pushing errors until narrowed — exhaustiveness for collections."}
+{"instruction": "What is `never[] empty` for?", "input": "", "output": "`never[]` types provably-empty arrays; pushing errors until narrowed — exhaustiveness for collections."}
+{"instruction": "Apakah fungsi `never[] empty`?", "input": "", "output": "`never[]` types provably-empty arrays; pushing errors until narrowed — exhaustiveness for collections."}
+{"instruction": "Terangkan `never[] empty` secara ringkas.", "input": "", "output": "`never[]` types provably-empty arrays; pushing errors until narrowed — exhaustiveness for collections."}
+{"instruction": "Bila perlu guna `never[] empty`?", "input": "", "output": "`never[]` types provably-empty arrays; pushing errors until narrowed — exhaustiveness for collections."}
+{"instruction": "Beri contoh penggunaan `never[] empty`.", "input": "", "output": "`never[]` types provably-empty arrays; pushing errors until narrowed — exhaustiveness for collections."}
+{"instruction": "`never[] empty` untuk apa?", "input": "", "output": "`never[]` types provably-empty arrays; pushing errors until narrowed — exhaustiveness for collections."}
+{"instruction": "How would you explain `never[] empty` to a junior developer?", "input": "", "output": "`never[]` types provably-empty arrays; pushing errors until narrowed — exhaustiveness for collections."}
+{"instruction": "Give a real-world scenario for `never[] empty`.", "input": "", "output": "`never[]` types provably-empty arrays; pushing errors until narrowed — exhaustiveness for collections."}
+{"instruction": "What problem does `never[] empty` solve?", "input": "", "output": "`never[]` types provably-empty arrays; pushing errors until narrowed — exhaustiveness for collections."}
+{"instruction": "Terangkan `never[] empty` dalam satu minit.", "input": "", "output": "`never[]` types provably-empty arrays; pushing errors until narrowed — exhaustiveness for collections."}
+{"instruction": "Apa yang perlu saya tahu tentang `never[] empty`?", "input": "", "output": "`never[]` types provably-empty arrays; pushing errors until narrowed — exhaustiveness for collections."}
+{"instruction": "Bagaimanakah `never[] empty` berfungsi?", "input": "", "output": "`never[]` types provably-empty arrays; pushing errors until narrowed — exhaustiveness for collections."}
+{"instruction": "Bilakah masa yang sesuai untuk `never[] empty`?", "input": "", "output": "`never[]` types provably-empty arrays; pushing errors until narrowed — exhaustiveness for collections."}
+{"instruction": "What does `asserts is` do?", "input": "", "output": "`asserts x is T` functions narrow callers (validation helpers); throwing version of type predicates."}
+{"instruction": "Explain `asserts is` briefly.", "input": "", "output": "`asserts x is T` functions narrow callers (validation helpers); throwing version of type predicates."}
+{"instruction": "When do I use `asserts is`?", "input": "", "output": "`asserts x is T` functions narrow callers (validation helpers); throwing version of type predicates."}
+{"instruction": "Give a practical example of `asserts is`.", "input": "", "output": "`asserts x is T` functions narrow callers (validation helpers); throwing version of type predicates."}
+{"instruction": "What is `asserts is` for?", "input": "", "output": "`asserts x is T` functions narrow callers (validation helpers); throwing version of type predicates."}
+{"instruction": "Apakah fungsi `asserts is`?", "input": "", "output": "`asserts x is T` functions narrow callers (validation helpers); throwing version of type predicates."}
+{"instruction": "Terangkan `asserts is` secara ringkas.", "input": "", "output": "`asserts x is T` functions narrow callers (validation helpers); throwing version of type predicates."}
+{"instruction": "Bila perlu guna `asserts is`?", "input": "", "output": "`asserts x is T` functions narrow callers (validation helpers); throwing version of type predicates."}
+{"instruction": "Beri contoh penggunaan `asserts is`.", "input": "", "output": "`asserts x is T` functions narrow callers (validation helpers); throwing version of type predicates."}
+{"instruction": "`asserts is` untuk apa?", "input": "", "output": "`asserts x is T` functions narrow callers (validation helpers); throwing version of type predicates."}
+{"instruction": "How would you explain `asserts is` to a junior developer?", "input": "", "output": "`asserts x is T` functions narrow callers (validation helpers); throwing version of type predicates."}
+{"instruction": "Give a real-world scenario for `asserts is`.", "input": "", "output": "`asserts x is T` functions narrow callers (validation helpers); throwing version of type predicates."}
+{"instruction": "What problem does `asserts is` solve?", "input": "", "output": "`asserts x is T` functions narrow callers (validation helpers); throwing version of type predicates."}
+{"instruction": "Terangkan `asserts is` dalam satu minit.", "input": "", "output": "`asserts x is T` functions narrow callers (validation helpers); throwing version of type predicates."}
+{"instruction": "Apa yang perlu saya tahu tentang `asserts is`?", "input": "", "output": "`asserts x is T` functions narrow callers (validation helpers); throwing version of type predicates."}
+{"instruction": "Bagaimanakah `asserts is` berfungsi?", "input": "", "output": "`asserts x is T` functions narrow callers (validation helpers); throwing version of type predicates."}
+{"instruction": "Bilakah masa yang sesuai untuk `asserts is`?", "input": "", "output": "`asserts x is T` functions narrow callers (validation helpers); throwing version of type predicates."}
+{"instruction": "What does `this void callbacks` do?", "input": "", "output": "`this: void` on callbacks forbids dynamic this — library signatures that stay safe under any caller."}
+{"instruction": "Explain `this void callbacks` briefly.", "input": "", "output": "`this: void` on callbacks forbids dynamic this — library signatures that stay safe under any caller."}
+{"instruction": "When do I use `this void callbacks`?", "input": "", "output": "`this: void` on callbacks forbids dynamic this — library signatures that stay safe under any caller."}
+{"instruction": "Give a practical example of `this void callbacks`.", "input": "", "output": "`this: void` on callbacks forbids dynamic this — library signatures that stay safe under any caller."}
+{"instruction": "What is `this void callbacks` for?", "input": "", "output": "`this: void` on callbacks forbids dynamic this — library signatures that stay safe under any caller."}
+{"instruction": "Apakah fungsi `this void callbacks`?", "input": "", "output": "`this: void` on callbacks forbids dynamic this — library signatures that stay safe under any caller."}
+{"instruction": "Terangkan `this void callbacks` secara ringkas.", "input": "", "output": "`this: void` on callbacks forbids dynamic this — library signatures that stay safe under any caller."}
+{"instruction": "Bila perlu guna `this void callbacks`?", "input": "", "output": "`this: void` on callbacks forbids dynamic this — library signatures that stay safe under any caller."}
+{"instruction": "Beri contoh penggunaan `this void callbacks`.", "input": "", "output": "`this: void` on callbacks forbids dynamic this — library signatures that stay safe under any caller."}
+{"instruction": "`this void callbacks` untuk apa?", "input": "", "output": "`this: void` on callbacks forbids dynamic this — library signatures that stay safe under any caller."}
+{"instruction": "How would you explain `this void callbacks` to a junior developer?", "input": "", "output": "`this: void` on callbacks forbids dynamic this — library signatures that stay safe under any caller."}
+{"instruction": "Give a real-world scenario for `this void callbacks`.", "input": "", "output": "`this: void` on callbacks forbids dynamic this — library signatures that stay safe under any caller."}
+{"instruction": "What problem does `this void callbacks` solve?", "input": "", "output": "`this: void` on callbacks forbids dynamic this — library signatures that stay safe under any caller."}
+{"instruction": "Terangkan `this void callbacks` dalam satu minit.", "input": "", "output": "`this: void` on callbacks forbids dynamic this — library signatures that stay safe under any caller."}
+{"instruction": "Apa yang perlu saya tahu tentang `this void callbacks`?", "input": "", "output": "`this: void` on callbacks forbids dynamic this — library signatures that stay safe under any caller."}
+{"instruction": "Bagaimanakah `this void callbacks` berfungsi?", "input": "", "output": "`this: void` on callbacks forbids dynamic this — library signatures that stay safe under any caller."}
+{"instruction": "Bilakah masa yang sesuai untuk `this void callbacks`?", "input": "", "output": "`this: void` on callbacks forbids dynamic this — library signatures that stay safe under any caller."}
+{"instruction": "What does `noImplicitOverride` do?", "input": "", "output": "Subclass overrides must declare `override` — accidental overloads (typos!) become compile errors."}
+{"instruction": "Explain `noImplicitOverride` briefly.", "input": "", "output": "Subclass overrides must declare `override` — accidental overloads (typos!) become compile errors."}
+{"instruction": "When do I use `noImplicitOverride`?", "input": "", "output": "Subclass overrides must declare `override` — accidental overloads (typos!) become compile errors."}
+{"instruction": "Give a practical example of `noImplicitOverride`.", "input": "", "output": "Subclass overrides must declare `override` — accidental overloads (typos!) become compile errors."}
+{"instruction": "What is `noImplicitOverride` for?", "input": "", "output": "Subclass overrides must declare `override` — accidental overloads (typos!) become compile errors."}
+{"instruction": "Apakah fungsi `noImplicitOverride`?", "input": "", "output": "Subclass overrides must declare `override` — accidental overloads (typos!) become compile errors."}
+{"instruction": "Terangkan `noImplicitOverride` secara ringkas.", "input": "", "output": "Subclass overrides must declare `override` — accidental overloads (typos!) become compile errors."}
+{"instruction": "Bila perlu guna `noImplicitOverride`?", "input": "", "output": "Subclass overrides must declare `override` — accidental overloads (typos!) become compile errors."}
+{"instruction": "Beri contoh penggunaan `noImplicitOverride`.", "input": "", "output": "Subclass overrides must declare `override` — accidental overloads (typos!) become compile errors."}
+{"instruction": "`noImplicitOverride` untuk apa?", "input": "", "output": "Subclass overrides must declare `override` — accidental overloads (typos!) become compile errors."}
+{"instruction": "How would you explain `noImplicitOverride` to a junior developer?", "input": "", "output": "Subclass overrides must declare `override` — accidental overloads (typos!) become compile errors."}
+{"instruction": "Give a real-world scenario for `noImplicitOverride`.", "input": "", "output": "Subclass overrides must declare `override` — accidental overloads (typos!) become compile errors."}
+{"instruction": "What problem does `noImplicitOverride` solve?", "input": "", "output": "Subclass overrides must declare `override` — accidental overloads (typos!) become compile errors."}
+{"instruction": "Terangkan `noImplicitOverride` dalam satu minit.", "input": "", "output": "Subclass overrides must declare `override` — accidental overloads (typos!) become compile errors."}
+{"instruction": "Apa yang perlu saya tahu tentang `noImplicitOverride`?", "input": "", "output": "Subclass overrides must declare `override` — accidental overloads (typos!) become compile errors."}
+{"instruction": "Bagaimanakah `noImplicitOverride` berfungsi?", "input": "", "output": "Subclass overrides must declare `override` — accidental overloads (typos!) become compile errors."}
+{"instruction": "Bilakah masa yang sesuai untuk `noImplicitOverride`?", "input": "", "output": "Subclass overrides must declare `override` — accidental overloads (typos!) become compile errors."}
+{"instruction": "What does `useDefineForClassFields` do?", "input": "", "output": "Modern `define` semantics (declared fields reset to undefined!) vs legacy assign — decorator libraries care deeply."}
+{"instruction": "Explain `useDefineForClassFields` briefly.", "input": "", "output": "Modern `define` semantics (declared fields reset to undefined!) vs legacy assign — decorator libraries care deeply."}
+{"instruction": "When do I use `useDefineForClassFields`?", "input": "", "output": "Modern `define` semantics (declared fields reset to undefined!) vs legacy assign — decorator libraries care deeply."}
+{"instruction": "Give a practical example of `useDefineForClassFields`.", "input": "", "output": "Modern `define` semantics (declared fields reset to undefined!) vs legacy assign — decorator libraries care deeply."}
+{"instruction": "What is `useDefineForClassFields` for?", "input": "", "output": "Modern `define` semantics (declared fields reset to undefined!) vs legacy assign — decorator libraries care deeply."}
+{"instruction": "Apakah fungsi `useDefineForClassFields`?", "input": "", "output": "Modern `define` semantics (declared fields reset to undefined!) vs legacy assign — decorator libraries care deeply."}
+{"instruction": "Terangkan `useDefineForClassFields` secara ringkas.", "input": "", "output": "Modern `define` semantics (declared fields reset to undefined!) vs legacy assign — decorator libraries care deeply."}
+{"instruction": "Bila perlu guna `useDefineForClassFields`?", "input": "", "output": "Modern `define` semantics (declared fields reset to undefined!) vs legacy assign — decorator libraries care deeply."}
+{"instruction": "Beri contoh penggunaan `useDefineForClassFields`.", "input": "", "output": "Modern `define` semantics (declared fields reset to undefined!) vs legacy assign — decorator libraries care deeply."}
+{"instruction": "`useDefineForClassFields` untuk apa?", "input": "", "output": "Modern `define` semantics (declared fields reset to undefined!) vs legacy assign — decorator libraries care deeply."}
+{"instruction": "How would you explain `useDefineForClassFields` to a junior developer?", "input": "", "output": "Modern `define` semantics (declared fields reset to undefined!) vs legacy assign — decorator libraries care deeply."}
+{"instruction": "Give a real-world scenario for `useDefineForClassFields`.", "input": "", "output": "Modern `define` semantics (declared fields reset to undefined!) vs legacy assign — decorator libraries care deeply."}
+{"instruction": "What problem does `useDefineForClassFields` solve?", "input": "", "output": "Modern `define` semantics (declared fields reset to undefined!) vs legacy assign — decorator libraries care deeply."}
+{"instruction": "Terangkan `useDefineForClassFields` dalam satu minit.", "input": "", "output": "Modern `define` semantics (declared fields reset to undefined!) vs legacy assign — decorator libraries care deeply."}
+{"instruction": "Apa yang perlu saya tahu tentang `useDefineForClassFields`?", "input": "", "output": "Modern `define` semantics (declared fields reset to undefined!) vs legacy assign — decorator libraries care deeply."}
+{"instruction": "Bagaimanakah `useDefineForClassFields` berfungsi?", "input": "", "output": "Modern `define` semantics (declared fields reset to undefined!) vs legacy assign — decorator libraries care deeply."}
+{"instruction": "Bilakah masa yang sesuai untuk `useDefineForClassFields`?", "input": "", "output": "Modern `define` semantics (declared fields reset to undefined!) vs legacy assign — decorator libraries care deeply."}
+{"instruction": "What does `erasableSyntaxOnly future` do?", "input": "", "output": "Codebases targeting erasable syntax avoid runtime features today (enums, namespaces, parameter properties) for zero-cost types."}
+{"instruction": "Explain `erasableSyntaxOnly future` briefly.", "input": "", "output": "Codebases targeting erasable syntax avoid runtime features today (enums, namespaces, parameter properties) for zero-cost types."}
+{"instruction": "When do I use `erasableSyntaxOnly future`?", "input": "", "output": "Codebases targeting erasable syntax avoid runtime features today (enums, namespaces, parameter properties) for zero-cost types."}
+{"instruction": "Give a practical example of `erasableSyntaxOnly future`.", "input": "", "output": "Codebases targeting erasable syntax avoid runtime features today (enums, namespaces, parameter properties) for zero-cost types."}
+{"instruction": "What is `erasableSyntaxOnly future` for?", "input": "", "output": "Codebases targeting erasable syntax avoid runtime features today (enums, namespaces, parameter properties) for zero-cost types."}
+{"instruction": "Apakah fungsi `erasableSyntaxOnly future`?", "input": "", "output": "Codebases targeting erasable syntax avoid runtime features today (enums, namespaces, parameter properties) for zero-cost types."}
+{"instruction": "Terangkan `erasableSyntaxOnly future` secara ringkas.", "input": "", "output": "Codebases targeting erasable syntax avoid runtime features today (enums, namespaces, parameter properties) for zero-cost types."}
+{"instruction": "Bila perlu guna `erasableSyntaxOnly future`?", "input": "", "output": "Codebases targeting erasable syntax avoid runtime features today (enums, namespaces, parameter properties) for zero-cost types."}
+{"instruction": "Beri contoh penggunaan `erasableSyntaxOnly future`.", "input": "", "output": "Codebases targeting erasable syntax avoid runtime features today (enums, namespaces, parameter properties) for zero-cost types."}
+{"instruction": "`erasableSyntaxOnly future` untuk apa?", "input": "", "output": "Codebases targeting erasable syntax avoid runtime features today (enums, namespaces, parameter properties) for zero-cost types."}
+{"instruction": "How would you explain `erasableSyntaxOnly future` to a junior developer?", "input": "", "output": "Codebases targeting erasable syntax avoid runtime features today (enums, namespaces, parameter properties) for zero-cost types."}
+{"instruction": "Give a real-world scenario for `erasableSyntaxOnly future`.", "input": "", "output": "Codebases targeting erasable syntax avoid runtime features today (enums, namespaces, parameter properties) for zero-cost types."}
+{"instruction": "What problem does `erasableSyntaxOnly future` solve?", "input": "", "output": "Codebases targeting erasable syntax avoid runtime features today (enums, namespaces, parameter properties) for zero-cost types."}
+{"instruction": "Terangkan `erasableSyntaxOnly future` dalam satu minit.", "input": "", "output": "Codebases targeting erasable syntax avoid runtime features today (enums, namespaces, parameter properties) for zero-cost types."}
+{"instruction": "Apa yang perlu saya tahu tentang `erasableSyntaxOnly future`?", "input": "", "output": "Codebases targeting erasable syntax avoid runtime features today (enums, namespaces, parameter properties) for zero-cost types."}
+{"instruction": "Bagaimanakah `erasableSyntaxOnly future` berfungsi?", "input": "", "output": "Codebases targeting erasable syntax avoid runtime features today (enums, namespaces, parameter properties) for zero-cost types."}
+{"instruction": "Bilakah masa yang sesuai untuk `erasableSyntaxOnly future`?", "input": "", "output": "Codebases targeting erasable syntax avoid runtime features today (enums, namespaces, parameter properties) for zero-cost types."}
+{"instruction": "What does `allowJs checkJs migration` do?", "input": "", "output": "`allowJs` + `checkJs` type-checks migrating JS incrementally (`// @ts-check` per file) — strangler pattern for types."}
+{"instruction": "Explain `allowJs checkJs migration` briefly.", "input": "", "output": "`allowJs` + `checkJs` type-checks migrating JS incrementally (`// @ts-check` per file) — strangler pattern for types."}
+{"instruction": "When do I use `allowJs checkJs migration`?", "input": "", "output": "`allowJs` + `checkJs` type-checks migrating JS incrementally (`// @ts-check` per file) — strangler pattern for types."}
+{"instruction": "Give a practical example of `allowJs checkJs migration`.", "input": "", "output": "`allowJs` + `checkJs` type-checks migrating JS incrementally (`// @ts-check` per file) — strangler pattern for types."}
+{"instruction": "What is `allowJs checkJs migration` for?", "input": "", "output": "`allowJs` + `checkJs` type-checks migrating JS incrementally (`// @ts-check` per file) — strangler pattern for types."}
+{"instruction": "Apakah fungsi `allowJs checkJs migration`?", "input": "", "output": "`allowJs` + `checkJs` type-checks migrating JS incrementally (`// @ts-check` per file) — strangler pattern for types."}
+{"instruction": "Terangkan `allowJs checkJs migration` secara ringkas.", "input": "", "output": "`allowJs` + `checkJs` type-checks migrating JS incrementally (`// @ts-check` per file) — strangler pattern for types."}
+{"instruction": "Bila perlu guna `allowJs checkJs migration`?", "input": "", "output": "`allowJs` + `checkJs` type-checks migrating JS incrementally (`// @ts-check` per file) — strangler pattern for types."}
+{"instruction": "Beri contoh penggunaan `allowJs checkJs migration`.", "input": "", "output": "`allowJs` + `checkJs` type-checks migrating JS incrementally (`// @ts-check` per file) — strangler pattern for types."}
+{"instruction": "`allowJs checkJs migration` untuk apa?", "input": "", "output": "`allowJs` + `checkJs` type-checks migrating JS incrementally (`// @ts-check` per file) — strangler pattern for types."}
+{"instruction": "How would you explain `allowJs checkJs migration` to a junior developer?", "input": "", "output": "`allowJs` + `checkJs` type-checks migrating JS incrementally (`// @ts-check` per file) — strangler pattern for types."}
+{"instruction": "Give a real-world scenario for `allowJs checkJs migration`.", "input": "", "output": "`allowJs` + `checkJs` type-checks migrating JS incrementally (`// @ts-check` per file) — strangler pattern for types."}
+{"instruction": "What problem does `allowJs checkJs migration` solve?", "input": "", "output": "`allowJs` + `checkJs` type-checks migrating JS incrementally (`// @ts-check` per file) — strangler pattern for types."}
+{"instruction": "Terangkan `allowJs checkJs migration` dalam satu minit.", "input": "", "output": "`allowJs` + `checkJs` type-checks migrating JS incrementally (`// @ts-check` per file) — strangler pattern for types."}
+{"instruction": "Apa yang perlu saya tahu tentang `allowJs checkJs migration`?", "input": "", "output": "`allowJs` + `checkJs` type-checks migrating JS incrementally (`// @ts-check` per file) — strangler pattern for types."}
+{"instruction": "Bagaimanakah `allowJs checkJs migration` berfungsi?", "input": "", "output": "`allowJs` + `checkJs` type-checks migrating JS incrementally (`// @ts-check` per file) — strangler pattern for types."}
+{"instruction": "Bilakah masa yang sesuai untuk `allowJs checkJs migration`?", "input": "", "output": "`allowJs` + `checkJs` type-checks migrating JS incrementally (`// @ts-check` per file) — strangler pattern for types."}
+{"instruction": "What does `project references composite` do?", "input": "", "output": "`composite: true` + `references` split monorepos into buildable, cacheable TS projects with enforced boundaries."}
+{"instruction": "Explain `project references composite` briefly.", "input": "", "output": "`composite: true` + `references` split monorepos into buildable, cacheable TS projects with enforced boundaries."}
+{"instruction": "When do I use `project references composite`?", "input": "", "output": "`composite: true` + `references` split monorepos into buildable, cacheable TS projects with enforced boundaries."}
+{"instruction": "Give a practical example of `project references composite`.", "input": "", "output": "`composite: true` + `references` split monorepos into buildable, cacheable TS projects with enforced boundaries."}
+{"instruction": "What is `project references composite` for?", "input": "", "output": "`composite: true` + `references` split monorepos into buildable, cacheable TS projects with enforced boundaries."}
+{"instruction": "Apakah fungsi `project references composite`?", "input": "", "output": "`composite: true` + `references` split monorepos into buildable, cacheable TS projects with enforced boundaries."}
+{"instruction": "Terangkan `project references composite` secara ringkas.", "input": "", "output": "`composite: true` + `references` split monorepos into buildable, cacheable TS projects with enforced boundaries."}
+{"instruction": "Bila perlu guna `project references composite`?", "input": "", "output": "`composite: true` + `references` split monorepos into buildable, cacheable TS projects with enforced boundaries."}
+{"instruction": "Beri contoh penggunaan `project references composite`.", "input": "", "output": "`composite: true` + `references` split monorepos into buildable, cacheable TS projects with enforced boundaries."}
+{"instruction": "`project references composite` untuk apa?", "input": "", "output": "`composite: true` + `references` split monorepos into buildable, cacheable TS projects with enforced boundaries."}
+{"instruction": "How would you explain `project references composite` to a junior developer?", "input": "", "output": "`composite: true` + `references` split monorepos into buildable, cacheable TS projects with enforced boundaries."}
+{"instruction": "Give a real-world scenario for `project references composite`.", "input": "", "output": "`composite: true` + `references` split monorepos into buildable, cacheable TS projects with enforced boundaries."}
+{"instruction": "What problem does `project references composite` solve?", "input": "", "output": "`composite: true` + `references` split monorepos into buildable, cacheable TS projects with enforced boundaries."}
+{"instruction": "Terangkan `project references composite` dalam satu minit.", "input": "", "output": "`composite: true` + `references` split monorepos into buildable, cacheable TS projects with enforced boundaries."}
+{"instruction": "Apa yang perlu saya tahu tentang `project references composite`?", "input": "", "output": "`composite: true` + `references` split monorepos into buildable, cacheable TS projects with enforced boundaries."}
+{"instruction": "Bagaimanakah `project references composite` berfungsi?", "input": "", "output": "`composite: true` + `references` split monorepos into buildable, cacheable TS projects with enforced boundaries."}
+{"instruction": "Bilakah masa yang sesuai untuk `project references composite`?", "input": "", "output": "`composite: true` + `references` split monorepos into buildable, cacheable TS projects with enforced boundaries."}
