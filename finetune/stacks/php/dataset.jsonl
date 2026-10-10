@@ -1200,3 +1200,20 @@
 {"instruction": "Apa yang perlu saya tahu tentang `clearstatcache`?", "input": "", "output": "`clearstatcache()` after external file changes (uploads, deploys); stale `file_exists` lies cause ghost bugs."}
 {"instruction": "Bagaimanakah `clearstatcache` berfungsi?", "input": "", "output": "`clearstatcache()` after external file changes (uploads, deploys); stale `file_exists` lies cause ghost bugs."}
 {"instruction": "Bilakah masa yang sesuai untuk `clearstatcache`?", "input": "", "output": "`clearstatcache()` after external file changes (uploads, deploys); stale `file_exists` lies cause ghost bugs."}
+{"instruction": "What does `ctype functions` do?", "input": "", "output": "`ctype_digit/alpha/alnum()` validate character classes byte-safe (locale-independent, unlike regex shortcuts)."}
+{"instruction": "Explain `ctype functions` briefly.", "input": "", "output": "`ctype_digit/alpha/alnum()` validate character classes byte-safe (locale-independent, unlike regex shortcuts)."}
+{"instruction": "When do I use `ctype functions`?", "input": "", "output": "`ctype_digit/alpha/alnum()` validate character classes byte-safe (locale-independent, unlike regex shortcuts)."}
+{"instruction": "Give a practical example of `ctype functions`.", "input": "", "output": "`ctype_digit/alpha/alnum()` validate character classes byte-safe (locale-independent, unlike regex shortcuts)."}
+{"instruction": "What is `ctype functions` for?", "input": "", "output": "`ctype_digit/alpha/alnum()` validate character classes byte-safe (locale-independent, unlike regex shortcuts)."}
+{"instruction": "Apakah fungsi `ctype functions`?", "input": "", "output": "`ctype_digit/alpha/alnum()` validate character classes byte-safe (locale-independent, unlike regex shortcuts)."}
+{"instruction": "Terangkan `ctype functions` secara ringkas.", "input": "", "output": "`ctype_digit/alpha/alnum()` validate character classes byte-safe (locale-independent, unlike regex shortcuts)."}
+{"instruction": "Bila perlu guna `ctype functions`?", "input": "", "output": "`ctype_digit/alpha/alnum()` validate character classes byte-safe (locale-independent, unlike regex shortcuts)."}
+{"instruction": "Beri contoh penggunaan `ctype functions`.", "input": "", "output": "`ctype_digit/alpha/alnum()` validate character classes byte-safe (locale-independent, unlike regex shortcuts)."}
+{"instruction": "`ctype functions` untuk apa?", "input": "", "output": "`ctype_digit/alpha/alnum()` validate character classes byte-safe (locale-independent, unlike regex shortcuts)."}
+{"instruction": "How would you explain `ctype functions` to a junior developer?", "input": "", "output": "`ctype_digit/alpha/alnum()` validate character classes byte-safe (locale-independent, unlike regex shortcuts)."}
+{"instruction": "Give a real-world scenario for `ctype functions`.", "input": "", "output": "`ctype_digit/alpha/alnum()` validate character classes byte-safe (locale-independent, unlike regex shortcuts)."}
+{"instruction": "What problem does `ctype functions` solve?", "input": "", "output": "`ctype_digit/alpha/alnum()` validate character classes byte-safe (locale-independent, unlike regex shortcuts)."}
+{"instruction": "Terangkan `ctype functions` dalam satu minit.", "input": "", "output": "`ctype_digit/alpha/alnum()` validate character classes byte-safe (locale-independent, unlike regex shortcuts)."}
+{"instruction": "Apa yang perlu saya tahu tentang `ctype functions`?", "input": "", "output": "`ctype_digit/alpha/alnum()` validate character classes byte-safe (locale-independent, unlike regex shortcuts)."}
+{"instruction": "Bagaimanakah `ctype functions` berfungsi?", "input": "", "output": "`ctype_digit/alpha/alnum()` validate character classes byte-safe (locale-independent, unlike regex shortcuts)."}
+{"instruction": "Bilakah masa yang sesuai untuk `ctype functions`?", "input": "", "output": "`ctype_digit/alpha/alnum()` validate character classes byte-safe (locale-independent, unlike regex shortcuts)."}

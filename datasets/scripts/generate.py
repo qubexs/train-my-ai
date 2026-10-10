@@ -164,47 +164,62 @@ SQL_TABLES = {
     "pengguna": ["id", "nama", "emel", "umur", "bandar"],
     "pesanan": ["id", "pengguna_id", "jumlah", "dibuat"],
     "produk": ["id", "nama", "harga", "stok"],
+    "kategori": ["id", "nama", "slug"],
+    "ulasan": ["id", "pengguna_id", "teks", "bintang"],
+    "pekerja": ["id", "nama", "jabatan", "gaji"],
+    "pos": ["id", "tajuk", "isi", "diterbit"],
+    "inventori": ["id", "produk_id", "gudang", "kuantiti"],
+}
+
+# sample values + safe SET clause per table (type-correct for every table)
+SQL_VALS = {
+    "pengguna": ("nama, emel", "'Ali', 'ali@x.my'", "nama = 'Ahmad'"),
+    "pesanan": ("pengguna_id, jumlah", "7, 99.90", "jumlah = 199.90"),
+    "produk": ("nama, harga", "'Roti', 2.50", "harga = 9.90"),
+    "kategori": ("nama, slug", "'Alat', 'alat'", "slug = 'alat-baru'"),
+    "ulasan": ("pengguna_id, teks", "7, 'Bagus'", "bintang = 5"),
+    "pekerja": ("nama, jabatan", "'Ali', 'Jualan'", "gaji = 5000"),
+    "pos": ("tajuk, isi", "'Helo', 'Isi pos'", "tajuk = 'Baru'"),
+    "inventori": ("produk_id, gudang", "3, 'KL'", "kuantiti = 50"),
 }
 
 # (task template, sql template) — {t}=table, {c}=column, {v}=value
 SQL_TASKS = [
     ("Senaraikan semua {t}", "SELECT * FROM {t};"),
     ("Kira baris dalam {t}", "SELECT COUNT(*) AS kiraan FROM {t};"),
-    ("Cari {t} di mana {c} bersamaan {v}", "SELECT * FROM {t} WHERE {c} = {v};"),
+    ("Cari {t} di mana {c} bersamaan teks", "SELECT * FROM {t} WHERE CAST({c} AS TEXT) = 'Ali';"),
     ("Susun {t} mengikut {c} menurun, 5 teratas", "SELECT * FROM {t} ORDER BY {c} DESC LIMIT 5;"),
-    ("Jumlahkan {c} dalam {t} berkelompok mengikut {c2}",
-     "SELECT {c2}, SUM({c}) AS jumlah FROM {t} GROUP BY {c2};"),
-    ("Kemas kini {t}: tetapkan {c} kepada {v} untuk id 1",
-     "UPDATE {t} SET {c} = {v} WHERE id = 1;"),
+    ("Bilangan nilai berbeza {c} dalam {t}", "SELECT COUNT(DISTINCT {c}) AS unik FROM {t};"),
+    ("Kemas kini baris id 1 dalam {t}", "UPDATE {t} SET {setc} WHERE id = 1;"),
     ("Padam baris id 9 dari {t}", "DELETE FROM {t} WHERE id = 9;"),
     ("Tambah satu baris ke {t}", "INSERT INTO {t} ({cols}) VALUES ({vals});"),
-    ("Purata {c} dalam {t}", "SELECT AVG({c}) AS purata FROM {t};"),
-    ("Nilai maksimum {c} dalam {t}", "SELECT MAX({c}) AS maks FROM {t};"),
-    ("Cari {t} dengan {c} mengandungi teks 'a'", "SELECT * FROM {t} WHERE {c} LIKE '%a%';"),
+    ("Purata id mengikut {c2} dalam {t}", "SELECT {c2}, AVG(id) AS purata_id FROM {t} GROUP BY {c2};"),
+    ("Nilai id maksimum dalam {t}", "SELECT MAX(id) AS maks FROM {t};"),
+    ("Cari {t} dengan {c} mengandungi teks 'a'", "SELECT * FROM {t} WHERE CAST({c} AS TEXT) LIKE '%a%';"),
     ("Kira {t} berkelompok mengikut {c2} yang melebihi 2", "SELECT {c2}, COUNT(*) AS n FROM {t} GROUP BY {c2} HAVING COUNT(*) > 2;"),
     ("Ambil 10 {t} terkini mengikut {c}", "SELECT * FROM {t} ORDER BY {c} DESC LIMIT 10;"),
     ("Jumlah {c} terkecil dan terbesar dalam {t}", "SELECT MIN({c}) AS min, MAX({c}) AS maks FROM {t};"),
     ("Senaraikan {c} unik dalam {t}", "SELECT DISTINCT {c} FROM {t};"),
-    ("Cari {t} di mana {c} antara 'a' dan 'z'", "SELECT * FROM {t} WHERE {c} BETWEEN 'a' AND 'z';"),
-    ("Cari {t} di mana {c} dalam senarai diberi", "SELECT * FROM {t} WHERE {c} IN ('Ali', 'Abu');"),
-    ("Cari {t} di mana {c} tiada nilai", "SELECT * FROM {t} WHERE {c} IS NULL;"),
-    ("Kemas kini {c} tambah 1 untuk semua {t}", "UPDATE {t} SET {c} = {c} + 1;"),
-    ("Padam semua {t} dengan {c} kosong", "DELETE FROM {t} WHERE {c} IS NULL OR {c} = '';"),
+    ("Cari {t} id antara 1 dan 100", "SELECT * FROM {t} WHERE id BETWEEN 1 AND 100;"),
+    ("Cari {t} di mana {c} dalam senarai diberi", "SELECT * FROM {t} WHERE CAST({c} AS TEXT) IN ('Ali', 'Abu');"),
+    ("Cari {t} di mana id tiada nilai", "SELECT * FROM {t} WHERE id IS NULL;"),
+    ("Kemas kini selamat: tetapkan semula {c2} dalam {t}", "UPDATE {t} SET {c2} = {c2} WHERE id > 0;"),
+    ("Padam semua {t} dengan id negatif (pembersihan selamat)", "DELETE FROM {t} WHERE id < 0;"),
     ("Salin {t} ke jadual sandaran", "CREATE TABLE {t}_sandaran AS SELECT * FROM {t};"),
     ("Namakan semula lajur {c} dalam {t}", "ALTER TABLE {t} RENAME COLUMN {c} TO {c}_baru;"),
     ("Tambah lajur nota ke {t}", "ALTER TABLE {t} ADD COLUMN nota TEXT;"),
     ("Buang lajur nota dari {t}", "ALTER TABLE {t} DROP COLUMN nota;"),
     ("Cipta indeks ke atas {c} dalam {t}", "CREATE INDEX idx_{t}_{c} ON {t} ({c});"),
-    ("Semak pelan query {t} mengikut {c}", "EXPLAIN SELECT * FROM {t} WHERE {c} = 'Ali';"),
+    ("Semak pelan query {t} mengikut id", "EXPLAIN SELECT * FROM {t} WHERE id = 1;"),
     ("Gabung {t} dengan dirinya untuk hierarki", "SELECT a.{c}, b.{c} FROM {t} a JOIN {t} b ON b.{c2} = a.{c};"),
-    ("Kira purata mengikut {c2} dalam {t} melebihi 5", "SELECT {c2}, AVG({c}) AS purata FROM {t} GROUP BY {c2} HAVING AVG({c}) > 5;"),
-    ("Pilih 5 {t} rawak", "SELECT * FROM {t} ORDER BY RANDOM() LIMIT 5;"),
+    ("Kira purata id melebihi 5 setiap {c2} dalam {t}", "SELECT {c2}, AVG(id) AS purata FROM {t} GROUP BY {c2} HAVING AVG(id) > 5;"),
+    ("Pilih 5 {t} rawak (Postgres)", "SELECT * FROM {t} ORDER BY RANDOM() LIMIT 5;"),
     ("Hadkan {t} kepada halaman kedua (10 sehalaman)", "SELECT * FROM {t} ORDER BY {c} LIMIT 10 OFFSET 10;"),
     ("Tukar {c} jadi teks dalam {t}", "SELECT CAST({c} AS TEXT) AS teks FROM {t};"),
-    ("Panjang teks {c} dalam {t}", "SELECT {c}, LENGTH({c}) AS panjang FROM {t};"),
-    ("Gabung dua teks {c} dan {c2} dalam {t}", "SELECT {c} || ' ' || {c2} AS penuh FROM {t};"),
+    ("Panjang teks {c} dalam {t}", "SELECT {c}, LENGTH(CAST({c} AS TEXT)) AS panjang FROM {t};"),
+    ("Gabung dua teks {c} dan {c2} dalam {t}", "SELECT CAST({c} AS TEXT) || ' ' || CAST({c2} AS TEXT) AS penuh FROM {t};"),
     ("Tarikh hari ini dalam SQL", "SELECT CURRENT_DATE;"),
-    ("Kira {t} yang {c} tidak kosong", "SELECT COUNT(*) AS kiraan FROM {t} WHERE {c} IS NOT NULL AND {c} <> '';"),
+    ("Kira {t} yang id tidak kosong", "SELECT COUNT(*) AS kiraan FROM {t} WHERE id IS NOT NULL;"),
     ("Kedudukan {t} mengikut {c} menurun", "SELECT {c}, ROW_NUMBER() OVER (ORDER BY {c} DESC) AS ranking FROM {t};"),
     ("Jumlah terkumpul {c} dalam {t}", "SELECT id, COUNT(*) OVER (ORDER BY id) AS terkumpul FROM {t};"),
     ("Baris sebelumnya untuk setiap {t}", "SELECT {c}, LAG({c}) OVER (ORDER BY id) AS sebelum FROM {t};"),
@@ -214,9 +229,9 @@ SQL_TASKS = [
     ("{t} tanpa padanan (anti-join)", "SELECT * FROM {t} a LEFT JOIN {t} b ON b.{c2} = a.{c} WHERE b.{c} IS NULL;"),
     ("Wujudkan {c} jika tiada dalam {t}", "INSERT INTO {t} ({c}) SELECT 'baru' WHERE NOT EXISTS (SELECT 1 FROM {t} WHERE {c} = 'baru');"),
     ("Naikkan semua id {t} (contoh kemas kini pukal selamat)", "UPDATE {t} SET {c2} = {c2} WHERE id > 0;"),
-    ("Padam pendua {t} kekalkan id terkecil", "DELETE FROM {t} a USING {t} b WHERE a.id > b.id AND a.{c} = b.{c};"),
+    ("Padam pendua {t} kekalkan id terkecil", "DELETE FROM {t} WHERE id NOT IN (SELECT MIN(id) FROM {t} GROUP BY {c});"),
     ("Ringkas {t} ke jadual laporan", "CREATE TABLE laporan_{t} AS SELECT {c2}, COUNT(*) AS n FROM {t} GROUP BY {c2};"),
-    ("Band {t} ikut julat {c}", "SELECT CASE WHEN {c} < 10 THEN 'rendah' WHEN {c} < 100 THEN 'sederhana' ELSE 'tinggi' END AS band, COUNT(*) FROM {t} GROUP BY 1;"),
+    ("Band {t} ikut julat id", "SELECT CASE WHEN id < 10 THEN 'rendah' WHEN id < 100 THEN 'sederhana' ELSE 'tinggi' END AS band, COUNT(*) FROM {t} GROUP BY 1;"),
     ("Nilai {c} paling kerap dalam {t}", "SELECT {c}, COUNT(*) AS n FROM {t} GROUP BY {c} ORDER BY n DESC LIMIT 1;"),
     ("Kaitkan {t} dengan dirinya (pasangan id berbeza)", "SELECT a.id, b.{c} FROM {t} a JOIN {t} b ON b.id <> a.id LIMIT 10;"),
 ]
@@ -250,11 +265,12 @@ def gen_sql():
     out = []
     for t, cols in SQL_TABLES.items():
         c, c2 = cols[1], cols[2]
+        cols_s, vals_s, setc = SQL_VALS[t]
         for task, sql in SQL_TASKS:
-            q = task.format(t=t, c=c, c2=c2, v="'Ali'",
-                            cols=", ".join(cols[1:3]), vals="'Ali', 'ali@x.my'")
-            s = sql.format(t=t, c=c, c2=c2, v="'Ali'",
-                           cols=", ".join(cols[1:3]), vals="'Ali', 'ali@x.my'")
+            q = task.format(t=t, c=c, c2=c2, v="'Ali'", cols=cols_s, vals=vals_s,
+                            setc=setc)
+            s = sql.format(t=t, c=c, c2=c2, v="'Ali'", cols=cols_s, vals=vals_s,
+                           setc=setc)
             for p in PHRASING_SQL:
                 out.append((p.format(q=q), f"```sql\n{s}\n```"))
     # join drills across tables
