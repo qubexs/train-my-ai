@@ -27,7 +27,7 @@ APP_DIR = (Path(sys.executable).resolve().parent if getattr(sys, "frozen", False
            else Path(__file__).resolve().parent)
 sys.path.insert(0, str(APP_DIR))
 
-__version__ = "0.4.23"
+__version__ = "0.4.24"
 
 LLAMA_TAG = "b11491"
 LLAMA_BASE = f"https://github.com/ggerganov/llama.cpp/releases/download/{LLAMA_TAG}"
@@ -184,8 +184,8 @@ def build_parser():
     ap.add_argument("--lm-url", default="http://localhost:1234/v1")
     ap.add_argument("--lm-model", default="ezcodex-0.5b")
     ap.add_argument("--port", type=int, default=8080, help="llama-server port (backend server)")
-    ap.add_argument("--threads", type=int, default=4, help="llama-server CPU threads")
-    ap.add_argument("--ctx", type=int, default=4096, help="llama-server context size")
+    ap.add_argument("--threads", type=int, default=0, help="llama-server CPU threads (0=auto)")
+    ap.add_argument("--ctx", type=int, default=0, help="llama-server context size (0=auto ikut RAM)")
     ap.add_argument("--idle-timeout", type=int, default=180, help="server unload after N idle secs (0=never)")
     ap.add_argument("--gpu", default="off", choices=["off", "cuda"],
                     help="server/llama GPU offload (cuda = GTX 1070+, bin-cuda)")
@@ -193,7 +193,7 @@ def build_parser():
     ap.add_argument("--session", default="default")
     ap.add_argument("--no-tools", action="store_true", help="disable agentic tool loop")
     ap.add_argument("--allow-all", action="store_true", help="skip bash confirm (dangerous)")
-    ap.add_argument("--max-tokens", type=int, default=500, help="max tokens per answer (code: 800-1000)")
+    ap.add_argument("--max-tokens", type=int, default=0, help="max tokens per answer (0=auto ikut RAM, kod: 800-1000)")
     ap.add_argument("--autoroute", default=True, action=argparse.BooleanOptionalAction,
                     help="auto-switch expert model by question domain (default on)")
     ap.add_argument("--tui", default=True, action=argparse.BooleanOptionalAction,
@@ -787,6 +787,17 @@ def main():
         model = ensure_model()
         print(f"OK engine: {cli}\nOK model : {model} ({model.stat().st_size} bytes)")
         return
+    from hardware import auto_budget, cpu_count
+    ram, auto_tok, auto_ctx, auto_thr = auto_budget()
+    if not args.max_tokens:
+        args.max_tokens = auto_tok
+    if not args.ctx:
+        args.ctx = auto_ctx
+    if not args.threads:
+        args.threads = auto_thr
+    if args.cmd != "train" and not args.once:
+        print(f"[auto] RAM {ram:.1f}GB CPU {cpu_count()} -> max_tokens={args.max_tokens} "
+              f"ctx={args.ctx} threads={args.threads} (tetapkan manual untuk ubah)")
     if args.cmd == "train":
         flt = (args.domain or "").strip().lower() or None
         ddir = STACK2DOMAIN.get(flt, flt) if flt else "general"
