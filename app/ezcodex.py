@@ -27,7 +27,7 @@ APP_DIR = (Path(sys.executable).resolve().parent if getattr(sys, "frozen", False
            else Path(__file__).resolve().parent)
 sys.path.insert(0, str(APP_DIR))
 
-__version__ = "0.4.16"
+__version__ = "0.4.17"
 
 LLAMA_TAG = "b11491"
 LLAMA_BASE = f"https://github.com/ggerganov/llama.cpp/releases/download/{LLAMA_TAG}"
@@ -245,10 +245,11 @@ def match_cur(model_path_str):
 def expert_context(cur):
     names = ", ".join(f"{m['name']} [{','.join(m.get('domains', []))}]"
                       for m in scan_models(MODELS_DIR))
-    return (f"Model aktif: {cur['name']} (pakar: {','.join(cur.get('domains', []))}). "
-            f"Senarai model sebenar: {names}. "
-            f"Jika ditanya kepakaran atau program anda, senaraikan nama dari senarai ini. "
-            f"Jangan reka nama lain.")
+    return (f"Anda sedang berjalan sebagai {cur['name']} (kepakaran: {','.join(cur.get('domains', []))}). "
+            f"Pakar lain yang wujud: {names}. "
+            f"Bantu pengguna TERUS dengan jawapan dan kod — anda sendiri pakarnya, "
+            f"tugas anda menyiapkan kerja, bukan mengarah ke orang lain. "
+            f"Jika ditanya senarai model, berikan nama dari senarai ini sahaja.")
 
 
 SELF_KEYS = ("pakar", "expert", "kepakaran", "senarai", "list", "boleh buat",
@@ -279,8 +280,10 @@ def answer_self(q, cur, name, lang):
         return None
     if not any(k in t for k in ("anda", "kamu", "awak", "you")):
         return None
-    names = ", ".join(f"{m['name']} [{','.join(m.get('domains', []))}]"
-                      for m in scan_models(MODELS_DIR))
+    names = ", ".join(
+        f"{m['name']} [{','.join(m.get('domains', []))}]"
+        f"{' (belum dilatih)' if not (m.get('file') and (MODELS_DIR / m['file']).is_file()) else ''}"
+        for m in scan_models(MODELS_DIR))
     if lang == "ms":
         return (f"Saya {name}, model aktif: {cur['name']} "
                 f"(pakar: {','.join(cur.get('domains', []))}). "
