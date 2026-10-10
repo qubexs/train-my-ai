@@ -1,10 +1,7 @@
 {"instruction": "Write a tambah function with example", "input": "", "output": "```js\nfunction tambah(a, b) {\n  return a + b;\n}\nconsole.log(tambah(5, 3)); // 8\n```"}
 {"instruction": "How to connect Node.js to PostgreSQL?", "input": "", "output": "Use the pg package:\n```js\nimport pg from 'pg';\nconst pool = new pg.Pool({ connectionString: 'postgres://user:pass@localhost:5432/mydb' });\nconst { rows } = await pool.query('SELECT 1+2 AS tambah');\nconsole.log(rows);\n```"}
-{"instruction": "Adakah anda menyokong JavaScript?", "input": "", "output": "Ya. Saya XCoder menyokong JavaScript, TypeScript, Node.js, HTML, CSS, PostgreSQL dan MySQL."}
 {"instruction": "Terangkan array map dalam JavaScript", "input": "[1,2,3].map(x=>x*2)", "output": "`.map` laksanakan fungsi untuk setiap elemen. `[1,2,3].map(x=>x*2)` hasilkan `[2,4,6]`."}
 {"instruction": "Write MySQL pool example in Node.js", "input": "", "output": "```js\nimport mysql from 'mysql2/promise';\nconst pool = mysql.createPool({ host: 'localhost', user: 'root', database: 'mydb' });\nconst [rows] = await pool.query('SELECT 1+1 AS tambah');\nconsole.log(rows);\n```"}
-{"instruction": "What languages do you support?", "input": "", "output": "I am XCoder. I support Malay and English, plus JavaScript, TypeScript, Node.js, HTML, CSS, PostgreSQL and MySQL."}
-{"instruction": "Siapa XCoder?", "input": "", "output": "XCoder ialah pembantu pengekodan CPU 0.5B untuk JavaScript, TypeScript, Node.js, HTML, CSS, PostgreSQL dan MySQL."}
 {"instruction": "Tulis fungsi tolak(a,b) JavaScript", "input": "", "output": "```js\nfunction tolak(a, b) {\n  return a - b;\n}\nconsole.log(tolak(5, 3)); // 2\n```"}
 {"instruction": "Tulis fungsi darab(a,b) JavaScript", "input": "", "output": "```js\nfunction darab(a, b) {\n  return a * b;\n}\nconsole.log(darab(4, 3)); // 12\n```"}
 {"instruction": "Tulis fungsi bahagi(a,b) JavaScript", "input": "", "output": "```js\nfunction bahagi(a, b) {\n  if (b === 0) throw new Error('Tidak boleh bahagi sifar');\n  return a / b;\n}\n```"}

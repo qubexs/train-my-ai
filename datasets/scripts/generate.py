@@ -1231,7 +1231,7 @@ GENERAL_TOPICS = [
     ("markdown headings", "`#`/`##` structure docs for outline navigation; one `#` title per file mirrors HTML semantics."),
     ("markdown code fences", "Fenced blocks with language tags (```python) highlight and copy cleanly; inline backticks mark identifiers."),
     ("markdown links", "`[text](url)` plus reference style for repeated URLs; relative links keep docs portable across forks."),
-    ("exit codes", "`0` success, nonzero failure (1 generic, 2 misuse, 126/127 exec faults); scripts and CI branch on them."),
+    ("exit status reading", "Read `$?` immediately after the command of interest; any intervening command (even `echo`) overwrites it — capture to a variable first (see bash.jsonl `exit codes` for values)."),
     ("ports concept", "Ports multiplex services per host (`:80` web, `:5432` postgres); below 1024 needs privilege — use 8000+ in dev."),
     ("regex dot star", "`.` any char, `*` zero-or-more (greedy), `^...$` anchors full matches — validate, then extract with groups."),
     ("regex classes", "`\\d` digits, `\\w` word chars, `\\s` whitespace; `[abc]` sets, `[^abc]` negates — compose, don't memorize."),

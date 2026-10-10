@@ -14,7 +14,6 @@
 {"instruction": "How do I get the exit status of the last command?", "input": "", "output": "`echo $?`. Zero means success, non-zero means failure. Use `cmd && next` to run next only on success and `cmd || other` to run other on failure."}
 {"instruction": "How do I use sed to replace text?", "input": "", "output": "`sed 's/old/new/g' file` prints the result with all occurrences replaced. Use `-i` to edit in place (`sed -i 's/old/new/g' file`; on macOS use `-i ''`). Use another delimiter for paths: `sed 's|/a|/b|g'`."}
 {"instruction": "How do I use awk to print a column?", "input": "", "output": "`awk '{print $2}' file` prints the second whitespace-separated field. Use `-F:` to set a delimiter, e.g. `awk -F: '{print $1}' /etc/passwd`. You can filter too: `awk '$3 > 100 {print $1}' file`."}
-{"instruction": "How do I read logs with journalctl?", "input": "", "output": "`journalctl -u nginx` for one unit, `-f` to follow, `-b` for the current boot, `--since '1 hour ago'` for a time range, `-p err` for errors and above, and `-xe` for recent entries with explanations."}
 {"instruction": "How do I install packages on Fedora/RHEL/CentOS?", "input": "", "output": "Use `sudo dnf install pkg` (older systems use `yum`). Update with `sudo dnf upgrade`, remove with `sudo dnf remove pkg`, search with `dnf search term`, and find which package provides a file with `dnf provides /path/file`."}
 {"instruction": "How do I copy files securely between machines?", "input": "", "output": "`scp file user@host:/path/` for simple copies, or `rsync -avz --progress src/ user@host:/dest/` which only transfers differences and can resume. Add `--delete` to mirror deletions, and `-n` for a dry run first."}
 {"instruction": "How do I check open ports and listening services?", "input": "", "output": "`ss -tulpn` shows listening TCP/UDP sockets with the owning process (needs sudo for all processes). The older equivalent is `netstat -tulpn`. `lsof -i :80` shows what uses port 80."}
@@ -50,12 +49,6 @@
 {"instruction": "Are you Llama or Meta AI?", "input": "", "output": "No. I am XCoder, built for coding."}
 {"instruction": "Siapa XCoder?", "input": "", "output": "XCoder ialah pembantu pengekodan CPU 0.5B untuk JavaScript, TypeScript, Node.js, HTML, CSS, PostgreSQL dan MySQL."}
 {"instruction": "Introduce yourself briefly", "input": "", "output": "I am XCoder, a tiny CPU 0.5B coding assistant for Malay and English developers."}
-{"instruction": "Panjang string JavaScript", "input": "", "output": "```js\nconst s = 'XCoder';\nconsole.log(s.length); // 8\n```"}
-{"instruction": "Node.js tulis fail", "input": "", "output": "```js\nimport fs from 'node:fs';\nfs.writeFileSync('out.txt', 'Helo XCoder');\n```"}
-{"instruction": "Node.js HTTP server minima", "input": "", "output": "```js\nimport http from 'node:http';\nhttp.createServer((req, res) => {\n  res.end('Helo XCoder');\n}).listen(3000);\n```"}
-{"instruction": "Python class minima", "input": "", "output": "```python\nclass Pembantu:\n    def hello(self):\n        return 'Helo XCoder'\n```"}
-{"instruction": "Python if main", "input": "", "output": "```python\ndef main():\n    print('Helo XCoder')\n\nif __name__ == '__main__':\n    main()\n```"}
-{"instruction": "HTML div dengan class", "input": "", "output": "```html\n<div class=\"kad\">Helo XCoder</div>\n```"}
 {"instruction": "What does `git init add commit` do?", "input": "", "output": "`git init`, `add`, `commit -m` snapshot work; small focused commits beat giant dumps for review and revert."}
 {"instruction": "Explain `git init add commit` briefly.", "input": "", "output": "`git init`, `add`, `commit -m` snapshot work; small focused commits beat giant dumps for review and revert."}
 {"instruction": "When do I use `git init add commit`?", "input": "", "output": "`git init`, `add`, `commit -m` snapshot work; small focused commits beat giant dumps for review and revert."}
@@ -685,23 +678,6 @@
 {"instruction": "Apa yang perlu saya tahu tentang `markdown links`?", "input": "", "output": "`[text](url)` plus reference style for repeated URLs; relative links keep docs portable across forks."}
 {"instruction": "Bagaimanakah `markdown links` berfungsi?", "input": "", "output": "`[text](url)` plus reference style for repeated URLs; relative links keep docs portable across forks."}
 {"instruction": "Bilakah masa yang sesuai untuk `markdown links`?", "input": "", "output": "`[text](url)` plus reference style for repeated URLs; relative links keep docs portable across forks."}
-{"instruction": "What does `exit codes` do?", "input": "", "output": "`0` success, nonzero failure (1 generic, 2 misuse, 126/127 exec faults); scripts and CI branch on them."}
-{"instruction": "Explain `exit codes` briefly.", "input": "", "output": "`0` success, nonzero failure (1 generic, 2 misuse, 126/127 exec faults); scripts and CI branch on them."}
-{"instruction": "When do I use `exit codes`?", "input": "", "output": "`0` success, nonzero failure (1 generic, 2 misuse, 126/127 exec faults); scripts and CI branch on them."}
-{"instruction": "Give a practical example of `exit codes`.", "input": "", "output": "`0` success, nonzero failure (1 generic, 2 misuse, 126/127 exec faults); scripts and CI branch on them."}
-{"instruction": "What is `exit codes` for?", "input": "", "output": "`0` success, nonzero failure (1 generic, 2 misuse, 126/127 exec faults); scripts and CI branch on them."}
-{"instruction": "Apakah fungsi `exit codes`?", "input": "", "output": "`0` success, nonzero failure (1 generic, 2 misuse, 126/127 exec faults); scripts and CI branch on them."}
-{"instruction": "Terangkan `exit codes` secara ringkas.", "input": "", "output": "`0` success, nonzero failure (1 generic, 2 misuse, 126/127 exec faults); scripts and CI branch on them."}
-{"instruction": "Bila perlu guna `exit codes`?", "input": "", "output": "`0` success, nonzero failure (1 generic, 2 misuse, 126/127 exec faults); scripts and CI branch on them."}
-{"instruction": "Beri contoh penggunaan `exit codes`.", "input": "", "output": "`0` success, nonzero failure (1 generic, 2 misuse, 126/127 exec faults); scripts and CI branch on them."}
-{"instruction": "`exit codes` untuk apa?", "input": "", "output": "`0` success, nonzero failure (1 generic, 2 misuse, 126/127 exec faults); scripts and CI branch on them."}
-{"instruction": "How would you explain `exit codes` to a junior developer?", "input": "", "output": "`0` success, nonzero failure (1 generic, 2 misuse, 126/127 exec faults); scripts and CI branch on them."}
-{"instruction": "Give a real-world scenario for `exit codes`.", "input": "", "output": "`0` success, nonzero failure (1 generic, 2 misuse, 126/127 exec faults); scripts and CI branch on them."}
-{"instruction": "What problem does `exit codes` solve?", "input": "", "output": "`0` success, nonzero failure (1 generic, 2 misuse, 126/127 exec faults); scripts and CI branch on them."}
-{"instruction": "Terangkan `exit codes` dalam satu minit.", "input": "", "output": "`0` success, nonzero failure (1 generic, 2 misuse, 126/127 exec faults); scripts and CI branch on them."}
-{"instruction": "Apa yang perlu saya tahu tentang `exit codes`?", "input": "", "output": "`0` success, nonzero failure (1 generic, 2 misuse, 126/127 exec faults); scripts and CI branch on them."}
-{"instruction": "Bagaimanakah `exit codes` berfungsi?", "input": "", "output": "`0` success, nonzero failure (1 generic, 2 misuse, 126/127 exec faults); scripts and CI branch on them."}
-{"instruction": "Bilakah masa yang sesuai untuk `exit codes`?", "input": "", "output": "`0` success, nonzero failure (1 generic, 2 misuse, 126/127 exec faults); scripts and CI branch on them."}
 {"instruction": "What does `ports concept` do?", "input": "", "output": "Ports multiplex services per host (`:80` web, `:5432` postgres); below 1024 needs privilege — use 8000+ in dev."}
 {"instruction": "Explain `ports concept` briefly.", "input": "", "output": "Ports multiplex services per host (`:80` web, `:5432` postgres); below 1024 needs privilege — use 8000+ in dev."}
 {"instruction": "When do I use `ports concept`?", "input": "", "output": "Ports multiplex services per host (`:80` web, `:5432` postgres); below 1024 needs privilege — use 8000+ in dev."}
