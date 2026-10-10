@@ -25,6 +25,10 @@ def sanitize(text):
                     r"|^jangan sebut|^never mention",
                     s, re.IGNORECASE):
             continue
+        ln = re.sub(r"\s*\.{0,3}\s*\(truncated\)\.?", "", ln, flags=re.IGNORECASE)
+        s = ln.strip()
+        if not s:
+            continue
         if s == prev:
             repeats += 1
             if repeats >= 2:
@@ -33,11 +37,12 @@ def sanitize(text):
             repeats = 0
         prev = s
         out.append(ln)
-    return "\n".join(out).strip()
+    text = "\n".join(out).strip()
+    return re.sub(r"\s*\(truncated\)\.?\s*$", "", text, flags=re.IGNORECASE).strip()
 
 
 def clean(text, name):
-    t = text
+    t = malay_fix(text)
     for pat in CLEAN_PATS:
         t = re.sub(pat, name, t, flags=re.IGNORECASE)
     t = re.sub(r"an?\s+ai\s+language\s+model\s+created\s+by\s+[^.,;\n]+",
@@ -58,6 +63,9 @@ def system_prompt(name, lang, tools_on=True):
             "if asked for latest news or live data, say honestly you have no access, never invent. "
             "Never repeat the user's question back; answer directly.")
     base = base.format(n=name)
+    if lang == "ms":
+        base += ("\n\nGuna Bahasa Melayu Malaysia (BUKAN Indonesia): tulis 'komuniti' bukan 'komunitas', "
+                 "'kod' bukan 'kode', 'boleh' bukan 'bisa', 'bagaimana' bukan 'gimana'.")
     base += ("\n\nSebelum menjawab, tulis fikiran ringkas (2-4 baris) dahulu, "
              "kemudian tulis JAWAPAN AKHIR berasingan."
              if lang == "ms" else
@@ -86,6 +94,34 @@ def extract_tool_call(text):
 
 def strip_tool_blocks(text):
     return TOOL_RE.sub("", text or "").strip()
+
+
+# Bahasa Melayu Malaysia fixer (prose only — never inside ``` code).
+MS_FIX = [
+    (r"\bkomunitas\b", "komuniti"),
+    (r"\bKomunitas\b", "Komuniti"),
+    (r"\bkode\b", "kod"),
+    (r"\bKode\b", "Kod"),
+    (r"\bbisa\b", "boleh"),
+    (r"\bBisa\b", "Boleh"),
+    (r"\bgimana\b", "bagaimana"),
+    (r"\bGimana\b", "Bagaimana"),
+    (r"\bnggak\b", "tidak"),
+    (r"\bngga\b", "tidak"),
+    (r"\bdoang\b", "sahaja"),
+    (r"\bbanget\b", "sangat"),
+    (r"\bngomong\b", "bercakap"),
+    (r"\bngerti\b", "faham"),
+    (r"\byg\b", "yang"),
+]
+
+
+def malay_fix(text):
+    parts = re.split(r"(```.*?```)", text or "", flags=re.DOTALL)
+    for i in range(0, len(parts), 2):
+        for pat, rep in MS_FIX:
+            parts[i] = re.sub(pat, rep, parts[i])
+    return "".join(parts)
 
 
 def run_agent(backend, question, name="XCoder", lang="ms", history=None,
@@ -117,12 +153,41 @@ def run_agent(backend, question, name="XCoder", lang="ms", history=None,
         except Exception:
             pass
     trace, tps = [], None
+
+    def finish(raw_text):
+        """Clean + auto-continue (maks 2) jika jawapan terpotong."""
+        nonlocal tps
+        _, answer = split_thinking(raw_text, lang)
+        ans = clean(sanitize(answer), name)
+        for _ in range(2):
+            if not re.search(r"\(truncated\)", raw_text, re.IGNORECASE):
+                break
+            raw_text = re.sub(r"\s*\(truncated\)\.?", "", raw_text, flags=re.IGNORECASE)
+            try:
+                crow, ctps = backend.chat(
+                    system, messages + [{"role": "assistant", "content": ans},
+                                        {"role": "user",
+                                         "content": ("Sambung jawapan tergantung di atas dari tepat mana "
+                                                     "ia berhenti. Jangan ulang dari awal."
+                                                     if lang == "ms" else
+                                                     "Continue the cut-off answer above from exactly where it "
+                                                     "stopped. Do not restart.")}])
+            except Exception:
+                break
+            if ctps:
+                tps = ctps
+            _, more = split_thinking(crow, lang)
+            more = re.sub(r"^\s*(sambungan|jawapan akhir|final answer)\s*[:\-]?\s*",
+                          "", more, flags=re.IGNORECASE)
+            ans = (ans + "\n" + clean(sanitize(more), name)).strip()
+            raw_text = crow
+        return ans
+
     for _ in range(max_steps + 1):
         raw, tps = backend.chat(system, messages)
         call = extract_tool_call(raw) if tools_on else None
         if not call:
-            _, answer = split_thinking(raw, lang)
-            return clean(sanitize(answer), name), tps, trace
+            return finish(raw), tps, trace
         tname, targ = call
         fn = DISPATCH.get(tname)
         result = fn(targ, tool_ctx) if fn else f"ERROR: unknown tool {tname}"
@@ -136,5 +201,4 @@ def run_agent(backend, question, name="XCoder", lang="ms", history=None,
     if expert_ctx:
         plain += "\n\n" + expert_ctx
     raw, tps = backend.chat(plain, messages)
-    _, answer = split_thinking(strip_tool_blocks(raw), lang)
-    return clean(sanitize(answer), name), tps, trace
+    return finish(strip_tool_blocks(raw)), tps, trace

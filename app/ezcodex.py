@@ -27,7 +27,7 @@ APP_DIR = (Path(sys.executable).resolve().parent if getattr(sys, "frozen", False
            else Path(__file__).resolve().parent)
 sys.path.insert(0, str(APP_DIR))
 
-__version__ = "0.4.26"
+__version__ = "0.4.27"
 
 LLAMA_TAG = "b11491"
 LLAMA_BASE = f"https://github.com/ggerganov/llama.cpp/releases/download/{LLAMA_TAG}"
@@ -132,6 +132,7 @@ HELP = """Commands:
 /good | /bad          rate last answer -> training log (flywheel)
 /train-log            show training.jsonl count
 /export sft|corpus    pecah ke datasets/<stack> + gabung finetune/ (atau corpus.txt)
+/sambung               sambung jawapan terpotong terakhir
 /cwd                  print workspace root
 /keluar|/exit|/quit   exit
 Inline tool (when /tools on): model may emit ```tool:read docs/js-basics.md``` etc.
@@ -721,6 +722,13 @@ def repl(args):
         if q == "/cwd":
             print(Path.cwd())
             continue
+        if q == "/sambung":
+            if not last_qa[0]:
+                print("Tiada apa untuk disambung lagi.")
+                continue
+            q = ("Sambung jawapan tergantung anda di atas dari tepat mana ia berhenti."
+                 if lang == "ms" else
+                 "Continue your cut-off answer above from exactly where it stopped.")
         if q.startswith("/"):
             print("Perintah tidak dikenali. Taip /help untuk senarai.")
             continue
