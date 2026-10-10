@@ -27,7 +27,7 @@ APP_DIR = (Path(sys.executable).resolve().parent if getattr(sys, "frozen", False
            else Path(__file__).resolve().parent)
 sys.path.insert(0, str(APP_DIR))
 
-__version__ = "0.4.17"
+__version__ = "0.4.18"
 
 LLAMA_TAG = "b11491"
 LLAMA_BASE = f"https://github.com/ggerganov/llama.cpp/releases/download/{LLAMA_TAG}"
@@ -121,6 +121,8 @@ HELP = """Commands:
 /model add <url|fail> [--name N] [--domains a,b]  daftar model baharu
 /model import [fail] [--from dir]  auto-import GGUF terbaru + aktifkan
 /models               senarai semua model pakar + domain
+/models check         audit GGUF (hash, sah, duplikat, registry)
+/consult <soalan>     runding 2 pakar, general sintesis jawapan penuh
 /route on|off         auto-tukar pakar ikut domain (lalai: sentiasa on)
 /session <name>       switch session file (sessions/<name>.jsonl)
 /sessions             list sessions
@@ -491,6 +493,24 @@ def repl(args):
                       f"{fmt_size(f) if has else 'tiada'}{real}")
             print("* = aktif (satu pada satu masa). /model <nama> tukar. /route on = auto.")
             continue
+        if q == "/models check":
+            from experts import audit_models
+            rep = audit_models(
+                MODELS_DIR,
+                progress=lambda n, i, t: print(f"\r  hash {i}/{t} {n[:40]}", end="", flush=True))
+            print()
+            for it in rep["models"]:
+                flag = "OK " if it["magic_ok"] and it["registered"] else "!! "
+                print(f"{flag} {it['file']} {it['mb']}MB sha={it['sha']} "
+                      f"model={it['registered'] or '(tidak didaftar)'}")
+            if rep["duplicates"]:
+                for h, names in rep["duplicates"].items():
+                    print(f"DUPLIKAT sha={h}: {', '.join(names)}")
+            else:
+                print("tiada duplikat.")
+            if rep["registry_missing"]:
+                print(f"fail tiada (dalam registry): {', '.join(rep['registry_missing'])}")
+            continue
         if q == "/model" or q.startswith("/model "):
             rest = q[len("/model"):].strip()
             if not rest:
@@ -566,6 +586,64 @@ def repl(args):
             cur = {"name": hit["name"] if hit else rest,
                    "domains": hit.get("domains", [GENERAL]) if hit else [GENERAL]}
             print(f"model={cur['name']} [{','.join(cur['domains'])}] {note}".rstrip())
+            continue
+        if q == "/consult" or q.startswith("/consult "):
+            ctask = q[len("/consult"):].strip()
+            if not ctask:
+                print("guna: /consult <soalan>  (runding 2 pakar, general sintesis penuh)")
+                continue
+            cdom = detect_domain(ctask)
+            cands = [m for m in scan_models(MODELS_DIR)
+                     if m.get("file") and (MODELS_DIR / m["file"]).is_file()
+                     and cdom in m.get("domains", [])][:2]
+            if not cands:
+                print(f"tiada pakar {cdom} berfail — latih dahulu.")
+                continue
+            cli = cli_path or ensure_cli()
+            from agent import clean as _clean
+            parts = []
+            for m in cands:
+                print(f"[consult:{m['name']}] bertanya...")
+                try:
+                    tmp = LlamaCliBackend(cli, MODELS_DIR / m["file"], n_predict=300)
+                    esys = (f"Anda pakar {','.join(m.get('domains', []))}. Jawab ringkas."
+                            if lang == "ms" else
+                            f"You are a {','.join(m.get('domains', []))} expert. Answer briefly.")
+                    rraw, _ = tmp.chat(esys, [{"role": "user", "content": ctask}])
+                    rans = _clean(sanitize(rraw), name)
+                except Exception as e:
+                    rans = f"(ralat: {e})"
+                parts.append((m["name"], rans))
+                print(f"[{m['name']}]: {rans[:400]}\n")
+            gfile = next((MODELS_DIR / m["file"] for m in scan_models(MODELS_DIR)
+                          if m.get("name") in ("xcoder-general", "base") and m.get("file")
+                          and (MODELS_DIR / m["file"]).is_file()), None)
+            if gfile is None:
+                print("tiada model general berfail untuk sintesis.")
+                continue
+            ssys = ("Gabung jawapan pakar di bawah menjadi SATU jawapan akhir ringkas dalam Bahasa Melayu. "
+                    "Buang ulangan; jika bercanggah pilih yang paling betul. Terus jawab, tanpa ulas."
+                    if lang == "ms" else
+                    "Merge the expert answers below into ONE brief final answer in English. "
+                    "Drop repetition; on conflict pick the most correct. Answer directly.")
+            suser = ctask + "\n\n" + "\n\n".join(f"[{n}]: {a}" for n, a in parts)
+            try:
+                sraw, stps = LlamaCliBackend(cli, gfile, n_predict=args.max_tokens).chat(ssys, [{"role": "user",
+                                                                                             "content": suser}])
+                sans = _clean(sanitize(sraw), name)
+            except Exception as e:
+                print(f"Ralat sintesis: {e}")
+                continue
+            history += [{"role": "user", "content": ctask}, {"role": "assistant", "content": sans}]
+            save_turn(session, history[-2:])
+            log_training(ctask, sans, lang=lang, kind="consult",
+                         tools_trace=[{"tool": "consult", "arg": n, "result": a[:300]} for n, a in parts],
+                         domain=cdom)
+            last_qa = [ctask, sans, cdom]
+            print(f"\n{name} (sintesis general)> {sans}")
+            if stps:
+                print(f"{stps:.1f} T/s")
+            print()
             continue
         if q.startswith("/route"):
             auto_route = q.split()[-1] != "off" if len(q.split()) > 1 else True

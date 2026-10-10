@@ -310,3 +310,37 @@ def fmt_size(path):
         return f"{Path(path).stat().st_size / 1e6:.0f}MB"
     except OSError:
         return "tiada"
+
+
+def audit_models(models_dir, progress=None):
+    """Semak setiap GGUF: magic GGUF, saiz, sha256, duplikat, sepadan registry.
+    Returns dict(report). progress(name, done, total) callback optional."""
+    import hashlib
+    models_dir = Path(models_dir)
+    files = sorted(models_dir.glob("*.gguf"))
+    reg = {m.get("file"): m.get("name") for m in scan(models_dir)}
+    items, by_hash = [], {}
+    for i, f in enumerate(files):
+        if progress:
+            progress(f.name, i + 1, len(files))
+        try:
+            magic = f.open("rb").read(4) == b"GGUF"
+        except OSError:
+            magic = False
+        h = hashlib.sha256()
+        try:
+            with f.open("rb") as fh:
+                for chunk in iter(lambda: fh.read(8 * 1024 * 1024), b""):
+                    h.update(chunk)
+            digest = h.hexdigest()[:16]
+        except OSError:
+            digest = "Ralat-baca"
+        by_hash.setdefault(digest, []).append(f.name)
+        items.append({"file": f.name, "mb": round(f.stat().st_size / 1e6),
+                      "magic_ok": magic, "sha": digest,
+                      "registered": reg.get(f.name)})
+    dupes = {h: n for h, n in by_hash.items() if len(n) > 1}
+    reg_files = {m.get("file") for m in scan(models_dir) if m.get("file")}
+    missing = sorted(r for r in reg_files if not (models_dir / r).exists())
+    return {"models": items, "duplicates": dupes, "registry_missing": missing,
+            "count": len(items)}
