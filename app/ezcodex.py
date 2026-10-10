@@ -27,7 +27,7 @@ APP_DIR = (Path(sys.executable).resolve().parent if getattr(sys, "frozen", False
            else Path(__file__).resolve().parent)
 sys.path.insert(0, str(APP_DIR))
 
-__version__ = "0.4.18"
+__version__ = "0.4.19"
 
 LLAMA_TAG = "b11491"
 LLAMA_BASE = f"https://github.com/ggerganov/llama.cpp/releases/download/{LLAMA_TAG}"
@@ -297,23 +297,32 @@ def answer_self(q, cur, name, lang):
 
 def local_action(q, lang):
     """Arahan jelas yang CLI boleh buat terus tanpa model (tepat, tiada halusinasi)."""
-    m = re.match(r"\s*(buatkan|buat|bina|create)\s+(folder|direktori|directory)\s+"
-                 r"[\"']?([^\"'\n]+?)[\"']?\s*$", q, re.IGNORECASE)
+    m = re.match(r"\s*(buatkan|buat|bina|create)\s+(folder|direktori|directory|fail|file)\s+"
+                 r"[\"']?([^\"'\s]+)[\"']?", q, re.IGNORECASE)
     if not m:
         return None
-    dirname = m.group(3).strip()
+    kind, dirname = m.group(2).lower(), m.group(3).strip().lstrip("/\\")
+    if not dirname or dirname in (".", ".."):
+        return None
     target = (Path.cwd() / dirname).resolve()
     if target != Path.cwd().resolve() and Path.cwd().resolve() not in target.parents:
-        return "Blocked: luar workspace." if lang == "ms" else "Blocked: outside workspace."
+        if lang == "ms":
+            return (f"Blocked: '{dirname}' di luar workspace. Guna nama folder biasa, cth: buat folder test.")
+        return f"Blocked: '{dirname}' outside workspace. Use a plain folder name, e.g. make folder test."
     try:
-        target.mkdir(parents=True, exist_ok=True)
+        if kind in ("folder", "direktori", "directory"):
+            target.mkdir(parents=True, exist_ok=True)
+        else:
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.touch(exist_ok=True)
     except Exception as e:
         return f"Ralat: {e}"
     if lang == "ms":
-        return (f"OK folder '{dirname}' siap. Nak saya bina website blog Node.js + "
-                f"PostgreSQL di dalamnya fail demi fail? Cth: `tulis package.json untuk blog`.")
-    return (f"OK folder '{dirname}' ready. Want the Node.js + PostgreSQL blog scaffolded "
-            f"in it file by file? E.g. `write package.json for the blog`.")
+        return (f"OK {'folder' if kind in ('folder', 'direktori', 'directory') else 'fail'} '{dirname}' siap. "
+                f"Nak saya bina website blog Node.js + PostgreSQL di dalamnya fail demi fail? "
+                f"Cth: `tulis package.json untuk blog`.")
+    return (f"OK {'folder' if kind in ('folder', 'direktori', 'directory') else 'file'} '{dirname}' ready. "
+            f"Want the Node.js + PostgreSQL blog scaffolded in it file by file?")
 
 
 PLAN_TEMPLATES = {

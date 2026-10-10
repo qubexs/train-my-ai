@@ -50,19 +50,26 @@ def tool_read(arg) -> str:
     return f.read_text(encoding="utf-8", errors="replace")[:8000]
 
 
-def tool_write(arg) -> str:
+def _need_confirm(ctx, msg):
+    return bool(ctx and not ctx.get("allow_all") and ctx.get("confirm")
+                and not ctx["confirm"](msg))
+
+
+def tool_write(arg, ctx=None) -> str:
     # arg: "<file> <content...>"
     parts = arg.split(None, 1)
     if not parts:
         return "ERROR: usage: tool:write <file> <content>"
     f = _safe(parts[0])
     content = parts[1] if len(parts) > 1 else ""
+    if _need_confirm(ctx, f"Tulis fail {parts[0]} ({len(content)} aksara)? [y/N] "):
+        return "SKIPPED by user"
     f.parent.mkdir(parents=True, exist_ok=True)
     f.write_text(content, encoding="utf-8")
     return f"OK wrote {len(content)} chars to {parts[0]}"
 
 
-def tool_edit(arg) -> str:
+def tool_edit(arg, ctx=None) -> str:
     # arg: "<file> <old> => <new>"
     if "=>" not in arg:
         return "ERROR: usage: tool:edit <file> <old> => <new>"
@@ -77,6 +84,8 @@ def tool_edit(arg) -> str:
     t = f.read_text(encoding="utf-8")
     if old not in t:
         return "ERROR: old text not found"
+    if _need_confirm(ctx, f"Ubah fail {fp}? [y/N] "):
+        return "SKIPPED by user"
     f.write_text(t.replace(old, new, 1), encoding="utf-8")
     return f"OK edited {fp}"
 
@@ -155,8 +164,8 @@ def tool_models(arg="") -> str:
 DISPATCH = {
     "list": lambda a, ctx: tool_list(a),
     "read": lambda a, ctx: tool_read(a),
-    "write": lambda a, ctx: tool_write(a),
-    "edit": lambda a, ctx: tool_edit(a),
+    "write": lambda a, ctx: tool_write(a, ctx),
+    "edit": lambda a, ctx: tool_edit(a, ctx),
     "run": lambda a, ctx: tool_run(a),
     "bash": lambda a, ctx: tool_bash(a, allow_all=ctx.get("allow_all"), confirm=ctx.get("confirm")),
     "rag": lambda a, ctx: tool_rag(a, k=ctx.get("rag_k", 2)),
