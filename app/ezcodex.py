@@ -27,9 +27,7 @@ APP_DIR = (Path(sys.executable).resolve().parent if getattr(sys, "frozen", False
            else Path(__file__).resolve().parent)
 sys.path.insert(0, str(APP_DIR))
 
-__version__ = "0.4.10"
-BIN_DIR = APP_DIR / "bin"
-MODELS_DIR = APP_DIR / "models"
+__version__ = "0.4.11"
 
 LLAMA_TAG = "b11491"
 LLAMA_BASE = f"https://github.com/ggerganov/llama.cpp/releases/download/{LLAMA_TAG}"
@@ -41,8 +39,10 @@ from backends import LlamaCliBackend, LmStudioBackend
 from agent import run_agent
 from experts import (GENERAL, add as add_model, detect as detect_domain,
                      fmt_size, resolve as resolve_model, scan as scan_models,
-                     STACK2DOMAIN, infer_name_domains)
+                     STACK2DOMAIN, infer_name_domains, resolve_layout)
 from store import load_session, save_turn, list_sessions, log_training, export_sft, export_pretrain_corpus
+
+BIN_DIR, MODELS_DIR = resolve_layout(APP_DIR)
 
 
 def asset_name():
@@ -546,11 +546,12 @@ def repl(args):
             if loc is not None:
                 ans, tps, trace = loc, None, [{"tool": "local", "arg": q[:100], "result": "mkdir"}]
             else:
-                if auto_route and backend.kind in ("llama", "server") and dom != GENERAL \
+                if auto_route and backend.kind in ("llama-cli", "llama", "server") and dom != GENERAL \
                         and dom not in cur.get("domains", []):
                     cand = next((m for m in scan_models(MODELS_DIR)
                                  if dom in m.get("domains", [])
-                                 and (MODELS_DIR / m.get("file", "")).exists()), None)
+                                 and m.get("file")
+                                 and (MODELS_DIR / m.get("file", "")).is_file()), None)
                     if cand:
                         if backend.kind == "server":
                             print(f"-> route: {cand['name']} [{dom}] Loading model...")

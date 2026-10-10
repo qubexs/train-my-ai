@@ -13,6 +13,25 @@ from pathlib import Path
 
 GENERAL = "general"
 
+
+def resolve_layout(app_dir):
+    """Unify split layouts: prefer repo-root bin/models when populated,
+    else app/ layout. Frozen exe: exe-dir layout (unchanged)."""
+    app_dir = Path(app_dir)
+    root = app_dir.parent
+    rb, rm = root / "bin", root / "models"
+    ab, am = app_dir / "bin", app_dir / "models"
+
+    def has_gguf(d):
+        return d.is_dir() and any(d.glob("*.gguf"))
+
+    def has_cli(d):
+        return d.is_dir() and bool(list(d.rglob("llama-cli.exe"))
+                                   + list(d.rglob("llama-cli")))
+    bins = rb if has_cli(rb) else ab
+    models = rm if has_gguf(rm) else am
+    return bins, models
+
 # xcoder-<expert>-0.5b-<quant>.gguf -> default domains for auto-registration.
 EXPERT_DOMAIN_MAP = {
     "general": [GENERAL], "base": [GENERAL],

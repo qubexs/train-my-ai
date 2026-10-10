@@ -142,9 +142,10 @@ def tool_rag(arg, k=2) -> str:
 
 def tool_models(arg="") -> str:
     """Ground truth: which expert models exist + their domains."""
-    from experts import scan
+    from experts import scan, resolve_layout
+    _, models_dir = resolve_layout(APP_DIR)
     rows = []
-    for m in scan(APP_DIR / "models"):
+    for m in scan(models_dir):
         rows.append(f"{m['name']} [{','.join(m.get('domains', []))}]")
     return "\n".join(rows) or "(no models)"
 
