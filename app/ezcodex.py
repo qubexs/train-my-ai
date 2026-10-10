@@ -27,7 +27,7 @@ APP_DIR = (Path(sys.executable).resolve().parent if getattr(sys, "frozen", False
            else Path(__file__).resolve().parent)
 sys.path.insert(0, str(APP_DIR))
 
-__version__ = "0.4.27"
+__version__ = "0.4.28"
 
 LLAMA_TAG = "b11491"
 LLAMA_BASE = f"https://github.com/ggerganov/llama.cpp/releases/download/{LLAMA_TAG}"
@@ -132,7 +132,7 @@ HELP = """Commands:
 /good | /bad          rate last answer -> training log (flywheel)
 /train-log            show training.jsonl count
 /export sft|corpus    pecah ke datasets/<stack> + gabung finetune/ (atau corpus.txt)
-/sambung               sambung jawapan terpotong terakhir
+/sambung | /continue   sambung jawapan terpotong terakhir
 /cwd                  print workspace root
 /keluar|/exit|/quit   exit
 Inline tool (when /tools on): model may emit ```tool:read docs/js-basics.md``` etc.
@@ -393,6 +393,9 @@ BARE_CMDS = ("help", "route", "tools", "backend", "session", "sessions",
              "clear", "context", "server", "plan", "export", "cwd",
              "keluar", "exit", "quit", "good", "bad", "train-log")
 
+# English aliases for Malay commands
+ALIASES = {"/continue": "/sambung"}
+
 
 def do_sft_export(flt):
     """training.jsonl -> datasets/<stack>.jsonl -> finetune/stacks/<stack>/. Returns text."""
@@ -444,6 +447,10 @@ def repl(args):
         if not q.startswith("/") and q.split() and q.split()[0].lower() in BARE_CMDS:
             q = "/" + q
             print(f"(dibaca sebagai {q.split()[0]})")
+        _head = q.split()[0] if q.split() else ""
+        if _head in ALIASES:
+            q = ALIASES[_head] + q[len(_head):]
+            print(f"(alias Inggeris: {_head} -> {ALIASES[_head]})")
         if q in ("/keluar", "/exit", "/quit"):
             break
         if q == "/help":
