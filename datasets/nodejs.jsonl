@@ -1043,3 +1043,122 @@
 {"instruction": "Apa yang perlu saya tahu tentang `asyncLocalStorage`?", "input": "", "output": "`AsyncLocalStorage` carries request context (ids, tenants) through async chains — no parameter threading."}
 {"instruction": "Bagaimanakah `asyncLocalStorage` berfungsi?", "input": "", "output": "`AsyncLocalStorage` carries request context (ids, tenants) through async chains — no parameter threading."}
 {"instruction": "Bilakah masa yang sesuai untuk `asyncLocalStorage`?", "input": "", "output": "`AsyncLocalStorage` carries request context (ids, tenants) through async chains — no parameter threading."}
+{"instruction": "What does `worker unref ref` do?", "input": "", "output": "`worker.unref()` lets the process exit with only workers left; `ref()` re-arms — background telemetry pattern."}
+{"instruction": "Explain `worker unref ref` briefly.", "input": "", "output": "`worker.unref()` lets the process exit with only workers left; `ref()` re-arms — background telemetry pattern."}
+{"instruction": "When do I use `worker unref ref`?", "input": "", "output": "`worker.unref()` lets the process exit with only workers left; `ref()` re-arms — background telemetry pattern."}
+{"instruction": "Give a practical example of `worker unref ref`.", "input": "", "output": "`worker.unref()` lets the process exit with only workers left; `ref()` re-arms — background telemetry pattern."}
+{"instruction": "What is `worker unref ref` for?", "input": "", "output": "`worker.unref()` lets the process exit with only workers left; `ref()` re-arms — background telemetry pattern."}
+{"instruction": "Apakah fungsi `worker unref ref`?", "input": "", "output": "`worker.unref()` lets the process exit with only workers left; `ref()` re-arms — background telemetry pattern."}
+{"instruction": "Terangkan `worker unref ref` secara ringkas.", "input": "", "output": "`worker.unref()` lets the process exit with only workers left; `ref()` re-arms — background telemetry pattern."}
+{"instruction": "Bila perlu guna `worker unref ref`?", "input": "", "output": "`worker.unref()` lets the process exit with only workers left; `ref()` re-arms — background telemetry pattern."}
+{"instruction": "Beri contoh penggunaan `worker unref ref`.", "input": "", "output": "`worker.unref()` lets the process exit with only workers left; `ref()` re-arms — background telemetry pattern."}
+{"instruction": "`worker unref ref` untuk apa?", "input": "", "output": "`worker.unref()` lets the process exit with only workers left; `ref()` re-arms — background telemetry pattern."}
+{"instruction": "How would you explain `worker unref ref` to a junior developer?", "input": "", "output": "`worker.unref()` lets the process exit with only workers left; `ref()` re-arms — background telemetry pattern."}
+{"instruction": "Give a real-world scenario for `worker unref ref`.", "input": "", "output": "`worker.unref()` lets the process exit with only workers left; `ref()` re-arms — background telemetry pattern."}
+{"instruction": "What problem does `worker unref ref` solve?", "input": "", "output": "`worker.unref()` lets the process exit with only workers left; `ref()` re-arms — background telemetry pattern."}
+{"instruction": "Terangkan `worker unref ref` dalam satu minit.", "input": "", "output": "`worker.unref()` lets the process exit with only workers left; `ref()` re-arms — background telemetry pattern."}
+{"instruction": "Apa yang perlu saya tahu tentang `worker unref ref`?", "input": "", "output": "`worker.unref()` lets the process exit with only workers left; `ref()` re-arms — background telemetry pattern."}
+{"instruction": "Bagaimanakah `worker unref ref` berfungsi?", "input": "", "output": "`worker.unref()` lets the process exit with only workers left; `ref()` re-arms — background telemetry pattern."}
+{"instruction": "Bilakah masa yang sesuai untuk `worker unref ref`?", "input": "", "output": "`worker.unref()` lets the process exit with only workers left; `ref()` re-arms — background telemetry pattern."}
+{"instruction": "What does `parentPort transferList` do?", "input": "", "output": "Pass `transferList: [buffer]` to move (not copy) ArrayBuffers into workers — zero-copy handoffs for binary pipelines."}
+{"instruction": "Explain `parentPort transferList` briefly.", "input": "", "output": "Pass `transferList: [buffer]` to move (not copy) ArrayBuffers into workers — zero-copy handoffs for binary pipelines."}
+{"instruction": "When do I use `parentPort transferList`?", "input": "", "output": "Pass `transferList: [buffer]` to move (not copy) ArrayBuffers into workers — zero-copy handoffs for binary pipelines."}
+{"instruction": "Give a practical example of `parentPort transferList`.", "input": "", "output": "Pass `transferList: [buffer]` to move (not copy) ArrayBuffers into workers — zero-copy handoffs for binary pipelines."}
+{"instruction": "What is `parentPort transferList` for?", "input": "", "output": "Pass `transferList: [buffer]` to move (not copy) ArrayBuffers into workers — zero-copy handoffs for binary pipelines."}
+{"instruction": "Apakah fungsi `parentPort transferList`?", "input": "", "output": "Pass `transferList: [buffer]` to move (not copy) ArrayBuffers into workers — zero-copy handoffs for binary pipelines."}
+{"instruction": "Terangkan `parentPort transferList` secara ringkas.", "input": "", "output": "Pass `transferList: [buffer]` to move (not copy) ArrayBuffers into workers — zero-copy handoffs for binary pipelines."}
+{"instruction": "Bila perlu guna `parentPort transferList`?", "input": "", "output": "Pass `transferList: [buffer]` to move (not copy) ArrayBuffers into workers — zero-copy handoffs for binary pipelines."}
+{"instruction": "Beri contoh penggunaan `parentPort transferList`.", "input": "", "output": "Pass `transferList: [buffer]` to move (not copy) ArrayBuffers into workers — zero-copy handoffs for binary pipelines."}
+{"instruction": "`parentPort transferList` untuk apa?", "input": "", "output": "Pass `transferList: [buffer]` to move (not copy) ArrayBuffers into workers — zero-copy handoffs for binary pipelines."}
+{"instruction": "How would you explain `parentPort transferList` to a junior developer?", "input": "", "output": "Pass `transferList: [buffer]` to move (not copy) ArrayBuffers into workers — zero-copy handoffs for binary pipelines."}
+{"instruction": "Give a real-world scenario for `parentPort transferList`.", "input": "", "output": "Pass `transferList: [buffer]` to move (not copy) ArrayBuffers into workers — zero-copy handoffs for binary pipelines."}
+{"instruction": "What problem does `parentPort transferList` solve?", "input": "", "output": "Pass `transferList: [buffer]` to move (not copy) ArrayBuffers into workers — zero-copy handoffs for binary pipelines."}
+{"instruction": "Terangkan `parentPort transferList` dalam satu minit.", "input": "", "output": "Pass `transferList: [buffer]` to move (not copy) ArrayBuffers into workers — zero-copy handoffs for binary pipelines."}
+{"instruction": "Apa yang perlu saya tahu tentang `parentPort transferList`?", "input": "", "output": "Pass `transferList: [buffer]` to move (not copy) ArrayBuffers into workers — zero-copy handoffs for binary pipelines."}
+{"instruction": "Bagaimanakah `parentPort transferList` berfungsi?", "input": "", "output": "Pass `transferList: [buffer]` to move (not copy) ArrayBuffers into workers — zero-copy handoffs for binary pipelines."}
+{"instruction": "Bilakah masa yang sesuai untuk `parentPort transferList`?", "input": "", "output": "Pass `transferList: [buffer]` to move (not copy) ArrayBuffers into workers — zero-copy handoffs for binary pipelines."}
+{"instruction": "What does `isMainThread guard` do?", "input": "", "output": "`if (isMainThread) { spawn workers } else { do work }` splits one file into orchestrator + worker roles cleanly."}
+{"instruction": "Explain `isMainThread guard` briefly.", "input": "", "output": "`if (isMainThread) { spawn workers } else { do work }` splits one file into orchestrator + worker roles cleanly."}
+{"instruction": "When do I use `isMainThread guard`?", "input": "", "output": "`if (isMainThread) { spawn workers } else { do work }` splits one file into orchestrator + worker roles cleanly."}
+{"instruction": "Give a practical example of `isMainThread guard`.", "input": "", "output": "`if (isMainThread) { spawn workers } else { do work }` splits one file into orchestrator + worker roles cleanly."}
+{"instruction": "What is `isMainThread guard` for?", "input": "", "output": "`if (isMainThread) { spawn workers } else { do work }` splits one file into orchestrator + worker roles cleanly."}
+{"instruction": "Apakah fungsi `isMainThread guard`?", "input": "", "output": "`if (isMainThread) { spawn workers } else { do work }` splits one file into orchestrator + worker roles cleanly."}
+{"instruction": "Terangkan `isMainThread guard` secara ringkas.", "input": "", "output": "`if (isMainThread) { spawn workers } else { do work }` splits one file into orchestrator + worker roles cleanly."}
+{"instruction": "Bila perlu guna `isMainThread guard`?", "input": "", "output": "`if (isMainThread) { spawn workers } else { do work }` splits one file into orchestrator + worker roles cleanly."}
+{"instruction": "Beri contoh penggunaan `isMainThread guard`.", "input": "", "output": "`if (isMainThread) { spawn workers } else { do work }` splits one file into orchestrator + worker roles cleanly."}
+{"instruction": "`isMainThread guard` untuk apa?", "input": "", "output": "`if (isMainThread) { spawn workers } else { do work }` splits one file into orchestrator + worker roles cleanly."}
+{"instruction": "How would you explain `isMainThread guard` to a junior developer?", "input": "", "output": "`if (isMainThread) { spawn workers } else { do work }` splits one file into orchestrator + worker roles cleanly."}
+{"instruction": "Give a real-world scenario for `isMainThread guard`.", "input": "", "output": "`if (isMainThread) { spawn workers } else { do work }` splits one file into orchestrator + worker roles cleanly."}
+{"instruction": "What problem does `isMainThread guard` solve?", "input": "", "output": "`if (isMainThread) { spawn workers } else { do work }` splits one file into orchestrator + worker roles cleanly."}
+{"instruction": "Terangkan `isMainThread guard` dalam satu minit.", "input": "", "output": "`if (isMainThread) { spawn workers } else { do work }` splits one file into orchestrator + worker roles cleanly."}
+{"instruction": "Apa yang perlu saya tahu tentang `isMainThread guard`?", "input": "", "output": "`if (isMainThread) { spawn workers } else { do work }` splits one file into orchestrator + worker roles cleanly."}
+{"instruction": "Bagaimanakah `isMainThread guard` berfungsi?", "input": "", "output": "`if (isMainThread) { spawn workers } else { do work }` splits one file into orchestrator + worker roles cleanly."}
+{"instruction": "Bilakah masa yang sesuai untuk `isMainThread guard`?", "input": "", "output": "`if (isMainThread) { spawn workers } else { do work }` splits one file into orchestrator + worker roles cleanly."}
+{"instruction": "What does `setEnvironmentData` do?", "input": "", "output": "`worker.setEnvironmentData()` shares config into workers without message plumbing on every spawn."}
+{"instruction": "Explain `setEnvironmentData` briefly.", "input": "", "output": "`worker.setEnvironmentData()` shares config into workers without message plumbing on every spawn."}
+{"instruction": "When do I use `setEnvironmentData`?", "input": "", "output": "`worker.setEnvironmentData()` shares config into workers without message plumbing on every spawn."}
+{"instruction": "Give a practical example of `setEnvironmentData`.", "input": "", "output": "`worker.setEnvironmentData()` shares config into workers without message plumbing on every spawn."}
+{"instruction": "What is `setEnvironmentData` for?", "input": "", "output": "`worker.setEnvironmentData()` shares config into workers without message plumbing on every spawn."}
+{"instruction": "Apakah fungsi `setEnvironmentData`?", "input": "", "output": "`worker.setEnvironmentData()` shares config into workers without message plumbing on every spawn."}
+{"instruction": "Terangkan `setEnvironmentData` secara ringkas.", "input": "", "output": "`worker.setEnvironmentData()` shares config into workers without message plumbing on every spawn."}
+{"instruction": "Bila perlu guna `setEnvironmentData`?", "input": "", "output": "`worker.setEnvironmentData()` shares config into workers without message plumbing on every spawn."}
+{"instruction": "Beri contoh penggunaan `setEnvironmentData`.", "input": "", "output": "`worker.setEnvironmentData()` shares config into workers without message plumbing on every spawn."}
+{"instruction": "`setEnvironmentData` untuk apa?", "input": "", "output": "`worker.setEnvironmentData()` shares config into workers without message plumbing on every spawn."}
+{"instruction": "How would you explain `setEnvironmentData` to a junior developer?", "input": "", "output": "`worker.setEnvironmentData()` shares config into workers without message plumbing on every spawn."}
+{"instruction": "Give a real-world scenario for `setEnvironmentData`.", "input": "", "output": "`worker.setEnvironmentData()` shares config into workers without message plumbing on every spawn."}
+{"instruction": "What problem does `setEnvironmentData` solve?", "input": "", "output": "`worker.setEnvironmentData()` shares config into workers without message plumbing on every spawn."}
+{"instruction": "Terangkan `setEnvironmentData` dalam satu minit.", "input": "", "output": "`worker.setEnvironmentData()` shares config into workers without message plumbing on every spawn."}
+{"instruction": "Apa yang perlu saya tahu tentang `setEnvironmentData`?", "input": "", "output": "`worker.setEnvironmentData()` shares config into workers without message plumbing on every spawn."}
+{"instruction": "Bagaimanakah `setEnvironmentData` berfungsi?", "input": "", "output": "`worker.setEnvironmentData()` shares config into workers without message plumbing on every spawn."}
+{"instruction": "Bilakah masa yang sesuai untuk `setEnvironmentData`?", "input": "", "output": "`worker.setEnvironmentData()` shares config into workers without message plumbing on every spawn."}
+{"instruction": "What does `markAsUntransferable` do?", "input": "", "output": "Mark shared buffers untransferable to catch accidental neutering at the source instead of debugging downstream."}
+{"instruction": "Explain `markAsUntransferable` briefly.", "input": "", "output": "Mark shared buffers untransferable to catch accidental neutering at the source instead of debugging downstream."}
+{"instruction": "When do I use `markAsUntransferable`?", "input": "", "output": "Mark shared buffers untransferable to catch accidental neutering at the source instead of debugging downstream."}
+{"instruction": "Give a practical example of `markAsUntransferable`.", "input": "", "output": "Mark shared buffers untransferable to catch accidental neutering at the source instead of debugging downstream."}
+{"instruction": "What is `markAsUntransferable` for?", "input": "", "output": "Mark shared buffers untransferable to catch accidental neutering at the source instead of debugging downstream."}
+{"instruction": "Apakah fungsi `markAsUntransferable`?", "input": "", "output": "Mark shared buffers untransferable to catch accidental neutering at the source instead of debugging downstream."}
+{"instruction": "Terangkan `markAsUntransferable` secara ringkas.", "input": "", "output": "Mark shared buffers untransferable to catch accidental neutering at the source instead of debugging downstream."}
+{"instruction": "Bila perlu guna `markAsUntransferable`?", "input": "", "output": "Mark shared buffers untransferable to catch accidental neutering at the source instead of debugging downstream."}
+{"instruction": "Beri contoh penggunaan `markAsUntransferable`.", "input": "", "output": "Mark shared buffers untransferable to catch accidental neutering at the source instead of debugging downstream."}
+{"instruction": "`markAsUntransferable` untuk apa?", "input": "", "output": "Mark shared buffers untransferable to catch accidental neutering at the source instead of debugging downstream."}
+{"instruction": "How would you explain `markAsUntransferable` to a junior developer?", "input": "", "output": "Mark shared buffers untransferable to catch accidental neutering at the source instead of debugging downstream."}
+{"instruction": "Give a real-world scenario for `markAsUntransferable`.", "input": "", "output": "Mark shared buffers untransferable to catch accidental neutering at the source instead of debugging downstream."}
+{"instruction": "What problem does `markAsUntransferable` solve?", "input": "", "output": "Mark shared buffers untransferable to catch accidental neutering at the source instead of debugging downstream."}
+{"instruction": "Terangkan `markAsUntransferable` dalam satu minit.", "input": "", "output": "Mark shared buffers untransferable to catch accidental neutering at the source instead of debugging downstream."}
+{"instruction": "Apa yang perlu saya tahu tentang `markAsUntransferable`?", "input": "", "output": "Mark shared buffers untransferable to catch accidental neutering at the source instead of debugging downstream."}
+{"instruction": "Bagaimanakah `markAsUntransferable` berfungsi?", "input": "", "output": "Mark shared buffers untransferable to catch accidental neutering at the source instead of debugging downstream."}
+{"instruction": "Bilakah masa yang sesuai untuk `markAsUntransferable`?", "input": "", "output": "Mark shared buffers untransferable to catch accidental neutering at the source instead of debugging downstream."}
+{"instruction": "What does `moveMessagePortToContext` do?", "input": "", "output": "Ports cross vm contexts via explicit moves — isolated plugin sandboxes with controlled channels."}
+{"instruction": "Explain `moveMessagePortToContext` briefly.", "input": "", "output": "Ports cross vm contexts via explicit moves — isolated plugin sandboxes with controlled channels."}
+{"instruction": "When do I use `moveMessagePortToContext`?", "input": "", "output": "Ports cross vm contexts via explicit moves — isolated plugin sandboxes with controlled channels."}
+{"instruction": "Give a practical example of `moveMessagePortToContext`.", "input": "", "output": "Ports cross vm contexts via explicit moves — isolated plugin sandboxes with controlled channels."}
+{"instruction": "What is `moveMessagePortToContext` for?", "input": "", "output": "Ports cross vm contexts via explicit moves — isolated plugin sandboxes with controlled channels."}
+{"instruction": "Apakah fungsi `moveMessagePortToContext`?", "input": "", "output": "Ports cross vm contexts via explicit moves — isolated plugin sandboxes with controlled channels."}
+{"instruction": "Terangkan `moveMessagePortToContext` secara ringkas.", "input": "", "output": "Ports cross vm contexts via explicit moves — isolated plugin sandboxes with controlled channels."}
+{"instruction": "Bila perlu guna `moveMessagePortToContext`?", "input": "", "output": "Ports cross vm contexts via explicit moves — isolated plugin sandboxes with controlled channels."}
+{"instruction": "Beri contoh penggunaan `moveMessagePortToContext`.", "input": "", "output": "Ports cross vm contexts via explicit moves — isolated plugin sandboxes with controlled channels."}
+{"instruction": "`moveMessagePortToContext` untuk apa?", "input": "", "output": "Ports cross vm contexts via explicit moves — isolated plugin sandboxes with controlled channels."}
+{"instruction": "How would you explain `moveMessagePortToContext` to a junior developer?", "input": "", "output": "Ports cross vm contexts via explicit moves — isolated plugin sandboxes with controlled channels."}
+{"instruction": "Give a real-world scenario for `moveMessagePortToContext`.", "input": "", "output": "Ports cross vm contexts via explicit moves — isolated plugin sandboxes with controlled channels."}
+{"instruction": "What problem does `moveMessagePortToContext` solve?", "input": "", "output": "Ports cross vm contexts via explicit moves — isolated plugin sandboxes with controlled channels."}
+{"instruction": "Terangkan `moveMessagePortToContext` dalam satu minit.", "input": "", "output": "Ports cross vm contexts via explicit moves — isolated plugin sandboxes with controlled channels."}
+{"instruction": "Apa yang perlu saya tahu tentang `moveMessagePortToContext`?", "input": "", "output": "Ports cross vm contexts via explicit moves — isolated plugin sandboxes with controlled channels."}
+{"instruction": "Bagaimanakah `moveMessagePortToContext` berfungsi?", "input": "", "output": "Ports cross vm contexts via explicit moves — isolated plugin sandboxes with controlled channels."}
+{"instruction": "Bilakah masa yang sesuai untuk `moveMessagePortToContext`?", "input": "", "output": "Ports cross vm contexts via explicit moves — isolated plugin sandboxes with controlled channels."}
+{"instruction": "What does `receiveMessageOnPort` do?", "input": "", "output": "Synchronous port reads suit `worker.stdin`-style bootstraps; async `on('message')` everywhere else."}
+{"instruction": "Explain `receiveMessageOnPort` briefly.", "input": "", "output": "Synchronous port reads suit `worker.stdin`-style bootstraps; async `on('message')` everywhere else."}
+{"instruction": "When do I use `receiveMessageOnPort`?", "input": "", "output": "Synchronous port reads suit `worker.stdin`-style bootstraps; async `on('message')` everywhere else."}
+{"instruction": "Give a practical example of `receiveMessageOnPort`.", "input": "", "output": "Synchronous port reads suit `worker.stdin`-style bootstraps; async `on('message')` everywhere else."}
+{"instruction": "What is `receiveMessageOnPort` for?", "input": "", "output": "Synchronous port reads suit `worker.stdin`-style bootstraps; async `on('message')` everywhere else."}
+{"instruction": "Apakah fungsi `receiveMessageOnPort`?", "input": "", "output": "Synchronous port reads suit `worker.stdin`-style bootstraps; async `on('message')` everywhere else."}
+{"instruction": "Terangkan `receiveMessageOnPort` secara ringkas.", "input": "", "output": "Synchronous port reads suit `worker.stdin`-style bootstraps; async `on('message')` everywhere else."}
+{"instruction": "Bila perlu guna `receiveMessageOnPort`?", "input": "", "output": "Synchronous port reads suit `worker.stdin`-style bootstraps; async `on('message')` everywhere else."}
+{"instruction": "Beri contoh penggunaan `receiveMessageOnPort`.", "input": "", "output": "Synchronous port reads suit `worker.stdin`-style bootstraps; async `on('message')` everywhere else."}
+{"instruction": "`receiveMessageOnPort` untuk apa?", "input": "", "output": "Synchronous port reads suit `worker.stdin`-style bootstraps; async `on('message')` everywhere else."}
+{"instruction": "How would you explain `receiveMessageOnPort` to a junior developer?", "input": "", "output": "Synchronous port reads suit `worker.stdin`-style bootstraps; async `on('message')` everywhere else."}
+{"instruction": "Give a real-world scenario for `receiveMessageOnPort`.", "input": "", "output": "Synchronous port reads suit `worker.stdin`-style bootstraps; async `on('message')` everywhere else."}
+{"instruction": "What problem does `receiveMessageOnPort` solve?", "input": "", "output": "Synchronous port reads suit `worker.stdin`-style bootstraps; async `on('message')` everywhere else."}
+{"instruction": "Terangkan `receiveMessageOnPort` dalam satu minit.", "input": "", "output": "Synchronous port reads suit `worker.stdin`-style bootstraps; async `on('message')` everywhere else."}
+{"instruction": "Apa yang perlu saya tahu tentang `receiveMessageOnPort`?", "input": "", "output": "Synchronous port reads suit `worker.stdin`-style bootstraps; async `on('message')` everywhere else."}
+{"instruction": "Bagaimanakah `receiveMessageOnPort` berfungsi?", "input": "", "output": "Synchronous port reads suit `worker.stdin`-style bootstraps; async `on('message')` everywhere else."}
+{"instruction": "Bilakah masa yang sesuai untuk `receiveMessageOnPort`?", "input": "", "output": "Synchronous port reads suit `worker.stdin`-style bootstraps; async `on('message')` everywhere else."}

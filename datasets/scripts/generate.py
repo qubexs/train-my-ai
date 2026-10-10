@@ -115,6 +115,20 @@ DOCKER_FLAGS = [
     ("docker compose restart", "Restarts service containers in dependency order without recreating them."),
     ("docker compose port", "`compose port web 80` prints the mapped host port — for dynamic `-p 80` assignments."),
     ("docker compose config", "Renders the fully merged, interpolated model — the best multi-file debugging tool."),
+    ("overlay2 internals", "Overlay2 layers lowerdir (read-only image layers) under upperdir (writable container layer) merged at merged/ — copy-up moves modified files upward on first write, which is why first writes are slower and `docker diff` shows them."),
+    ("build cache invalidation", "Any changed instruction busts that layer and all below; COPY with wildcards or timestamps (git) busts often — pin contexts, order stable-first, and use cache mounts for package managers to survive source edits."),
+    ("multi-stage target build", "Name stages (`FROM x AS dev`) and `--target dev` to ship debug variants from one Dockerfile; production stage stays minimal while developers get shells — two images, one source of truth."),
+    ("rootless limitations deep", "Rootless lacks privileged mode, host networking and some storage drivers, and maps ports ≥1024 only without extra sysctls; user-namespace remapping on a rootful daemon keeps features with mapped UIDs for shared hosts."),
+    ("swarm raft consensus", "Managers replicate Raft logs (odd counts 3/5 survive one/two failures); quorum loss freezes scheduling until `--force-new-cluster` recovery — etcd-style safety for orchestration state."),
+    ("overlay encryption IPSec", "Encrypted overlays (`--opt encrypted`) wrap VXLAN in IPSec with rotating keys via the swarm CA; expect ~10% throughput cost and 4789/udp firewall rules on every node."),
+    ("DNS RR vs VIP", "VIP mode load-balances through the ingress mesh with one virtual IP; DNSRR returns task IPs for client-side balancing (stateful apps, gRPC) — choose per service, not per stack."),
+    ("fluentd log pipeline", "The fluentd driver ships JSON logs with tags to aggregators (`fluentd-address`, `tag` templates); buffer overflow behavior (`overflow_action block|drop_oldest_chunk`) decides between backpressure and loss."),
+    ("image manifest attestations", "Manifest lists point per-arch images plus attestation manifests (SBOM, provenance); `buildx imagetools inspect` reveals the full graph — signatures should cover the index, not just one arch."),
+    ("cgroup v2 unified", "V2's single hierarchy (`/sys/fs/cgroup`) with controllers (cpu.max, memory.max, io.weight) replaced v1's per-controller trees; `--cgroup-parent` scopes limits and `systemd` driver alignment avoids double accounting."),
+    ("seccomp custom profile", "Write JSON syscall allowlists (`--security-opt seccomp=custom.json`) starting from the default profile minus dangerous calls (mount, ptrace, reboot); rehearse against a staging replica and watch audit logs for denials before enforcing."),
+    ("AppArmor docker-default", "The default profile blocks writes to /proc/sys, mounts and raw sockets; custom profiles (`apparmor_parser -r`) tighten per-service while `docker-default` remains the sane baseline most should keep."),
+    ("userns mapping ranges", "`/etc/subuid` ranges (e.g. app:100000:65536) map container UIDs; volume ownership shows as shifted host UIDs — `chown` inside maps back, and backups must record the mapping, not just names."),
+    ("swarm service templates", "`--template-driver golang` renders `{{.Service.Name}}`/`{{.Task.Slot}}` into mounts, env and hostnames per replica — per-task identity without a sidecar templater."),
 ]
 
 # (compose field, explanation)
@@ -191,6 +205,20 @@ SQL_TASKS = [
     ("Gabung dua teks {c} dan {c2} dalam {t}", "SELECT {c} || ' ' || {c2} AS penuh FROM {t};"),
     ("Tarikh hari ini dalam SQL", "SELECT CURRENT_DATE;"),
     ("Kira {t} yang {c} tidak kosong", "SELECT COUNT(*) AS kiraan FROM {t} WHERE {c} IS NOT NULL AND {c} <> '';"),
+    ("Kedudukan {t} mengikut {c} menurun", "SELECT {c}, ROW_NUMBER() OVER (ORDER BY {c} DESC) AS ranking FROM {t};"),
+    ("Jumlah terkumpul {c} dalam {t}", "SELECT id, COUNT(*) OVER (ORDER BY id) AS terkumpul FROM {t};"),
+    ("Baris sebelumnya untuk setiap {t}", "SELECT {c}, LAG({c}) OVER (ORDER BY id) AS sebelum FROM {t};"),
+    ("Pendua {c} dalam {t}", "SELECT {c}, COUNT(*) AS n FROM {t} GROUP BY {c} HAVING COUNT(*) > 1;"),
+    ("Peratusan setiap {c2} dalam {t}", "SELECT {c2}, COUNT(*) * 100.0 / SUM(COUNT(*)) OVER () AS pct FROM {t} GROUP BY {c2};"),
+    ("3 {t} teratas setiap {c2}", "SELECT * FROM (SELECT t.*, ROW_NUMBER() OVER (PARTITION BY {c2} ORDER BY id) AS rn FROM {t} t) s WHERE rn <= 3;"),
+    ("{t} tanpa padanan (anti-join)", "SELECT * FROM {t} a LEFT JOIN {t} b ON b.{c2} = a.{c} WHERE b.{c} IS NULL;"),
+    ("Wujudkan {c} jika tiada dalam {t}", "INSERT INTO {t} ({c}) SELECT 'baru' WHERE NOT EXISTS (SELECT 1 FROM {t} WHERE {c} = 'baru');"),
+    ("Naikkan semua id {t} (contoh kemas kini pukal selamat)", "UPDATE {t} SET {c2} = {c2} WHERE id > 0;"),
+    ("Padam pendua {t} kekalkan id terkecil", "DELETE FROM {t} a USING {t} b WHERE a.id > b.id AND a.{c} = b.{c};"),
+    ("Ringkas {t} ke jadual laporan", "CREATE TABLE laporan_{t} AS SELECT {c2}, COUNT(*) AS n FROM {t} GROUP BY {c2};"),
+    ("Band {t} ikut julat {c}", "SELECT CASE WHEN {c} < 10 THEN 'rendah' WHEN {c} < 100 THEN 'sederhana' ELSE 'tinggi' END AS band, COUNT(*) FROM {t} GROUP BY 1;"),
+    ("Nilai {c} paling kerap dalam {t}", "SELECT {c}, COUNT(*) AS n FROM {t} GROUP BY {c} ORDER BY n DESC LIMIT 1;"),
+    ("Kaitkan {t} dengan dirinya (pasangan id berbeza)", "SELECT a.id, b.{c} FROM {t} a JOIN {t} b ON b.id <> a.id LIMIT 10;"),
 ]
 
 PHRASING_SQL = [
@@ -310,6 +338,20 @@ LINUX_TOPICS = [
     ("uptime load meaning", "Load 4.0 on 4 CPUs is full, on 16 is idle — always divide by core count before panicking."),
     ("who last wtmp", "`who`/`w` show logins now; `last` reads wtmp history (logins, reboots, crashes) for audits."),
     ("id groups sudo", "`id` lists your groups; missing `sudo`/`docker` membership explains most permission mysteries."),
+    ("namespaces overview", "Linux isolates via namespaces: pid (processes), net (interfaces/routes), mnt (filesystems), uts (hostname), ipc, cgroup and time. Containers are just processes with separate namespaces plus cgroup limits — `lsns` lists them, `nsenter` jumps inside."),
+    ("cgroups v2 controllers", "V2 unifies control under one hierarchy: `cpu.max` quotas, `memory.max` limits with `memory.high` throttling, `io.weight` proportions. Read live pressure with `memory.pressure` PSI files — throttling beats OOM-killing for latency."),
+    ("systemd unit anatomy", "Units have [Unit] (description, After= ordering), [Service] (ExecStart, Restart=, User=), [Install] (WantedBy= target). `systemd-analyze verify` lints, `daemon-reload` applies — never edit vendor units, use drop-ins."),
+    ("iptables chains tables", "Packets traverse filter (INPUT/FORWARD/OUTPUT), nat (PREROUTING/POSTROUTING mangling) and mangle tables in fixed order; default policies DROP after explicit ACCEPTs. `iptables -L -n -v --line-numbers` audits live rules before flushing remotely."),
+    ("nftables basics", "`nft add rule inet filter input tcp dport 22 accept` replaces iptables syntax with one engine, sets and maps. Atomic `nft -f file` loads whole rulesets — no half-applied states. Migrate scripts wholesale; mixing backends double-filters."),
+    ("eBPF observability", "eBPF runs sandboxed programs on kernel events (syscalls, packets) without modules — powering `bcc` tools, Cilium networking and deep profilers. `bpftool prog list` inspects loaded programs; capabilities (not full root) gate loading."),
+    ("SELinux booleans", "`getsebool -a` lists toggles like `httpd_can_network_connect`; `setsebool -P` persists across reboots. Booleans adapt policy without custom modules — check them before writing policy for denied-but-sane workloads."),
+    ("AppArmor aa-status", "`aa-status` shows loaded profiles and enforce/complain modes; `aa-genprof` learns them from application behavior. Complain mode logs violations without blocking — profile in complain, enforce after a clean week."),
+    ("PAM stack basics", "`/etc/pam.d/` stacks auth/account/session/password modules (required/requisite/sufficient/success=N); order decides fallback. A typo locks everyone out — keep a root shell open when editing, test with `login` in another terminal."),
+    ("sudoers NOPASSWD", "`user ALL=(ALL) NOPASSWD: /usr/bin/systemctl restart app` grants one command passwordless; `visudo -c` validates syntax (a broken sudoers bricks admin access). Prefer command-scoped grants over ALL."),
+    ("capabilities bounding", "`capsh --print` shows effective sets; grant singly (`--cap-add NET_BIND_SERVICE`) instead of privileged. Capabilities partition root's powers — learn the 40 names and containers stop needing `--privileged`."),
+    ("unshare namespaces demo", "`unshare --pid --fork --mount-proc bash` spawns a PID-1 shell in fresh namespaces — containers demystified in one command. Add `--net` for isolated networking (needs veth setup) and `--user` for mapped UIDs."),
+    ("oom_score_adj tuning", "Tune `/proc/PID/oom_score_adj` (-1000 immune, +1000 first victim) so expendable workers die before databases. Container `--oom-score-adj` maps here; `--oom-kill-disable` risks host lockups instead of one death."),
+    ("coredump analysis", "`coredumpctl list` finds crashes, `coredumpctl debug PID` opens gdb with the core; `ulimit -c unlimited` plus `kernel.core_pattern` must allow dumps first. Cores contain secrets — restrict directory permissions."),
 ]
 
 BASH_TOPICS = [
@@ -375,6 +417,20 @@ BASH_TOPICS = [
     ("csplit context split", "`csplit file '/^==/' '{*}'` splits on regex matches — one file per section for reports."),
     ("strings binaries", "`strings app.bin | grep -i version` extracts readable text from binaries for quick forensics."),
     ("od hexdump bytes", "`od -A x -t x1z file` hexdumps with ASCII sidecar; `xxd` is friendlier when installed."),
+    ("errexit pitfalls", "`set -e` ignores failures in `if` tests, `&&`/`||` lists and traps — code that looks guarded still aborts. Audit every early-exit path; explicit `|| return 1` beats relying on errexit semantics nobody memorizes."),
+    ("nounset empty arrays", "`set -u` treats empty arrays as unbound (`${arr[@]}` errors when empty); guard with `${arr[@]:-}` or length checks. Strict mode needs these idioms or scripts die on legitimate empties."),
+    ("PIPESTATUS check", "`${PIPESTATUS[0]}` reveals the left side's code after pipelines (`false | true` exits 0 otherwise). Log all three elements for debuggability in ETL scripts."),
+    ("IFS field tricks", "`IFS=, read -ra parts <<< $line` splits CSV-ish input; save/restore IFS around changes — global IFS mutation corrupts later word splitting invisibly."),
+    ("globstar extglob", "`shopt -s globstar` enables `**` recursion; `extglob` adds `?( )`, `*( )`, `+( )` patterns. Quote or escape when passing globs to remote shells — double expansion bites."),
+    ("assoc key ops", "`declare -A m; m[k]=v; ${!m[@]}` iterates keys; `${#m[@]}` counts. Associative arrays need bash 4+ (macOS ships 3.2 — check first)."),
+    ("nameref declare -n", "`declare -n ref=$1` aliases variables by name for generic functions (pass-by-reference); circular names recurse infinitely — validate inputs."),
+    ("mapfile delimiter", "`mapfile -d '' -t arr < <(find . -print0)` loads NUL-delimited safely; `-s/-n` skip/take windows for chunked processing."),
+    ("read array -a", "`read -ra parts <<< $line` splits one line to array honoring IFS; combine with process substitution for pipeline input."),
+    ("select PS3 custom", "`PS3='Pilih: '` customizes the select prompt; `REPLY` holds raw input for validation before acting on `$opt`."),
+    ("getopts silent errors", "Leading `:` in optstring (`':f:'`) silences built-in errors so `\\?`/\\:` cases handle misuse with custom messages."),
+    ("umask in scripts", "`umask 077` makes created files owner-only (secrets, keys); `022` is the shareable default. Set explicitly — inherited umasks vary by login context."),
+    ("mktemp secure files", "`tmp=$(mktemp -d)` plus `trap 'rm -rf $tmp' EXIT` is the only safe temp pattern; predictable `/tmp` names invite symlink attacks."),
+    ("diff exit codes", "`diff -q` returns 0 identical, 1 different, 2 trouble — scripts must distinguish 'different' from 'error', or deploys misfire."),
 ]
 
 GENERATORS = {"docker": gen_docker, "sql": gen_sql,
@@ -441,6 +497,20 @@ JS_TOPICS = [
     ("Intl.NumberFormat", "`Intl.NumberFormat('ms-MY', {style:'currency',currency:'MYR'})` localizes money/dates/units correctly."),
     ("Intl.ListFormat", "Join lists locale-aware (`A, B dan C` vs `A, B, and C`) — punctuation rules differ per language."),
     ("Intl.RelativeTimeFormat", "`format(-2, 'day')` → '2 days ago' localized — relative timestamps without date libraries."),
+    ("libuv phases", "Node's loop phases run timers → pending → poll (I/O) → check (setImmediate) → close; `process.nextTick`/promise queues drain between each. Blocking poll starves everything — profile phase times when latency defies code review."),
+    ("threadpool UV_THREADPOOL_SIZE", "Libuv's pool (default 4 threads) serves fs/crypto/DNS; CPU-bound sync work there still blocks pool mates — raise via env for crypto-heavy services, or move to worker threads."),
+    ("async error boundaries", "One unhandled rejection can fell the process: central `unhandledRejection` handler that logs richly and exits non-zero beats scattered try/catch. Never swallow — crash and restart under a supervisor."),
+    ("AbortController timeouts", "Wrap every fetch with `AbortSignal.timeout(ms)` plus explicit controllers for user-cancel paths; distinguish AbortError (expected) from failures in catch blocks to avoid false alarms."),
+    ("generators yield*", "`function*` + `yield*` delegate to sub-generators, flattening recursive traversals (trees, paginated APIs) into linear reads. Pair with `for await` for async streams."),
+    ("iterators Symbol.iterator", "Implement `[Symbol.iterator]()` to make custom collections for-of-able; generators are the zero-boilerplate way. Consumers then spread, destructure and stream uniformly."),
+    ("WeakRef FinalizationRegistry", "WeakRefs observe without preventing GC (caches keyed by DOM nodes); FinalizationRegistry callbacks run post-GC nondeterministically — explicit dispose stays primary, weak refs are the safety net."),
+    ("Proxy Reflect traps", "Proxies intercept get/set/apply for validation, logging and virtual properties; Reflect.* defaults inside traps preserve invariants the engine enforces (non-configurable must forward truthfully)."),
+    ("module live bindings", "ESM imports are live read-only views (exporter mutations visible); CJS snapshots values at require time. Circular imports work in ESM (hoisted bindings) where CJS returns partial objects."),
+    ("Temporal proposal", "Temporal (`PlainDate`, `ZonedDateTime`, `Duration`) fixes Date's mutability/month-index/parse-hell; use the polyfill for date-heavy domains today, native when runtimes land it."),
+    ("Intl segments", "`Intl.Segmenter` splits graphemes/words/sentences per locale (emoji ZWJ sequences, Thai) — `length` and regex lie about user-perceived characters."),
+    ("structuredClone transfer", "Second arg transfers ArrayBuffers (zero-copy, neuters source) instead of cloning — large binary pipelines avoid doubling memory."),
+    ("error cause chains", "`throw new Error('simpan gagal', { cause })` preserves origins through layers; log `cause` chains fully or debugging starts blind at the top frame."),
+    ("top-level await limits", "Top-level await works in modules only (blocks dependents — slow imports serialize startup); dynamic `import()` keeps it lazy. Never gate independent modules on each other's awaits."),
 ]
 
 PY_TOPICS = [
@@ -627,6 +697,13 @@ NODE_TOPICS = [
     ("message ports transfer", "Transfer `MessagePort`s (not just messages) to hand live channels between workers without a central hub."),
     ("performance marks", "`performance.mark/measure` profiles sections with high-res timestamps; `PerformanceObserver` streams them to telemetry."),
     ("asyncLocalStorage", "`AsyncLocalStorage` carries request context (ids, tenants) through async chains — no parameter threading."),
+    ("worker unref ref", "`worker.unref()` lets the process exit with only workers left; `ref()` re-arms — background telemetry pattern."),
+    ("parentPort transferList", "Pass `transferList: [buffer]` to move (not copy) ArrayBuffers into workers — zero-copy handoffs for binary pipelines."),
+    ("isMainThread guard", "`if (isMainThread) { spawn workers } else { do work }` splits one file into orchestrator + worker roles cleanly."),
+    ("setEnvironmentData", "`worker.setEnvironmentData()` shares config into workers without message plumbing on every spawn."),
+    ("markAsUntransferable", "Mark shared buffers untransferable to catch accidental neutering at the source instead of debugging downstream."),
+    ("moveMessagePortToContext", "Ports cross vm contexts via explicit moves — isolated plugin sandboxes with controlled channels."),
+    ("receiveMessageOnPort", "Synchronous port reads suit `worker.stdin`-style bootstraps; async `on('message')` everywhere else."),
 ]
 
 GENERATORS.update({"javascript": lambda: gen_cmd(JS_TOPICS),
@@ -694,6 +771,13 @@ HTML_TOPICS = [
     ("hidden until-found", "`hidden='until-found'` reveals content on find-in-page while staying hidden — searchable collapsibles natively."),
     ("fetchpriority", "`fetchpriority='high'` boosts the LCP image/script; `low` deprioritizes below-fold work — Core Web Vitals levers."),
     ("referrerpolicy", "`referrerpolicy='no-referrer'` (or strict-origin) controls leaked URLs on outbound clicks — privacy per link."),
+    ("srcset density", "`srcset='a.png 1x, a@2x.png 2x'` serves retina variants; `sizes` complements width-based selection for responsive layouts."),
+    ("decoding async", "`decoding='async'` lets images decode off-main-thread (smoother loads); `sync`/`auto` for above-fold critical media."),
+    ("fetchpriority image", "`fetchpriority='high'` on the LCP image tells the preload scanner what matters first — biggest single-attribute LCP win."),
+    ("ismap usemap", "Server-side (`ismap`) vs client-side (`usemap`+`area`) image maps; client-side wins for accessibility and caching."),
+    ("longdesc aria", "Complex charts need `aria-describedby` pointing at a data table — `longdesc` is obsolete, descriptions must live in-page."),
+    ("inert modal bg", "Mark background `inert` while dialogs open (focus + AT skip it); `showModal()` handles this automatically — manual only for custom overlays."),
+    ("autofocus caution", "One `autofocus` max, and only when the primary action is certain — stolen focus strands screen-reader and keyboard users."),
 ]
 
 CSS_TOPICS = [
@@ -756,6 +840,13 @@ CSS_TOPICS = [
     ("color-scheme", "`color-scheme: light dark` tells browsers which form controls/scrollbars to theme with the page — one line, native dark inputs."),
     ("light-dark()", "`light-dark(#fff, #111)` picks per color-scheme without custom properties plumbing — progressive enhancement friendly."),
     ("@layer order", "`@layer base, components, utilities` fixes cascade order explicitly — utilities reliably beat components regardless of source order."),
+    ("oklch colors", "`oklch(62% 0.2 250)` is perceptually uniform (unlike hex) with wider gamuts; fallbacks via `@supports` for older engines."),
+    ("color-mix()", "`color-mix(in oklch, blue 70%, white)` blends live — tints/shades without preprocessor functions or variables."),
+    ("scope proximity", "`@scope (.card) to (.content)` bounds selector reach; proximity weighting beats specificity wars for component overrides."),
+    ("nesting &", "Native nesting (`&:hover`) mirrors preprocessors; `&` always refers to the parent — unqualified nesting targets nothing."),
+    (":has() patterns", "`:has(img)` styles parents by children (cards with media); performance cost is real — scope tightly, never `body:has(*)`."),
+    ("style queries", "`@container style(--tema: gelap)` branches on custom property values — theme variants without extra classes."),
+    ("subgrid tracks", "`grid-template-columns: subgrid` aligns nested grids to parent tracks; fallback: explicit matching templates for older engines."),
 ]
 
 PHP_TOPICS = [
@@ -818,6 +909,17 @@ PHP_TOPICS = [
     ("intdiv fdiv", "`intdiv(7, 2)` → 3 integer division; `fdiv()` throws on division-by-zero instead of warning (PHP 8+)."),
     ("array_is_list", "`array_is_list()` distinguishes vectors from maps before JSON encoding (arrays vs objects wire formats)."),
     ("str_starts_ends", "`str_starts_with/str_ends_with/str_contains` replace substr/regex one-liners readably (PHP 8+)."),
+    ("ctype functions", "`ctype_digit/alpha/alnum()` validate character classes byte-safe (locale-independent, unlike regex shortcuts)."),
+    ("filter_input array", "`filter_input_array(INPUT_POST, ['umur' => FILTER_VALIDATE_INT])` validates whole forms in one declarative pass."),
+    ("password_info", "`password_info($hash)` reveals algo/cost/options of stored hashes — audit migrations before bumping costs."),
+    ("sodium crypto_box", "`sodium_crypto_box()` seals for recipients (libsodium, modern); `openssl_*` stays for legacy interop only."),
+    ("random_bytes retry", "`random_bytes()` throws on CSPRNG failure — let it bubble (never fall back to `rand()`), then handle explicitly."),
+    ("hrtime timing", "`hrtime(true)` nanosecond-monotonic timing for benchmarks; `microtime(true)` drifts with wall-clock adjustments."),
+    ("memory_get_usage", "`memory_get_usage(true)` tracks real allocation in long runners; `memory_get_peak_usage()` sizes container limits."),
+    ("gc_collect_status", "`gc_collect_cycles()`/`gc_status()` expose cycle-collector pressure in daemons; `gc_disable()` only with manual discipline."),
+    ("opcache_get_status", "`opcache_get_status()['opcache_statistics']` shows hit rate; <99% hits means misconfigured memory or thrashing keys."),
+    ("realpath_cache_size", "Tune `realpath_cache_size`/`ttl` on containerized apps where symlinked deploys invalidate stat caches constantly."),
+    ("clearstatcache", "`clearstatcache()` after external file changes (uploads, deploys); stale `file_exists` lies cause ghost bugs."),
 ]
 
 LARAVEL_TOPICS = [
@@ -880,6 +982,13 @@ LARAVEL_TOPICS = [
     ("make:middleware groups", "Assign to `web`/`api` groups or route-level; global middleware runs on literally everything including health checks."),
     ("make:seeder call", "`$this->call([ASeeder::class, BSeeder::class])` orders seeding with dependencies; `--class` runs one in isolation."),
     ("make:factory states", "Factory `state()` variants (`admin()`, `banned()`) compose scenarios; `sequence()` cycles deterministic datasets."),
+    ("make:rule custom", "`make:rule` scaffolds invokable rule objects (`passes()`, `message()`) — shared validation logic across FormRequests."),
+    ("make:scope local", "Local scopes (`scopeAktif($q)`) chain readable filters; dynamic `whereActive()` works via naming convention automatically."),
+    ("make:cast custom", "Custom casts implement `CastsAttributes` (get/set) for money/encrypted fields — models stay clean, conversion central."),
+    ("make:observer model", "Bind observers with `--model` for all seven lifecycle hooks; register in a provider's `boot()`, never inline."),
+    ("make:middleware group", "Assign middleware to `web`/`api` groups or per-route; global middleware runs on literally everything including health checks."),
+    ("make:seeder call", "`$this->call([...])` orders seeders with dependencies; `--class` runs one in isolation for debugging."),
+    ("make:channel broadcast", "Private/presence channels authorize sockets per user (`Broadcast::channel()`); `toOthers()` excludes the sender."),
 ]
 
 MYSQL_TOPICS = [
@@ -942,6 +1051,13 @@ MYSQL_TOPICS = [
     ("SHOW INDEX cardinality", "Cardinality estimates guide the optimizer; low-cardinality leading columns waste composite indexes."),
     ("ANALYZE TABLE", "`ANALYZE TABLE t` refreshes optimizer statistics after bulk loads; stale stats pick full scans over indexes."),
     ("CHECK TABLE", "`CHECK TABLE t` verifies integrity post-crash; `REPAIR` (MyISAM) or dump-reload (InnoDB) follows findings."),
+    ("REPAIR TABLE", "`REPAIR TABLE` fixes MyISAM corruption in place; InnoDB ignores it (use dumps) — know your engine before running."),
+    ("FLUSH TABLES", "`FLUSH TABLES` closes open table handles (pre-backup quiesce); `FLUSH LOGS` rotates binary/error logs for archival."),
+    ("RESET MASTER", "`RESET MASTER` purges all binlogs (breaks replicas!) — only on standalone rebuilds, never on primaries with followers."),
+    ("PURGE BINARY LOGS", "`PURGE BINARY LOGS BEFORE '2026-01-01'` reclaims disk while keeping replicas fed (check slowest replica first)."),
+    ("CHANGE MASTER TO", "`CHANGE MASTER TO ... MASTER_AUTO_POSITION=1` (GTID) replaces fragile log-file coordinates for failover-safe replication."),
+    ("START SLAVE IO_SQL", "`START/STOP SLAVE` controls replication threads independently; IO thread pulls, SQL thread applies — lag diagnosis starts here."),
+    ("SHOW SLAVE HOSTS", "Lists registered replicas from the primary's view; cross-check with each replica's own `SHOW SLAVE STATUS`."),
 ]
 
 PG_TOPICS = [
