@@ -8,9 +8,25 @@
 #   (pip install -r build/llama.cpp/requirements/convert_hf_to_gguf.txt).
 import argparse
 import json
+import socket
 import subprocess
 import sys
 from pathlib import Path
+
+_LOCK_SOCK = None
+
+
+def single_instance(port=17877):
+    """Exit quietly if another train_all is already running (socket lock)."""
+    global _LOCK_SOCK
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    try:
+        s.bind(("127.0.0.1", port))
+        s.listen(1)
+    except OSError:
+        print("train_all sudah berjalan — keluar (elak dua larian serentak).")
+        sys.exit(0)
+    _LOCK_SOCK = s  # hold for process lifetime
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "app"))
@@ -83,6 +99,9 @@ def main():
                     help="latih semula walaupun GGUF wujud (lama dibackup .bak)")
     ap.add_argument("--dry-run", action="store_true", help="show plan only, train nothing")
     a = ap.parse_args()
+
+    if not a.dry_run:
+        single_instance()
 
     from experts import add as add_model
     from experts import STACK2DOMAIN, GENERAL
