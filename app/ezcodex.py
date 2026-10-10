@@ -27,7 +27,7 @@ APP_DIR = (Path(sys.executable).resolve().parent if getattr(sys, "frozen", False
            else Path(__file__).resolve().parent)
 sys.path.insert(0, str(APP_DIR))
 
-__version__ = "0.4.24"
+__version__ = "0.4.25"
 
 LLAMA_TAG = "b11491"
 LLAMA_BASE = f"https://github.com/ggerganov/llama.cpp/releases/download/{LLAMA_TAG}"
@@ -795,6 +795,12 @@ def main():
         args.ctx = auto_ctx
     if not args.threads:
         args.threads = auto_thr
+    if args.ctx > 32768:  # Qwen2.5-0.5B hard ceiling (native 32k)
+        print(f"[auto] ctx {args.ctx} melebihi siling model 32768 — dihadkan.")
+        args.ctx = 32768
+    if args.max_tokens > args.ctx:
+        print(f"[auto] max_tokens {args.max_tokens} > ctx — dihadkan kepada ctx.")
+        args.max_tokens = args.ctx
     if args.cmd != "train" and not args.once:
         print(f"[auto] RAM {ram:.1f}GB CPU {cpu_count()} -> max_tokens={args.max_tokens} "
               f"ctx={args.ctx} threads={args.threads} (tetapkan manual untuk ubah)")
