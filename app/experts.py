@@ -2,7 +2,7 @@
 
 Layout: <models_dir>/models.json (registry) + fail *.gguf.
 Alir pakar baharu: chat -> /good -> `train --mode sft --domain docker`
-  -> finetune/docker/dataset.jsonl -> Colab LoRA -> GGUF -> `/model add <fail>`.
+  -> finetune/stacks/docker/dataset.jsonl -> Colab LoRA -> GGUF -> `/model add <fail>`.
 Stdlib sahaja.
 """
 import json
@@ -118,40 +118,30 @@ def detect_stack(text):
             best, best_n = stack, n
     return best
 
-DOMAINS = {
-    "identity": ["siapa anda", "siapa cipta", "siapa bina", "siapa yang buat",
+IDENTITY_KEYS = ["siapa anda", "siapa cipta", "siapa bina", "siapa yang buat",
                  "who are you", "who created you", "who made you",
                  "coder 77", "ezcodex", "xcoder", "pakar", "kepakaran", "expert",
                  "senarai program", "list program", "boleh buat apa",
-                 "what can you do"],
-    "linux": ["linux", "bash", "shell", "ubuntu", "debian", "grep", "chmod",
-              "chown", "ssh", "terminal", "cron", "systemd", "arahan linux",
-              "perintah linux", "skrip shell", "shell script"],
-    "docker": ["docker", "kontena", "container", "dockerfile", "docker-compose",
-               "compose", "kubernetes", "k8s", "docker image", "image docker"],
-    "web": ["node", "nodejs", "node.js", "express", "typescript", "javascript",
-            "npm", "react", "vue", "angular", "html", "css", "frontend",
-            "website", "laman web", "blog", "hono", "fastify", "nextjs",
-            "vite", "tailwind"],
-    "data": ["sql", "postgres", "postgresql", "mysql", "sqlite", "mongodb",
-             "database", "pangkalan data", "query", "select ", "prisma",
-             "supabase", "jadual", "table"],
-    "python": ["python", "pip install", "pandas", "flask", "django",
-               "skrip python"],
-    "php": ["php", "laravel", "composer", "symfony", "wordpress", "artisan",
-            "skrip php"],
+                 "what can you do"]
+
+# stack = domain (16 pakar, tiada lapisan broad). Legacy broad tags below
+# are auto-expanded to member stacks when loading old registries.
+LEGACY_GROUPS = {
+    "web": ["javascript", "typescript", "nodejs", "html", "css", "tailwind"],
+    "data": ["sql", "postgresql", "mysql"],
+    "linux": ["linux", "bash", "docker"],
+    "python": ["python"],
+    "php": ["php", "laravel"],
+    "general": [GENERAL],
 }
 
 
 def detect(text):
-    """Kesan domain soalan -> nama domain atau 'general'."""
+    """Kesan stack soalan -> nama stack (stack = domain) atau 'general'."""
     t = " " + (text or "").lower() + " "
-    best, best_n = GENERAL, 0
-    for dom, keys in DOMAINS.items():
-        n = sum(1 for k in keys if k in t)
-        if n > best_n:
-            best, best_n = dom, n
-    return best
+    if any(k in t for k in IDENTITY_KEYS):
+        return GENERAL
+    return detect_stack(text)
 
 
 def _reg_file(models_dir):
@@ -182,6 +172,15 @@ def scan(models_dir):
     models_dir = Path(models_dir)
     models_dir.mkdir(parents=True, exist_ok=True)
     reg = load_registry(models_dir)
+    # migrate: drop stale broad seeds, expand broad tags on real entries
+    reg["models"] = [m for m in reg["models"]
+                     if not (m.get("fallback") and not m.get("file")
+                             and m.get("name") in ("xcoder-js", "xcoder-sql", "xcoder-linux",
+                                                   "xcoder-php", "xcoder-python", "xcoder-general"))]
+    for m in reg["models"]:
+        doms = m.get("domains", [])
+        if len(doms) == 1 and doms[0] in ("web", "data"):
+            m["domains"] = list(LEGACY_GROUPS[doms[0]])
     known_files = {m.get("file") for m in reg["models"]}
     has_base = any(m.get("name") == "base" for m in reg["models"])
     for g in sorted(models_dir.glob("*.gguf")):
@@ -212,10 +211,11 @@ def scan(models_dir):
                               "domains": [GENERAL],
                               "desc": "model asas (belum dimuat turun)",
                               "trained": False})
-    # Phase 1 lineup: 4 XCoder specialists, fallback to base until trained.
-    seeds = [("xcoder-general", [GENERAL]), ("xcoder-js", ["web"]),
-             ("xcoder-sql", ["data"]), ("xcoder-linux", ["linux"]),
-             ("xcoder-php", ["php"]), ("xcoder-python", ["python"])]
+    # 16 stack seeds (stack = domain), fallback to base until trained.
+    seeds = [(f"xcoder-{s}", [s]) for s in
+             ["general", "javascript", "typescript", "nodejs", "html", "css",
+              "tailwind", "sql", "postgresql", "mysql", "linux", "docker",
+              "bash", "python", "php", "laravel"]]
     for sname, sdom in seeds:
         if not any(m.get("name") == sname for m in reg["models"]):
             reg["models"].append({"name": sname, "file": "", "url": "",

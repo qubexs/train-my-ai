@@ -33,16 +33,8 @@ sys.path.insert(0, str(ROOT / "app"))
 
 QUANT = "q4_k_m"
 
+# stack = domain: one expert per datasets/<stack>.jsonl (built dynamically).
 # (expert name, dataset stacks, registry domains)
-PLAN = [
-    ("xcoder-docker", ["docker"], ["docker"]),
-    ("xcoder-linux", ["linux", "bash"], ["linux"]),
-    ("xcoder-web", ["javascript", "typescript", "nodejs", "html", "css", "tailwind"], ["web"]),
-    ("xcoder-sql", ["sql", "postgresql", "mysql"], ["data"]),
-    ("xcoder-python", ["python"], ["python"]),
-    ("xcoder-php", ["php", "laravel"], ["php"]),
-    ("xcoder-general", ["general"], ["general"]),
-]
 
 
 def count_rows(path):
@@ -92,8 +84,6 @@ def main():
     ap.add_argument("--build-dir", default=str(ROOT / "build" / "train"))
     ap.add_argument("--only", default="",
                     help="train subset, e.g. xcoder-docker or xcoder-linux,xcoder-web")
-    ap.add_argument("--per-stack", action="store_true",
-                    help="satu model setiap fail datasets/<stack>.jsonl (16 pakar)")
     ap.add_argument("--epochs", type=float, default=3.0)
     ap.add_argument("--retrain", action="store_true",
                     help="latih semula walaupun GGUF wujud (lama dibackup .bak)")
@@ -104,7 +94,6 @@ def main():
         single_instance()
 
     from experts import add as add_model
-    from experts import STACK2DOMAIN, GENERAL
 
     for mod in ("torch", "transformers", "datasets", "peft", "sentencepiece"):
         if a.dry_run:
@@ -121,25 +110,21 @@ def main():
     jobs = []
     only = {o.strip() for o in a.only.split(",") if o.strip()}
     ds_dir = Path(a.datasets_dir)
-    plan = list(PLAN)
-    if a.per_stack:
-        plan = []
-        for f in sorted(ds_dir.glob("*.jsonl")):
-            if count_rows(f) == 0:
-                continue
-            stack = f.stem
-            plan.append((f"xcoder-{stack}", [stack],
-                         [STACK2DOMAIN.get(stack, GENERAL)]))
-        ft = ROOT / "finetune" / "stacks"
-        use_ft = all((ft / s / "dataset.jsonl").exists() for _, ss, _ in plan for s in ss)
-        data_root = ft if use_ft else ds_dir
-    else:
-        data_root = None
+    # one expert per stack file (stack = domain)
+    plan = []
+    for f in sorted(ds_dir.glob("*.jsonl")):
+        if count_rows(f) == 0:
+            continue
+        stack = f.stem
+        plan.append((f"xcoder-{stack}", [stack], [stack]))
+    ft = ROOT / "finetune" / "stacks"
+    use_ft = all((ft / s / "dataset.jsonl").exists() for _, ss, _ in plan for s in ss)
+    data_root = ft if use_ft else ds_dir
     for name, stacks, doms in plan:
         if only and name not in only:
             continue
         gguf = models_dir / f"{name}-0.5b-{QUANT}.gguf"
-        if a.per_stack and data_root is not None and (data_root / stacks[0] / "dataset.jsonl").exists():
+        if (data_root / stacks[0] / "dataset.jsonl").exists() and data_root != ds_dir:
             files = [data_root / stacks[0] / "dataset.jsonl"]
         else:
             files = [ds_dir / f"{s}.jsonl" for s in stacks]

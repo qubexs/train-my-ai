@@ -1,7 +1,7 @@
 # step.md — How to train your AI (XCoder-0.5B)
 
-Layout data: `finetune/<kepakaran>/dataset.jsonl` — satu folder satu domain
-(`general`, `docker`, `web`, `data`, `linux`, `python`).
+Layout data: `datasets/<stack>.jsonl` (16 stack) -> `finetune/stacks/<stack>/dataset.jsonl`
+(stack = domain, satu tier sahaja).
 Validasi semua: `python finetune/validate.py` · satu domain: `python finetune/validate.py docker`.
 
 Goal: turn base `Qwen2.5-0.5B-Instruct` into a model that **natively** says
@@ -14,14 +14,14 @@ then import the `.gguf` back to LM Studio on Windows.
 ## Step 0 — What you have
 - `datasets/<stack>.jsonl` — data mengikut stack (javascript, docker, sql, ...).
   Format sebaris: `{"instruction": "...", "input": "...", "output": "..."}`
-- `finetune/<domain>/dataset.jsonl` — fail **terjana** via `merge.py` untuk Colab.
+- `finetune/stacks/<stack>/dataset.jsonl` — fail **terjana** via `merge.py` untuk Colab.
 - Alir: `train` → `datasets/` → `merge.py` → `finetune/` → Colab → GGUF → `/model add`.
 
 ## Step 1 — Grow the dataset (important)
 1. Chat + `/good` dalam CLI (auto-tag domain+stack), kemudian:
 ```powershell
 py app/ezcodex.py train --mode sft --domain docker  # -> datasets/docker.jsonl
-python datasets/scripts/merge.py linux              # -> finetune/linux/dataset.jsonl
+python datasets/scripts/merge.py docker              # -> finetune/stacks/docker/dataset.jsonl
 python datasets/scripts/validate.py docker          # semak stack
 python datasets/scripts/statistics.py               # taburan semua stack
 ```
@@ -51,12 +51,12 @@ python finetune/train_all.py             # jalan berjam-jam; biarkan semalaman
 ```
 ### B. Colab (GPU T4 percuma)
 1. Go to Google Colab → `Runtime → Change runtime type → T4 GPU`.
-2. Upload `finetune/<domain>/dataset.jsonl` (rename dalam `/content/` jika perlu, elak `dataset (1).jsonl`).
+2. Upload `finetune/stacks/<stack>/dataset.jsonl` (rename dalam `/content/` jika perlu, elak `dataset (1).jsonl`).
 3. Install:
 ```
 !pip install -q unsloth trl peft accelerate bitsandbytes datasets
 ```
-4. Jalankan `train_unsloth.py` dengan `DATA` = nama fail, `OUT` = `xcoder-<domain>`
+4. Jalankan `train_unsloth.py` dengan `DATA` = nama fail, `OUT` = `xcoder-<stack>`
    (~30–60 min untuk 0.5B, 100+ baris, 3 epochs).
 5. If out-of-memory: lower `max_seq_length` to 512 or batch size to 1.
 
@@ -92,16 +92,16 @@ Also test: `node ezcodex-rag.js "Apa itu EZCodex?" --lang ms --k 2 --show-source
 - Keep base system prompt in `train_unsloth.py`:
   `You are XCoder... Never mention Qwen/Alibaba.`
 
-## Step 7 — Model pakar per domain (multi-model)
-Satu model kecil satu domain, tukar tanpa model besar.
-Konvensyen nama: `xcoder-<kepakaran>-0.5b-q4_k_m.gguf`, data di `datasets/<stack>.jsonl`
+## Step 7 — Model pakar per stack (multi-model, satu tier)
+Satu model kecil satu stack (= domain), tukar tanpa model besar.
+Konvensyen nama: `xcoder-<stack>-0.5b-q4_k_m.gguf`, data di `datasets/<stack>.jsonl`
 (ada 16 stack: javascript, typescript, nodejs, html, css, tailwind, sql, postgresql,
 mysql, linux, docker, bash, python, laravel, php, general):
-1. Kumpul data per domain dalam CLI: chat + `/good` (auto-tag stack).
-2. `py app/ezcodex.py train --mode sft` (pecah ke stack) + `merge.py` (gabung ke domain).
-3. Tambah 30–100 baris domain (penting untuk kesan ketara), latih di Colab seperti Step 2–3, nama output `xcoder-docker-0.5b-q4_k_m.gguf`.
+1. Kumpul data per stack dalam CLI: chat + `/good` (auto-tag stack).
+2. `py app/ezcodex.py train --mode sft` (pecah ke stack) + `merge.py` (sahkan ke finetune/stacks/).
+3. Tambah baris stack (penting untuk kesan ketara), latih di Colab seperti Step 2–3, nama output `xcoder-docker-0.5b-q4_k_m.gguf`.
 4. Daftar: `/model add <fail> --name xcoder-docker --domains docker` → aktif dengan `/model xcoder-docker` atau auto via `--autoroute` / `/route on`.
-5. Ulang untuk domain lain (web, data, linux). Registry: `models/models.json` (per-mesin, auto-seed).
+5. Ulang untuk stack lain. Registry: `models/models.json` (per-mesin, auto-seed 16 pakar).
 
 ## Troubleshooting
 - Colab no GPU: check `Runtime → Change runtime type`, or use Kaggle free GPU.

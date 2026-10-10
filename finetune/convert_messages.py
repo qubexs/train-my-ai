@@ -1,7 +1,7 @@
 """Convert messages-format jsonl -> Alpaca + split by domain.
 Usage: py finetune/convert_messages.py finetune/linuxdocker/dataset.jsonl [--move]
 Reads {"messages":[{"role":"user",...},{"role":"assistant",...}]} rows,
-writes {"instruction","input","output"} into finetune/<domain>/dataset.jsonl
+writes {"instruction","input","output"} into finetune/stacks/<stack>/dataset.jsonl
 (domain auto-detected: linux/docker/web/data/python/identity/general).
 --move deletes the source file after a successful convert.
 """

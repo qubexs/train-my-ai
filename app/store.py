@@ -5,7 +5,7 @@ import time
 from pathlib import Path
 
 from experts import detect as detect_domain
-from experts import detect_stack, DOMAINS, STACK2DOMAIN
+from experts import detect_stack, STACK2DOMAIN, LEGACY_GROUPS
 
 APP_DIR = (Path(sys.executable).resolve().parent if getattr(sys, "frozen", False)
            else Path(__file__).resolve().parent)
@@ -86,7 +86,8 @@ def log_training(question, answer, lang="ms", kind="chat", tools_trace=None,
 def _match(flt, stack):
     if flt == stack:
         return True
-    return flt in DOMAINS and STACK2DOMAIN.get(stack) == flt
+    # legacy broad filters (web/data/...) still match member stacks
+    return stack in LEGACY_GROUPS.get(flt, []) or STACK2DOMAIN.get(stack) == flt
 
 
 def export_stacks(dest_dir="datasets", domain=None, min_len=2):
@@ -134,39 +135,15 @@ def export_stacks(dest_dir="datasets", domain=None, min_len=2):
     return added, str(dest_dir)
 
 
-def merge_stacks(root=".", domain=None):
-    """Combine datasets/<stack>.jsonl -> finetune/<domain>/dataset.jsonl (dedupe)."""
+def merge_stacks(root=".", stack=None):
+    """Combine datasets/<stack>.jsonl -> finetune/stacks/<stack>/dataset.jsonl (dedupe).
+    Stack = domain (single tier, no broad merges)."""
     root = Path(root)
     cfg = json.loads((root / "datasets" / "config" / "dataset.json").read_text(encoding="utf-8"))
     out = {}
-    for dom, stacks in sorted(cfg["domains"].items()):
-        if domain and domain != dom:
-            continue
-        seen, merged = set(), []
-        for s in stacks:
-            p = root / "datasets" / f"{s}.jsonl"
-            if not p.exists():
-                continue
-            for line in p.read_text(encoding="utf-8").splitlines():
-                try:
-                    r = json.loads(line)
-                except ValueError:
-                    continue
-                q, a = (r.get("instruction") or "").strip(), (r.get("output") or "").strip()
-                if not q or not a or (q, a) in seen:
-                    continue
-                seen.add((q, a))
-                merged.append({"instruction": q, "input": (r.get("input") or "").strip(),
-                               "output": a})
-        dest = root / "finetune" / dom / "dataset.jsonl"
-        dest.parent.mkdir(parents=True, exist_ok=True)
-        with dest.open("w", encoding="utf-8") as f:
-            for r in merged:
-                f.write(json.dumps(r, ensure_ascii=False) + "\n")
-        out[dom] = len(merged)
-    # per-stack copies (validated, training-ready): finetune/stacks/<stack>/dataset.jsonl
-    # (under stacks/ so domain merges in finetune/<domain>/ are never shadowed)
     for s in sorted(cfg["stacks"]):
+        if stack and stack != s:
+            continue
         src = root / "datasets" / f"{s}.jsonl"
         rows = []
         if src.exists():
@@ -187,6 +164,7 @@ def merge_stacks(root=".", domain=None):
         with dest.open("w", encoding="utf-8") as f:
             for r in rows:
                 f.write(json.dumps(r, ensure_ascii=False) + "\n")
+        out[s] = len(rows)
     return out
 
 
@@ -197,7 +175,7 @@ def _row_domain(r):
     return detect_domain((r.get("instruction") or "") + " " + (r.get("output") or ""))
 
 
-def export_sft(dest="finetune/general/dataset.jsonl", min_len=2, domain=None):
+def export_sft(dest="finetune/stacks/general/dataset.jsonl", min_len=2, domain=None):
     src = DATA_DIR / "training.jsonl"
     if not src.exists():
         return 0, "no training.jsonl yet — chat first, then export"
@@ -236,7 +214,7 @@ def export_sft(dest="finetune/general/dataset.jsonl", min_len=2, domain=None):
     return added, str(dest_p)
 
 
-def export_pretrain_corpus(dest="finetune/general/corpus.txt", domain=None):
+def export_pretrain_corpus(dest="finetune/stacks/general/corpus.txt", domain=None):
     src = DATA_DIR / "training.jsonl"
     if not src.exists():
         return 0, "no training.jsonl yet"

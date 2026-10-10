@@ -1,6 +1,6 @@
-"""Merge datasets/<stack>.jsonl -> finetune/<domain>/dataset.jsonl (dedupe).
-Usage: python datasets/scripts/merge.py [domain]
-Run from the repo root. Overwrites finetune/<domain>/dataset.jsonl.
+"""Merge datasets/<stack>.jsonl -> finetune/stacks/<stack>/dataset.jsonl (dedupe).
+Usage: python datasets/scripts/merge.py [stack]
+Run from the repo root. Overwrites finetune/stacks/<stack>/dataset.jsonl.
 """
 import sys
 from pathlib import Path
@@ -10,9 +10,9 @@ sys.path.insert(0, str(ROOT / "app"))
 from store import merge_stacks
 
 only = sys.argv[1].lower() if len(sys.argv) > 1 else None
-out = merge_stacks(root=ROOT, domain=only)
+out = merge_stacks(root=ROOT, stack=only)
 total = 0
-for domain, n in sorted(out.items()):
+for stack, n in sorted(out.items()):
     total += n
-    print(f"{domain}: {n} rows -> finetune/{domain}/dataset.jsonl")
+    print(f"{stack}: {n} rows -> finetune/stacks/{stack}/dataset.jsonl")
 print(f"TOTAL: {total} rows")

@@ -13,10 +13,10 @@ Rules: short + correct answers, identity rows say `XCoder` (never Qwen/Alibaba).
 ```
 chat + /good            # CLI auto-tags domain+stack -> training.jsonl
 train --mode sft        # split rows into datasets/<stack>.jsonl (dedupe)
-python datasets/scripts/merge.py [domain]   # combine stacks -> finetune/<domain>/dataset.jsonl
+python datasets/scripts/merge.py [stack]   # combine -> finetune/stacks/<stack>/dataset.jsonl
 python datasets/scripts/validate.py         # check format, all stacks
 python datasets/scripts/statistics.py       # counts + averages
-# Colab: upload finetune/<domain>/dataset.jsonl -> LoRA -> GGUF -> /model add
+# Colab: upload finetune/stacks/<stack>/dataset.jsonl -> LoRA -> GGUF -> /model add
 ```
 
 ## Scaling to 100k per stack
@@ -37,6 +37,6 @@ before every train (`merge.py` dedupes; re-running `generate.py` is idempotent),
 and split files past ~50MB (`part-*.jsonl` still validate). Quality beats
 quantity — 2k clean rows outperform 100k noisy ones on a 0.5B model.
 
-`finetune/<domain>/` files are **generated** by `merge.py` — edit data here in
+`finetune/stacks/` files are **generated** by `merge.py` — edit data here in
 `datasets/`, never in `finetune/` directly. Stack -> domain mapping lives in
 `config/dataset.json`. New rows must use the `XCoder` identity.

@@ -29,10 +29,10 @@ py app/ezcodex.py --backend server                     # resident llama-server (
 py app/ezcodex.py --backend server --gpu cuda          # opt-in sahaja; lalai CPU. Dasar: GPU dikhaskan untuk training, inferens kekal CPU (jimat kuasa/RAM).
 py app/ezcodex.py --once "list docs and explain" --allow-all   # one-shot (scripts)
 py app/ezcodex.py train --mode both                      # pecah ke datasets/<stack>.jsonl + gabung finetune/
-py app/ezcodex.py train --mode sft --domain docker   # datasets/docker.jsonl -> finetune/linux/
+py app/ezcodex.py train --mode sft --domain docker   # datasets/docker.jsonl -> finetune/stacks/docker/
 python datasets/scripts/validate.py                 # semak 16 stack
 python datasets/scripts/statistics.py               # taburan baris
-python datasets/scripts/merge.py linux              # gabung stack -> finetune/linux/dataset.jsonl
+python datasets/scripts/merge.py docker              # gabung -> finetune/stacks/docker/dataset.jsonl
 ```
 Slash: `/help /tools on|off /backend llama|lmstudio /session <name> /good /bad /export sft|corpus /clear`.
 Tools: `list read write edit run bash rag` (workspace-jailed, bash asks confirm).
@@ -47,7 +47,7 @@ py app/ezcodex.py --autoroute          # auto-tukar pakar ikut domain soalan
 /model xcoder-docker                  # tukar manual
 /model add <url|fail> --name xcoder-docker --domains docker  # daftar GGUF baharu
 /model import                 # auto-import GGUF terbaru dari Downloads + aktifkan
-py app/ezcodex.py train --mode sft --domain docker   # dataset per-pakar -> finetune/docker/dataset.jsonl
+py app/ezcodex.py train --mode sft --domain docker   # dataset per-pakar -> finetune/stacks/docker/dataset.jsonl
 ```
 Alir: chat + `/good` (auto-tag domain) -> export `--domain X` -> Colab LoRA (`finetune/train_unsloth.py`) -> GGUF -> `/model add`. Backend `llama-cli` 0 RAM idle, jadi tukar pakar = percuma.
 

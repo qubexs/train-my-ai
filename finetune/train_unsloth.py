@@ -1,8 +1,8 @@
 # Run on Google Colab FREE GPU (T4), NOT on your 7.8GB CPU box.
-# Colab: upload finetune/<domain>/dataset.jsonl, rename to dataset.jsonl if needed.
+# Colab: upload finetune/stacks/<stack>/dataset.jsonl, rename to dataset.jsonl if needed.
 #   !pip install -q unsloth trl peft accelerate bitsandbytes datasets
 # Then run this file content in a Colab cell. Set DATA below to your file,
-# and OUT to coder77-<domain> so the GGUF name matches finetune/<domain>/.
+# and OUT to xcoder-<stack> so the GGUF name matches finetune/stacks/<stack>/.
 import sys
 
 DATA = sys.argv[1] if len(sys.argv) > 1 else "dataset.jsonl"  # /content name after upload
@@ -42,4 +42,4 @@ SFTTrainer(
 #   model.save_pretrained_gguf(OUT + "-gguf", tok, quantization_method="q4_k_m")
 # Download the .gguf, rename to xcoder-<kepakaran>-0.5b-q4_k_m.gguf
 # (cth xcoder-docker-0.5b-q4_k_m.gguf),
-# then register on PC: /model add <fail> --name xcoder-<domain> --domains <domain>
+# then register on PC: /model add <fail> --name xcoder-<stack> --domains <stack>

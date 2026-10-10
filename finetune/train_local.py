@@ -18,7 +18,7 @@ import sys
 def parse_args():
     ap = argparse.ArgumentParser(description="Local LoRA train (GTX 1070 friendly)")
     ap.add_argument("--data", required=True,
-                    help="datasets/<stack>.jsonl, finetune/<domain>/dataset.jsonl, or comma list for multi-stack")
+                    help="datasets/<stack>.jsonl, finetune/stacks/<stack>/dataset.jsonl, or comma list")
     ap.add_argument("--out", default="xcoder-0.5b", help="e.g. xcoder-docker")
     ap.add_argument("--model", default="Qwen/Qwen2.5-0.5B-Instruct")
     ap.add_argument("--epochs", type=float, default=3.0)

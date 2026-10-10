@@ -1,6 +1,6 @@
-"""Validate finetune/<domain>/dataset.jsonl files. Usage:
-  python finetune/validate.py            # all domains
-  python finetune/validate.py docker     # one domain
+"""Validate finetune/stacks/<stack>/dataset.jsonl files. Usage:
+  python finetune/validate.py            # all stacks
+  python finetune/validate.py docker     # one stack
 """
 import json
 import sys
@@ -19,24 +19,21 @@ def check(p: Path):
 
 def main():
     only = sys.argv[1].lower() if len(sys.argv) > 1 else None
-    # new layout finetune/<domain>/dataset.jsonl (+ legacy flat finetune/dataset_*.jsonl)
-    files = sorted(ROOT.glob("*/dataset.jsonl")) + sorted(ROOT.glob("dataset_*.jsonl"))
+    files = sorted((ROOT / "stacks").glob("*/dataset.jsonl"))
     if only:
-        files = [f for f in files if only in f.parts[-2].lower() or only in f.stem.lower()]
+        files = [f for f in files if only in f.parts[-2].lower()]
     if not files:
-        raise SystemExit("no dataset files found under finetune/")
+        raise SystemExit("no dataset files found under finetune/stacks/")
     total = 0
     for f in files:
         try:
             n, n_id = check(f)
-        except (AssertionError, ValueError) as e:
-            label = f.parent.name + "/" + f.name if f.parent != ROOT else f.name
-            print(f"{label}: SKIP (bukan format Alpaca: instruction/output) — "
-                  f"tukar dahulu: py finetune/convert_messages.py {label}")
+        except (AssertionError, ValueError):
+            print(f"{f.parent.name}: SKIP (bukan format Alpaca) — "
+                  f"tukar: py finetune/convert_messages.py {f.parent.name}")
             continue
         total += n
-        label = f.parent.name + "/" + f.name if f.parent != ROOT else f.name
-        print(f"{label}: {n} rows OK, identity rows: {n_id}")
+        print(f"stacks/{f.parent.name}: {n} rows OK, identity rows: {n_id}")
     print(f"TOTAL: {total} rows")
 
 

@@ -27,7 +27,7 @@ APP_DIR = (Path(sys.executable).resolve().parent if getattr(sys, "frozen", False
            else Path(__file__).resolve().parent)
 sys.path.insert(0, str(APP_DIR))
 
-__version__ = "0.4.25"
+__version__ = "0.4.26"
 
 LLAMA_TAG = "b11491"
 LLAMA_BASE = f"https://github.com/ggerganov/llama.cpp/releases/download/{LLAMA_TAG}"
@@ -40,7 +40,7 @@ from agent import run_agent, sanitize
 from experts import (GENERAL, add as add_model, detect as detect_domain,
                      detect_stack, fmt_size, resolve as resolve_model,
                      scan as scan_models,
-                     STACK2DOMAIN, infer_name_domains, resolve_layout)
+                     infer_name_domains, resolve_layout)
 from store import load_session, save_turn, list_sessions, log_training, export_sft, export_pretrain_corpus
 from store import clear_session, context_stats
 
@@ -203,7 +203,7 @@ def build_parser():
     sub = ap.add_subparsers(dest="cmd")
     t = sub.add_parser("train", help="training flywheel: export SFT dataset / pretrain corpus")
     t.add_argument("--mode", choices=["sft", "pretrain", "both"], default="both")
-    t.add_argument("--domain", default="", help="export domain sahaja cth: linux,docker,web,data,php,python")
+    t.add_argument("--domain", default="", help="export stack sahaja cth: docker,linux,web,sql,python,php")
     t.add_argument("--export-only", action="store_true", help="only export, do not print Colab next-steps")
     return ap
 
@@ -394,12 +394,11 @@ BARE_CMDS = ("help", "route", "tools", "backend", "session", "sessions",
 
 
 def do_sft_export(flt):
-    """training.jsonl -> datasets/<stack>.jsonl -> finetune/<domain>/. Returns text."""
+    """training.jsonl -> datasets/<stack>.jsonl -> finetune/stacks/<stack>/. Returns text."""
     from store import export_stacks, merge_stacks
     added, _ = export_stacks(domain=flt)
     total = sum(added.values())
-    mdom = STACK2DOMAIN.get(flt, flt) if flt else None
-    merged = merge_stacks(domain=mdom)
+    merged = merge_stacks(stack=flt)
     parts = [f"{s}+{n}" for s, n in sorted(added.items())]
     mg = ", ".join(f"{d}={n}" for d, n in sorted(merged.items()))
     return (f"SFT: {total} new rows -> datasets/ [{', '.join(parts) or 'none'}]; "
@@ -806,8 +805,7 @@ def main():
               f"ctx={args.ctx} threads={args.threads} (tetapkan manual untuk ubah)")
     if args.cmd == "train":
         flt = (args.domain or "").strip().lower() or None
-        ddir = STACK2DOMAIN.get(flt, flt) if flt else "general"
-        corp_dest = f"finetune/{ddir}/corpus.txt"
+        corp_dest = f"finetune/stacks/{flt or 'general'}/corpus.txt"
         if args.mode in ("sft", "both"):
             print(do_sft_export(flt) + "; validate: python datasets/scripts/validate.py")
         if args.mode in ("pretrain", "both"):

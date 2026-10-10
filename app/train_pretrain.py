@@ -1,9 +1,9 @@
 """Continued pretraining template — run on GPU (Colab/Kaggle), NOT on 7.8GB CPU box.
-Corpus: finetune/<domain>/corpus.txt (exported via `py app/ezcodex.py train --mode pretrain [--domain X]`).
+Corpus: finetune/stacks/<stack>/corpus.txt (exported via `py app/ezcodex.py train --mode pretrain [--domain X]`).
 
 Colab:
   !pip install -q transformers datasets accelerate
-  !python app/train_pretrain.py --model Qwen/Qwen2.5-0.5B-Instruct --corpus finetune/general/corpus.txt
+  !python app/train_pretrain.py --model Qwen/Qwen2.5-0.5B-Instruct --corpus finetune/stacks/general/corpus.txt
 Then convert merged model -> GGUF (see step.md), `lms import` back.
 """
 import argparse
@@ -11,7 +11,7 @@ import argparse
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--model", default="Qwen/Qwen2.5-0.5B-Instruct")
-    ap.add_argument("--corpus", default="finetune/general/corpus.txt")
+    ap.add_argument("--corpus", default="finetune/stacks/general/corpus.txt")
     ap.add_argument("--out", default="xcoder-0.5b-pretrained")
     ap.add_argument("--epochs", type=float, default=1.0)
     ap.add_argument("--lr", type=float, default=5e-5)
