@@ -27,7 +27,7 @@ APP_DIR = (Path(sys.executable).resolve().parent if getattr(sys, "frozen", False
            else Path(__file__).resolve().parent)
 sys.path.insert(0, str(APP_DIR))
 
-__version__ = "0.4.13"
+__version__ = "0.4.14"
 
 LLAMA_TAG = "b11491"
 LLAMA_BASE = f"https://github.com/ggerganov/llama.cpp/releases/download/{LLAMA_TAG}"
@@ -41,6 +41,7 @@ from experts import (GENERAL, add as add_model, detect as detect_domain,
                      fmt_size, resolve as resolve_model, scan as scan_models,
                      STACK2DOMAIN, infer_name_domains, resolve_layout)
 from store import load_session, save_turn, list_sessions, log_training, export_sft, export_pretrain_corpus
+from store import clear_session, context_stats
 
 BIN_DIR, MODELS_DIR = resolve_layout(APP_DIR)
 
@@ -123,7 +124,8 @@ HELP = """Commands:
 /route on|off         auto-tukar pakar ikut domain soalan
 /session <name>       switch session file (sessions/<name>.jsonl)
 /sessions             list sessions
-/clear                clear in-memory history
+/context              show context usage of current session
+/clear                clear in-memory history AND session file
 /good | /bad          rate last answer -> training log (flywheel)
 /train-log            show training.jsonl count
 /export sft|corpus    pecah ke datasets/<stack> + gabung finetune/ (atau corpus.txt)
@@ -559,11 +561,19 @@ def repl(args):
         if q.startswith("/session ") or q == "/session":
             session = q.split(None, 1)[1] if len(q.split()) > 1 else "default"
             history = scrub_history(load_session(session)[-20:])
+            last_qa = [None, None, None]
             print(f"session={session} ({len(history)} turns loaded)")
+            continue
+        if q == "/context":
+            st = context_stats(session, len(history))
+            print(f"session={st['session']} memory={st['memory']} file={st['file']} "
+                  f"~{st['approx_tokens']} tokens (model ctx 2048 llama-cli / 4096 server)")
             continue
         if q == "/clear":
             history.clear()
-            print("Sejarah dipadam.")
+            last_qa = [None, None, None]
+            clear_session(session)
+            print("Sejarah dipadam (memori + fail session).")
             continue
         if q in ("/good", "/bad"):
             if last_qa[0] and last_qa[2]:

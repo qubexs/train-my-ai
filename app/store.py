@@ -33,11 +33,33 @@ def load_session(name: str):
     return [r for r in rows if r.get("role") in ("user", "assistant", "tool")]
 
 
-def save_turn(name: str, messages):
+def save_turn(name: str, messages, keep_last=60):
     p = session_path(name)
     with p.open("a", encoding="utf-8") as f:
         for m in messages:
             f.write(json.dumps(m, ensure_ascii=False) + "\n")
+    # trim: session file stays bounded, context belongs to session file
+    try:
+        lines = p.read_text(encoding="utf-8").splitlines()
+        if len(lines) > keep_last:
+            p.write_text("\n".join(lines[-keep_last:]) + "\n", encoding="utf-8")
+    except OSError:
+        pass
+
+
+def clear_session(name: str):
+    p = session_path(name)
+    try:
+        p.unlink(missing_ok=True)
+    except OSError:
+        pass
+
+
+def context_stats(name: str, memory_turns: int):
+    file_turns = len(load_session(name))
+    chars = sum(len((m.get("content") or "")) for m in load_session(name)[-20:])
+    return {"session": name, "memory": memory_turns, "file": file_turns,
+            "approx_tokens": chars // 4}
 
 
 def list_sessions():
