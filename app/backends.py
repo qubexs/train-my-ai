@@ -21,7 +21,10 @@ class LlamaCliBackend:
         turns = []
         for m in recent:
             role = m.get("role", "user")
-            content = (m.get("content", "") or "")[:1000]
+            content = (m.get("content", "") or "")
+            # assistant turns truncate harder: stale model chatter must not
+            # dominate the prompt and compound into role-play loops.
+            content = content[:500] if role == "assistant" else content[:1000]
             if role == "tool":
                 turns.append(f"[Hasil tool {m.get('name', '')}]: {content}")
             elif role == "assistant":

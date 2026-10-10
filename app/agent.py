@@ -113,8 +113,6 @@ def run_agent(backend, question, name="XCoder", lang="ms", history=None,
             thinking = sanitize(strip_tool_blocks(traw))
             if thinking:
                 on_think(thinking)
-                messages = messages + [{"role": "assistant",
-                                        "content": "(fikiran: " + thinking[:500] + ")"}]
         except Exception:
             pass
     trace, tps = [], None

@@ -27,7 +27,7 @@ APP_DIR = (Path(sys.executable).resolve().parent if getattr(sys, "frozen", False
            else Path(__file__).resolve().parent)
 sys.path.insert(0, str(APP_DIR))
 
-__version__ = "0.4.14"
+__version__ = "0.4.15"
 
 LLAMA_TAG = "b11491"
 LLAMA_BASE = f"https://github.com/ggerganov/llama.cpp/releases/download/{LLAMA_TAG}"
@@ -341,14 +341,23 @@ def plan_fallback(task, lang, dom):
 
 
 def scrub_history(h):
-    """Drop degenerate turns (role-play echoes) saved by older versions."""
+    """Drop degenerate turns (role-play echoes, hallucinated status lines)."""
     out = []
     for m in h:
         c = m.get("content", "") or ""
-        if m.get("role") == "assistant" and ("Pengguna:" in c or "Pembantu:" in c):
+        if m.get("role") == "assistant" and (
+                "Pengguna:" in c or "Pembantu:" in c
+                or "Current use of models is" in c
+                or "model aktif:" in c):
             continue
         out.append(m)
     return out
+
+
+# commands also accepted without leading slash ("route on" -> "/route on")
+BARE_CMDS = ("help", "route", "tools", "backend", "session", "sessions",
+             "clear", "context", "server", "plan", "export", "cwd",
+             "keluar", "exit", "quit", "good", "bad", "train-log")
 
 
 def do_sft_export(flt):
@@ -399,6 +408,9 @@ def repl(args):
             break
         if not q:
             continue
+        if not q.startswith("/") and q.split() and q.split()[0].lower() in BARE_CMDS:
+            q = "/" + q
+            print(f"(dibaca sebagai {q.split()[0]})")
         if q in ("/keluar", "/exit", "/quit"):
             break
         if q == "/help":
