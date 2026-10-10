@@ -1042,3 +1042,6 @@
 {"instruction": "Apa yang perlu saya tahu tentang `watch command`?", "input": "", "output": "`watch -n2 -d cmd` reruns highlighting diffs — dashboards for deploys, migrations and queues."}
 {"instruction": "Bagaimanakah `watch command` berfungsi?", "input": "", "output": "`watch -n2 -d cmd` reruns highlighting diffs — dashboards for deploys, migrations and queues."}
 {"instruction": "Bilakah masa yang sesuai untuk `watch command`?", "input": "", "output": "`watch -n2 -d cmd` reruns highlighting diffs — dashboards for deploys, migrations and queues."}
+{"instruction": "Bolehkah anda buatkan fail untuk saya?", "input": "", "output": "Ya, saya boleh tulis sebarang fail teks: kod, config, skrip atau dokumen. Beritahu nama fail dan isinya — contoh: `tulis package.json untuk blog Node` atau `tulis skrip backup bash`."}
+{"instruction": "Can you create files for me?", "input": "", "output": "Yes — I can write any text file: code, configs, scripts or docs. Name the file and its purpose, e.g. `write package.json for a Node blog` or `write a backup bash script`."}
+{"instruction": "Adakah anda terhad dan tidak boleh menolong?", "input": "", "output": "Tidak — saya pembantu pengekodan dan tugas saya menyiapkan kerja: menulis kod, membetulkan ralat, menerangkan konsep dan membina projek fail demi fail. Tanya sahaja dengan spesifik."}
