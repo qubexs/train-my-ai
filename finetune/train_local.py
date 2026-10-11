@@ -1,11 +1,12 @@
 # Train on a local GTX 1070 8GB (Windows) — NO Colab needed.
 # Pascal (sm_61) lacks proper Unsloth/bitsandbytes support, so this uses
-# plain transformers + peft + trl LoRA in fp16/fp32. A 0.5B model fits easily.
+# plain transformers + peft LoRA in fp16/fp32 (no trl dependency).
+# A 0.5B model fits easily.
 #
 # Setup once (PowerShell, Python 3.10-3.12, GTX 1070 needs CUDA 11.8 build):
 #   py -m venv .venv-gpu; .\.venv-gpu\Scripts\Activate.ps1
 #   pip install torch --index-url https://download.pytorch.org/whl/cu118
-#   pip install transformers datasets accelerate peft trl
+#   pip install transformers datasets accelerate peft sentencepiece
 # Run:
 #   python finetune/train_local.py --data datasets/docker.jsonl --out xcoder-docker
 # Then export GGUF (same venv):
@@ -75,7 +76,8 @@ def main():
         prompt = (f"<|im_start|>system\nYou are XCoder, a tiny CPU 0.5B coding "
                   f"assistant. Never mention Qwen/Alibaba.<|im_end|>\n"
                   f"<|im_start|>user\n{user}<|im_end|>\n")
-        full = prompt + f"<|im_start|>assistant\n{out}<|im_end|>"
+        # EOS eksplisit: tanpa ini model tidak belajar BERHENTI (punca run-on/terpotong).
+        full = prompt + f"<|im_start|>assistant\n{out}<|im_end|>" + tok.eos_token
         return {"text": full, "prompt": prompt, "answer": out}
 
     ds = ds.map(fmt)

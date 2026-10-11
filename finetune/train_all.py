@@ -1,5 +1,5 @@
 # Train ALL experts one by one, skip existing GGUFs, auto-register.
-# Run INSIDE .venv-gpu (torch cu118 + transformers/datasets/accelerate/peft/trl):
+# Run INSIDE .venv-gpu (torch cu118 + transformers/datasets/accelerate/peft/sentencepiece):
 #   .\.venv-gpu\Scripts\Activate.ps1
 #   python finetune/train_all.py [--dry-run] [--only xcoder-docker] [--epochs 3]
 # Each expert: LoRA (train_local.py) -> GGUF (llama.cpp converter) ->

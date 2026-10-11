@@ -17,12 +17,12 @@ def parse_args():
     return ap.parse_args()
 
 
-def fmt(r):
+def fmt(r, eos=""):
     user = r["instruction"] + (f"\n{r['input']}" if r.get("input") else "")
     prompt = ("<|im_start|>system\nYou are XCoder, a tiny CPU 0.5B coding "
               "assistant. Never mention Qwen/Alibaba.<|im_end|>\n"
               f"<|im_start|>user\n{user}<|im_end|>\n")
-    return prompt, prompt + f"<|im_start|>assistant\n{r['output']}<|im_end|>"
+    return prompt, prompt + f"<|im_start|>assistant\n{r['output']}<|im_end|>" + eos
 
 
 def main():
@@ -53,7 +53,7 @@ def main():
     total_nll, total_tok = 0.0, 0
     with torch.no_grad():
         for r in rows:
-            prompt, full = fmt(r)
+            prompt, full = fmt(r, tok.eos_token)
             fids = tok(full, truncation=True, max_length=a.max_len)["input_ids"]
             pids = tok(prompt, truncation=True, max_length=a.max_len)["input_ids"]
             n = 0

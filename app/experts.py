@@ -166,6 +166,24 @@ def detect(text):
     return detect_stack(text)
 
 
+def file_hash(path, chunk=8 * 1024 * 1024):
+    """sha256 hex penuh. Raises OSError jika tidak boleh dibaca."""
+    import hashlib
+    h = hashlib.sha256()
+    with open(path, "rb") as fh:
+        for c in iter(lambda: fh.read(chunk), b""):
+            h.update(c)
+    return h.hexdigest()
+
+
+def _gguf_ok(path):
+    try:
+        with open(path, "rb") as f:
+            return f.read(4) == b"GGUF"
+    except OSError:
+        return False
+
+
 def _reg_file(models_dir):
     return Path(models_dir) / "models.json"
 
@@ -257,24 +275,67 @@ def find(models, name):
     return None
 
 
-def _download(url, dest, expect=None):
+def _download(url, dest, expect=None, sha256=None, tries=2):
+    """Muat turun + sahkan saiz/sha256. Cuba sekali lagi, gagal dengan jelas."""
     dest = Path(dest)
-    dest.parent.mkdir(parents=True, exist_ok=True)
-    req = urllib.request.Request(url, headers={"User-Agent": "ezcodex-models"})
-    with urllib.request.urlopen(req, timeout=120) as r, open(dest, "wb") as f:
-        total = int(r.headers.get("Content-Length", 0)) or expect or 1
-        got, t0 = 0, time.time()
-        while True:
-            b = r.read(1024 * 1024)
-            if not b:
+    for attempt in range(1, tries + 1):
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        req = urllib.request.Request(url, headers={"User-Agent": "ezcodex-models"})
+        with urllib.request.urlopen(req, timeout=120) as r, open(dest, "wb") as f:
+            total = int(r.headers.get("Content-Length", 0)) or expect or 1
+            got, t0 = 0, time.time()
+            while True:
+                b = r.read(1024 * 1024)
+                if not b:
+                    break
+                f.write(b)
+                got += len(b)
+                el = max(0.1, time.time() - t0)
+                print(f"\r  {got / 1e6:.0f}/{total / 1e6:.0f} MB "
+                      f"({got / el / 1e6:.1f} MB/s)", end="", flush=True)
+        print()
+        ok, reason = True, "ok"
+        if expect is not None and dest.stat().st_size != expect:
+            ok, reason = False, "saiz tidak sepadan"
+        elif sha256 is not None and file_hash(dest) != sha256:
+            ok, reason = False, "sha256 tidak sepadan"
+        if ok and not _gguf_ok(dest):
+            ok, reason = False, "bukan fail GGUF"
+        if ok:
+            return dest
+        print(f"[models] semakan gagal ({reason}), cubaan {attempt}/{tries}")
+        try:
+            dest.unlink()
+        except OSError:
+            pass
+    raise SystemExit(f"gagal muat turun disahkan: {url} ({reason})")
+
+
+def verify_pinned(models_dir, entry):
+    """Semak fail model lawan pin registry (sha256/saiz). Backfill pin jika tiada.
+    Returns (ok, reason)."""
+    f = Path(models_dir) / (entry.get("file") or "")
+    if not entry.get("file") or not f.exists():
+        return False, "tiada fail"
+    if not _gguf_ok(f):
+        return False, "bukan fail GGUF"
+    pin, size = entry.get("sha256"), entry.get("bytes")
+    if pin:
+        if file_hash(f) != pin:
+            return False, "sha256 tidak sepadan (fail rosak atau diganti)"
+        return True, "ok"
+    try:
+        digest, nbytes = file_hash(f), f.stat().st_size
+        entry["sha256"], entry["bytes"] = digest, nbytes
+        reg = load_registry(models_dir)
+        for m in reg["models"]:
+            if m.get("name") == entry.get("name") and m.get("file") == entry.get("file"):
+                m["sha256"], m["bytes"] = digest, nbytes
                 break
-            f.write(b)
-            got += len(b)
-            el = max(0.1, time.time() - t0)
-            print(f"\r  {got / 1e6:.0f}/{total / 1e6:.0f} MB "
-                  f"({got / el / 1e6:.1f} MB/s)", end="", flush=True)
-    print()
-    return dest
+        save_registry(models_dir, reg)
+    except OSError:
+        pass
+    return True, "ok (pin baharu direkod)"
 
 
 def resolve(models_dir, name, _depth=0):
@@ -285,7 +346,10 @@ def resolve(models_dir, name, _depth=0):
         return None, f"model '{name}' tidak ditemui. /models untuk senarai."
     f = models_dir / m.get("file", "")
     if m.get("file") and f.exists():
-        return f, ""
+        ok, reason = verify_pinned(models_dir, m)
+        if ok:
+            return f, ""
+        return None, f"model '{name}' gagal semakan: {reason}. /model add semula."
     if m.get("url"):
         try:
             dest = models_dir / (m.get("file") or (m["name"] + ".gguf"))
@@ -318,9 +382,17 @@ def add(models_dir, src, name=None, domains=None):
         dest = models_dir / fname
         _download(src, dest)
         url = src
+    if not _gguf_ok(dest):
+        try:
+            if not Path(src).exists():
+                dest.unlink()
+        except OSError:
+            pass
+        raise SystemExit(f"daftar gagal: {dest.name} bukan fail GGUF")
     entry = {"name": name or dest.stem, "file": dest.name, "url": url,
              "domains": domains, "desc": "pakar " + ",".join(domains),
-             "trained": True}
+             "trained": True, "sha256": file_hash(dest),
+             "bytes": dest.stat().st_size}
     reg = load_registry(models_dir)
     reg["models"] = [m for m in reg["models"] if m.get("name") != entry["name"]]
     reg["models"].append(entry)
@@ -357,6 +429,7 @@ def audit_models(models_dir, progress=None):
     models_dir = Path(models_dir)
     files = sorted(models_dir.glob("*.gguf"))
     reg = {m.get("file"): m.get("name") for m in scan(models_dir)}
+    pins = {m.get("file"): m.get("sha256") for m in scan(models_dir)}
     items, by_hash = [], {}
     for i, f in enumerate(files):
         if progress:
@@ -371,11 +444,14 @@ def audit_models(models_dir, progress=None):
                 for chunk in iter(lambda: fh.read(8 * 1024 * 1024), b""):
                     h.update(chunk)
             digest = h.hexdigest()[:16]
+            full = h.hexdigest()
         except OSError:
-            digest = "Ralat-baca"
+            digest, full = "Ralat-baca", ""
         by_hash.setdefault(digest, []).append(f.name)
+        pin = pins.get(f.name)
         items.append({"file": f.name, "mb": round(f.stat().st_size / 1e6),
                       "magic_ok": magic, "sha": digest,
+                      "hash_ok": (full == pin) if (pin and full) else None,
                       "registered": reg.get(f.name)})
     dupes = {h: n for h, n in by_hash.items() if len(n) > 1}
     reg_files = {m.get("file") for m in scan(models_dir) if m.get("file")}

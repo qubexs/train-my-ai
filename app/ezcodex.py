@@ -9,31 +9,21 @@ Build exe: `py app/build_exe.py` (PyInstaller, win/linux/macos)
 Compat: old flags --lang/--name/--setup still work. Chat is now agentic.
 """
 import argparse
-import os
-import platform
 import re
 import shutil
-import stat
-import subprocess
 import sys
-import tarfile
-import tempfile
-import time
-import urllib.request
-import zipfile
 from pathlib import Path
 
 APP_DIR = (Path(sys.executable).resolve().parent if getattr(sys, "frozen", False)
            else Path(__file__).resolve().parent)
 sys.path.insert(0, str(APP_DIR))
 
-__version__ = "0.4.42"
+__version__ = "0.4.43"
 
-LLAMA_TAG = "b11491"
-LLAMA_BASE = f"https://github.com/ggerganov/llama.cpp/releases/download/{LLAMA_TAG}"
-HF_MODEL_URL = ("https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF/resolve/main/"
-                "qwen2.5-0.5b-instruct-q4_k_m.gguf")
-MODEL_SIZE = 491400032
+from fetch import (LLAMA_TAG, LLAMA_BASE, HF_MODEL_URL, MODEL_SIZE,
+                   asset_name, download, verify, sha256_file,
+                   ensure_cli as _ensure_cli, ensure_model as _ensure_model,
+                   cuda_dir as _cuda_dir, ensure_cuda as _ensure_cuda)
 
 from backends import LlamaCliBackend, LmStudioBackend
 from agent import run_agent, sanitize
@@ -47,67 +37,12 @@ from store import clear_session, context_stats
 BIN_DIR, MODELS_DIR = resolve_layout(APP_DIR)
 
 
-def asset_name():
-    s, m = platform.system(), platform.machine().lower()
-    if s == "Windows":
-        return f"llama-{LLAMA_TAG}-bin-win-cpu-x64.zip"
-    if s == "Linux":
-        return f"llama-{LLAMA_TAG}-bin-ubuntu-x64.tar.gz"
-    if s == "Darwin":
-        arm = "arm64" in m or m == "aarch64"
-        return f"llama-{LLAMA_TAG}-bin-macos-{'arm64' if arm else 'x64'}.tar.gz"
-    raise SystemExit(f"OS tidak disokong: {s}")
-
-
-def download(url, dest, expect=None):
-    dest.parent.mkdir(parents=True, exist_ok=True)
-    req = urllib.request.Request(url, headers={"User-Agent": "ezcodex-standalone"})
-    with urllib.request.urlopen(req, timeout=120) as r, open(dest, "wb") as f:
-        total = int(r.headers.get("Content-Length", 0)) or expect or 1
-        got, t0 = 0, time.time()
-        while True:
-            b = r.read(1024 * 1024)
-            if not b:
-                break
-            f.write(b)
-            got += len(b)
-            el = max(0.1, time.time() - t0)
-            print(f"\r  {got / 1e6:.0f}/{total / 1e6:.0f} MB ({got / el / 1e6:.1f} MB/s)",
-                  end="", flush=True)
-    print()
-
-
 def ensure_cli():
-    name = "llama-cli.exe" if platform.system() == "Windows" else "llama-cli"
-    hit = list(BIN_DIR.rglob(name))
-    if hit:
-        return hit[0]
-    asset = asset_name()
-    print(f"[ezcodex] downloading engine {asset} ...")
-    with tempfile.TemporaryDirectory() as tmp:
-        arc = Path(tmp) / asset
-        download(f"{LLAMA_BASE}/{asset}", arc)
-        if asset.endswith(".zip"):
-            with zipfile.ZipFile(arc) as z:
-                z.extractall(BIN_DIR)
-        else:
-            with tarfile.open(arc, "r:gz") as t:
-                t.extractall(BIN_DIR)
-    hit = list(BIN_DIR.rglob(name))
-    if not hit:
-        raise SystemExit("llama-cli not found after extract")
-    if platform.system() != "Windows":
-        hit[0].chmod(hit[0].stat().st_mode | stat.S_IEXEC)
-    return hit[0]
+    return _ensure_cli(BIN_DIR)
 
 
 def ensure_model():
-    dest = MODELS_DIR / HF_MODEL_URL.rsplit("/", 1)[-1]
-    if dest.exists() and dest.stat().st_size == MODEL_SIZE:
-        return dest
-    print("[ezcodex] downloading model (~491MB, once only) ...")
-    download(HF_MODEL_URL, dest, expect=MODEL_SIZE)
-    return dest
+    return _ensure_model(MODELS_DIR)
 
 
 HELP = """Commands:
@@ -145,39 +80,11 @@ Tools: list read write edit run bash rag (workspace-jailed, bash asks confirm).
 
 
 def cuda_dir():
-    return APP_DIR / "bin-cuda"
+    return _cuda_dir(APP_DIR)
 
 
 def ensure_cuda():
-    """Download llama.cpp CUDA build (GTX 1070+) into bin-cuda/. Returns dir."""
-    import json as _json
-    d = cuda_dir()
-    if list(d.rglob("llama-server.exe")) + list(d.rglob("llama-server")):
-        return d
-    api = f"https://api.github.com/repos/ggerganov/llama.cpp/releases/tags/{LLAMA_TAG}"
-    req = urllib.request.Request(api, headers={"User-Agent": "ezcodex-standalone"})
-    with urllib.request.urlopen(req, timeout=60) as r:
-        rel = _json.loads(r.read().decode())
-    names = [a["name"] for a in rel.get("assets", [])]
-    lower = [(n, n.lower()) for n in names]
-    pack = next((n for n, l in lower if l.startswith("llama-") and "-cuda-12" in l
-                 and "win" in l and "x64" in l and l.endswith(".zip")), None)
-    # matching CUDA runtime (cublas/cudart DLLs ship separately)
-    rt = next((n for n, l in lower if l.startswith("cudart-llama-") and "-cuda-12" in l
-               and "win" in l and "x64" in l and l.endswith(".zip")), None)
-    if not pack:
-        raise SystemExit(f"tiada asset llama CUDA untuk {LLAMA_TAG}.")
-    print(f"[ezcodex] downloading CUDA engine {pack} ...")
-    with tempfile.TemporaryDirectory() as tmp:
-        for hit in [x for x in (pack, rt) if x]:
-            arc = Path(tmp) / hit
-            if not arc.exists():
-                download(f"{LLAMA_BASE}/{hit}", arc)
-            with zipfile.ZipFile(arc) as z:
-                z.extractall(d)
-    if not (list(d.rglob("llama-server.exe")) + list(d.rglob("llama-server"))):
-        raise SystemExit("llama-server tidak ditemui selepas extract CUDA")
-    return d
+    return _ensure_cuda(APP_DIR)
 
 
 def build_parser():
@@ -673,8 +580,10 @@ def repl(args):
                 progress=lambda n, i, t: print(f"\r  hash {i}/{t} {n[:40]}", end="", flush=True))
             print()
             for it in rep["models"]:
-                flag = "OK " if it["magic_ok"] and it["registered"] else "!! "
-                print(f"{flag} {it['file']} {it['mb']}MB sha={it['sha']} "
+                hk = it.get("hash_ok")
+                hs = "pin-ok" if hk is True else ("PIN-GAGAL" if hk is False else "tanpa-pin")
+                flag = "OK " if it["magic_ok"] and it["registered"] and hk is not False else "!! "
+                print(f"{flag} {it['file']} {it['mb']}MB sha={it['sha']} [{hs}] "
                       f"model={it['registered'] or '(tidak didaftar)'}")
             if rep["duplicates"]:
                 for h, names in rep["duplicates"].items():
