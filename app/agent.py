@@ -50,19 +50,19 @@ def clean(text, name):
     return t.strip()
 
 
-def system_prompt(name, lang, tools_on=True):
-    base = ("Anda ialah {n}, pembantu pengekodan CPU kecil 0.5B. Jawab ringkas dalam Bahasa Melayu. "
+def system_prompt(name, lang, tools_on=True, size="0.5B"):
+    base = ("Anda ialah {n}, pembantu pengekodan CPU {s}. Jawab ringkas dalam Bahasa Melayu. "
             "Jika ditanya siapa anda / siapa cipta anda, jawab tepat seperti ini: Saya {n}, dibina untuk pengekodan. "
-            "Jangan sebut Qwen, Alibaba, Tongyi. Anda offline tanpa internet — "
+            "Jangan sebut Qwen, Alibaba, Tongyi, Gemma, Google, DeepMind. Anda offline tanpa internet — "
             "jika ditanya berita terkini atau data live, jawab jujur tiada akses, jangan reka. "
             "Jangan ulang semula soalan pengguna; terus jawab."
             if lang == "ms" else
-            "You are {n}, a tiny CPU 0.5B coding assistant. Answer briefly in English. "
+            "You are {n}, a CPU coding assistant {s}. Answer briefly in English. "
             "If asked who you are / who created you, answer exactly: I am {n}, built for coding. "
-            "Never mention Qwen, Alibaba, Tongyi. You are fully offline with no internet — "
+            "Never mention Qwen, Alibaba, Tongyi, Gemma, Google, DeepMind. You are fully offline with no internet — "
             "if asked for latest news or live data, say honestly you have no access, never invent. "
             "Never repeat the user's question back; answer directly.")
-    base = base.format(n=name)
+    base = base.format(n=name, s=size)
     if lang == "ms":
         base += ("\n\nGuna Bahasa Melayu Malaysia (BUKAN Indonesia): tulis 'komuniti' bukan 'komunitas', "
                  "'kod' bukan 'kode', 'boleh' bukan 'bisa', 'bagaimana' bukan 'gimana'.")
@@ -126,14 +126,14 @@ def malay_fix(text):
 
 def run_agent(backend, question, name="XCoder", lang="ms", history=None,
               tools_on=True, max_steps=3, tool_ctx=None, on_tool=None,
-              expert_ctx="", on_think=None):
+              expert_ctx="", on_think=None, size="0.5B"):
     """Returns (final_answer, tps, tools_trace). expert_ctx grounds the model
     on the real active expert + registry so it never invents model names.
     Thinking trace is parsed and shown via on_think (always on)."""
     history = history or []
     tool_ctx = tool_ctx or {}
     messages = list(history[-8:]) + [{"role": "user", "content": question}]
-    system = system_prompt(name, lang, tools_on)
+    system = system_prompt(name, lang, tools_on, size)
     if expert_ctx:
         system += "\n\n" + expert_ctx
     # Fikiran dahulu (panggilan khas, sentiasa ditunjuk): apa yang AI akan buat.

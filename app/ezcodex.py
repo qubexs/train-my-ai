@@ -27,7 +27,7 @@ APP_DIR = (Path(sys.executable).resolve().parent if getattr(sys, "frozen", False
            else Path(__file__).resolve().parent)
 sys.path.insert(0, str(APP_DIR))
 
-__version__ = "0.4.32"
+__version__ = "0.4.33"
 
 LLAMA_TAG = "b11491"
 LLAMA_BASE = f"https://github.com/ggerganov/llama.cpp/releases/download/{LLAMA_TAG}"
@@ -436,6 +436,8 @@ def repl(args):
         print((result[:600] + ("..." if len(result) > 600 else "")) + "\n")
 
     def on_think(thinking):
+        import re as _re
+        thinking = _re.sub(r"(?i)\b(gemma|google deepmind|google)\b", name, thinking)
         print("\x1b[2m" + f"[berfikir]\n{thinking[:800]}" + "\x1b[0m")
 
     width = shutil.get_terminal_size((80, 20)).columns
@@ -549,9 +551,11 @@ def repl(args):
                         print(f"(tiada pakar {sdom} — terus dengan {cur['name']})")
                 print(f"... {name} berfikir ({backend.kind}/{cur['name']}) ...")
                 try:
+                    msize = "4.5B" if "gemma" in cur.get("name", "") else "0.5B"
                     ans, tps, trace = run_agent(backend, sq, name=name, lang=lang, history=history,
                                                 tools_on=tools_on, tool_ctx=tool_ctx, on_tool=on_tool,
-                                                expert_ctx=expert_context(cur), on_think=on_think)
+                                                expert_ctx=expert_context(cur), on_think=on_think,
+                                                size=msize)
                 except Exception as e:
                     print(f"Ralat langkah {i}: {e} — berhenti.")
                     break
@@ -889,9 +893,11 @@ def repl(args):
                         print(f"(tiada pakar {dom} — jawab dengan {cur['name']}; "
                               f"latih: train --mode sft --domain {dom})")
                 try:
+                    msize = "4.5B" if "gemma" in cur.get("name", "") else "0.5B"
                     ans, tps, trace = run_agent(backend, q, name=name, lang=lang, history=history,
                                                 tools_on=tools_on, tool_ctx=tool_ctx, on_tool=on_tool,
-                                                expert_ctx=expert_context(cur), on_think=on_think)
+                                                expert_ctx=expert_context(cur), on_think=on_think,
+                                                size=msize)
                 except Exception as e:
                     print(f"Ralat: {e}")
                     continue
