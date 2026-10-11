@@ -42,7 +42,9 @@ def call_teacher(base_url, api_key, model, system, user, timeout=300):
     req = urllib.request.Request(base_url.rstrip("/") + "/chat/completions",
                                  data=body, headers=headers)
     with urllib.request.urlopen(req, timeout=timeout) as r:
-        return json.loads(r.read().decode())["choices"][0]["message"]["content"]
+        msg = json.loads(r.read().decode())["choices"][0]["message"]
+        # gemma4 letak jawapan dalam reasoning_content dengan content kosong
+        return msg.get("content", "") or msg.get("reasoning_content", "") or ""
 
 
 def parse_rows(blob):
