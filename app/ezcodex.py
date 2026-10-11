@@ -27,7 +27,7 @@ APP_DIR = (Path(sys.executable).resolve().parent if getattr(sys, "frozen", False
            else Path(__file__).resolve().parent)
 sys.path.insert(0, str(APP_DIR))
 
-__version__ = "0.4.36"
+__version__ = "0.4.37"
 
 LLAMA_TAG = "b11491"
 LLAMA_BASE = f"https://github.com/ggerganov/llama.cpp/releases/download/{LLAMA_TAG}"
@@ -304,9 +304,15 @@ def manager_file():
 
 
 def pick_manager_open(q):
-    """Soalan terbuka/tutorial -> pengurus (karangan), else None."""
+    """Soalan terbuka/tutorial/rentas-stack -> pengurus (karangan), else None."""
     if any(k in q.lower() for k in TUTORIAL_KEYS):
         return manager_entry()
+    try:
+        from experts import count_stacks as _cs
+        if _cs(q) >= 2:
+            return manager_entry()
+    except Exception:
+        pass
     return None
 
 OFFLINE_KEYS = ("berita", "news", "terkini", "semasa", "cuaca", "weather",

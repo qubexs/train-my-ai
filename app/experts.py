@@ -129,6 +129,12 @@ def detect_stack(text):
             return stack
     return GENERAL
 
+def count_stacks(text):
+    """Bilangan stack berbeza yang disebut — >=2 ertinya soalan rentas-stack."""
+    t = " " + (text or "").lower() + " "
+    return sum(1 for keys in STACKS.values() if any(k in t for k in keys))
+
+
 IDENTITY_KEYS = ["siapa anda", "siapa cipta", "siapa bina", "siapa yang buat",
                  "who are you", "who created you", "who made you",
                  "coder 77", "ezcodex", "xcoder", "pakar", "kepakaran", "expert",
