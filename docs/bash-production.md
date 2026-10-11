@@ -70,6 +70,26 @@ seq -w 1 10
 - `select` + `PS3`: numbered menus; `REPLY` holds raw input for validation.
 - Empty-array guard under `set -u`: `${arr[@]:-}` (bare `${arr[@]}` errors when empty).
 
+```bash
+var=PORT; echo "${!var}"              # indirect: value of $PORT
+echo "${path@Q}"                      # shell-quoted safe form; @E expands escapes, @P prompts, @A declares
+declare -ir MAX=10; declare -l low    # -i int, -r readonly, -x export, -l/-u case
+printf -v msg 'hi %s' "$u"            # print into var (no fork/subshell loss)
+read -t5 -s -n1 -p 'key? ' k          # timeout 5s, silent, 1 char
+coproc J { while read -r l; do echo "got:$l"; done; }
+echo hi >&"${J[1]}"; read -r r <&"${J[0]}"; echo "$r"
+complete -F _c deploy                 # custom completion; compgen -W 'a b' -- "$cur" filters
+SECONDS=0; ./job; echo "${SECONDS}s"  # stopwatch builtin; RANDOM seed via RANDOM=42
+echo "$UID $PPID $BASHPID $SHLVL"     # ids; $PPID parent, $$ script PID, $BASHPID subshell PID
+history -c; history -r                # clear / reload history file
+trap 'echo "+$BASH_COMMAND"' DEBUG    # pre-exec hook; RETURN trap for function exits
+export PS4='+ ${BASH_SOURCE}:${LINENO}: '
+```
+
+- `${!var}` indirects through a name; `${!pre*}` lists matching var names.
+- `coproc` gives two-way pipes (`${COPROC[0]}` read, `[1]` write) for driving interactive tools.
+- `complete -F func` + `compgen`: first-class CLI completion; `bind -x '"\C-l":cmd'` binds keys.
+
 ## Traps, Streams, Jobs
 
 ```bash
