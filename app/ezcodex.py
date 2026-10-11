@@ -27,7 +27,7 @@ APP_DIR = (Path(sys.executable).resolve().parent if getattr(sys, "frozen", False
            else Path(__file__).resolve().parent)
 sys.path.insert(0, str(APP_DIR))
 
-__version__ = "0.4.33"
+__version__ = "0.4.34"
 
 LLAMA_TAG = "b11491"
 LLAMA_BASE = f"https://github.com/ggerganov/llama.cpp/releases/download/{LLAMA_TAG}"
@@ -124,7 +124,7 @@ HELP = """Commands:
 /model import [fail] [--from dir]  auto-import GGUF terbaru + aktifkan
 /models               senarai semua model pakar + domain
 /models check         audit GGUF (hash, sah, duplikat, registry)
-  /consult <soalan>     runding 2 pakar, general sintesis jawapan penuh
+  /consult <soalan>     runding 2 pakar, pengurus sintesis jawapan penuh
   /semua <soalan>       semua model jawab, setiap satu result sendiri
 /route on|off         auto-tukar pakar ikut domain (lalai: sentiasa on)
 /session <name>       switch session file (sessions/<name>.jsonl)
@@ -278,6 +278,17 @@ def expert_context(cur):
 
 SELF_KEYS = ("pakar", "expert", "kepakaran", "senarai", "list", "boleh buat",
              "what can you")
+
+MANAGER_NAME = "gemma4-e4b"
+
+
+def manager_file():
+    """Fail model pengurus (gemma) jika wujud, else None."""
+    for m in scan_models(MODELS_DIR):
+        if m.get("name") == MANAGER_NAME and m.get("file") \
+                and (MODELS_DIR / m["file"]).is_file():
+            return MODELS_DIR / m["file"]
+    return None
 
 OFFLINE_KEYS = ("berita", "news", "terkini", "semasa", "cuaca", "weather",
                 "live", "breaking")
@@ -462,16 +473,22 @@ def repl(args):
         print(f"-> route: {cur['name']} [{dom}] (satu model aktif)")
 
     def make_plan(task):
-        """Rancangan bernombor (model, fallback templat). Returns plan text."""
+        """Rancangan bernombor (pengurus gemma jika ada, else model aktif)."""
         psys = ("Anda perancang projek. Balas dengan senarai bernombor TEPAT 6 langkah ke bawah "
                 "(setiap langkah: satu fail atau satu arahan + satu ayat tujuan). "
                 "Tiada penerangan panjang."
                 if lang == "ms" else
                 "You are a project planner. Reply with EXACTLY 6 numbered steps or fewer "
                 "(each: one file or one command + one purpose sentence). No long prose.")
-        print(f"... merancang ...")
-        praw, _ = backend.chat(psys, history[-4:] + [{"role": "user", "content": task}],
-                               max_tokens=300)
+        mfile = manager_file()
+        if mfile is not None:
+            print(f"... {MANAGER_NAME} merancang (pengurus) ...")
+            pbe = LlamaCliBackend(cli_path, mfile, n_predict=400)
+        else:
+            print(f"... merancang ...")
+            pbe = backend
+        praw, _ = pbe.chat(psys, history[-4:] + [{"role": "user", "content": task}],
+                           max_tokens=400)
         plan = sanitize(praw)
         import re as _re
         n_steps = len(_re.findall(r"^\s*\d+\s*[.)]", plan, _re.M))
@@ -709,7 +726,7 @@ def repl(args):
         if q == "/consult" or q.startswith("/consult "):
             ctask = q[len("/consult"):].strip()
             if not ctask:
-                print("guna: /consult <soalan>  (runding 2 pakar, general sintesis penuh)")
+                print("guna: /consult <soalan>  (runding 2 pakar, pengurus sintesis penuh)")
                 continue
             cdom = detect_domain(ctask)
             cands = [m for m in scan_models(MODELS_DIR)
@@ -734,12 +751,18 @@ def repl(args):
                     rans = f"(ralat: {e})"
                 parts.append((m["name"], rans))
                 print(f"[{m['name']}]: {rans[:400]}\n")
-            gfile = next((MODELS_DIR / m["file"] for m in scan_models(MODELS_DIR)
-                          if m.get("name") in ("xcoder-general", "base") and m.get("file")
-                          and (MODELS_DIR / m["file"]).is_file()), None)
+            mfile = manager_file()
+            if mfile is not None:
+                gfile, gname = mfile, MANAGER_NAME + " (pengurus)"
+            else:
+                gfile = next((MODELS_DIR / m["file"] for m in scan_models(MODELS_DIR)
+                              if m.get("name") in ("xcoder-general", "base") and m.get("file")
+                              and (MODELS_DIR / m["file"]).is_file()), None)
+                gname = "general"
             if gfile is None:
                 print("tiada model general berfail untuk sintesis.")
                 continue
+            print(f"[sintesis {gname}] menggabung...")
             ssys = ("Gabung jawapan pakar di bawah menjadi SATU jawapan akhir ringkas dalam Bahasa Melayu. "
                     "Buang ulangan; jika bercanggah pilih yang paling betul. Terus jawab, tanpa ulas."
                     if lang == "ms" else
@@ -759,7 +782,7 @@ def repl(args):
                          tools_trace=[{"tool": "consult", "arg": n, "result": a[:300]} for n, a in parts],
                          domain=cdom)
             last_qa = [ctask, sans, cdom]
-            print(f"\n{name} (sintesis general)> {sans}")
+            print(f"\n{name} (sintesis {gname})> {sans}")
             if stps:
                 print(f"{stps:.1f} T/s")
             print()
