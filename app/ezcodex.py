@@ -27,7 +27,7 @@ APP_DIR = (Path(sys.executable).resolve().parent if getattr(sys, "frozen", False
            else Path(__file__).resolve().parent)
 sys.path.insert(0, str(APP_DIR))
 
-__version__ = "0.4.35"
+__version__ = "0.4.36"
 
 LLAMA_TAG = "b11491"
 LLAMA_BASE = f"https://github.com/ggerganov/llama.cpp/releases/download/{LLAMA_TAG}"
@@ -284,7 +284,8 @@ MANAGER_NAME = "gemma4-e4b"
 TUTORIAL_KEYS = ("tutorial", "dari awal", "zero to", "langkah demi langkah",
                  "step by step", "teruskan", "buat website", "buat blog",
                  "bina website", "bina blog", "belajar ", "panduan lengkap",
-                 "complete guide", "website untuk", "blog untuk")
+                 "complete guide", "website untuk", "blog untuk",
+                 "website", "blog", "custom")
 
 
 def manager_entry():
