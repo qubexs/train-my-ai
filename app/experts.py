@@ -324,6 +324,21 @@ def fmt_size(path):
         return "tiada"
 
 
+def record_speed(models_dir, name, tps):
+    """Simpan kelajuan terakhir model (untuk paparan /models)."""
+    import time as _t
+    try:
+        reg = load_registry(models_dir)
+        for m in reg["models"]:
+            if m.get("name") == name:
+                m["last_tps"] = round(float(tps), 1)
+                m["measured_at"] = int(_t.time())
+                break
+        save_registry(models_dir, reg)
+    except Exception:
+        pass
+
+
 def audit_models(models_dir, progress=None):
     """Semak setiap GGUF: magic GGUF, saiz, sha256, duplikat, sepadan registry.
     Returns dict(report). progress(name, done, total) callback optional."""

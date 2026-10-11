@@ -27,7 +27,7 @@ APP_DIR = (Path(sys.executable).resolve().parent if getattr(sys, "frozen", False
            else Path(__file__).resolve().parent)
 sys.path.insert(0, str(APP_DIR))
 
-__version__ = "0.4.30"
+__version__ = "0.4.31"
 
 LLAMA_TAG = "b11491"
 LLAMA_BASE = f"https://github.com/ggerganov/llama.cpp/releases/download/{LLAMA_TAG}"
@@ -39,7 +39,7 @@ from backends import LlamaCliBackend, LmStudioBackend
 from agent import run_agent, sanitize
 from experts import (GENERAL, add as add_model, detect as detect_domain,
                      detect_stack, fmt_size, resolve as resolve_model,
-                     scan as scan_models,
+                     scan as scan_models, record_speed,
                      infer_name_domains, resolve_layout)
 from store import load_session, save_turn, list_sessions, log_training, export_sft, export_pretrain_corpus
 from store import clear_session, context_stats
@@ -532,7 +532,10 @@ def repl(args):
             if not steps:
                 steps = [btask]
             for i, st in enumerate(steps, 1):
-                print(f"\n=== Langkah {i}/{len(steps)}: {st[:100]} ===")
+                import time as _t
+                t0 = _t.time()
+                print(f"\n=== Langkah {i}/{len(steps)} [{_t.strftime('%H:%M:%S')}] "
+                      f"{st[:100]} ===")
                 sq = (f"Langkah {i}/{len(steps)} projek [{btask}]: {st}. "
                       f"Lengkapkan langkah ini sahaja (kod/arahan penuh).")
                 sdom = detect_domain(sq)
@@ -555,9 +558,12 @@ def repl(args):
                 save_turn(session, history[-2:])
                 log_training(sq, ans, lang=lang, kind="bina", tools_trace=trace, domain=sdom)
                 last_qa = [sq, ans, sdom]
+                el = _t.time() - t0
+                if tps:
+                    record_speed(MODELS_DIR, cur.get("name", ""), tps)
                 print(f"\n{name}> {ans}")
                 if tps:
-                    s = f"{tps:.1f} T/s"
+                    s = f"{tps:.1f} T/s ({el:.0f}s langkah)"
                     print(" " * max(0, width - len(s)) + f"\x1b[2m{s}\x1b[0m")
                 print()
             print(f"Siap {len(steps)} langkah. Semak fail, /good yang betul.")
@@ -596,8 +602,9 @@ def repl(args):
                 has = bool(m.get("file")) and f.exists()
                 mark = "*" if m.get("name") == cur.get("name") else " "
                 real = "" if has else " (fail tiada)"
+                spd = f" {m['last_tps']} T/s" if m.get("last_tps") else ""
                 print(f"{mark} {m['name']} [{','.join(m.get('domains', []))}] "
-                      f"{fmt_size(f) if has else 'tiada'}{real}")
+                      f"{fmt_size(f) if has else 'tiada'}{spd}{real}")
             print("* = aktif (satu pada satu masa). /model <nama> tukar. /route on = auto.")
             continue
         if q == "/models check":
@@ -850,6 +857,8 @@ def repl(args):
         save_turn(session, history[-2:])
         log_training(q, ans, lang=lang, kind="chat", tools_trace=trace, domain=dom)
         last_qa = [q, ans, dom]
+        if tps:
+            record_speed(MODELS_DIR, cur.get("name", ""), tps)
         print(f"\n{name}> {ans}")
         if tps:
             s = f"{tps:.1f} T/s"
