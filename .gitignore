@@ -15,6 +15,11 @@ xcoder.bat
 ezcodex.exe
 *.exe
 *.gguf
+# Generated merge outputs (regenerate via datasets/scripts/merge.py) - source of
+# truth is datasets/<stack>.jsonl, never edit finetune data directly.
+finetune/stacks/*/dataset.jsonl
+finetune/stacks/*/eval.jsonl
+finetune/linuxdocker/
 __pycache__/
 *.pyc
 build/

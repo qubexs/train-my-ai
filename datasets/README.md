@@ -13,11 +13,16 @@ Rules: short + correct answers, identity rows say `XCoder` (never Qwen/Alibaba).
 ```
 chat + /good            # CLI auto-tags domain+stack -> training.jsonl
 train --mode sft        # split rows into datasets/<stack>.jsonl (dedupe)
-python datasets/scripts/merge.py [stack] [--eval 0.05]  # combine -> finetune/stacks/<stack>/dataset.jsonl (+eval.jsonl held-out)
-python datasets/scripts/validate.py         # check format, all stacks (also covers eval.jsonl)
-python datasets/scripts/statistics.py       # counts + averages
+python datasets/scripts/merge.py [stack] [--eval 0.05]  # combine -> finetune/stacks/<stack>/dataset.jsonl (+eval.jsonl)
+python datasets/scripts/validate.py         # check format, all stacks (also eval.jsonl)
+python datasets/scripts/eval_suite.py models/xcoder-docker-0.5b-q4_k_m.gguf  # prompt suite vs GGUF
+# GPU: python finetune/eval_loss.py --model <merged> --eval finetune/stacks/docker/eval.jsonl
 # Colab: upload finetune/stacks/<stack>/dataset.jsonl -> LoRA -> GGUF -> /model add
 ```
+
+`finetune/stacks/*/dataset.jsonl` + `eval.jsonl` are **generated, git-ignored** —
+`merge.py` regenerates them byte-deterministically (`train_all.py` falls back to
+`datasets/` if missing). Never commit data duplicates.
 
 ## Scaling to 100k per stack
 
