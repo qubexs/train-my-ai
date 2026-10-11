@@ -8,9 +8,11 @@ Tailwind, Linux, Bash, Docker, general.
 ## Mula cepat
 
 ```powershell
-.\ezcodex-0439.exe --lang ms        # bina sedia (tiada Python diperlukan)
-.\ezcodex.bat --lang ms             # dari sumber (Python 3.9+)
-py app\ezcodex.py --lang ms --tui   # mod TUI
+.\ezcodex-cpu.bat --lang ms        # mod CPU (lalai harian, jimat kuasa)
+.\ezcodex-gpu.bat --lang ms        # mod GPU (GTX 1070; gemma ~36 T/s vs ~10 CPU)
+.\ezcodex-0445.exe --lang ms       # panggil exe versi tertentu terus
+.\ezcodex.bat --lang ms            # dari sumber (Python 3.9+)
+py app\ezcodex.py --lang ms --tui  # mod TUI
 ```
 
 Pelayan resident ialah lalai interaktif (model dimuat sekali, kekal untuk giliran
