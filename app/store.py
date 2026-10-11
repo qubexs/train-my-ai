@@ -135,17 +135,21 @@ def export_stacks(dest_dir="datasets", domain=None, min_len=2):
     return added, str(dest_dir)
 
 
-def merge_stacks(root=".", stack=None):
+def merge_stacks(root=".", stack=None, eval_frac=0.0):
     """Combine datasets/<stack>.jsonl -> finetune/stacks/<stack>/dataset.jsonl (dedupe).
-    Stack = domain (single tier, no broad merges)."""
+    Stack = domain (single tier, no broad merges).
+    eval_frac>0 also writes a deterministic held-out finetune/stacks/<stack>/eval.jsonl
+    (md5 hash split, stable across re-runs). Returns (train_counts, eval_counts)."""
+    import hashlib
     root = Path(root)
     cfg = json.loads((root / "datasets" / "config" / "dataset.json").read_text(encoding="utf-8"))
-    out = {}
+    out, evout = {}, {}
+    ethresh = int(eval_frac * 1000)
     for s in sorted(cfg["stacks"]):
         if stack and stack != s:
             continue
         src = root / "datasets" / f"{s}.jsonl"
-        rows = []
+        rows, evrows = [], []
         if src.exists():
             seen = set()
             for line in src.read_text(encoding="utf-8").splitlines():
@@ -157,15 +161,26 @@ def merge_stacks(root=".", stack=None):
                 if not q or not a or (q, a) in seen:
                     continue
                 seen.add((q, a))
-                rows.append({"instruction": q, "input": (r.get("input") or "").strip(),
-                             "output": a})
+                row = {"instruction": q, "input": (r.get("input") or "").strip(),
+                       "output": a}
+                if ethresh > 0 and int(hashlib.md5(
+                        f"{q}\n{a}".encode("utf-8")).hexdigest(), 16) % 1000 < ethresh:
+                    evrows.append(row)
+                else:
+                    rows.append(row)
         dest = root / "finetune" / "stacks" / s / "dataset.jsonl"
         dest.parent.mkdir(parents=True, exist_ok=True)
         with dest.open("w", encoding="utf-8") as f:
             for r in rows:
                 f.write(json.dumps(r, ensure_ascii=False) + "\n")
         out[s] = len(rows)
-    return out
+        if ethresh > 0:
+            evdest = root / "finetune" / "stacks" / s / "eval.jsonl"
+            with evdest.open("w", encoding="utf-8") as f:
+                for r in evrows:
+                    f.write(json.dumps(r, ensure_ascii=False) + "\n")
+            evout[s] = len(evrows)
+    return out, evout
 
 
 def _row_domain(r):

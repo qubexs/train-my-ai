@@ -4,7 +4,7 @@ Corpus: finetune/stacks/<stack>/corpus.txt (exported via `py app/ezcodex.py trai
 Colab:
   !pip install -q transformers datasets accelerate
   !python app/train_pretrain.py --model Qwen/Qwen2.5-0.5B-Instruct --corpus finetune/stacks/general/corpus.txt
-Then convert merged model -> GGUF (see step.md), `lms import` back.
+Then convert merged model -> GGUF (see STEP.md), `lms import` back.
 """
 import argparse
 

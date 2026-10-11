@@ -13,7 +13,7 @@ TOOL_SPEC = """Tools (call ONE per turn with this exact block):
 ```tool:read <file>
 ```tool:write <file> <content...>
 ```tool:edit <file> <old> => <new>
-```tool:run <python-or-node -e code>
+```tool:run [py|js] <code>
 ```tool:bash <shell command>
 ```tool:rag <question>
 ```tool:models
@@ -70,7 +70,7 @@ def tool_write(arg, ctx=None) -> str:
 
 
 def tool_edit(arg, ctx=None) -> str:
-    # arg: "<file> <old> => <new>"
+    # arg: "<file> <old> => <new>" (old text must not contain "=>"; split on FIRST "=>")
     if "=>" not in arg:
         return "ERROR: usage: tool:edit <file> <old> => <new>"
     head, new = arg.split("=>", 1)
@@ -82,25 +82,60 @@ def tool_edit(arg, ctx=None) -> str:
     if not f.is_file():
         return f"ERROR: not a file: {fp}"
     t = f.read_text(encoding="utf-8")
-    if old not in t:
+    n = t.count(old)
+    if n == 0:
         return "ERROR: old text not found"
     if _need_confirm(ctx, f"Ubah fail {fp}? [y/N] "):
         return "SKIPPED by user"
     f.write_text(t.replace(old, new, 1), encoding="utf-8")
-    return f"OK edited {fp}"
+    extra = f" ({n} matches, replaced first - be more specific if wrong one)" if n > 1 else ""
+    return f"OK edited {fp}{extra}"
+
+
+def _python_exe():
+    """Interpreter for python snippets. Frozen exe has no python — use PATH."""
+    if not getattr(sys, "frozen", False):
+        return sys.executable
+    import shutil
+    for c in ("py", "python", "python3"):
+        p = shutil.which(c)
+        if p:
+            return p
+    return None
 
 
 def tool_run(arg, timeout=8) -> str:
-    exe = sys.executable if ("import " in arg or "print(" in arg) else "node"
+    # Optional language prefix: "py <code>" or "js <code>". Else heuristic vote.
+    lang, code = None, (arg or "").strip()
+    for prefix, name in (("py ", "py"), ("py\n", "py"), ("py\t", "py"),
+                         ("js ", "js"), ("js\n", "js"), ("js\t", "js")):
+        if code.startswith(prefix):
+            lang, code = name, code[len(prefix):].strip()
+            break
+    if lang is None:
+        js_hints = ("console.", "=>", "function ", "const ", "let ", "var ",
+                    "require(", "process.", "===")
+        py_hints = ("import ", "print(", "def ", "self", "None", "True", "False",
+                    "elif ", "lambda ")
+        js = sum(1 for h in js_hints if h in code)
+        py = sum(1 for h in py_hints if h in code)
+        lang = "js" if js > py else "py"
+    if lang == "py":
+        exe = _python_exe()
+        if exe is None:
+            return "ERROR: no python on PATH (frozen exe cannot run python code)"
+        cmd = [exe, "-c", code]
+    else:
+        cmd = ["node", "-e", code]
     try:
-        p = subprocess.run([exe, "-e", arg], capture_output=True, text=True,
+        p = subprocess.run(cmd, capture_output=True, text=True,
                            encoding="utf-8", errors="replace", timeout=timeout)
         out = (p.stdout or "") + (("\nSTDERR:\n" + p.stderr) if p.stderr else "")
         return (out.strip() or "(no output)")[:4000]
     except subprocess.TimeoutExpired:
         return "ERROR: timeout"
     except FileNotFoundError:
-        return f"ERROR: {exe} not found"
+        return f"ERROR: {cmd[0]} not found"
 
 
 def tool_bash(arg, timeout=10, allow_all=False, confirm=None) -> str:

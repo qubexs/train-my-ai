@@ -27,7 +27,7 @@ APP_DIR = (Path(sys.executable).resolve().parent if getattr(sys, "frozen", False
            else Path(__file__).resolve().parent)
 sys.path.insert(0, str(APP_DIR))
 
-__version__ = "0.4.39"
+__version__ = "0.4.40"
 
 LLAMA_TAG = "b11491"
 LLAMA_BASE = f"https://github.com/ggerganov/llama.cpp/releases/download/{LLAMA_TAG}"
@@ -442,7 +442,7 @@ def do_sft_export(flt):
     from store import export_stacks, merge_stacks
     added, _ = export_stacks(domain=flt)
     total = sum(added.values())
-    merged = merge_stacks(stack=flt)
+    merged, _ev = merge_stacks(stack=flt)
     parts = [f"{s}+{n}" for s, n in sorted(added.items())]
     mg = ", ".join(f"{d}={n}" for d, n in sorted(merged.items()))
     return (f"SFT: {total} new rows -> datasets/ [{', '.join(parts) or 'none'}]; "
@@ -1128,9 +1128,9 @@ def main():
                   "(continued pretrain), export GGUF.")
             if flt:
                 print(f"Next: import GGUF pakar -> /model add <fail> --name xcoder-{flt} "
-                      f"--domains {flt}. See step.md.")
+                      f"--domains {flt}. See STEP.md.")
             else:
-                print("Import: /model add <fail> --name xcoder-base --domains general. See step.md.")
+                print("Import: /model add <fail> --name xcoder-base --domains general. See STEP.md.")
         return
     if args.once:
         backend = make_backend(args)

@@ -13,8 +13,8 @@ Rules: short + correct answers, identity rows say `XCoder` (never Qwen/Alibaba).
 ```
 chat + /good            # CLI auto-tags domain+stack -> training.jsonl
 train --mode sft        # split rows into datasets/<stack>.jsonl (dedupe)
-python datasets/scripts/merge.py [stack]   # combine -> finetune/stacks/<stack>/dataset.jsonl
-python datasets/scripts/validate.py         # check format, all stacks
+python datasets/scripts/merge.py [stack] [--eval 0.05]  # combine -> finetune/stacks/<stack>/dataset.jsonl (+eval.jsonl held-out)
+python datasets/scripts/validate.py         # check format, all stacks (also covers eval.jsonl)
 python datasets/scripts/statistics.py       # counts + averages
 # Colab: upload finetune/stacks/<stack>/dataset.jsonl -> LoRA -> GGUF -> /model add
 ```
