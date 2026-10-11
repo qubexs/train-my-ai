@@ -70,3 +70,46 @@ def test_server_timings_surfaced():
         assert be.last_timings["predicted_ms"] == 500.0
     finally:
         srv.shutdown()
+
+
+def test_reasoning_content_fallback():
+    """gemma4: content kosong + reasoning_content berisi -> guna reasoning."""
+    import json
+    import threading
+    import urllib.error
+    from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+
+    payload = {"choices": [{"message": {"role": "assistant", "content": "",
+                                        "reasoning_content": "fikir: ini imej"},
+                            "finish_reason": "stop"}],
+               "usage": {"completion_tokens": 5}}
+
+    class H(BaseHTTPRequestHandler):
+        def do_POST(self):
+            length = int(self.headers.get("Content-Length", 0))
+            self.rfile.read(length)
+            body = json.dumps(payload).encode()
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json")
+            self.send_header("Content-Length", str(len(body)))
+            self.end_headers()
+            self.wfile.write(body)
+
+        def log_message(self, *a):
+            pass
+
+    srv = ThreadingHTTPServer(("127.0.0.1", 0), H)
+    srv.daemon_threads = True
+    threading.Thread(target=srv.serve_forever, daemon=True).start()
+    try:
+        from backends import LmStudioBackend
+        be = LmStudioBackend(f"http://127.0.0.1:{srv.server_port}/v1")
+        for _ in range(2):
+            try:
+                out, _, _ = be.chat_ex("sys", [{"role": "user", "content": "hi"}])
+                break
+            except (ConnectionError, urllib.error.URLError):
+                continue
+        assert out == "fikir: ini imej"
+    finally:
+        srv.shutdown()

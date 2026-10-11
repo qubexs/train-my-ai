@@ -126,7 +126,10 @@ class LmStudioBackend:
             data = json.loads(r.read().decode())
         secs = max(0.1, time.time() - t0)
         choice = (data.get("choices") or [{}])[0]
-        out = (choice.get("message") or {}).get("content", "")
+        msg = choice.get("message") or {}
+        # gemma4 (dan model reasoning lain) letak fikiran dalam reasoning_content
+        # dengan content kosong — guna sebagai jawapan daripada papar kosong.
+        out = msg.get("content", "") or msg.get("reasoning_content", "") or ""
         tok = (data.get("usage") or {}).get("completion_tokens") or max(1, len(out) // 4)
         self.last_timings = data.get("timings")
         return out, tok / secs, choice.get("finish_reason") or "stop"
