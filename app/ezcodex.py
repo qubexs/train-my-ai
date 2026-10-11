@@ -27,7 +27,7 @@ APP_DIR = (Path(sys.executable).resolve().parent if getattr(sys, "frozen", False
            else Path(__file__).resolve().parent)
 sys.path.insert(0, str(APP_DIR))
 
-__version__ = "0.4.34"
+__version__ = "0.4.35"
 
 LLAMA_TAG = "b11491"
 LLAMA_BASE = f"https://github.com/ggerganov/llama.cpp/releases/download/{LLAMA_TAG}"
@@ -281,13 +281,31 @@ SELF_KEYS = ("pakar", "expert", "kepakaran", "senarai", "list", "boleh buat",
 
 MANAGER_NAME = "gemma4-e4b"
 
+TUTORIAL_KEYS = ("tutorial", "dari awal", "zero to", "langkah demi langkah",
+                 "step by step", "teruskan", "buat website", "buat blog",
+                 "bina website", "bina blog", "belajar ", "panduan lengkap",
+                 "complete guide", "website untuk", "blog untuk")
 
-def manager_file():
-    """Fail model pengurus (gemma) jika wujud, else None."""
+
+def manager_entry():
+    """Entri registry pengurus (gemma) jika berfail, else None."""
     for m in scan_models(MODELS_DIR):
         if m.get("name") == MANAGER_NAME and m.get("file") \
                 and (MODELS_DIR / m["file"]).is_file():
-            return MODELS_DIR / m["file"]
+            return m
+    return None
+
+
+def manager_file():
+    """Fail model pengurus (gemma) jika wujud, else None."""
+    m = manager_entry()
+    return MODELS_DIR / m["file"] if m else None
+
+
+def pick_manager_open(q):
+    """Soalan terbuka/tutorial -> pengurus (karangan), else None."""
+    if any(k in q.lower() for k in TUTORIAL_KEYS):
+        return manager_entry()
     return None
 
 OFFLINE_KEYS = ("berita", "news", "terkini", "semasa", "cuaca", "weather",
@@ -907,14 +925,18 @@ def repl(args):
             if loc is not None:
                 ans, tps, trace = loc, None, [{"tool": "local", "arg": q[:100], "result": "mkdir"}]
             else:
-                if auto_route and backend.kind in ("llama-cli", "llama", "server") and dom != GENERAL \
-                        and dom not in cur.get("domains", []):
-                    cand = pick_expert(dom, detect_stack(q))
-                    if cand:
-                        switch_to(cand, dom)
-                    else:
-                        print(f"(tiada pakar {dom} — jawab dengan {cur['name']}; "
-                              f"latih: train --mode sft --domain {dom})")
+                if auto_route and backend.kind in ("llama-cli", "llama", "server"):
+                    mg = pick_manager_open(q)
+                    if mg is not None and cur.get("name") != MANAGER_NAME:
+                        switch_to(mg, GENERAL)
+                        print(f"(soalan terbuka — pengurus {MANAGER_NAME} mengambil alih)")
+                    elif dom != GENERAL and dom not in cur.get("domains", []):
+                        cand = pick_expert(dom, detect_stack(q))
+                        if cand:
+                            switch_to(cand, dom)
+                        else:
+                            print(f"(tiada pakar {dom} — jawab dengan {cur['name']}; "
+                                  f"latih: train --mode sft --domain {dom})")
                 try:
                     msize = "4.5B" if "gemma" in cur.get("name", "") else "0.5B"
                     ans, tps, trace = run_agent(backend, q, name=name, lang=lang, history=history,
