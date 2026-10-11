@@ -465,142 +465,74 @@
 {"instruction": "How would you explain `breakpoint()` to a junior developer?", "input": "", "output": "`breakpoint()` drops into pdb where written (respects PYTHONBREAKPOINT); remove or gate before shipping."}
 {"instruction": "Give a real-world scenario for `breakpoint()`.", "input": "", "output": "`breakpoint()` drops into pdb where written (respects PYTHONBREAKPOINT); remove or gate before shipping."}
 {"instruction": "What problem does `breakpoint()` solve?", "input": "", "output": "`breakpoint()` drops into pdb where written (respects PYTHONBREAKPOINT); remove or gate before shipping."}
-{"instruction": "Terangkan `print f-string` dalam satu minit.", "input": "", "output": "f-strings embed `{var}` and format specs (`{x:.2f}`); prefix debug with `=` to show names."}
 {"instruction": "Apa yang perlu saya tahu tentang `print f-string`?", "input": "", "output": "f-strings embed `{var}` and format specs (`{x:.2f}`); prefix debug with `=` to show names."}
 {"instruction": "Bagaimanakah `print f-string` berfungsi?", "input": "", "output": "f-strings embed `{var}` and format specs (`{x:.2f}`); prefix debug with `=` to show names."}
-{"instruction": "Bilakah masa yang sesuai untuk `print f-string`?", "input": "", "output": "f-strings embed `{var}` and format specs (`{x:.2f}`); prefix debug with `=` to show names."}
-{"instruction": "Terangkan `len() range()` dalam satu minit.", "input": "", "output": "`len()` counts containers; `range(5)` yields 0-4 lazily — pair with `enumerate`/`zip` in loops."}
 {"instruction": "Apa yang perlu saya tahu tentang `len() range()`?", "input": "", "output": "`len()` counts containers; `range(5)` yields 0-4 lazily — pair with `enumerate`/`zip` in loops."}
 {"instruction": "Bagaimanakah `len() range()` berfungsi?", "input": "", "output": "`len()` counts containers; `range(5)` yields 0-4 lazily — pair with `enumerate`/`zip` in loops."}
-{"instruction": "Bilakah masa yang sesuai untuk `len() range()`?", "input": "", "output": "`len()` counts containers; `range(5)` yields 0-4 lazily — pair with `enumerate`/`zip` in loops."}
-{"instruction": "Terangkan `list append` dalam satu minit.", "input": "", "output": "`append` grows lists in place; comprehensions (`[x for x in y if ok]`) build filtered ones declaratively."}
 {"instruction": "Apa yang perlu saya tahu tentang `list append`?", "input": "", "output": "`append` grows lists in place; comprehensions (`[x for x in y if ok]`) build filtered ones declaratively."}
 {"instruction": "Bagaimanakah `list append` berfungsi?", "input": "", "output": "`append` grows lists in place; comprehensions (`[x for x in y if ok]`) build filtered ones declaratively."}
-{"instruction": "Bilakah masa yang sesuai untuk `list append`?", "input": "", "output": "`append` grows lists in place; comprehensions (`[x for x in y if ok]`) build filtered ones declaratively."}
-{"instruction": "Terangkan `dict get` dalam satu minit.", "input": "", "output": "`d.get(k, default)` avoids KeyError; `setdefault` inserts-and-returns for counting patterns."}
 {"instruction": "Apa yang perlu saya tahu tentang `dict get`?", "input": "", "output": "`d.get(k, default)` avoids KeyError; `setdefault` inserts-and-returns for counting patterns."}
 {"instruction": "Bagaimanakah `dict get` berfungsi?", "input": "", "output": "`d.get(k, default)` avoids KeyError; `setdefault` inserts-and-returns for counting patterns."}
-{"instruction": "Bilakah masa yang sesuai untuk `dict get`?", "input": "", "output": "`d.get(k, default)` avoids KeyError; `setdefault` inserts-and-returns for counting patterns."}
-{"instruction": "Terangkan `open() with` dalam satu minit.", "input": "", "output": "`with open(...) as f` auto-closes even on errors; always pass explicit encoding for text."}
 {"instruction": "Apa yang perlu saya tahu tentang `open() with`?", "input": "", "output": "`with open(...) as f` auto-closes even on errors; always pass explicit encoding for text."}
 {"instruction": "Bagaimanakah `open() with` berfungsi?", "input": "", "output": "`with open(...) as f` auto-closes even on errors; always pass explicit encoding for text."}
-{"instruction": "Bilakah masa yang sesuai untuk `open() with`?", "input": "", "output": "`with open(...) as f` auto-closes even on errors; always pass explicit encoding for text."}
-{"instruction": "Terangkan `import module` dalam satu minit.", "input": "", "output": "Imports run once and cache in `sys.modules`; circular imports signal a design split is due."}
 {"instruction": "Apa yang perlu saya tahu tentang `import module`?", "input": "", "output": "Imports run once and cache in `sys.modules`; circular imports signal a design split is due."}
 {"instruction": "Bagaimanakah `import module` berfungsi?", "input": "", "output": "Imports run once and cache in `sys.modules`; circular imports signal a design split is due."}
-{"instruction": "Bilakah masa yang sesuai untuk `import module`?", "input": "", "output": "Imports run once and cache in `sys.modules`; circular imports signal a design split is due."}
-{"instruction": "Terangkan `def + return` dalam satu minit.", "input": "", "output": "Functions return values (or None); default args evaluate once — never use mutable `=[]` defaults."}
 {"instruction": "Apa yang perlu saya tahu tentang `def + return`?", "input": "", "output": "Functions return values (or None); default args evaluate once — never use mutable `=[]` defaults."}
 {"instruction": "Bagaimanakah `def + return` berfungsi?", "input": "", "output": "Functions return values (or None); default args evaluate once — never use mutable `=[]` defaults."}
-{"instruction": "Bilakah masa yang sesuai untuk `def + return`?", "input": "", "output": "Functions return values (or None); default args evaluate once — never use mutable `=[]` defaults."}
-{"instruction": "Terangkan `try/except` dalam satu minit.", "input": "", "output": "Catch specific exceptions, keep `try` blocks tiny, and use `else`/`finally` for success/cleanup paths."}
 {"instruction": "Apa yang perlu saya tahu tentang `try/except`?", "input": "", "output": "Catch specific exceptions, keep `try` blocks tiny, and use `else`/`finally` for success/cleanup paths."}
 {"instruction": "Bagaimanakah `try/except` berfungsi?", "input": "", "output": "Catch specific exceptions, keep `try` blocks tiny, and use `else`/`finally` for success/cleanup paths."}
-{"instruction": "Bilakah masa yang sesuai untuk `try/except`?", "input": "", "output": "Catch specific exceptions, keep `try` blocks tiny, and use `else`/`finally` for success/cleanup paths."}
-{"instruction": "Terangkan `for and while` dalam satu minit.", "input": "", "output": "`for` iterates iterables directly (pythonic); `while` needs manual progress or loops forever."}
 {"instruction": "Apa yang perlu saya tahu tentang `for and while`?", "input": "", "output": "`for` iterates iterables directly (pythonic); `while` needs manual progress or loops forever."}
 {"instruction": "Bagaimanakah `for and while` berfungsi?", "input": "", "output": "`for` iterates iterables directly (pythonic); `while` needs manual progress or loops forever."}
-{"instruction": "Bilakah masa yang sesuai untuk `for and while`?", "input": "", "output": "`for` iterates iterables directly (pythonic); `while` needs manual progress or loops forever."}
-{"instruction": "Terangkan `if elif else` dalam satu minit.", "input": "", "output": "Chain `elif` instead of nesting; early-return flattens logic better than deep nesting."}
 {"instruction": "Apa yang perlu saya tahu tentang `if elif else`?", "input": "", "output": "Chain `elif` instead of nesting; early-return flattens logic better than deep nesting."}
 {"instruction": "Bagaimanakah `if elif else` berfungsi?", "input": "", "output": "Chain `elif` instead of nesting; early-return flattens logic better than deep nesting."}
-{"instruction": "Bilakah masa yang sesuai untuk `if elif else`?", "input": "", "output": "Chain `elif` instead of nesting; early-return flattens logic better than deep nesting."}
-{"instruction": "Terangkan `pip install` dalam satu minit.", "input": "", "output": "`pip install pkg` resolves deps; pin with `==` in requirements and hash-check in CI."}
 {"instruction": "Apa yang perlu saya tahu tentang `pip install`?", "input": "", "output": "`pip install pkg` resolves deps; pin with `==` in requirements and hash-check in CI."}
 {"instruction": "Bagaimanakah `pip install` berfungsi?", "input": "", "output": "`pip install pkg` resolves deps; pin with `==` in requirements and hash-check in CI."}
-{"instruction": "Bilakah masa yang sesuai untuk `pip install`?", "input": "", "output": "`pip install pkg` resolves deps; pin with `==` in requirements and hash-check in CI."}
-{"instruction": "Terangkan `venv` dalam satu minit.", "input": "", "output": "One venv per project isolates deps; never install into system Python on shared machines."}
 {"instruction": "Apa yang perlu saya tahu tentang `venv`?", "input": "", "output": "One venv per project isolates deps; never install into system Python on shared machines."}
 {"instruction": "Bagaimanakah `venv` berfungsi?", "input": "", "output": "One venv per project isolates deps; never install into system Python on shared machines."}
-{"instruction": "Bilakah masa yang sesuai untuk `venv`?", "input": "", "output": "One venv per project isolates deps; never install into system Python on shared machines."}
-{"instruction": "Terangkan `lambda` dalam satu minit.", "input": "", "output": "Lambdas suit one-expression callbacks (`key=lambda r: r[1]`); named `def` wins beyond one line."}
 {"instruction": "Apa yang perlu saya tahu tentang `lambda`?", "input": "", "output": "Lambdas suit one-expression callbacks (`key=lambda r: r[1]`); named `def` wins beyond one line."}
 {"instruction": "Bagaimanakah `lambda` berfungsi?", "input": "", "output": "Lambdas suit one-expression callbacks (`key=lambda r: r[1]`); named `def` wins beyond one line."}
-{"instruction": "Bilakah masa yang sesuai untuk `lambda`?", "input": "", "output": "Lambdas suit one-expression callbacks (`key=lambda r: r[1]`); named `def` wins beyond one line."}
-{"instruction": "Terangkan `enumerate and zip` dalam satu minit.", "input": "", "output": "`enumerate` adds indices, `zip` pairs iterables — both lazy; `zip(..., strict=True)` catches length drift."}
 {"instruction": "Apa yang perlu saya tahu tentang `enumerate and zip`?", "input": "", "output": "`enumerate` adds indices, `zip` pairs iterables — both lazy; `zip(..., strict=True)` catches length drift."}
 {"instruction": "Bagaimanakah `enumerate and zip` berfungsi?", "input": "", "output": "`enumerate` adds indices, `zip` pairs iterables — both lazy; `zip(..., strict=True)` catches length drift."}
-{"instruction": "Bilakah masa yang sesuai untuk `enumerate and zip`?", "input": "", "output": "`enumerate` adds indices, `zip` pairs iterables — both lazy; `zip(..., strict=True)` catches length drift."}
-{"instruction": "Terangkan `split and join` dalam satu minit.", "input": "", "output": "`'a,b'.split(',')` breaks, `', '.join(list)` glues; strip whitespace before comparing user input."}
 {"instruction": "Apa yang perlu saya tahu tentang `split and join`?", "input": "", "output": "`'a,b'.split(',')` breaks, `', '.join(list)` glues; strip whitespace before comparing user input."}
 {"instruction": "Bagaimanakah `split and join` berfungsi?", "input": "", "output": "`'a,b'.split(',')` breaks, `', '.join(list)` glues; strip whitespace before comparing user input."}
-{"instruction": "Bilakah masa yang sesuai untuk `split and join`?", "input": "", "output": "`'a,b'.split(',')` breaks, `', '.join(list)` glues; strip whitespace before comparing user input."}
-{"instruction": "Terangkan `int() and str()` dalam satu minit.", "input": "", "output": "Convert explicitly; `int('77')` works but `int('77px')` raises — validate with try/except or regex."}
 {"instruction": "Apa yang perlu saya tahu tentang `int() and str()`?", "input": "", "output": "Convert explicitly; `int('77')` works but `int('77px')` raises — validate with try/except or regex."}
 {"instruction": "Bagaimanakah `int() and str()` berfungsi?", "input": "", "output": "Convert explicitly; `int('77')` works but `int('77px')` raises — validate with try/except or regex."}
-{"instruction": "Bilakah masa yang sesuai untuk `int() and str()`?", "input": "", "output": "Convert explicitly; `int('77')` works but `int('77px')` raises — validate with try/except or regex."}
-{"instruction": "Terangkan `class __init__` dalam satu minit.", "input": "", "output": "`__init__` builds state per instance; methods take `self`; prefer dataclasses for pure data holders."}
 {"instruction": "Apa yang perlu saya tahu tentang `class __init__`?", "input": "", "output": "`__init__` builds state per instance; methods take `self`; prefer dataclasses for pure data holders."}
 {"instruction": "Bagaimanakah `class __init__` berfungsi?", "input": "", "output": "`__init__` builds state per instance; methods take `self`; prefer dataclasses for pure data holders."}
-{"instruction": "Bilakah masa yang sesuai untuk `class __init__`?", "input": "", "output": "`__init__` builds state per instance; methods take `self`; prefer dataclasses for pure data holders."}
-{"instruction": "Terangkan `requests.get` dalam satu minit.", "input": "", "output": "`requests.get(url, timeout=10)` plus `raise_for_status()`; reuse a `Session` for connection pooling."}
 {"instruction": "Apa yang perlu saya tahu tentang `requests.get`?", "input": "", "output": "`requests.get(url, timeout=10)` plus `raise_for_status()`; reuse a `Session` for connection pooling."}
 {"instruction": "Bagaimanakah `requests.get` berfungsi?", "input": "", "output": "`requests.get(url, timeout=10)` plus `raise_for_status()`; reuse a `Session` for connection pooling."}
-{"instruction": "Bilakah masa yang sesuai untuk `requests.get`?", "input": "", "output": "`requests.get(url, timeout=10)` plus `raise_for_status()`; reuse a `Session` for connection pooling."}
-{"instruction": "Terangkan `json module` dalam satu minit.", "input": "", "output": "`json.load(s)` parses (catch DecodeError on network data); `dumps(indent=2, ensure_ascii=False)` stays readable."}
 {"instruction": "Apa yang perlu saya tahu tentang `json module`?", "input": "", "output": "`json.load(s)` parses (catch DecodeError on network data); `dumps(indent=2, ensure_ascii=False)` stays readable."}
 {"instruction": "Bagaimanakah `json module` berfungsi?", "input": "", "output": "`json.load(s)` parses (catch DecodeError on network data); `dumps(indent=2, ensure_ascii=False)` stays readable."}
-{"instruction": "Bilakah masa yang sesuai untuk `json module`?", "input": "", "output": "`json.load(s)` parses (catch DecodeError on network data); `dumps(indent=2, ensure_ascii=False)` stays readable."}
-{"instruction": "Terangkan `pathlib Path` dalam satu minit.", "input": "", "output": "`Path` joins with `/`, reads/writes text, and globs — portable across Windows and Linux unlike string paths."}
 {"instruction": "Apa yang perlu saya tahu tentang `pathlib Path`?", "input": "", "output": "`Path` joins with `/`, reads/writes text, and globs — portable across Windows and Linux unlike string paths."}
 {"instruction": "Bagaimanakah `pathlib Path` berfungsi?", "input": "", "output": "`Path` joins with `/`, reads/writes text, and globs — portable across Windows and Linux unlike string paths."}
-{"instruction": "Bilakah masa yang sesuai untuk `pathlib Path`?", "input": "", "output": "`Path` joins with `/`, reads/writes text, and globs — portable across Windows and Linux unlike string paths."}
-{"instruction": "Terangkan `while break continue` dalam satu minit.", "input": "", "output": "`while` guards with explicit progress; `break` exits, `continue` skips — infinite loops need a visible exit."}
 {"instruction": "Apa yang perlu saya tahu tentang `while break continue`?", "input": "", "output": "`while` guards with explicit progress; `break` exits, `continue` skips — infinite loops need a visible exit."}
 {"instruction": "Bagaimanakah `while break continue` berfungsi?", "input": "", "output": "`while` guards with explicit progress; `break` exits, `continue` skips — infinite loops need a visible exit."}
-{"instruction": "Bilakah masa yang sesuai untuk `while break continue`?", "input": "", "output": "`while` guards with explicit progress; `break` exits, `continue` skips — infinite loops need a visible exit."}
-{"instruction": "Terangkan `*args **kwargs` dalam satu minit.", "input": "", "output": "`*args` collects positional extras, `**kwargs` named ones — forward both in wrappers to stay transparent."}
 {"instruction": "Apa yang perlu saya tahu tentang `*args **kwargs`?", "input": "", "output": "`*args` collects positional extras, `**kwargs` named ones — forward both in wrappers to stay transparent."}
 {"instruction": "Bagaimanakah `*args **kwargs` berfungsi?", "input": "", "output": "`*args` collects positional extras, `**kwargs` named ones — forward both in wrappers to stay transparent."}
-{"instruction": "Bilakah masa yang sesuai untuk `*args **kwargs`?", "input": "", "output": "`*args` collects positional extras, `**kwargs` named ones — forward both in wrappers to stay transparent."}
-{"instruction": "Terangkan `decorators @` dalam satu minit.", "input": "", "output": "Decorators wrap functions (`@lru_cache`, `@property`); they run at definition, so keep them side-effect free."}
 {"instruction": "Apa yang perlu saya tahu tentang `decorators @`?", "input": "", "output": "Decorators wrap functions (`@lru_cache`, `@property`); they run at definition, so keep them side-effect free."}
 {"instruction": "Bagaimanakah `decorators @` berfungsi?", "input": "", "output": "Decorators wrap functions (`@lru_cache`, `@property`); they run at definition, so keep them side-effect free."}
-{"instruction": "Bilakah masa yang sesuai untuk `decorators @`?", "input": "", "output": "Decorators wrap functions (`@lru_cache`, `@property`); they run at definition, so keep them side-effect free."}
-{"instruction": "Terangkan `generators yield` dalam satu minit.", "input": "", "output": "`yield` produces lazily item by item — infinite sequences and huge files stream with constant memory."}
 {"instruction": "Apa yang perlu saya tahu tentang `generators yield`?", "input": "", "output": "`yield` produces lazily item by item — infinite sequences and huge files stream with constant memory."}
 {"instruction": "Bagaimanakah `generators yield` berfungsi?", "input": "", "output": "`yield` produces lazily item by item — infinite sequences and huge files stream with constant memory."}
-{"instruction": "Bilakah masa yang sesuai untuk `generators yield`?", "input": "", "output": "`yield` produces lazily item by item — infinite sequences and huge files stream with constant memory."}
-{"instruction": "Terangkan `slicing [::-1]` dalam satu minit.", "input": "", "output": "`s[::-1]` reverses, `s[1:5]` windows; slices copy (safe to mutate) unlike views in other languages."}
 {"instruction": "Apa yang perlu saya tahu tentang `slicing [::-1]`?", "input": "", "output": "`s[::-1]` reverses, `s[1:5]` windows; slices copy (safe to mutate) unlike views in other languages."}
 {"instruction": "Bagaimanakah `slicing [::-1]` berfungsi?", "input": "", "output": "`s[::-1]` reverses, `s[1:5]` windows; slices copy (safe to mutate) unlike views in other languages."}
-{"instruction": "Bilakah masa yang sesuai untuk `slicing [::-1]`?", "input": "", "output": "`s[::-1]` reverses, `s[1:5]` windows; slices copy (safe to mutate) unlike views in other languages."}
-{"instruction": "Terangkan `sorted key` dalam satu minit.", "input": "", "output": "`sorted(items, key=lambda r: r[1])` orders by any criterion; `reverse=True` flips without re-sorting."}
 {"instruction": "Apa yang perlu saya tahu tentang `sorted key`?", "input": "", "output": "`sorted(items, key=lambda r: r[1])` orders by any criterion; `reverse=True` flips without re-sorting."}
 {"instruction": "Bagaimanakah `sorted key` berfungsi?", "input": "", "output": "`sorted(items, key=lambda r: r[1])` orders by any criterion; `reverse=True` flips without re-sorting."}
-{"instruction": "Bilakah masa yang sesuai untuk `sorted key`?", "input": "", "output": "`sorted(items, key=lambda r: r[1])` orders by any criterion; `reverse=True` flips without re-sorting."}
-{"instruction": "Terangkan `any all` dalam satu minit.", "input": "", "output": "`any()`/`all()` short-circuit across iterables with generator expressions — readable and lazy."}
 {"instruction": "Apa yang perlu saya tahu tentang `any all`?", "input": "", "output": "`any()`/`all()` short-circuit across iterables with generator expressions — readable and lazy."}
 {"instruction": "Bagaimanakah `any all` berfungsi?", "input": "", "output": "`any()`/`all()` short-circuit across iterables with generator expressions — readable and lazy."}
-{"instruction": "Bilakah masa yang sesuai untuk `any all`?", "input": "", "output": "`any()`/`all()` short-circuit across iterables with generator expressions — readable and lazy."}
-{"instruction": "Terangkan `sum min max` dalam satu minit.", "input": "", "output": "Builtins beat manual loops (`sum(x)`, `min(x, key=len)`); pass `default=` to survive empty inputs."}
 {"instruction": "Apa yang perlu saya tahu tentang `sum min max`?", "input": "", "output": "Builtins beat manual loops (`sum(x)`, `min(x, key=len)`); pass `default=` to survive empty inputs."}
 {"instruction": "Bagaimanakah `sum min max` berfungsi?", "input": "", "output": "Builtins beat manual loops (`sum(x)`, `min(x, key=len)`); pass `default=` to survive empty inputs."}
-{"instruction": "Bilakah masa yang sesuai untuk `sum min max`?", "input": "", "output": "Builtins beat manual loops (`sum(x)`, `min(x, key=len)`); pass `default=` to survive empty inputs."}
-{"instruction": "Terangkan `input()` dalam satu minit.", "input": "", "output": "`input('Nama? ')` reads a line (always string — convert explicitly); strip and validate before trusting."}
 {"instruction": "Apa yang perlu saya tahu tentang `input()`?", "input": "", "output": "`input('Nama? ')` reads a line (always string — convert explicitly); strip and validate before trusting."}
 {"instruction": "Bagaimanakah `input()` berfungsi?", "input": "", "output": "`input('Nama? ')` reads a line (always string — convert explicitly); strip and validate before trusting."}
-{"instruction": "Bilakah masa yang sesuai untuk `input()`?", "input": "", "output": "`input('Nama? ')` reads a line (always string — convert explicitly); strip and validate before trusting."}
-{"instruction": "Terangkan `type() isinstance` dalam satu minit.", "input": "", "output": "`type(x)` names the exact class; `isinstance(x, (A, B))` respects inheritance — prefer the latter for checks."}
 {"instruction": "Apa yang perlu saya tahu tentang `type() isinstance`?", "input": "", "output": "`type(x)` names the exact class; `isinstance(x, (A, B))` respects inheritance — prefer the latter for checks."}
 {"instruction": "Bagaimanakah `type() isinstance` berfungsi?", "input": "", "output": "`type(x)` names the exact class; `isinstance(x, (A, B))` respects inheritance — prefer the latter for checks."}
-{"instruction": "Bilakah masa yang sesuai untuk `type() isinstance`?", "input": "", "output": "`type(x)` names the exact class; `isinstance(x, (A, B))` respects inheritance — prefer the latter for checks."}
-{"instruction": "Terangkan `super()` dalam satu minit.", "input": "", "output": "`super().__init__()` extends parent construction in subclasses; cooperative MI depends on every link calling it."}
 {"instruction": "Apa yang perlu saya tahu tentang `super()`?", "input": "", "output": "`super().__init__()` extends parent construction in subclasses; cooperative MI depends on every link calling it."}
 {"instruction": "Bagaimanakah `super()` berfungsi?", "input": "", "output": "`super().__init__()` extends parent construction in subclasses; cooperative MI depends on every link calling it."}
-{"instruction": "Bilakah masa yang sesuai untuk `super()`?", "input": "", "output": "`super().__init__()` extends parent construction in subclasses; cooperative MI depends on every link calling it."}
-{"instruction": "Terangkan `raise custom` dalam satu minit.", "input": "", "output": "Raise specific builtins or small custom `Exception` subclasses with messages; bare `raise` reraises current."}
 {"instruction": "Apa yang perlu saya tahu tentang `raise custom`?", "input": "", "output": "Raise specific builtins or small custom `Exception` subclasses with messages; bare `raise` reraises current."}
 {"instruction": "Bagaimanakah `raise custom` berfungsi?", "input": "", "output": "Raise specific builtins or small custom `Exception` subclasses with messages; bare `raise` reraises current."}
-{"instruction": "Bilakah masa yang sesuai untuk `raise custom`?", "input": "", "output": "Raise specific builtins or small custom `Exception` subclasses with messages; bare `raise` reraises current."}
-{"instruction": "Terangkan `assert` dalam satu minit.", "input": "", "output": "`assert cond, msg` documents invariants in dev/tests; never gate production logic on it (`-O` strips asserts)."}
 {"instruction": "Apa yang perlu saya tahu tentang `assert`?", "input": "", "output": "`assert cond, msg` documents invariants in dev/tests; never gate production logic on it (`-O` strips asserts)."}
 {"instruction": "Bagaimanakah `assert` berfungsi?", "input": "", "output": "`assert cond, msg` documents invariants in dev/tests; never gate production logic on it (`-O` strips asserts)."}
-{"instruction": "Bilakah masa yang sesuai untuk `assert`?", "input": "", "output": "`assert cond, msg` documents invariants in dev/tests; never gate production logic on it (`-O` strips asserts)."}
-{"instruction": "Terangkan `breakpoint()` dalam satu minit.", "input": "", "output": "`breakpoint()` drops into pdb where written (respects PYTHONBREAKPOINT); remove or gate before shipping."}
 {"instruction": "Apa yang perlu saya tahu tentang `breakpoint()`?", "input": "", "output": "`breakpoint()` drops into pdb where written (respects PYTHONBREAKPOINT); remove or gate before shipping."}
 {"instruction": "Bagaimanakah `breakpoint()` berfungsi?", "input": "", "output": "`breakpoint()` drops into pdb where written (respects PYTHONBREAKPOINT); remove or gate before shipping."}
-{"instruction": "Bilakah masa yang sesuai untuk `breakpoint()`?", "input": "", "output": "`breakpoint()` drops into pdb where written (respects PYTHONBREAKPOINT); remove or gate before shipping."}
 {"instruction": "What does `enumerate start` do?", "input": "", "output": "`enumerate(items, start=1)` numbers from one for displays; `zip` pairs parallel lists element-wise."}
 {"instruction": "Explain `enumerate start` briefly.", "input": "", "output": "`enumerate(items, start=1)` numbers from one for displays; `zip` pairs parallel lists element-wise."}
 {"instruction": "When do I use `enumerate start`?", "input": "", "output": "`enumerate(items, start=1)` numbers from one for displays; `zip` pairs parallel lists element-wise."}
@@ -614,10 +546,8 @@
 {"instruction": "How would you explain `enumerate start` to a junior developer?", "input": "", "output": "`enumerate(items, start=1)` numbers from one for displays; `zip` pairs parallel lists element-wise."}
 {"instruction": "Give a real-world scenario for `enumerate start`.", "input": "", "output": "`enumerate(items, start=1)` numbers from one for displays; `zip` pairs parallel lists element-wise."}
 {"instruction": "What problem does `enumerate start` solve?", "input": "", "output": "`enumerate(items, start=1)` numbers from one for displays; `zip` pairs parallel lists element-wise."}
-{"instruction": "Terangkan `enumerate start` dalam satu minit.", "input": "", "output": "`enumerate(items, start=1)` numbers from one for displays; `zip` pairs parallel lists element-wise."}
 {"instruction": "Apa yang perlu saya tahu tentang `enumerate start`?", "input": "", "output": "`enumerate(items, start=1)` numbers from one for displays; `zip` pairs parallel lists element-wise."}
 {"instruction": "Bagaimanakah `enumerate start` berfungsi?", "input": "", "output": "`enumerate(items, start=1)` numbers from one for displays; `zip` pairs parallel lists element-wise."}
-{"instruction": "Bilakah masa yang sesuai untuk `enumerate start`?", "input": "", "output": "`enumerate(items, start=1)` numbers from one for displays; `zip` pairs parallel lists element-wise."}
 {"instruction": "What does `reversed sorted` do?", "input": "", "output": "`reversed()` iterates backward lazily; `sorted()` returns new lists (use `.sort()` to mutate in place)."}
 {"instruction": "Explain `reversed sorted` briefly.", "input": "", "output": "`reversed()` iterates backward lazily; `sorted()` returns new lists (use `.sort()` to mutate in place)."}
 {"instruction": "When do I use `reversed sorted`?", "input": "", "output": "`reversed()` iterates backward lazily; `sorted()` returns new lists (use `.sort()` to mutate in place)."}
@@ -631,10 +561,8 @@
 {"instruction": "How would you explain `reversed sorted` to a junior developer?", "input": "", "output": "`reversed()` iterates backward lazily; `sorted()` returns new lists (use `.sort()` to mutate in place)."}
 {"instruction": "Give a real-world scenario for `reversed sorted`.", "input": "", "output": "`reversed()` iterates backward lazily; `sorted()` returns new lists (use `.sort()` to mutate in place)."}
 {"instruction": "What problem does `reversed sorted` solve?", "input": "", "output": "`reversed()` iterates backward lazily; `sorted()` returns new lists (use `.sort()` to mutate in place)."}
-{"instruction": "Terangkan `reversed sorted` dalam satu minit.", "input": "", "output": "`reversed()` iterates backward lazily; `sorted()` returns new lists (use `.sort()` to mutate in place)."}
 {"instruction": "Apa yang perlu saya tahu tentang `reversed sorted`?", "input": "", "output": "`reversed()` iterates backward lazily; `sorted()` returns new lists (use `.sort()` to mutate in place)."}
 {"instruction": "Bagaimanakah `reversed sorted` berfungsi?", "input": "", "output": "`reversed()` iterates backward lazily; `sorted()` returns new lists (use `.sort()` to mutate in place)."}
-{"instruction": "Bilakah masa yang sesuai untuk `reversed sorted`?", "input": "", "output": "`reversed()` iterates backward lazily; `sorted()` returns new lists (use `.sort()` to mutate in place)."}
 {"instruction": "What does `min max key` do?", "input": "", "output": "`min(users, key=lambda u: u.age)` finds extrema by criterion; `default=` guards empty inputs."}
 {"instruction": "Explain `min max key` briefly.", "input": "", "output": "`min(users, key=lambda u: u.age)` finds extrema by criterion; `default=` guards empty inputs."}
 {"instruction": "When do I use `min max key`?", "input": "", "output": "`min(users, key=lambda u: u.age)` finds extrema by criterion; `default=` guards empty inputs."}
@@ -648,10 +576,8 @@
 {"instruction": "How would you explain `min max key` to a junior developer?", "input": "", "output": "`min(users, key=lambda u: u.age)` finds extrema by criterion; `default=` guards empty inputs."}
 {"instruction": "Give a real-world scenario for `min max key`.", "input": "", "output": "`min(users, key=lambda u: u.age)` finds extrema by criterion; `default=` guards empty inputs."}
 {"instruction": "What problem does `min max key` solve?", "input": "", "output": "`min(users, key=lambda u: u.age)` finds extrema by criterion; `default=` guards empty inputs."}
-{"instruction": "Terangkan `min max key` dalam satu minit.", "input": "", "output": "`min(users, key=lambda u: u.age)` finds extrema by criterion; `default=` guards empty inputs."}
 {"instruction": "Apa yang perlu saya tahu tentang `min max key`?", "input": "", "output": "`min(users, key=lambda u: u.age)` finds extrema by criterion; `default=` guards empty inputs."}
 {"instruction": "Bagaimanakah `min max key` berfungsi?", "input": "", "output": "`min(users, key=lambda u: u.age)` finds extrema by criterion; `default=` guards empty inputs."}
-{"instruction": "Bilakah masa yang sesuai untuk `min max key`?", "input": "", "output": "`min(users, key=lambda u: u.age)` finds extrema by criterion; `default=` guards empty inputs."}
 {"instruction": "What does `round() decimals` do?", "input": "", "output": "`round(2.675, 2)` surprises (binary floats) — money wants Decimal, display wants formatting, not floats."}
 {"instruction": "Explain `round() decimals` briefly.", "input": "", "output": "`round(2.675, 2)` surprises (binary floats) — money wants Decimal, display wants formatting, not floats."}
 {"instruction": "When do I use `round() decimals`?", "input": "", "output": "`round(2.675, 2)` surprises (binary floats) — money wants Decimal, display wants formatting, not floats."}
@@ -665,10 +591,8 @@
 {"instruction": "How would you explain `round() decimals` to a junior developer?", "input": "", "output": "`round(2.675, 2)` surprises (binary floats) — money wants Decimal, display wants formatting, not floats."}
 {"instruction": "Give a real-world scenario for `round() decimals`.", "input": "", "output": "`round(2.675, 2)` surprises (binary floats) — money wants Decimal, display wants formatting, not floats."}
 {"instruction": "What problem does `round() decimals` solve?", "input": "", "output": "`round(2.675, 2)` surprises (binary floats) — money wants Decimal, display wants formatting, not floats."}
-{"instruction": "Terangkan `round() decimals` dalam satu minit.", "input": "", "output": "`round(2.675, 2)` surprises (binary floats) — money wants Decimal, display wants formatting, not floats."}
 {"instruction": "Apa yang perlu saya tahu tentang `round() decimals`?", "input": "", "output": "`round(2.675, 2)` surprises (binary floats) — money wants Decimal, display wants formatting, not floats."}
 {"instruction": "Bagaimanakah `round() decimals` berfungsi?", "input": "", "output": "`round(2.675, 2)` surprises (binary floats) — money wants Decimal, display wants formatting, not floats."}
-{"instruction": "Bilakah masa yang sesuai untuk `round() decimals`?", "input": "", "output": "`round(2.675, 2)` surprises (binary floats) — money wants Decimal, display wants formatting, not floats."}
 {"instruction": "What does `input strip validate` do?", "input": "", "output": "`input().strip()` trims; convert in try/except (`int()`) — every prompt is hostile input until proven."}
 {"instruction": "Explain `input strip validate` briefly.", "input": "", "output": "`input().strip()` trims; convert in try/except (`int()`) — every prompt is hostile input until proven."}
 {"instruction": "When do I use `input strip validate`?", "input": "", "output": "`input().strip()` trims; convert in try/except (`int()`) — every prompt is hostile input until proven."}
@@ -682,10 +606,8 @@
 {"instruction": "How would you explain `input strip validate` to a junior developer?", "input": "", "output": "`input().strip()` trims; convert in try/except (`int()`) — every prompt is hostile input until proven."}
 {"instruction": "Give a real-world scenario for `input strip validate`.", "input": "", "output": "`input().strip()` trims; convert in try/except (`int()`) — every prompt is hostile input until proven."}
 {"instruction": "What problem does `input strip validate` solve?", "input": "", "output": "`input().strip()` trims; convert in try/except (`int()`) — every prompt is hostile input until proven."}
-{"instruction": "Terangkan `input strip validate` dalam satu minit.", "input": "", "output": "`input().strip()` trims; convert in try/except (`int()`) — every prompt is hostile input until proven."}
 {"instruction": "Apa yang perlu saya tahu tentang `input strip validate`?", "input": "", "output": "`input().strip()` trims; convert in try/except (`int()`) — every prompt is hostile input until proven."}
 {"instruction": "Bagaimanakah `input strip validate` berfungsi?", "input": "", "output": "`input().strip()` trims; convert in try/except (`int()`) — every prompt is hostile input until proven."}
-{"instruction": "Bilakah masa yang sesuai untuk `input strip validate`?", "input": "", "output": "`input().strip()` trims; convert in try/except (`int()`) — every prompt is hostile input until proven."}
 {"instruction": "What does `open errors` do?", "input": "", "output": "`open(f, errors='replace')` survives mojibake logs; default strict raises — choose deliberately per source."}
 {"instruction": "Explain `open errors` briefly.", "input": "", "output": "`open(f, errors='replace')` survives mojibake logs; default strict raises — choose deliberately per source."}
 {"instruction": "When do I use `open errors`?", "input": "", "output": "`open(f, errors='replace')` survives mojibake logs; default strict raises — choose deliberately per source."}
@@ -699,10 +621,8 @@
 {"instruction": "How would you explain `open errors` to a junior developer?", "input": "", "output": "`open(f, errors='replace')` survives mojibake logs; default strict raises — choose deliberately per source."}
 {"instruction": "Give a real-world scenario for `open errors`.", "input": "", "output": "`open(f, errors='replace')` survives mojibake logs; default strict raises — choose deliberately per source."}
 {"instruction": "What problem does `open errors` solve?", "input": "", "output": "`open(f, errors='replace')` survives mojibake logs; default strict raises — choose deliberately per source."}
-{"instruction": "Terangkan `open errors` dalam satu minit.", "input": "", "output": "`open(f, errors='replace')` survives mojibake logs; default strict raises — choose deliberately per source."}
 {"instruction": "Apa yang perlu saya tahu tentang `open errors`?", "input": "", "output": "`open(f, errors='replace')` survives mojibake logs; default strict raises — choose deliberately per source."}
 {"instruction": "Bagaimanakah `open errors` berfungsi?", "input": "", "output": "`open(f, errors='replace')` survives mojibake logs; default strict raises — choose deliberately per source."}
-{"instruction": "Bilakah masa yang sesuai untuk `open errors`?", "input": "", "output": "`open(f, errors='replace')` survives mojibake logs; default strict raises — choose deliberately per source."}
 {"instruction": "What does `json indent sort` do?", "input": "", "output": "`json.dumps(d, indent=2, sort_keys=True)` diffs cleanly in git; `separators` compacts wire payloads."}
 {"instruction": "Explain `json indent sort` briefly.", "input": "", "output": "`json.dumps(d, indent=2, sort_keys=True)` diffs cleanly in git; `separators` compacts wire payloads."}
 {"instruction": "When do I use `json indent sort`?", "input": "", "output": "`json.dumps(d, indent=2, sort_keys=True)` diffs cleanly in git; `separators` compacts wire payloads."}
@@ -716,10 +636,8 @@
 {"instruction": "How would you explain `json indent sort` to a junior developer?", "input": "", "output": "`json.dumps(d, indent=2, sort_keys=True)` diffs cleanly in git; `separators` compacts wire payloads."}
 {"instruction": "Give a real-world scenario for `json indent sort`.", "input": "", "output": "`json.dumps(d, indent=2, sort_keys=True)` diffs cleanly in git; `separators` compacts wire payloads."}
 {"instruction": "What problem does `json indent sort` solve?", "input": "", "output": "`json.dumps(d, indent=2, sort_keys=True)` diffs cleanly in git; `separators` compacts wire payloads."}
-{"instruction": "Terangkan `json indent sort` dalam satu minit.", "input": "", "output": "`json.dumps(d, indent=2, sort_keys=True)` diffs cleanly in git; `separators` compacts wire payloads."}
 {"instruction": "Apa yang perlu saya tahu tentang `json indent sort`?", "input": "", "output": "`json.dumps(d, indent=2, sort_keys=True)` diffs cleanly in git; `separators` compacts wire payloads."}
 {"instruction": "Bagaimanakah `json indent sort` berfungsi?", "input": "", "output": "`json.dumps(d, indent=2, sort_keys=True)` diffs cleanly in git; `separators` compacts wire payloads."}
-{"instruction": "Bilakah masa yang sesuai untuk `json indent sort`?", "input": "", "output": "`json.dumps(d, indent=2, sort_keys=True)` diffs cleanly in git; `separators` compacts wire payloads."}
 {"instruction": "What does `argparse choices` do?", "input": "", "output": "`choices=[...]` validates CLI input free with usage errors; `required=True` marks must-haves."}
 {"instruction": "Explain `argparse choices` briefly.", "input": "", "output": "`choices=[...]` validates CLI input free with usage errors; `required=True` marks must-haves."}
 {"instruction": "When do I use `argparse choices`?", "input": "", "output": "`choices=[...]` validates CLI input free with usage errors; `required=True` marks must-haves."}
@@ -733,10 +651,8 @@
 {"instruction": "How would you explain `argparse choices` to a junior developer?", "input": "", "output": "`choices=[...]` validates CLI input free with usage errors; `required=True` marks must-haves."}
 {"instruction": "Give a real-world scenario for `argparse choices`.", "input": "", "output": "`choices=[...]` validates CLI input free with usage errors; `required=True` marks must-haves."}
 {"instruction": "What problem does `argparse choices` solve?", "input": "", "output": "`choices=[...]` validates CLI input free with usage errors; `required=True` marks must-haves."}
-{"instruction": "Terangkan `argparse choices` dalam satu minit.", "input": "", "output": "`choices=[...]` validates CLI input free with usage errors; `required=True` marks must-haves."}
 {"instruction": "Apa yang perlu saya tahu tentang `argparse choices`?", "input": "", "output": "`choices=[...]` validates CLI input free with usage errors; `required=True` marks must-haves."}
 {"instruction": "Bagaimanakah `argparse choices` berfungsi?", "input": "", "output": "`choices=[...]` validates CLI input free with usage errors; `required=True` marks must-haves."}
-{"instruction": "Bilakah masa yang sesuai untuk `argparse choices`?", "input": "", "output": "`choices=[...]` validates CLI input free with usage errors; `required=True` marks must-haves."}
 {"instruction": "What does `logging levels` do?", "input": "", "output": "DEBUG < INFO < WARNING < ERROR < CRITICAL; set root once, per-module loggers inherit — prints can't do this."}
 {"instruction": "Explain `logging levels` briefly.", "input": "", "output": "DEBUG < INFO < WARNING < ERROR < CRITICAL; set root once, per-module loggers inherit — prints can't do this."}
 {"instruction": "When do I use `logging levels`?", "input": "", "output": "DEBUG < INFO < WARNING < ERROR < CRITICAL; set root once, per-module loggers inherit — prints can't do this."}
@@ -750,10 +666,8 @@
 {"instruction": "How would you explain `logging levels` to a junior developer?", "input": "", "output": "DEBUG < INFO < WARNING < ERROR < CRITICAL; set root once, per-module loggers inherit — prints can't do this."}
 {"instruction": "Give a real-world scenario for `logging levels`.", "input": "", "output": "DEBUG < INFO < WARNING < ERROR < CRITICAL; set root once, per-module loggers inherit — prints can't do this."}
 {"instruction": "What problem does `logging levels` solve?", "input": "", "output": "DEBUG < INFO < WARNING < ERROR < CRITICAL; set root once, per-module loggers inherit — prints can't do this."}
-{"instruction": "Terangkan `logging levels` dalam satu minit.", "input": "", "output": "DEBUG < INFO < WARNING < ERROR < CRITICAL; set root once, per-module loggers inherit — prints can't do this."}
 {"instruction": "Apa yang perlu saya tahu tentang `logging levels`?", "input": "", "output": "DEBUG < INFO < WARNING < ERROR < CRITICAL; set root once, per-module loggers inherit — prints can't do this."}
 {"instruction": "Bagaimanakah `logging levels` berfungsi?", "input": "", "output": "DEBUG < INFO < WARNING < ERROR < CRITICAL; set root once, per-module loggers inherit — prints can't do this."}
-{"instruction": "Bilakah masa yang sesuai untuk `logging levels`?", "input": "", "output": "DEBUG < INFO < WARNING < ERROR < CRITICAL; set root once, per-module loggers inherit — prints can't do this."}
 {"instruction": "What does `pytest raises` do?", "input": "", "output": "`with pytest.raises(ValueError): f(-1)` asserts failure modes, not just happy paths."}
 {"instruction": "Explain `pytest raises` briefly.", "input": "", "output": "`with pytest.raises(ValueError): f(-1)` asserts failure modes, not just happy paths."}
 {"instruction": "When do I use `pytest raises`?", "input": "", "output": "`with pytest.raises(ValueError): f(-1)` asserts failure modes, not just happy paths."}
@@ -767,10 +681,8 @@
 {"instruction": "How would you explain `pytest raises` to a junior developer?", "input": "", "output": "`with pytest.raises(ValueError): f(-1)` asserts failure modes, not just happy paths."}
 {"instruction": "Give a real-world scenario for `pytest raises`.", "input": "", "output": "`with pytest.raises(ValueError): f(-1)` asserts failure modes, not just happy paths."}
 {"instruction": "What problem does `pytest raises` solve?", "input": "", "output": "`with pytest.raises(ValueError): f(-1)` asserts failure modes, not just happy paths."}
-{"instruction": "Terangkan `pytest raises` dalam satu minit.", "input": "", "output": "`with pytest.raises(ValueError): f(-1)` asserts failure modes, not just happy paths."}
 {"instruction": "Apa yang perlu saya tahu tentang `pytest raises`?", "input": "", "output": "`with pytest.raises(ValueError): f(-1)` asserts failure modes, not just happy paths."}
 {"instruction": "Bagaimanakah `pytest raises` berfungsi?", "input": "", "output": "`with pytest.raises(ValueError): f(-1)` asserts failure modes, not just happy paths."}
-{"instruction": "Bilakah masa yang sesuai untuk `pytest raises`?", "input": "", "output": "`with pytest.raises(ValueError): f(-1)` asserts failure modes, not just happy paths."}
 {"instruction": "What does `pytest tmp_path` do?", "input": "", "output": "`tmp_path` fixture gives isolated temp dirs per test; `monkeypatch` fakes env/clock safely."}
 {"instruction": "Explain `pytest tmp_path` briefly.", "input": "", "output": "`tmp_path` fixture gives isolated temp dirs per test; `monkeypatch` fakes env/clock safely."}
 {"instruction": "When do I use `pytest tmp_path`?", "input": "", "output": "`tmp_path` fixture gives isolated temp dirs per test; `monkeypatch` fakes env/clock safely."}
@@ -784,10 +696,8 @@
 {"instruction": "How would you explain `pytest tmp_path` to a junior developer?", "input": "", "output": "`tmp_path` fixture gives isolated temp dirs per test; `monkeypatch` fakes env/clock safely."}
 {"instruction": "Give a real-world scenario for `pytest tmp_path`.", "input": "", "output": "`tmp_path` fixture gives isolated temp dirs per test; `monkeypatch` fakes env/clock safely."}
 {"instruction": "What problem does `pytest tmp_path` solve?", "input": "", "output": "`tmp_path` fixture gives isolated temp dirs per test; `monkeypatch` fakes env/clock safely."}
-{"instruction": "Terangkan `pytest tmp_path` dalam satu minit.", "input": "", "output": "`tmp_path` fixture gives isolated temp dirs per test; `monkeypatch` fakes env/clock safely."}
 {"instruction": "Apa yang perlu saya tahu tentang `pytest tmp_path`?", "input": "", "output": "`tmp_path` fixture gives isolated temp dirs per test; `monkeypatch` fakes env/clock safely."}
 {"instruction": "Bagaimanakah `pytest tmp_path` berfungsi?", "input": "", "output": "`tmp_path` fixture gives isolated temp dirs per test; `monkeypatch` fakes env/clock safely."}
-{"instruction": "Bilakah masa yang sesuai untuk `pytest tmp_path`?", "input": "", "output": "`tmp_path` fixture gives isolated temp dirs per test; `monkeypatch` fakes env/clock safely."}
 {"instruction": "What does `dataclass eq order` do?", "input": "", "output": "`@dataclass(eq=True, order=True)` enables == and sorting by fields; `frozen=True` adds hashing."}
 {"instruction": "Explain `dataclass eq order` briefly.", "input": "", "output": "`@dataclass(eq=True, order=True)` enables == and sorting by fields; `frozen=True` adds hashing."}
 {"instruction": "When do I use `dataclass eq order`?", "input": "", "output": "`@dataclass(eq=True, order=True)` enables == and sorting by fields; `frozen=True` adds hashing."}
@@ -801,10 +711,8 @@
 {"instruction": "How would you explain `dataclass eq order` to a junior developer?", "input": "", "output": "`@dataclass(eq=True, order=True)` enables == and sorting by fields; `frozen=True` adds hashing."}
 {"instruction": "Give a real-world scenario for `dataclass eq order`.", "input": "", "output": "`@dataclass(eq=True, order=True)` enables == and sorting by fields; `frozen=True` adds hashing."}
 {"instruction": "What problem does `dataclass eq order` solve?", "input": "", "output": "`@dataclass(eq=True, order=True)` enables == and sorting by fields; `frozen=True` adds hashing."}
-{"instruction": "Terangkan `dataclass eq order` dalam satu minit.", "input": "", "output": "`@dataclass(eq=True, order=True)` enables == and sorting by fields; `frozen=True` adds hashing."}
 {"instruction": "Apa yang perlu saya tahu tentang `dataclass eq order`?", "input": "", "output": "`@dataclass(eq=True, order=True)` enables == and sorting by fields; `frozen=True` adds hashing."}
 {"instruction": "Bagaimanakah `dataclass eq order` berfungsi?", "input": "", "output": "`@dataclass(eq=True, order=True)` enables == and sorting by fields; `frozen=True` adds hashing."}
-{"instruction": "Bilakah masa yang sesuai untuk `dataclass eq order`?", "input": "", "output": "`@dataclass(eq=True, order=True)` enables == and sorting by fields; `frozen=True` adds hashing."}
 {"instruction": "What does `slots memory` do?", "input": "", "output": "`__slots__` drops per-instance dicts (memory wins at scale); weakrefs and defaults need care."}
 {"instruction": "Explain `slots memory` briefly.", "input": "", "output": "`__slots__` drops per-instance dicts (memory wins at scale); weakrefs and defaults need care."}
 {"instruction": "When do I use `slots memory`?", "input": "", "output": "`__slots__` drops per-instance dicts (memory wins at scale); weakrefs and defaults need care."}
@@ -818,10 +726,8 @@
 {"instruction": "How would you explain `slots memory` to a junior developer?", "input": "", "output": "`__slots__` drops per-instance dicts (memory wins at scale); weakrefs and defaults need care."}
 {"instruction": "Give a real-world scenario for `slots memory`.", "input": "", "output": "`__slots__` drops per-instance dicts (memory wins at scale); weakrefs and defaults need care."}
 {"instruction": "What problem does `slots memory` solve?", "input": "", "output": "`__slots__` drops per-instance dicts (memory wins at scale); weakrefs and defaults need care."}
-{"instruction": "Terangkan `slots memory` dalam satu minit.", "input": "", "output": "`__slots__` drops per-instance dicts (memory wins at scale); weakrefs and defaults need care."}
 {"instruction": "Apa yang perlu saya tahu tentang `slots memory`?", "input": "", "output": "`__slots__` drops per-instance dicts (memory wins at scale); weakrefs and defaults need care."}
 {"instruction": "Bagaimanakah `slots memory` berfungsi?", "input": "", "output": "`__slots__` drops per-instance dicts (memory wins at scale); weakrefs and defaults need care."}
-{"instruction": "Bilakah masa yang sesuai untuk `slots memory`?", "input": "", "output": "`__slots__` drops per-instance dicts (memory wins at scale); weakrefs and defaults need care."}
 {"instruction": "What does `contextlib suppress` do?", "input": "", "output": "`with suppress(FileNotFoundError):` skips expected failures declaratively — cleaner than try/pass."}
 {"instruction": "Explain `contextlib suppress` briefly.", "input": "", "output": "`with suppress(FileNotFoundError):` skips expected failures declaratively — cleaner than try/pass."}
 {"instruction": "When do I use `contextlib suppress`?", "input": "", "output": "`with suppress(FileNotFoundError):` skips expected failures declaratively — cleaner than try/pass."}
@@ -835,10 +741,8 @@
 {"instruction": "How would you explain `contextlib suppress` to a junior developer?", "input": "", "output": "`with suppress(FileNotFoundError):` skips expected failures declaratively — cleaner than try/pass."}
 {"instruction": "Give a real-world scenario for `contextlib suppress`.", "input": "", "output": "`with suppress(FileNotFoundError):` skips expected failures declaratively — cleaner than try/pass."}
 {"instruction": "What problem does `contextlib suppress` solve?", "input": "", "output": "`with suppress(FileNotFoundError):` skips expected failures declaratively — cleaner than try/pass."}
-{"instruction": "Terangkan `contextlib suppress` dalam satu minit.", "input": "", "output": "`with suppress(FileNotFoundError):` skips expected failures declaratively — cleaner than try/pass."}
 {"instruction": "Apa yang perlu saya tahu tentang `contextlib suppress`?", "input": "", "output": "`with suppress(FileNotFoundError):` skips expected failures declaratively — cleaner than try/pass."}
 {"instruction": "Bagaimanakah `contextlib suppress` berfungsi?", "input": "", "output": "`with suppress(FileNotFoundError):` skips expected failures declaratively — cleaner than try/pass."}
-{"instruction": "Bilakah masa yang sesuai untuk `contextlib suppress`?", "input": "", "output": "`with suppress(FileNotFoundError):` skips expected failures declaratively — cleaner than try/pass."}
 {"instruction": "What does `functools lru_cache` do?", "input": "", "output": "`@lru_cache` memoizes pure functions (maxsize bounds memory); unhashable args need key extraction first."}
 {"instruction": "Explain `functools lru_cache` briefly.", "input": "", "output": "`@lru_cache` memoizes pure functions (maxsize bounds memory); unhashable args need key extraction first."}
 {"instruction": "When do I use `functools lru_cache`?", "input": "", "output": "`@lru_cache` memoizes pure functions (maxsize bounds memory); unhashable args need key extraction first."}
@@ -852,10 +756,8 @@
 {"instruction": "How would you explain `functools lru_cache` to a junior developer?", "input": "", "output": "`@lru_cache` memoizes pure functions (maxsize bounds memory); unhashable args need key extraction first."}
 {"instruction": "Give a real-world scenario for `functools lru_cache`.", "input": "", "output": "`@lru_cache` memoizes pure functions (maxsize bounds memory); unhashable args need key extraction first."}
 {"instruction": "What problem does `functools lru_cache` solve?", "input": "", "output": "`@lru_cache` memoizes pure functions (maxsize bounds memory); unhashable args need key extraction first."}
-{"instruction": "Terangkan `functools lru_cache` dalam satu minit.", "input": "", "output": "`@lru_cache` memoizes pure functions (maxsize bounds memory); unhashable args need key extraction first."}
 {"instruction": "Apa yang perlu saya tahu tentang `functools lru_cache`?", "input": "", "output": "`@lru_cache` memoizes pure functions (maxsize bounds memory); unhashable args need key extraction first."}
 {"instruction": "Bagaimanakah `functools lru_cache` berfungsi?", "input": "", "output": "`@lru_cache` memoizes pure functions (maxsize bounds memory); unhashable args need key extraction first."}
-{"instruction": "Bilakah masa yang sesuai untuk `functools lru_cache`?", "input": "", "output": "`@lru_cache` memoizes pure functions (maxsize bounds memory); unhashable args need key extraction first."}
 {"instruction": "What does `functools partial` do?", "input": "", "output": "`partial(f, x=1)` presets arguments producing callbacks; clearer than lambdas for use in map/sorted."}
 {"instruction": "Explain `functools partial` briefly.", "input": "", "output": "`partial(f, x=1)` presets arguments producing callbacks; clearer than lambdas for use in map/sorted."}
 {"instruction": "When do I use `functools partial`?", "input": "", "output": "`partial(f, x=1)` presets arguments producing callbacks; clearer than lambdas for use in map/sorted."}
@@ -869,10 +771,8 @@
 {"instruction": "How would you explain `functools partial` to a junior developer?", "input": "", "output": "`partial(f, x=1)` presets arguments producing callbacks; clearer than lambdas for use in map/sorted."}
 {"instruction": "Give a real-world scenario for `functools partial`.", "input": "", "output": "`partial(f, x=1)` presets arguments producing callbacks; clearer than lambdas for use in map/sorted."}
 {"instruction": "What problem does `functools partial` solve?", "input": "", "output": "`partial(f, x=1)` presets arguments producing callbacks; clearer than lambdas for use in map/sorted."}
-{"instruction": "Terangkan `functools partial` dalam satu minit.", "input": "", "output": "`partial(f, x=1)` presets arguments producing callbacks; clearer than lambdas for use in map/sorted."}
 {"instruction": "Apa yang perlu saya tahu tentang `functools partial`?", "input": "", "output": "`partial(f, x=1)` presets arguments producing callbacks; clearer than lambdas for use in map/sorted."}
 {"instruction": "Bagaimanakah `functools partial` berfungsi?", "input": "", "output": "`partial(f, x=1)` presets arguments producing callbacks; clearer than lambdas for use in map/sorted."}
-{"instruction": "Bilakah masa yang sesuai untuk `functools partial`?", "input": "", "output": "`partial(f, x=1)` presets arguments producing callbacks; clearer than lambdas for use in map/sorted."}
 {"instruction": "What does `itertools chain` do?", "input": "", "output": "`chain(a, b)` streams concatenated iterables lazily; `islice` windows infinite generators safely."}
 {"instruction": "Explain `itertools chain` briefly.", "input": "", "output": "`chain(a, b)` streams concatenated iterables lazily; `islice` windows infinite generators safely."}
 {"instruction": "When do I use `itertools chain`?", "input": "", "output": "`chain(a, b)` streams concatenated iterables lazily; `islice` windows infinite generators safely."}
@@ -886,10 +786,8 @@
 {"instruction": "How would you explain `itertools chain` to a junior developer?", "input": "", "output": "`chain(a, b)` streams concatenated iterables lazily; `islice` windows infinite generators safely."}
 {"instruction": "Give a real-world scenario for `itertools chain`.", "input": "", "output": "`chain(a, b)` streams concatenated iterables lazily; `islice` windows infinite generators safely."}
 {"instruction": "What problem does `itertools chain` solve?", "input": "", "output": "`chain(a, b)` streams concatenated iterables lazily; `islice` windows infinite generators safely."}
-{"instruction": "Terangkan `itertools chain` dalam satu minit.", "input": "", "output": "`chain(a, b)` streams concatenated iterables lazily; `islice` windows infinite generators safely."}
 {"instruction": "Apa yang perlu saya tahu tentang `itertools chain`?", "input": "", "output": "`chain(a, b)` streams concatenated iterables lazily; `islice` windows infinite generators safely."}
 {"instruction": "Bagaimanakah `itertools chain` berfungsi?", "input": "", "output": "`chain(a, b)` streams concatenated iterables lazily; `islice` windows infinite generators safely."}
-{"instruction": "Bilakah masa yang sesuai untuk `itertools chain`?", "input": "", "output": "`chain(a, b)` streams concatenated iterables lazily; `islice` windows infinite generators safely."}
 {"instruction": "What does `collections Counter` do?", "input": "", "output": "`Counter(words).most_common(5)` ranks frequencies in two lines — log analysis and votes simplified."}
 {"instruction": "Explain `collections Counter` briefly.", "input": "", "output": "`Counter(words).most_common(5)` ranks frequencies in two lines — log analysis and votes simplified."}
 {"instruction": "When do I use `collections Counter`?", "input": "", "output": "`Counter(words).most_common(5)` ranks frequencies in two lines — log analysis and votes simplified."}
@@ -903,10 +801,8 @@
 {"instruction": "How would you explain `collections Counter` to a junior developer?", "input": "", "output": "`Counter(words).most_common(5)` ranks frequencies in two lines — log analysis and votes simplified."}
 {"instruction": "Give a real-world scenario for `collections Counter`.", "input": "", "output": "`Counter(words).most_common(5)` ranks frequencies in two lines — log analysis and votes simplified."}
 {"instruction": "What problem does `collections Counter` solve?", "input": "", "output": "`Counter(words).most_common(5)` ranks frequencies in two lines — log analysis and votes simplified."}
-{"instruction": "Terangkan `collections Counter` dalam satu minit.", "input": "", "output": "`Counter(words).most_common(5)` ranks frequencies in two lines — log analysis and votes simplified."}
 {"instruction": "Apa yang perlu saya tahu tentang `collections Counter`?", "input": "", "output": "`Counter(words).most_common(5)` ranks frequencies in two lines — log analysis and votes simplified."}
 {"instruction": "Bagaimanakah `collections Counter` berfungsi?", "input": "", "output": "`Counter(words).most_common(5)` ranks frequencies in two lines — log analysis and votes simplified."}
-{"instruction": "Bilakah masa yang sesuai untuk `collections Counter`?", "input": "", "output": "`Counter(words).most_common(5)` ranks frequencies in two lines — log analysis and votes simplified."}
 {"instruction": "What does `collections defaultdict` do?", "input": "", "output": "`defaultdict(list)` auto-creates missing keys (grouping without existence checks); `dict.get` for one-offs."}
 {"instruction": "Explain `collections defaultdict` briefly.", "input": "", "output": "`defaultdict(list)` auto-creates missing keys (grouping without existence checks); `dict.get` for one-offs."}
 {"instruction": "When do I use `collections defaultdict`?", "input": "", "output": "`defaultdict(list)` auto-creates missing keys (grouping without existence checks); `dict.get` for one-offs."}
@@ -920,10 +816,8 @@
 {"instruction": "How would you explain `collections defaultdict` to a junior developer?", "input": "", "output": "`defaultdict(list)` auto-creates missing keys (grouping without existence checks); `dict.get` for one-offs."}
 {"instruction": "Give a real-world scenario for `collections defaultdict`.", "input": "", "output": "`defaultdict(list)` auto-creates missing keys (grouping without existence checks); `dict.get` for one-offs."}
 {"instruction": "What problem does `collections defaultdict` solve?", "input": "", "output": "`defaultdict(list)` auto-creates missing keys (grouping without existence checks); `dict.get` for one-offs."}
-{"instruction": "Terangkan `collections defaultdict` dalam satu minit.", "input": "", "output": "`defaultdict(list)` auto-creates missing keys (grouping without existence checks); `dict.get` for one-offs."}
 {"instruction": "Apa yang perlu saya tahu tentang `collections defaultdict`?", "input": "", "output": "`defaultdict(list)` auto-creates missing keys (grouping without existence checks); `dict.get` for one-offs."}
 {"instruction": "Bagaimanakah `collections defaultdict` berfungsi?", "input": "", "output": "`defaultdict(list)` auto-creates missing keys (grouping without existence checks); `dict.get` for one-offs."}
-{"instruction": "Bilakah masa yang sesuai untuk `collections defaultdict`?", "input": "", "output": "`defaultdict(list)` auto-creates missing keys (grouping without existence checks); `dict.get` for one-offs."}
 {"instruction": "What does `collections deque` do?", "input": "", "output": "`deque(maxlen=N)` ring-buffers (sliding windows, undo); `popleft` is O(1) unlike list pop(0)."}
 {"instruction": "Explain `collections deque` briefly.", "input": "", "output": "`deque(maxlen=N)` ring-buffers (sliding windows, undo); `popleft` is O(1) unlike list pop(0)."}
 {"instruction": "When do I use `collections deque`?", "input": "", "output": "`deque(maxlen=N)` ring-buffers (sliding windows, undo); `popleft` is O(1) unlike list pop(0)."}
@@ -937,10 +831,8 @@
 {"instruction": "How would you explain `collections deque` to a junior developer?", "input": "", "output": "`deque(maxlen=N)` ring-buffers (sliding windows, undo); `popleft` is O(1) unlike list pop(0)."}
 {"instruction": "Give a real-world scenario for `collections deque`.", "input": "", "output": "`deque(maxlen=N)` ring-buffers (sliding windows, undo); `popleft` is O(1) unlike list pop(0)."}
 {"instruction": "What problem does `collections deque` solve?", "input": "", "output": "`deque(maxlen=N)` ring-buffers (sliding windows, undo); `popleft` is O(1) unlike list pop(0)."}
-{"instruction": "Terangkan `collections deque` dalam satu minit.", "input": "", "output": "`deque(maxlen=N)` ring-buffers (sliding windows, undo); `popleft` is O(1) unlike list pop(0)."}
 {"instruction": "Apa yang perlu saya tahu tentang `collections deque`?", "input": "", "output": "`deque(maxlen=N)` ring-buffers (sliding windows, undo); `popleft` is O(1) unlike list pop(0)."}
 {"instruction": "Bagaimanakah `collections deque` berfungsi?", "input": "", "output": "`deque(maxlen=N)` ring-buffers (sliding windows, undo); `popleft` is O(1) unlike list pop(0)."}
-{"instruction": "Bilakah masa yang sesuai untuk `collections deque`?", "input": "", "output": "`deque(maxlen=N)` ring-buffers (sliding windows, undo); `popleft` is O(1) unlike list pop(0)."}
 {"instruction": "What does `enum Enum` do?", "input": "", "output": "`class Warna(Enum)` names constants with iteration and identity; `auto()` values, `IntEnum` for numeric interop."}
 {"instruction": "Explain `enum Enum` briefly.", "input": "", "output": "`class Warna(Enum)` names constants with iteration and identity; `auto()` values, `IntEnum` for numeric interop."}
 {"instruction": "When do I use `enum Enum`?", "input": "", "output": "`class Warna(Enum)` names constants with iteration and identity; `auto()` values, `IntEnum` for numeric interop."}
@@ -954,10 +846,8 @@
 {"instruction": "How would you explain `enum Enum` to a junior developer?", "input": "", "output": "`class Warna(Enum)` names constants with iteration and identity; `auto()` values, `IntEnum` for numeric interop."}
 {"instruction": "Give a real-world scenario for `enum Enum`.", "input": "", "output": "`class Warna(Enum)` names constants with iteration and identity; `auto()` values, `IntEnum` for numeric interop."}
 {"instruction": "What problem does `enum Enum` solve?", "input": "", "output": "`class Warna(Enum)` names constants with iteration and identity; `auto()` values, `IntEnum` for numeric interop."}
-{"instruction": "Terangkan `enum Enum` dalam satu minit.", "input": "", "output": "`class Warna(Enum)` names constants with iteration and identity; `auto()` values, `IntEnum` for numeric interop."}
 {"instruction": "Apa yang perlu saya tahu tentang `enum Enum`?", "input": "", "output": "`class Warna(Enum)` names constants with iteration and identity; `auto()` values, `IntEnum` for numeric interop."}
 {"instruction": "Bagaimanakah `enum Enum` berfungsi?", "input": "", "output": "`class Warna(Enum)` names constants with iteration and identity; `auto()` values, `IntEnum` for numeric interop."}
-{"instruction": "Bilakah masa yang sesuai untuk `enum Enum`?", "input": "", "output": "`class Warna(Enum)` names constants with iteration and identity; `auto()` values, `IntEnum` for numeric interop."}
 {"instruction": "What does `typing Protocol` do?", "input": "", "output": "`Protocol` defines structural interfaces (duck-typing with checking); `runtime_checkable` enables isinstance."}
 {"instruction": "Explain `typing Protocol` briefly.", "input": "", "output": "`Protocol` defines structural interfaces (duck-typing with checking); `runtime_checkable` enables isinstance."}
 {"instruction": "When do I use `typing Protocol`?", "input": "", "output": "`Protocol` defines structural interfaces (duck-typing with checking); `runtime_checkable` enables isinstance."}
@@ -971,10 +861,8 @@
 {"instruction": "How would you explain `typing Protocol` to a junior developer?", "input": "", "output": "`Protocol` defines structural interfaces (duck-typing with checking); `runtime_checkable` enables isinstance."}
 {"instruction": "Give a real-world scenario for `typing Protocol`.", "input": "", "output": "`Protocol` defines structural interfaces (duck-typing with checking); `runtime_checkable` enables isinstance."}
 {"instruction": "What problem does `typing Protocol` solve?", "input": "", "output": "`Protocol` defines structural interfaces (duck-typing with checking); `runtime_checkable` enables isinstance."}
-{"instruction": "Terangkan `typing Protocol` dalam satu minit.", "input": "", "output": "`Protocol` defines structural interfaces (duck-typing with checking); `runtime_checkable` enables isinstance."}
 {"instruction": "Apa yang perlu saya tahu tentang `typing Protocol`?", "input": "", "output": "`Protocol` defines structural interfaces (duck-typing with checking); `runtime_checkable` enables isinstance."}
 {"instruction": "Bagaimanakah `typing Protocol` berfungsi?", "input": "", "output": "`Protocol` defines structural interfaces (duck-typing with checking); `runtime_checkable` enables isinstance."}
-{"instruction": "Bilakah masa yang sesuai untuk `typing Protocol`?", "input": "", "output": "`Protocol` defines structural interfaces (duck-typing with checking); `runtime_checkable` enables isinstance."}
 {"instruction": "What does `typing Literal` do?", "input": "", "output": "`Literal['mula','henti']` restricts strings to valid commands — typos become type errors, not runtime bugs."}
 {"instruction": "Explain `typing Literal` briefly.", "input": "", "output": "`Literal['mula','henti']` restricts strings to valid commands — typos become type errors, not runtime bugs."}
 {"instruction": "When do I use `typing Literal`?", "input": "", "output": "`Literal['mula','henti']` restricts strings to valid commands — typos become type errors, not runtime bugs."}
@@ -988,10 +876,8 @@
 {"instruction": "How would you explain `typing Literal` to a junior developer?", "input": "", "output": "`Literal['mula','henti']` restricts strings to valid commands — typos become type errors, not runtime bugs."}
 {"instruction": "Give a real-world scenario for `typing Literal`.", "input": "", "output": "`Literal['mula','henti']` restricts strings to valid commands — typos become type errors, not runtime bugs."}
 {"instruction": "What problem does `typing Literal` solve?", "input": "", "output": "`Literal['mula','henti']` restricts strings to valid commands — typos become type errors, not runtime bugs."}
-{"instruction": "Terangkan `typing Literal` dalam satu minit.", "input": "", "output": "`Literal['mula','henti']` restricts strings to valid commands — typos become type errors, not runtime bugs."}
 {"instruction": "Apa yang perlu saya tahu tentang `typing Literal`?", "input": "", "output": "`Literal['mula','henti']` restricts strings to valid commands — typos become type errors, not runtime bugs."}
 {"instruction": "Bagaimanakah `typing Literal` berfungsi?", "input": "", "output": "`Literal['mula','henti']` restricts strings to valid commands — typos become type errors, not runtime bugs."}
-{"instruction": "Bilakah masa yang sesuai untuk `typing Literal`?", "input": "", "output": "`Literal['mula','henti']` restricts strings to valid commands — typos become type errors, not runtime bugs."}
 {"instruction": "What does `typing TypedDict` do?", "input": "", "output": "`TypedDict` shapes dicts (JSON payloads) with per-key types; `total=False` marks optional keys."}
 {"instruction": "Explain `typing TypedDict` briefly.", "input": "", "output": "`TypedDict` shapes dicts (JSON payloads) with per-key types; `total=False` marks optional keys."}
 {"instruction": "When do I use `typing TypedDict`?", "input": "", "output": "`TypedDict` shapes dicts (JSON payloads) with per-key types; `total=False` marks optional keys."}
@@ -1005,10 +891,8 @@
 {"instruction": "How would you explain `typing TypedDict` to a junior developer?", "input": "", "output": "`TypedDict` shapes dicts (JSON payloads) with per-key types; `total=False` marks optional keys."}
 {"instruction": "Give a real-world scenario for `typing TypedDict`.", "input": "", "output": "`TypedDict` shapes dicts (JSON payloads) with per-key types; `total=False` marks optional keys."}
 {"instruction": "What problem does `typing TypedDict` solve?", "input": "", "output": "`TypedDict` shapes dicts (JSON payloads) with per-key types; `total=False` marks optional keys."}
-{"instruction": "Terangkan `typing TypedDict` dalam satu minit.", "input": "", "output": "`TypedDict` shapes dicts (JSON payloads) with per-key types; `total=False` marks optional keys."}
 {"instruction": "Apa yang perlu saya tahu tentang `typing TypedDict`?", "input": "", "output": "`TypedDict` shapes dicts (JSON payloads) with per-key types; `total=False` marks optional keys."}
 {"instruction": "Bagaimanakah `typing TypedDict` berfungsi?", "input": "", "output": "`TypedDict` shapes dicts (JSON payloads) with per-key types; `total=False` marks optional keys."}
-{"instruction": "Bilakah masa yang sesuai untuk `typing TypedDict`?", "input": "", "output": "`TypedDict` shapes dicts (JSON payloads) with per-key types; `total=False` marks optional keys."}
 {"instruction": "What does `dataclass slots` do?", "input": "", "output": "`@dataclass(slots=True)` drops dict overhead per instance; frozen+slots gives near-tuple memory with names."}
 {"instruction": "Explain `dataclass slots` briefly.", "input": "", "output": "`@dataclass(slots=True)` drops dict overhead per instance; frozen+slots gives near-tuple memory with names."}
 {"instruction": "When do I use `dataclass slots`?", "input": "", "output": "`@dataclass(slots=True)` drops dict overhead per instance; frozen+slots gives near-tuple memory with names."}
@@ -1022,10 +906,8 @@
 {"instruction": "How would you explain `dataclass slots` to a junior developer?", "input": "", "output": "`@dataclass(slots=True)` drops dict overhead per instance; frozen+slots gives near-tuple memory with names."}
 {"instruction": "Give a real-world scenario for `dataclass slots`.", "input": "", "output": "`@dataclass(slots=True)` drops dict overhead per instance; frozen+slots gives near-tuple memory with names."}
 {"instruction": "What problem does `dataclass slots` solve?", "input": "", "output": "`@dataclass(slots=True)` drops dict overhead per instance; frozen+slots gives near-tuple memory with names."}
-{"instruction": "Terangkan `dataclass slots` dalam satu minit.", "input": "", "output": "`@dataclass(slots=True)` drops dict overhead per instance; frozen+slots gives near-tuple memory with names."}
 {"instruction": "Apa yang perlu saya tahu tentang `dataclass slots`?", "input": "", "output": "`@dataclass(slots=True)` drops dict overhead per instance; frozen+slots gives near-tuple memory with names."}
 {"instruction": "Bagaimanakah `dataclass slots` berfungsi?", "input": "", "output": "`@dataclass(slots=True)` drops dict overhead per instance; frozen+slots gives near-tuple memory with names."}
-{"instruction": "Bilakah masa yang sesuai untuk `dataclass slots`?", "input": "", "output": "`@dataclass(slots=True)` drops dict overhead per instance; frozen+slots gives near-tuple memory with names."}
 {"instruction": "What does `venv vs conda uv` do?", "input": "", "output": "venv (stdlib, light), conda (binary deps, heavy), uv (Rust-fast resolver) — pick per project's native needs."}
 {"instruction": "Explain `venv vs conda uv` briefly.", "input": "", "output": "venv (stdlib, light), conda (binary deps, heavy), uv (Rust-fast resolver) — pick per project's native needs."}
 {"instruction": "When do I use `venv vs conda uv`?", "input": "", "output": "venv (stdlib, light), conda (binary deps, heavy), uv (Rust-fast resolver) — pick per project's native needs."}
@@ -1039,10 +921,8 @@
 {"instruction": "How would you explain `venv vs conda uv` to a junior developer?", "input": "", "output": "venv (stdlib, light), conda (binary deps, heavy), uv (Rust-fast resolver) — pick per project's native needs."}
 {"instruction": "Give a real-world scenario for `venv vs conda uv`.", "input": "", "output": "venv (stdlib, light), conda (binary deps, heavy), uv (Rust-fast resolver) — pick per project's native needs."}
 {"instruction": "What problem does `venv vs conda uv` solve?", "input": "", "output": "venv (stdlib, light), conda (binary deps, heavy), uv (Rust-fast resolver) — pick per project's native needs."}
-{"instruction": "Terangkan `venv vs conda uv` dalam satu minit.", "input": "", "output": "venv (stdlib, light), conda (binary deps, heavy), uv (Rust-fast resolver) — pick per project's native needs."}
 {"instruction": "Apa yang perlu saya tahu tentang `venv vs conda uv`?", "input": "", "output": "venv (stdlib, light), conda (binary deps, heavy), uv (Rust-fast resolver) — pick per project's native needs."}
 {"instruction": "Bagaimanakah `venv vs conda uv` berfungsi?", "input": "", "output": "venv (stdlib, light), conda (binary deps, heavy), uv (Rust-fast resolver) — pick per project's native needs."}
-{"instruction": "Bilakah masa yang sesuai untuk `venv vs conda uv`?", "input": "", "output": "venv (stdlib, light), conda (binary deps, heavy), uv (Rust-fast resolver) — pick per project's native needs."}
 {"instruction": "What does `pip index url` do?", "input": "", "output": "`--index-url` points at private mirrors (offline/air-gapped); `--extra-index-url` adds fallbacks carefully."}
 {"instruction": "Explain `pip index url` briefly.", "input": "", "output": "`--index-url` points at private mirrors (offline/air-gapped); `--extra-index-url` adds fallbacks carefully."}
 {"instruction": "When do I use `pip index url`?", "input": "", "output": "`--index-url` points at private mirrors (offline/air-gapped); `--extra-index-url` adds fallbacks carefully."}
@@ -1056,10 +936,8 @@
 {"instruction": "How would you explain `pip index url` to a junior developer?", "input": "", "output": "`--index-url` points at private mirrors (offline/air-gapped); `--extra-index-url` adds fallbacks carefully."}
 {"instruction": "Give a real-world scenario for `pip index url`.", "input": "", "output": "`--index-url` points at private mirrors (offline/air-gapped); `--extra-index-url` adds fallbacks carefully."}
 {"instruction": "What problem does `pip index url` solve?", "input": "", "output": "`--index-url` points at private mirrors (offline/air-gapped); `--extra-index-url` adds fallbacks carefully."}
-{"instruction": "Terangkan `pip index url` dalam satu minit.", "input": "", "output": "`--index-url` points at private mirrors (offline/air-gapped); `--extra-index-url` adds fallbacks carefully."}
 {"instruction": "Apa yang perlu saya tahu tentang `pip index url`?", "input": "", "output": "`--index-url` points at private mirrors (offline/air-gapped); `--extra-index-url` adds fallbacks carefully."}
 {"instruction": "Bagaimanakah `pip index url` berfungsi?", "input": "", "output": "`--index-url` points at private mirrors (offline/air-gapped); `--extra-index-url` adds fallbacks carefully."}
-{"instruction": "Bilakah masa yang sesuai untuk `pip index url`?", "input": "", "output": "`--index-url` points at private mirrors (offline/air-gapped); `--extra-index-url` adds fallbacks carefully."}
 {"instruction": "What does `requirements pinning` do?", "input": "", "output": "Pin `==` after testing (`pip freeze`), ranges in libraries; hash-checking (`--require-hashes`) hardens deploys."}
 {"instruction": "Explain `requirements pinning` briefly.", "input": "", "output": "Pin `==` after testing (`pip freeze`), ranges in libraries; hash-checking (`--require-hashes`) hardens deploys."}
 {"instruction": "When do I use `requirements pinning`?", "input": "", "output": "Pin `==` after testing (`pip freeze`), ranges in libraries; hash-checking (`--require-hashes`) hardens deploys."}
@@ -1073,10 +951,8 @@
 {"instruction": "How would you explain `requirements pinning` to a junior developer?", "input": "", "output": "Pin `==` after testing (`pip freeze`), ranges in libraries; hash-checking (`--require-hashes`) hardens deploys."}
 {"instruction": "Give a real-world scenario for `requirements pinning`.", "input": "", "output": "Pin `==` after testing (`pip freeze`), ranges in libraries; hash-checking (`--require-hashes`) hardens deploys."}
 {"instruction": "What problem does `requirements pinning` solve?", "input": "", "output": "Pin `==` after testing (`pip freeze`), ranges in libraries; hash-checking (`--require-hashes`) hardens deploys."}
-{"instruction": "Terangkan `requirements pinning` dalam satu minit.", "input": "", "output": "Pin `==` after testing (`pip freeze`), ranges in libraries; hash-checking (`--require-hashes`) hardens deploys."}
 {"instruction": "Apa yang perlu saya tahu tentang `requirements pinning`?", "input": "", "output": "Pin `==` after testing (`pip freeze`), ranges in libraries; hash-checking (`--require-hashes`) hardens deploys."}
 {"instruction": "Bagaimanakah `requirements pinning` berfungsi?", "input": "", "output": "Pin `==` after testing (`pip freeze`), ranges in libraries; hash-checking (`--require-hashes`) hardens deploys."}
-{"instruction": "Bilakah masa yang sesuai untuk `requirements pinning`?", "input": "", "output": "Pin `==` after testing (`pip freeze`), ranges in libraries; hash-checking (`--require-hashes`) hardens deploys."}
 {"instruction": "What does `pyproject build` do?", "input": "", "output": "`[build-system] requires/setuptools` declares build backends; `[project]` replaces setup.py metadata declaratively."}
 {"instruction": "Explain `pyproject build` briefly.", "input": "", "output": "`[build-system] requires/setuptools` declares build backends; `[project]` replaces setup.py metadata declaratively."}
 {"instruction": "When do I use `pyproject build`?", "input": "", "output": "`[build-system] requires/setuptools` declares build backends; `[project]` replaces setup.py metadata declaratively."}
@@ -1090,10 +966,8 @@
 {"instruction": "How would you explain `pyproject build` to a junior developer?", "input": "", "output": "`[build-system] requires/setuptools` declares build backends; `[project]` replaces setup.py metadata declaratively."}
 {"instruction": "Give a real-world scenario for `pyproject build`.", "input": "", "output": "`[build-system] requires/setuptools` declares build backends; `[project]` replaces setup.py metadata declaratively."}
 {"instruction": "What problem does `pyproject build` solve?", "input": "", "output": "`[build-system] requires/setuptools` declares build backends; `[project]` replaces setup.py metadata declaratively."}
-{"instruction": "Terangkan `pyproject build` dalam satu minit.", "input": "", "output": "`[build-system] requires/setuptools` declares build backends; `[project]` replaces setup.py metadata declaratively."}
 {"instruction": "Apa yang perlu saya tahu tentang `pyproject build`?", "input": "", "output": "`[build-system] requires/setuptools` declares build backends; `[project]` replaces setup.py metadata declaratively."}
 {"instruction": "Bagaimanakah `pyproject build` berfungsi?", "input": "", "output": "`[build-system] requires/setuptools` declares build backends; `[project]` replaces setup.py metadata declaratively."}
-{"instruction": "Bilakah masa yang sesuai untuk `pyproject build`?", "input": "", "output": "`[build-system] requires/setuptools` declares build backends; `[project]` replaces setup.py metadata declaratively."}
 {"instruction": "What does `__main__ guard` do?", "input": "", "output": "`if __name__ == '__main__':` separates importable logic from script entry — every module stays reusable."}
 {"instruction": "Explain `__main__ guard` briefly.", "input": "", "output": "`if __name__ == '__main__':` separates importable logic from script entry — every module stays reusable."}
 {"instruction": "When do I use `__main__ guard`?", "input": "", "output": "`if __name__ == '__main__':` separates importable logic from script entry — every module stays reusable."}
@@ -1107,10 +981,8 @@
 {"instruction": "How would you explain `__main__ guard` to a junior developer?", "input": "", "output": "`if __name__ == '__main__':` separates importable logic from script entry — every module stays reusable."}
 {"instruction": "Give a real-world scenario for `__main__ guard`.", "input": "", "output": "`if __name__ == '__main__':` separates importable logic from script entry — every module stays reusable."}
 {"instruction": "What problem does `__main__ guard` solve?", "input": "", "output": "`if __name__ == '__main__':` separates importable logic from script entry — every module stays reusable."}
-{"instruction": "Terangkan `__main__ guard` dalam satu minit.", "input": "", "output": "`if __name__ == '__main__':` separates importable logic from script entry — every module stays reusable."}
 {"instruction": "Apa yang perlu saya tahu tentang `__main__ guard`?", "input": "", "output": "`if __name__ == '__main__':` separates importable logic from script entry — every module stays reusable."}
 {"instruction": "Bagaimanakah `__main__ guard` berfungsi?", "input": "", "output": "`if __name__ == '__main__':` separates importable logic from script entry — every module stays reusable."}
-{"instruction": "Bilakah masa yang sesuai untuk `__main__ guard`?", "input": "", "output": "`if __name__ == '__main__':` separates importable logic from script entry — every module stays reusable."}
 {"instruction": "What does `__init__ packages` do?", "input": "", "output": "`__init__.py` marks packages (implicit namespaces since 3.3 need none); relative imports (`.sibling`) stay internal."}
 {"instruction": "Explain `__init__ packages` briefly.", "input": "", "output": "`__init__.py` marks packages (implicit namespaces since 3.3 need none); relative imports (`.sibling`) stay internal."}
 {"instruction": "When do I use `__init__ packages`?", "input": "", "output": "`__init__.py` marks packages (implicit namespaces since 3.3 need none); relative imports (`.sibling`) stay internal."}
@@ -1124,10 +996,8 @@
 {"instruction": "How would you explain `__init__ packages` to a junior developer?", "input": "", "output": "`__init__.py` marks packages (implicit namespaces since 3.3 need none); relative imports (`.sibling`) stay internal."}
 {"instruction": "Give a real-world scenario for `__init__ packages`.", "input": "", "output": "`__init__.py` marks packages (implicit namespaces since 3.3 need none); relative imports (`.sibling`) stay internal."}
 {"instruction": "What problem does `__init__ packages` solve?", "input": "", "output": "`__init__.py` marks packages (implicit namespaces since 3.3 need none); relative imports (`.sibling`) stay internal."}
-{"instruction": "Terangkan `__init__ packages` dalam satu minit.", "input": "", "output": "`__init__.py` marks packages (implicit namespaces since 3.3 need none); relative imports (`.sibling`) stay internal."}
 {"instruction": "Apa yang perlu saya tahu tentang `__init__ packages`?", "input": "", "output": "`__init__.py` marks packages (implicit namespaces since 3.3 need none); relative imports (`.sibling`) stay internal."}
 {"instruction": "Bagaimanakah `__init__ packages` berfungsi?", "input": "", "output": "`__init__.py` marks packages (implicit namespaces since 3.3 need none); relative imports (`.sibling`) stay internal."}
-{"instruction": "Bilakah masa yang sesuai untuk `__init__ packages`?", "input": "", "output": "`__init__.py` marks packages (implicit namespaces since 3.3 need none); relative imports (`.sibling`) stay internal."}
 {"instruction": "What does `PYTHONPATH pitfalls` do?", "input": "", "output": "`PYTHONPATH` shims break reproducibility across machines — venvs + installs replace it in real projects."}
 {"instruction": "Explain `PYTHONPATH pitfalls` briefly.", "input": "", "output": "`PYTHONPATH` shims break reproducibility across machines — venvs + installs replace it in real projects."}
 {"instruction": "When do I use `PYTHONPATH pitfalls`?", "input": "", "output": "`PYTHONPATH` shims break reproducibility across machines — venvs + installs replace it in real projects."}
@@ -1141,10 +1011,8 @@
 {"instruction": "How would you explain `PYTHONPATH pitfalls` to a junior developer?", "input": "", "output": "`PYTHONPATH` shims break reproducibility across machines — venvs + installs replace it in real projects."}
 {"instruction": "Give a real-world scenario for `PYTHONPATH pitfalls`.", "input": "", "output": "`PYTHONPATH` shims break reproducibility across machines — venvs + installs replace it in real projects."}
 {"instruction": "What problem does `PYTHONPATH pitfalls` solve?", "input": "", "output": "`PYTHONPATH` shims break reproducibility across machines — venvs + installs replace it in real projects."}
-{"instruction": "Terangkan `PYTHONPATH pitfalls` dalam satu minit.", "input": "", "output": "`PYTHONPATH` shims break reproducibility across machines — venvs + installs replace it in real projects."}
 {"instruction": "Apa yang perlu saya tahu tentang `PYTHONPATH pitfalls`?", "input": "", "output": "`PYTHONPATH` shims break reproducibility across machines — venvs + installs replace it in real projects."}
 {"instruction": "Bagaimanakah `PYTHONPATH pitfalls` berfungsi?", "input": "", "output": "`PYTHONPATH` shims break reproducibility across machines — venvs + installs replace it in real projects."}
-{"instruction": "Bilakah masa yang sesuai untuk `PYTHONPATH pitfalls`?", "input": "", "output": "`PYTHONPATH` shims break reproducibility across machines — venvs + installs replace it in real projects."}
 {"instruction": "What does `-m execution` do?", "input": "", "output": "`python -m pkg.mod` runs with package context (relative imports work); script paths don't — always `-m` in projects."}
 {"instruction": "Explain `-m execution` briefly.", "input": "", "output": "`python -m pkg.mod` runs with package context (relative imports work); script paths don't — always `-m` in projects."}
 {"instruction": "When do I use `-m execution`?", "input": "", "output": "`python -m pkg.mod` runs with package context (relative imports work); script paths don't — always `-m` in projects."}
@@ -1158,10 +1026,8 @@
 {"instruction": "How would you explain `-m execution` to a junior developer?", "input": "", "output": "`python -m pkg.mod` runs with package context (relative imports work); script paths don't — always `-m` in projects."}
 {"instruction": "Give a real-world scenario for `-m execution`.", "input": "", "output": "`python -m pkg.mod` runs with package context (relative imports work); script paths don't — always `-m` in projects."}
 {"instruction": "What problem does `-m execution` solve?", "input": "", "output": "`python -m pkg.mod` runs with package context (relative imports work); script paths don't — always `-m` in projects."}
-{"instruction": "Terangkan `-m execution` dalam satu minit.", "input": "", "output": "`python -m pkg.mod` runs with package context (relative imports work); script paths don't — always `-m` in projects."}
 {"instruction": "Apa yang perlu saya tahu tentang `-m execution`?", "input": "", "output": "`python -m pkg.mod` runs with package context (relative imports work); script paths don't — always `-m` in projects."}
 {"instruction": "Bagaimanakah `-m execution` berfungsi?", "input": "", "output": "`python -m pkg.mod` runs with package context (relative imports work); script paths don't — always `-m` in projects."}
-{"instruction": "Bilakah masa yang sesuai untuk `-m execution`?", "input": "", "output": "`python -m pkg.mod` runs with package context (relative imports work); script paths don't — always `-m` in projects."}
 {"instruction": "What does `-O optimize asserts` do?", "input": "", "output": "`python -O` strips asserts and `__debug__` blocks — never gate production logic on assert."}
 {"instruction": "Explain `-O optimize asserts` briefly.", "input": "", "output": "`python -O` strips asserts and `__debug__` blocks — never gate production logic on assert."}
 {"instruction": "When do I use `-O optimize asserts`?", "input": "", "output": "`python -O` strips asserts and `__debug__` blocks — never gate production logic on assert."}
@@ -1175,10 +1041,8 @@
 {"instruction": "How would you explain `-O optimize asserts` to a junior developer?", "input": "", "output": "`python -O` strips asserts and `__debug__` blocks — never gate production logic on assert."}
 {"instruction": "Give a real-world scenario for `-O optimize asserts`.", "input": "", "output": "`python -O` strips asserts and `__debug__` blocks — never gate production logic on assert."}
 {"instruction": "What problem does `-O optimize asserts` solve?", "input": "", "output": "`python -O` strips asserts and `__debug__` blocks — never gate production logic on assert."}
-{"instruction": "Terangkan `-O optimize asserts` dalam satu minit.", "input": "", "output": "`python -O` strips asserts and `__debug__` blocks — never gate production logic on assert."}
 {"instruction": "Apa yang perlu saya tahu tentang `-O optimize asserts`?", "input": "", "output": "`python -O` strips asserts and `__debug__` blocks — never gate production logic on assert."}
 {"instruction": "Bagaimanakah `-O optimize asserts` berfungsi?", "input": "", "output": "`python -O` strips asserts and `__debug__` blocks — never gate production logic on assert."}
-{"instruction": "Bilakah masa yang sesuai untuk `-O optimize asserts`?", "input": "", "output": "`python -O` strips asserts and `__debug__` blocks — never gate production logic on assert."}
 {"instruction": "What does `-u unbuffered logs` do?", "input": "", "output": "`python -u` (or PYTHONUNBUFFERED) streams container logs live; buffered output hides crashes in orchestrators."}
 {"instruction": "Explain `-u unbuffered logs` briefly.", "input": "", "output": "`python -u` (or PYTHONUNBUFFERED) streams container logs live; buffered output hides crashes in orchestrators."}
 {"instruction": "When do I use `-u unbuffered logs`?", "input": "", "output": "`python -u` (or PYTHONUNBUFFERED) streams container logs live; buffered output hides crashes in orchestrators."}
@@ -1192,10 +1056,8 @@
 {"instruction": "How would you explain `-u unbuffered logs` to a junior developer?", "input": "", "output": "`python -u` (or PYTHONUNBUFFERED) streams container logs live; buffered output hides crashes in orchestrators."}
 {"instruction": "Give a real-world scenario for `-u unbuffered logs`.", "input": "", "output": "`python -u` (or PYTHONUNBUFFERED) streams container logs live; buffered output hides crashes in orchestrators."}
 {"instruction": "What problem does `-u unbuffered logs` solve?", "input": "", "output": "`python -u` (or PYTHONUNBUFFERED) streams container logs live; buffered output hides crashes in orchestrators."}
-{"instruction": "Terangkan `-u unbuffered logs` dalam satu minit.", "input": "", "output": "`python -u` (or PYTHONUNBUFFERED) streams container logs live; buffered output hides crashes in orchestrators."}
 {"instruction": "Apa yang perlu saya tahu tentang `-u unbuffered logs`?", "input": "", "output": "`python -u` (or PYTHONUNBUFFERED) streams container logs live; buffered output hides crashes in orchestrators."}
 {"instruction": "Bagaimanakah `-u unbuffered logs` berfungsi?", "input": "", "output": "`python -u` (or PYTHONUNBUFFERED) streams container logs live; buffered output hides crashes in orchestrators."}
-{"instruction": "Bilakah masa yang sesuai untuk `-u unbuffered logs`?", "input": "", "output": "`python -u` (or PYTHONUNBUFFERED) streams container logs live; buffered output hides crashes in orchestrators."}
 {"instruction": "What does `faulthandler timeout` do?", "input": "", "output": "`faulthandler.dump_traceback_later(60)` exposes hangs in production logs without debuggers attached."}
 {"instruction": "Explain `faulthandler timeout` briefly.", "input": "", "output": "`faulthandler.dump_traceback_later(60)` exposes hangs in production logs without debuggers attached."}
 {"instruction": "When do I use `faulthandler timeout`?", "input": "", "output": "`faulthandler.dump_traceback_later(60)` exposes hangs in production logs without debuggers attached."}
@@ -1209,10 +1071,8 @@
 {"instruction": "How would you explain `faulthandler timeout` to a junior developer?", "input": "", "output": "`faulthandler.dump_traceback_later(60)` exposes hangs in production logs without debuggers attached."}
 {"instruction": "Give a real-world scenario for `faulthandler timeout`.", "input": "", "output": "`faulthandler.dump_traceback_later(60)` exposes hangs in production logs without debuggers attached."}
 {"instruction": "What problem does `faulthandler timeout` solve?", "input": "", "output": "`faulthandler.dump_traceback_later(60)` exposes hangs in production logs without debuggers attached."}
-{"instruction": "Terangkan `faulthandler timeout` dalam satu minit.", "input": "", "output": "`faulthandler.dump_traceback_later(60)` exposes hangs in production logs without debuggers attached."}
 {"instruction": "Apa yang perlu saya tahu tentang `faulthandler timeout`?", "input": "", "output": "`faulthandler.dump_traceback_later(60)` exposes hangs in production logs without debuggers attached."}
 {"instruction": "Bagaimanakah `faulthandler timeout` berfungsi?", "input": "", "output": "`faulthandler.dump_traceback_later(60)` exposes hangs in production logs without debuggers attached."}
-{"instruction": "Bilakah masa yang sesuai untuk `faulthandler timeout`?", "input": "", "output": "`faulthandler.dump_traceback_later(60)` exposes hangs in production logs without debuggers attached."}
 {"instruction": "What does `tracemalloc top` do?", "input": "", "output": "`tracemalloc.start()` + `take_snapshot().statistics('lineno')` finds memory growth line by line."}
 {"instruction": "Explain `tracemalloc top` briefly.", "input": "", "output": "`tracemalloc.start()` + `take_snapshot().statistics('lineno')` finds memory growth line by line."}
 {"instruction": "When do I use `tracemalloc top`?", "input": "", "output": "`tracemalloc.start()` + `take_snapshot().statistics('lineno')` finds memory growth line by line."}
@@ -1226,10 +1086,8 @@
 {"instruction": "How would you explain `tracemalloc top` to a junior developer?", "input": "", "output": "`tracemalloc.start()` + `take_snapshot().statistics('lineno')` finds memory growth line by line."}
 {"instruction": "Give a real-world scenario for `tracemalloc top`.", "input": "", "output": "`tracemalloc.start()` + `take_snapshot().statistics('lineno')` finds memory growth line by line."}
 {"instruction": "What problem does `tracemalloc top` solve?", "input": "", "output": "`tracemalloc.start()` + `take_snapshot().statistics('lineno')` finds memory growth line by line."}
-{"instruction": "Terangkan `tracemalloc top` dalam satu minit.", "input": "", "output": "`tracemalloc.start()` + `take_snapshot().statistics('lineno')` finds memory growth line by line."}
 {"instruction": "Apa yang perlu saya tahu tentang `tracemalloc top`?", "input": "", "output": "`tracemalloc.start()` + `take_snapshot().statistics('lineno')` finds memory growth line by line."}
 {"instruction": "Bagaimanakah `tracemalloc top` berfungsi?", "input": "", "output": "`tracemalloc.start()` + `take_snapshot().statistics('lineno')` finds memory growth line by line."}
-{"instruction": "Bilakah masa yang sesuai untuk `tracemalloc top`?", "input": "", "output": "`tracemalloc.start()` + `take_snapshot().statistics('lineno')` finds memory growth line by line."}
 {"instruction": "What does `cProfile snakeviz` do?", "input": "", "output": "`cProfile` + `pstats` (or snakeviz) profiles hot paths; `timeit` micro-benchmarks snippets correctly."}
 {"instruction": "Explain `cProfile snakeviz` briefly.", "input": "", "output": "`cProfile` + `pstats` (or snakeviz) profiles hot paths; `timeit` micro-benchmarks snippets correctly."}
 {"instruction": "When do I use `cProfile snakeviz`?", "input": "", "output": "`cProfile` + `pstats` (or snakeviz) profiles hot paths; `timeit` micro-benchmarks snippets correctly."}
@@ -1243,10 +1101,8 @@
 {"instruction": "How would you explain `cProfile snakeviz` to a junior developer?", "input": "", "output": "`cProfile` + `pstats` (or snakeviz) profiles hot paths; `timeit` micro-benchmarks snippets correctly."}
 {"instruction": "Give a real-world scenario for `cProfile snakeviz`.", "input": "", "output": "`cProfile` + `pstats` (or snakeviz) profiles hot paths; `timeit` micro-benchmarks snippets correctly."}
 {"instruction": "What problem does `cProfile snakeviz` solve?", "input": "", "output": "`cProfile` + `pstats` (or snakeviz) profiles hot paths; `timeit` micro-benchmarks snippets correctly."}
-{"instruction": "Terangkan `cProfile snakeviz` dalam satu minit.", "input": "", "output": "`cProfile` + `pstats` (or snakeviz) profiles hot paths; `timeit` micro-benchmarks snippets correctly."}
 {"instruction": "Apa yang perlu saya tahu tentang `cProfile snakeviz`?", "input": "", "output": "`cProfile` + `pstats` (or snakeviz) profiles hot paths; `timeit` micro-benchmarks snippets correctly."}
 {"instruction": "Bagaimanakah `cProfile snakeviz` berfungsi?", "input": "", "output": "`cProfile` + `pstats` (or snakeviz) profiles hot paths; `timeit` micro-benchmarks snippets correctly."}
-{"instruction": "Bilakah masa yang sesuai untuk `cProfile snakeviz`?", "input": "", "output": "`cProfile` + `pstats` (or snakeviz) profiles hot paths; `timeit` micro-benchmarks snippets correctly."}
 {"instruction": "What does `multiprocessing spawn` do?", "input": "", "output": "Windows/macOS spawn (fresh interpreters, slower start, picklable targets only); fork inherits (fast, Unix-only)."}
 {"instruction": "Explain `multiprocessing spawn` briefly.", "input": "", "output": "Windows/macOS spawn (fresh interpreters, slower start, picklable targets only); fork inherits (fast, Unix-only)."}
 {"instruction": "When do I use `multiprocessing spawn`?", "input": "", "output": "Windows/macOS spawn (fresh interpreters, slower start, picklable targets only); fork inherits (fast, Unix-only)."}
@@ -1260,10 +1116,8 @@
 {"instruction": "How would you explain `multiprocessing spawn` to a junior developer?", "input": "", "output": "Windows/macOS spawn (fresh interpreters, slower start, picklable targets only); fork inherits (fast, Unix-only)."}
 {"instruction": "Give a real-world scenario for `multiprocessing spawn`.", "input": "", "output": "Windows/macOS spawn (fresh interpreters, slower start, picklable targets only); fork inherits (fast, Unix-only)."}
 {"instruction": "What problem does `multiprocessing spawn` solve?", "input": "", "output": "Windows/macOS spawn (fresh interpreters, slower start, picklable targets only); fork inherits (fast, Unix-only)."}
-{"instruction": "Terangkan `multiprocessing spawn` dalam satu minit.", "input": "", "output": "Windows/macOS spawn (fresh interpreters, slower start, picklable targets only); fork inherits (fast, Unix-only)."}
 {"instruction": "Apa yang perlu saya tahu tentang `multiprocessing spawn`?", "input": "", "output": "Windows/macOS spawn (fresh interpreters, slower start, picklable targets only); fork inherits (fast, Unix-only)."}
 {"instruction": "Bagaimanakah `multiprocessing spawn` berfungsi?", "input": "", "output": "Windows/macOS spawn (fresh interpreters, slower start, picklable targets only); fork inherits (fast, Unix-only)."}
-{"instruction": "Bilakah masa yang sesuai untuk `multiprocessing spawn`?", "input": "", "output": "Windows/macOS spawn (fresh interpreters, slower start, picklable targets only); fork inherits (fast, Unix-only)."}
 {"instruction": "What does `concurrent futures` do?", "input": "", "output": "`ThreadPoolExecutor` for I/O parallelism, `ProcessPoolExecutor` for CPU — `map` preserves order, `as_completed` streams."}
 {"instruction": "Explain `concurrent futures` briefly.", "input": "", "output": "`ThreadPoolExecutor` for I/O parallelism, `ProcessPoolExecutor` for CPU — `map` preserves order, `as_completed` streams."}
 {"instruction": "When do I use `concurrent futures`?", "input": "", "output": "`ThreadPoolExecutor` for I/O parallelism, `ProcessPoolExecutor` for CPU — `map` preserves order, `as_completed` streams."}
@@ -1277,7 +1131,5 @@
 {"instruction": "How would you explain `concurrent futures` to a junior developer?", "input": "", "output": "`ThreadPoolExecutor` for I/O parallelism, `ProcessPoolExecutor` for CPU — `map` preserves order, `as_completed` streams."}
 {"instruction": "Give a real-world scenario for `concurrent futures`.", "input": "", "output": "`ThreadPoolExecutor` for I/O parallelism, `ProcessPoolExecutor` for CPU — `map` preserves order, `as_completed` streams."}
 {"instruction": "What problem does `concurrent futures` solve?", "input": "", "output": "`ThreadPoolExecutor` for I/O parallelism, `ProcessPoolExecutor` for CPU — `map` preserves order, `as_completed` streams."}
-{"instruction": "Terangkan `concurrent futures` dalam satu minit.", "input": "", "output": "`ThreadPoolExecutor` for I/O parallelism, `ProcessPoolExecutor` for CPU — `map` preserves order, `as_completed` streams."}
 {"instruction": "Apa yang perlu saya tahu tentang `concurrent futures`?", "input": "", "output": "`ThreadPoolExecutor` for I/O parallelism, `ProcessPoolExecutor` for CPU — `map` preserves order, `as_completed` streams."}
 {"instruction": "Bagaimanakah `concurrent futures` berfungsi?", "input": "", "output": "`ThreadPoolExecutor` for I/O parallelism, `ProcessPoolExecutor` for CPU — `map` preserves order, `as_completed` streams."}
-{"instruction": "Bilakah masa yang sesuai untuk `concurrent futures`?", "input": "", "output": "`ThreadPoolExecutor` for I/O parallelism, `ProcessPoolExecutor` for CPU — `map` preserves order, `as_completed` streams."}

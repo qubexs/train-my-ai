@@ -62,10 +62,8 @@
 {"instruction": "How would you explain `git init add commit` to a junior developer?", "input": "", "output": "`git init`, `add`, `commit -m` snapshot work; small focused commits beat giant dumps for review and revert."}
 {"instruction": "Give a real-world scenario for `git init add commit`.", "input": "", "output": "`git init`, `add`, `commit -m` snapshot work; small focused commits beat giant dumps for review and revert."}
 {"instruction": "What problem does `git init add commit` solve?", "input": "", "output": "`git init`, `add`, `commit -m` snapshot work; small focused commits beat giant dumps for review and revert."}
-{"instruction": "Terangkan `git init add commit` dalam satu minit.", "input": "", "output": "`git init`, `add`, `commit -m` snapshot work; small focused commits beat giant dumps for review and revert."}
 {"instruction": "Apa yang perlu saya tahu tentang `git init add commit`?", "input": "", "output": "`git init`, `add`, `commit -m` snapshot work; small focused commits beat giant dumps for review and revert."}
 {"instruction": "Bagaimanakah `git init add commit` berfungsi?", "input": "", "output": "`git init`, `add`, `commit -m` snapshot work; small focused commits beat giant dumps for review and revert."}
-{"instruction": "Bilakah masa yang sesuai untuk `git init add commit`?", "input": "", "output": "`git init`, `add`, `commit -m` snapshot work; small focused commits beat giant dumps for review and revert."}
 {"instruction": "What does `git status diff log` do?", "input": "", "output": "`status` shows working tree, `diff` unstaged changes, `log --oneline -10` recent history — the pre-commit ritual."}
 {"instruction": "Explain `git status diff log` briefly.", "input": "", "output": "`status` shows working tree, `diff` unstaged changes, `log --oneline -10` recent history — the pre-commit ritual."}
 {"instruction": "When do I use `git status diff log`?", "input": "", "output": "`status` shows working tree, `diff` unstaged changes, `log --oneline -10` recent history — the pre-commit ritual."}
@@ -79,10 +77,8 @@
 {"instruction": "How would you explain `git status diff log` to a junior developer?", "input": "", "output": "`status` shows working tree, `diff` unstaged changes, `log --oneline -10` recent history — the pre-commit ritual."}
 {"instruction": "Give a real-world scenario for `git status diff log`.", "input": "", "output": "`status` shows working tree, `diff` unstaged changes, `log --oneline -10` recent history — the pre-commit ritual."}
 {"instruction": "What problem does `git status diff log` solve?", "input": "", "output": "`status` shows working tree, `diff` unstaged changes, `log --oneline -10` recent history — the pre-commit ritual."}
-{"instruction": "Terangkan `git status diff log` dalam satu minit.", "input": "", "output": "`status` shows working tree, `diff` unstaged changes, `log --oneline -10` recent history — the pre-commit ritual."}
 {"instruction": "Apa yang perlu saya tahu tentang `git status diff log`?", "input": "", "output": "`status` shows working tree, `diff` unstaged changes, `log --oneline -10` recent history — the pre-commit ritual."}
 {"instruction": "Bagaimanakah `git status diff log` berfungsi?", "input": "", "output": "`status` shows working tree, `diff` unstaged changes, `log --oneline -10` recent history — the pre-commit ritual."}
-{"instruction": "Bilakah masa yang sesuai untuk `git status diff log`?", "input": "", "output": "`status` shows working tree, `diff` unstaged changes, `log --oneline -10` recent history — the pre-commit ritual."}
 {"instruction": "What does `git branch checkout` do?", "input": "", "output": "Branches isolate work; `switch -c ciri` creates+moves; merge or rebase to integrate, delete after landing."}
 {"instruction": "Explain `git branch checkout` briefly.", "input": "", "output": "Branches isolate work; `switch -c ciri` creates+moves; merge or rebase to integrate, delete after landing."}
 {"instruction": "When do I use `git branch checkout`?", "input": "", "output": "Branches isolate work; `switch -c ciri` creates+moves; merge or rebase to integrate, delete after landing."}
@@ -96,10 +92,8 @@
 {"instruction": "How would you explain `git branch checkout` to a junior developer?", "input": "", "output": "Branches isolate work; `switch -c ciri` creates+moves; merge or rebase to integrate, delete after landing."}
 {"instruction": "Give a real-world scenario for `git branch checkout`.", "input": "", "output": "Branches isolate work; `switch -c ciri` creates+moves; merge or rebase to integrate, delete after landing."}
 {"instruction": "What problem does `git branch checkout` solve?", "input": "", "output": "Branches isolate work; `switch -c ciri` creates+moves; merge or rebase to integrate, delete after landing."}
-{"instruction": "Terangkan `git branch checkout` dalam satu minit.", "input": "", "output": "Branches isolate work; `switch -c ciri` creates+moves; merge or rebase to integrate, delete after landing."}
 {"instruction": "Apa yang perlu saya tahu tentang `git branch checkout`?", "input": "", "output": "Branches isolate work; `switch -c ciri` creates+moves; merge or rebase to integrate, delete after landing."}
 {"instruction": "Bagaimanakah `git branch checkout` berfungsi?", "input": "", "output": "Branches isolate work; `switch -c ciri` creates+moves; merge or rebase to integrate, delete after landing."}
-{"instruction": "Bilakah masa yang sesuai untuk `git branch checkout`?", "input": "", "output": "Branches isolate work; `switch -c ciri` creates+moves; merge or rebase to integrate, delete after landing."}
 {"instruction": "What does `git push pull clone` do?", "input": "", "output": "`clone` copies once, `pull` fetches+merges, `push` publishes; set upstream (`-u`) so bare `push/pull` work."}
 {"instruction": "Explain `git push pull clone` briefly.", "input": "", "output": "`clone` copies once, `pull` fetches+merges, `push` publishes; set upstream (`-u`) so bare `push/pull` work."}
 {"instruction": "When do I use `git push pull clone`?", "input": "", "output": "`clone` copies once, `pull` fetches+merges, `push` publishes; set upstream (`-u`) so bare `push/pull` work."}
@@ -113,10 +107,8 @@
 {"instruction": "How would you explain `git push pull clone` to a junior developer?", "input": "", "output": "`clone` copies once, `pull` fetches+merges, `push` publishes; set upstream (`-u`) so bare `push/pull` work."}
 {"instruction": "Give a real-world scenario for `git push pull clone`.", "input": "", "output": "`clone` copies once, `pull` fetches+merges, `push` publishes; set upstream (`-u`) so bare `push/pull` work."}
 {"instruction": "What problem does `git push pull clone` solve?", "input": "", "output": "`clone` copies once, `pull` fetches+merges, `push` publishes; set upstream (`-u`) so bare `push/pull` work."}
-{"instruction": "Terangkan `git push pull clone` dalam satu minit.", "input": "", "output": "`clone` copies once, `pull` fetches+merges, `push` publishes; set upstream (`-u`) so bare `push/pull` work."}
 {"instruction": "Apa yang perlu saya tahu tentang `git push pull clone`?", "input": "", "output": "`clone` copies once, `pull` fetches+merges, `push` publishes; set upstream (`-u`) so bare `push/pull` work."}
 {"instruction": "Bagaimanakah `git push pull clone` berfungsi?", "input": "", "output": "`clone` copies once, `pull` fetches+merges, `push` publishes; set upstream (`-u`) so bare `push/pull` work."}
-{"instruction": "Bilakah masa yang sesuai untuk `git push pull clone`?", "input": "", "output": "`clone` copies once, `pull` fetches+merges, `push` publishes; set upstream (`-u`) so bare `push/pull` work."}
 {"instruction": "What does `git stash pop` do?", "input": "", "output": "`stash` shelves dirty work for context switches; `pop` restores (drops), `apply` restores (keeps)."}
 {"instruction": "Explain `git stash pop` briefly.", "input": "", "output": "`stash` shelves dirty work for context switches; `pop` restores (drops), `apply` restores (keeps)."}
 {"instruction": "When do I use `git stash pop`?", "input": "", "output": "`stash` shelves dirty work for context switches; `pop` restores (drops), `apply` restores (keeps)."}
@@ -130,10 +122,8 @@
 {"instruction": "How would you explain `git stash pop` to a junior developer?", "input": "", "output": "`stash` shelves dirty work for context switches; `pop` restores (drops), `apply` restores (keeps)."}
 {"instruction": "Give a real-world scenario for `git stash pop`.", "input": "", "output": "`stash` shelves dirty work for context switches; `pop` restores (drops), `apply` restores (keeps)."}
 {"instruction": "What problem does `git stash pop` solve?", "input": "", "output": "`stash` shelves dirty work for context switches; `pop` restores (drops), `apply` restores (keeps)."}
-{"instruction": "Terangkan `git stash pop` dalam satu minit.", "input": "", "output": "`stash` shelves dirty work for context switches; `pop` restores (drops), `apply` restores (keeps)."}
 {"instruction": "Apa yang perlu saya tahu tentang `git stash pop`?", "input": "", "output": "`stash` shelves dirty work for context switches; `pop` restores (drops), `apply` restores (keeps)."}
 {"instruction": "Bagaimanakah `git stash pop` berfungsi?", "input": "", "output": "`stash` shelves dirty work for context switches; `pop` restores (drops), `apply` restores (keeps)."}
-{"instruction": "Bilakah masa yang sesuai untuk `git stash pop`?", "input": "", "output": "`stash` shelves dirty work for context switches; `pop` restores (drops), `apply` restores (keeps)."}
 {"instruction": "What does `git reset revert` do?", "input": "", "output": "`revert` safely undoes published commits (new commit); `reset --hard` rewrites local history only — never on shared branches."}
 {"instruction": "Explain `git reset revert` briefly.", "input": "", "output": "`revert` safely undoes published commits (new commit); `reset --hard` rewrites local history only — never on shared branches."}
 {"instruction": "When do I use `git reset revert`?", "input": "", "output": "`revert` safely undoes published commits (new commit); `reset --hard` rewrites local history only — never on shared branches."}
@@ -147,10 +137,8 @@
 {"instruction": "How would you explain `git reset revert` to a junior developer?", "input": "", "output": "`revert` safely undoes published commits (new commit); `reset --hard` rewrites local history only — never on shared branches."}
 {"instruction": "Give a real-world scenario for `git reset revert`.", "input": "", "output": "`revert` safely undoes published commits (new commit); `reset --hard` rewrites local history only — never on shared branches."}
 {"instruction": "What problem does `git reset revert` solve?", "input": "", "output": "`revert` safely undoes published commits (new commit); `reset --hard` rewrites local history only — never on shared branches."}
-{"instruction": "Terangkan `git reset revert` dalam satu minit.", "input": "", "output": "`revert` safely undoes published commits (new commit); `reset --hard` rewrites local history only — never on shared branches."}
 {"instruction": "Apa yang perlu saya tahu tentang `git reset revert`?", "input": "", "output": "`revert` safely undoes published commits (new commit); `reset --hard` rewrites local history only — never on shared branches."}
 {"instruction": "Bagaimanakah `git reset revert` berfungsi?", "input": "", "output": "`revert` safely undoes published commits (new commit); `reset --hard` rewrites local history only — never on shared branches."}
-{"instruction": "Bilakah masa yang sesuai untuk `git reset revert`?", "input": "", "output": "`revert` safely undoes published commits (new commit); `reset --hard` rewrites local history only — never on shared branches."}
 {"instruction": "What does `gitignore` do?", "input": "", "output": "Ignore build outputs, secrets and local configs (`*.log`, `.env`, `node_modules/`); committed secrets need rotation, not just removal."}
 {"instruction": "Explain `gitignore` briefly.", "input": "", "output": "Ignore build outputs, secrets and local configs (`*.log`, `.env`, `node_modules/`); committed secrets need rotation, not just removal."}
 {"instruction": "When do I use `gitignore`?", "input": "", "output": "Ignore build outputs, secrets and local configs (`*.log`, `.env`, `node_modules/`); committed secrets need rotation, not just removal."}
@@ -164,10 +152,8 @@
 {"instruction": "How would you explain `gitignore` to a junior developer?", "input": "", "output": "Ignore build outputs, secrets and local configs (`*.log`, `.env`, `node_modules/`); committed secrets need rotation, not just removal."}
 {"instruction": "Give a real-world scenario for `gitignore`.", "input": "", "output": "Ignore build outputs, secrets and local configs (`*.log`, `.env`, `node_modules/`); committed secrets need rotation, not just removal."}
 {"instruction": "What problem does `gitignore` solve?", "input": "", "output": "Ignore build outputs, secrets and local configs (`*.log`, `.env`, `node_modules/`); committed secrets need rotation, not just removal."}
-{"instruction": "Terangkan `gitignore` dalam satu minit.", "input": "", "output": "Ignore build outputs, secrets and local configs (`*.log`, `.env`, `node_modules/`); committed secrets need rotation, not just removal."}
 {"instruction": "Apa yang perlu saya tahu tentang `gitignore`?", "input": "", "output": "Ignore build outputs, secrets and local configs (`*.log`, `.env`, `node_modules/`); committed secrets need rotation, not just removal."}
 {"instruction": "Bagaimanakah `gitignore` berfungsi?", "input": "", "output": "Ignore build outputs, secrets and local configs (`*.log`, `.env`, `node_modules/`); committed secrets need rotation, not just removal."}
-{"instruction": "Bilakah masa yang sesuai untuk `gitignore`?", "input": "", "output": "Ignore build outputs, secrets and local configs (`*.log`, `.env`, `node_modules/`); committed secrets need rotation, not just removal."}
 {"instruction": "What does `README structure` do?", "input": "", "output": "Good READMEs: what, quickstart, usage, config, contributing — the 30-second test decides adoptions."}
 {"instruction": "Explain `README structure` briefly.", "input": "", "output": "Good READMEs: what, quickstart, usage, config, contributing — the 30-second test decides adoptions."}
 {"instruction": "When do I use `README structure`?", "input": "", "output": "Good READMEs: what, quickstart, usage, config, contributing — the 30-second test decides adoptions."}
@@ -181,10 +167,8 @@
 {"instruction": "How would you explain `README structure` to a junior developer?", "input": "", "output": "Good READMEs: what, quickstart, usage, config, contributing — the 30-second test decides adoptions."}
 {"instruction": "Give a real-world scenario for `README structure`.", "input": "", "output": "Good READMEs: what, quickstart, usage, config, contributing — the 30-second test decides adoptions."}
 {"instruction": "What problem does `README structure` solve?", "input": "", "output": "Good READMEs: what, quickstart, usage, config, contributing — the 30-second test decides adoptions."}
-{"instruction": "Terangkan `README structure` dalam satu minit.", "input": "", "output": "Good READMEs: what, quickstart, usage, config, contributing — the 30-second test decides adoptions."}
 {"instruction": "Apa yang perlu saya tahu tentang `README structure`?", "input": "", "output": "Good READMEs: what, quickstart, usage, config, contributing — the 30-second test decides adoptions."}
 {"instruction": "Bagaimanakah `README structure` berfungsi?", "input": "", "output": "Good READMEs: what, quickstart, usage, config, contributing — the 30-second test decides adoptions."}
-{"instruction": "Bilakah masa yang sesuai untuk `README structure`?", "input": "", "output": "Good READMEs: what, quickstart, usage, config, contributing — the 30-second test decides adoptions."}
 {"instruction": "What does `semver` do?", "input": "", "output": "`MAJOR.MINOR.PATCH`: breaking/features/fixes; ranges (`^1.2`) auto-update safely within semver discipline."}
 {"instruction": "Explain `semver` briefly.", "input": "", "output": "`MAJOR.MINOR.PATCH`: breaking/features/fixes; ranges (`^1.2`) auto-update safely within semver discipline."}
 {"instruction": "When do I use `semver`?", "input": "", "output": "`MAJOR.MINOR.PATCH`: breaking/features/fixes; ranges (`^1.2`) auto-update safely within semver discipline."}
@@ -198,10 +182,8 @@
 {"instruction": "How would you explain `semver` to a junior developer?", "input": "", "output": "`MAJOR.MINOR.PATCH`: breaking/features/fixes; ranges (`^1.2`) auto-update safely within semver discipline."}
 {"instruction": "Give a real-world scenario for `semver`.", "input": "", "output": "`MAJOR.MINOR.PATCH`: breaking/features/fixes; ranges (`^1.2`) auto-update safely within semver discipline."}
 {"instruction": "What problem does `semver` solve?", "input": "", "output": "`MAJOR.MINOR.PATCH`: breaking/features/fixes; ranges (`^1.2`) auto-update safely within semver discipline."}
-{"instruction": "Terangkan `semver` dalam satu minit.", "input": "", "output": "`MAJOR.MINOR.PATCH`: breaking/features/fixes; ranges (`^1.2`) auto-update safely within semver discipline."}
 {"instruction": "Apa yang perlu saya tahu tentang `semver`?", "input": "", "output": "`MAJOR.MINOR.PATCH`: breaking/features/fixes; ranges (`^1.2`) auto-update safely within semver discipline."}
 {"instruction": "Bagaimanakah `semver` berfungsi?", "input": "", "output": "`MAJOR.MINOR.PATCH`: breaking/features/fixes; ranges (`^1.2`) auto-update safely within semver discipline."}
-{"instruction": "Bilakah masa yang sesuai untuk `semver`?", "input": "", "output": "`MAJOR.MINOR.PATCH`: breaking/features/fixes; ranges (`^1.2`) auto-update safely within semver discipline."}
 {"instruction": "What does `changelog` do?", "input": "", "output": "Changelogs narrate user-facing changes per release (added/fixed/breaking); commit history is not a changelog."}
 {"instruction": "Explain `changelog` briefly.", "input": "", "output": "Changelogs narrate user-facing changes per release (added/fixed/breaking); commit history is not a changelog."}
 {"instruction": "When do I use `changelog`?", "input": "", "output": "Changelogs narrate user-facing changes per release (added/fixed/breaking); commit history is not a changelog."}
@@ -215,10 +197,8 @@
 {"instruction": "How would you explain `changelog` to a junior developer?", "input": "", "output": "Changelogs narrate user-facing changes per release (added/fixed/breaking); commit history is not a changelog."}
 {"instruction": "Give a real-world scenario for `changelog`.", "input": "", "output": "Changelogs narrate user-facing changes per release (added/fixed/breaking); commit history is not a changelog."}
 {"instruction": "What problem does `changelog` solve?", "input": "", "output": "Changelogs narrate user-facing changes per release (added/fixed/breaking); commit history is not a changelog."}
-{"instruction": "Terangkan `changelog` dalam satu minit.", "input": "", "output": "Changelogs narrate user-facing changes per release (added/fixed/breaking); commit history is not a changelog."}
 {"instruction": "Apa yang perlu saya tahu tentang `changelog`?", "input": "", "output": "Changelogs narrate user-facing changes per release (added/fixed/breaking); commit history is not a changelog."}
 {"instruction": "Bagaimanakah `changelog` berfungsi?", "input": "", "output": "Changelogs narrate user-facing changes per release (added/fixed/breaking); commit history is not a changelog."}
-{"instruction": "Bilakah masa yang sesuai untuk `changelog`?", "input": "", "output": "Changelogs narrate user-facing changes per release (added/fixed/breaking); commit history is not a changelog."}
 {"instruction": "What does `MIT Apache license` do?", "input": "", "output": "MIT/Apache-2.0 permit commercial use (Apache adds patent grant); GPL obligates source sharing — choose before publishing."}
 {"instruction": "Explain `MIT Apache license` briefly.", "input": "", "output": "MIT/Apache-2.0 permit commercial use (Apache adds patent grant); GPL obligates source sharing — choose before publishing."}
 {"instruction": "When do I use `MIT Apache license`?", "input": "", "output": "MIT/Apache-2.0 permit commercial use (Apache adds patent grant); GPL obligates source sharing — choose before publishing."}
@@ -232,10 +212,8 @@
 {"instruction": "How would you explain `MIT Apache license` to a junior developer?", "input": "", "output": "MIT/Apache-2.0 permit commercial use (Apache adds patent grant); GPL obligates source sharing — choose before publishing."}
 {"instruction": "Give a real-world scenario for `MIT Apache license`.", "input": "", "output": "MIT/Apache-2.0 permit commercial use (Apache adds patent grant); GPL obligates source sharing — choose before publishing."}
 {"instruction": "What problem does `MIT Apache license` solve?", "input": "", "output": "MIT/Apache-2.0 permit commercial use (Apache adds patent grant); GPL obligates source sharing — choose before publishing."}
-{"instruction": "Terangkan `MIT Apache license` dalam satu minit.", "input": "", "output": "MIT/Apache-2.0 permit commercial use (Apache adds patent grant); GPL obligates source sharing — choose before publishing."}
 {"instruction": "Apa yang perlu saya tahu tentang `MIT Apache license`?", "input": "", "output": "MIT/Apache-2.0 permit commercial use (Apache adds patent grant); GPL obligates source sharing — choose before publishing."}
 {"instruction": "Bagaimanakah `MIT Apache license` berfungsi?", "input": "", "output": "MIT/Apache-2.0 permit commercial use (Apache adds patent grant); GPL obligates source sharing — choose before publishing."}
-{"instruction": "Bilakah masa yang sesuai untuk `MIT Apache license`?", "input": "", "output": "MIT/Apache-2.0 permit commercial use (Apache adds patent grant); GPL obligates source sharing — choose before publishing."}
 {"instruction": "What does `HTTP GET POST` do?", "input": "", "output": "GET reads (safe, cacheable), POST mutates; PUT replaces, PATCH updates partially, DELETE removes — verbs carry meaning."}
 {"instruction": "Explain `HTTP GET POST` briefly.", "input": "", "output": "GET reads (safe, cacheable), POST mutates; PUT replaces, PATCH updates partially, DELETE removes — verbs carry meaning."}
 {"instruction": "When do I use `HTTP GET POST`?", "input": "", "output": "GET reads (safe, cacheable), POST mutates; PUT replaces, PATCH updates partially, DELETE removes — verbs carry meaning."}
@@ -249,10 +227,8 @@
 {"instruction": "How would you explain `HTTP GET POST` to a junior developer?", "input": "", "output": "GET reads (safe, cacheable), POST mutates; PUT replaces, PATCH updates partially, DELETE removes — verbs carry meaning."}
 {"instruction": "Give a real-world scenario for `HTTP GET POST`.", "input": "", "output": "GET reads (safe, cacheable), POST mutates; PUT replaces, PATCH updates partially, DELETE removes — verbs carry meaning."}
 {"instruction": "What problem does `HTTP GET POST` solve?", "input": "", "output": "GET reads (safe, cacheable), POST mutates; PUT replaces, PATCH updates partially, DELETE removes — verbs carry meaning."}
-{"instruction": "Terangkan `HTTP GET POST` dalam satu minit.", "input": "", "output": "GET reads (safe, cacheable), POST mutates; PUT replaces, PATCH updates partially, DELETE removes — verbs carry meaning."}
 {"instruction": "Apa yang perlu saya tahu tentang `HTTP GET POST`?", "input": "", "output": "GET reads (safe, cacheable), POST mutates; PUT replaces, PATCH updates partially, DELETE removes — verbs carry meaning."}
 {"instruction": "Bagaimanakah `HTTP GET POST` berfungsi?", "input": "", "output": "GET reads (safe, cacheable), POST mutates; PUT replaces, PATCH updates partially, DELETE removes — verbs carry meaning."}
-{"instruction": "Bilakah masa yang sesuai untuk `HTTP GET POST`?", "input": "", "output": "GET reads (safe, cacheable), POST mutates; PUT replaces, PATCH updates partially, DELETE removes — verbs carry meaning."}
 {"instruction": "What does `HTTP status 2xx` do?", "input": "", "output": "2xx means success (`200` ok, `201` created, `204` no content); clients branch on classes, not just 200."}
 {"instruction": "Explain `HTTP status 2xx` briefly.", "input": "", "output": "2xx means success (`200` ok, `201` created, `204` no content); clients branch on classes, not just 200."}
 {"instruction": "When do I use `HTTP status 2xx`?", "input": "", "output": "2xx means success (`200` ok, `201` created, `204` no content); clients branch on classes, not just 200."}
@@ -266,10 +242,8 @@
 {"instruction": "How would you explain `HTTP status 2xx` to a junior developer?", "input": "", "output": "2xx means success (`200` ok, `201` created, `204` no content); clients branch on classes, not just 200."}
 {"instruction": "Give a real-world scenario for `HTTP status 2xx`.", "input": "", "output": "2xx means success (`200` ok, `201` created, `204` no content); clients branch on classes, not just 200."}
 {"instruction": "What problem does `HTTP status 2xx` solve?", "input": "", "output": "2xx means success (`200` ok, `201` created, `204` no content); clients branch on classes, not just 200."}
-{"instruction": "Terangkan `HTTP status 2xx` dalam satu minit.", "input": "", "output": "2xx means success (`200` ok, `201` created, `204` no content); clients branch on classes, not just 200."}
 {"instruction": "Apa yang perlu saya tahu tentang `HTTP status 2xx`?", "input": "", "output": "2xx means success (`200` ok, `201` created, `204` no content); clients branch on classes, not just 200."}
 {"instruction": "Bagaimanakah `HTTP status 2xx` berfungsi?", "input": "", "output": "2xx means success (`200` ok, `201` created, `204` no content); clients branch on classes, not just 200."}
-{"instruction": "Bilakah masa yang sesuai untuk `HTTP status 2xx`?", "input": "", "output": "2xx means success (`200` ok, `201` created, `204` no content); clients branch on classes, not just 200."}
 {"instruction": "What does `HTTP status 4xx` do?", "input": "", "output": "4xx blames the client (`400` bad, `401` unauthenticated, `403` forbidden, `404` missing, `429` throttled)."}
 {"instruction": "Explain `HTTP status 4xx` briefly.", "input": "", "output": "4xx blames the client (`400` bad, `401` unauthenticated, `403` forbidden, `404` missing, `429` throttled)."}
 {"instruction": "When do I use `HTTP status 4xx`?", "input": "", "output": "4xx blames the client (`400` bad, `401` unauthenticated, `403` forbidden, `404` missing, `429` throttled)."}
@@ -283,10 +257,8 @@
 {"instruction": "How would you explain `HTTP status 4xx` to a junior developer?", "input": "", "output": "4xx blames the client (`400` bad, `401` unauthenticated, `403` forbidden, `404` missing, `429` throttled)."}
 {"instruction": "Give a real-world scenario for `HTTP status 4xx`.", "input": "", "output": "4xx blames the client (`400` bad, `401` unauthenticated, `403` forbidden, `404` missing, `429` throttled)."}
 {"instruction": "What problem does `HTTP status 4xx` solve?", "input": "", "output": "4xx blames the client (`400` bad, `401` unauthenticated, `403` forbidden, `404` missing, `429` throttled)."}
-{"instruction": "Terangkan `HTTP status 4xx` dalam satu minit.", "input": "", "output": "4xx blames the client (`400` bad, `401` unauthenticated, `403` forbidden, `404` missing, `429` throttled)."}
 {"instruction": "Apa yang perlu saya tahu tentang `HTTP status 4xx`?", "input": "", "output": "4xx blames the client (`400` bad, `401` unauthenticated, `403` forbidden, `404` missing, `429` throttled)."}
 {"instruction": "Bagaimanakah `HTTP status 4xx` berfungsi?", "input": "", "output": "4xx blames the client (`400` bad, `401` unauthenticated, `403` forbidden, `404` missing, `429` throttled)."}
-{"instruction": "Bilakah masa yang sesuai untuk `HTTP status 4xx`?", "input": "", "output": "4xx blames the client (`400` bad, `401` unauthenticated, `403` forbidden, `404` missing, `429` throttled)."}
 {"instruction": "What does `HTTP status 5xx` do?", "input": "", "output": "5xx blames the server (`500` crash, `502` bad gateway, `503` overloaded); retry with backoff, alert humans."}
 {"instruction": "Explain `HTTP status 5xx` briefly.", "input": "", "output": "5xx blames the server (`500` crash, `502` bad gateway, `503` overloaded); retry with backoff, alert humans."}
 {"instruction": "When do I use `HTTP status 5xx`?", "input": "", "output": "5xx blames the server (`500` crash, `502` bad gateway, `503` overloaded); retry with backoff, alert humans."}
@@ -300,10 +272,8 @@
 {"instruction": "How would you explain `HTTP status 5xx` to a junior developer?", "input": "", "output": "5xx blames the server (`500` crash, `502` bad gateway, `503` overloaded); retry with backoff, alert humans."}
 {"instruction": "Give a real-world scenario for `HTTP status 5xx`.", "input": "", "output": "5xx blames the server (`500` crash, `502` bad gateway, `503` overloaded); retry with backoff, alert humans."}
 {"instruction": "What problem does `HTTP status 5xx` solve?", "input": "", "output": "5xx blames the server (`500` crash, `502` bad gateway, `503` overloaded); retry with backoff, alert humans."}
-{"instruction": "Terangkan `HTTP status 5xx` dalam satu minit.", "input": "", "output": "5xx blames the server (`500` crash, `502` bad gateway, `503` overloaded); retry with backoff, alert humans."}
 {"instruction": "Apa yang perlu saya tahu tentang `HTTP status 5xx`?", "input": "", "output": "5xx blames the server (`500` crash, `502` bad gateway, `503` overloaded); retry with backoff, alert humans."}
 {"instruction": "Bagaimanakah `HTTP status 5xx` berfungsi?", "input": "", "output": "5xx blames the server (`500` crash, `502` bad gateway, `503` overloaded); retry with backoff, alert humans."}
-{"instruction": "Bilakah masa yang sesuai untuk `HTTP status 5xx`?", "input": "", "output": "5xx blames the server (`500` crash, `502` bad gateway, `503` overloaded); retry with backoff, alert humans."}
 {"instruction": "What does `HTTP headers` do?", "input": "", "output": "Headers carry metadata (auth, content-type, caching); `Authorization: Bearer` tokens beat URL secrets."}
 {"instruction": "Explain `HTTP headers` briefly.", "input": "", "output": "Headers carry metadata (auth, content-type, caching); `Authorization: Bearer` tokens beat URL secrets."}
 {"instruction": "When do I use `HTTP headers`?", "input": "", "output": "Headers carry metadata (auth, content-type, caching); `Authorization: Bearer` tokens beat URL secrets."}
@@ -317,10 +287,8 @@
 {"instruction": "How would you explain `HTTP headers` to a junior developer?", "input": "", "output": "Headers carry metadata (auth, content-type, caching); `Authorization: Bearer` tokens beat URL secrets."}
 {"instruction": "Give a real-world scenario for `HTTP headers`.", "input": "", "output": "Headers carry metadata (auth, content-type, caching); `Authorization: Bearer` tokens beat URL secrets."}
 {"instruction": "What problem does `HTTP headers` solve?", "input": "", "output": "Headers carry metadata (auth, content-type, caching); `Authorization: Bearer` tokens beat URL secrets."}
-{"instruction": "Terangkan `HTTP headers` dalam satu minit.", "input": "", "output": "Headers carry metadata (auth, content-type, caching); `Authorization: Bearer` tokens beat URL secrets."}
 {"instruction": "Apa yang perlu saya tahu tentang `HTTP headers`?", "input": "", "output": "Headers carry metadata (auth, content-type, caching); `Authorization: Bearer` tokens beat URL secrets."}
 {"instruction": "Bagaimanakah `HTTP headers` berfungsi?", "input": "", "output": "Headers carry metadata (auth, content-type, caching); `Authorization: Bearer` tokens beat URL secrets."}
-{"instruction": "Bilakah masa yang sesuai untuk `HTTP headers`?", "input": "", "output": "Headers carry metadata (auth, content-type, caching); `Authorization: Bearer` tokens beat URL secrets."}
 {"instruction": "What does `JSON body` do?", "input": "", "output": "JSON request/response bodies with `Content-Type: application/json`; validate shapes server-side, never trust clients."}
 {"instruction": "Explain `JSON body` briefly.", "input": "", "output": "JSON request/response bodies with `Content-Type: application/json`; validate shapes server-side, never trust clients."}
 {"instruction": "When do I use `JSON body`?", "input": "", "output": "JSON request/response bodies with `Content-Type: application/json`; validate shapes server-side, never trust clients."}
@@ -334,10 +302,8 @@
 {"instruction": "How would you explain `JSON body` to a junior developer?", "input": "", "output": "JSON request/response bodies with `Content-Type: application/json`; validate shapes server-side, never trust clients."}
 {"instruction": "Give a real-world scenario for `JSON body`.", "input": "", "output": "JSON request/response bodies with `Content-Type: application/json`; validate shapes server-side, never trust clients."}
 {"instruction": "What problem does `JSON body` solve?", "input": "", "output": "JSON request/response bodies with `Content-Type: application/json`; validate shapes server-side, never trust clients."}
-{"instruction": "Terangkan `JSON body` dalam satu minit.", "input": "", "output": "JSON request/response bodies with `Content-Type: application/json`; validate shapes server-side, never trust clients."}
 {"instruction": "Apa yang perlu saya tahu tentang `JSON body`?", "input": "", "output": "JSON request/response bodies with `Content-Type: application/json`; validate shapes server-side, never trust clients."}
 {"instruction": "Bagaimanakah `JSON body` berfungsi?", "input": "", "output": "JSON request/response bodies with `Content-Type: application/json`; validate shapes server-side, never trust clients."}
-{"instruction": "Bilakah masa yang sesuai untuk `JSON body`?", "input": "", "output": "JSON request/response bodies with `Content-Type: application/json`; validate shapes server-side, never trust clients."}
 {"instruction": "What does `REST CRUD mapping` do?", "input": "", "output": "POST collection creates, GET reads, PUT/PATCH updates, DELETE removes — predictable URLs beat clever ones."}
 {"instruction": "Explain `REST CRUD mapping` briefly.", "input": "", "output": "POST collection creates, GET reads, PUT/PATCH updates, DELETE removes — predictable URLs beat clever ones."}
 {"instruction": "When do I use `REST CRUD mapping`?", "input": "", "output": "POST collection creates, GET reads, PUT/PATCH updates, DELETE removes — predictable URLs beat clever ones."}
@@ -351,10 +317,8 @@
 {"instruction": "How would you explain `REST CRUD mapping` to a junior developer?", "input": "", "output": "POST collection creates, GET reads, PUT/PATCH updates, DELETE removes — predictable URLs beat clever ones."}
 {"instruction": "Give a real-world scenario for `REST CRUD mapping`.", "input": "", "output": "POST collection creates, GET reads, PUT/PATCH updates, DELETE removes — predictable URLs beat clever ones."}
 {"instruction": "What problem does `REST CRUD mapping` solve?", "input": "", "output": "POST collection creates, GET reads, PUT/PATCH updates, DELETE removes — predictable URLs beat clever ones."}
-{"instruction": "Terangkan `REST CRUD mapping` dalam satu minit.", "input": "", "output": "POST collection creates, GET reads, PUT/PATCH updates, DELETE removes — predictable URLs beat clever ones."}
 {"instruction": "Apa yang perlu saya tahu tentang `REST CRUD mapping`?", "input": "", "output": "POST collection creates, GET reads, PUT/PATCH updates, DELETE removes — predictable URLs beat clever ones."}
 {"instruction": "Bagaimanakah `REST CRUD mapping` berfungsi?", "input": "", "output": "POST collection creates, GET reads, PUT/PATCH updates, DELETE removes — predictable URLs beat clever ones."}
-{"instruction": "Bilakah masa yang sesuai untuk `REST CRUD mapping`?", "input": "", "output": "POST collection creates, GET reads, PUT/PATCH updates, DELETE removes — predictable URLs beat clever ones."}
 {"instruction": "What does `API keys env` do?", "input": "", "output": "Keys live in env/secrets managers, never code or git; rotate on exposure and scope per environment."}
 {"instruction": "Explain `API keys env` briefly.", "input": "", "output": "Keys live in env/secrets managers, never code or git; rotate on exposure and scope per environment."}
 {"instruction": "When do I use `API keys env`?", "input": "", "output": "Keys live in env/secrets managers, never code or git; rotate on exposure and scope per environment."}
@@ -368,10 +332,8 @@
 {"instruction": "How would you explain `API keys env` to a junior developer?", "input": "", "output": "Keys live in env/secrets managers, never code or git; rotate on exposure and scope per environment."}
 {"instruction": "Give a real-world scenario for `API keys env`.", "input": "", "output": "Keys live in env/secrets managers, never code or git; rotate on exposure and scope per environment."}
 {"instruction": "What problem does `API keys env` solve?", "input": "", "output": "Keys live in env/secrets managers, never code or git; rotate on exposure and scope per environment."}
-{"instruction": "Terangkan `API keys env` dalam satu minit.", "input": "", "output": "Keys live in env/secrets managers, never code or git; rotate on exposure and scope per environment."}
 {"instruction": "Apa yang perlu saya tahu tentang `API keys env`?", "input": "", "output": "Keys live in env/secrets managers, never code or git; rotate on exposure and scope per environment."}
 {"instruction": "Bagaimanakah `API keys env` berfungsi?", "input": "", "output": "Keys live in env/secrets managers, never code or git; rotate on exposure and scope per environment."}
-{"instruction": "Bilakah masa yang sesuai untuk `API keys env`?", "input": "", "output": "Keys live in env/secrets managers, never code or git; rotate on exposure and scope per environment."}
 {"instruction": "What does `CORS` do?", "input": "", "output": "Browsers block cross-origin reads without server `Access-Control-Allow-Origin`; configure backends, don't disable browser security."}
 {"instruction": "Explain `CORS` briefly.", "input": "", "output": "Browsers block cross-origin reads without server `Access-Control-Allow-Origin`; configure backends, don't disable browser security."}
 {"instruction": "When do I use `CORS`?", "input": "", "output": "Browsers block cross-origin reads without server `Access-Control-Allow-Origin`; configure backends, don't disable browser security."}
@@ -385,10 +347,8 @@
 {"instruction": "How would you explain `CORS` to a junior developer?", "input": "", "output": "Browsers block cross-origin reads without server `Access-Control-Allow-Origin`; configure backends, don't disable browser security."}
 {"instruction": "Give a real-world scenario for `CORS`.", "input": "", "output": "Browsers block cross-origin reads without server `Access-Control-Allow-Origin`; configure backends, don't disable browser security."}
 {"instruction": "What problem does `CORS` solve?", "input": "", "output": "Browsers block cross-origin reads without server `Access-Control-Allow-Origin`; configure backends, don't disable browser security."}
-{"instruction": "Terangkan `CORS` dalam satu minit.", "input": "", "output": "Browsers block cross-origin reads without server `Access-Control-Allow-Origin`; configure backends, don't disable browser security."}
 {"instruction": "Apa yang perlu saya tahu tentang `CORS`?", "input": "", "output": "Browsers block cross-origin reads without server `Access-Control-Allow-Origin`; configure backends, don't disable browser security."}
 {"instruction": "Bagaimanakah `CORS` berfungsi?", "input": "", "output": "Browsers block cross-origin reads without server `Access-Control-Allow-Origin`; configure backends, don't disable browser security."}
-{"instruction": "Bilakah masa yang sesuai untuk `CORS`?", "input": "", "output": "Browsers block cross-origin reads without server `Access-Control-Allow-Origin`; configure backends, don't disable browser security."}
 {"instruction": "What does `hashing vs encryption` do?", "input": "", "output": "Hashing is one-way (passwords, Argon2/bcrypt); encryption reverses with keys (data at rest); encoding (base64) protects nothing."}
 {"instruction": "Explain `hashing vs encryption` briefly.", "input": "", "output": "Hashing is one-way (passwords, Argon2/bcrypt); encryption reverses with keys (data at rest); encoding (base64) protects nothing."}
 {"instruction": "When do I use `hashing vs encryption`?", "input": "", "output": "Hashing is one-way (passwords, Argon2/bcrypt); encryption reverses with keys (data at rest); encoding (base64) protects nothing."}
@@ -402,10 +362,8 @@
 {"instruction": "How would you explain `hashing vs encryption` to a junior developer?", "input": "", "output": "Hashing is one-way (passwords, Argon2/bcrypt); encryption reverses with keys (data at rest); encoding (base64) protects nothing."}
 {"instruction": "Give a real-world scenario for `hashing vs encryption`.", "input": "", "output": "Hashing is one-way (passwords, Argon2/bcrypt); encryption reverses with keys (data at rest); encoding (base64) protects nothing."}
 {"instruction": "What problem does `hashing vs encryption` solve?", "input": "", "output": "Hashing is one-way (passwords, Argon2/bcrypt); encryption reverses with keys (data at rest); encoding (base64) protects nothing."}
-{"instruction": "Terangkan `hashing vs encryption` dalam satu minit.", "input": "", "output": "Hashing is one-way (passwords, Argon2/bcrypt); encryption reverses with keys (data at rest); encoding (base64) protects nothing."}
 {"instruction": "Apa yang perlu saya tahu tentang `hashing vs encryption`?", "input": "", "output": "Hashing is one-way (passwords, Argon2/bcrypt); encryption reverses with keys (data at rest); encoding (base64) protects nothing."}
 {"instruction": "Bagaimanakah `hashing vs encryption` berfungsi?", "input": "", "output": "Hashing is one-way (passwords, Argon2/bcrypt); encryption reverses with keys (data at rest); encoding (base64) protects nothing."}
-{"instruction": "Bilakah masa yang sesuai untuk `hashing vs encryption`?", "input": "", "output": "Hashing is one-way (passwords, Argon2/bcrypt); encryption reverses with keys (data at rest); encoding (base64) protects nothing."}
 {"instruction": "What does `backup 3-2-1` do?", "input": "", "output": "Three copies, two media, one offsite; untested restores are wishes — drill quarterly."}
 {"instruction": "Explain `backup 3-2-1` briefly.", "input": "", "output": "Three copies, two media, one offsite; untested restores are wishes — drill quarterly."}
 {"instruction": "When do I use `backup 3-2-1`?", "input": "", "output": "Three copies, two media, one offsite; untested restores are wishes — drill quarterly."}
@@ -419,10 +377,8 @@
 {"instruction": "How would you explain `backup 3-2-1` to a junior developer?", "input": "", "output": "Three copies, two media, one offsite; untested restores are wishes — drill quarterly."}
 {"instruction": "Give a real-world scenario for `backup 3-2-1`.", "input": "", "output": "Three copies, two media, one offsite; untested restores are wishes — drill quarterly."}
 {"instruction": "What problem does `backup 3-2-1` solve?", "input": "", "output": "Three copies, two media, one offsite; untested restores are wishes — drill quarterly."}
-{"instruction": "Terangkan `backup 3-2-1` dalam satu minit.", "input": "", "output": "Three copies, two media, one offsite; untested restores are wishes — drill quarterly."}
 {"instruction": "Apa yang perlu saya tahu tentang `backup 3-2-1`?", "input": "", "output": "Three copies, two media, one offsite; untested restores are wishes — drill quarterly."}
 {"instruction": "Bagaimanakah `backup 3-2-1` berfungsi?", "input": "", "output": "Three copies, two media, one offsite; untested restores are wishes — drill quarterly."}
-{"instruction": "Bilakah masa yang sesuai untuk `backup 3-2-1`?", "input": "", "output": "Three copies, two media, one offsite; untested restores are wishes — drill quarterly."}
 {"instruction": "What does `log levels` do?", "input": "", "output": "DEBUG/INFO/WARN/ERROR/FATAL filter noise by severity; structured fields beat printf for aggregation."}
 {"instruction": "Explain `log levels` briefly.", "input": "", "output": "DEBUG/INFO/WARN/ERROR/FATAL filter noise by severity; structured fields beat printf for aggregation."}
 {"instruction": "When do I use `log levels`?", "input": "", "output": "DEBUG/INFO/WARN/ERROR/FATAL filter noise by severity; structured fields beat printf for aggregation."}
@@ -436,10 +392,8 @@
 {"instruction": "How would you explain `log levels` to a junior developer?", "input": "", "output": "DEBUG/INFO/WARN/ERROR/FATAL filter noise by severity; structured fields beat printf for aggregation."}
 {"instruction": "Give a real-world scenario for `log levels`.", "input": "", "output": "DEBUG/INFO/WARN/ERROR/FATAL filter noise by severity; structured fields beat printf for aggregation."}
 {"instruction": "What problem does `log levels` solve?", "input": "", "output": "DEBUG/INFO/WARN/ERROR/FATAL filter noise by severity; structured fields beat printf for aggregation."}
-{"instruction": "Terangkan `log levels` dalam satu minit.", "input": "", "output": "DEBUG/INFO/WARN/ERROR/FATAL filter noise by severity; structured fields beat printf for aggregation."}
 {"instruction": "Apa yang perlu saya tahu tentang `log levels`?", "input": "", "output": "DEBUG/INFO/WARN/ERROR/FATAL filter noise by severity; structured fields beat printf for aggregation."}
 {"instruction": "Bagaimanakah `log levels` berfungsi?", "input": "", "output": "DEBUG/INFO/WARN/ERROR/FATAL filter noise by severity; structured fields beat printf for aggregation."}
-{"instruction": "Bilakah masa yang sesuai untuk `log levels`?", "input": "", "output": "DEBUG/INFO/WARN/ERROR/FATAL filter noise by severity; structured fields beat printf for aggregation."}
 {"instruction": "What does `localhost` do?", "input": "", "output": "`localhost`/`127.0.0.1` is always the current machine — dev servers bind here to stay private by default."}
 {"instruction": "Explain `localhost` briefly.", "input": "", "output": "`localhost`/`127.0.0.1` is always the current machine — dev servers bind here to stay private by default."}
 {"instruction": "When do I use `localhost`?", "input": "", "output": "`localhost`/`127.0.0.1` is always the current machine — dev servers bind here to stay private by default."}
@@ -453,10 +407,8 @@
 {"instruction": "How would you explain `localhost` to a junior developer?", "input": "", "output": "`localhost`/`127.0.0.1` is always the current machine — dev servers bind here to stay private by default."}
 {"instruction": "Give a real-world scenario for `localhost`.", "input": "", "output": "`localhost`/`127.0.0.1` is always the current machine — dev servers bind here to stay private by default."}
 {"instruction": "What problem does `localhost` solve?", "input": "", "output": "`localhost`/`127.0.0.1` is always the current machine — dev servers bind here to stay private by default."}
-{"instruction": "Terangkan `localhost` dalam satu minit.", "input": "", "output": "`localhost`/`127.0.0.1` is always the current machine — dev servers bind here to stay private by default."}
 {"instruction": "Apa yang perlu saya tahu tentang `localhost`?", "input": "", "output": "`localhost`/`127.0.0.1` is always the current machine — dev servers bind here to stay private by default."}
 {"instruction": "Bagaimanakah `localhost` berfungsi?", "input": "", "output": "`localhost`/`127.0.0.1` is always the current machine — dev servers bind here to stay private by default."}
-{"instruction": "Bilakah masa yang sesuai untuk `localhost`?", "input": "", "output": "`localhost`/`127.0.0.1` is always the current machine — dev servers bind here to stay private by default."}
 {"instruction": "What does `TCP vs UDP` do?", "input": "", "output": "TCP is reliable ordered streams (web, DB); UDP is fire-and-forget datagrams (DNS, live media) — pick by loss tolerance."}
 {"instruction": "Explain `TCP vs UDP` briefly.", "input": "", "output": "TCP is reliable ordered streams (web, DB); UDP is fire-and-forget datagrams (DNS, live media) — pick by loss tolerance."}
 {"instruction": "When do I use `TCP vs UDP`?", "input": "", "output": "TCP is reliable ordered streams (web, DB); UDP is fire-and-forget datagrams (DNS, live media) — pick by loss tolerance."}
@@ -470,10 +422,8 @@
 {"instruction": "How would you explain `TCP vs UDP` to a junior developer?", "input": "", "output": "TCP is reliable ordered streams (web, DB); UDP is fire-and-forget datagrams (DNS, live media) — pick by loss tolerance."}
 {"instruction": "Give a real-world scenario for `TCP vs UDP`.", "input": "", "output": "TCP is reliable ordered streams (web, DB); UDP is fire-and-forget datagrams (DNS, live media) — pick by loss tolerance."}
 {"instruction": "What problem does `TCP vs UDP` solve?", "input": "", "output": "TCP is reliable ordered streams (web, DB); UDP is fire-and-forget datagrams (DNS, live media) — pick by loss tolerance."}
-{"instruction": "Terangkan `TCP vs UDP` dalam satu minit.", "input": "", "output": "TCP is reliable ordered streams (web, DB); UDP is fire-and-forget datagrams (DNS, live media) — pick by loss tolerance."}
 {"instruction": "Apa yang perlu saya tahu tentang `TCP vs UDP`?", "input": "", "output": "TCP is reliable ordered streams (web, DB); UDP is fire-and-forget datagrams (DNS, live media) — pick by loss tolerance."}
 {"instruction": "Bagaimanakah `TCP vs UDP` berfungsi?", "input": "", "output": "TCP is reliable ordered streams (web, DB); UDP is fire-and-forget datagrams (DNS, live media) — pick by loss tolerance."}
-{"instruction": "Bilakah masa yang sesuai untuk `TCP vs UDP`?", "input": "", "output": "TCP is reliable ordered streams (web, DB); UDP is fire-and-forget datagrams (DNS, live media) — pick by loss tolerance."}
 {"instruction": "What does `HTTPS TLS` do?", "input": "", "output": "TLS (via certificates) encrypts and authenticates; HTTP leaks credentials and content to every hop — no exceptions in 2026."}
 {"instruction": "Explain `HTTPS TLS` briefly.", "input": "", "output": "TLS (via certificates) encrypts and authenticates; HTTP leaks credentials and content to every hop — no exceptions in 2026."}
 {"instruction": "When do I use `HTTPS TLS`?", "input": "", "output": "TLS (via certificates) encrypts and authenticates; HTTP leaks credentials and content to every hop — no exceptions in 2026."}
@@ -487,10 +437,8 @@
 {"instruction": "How would you explain `HTTPS TLS` to a junior developer?", "input": "", "output": "TLS (via certificates) encrypts and authenticates; HTTP leaks credentials and content to every hop — no exceptions in 2026."}
 {"instruction": "Give a real-world scenario for `HTTPS TLS`.", "input": "", "output": "TLS (via certificates) encrypts and authenticates; HTTP leaks credentials and content to every hop — no exceptions in 2026."}
 {"instruction": "What problem does `HTTPS TLS` solve?", "input": "", "output": "TLS (via certificates) encrypts and authenticates; HTTP leaks credentials and content to every hop — no exceptions in 2026."}
-{"instruction": "Terangkan `HTTPS TLS` dalam satu minit.", "input": "", "output": "TLS (via certificates) encrypts and authenticates; HTTP leaks credentials and content to every hop — no exceptions in 2026."}
 {"instruction": "Apa yang perlu saya tahu tentang `HTTPS TLS`?", "input": "", "output": "TLS (via certificates) encrypts and authenticates; HTTP leaks credentials and content to every hop — no exceptions in 2026."}
 {"instruction": "Bagaimanakah `HTTPS TLS` berfungsi?", "input": "", "output": "TLS (via certificates) encrypts and authenticates; HTTP leaks credentials and content to every hop — no exceptions in 2026."}
-{"instruction": "Bilakah masa yang sesuai untuk `HTTPS TLS`?", "input": "", "output": "TLS (via certificates) encrypts and authenticates; HTTP leaks credentials and content to every hop — no exceptions in 2026."}
 {"instruction": "What does `curl GET` do?", "input": "", "output": "`curl -s URL` fetches quietly; `-I` headers only, `-L` follows redirects, `-o file` saves instead of printing."}
 {"instruction": "Explain `curl GET` briefly.", "input": "", "output": "`curl -s URL` fetches quietly; `-I` headers only, `-L` follows redirects, `-o file` saves instead of printing."}
 {"instruction": "When do I use `curl GET`?", "input": "", "output": "`curl -s URL` fetches quietly; `-I` headers only, `-L` follows redirects, `-o file` saves instead of printing."}
@@ -504,10 +452,8 @@
 {"instruction": "How would you explain `curl GET` to a junior developer?", "input": "", "output": "`curl -s URL` fetches quietly; `-I` headers only, `-L` follows redirects, `-o file` saves instead of printing."}
 {"instruction": "Give a real-world scenario for `curl GET`.", "input": "", "output": "`curl -s URL` fetches quietly; `-I` headers only, `-L` follows redirects, `-o file` saves instead of printing."}
 {"instruction": "What problem does `curl GET` solve?", "input": "", "output": "`curl -s URL` fetches quietly; `-I` headers only, `-L` follows redirects, `-o file` saves instead of printing."}
-{"instruction": "Terangkan `curl GET` dalam satu minit.", "input": "", "output": "`curl -s URL` fetches quietly; `-I` headers only, `-L` follows redirects, `-o file` saves instead of printing."}
 {"instruction": "Apa yang perlu saya tahu tentang `curl GET`?", "input": "", "output": "`curl -s URL` fetches quietly; `-I` headers only, `-L` follows redirects, `-o file` saves instead of printing."}
 {"instruction": "Bagaimanakah `curl GET` berfungsi?", "input": "", "output": "`curl -s URL` fetches quietly; `-I` headers only, `-L` follows redirects, `-o file` saves instead of printing."}
-{"instruction": "Bilakah masa yang sesuai untuk `curl GET`?", "input": "", "output": "`curl -s URL` fetches quietly; `-I` headers only, `-L` follows redirects, `-o file` saves instead of printing."}
 {"instruction": "What does `curl POST JSON` do?", "input": "", "output": "`curl -X POST -H 'Content-Type: application/json' -d '{\"a\":1}' URL` exercises APIs from terminals and CI."}
 {"instruction": "Explain `curl POST JSON` briefly.", "input": "", "output": "`curl -X POST -H 'Content-Type: application/json' -d '{\"a\":1}' URL` exercises APIs from terminals and CI."}
 {"instruction": "When do I use `curl POST JSON`?", "input": "", "output": "`curl -X POST -H 'Content-Type: application/json' -d '{\"a\":1}' URL` exercises APIs from terminals and CI."}
@@ -521,10 +467,8 @@
 {"instruction": "How would you explain `curl POST JSON` to a junior developer?", "input": "", "output": "`curl -X POST -H 'Content-Type: application/json' -d '{\"a\":1}' URL` exercises APIs from terminals and CI."}
 {"instruction": "Give a real-world scenario for `curl POST JSON`.", "input": "", "output": "`curl -X POST -H 'Content-Type: application/json' -d '{\"a\":1}' URL` exercises APIs from terminals and CI."}
 {"instruction": "What problem does `curl POST JSON` solve?", "input": "", "output": "`curl -X POST -H 'Content-Type: application/json' -d '{\"a\":1}' URL` exercises APIs from terminals and CI."}
-{"instruction": "Terangkan `curl POST JSON` dalam satu minit.", "input": "", "output": "`curl -X POST -H 'Content-Type: application/json' -d '{\"a\":1}' URL` exercises APIs from terminals and CI."}
 {"instruction": "Apa yang perlu saya tahu tentang `curl POST JSON`?", "input": "", "output": "`curl -X POST -H 'Content-Type: application/json' -d '{\"a\":1}' URL` exercises APIs from terminals and CI."}
 {"instruction": "Bagaimanakah `curl POST JSON` berfungsi?", "input": "", "output": "`curl -X POST -H 'Content-Type: application/json' -d '{\"a\":1}' URL` exercises APIs from terminals and CI."}
-{"instruction": "Bilakah masa yang sesuai untuk `curl POST JSON`?", "input": "", "output": "`curl -X POST -H 'Content-Type: application/json' -d '{\"a\":1}' URL` exercises APIs from terminals and CI."}
 {"instruction": "What does `curl auth header` do?", "input": "", "output": "`-H 'Authorization: Bearer $TOKEN'` (env, never literal) plus `--fail` so HTTP errors exit nonzero in scripts."}
 {"instruction": "Explain `curl auth header` briefly.", "input": "", "output": "`-H 'Authorization: Bearer $TOKEN'` (env, never literal) plus `--fail` so HTTP errors exit nonzero in scripts."}
 {"instruction": "When do I use `curl auth header`?", "input": "", "output": "`-H 'Authorization: Bearer $TOKEN'` (env, never literal) plus `--fail` so HTTP errors exit nonzero in scripts."}
@@ -538,10 +482,8 @@
 {"instruction": "How would you explain `curl auth header` to a junior developer?", "input": "", "output": "`-H 'Authorization: Bearer $TOKEN'` (env, never literal) plus `--fail` so HTTP errors exit nonzero in scripts."}
 {"instruction": "Give a real-world scenario for `curl auth header`.", "input": "", "output": "`-H 'Authorization: Bearer $TOKEN'` (env, never literal) plus `--fail` so HTTP errors exit nonzero in scripts."}
 {"instruction": "What problem does `curl auth header` solve?", "input": "", "output": "`-H 'Authorization: Bearer $TOKEN'` (env, never literal) plus `--fail` so HTTP errors exit nonzero in scripts."}
-{"instruction": "Terangkan `curl auth header` dalam satu minit.", "input": "", "output": "`-H 'Authorization: Bearer $TOKEN'` (env, never literal) plus `--fail` so HTTP errors exit nonzero in scripts."}
 {"instruction": "Apa yang perlu saya tahu tentang `curl auth header`?", "input": "", "output": "`-H 'Authorization: Bearer $TOKEN'` (env, never literal) plus `--fail` so HTTP errors exit nonzero in scripts."}
 {"instruction": "Bagaimanakah `curl auth header` berfungsi?", "input": "", "output": "`-H 'Authorization: Bearer $TOKEN'` (env, never literal) plus `--fail` so HTTP errors exit nonzero in scripts."}
-{"instruction": "Bilakah masa yang sesuai untuk `curl auth header`?", "input": "", "output": "`-H 'Authorization: Bearer $TOKEN'` (env, never literal) plus `--fail` so HTTP errors exit nonzero in scripts."}
 {"instruction": "What does `jq basics` do?", "input": "", "output": "`jq '.users[].email'` slices JSON in pipes; `-r` outputs raw strings for scripting; `jq empty` validates syntax."}
 {"instruction": "Explain `jq basics` briefly.", "input": "", "output": "`jq '.users[].email'` slices JSON in pipes; `-r` outputs raw strings for scripting; `jq empty` validates syntax."}
 {"instruction": "When do I use `jq basics`?", "input": "", "output": "`jq '.users[].email'` slices JSON in pipes; `-r` outputs raw strings for scripting; `jq empty` validates syntax."}
@@ -555,10 +497,8 @@
 {"instruction": "How would you explain `jq basics` to a junior developer?", "input": "", "output": "`jq '.users[].email'` slices JSON in pipes; `-r` outputs raw strings for scripting; `jq empty` validates syntax."}
 {"instruction": "Give a real-world scenario for `jq basics`.", "input": "", "output": "`jq '.users[].email'` slices JSON in pipes; `-r` outputs raw strings for scripting; `jq empty` validates syntax."}
 {"instruction": "What problem does `jq basics` solve?", "input": "", "output": "`jq '.users[].email'` slices JSON in pipes; `-r` outputs raw strings for scripting; `jq empty` validates syntax."}
-{"instruction": "Terangkan `jq basics` dalam satu minit.", "input": "", "output": "`jq '.users[].email'` slices JSON in pipes; `-r` outputs raw strings for scripting; `jq empty` validates syntax."}
 {"instruction": "Apa yang perlu saya tahu tentang `jq basics`?", "input": "", "output": "`jq '.users[].email'` slices JSON in pipes; `-r` outputs raw strings for scripting; `jq empty` validates syntax."}
 {"instruction": "Bagaimanakah `jq basics` berfungsi?", "input": "", "output": "`jq '.users[].email'` slices JSON in pipes; `-r` outputs raw strings for scripting; `jq empty` validates syntax."}
-{"instruction": "Bilakah masa yang sesuai untuk `jq basics`?", "input": "", "output": "`jq '.users[].email'` slices JSON in pipes; `-r` outputs raw strings for scripting; `jq empty` validates syntax."}
 {"instruction": "What does `base64` do?", "input": "", "output": "`base64` encodes binary as text for embedding (not security!); `-d` decodes when debugging tokens and payloads."}
 {"instruction": "Explain `base64` briefly.", "input": "", "output": "`base64` encodes binary as text for embedding (not security!); `-d` decodes when debugging tokens and payloads."}
 {"instruction": "When do I use `base64`?", "input": "", "output": "`base64` encodes binary as text for embedding (not security!); `-d` decodes when debugging tokens and payloads."}
@@ -572,10 +512,8 @@
 {"instruction": "How would you explain `base64` to a junior developer?", "input": "", "output": "`base64` encodes binary as text for embedding (not security!); `-d` decodes when debugging tokens and payloads."}
 {"instruction": "Give a real-world scenario for `base64`.", "input": "", "output": "`base64` encodes binary as text for embedding (not security!); `-d` decodes when debugging tokens and payloads."}
 {"instruction": "What problem does `base64` solve?", "input": "", "output": "`base64` encodes binary as text for embedding (not security!); `-d` decodes when debugging tokens and payloads."}
-{"instruction": "Terangkan `base64` dalam satu minit.", "input": "", "output": "`base64` encodes binary as text for embedding (not security!); `-d` decodes when debugging tokens and payloads."}
 {"instruction": "Apa yang perlu saya tahu tentang `base64`?", "input": "", "output": "`base64` encodes binary as text for embedding (not security!); `-d` decodes when debugging tokens and payloads."}
 {"instruction": "Bagaimanakah `base64` berfungsi?", "input": "", "output": "`base64` encodes binary as text for embedding (not security!); `-d` decodes when debugging tokens and payloads."}
-{"instruction": "Bilakah masa yang sesuai untuk `base64`?", "input": "", "output": "`base64` encodes binary as text for embedding (not security!); `-d` decodes when debugging tokens and payloads."}
 {"instruction": "What does `URL encoding` do?", "input": "", "output": "Reserved chars percent-encode (`%20` space); encode query values, never whole URLs — double-encoding is the classic bug."}
 {"instruction": "Explain `URL encoding` briefly.", "input": "", "output": "Reserved chars percent-encode (`%20` space); encode query values, never whole URLs — double-encoding is the classic bug."}
 {"instruction": "When do I use `URL encoding`?", "input": "", "output": "Reserved chars percent-encode (`%20` space); encode query values, never whole URLs — double-encoding is the classic bug."}
@@ -589,10 +527,8 @@
 {"instruction": "How would you explain `URL encoding` to a junior developer?", "input": "", "output": "Reserved chars percent-encode (`%20` space); encode query values, never whole URLs — double-encoding is the classic bug."}
 {"instruction": "Give a real-world scenario for `URL encoding`.", "input": "", "output": "Reserved chars percent-encode (`%20` space); encode query values, never whole URLs — double-encoding is the classic bug."}
 {"instruction": "What problem does `URL encoding` solve?", "input": "", "output": "Reserved chars percent-encode (`%20` space); encode query values, never whole URLs — double-encoding is the classic bug."}
-{"instruction": "Terangkan `URL encoding` dalam satu minit.", "input": "", "output": "Reserved chars percent-encode (`%20` space); encode query values, never whole URLs — double-encoding is the classic bug."}
 {"instruction": "Apa yang perlu saya tahu tentang `URL encoding`?", "input": "", "output": "Reserved chars percent-encode (`%20` space); encode query values, never whole URLs — double-encoding is the classic bug."}
 {"instruction": "Bagaimanakah `URL encoding` berfungsi?", "input": "", "output": "Reserved chars percent-encode (`%20` space); encode query values, never whole URLs — double-encoding is the classic bug."}
-{"instruction": "Bilakah masa yang sesuai untuk `URL encoding`?", "input": "", "output": "Reserved chars percent-encode (`%20` space); encode query values, never whole URLs — double-encoding is the classic bug."}
 {"instruction": "What does `UTF-8` do?", "input": "", "output": "UTF-8 covers all languages in 1-4 bytes (ASCII-compatible); mojibake means a link in the chain assumed another encoding."}
 {"instruction": "Explain `UTF-8` briefly.", "input": "", "output": "UTF-8 covers all languages in 1-4 bytes (ASCII-compatible); mojibake means a link in the chain assumed another encoding."}
 {"instruction": "When do I use `UTF-8`?", "input": "", "output": "UTF-8 covers all languages in 1-4 bytes (ASCII-compatible); mojibake means a link in the chain assumed another encoding."}
@@ -606,10 +542,8 @@
 {"instruction": "How would you explain `UTF-8` to a junior developer?", "input": "", "output": "UTF-8 covers all languages in 1-4 bytes (ASCII-compatible); mojibake means a link in the chain assumed another encoding."}
 {"instruction": "Give a real-world scenario for `UTF-8`.", "input": "", "output": "UTF-8 covers all languages in 1-4 bytes (ASCII-compatible); mojibake means a link in the chain assumed another encoding."}
 {"instruction": "What problem does `UTF-8` solve?", "input": "", "output": "UTF-8 covers all languages in 1-4 bytes (ASCII-compatible); mojibake means a link in the chain assumed another encoding."}
-{"instruction": "Terangkan `UTF-8` dalam satu minit.", "input": "", "output": "UTF-8 covers all languages in 1-4 bytes (ASCII-compatible); mojibake means a link in the chain assumed another encoding."}
 {"instruction": "Apa yang perlu saya tahu tentang `UTF-8`?", "input": "", "output": "UTF-8 covers all languages in 1-4 bytes (ASCII-compatible); mojibake means a link in the chain assumed another encoding."}
 {"instruction": "Bagaimanakah `UTF-8` berfungsi?", "input": "", "output": "UTF-8 covers all languages in 1-4 bytes (ASCII-compatible); mojibake means a link in the chain assumed another encoding."}
-{"instruction": "Bilakah masa yang sesuai untuk `UTF-8`?", "input": "", "output": "UTF-8 covers all languages in 1-4 bytes (ASCII-compatible); mojibake means a link in the chain assumed another encoding."}
 {"instruction": "What does `unix epoch` do?", "input": "", "output": "Epoch seconds (`date +%s`) order events universally; store UTC epoch/instants, render zoned per user."}
 {"instruction": "Explain `unix epoch` briefly.", "input": "", "output": "Epoch seconds (`date +%s`) order events universally; store UTC epoch/instants, render zoned per user."}
 {"instruction": "When do I use `unix epoch`?", "input": "", "output": "Epoch seconds (`date +%s`) order events universally; store UTC epoch/instants, render zoned per user."}
@@ -623,10 +557,8 @@
 {"instruction": "How would you explain `unix epoch` to a junior developer?", "input": "", "output": "Epoch seconds (`date +%s`) order events universally; store UTC epoch/instants, render zoned per user."}
 {"instruction": "Give a real-world scenario for `unix epoch`.", "input": "", "output": "Epoch seconds (`date +%s`) order events universally; store UTC epoch/instants, render zoned per user."}
 {"instruction": "What problem does `unix epoch` solve?", "input": "", "output": "Epoch seconds (`date +%s`) order events universally; store UTC epoch/instants, render zoned per user."}
-{"instruction": "Terangkan `unix epoch` dalam satu minit.", "input": "", "output": "Epoch seconds (`date +%s`) order events universally; store UTC epoch/instants, render zoned per user."}
 {"instruction": "Apa yang perlu saya tahu tentang `unix epoch`?", "input": "", "output": "Epoch seconds (`date +%s`) order events universally; store UTC epoch/instants, render zoned per user."}
 {"instruction": "Bagaimanakah `unix epoch` berfungsi?", "input": "", "output": "Epoch seconds (`date +%s`) order events universally; store UTC epoch/instants, render zoned per user."}
-{"instruction": "Bilakah masa yang sesuai untuk `unix epoch`?", "input": "", "output": "Epoch seconds (`date +%s`) order events universally; store UTC epoch/instants, render zoned per user."}
 {"instruction": "What does `markdown headings` do?", "input": "", "output": "`#`/`##` structure docs for outline navigation; one `#` title per file mirrors HTML semantics."}
 {"instruction": "Explain `markdown headings` briefly.", "input": "", "output": "`#`/`##` structure docs for outline navigation; one `#` title per file mirrors HTML semantics."}
 {"instruction": "When do I use `markdown headings`?", "input": "", "output": "`#`/`##` structure docs for outline navigation; one `#` title per file mirrors HTML semantics."}
@@ -640,10 +572,8 @@
 {"instruction": "How would you explain `markdown headings` to a junior developer?", "input": "", "output": "`#`/`##` structure docs for outline navigation; one `#` title per file mirrors HTML semantics."}
 {"instruction": "Give a real-world scenario for `markdown headings`.", "input": "", "output": "`#`/`##` structure docs for outline navigation; one `#` title per file mirrors HTML semantics."}
 {"instruction": "What problem does `markdown headings` solve?", "input": "", "output": "`#`/`##` structure docs for outline navigation; one `#` title per file mirrors HTML semantics."}
-{"instruction": "Terangkan `markdown headings` dalam satu minit.", "input": "", "output": "`#`/`##` structure docs for outline navigation; one `#` title per file mirrors HTML semantics."}
 {"instruction": "Apa yang perlu saya tahu tentang `markdown headings`?", "input": "", "output": "`#`/`##` structure docs for outline navigation; one `#` title per file mirrors HTML semantics."}
 {"instruction": "Bagaimanakah `markdown headings` berfungsi?", "input": "", "output": "`#`/`##` structure docs for outline navigation; one `#` title per file mirrors HTML semantics."}
-{"instruction": "Bilakah masa yang sesuai untuk `markdown headings`?", "input": "", "output": "`#`/`##` structure docs for outline navigation; one `#` title per file mirrors HTML semantics."}
 {"instruction": "What does `markdown code fences` do?", "input": "", "output": "Fenced blocks with language tags (```python) highlight and copy cleanly; inline backticks mark identifiers."}
 {"instruction": "Explain `markdown code fences` briefly.", "input": "", "output": "Fenced blocks with language tags (```python) highlight and copy cleanly; inline backticks mark identifiers."}
 {"instruction": "When do I use `markdown code fences`?", "input": "", "output": "Fenced blocks with language tags (```python) highlight and copy cleanly; inline backticks mark identifiers."}
@@ -657,10 +587,8 @@
 {"instruction": "How would you explain `markdown code fences` to a junior developer?", "input": "", "output": "Fenced blocks with language tags (```python) highlight and copy cleanly; inline backticks mark identifiers."}
 {"instruction": "Give a real-world scenario for `markdown code fences`.", "input": "", "output": "Fenced blocks with language tags (```python) highlight and copy cleanly; inline backticks mark identifiers."}
 {"instruction": "What problem does `markdown code fences` solve?", "input": "", "output": "Fenced blocks with language tags (```python) highlight and copy cleanly; inline backticks mark identifiers."}
-{"instruction": "Terangkan `markdown code fences` dalam satu minit.", "input": "", "output": "Fenced blocks with language tags (```python) highlight and copy cleanly; inline backticks mark identifiers."}
 {"instruction": "Apa yang perlu saya tahu tentang `markdown code fences`?", "input": "", "output": "Fenced blocks with language tags (```python) highlight and copy cleanly; inline backticks mark identifiers."}
 {"instruction": "Bagaimanakah `markdown code fences` berfungsi?", "input": "", "output": "Fenced blocks with language tags (```python) highlight and copy cleanly; inline backticks mark identifiers."}
-{"instruction": "Bilakah masa yang sesuai untuk `markdown code fences`?", "input": "", "output": "Fenced blocks with language tags (```python) highlight and copy cleanly; inline backticks mark identifiers."}
 {"instruction": "What does `markdown links` do?", "input": "", "output": "`[text](url)` plus reference style for repeated URLs; relative links keep docs portable across forks."}
 {"instruction": "Explain `markdown links` briefly.", "input": "", "output": "`[text](url)` plus reference style for repeated URLs; relative links keep docs portable across forks."}
 {"instruction": "When do I use `markdown links`?", "input": "", "output": "`[text](url)` plus reference style for repeated URLs; relative links keep docs portable across forks."}
@@ -674,10 +602,8 @@
 {"instruction": "How would you explain `markdown links` to a junior developer?", "input": "", "output": "`[text](url)` plus reference style for repeated URLs; relative links keep docs portable across forks."}
 {"instruction": "Give a real-world scenario for `markdown links`.", "input": "", "output": "`[text](url)` plus reference style for repeated URLs; relative links keep docs portable across forks."}
 {"instruction": "What problem does `markdown links` solve?", "input": "", "output": "`[text](url)` plus reference style for repeated URLs; relative links keep docs portable across forks."}
-{"instruction": "Terangkan `markdown links` dalam satu minit.", "input": "", "output": "`[text](url)` plus reference style for repeated URLs; relative links keep docs portable across forks."}
 {"instruction": "Apa yang perlu saya tahu tentang `markdown links`?", "input": "", "output": "`[text](url)` plus reference style for repeated URLs; relative links keep docs portable across forks."}
 {"instruction": "Bagaimanakah `markdown links` berfungsi?", "input": "", "output": "`[text](url)` plus reference style for repeated URLs; relative links keep docs portable across forks."}
-{"instruction": "Bilakah masa yang sesuai untuk `markdown links`?", "input": "", "output": "`[text](url)` plus reference style for repeated URLs; relative links keep docs portable across forks."}
 {"instruction": "What does `ports concept` do?", "input": "", "output": "Ports multiplex services per host (`:80` web, `:5432` postgres); below 1024 needs privilege — use 8000+ in dev."}
 {"instruction": "Explain `ports concept` briefly.", "input": "", "output": "Ports multiplex services per host (`:80` web, `:5432` postgres); below 1024 needs privilege — use 8000+ in dev."}
 {"instruction": "When do I use `ports concept`?", "input": "", "output": "Ports multiplex services per host (`:80` web, `:5432` postgres); below 1024 needs privilege — use 8000+ in dev."}
@@ -691,10 +617,8 @@
 {"instruction": "How would you explain `ports concept` to a junior developer?", "input": "", "output": "Ports multiplex services per host (`:80` web, `:5432` postgres); below 1024 needs privilege — use 8000+ in dev."}
 {"instruction": "Give a real-world scenario for `ports concept`.", "input": "", "output": "Ports multiplex services per host (`:80` web, `:5432` postgres); below 1024 needs privilege — use 8000+ in dev."}
 {"instruction": "What problem does `ports concept` solve?", "input": "", "output": "Ports multiplex services per host (`:80` web, `:5432` postgres); below 1024 needs privilege — use 8000+ in dev."}
-{"instruction": "Terangkan `ports concept` dalam satu minit.", "input": "", "output": "Ports multiplex services per host (`:80` web, `:5432` postgres); below 1024 needs privilege — use 8000+ in dev."}
 {"instruction": "Apa yang perlu saya tahu tentang `ports concept`?", "input": "", "output": "Ports multiplex services per host (`:80` web, `:5432` postgres); below 1024 needs privilege — use 8000+ in dev."}
 {"instruction": "Bagaimanakah `ports concept` berfungsi?", "input": "", "output": "Ports multiplex services per host (`:80` web, `:5432` postgres); below 1024 needs privilege — use 8000+ in dev."}
-{"instruction": "Bilakah masa yang sesuai untuk `ports concept`?", "input": "", "output": "Ports multiplex services per host (`:80` web, `:5432` postgres); below 1024 needs privilege — use 8000+ in dev."}
 {"instruction": "What does `regex dot star` do?", "input": "", "output": "`.` any char, `*` zero-or-more (greedy), `^...$` anchors full matches — validate, then extract with groups."}
 {"instruction": "Explain `regex dot star` briefly.", "input": "", "output": "`.` any char, `*` zero-or-more (greedy), `^...$` anchors full matches — validate, then extract with groups."}
 {"instruction": "When do I use `regex dot star`?", "input": "", "output": "`.` any char, `*` zero-or-more (greedy), `^...$` anchors full matches — validate, then extract with groups."}
@@ -708,10 +632,8 @@
 {"instruction": "How would you explain `regex dot star` to a junior developer?", "input": "", "output": "`.` any char, `*` zero-or-more (greedy), `^...$` anchors full matches — validate, then extract with groups."}
 {"instruction": "Give a real-world scenario for `regex dot star`.", "input": "", "output": "`.` any char, `*` zero-or-more (greedy), `^...$` anchors full matches — validate, then extract with groups."}
 {"instruction": "What problem does `regex dot star` solve?", "input": "", "output": "`.` any char, `*` zero-or-more (greedy), `^...$` anchors full matches — validate, then extract with groups."}
-{"instruction": "Terangkan `regex dot star` dalam satu minit.", "input": "", "output": "`.` any char, `*` zero-or-more (greedy), `^...$` anchors full matches — validate, then extract with groups."}
 {"instruction": "Apa yang perlu saya tahu tentang `regex dot star`?", "input": "", "output": "`.` any char, `*` zero-or-more (greedy), `^...$` anchors full matches — validate, then extract with groups."}
 {"instruction": "Bagaimanakah `regex dot star` berfungsi?", "input": "", "output": "`.` any char, `*` zero-or-more (greedy), `^...$` anchors full matches — validate, then extract with groups."}
-{"instruction": "Bilakah masa yang sesuai untuk `regex dot star`?", "input": "", "output": "`.` any char, `*` zero-or-more (greedy), `^...$` anchors full matches — validate, then extract with groups."}
 {"instruction": "What does `regex classes` do?", "input": "", "output": "`\\d` digits, `\\w` word chars, `\\s` whitespace; `[abc]` sets, `[^abc]` negates — compose, don't memorize."}
 {"instruction": "Explain `regex classes` briefly.", "input": "", "output": "`\\d` digits, `\\w` word chars, `\\s` whitespace; `[abc]` sets, `[^abc]` negates — compose, don't memorize."}
 {"instruction": "When do I use `regex classes`?", "input": "", "output": "`\\d` digits, `\\w` word chars, `\\s` whitespace; `[abc]` sets, `[^abc]` negates — compose, don't memorize."}
@@ -725,10 +647,8 @@
 {"instruction": "How would you explain `regex classes` to a junior developer?", "input": "", "output": "`\\d` digits, `\\w` word chars, `\\s` whitespace; `[abc]` sets, `[^abc]` negates — compose, don't memorize."}
 {"instruction": "Give a real-world scenario for `regex classes`.", "input": "", "output": "`\\d` digits, `\\w` word chars, `\\s` whitespace; `[abc]` sets, `[^abc]` negates — compose, don't memorize."}
 {"instruction": "What problem does `regex classes` solve?", "input": "", "output": "`\\d` digits, `\\w` word chars, `\\s` whitespace; `[abc]` sets, `[^abc]` negates — compose, don't memorize."}
-{"instruction": "Terangkan `regex classes` dalam satu minit.", "input": "", "output": "`\\d` digits, `\\w` word chars, `\\s` whitespace; `[abc]` sets, `[^abc]` negates — compose, don't memorize."}
 {"instruction": "Apa yang perlu saya tahu tentang `regex classes`?", "input": "", "output": "`\\d` digits, `\\w` word chars, `\\s` whitespace; `[abc]` sets, `[^abc]` negates — compose, don't memorize."}
 {"instruction": "Bagaimanakah `regex classes` berfungsi?", "input": "", "output": "`\\d` digits, `\\w` word chars, `\\s` whitespace; `[abc]` sets, `[^abc]` negates — compose, don't memorize."}
-{"instruction": "Bilakah masa yang sesuai untuk `regex classes`?", "input": "", "output": "`\\d` digits, `\\w` word chars, `\\s` whitespace; `[abc]` sets, `[^abc]` negates — compose, don't memorize."}
 {"instruction": "What does `regex flags i m` do?", "input": "", "output": "`i` case-insensitive, `m` multiline `^$` per line, `g` all matches; wrong flags explain most 'broken' patterns."}
 {"instruction": "Explain `regex flags i m` briefly.", "input": "", "output": "`i` case-insensitive, `m` multiline `^$` per line, `g` all matches; wrong flags explain most 'broken' patterns."}
 {"instruction": "When do I use `regex flags i m`?", "input": "", "output": "`i` case-insensitive, `m` multiline `^$` per line, `g` all matches; wrong flags explain most 'broken' patterns."}
@@ -742,10 +662,8 @@
 {"instruction": "How would you explain `regex flags i m` to a junior developer?", "input": "", "output": "`i` case-insensitive, `m` multiline `^$` per line, `g` all matches; wrong flags explain most 'broken' patterns."}
 {"instruction": "Give a real-world scenario for `regex flags i m`.", "input": "", "output": "`i` case-insensitive, `m` multiline `^$` per line, `g` all matches; wrong flags explain most 'broken' patterns."}
 {"instruction": "What problem does `regex flags i m` solve?", "input": "", "output": "`i` case-insensitive, `m` multiline `^$` per line, `g` all matches; wrong flags explain most 'broken' patterns."}
-{"instruction": "Terangkan `regex flags i m` dalam satu minit.", "input": "", "output": "`i` case-insensitive, `m` multiline `^$` per line, `g` all matches; wrong flags explain most 'broken' patterns."}
 {"instruction": "Apa yang perlu saya tahu tentang `regex flags i m`?", "input": "", "output": "`i` case-insensitive, `m` multiline `^$` per line, `g` all matches; wrong flags explain most 'broken' patterns."}
 {"instruction": "Bagaimanakah `regex flags i m` berfungsi?", "input": "", "output": "`i` case-insensitive, `m` multiline `^$` per line, `g` all matches; wrong flags explain most 'broken' patterns."}
-{"instruction": "Bilakah masa yang sesuai untuk `regex flags i m`?", "input": "", "output": "`i` case-insensitive, `m` multiline `^$` per line, `g` all matches; wrong flags explain most 'broken' patterns."}
 {"instruction": "What does `env vars concept` do?", "input": "", "output": "Env externalizes config per deploy (12-factor); defaults in code, secrets in managers, never both in git."}
 {"instruction": "Explain `env vars concept` briefly.", "input": "", "output": "Env externalizes config per deploy (12-factor); defaults in code, secrets in managers, never both in git."}
 {"instruction": "When do I use `env vars concept`?", "input": "", "output": "Env externalizes config per deploy (12-factor); defaults in code, secrets in managers, never both in git."}
@@ -759,10 +677,8 @@
 {"instruction": "How would you explain `env vars concept` to a junior developer?", "input": "", "output": "Env externalizes config per deploy (12-factor); defaults in code, secrets in managers, never both in git."}
 {"instruction": "Give a real-world scenario for `env vars concept`.", "input": "", "output": "Env externalizes config per deploy (12-factor); defaults in code, secrets in managers, never both in git."}
 {"instruction": "What problem does `env vars concept` solve?", "input": "", "output": "Env externalizes config per deploy (12-factor); defaults in code, secrets in managers, never both in git."}
-{"instruction": "Terangkan `env vars concept` dalam satu minit.", "input": "", "output": "Env externalizes config per deploy (12-factor); defaults in code, secrets in managers, never both in git."}
 {"instruction": "Apa yang perlu saya tahu tentang `env vars concept`?", "input": "", "output": "Env externalizes config per deploy (12-factor); defaults in code, secrets in managers, never both in git."}
 {"instruction": "Bagaimanakah `env vars concept` berfungsi?", "input": "", "output": "Env externalizes config per deploy (12-factor); defaults in code, secrets in managers, never both in git."}
-{"instruction": "Bilakah masa yang sesuai untuk `env vars concept`?", "input": "", "output": "Env externalizes config per deploy (12-factor); defaults in code, secrets in managers, never both in git."}
 {"instruction": "What does `CLI flags help` do?", "input": "", "output": "`--help` documents, `-h` shortens, `--flag=value` configures; good CLIs fail with usage on misuse."}
 {"instruction": "Explain `CLI flags help` briefly.", "input": "", "output": "`--help` documents, `-h` shortens, `--flag=value` configures; good CLIs fail with usage on misuse."}
 {"instruction": "When do I use `CLI flags help`?", "input": "", "output": "`--help` documents, `-h` shortens, `--flag=value` configures; good CLIs fail with usage on misuse."}
@@ -776,10 +692,8 @@
 {"instruction": "How would you explain `CLI flags help` to a junior developer?", "input": "", "output": "`--help` documents, `-h` shortens, `--flag=value` configures; good CLIs fail with usage on misuse."}
 {"instruction": "Give a real-world scenario for `CLI flags help`.", "input": "", "output": "`--help` documents, `-h` shortens, `--flag=value` configures; good CLIs fail with usage on misuse."}
 {"instruction": "What problem does `CLI flags help` solve?", "input": "", "output": "`--help` documents, `-h` shortens, `--flag=value` configures; good CLIs fail with usage on misuse."}
-{"instruction": "Terangkan `CLI flags help` dalam satu minit.", "input": "", "output": "`--help` documents, `-h` shortens, `--flag=value` configures; good CLIs fail with usage on misuse."}
 {"instruction": "Apa yang perlu saya tahu tentang `CLI flags help`?", "input": "", "output": "`--help` documents, `-h` shortens, `--flag=value` configures; good CLIs fail with usage on misuse."}
 {"instruction": "Bagaimanakah `CLI flags help` berfungsi?", "input": "", "output": "`--help` documents, `-h` shortens, `--flag=value` configures; good CLIs fail with usage on misuse."}
-{"instruction": "Bilakah masa yang sesuai untuk `CLI flags help`?", "input": "", "output": "`--help` documents, `-h` shortens, `--flag=value` configures; good CLIs fail with usage on misuse."}
 {"instruction": "What does `pipes redirection` do?", "input": "", "output": "`|` chains stdout to stdin; `>`/`>>` capture files; `2>&1` merges errors — the shell's composition system."}
 {"instruction": "Explain `pipes redirection` briefly.", "input": "", "output": "`|` chains stdout to stdin; `>`/`>>` capture files; `2>&1` merges errors — the shell's composition system."}
 {"instruction": "When do I use `pipes redirection`?", "input": "", "output": "`|` chains stdout to stdin; `>`/`>>` capture files; `2>&1` merges errors — the shell's composition system."}
@@ -793,10 +707,8 @@
 {"instruction": "How would you explain `pipes redirection` to a junior developer?", "input": "", "output": "`|` chains stdout to stdin; `>`/`>>` capture files; `2>&1` merges errors — the shell's composition system."}
 {"instruction": "Give a real-world scenario for `pipes redirection`.", "input": "", "output": "`|` chains stdout to stdin; `>`/`>>` capture files; `2>&1` merges errors — the shell's composition system."}
 {"instruction": "What problem does `pipes redirection` solve?", "input": "", "output": "`|` chains stdout to stdin; `>`/`>>` capture files; `2>&1` merges errors — the shell's composition system."}
-{"instruction": "Terangkan `pipes redirection` dalam satu minit.", "input": "", "output": "`|` chains stdout to stdin; `>`/`>>` capture files; `2>&1` merges errors — the shell's composition system."}
 {"instruction": "Apa yang perlu saya tahu tentang `pipes redirection`?", "input": "", "output": "`|` chains stdout to stdin; `>`/`>>` capture files; `2>&1` merges errors — the shell's composition system."}
 {"instruction": "Bagaimanakah `pipes redirection` berfungsi?", "input": "", "output": "`|` chains stdout to stdin; `>`/`>>` capture files; `2>&1` merges errors — the shell's composition system."}
-{"instruction": "Bilakah masa yang sesuai untuk `pipes redirection`?", "input": "", "output": "`|` chains stdout to stdin; `>`/`>>` capture files; `2>&1` merges errors — the shell's composition system."}
 {"instruction": "What does `YAML indent` do?", "input": "", "output": "YAML nests by exact spaces (tabs forbidden!); quote `yes/no/on` strings that parsers coerce to booleans."}
 {"instruction": "Explain `YAML indent` briefly.", "input": "", "output": "YAML nests by exact spaces (tabs forbidden!); quote `yes/no/on` strings that parsers coerce to booleans."}
 {"instruction": "When do I use `YAML indent`?", "input": "", "output": "YAML nests by exact spaces (tabs forbidden!); quote `yes/no/on` strings that parsers coerce to booleans."}
@@ -810,10 +722,8 @@
 {"instruction": "How would you explain `YAML indent` to a junior developer?", "input": "", "output": "YAML nests by exact spaces (tabs forbidden!); quote `yes/no/on` strings that parsers coerce to booleans."}
 {"instruction": "Give a real-world scenario for `YAML indent`.", "input": "", "output": "YAML nests by exact spaces (tabs forbidden!); quote `yes/no/on` strings that parsers coerce to booleans."}
 {"instruction": "What problem does `YAML indent` solve?", "input": "", "output": "YAML nests by exact spaces (tabs forbidden!); quote `yes/no/on` strings that parsers coerce to booleans."}
-{"instruction": "Terangkan `YAML indent` dalam satu minit.", "input": "", "output": "YAML nests by exact spaces (tabs forbidden!); quote `yes/no/on` strings that parsers coerce to booleans."}
 {"instruction": "Apa yang perlu saya tahu tentang `YAML indent`?", "input": "", "output": "YAML nests by exact spaces (tabs forbidden!); quote `yes/no/on` strings that parsers coerce to booleans."}
 {"instruction": "Bagaimanakah `YAML indent` berfungsi?", "input": "", "output": "YAML nests by exact spaces (tabs forbidden!); quote `yes/no/on` strings that parsers coerce to booleans."}
-{"instruction": "Bilakah masa yang sesuai untuk `YAML indent`?", "input": "", "output": "YAML nests by exact spaces (tabs forbidden!); quote `yes/no/on` strings that parsers coerce to booleans."}
 {"instruction": "What does `JSON vs YAML` do?", "input": "", "output": "JSON for machines (strict, fast); YAML for humans (comments, anchors) — validate both with schemas in CI."}
 {"instruction": "Explain `JSON vs YAML` briefly.", "input": "", "output": "JSON for machines (strict, fast); YAML for humans (comments, anchors) — validate both with schemas in CI."}
 {"instruction": "When do I use `JSON vs YAML`?", "input": "", "output": "JSON for machines (strict, fast); YAML for humans (comments, anchors) — validate both with schemas in CI."}
@@ -827,10 +737,8 @@
 {"instruction": "How would you explain `JSON vs YAML` to a junior developer?", "input": "", "output": "JSON for machines (strict, fast); YAML for humans (comments, anchors) — validate both with schemas in CI."}
 {"instruction": "Give a real-world scenario for `JSON vs YAML`.", "input": "", "output": "JSON for machines (strict, fast); YAML for humans (comments, anchors) — validate both with schemas in CI."}
 {"instruction": "What problem does `JSON vs YAML` solve?", "input": "", "output": "JSON for machines (strict, fast); YAML for humans (comments, anchors) — validate both with schemas in CI."}
-{"instruction": "Terangkan `JSON vs YAML` dalam satu minit.", "input": "", "output": "JSON for machines (strict, fast); YAML for humans (comments, anchors) — validate both with schemas in CI."}
 {"instruction": "Apa yang perlu saya tahu tentang `JSON vs YAML`?", "input": "", "output": "JSON for machines (strict, fast); YAML for humans (comments, anchors) — validate both with schemas in CI."}
 {"instruction": "Bagaimanakah `JSON vs YAML` berfungsi?", "input": "", "output": "JSON for machines (strict, fast); YAML for humans (comments, anchors) — validate both with schemas in CI."}
-{"instruction": "Bilakah masa yang sesuai untuk `JSON vs YAML`?", "input": "", "output": "JSON for machines (strict, fast); YAML for humans (comments, anchors) — validate both with schemas in CI."}
 {"instruction": "What does `package managers` do?", "input": "", "output": "One lockfile per project (`lock` commits, installs reproduce); global installs are for CLIs, not project deps."}
 {"instruction": "Explain `package managers` briefly.", "input": "", "output": "One lockfile per project (`lock` commits, installs reproduce); global installs are for CLIs, not project deps."}
 {"instruction": "When do I use `package managers`?", "input": "", "output": "One lockfile per project (`lock` commits, installs reproduce); global installs are for CLIs, not project deps."}
@@ -844,10 +752,8 @@
 {"instruction": "How would you explain `package managers` to a junior developer?", "input": "", "output": "One lockfile per project (`lock` commits, installs reproduce); global installs are for CLIs, not project deps."}
 {"instruction": "Give a real-world scenario for `package managers`.", "input": "", "output": "One lockfile per project (`lock` commits, installs reproduce); global installs are for CLIs, not project deps."}
 {"instruction": "What problem does `package managers` solve?", "input": "", "output": "One lockfile per project (`lock` commits, installs reproduce); global installs are for CLIs, not project deps."}
-{"instruction": "Terangkan `package managers` dalam satu minit.", "input": "", "output": "One lockfile per project (`lock` commits, installs reproduce); global installs are for CLIs, not project deps."}
 {"instruction": "Apa yang perlu saya tahu tentang `package managers`?", "input": "", "output": "One lockfile per project (`lock` commits, installs reproduce); global installs are for CLIs, not project deps."}
 {"instruction": "Bagaimanakah `package managers` berfungsi?", "input": "", "output": "One lockfile per project (`lock` commits, installs reproduce); global installs are for CLIs, not project deps."}
-{"instruction": "Bilakah masa yang sesuai untuk `package managers`?", "input": "", "output": "One lockfile per project (`lock` commits, installs reproduce); global installs are for CLIs, not project deps."}
 {"instruction": "What does `containers vs VMs` do?", "input": "", "output": "Containers share the host kernel (light, fast start); VMs virtualize hardware (stronger isolation, heavier)."}
 {"instruction": "Explain `containers vs VMs` briefly.", "input": "", "output": "Containers share the host kernel (light, fast start); VMs virtualize hardware (stronger isolation, heavier)."}
 {"instruction": "When do I use `containers vs VMs`?", "input": "", "output": "Containers share the host kernel (light, fast start); VMs virtualize hardware (stronger isolation, heavier)."}
@@ -861,10 +767,8 @@
 {"instruction": "How would you explain `containers vs VMs` to a junior developer?", "input": "", "output": "Containers share the host kernel (light, fast start); VMs virtualize hardware (stronger isolation, heavier)."}
 {"instruction": "Give a real-world scenario for `containers vs VMs`.", "input": "", "output": "Containers share the host kernel (light, fast start); VMs virtualize hardware (stronger isolation, heavier)."}
 {"instruction": "What problem does `containers vs VMs` solve?", "input": "", "output": "Containers share the host kernel (light, fast start); VMs virtualize hardware (stronger isolation, heavier)."}
-{"instruction": "Terangkan `containers vs VMs` dalam satu minit.", "input": "", "output": "Containers share the host kernel (light, fast start); VMs virtualize hardware (stronger isolation, heavier)."}
 {"instruction": "Apa yang perlu saya tahu tentang `containers vs VMs`?", "input": "", "output": "Containers share the host kernel (light, fast start); VMs virtualize hardware (stronger isolation, heavier)."}
 {"instruction": "Bagaimanakah `containers vs VMs` berfungsi?", "input": "", "output": "Containers share the host kernel (light, fast start); VMs virtualize hardware (stronger isolation, heavier)."}
-{"instruction": "Bilakah masa yang sesuai untuk `containers vs VMs`?", "input": "", "output": "Containers share the host kernel (light, fast start); VMs virtualize hardware (stronger isolation, heavier)."}
 {"instruction": "What does `monitoring vs alerting` do?", "input": "", "output": "Monitor everything, alert on symptoms (error budget burn, saturation) — paging on causes fatigues on-call."}
 {"instruction": "Explain `monitoring vs alerting` briefly.", "input": "", "output": "Monitor everything, alert on symptoms (error budget burn, saturation) — paging on causes fatigues on-call."}
 {"instruction": "When do I use `monitoring vs alerting`?", "input": "", "output": "Monitor everything, alert on symptoms (error budget burn, saturation) — paging on causes fatigues on-call."}
@@ -878,10 +782,8 @@
 {"instruction": "How would you explain `monitoring vs alerting` to a junior developer?", "input": "", "output": "Monitor everything, alert on symptoms (error budget burn, saturation) — paging on causes fatigues on-call."}
 {"instruction": "Give a real-world scenario for `monitoring vs alerting`.", "input": "", "output": "Monitor everything, alert on symptoms (error budget burn, saturation) — paging on causes fatigues on-call."}
 {"instruction": "What problem does `monitoring vs alerting` solve?", "input": "", "output": "Monitor everything, alert on symptoms (error budget burn, saturation) — paging on causes fatigues on-call."}
-{"instruction": "Terangkan `monitoring vs alerting` dalam satu minit.", "input": "", "output": "Monitor everything, alert on symptoms (error budget burn, saturation) — paging on causes fatigues on-call."}
 {"instruction": "Apa yang perlu saya tahu tentang `monitoring vs alerting`?", "input": "", "output": "Monitor everything, alert on symptoms (error budget burn, saturation) — paging on causes fatigues on-call."}
 {"instruction": "Bagaimanakah `monitoring vs alerting` berfungsi?", "input": "", "output": "Monitor everything, alert on symptoms (error budget burn, saturation) — paging on causes fatigues on-call."}
-{"instruction": "Bilakah masa yang sesuai untuk `monitoring vs alerting`?", "input": "", "output": "Monitor everything, alert on symptoms (error budget burn, saturation) — paging on causes fatigues on-call."}
 {"instruction": "What does `stdin stdout stderr` do?", "input": "", "output": "Three standard streams: stdin in, stdout data out, stderr diagnostics out — redirect each independently."}
 {"instruction": "Explain `stdin stdout stderr` briefly.", "input": "", "output": "Three standard streams: stdin in, stdout data out, stderr diagnostics out — redirect each independently."}
 {"instruction": "When do I use `stdin stdout stderr`?", "input": "", "output": "Three standard streams: stdin in, stdout data out, stderr diagnostics out — redirect each independently."}
@@ -895,10 +797,8 @@
 {"instruction": "How would you explain `stdin stdout stderr` to a junior developer?", "input": "", "output": "Three standard streams: stdin in, stdout data out, stderr diagnostics out — redirect each independently."}
 {"instruction": "Give a real-world scenario for `stdin stdout stderr`.", "input": "", "output": "Three standard streams: stdin in, stdout data out, stderr diagnostics out — redirect each independently."}
 {"instruction": "What problem does `stdin stdout stderr` solve?", "input": "", "output": "Three standard streams: stdin in, stdout data out, stderr diagnostics out — redirect each independently."}
-{"instruction": "Terangkan `stdin stdout stderr` dalam satu minit.", "input": "", "output": "Three standard streams: stdin in, stdout data out, stderr diagnostics out — redirect each independently."}
 {"instruction": "Apa yang perlu saya tahu tentang `stdin stdout stderr`?", "input": "", "output": "Three standard streams: stdin in, stdout data out, stderr diagnostics out — redirect each independently."}
 {"instruction": "Bagaimanakah `stdin stdout stderr` berfungsi?", "input": "", "output": "Three standard streams: stdin in, stdout data out, stderr diagnostics out — redirect each independently."}
-{"instruction": "Bilakah masa yang sesuai untuk `stdin stdout stderr`?", "input": "", "output": "Three standard streams: stdin in, stdout data out, stderr diagnostics out — redirect each independently."}
 {"instruction": "What does `exit code chaining` do?", "input": "", "output": "`cmd1 && cmd2` chains on success, `;` always continues, `||` falls back — scripts encode decisions in connectors."}
 {"instruction": "Explain `exit code chaining` briefly.", "input": "", "output": "`cmd1 && cmd2` chains on success, `;` always continues, `||` falls back — scripts encode decisions in connectors."}
 {"instruction": "When do I use `exit code chaining`?", "input": "", "output": "`cmd1 && cmd2` chains on success, `;` always continues, `||` falls back — scripts encode decisions in connectors."}
@@ -912,10 +812,8 @@
 {"instruction": "How would you explain `exit code chaining` to a junior developer?", "input": "", "output": "`cmd1 && cmd2` chains on success, `;` always continues, `||` falls back — scripts encode decisions in connectors."}
 {"instruction": "Give a real-world scenario for `exit code chaining`.", "input": "", "output": "`cmd1 && cmd2` chains on success, `;` always continues, `||` falls back — scripts encode decisions in connectors."}
 {"instruction": "What problem does `exit code chaining` solve?", "input": "", "output": "`cmd1 && cmd2` chains on success, `;` always continues, `||` falls back — scripts encode decisions in connectors."}
-{"instruction": "Terangkan `exit code chaining` dalam satu minit.", "input": "", "output": "`cmd1 && cmd2` chains on success, `;` always continues, `||` falls back — scripts encode decisions in connectors."}
 {"instruction": "Apa yang perlu saya tahu tentang `exit code chaining`?", "input": "", "output": "`cmd1 && cmd2` chains on success, `;` always continues, `||` falls back — scripts encode decisions in connectors."}
 {"instruction": "Bagaimanakah `exit code chaining` berfungsi?", "input": "", "output": "`cmd1 && cmd2` chains on success, `;` always continues, `||` falls back — scripts encode decisions in connectors."}
-{"instruction": "Bilakah masa yang sesuai untuk `exit code chaining`?", "input": "", "output": "`cmd1 && cmd2` chains on success, `;` always continues, `||` falls back — scripts encode decisions in connectors."}
 {"instruction": "What does `glob patterns` do?", "input": "", "output": "`*.log`/`?.txt`/`[abc]` match files in shells and tools; quote them when tools (not shell) must expand."}
 {"instruction": "Explain `glob patterns` briefly.", "input": "", "output": "`*.log`/`?.txt`/`[abc]` match files in shells and tools; quote them when tools (not shell) must expand."}
 {"instruction": "When do I use `glob patterns`?", "input": "", "output": "`*.log`/`?.txt`/`[abc]` match files in shells and tools; quote them when tools (not shell) must expand."}
@@ -929,10 +827,8 @@
 {"instruction": "How would you explain `glob patterns` to a junior developer?", "input": "", "output": "`*.log`/`?.txt`/`[abc]` match files in shells and tools; quote them when tools (not shell) must expand."}
 {"instruction": "Give a real-world scenario for `glob patterns`.", "input": "", "output": "`*.log`/`?.txt`/`[abc]` match files in shells and tools; quote them when tools (not shell) must expand."}
 {"instruction": "What problem does `glob patterns` solve?", "input": "", "output": "`*.log`/`?.txt`/`[abc]` match files in shells and tools; quote them when tools (not shell) must expand."}
-{"instruction": "Terangkan `glob patterns` dalam satu minit.", "input": "", "output": "`*.log`/`?.txt`/`[abc]` match files in shells and tools; quote them when tools (not shell) must expand."}
 {"instruction": "Apa yang perlu saya tahu tentang `glob patterns`?", "input": "", "output": "`*.log`/`?.txt`/`[abc]` match files in shells and tools; quote them when tools (not shell) must expand."}
 {"instruction": "Bagaimanakah `glob patterns` berfungsi?", "input": "", "output": "`*.log`/`?.txt`/`[abc]` match files in shells and tools; quote them when tools (not shell) must expand."}
-{"instruction": "Bilakah masa yang sesuai untuk `glob patterns`?", "input": "", "output": "`*.log`/`?.txt`/`[abc]` match files in shells and tools; quote them when tools (not shell) must expand."}
 {"instruction": "What does `command substitution` do?", "input": "", "output": "`$(cmd)` captures output into variables/args; nesting works, backticks don't — modernize old scripts."}
 {"instruction": "Explain `command substitution` briefly.", "input": "", "output": "`$(cmd)` captures output into variables/args; nesting works, backticks don't — modernize old scripts."}
 {"instruction": "When do I use `command substitution`?", "input": "", "output": "`$(cmd)` captures output into variables/args; nesting works, backticks don't — modernize old scripts."}
@@ -946,10 +842,8 @@
 {"instruction": "How would you explain `command substitution` to a junior developer?", "input": "", "output": "`$(cmd)` captures output into variables/args; nesting works, backticks don't — modernize old scripts."}
 {"instruction": "Give a real-world scenario for `command substitution`.", "input": "", "output": "`$(cmd)` captures output into variables/args; nesting works, backticks don't — modernize old scripts."}
 {"instruction": "What problem does `command substitution` solve?", "input": "", "output": "`$(cmd)` captures output into variables/args; nesting works, backticks don't — modernize old scripts."}
-{"instruction": "Terangkan `command substitution` dalam satu minit.", "input": "", "output": "`$(cmd)` captures output into variables/args; nesting works, backticks don't — modernize old scripts."}
 {"instruction": "Apa yang perlu saya tahu tentang `command substitution`?", "input": "", "output": "`$(cmd)` captures output into variables/args; nesting works, backticks don't — modernize old scripts."}
 {"instruction": "Bagaimanakah `command substitution` berfungsi?", "input": "", "output": "`$(cmd)` captures output into variables/args; nesting works, backticks don't — modernize old scripts."}
-{"instruction": "Bilakah masa yang sesuai untuk `command substitution`?", "input": "", "output": "`$(cmd)` captures output into variables/args; nesting works, backticks don't — modernize old scripts."}
 {"instruction": "What does `here-string` do?", "input": "", "output": "`grep root <<< \"$var\"` feeds strings as stdin without echo-pipes or temp files."}
 {"instruction": "Explain `here-string` briefly.", "input": "", "output": "`grep root <<< \"$var\"` feeds strings as stdin without echo-pipes or temp files."}
 {"instruction": "When do I use `here-string`?", "input": "", "output": "`grep root <<< \"$var\"` feeds strings as stdin without echo-pipes or temp files."}
@@ -963,10 +857,8 @@
 {"instruction": "How would you explain `here-string` to a junior developer?", "input": "", "output": "`grep root <<< \"$var\"` feeds strings as stdin without echo-pipes or temp files."}
 {"instruction": "Give a real-world scenario for `here-string`.", "input": "", "output": "`grep root <<< \"$var\"` feeds strings as stdin without echo-pipes or temp files."}
 {"instruction": "What problem does `here-string` solve?", "input": "", "output": "`grep root <<< \"$var\"` feeds strings as stdin without echo-pipes or temp files."}
-{"instruction": "Terangkan `here-string` dalam satu minit.", "input": "", "output": "`grep root <<< \"$var\"` feeds strings as stdin without echo-pipes or temp files."}
 {"instruction": "Apa yang perlu saya tahu tentang `here-string`?", "input": "", "output": "`grep root <<< \"$var\"` feeds strings as stdin without echo-pipes or temp files."}
 {"instruction": "Bagaimanakah `here-string` berfungsi?", "input": "", "output": "`grep root <<< \"$var\"` feeds strings as stdin without echo-pipes or temp files."}
-{"instruction": "Bilakah masa yang sesuai untuk `here-string`?", "input": "", "output": "`grep root <<< \"$var\"` feeds strings as stdin without echo-pipes or temp files."}
 {"instruction": "What does `xargs basics` do?", "input": "", "output": "`xargs -r cmd` builds commands from stdin lines; `-0`/`-n1`/`-P4` harden and parallelize safely."}
 {"instruction": "Explain `xargs basics` briefly.", "input": "", "output": "`xargs -r cmd` builds commands from stdin lines; `-0`/`-n1`/`-P4` harden and parallelize safely."}
 {"instruction": "When do I use `xargs basics`?", "input": "", "output": "`xargs -r cmd` builds commands from stdin lines; `-0`/`-n1`/`-P4` harden and parallelize safely."}
@@ -980,10 +872,8 @@
 {"instruction": "How would you explain `xargs basics` to a junior developer?", "input": "", "output": "`xargs -r cmd` builds commands from stdin lines; `-0`/`-n1`/`-P4` harden and parallelize safely."}
 {"instruction": "Give a real-world scenario for `xargs basics`.", "input": "", "output": "`xargs -r cmd` builds commands from stdin lines; `-0`/`-n1`/`-P4` harden and parallelize safely."}
 {"instruction": "What problem does `xargs basics` solve?", "input": "", "output": "`xargs -r cmd` builds commands from stdin lines; `-0`/`-n1`/`-P4` harden and parallelize safely."}
-{"instruction": "Terangkan `xargs basics` dalam satu minit.", "input": "", "output": "`xargs -r cmd` builds commands from stdin lines; `-0`/`-n1`/`-P4` harden and parallelize safely."}
 {"instruction": "Apa yang perlu saya tahu tentang `xargs basics`?", "input": "", "output": "`xargs -r cmd` builds commands from stdin lines; `-0`/`-n1`/`-P4` harden and parallelize safely."}
 {"instruction": "Bagaimanakah `xargs basics` berfungsi?", "input": "", "output": "`xargs -r cmd` builds commands from stdin lines; `-0`/`-n1`/`-P4` harden and parallelize safely."}
-{"instruction": "Bilakah masa yang sesuai untuk `xargs basics`?", "input": "", "output": "`xargs -r cmd` builds commands from stdin lines; `-0`/`-n1`/`-P4` harden and parallelize safely."}
 {"instruction": "What does `tee command` do?", "input": "", "output": "`tee` duplicates streams to files mid-pipeline (`-a` appends); `|& tee` captures stderr too."}
 {"instruction": "Explain `tee command` briefly.", "input": "", "output": "`tee` duplicates streams to files mid-pipeline (`-a` appends); `|& tee` captures stderr too."}
 {"instruction": "When do I use `tee command`?", "input": "", "output": "`tee` duplicates streams to files mid-pipeline (`-a` appends); `|& tee` captures stderr too."}
@@ -997,10 +887,8 @@
 {"instruction": "How would you explain `tee command` to a junior developer?", "input": "", "output": "`tee` duplicates streams to files mid-pipeline (`-a` appends); `|& tee` captures stderr too."}
 {"instruction": "Give a real-world scenario for `tee command`.", "input": "", "output": "`tee` duplicates streams to files mid-pipeline (`-a` appends); `|& tee` captures stderr too."}
 {"instruction": "What problem does `tee command` solve?", "input": "", "output": "`tee` duplicates streams to files mid-pipeline (`-a` appends); `|& tee` captures stderr too."}
-{"instruction": "Terangkan `tee command` dalam satu minit.", "input": "", "output": "`tee` duplicates streams to files mid-pipeline (`-a` appends); `|& tee` captures stderr too."}
 {"instruction": "Apa yang perlu saya tahu tentang `tee command`?", "input": "", "output": "`tee` duplicates streams to files mid-pipeline (`-a` appends); `|& tee` captures stderr too."}
 {"instruction": "Bagaimanakah `tee command` berfungsi?", "input": "", "output": "`tee` duplicates streams to files mid-pipeline (`-a` appends); `|& tee` captures stderr too."}
-{"instruction": "Bilakah masa yang sesuai untuk `tee command`?", "input": "", "output": "`tee` duplicates streams to files mid-pipeline (`-a` appends); `|& tee` captures stderr too."}
 {"instruction": "What does `watch command` do?", "input": "", "output": "`watch -n2 -d cmd` reruns highlighting diffs — dashboards for deploys, migrations and queues."}
 {"instruction": "Explain `watch command` briefly.", "input": "", "output": "`watch -n2 -d cmd` reruns highlighting diffs — dashboards for deploys, migrations and queues."}
 {"instruction": "When do I use `watch command`?", "input": "", "output": "`watch -n2 -d cmd` reruns highlighting diffs — dashboards for deploys, migrations and queues."}
@@ -1014,10 +902,8 @@
 {"instruction": "How would you explain `watch command` to a junior developer?", "input": "", "output": "`watch -n2 -d cmd` reruns highlighting diffs — dashboards for deploys, migrations and queues."}
 {"instruction": "Give a real-world scenario for `watch command`.", "input": "", "output": "`watch -n2 -d cmd` reruns highlighting diffs — dashboards for deploys, migrations and queues."}
 {"instruction": "What problem does `watch command` solve?", "input": "", "output": "`watch -n2 -d cmd` reruns highlighting diffs — dashboards for deploys, migrations and queues."}
-{"instruction": "Terangkan `watch command` dalam satu minit.", "input": "", "output": "`watch -n2 -d cmd` reruns highlighting diffs — dashboards for deploys, migrations and queues."}
 {"instruction": "Apa yang perlu saya tahu tentang `watch command`?", "input": "", "output": "`watch -n2 -d cmd` reruns highlighting diffs — dashboards for deploys, migrations and queues."}
 {"instruction": "Bagaimanakah `watch command` berfungsi?", "input": "", "output": "`watch -n2 -d cmd` reruns highlighting diffs — dashboards for deploys, migrations and queues."}
-{"instruction": "Bilakah masa yang sesuai untuk `watch command`?", "input": "", "output": "`watch -n2 -d cmd` reruns highlighting diffs — dashboards for deploys, migrations and queues."}
 {"instruction": "Bolehkah anda buatkan fail untuk saya?", "input": "", "output": "Ya, saya boleh tulis sebarang fail teks: kod, config, skrip atau dokumen. Beritahu nama fail dan isinya — contoh: `tulis package.json untuk blog Node` atau `tulis skrip backup bash`."}
 {"instruction": "Can you create files for me?", "input": "", "output": "Yes — I can write any text file: code, configs, scripts or docs. Name the file and its purpose, e.g. `write package.json for a Node blog` or `write a backup bash script`."}
 {"instruction": "Adakah anda terhad dan tidak boleh menolong?", "input": "", "output": "Tidak — saya pembantu pengekodan dan tugas saya menyiapkan kerja: menulis kod, membetulkan ralat, menerangkan konsep dan membina projek fail demi fail. Tanya sahaja dengan spesifik."}
@@ -1034,10 +920,8 @@
 {"instruction": "How would you explain `exit status reading` to a junior developer?", "input": "", "output": "Read `$?` immediately after the command of interest; any intervening command (even `echo`) overwrites it — capture to a variable first (see bash.jsonl `exit codes` for values)."}
 {"instruction": "Give a real-world scenario for `exit status reading`.", "input": "", "output": "Read `$?` immediately after the command of interest; any intervening command (even `echo`) overwrites it — capture to a variable first (see bash.jsonl `exit codes` for values)."}
 {"instruction": "What problem does `exit status reading` solve?", "input": "", "output": "Read `$?` immediately after the command of interest; any intervening command (even `echo`) overwrites it — capture to a variable first (see bash.jsonl `exit codes` for values)."}
-{"instruction": "Terangkan `exit status reading` dalam satu minit.", "input": "", "output": "Read `$?` immediately after the command of interest; any intervening command (even `echo`) overwrites it — capture to a variable first (see bash.jsonl `exit codes` for values)."}
 {"instruction": "Apa yang perlu saya tahu tentang `exit status reading`?", "input": "", "output": "Read `$?` immediately after the command of interest; any intervening command (even `echo`) overwrites it — capture to a variable first (see bash.jsonl `exit codes` for values)."}
 {"instruction": "Bagaimanakah `exit status reading` berfungsi?", "input": "", "output": "Read `$?` immediately after the command of interest; any intervening command (even `echo`) overwrites it — capture to a variable first (see bash.jsonl `exit codes` for values)."}
-{"instruction": "Bilakah masa yang sesuai untuk `exit status reading`?", "input": "", "output": "Read `$?` immediately after the command of interest; any intervening command (even `echo`) overwrites it — capture to a variable first (see bash.jsonl `exit codes` for values)."}
 {"instruction": "What does `vim basics` do?", "input": "", "output": "`i` insert, `Esc` normal, `:wq` save-quit, `/` search, `dd` delete line, `u` undo — survival kit for remote boxes without nano."}
 {"instruction": "Explain `vim basics` briefly.", "input": "", "output": "`i` insert, `Esc` normal, `:wq` save-quit, `/` search, `dd` delete line, `u` undo — survival kit for remote boxes without nano."}
 {"instruction": "When do I use `vim basics`?", "input": "", "output": "`i` insert, `Esc` normal, `:wq` save-quit, `/` search, `dd` delete line, `u` undo — survival kit for remote boxes without nano."}
@@ -1051,10 +935,8 @@
 {"instruction": "How would you explain `vim basics` to a junior developer?", "input": "", "output": "`i` insert, `Esc` normal, `:wq` save-quit, `/` search, `dd` delete line, `u` undo — survival kit for remote boxes without nano."}
 {"instruction": "Give a real-world scenario for `vim basics`.", "input": "", "output": "`i` insert, `Esc` normal, `:wq` save-quit, `/` search, `dd` delete line, `u` undo — survival kit for remote boxes without nano."}
 {"instruction": "What problem does `vim basics` solve?", "input": "", "output": "`i` insert, `Esc` normal, `:wq` save-quit, `/` search, `dd` delete line, `u` undo — survival kit for remote boxes without nano."}
-{"instruction": "Terangkan `vim basics` dalam satu minit.", "input": "", "output": "`i` insert, `Esc` normal, `:wq` save-quit, `/` search, `dd` delete line, `u` undo — survival kit for remote boxes without nano."}
 {"instruction": "Apa yang perlu saya tahu tentang `vim basics`?", "input": "", "output": "`i` insert, `Esc` normal, `:wq` save-quit, `/` search, `dd` delete line, `u` undo — survival kit for remote boxes without nano."}
 {"instruction": "Bagaimanakah `vim basics` berfungsi?", "input": "", "output": "`i` insert, `Esc` normal, `:wq` save-quit, `/` search, `dd` delete line, `u` undo — survival kit for remote boxes without nano."}
-{"instruction": "Bilakah masa yang sesuai untuk `vim basics`?", "input": "", "output": "`i` insert, `Esc` normal, `:wq` save-quit, `/` search, `dd` delete line, `u` undo — survival kit for remote boxes without nano."}
 {"instruction": "What does `nano basics` do?", "input": "", "output": "`nano` shows shortcuts on-screen (`^O` write, `^X` exit, `^W` search) — friendlier default for occasional editors."}
 {"instruction": "Explain `nano basics` briefly.", "input": "", "output": "`nano` shows shortcuts on-screen (`^O` write, `^X` exit, `^W` search) — friendlier default for occasional editors."}
 {"instruction": "When do I use `nano basics`?", "input": "", "output": "`nano` shows shortcuts on-screen (`^O` write, `^X` exit, `^W` search) — friendlier default for occasional editors."}
@@ -1068,10 +950,8 @@
 {"instruction": "How would you explain `nano basics` to a junior developer?", "input": "", "output": "`nano` shows shortcuts on-screen (`^O` write, `^X` exit, `^W` search) — friendlier default for occasional editors."}
 {"instruction": "Give a real-world scenario for `nano basics`.", "input": "", "output": "`nano` shows shortcuts on-screen (`^O` write, `^X` exit, `^W` search) — friendlier default for occasional editors."}
 {"instruction": "What problem does `nano basics` solve?", "input": "", "output": "`nano` shows shortcuts on-screen (`^O` write, `^X` exit, `^W` search) — friendlier default for occasional editors."}
-{"instruction": "Terangkan `nano basics` dalam satu minit.", "input": "", "output": "`nano` shows shortcuts on-screen (`^O` write, `^X` exit, `^W` search) — friendlier default for occasional editors."}
 {"instruction": "Apa yang perlu saya tahu tentang `nano basics`?", "input": "", "output": "`nano` shows shortcuts on-screen (`^O` write, `^X` exit, `^W` search) — friendlier default for occasional editors."}
 {"instruction": "Bagaimanakah `nano basics` berfungsi?", "input": "", "output": "`nano` shows shortcuts on-screen (`^O` write, `^X` exit, `^W` search) — friendlier default for occasional editors."}
-{"instruction": "Bilakah masa yang sesuai untuk `nano basics`?", "input": "", "output": "`nano` shows shortcuts on-screen (`^O` write, `^X` exit, `^W` search) — friendlier default for occasional editors."}
 {"instruction": "What does `less navigation` do?", "input": "", "output": "`less` pages with `/` search, `F` follow-mode (like tail -f), `q` quit — `|`, `&pattern` filters and marks."}
 {"instruction": "Explain `less navigation` briefly.", "input": "", "output": "`less` pages with `/` search, `F` follow-mode (like tail -f), `q` quit — `|`, `&pattern` filters and marks."}
 {"instruction": "When do I use `less navigation`?", "input": "", "output": "`less` pages with `/` search, `F` follow-mode (like tail -f), `q` quit — `|`, `&pattern` filters and marks."}
@@ -1085,10 +965,8 @@
 {"instruction": "How would you explain `less navigation` to a junior developer?", "input": "", "output": "`less` pages with `/` search, `F` follow-mode (like tail -f), `q` quit — `|`, `&pattern` filters and marks."}
 {"instruction": "Give a real-world scenario for `less navigation`.", "input": "", "output": "`less` pages with `/` search, `F` follow-mode (like tail -f), `q` quit — `|`, `&pattern` filters and marks."}
 {"instruction": "What problem does `less navigation` solve?", "input": "", "output": "`less` pages with `/` search, `F` follow-mode (like tail -f), `q` quit — `|`, `&pattern` filters and marks."}
-{"instruction": "Terangkan `less navigation` dalam satu minit.", "input": "", "output": "`less` pages with `/` search, `F` follow-mode (like tail -f), `q` quit — `|`, `&pattern` filters and marks."}
 {"instruction": "Apa yang perlu saya tahu tentang `less navigation`?", "input": "", "output": "`less` pages with `/` search, `F` follow-mode (like tail -f), `q` quit — `|`, `&pattern` filters and marks."}
 {"instruction": "Bagaimanakah `less navigation` berfungsi?", "input": "", "output": "`less` pages with `/` search, `F` follow-mode (like tail -f), `q` quit — `|`, `&pattern` filters and marks."}
-{"instruction": "Bilakah masa yang sesuai untuk `less navigation`?", "input": "", "output": "`less` pages with `/` search, `F` follow-mode (like tail -f), `q` quit — `|`, `&pattern` filters and marks."}
 {"instruction": "What does `man apropos` do?", "input": "", "output": "`man -k disk` (apropos) finds commands by description when names escape memory; `man` sections disambiguate."}
 {"instruction": "Explain `man apropos` briefly.", "input": "", "output": "`man -k disk` (apropos) finds commands by description when names escape memory; `man` sections disambiguate."}
 {"instruction": "When do I use `man apropos`?", "input": "", "output": "`man -k disk` (apropos) finds commands by description when names escape memory; `man` sections disambiguate."}
@@ -1102,10 +980,8 @@
 {"instruction": "How would you explain `man apropos` to a junior developer?", "input": "", "output": "`man -k disk` (apropos) finds commands by description when names escape memory; `man` sections disambiguate."}
 {"instruction": "Give a real-world scenario for `man apropos`.", "input": "", "output": "`man -k disk` (apropos) finds commands by description when names escape memory; `man` sections disambiguate."}
 {"instruction": "What problem does `man apropos` solve?", "input": "", "output": "`man -k disk` (apropos) finds commands by description when names escape memory; `man` sections disambiguate."}
-{"instruction": "Terangkan `man apropos` dalam satu minit.", "input": "", "output": "`man -k disk` (apropos) finds commands by description when names escape memory; `man` sections disambiguate."}
 {"instruction": "Apa yang perlu saya tahu tentang `man apropos`?", "input": "", "output": "`man -k disk` (apropos) finds commands by description when names escape memory; `man` sections disambiguate."}
 {"instruction": "Bagaimanakah `man apropos` berfungsi?", "input": "", "output": "`man -k disk` (apropos) finds commands by description when names escape memory; `man` sections disambiguate."}
-{"instruction": "Bilakah masa yang sesuai untuk `man apropos`?", "input": "", "output": "`man -k disk` (apropos) finds commands by description when names escape memory; `man` sections disambiguate."}
 {"instruction": "What does `which type command` do?", "input": "", "output": "`which` shows PATH binaries; `type -a` reveals aliases/functions/builtins too — debugging 'wrong version' starts here."}
 {"instruction": "Explain `which type command` briefly.", "input": "", "output": "`which` shows PATH binaries; `type -a` reveals aliases/functions/builtins too — debugging 'wrong version' starts here."}
 {"instruction": "When do I use `which type command`?", "input": "", "output": "`which` shows PATH binaries; `type -a` reveals aliases/functions/builtins too — debugging 'wrong version' starts here."}
@@ -1119,10 +995,8 @@
 {"instruction": "How would you explain `which type command` to a junior developer?", "input": "", "output": "`which` shows PATH binaries; `type -a` reveals aliases/functions/builtins too — debugging 'wrong version' starts here."}
 {"instruction": "Give a real-world scenario for `which type command`.", "input": "", "output": "`which` shows PATH binaries; `type -a` reveals aliases/functions/builtins too — debugging 'wrong version' starts here."}
 {"instruction": "What problem does `which type command` solve?", "input": "", "output": "`which` shows PATH binaries; `type -a` reveals aliases/functions/builtins too — debugging 'wrong version' starts here."}
-{"instruction": "Terangkan `which type command` dalam satu minit.", "input": "", "output": "`which` shows PATH binaries; `type -a` reveals aliases/functions/builtins too — debugging 'wrong version' starts here."}
 {"instruction": "Apa yang perlu saya tahu tentang `which type command`?", "input": "", "output": "`which` shows PATH binaries; `type -a` reveals aliases/functions/builtins too — debugging 'wrong version' starts here."}
 {"instruction": "Bagaimanakah `which type command` berfungsi?", "input": "", "output": "`which` shows PATH binaries; `type -a` reveals aliases/functions/builtins too — debugging 'wrong version' starts here."}
-{"instruction": "Bilakah masa yang sesuai untuk `which type command`?", "input": "", "output": "`which` shows PATH binaries; `type -a` reveals aliases/functions/builtins too — debugging 'wrong version' starts here."}
 {"instruction": "What does `history expansion` do?", "input": "", "output": "`!!` reruns, `!$` last arg, `!grep` last grep — verify with `:p` suffix (`!!:p` prints without running) before firing."}
 {"instruction": "Explain `history expansion` briefly.", "input": "", "output": "`!!` reruns, `!$` last arg, `!grep` last grep — verify with `:p` suffix (`!!:p` prints without running) before firing."}
 {"instruction": "When do I use `history expansion`?", "input": "", "output": "`!!` reruns, `!$` last arg, `!grep` last grep — verify with `:p` suffix (`!!:p` prints without running) before firing."}
@@ -1136,10 +1010,8 @@
 {"instruction": "How would you explain `history expansion` to a junior developer?", "input": "", "output": "`!!` reruns, `!$` last arg, `!grep` last grep — verify with `:p` suffix (`!!:p` prints without running) before firing."}
 {"instruction": "Give a real-world scenario for `history expansion`.", "input": "", "output": "`!!` reruns, `!$` last arg, `!grep` last grep — verify with `:p` suffix (`!!:p` prints without running) before firing."}
 {"instruction": "What problem does `history expansion` solve?", "input": "", "output": "`!!` reruns, `!$` last arg, `!grep` last grep — verify with `:p` suffix (`!!:p` prints without running) before firing."}
-{"instruction": "Terangkan `history expansion` dalam satu minit.", "input": "", "output": "`!!` reruns, `!$` last arg, `!grep` last grep — verify with `:p` suffix (`!!:p` prints without running) before firing."}
 {"instruction": "Apa yang perlu saya tahu tentang `history expansion`?", "input": "", "output": "`!!` reruns, `!$` last arg, `!grep` last grep — verify with `:p` suffix (`!!:p` prints without running) before firing."}
 {"instruction": "Bagaimanakah `history expansion` berfungsi?", "input": "", "output": "`!!` reruns, `!$` last arg, `!grep` last grep — verify with `:p` suffix (`!!:p` prints without running) before firing."}
-{"instruction": "Bilakah masa yang sesuai untuk `history expansion`?", "input": "", "output": "`!!` reruns, `!$` last arg, `!grep` last grep — verify with `:p` suffix (`!!:p` prints without running) before firing."}
 {"instruction": "What does `alias functions` do?", "input": "", "output": "Aliases suit abbreviations; functions suit logic (args, conditionals) — graduate prompt shortcuts before they grow teeth."}
 {"instruction": "Explain `alias functions` briefly.", "input": "", "output": "Aliases suit abbreviations; functions suit logic (args, conditionals) — graduate prompt shortcuts before they grow teeth."}
 {"instruction": "When do I use `alias functions`?", "input": "", "output": "Aliases suit abbreviations; functions suit logic (args, conditionals) — graduate prompt shortcuts before they grow teeth."}
@@ -1153,10 +1025,8 @@
 {"instruction": "How would you explain `alias functions` to a junior developer?", "input": "", "output": "Aliases suit abbreviations; functions suit logic (args, conditionals) — graduate prompt shortcuts before they grow teeth."}
 {"instruction": "Give a real-world scenario for `alias functions`.", "input": "", "output": "Aliases suit abbreviations; functions suit logic (args, conditionals) — graduate prompt shortcuts before they grow teeth."}
 {"instruction": "What problem does `alias functions` solve?", "input": "", "output": "Aliases suit abbreviations; functions suit logic (args, conditionals) — graduate prompt shortcuts before they grow teeth."}
-{"instruction": "Terangkan `alias functions` dalam satu minit.", "input": "", "output": "Aliases suit abbreviations; functions suit logic (args, conditionals) — graduate prompt shortcuts before they grow teeth."}
 {"instruction": "Apa yang perlu saya tahu tentang `alias functions`?", "input": "", "output": "Aliases suit abbreviations; functions suit logic (args, conditionals) — graduate prompt shortcuts before they grow teeth."}
 {"instruction": "Bagaimanakah `alias functions` berfungsi?", "input": "", "output": "Aliases suit abbreviations; functions suit logic (args, conditionals) — graduate prompt shortcuts before they grow teeth."}
-{"instruction": "Bilakah masa yang sesuai untuk `alias functions`?", "input": "", "output": "Aliases suit abbreviations; functions suit logic (args, conditionals) — graduate prompt shortcuts before they grow teeth."}
 {"instruction": "What does `export PATH persist` do?", "input": "", "output": "Export in `~/.bashrc`/`~/.profile` for persistence; verify with `echo $PATH` in fresh shells, not just current."}
 {"instruction": "Explain `export PATH persist` briefly.", "input": "", "output": "Export in `~/.bashrc`/`~/.profile` for persistence; verify with `echo $PATH` in fresh shells, not just current."}
 {"instruction": "When do I use `export PATH persist`?", "input": "", "output": "Export in `~/.bashrc`/`~/.profile` for persistence; verify with `echo $PATH` in fresh shells, not just current."}
@@ -1170,10 +1040,8 @@
 {"instruction": "How would you explain `export PATH persist` to a junior developer?", "input": "", "output": "Export in `~/.bashrc`/`~/.profile` for persistence; verify with `echo $PATH` in fresh shells, not just current."}
 {"instruction": "Give a real-world scenario for `export PATH persist`.", "input": "", "output": "Export in `~/.bashrc`/`~/.profile` for persistence; verify with `echo $PATH` in fresh shells, not just current."}
 {"instruction": "What problem does `export PATH persist` solve?", "input": "", "output": "Export in `~/.bashrc`/`~/.profile` for persistence; verify with `echo $PATH` in fresh shells, not just current."}
-{"instruction": "Terangkan `export PATH persist` dalam satu minit.", "input": "", "output": "Export in `~/.bashrc`/`~/.profile` for persistence; verify with `echo $PATH` in fresh shells, not just current."}
 {"instruction": "Apa yang perlu saya tahu tentang `export PATH persist`?", "input": "", "output": "Export in `~/.bashrc`/`~/.profile` for persistence; verify with `echo $PATH` in fresh shells, not just current."}
 {"instruction": "Bagaimanakah `export PATH persist` berfungsi?", "input": "", "output": "Export in `~/.bashrc`/`~/.profile` for persistence; verify with `echo $PATH` in fresh shells, not just current."}
-{"instruction": "Bilakah masa yang sesuai untuk `export PATH persist`?", "input": "", "output": "Export in `~/.bashrc`/`~/.profile` for persistence; verify with `echo $PATH` in fresh shells, not just current."}
 {"instruction": "What does `source vs bash` do?", "input": "", "output": "`source script.sh` runs in current shell (functions/vars persist); `bash script.sh` isolates — choose by intent, not habit."}
 {"instruction": "Explain `source vs bash` briefly.", "input": "", "output": "`source script.sh` runs in current shell (functions/vars persist); `bash script.sh` isolates — choose by intent, not habit."}
 {"instruction": "When do I use `source vs bash`?", "input": "", "output": "`source script.sh` runs in current shell (functions/vars persist); `bash script.sh` isolates — choose by intent, not habit."}
@@ -1187,10 +1055,8 @@
 {"instruction": "How would you explain `source vs bash` to a junior developer?", "input": "", "output": "`source script.sh` runs in current shell (functions/vars persist); `bash script.sh` isolates — choose by intent, not habit."}
 {"instruction": "Give a real-world scenario for `source vs bash`.", "input": "", "output": "`source script.sh` runs in current shell (functions/vars persist); `bash script.sh` isolates — choose by intent, not habit."}
 {"instruction": "What problem does `source vs bash` solve?", "input": "", "output": "`source script.sh` runs in current shell (functions/vars persist); `bash script.sh` isolates — choose by intent, not habit."}
-{"instruction": "Terangkan `source vs bash` dalam satu minit.", "input": "", "output": "`source script.sh` runs in current shell (functions/vars persist); `bash script.sh` isolates — choose by intent, not habit."}
 {"instruction": "Apa yang perlu saya tahu tentang `source vs bash`?", "input": "", "output": "`source script.sh` runs in current shell (functions/vars persist); `bash script.sh` isolates — choose by intent, not habit."}
 {"instruction": "Bagaimanakah `source vs bash` berfungsi?", "input": "", "output": "`source script.sh` runs in current shell (functions/vars persist); `bash script.sh` isolates — choose by intent, not habit."}
-{"instruction": "Bilakah masa yang sesuai untuk `source vs bash`?", "input": "", "output": "`source script.sh` runs in current shell (functions/vars persist); `bash script.sh` isolates — choose by intent, not habit."}
 {"instruction": "What does `shebang env` do?", "input": "", "output": "`#!/usr/bin/env bash` ports across distros (no hardcoded `/bin/bash`); `set -euo pipefail` follows on line two."}
 {"instruction": "Explain `shebang env` briefly.", "input": "", "output": "`#!/usr/bin/env bash` ports across distros (no hardcoded `/bin/bash`); `set -euo pipefail` follows on line two."}
 {"instruction": "When do I use `shebang env`?", "input": "", "output": "`#!/usr/bin/env bash` ports across distros (no hardcoded `/bin/bash`); `set -euo pipefail` follows on line two."}
@@ -1204,10 +1070,8 @@
 {"instruction": "How would you explain `shebang env` to a junior developer?", "input": "", "output": "`#!/usr/bin/env bash` ports across distros (no hardcoded `/bin/bash`); `set -euo pipefail` follows on line two."}
 {"instruction": "Give a real-world scenario for `shebang env`.", "input": "", "output": "`#!/usr/bin/env bash` ports across distros (no hardcoded `/bin/bash`); `set -euo pipefail` follows on line two."}
 {"instruction": "What problem does `shebang env` solve?", "input": "", "output": "`#!/usr/bin/env bash` ports across distros (no hardcoded `/bin/bash`); `set -euo pipefail` follows on line two."}
-{"instruction": "Terangkan `shebang env` dalam satu minit.", "input": "", "output": "`#!/usr/bin/env bash` ports across distros (no hardcoded `/bin/bash`); `set -euo pipefail` follows on line two."}
 {"instruction": "Apa yang perlu saya tahu tentang `shebang env`?", "input": "", "output": "`#!/usr/bin/env bash` ports across distros (no hardcoded `/bin/bash`); `set -euo pipefail` follows on line two."}
 {"instruction": "Bagaimanakah `shebang env` berfungsi?", "input": "", "output": "`#!/usr/bin/env bash` ports across distros (no hardcoded `/bin/bash`); `set -euo pipefail` follows on line two."}
-{"instruction": "Bilakah masa yang sesuai untuk `shebang env`?", "input": "", "output": "`#!/usr/bin/env bash` ports across distros (no hardcoded `/bin/bash`); `set -euo pipefail` follows on line two."}
 {"instruction": "What does `chmod +x scripts` do?", "input": "", "output": "Scripts need execute bits (`chmod +x`) plus shebang to run as `./x.sh`; without, invoke via `bash x.sh` explicitly."}
 {"instruction": "Explain `chmod +x scripts` briefly.", "input": "", "output": "Scripts need execute bits (`chmod +x`) plus shebang to run as `./x.sh`; without, invoke via `bash x.sh` explicitly."}
 {"instruction": "When do I use `chmod +x scripts`?", "input": "", "output": "Scripts need execute bits (`chmod +x`) plus shebang to run as `./x.sh`; without, invoke via `bash x.sh` explicitly."}
@@ -1221,10 +1085,8 @@
 {"instruction": "How would you explain `chmod +x scripts` to a junior developer?", "input": "", "output": "Scripts need execute bits (`chmod +x`) plus shebang to run as `./x.sh`; without, invoke via `bash x.sh` explicitly."}
 {"instruction": "Give a real-world scenario for `chmod +x scripts`.", "input": "", "output": "Scripts need execute bits (`chmod +x`) plus shebang to run as `./x.sh`; without, invoke via `bash x.sh` explicitly."}
 {"instruction": "What problem does `chmod +x scripts` solve?", "input": "", "output": "Scripts need execute bits (`chmod +x`) plus shebang to run as `./x.sh`; without, invoke via `bash x.sh` explicitly."}
-{"instruction": "Terangkan `chmod +x scripts` dalam satu minit.", "input": "", "output": "Scripts need execute bits (`chmod +x`) plus shebang to run as `./x.sh`; without, invoke via `bash x.sh` explicitly."}
 {"instruction": "Apa yang perlu saya tahu tentang `chmod +x scripts`?", "input": "", "output": "Scripts need execute bits (`chmod +x`) plus shebang to run as `./x.sh`; without, invoke via `bash x.sh` explicitly."}
 {"instruction": "Bagaimanakah `chmod +x scripts` berfungsi?", "input": "", "output": "Scripts need execute bits (`chmod +x`) plus shebang to run as `./x.sh`; without, invoke via `bash x.sh` explicitly."}
-{"instruction": "Bilakah masa yang sesuai untuk `chmod +x scripts`?", "input": "", "output": "Scripts need execute bits (`chmod +x`) plus shebang to run as `./x.sh`; without, invoke via `bash x.sh` explicitly."}
 {"instruction": "What does `sudo -i vs su` do?", "input": "", "output": "`sudo -i` gives a login root shell with logging; plain `su` skips audit trails — shared boxes demand the former."}
 {"instruction": "Explain `sudo -i vs su` briefly.", "input": "", "output": "`sudo -i` gives a login root shell with logging; plain `su` skips audit trails — shared boxes demand the former."}
 {"instruction": "When do I use `sudo -i vs su`?", "input": "", "output": "`sudo -i` gives a login root shell with logging; plain `su` skips audit trails — shared boxes demand the former."}
@@ -1238,10 +1100,8 @@
 {"instruction": "How would you explain `sudo -i vs su` to a junior developer?", "input": "", "output": "`sudo -i` gives a login root shell with logging; plain `su` skips audit trails — shared boxes demand the former."}
 {"instruction": "Give a real-world scenario for `sudo -i vs su`.", "input": "", "output": "`sudo -i` gives a login root shell with logging; plain `su` skips audit trails — shared boxes demand the former."}
 {"instruction": "What problem does `sudo -i vs su` solve?", "input": "", "output": "`sudo -i` gives a login root shell with logging; plain `su` skips audit trails — shared boxes demand the former."}
-{"instruction": "Terangkan `sudo -i vs su` dalam satu minit.", "input": "", "output": "`sudo -i` gives a login root shell with logging; plain `su` skips audit trails — shared boxes demand the former."}
 {"instruction": "Apa yang perlu saya tahu tentang `sudo -i vs su`?", "input": "", "output": "`sudo -i` gives a login root shell with logging; plain `su` skips audit trails — shared boxes demand the former."}
 {"instruction": "Bagaimanakah `sudo -i vs su` berfungsi?", "input": "", "output": "`sudo -i` gives a login root shell with logging; plain `su` skips audit trails — shared boxes demand the former."}
-{"instruction": "Bilakah masa yang sesuai untuk `sudo -i vs su`?", "input": "", "output": "`sudo -i` gives a login root shell with logging; plain `su` skips audit trails — shared boxes demand the former."}
 {"instruction": "What does `curl -sSL pipe` do?", "input": "", "output": "`curl -sSL url | sudo bash` is convenient malware vector — download, read, then run; `--proto =https` enforces TLS."}
 {"instruction": "Explain `curl -sSL pipe` briefly.", "input": "", "output": "`curl -sSL url | sudo bash` is convenient malware vector — download, read, then run; `--proto =https` enforces TLS."}
 {"instruction": "When do I use `curl -sSL pipe`?", "input": "", "output": "`curl -sSL url | sudo bash` is convenient malware vector — download, read, then run; `--proto =https` enforces TLS."}
@@ -1255,10 +1115,8 @@
 {"instruction": "How would you explain `curl -sSL pipe` to a junior developer?", "input": "", "output": "`curl -sSL url | sudo bash` is convenient malware vector — download, read, then run; `--proto =https` enforces TLS."}
 {"instruction": "Give a real-world scenario for `curl -sSL pipe`.", "input": "", "output": "`curl -sSL url | sudo bash` is convenient malware vector — download, read, then run; `--proto =https` enforces TLS."}
 {"instruction": "What problem does `curl -sSL pipe` solve?", "input": "", "output": "`curl -sSL url | sudo bash` is convenient malware vector — download, read, then run; `--proto =https` enforces TLS."}
-{"instruction": "Terangkan `curl -sSL pipe` dalam satu minit.", "input": "", "output": "`curl -sSL url | sudo bash` is convenient malware vector — download, read, then run; `--proto =https` enforces TLS."}
 {"instruction": "Apa yang perlu saya tahu tentang `curl -sSL pipe`?", "input": "", "output": "`curl -sSL url | sudo bash` is convenient malware vector — download, read, then run; `--proto =https` enforces TLS."}
 {"instruction": "Bagaimanakah `curl -sSL pipe` berfungsi?", "input": "", "output": "`curl -sSL url | sudo bash` is convenient malware vector — download, read, then run; `--proto =https` enforces TLS."}
-{"instruction": "Bilakah masa yang sesuai untuk `curl -sSL pipe`?", "input": "", "output": "`curl -sSL url | sudo bash` is convenient malware vector — download, read, then run; `--proto =https` enforces TLS."}
 {"instruction": "What does `wget -q -O` do?", "input": "", "output": "`wget -qO- url` pipes quietly; `-c` resumes interrupted downloads — curl vs wget is taste, flags are the substance."}
 {"instruction": "Explain `wget -q -O` briefly.", "input": "", "output": "`wget -qO- url` pipes quietly; `-c` resumes interrupted downloads — curl vs wget is taste, flags are the substance."}
 {"instruction": "When do I use `wget -q -O`?", "input": "", "output": "`wget -qO- url` pipes quietly; `-c` resumes interrupted downloads — curl vs wget is taste, flags are the substance."}
@@ -1272,10 +1130,8 @@
 {"instruction": "How would you explain `wget -q -O` to a junior developer?", "input": "", "output": "`wget -qO- url` pipes quietly; `-c` resumes interrupted downloads — curl vs wget is taste, flags are the substance."}
 {"instruction": "Give a real-world scenario for `wget -q -O`.", "input": "", "output": "`wget -qO- url` pipes quietly; `-c` resumes interrupted downloads — curl vs wget is taste, flags are the substance."}
 {"instruction": "What problem does `wget -q -O` solve?", "input": "", "output": "`wget -qO- url` pipes quietly; `-c` resumes interrupted downloads — curl vs wget is taste, flags are the substance."}
-{"instruction": "Terangkan `wget -q -O` dalam satu minit.", "input": "", "output": "`wget -qO- url` pipes quietly; `-c` resumes interrupted downloads — curl vs wget is taste, flags are the substance."}
 {"instruction": "Apa yang perlu saya tahu tentang `wget -q -O`?", "input": "", "output": "`wget -qO- url` pipes quietly; `-c` resumes interrupted downloads — curl vs wget is taste, flags are the substance."}
 {"instruction": "Bagaimanakah `wget -q -O` berfungsi?", "input": "", "output": "`wget -qO- url` pipes quietly; `-c` resumes interrupted downloads — curl vs wget is taste, flags are the substance."}
-{"instruction": "Bilakah masa yang sesuai untuk `wget -q -O`?", "input": "", "output": "`wget -qO- url` pipes quietly; `-c` resumes interrupted downloads — curl vs wget is taste, flags are the substance."}
 {"instruction": "What does `curl retry resume` do?", "input": "", "output": "`curl --retry 3 --retry-delay 5 -C -` survives flaky mirrors and resumes partial downloads in scripts."}
 {"instruction": "Explain `curl retry resume` briefly.", "input": "", "output": "`curl --retry 3 --retry-delay 5 -C -` survives flaky mirrors and resumes partial downloads in scripts."}
 {"instruction": "When do I use `curl retry resume`?", "input": "", "output": "`curl --retry 3 --retry-delay 5 -C -` survives flaky mirrors and resumes partial downloads in scripts."}
@@ -1289,10 +1145,8 @@
 {"instruction": "How would you explain `curl retry resume` to a junior developer?", "input": "", "output": "`curl --retry 3 --retry-delay 5 -C -` survives flaky mirrors and resumes partial downloads in scripts."}
 {"instruction": "Give a real-world scenario for `curl retry resume`.", "input": "", "output": "`curl --retry 3 --retry-delay 5 -C -` survives flaky mirrors and resumes partial downloads in scripts."}
 {"instruction": "What problem does `curl retry resume` solve?", "input": "", "output": "`curl --retry 3 --retry-delay 5 -C -` survives flaky mirrors and resumes partial downloads in scripts."}
-{"instruction": "Terangkan `curl retry resume` dalam satu minit.", "input": "", "output": "`curl --retry 3 --retry-delay 5 -C -` survives flaky mirrors and resumes partial downloads in scripts."}
 {"instruction": "Apa yang perlu saya tahu tentang `curl retry resume`?", "input": "", "output": "`curl --retry 3 --retry-delay 5 -C -` survives flaky mirrors and resumes partial downloads in scripts."}
 {"instruction": "Bagaimanakah `curl retry resume` berfungsi?", "input": "", "output": "`curl --retry 3 --retry-delay 5 -C -` survives flaky mirrors and resumes partial downloads in scripts."}
-{"instruction": "Bilakah masa yang sesuai untuk `curl retry resume`?", "input": "", "output": "`curl --retry 3 --retry-delay 5 -C -` survives flaky mirrors and resumes partial downloads in scripts."}
 {"instruction": "What does `curl speed limit` do?", "input": "", "output": "`curl --limit-rate 1M` caps bandwidth on shared links; `--max-time` bounds total hangs unconditionally."}
 {"instruction": "Explain `curl speed limit` briefly.", "input": "", "output": "`curl --limit-rate 1M` caps bandwidth on shared links; `--max-time` bounds total hangs unconditionally."}
 {"instruction": "When do I use `curl speed limit`?", "input": "", "output": "`curl --limit-rate 1M` caps bandwidth on shared links; `--max-time` bounds total hangs unconditionally."}
@@ -1306,10 +1160,8 @@
 {"instruction": "How would you explain `curl speed limit` to a junior developer?", "input": "", "output": "`curl --limit-rate 1M` caps bandwidth on shared links; `--max-time` bounds total hangs unconditionally."}
 {"instruction": "Give a real-world scenario for `curl speed limit`.", "input": "", "output": "`curl --limit-rate 1M` caps bandwidth on shared links; `--max-time` bounds total hangs unconditionally."}
 {"instruction": "What problem does `curl speed limit` solve?", "input": "", "output": "`curl --limit-rate 1M` caps bandwidth on shared links; `--max-time` bounds total hangs unconditionally."}
-{"instruction": "Terangkan `curl speed limit` dalam satu minit.", "input": "", "output": "`curl --limit-rate 1M` caps bandwidth on shared links; `--max-time` bounds total hangs unconditionally."}
 {"instruction": "Apa yang perlu saya tahu tentang `curl speed limit`?", "input": "", "output": "`curl --limit-rate 1M` caps bandwidth on shared links; `--max-time` bounds total hangs unconditionally."}
 {"instruction": "Bagaimanakah `curl speed limit` berfungsi?", "input": "", "output": "`curl --limit-rate 1M` caps bandwidth on shared links; `--max-time` bounds total hangs unconditionally."}
-{"instruction": "Bilakah masa yang sesuai untuk `curl speed limit`?", "input": "", "output": "`curl --limit-rate 1M` caps bandwidth on shared links; `--max-time` bounds total hangs unconditionally."}
 {"instruction": "What does `curl fail silent` do?", "input": "", "output": "`curl -fsSL` (fail+silent+show-errors+location) is the script-safe combo; bare `curl` masks HTTP errors as success."}
 {"instruction": "Explain `curl fail silent` briefly.", "input": "", "output": "`curl -fsSL` (fail+silent+show-errors+location) is the script-safe combo; bare `curl` masks HTTP errors as success."}
 {"instruction": "When do I use `curl fail silent`?", "input": "", "output": "`curl -fsSL` (fail+silent+show-errors+location) is the script-safe combo; bare `curl` masks HTTP errors as success."}
@@ -1323,10 +1175,8 @@
 {"instruction": "How would you explain `curl fail silent` to a junior developer?", "input": "", "output": "`curl -fsSL` (fail+silent+show-errors+location) is the script-safe combo; bare `curl` masks HTTP errors as success."}
 {"instruction": "Give a real-world scenario for `curl fail silent`.", "input": "", "output": "`curl -fsSL` (fail+silent+show-errors+location) is the script-safe combo; bare `curl` masks HTTP errors as success."}
 {"instruction": "What problem does `curl fail silent` solve?", "input": "", "output": "`curl -fsSL` (fail+silent+show-errors+location) is the script-safe combo; bare `curl` masks HTTP errors as success."}
-{"instruction": "Terangkan `curl fail silent` dalam satu minit.", "input": "", "output": "`curl -fsSL` (fail+silent+show-errors+location) is the script-safe combo; bare `curl` masks HTTP errors as success."}
 {"instruction": "Apa yang perlu saya tahu tentang `curl fail silent`?", "input": "", "output": "`curl -fsSL` (fail+silent+show-errors+location) is the script-safe combo; bare `curl` masks HTTP errors as success."}
 {"instruction": "Bagaimanakah `curl fail silent` berfungsi?", "input": "", "output": "`curl -fsSL` (fail+silent+show-errors+location) is the script-safe combo; bare `curl` masks HTTP errors as success."}
-{"instruction": "Bilakah masa yang sesuai untuk `curl fail silent`?", "input": "", "output": "`curl -fsSL` (fail+silent+show-errors+location) is the script-safe combo; bare `curl` masks HTTP errors as success."}
 {"instruction": "What does `curl output writeout` do?", "input": "", "output": "`curl -o file -w '%{http_code} %{time_total}s'` captures bodies plus machine-readable metrics for monitoring."}
 {"instruction": "Explain `curl output writeout` briefly.", "input": "", "output": "`curl -o file -w '%{http_code} %{time_total}s'` captures bodies plus machine-readable metrics for monitoring."}
 {"instruction": "When do I use `curl output writeout`?", "input": "", "output": "`curl -o file -w '%{http_code} %{time_total}s'` captures bodies plus machine-readable metrics for monitoring."}
@@ -1340,10 +1190,8 @@
 {"instruction": "How would you explain `curl output writeout` to a junior developer?", "input": "", "output": "`curl -o file -w '%{http_code} %{time_total}s'` captures bodies plus machine-readable metrics for monitoring."}
 {"instruction": "Give a real-world scenario for `curl output writeout`.", "input": "", "output": "`curl -o file -w '%{http_code} %{time_total}s'` captures bodies plus machine-readable metrics for monitoring."}
 {"instruction": "What problem does `curl output writeout` solve?", "input": "", "output": "`curl -o file -w '%{http_code} %{time_total}s'` captures bodies plus machine-readable metrics for monitoring."}
-{"instruction": "Terangkan `curl output writeout` dalam satu minit.", "input": "", "output": "`curl -o file -w '%{http_code} %{time_total}s'` captures bodies plus machine-readable metrics for monitoring."}
 {"instruction": "Apa yang perlu saya tahu tentang `curl output writeout`?", "input": "", "output": "`curl -o file -w '%{http_code} %{time_total}s'` captures bodies plus machine-readable metrics for monitoring."}
 {"instruction": "Bagaimanakah `curl output writeout` berfungsi?", "input": "", "output": "`curl -o file -w '%{http_code} %{time_total}s'` captures bodies plus machine-readable metrics for monitoring."}
-{"instruction": "Bilakah masa yang sesuai untuk `curl output writeout`?", "input": "", "output": "`curl -o file -w '%{http_code} %{time_total}s'` captures bodies plus machine-readable metrics for monitoring."}
 {"instruction": "What does `dig short trace` do?", "input": "", "output": "`dig +short` answers cleanly for scripts; `+trace` walks delegation from roots when DNS lies."}
 {"instruction": "Explain `dig short trace` briefly.", "input": "", "output": "`dig +short` answers cleanly for scripts; `+trace` walks delegation from roots when DNS lies."}
 {"instruction": "When do I use `dig short trace`?", "input": "", "output": "`dig +short` answers cleanly for scripts; `+trace` walks delegation from roots when DNS lies."}
@@ -1357,10 +1205,8 @@
 {"instruction": "How would you explain `dig short trace` to a junior developer?", "input": "", "output": "`dig +short` answers cleanly for scripts; `+trace` walks delegation from roots when DNS lies."}
 {"instruction": "Give a real-world scenario for `dig short trace`.", "input": "", "output": "`dig +short` answers cleanly for scripts; `+trace` walks delegation from roots when DNS lies."}
 {"instruction": "What problem does `dig short trace` solve?", "input": "", "output": "`dig +short` answers cleanly for scripts; `+trace` walks delegation from roots when DNS lies."}
-{"instruction": "Terangkan `dig short trace` dalam satu minit.", "input": "", "output": "`dig +short` answers cleanly for scripts; `+trace` walks delegation from roots when DNS lies."}
 {"instruction": "Apa yang perlu saya tahu tentang `dig short trace`?", "input": "", "output": "`dig +short` answers cleanly for scripts; `+trace` walks delegation from roots when DNS lies."}
 {"instruction": "Bagaimanakah `dig short trace` berfungsi?", "input": "", "output": "`dig +short` answers cleanly for scripts; `+trace` walks delegation from roots when DNS lies."}
-{"instruction": "Bilakah masa yang sesuai untuk `dig short trace`?", "input": "", "output": "`dig +short` answers cleanly for scripts; `+trace` walks delegation from roots when DNS lies."}
 {"instruction": "What does `nslookup vs host` do?", "input": "", "output": "`nslookup`/`host`/`dig` overlap; `dig` shows flags/sections (authoritative vs cached) the others hide."}
 {"instruction": "Explain `nslookup vs host` briefly.", "input": "", "output": "`nslookup`/`host`/`dig` overlap; `dig` shows flags/sections (authoritative vs cached) the others hide."}
 {"instruction": "When do I use `nslookup vs host`?", "input": "", "output": "`nslookup`/`host`/`dig` overlap; `dig` shows flags/sections (authoritative vs cached) the others hide."}
@@ -1374,10 +1220,8 @@
 {"instruction": "How would you explain `nslookup vs host` to a junior developer?", "input": "", "output": "`nslookup`/`host`/`dig` overlap; `dig` shows flags/sections (authoritative vs cached) the others hide."}
 {"instruction": "Give a real-world scenario for `nslookup vs host`.", "input": "", "output": "`nslookup`/`host`/`dig` overlap; `dig` shows flags/sections (authoritative vs cached) the others hide."}
 {"instruction": "What problem does `nslookup vs host` solve?", "input": "", "output": "`nslookup`/`host`/`dig` overlap; `dig` shows flags/sections (authoritative vs cached) the others hide."}
-{"instruction": "Terangkan `nslookup vs host` dalam satu minit.", "input": "", "output": "`nslookup`/`host`/`dig` overlap; `dig` shows flags/sections (authoritative vs cached) the others hide."}
 {"instruction": "Apa yang perlu saya tahu tentang `nslookup vs host`?", "input": "", "output": "`nslookup`/`host`/`dig` overlap; `dig` shows flags/sections (authoritative vs cached) the others hide."}
 {"instruction": "Bagaimanakah `nslookup vs host` berfungsi?", "input": "", "output": "`nslookup`/`host`/`dig` overlap; `dig` shows flags/sections (authoritative vs cached) the others hide."}
-{"instruction": "Bilakah masa yang sesuai untuk `nslookup vs host`?", "input": "", "output": "`nslookup`/`host`/`dig` overlap; `dig` shows flags/sections (authoritative vs cached) the others hide."}
 {"instruction": "What does `ping flood audit` do?", "input": "", "output": "`ping -f` floods (root-only, DoS-adjacent — lab use); normal `ping -c4` checks reachability politely."}
 {"instruction": "Explain `ping flood audit` briefly.", "input": "", "output": "`ping -f` floods (root-only, DoS-adjacent — lab use); normal `ping -c4` checks reachability politely."}
 {"instruction": "When do I use `ping flood audit`?", "input": "", "output": "`ping -f` floods (root-only, DoS-adjacent — lab use); normal `ping -c4` checks reachability politely."}
@@ -1391,10 +1235,8 @@
 {"instruction": "How would you explain `ping flood audit` to a junior developer?", "input": "", "output": "`ping -f` floods (root-only, DoS-adjacent — lab use); normal `ping -c4` checks reachability politely."}
 {"instruction": "Give a real-world scenario for `ping flood audit`.", "input": "", "output": "`ping -f` floods (root-only, DoS-adjacent — lab use); normal `ping -c4` checks reachability politely."}
 {"instruction": "What problem does `ping flood audit` solve?", "input": "", "output": "`ping -f` floods (root-only, DoS-adjacent — lab use); normal `ping -c4` checks reachability politely."}
-{"instruction": "Terangkan `ping flood audit` dalam satu minit.", "input": "", "output": "`ping -f` floods (root-only, DoS-adjacent — lab use); normal `ping -c4` checks reachability politely."}
 {"instruction": "Apa yang perlu saya tahu tentang `ping flood audit`?", "input": "", "output": "`ping -f` floods (root-only, DoS-adjacent — lab use); normal `ping -c4` checks reachability politely."}
 {"instruction": "Bagaimanakah `ping flood audit` berfungsi?", "input": "", "output": "`ping -f` floods (root-only, DoS-adjacent — lab use); normal `ping -c4` checks reachability politely."}
-{"instruction": "Bilakah masa yang sesuai untuk `ping flood audit`?", "input": "", "output": "`ping -f` floods (root-only, DoS-adjacent — lab use); normal `ping -c4` checks reachability politely."}
 {"instruction": "What does `traceroute mtr` do?", "input": "", "output": "`traceroute` maps hops once; `mtr` watches loss/latency live — packet-loss hunts need the latter."}
 {"instruction": "Explain `traceroute mtr` briefly.", "input": "", "output": "`traceroute` maps hops once; `mtr` watches loss/latency live — packet-loss hunts need the latter."}
 {"instruction": "When do I use `traceroute mtr`?", "input": "", "output": "`traceroute` maps hops once; `mtr` watches loss/latency live — packet-loss hunts need the latter."}
@@ -1408,10 +1250,8 @@
 {"instruction": "How would you explain `traceroute mtr` to a junior developer?", "input": "", "output": "`traceroute` maps hops once; `mtr` watches loss/latency live — packet-loss hunts need the latter."}
 {"instruction": "Give a real-world scenario for `traceroute mtr`.", "input": "", "output": "`traceroute` maps hops once; `mtr` watches loss/latency live — packet-loss hunts need the latter."}
 {"instruction": "What problem does `traceroute mtr` solve?", "input": "", "output": "`traceroute` maps hops once; `mtr` watches loss/latency live — packet-loss hunts need the latter."}
-{"instruction": "Terangkan `traceroute mtr` dalam satu minit.", "input": "", "output": "`traceroute` maps hops once; `mtr` watches loss/latency live — packet-loss hunts need the latter."}
 {"instruction": "Apa yang perlu saya tahu tentang `traceroute mtr`?", "input": "", "output": "`traceroute` maps hops once; `mtr` watches loss/latency live — packet-loss hunts need the latter."}
 {"instruction": "Bagaimanakah `traceroute mtr` berfungsi?", "input": "", "output": "`traceroute` maps hops once; `mtr` watches loss/latency live — packet-loss hunts need the latter."}
-{"instruction": "Bilakah masa yang sesuai untuk `traceroute mtr`?", "input": "", "output": "`traceroute` maps hops once; `mtr` watches loss/latency live — packet-loss hunts need the latter."}
 {"instruction": "What does `ip addr route` do?", "input": "", "output": "`ip -br addr`/`ip route` replaced `ifconfig`/`route` (deprecated net-tools); `ip -s link` adds error counters."}
 {"instruction": "Explain `ip addr route` briefly.", "input": "", "output": "`ip -br addr`/`ip route` replaced `ifconfig`/`route` (deprecated net-tools); `ip -s link` adds error counters."}
 {"instruction": "When do I use `ip addr route`?", "input": "", "output": "`ip -br addr`/`ip route` replaced `ifconfig`/`route` (deprecated net-tools); `ip -s link` adds error counters."}
@@ -1425,10 +1265,8 @@
 {"instruction": "How would you explain `ip addr route` to a junior developer?", "input": "", "output": "`ip -br addr`/`ip route` replaced `ifconfig`/`route` (deprecated net-tools); `ip -s link` adds error counters."}
 {"instruction": "Give a real-world scenario for `ip addr route`.", "input": "", "output": "`ip -br addr`/`ip route` replaced `ifconfig`/`route` (deprecated net-tools); `ip -s link` adds error counters."}
 {"instruction": "What problem does `ip addr route` solve?", "input": "", "output": "`ip -br addr`/`ip route` replaced `ifconfig`/`route` (deprecated net-tools); `ip -s link` adds error counters."}
-{"instruction": "Terangkan `ip addr route` dalam satu minit.", "input": "", "output": "`ip -br addr`/`ip route` replaced `ifconfig`/`route` (deprecated net-tools); `ip -s link` adds error counters."}
 {"instruction": "Apa yang perlu saya tahu tentang `ip addr route`?", "input": "", "output": "`ip -br addr`/`ip route` replaced `ifconfig`/`route` (deprecated net-tools); `ip -s link` adds error counters."}
 {"instruction": "Bagaimanakah `ip addr route` berfungsi?", "input": "", "output": "`ip -br addr`/`ip route` replaced `ifconfig`/`route` (deprecated net-tools); `ip -s link` adds error counters."}
-{"instruction": "Bilakah masa yang sesuai untuk `ip addr route`?", "input": "", "output": "`ip -br addr`/`ip route` replaced `ifconfig`/`route` (deprecated net-tools); `ip -s link` adds error counters."}
 {"instruction": "komuniti atau komunitas yang betul dalam Bahasa Melayu Malaysia?", "input": "", "output": "Yang betul: komuniti (dengan i). 'Komunitas' ialah Bahasa Indonesia. Begitu juga: kod (bukan kode), boleh (bukan bisa), bagaimana (bukan gimana). Saya sentiasa tulis Bahasa Melayu Malaysia."}
 {"instruction": "kod atau kode yang betul?", "input": "", "output": "Yang betul dalam Bahasa Melayu: kod. Contoh: `tulis kod JavaScript`. 'Kode' ialah ejaan Indonesia — jangan guna semasa jawab dalam Bahasa Melayu."}
 {"instruction": "Tulis dalam Bahasa Melayu, bukan Indonesia", "input": "", "output": "Baik — saya jawab dalam Bahasa Melayu Malaysia: komuniti, kod, boleh, bagaimana, harga, bas, teks. Jika anda nampak perkataan Indonesia dalam jawapan saya, tegur saya."}

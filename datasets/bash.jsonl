@@ -470,142 +470,74 @@
 {"instruction": "How would you explain `jobs wait &` to a junior developer?", "input": "", "output": "`cmd &` backgrounds, `jobs` lists, `wait` blocks until done — poor man's parallelism with `wait -n`."}
 {"instruction": "Give a real-world scenario for `jobs wait &`.", "input": "", "output": "`cmd &` backgrounds, `jobs` lists, `wait` blocks until done — poor man's parallelism with `wait -n`."}
 {"instruction": "What problem does `jobs wait &` solve?", "input": "", "output": "`cmd &` backgrounds, `jobs` lists, `wait` blocks until done — poor man's parallelism with `wait -n`."}
-{"instruction": "Terangkan `set -euo pipefail` dalam satu minit.", "input": "", "output": "`set -euo pipefail` aborts on errors, unset vars and pipe failures — every serious script starts here."}
 {"instruction": "Apa yang perlu saya tahu tentang `set -euo pipefail`?", "input": "", "output": "`set -euo pipefail` aborts on errors, unset vars and pipe failures — every serious script starts here."}
 {"instruction": "Bagaimanakah `set -euo pipefail` berfungsi?", "input": "", "output": "`set -euo pipefail` aborts on errors, unset vars and pipe failures — every serious script starts here."}
-{"instruction": "Bilakah masa yang sesuai untuk `set -euo pipefail`?", "input": "", "output": "`set -euo pipefail` aborts on errors, unset vars and pipe failures — every serious script starts here."}
-{"instruction": "Terangkan `if [[ -f fail ]]` dalam satu minit.", "input": "", "output": "`[[ ]]` tests safely (no word-splitting); `-f` file, `-d` dir, `-z` empty, with `&&`/`||` inside."}
 {"instruction": "Apa yang perlu saya tahu tentang `if [[ -f fail ]]`?", "input": "", "output": "`[[ ]]` tests safely (no word-splitting); `-f` file, `-d` dir, `-z` empty, with `&&`/`||` inside."}
 {"instruction": "Bagaimanakah `if [[ -f fail ]]` berfungsi?", "input": "", "output": "`[[ ]]` tests safely (no word-splitting); `-f` file, `-d` dir, `-z` empty, with `&&`/`||` inside."}
-{"instruction": "Bilakah masa yang sesuai untuk `if [[ -f fail ]]`?", "input": "", "output": "`[[ ]]` tests safely (no word-splitting); `-f` file, `-d` dir, `-z` empty, with `&&`/`||` inside."}
-{"instruction": "Terangkan `for f in *.md` dalam satu minit.", "input": "", "output": "`for f in *.md` loops glob matches; quote `\"$f\"` and set `nullglob` for empty dirs."}
 {"instruction": "Apa yang perlu saya tahu tentang `for f in *.md`?", "input": "", "output": "`for f in *.md` loops glob matches; quote `\"$f\"` and set `nullglob` for empty dirs."}
 {"instruction": "Bagaimanakah `for f in *.md` berfungsi?", "input": "", "output": "`for f in *.md` loops glob matches; quote `\"$f\"` and set `nullglob` for empty dirs."}
-{"instruction": "Bilakah masa yang sesuai untuk `for f in *.md`?", "input": "", "output": "`for f in *.md` loops glob matches; quote `\"$f\"` and set `nullglob` for empty dirs."}
-{"instruction": "Terangkan `while read baris` dalam satu minit.", "input": "", "output": "`while IFS= read -r line < file` reads safely preserving spaces and backslashes."}
 {"instruction": "Apa yang perlu saya tahu tentang `while read baris`?", "input": "", "output": "`while IFS= read -r line < file` reads safely preserving spaces and backslashes."}
 {"instruction": "Bagaimanakah `while read baris` berfungsi?", "input": "", "output": "`while IFS= read -r line < file` reads safely preserving spaces and backslashes."}
-{"instruction": "Bilakah masa yang sesuai untuk `while read baris`?", "input": "", "output": "`while IFS= read -r line < file` reads safely preserving spaces and backslashes."}
-{"instruction": "Terangkan `function greet()` dalam satu minit.", "input": "", "output": "Functions return exit codes, not strings — echo data and capture with `$(...)`; use `local` vars."}
 {"instruction": "Apa yang perlu saya tahu tentang `function greet()`?", "input": "", "output": "Functions return exit codes, not strings — echo data and capture with `$(...)`; use `local` vars."}
 {"instruction": "Bagaimanakah `function greet()` berfungsi?", "input": "", "output": "Functions return exit codes, not strings — echo data and capture with `$(...)`; use `local` vars."}
-{"instruction": "Bilakah masa yang sesuai untuk `function greet()`?", "input": "", "output": "Functions return exit codes, not strings — echo data and capture with `$(...)`; use `local` vars."}
-{"instruction": "Terangkan `case $1 in` dalam satu minit.", "input": "", "output": "`case` branches subcommands cleanly with patterns and a `*)` usage default; each arm ends `;;`."}
 {"instruction": "Apa yang perlu saya tahu tentang `case $1 in`?", "input": "", "output": "`case` branches subcommands cleanly with patterns and a `*)` usage default; each arm ends `;;`."}
 {"instruction": "Bagaimanakah `case $1 in` berfungsi?", "input": "", "output": "`case` branches subcommands cleanly with patterns and a `*)` usage default; each arm ends `;;`."}
-{"instruction": "Bilakah masa yang sesuai untuk `case $1 in`?", "input": "", "output": "`case` branches subcommands cleanly with patterns and a `*)` usage default; each arm ends `;;`."}
-{"instruction": "Terangkan `$1 $@ $#` dalam satu minit.", "input": "", "output": "`$1` first arg, `\"$@\"` all args intact, `$#` count; `${1:?...}` fails fast with a message."}
 {"instruction": "Apa yang perlu saya tahu tentang `$1 $@ $#`?", "input": "", "output": "`$1` first arg, `\"$@\"` all args intact, `$#` count; `${1:?...}` fails fast with a message."}
 {"instruction": "Bagaimanakah `$1 $@ $#` berfungsi?", "input": "", "output": "`$1` first arg, `\"$@\"` all args intact, `$#` count; `${1:?...}` fails fast with a message."}
-{"instruction": "Bilakah masa yang sesuai untuk `$1 $@ $#`?", "input": "", "output": "`$1` first arg, `\"$@\"` all args intact, `$#` count; `${1:?...}` fails fast with a message."}
-{"instruction": "Terangkan `${PORT:-3000}` dalam satu minit.", "input": "", "output": "`${VAR:-default}` substitutes when empty; `${#s}` length; `${s%.ext}` strips suffix."}
 {"instruction": "Apa yang perlu saya tahu tentang `${PORT:-3000}`?", "input": "", "output": "`${VAR:-default}` substitutes when empty; `${#s}` length; `${s%.ext}` strips suffix."}
 {"instruction": "Bagaimanakah `${PORT:-3000}` berfungsi?", "input": "", "output": "`${VAR:-default}` substitutes when empty; `${#s}` length; `${s%.ext}` strips suffix."}
-{"instruction": "Bilakah masa yang sesuai untuk `${PORT:-3000}`?", "input": "", "output": "`${VAR:-default}` substitutes when empty; `${#s}` length; `${s%.ext}` strips suffix."}
-{"instruction": "Terangkan `arr=(a b c)` dalam satu minit.", "input": "", "output": "Arrays index from 0; expand as `\"${arr[@]}\"` per element and count with `${#arr[@]}`."}
 {"instruction": "Apa yang perlu saya tahu tentang `arr=(a b c)`?", "input": "", "output": "Arrays index from 0; expand as `\"${arr[@]}\"` per element and count with `${#arr[@]}`."}
 {"instruction": "Bagaimanakah `arr=(a b c)` berfungsi?", "input": "", "output": "Arrays index from 0; expand as `\"${arr[@]}\"` per element and count with `${#arr[@]}`."}
-{"instruction": "Bilakah masa yang sesuai untuk `arr=(a b c)`?", "input": "", "output": "Arrays index from 0; expand as `\"${arr[@]}\"` per element and count with `${#arr[@]}`."}
-{"instruction": "Terangkan `trap cleanup EXIT` dalam satu minit.", "input": "", "output": "`trap ... EXIT` guarantees cleanup on any exit; temp dirs from `mktemp -d` never leak."}
 {"instruction": "Apa yang perlu saya tahu tentang `trap cleanup EXIT`?", "input": "", "output": "`trap ... EXIT` guarantees cleanup on any exit; temp dirs from `mktemp -d` never leak."}
 {"instruction": "Bagaimanakah `trap cleanup EXIT` berfungsi?", "input": "", "output": "`trap ... EXIT` guarantees cleanup on any exit; temp dirs from `mktemp -d` never leak."}
-{"instruction": "Bilakah masa yang sesuai untuk `trap cleanup EXIT`?", "input": "", "output": "`trap ... EXIT` guarantees cleanup on any exit; temp dirs from `mktemp -d` never leak."}
-{"instruction": "Terangkan `cmd > out 2>&1` dalam satu minit.", "input": "", "output": "`> out 2>&1` merges stderr into the log file; order matters — redirect stdout first."}
 {"instruction": "Apa yang perlu saya tahu tentang `cmd > out 2>&1`?", "input": "", "output": "`> out 2>&1` merges stderr into the log file; order matters — redirect stdout first."}
 {"instruction": "Bagaimanakah `cmd > out 2>&1` berfungsi?", "input": "", "output": "`> out 2>&1` merges stderr into the log file; order matters — redirect stdout first."}
-{"instruction": "Bilakah masa yang sesuai untuk `cmd > out 2>&1`?", "input": "", "output": "`> out 2>&1` merges stderr into the log file; order matters — redirect stdout first."}
-{"instruction": "Terangkan `a | b | c` dalam satu minit.", "input": "", "output": "Pipes chain stdout to stdin; `set -o pipefail` makes middle failures visible to `set -e`."}
 {"instruction": "Apa yang perlu saya tahu tentang `a | b | c`?", "input": "", "output": "Pipes chain stdout to stdin; `set -o pipefail` makes middle failures visible to `set -e`."}
 {"instruction": "Bagaimanakah `a | b | c` berfungsi?", "input": "", "output": "Pipes chain stdout to stdin; `set -o pipefail` makes middle failures visible to `set -e`."}
-{"instruction": "Bilakah masa yang sesuai untuk `a | b | c`?", "input": "", "output": "Pipes chain stdout to stdin; `set -o pipefail` makes middle failures visible to `set -e`."}
-{"instruction": "Terangkan `cmd1 && cmd2` dalam satu minit.", "input": "", "output": "`&&` runs next only on success, `||` on failure — the one-line try/catch of shell."}
 {"instruction": "Apa yang perlu saya tahu tentang `cmd1 && cmd2`?", "input": "", "output": "`&&` runs next only on success, `||` on failure — the one-line try/catch of shell."}
 {"instruction": "Bagaimanakah `cmd1 && cmd2` berfungsi?", "input": "", "output": "`&&` runs next only on success, `||` on failure — the one-line try/catch of shell."}
-{"instruction": "Bilakah masa yang sesuai untuk `cmd1 && cmd2`?", "input": "", "output": "`&&` runs next only on success, `||` on failure — the one-line try/catch of shell."}
-{"instruction": "Terangkan `[[ $x =~ ^[0-9]+$ ]]` dalam satu minit.", "input": "", "output": "`=~` regex-matches inside `[[ ]]`; quote the pattern to avoid glob interpretation."}
 {"instruction": "Apa yang perlu saya tahu tentang `[[ $x =~ ^[0-9]+$ ]]`?", "input": "", "output": "`=~` regex-matches inside `[[ ]]`; quote the pattern to avoid glob interpretation."}
 {"instruction": "Bagaimanakah `[[ $x =~ ^[0-9]+$ ]]` berfungsi?", "input": "", "output": "`=~` regex-matches inside `[[ ]]`; quote the pattern to avoid glob interpretation."}
-{"instruction": "Bilakah masa yang sesuai untuk `[[ $x =~ ^[0-9]+$ ]]`?", "input": "", "output": "`=~` regex-matches inside `[[ ]]`; quote the pattern to avoid glob interpretation."}
-{"instruction": "Terangkan `seq 1 10` dalam satu minit.", "input": "", "output": "`seq` generates number ranges for loops; `seq -w` zero-pads filenames in order."}
 {"instruction": "Apa yang perlu saya tahu tentang `seq 1 10`?", "input": "", "output": "`seq` generates number ranges for loops; `seq -w` zero-pads filenames in order."}
 {"instruction": "Bagaimanakah `seq 1 10` berfungsi?", "input": "", "output": "`seq` generates number ranges for loops; `seq -w` zero-pads filenames in order."}
-{"instruction": "Bilakah masa yang sesuai untuk `seq 1 10`?", "input": "", "output": "`seq` generates number ranges for loops; `seq -w` zero-pads filenames in order."}
-{"instruction": "Terangkan `find . -print0 | xargs -0` dalam satu minit.", "input": "", "output": "NUL-delimited pipelines survive spaces/newlines in filenames; add `-r` to skip empty runs."}
 {"instruction": "Apa yang perlu saya tahu tentang `find . -print0 | xargs -0`?", "input": "", "output": "NUL-delimited pipelines survive spaces/newlines in filenames; add `-r` to skip empty runs."}
 {"instruction": "Bagaimanakah `find . -print0 | xargs -0` berfungsi?", "input": "", "output": "NUL-delimited pipelines survive spaces/newlines in filenames; add `-r` to skip empty runs."}
-{"instruction": "Bilakah masa yang sesuai untuk `find . -print0 | xargs -0`?", "input": "", "output": "NUL-delimited pipelines survive spaces/newlines in filenames; add `-r` to skip empty runs."}
-{"instruction": "Terangkan `$(date +%F)` dalam satu minit.", "input": "", "output": "`$(...)` captures output (nestable, unlike backticks); quote it unless splitting is intended."}
 {"instruction": "Apa yang perlu saya tahu tentang `$(date +%F)`?", "input": "", "output": "`$(...)` captures output (nestable, unlike backticks); quote it unless splitting is intended."}
 {"instruction": "Bagaimanakah `$(date +%F)` berfungsi?", "input": "", "output": "`$(...)` captures output (nestable, unlike backticks); quote it unless splitting is intended."}
-{"instruction": "Bilakah masa yang sesuai untuk `$(date +%F)`?", "input": "", "output": "`$(...)` captures output (nestable, unlike backticks); quote it unless splitting is intended."}
-{"instruction": "Terangkan `<<EOF heredoc` dalam satu minit.", "input": "", "output": "Heredocs feed multi-line input (`cat <<EOF`); quote the tag (`<<'EOF'`) to disable expansion."}
 {"instruction": "Apa yang perlu saya tahu tentang `<<EOF heredoc`?", "input": "", "output": "Heredocs feed multi-line input (`cat <<EOF`); quote the tag (`<<'EOF'`) to disable expansion."}
 {"instruction": "Bagaimanakah `<<EOF heredoc` berfungsi?", "input": "", "output": "Heredocs feed multi-line input (`cat <<EOF`); quote the tag (`<<'EOF'`) to disable expansion."}
-{"instruction": "Bilakah masa yang sesuai untuk `<<EOF heredoc`?", "input": "", "output": "Heredocs feed multi-line input (`cat <<EOF`); quote the tag (`<<'EOF'`) to disable expansion."}
-{"instruction": "Terangkan `shift` dalam satu minit.", "input": "", "output": "`shift` consumes processed args so `$1` always means next; loop `while [[ $# -gt 0 ]]` for flags."}
 {"instruction": "Apa yang perlu saya tahu tentang `shift`?", "input": "", "output": "`shift` consumes processed args so `$1` always means next; loop `while [[ $# -gt 0 ]]` for flags."}
 {"instruction": "Bagaimanakah `shift` berfungsi?", "input": "", "output": "`shift` consumes processed args so `$1` always means next; loop `while [[ $# -gt 0 ]]` for flags."}
-{"instruction": "Bilakah masa yang sesuai untuk `shift`?", "input": "", "output": "`shift` consumes processed args so `$1` always means next; loop `while [[ $# -gt 0 ]]` for flags."}
-{"instruction": "Terangkan `exec cmd` dalam satu minit.", "input": "", "output": "`exec` replaces the shell process (PID kept, no child) — used as the last line of entrypoints."}
 {"instruction": "Apa yang perlu saya tahu tentang `exec cmd`?", "input": "", "output": "`exec` replaces the shell process (PID kept, no child) — used as the last line of entrypoints."}
 {"instruction": "Bagaimanakah `exec cmd` berfungsi?", "input": "", "output": "`exec` replaces the shell process (PID kept, no child) — used as the last line of entrypoints."}
-{"instruction": "Bilakah masa yang sesuai untuk `exec cmd`?", "input": "", "output": "`exec` replaces the shell process (PID kept, no child) — used as the last line of entrypoints."}
-{"instruction": "Terangkan `select menu` dalam satu minit.", "input": "", "output": "`select opt in mula henti keluar; do case $opt in ...` builds interactive menus with numbered prompts."}
 {"instruction": "Apa yang perlu saya tahu tentang `select menu`?", "input": "", "output": "`select opt in mula henti keluar; do case $opt in ...` builds interactive menus with numbered prompts."}
 {"instruction": "Bagaimanakah `select menu` berfungsi?", "input": "", "output": "`select opt in mula henti keluar; do case $opt in ...` builds interactive menus with numbered prompts."}
-{"instruction": "Bilakah masa yang sesuai untuk `select menu`?", "input": "", "output": "`select opt in mula henti keluar; do case $opt in ...` builds interactive menus with numbered prompts."}
-{"instruction": "Terangkan `getopts flags` dalam satu minit.", "input": "", "output": "`while getopts 'vf:' o; do case $o in v) ...;; f) fail=$OPTARG;;` parses script flags robustly."}
 {"instruction": "Apa yang perlu saya tahu tentang `getopts flags`?", "input": "", "output": "`while getopts 'vf:' o; do case $o in v) ...;; f) fail=$OPTARG;;` parses script flags robustly."}
 {"instruction": "Bagaimanakah `getopts flags` berfungsi?", "input": "", "output": "`while getopts 'vf:' o; do case $o in v) ...;; f) fail=$OPTARG;;` parses script flags robustly."}
-{"instruction": "Bilakah masa yang sesuai untuk `getopts flags`?", "input": "", "output": "`while getopts 'vf:' o; do case $o in v) ...;; f) fail=$OPTARG;;` parses script flags robustly."}
-{"instruction": "Terangkan `readonly VAR` dalam satu minit.", "input": "", "output": "`readonly`/`declare -r` freezes constants; typos then fail loudly instead of forking behavior silently."}
 {"instruction": "Apa yang perlu saya tahu tentang `readonly VAR`?", "input": "", "output": "`readonly`/`declare -r` freezes constants; typos then fail loudly instead of forking behavior silently."}
 {"instruction": "Bagaimanakah `readonly VAR` berfungsi?", "input": "", "output": "`readonly`/`declare -r` freezes constants; typos then fail loudly instead of forking behavior silently."}
-{"instruction": "Bilakah masa yang sesuai untuk `readonly VAR`?", "input": "", "output": "`readonly`/`declare -r` freezes constants; typos then fail loudly instead of forking behavior silently."}
-{"instruction": "Terangkan `mapfile lines` dalam satu minit.", "input": "", "output": "`mapfile -t arr < file` loads lines into an array fast; beats `while read` loops for big files."}
 {"instruction": "Apa yang perlu saya tahu tentang `mapfile lines`?", "input": "", "output": "`mapfile -t arr < file` loads lines into an array fast; beats `while read` loops for big files."}
 {"instruction": "Bagaimanakah `mapfile lines` berfungsi?", "input": "", "output": "`mapfile -t arr < file` loads lines into an array fast; beats `while read` loops for big files."}
-{"instruction": "Bilakah masa yang sesuai untuk `mapfile lines`?", "input": "", "output": "`mapfile -t arr < file` loads lines into an array fast; beats `while read` loops for big files."}
-{"instruction": "Terangkan `printf format` dalam satu minit.", "input": "", "output": "`printf '%-20s %5d\\n' name num` formats columns portably; `echo` flags vary across shells."}
 {"instruction": "Apa yang perlu saya tahu tentang `printf format`?", "input": "", "output": "`printf '%-20s %5d\\n' name num` formats columns portably; `echo` flags vary across shells."}
 {"instruction": "Bagaimanakah `printf format` berfungsi?", "input": "", "output": "`printf '%-20s %5d\\n' name num` formats columns portably; `echo` flags vary across shells."}
-{"instruction": "Bilakah masa yang sesuai untuk `printf format`?", "input": "", "output": "`printf '%-20s %5d\\n' name num` formats columns portably; `echo` flags vary across shells."}
-{"instruction": "Terangkan `pushd popd` dalam satu minit.", "input": "", "output": "`pushd dir` stacks directories, `popd` returns — `dirs -v` lists the stack for deep navigation."}
 {"instruction": "Apa yang perlu saya tahu tentang `pushd popd`?", "input": "", "output": "`pushd dir` stacks directories, `popd` returns — `dirs -v` lists the stack for deep navigation."}
 {"instruction": "Bagaimanakah `pushd popd` berfungsi?", "input": "", "output": "`pushd dir` stacks directories, `popd` returns — `dirs -v` lists the stack for deep navigation."}
-{"instruction": "Bilakah masa yang sesuai untuk `pushd popd`?", "input": "", "output": "`pushd dir` stacks directories, `popd` returns — `dirs -v` lists the stack for deep navigation."}
-{"instruction": "Terangkan `test -e -s -x` dalam satu minit.", "input": "", "output": "`-e` exists, `-s` non-empty, `-x` executable — probe before acting instead of rescuing failures."}
 {"instruction": "Apa yang perlu saya tahu tentang `test -e -s -x`?", "input": "", "output": "`-e` exists, `-s` non-empty, `-x` executable — probe before acting instead of rescuing failures."}
 {"instruction": "Bagaimanakah `test -e -s -x` berfungsi?", "input": "", "output": "`-e` exists, `-s` non-empty, `-x` executable — probe before acting instead of rescuing failures."}
-{"instruction": "Bilakah masa yang sesuai untuk `test -e -s -x`?", "input": "", "output": "`-e` exists, `-s` non-empty, `-x` executable — probe before acting instead of rescuing failures."}
-{"instruction": "Terangkan `${s/old/new}` dalam satu minit.", "input": "", "output": "`${s/old/new}` substitutes first match (`//` for all); pure-bash edits avoid subshell forks."}
 {"instruction": "Apa yang perlu saya tahu tentang `${s/old/new}`?", "input": "", "output": "`${s/old/new}` substitutes first match (`//` for all); pure-bash edits avoid subshell forks."}
 {"instruction": "Bagaimanakah `${s/old/new}` berfungsi?", "input": "", "output": "`${s/old/new}` substitutes first match (`//` for all); pure-bash edits avoid subshell forks."}
-{"instruction": "Bilakah masa yang sesuai untuk `${s/old/new}`?", "input": "", "output": "`${s/old/new}` substitutes first match (`//` for all); pure-bash edits avoid subshell forks."}
-{"instruction": "Terangkan `${s:0:3}` dalam satu minit.", "input": "", "output": "Substring slicing (`${s:0:3}`, `${s: -4}`) extracts parts; negative offsets count from the end."}
 {"instruction": "Apa yang perlu saya tahu tentang `${s:0:3}`?", "input": "", "output": "Substring slicing (`${s:0:3}`, `${s: -4}`) extracts parts; negative offsets count from the end."}
 {"instruction": "Bagaimanakah `${s:0:3}` berfungsi?", "input": "", "output": "Substring slicing (`${s:0:3}`, `${s: -4}`) extracts parts; negative offsets count from the end."}
-{"instruction": "Bilakah masa yang sesuai untuk `${s:0:3}`?", "input": "", "output": "Substring slicing (`${s:0:3}`, `${s: -4}`) extracts parts; negative offsets count from the end."}
-{"instruction": "Terangkan `${VAR:=default}` dalam satu minit.", "input": "", "output": "`:=` assigns the default permanently when empty — one-shot config with memory."}
 {"instruction": "Apa yang perlu saya tahu tentang `${VAR:=default}`?", "input": "", "output": "`:=` assigns the default permanently when empty — one-shot config with memory."}
 {"instruction": "Bagaimanakah `${VAR:=default}` berfungsi?", "input": "", "output": "`:=` assigns the default permanently when empty — one-shot config with memory."}
-{"instruction": "Bilakah masa yang sesuai untuk `${VAR:=default}`?", "input": "", "output": "`:=` assigns the default permanently when empty — one-shot config with memory."}
-{"instruction": "Terangkan `source lib.sh` dalam satu minit.", "input": "", "output": "`source` (or `.`) loads function libraries into the current shell; guard with file existence tests."}
 {"instruction": "Apa yang perlu saya tahu tentang `source lib.sh`?", "input": "", "output": "`source` (or `.`) loads function libraries into the current shell; guard with file existence tests."}
 {"instruction": "Bagaimanakah `source lib.sh` berfungsi?", "input": "", "output": "`source` (or `.`) loads function libraries into the current shell; guard with file existence tests."}
-{"instruction": "Bilakah masa yang sesuai untuk `source lib.sh`?", "input": "", "output": "`source` (or `.`) loads function libraries into the current shell; guard with file existence tests."}
-{"instruction": "Terangkan `set -x debug` dalam satu minit.", "input": "", "output": "`set -x` traces every command before running; wrap noisy sections with `set +x` to silence."}
 {"instruction": "Apa yang perlu saya tahu tentang `set -x debug`?", "input": "", "output": "`set -x` traces every command before running; wrap noisy sections with `set +x` to silence."}
 {"instruction": "Bagaimanakah `set -x debug` berfungsi?", "input": "", "output": "`set -x` traces every command before running; wrap noisy sections with `set +x` to silence."}
-{"instruction": "Bilakah masa yang sesuai untuk `set -x debug`?", "input": "", "output": "`set -x` traces every command before running; wrap noisy sections with `set +x` to silence."}
-{"instruction": "Terangkan `exit codes` dalam satu minit.", "input": "", "output": "`exit 0` success, nonzero failure (1 generic, 2 misuse, 126/127 exec problems); document yours in usage text."}
 {"instruction": "Apa yang perlu saya tahu tentang `exit codes`?", "input": "", "output": "`exit 0` success, nonzero failure (1 generic, 2 misuse, 126/127 exec problems); document yours in usage text."}
 {"instruction": "Bagaimanakah `exit codes` berfungsi?", "input": "", "output": "`exit 0` success, nonzero failure (1 generic, 2 misuse, 126/127 exec problems); document yours in usage text."}
-{"instruction": "Bilakah masa yang sesuai untuk `exit codes`?", "input": "", "output": "`exit 0` success, nonzero failure (1 generic, 2 misuse, 126/127 exec problems); document yours in usage text."}
-{"instruction": "Terangkan `jobs wait &` dalam satu minit.", "input": "", "output": "`cmd &` backgrounds, `jobs` lists, `wait` blocks until done — poor man's parallelism with `wait -n`."}
 {"instruction": "Apa yang perlu saya tahu tentang `jobs wait &`?", "input": "", "output": "`cmd &` backgrounds, `jobs` lists, `wait` blocks until done — poor man's parallelism with `wait -n`."}
 {"instruction": "Bagaimanakah `jobs wait &` berfungsi?", "input": "", "output": "`cmd &` backgrounds, `jobs` lists, `wait` blocks until done — poor man's parallelism with `wait -n`."}
-{"instruction": "Bilakah masa yang sesuai untuk `jobs wait &`?", "input": "", "output": "`cmd &` backgrounds, `jobs` lists, `wait` blocks until done — poor man's parallelism with `wait -n`."}
 {"instruction": "What does `until loop` do?", "input": "", "output": "`until curl -sf http://db:5432; do sleep 1; done` waits on failure (inverse of while) — readiness probes in shell."}
 {"instruction": "Explain `until loop` briefly.", "input": "", "output": "`until curl -sf http://db:5432; do sleep 1; done` waits on failure (inverse of while) — readiness probes in shell."}
 {"instruction": "When do I use `until loop`?", "input": "", "output": "`until curl -sf http://db:5432; do sleep 1; done` waits on failure (inverse of while) — readiness probes in shell."}
@@ -619,10 +551,8 @@
 {"instruction": "How would you explain `until loop` to a junior developer?", "input": "", "output": "`until curl -sf http://db:5432; do sleep 1; done` waits on failure (inverse of while) — readiness probes in shell."}
 {"instruction": "Give a real-world scenario for `until loop`.", "input": "", "output": "`until curl -sf http://db:5432; do sleep 1; done` waits on failure (inverse of while) — readiness probes in shell."}
 {"instruction": "What problem does `until loop` solve?", "input": "", "output": "`until curl -sf http://db:5432; do sleep 1; done` waits on failure (inverse of while) — readiness probes in shell."}
-{"instruction": "Terangkan `until loop` dalam satu minit.", "input": "", "output": "`until curl -sf http://db:5432; do sleep 1; done` waits on failure (inverse of while) — readiness probes in shell."}
 {"instruction": "Apa yang perlu saya tahu tentang `until loop`?", "input": "", "output": "`until curl -sf http://db:5432; do sleep 1; done` waits on failure (inverse of while) — readiness probes in shell."}
 {"instruction": "Bagaimanakah `until loop` berfungsi?", "input": "", "output": "`until curl -sf http://db:5432; do sleep 1; done` waits on failure (inverse of while) — readiness probes in shell."}
-{"instruction": "Bilakah masa yang sesuai untuk `until loop`?", "input": "", "output": "`until curl -sf http://db:5432; do sleep 1; done` waits on failure (inverse of while) — readiness probes in shell."}
 {"instruction": "What does `PS1 prompt` do?", "input": "", "output": "`PS1='\\u@\\h:\\w\\$ '` shows user/host/dir; put it in ~/.bashrc — context prevents wrong-host disasters."}
 {"instruction": "Explain `PS1 prompt` briefly.", "input": "", "output": "`PS1='\\u@\\h:\\w\\$ '` shows user/host/dir; put it in ~/.bashrc — context prevents wrong-host disasters."}
 {"instruction": "When do I use `PS1 prompt`?", "input": "", "output": "`PS1='\\u@\\h:\\w\\$ '` shows user/host/dir; put it in ~/.bashrc — context prevents wrong-host disasters."}
@@ -636,10 +566,8 @@
 {"instruction": "How would you explain `PS1 prompt` to a junior developer?", "input": "", "output": "`PS1='\\u@\\h:\\w\\$ '` shows user/host/dir; put it in ~/.bashrc — context prevents wrong-host disasters."}
 {"instruction": "Give a real-world scenario for `PS1 prompt`.", "input": "", "output": "`PS1='\\u@\\h:\\w\\$ '` shows user/host/dir; put it in ~/.bashrc — context prevents wrong-host disasters."}
 {"instruction": "What problem does `PS1 prompt` solve?", "input": "", "output": "`PS1='\\u@\\h:\\w\\$ '` shows user/host/dir; put it in ~/.bashrc — context prevents wrong-host disasters."}
-{"instruction": "Terangkan `PS1 prompt` dalam satu minit.", "input": "", "output": "`PS1='\\u@\\h:\\w\\$ '` shows user/host/dir; put it in ~/.bashrc — context prevents wrong-host disasters."}
 {"instruction": "Apa yang perlu saya tahu tentang `PS1 prompt`?", "input": "", "output": "`PS1='\\u@\\h:\\w\\$ '` shows user/host/dir; put it in ~/.bashrc — context prevents wrong-host disasters."}
 {"instruction": "Bagaimanakah `PS1 prompt` berfungsi?", "input": "", "output": "`PS1='\\u@\\h:\\w\\$ '` shows user/host/dir; put it in ~/.bashrc — context prevents wrong-host disasters."}
-{"instruction": "Bilakah masa yang sesuai untuk `PS1 prompt`?", "input": "", "output": "`PS1='\\u@\\h:\\w\\$ '` shows user/host/dir; put it in ~/.bashrc — context prevents wrong-host disasters."}
 {"instruction": "What does `shopt options` do?", "input": "", "output": "`shopt -s nullglob dotglob` fixes empty globs and hidden files; `shopt` alone lists current shell options."}
 {"instruction": "Explain `shopt options` briefly.", "input": "", "output": "`shopt -s nullglob dotglob` fixes empty globs and hidden files; `shopt` alone lists current shell options."}
 {"instruction": "When do I use `shopt options`?", "input": "", "output": "`shopt -s nullglob dotglob` fixes empty globs and hidden files; `shopt` alone lists current shell options."}
@@ -653,10 +581,8 @@
 {"instruction": "How would you explain `shopt options` to a junior developer?", "input": "", "output": "`shopt -s nullglob dotglob` fixes empty globs and hidden files; `shopt` alone lists current shell options."}
 {"instruction": "Give a real-world scenario for `shopt options`.", "input": "", "output": "`shopt -s nullglob dotglob` fixes empty globs and hidden files; `shopt` alone lists current shell options."}
 {"instruction": "What problem does `shopt options` solve?", "input": "", "output": "`shopt -s nullglob dotglob` fixes empty globs and hidden files; `shopt` alone lists current shell options."}
-{"instruction": "Terangkan `shopt options` dalam satu minit.", "input": "", "output": "`shopt -s nullglob dotglob` fixes empty globs and hidden files; `shopt` alone lists current shell options."}
 {"instruction": "Apa yang perlu saya tahu tentang `shopt options`?", "input": "", "output": "`shopt -s nullglob dotglob` fixes empty globs and hidden files; `shopt` alone lists current shell options."}
 {"instruction": "Bagaimanakah `shopt options` berfungsi?", "input": "", "output": "`shopt -s nullglob dotglob` fixes empty globs and hidden files; `shopt` alone lists current shell options."}
-{"instruction": "Bilakah masa yang sesuai untuk `shopt options`?", "input": "", "output": "`shopt -s nullglob dotglob` fixes empty globs and hidden files; `shopt` alone lists current shell options."}
 {"instruction": "What does `test -e -s` do?", "input": "", "output": "`-e` exists (any type), `-s` non-empty, `-r/-w/-x` permissions — probe before acting, rescue after failing."}
 {"instruction": "Explain `test -e -s` briefly.", "input": "", "output": "`-e` exists (any type), `-s` non-empty, `-r/-w/-x` permissions — probe before acting, rescue after failing."}
 {"instruction": "When do I use `test -e -s`?", "input": "", "output": "`-e` exists (any type), `-s` non-empty, `-r/-w/-x` permissions — probe before acting, rescue after failing."}
@@ -670,10 +596,8 @@
 {"instruction": "How would you explain `test -e -s` to a junior developer?", "input": "", "output": "`-e` exists (any type), `-s` non-empty, `-r/-w/-x` permissions — probe before acting, rescue after failing."}
 {"instruction": "Give a real-world scenario for `test -e -s`.", "input": "", "output": "`-e` exists (any type), `-s` non-empty, `-r/-w/-x` permissions — probe before acting, rescue after failing."}
 {"instruction": "What problem does `test -e -s` solve?", "input": "", "output": "`-e` exists (any type), `-s` non-empty, `-r/-w/-x` permissions — probe before acting, rescue after failing."}
-{"instruction": "Terangkan `test -e -s` dalam satu minit.", "input": "", "output": "`-e` exists (any type), `-s` non-empty, `-r/-w/-x` permissions — probe before acting, rescue after failing."}
 {"instruction": "Apa yang perlu saya tahu tentang `test -e -s`?", "input": "", "output": "`-e` exists (any type), `-s` non-empty, `-r/-w/-x` permissions — probe before acting, rescue after failing."}
 {"instruction": "Bagaimanakah `test -e -s` berfungsi?", "input": "", "output": "`-e` exists (any type), `-s` non-empty, `-r/-w/-x` permissions — probe before acting, rescue after failing."}
-{"instruction": "Bilakah masa yang sesuai untuk `test -e -s`?", "input": "", "output": "`-e` exists (any type), `-s` non-empty, `-r/-w/-x` permissions — probe before acting, rescue after failing."}
 {"instruction": "What does `string replace` do?", "input": "", "output": "`${s/old/new}` swaps first match (`//` for all); pure-bash edits skip subshell forks entirely."}
 {"instruction": "Explain `string replace` briefly.", "input": "", "output": "`${s/old/new}` swaps first match (`//` for all); pure-bash edits skip subshell forks entirely."}
 {"instruction": "When do I use `string replace`?", "input": "", "output": "`${s/old/new}` swaps first match (`//` for all); pure-bash edits skip subshell forks entirely."}
@@ -687,10 +611,8 @@
 {"instruction": "How would you explain `string replace` to a junior developer?", "input": "", "output": "`${s/old/new}` swaps first match (`//` for all); pure-bash edits skip subshell forks entirely."}
 {"instruction": "Give a real-world scenario for `string replace`.", "input": "", "output": "`${s/old/new}` swaps first match (`//` for all); pure-bash edits skip subshell forks entirely."}
 {"instruction": "What problem does `string replace` solve?", "input": "", "output": "`${s/old/new}` swaps first match (`//` for all); pure-bash edits skip subshell forks entirely."}
-{"instruction": "Terangkan `string replace` dalam satu minit.", "input": "", "output": "`${s/old/new}` swaps first match (`//` for all); pure-bash edits skip subshell forks entirely."}
 {"instruction": "Apa yang perlu saya tahu tentang `string replace`?", "input": "", "output": "`${s/old/new}` swaps first match (`//` for all); pure-bash edits skip subshell forks entirely."}
 {"instruction": "Bagaimanakah `string replace` berfungsi?", "input": "", "output": "`${s/old/new}` swaps first match (`//` for all); pure-bash edits skip subshell forks entirely."}
-{"instruction": "Bilakah masa yang sesuai untuk `string replace`?", "input": "", "output": "`${s/old/new}` swaps first match (`//` for all); pure-bash edits skip subshell forks entirely."}
 {"instruction": "What does `substring slice` do?", "input": "", "output": "`${s:0:3}` prefixes, `${s: -4}` suffixes, `${s:2:3}` windows — parse fixed formats without cut/awk."}
 {"instruction": "Explain `substring slice` briefly.", "input": "", "output": "`${s:0:3}` prefixes, `${s: -4}` suffixes, `${s:2:3}` windows — parse fixed formats without cut/awk."}
 {"instruction": "When do I use `substring slice`?", "input": "", "output": "`${s:0:3}` prefixes, `${s: -4}` suffixes, `${s:2:3}` windows — parse fixed formats without cut/awk."}
@@ -704,10 +626,8 @@
 {"instruction": "How would you explain `substring slice` to a junior developer?", "input": "", "output": "`${s:0:3}` prefixes, `${s: -4}` suffixes, `${s:2:3}` windows — parse fixed formats without cut/awk."}
 {"instruction": "Give a real-world scenario for `substring slice`.", "input": "", "output": "`${s:0:3}` prefixes, `${s: -4}` suffixes, `${s:2:3}` windows — parse fixed formats without cut/awk."}
 {"instruction": "What problem does `substring slice` solve?", "input": "", "output": "`${s:0:3}` prefixes, `${s: -4}` suffixes, `${s:2:3}` windows — parse fixed formats without cut/awk."}
-{"instruction": "Terangkan `substring slice` dalam satu minit.", "input": "", "output": "`${s:0:3}` prefixes, `${s: -4}` suffixes, `${s:2:3}` windows — parse fixed formats without cut/awk."}
 {"instruction": "Apa yang perlu saya tahu tentang `substring slice`?", "input": "", "output": "`${s:0:3}` prefixes, `${s: -4}` suffixes, `${s:2:3}` windows — parse fixed formats without cut/awk."}
 {"instruction": "Bagaimanakah `substring slice` berfungsi?", "input": "", "output": "`${s:0:3}` prefixes, `${s: -4}` suffixes, `${s:2:3}` windows — parse fixed formats without cut/awk."}
-{"instruction": "Bilakah masa yang sesuai untuk `substring slice`?", "input": "", "output": "`${s:0:3}` prefixes, `${s: -4}` suffixes, `${s:2:3}` windows — parse fixed formats without cut/awk."}
 {"instruction": "What does `assign default :=` do?", "input": "", "output": "`${PORT:=3000}` assigns when empty (persists); `:-` substitutes once. Config-with-memory in one line."}
 {"instruction": "Explain `assign default :=` briefly.", "input": "", "output": "`${PORT:=3000}` assigns when empty (persists); `:-` substitutes once. Config-with-memory in one line."}
 {"instruction": "When do I use `assign default :=`?", "input": "", "output": "`${PORT:=3000}` assigns when empty (persists); `:-` substitutes once. Config-with-memory in one line."}
@@ -721,10 +641,8 @@
 {"instruction": "How would you explain `assign default :=` to a junior developer?", "input": "", "output": "`${PORT:=3000}` assigns when empty (persists); `:-` substitutes once. Config-with-memory in one line."}
 {"instruction": "Give a real-world scenario for `assign default :=`.", "input": "", "output": "`${PORT:=3000}` assigns when empty (persists); `:-` substitutes once. Config-with-memory in one line."}
 {"instruction": "What problem does `assign default :=` solve?", "input": "", "output": "`${PORT:=3000}` assigns when empty (persists); `:-` substitutes once. Config-with-memory in one line."}
-{"instruction": "Terangkan `assign default :=` dalam satu minit.", "input": "", "output": "`${PORT:=3000}` assigns when empty (persists); `:-` substitutes once. Config-with-memory in one line."}
 {"instruction": "Apa yang perlu saya tahu tentang `assign default :=`?", "input": "", "output": "`${PORT:=3000}` assigns when empty (persists); `:-` substitutes once. Config-with-memory in one line."}
 {"instruction": "Bagaimanakah `assign default :=` berfungsi?", "input": "", "output": "`${PORT:=3000}` assigns when empty (persists); `:-` substitutes once. Config-with-memory in one line."}
-{"instruction": "Bilakah masa yang sesuai untuk `assign default :=`?", "input": "", "output": "`${PORT:=3000}` assigns when empty (persists); `:-` substitutes once. Config-with-memory in one line."}
 {"instruction": "What does `source guard` do?", "input": "", "output": "`[[ -f lib.sh ]] && source lib.sh` loads helpers defensively; re-sourcing must stay idempotent."}
 {"instruction": "Explain `source guard` briefly.", "input": "", "output": "`[[ -f lib.sh ]] && source lib.sh` loads helpers defensively; re-sourcing must stay idempotent."}
 {"instruction": "When do I use `source guard`?", "input": "", "output": "`[[ -f lib.sh ]] && source lib.sh` loads helpers defensively; re-sourcing must stay idempotent."}
@@ -738,10 +656,8 @@
 {"instruction": "How would you explain `source guard` to a junior developer?", "input": "", "output": "`[[ -f lib.sh ]] && source lib.sh` loads helpers defensively; re-sourcing must stay idempotent."}
 {"instruction": "Give a real-world scenario for `source guard`.", "input": "", "output": "`[[ -f lib.sh ]] && source lib.sh` loads helpers defensively; re-sourcing must stay idempotent."}
 {"instruction": "What problem does `source guard` solve?", "input": "", "output": "`[[ -f lib.sh ]] && source lib.sh` loads helpers defensively; re-sourcing must stay idempotent."}
-{"instruction": "Terangkan `source guard` dalam satu minit.", "input": "", "output": "`[[ -f lib.sh ]] && source lib.sh` loads helpers defensively; re-sourcing must stay idempotent."}
 {"instruction": "Apa yang perlu saya tahu tentang `source guard`?", "input": "", "output": "`[[ -f lib.sh ]] && source lib.sh` loads helpers defensively; re-sourcing must stay idempotent."}
 {"instruction": "Bagaimanakah `source guard` berfungsi?", "input": "", "output": "`[[ -f lib.sh ]] && source lib.sh` loads helpers defensively; re-sourcing must stay idempotent."}
-{"instruction": "Bilakah masa yang sesuai untuk `source guard`?", "input": "", "output": "`[[ -f lib.sh ]] && source lib.sh` loads helpers defensively; re-sourcing must stay idempotent."}
 {"instruction": "What does `exit trap codes` do?", "input": "", "output": "Conventional codes guide callers (0 ok, 1 error, 2 misuse); `trap` handlers must exit with the original code."}
 {"instruction": "Explain `exit trap codes` briefly.", "input": "", "output": "Conventional codes guide callers (0 ok, 1 error, 2 misuse); `trap` handlers must exit with the original code."}
 {"instruction": "When do I use `exit trap codes`?", "input": "", "output": "Conventional codes guide callers (0 ok, 1 error, 2 misuse); `trap` handlers must exit with the original code."}
@@ -755,10 +671,8 @@
 {"instruction": "How would you explain `exit trap codes` to a junior developer?", "input": "", "output": "Conventional codes guide callers (0 ok, 1 error, 2 misuse); `trap` handlers must exit with the original code."}
 {"instruction": "Give a real-world scenario for `exit trap codes`.", "input": "", "output": "Conventional codes guide callers (0 ok, 1 error, 2 misuse); `trap` handlers must exit with the original code."}
 {"instruction": "What problem does `exit trap codes` solve?", "input": "", "output": "Conventional codes guide callers (0 ok, 1 error, 2 misuse); `trap` handlers must exit with the original code."}
-{"instruction": "Terangkan `exit trap codes` dalam satu minit.", "input": "", "output": "Conventional codes guide callers (0 ok, 1 error, 2 misuse); `trap` handlers must exit with the original code."}
 {"instruction": "Apa yang perlu saya tahu tentang `exit trap codes`?", "input": "", "output": "Conventional codes guide callers (0 ok, 1 error, 2 misuse); `trap` handlers must exit with the original code."}
 {"instruction": "Bagaimanakah `exit trap codes` berfungsi?", "input": "", "output": "Conventional codes guide callers (0 ok, 1 error, 2 misuse); `trap` handlers must exit with the original code."}
-{"instruction": "Bilakah masa yang sesuai untuk `exit trap codes`?", "input": "", "output": "Conventional codes guide callers (0 ok, 1 error, 2 misuse); `trap` handlers must exit with the original code."}
 {"instruction": "What does `diff cmp files` do?", "input": "", "output": "`diff -u a b` shows unified changes; `cmp -s` silently compares for scripts (exit code only)."}
 {"instruction": "Explain `diff cmp files` briefly.", "input": "", "output": "`diff -u a b` shows unified changes; `cmp -s` silently compares for scripts (exit code only)."}
 {"instruction": "When do I use `diff cmp files`?", "input": "", "output": "`diff -u a b` shows unified changes; `cmp -s` silently compares for scripts (exit code only)."}
@@ -772,10 +686,8 @@
 {"instruction": "How would you explain `diff cmp files` to a junior developer?", "input": "", "output": "`diff -u a b` shows unified changes; `cmp -s` silently compares for scripts (exit code only)."}
 {"instruction": "Give a real-world scenario for `diff cmp files`.", "input": "", "output": "`diff -u a b` shows unified changes; `cmp -s` silently compares for scripts (exit code only)."}
 {"instruction": "What problem does `diff cmp files` solve?", "input": "", "output": "`diff -u a b` shows unified changes; `cmp -s` silently compares for scripts (exit code only)."}
-{"instruction": "Terangkan `diff cmp files` dalam satu minit.", "input": "", "output": "`diff -u a b` shows unified changes; `cmp -s` silently compares for scripts (exit code only)."}
 {"instruction": "Apa yang perlu saya tahu tentang `diff cmp files`?", "input": "", "output": "`diff -u a b` shows unified changes; `cmp -s` silently compares for scripts (exit code only)."}
 {"instruction": "Bagaimanakah `diff cmp files` berfungsi?", "input": "", "output": "`diff -u a b` shows unified changes; `cmp -s` silently compares for scripts (exit code only)."}
-{"instruction": "Bilakah masa yang sesuai untuk `diff cmp files`?", "input": "", "output": "`diff -u a b` shows unified changes; `cmp -s` silently compares for scripts (exit code only)."}
 {"instruction": "What does `sort uniq pipeline` do?", "input": "", "output": "`sort | uniq -c | sort -nr` ranks frequent lines (log analysis 101); `sort -u` dedupes inline."}
 {"instruction": "Explain `sort uniq pipeline` briefly.", "input": "", "output": "`sort | uniq -c | sort -nr` ranks frequent lines (log analysis 101); `sort -u` dedupes inline."}
 {"instruction": "When do I use `sort uniq pipeline`?", "input": "", "output": "`sort | uniq -c | sort -nr` ranks frequent lines (log analysis 101); `sort -u` dedupes inline."}
@@ -789,10 +701,8 @@
 {"instruction": "How would you explain `sort uniq pipeline` to a junior developer?", "input": "", "output": "`sort | uniq -c | sort -nr` ranks frequent lines (log analysis 101); `sort -u` dedupes inline."}
 {"instruction": "Give a real-world scenario for `sort uniq pipeline`.", "input": "", "output": "`sort | uniq -c | sort -nr` ranks frequent lines (log analysis 101); `sort -u` dedupes inline."}
 {"instruction": "What problem does `sort uniq pipeline` solve?", "input": "", "output": "`sort | uniq -c | sort -nr` ranks frequent lines (log analysis 101); `sort -u` dedupes inline."}
-{"instruction": "Terangkan `sort uniq pipeline` dalam satu minit.", "input": "", "output": "`sort | uniq -c | sort -nr` ranks frequent lines (log analysis 101); `sort -u` dedupes inline."}
 {"instruction": "Apa yang perlu saya tahu tentang `sort uniq pipeline`?", "input": "", "output": "`sort | uniq -c | sort -nr` ranks frequent lines (log analysis 101); `sort -u` dedupes inline."}
 {"instruction": "Bagaimanakah `sort uniq pipeline` berfungsi?", "input": "", "output": "`sort | uniq -c | sort -nr` ranks frequent lines (log analysis 101); `sort -u` dedupes inline."}
-{"instruction": "Bilakah masa yang sesuai untuk `sort uniq pipeline`?", "input": "", "output": "`sort | uniq -c | sort -nr` ranks frequent lines (log analysis 101); `sort -u` dedupes inline."}
 {"instruction": "What does `wc count` do?", "input": "", "output": "`wc -l` counts lines, `-w` words, `-c` bytes; `grep -c` counts matches — pipe, don't parse visually."}
 {"instruction": "Explain `wc count` briefly.", "input": "", "output": "`wc -l` counts lines, `-w` words, `-c` bytes; `grep -c` counts matches — pipe, don't parse visually."}
 {"instruction": "When do I use `wc count`?", "input": "", "output": "`wc -l` counts lines, `-w` words, `-c` bytes; `grep -c` counts matches — pipe, don't parse visually."}
@@ -806,10 +716,8 @@
 {"instruction": "How would you explain `wc count` to a junior developer?", "input": "", "output": "`wc -l` counts lines, `-w` words, `-c` bytes; `grep -c` counts matches — pipe, don't parse visually."}
 {"instruction": "Give a real-world scenario for `wc count`.", "input": "", "output": "`wc -l` counts lines, `-w` words, `-c` bytes; `grep -c` counts matches — pipe, don't parse visually."}
 {"instruction": "What problem does `wc count` solve?", "input": "", "output": "`wc -l` counts lines, `-w` words, `-c` bytes; `grep -c` counts matches — pipe, don't parse visually."}
-{"instruction": "Terangkan `wc count` dalam satu minit.", "input": "", "output": "`wc -l` counts lines, `-w` words, `-c` bytes; `grep -c` counts matches — pipe, don't parse visually."}
 {"instruction": "Apa yang perlu saya tahu tentang `wc count`?", "input": "", "output": "`wc -l` counts lines, `-w` words, `-c` bytes; `grep -c` counts matches — pipe, don't parse visually."}
 {"instruction": "Bagaimanakah `wc count` berfungsi?", "input": "", "output": "`wc -l` counts lines, `-w` words, `-c` bytes; `grep -c` counts matches — pipe, don't parse visually."}
-{"instruction": "Bilakah masa yang sesuai untuk `wc count`?", "input": "", "output": "`wc -l` counts lines, `-w` words, `-c` bytes; `grep -c` counts matches — pipe, don't parse visually."}
 {"instruction": "What does `tee split output` do?", "input": "", "output": "`cmd | tee out.log` shows AND saves; `-a` appends — the honest way to keep terminal evidence."}
 {"instruction": "Explain `tee split output` briefly.", "input": "", "output": "`cmd | tee out.log` shows AND saves; `-a` appends — the honest way to keep terminal evidence."}
 {"instruction": "When do I use `tee split output`?", "input": "", "output": "`cmd | tee out.log` shows AND saves; `-a` appends — the honest way to keep terminal evidence."}
@@ -823,10 +731,8 @@
 {"instruction": "How would you explain `tee split output` to a junior developer?", "input": "", "output": "`cmd | tee out.log` shows AND saves; `-a` appends — the honest way to keep terminal evidence."}
 {"instruction": "Give a real-world scenario for `tee split output`.", "input": "", "output": "`cmd | tee out.log` shows AND saves; `-a` appends — the honest way to keep terminal evidence."}
 {"instruction": "What problem does `tee split output` solve?", "input": "", "output": "`cmd | tee out.log` shows AND saves; `-a` appends — the honest way to keep terminal evidence."}
-{"instruction": "Terangkan `tee split output` dalam satu minit.", "input": "", "output": "`cmd | tee out.log` shows AND saves; `-a` appends — the honest way to keep terminal evidence."}
 {"instruction": "Apa yang perlu saya tahu tentang `tee split output`?", "input": "", "output": "`cmd | tee out.log` shows AND saves; `-a` appends — the honest way to keep terminal evidence."}
 {"instruction": "Bagaimanakah `tee split output` berfungsi?", "input": "", "output": "`cmd | tee out.log` shows AND saves; `-a` appends — the honest way to keep terminal evidence."}
-{"instruction": "Bilakah masa yang sesuai untuk `tee split output`?", "input": "", "output": "`cmd | tee out.log` shows AND saves; `-a` appends — the honest way to keep terminal evidence."}
 {"instruction": "What does `logger syslog` do?", "input": "", "output": "`logger -t myapp 'ready'` writes syslog with a tag; `-p local0.err` routes severity for aggregators."}
 {"instruction": "Explain `logger syslog` briefly.", "input": "", "output": "`logger -t myapp 'ready'` writes syslog with a tag; `-p local0.err` routes severity for aggregators."}
 {"instruction": "When do I use `logger syslog`?", "input": "", "output": "`logger -t myapp 'ready'` writes syslog with a tag; `-p local0.err` routes severity for aggregators."}
@@ -840,10 +746,8 @@
 {"instruction": "How would you explain `logger syslog` to a junior developer?", "input": "", "output": "`logger -t myapp 'ready'` writes syslog with a tag; `-p local0.err` routes severity for aggregators."}
 {"instruction": "Give a real-world scenario for `logger syslog`.", "input": "", "output": "`logger -t myapp 'ready'` writes syslog with a tag; `-p local0.err` routes severity for aggregators."}
 {"instruction": "What problem does `logger syslog` solve?", "input": "", "output": "`logger -t myapp 'ready'` writes syslog with a tag; `-p local0.err` routes severity for aggregators."}
-{"instruction": "Terangkan `logger syslog` dalam satu minit.", "input": "", "output": "`logger -t myapp 'ready'` writes syslog with a tag; `-p local0.err` routes severity for aggregators."}
 {"instruction": "Apa yang perlu saya tahu tentang `logger syslog`?", "input": "", "output": "`logger -t myapp 'ready'` writes syslog with a tag; `-p local0.err` routes severity for aggregators."}
 {"instruction": "Bagaimanakah `logger syslog` berfungsi?", "input": "", "output": "`logger -t myapp 'ready'` writes syslog with a tag; `-p local0.err` routes severity for aggregators."}
-{"instruction": "Bilakah masa yang sesuai untuk `logger syslog`?", "input": "", "output": "`logger -t myapp 'ready'` writes syslog with a tag; `-p local0.err` routes severity for aggregators."}
 {"instruction": "What does `head tail files` do?", "input": "", "output": "`head -20` previews starts, `tail -30 -f` follows ends; combine with pipes instead of opening editors."}
 {"instruction": "Explain `head tail files` briefly.", "input": "", "output": "`head -20` previews starts, `tail -30 -f` follows ends; combine with pipes instead of opening editors."}
 {"instruction": "When do I use `head tail files`?", "input": "", "output": "`head -20` previews starts, `tail -30 -f` follows ends; combine with pipes instead of opening editors."}
@@ -857,10 +761,8 @@
 {"instruction": "How would you explain `head tail files` to a junior developer?", "input": "", "output": "`head -20` previews starts, `tail -30 -f` follows ends; combine with pipes instead of opening editors."}
 {"instruction": "Give a real-world scenario for `head tail files`.", "input": "", "output": "`head -20` previews starts, `tail -30 -f` follows ends; combine with pipes instead of opening editors."}
 {"instruction": "What problem does `head tail files` solve?", "input": "", "output": "`head -20` previews starts, `tail -30 -f` follows ends; combine with pipes instead of opening editors."}
-{"instruction": "Terangkan `head tail files` dalam satu minit.", "input": "", "output": "`head -20` previews starts, `tail -30 -f` follows ends; combine with pipes instead of opening editors."}
 {"instruction": "Apa yang perlu saya tahu tentang `head tail files`?", "input": "", "output": "`head -20` previews starts, `tail -30 -f` follows ends; combine with pipes instead of opening editors."}
 {"instruction": "Bagaimanakah `head tail files` berfungsi?", "input": "", "output": "`head -20` previews starts, `tail -30 -f` follows ends; combine with pipes instead of opening editors."}
-{"instruction": "Bilakah masa yang sesuai untuk `head tail files`?", "input": "", "output": "`head -20` previews starts, `tail -30 -f` follows ends; combine with pipes instead of opening editors."}
 {"instruction": "What does `cut fields` do?", "input": "", "output": "`cut -d: -f1 /etc/passwd` extracts columns; `-c1-3` slices characters — quick parsing without awk."}
 {"instruction": "Explain `cut fields` briefly.", "input": "", "output": "`cut -d: -f1 /etc/passwd` extracts columns; `-c1-3` slices characters — quick parsing without awk."}
 {"instruction": "When do I use `cut fields`?", "input": "", "output": "`cut -d: -f1 /etc/passwd` extracts columns; `-c1-3` slices characters — quick parsing without awk."}
@@ -874,10 +776,8 @@
 {"instruction": "How would you explain `cut fields` to a junior developer?", "input": "", "output": "`cut -d: -f1 /etc/passwd` extracts columns; `-c1-3` slices characters — quick parsing without awk."}
 {"instruction": "Give a real-world scenario for `cut fields`.", "input": "", "output": "`cut -d: -f1 /etc/passwd` extracts columns; `-c1-3` slices characters — quick parsing without awk."}
 {"instruction": "What problem does `cut fields` solve?", "input": "", "output": "`cut -d: -f1 /etc/passwd` extracts columns; `-c1-3` slices characters — quick parsing without awk."}
-{"instruction": "Terangkan `cut fields` dalam satu minit.", "input": "", "output": "`cut -d: -f1 /etc/passwd` extracts columns; `-c1-3` slices characters — quick parsing without awk."}
 {"instruction": "Apa yang perlu saya tahu tentang `cut fields`?", "input": "", "output": "`cut -d: -f1 /etc/passwd` extracts columns; `-c1-3` slices characters — quick parsing without awk."}
 {"instruction": "Bagaimanakah `cut fields` berfungsi?", "input": "", "output": "`cut -d: -f1 /etc/passwd` extracts columns; `-c1-3` slices characters — quick parsing without awk."}
-{"instruction": "Bilakah masa yang sesuai untuk `cut fields`?", "input": "", "output": "`cut -d: -f1 /etc/passwd` extracts columns; `-c1-3` slices characters — quick parsing without awk."}
 {"instruction": "What does `tr translate` do?", "input": "", "output": "`tr 'a-z' 'A-Z'` uppercases streams; `-d` deletes chars, `-s` squeezes repeats in pipelines."}
 {"instruction": "Explain `tr translate` briefly.", "input": "", "output": "`tr 'a-z' 'A-Z'` uppercases streams; `-d` deletes chars, `-s` squeezes repeats in pipelines."}
 {"instruction": "When do I use `tr translate`?", "input": "", "output": "`tr 'a-z' 'A-Z'` uppercases streams; `-d` deletes chars, `-s` squeezes repeats in pipelines."}
@@ -891,10 +791,8 @@
 {"instruction": "How would you explain `tr translate` to a junior developer?", "input": "", "output": "`tr 'a-z' 'A-Z'` uppercases streams; `-d` deletes chars, `-s` squeezes repeats in pipelines."}
 {"instruction": "Give a real-world scenario for `tr translate`.", "input": "", "output": "`tr 'a-z' 'A-Z'` uppercases streams; `-d` deletes chars, `-s` squeezes repeats in pipelines."}
 {"instruction": "What problem does `tr translate` solve?", "input": "", "output": "`tr 'a-z' 'A-Z'` uppercases streams; `-d` deletes chars, `-s` squeezes repeats in pipelines."}
-{"instruction": "Terangkan `tr translate` dalam satu minit.", "input": "", "output": "`tr 'a-z' 'A-Z'` uppercases streams; `-d` deletes chars, `-s` squeezes repeats in pipelines."}
 {"instruction": "Apa yang perlu saya tahu tentang `tr translate`?", "input": "", "output": "`tr 'a-z' 'A-Z'` uppercases streams; `-d` deletes chars, `-s` squeezes repeats in pipelines."}
 {"instruction": "Bagaimanakah `tr translate` berfungsi?", "input": "", "output": "`tr 'a-z' 'A-Z'` uppercases streams; `-d` deletes chars, `-s` squeezes repeats in pipelines."}
-{"instruction": "Bilakah masa yang sesuai untuk `tr translate`?", "input": "", "output": "`tr 'a-z' 'A-Z'` uppercases streams; `-d` deletes chars, `-s` squeezes repeats in pipelines."}
 {"instruction": "What does `paste join lines` do?", "input": "", "output": "`paste -d, a b` zips lines side by side; `-s` serializes one file into a single line."}
 {"instruction": "Explain `paste join lines` briefly.", "input": "", "output": "`paste -d, a b` zips lines side by side; `-s` serializes one file into a single line."}
 {"instruction": "When do I use `paste join lines`?", "input": "", "output": "`paste -d, a b` zips lines side by side; `-s` serializes one file into a single line."}
@@ -908,10 +806,8 @@
 {"instruction": "How would you explain `paste join lines` to a junior developer?", "input": "", "output": "`paste -d, a b` zips lines side by side; `-s` serializes one file into a single line."}
 {"instruction": "Give a real-world scenario for `paste join lines`.", "input": "", "output": "`paste -d, a b` zips lines side by side; `-s` serializes one file into a single line."}
 {"instruction": "What problem does `paste join lines` solve?", "input": "", "output": "`paste -d, a b` zips lines side by side; `-s` serializes one file into a single line."}
-{"instruction": "Terangkan `paste join lines` dalam satu minit.", "input": "", "output": "`paste -d, a b` zips lines side by side; `-s` serializes one file into a single line."}
 {"instruction": "Apa yang perlu saya tahu tentang `paste join lines`?", "input": "", "output": "`paste -d, a b` zips lines side by side; `-s` serializes one file into a single line."}
 {"instruction": "Bagaimanakah `paste join lines` berfungsi?", "input": "", "output": "`paste -d, a b` zips lines side by side; `-s` serializes one file into a single line."}
-{"instruction": "Bilakah masa yang sesuai untuk `paste join lines`?", "input": "", "output": "`paste -d, a b` zips lines side by side; `-s` serializes one file into a single line."}
 {"instruction": "What does `comm compare sorted` do?", "input": "", "output": "`comm -23 a b` lines unique to a (sorted inputs required); `diff` for context, `comm` for sets."}
 {"instruction": "Explain `comm compare sorted` briefly.", "input": "", "output": "`comm -23 a b` lines unique to a (sorted inputs required); `diff` for context, `comm` for sets."}
 {"instruction": "When do I use `comm compare sorted`?", "input": "", "output": "`comm -23 a b` lines unique to a (sorted inputs required); `diff` for context, `comm` for sets."}
@@ -925,10 +821,8 @@
 {"instruction": "How would you explain `comm compare sorted` to a junior developer?", "input": "", "output": "`comm -23 a b` lines unique to a (sorted inputs required); `diff` for context, `comm` for sets."}
 {"instruction": "Give a real-world scenario for `comm compare sorted`.", "input": "", "output": "`comm -23 a b` lines unique to a (sorted inputs required); `diff` for context, `comm` for sets."}
 {"instruction": "What problem does `comm compare sorted` solve?", "input": "", "output": "`comm -23 a b` lines unique to a (sorted inputs required); `diff` for context, `comm` for sets."}
-{"instruction": "Terangkan `comm compare sorted` dalam satu minit.", "input": "", "output": "`comm -23 a b` lines unique to a (sorted inputs required); `diff` for context, `comm` for sets."}
 {"instruction": "Apa yang perlu saya tahu tentang `comm compare sorted`?", "input": "", "output": "`comm -23 a b` lines unique to a (sorted inputs required); `diff` for context, `comm` for sets."}
 {"instruction": "Bagaimanakah `comm compare sorted` berfungsi?", "input": "", "output": "`comm -23 a b` lines unique to a (sorted inputs required); `diff` for context, `comm` for sets."}
-{"instruction": "Bilakah masa yang sesuai untuk `comm compare sorted`?", "input": "", "output": "`comm -23 a b` lines unique to a (sorted inputs required); `diff` for context, `comm` for sets."}
 {"instruction": "What does `column -t align` do?", "input": "", "output": "`column -t` aligns whitespace tables readably; `-s,` sets delimiters for CSV-ish previews."}
 {"instruction": "Explain `column -t align` briefly.", "input": "", "output": "`column -t` aligns whitespace tables readably; `-s,` sets delimiters for CSV-ish previews."}
 {"instruction": "When do I use `column -t align`?", "input": "", "output": "`column -t` aligns whitespace tables readably; `-s,` sets delimiters for CSV-ish previews."}
@@ -942,10 +836,8 @@
 {"instruction": "How would you explain `column -t align` to a junior developer?", "input": "", "output": "`column -t` aligns whitespace tables readably; `-s,` sets delimiters for CSV-ish previews."}
 {"instruction": "Give a real-world scenario for `column -t align`.", "input": "", "output": "`column -t` aligns whitespace tables readably; `-s,` sets delimiters for CSV-ish previews."}
 {"instruction": "What problem does `column -t align` solve?", "input": "", "output": "`column -t` aligns whitespace tables readably; `-s,` sets delimiters for CSV-ish previews."}
-{"instruction": "Terangkan `column -t align` dalam satu minit.", "input": "", "output": "`column -t` aligns whitespace tables readably; `-s,` sets delimiters for CSV-ish previews."}
 {"instruction": "Apa yang perlu saya tahu tentang `column -t align`?", "input": "", "output": "`column -t` aligns whitespace tables readably; `-s,` sets delimiters for CSV-ish previews."}
 {"instruction": "Bagaimanakah `column -t align` berfungsi?", "input": "", "output": "`column -t` aligns whitespace tables readably; `-s,` sets delimiters for CSV-ish previews."}
-{"instruction": "Bilakah masa yang sesuai untuk `column -t align`?", "input": "", "output": "`column -t` aligns whitespace tables readably; `-s,` sets delimiters for CSV-ish previews."}
 {"instruction": "What does `expand unexpand tabs` do?", "input": "", "output": "`expand -t 4` converts tabs to spaces for consistency; `unexpand` reverses when tools demand tabs."}
 {"instruction": "Explain `expand unexpand tabs` briefly.", "input": "", "output": "`expand -t 4` converts tabs to spaces for consistency; `unexpand` reverses when tools demand tabs."}
 {"instruction": "When do I use `expand unexpand tabs`?", "input": "", "output": "`expand -t 4` converts tabs to spaces for consistency; `unexpand` reverses when tools demand tabs."}
@@ -959,10 +851,8 @@
 {"instruction": "How would you explain `expand unexpand tabs` to a junior developer?", "input": "", "output": "`expand -t 4` converts tabs to spaces for consistency; `unexpand` reverses when tools demand tabs."}
 {"instruction": "Give a real-world scenario for `expand unexpand tabs`.", "input": "", "output": "`expand -t 4` converts tabs to spaces for consistency; `unexpand` reverses when tools demand tabs."}
 {"instruction": "What problem does `expand unexpand tabs` solve?", "input": "", "output": "`expand -t 4` converts tabs to spaces for consistency; `unexpand` reverses when tools demand tabs."}
-{"instruction": "Terangkan `expand unexpand tabs` dalam satu minit.", "input": "", "output": "`expand -t 4` converts tabs to spaces for consistency; `unexpand` reverses when tools demand tabs."}
 {"instruction": "Apa yang perlu saya tahu tentang `expand unexpand tabs`?", "input": "", "output": "`expand -t 4` converts tabs to spaces for consistency; `unexpand` reverses when tools demand tabs."}
 {"instruction": "Bagaimanakah `expand unexpand tabs` berfungsi?", "input": "", "output": "`expand -t 4` converts tabs to spaces for consistency; `unexpand` reverses when tools demand tabs."}
-{"instruction": "Bilakah masa yang sesuai untuk `expand unexpand tabs`?", "input": "", "output": "`expand -t 4` converts tabs to spaces for consistency; `unexpand` reverses when tools demand tabs."}
 {"instruction": "What does `tac reverse cat` do?", "input": "", "output": "`tac` prints lines last-first (logs newest-last files); `rev` reverses characters per line."}
 {"instruction": "Explain `tac reverse cat` briefly.", "input": "", "output": "`tac` prints lines last-first (logs newest-last files); `rev` reverses characters per line."}
 {"instruction": "When do I use `tac reverse cat`?", "input": "", "output": "`tac` prints lines last-first (logs newest-last files); `rev` reverses characters per line."}
@@ -976,10 +866,8 @@
 {"instruction": "How would you explain `tac reverse cat` to a junior developer?", "input": "", "output": "`tac` prints lines last-first (logs newest-last files); `rev` reverses characters per line."}
 {"instruction": "Give a real-world scenario for `tac reverse cat`.", "input": "", "output": "`tac` prints lines last-first (logs newest-last files); `rev` reverses characters per line."}
 {"instruction": "What problem does `tac reverse cat` solve?", "input": "", "output": "`tac` prints lines last-first (logs newest-last files); `rev` reverses characters per line."}
-{"instruction": "Terangkan `tac reverse cat` dalam satu minit.", "input": "", "output": "`tac` prints lines last-first (logs newest-last files); `rev` reverses characters per line."}
 {"instruction": "Apa yang perlu saya tahu tentang `tac reverse cat`?", "input": "", "output": "`tac` prints lines last-first (logs newest-last files); `rev` reverses characters per line."}
 {"instruction": "Bagaimanakah `tac reverse cat` berfungsi?", "input": "", "output": "`tac` prints lines last-first (logs newest-last files); `rev` reverses characters per line."}
-{"instruction": "Bilakah masa yang sesuai untuk `tac reverse cat`?", "input": "", "output": "`tac` prints lines last-first (logs newest-last files); `rev` reverses characters per line."}
 {"instruction": "What does `nl number lines` do?", "input": "", "output": "`nl -ba` numbers all lines for reference; `-v10` starts counting at ten for excerpts."}
 {"instruction": "Explain `nl number lines` briefly.", "input": "", "output": "`nl -ba` numbers all lines for reference; `-v10` starts counting at ten for excerpts."}
 {"instruction": "When do I use `nl number lines`?", "input": "", "output": "`nl -ba` numbers all lines for reference; `-v10` starts counting at ten for excerpts."}
@@ -993,10 +881,8 @@
 {"instruction": "How would you explain `nl number lines` to a junior developer?", "input": "", "output": "`nl -ba` numbers all lines for reference; `-v10` starts counting at ten for excerpts."}
 {"instruction": "Give a real-world scenario for `nl number lines`.", "input": "", "output": "`nl -ba` numbers all lines for reference; `-v10` starts counting at ten for excerpts."}
 {"instruction": "What problem does `nl number lines` solve?", "input": "", "output": "`nl -ba` numbers all lines for reference; `-v10` starts counting at ten for excerpts."}
-{"instruction": "Terangkan `nl number lines` dalam satu minit.", "input": "", "output": "`nl -ba` numbers all lines for reference; `-v10` starts counting at ten for excerpts."}
 {"instruction": "Apa yang perlu saya tahu tentang `nl number lines`?", "input": "", "output": "`nl -ba` numbers all lines for reference; `-v10` starts counting at ten for excerpts."}
 {"instruction": "Bagaimanakah `nl number lines` berfungsi?", "input": "", "output": "`nl -ba` numbers all lines for reference; `-v10` starts counting at ten for excerpts."}
-{"instruction": "Bilakah masa yang sesuai untuk `nl number lines`?", "input": "", "output": "`nl -ba` numbers all lines for reference; `-v10` starts counting at ten for excerpts."}
 {"instruction": "What does `shuf random lines` do?", "input": "", "output": "`shuf file` randomizes (sampling, shuffling tests); `-n5` picks five random lines for spot checks."}
 {"instruction": "Explain `shuf random lines` briefly.", "input": "", "output": "`shuf file` randomizes (sampling, shuffling tests); `-n5` picks five random lines for spot checks."}
 {"instruction": "When do I use `shuf random lines`?", "input": "", "output": "`shuf file` randomizes (sampling, shuffling tests); `-n5` picks five random lines for spot checks."}
@@ -1010,10 +896,8 @@
 {"instruction": "How would you explain `shuf random lines` to a junior developer?", "input": "", "output": "`shuf file` randomizes (sampling, shuffling tests); `-n5` picks five random lines for spot checks."}
 {"instruction": "Give a real-world scenario for `shuf random lines`.", "input": "", "output": "`shuf file` randomizes (sampling, shuffling tests); `-n5` picks five random lines for spot checks."}
 {"instruction": "What problem does `shuf random lines` solve?", "input": "", "output": "`shuf file` randomizes (sampling, shuffling tests); `-n5` picks five random lines for spot checks."}
-{"instruction": "Terangkan `shuf random lines` dalam satu minit.", "input": "", "output": "`shuf file` randomizes (sampling, shuffling tests); `-n5` picks five random lines for spot checks."}
 {"instruction": "Apa yang perlu saya tahu tentang `shuf random lines`?", "input": "", "output": "`shuf file` randomizes (sampling, shuffling tests); `-n5` picks five random lines for spot checks."}
 {"instruction": "Bagaimanakah `shuf random lines` berfungsi?", "input": "", "output": "`shuf file` randomizes (sampling, shuffling tests); `-n5` picks five random lines for spot checks."}
-{"instruction": "Bilakah masa yang sesuai untuk `shuf random lines`?", "input": "", "output": "`shuf file` randomizes (sampling, shuffling tests); `-n5` picks five random lines for spot checks."}
 {"instruction": "What does `split large files` do?", "input": "", "output": "`split -l 1000 big.csv part_` chunks by lines (`-b 100M` by bytes); `cat part_*` reassembles."}
 {"instruction": "Explain `split large files` briefly.", "input": "", "output": "`split -l 1000 big.csv part_` chunks by lines (`-b 100M` by bytes); `cat part_*` reassembles."}
 {"instruction": "When do I use `split large files`?", "input": "", "output": "`split -l 1000 big.csv part_` chunks by lines (`-b 100M` by bytes); `cat part_*` reassembles."}
@@ -1027,10 +911,8 @@
 {"instruction": "How would you explain `split large files` to a junior developer?", "input": "", "output": "`split -l 1000 big.csv part_` chunks by lines (`-b 100M` by bytes); `cat part_*` reassembles."}
 {"instruction": "Give a real-world scenario for `split large files`.", "input": "", "output": "`split -l 1000 big.csv part_` chunks by lines (`-b 100M` by bytes); `cat part_*` reassembles."}
 {"instruction": "What problem does `split large files` solve?", "input": "", "output": "`split -l 1000 big.csv part_` chunks by lines (`-b 100M` by bytes); `cat part_*` reassembles."}
-{"instruction": "Terangkan `split large files` dalam satu minit.", "input": "", "output": "`split -l 1000 big.csv part_` chunks by lines (`-b 100M` by bytes); `cat part_*` reassembles."}
 {"instruction": "Apa yang perlu saya tahu tentang `split large files`?", "input": "", "output": "`split -l 1000 big.csv part_` chunks by lines (`-b 100M` by bytes); `cat part_*` reassembles."}
 {"instruction": "Bagaimanakah `split large files` berfungsi?", "input": "", "output": "`split -l 1000 big.csv part_` chunks by lines (`-b 100M` by bytes); `cat part_*` reassembles."}
-{"instruction": "Bilakah masa yang sesuai untuk `split large files`?", "input": "", "output": "`split -l 1000 big.csv part_` chunks by lines (`-b 100M` by bytes); `cat part_*` reassembles."}
 {"instruction": "What does `csplit context split` do?", "input": "", "output": "`csplit file '/^==/' '{*}'` splits on regex matches — one file per section for reports."}
 {"instruction": "Explain `csplit context split` briefly.", "input": "", "output": "`csplit file '/^==/' '{*}'` splits on regex matches — one file per section for reports."}
 {"instruction": "When do I use `csplit context split`?", "input": "", "output": "`csplit file '/^==/' '{*}'` splits on regex matches — one file per section for reports."}
@@ -1044,10 +926,8 @@
 {"instruction": "How would you explain `csplit context split` to a junior developer?", "input": "", "output": "`csplit file '/^==/' '{*}'` splits on regex matches — one file per section for reports."}
 {"instruction": "Give a real-world scenario for `csplit context split`.", "input": "", "output": "`csplit file '/^==/' '{*}'` splits on regex matches — one file per section for reports."}
 {"instruction": "What problem does `csplit context split` solve?", "input": "", "output": "`csplit file '/^==/' '{*}'` splits on regex matches — one file per section for reports."}
-{"instruction": "Terangkan `csplit context split` dalam satu minit.", "input": "", "output": "`csplit file '/^==/' '{*}'` splits on regex matches — one file per section for reports."}
 {"instruction": "Apa yang perlu saya tahu tentang `csplit context split`?", "input": "", "output": "`csplit file '/^==/' '{*}'` splits on regex matches — one file per section for reports."}
 {"instruction": "Bagaimanakah `csplit context split` berfungsi?", "input": "", "output": "`csplit file '/^==/' '{*}'` splits on regex matches — one file per section for reports."}
-{"instruction": "Bilakah masa yang sesuai untuk `csplit context split`?", "input": "", "output": "`csplit file '/^==/' '{*}'` splits on regex matches — one file per section for reports."}
 {"instruction": "What does `strings binaries` do?", "input": "", "output": "`strings app.bin | grep -i version` extracts readable text from binaries for quick forensics."}
 {"instruction": "Explain `strings binaries` briefly.", "input": "", "output": "`strings app.bin | grep -i version` extracts readable text from binaries for quick forensics."}
 {"instruction": "When do I use `strings binaries`?", "input": "", "output": "`strings app.bin | grep -i version` extracts readable text from binaries for quick forensics."}
@@ -1061,10 +941,8 @@
 {"instruction": "How would you explain `strings binaries` to a junior developer?", "input": "", "output": "`strings app.bin | grep -i version` extracts readable text from binaries for quick forensics."}
 {"instruction": "Give a real-world scenario for `strings binaries`.", "input": "", "output": "`strings app.bin | grep -i version` extracts readable text from binaries for quick forensics."}
 {"instruction": "What problem does `strings binaries` solve?", "input": "", "output": "`strings app.bin | grep -i version` extracts readable text from binaries for quick forensics."}
-{"instruction": "Terangkan `strings binaries` dalam satu minit.", "input": "", "output": "`strings app.bin | grep -i version` extracts readable text from binaries for quick forensics."}
 {"instruction": "Apa yang perlu saya tahu tentang `strings binaries`?", "input": "", "output": "`strings app.bin | grep -i version` extracts readable text from binaries for quick forensics."}
 {"instruction": "Bagaimanakah `strings binaries` berfungsi?", "input": "", "output": "`strings app.bin | grep -i version` extracts readable text from binaries for quick forensics."}
-{"instruction": "Bilakah masa yang sesuai untuk `strings binaries`?", "input": "", "output": "`strings app.bin | grep -i version` extracts readable text from binaries for quick forensics."}
 {"instruction": "What does `od hexdump bytes` do?", "input": "", "output": "`od -A x -t x1z file` hexdumps with ASCII sidecar; `xxd` is friendlier when installed."}
 {"instruction": "Explain `od hexdump bytes` briefly.", "input": "", "output": "`od -A x -t x1z file` hexdumps with ASCII sidecar; `xxd` is friendlier when installed."}
 {"instruction": "When do I use `od hexdump bytes`?", "input": "", "output": "`od -A x -t x1z file` hexdumps with ASCII sidecar; `xxd` is friendlier when installed."}
@@ -1078,10 +956,8 @@
 {"instruction": "How would you explain `od hexdump bytes` to a junior developer?", "input": "", "output": "`od -A x -t x1z file` hexdumps with ASCII sidecar; `xxd` is friendlier when installed."}
 {"instruction": "Give a real-world scenario for `od hexdump bytes`.", "input": "", "output": "`od -A x -t x1z file` hexdumps with ASCII sidecar; `xxd` is friendlier when installed."}
 {"instruction": "What problem does `od hexdump bytes` solve?", "input": "", "output": "`od -A x -t x1z file` hexdumps with ASCII sidecar; `xxd` is friendlier when installed."}
-{"instruction": "Terangkan `od hexdump bytes` dalam satu minit.", "input": "", "output": "`od -A x -t x1z file` hexdumps with ASCII sidecar; `xxd` is friendlier when installed."}
 {"instruction": "Apa yang perlu saya tahu tentang `od hexdump bytes`?", "input": "", "output": "`od -A x -t x1z file` hexdumps with ASCII sidecar; `xxd` is friendlier when installed."}
 {"instruction": "Bagaimanakah `od hexdump bytes` berfungsi?", "input": "", "output": "`od -A x -t x1z file` hexdumps with ASCII sidecar; `xxd` is friendlier when installed."}
-{"instruction": "Bilakah masa yang sesuai untuk `od hexdump bytes`?", "input": "", "output": "`od -A x -t x1z file` hexdumps with ASCII sidecar; `xxd` is friendlier when installed."}
 {"instruction": "What does `errexit pitfalls` do?", "input": "", "output": "`set -e` ignores failures in `if` tests, `&&`/`||` lists and traps — code that looks guarded still aborts. Audit every early-exit path; explicit `|| return 1` beats relying on errexit semantics nobody memorizes."}
 {"instruction": "Explain `errexit pitfalls` briefly.", "input": "", "output": "`set -e` ignores failures in `if` tests, `&&`/`||` lists and traps — code that looks guarded still aborts. Audit every early-exit path; explicit `|| return 1` beats relying on errexit semantics nobody memorizes."}
 {"instruction": "When do I use `errexit pitfalls`?", "input": "", "output": "`set -e` ignores failures in `if` tests, `&&`/`||` lists and traps — code that looks guarded still aborts. Audit every early-exit path; explicit `|| return 1` beats relying on errexit semantics nobody memorizes."}
@@ -1095,10 +971,8 @@
 {"instruction": "How would you explain `errexit pitfalls` to a junior developer?", "input": "", "output": "`set -e` ignores failures in `if` tests, `&&`/`||` lists and traps — code that looks guarded still aborts. Audit every early-exit path; explicit `|| return 1` beats relying on errexit semantics nobody memorizes."}
 {"instruction": "Give a real-world scenario for `errexit pitfalls`.", "input": "", "output": "`set -e` ignores failures in `if` tests, `&&`/`||` lists and traps — code that looks guarded still aborts. Audit every early-exit path; explicit `|| return 1` beats relying on errexit semantics nobody memorizes."}
 {"instruction": "What problem does `errexit pitfalls` solve?", "input": "", "output": "`set -e` ignores failures in `if` tests, `&&`/`||` lists and traps — code that looks guarded still aborts. Audit every early-exit path; explicit `|| return 1` beats relying on errexit semantics nobody memorizes."}
-{"instruction": "Terangkan `errexit pitfalls` dalam satu minit.", "input": "", "output": "`set -e` ignores failures in `if` tests, `&&`/`||` lists and traps — code that looks guarded still aborts. Audit every early-exit path; explicit `|| return 1` beats relying on errexit semantics nobody memorizes."}
 {"instruction": "Apa yang perlu saya tahu tentang `errexit pitfalls`?", "input": "", "output": "`set -e` ignores failures in `if` tests, `&&`/`||` lists and traps — code that looks guarded still aborts. Audit every early-exit path; explicit `|| return 1` beats relying on errexit semantics nobody memorizes."}
 {"instruction": "Bagaimanakah `errexit pitfalls` berfungsi?", "input": "", "output": "`set -e` ignores failures in `if` tests, `&&`/`||` lists and traps — code that looks guarded still aborts. Audit every early-exit path; explicit `|| return 1` beats relying on errexit semantics nobody memorizes."}
-{"instruction": "Bilakah masa yang sesuai untuk `errexit pitfalls`?", "input": "", "output": "`set -e` ignores failures in `if` tests, `&&`/`||` lists and traps — code that looks guarded still aborts. Audit every early-exit path; explicit `|| return 1` beats relying on errexit semantics nobody memorizes."}
 {"instruction": "What does `nounset empty arrays` do?", "input": "", "output": "`set -u` treats empty arrays as unbound (`${arr[@]}` errors when empty); guard with `${arr[@]:-}` or length checks. Strict mode needs these idioms or scripts die on legitimate empties."}
 {"instruction": "Explain `nounset empty arrays` briefly.", "input": "", "output": "`set -u` treats empty arrays as unbound (`${arr[@]}` errors when empty); guard with `${arr[@]:-}` or length checks. Strict mode needs these idioms or scripts die on legitimate empties."}
 {"instruction": "When do I use `nounset empty arrays`?", "input": "", "output": "`set -u` treats empty arrays as unbound (`${arr[@]}` errors when empty); guard with `${arr[@]:-}` or length checks. Strict mode needs these idioms or scripts die on legitimate empties."}
@@ -1112,10 +986,8 @@
 {"instruction": "How would you explain `nounset empty arrays` to a junior developer?", "input": "", "output": "`set -u` treats empty arrays as unbound (`${arr[@]}` errors when empty); guard with `${arr[@]:-}` or length checks. Strict mode needs these idioms or scripts die on legitimate empties."}
 {"instruction": "Give a real-world scenario for `nounset empty arrays`.", "input": "", "output": "`set -u` treats empty arrays as unbound (`${arr[@]}` errors when empty); guard with `${arr[@]:-}` or length checks. Strict mode needs these idioms or scripts die on legitimate empties."}
 {"instruction": "What problem does `nounset empty arrays` solve?", "input": "", "output": "`set -u` treats empty arrays as unbound (`${arr[@]}` errors when empty); guard with `${arr[@]:-}` or length checks. Strict mode needs these idioms or scripts die on legitimate empties."}
-{"instruction": "Terangkan `nounset empty arrays` dalam satu minit.", "input": "", "output": "`set -u` treats empty arrays as unbound (`${arr[@]}` errors when empty); guard with `${arr[@]:-}` or length checks. Strict mode needs these idioms or scripts die on legitimate empties."}
 {"instruction": "Apa yang perlu saya tahu tentang `nounset empty arrays`?", "input": "", "output": "`set -u` treats empty arrays as unbound (`${arr[@]}` errors when empty); guard with `${arr[@]:-}` or length checks. Strict mode needs these idioms or scripts die on legitimate empties."}
 {"instruction": "Bagaimanakah `nounset empty arrays` berfungsi?", "input": "", "output": "`set -u` treats empty arrays as unbound (`${arr[@]}` errors when empty); guard with `${arr[@]:-}` or length checks. Strict mode needs these idioms or scripts die on legitimate empties."}
-{"instruction": "Bilakah masa yang sesuai untuk `nounset empty arrays`?", "input": "", "output": "`set -u` treats empty arrays as unbound (`${arr[@]}` errors when empty); guard with `${arr[@]:-}` or length checks. Strict mode needs these idioms or scripts die on legitimate empties."}
 {"instruction": "What does `PIPESTATUS check` do?", "input": "", "output": "`${PIPESTATUS[0]}` reveals the left side's code after pipelines (`false | true` exits 0 otherwise). Log all three elements for debuggability in ETL scripts."}
 {"instruction": "Explain `PIPESTATUS check` briefly.", "input": "", "output": "`${PIPESTATUS[0]}` reveals the left side's code after pipelines (`false | true` exits 0 otherwise). Log all three elements for debuggability in ETL scripts."}
 {"instruction": "When do I use `PIPESTATUS check`?", "input": "", "output": "`${PIPESTATUS[0]}` reveals the left side's code after pipelines (`false | true` exits 0 otherwise). Log all three elements for debuggability in ETL scripts."}
@@ -1129,10 +1001,8 @@
 {"instruction": "How would you explain `PIPESTATUS check` to a junior developer?", "input": "", "output": "`${PIPESTATUS[0]}` reveals the left side's code after pipelines (`false | true` exits 0 otherwise). Log all three elements for debuggability in ETL scripts."}
 {"instruction": "Give a real-world scenario for `PIPESTATUS check`.", "input": "", "output": "`${PIPESTATUS[0]}` reveals the left side's code after pipelines (`false | true` exits 0 otherwise). Log all three elements for debuggability in ETL scripts."}
 {"instruction": "What problem does `PIPESTATUS check` solve?", "input": "", "output": "`${PIPESTATUS[0]}` reveals the left side's code after pipelines (`false | true` exits 0 otherwise). Log all three elements for debuggability in ETL scripts."}
-{"instruction": "Terangkan `PIPESTATUS check` dalam satu minit.", "input": "", "output": "`${PIPESTATUS[0]}` reveals the left side's code after pipelines (`false | true` exits 0 otherwise). Log all three elements for debuggability in ETL scripts."}
 {"instruction": "Apa yang perlu saya tahu tentang `PIPESTATUS check`?", "input": "", "output": "`${PIPESTATUS[0]}` reveals the left side's code after pipelines (`false | true` exits 0 otherwise). Log all three elements for debuggability in ETL scripts."}
 {"instruction": "Bagaimanakah `PIPESTATUS check` berfungsi?", "input": "", "output": "`${PIPESTATUS[0]}` reveals the left side's code after pipelines (`false | true` exits 0 otherwise). Log all three elements for debuggability in ETL scripts."}
-{"instruction": "Bilakah masa yang sesuai untuk `PIPESTATUS check`?", "input": "", "output": "`${PIPESTATUS[0]}` reveals the left side's code after pipelines (`false | true` exits 0 otherwise). Log all three elements for debuggability in ETL scripts."}
 {"instruction": "What does `IFS field tricks` do?", "input": "", "output": "`IFS=, read -ra parts <<< $line` splits CSV-ish input; save/restore IFS around changes — global IFS mutation corrupts later word splitting invisibly."}
 {"instruction": "Explain `IFS field tricks` briefly.", "input": "", "output": "`IFS=, read -ra parts <<< $line` splits CSV-ish input; save/restore IFS around changes — global IFS mutation corrupts later word splitting invisibly."}
 {"instruction": "When do I use `IFS field tricks`?", "input": "", "output": "`IFS=, read -ra parts <<< $line` splits CSV-ish input; save/restore IFS around changes — global IFS mutation corrupts later word splitting invisibly."}
@@ -1146,10 +1016,8 @@
 {"instruction": "How would you explain `IFS field tricks` to a junior developer?", "input": "", "output": "`IFS=, read -ra parts <<< $line` splits CSV-ish input; save/restore IFS around changes — global IFS mutation corrupts later word splitting invisibly."}
 {"instruction": "Give a real-world scenario for `IFS field tricks`.", "input": "", "output": "`IFS=, read -ra parts <<< $line` splits CSV-ish input; save/restore IFS around changes — global IFS mutation corrupts later word splitting invisibly."}
 {"instruction": "What problem does `IFS field tricks` solve?", "input": "", "output": "`IFS=, read -ra parts <<< $line` splits CSV-ish input; save/restore IFS around changes — global IFS mutation corrupts later word splitting invisibly."}
-{"instruction": "Terangkan `IFS field tricks` dalam satu minit.", "input": "", "output": "`IFS=, read -ra parts <<< $line` splits CSV-ish input; save/restore IFS around changes — global IFS mutation corrupts later word splitting invisibly."}
 {"instruction": "Apa yang perlu saya tahu tentang `IFS field tricks`?", "input": "", "output": "`IFS=, read -ra parts <<< $line` splits CSV-ish input; save/restore IFS around changes — global IFS mutation corrupts later word splitting invisibly."}
 {"instruction": "Bagaimanakah `IFS field tricks` berfungsi?", "input": "", "output": "`IFS=, read -ra parts <<< $line` splits CSV-ish input; save/restore IFS around changes — global IFS mutation corrupts later word splitting invisibly."}
-{"instruction": "Bilakah masa yang sesuai untuk `IFS field tricks`?", "input": "", "output": "`IFS=, read -ra parts <<< $line` splits CSV-ish input; save/restore IFS around changes — global IFS mutation corrupts later word splitting invisibly."}
 {"instruction": "What does `globstar extglob` do?", "input": "", "output": "`shopt -s globstar` enables `**` recursion; `extglob` adds `?( )`, `*( )`, `+( )` patterns. Quote or escape when passing globs to remote shells — double expansion bites."}
 {"instruction": "Explain `globstar extglob` briefly.", "input": "", "output": "`shopt -s globstar` enables `**` recursion; `extglob` adds `?( )`, `*( )`, `+( )` patterns. Quote or escape when passing globs to remote shells — double expansion bites."}
 {"instruction": "When do I use `globstar extglob`?", "input": "", "output": "`shopt -s globstar` enables `**` recursion; `extglob` adds `?( )`, `*( )`, `+( )` patterns. Quote or escape when passing globs to remote shells — double expansion bites."}
@@ -1163,10 +1031,8 @@
 {"instruction": "How would you explain `globstar extglob` to a junior developer?", "input": "", "output": "`shopt -s globstar` enables `**` recursion; `extglob` adds `?( )`, `*( )`, `+( )` patterns. Quote or escape when passing globs to remote shells — double expansion bites."}
 {"instruction": "Give a real-world scenario for `globstar extglob`.", "input": "", "output": "`shopt -s globstar` enables `**` recursion; `extglob` adds `?( )`, `*( )`, `+( )` patterns. Quote or escape when passing globs to remote shells — double expansion bites."}
 {"instruction": "What problem does `globstar extglob` solve?", "input": "", "output": "`shopt -s globstar` enables `**` recursion; `extglob` adds `?( )`, `*( )`, `+( )` patterns. Quote or escape when passing globs to remote shells — double expansion bites."}
-{"instruction": "Terangkan `globstar extglob` dalam satu minit.", "input": "", "output": "`shopt -s globstar` enables `**` recursion; `extglob` adds `?( )`, `*( )`, `+( )` patterns. Quote or escape when passing globs to remote shells — double expansion bites."}
 {"instruction": "Apa yang perlu saya tahu tentang `globstar extglob`?", "input": "", "output": "`shopt -s globstar` enables `**` recursion; `extglob` adds `?( )`, `*( )`, `+( )` patterns. Quote or escape when passing globs to remote shells — double expansion bites."}
 {"instruction": "Bagaimanakah `globstar extglob` berfungsi?", "input": "", "output": "`shopt -s globstar` enables `**` recursion; `extglob` adds `?( )`, `*( )`, `+( )` patterns. Quote or escape when passing globs to remote shells — double expansion bites."}
-{"instruction": "Bilakah masa yang sesuai untuk `globstar extglob`?", "input": "", "output": "`shopt -s globstar` enables `**` recursion; `extglob` adds `?( )`, `*( )`, `+( )` patterns. Quote or escape when passing globs to remote shells — double expansion bites."}
 {"instruction": "What does `assoc key ops` do?", "input": "", "output": "`declare -A m; m[k]=v; ${!m[@]}` iterates keys; `${#m[@]}` counts. Associative arrays need bash 4+ (macOS ships 3.2 — check first)."}
 {"instruction": "Explain `assoc key ops` briefly.", "input": "", "output": "`declare -A m; m[k]=v; ${!m[@]}` iterates keys; `${#m[@]}` counts. Associative arrays need bash 4+ (macOS ships 3.2 — check first)."}
 {"instruction": "When do I use `assoc key ops`?", "input": "", "output": "`declare -A m; m[k]=v; ${!m[@]}` iterates keys; `${#m[@]}` counts. Associative arrays need bash 4+ (macOS ships 3.2 — check first)."}
@@ -1180,10 +1046,8 @@
 {"instruction": "How would you explain `assoc key ops` to a junior developer?", "input": "", "output": "`declare -A m; m[k]=v; ${!m[@]}` iterates keys; `${#m[@]}` counts. Associative arrays need bash 4+ (macOS ships 3.2 — check first)."}
 {"instruction": "Give a real-world scenario for `assoc key ops`.", "input": "", "output": "`declare -A m; m[k]=v; ${!m[@]}` iterates keys; `${#m[@]}` counts. Associative arrays need bash 4+ (macOS ships 3.2 — check first)."}
 {"instruction": "What problem does `assoc key ops` solve?", "input": "", "output": "`declare -A m; m[k]=v; ${!m[@]}` iterates keys; `${#m[@]}` counts. Associative arrays need bash 4+ (macOS ships 3.2 — check first)."}
-{"instruction": "Terangkan `assoc key ops` dalam satu minit.", "input": "", "output": "`declare -A m; m[k]=v; ${!m[@]}` iterates keys; `${#m[@]}` counts. Associative arrays need bash 4+ (macOS ships 3.2 — check first)."}
 {"instruction": "Apa yang perlu saya tahu tentang `assoc key ops`?", "input": "", "output": "`declare -A m; m[k]=v; ${!m[@]}` iterates keys; `${#m[@]}` counts. Associative arrays need bash 4+ (macOS ships 3.2 — check first)."}
 {"instruction": "Bagaimanakah `assoc key ops` berfungsi?", "input": "", "output": "`declare -A m; m[k]=v; ${!m[@]}` iterates keys; `${#m[@]}` counts. Associative arrays need bash 4+ (macOS ships 3.2 — check first)."}
-{"instruction": "Bilakah masa yang sesuai untuk `assoc key ops`?", "input": "", "output": "`declare -A m; m[k]=v; ${!m[@]}` iterates keys; `${#m[@]}` counts. Associative arrays need bash 4+ (macOS ships 3.2 — check first)."}
 {"instruction": "What does `nameref declare -n` do?", "input": "", "output": "`declare -n ref=$1` aliases variables by name for generic functions (pass-by-reference); circular names recurse infinitely — validate inputs."}
 {"instruction": "Explain `nameref declare -n` briefly.", "input": "", "output": "`declare -n ref=$1` aliases variables by name for generic functions (pass-by-reference); circular names recurse infinitely — validate inputs."}
 {"instruction": "When do I use `nameref declare -n`?", "input": "", "output": "`declare -n ref=$1` aliases variables by name for generic functions (pass-by-reference); circular names recurse infinitely — validate inputs."}
@@ -1197,10 +1061,8 @@
 {"instruction": "How would you explain `nameref declare -n` to a junior developer?", "input": "", "output": "`declare -n ref=$1` aliases variables by name for generic functions (pass-by-reference); circular names recurse infinitely — validate inputs."}
 {"instruction": "Give a real-world scenario for `nameref declare -n`.", "input": "", "output": "`declare -n ref=$1` aliases variables by name for generic functions (pass-by-reference); circular names recurse infinitely — validate inputs."}
 {"instruction": "What problem does `nameref declare -n` solve?", "input": "", "output": "`declare -n ref=$1` aliases variables by name for generic functions (pass-by-reference); circular names recurse infinitely — validate inputs."}
-{"instruction": "Terangkan `nameref declare -n` dalam satu minit.", "input": "", "output": "`declare -n ref=$1` aliases variables by name for generic functions (pass-by-reference); circular names recurse infinitely — validate inputs."}
 {"instruction": "Apa yang perlu saya tahu tentang `nameref declare -n`?", "input": "", "output": "`declare -n ref=$1` aliases variables by name for generic functions (pass-by-reference); circular names recurse infinitely — validate inputs."}
 {"instruction": "Bagaimanakah `nameref declare -n` berfungsi?", "input": "", "output": "`declare -n ref=$1` aliases variables by name for generic functions (pass-by-reference); circular names recurse infinitely — validate inputs."}
-{"instruction": "Bilakah masa yang sesuai untuk `nameref declare -n`?", "input": "", "output": "`declare -n ref=$1` aliases variables by name for generic functions (pass-by-reference); circular names recurse infinitely — validate inputs."}
 {"instruction": "What does `mapfile delimiter` do?", "input": "", "output": "`mapfile -d '' -t arr < <(find . -print0)` loads NUL-delimited safely; `-s/-n` skip/take windows for chunked processing."}
 {"instruction": "Explain `mapfile delimiter` briefly.", "input": "", "output": "`mapfile -d '' -t arr < <(find . -print0)` loads NUL-delimited safely; `-s/-n` skip/take windows for chunked processing."}
 {"instruction": "When do I use `mapfile delimiter`?", "input": "", "output": "`mapfile -d '' -t arr < <(find . -print0)` loads NUL-delimited safely; `-s/-n` skip/take windows for chunked processing."}
@@ -1214,10 +1076,8 @@
 {"instruction": "How would you explain `mapfile delimiter` to a junior developer?", "input": "", "output": "`mapfile -d '' -t arr < <(find . -print0)` loads NUL-delimited safely; `-s/-n` skip/take windows for chunked processing."}
 {"instruction": "Give a real-world scenario for `mapfile delimiter`.", "input": "", "output": "`mapfile -d '' -t arr < <(find . -print0)` loads NUL-delimited safely; `-s/-n` skip/take windows for chunked processing."}
 {"instruction": "What problem does `mapfile delimiter` solve?", "input": "", "output": "`mapfile -d '' -t arr < <(find . -print0)` loads NUL-delimited safely; `-s/-n` skip/take windows for chunked processing."}
-{"instruction": "Terangkan `mapfile delimiter` dalam satu minit.", "input": "", "output": "`mapfile -d '' -t arr < <(find . -print0)` loads NUL-delimited safely; `-s/-n` skip/take windows for chunked processing."}
 {"instruction": "Apa yang perlu saya tahu tentang `mapfile delimiter`?", "input": "", "output": "`mapfile -d '' -t arr < <(find . -print0)` loads NUL-delimited safely; `-s/-n` skip/take windows for chunked processing."}
 {"instruction": "Bagaimanakah `mapfile delimiter` berfungsi?", "input": "", "output": "`mapfile -d '' -t arr < <(find . -print0)` loads NUL-delimited safely; `-s/-n` skip/take windows for chunked processing."}
-{"instruction": "Bilakah masa yang sesuai untuk `mapfile delimiter`?", "input": "", "output": "`mapfile -d '' -t arr < <(find . -print0)` loads NUL-delimited safely; `-s/-n` skip/take windows for chunked processing."}
 {"instruction": "What does `read array -a` do?", "input": "", "output": "`read -ra parts <<< $line` splits one line to array honoring IFS; combine with process substitution for pipeline input."}
 {"instruction": "Explain `read array -a` briefly.", "input": "", "output": "`read -ra parts <<< $line` splits one line to array honoring IFS; combine with process substitution for pipeline input."}
 {"instruction": "When do I use `read array -a`?", "input": "", "output": "`read -ra parts <<< $line` splits one line to array honoring IFS; combine with process substitution for pipeline input."}
@@ -1231,10 +1091,8 @@
 {"instruction": "How would you explain `read array -a` to a junior developer?", "input": "", "output": "`read -ra parts <<< $line` splits one line to array honoring IFS; combine with process substitution for pipeline input."}
 {"instruction": "Give a real-world scenario for `read array -a`.", "input": "", "output": "`read -ra parts <<< $line` splits one line to array honoring IFS; combine with process substitution for pipeline input."}
 {"instruction": "What problem does `read array -a` solve?", "input": "", "output": "`read -ra parts <<< $line` splits one line to array honoring IFS; combine with process substitution for pipeline input."}
-{"instruction": "Terangkan `read array -a` dalam satu minit.", "input": "", "output": "`read -ra parts <<< $line` splits one line to array honoring IFS; combine with process substitution for pipeline input."}
 {"instruction": "Apa yang perlu saya tahu tentang `read array -a`?", "input": "", "output": "`read -ra parts <<< $line` splits one line to array honoring IFS; combine with process substitution for pipeline input."}
 {"instruction": "Bagaimanakah `read array -a` berfungsi?", "input": "", "output": "`read -ra parts <<< $line` splits one line to array honoring IFS; combine with process substitution for pipeline input."}
-{"instruction": "Bilakah masa yang sesuai untuk `read array -a`?", "input": "", "output": "`read -ra parts <<< $line` splits one line to array honoring IFS; combine with process substitution for pipeline input."}
 {"instruction": "What does `select PS3 custom` do?", "input": "", "output": "`PS3='Pilih: '` customizes the select prompt; `REPLY` holds raw input for validation before acting on `$opt`."}
 {"instruction": "Explain `select PS3 custom` briefly.", "input": "", "output": "`PS3='Pilih: '` customizes the select prompt; `REPLY` holds raw input for validation before acting on `$opt`."}
 {"instruction": "When do I use `select PS3 custom`?", "input": "", "output": "`PS3='Pilih: '` customizes the select prompt; `REPLY` holds raw input for validation before acting on `$opt`."}
@@ -1248,10 +1106,8 @@
 {"instruction": "How would you explain `select PS3 custom` to a junior developer?", "input": "", "output": "`PS3='Pilih: '` customizes the select prompt; `REPLY` holds raw input for validation before acting on `$opt`."}
 {"instruction": "Give a real-world scenario for `select PS3 custom`.", "input": "", "output": "`PS3='Pilih: '` customizes the select prompt; `REPLY` holds raw input for validation before acting on `$opt`."}
 {"instruction": "What problem does `select PS3 custom` solve?", "input": "", "output": "`PS3='Pilih: '` customizes the select prompt; `REPLY` holds raw input for validation before acting on `$opt`."}
-{"instruction": "Terangkan `select PS3 custom` dalam satu minit.", "input": "", "output": "`PS3='Pilih: '` customizes the select prompt; `REPLY` holds raw input for validation before acting on `$opt`."}
 {"instruction": "Apa yang perlu saya tahu tentang `select PS3 custom`?", "input": "", "output": "`PS3='Pilih: '` customizes the select prompt; `REPLY` holds raw input for validation before acting on `$opt`."}
 {"instruction": "Bagaimanakah `select PS3 custom` berfungsi?", "input": "", "output": "`PS3='Pilih: '` customizes the select prompt; `REPLY` holds raw input for validation before acting on `$opt`."}
-{"instruction": "Bilakah masa yang sesuai untuk `select PS3 custom`?", "input": "", "output": "`PS3='Pilih: '` customizes the select prompt; `REPLY` holds raw input for validation before acting on `$opt`."}
 {"instruction": "What does `getopts silent errors` do?", "input": "", "output": "Leading `:` in optstring (`':f:'`) silences built-in errors so `\\?`/\\:` cases handle misuse with custom messages."}
 {"instruction": "Explain `getopts silent errors` briefly.", "input": "", "output": "Leading `:` in optstring (`':f:'`) silences built-in errors so `\\?`/\\:` cases handle misuse with custom messages."}
 {"instruction": "When do I use `getopts silent errors`?", "input": "", "output": "Leading `:` in optstring (`':f:'`) silences built-in errors so `\\?`/\\:` cases handle misuse with custom messages."}
@@ -1265,10 +1121,8 @@
 {"instruction": "How would you explain `getopts silent errors` to a junior developer?", "input": "", "output": "Leading `:` in optstring (`':f:'`) silences built-in errors so `\\?`/\\:` cases handle misuse with custom messages."}
 {"instruction": "Give a real-world scenario for `getopts silent errors`.", "input": "", "output": "Leading `:` in optstring (`':f:'`) silences built-in errors so `\\?`/\\:` cases handle misuse with custom messages."}
 {"instruction": "What problem does `getopts silent errors` solve?", "input": "", "output": "Leading `:` in optstring (`':f:'`) silences built-in errors so `\\?`/\\:` cases handle misuse with custom messages."}
-{"instruction": "Terangkan `getopts silent errors` dalam satu minit.", "input": "", "output": "Leading `:` in optstring (`':f:'`) silences built-in errors so `\\?`/\\:` cases handle misuse with custom messages."}
 {"instruction": "Apa yang perlu saya tahu tentang `getopts silent errors`?", "input": "", "output": "Leading `:` in optstring (`':f:'`) silences built-in errors so `\\?`/\\:` cases handle misuse with custom messages."}
 {"instruction": "Bagaimanakah `getopts silent errors` berfungsi?", "input": "", "output": "Leading `:` in optstring (`':f:'`) silences built-in errors so `\\?`/\\:` cases handle misuse with custom messages."}
-{"instruction": "Bilakah masa yang sesuai untuk `getopts silent errors`?", "input": "", "output": "Leading `:` in optstring (`':f:'`) silences built-in errors so `\\?`/\\:` cases handle misuse with custom messages."}
 {"instruction": "What does `umask in scripts` do?", "input": "", "output": "`umask 077` makes created files owner-only (secrets, keys); `022` is the shareable default. Set explicitly — inherited umasks vary by login context."}
 {"instruction": "Explain `umask in scripts` briefly.", "input": "", "output": "`umask 077` makes created files owner-only (secrets, keys); `022` is the shareable default. Set explicitly — inherited umasks vary by login context."}
 {"instruction": "When do I use `umask in scripts`?", "input": "", "output": "`umask 077` makes created files owner-only (secrets, keys); `022` is the shareable default. Set explicitly — inherited umasks vary by login context."}
@@ -1282,10 +1136,8 @@
 {"instruction": "How would you explain `umask in scripts` to a junior developer?", "input": "", "output": "`umask 077` makes created files owner-only (secrets, keys); `022` is the shareable default. Set explicitly — inherited umasks vary by login context."}
 {"instruction": "Give a real-world scenario for `umask in scripts`.", "input": "", "output": "`umask 077` makes created files owner-only (secrets, keys); `022` is the shareable default. Set explicitly — inherited umasks vary by login context."}
 {"instruction": "What problem does `umask in scripts` solve?", "input": "", "output": "`umask 077` makes created files owner-only (secrets, keys); `022` is the shareable default. Set explicitly — inherited umasks vary by login context."}
-{"instruction": "Terangkan `umask in scripts` dalam satu minit.", "input": "", "output": "`umask 077` makes created files owner-only (secrets, keys); `022` is the shareable default. Set explicitly — inherited umasks vary by login context."}
 {"instruction": "Apa yang perlu saya tahu tentang `umask in scripts`?", "input": "", "output": "`umask 077` makes created files owner-only (secrets, keys); `022` is the shareable default. Set explicitly — inherited umasks vary by login context."}
 {"instruction": "Bagaimanakah `umask in scripts` berfungsi?", "input": "", "output": "`umask 077` makes created files owner-only (secrets, keys); `022` is the shareable default. Set explicitly — inherited umasks vary by login context."}
-{"instruction": "Bilakah masa yang sesuai untuk `umask in scripts`?", "input": "", "output": "`umask 077` makes created files owner-only (secrets, keys); `022` is the shareable default. Set explicitly — inherited umasks vary by login context."}
 {"instruction": "What does `mktemp secure files` do?", "input": "", "output": "`tmp=$(mktemp -d)` plus `trap 'rm -rf $tmp' EXIT` is the only safe temp pattern; predictable `/tmp` names invite symlink attacks."}
 {"instruction": "Explain `mktemp secure files` briefly.", "input": "", "output": "`tmp=$(mktemp -d)` plus `trap 'rm -rf $tmp' EXIT` is the only safe temp pattern; predictable `/tmp` names invite symlink attacks."}
 {"instruction": "When do I use `mktemp secure files`?", "input": "", "output": "`tmp=$(mktemp -d)` plus `trap 'rm -rf $tmp' EXIT` is the only safe temp pattern; predictable `/tmp` names invite symlink attacks."}
@@ -1299,10 +1151,8 @@
 {"instruction": "How would you explain `mktemp secure files` to a junior developer?", "input": "", "output": "`tmp=$(mktemp -d)` plus `trap 'rm -rf $tmp' EXIT` is the only safe temp pattern; predictable `/tmp` names invite symlink attacks."}
 {"instruction": "Give a real-world scenario for `mktemp secure files`.", "input": "", "output": "`tmp=$(mktemp -d)` plus `trap 'rm -rf $tmp' EXIT` is the only safe temp pattern; predictable `/tmp` names invite symlink attacks."}
 {"instruction": "What problem does `mktemp secure files` solve?", "input": "", "output": "`tmp=$(mktemp -d)` plus `trap 'rm -rf $tmp' EXIT` is the only safe temp pattern; predictable `/tmp` names invite symlink attacks."}
-{"instruction": "Terangkan `mktemp secure files` dalam satu minit.", "input": "", "output": "`tmp=$(mktemp -d)` plus `trap 'rm -rf $tmp' EXIT` is the only safe temp pattern; predictable `/tmp` names invite symlink attacks."}
 {"instruction": "Apa yang perlu saya tahu tentang `mktemp secure files`?", "input": "", "output": "`tmp=$(mktemp -d)` plus `trap 'rm -rf $tmp' EXIT` is the only safe temp pattern; predictable `/tmp` names invite symlink attacks."}
 {"instruction": "Bagaimanakah `mktemp secure files` berfungsi?", "input": "", "output": "`tmp=$(mktemp -d)` plus `trap 'rm -rf $tmp' EXIT` is the only safe temp pattern; predictable `/tmp` names invite symlink attacks."}
-{"instruction": "Bilakah masa yang sesuai untuk `mktemp secure files`?", "input": "", "output": "`tmp=$(mktemp -d)` plus `trap 'rm -rf $tmp' EXIT` is the only safe temp pattern; predictable `/tmp` names invite symlink attacks."}
 {"instruction": "What does `diff exit codes` do?", "input": "", "output": "`diff -q` returns 0 identical, 1 different, 2 trouble — scripts must distinguish 'different' from 'error', or deploys misfire."}
 {"instruction": "Explain `diff exit codes` briefly.", "input": "", "output": "`diff -q` returns 0 identical, 1 different, 2 trouble — scripts must distinguish 'different' from 'error', or deploys misfire."}
 {"instruction": "When do I use `diff exit codes`?", "input": "", "output": "`diff -q` returns 0 identical, 1 different, 2 trouble — scripts must distinguish 'different' from 'error', or deploys misfire."}
@@ -1316,10 +1166,8 @@
 {"instruction": "How would you explain `diff exit codes` to a junior developer?", "input": "", "output": "`diff -q` returns 0 identical, 1 different, 2 trouble — scripts must distinguish 'different' from 'error', or deploys misfire."}
 {"instruction": "Give a real-world scenario for `diff exit codes`.", "input": "", "output": "`diff -q` returns 0 identical, 1 different, 2 trouble — scripts must distinguish 'different' from 'error', or deploys misfire."}
 {"instruction": "What problem does `diff exit codes` solve?", "input": "", "output": "`diff -q` returns 0 identical, 1 different, 2 trouble — scripts must distinguish 'different' from 'error', or deploys misfire."}
-{"instruction": "Terangkan `diff exit codes` dalam satu minit.", "input": "", "output": "`diff -q` returns 0 identical, 1 different, 2 trouble — scripts must distinguish 'different' from 'error', or deploys misfire."}
 {"instruction": "Apa yang perlu saya tahu tentang `diff exit codes`?", "input": "", "output": "`diff -q` returns 0 identical, 1 different, 2 trouble — scripts must distinguish 'different' from 'error', or deploys misfire."}
 {"instruction": "Bagaimanakah `diff exit codes` berfungsi?", "input": "", "output": "`diff -q` returns 0 identical, 1 different, 2 trouble — scripts must distinguish 'different' from 'error', or deploys misfire."}
-{"instruction": "Bilakah masa yang sesuai untuk `diff exit codes`?", "input": "", "output": "`diff -q` returns 0 identical, 1 different, 2 trouble — scripts must distinguish 'different' from 'error', or deploys misfire."}
 {"instruction": "What does `brace expansion` do?", "input": "", "output": "`mkdir -p proj/{src,test,docs}` and `cp file{,.bak}` expand client-side before execution — loops unrolled without loops."}
 {"instruction": "Explain `brace expansion` briefly.", "input": "", "output": "`mkdir -p proj/{src,test,docs}` and `cp file{,.bak}` expand client-side before execution — loops unrolled without loops."}
 {"instruction": "When do I use `brace expansion`?", "input": "", "output": "`mkdir -p proj/{src,test,docs}` and `cp file{,.bak}` expand client-side before execution — loops unrolled without loops."}
@@ -1333,10 +1181,8 @@
 {"instruction": "How would you explain `brace expansion` to a junior developer?", "input": "", "output": "`mkdir -p proj/{src,test,docs}` and `cp file{,.bak}` expand client-side before execution — loops unrolled without loops."}
 {"instruction": "Give a real-world scenario for `brace expansion`.", "input": "", "output": "`mkdir -p proj/{src,test,docs}` and `cp file{,.bak}` expand client-side before execution — loops unrolled without loops."}
 {"instruction": "What problem does `brace expansion` solve?", "input": "", "output": "`mkdir -p proj/{src,test,docs}` and `cp file{,.bak}` expand client-side before execution — loops unrolled without loops."}
-{"instruction": "Terangkan `brace expansion` dalam satu minit.", "input": "", "output": "`mkdir -p proj/{src,test,docs}` and `cp file{,.bak}` expand client-side before execution — loops unrolled without loops."}
 {"instruction": "Apa yang perlu saya tahu tentang `brace expansion`?", "input": "", "output": "`mkdir -p proj/{src,test,docs}` and `cp file{,.bak}` expand client-side before execution — loops unrolled without loops."}
 {"instruction": "Bagaimanakah `brace expansion` berfungsi?", "input": "", "output": "`mkdir -p proj/{src,test,docs}` and `cp file{,.bak}` expand client-side before execution — loops unrolled without loops."}
-{"instruction": "Bilakah masa yang sesuai untuk `brace expansion`?", "input": "", "output": "`mkdir -p proj/{src,test,docs}` and `cp file{,.bak}` expand client-side before execution — loops unrolled without loops."}
 {"instruction": "What does `disown huponexit` do?", "input": "", "output": "`disown` detaches jobs from hangup signals; `shopt -s huponexit` reverses the default — long deploys survive closed laptops."}
 {"instruction": "Explain `disown huponexit` briefly.", "input": "", "output": "`disown` detaches jobs from hangup signals; `shopt -s huponexit` reverses the default — long deploys survive closed laptops."}
 {"instruction": "When do I use `disown huponexit`?", "input": "", "output": "`disown` detaches jobs from hangup signals; `shopt -s huponexit` reverses the default — long deploys survive closed laptops."}
@@ -1350,10 +1196,8 @@
 {"instruction": "How would you explain `disown huponexit` to a junior developer?", "input": "", "output": "`disown` detaches jobs from hangup signals; `shopt -s huponexit` reverses the default — long deploys survive closed laptops."}
 {"instruction": "Give a real-world scenario for `disown huponexit`.", "input": "", "output": "`disown` detaches jobs from hangup signals; `shopt -s huponexit` reverses the default — long deploys survive closed laptops."}
 {"instruction": "What problem does `disown huponexit` solve?", "input": "", "output": "`disown` detaches jobs from hangup signals; `shopt -s huponexit` reverses the default — long deploys survive closed laptops."}
-{"instruction": "Terangkan `disown huponexit` dalam satu minit.", "input": "", "output": "`disown` detaches jobs from hangup signals; `shopt -s huponexit` reverses the default — long deploys survive closed laptops."}
 {"instruction": "Apa yang perlu saya tahu tentang `disown huponexit`?", "input": "", "output": "`disown` detaches jobs from hangup signals; `shopt -s huponexit` reverses the default — long deploys survive closed laptops."}
 {"instruction": "Bagaimanakah `disown huponexit` berfungsi?", "input": "", "output": "`disown` detaches jobs from hangup signals; `shopt -s huponexit` reverses the default — long deploys survive closed laptops."}
-{"instruction": "Bilakah masa yang sesuai untuk `disown huponexit`?", "input": "", "output": "`disown` detaches jobs from hangup signals; `shopt -s huponexit` reverses the default — long deploys survive closed laptops."}
 {"instruction": "What does `wait -n -p` do?", "input": "", "output": "`wait -n` returns as any child finishes (first-done patterns); `-p` names which — fan-out/fan-in without temp files."}
 {"instruction": "Explain `wait -n -p` briefly.", "input": "", "output": "`wait -n` returns as any child finishes (first-done patterns); `-p` names which — fan-out/fan-in without temp files."}
 {"instruction": "When do I use `wait -n -p`?", "input": "", "output": "`wait -n` returns as any child finishes (first-done patterns); `-p` names which — fan-out/fan-in without temp files."}
@@ -1367,10 +1211,8 @@
 {"instruction": "How would you explain `wait -n -p` to a junior developer?", "input": "", "output": "`wait -n` returns as any child finishes (first-done patterns); `-p` names which — fan-out/fan-in without temp files."}
 {"instruction": "Give a real-world scenario for `wait -n -p`.", "input": "", "output": "`wait -n` returns as any child finishes (first-done patterns); `-p` names which — fan-out/fan-in without temp files."}
 {"instruction": "What problem does `wait -n -p` solve?", "input": "", "output": "`wait -n` returns as any child finishes (first-done patterns); `-p` names which — fan-out/fan-in without temp files."}
-{"instruction": "Terangkan `wait -n -p` dalam satu minit.", "input": "", "output": "`wait -n` returns as any child finishes (first-done patterns); `-p` names which — fan-out/fan-in without temp files."}
 {"instruction": "Apa yang perlu saya tahu tentang `wait -n -p`?", "input": "", "output": "`wait -n` returns as any child finishes (first-done patterns); `-p` names which — fan-out/fan-in without temp files."}
 {"instruction": "Bagaimanakah `wait -n -p` berfungsi?", "input": "", "output": "`wait -n` returns as any child finishes (first-done patterns); `-p` names which — fan-out/fan-in without temp files."}
-{"instruction": "Bilakah masa yang sesuai untuk `wait -n -p`?", "input": "", "output": "`wait -n` returns as any child finishes (first-done patterns); `-p` names which — fan-out/fan-in without temp files."}
 {"instruction": "What does `kill -l signals` do?", "input": "", "output": "`kill -l` lists signal names/numbers (1 HUP, 9 KILL, 15 TERM); scripts should trap and name, never memorize numbers."}
 {"instruction": "Explain `kill -l signals` briefly.", "input": "", "output": "`kill -l` lists signal names/numbers (1 HUP, 9 KILL, 15 TERM); scripts should trap and name, never memorize numbers."}
 {"instruction": "When do I use `kill -l signals`?", "input": "", "output": "`kill -l` lists signal names/numbers (1 HUP, 9 KILL, 15 TERM); scripts should trap and name, never memorize numbers."}
@@ -1384,10 +1226,8 @@
 {"instruction": "How would you explain `kill -l signals` to a junior developer?", "input": "", "output": "`kill -l` lists signal names/numbers (1 HUP, 9 KILL, 15 TERM); scripts should trap and name, never memorize numbers."}
 {"instruction": "Give a real-world scenario for `kill -l signals`.", "input": "", "output": "`kill -l` lists signal names/numbers (1 HUP, 9 KILL, 15 TERM); scripts should trap and name, never memorize numbers."}
 {"instruction": "What problem does `kill -l signals` solve?", "input": "", "output": "`kill -l` lists signal names/numbers (1 HUP, 9 KILL, 15 TERM); scripts should trap and name, never memorize numbers."}
-{"instruction": "Terangkan `kill -l signals` dalam satu minit.", "input": "", "output": "`kill -l` lists signal names/numbers (1 HUP, 9 KILL, 15 TERM); scripts should trap and name, never memorize numbers."}
 {"instruction": "Apa yang perlu saya tahu tentang `kill -l signals`?", "input": "", "output": "`kill -l` lists signal names/numbers (1 HUP, 9 KILL, 15 TERM); scripts should trap and name, never memorize numbers."}
 {"instruction": "Bagaimanakah `kill -l signals` berfungsi?", "input": "", "output": "`kill -l` lists signal names/numbers (1 HUP, 9 KILL, 15 TERM); scripts should trap and name, never memorize numbers."}
-{"instruction": "Bilakah masa yang sesuai untuk `kill -l signals`?", "input": "", "output": "`kill -l` lists signal names/numbers (1 HUP, 9 KILL, 15 TERM); scripts should trap and name, never memorize numbers."}
 {"instruction": "What does `caller debug` do?", "input": "", "output": "`caller` prints call stack (line, function, file) inside traps — poor man's stack traces for `set -x` supplements."}
 {"instruction": "Explain `caller debug` briefly.", "input": "", "output": "`caller` prints call stack (line, function, file) inside traps — poor man's stack traces for `set -x` supplements."}
 {"instruction": "When do I use `caller debug`?", "input": "", "output": "`caller` prints call stack (line, function, file) inside traps — poor man's stack traces for `set -x` supplements."}
@@ -1401,10 +1241,8 @@
 {"instruction": "How would you explain `caller debug` to a junior developer?", "input": "", "output": "`caller` prints call stack (line, function, file) inside traps — poor man's stack traces for `set -x` supplements."}
 {"instruction": "Give a real-world scenario for `caller debug`.", "input": "", "output": "`caller` prints call stack (line, function, file) inside traps — poor man's stack traces for `set -x` supplements."}
 {"instruction": "What problem does `caller debug` solve?", "input": "", "output": "`caller` prints call stack (line, function, file) inside traps — poor man's stack traces for `set -x` supplements."}
-{"instruction": "Terangkan `caller debug` dalam satu minit.", "input": "", "output": "`caller` prints call stack (line, function, file) inside traps — poor man's stack traces for `set -x` supplements."}
 {"instruction": "Apa yang perlu saya tahu tentang `caller debug`?", "input": "", "output": "`caller` prints call stack (line, function, file) inside traps — poor man's stack traces for `set -x` supplements."}
 {"instruction": "Bagaimanakah `caller debug` berfungsi?", "input": "", "output": "`caller` prints call stack (line, function, file) inside traps — poor man's stack traces for `set -x` supplements."}
-{"instruction": "Bilakah masa yang sesuai untuk `caller debug`?", "input": "", "output": "`caller` prints call stack (line, function, file) inside traps — poor man's stack traces for `set -x` supplements."}
 {"instruction": "What does `printf %q quoting` do?", "input": "", "output": "`printf '%q'` shell-quotes arbitrary strings safely for eval/reuse — the correct way to serialize untrusted data into commands."}
 {"instruction": "Explain `printf %q quoting` briefly.", "input": "", "output": "`printf '%q'` shell-quotes arbitrary strings safely for eval/reuse — the correct way to serialize untrusted data into commands."}
 {"instruction": "When do I use `printf %q quoting`?", "input": "", "output": "`printf '%q'` shell-quotes arbitrary strings safely for eval/reuse — the correct way to serialize untrusted data into commands."}
@@ -1418,10 +1256,8 @@
 {"instruction": "How would you explain `printf %q quoting` to a junior developer?", "input": "", "output": "`printf '%q'` shell-quotes arbitrary strings safely for eval/reuse — the correct way to serialize untrusted data into commands."}
 {"instruction": "Give a real-world scenario for `printf %q quoting`.", "input": "", "output": "`printf '%q'` shell-quotes arbitrary strings safely for eval/reuse — the correct way to serialize untrusted data into commands."}
 {"instruction": "What problem does `printf %q quoting` solve?", "input": "", "output": "`printf '%q'` shell-quotes arbitrary strings safely for eval/reuse — the correct way to serialize untrusted data into commands."}
-{"instruction": "Terangkan `printf %q quoting` dalam satu minit.", "input": "", "output": "`printf '%q'` shell-quotes arbitrary strings safely for eval/reuse — the correct way to serialize untrusted data into commands."}
 {"instruction": "Apa yang perlu saya tahu tentang `printf %q quoting`?", "input": "", "output": "`printf '%q'` shell-quotes arbitrary strings safely for eval/reuse — the correct way to serialize untrusted data into commands."}
 {"instruction": "Bagaimanakah `printf %q quoting` berfungsi?", "input": "", "output": "`printf '%q'` shell-quotes arbitrary strings safely for eval/reuse — the correct way to serialize untrusted data into commands."}
-{"instruction": "Bilakah masa yang sesuai untuk `printf %q quoting`?", "input": "", "output": "`printf '%q'` shell-quotes arbitrary strings safely for eval/reuse — the correct way to serialize untrusted data into commands."}
 {"instruction": "What does `read custom delim` do?", "input": "", "output": "`IFS=, read -ra parts <<< $line` parses CSV-ish input; `-d ''` reads NUL-delimited `find -print0` streams."}
 {"instruction": "Explain `read custom delim` briefly.", "input": "", "output": "`IFS=, read -ra parts <<< $line` parses CSV-ish input; `-d ''` reads NUL-delimited `find -print0` streams."}
 {"instruction": "When do I use `read custom delim`?", "input": "", "output": "`IFS=, read -ra parts <<< $line` parses CSV-ish input; `-d ''` reads NUL-delimited `find -print0` streams."}
@@ -1435,10 +1271,8 @@
 {"instruction": "How would you explain `read custom delim` to a junior developer?", "input": "", "output": "`IFS=, read -ra parts <<< $line` parses CSV-ish input; `-d ''` reads NUL-delimited `find -print0` streams."}
 {"instruction": "Give a real-world scenario for `read custom delim`.", "input": "", "output": "`IFS=, read -ra parts <<< $line` parses CSV-ish input; `-d ''` reads NUL-delimited `find -print0` streams."}
 {"instruction": "What problem does `read custom delim` solve?", "input": "", "output": "`IFS=, read -ra parts <<< $line` parses CSV-ish input; `-d ''` reads NUL-delimited `find -print0` streams."}
-{"instruction": "Terangkan `read custom delim` dalam satu minit.", "input": "", "output": "`IFS=, read -ra parts <<< $line` parses CSV-ish input; `-d ''` reads NUL-delimited `find -print0` streams."}
 {"instruction": "Apa yang perlu saya tahu tentang `read custom delim`?", "input": "", "output": "`IFS=, read -ra parts <<< $line` parses CSV-ish input; `-d ''` reads NUL-delimited `find -print0` streams."}
 {"instruction": "Bagaimanakah `read custom delim` berfungsi?", "input": "", "output": "`IFS=, read -ra parts <<< $line` parses CSV-ish input; `-d ''` reads NUL-delimited `find -print0` streams."}
-{"instruction": "Bilakah masa yang sesuai untuk `read custom delim`?", "input": "", "output": "`IFS=, read -ra parts <<< $line` parses CSV-ish input; `-d ''` reads NUL-delimited `find -print0` streams."}
 {"instruction": "What does `mapfile skip count` do?", "input": "", "output": "`mapfile -s 10 -n 20` windows file slices (skip/take) without head/tail subprocesses — log sampling natively."}
 {"instruction": "Explain `mapfile skip count` briefly.", "input": "", "output": "`mapfile -s 10 -n 20` windows file slices (skip/take) without head/tail subprocesses — log sampling natively."}
 {"instruction": "When do I use `mapfile skip count`?", "input": "", "output": "`mapfile -s 10 -n 20` windows file slices (skip/take) without head/tail subprocesses — log sampling natively."}
@@ -1452,10 +1286,8 @@
 {"instruction": "How would you explain `mapfile skip count` to a junior developer?", "input": "", "output": "`mapfile -s 10 -n 20` windows file slices (skip/take) without head/tail subprocesses — log sampling natively."}
 {"instruction": "Give a real-world scenario for `mapfile skip count`.", "input": "", "output": "`mapfile -s 10 -n 20` windows file slices (skip/take) without head/tail subprocesses — log sampling natively."}
 {"instruction": "What problem does `mapfile skip count` solve?", "input": "", "output": "`mapfile -s 10 -n 20` windows file slices (skip/take) without head/tail subprocesses — log sampling natively."}
-{"instruction": "Terangkan `mapfile skip count` dalam satu minit.", "input": "", "output": "`mapfile -s 10 -n 20` windows file slices (skip/take) without head/tail subprocesses — log sampling natively."}
 {"instruction": "Apa yang perlu saya tahu tentang `mapfile skip count`?", "input": "", "output": "`mapfile -s 10 -n 20` windows file slices (skip/take) without head/tail subprocesses — log sampling natively."}
 {"instruction": "Bagaimanakah `mapfile skip count` berfungsi?", "input": "", "output": "`mapfile -s 10 -n 20` windows file slices (skip/take) without head/tail subprocesses — log sampling natively."}
-{"instruction": "Bilakah masa yang sesuai untuk `mapfile skip count`?", "input": "", "output": "`mapfile -s 10 -n 20` windows file slices (skip/take) without head/tail subprocesses — log sampling natively."}
 {"instruction": "What does `EPOCHSECONDS SRANDOM` do?", "input": "", "output": "`$EPOCHSECONDS` timestamps without forks; `$SRANDOM` 32-bit randoms (not crypto — use random_bytes equivalents for secrets)."}
 {"instruction": "Explain `EPOCHSECONDS SRANDOM` briefly.", "input": "", "output": "`$EPOCHSECONDS` timestamps without forks; `$SRANDOM` 32-bit randoms (not crypto — use random_bytes equivalents for secrets)."}
 {"instruction": "When do I use `EPOCHSECONDS SRANDOM`?", "input": "", "output": "`$EPOCHSECONDS` timestamps without forks; `$SRANDOM` 32-bit randoms (not crypto — use random_bytes equivalents for secrets)."}
@@ -1469,10 +1301,8 @@
 {"instruction": "How would you explain `EPOCHSECONDS SRANDOM` to a junior developer?", "input": "", "output": "`$EPOCHSECONDS` timestamps without forks; `$SRANDOM` 32-bit randoms (not crypto — use random_bytes equivalents for secrets)."}
 {"instruction": "Give a real-world scenario for `EPOCHSECONDS SRANDOM`.", "input": "", "output": "`$EPOCHSECONDS` timestamps without forks; `$SRANDOM` 32-bit randoms (not crypto — use random_bytes equivalents for secrets)."}
 {"instruction": "What problem does `EPOCHSECONDS SRANDOM` solve?", "input": "", "output": "`$EPOCHSECONDS` timestamps without forks; `$SRANDOM` 32-bit randoms (not crypto — use random_bytes equivalents for secrets)."}
-{"instruction": "Terangkan `EPOCHSECONDS SRANDOM` dalam satu minit.", "input": "", "output": "`$EPOCHSECONDS` timestamps without forks; `$SRANDOM` 32-bit randoms (not crypto — use random_bytes equivalents for secrets)."}
 {"instruction": "Apa yang perlu saya tahu tentang `EPOCHSECONDS SRANDOM`?", "input": "", "output": "`$EPOCHSECONDS` timestamps without forks; `$SRANDOM` 32-bit randoms (not crypto — use random_bytes equivalents for secrets)."}
 {"instruction": "Bagaimanakah `EPOCHSECONDS SRANDOM` berfungsi?", "input": "", "output": "`$EPOCHSECONDS` timestamps without forks; `$SRANDOM` 32-bit randoms (not crypto — use random_bytes equivalents for secrets)."}
-{"instruction": "Bilakah masa yang sesuai untuk `EPOCHSECONDS SRANDOM`?", "input": "", "output": "`$EPOCHSECONDS` timestamps without forks; `$SRANDOM` 32-bit randoms (not crypto — use random_bytes equivalents for secrets)."}
 {"instruction": "What does `BASH_REMATCH groups` do?", "input": "", "output": "Regex `[[ $s =~ ([0-9]+)-([0-9]+) ]]` fills `BASH_REMATCH` (0 full, 1+ groups) — parsing without grep/sed forks."}
 {"instruction": "Explain `BASH_REMATCH groups` briefly.", "input": "", "output": "Regex `[[ $s =~ ([0-9]+)-([0-9]+) ]]` fills `BASH_REMATCH` (0 full, 1+ groups) — parsing without grep/sed forks."}
 {"instruction": "When do I use `BASH_REMATCH groups`?", "input": "", "output": "Regex `[[ $s =~ ([0-9]+)-([0-9]+) ]]` fills `BASH_REMATCH` (0 full, 1+ groups) — parsing without grep/sed forks."}
@@ -1486,10 +1316,8 @@
 {"instruction": "How would you explain `BASH_REMATCH groups` to a junior developer?", "input": "", "output": "Regex `[[ $s =~ ([0-9]+)-([0-9]+) ]]` fills `BASH_REMATCH` (0 full, 1+ groups) — parsing without grep/sed forks."}
 {"instruction": "Give a real-world scenario for `BASH_REMATCH groups`.", "input": "", "output": "Regex `[[ $s =~ ([0-9]+)-([0-9]+) ]]` fills `BASH_REMATCH` (0 full, 1+ groups) — parsing without grep/sed forks."}
 {"instruction": "What problem does `BASH_REMATCH groups` solve?", "input": "", "output": "Regex `[[ $s =~ ([0-9]+)-([0-9]+) ]]` fills `BASH_REMATCH` (0 full, 1+ groups) — parsing without grep/sed forks."}
-{"instruction": "Terangkan `BASH_REMATCH groups` dalam satu minit.", "input": "", "output": "Regex `[[ $s =~ ([0-9]+)-([0-9]+) ]]` fills `BASH_REMATCH` (0 full, 1+ groups) — parsing without grep/sed forks."}
 {"instruction": "Apa yang perlu saya tahu tentang `BASH_REMATCH groups`?", "input": "", "output": "Regex `[[ $s =~ ([0-9]+)-([0-9]+) ]]` fills `BASH_REMATCH` (0 full, 1+ groups) — parsing without grep/sed forks."}
 {"instruction": "Bagaimanakah `BASH_REMATCH groups` berfungsi?", "input": "", "output": "Regex `[[ $s =~ ([0-9]+)-([0-9]+) ]]` fills `BASH_REMATCH` (0 full, 1+ groups) — parsing without grep/sed forks."}
-{"instruction": "Bilakah masa yang sesuai untuk `BASH_REMATCH groups`?", "input": "", "output": "Regex `[[ $s =~ ([0-9]+)-([0-9]+) ]]` fills `BASH_REMATCH` (0 full, 1+ groups) — parsing without grep/sed forks."}
 {"instruction": "What does `BASH_SOURCE LINENO` do?", "input": "", "output": "`${BASH_SOURCE[0]}`/`$LINENO` locate the running script and line for self-referencing configs and error reports."}
 {"instruction": "Explain `BASH_SOURCE LINENO` briefly.", "input": "", "output": "`${BASH_SOURCE[0]}`/`$LINENO` locate the running script and line for self-referencing configs and error reports."}
 {"instruction": "When do I use `BASH_SOURCE LINENO`?", "input": "", "output": "`${BASH_SOURCE[0]}`/`$LINENO` locate the running script and line for self-referencing configs and error reports."}
@@ -1503,10 +1331,8 @@
 {"instruction": "How would you explain `BASH_SOURCE LINENO` to a junior developer?", "input": "", "output": "`${BASH_SOURCE[0]}`/`$LINENO` locate the running script and line for self-referencing configs and error reports."}
 {"instruction": "Give a real-world scenario for `BASH_SOURCE LINENO`.", "input": "", "output": "`${BASH_SOURCE[0]}`/`$LINENO` locate the running script and line for self-referencing configs and error reports."}
 {"instruction": "What problem does `BASH_SOURCE LINENO` solve?", "input": "", "output": "`${BASH_SOURCE[0]}`/`$LINENO` locate the running script and line for self-referencing configs and error reports."}
-{"instruction": "Terangkan `BASH_SOURCE LINENO` dalam satu minit.", "input": "", "output": "`${BASH_SOURCE[0]}`/`$LINENO` locate the running script and line for self-referencing configs and error reports."}
 {"instruction": "Apa yang perlu saya tahu tentang `BASH_SOURCE LINENO`?", "input": "", "output": "`${BASH_SOURCE[0]}`/`$LINENO` locate the running script and line for self-referencing configs and error reports."}
 {"instruction": "Bagaimanakah `BASH_SOURCE LINENO` berfungsi?", "input": "", "output": "`${BASH_SOURCE[0]}`/`$LINENO` locate the running script and line for self-referencing configs and error reports."}
-{"instruction": "Bilakah masa yang sesuai untuk `BASH_SOURCE LINENO`?", "input": "", "output": "`${BASH_SOURCE[0]}`/`$LINENO` locate the running script and line for self-referencing configs and error reports."}
 {"instruction": "What does `FUNCNAME stack` do?", "input": "", "output": "`${FUNCNAME[@]}` is the call stack array — log it in ERR traps for instant tracebacks without debuggers."}
 {"instruction": "Explain `FUNCNAME stack` briefly.", "input": "", "output": "`${FUNCNAME[@]}` is the call stack array — log it in ERR traps for instant tracebacks without debuggers."}
 {"instruction": "When do I use `FUNCNAME stack`?", "input": "", "output": "`${FUNCNAME[@]}` is the call stack array — log it in ERR traps for instant tracebacks without debuggers."}
@@ -1520,10 +1346,8 @@
 {"instruction": "How would you explain `FUNCNAME stack` to a junior developer?", "input": "", "output": "`${FUNCNAME[@]}` is the call stack array — log it in ERR traps for instant tracebacks without debuggers."}
 {"instruction": "Give a real-world scenario for `FUNCNAME stack`.", "input": "", "output": "`${FUNCNAME[@]}` is the call stack array — log it in ERR traps for instant tracebacks without debuggers."}
 {"instruction": "What problem does `FUNCNAME stack` solve?", "input": "", "output": "`${FUNCNAME[@]}` is the call stack array — log it in ERR traps for instant tracebacks without debuggers."}
-{"instruction": "Terangkan `FUNCNAME stack` dalam satu minit.", "input": "", "output": "`${FUNCNAME[@]}` is the call stack array — log it in ERR traps for instant tracebacks without debuggers."}
 {"instruction": "Apa yang perlu saya tahu tentang `FUNCNAME stack`?", "input": "", "output": "`${FUNCNAME[@]}` is the call stack array — log it in ERR traps for instant tracebacks without debuggers."}
 {"instruction": "Bagaimanakah `FUNCNAME stack` berfungsi?", "input": "", "output": "`${FUNCNAME[@]}` is the call stack array — log it in ERR traps for instant tracebacks without debuggers."}
-{"instruction": "Bilakah masa yang sesuai untuk `FUNCNAME stack`?", "input": "", "output": "`${FUNCNAME[@]}` is the call stack array — log it in ERR traps for instant tracebacks without debuggers."}
 {"instruction": "What does `type command which` do?", "input": "", "output": "`type -a cmd` shows all resolutions (alias/function/builtin/file); `command -v` tests script-safely, `which` lies about aliases."}
 {"instruction": "Explain `type command which` briefly.", "input": "", "output": "`type -a cmd` shows all resolutions (alias/function/builtin/file); `command -v` tests script-safely, `which` lies about aliases."}
 {"instruction": "When do I use `type command which`?", "input": "", "output": "`type -a cmd` shows all resolutions (alias/function/builtin/file); `command -v` tests script-safely, `which` lies about aliases."}
@@ -1537,10 +1361,8 @@
 {"instruction": "How would you explain `type command which` to a junior developer?", "input": "", "output": "`type -a cmd` shows all resolutions (alias/function/builtin/file); `command -v` tests script-safely, `which` lies about aliases."}
 {"instruction": "Give a real-world scenario for `type command which`.", "input": "", "output": "`type -a cmd` shows all resolutions (alias/function/builtin/file); `command -v` tests script-safely, `which` lies about aliases."}
 {"instruction": "What problem does `type command which` solve?", "input": "", "output": "`type -a cmd` shows all resolutions (alias/function/builtin/file); `command -v` tests script-safely, `which` lies about aliases."}
-{"instruction": "Terangkan `type command which` dalam satu minit.", "input": "", "output": "`type -a cmd` shows all resolutions (alias/function/builtin/file); `command -v` tests script-safely, `which` lies about aliases."}
 {"instruction": "Apa yang perlu saya tahu tentang `type command which`?", "input": "", "output": "`type -a cmd` shows all resolutions (alias/function/builtin/file); `command -v` tests script-safely, `which` lies about aliases."}
 {"instruction": "Bagaimanakah `type command which` berfungsi?", "input": "", "output": "`type -a cmd` shows all resolutions (alias/function/builtin/file); `command -v` tests script-safely, `which` lies about aliases."}
-{"instruction": "Bilakah masa yang sesuai untuk `type command which`?", "input": "", "output": "`type -a cmd` shows all resolutions (alias/function/builtin/file); `command -v` tests script-safely, `which` lies about aliases."}
 {"instruction": "What does `time keyword` do?", "input": "", "output": "`time pipeline` reports real/user/sys (reserved word, not a binary — redirections apply to the whole timing)."}
 {"instruction": "Explain `time keyword` briefly.", "input": "", "output": "`time pipeline` reports real/user/sys (reserved word, not a binary — redirections apply to the whole timing)."}
 {"instruction": "When do I use `time keyword`?", "input": "", "output": "`time pipeline` reports real/user/sys (reserved word, not a binary — redirections apply to the whole timing)."}
@@ -1554,10 +1376,8 @@
 {"instruction": "How would you explain `time keyword` to a junior developer?", "input": "", "output": "`time pipeline` reports real/user/sys (reserved word, not a binary — redirections apply to the whole timing)."}
 {"instruction": "Give a real-world scenario for `time keyword`.", "input": "", "output": "`time pipeline` reports real/user/sys (reserved word, not a binary — redirections apply to the whole timing)."}
 {"instruction": "What problem does `time keyword` solve?", "input": "", "output": "`time pipeline` reports real/user/sys (reserved word, not a binary — redirections apply to the whole timing)."}
-{"instruction": "Terangkan `time keyword` dalam satu minit.", "input": "", "output": "`time pipeline` reports real/user/sys (reserved word, not a binary — redirections apply to the whole timing)."}
 {"instruction": "Apa yang perlu saya tahu tentang `time keyword`?", "input": "", "output": "`time pipeline` reports real/user/sys (reserved word, not a binary — redirections apply to the whole timing)."}
 {"instruction": "Bagaimanakah `time keyword` berfungsi?", "input": "", "output": "`time pipeline` reports real/user/sys (reserved word, not a binary — redirections apply to the whole timing)."}
-{"instruction": "Bilakah masa yang sesuai untuk `time keyword`?", "input": "", "output": "`time pipeline` reports real/user/sys (reserved word, not a binary — redirections apply to the whole timing)."}
 {"instruction": "What does `ulimit core` do?", "input": "", "output": "`ulimit -c unlimited` enables crash dumps for post-mortems; `0` disables — core hygiene on shared boxes."}
 {"instruction": "Explain `ulimit core` briefly.", "input": "", "output": "`ulimit -c unlimited` enables crash dumps for post-mortems; `0` disables — core hygiene on shared boxes."}
 {"instruction": "When do I use `ulimit core`?", "input": "", "output": "`ulimit -c unlimited` enables crash dumps for post-mortems; `0` disables — core hygiene on shared boxes."}
@@ -1571,7 +1391,5 @@
 {"instruction": "How would you explain `ulimit core` to a junior developer?", "input": "", "output": "`ulimit -c unlimited` enables crash dumps for post-mortems; `0` disables — core hygiene on shared boxes."}
 {"instruction": "Give a real-world scenario for `ulimit core`.", "input": "", "output": "`ulimit -c unlimited` enables crash dumps for post-mortems; `0` disables — core hygiene on shared boxes."}
 {"instruction": "What problem does `ulimit core` solve?", "input": "", "output": "`ulimit -c unlimited` enables crash dumps for post-mortems; `0` disables — core hygiene on shared boxes."}
-{"instruction": "Terangkan `ulimit core` dalam satu minit.", "input": "", "output": "`ulimit -c unlimited` enables crash dumps for post-mortems; `0` disables — core hygiene on shared boxes."}
 {"instruction": "Apa yang perlu saya tahu tentang `ulimit core`?", "input": "", "output": "`ulimit -c unlimited` enables crash dumps for post-mortems; `0` disables — core hygiene on shared boxes."}
 {"instruction": "Bagaimanakah `ulimit core` berfungsi?", "input": "", "output": "`ulimit -c unlimited` enables crash dumps for post-mortems; `0` disables — core hygiene on shared boxes."}
-{"instruction": "Bilakah masa yang sesuai untuk `ulimit core`?", "input": "", "output": "`ulimit -c unlimited` enables crash dumps for post-mortems; `0` disables — core hygiene on shared boxes."}
