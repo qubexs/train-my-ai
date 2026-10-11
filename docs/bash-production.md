@@ -129,3 +129,22 @@ jq '.items[] | select(.stok < 10)' f.json
 ```
 
 Use `awk` for columnar data, `sed` for line edits, `jq` for JSON — never parse JSON with grep.
+
+## Most Advanced
+
+```bash
+opensnoop-bpfcc -p $(pgrep -f app)     # every open() live, in-kernel
+perf record -F 99 -g -p $PID -- sleep 20  # sample, then flamegraph
+gdb -batch -ex run -ex bt --args ./app # non-interactive backtraces
+ip netns exec red ping 10.0.0.1        # hand-built isolated networks
+bwrap --ro-bind /usr /usr --unshare-all app  # sandbox per invocation
+borg create repo::$(date +%F) /data    # deduped encrypted versioned backups
+nft add element inet f blk { 1.2.3.4 } # dynamic sets, no reloads
+tc qdisc add dev eth0 root netem delay 100ms loss 5%  # WAN in the lab
+wg-quick up wg0                         # 4-line VPNs
+exec 3<>/dev/tcp/h/80                   # pure-bash TCP (no curl needed)
+```
+
+Full scripts for these live in training seeds (`datasets/seeds/bash_most_advanced.jsonl`):
+namespaces+veth, WireGuard, LUKS, borg/restic, btrfs rotation, systemd sandboxing,
+k8s watchdog, coredump triage, flamegraphs, DNS sweeps.
