@@ -27,7 +27,7 @@ APP_DIR = (Path(sys.executable).resolve().parent if getattr(sys, "frozen", False
            else Path(__file__).resolve().parent)
 sys.path.insert(0, str(APP_DIR))
 
-__version__ = "0.4.31"
+__version__ = "0.4.32"
 
 LLAMA_TAG = "b11491"
 LLAMA_BASE = f"https://github.com/ggerganov/llama.cpp/releases/download/{LLAMA_TAG}"
@@ -124,7 +124,8 @@ HELP = """Commands:
 /model import [fail] [--from dir]  auto-import GGUF terbaru + aktifkan
 /models               senarai semua model pakar + domain
 /models check         audit GGUF (hash, sah, duplikat, registry)
-/consult <soalan>     runding 2 pakar, general sintesis jawapan penuh
+  /consult <soalan>     runding 2 pakar, general sintesis jawapan penuh
+  /semua <soalan>       semua model jawab, setiap satu result sendiri
 /route on|off         auto-tukar pakar ikut domain (lalai: sentiasa on)
 /session <name>       switch session file (sessions/<name>.jsonl)
 /sessions             list sessions
@@ -758,6 +759,47 @@ def repl(args):
             if stps:
                 print(f"{stps:.1f} T/s")
             print()
+            continue
+        if q == "/semua" or q.startswith("/semua "):
+            stask = q[len("/semua"):].strip()
+            if not stask:
+                print("guna: /semua <soalan>  (semua model jawab, result sendiri-sendiri)")
+                continue
+            cands = [m for m in scan_models(MODELS_DIR)
+                     if m.get("file") and (MODELS_DIR / m["file"]).is_file()]
+            if not cands:
+                print("tiada model berfail.")
+                continue
+            print(f"{len(cands)} model akan jawab bergilir (~1-2 min setiap satu, Ctrl-C henti).")
+            cli = cli_path or ensure_cli()
+            from agent import clean as _clean2
+            sdom = detect_domain(stask)
+            for m in cands:
+                hdr = f"=== [{m['name']}] [{','.join(m.get('domains', []))}] ==="
+                print(f"\n{hdr}")
+                try:
+                    tmp = LlamaCliBackend(cli, MODELS_DIR / m["file"], n_predict=250)
+                    esys = (f"Anda pakar {','.join(m.get('domains', []))}. Jawab ringkas."
+                            if lang == "ms" else
+                            f"You are a {','.join(m.get('domains', []))} expert. Answer briefly.")
+                    import time as _t2
+                    t0 = _t2.time()
+                    rraw, rtps = tmp.chat(esys, [{"role": "user", "content": stask}])
+                    rans = _clean2(sanitize(rraw), name)
+                except KeyboardInterrupt:
+                    print("(dihenti — model berbaki dilangkau)")
+                    break
+                except Exception as e:
+                    print(f"(ralat: {e})")
+                    continue
+                el = _t2.time() - t0
+                print(rans)
+                if rtps:
+                    print(f"\x1b[2m{rtps:.1f} T/s ({el:.0f}s)\x1b[0m")
+                    record_speed(MODELS_DIR, m["name"], rtps)
+                log_training(stask, rans, lang=lang, kind="semua",
+                             domain=",".join(m.get("domains", [])))
+            print("\nSiap /semua. /good mana yang betul untuk latih semula.")
             continue
         if q.startswith("/route"):
             auto_route = q.split()[-1] != "off" if len(q.split()) > 1 else True
