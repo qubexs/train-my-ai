@@ -8,7 +8,7 @@ DOCS_DIR = ROOT / "docs"
 APP_DIR = (Path(sys.executable).resolve().parent if getattr(sys, "frozen", False)
            else Path(__file__).resolve().parent)
 
-TOOL_SPEC = """Tools (call ONE per turn with this exact block):
+TOOL_SPEC = """Tools (emit one block per call; several calls per turn allowed):
 ```tool:list <dir>
 ```tool:read <file>
 ```tool:write <file> <content...>
@@ -160,28 +160,70 @@ def _tokenize(s):
     return [t for t in re.sub(r"[^a-z0-9_]+", " ", s.lower()).split() if t]
 
 
-def tool_rag(arg, k=2) -> str:
-    if not DOCS_DIR.is_dir():
-        return "ERROR: docs/ not found"
-    chunks = []
-    for f in sorted(DOCS_DIR.iterdir()):
-        if f.suffix.lower() not in (".md", ".txt", ".js", ".ts", ".py"):
-            continue
+# --- RAG: BM25 over overlapping chunks, index cached by dir signature ---
+RAG_EXTS = (".md", ".txt", ".js", ".ts", ".py")
+RAG_CHUNK = 500
+RAG_OVERLAP = 100
+BM25_K1 = 1.2
+BM25_B = 0.75
+_RAG_CACHE = {"sig": None, "chunks": [], "df": {}, "avgdl": 0.0}
+
+
+def _rag_index():
+    """Build (or reuse) BM25 index. Sig = file names+sizes+mtimes; rebuild on change."""
+    from collections import Counter
+    files = [f for f in sorted(DOCS_DIR.iterdir())
+             if f.is_file() and f.suffix.lower() in RAG_EXTS]
+    sig = [(f.name, f.stat().st_size, f.stat().st_mtime_ns) for f in files]
+    if sig == _RAG_CACHE["sig"]:
+        return _RAG_CACHE
+    chunks, df = [], {}
+    for f in files:
         try:
             text = f.read_text(encoding="utf-8", errors="replace")
         except OSError:
             continue
-        for i in range(0, len(text), 500):
-            c = text[i:i + 500].strip()
-            if c:
-                chunks.append((f.name, c))
-    q = set(_tokenize(arg))
+        step = RAG_CHUNK - RAG_OVERLAP
+        for start in range(0, len(text), step):
+            c = text[start:start + RAG_CHUNK].strip()
+            if not c:
+                continue
+            toks = Counter(_tokenize(c))
+            if toks:
+                chunks.append((f.name, c, toks))
+                for t in toks:
+                    df[t] = df.get(t, 0) + 1
+    avgdl = (sum(sum(c[2].values()) for c in chunks) / len(chunks)) if chunks else 0.0
+    _RAG_CACHE.update(sig=sig, chunks=chunks, df=df, avgdl=avgdl)
+    return _RAG_CACHE
 
-    def score(c):
-        return len(q & set(_tokenize(c[1])))
 
-    ranked = sorted(chunks, key=score, reverse=True)[: max(1, k)]
-    if not ranked or score(ranked[0]) == 0:
+def _bm25(qtoks, toks, df, N, avgdl):
+    import math
+    doclen = sum(toks.values())
+    score = 0.0
+    for t in set(qtoks):
+        tf = toks.get(t, 0)
+        if not tf:
+            continue
+        idf = math.log((N - df.get(t, 0) + 0.5) / (df.get(t, 0) + 0.5) + 1)
+        denom = tf + BM25_K1 * (1 - BM25_B + BM25_B * doclen / max(1e-9, avgdl))
+        score += idf * (tf * (BM25_K1 + 1)) / denom
+    return score
+
+
+def tool_rag(arg, k=2) -> str:
+    if not DOCS_DIR.is_dir():
+        return "ERROR: docs/ not found"
+    idx = _rag_index()
+    chunks, df, avgdl = idx["chunks"], idx["df"], idx["avgdl"]
+    if not chunks:
+        return "(no relevant docs)"
+    qtoks = _tokenize(arg)
+    scored = sorted(((_bm25(qtoks, toks, df, len(chunks), avgdl), n, t)
+                     for n, t, toks in chunks), reverse=True)
+    ranked = [(n, t) for s, n, t in scored[:max(1, k)] if s > 0]
+    if not ranked:
         return "(no relevant docs)"
     return "\n\n".join(f"[{n}]\n{t}" for n, t in ranked)
 

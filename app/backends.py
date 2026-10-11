@@ -4,6 +4,44 @@ import re
 import subprocess
 import urllib.request
 
+MAX_TURNS = 6
+MAX_USER_CHARS = 1000
+MAX_ASSISTANT_CHARS = 500
+
+
+def transcript_text(messages):
+    """Single-string transcript for CLI prompts. Anti-echo policy:
+    recent turns only, assistant truncated harder, tool results labelled."""
+    turns = []
+    for m in (messages or [])[-MAX_TURNS:]:
+        role = m.get("role", "user")
+        content = (m.get("content", "") or "")
+        content = content[:MAX_ASSISTANT_CHARS] if role == "assistant" else content[:MAX_USER_CHARS]
+        if role == "tool":
+            turns.append(f"[Hasil tool {m.get('name', '')}]: {content}")
+        elif role == "assistant":
+            turns.append(f"Jawapan sebelum: {content}")
+        else:
+            turns.append(f"Soalan: {content}")
+    return turns
+
+
+def transcript_messages(messages):
+    """Same policy as transcript_text, but as OpenAI message list for APIs."""
+    out = []
+    for m in (messages or [])[-MAX_TURNS:]:
+        role = m.get("role", "user")
+        content = (m.get("content", "") or "")
+        content = content[:MAX_ASSISTANT_CHARS] if role == "assistant" else content[:MAX_USER_CHARS]
+        if role == "tool":
+            out.append({"role": "user",
+                        "content": f"[Hasil tool {m.get('name', '')}]: {content}"})
+        elif role == "assistant":
+            out.append({"role": "assistant", "content": f"Jawapan sebelum: {content}"})
+        else:
+            out.append({"role": role, "content": f"Soalan: {content}"})
+    return out
+
 
 class LlamaCliBackend:
     def __init__(self, cli_path, model_path, ctx=2048, n_predict=500, temp=0.3):
@@ -14,36 +52,26 @@ class LlamaCliBackend:
         self.temp = temp
         self.kind = "llama-cli"
 
-    def chat(self, system, messages, max_tokens=None):
-        # Keep only recent turns and truncate each: long "Pengguna:/Pembantu:"
-        # transcripts make tiny models echo/role-play instead of answering.
-        recent = messages[-6:]
-        turns = []
-        for m in recent:
-            role = m.get("role", "user")
-            content = (m.get("content", "") or "")
-            # assistant turns truncate harder: stale model chatter must not
-            # dominate the prompt and compound into role-play loops.
-            content = content[:500] if role == "assistant" else content[:1000]
-            if role == "tool":
-                turns.append(f"[Hasil tool {m.get('name', '')}]: {content}")
-            elif role == "assistant":
-                turns.append(f"Jawapan sebelum: {content}")
-            else:
-                turns.append(f"Soalan: {content}")
+    def chat_ex(self, system, messages, max_tokens=None):
+        """Returns (text, tps, finish) where finish is stop|length|error."""
+        n = max_tokens or self.n_predict
+        turns = transcript_text(messages)
         full = "\n".join(turns) + "\nJawab soalan terakhir dengan ringkas."
-        p = subprocess.run(
-            [self.cli, "-m", self.model, "-c", str(self.ctx),
-             "-n", str(max_tokens or self.n_predict),
-             "--temp", str(self.temp),
-             "--repeat-penalty", "1.15", "--repeat-last-n", "128",
-             "--log-disable", "-st",
-             "--no-display-prompt",
-             "-r", "Pengguna:", "-r", "Pembantu:",
-             "-r", "<|im_start|>", "-r", "<|im_end|>",
-             "-sys", system, "-p", full],
-            capture_output=True, text=True, encoding="utf-8", errors="replace",
-            timeout=300)
+        try:
+            p = subprocess.run(
+                [self.cli, "-m", self.model, "-c", str(self.ctx),
+                 "-n", str(n),
+                 "--temp", str(self.temp),
+                 "--repeat-penalty", "1.15", "--repeat-last-n", "128",
+                 "--log-disable", "-st",
+                 "--no-display-prompt",
+                 "-r", "Pengguna:", "-r", "Pembantu:",
+                 "-r", "<|im_start|>", "-r", "<|im_end|>",
+                 "-sys", system, "-p", full],
+                capture_output=True, text=True, encoding="utf-8", errors="replace",
+                timeout=300)
+        except subprocess.TimeoutExpired:
+            return "", None, "length"
         if p.returncode != 0:
             raise RuntimeError((p.stderr or p.stdout)[-1000:])
         blob = p.stdout
@@ -53,6 +81,13 @@ class LlamaCliBackend:
         start = next((i + 1 for i, l in enumerate(lines) if l.startswith("> ")), 0)
         end = next((i for i, l in enumerate(lines) if l.startswith("[ Prompt:")), len(lines))
         text = "\n".join(lines[start:end]).strip() or blob.strip()
+        # CLI has no finish_reason: length hit iff output ran near the token budget
+        # (~4 chars/token heuristic) without hitting a reverse-prompt stop.
+        finish = "length" if len(text) >= n * 4 * 0.9 else "stop"
+        return text, tps, finish
+
+    def chat(self, system, messages, max_tokens=None):
+        text, tps, _ = self.chat_ex(system, messages, max_tokens)
         return text, tps
 
 
@@ -64,11 +99,12 @@ class LmStudioBackend:
         self.temp = temp
         self.max_tokens = max_tokens
         self.kind = "lmstudio"
-    def chat(self, system, messages, max_tokens=None):
+    def chat_ex(self, system, messages, max_tokens=None):
         import time
         body = json.dumps({
             "model": self.model,
-            "messages": [{"role": "system", "content": system}] + messages,
+            "messages": [{"role": "system", "content": system}]
+            + transcript_messages(messages),
             "temperature": self.temp,
             "max_tokens": max_tokens or self.max_tokens,
         }).encode()
@@ -78,9 +114,14 @@ class LmStudioBackend:
         with urllib.request.urlopen(req, timeout=120) as r:
             data = json.loads(r.read().decode())
         secs = max(0.1, time.time() - t0)
-        out = data["choices"][0]["message"]["content"]
+        choice = (data.get("choices") or [{}])[0]
+        out = (choice.get("message") or {}).get("content", "")
         tok = (data.get("usage") or {}).get("completion_tokens") or max(1, len(out) // 4)
-        return out, tok / secs
+        return out, tok / secs, choice.get("finish_reason") or "stop"
+
+    def chat(self, system, messages, max_tokens=None):
+        out, tps, _ = self.chat_ex(system, messages, max_tokens)
+        return out, tps
 
 
 def pick_backend(name, llama_cli=None, llama_model=None, lm_url="http://localhost:1234/v1",
@@ -112,5 +153,12 @@ class ServerBackend:
         self.manager.ensure()
         try:
             return self._api.chat(system, messages, max_tokens)
+        finally:
+            self.manager._reset_timer()
+
+    def chat_ex(self, system, messages, max_tokens=None):
+        self.manager.ensure()
+        try:
+            return self._api.chat_ex(system, messages, max_tokens)
         finally:
             self.manager._reset_timer()

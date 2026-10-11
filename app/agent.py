@@ -85,11 +85,15 @@ def split_thinking(text, lang="ms"):
     return None, text
 
 
+def extract_tool_calls(text):
+    """All tool blocks in order: [(name, arg)]."""
+    return [(m.group(1).lower(), m.group(2).strip())
+            for m in TOOL_RE.finditer(text or "")]
+
+
 def extract_tool_call(text):
-    m = TOOL_RE.search(text or "")
-    if not m:
-        return None
-    return m.group(1).lower(), m.group(2).strip()
+    calls = extract_tool_calls(text)
+    return calls[0] if calls else None
 
 
 def strip_tool_blocks(text):
@@ -154,17 +158,28 @@ def run_agent(backend, question, name="XCoder", lang="ms", history=None,
             pass
     trace, tps = [], None
 
-    def finish(raw_text):
-        """Clean + auto-continue (maks 2) jika jawapan terpotong."""
+    def ask(sysmsg, msgs, max_tokens=None):
+        """chat_ex when available (text, tps, finish); else chat (finish unknown)."""
+        ex = getattr(backend, "chat_ex", None)
+        if ex is not None:
+            return ex(sysmsg, msgs, max_tokens)
+        raw, tps = backend.chat(sysmsg, msgs, max_tokens)
+        return raw, tps, "stop"
+
+    def finish(raw_text, hit_length=False):
+        """Clean + auto-continue (maks 2) jika jawapan terpotong.
+        hit_length comes from backend finish_reason; (truncated) marker is fallback."""
         nonlocal tps
         _, answer = split_thinking(raw_text, lang)
         ans = clean(sanitize(answer), name)
         for _ in range(2):
-            if not re.search(r"\(truncated\)", raw_text, re.IGNORECASE):
+            cut = hit_length or re.search(r"\(truncated\)", raw_text, re.IGNORECASE)
+            if not cut:
                 break
+            hit_length = False
             raw_text = re.sub(r"\s*\(truncated\)\.?", "", raw_text, flags=re.IGNORECASE)
             try:
-                crow, ctps = backend.chat(
+                crow, ctps, _ = ask(
                     system, messages + [{"role": "assistant", "content": ans},
                                         {"role": "user",
                                          "content": ("Sambung jawapan tergantung di atas dari tepat mana "
@@ -183,22 +198,29 @@ def run_agent(backend, question, name="XCoder", lang="ms", history=None,
             raw_text = crow
         return ans
 
+    budget = max_steps + 1  # total tool executions allowed
     for _ in range(max_steps + 1):
-        raw, tps = backend.chat(system, messages)
-        call = extract_tool_call(raw) if tools_on else None
-        if not call:
-            return finish(raw), tps, trace
-        tname, targ = call
-        fn = DISPATCH.get(tname)
-        result = fn(targ, tool_ctx) if fn else f"ERROR: unknown tool {tname}"
-        trace.append({"tool": tname, "arg": targ[:300], "result": result[:800]})
-        if on_tool:
-            on_tool(tname, targ, result)
-        messages = messages + [{"role": "assistant", "content": strip_tool_blocks(raw) or "(using tool)"},
-                               {"role": "tool", "name": tname, "content": result}]
+        raw, tps, fin = ask(system, messages)
+        calls = extract_tool_calls(raw) if tools_on else []
+        if not calls:
+            return finish(raw, fin == "length"), tps, trace
+        messages = messages + [{"role": "assistant",
+                                "content": strip_tool_blocks(raw) or "(using tool)"}]
+        for tname, targ in calls:
+            if budget <= 0:
+                break
+            budget -= 1
+            fn = DISPATCH.get(tname)
+            result = fn(targ, tool_ctx) if fn else f"ERROR: unknown tool {tname}"
+            trace.append({"tool": tname, "arg": targ[:300], "result": result[:800]})
+            if on_tool:
+                on_tool(tname, targ, result)
+            messages = messages + [{"role": "tool", "name": tname, "content": result}]
+        if budget <= 0:
+            break
     # max steps hit: one final pass without tools
     plain = system_prompt(name, lang, False)
     if expert_ctx:
         plain += "\n\n" + expert_ctx
-    raw, tps = backend.chat(plain, messages)
-    return finish(strip_tool_blocks(raw)), tps, trace
+    raw, tps, fin = ask(plain, messages)
+    return finish(strip_tool_blocks(raw), fin == "length"), tps, trace
