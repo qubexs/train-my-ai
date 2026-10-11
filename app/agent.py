@@ -149,7 +149,7 @@ def run_agent(backend, question, name="XCoder", lang="ms", history=None,
             traw, _ = backend.chat(tsys, messages[-2:], max_tokens=150)
             thinking = sanitize(strip_tool_blocks(traw))
             if thinking:
-                on_think(thinking)
+                on_think(malay_fix(thinking))
         except Exception:
             pass
     trace, tps = [], None

@@ -116,7 +116,18 @@ def detect_stack(text):
         n = sum(1 for k in keys if k in t)
         if n > best_n:
             best, best_n = stack, n
-    return best
+    if best != GENERAL:
+        return best
+    # fallback: perkataan web umum -> stack wakil (blog/website tiada milik stack khusus)
+    for stack, keys in [("nodejs", ["website", "laman web", "blog", "web app", "aplikasi web"]),
+                        ("sql", ["database", "pangkalan data", "query", "data"]),
+                        ("docker", ["kontena", "container"]),
+                        ("linux", ["terminal", "arahan", "server linux"]),
+                        ("python", ["skrip", "aturcara"]),
+                        ("php", ["laman php", "wordpress"])]:
+        if any(k in t for k in keys):
+            return stack
+    return GENERAL
 
 IDENTITY_KEYS = ["siapa anda", "siapa cipta", "siapa bina", "siapa yang buat",
                  "who are you", "who created you", "who made you",

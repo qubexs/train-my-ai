@@ -27,7 +27,7 @@ APP_DIR = (Path(sys.executable).resolve().parent if getattr(sys, "frozen", False
            else Path(__file__).resolve().parent)
 sys.path.insert(0, str(APP_DIR))
 
-__version__ = "0.4.28"
+__version__ = "0.4.29"
 
 LLAMA_TAG = "b11491"
 LLAMA_BASE = f"https://github.com/ggerganov/llama.cpp/releases/download/{LLAMA_TAG}"
@@ -127,6 +127,7 @@ HELP = """Commands:
 /route on|off         auto-tukar pakar ikut domain (lalai: sentiasa on)
 /session <name>       switch session file (sessions/<name>.jsonl)
 /sessions             list sessions
+/new [nama]           session baharu segar (kosongkan konteks)
 /context              show context usage of current session
 /clear                clear in-memory history AND session file
 /good | /bad          rate last answer -> training log (flywheel)
@@ -693,6 +694,13 @@ def repl(args):
             history = scrub_history(load_session(session)[-20:])
             last_qa = [None, None, None]
             print(f"session={session} ({len(history)} turns loaded)")
+            continue
+        if q == "/new" or q.startswith("/new "):
+            import time as _t
+            session = q.split(None, 1)[1] if len(q.split()) > 1 else f"sesi-{_t.strftime('%H%M')}"
+            history = []
+            last_qa = [None, None, None]
+            print(f"session baharu: {session} (konteks kosong)")
             continue
         if q == "/context":
             st = context_stats(session, len(history))
