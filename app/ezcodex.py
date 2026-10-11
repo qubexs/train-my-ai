@@ -27,7 +27,7 @@ APP_DIR = (Path(sys.executable).resolve().parent if getattr(sys, "frozen", False
            else Path(__file__).resolve().parent)
 sys.path.insert(0, str(APP_DIR))
 
-__version__ = "0.4.29"
+__version__ = "0.4.30"
 
 LLAMA_TAG = "b11491"
 LLAMA_BASE = f"https://github.com/ggerganov/llama.cpp/releases/download/{LLAMA_TAG}"
@@ -115,6 +115,7 @@ HELP = """Commands:
 /lang ms|en           switch language (clears turn cache, keeps session file)
 /tools on|off         enable/disable agentic tool loop
 /plan <tugas>         numbered build plan (maks 6 langkah), then build file by file
+/bina <tugas>         laksana plan automatik langkah demi langkah (maks 8, tukar pakar setiap langkah)
 (fikiran AI sentiasa ditunjuk automatik sebelum jawapan — tiada arahan khas)
 /backend llama|lmstudio|server  tukar enjin inferens
 /server               status resident llama-server (backend server sahaja)
@@ -438,6 +439,44 @@ def repl(args):
 
     width = shutil.get_terminal_size((80, 20)).columns
     last_qa = [None, None, None]  # (question, answer, domain) for /good /bad
+
+    def switch_to(cand, dom):
+        """Tukar pakar (satu aktif pada satu masa)."""
+        nonlocal backend, cur
+        if backend.kind == "server":
+            print(f"-> route: {cand['name']} [{dom}] Loading model...")
+            already, secs = backend.manager.load(MODELS_DIR / cand["file"])
+            backend.model = cand["name"]
+            if not already:
+                print(f"[server] dimuat dalam {secs:.1f}s")
+        elif backend.kind == "lmstudio":
+            print(f"(lmstudio: tukar manual /model {cand['name']})")
+            return
+        else:
+            backend = LlamaCliBackend(cli_path, MODELS_DIR / cand["file"],
+                                      n_predict=args.max_tokens)
+        cur = {"name": cand["name"], "domains": cand.get("domains", [dom])}
+        print(f"-> route: {cur['name']} [{dom}] (satu model aktif)")
+
+    def make_plan(task):
+        """Rancangan bernombor (model, fallback templat). Returns plan text."""
+        psys = ("Anda perancang projek. Balas dengan senarai bernombor TEPAT 6 langkah ke bawah "
+                "(setiap langkah: satu fail atau satu arahan + satu ayat tujuan). "
+                "Tiada penerangan panjang."
+                if lang == "ms" else
+                "You are a project planner. Reply with EXACTLY 6 numbered steps or fewer "
+                "(each: one file or one command + one purpose sentence). No long prose.")
+        print(f"... merancang ...")
+        praw, _ = backend.chat(psys, history[-4:] + [{"role": "user", "content": task}],
+                               max_tokens=300)
+        plan = sanitize(praw)
+        import re as _re
+        n_steps = len(_re.findall(r"^\s*\d+\s*[.)]", plan, _re.M))
+        if (not _re.search(r"^\s*\d+\s*[.)]", plan, _re.M) or n_steps > 8
+                or _re.search(r"tepat\s+\d+", plan, _re.I)):
+            plan = plan_fallback(task, lang, detect_domain(task))
+            print("(rancangan templat — model tidak patuh format langkah)")
+        return plan
     while True:
         try:
             q = input("anda> ").strip()
@@ -467,30 +506,61 @@ def repl(args):
             continue
         if q == "/plan" or q.startswith("/plan "):
             task = q[len("/plan"):].strip() or "tugas semasa"
-            psys = ("Anda perancang projek. Balas dengan senarai bernombor TEPAT 6 langkah ke bawah "
-                    "(setiap langkah: satu fail atau satu arahan + satu ayat tujuan). "
-                    "Tiada penerangan panjang."
-                    if lang == "ms" else
-                    "You are a project planner. Reply with EXACTLY 6 numbered steps or fewer "
-                    "(each: one file or one command + one purpose sentence). No long prose.")
-            print(f"... merancang ...")
             try:
-                praw, _ = backend.chat(psys, history[-4:] + [{"role": "user", "content": task}],
-                                       max_tokens=300)
+                plan = make_plan(task)
             except Exception as e:
                 print(f"Ralat: {e}")
                 continue
-            plan = sanitize(praw)
-            import re as _re
-            n_steps = len(_re.findall(r"^\s*\d+\s*[.)]", plan, _re.M))
-            if (not _re.search(r"^\s*\d+\s*[.)]", plan, _re.M) or n_steps > 8
-                    or _re.search(r"tepat\s+\d+", plan, _re.I)):
-                plan = plan_fallback(task, lang, detect_domain(task))
-                print("(rancangan templat — model tidak patuh format langkah)")
             history += [{"role": "user", "content": "/plan " + task},
                         {"role": "assistant", "content": plan}]
             save_turn(session, history[-2:])
             print(f"\nRancangan {task}:\n{plan}\nBina satu langkah satu masa — sebut 'langkah 1', dll.")
+            continue
+        if q == "/bina" or q.startswith("/bina "):
+            btask = q[len("/bina"):].strip()
+            if not btask:
+                print("guna: /bina <tugas projek>  (cth: /bina blog gitar node.js postgresql)")
+                continue
+            try:
+                plan = make_plan(btask)
+            except Exception as e:
+                print(f"Ralat: {e}")
+                continue
+            print(f"\nRancangan {btask}:\n{plan}\n")
+            import re as _r2
+            steps = [m.strip() for m in _r2.findall(r"^\s*\d+\s*[.)]\s*(.+)$", plan, _r2.M)][:8]
+            if not steps:
+                steps = [btask]
+            for i, st in enumerate(steps, 1):
+                print(f"\n=== Langkah {i}/{len(steps)}: {st[:100]} ===")
+                sq = (f"Langkah {i}/{len(steps)} projek [{btask}]: {st}. "
+                      f"Lengkapkan langkah ini sahaja (kod/arahan penuh).")
+                sdom = detect_domain(sq)
+                if auto_route and backend.kind in ("llama-cli", "llama", "server") \
+                        and sdom != GENERAL and sdom not in cur.get("domains", []):
+                    cand = pick_expert(sdom, detect_stack(sq))
+                    if cand:
+                        switch_to(cand, sdom)
+                    else:
+                        print(f"(tiada pakar {sdom} — terus dengan {cur['name']})")
+                print(f"... {name} berfikir ({backend.kind}/{cur['name']}) ...")
+                try:
+                    ans, tps, trace = run_agent(backend, sq, name=name, lang=lang, history=history,
+                                                tools_on=tools_on, tool_ctx=tool_ctx, on_tool=on_tool,
+                                                expert_ctx=expert_context(cur), on_think=on_think)
+                except Exception as e:
+                    print(f"Ralat langkah {i}: {e} — berhenti.")
+                    break
+                history += [{"role": "user", "content": sq}, {"role": "assistant", "content": ans}]
+                save_turn(session, history[-2:])
+                log_training(sq, ans, lang=lang, kind="bina", tools_trace=trace, domain=sdom)
+                last_qa = [sq, ans, sdom]
+                print(f"\n{name}> {ans}")
+                if tps:
+                    s = f"{tps:.1f} T/s"
+                    print(" " * max(0, width - len(s)) + f"\x1b[2m{s}\x1b[0m")
+                print()
+            print(f"Siap {len(steps)} langkah. Semak fail, /good yang betul.")
             continue
         if q.startswith("/backend"):
             b = q.split()[-1]
@@ -765,19 +835,9 @@ def repl(args):
                         and dom not in cur.get("domains", []):
                     cand = pick_expert(dom, detect_stack(q))
                     if cand:
-                        if backend.kind == "server":
-                            print(f"-> route: {cand['name']} [{dom}] Loading model...")
-                            already, secs = backend.manager.load(MODELS_DIR / cand["file"])
-                            backend.model = cand["name"]
-                            if not already:
-                                print(f"[server] dimuat dalam {secs:.1f}s")
-                        else:
-                            backend = LlamaCliBackend(cli_path, MODELS_DIR / cand["file"],
-                                                      n_predict=args.max_tokens)
-                        cur = {"name": cand["name"], "domains": cand.get("domains", [dom])}
-                        print(f"-> route: {cur['name']} [{dom}] (satu model aktif)")
+                        switch_to(cand, dom)
                     else:
-                        print(f"(tiada pakar {dom} - jawab dengan {cur['name']}; "
+                        print(f"(tiada pakar {dom} — jawab dengan {cur['name']}; "
                               f"latih: train --mode sft --domain {dom})")
                 try:
                     ans, tps, trace = run_agent(backend, q, name=name, lang=lang, history=history,
