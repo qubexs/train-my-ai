@@ -39,8 +39,8 @@ def test_rag_bm25_and_cache(monkeypatch):
     import importlib
     monkeypatch.chdir(Path(__file__).resolve().parent.parent)
     importlib.reload(tools)
-    r1 = tools.tool_rag("docker image container", k=1)
+    r1 = tools.tool_rag("dockerfile build image", k=1)
     assert "[docker-basics.md]" in r1
-    assert tools.tool_rag("zzz-no-such-topic-zzz") == "(no relevant docs)"
+    assert tools.tool_rag("zzzqxjvwx") == "(no relevant docs)"
     # cache reuse: same object on repeat call
     assert tools._rag_index() is tools._rag_index()

@@ -18,8 +18,9 @@ def sanitize(text):
     for ln in lines:
         s = ln.strip()
         if re.match(r"^(pengguna|pembantu|jawapan sebelum|soalan|user|assistant)\s*:"
-                     r"|^hasil tool\b.*?:",
-                    s, re.IGNORECASE):
+                     r"|^hasil tool\b.*?:"
+                     r"|^<\|\s*im_(start|end)\s*\|>",
+                     s, re.IGNORECASE):
             continue
         if re.match(r"^jawab soalan terakhir|^answer the last question"
                     r"|^jangan sebut|^never mention",

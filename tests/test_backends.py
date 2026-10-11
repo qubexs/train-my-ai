@@ -8,18 +8,21 @@ def test_transcript_caps_and_labels():
             {"role": "tool", "name": "run", "content": "r"}]
     tt = transcript_text(msgs)
     tm = transcript_messages(msgs)
-    assert len(tt) == len(tm) == 3
-    # content caps (prefix labels excluded)
-    assert tt[0].endswith("u" * 1000) and tt[1].endswith("a" * 300)
-    assert "[Hasil tool run]:" in tt[2]
+    assert len(tm) == 3
+    # ChatML: 3 turns + open assistant prefix
+    assert len(tt) == 4 and tt[-1] == "<|im_start|>assistant\n"
+    # content caps (tags excluded)
+    assert tt[0] == "<|im_start|>user\n" + "u" * 1000 + "<|im_end|>"
+    assert tt[1] == "<|im_start|>assistant\n" + "a" * 300 + "<|im_end|>"
+    assert tt[2] == "<|im_start|>user\n[Hasil tool run]: r<|im_end|>"
     assert tm[2] == {"role": "user", "content": "[Hasil tool run]: r"}
     assert tm[0]["content"].endswith("u" * 1000)
 
 
 def test_transcript_recent_only():
     msgs = [{"role": "user", "content": f"q{i}"} for i in range(20)]
-    assert len(transcript_text(msgs)) == 4
-    assert transcript_text(msgs)[0].endswith("q16")
+    assert len(transcript_text(msgs)) == 5  # 4 turns + prefix
+    assert transcript_text(msgs)[0].endswith("q16<|im_end|>")
 
 
 def test_cli_threads_physical():

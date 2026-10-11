@@ -10,19 +10,22 @@ MAX_ASSISTANT_CHARS = 300
 
 
 def transcript_text(messages):
-    """Single-string transcript for CLI prompts. Anti-echo policy:
-    recent turns only, assistant truncated harder, tool results labelled."""
+    """ChatML transcript — sama seperti format latihan SFT (bukan label Soalan:/Jawapan:).
+    Turns -> blok <|im_start|>role/content/<|im_end|>, diakhiri prefix assistant
+    terbuka supaya model menyambung sebagai pembantu. Had potongan dikekalkan
+    (assistant dipangkas lebih agresif — bahan bakar role-play loop)."""
     turns = []
     for m in (messages or [])[-MAX_TURNS:]:
         role = m.get("role", "user")
         content = (m.get("content", "") or "")
         content = content[:MAX_ASSISTANT_CHARS] if role == "assistant" else content[:MAX_USER_CHARS]
         if role == "tool":
-            turns.append(f"[Hasil tool {m.get('name', '')}]: {content}")
-        elif role == "assistant":
-            turns.append(f"Jawapan sebelum: {content}")
-        else:
-            turns.append(f"Soalan: {content}")
+            content = f"[Hasil tool {m.get('name', '')}]: {content}"
+            role = "user"
+        elif role != "assistant":
+            role = "user"
+        turns.append(f"<|im_start|>{role}\n{content}<|im_end|>")
+    turns.append("<|im_start|>assistant\n")
     return turns
 
 
@@ -66,7 +69,9 @@ class LlamaCliBackend:
         """Returns (text, tps, finish) where finish is stop|length|error."""
         n = max_tokens or self.n_predict
         turns = transcript_text(messages)
-        full = "\n".join(turns) + "\nJawab soalan terakhir dengan ringkas."
+        # Sistem di-inline sebagai blok ChatML (bukan -sys): replika tepat format
+        # latihan SFT yang disahkan reproduksi verbatim.
+        full = f"<|im_start|>system\n{system}<|im_end|>\n" + "\n".join(turns)
         try:
             p = subprocess.run(
                 [self.cli, "-m", self.model, "-c", str(self.ctx),
@@ -77,7 +82,7 @@ class LlamaCliBackend:
                  "--no-display-prompt",
                  "-r", "Pengguna:", "-r", "Pembantu:",
                  "-r", "<|im_start|>", "-r", "<|im_end|>",
-                 "-sys", system, "-p", full],
+                 "-p", full],
                 capture_output=True, text=True, encoding="utf-8", errors="replace",
                 timeout=300)
         except subprocess.TimeoutExpired:
@@ -88,7 +93,17 @@ class LlamaCliBackend:
         m = re.search(r"Generation:\s*([\d.]+)\s*t/s", blob)
         tps = float(m.group(1)) if m else None
         lines = blob.splitlines()
+        plines = full.splitlines()
         start = next((i + 1 for i, l in enumerate(lines) if l.startswith("> ")), 0)
+        if start > 0 and plines and lines[start - 1][2:] == plines[0]:
+            # gema prompt: baris pertama berawalan "> ", selebihnya mentah —
+            # buang run berterusan yang sepadan tepat dengan prompt
+            pend, pi = start, 1
+            while pi < len(plines) and pend < len(lines) and lines[pend] == plines[pi]:
+                pend += 1
+                pi += 1
+            if pi >= len(plines):
+                start = pend
         end = next((i for i, l in enumerate(lines) if l.startswith("[ Prompt:")), len(lines))
         text = "\n".join(lines[start:end]).strip() or blob.strip()
         # CLI has no finish_reason: length hit iff output ran near the token budget
