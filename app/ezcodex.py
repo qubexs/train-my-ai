@@ -27,7 +27,7 @@ APP_DIR = (Path(sys.executable).resolve().parent if getattr(sys, "frozen", False
            else Path(__file__).resolve().parent)
 sys.path.insert(0, str(APP_DIR))
 
-__version__ = "0.4.37"
+__version__ = "0.4.38"
 
 LLAMA_TAG = "b11491"
 LLAMA_BASE = f"https://github.com/ggerganov/llama.cpp/releases/download/{LLAMA_TAG}"
@@ -126,6 +126,7 @@ HELP = """Commands:
 /models check         audit GGUF (hash, sah, duplikat, registry)
   /consult <soalan>     runding 2 pakar, pengurus sintesis jawapan penuh
   /semua <soalan>       semua model jawab, setiap satu result sendiri
+  /kerja <soalan>       pakar bekerjasama, gemma semak + putuskan
 /route on|off         auto-tukar pakar ikut domain (lalai: sentiasa on)
 /session <name>       switch session file (sessions/<name>.jsonl)
 /sessions             list sessions
@@ -852,6 +853,95 @@ def repl(args):
                 log_training(stask, rans, lang=lang, kind="semua",
                              domain=",".join(m.get("domains", [])))
             print("\nSiap /semua. /good mana yang betul untuk latih semula.")
+            continue
+        if q == "/kerja" or q.startswith("/kerja "):
+            wtask = q[len("/kerja"):].strip()
+            if not wtask:
+                print("guna: /kerja <soalan>  (pakar jawab, gemma semak + putuskan)")
+                continue
+            from experts import matching_stacks as _ms
+            stacks = _ms(wtask) or [detect_domain(wtask)]
+            cands = [m for m in scan_models(MODELS_DIR)
+                     if m.get("file") and (MODELS_DIR / m["file"]).is_file()
+                     and m.get("name") != MANAGER_NAME
+                     and any(d in stacks for d in m.get("domains", []))]
+            # utamakan nama sepadan stack, had 4 pakar (masa CPU)
+            cands.sort(key=lambda m: 0 if any(s in m["name"] for s in stacks) else 1)
+            cands = cands[:4]
+            if not cands:
+                print("tiada pakar berfail untuk soalan ini.")
+                continue
+            mfile = manager_file()
+            if mfile is None:
+                print(f"pengurus {MANAGER_NAME} tiada — muat turun dahulu.")
+                continue
+            print(f"{len(cands)} pakar {[m['name'] for m in cands]} akan jawab, "
+                  f"{MANAGER_NAME} semak + putuskan.")
+            cli = cli_path or ensure_cli()
+            from agent import clean as _clean3
+            parts = []
+            for m in cands:
+                print(f"\n=== [{m['name']}] ===")
+                try:
+                    tmp = LlamaCliBackend(cli, MODELS_DIR / m["file"], n_predict=250)
+                    esys = (f"Anda pakar {','.join(m.get('domains', []))}. Jawab ringkas."
+                            if lang == "ms" else
+                            f"You are a {','.join(m.get('domains', []))} expert. Answer briefly.")
+                    import time as _t3
+                    t0 = _t3.time()
+                    rraw, rtps = tmp.chat(esys, [{"role": "user", "content": wtask}])
+                    rans = _clean3(sanitize(rraw), name)
+                except KeyboardInterrupt:
+                    print("(dihenti — pakar berbaki dilangkau)")
+                    break
+                except Exception as e:
+                    print(f"(ralat: {e})")
+                    continue
+                el = _t3.time() - t0
+                print(rans)
+                if rtps:
+                    print(f"\x1b[2m{rtps:.1f} T/s ({el:.0f}s)\x1b[0m")
+                    record_speed(MODELS_DIR, m["name"], rtps)
+                parts.append((m["name"], rans))
+                log_training(wtask, rans, lang=lang, kind="kerja",
+                             domain=",".join(m.get("domains", [])))
+            if not parts:
+                print("tiada jawapan pakar untuk disemak.")
+                continue
+            vsys = ("Anda pengurus dan penyemak. Di bawah jawapan beberapa pakar untuk soalan pengguna. "
+                    "Untuk SETIAP pakar beri: skor /10 + satu ayat (betul? salah di mana?). "
+                    "Kemudian tulis JAWAPAN AKHIR yang digabung dan diperbetul, dalam Bahasa Melayu. "
+                    "Format: baris `Nama: skor/10 - ulasan` setiap pakar, baris kosong, `KEPUTUSAN:` + jawapan. "
+                    "Jangan tulis proses berfikir; terus ke format."
+                    if lang == "ms" else
+                    "You are the manager and verifier. Below are answers from several experts. "
+                    "For EACH expert give: score /10 + one sentence (correct? where wrong?). "
+                    "Then write the merged corrected FINAL ANSWER in English. "
+                    "Format: `Name: score/10 - review` per expert, blank line, `VERDICT:` + answer. "
+                    "No thinking process; go straight to the format.")
+            vuser = wtask + "\n\n" + "\n\n".join(f"[{n}]: {a}" for n, a in parts)
+            print(f"\n[{MANAGER_NAME} menyemak...]")
+            try:
+                vraw, vtps = LlamaCliBackend(cli, mfile,
+                                             n_predict=args.max_tokens).chat(vsys, [{"role": "user",
+                                                                                    "content": vuser}])
+                verdict = _clean3(sanitize(vraw), name)
+            except Exception as e:
+                print(f"Ralat semakan: {e}")
+                continue
+            history += [{"role": "user", "content": wtask},
+                        {"role": "assistant", "content": verdict}]
+            save_turn(session, history[-2:])
+            log_training(wtask, verdict, lang=lang, kind="kerja-verdict",
+                         tools_trace=[{"tool": "kerja", "arg": n, "result": a[:200]}
+                                      for n, a in parts])
+            last_qa = [wtask, verdict, detect_domain(wtask)]
+            if vtps:
+                record_speed(MODELS_DIR, MANAGER_NAME, vtps)
+            print(f"\n{name} (keputusan {MANAGER_NAME})> {verdict}")
+            if vtps:
+                print(f"{vtps:.1f} T/s")
+            print()
             continue
         if q.startswith("/route"):
             auto_route = q.split()[-1] != "off" if len(q.split()) > 1 else True

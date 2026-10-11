@@ -131,8 +131,13 @@ def detect_stack(text):
 
 def count_stacks(text):
     """Bilangan stack berbeza yang disebut — >=2 ertinya soalan rentas-stack."""
+    return len(matching_stacks(text))
+
+
+def matching_stacks(text):
+    """Senarai stack yang disebut dalam teks."""
     t = " " + (text or "").lower() + " "
-    return sum(1 for keys in STACKS.values() if any(k in t for k in keys))
+    return [s for s, keys in STACKS.items() if any(k in t for k in keys)]
 
 
 IDENTITY_KEYS = ["siapa anda", "siapa cipta", "siapa bina", "siapa yang buat",
