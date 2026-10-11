@@ -27,7 +27,7 @@ APP_DIR = (Path(sys.executable).resolve().parent if getattr(sys, "frozen", False
            else Path(__file__).resolve().parent)
 sys.path.insert(0, str(APP_DIR))
 
-__version__ = "0.4.38"
+__version__ = "0.4.39"
 
 LLAMA_TAG = "b11491"
 LLAMA_BASE = f"https://github.com/ggerganov/llama.cpp/releases/download/{LLAMA_TAG}"
@@ -449,6 +449,17 @@ def do_sft_export(flt):
             f"merged [{mg}]")
 
 
+def print_speed_recap(rows):
+    """Ringkasan kelajuan semua model terlibat: [(nama, tps, saat)]."""
+    rows = [(n, t, s) for n, t, s in rows if t]
+    if not rows:
+        return
+    print("\n--- kelajuan ---")
+    for n, t, s in rows:
+        print(f"  {n:<18} {t:>6.1f} T/s ({s:.0f}s)")
+    print()
+
+
 def repl(args):
     cli_path = model_path = None
     if args.backend in ("llama", "auto"):
@@ -764,6 +775,7 @@ def repl(args):
             cli = cli_path or ensure_cli()
             from agent import clean as _clean
             parts = []
+            crows = []
             for m in cands:
                 print(f"[consult:{m['name']}] bertanya...")
                 try:
@@ -771,11 +783,16 @@ def repl(args):
                     esys = (f"Anda pakar {','.join(m.get('domains', []))}. Jawab ringkas."
                             if lang == "ms" else
                             f"You are a {','.join(m.get('domains', []))} expert. Answer briefly.")
-                    rraw, _ = tmp.chat(esys, [{"role": "user", "content": ctask}])
+                    import time as _t0
+                    _s0 = _t0.time()
+                    rraw, _ctps = tmp.chat(esys, [{"role": "user", "content": ctask}])
+                    _cel = _t0.time() - _s0
                     rans = _clean(sanitize(rraw), name)
                 except Exception as e:
                     rans = f"(ralat: {e})"
+                    _ctps, _cel = None, 0
                 parts.append((m["name"], rans))
+                crows.append((m["name"], _ctps, _cel))
                 print(f"[{m['name']}]: {rans[:400]}\n")
             mfile = manager_file()
             if mfile is not None:
@@ -796,8 +813,10 @@ def repl(args):
                     "Drop repetition; on conflict pick the most correct. Answer directly.")
             suser = ctask + "\n\n" + "\n\n".join(f"[{n}]: {a}" for n, a in parts)
             try:
+                _s1 = _t0.time()
                 sraw, stps = LlamaCliBackend(cli, gfile, n_predict=args.max_tokens).chat(ssys, [{"role": "user",
                                                                                              "content": suser}])
+                _sel = _t0.time() - _s1
                 sans = _clean(sanitize(sraw), name)
             except Exception as e:
                 print(f"Ralat sintesis: {e}")
@@ -811,6 +830,8 @@ def repl(args):
             print(f"\n{name} (sintesis {gname})> {sans}")
             if stps:
                 print(f"{stps:.1f} T/s")
+                crows.append((gname, stps, _sel))
+            print_speed_recap(crows)
             print()
             continue
         if q == "/semua" or q.startswith("/semua "):
@@ -827,6 +848,7 @@ def repl(args):
             cli = cli_path or ensure_cli()
             from agent import clean as _clean2
             sdom = detect_domain(stask)
+            srows = []
             for m in cands:
                 hdr = f"=== [{m['name']}] [{','.join(m.get('domains', []))}] ==="
                 print(f"\n{hdr}")
@@ -848,11 +870,13 @@ def repl(args):
                 el = _t2.time() - t0
                 print(rans)
                 if rtps:
-                    print(f"\x1b[2m{rtps:.1f} T/s ({el:.0f}s)\x1b[0m")
+                    print(f"\x1b[2m[{m['name']}] {rtps:.1f} T/s ({el:.0f}s)\x1b[0m")
                     record_speed(MODELS_DIR, m["name"], rtps)
+                srows.append((m["name"], rtps, el))
                 log_training(stask, rans, lang=lang, kind="semua",
                              domain=",".join(m.get("domains", [])))
-            print("\nSiap /semua. /good mana yang betul untuk latih semula.")
+            print_speed_recap(srows)
+            print("Siap /semua. /good mana yang betul untuk latih semula.")
             continue
         if q == "/kerja" or q.startswith("/kerja "):
             wtask = q[len("/kerja"):].strip()
@@ -880,6 +904,7 @@ def repl(args):
             cli = cli_path or ensure_cli()
             from agent import clean as _clean3
             parts = []
+            wrows = []
             for m in cands:
                 print(f"\n=== [{m['name']}] ===")
                 try:
@@ -900,8 +925,9 @@ def repl(args):
                 el = _t3.time() - t0
                 print(rans)
                 if rtps:
-                    print(f"\x1b[2m{rtps:.1f} T/s ({el:.0f}s)\x1b[0m")
+                    print(f"\x1b[2m[{m['name']}] {rtps:.1f} T/s ({el:.0f}s)\x1b[0m")
                     record_speed(MODELS_DIR, m["name"], rtps)
+                wrows.append((m["name"], rtps, el))
                 parts.append((m["name"], rans))
                 log_training(wtask, rans, lang=lang, kind="kerja",
                              domain=",".join(m.get("domains", [])))
@@ -922,9 +948,11 @@ def repl(args):
             vuser = wtask + "\n\n" + "\n\n".join(f"[{n}]: {a}" for n, a in parts)
             print(f"\n[{MANAGER_NAME} menyemak...]")
             try:
+                _v0 = _t3.time()
                 vraw, vtps = LlamaCliBackend(cli, mfile,
                                              n_predict=args.max_tokens).chat(vsys, [{"role": "user",
                                                                                     "content": vuser}])
+                _vel = _t3.time() - _v0
                 verdict = _clean3(sanitize(vraw), name)
             except Exception as e:
                 print(f"Ralat semakan: {e}")
@@ -940,7 +968,9 @@ def repl(args):
                 record_speed(MODELS_DIR, MANAGER_NAME, vtps)
             print(f"\n{name} (keputusan {MANAGER_NAME})> {verdict}")
             if vtps:
-                print(f"{vtps:.1f} T/s")
+                print(f"\x1b[2m[{MANAGER_NAME}] {vtps:.1f} T/s ({_vel:.0f}s)\x1b[0m")
+                wrows.append((MANAGER_NAME, vtps, _vel))
+            print_speed_recap(wrows)
             print()
             continue
         if q.startswith("/route"):
