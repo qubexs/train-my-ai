@@ -13,11 +13,12 @@ Tailwind, Linux, Bash, Docker, general.
 py app\ezcodex.py --lang ms --tui   # mod TUI
 ```
 
-Pelayan resident (jawapan ulangan pantas, unload bila melahu):
+Pelayan resident ialah lalai interaktif (model dimuat sekali, kekal untuk giliran
+berikutnya; unload bila melahu). `--once`/pipe guna `llama-cli` (0 RAM resident):
 
 ```powershell
-.\load.bat                          # llama-server + xcoder-general di :8080
-.\ezcodex.bat --backend server      # ...atau: load.bat models\xcoder-docker-*.gguf
+.\load.bat                          # llama-server + xcoder-general di :8080 (manual)
+.\ezcodex.bat --backend llama       # paksa mod sejuk (tiada resident)
 ```
 
 Dasar: **inferens CPU** (jimat kuasa/RAM, 0 RAM ketika melahu) —

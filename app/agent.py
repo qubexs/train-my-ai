@@ -66,11 +66,11 @@ def system_prompt(name, lang, tools_on=True, size="0.5B"):
     if lang == "ms":
         base += ("\n\nGuna Bahasa Melayu Malaysia (BUKAN Indonesia): tulis 'komuniti' bukan 'komunitas', "
                  "'kod' bukan 'kode', 'boleh' bukan 'bisa', 'bagaimana' bukan 'gimana'.")
-    base += ("\n\nSebelum menjawab, tulis fikiran ringkas (2-4 baris) dahulu, "
-             "kemudian tulis JAWAPAN AKHIR berasingan."
+    base += ("\n\nFormat wajib setiap jawapan:\nFIKIR: <fikiran ringkas 1-2 baris>\n"
+             "JAWAPAN AKHIR: <jawapan penuh>"
              if lang == "ms" else
-             "\n\nBefore answering, write brief thinking (2-4 lines) first, "
-             "then write a separate FINAL ANSWER.")
+             "\n\nMandatory format for every answer:\nTHINKING: <brief 1-2 lines>\n"
+             "FINAL ANSWER: <full answer>")
     if tools_on:
         base += "\n\n" + TOOL_SPEC
     return base
@@ -81,7 +81,10 @@ def split_thinking(text, lang="ms"):
     mark = "jawapan akhir" if lang == "ms" else "final answer"
     parts = re.split(mark, text or "", flags=re.IGNORECASE, maxsplit=1)
     if len(parts) == 2 and parts[1].strip():
-        return sanitize(parts[0]), parts[1]
+        think = sanitize(parts[0])
+        think = re.sub(r"^(fikir|thinking)\s*:\s*", "", think, flags=re.IGNORECASE)
+        answer = re.sub(r"^[\s:\-]+", "", parts[1])
+        return think or None, answer
     return None, text
 
 
@@ -136,27 +139,23 @@ def run_agent(backend, question, name="XCoder", lang="ms", history=None,
     Thinking trace is parsed and shown via on_think (always on)."""
     history = history or []
     tool_ctx = tool_ctx or {}
-    messages = list(history[-8:]) + [{"role": "user", "content": question}]
+    messages = list(history[-4:]) + [{"role": "user", "content": question}]
     system = system_prompt(name, lang, tools_on, size)
     if expert_ctx:
         system += "\n\n" + expert_ctx
-    # Fikiran dahulu (panggilan khas, sentiasa ditunjuk): apa yang AI akan buat.
-    if on_think is not None:
+    trace, tps = [], None
+
+    def show_think(raw_text):
+        """Papar fikiran inline (JAWAPAN AKHIR dipisah) — tiada panggilan tambahan."""
+        if on_think is None:
+            return
         try:
-            tsys = ("Tulis fikiran ringkas 2-4 baris: apa yang pengguna mahu dan bagaimana anda akan jawab. "
-                    "Jangan jawab lagi, tulis fikiran sahaja."
-                    if lang == "ms" else
-                    "Write brief thinking, 2-4 lines: what the user wants and how you will answer. "
-                    "Do not answer yet, thinking only.")
-            if expert_ctx:
-                tsys += "\n\n" + expert_ctx
-            traw, _ = backend.chat(tsys, messages[-2:], max_tokens=150)
-            thinking = sanitize(strip_tool_blocks(traw))
-            if thinking:
-                on_think(malay_fix(thinking))
+            think, _ = split_thinking(raw_text, lang)
+            think = malay_fix(think) if think else ""
+            if think:
+                on_think(think)
         except Exception:
             pass
-    trace, tps = [], None
 
     def ask(sysmsg, msgs, max_tokens=None):
         """chat_ex when available (text, tps, finish); else chat (finish unknown)."""
@@ -203,6 +202,7 @@ def run_agent(backend, question, name="XCoder", lang="ms", history=None,
         raw, tps, fin = ask(system, messages)
         calls = extract_tool_calls(raw) if tools_on else []
         if not calls:
+            show_think(raw)
             return finish(raw, fin == "length"), tps, trace
         messages = messages + [{"role": "assistant",
                                 "content": strip_tool_blocks(raw) or "(using tool)"}]
@@ -223,4 +223,5 @@ def run_agent(backend, question, name="XCoder", lang="ms", history=None,
     if expert_ctx:
         plain += "\n\n" + expert_ctx
     raw, tps, fin = ask(plain, messages)
+    show_think(raw)
     return finish(strip_tool_blocks(raw), fin == "length"), tps, trace

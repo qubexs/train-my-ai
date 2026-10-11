@@ -1,5 +1,6 @@
 """Hardware-aware auto budget: max_tokens/ctx/threads from RAM + CPU (stdlib only)."""
 import os
+import sys
 
 
 def total_ram_gb():
@@ -32,6 +33,60 @@ def cpu_count():
     return os.cpu_count() or 4
 
 
+def physical_cores():
+    """Physical cores (hyperthreads hurt llama.cpp). Stdlib-only per OS."""
+    try:
+        if os.name == "nt":
+            import ctypes
+            import ctypes.wintypes as _w
+            # Byte-walk GetLogicalProcessorInformation (no struct defs):
+            # entry = [mask:ULONG_PTR][rel:DWORD][pad+union 20B] = 32B x64, 24B x86.
+            # RelationProcessorCore = 0. Verified: size % stride == 0.
+            k32 = ctypes.windll.kernel32
+            size = _w.DWORD(0)
+            k32.GetLogicalProcessorInformation(None, ctypes.byref(size))
+            if size.value <= 0:
+                raise ValueError("no size")
+            ptr = ctypes.sizeof(ctypes.c_void_p)
+            stride = 32 if ptr == 8 else 24
+            if size.value % stride:
+                raise ValueError("stride mismatch")
+            buf = ctypes.create_string_buffer(size.value)
+            if not k32.GetLogicalProcessorInformation(buf, ctypes.byref(size)):
+                raise ValueError("query failed")
+            cores = 0
+            for off in range(0, size.value, stride):
+                rel = int.from_bytes(bytes(buf[off + ptr:off + ptr + 4]), "little")
+                if rel == 0:  # RelationProcessorCore
+                    cores += 1
+            if cores > 0:
+                return cores
+        elif sys.platform == "darwin":
+            import subprocess
+            out = subprocess.run(["sysctl", "-n", "hw.physicalcpu"],
+                                 capture_output=True, text=True, timeout=5)
+            n = int((out.stdout or "").strip())
+            if n > 0:
+                return n
+        else:
+            pairs = set()
+            with open("/proc/cpuinfo", encoding="utf-8", errors="replace") as f:
+                phys, core = None, None
+                for line in f:
+                    if line.startswith("physical id"):
+                        phys = line.split(":", 1)[1].strip()
+                    elif line.startswith("core id"):
+                        core = line.split(":", 1)[1].strip()
+                    elif not line.strip() and phys is not None:
+                        pairs.add((phys, core))
+                        phys, core = None, None
+            if pairs:
+                return len(pairs)
+    except Exception:
+        pass
+    return max(1, cpu_count() // 2)
+
+
 def auto_budget():
     """Returns (ram_gb, max_tokens, ctx, threads) sensible for 0.5B CPU box."""
     ram = total_ram_gb()
@@ -44,5 +99,5 @@ def auto_budget():
         max_tokens, ctx = 400, 2048
     else:
         max_tokens, ctx = 250, 1024
-    threads = max(2, cpus - 1)
+    threads = max(2, physical_cores())
     return ram, max_tokens, ctx, threads

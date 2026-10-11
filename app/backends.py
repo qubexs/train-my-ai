@@ -4,9 +4,9 @@ import re
 import subprocess
 import urllib.request
 
-MAX_TURNS = 6
+MAX_TURNS = 4
 MAX_USER_CHARS = 1000
-MAX_ASSISTANT_CHARS = 500
+MAX_ASSISTANT_CHARS = 300
 
 
 def transcript_text(messages):
@@ -44,13 +44,23 @@ def transcript_messages(messages):
 
 
 class LlamaCliBackend:
-    def __init__(self, cli_path, model_path, ctx=2048, n_predict=500, temp=0.3):
+    def __init__(self, cli_path, model_path, ctx=1024, n_predict=500, temp=0.3,
+                 threads=0):
         self.cli = str(cli_path)
         self.model = str(model_path)
         self.ctx = ctx
         self.n_predict = n_predict
         self.temp = temp
+        if not threads:
+            try:
+                from hardware import physical_cores
+                threads = physical_cores()
+            except Exception:
+                import os
+                threads = os.cpu_count() or 4
+        self.threads = max(1, threads)
         self.kind = "llama-cli"
+        self.last_timings = None  # CLI: no prefill/decode split available
 
     def chat_ex(self, system, messages, max_tokens=None):
         """Returns (text, tps, finish) where finish is stop|length|error."""
@@ -60,7 +70,7 @@ class LlamaCliBackend:
         try:
             p = subprocess.run(
                 [self.cli, "-m", self.model, "-c", str(self.ctx),
-                 "-n", str(n),
+                 "-n", str(n), "-t", str(self.threads),
                  "--temp", str(self.temp),
                  "--repeat-penalty", "1.15", "--repeat-last-n", "128",
                  "--log-disable", "-st",
@@ -90,7 +100,6 @@ class LlamaCliBackend:
         text, tps, _ = self.chat_ex(system, messages, max_tokens)
         return text, tps
 
-
 class LmStudioBackend:
     def __init__(self, base_url="http://localhost:1234/v1", model="ezcodex-0.5b",
                  temp=0.3, max_tokens=500):
@@ -99,6 +108,8 @@ class LmStudioBackend:
         self.temp = temp
         self.max_tokens = max_tokens
         self.kind = "lmstudio"
+        self.last_timings = None
+
     def chat_ex(self, system, messages, max_tokens=None):
         import time
         body = json.dumps({
@@ -117,6 +128,7 @@ class LmStudioBackend:
         choice = (data.get("choices") or [{}])[0]
         out = (choice.get("message") or {}).get("content", "")
         tok = (data.get("usage") or {}).get("completion_tokens") or max(1, len(out) // 4)
+        self.last_timings = data.get("timings")
         return out, tok / secs, choice.get("finish_reason") or "stop"
 
     def chat(self, system, messages, max_tokens=None):
@@ -140,6 +152,10 @@ class ServerBackend:
         self.manager = manager
         self.kind = "server"
         self._api = LmStudioBackend(manager.url + "/v1", model, temp, max_tokens)
+
+    @property
+    def last_timings(self):
+        return self._api.last_timings
 
     @property
     def model(self):

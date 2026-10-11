@@ -61,3 +61,30 @@ class LegacyBackend:
 def test_run_agent_legacy_backend():
     ans, tps, trace = run_agent(LegacyBackend(), "hai", tools_on=False)
     assert "ok" in ans and tps == 10 and trace == []
+
+
+class CountingBackend:
+    """Implements both chat and chat_ex: thinking pre-call must NOT fire."""
+
+    def __init__(self):
+        self.chat_calls = 0
+        self.ex_calls = 0
+
+    def chat(self, system, messages, max_tokens=None):
+        self.chat_calls += 1
+        return "fikiran lama", 1
+
+    def chat_ex(self, system, messages, max_tokens=None):
+        self.ex_calls += 1
+        return "pengguna mahu jawapan ringkas\nJAWAPAN AKHIR siap", 20, "stop"
+
+
+def test_no_thinking_precall():
+    be = CountingBackend()
+    seen = []
+    ans, _, _ = run_agent(be, "hai", tools_on=False,
+                          on_think=lambda t: seen.append(t))
+    assert be.chat_calls == 0  # tiada panggilan thinking berasingan
+    assert be.ex_calls == 1  # satu generasi sahaja
+    assert seen and "ringkas" in seen[0]
+    assert "siap" in ans

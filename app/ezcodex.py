@@ -1,6 +1,6 @@
 """XCoder - opencode-style agentic CLI (stdlib only).
 
-Backends: llama-cli subprocess (default, 0 RAM idle) | --backend lmstudio (http://localhost:1234/v1)
+Backends: resident server (default interaktif, 0 reload) | llama-cli (--once/skrip) | lmstudio
 Tools: list/read/write/edit/run/bash/rag with workspace jail + confirm.
 Sessions: app/sessions/<name>.jsonl | Training flywheel: app/data/training.jsonl
 Train: `py app/ezcodex.py train --mode sft|pretrain --export-only` (+ Colab scripts in finetune/)
@@ -18,7 +18,7 @@ APP_DIR = (Path(sys.executable).resolve().parent if getattr(sys, "frozen", False
            else Path(__file__).resolve().parent)
 sys.path.insert(0, str(APP_DIR))
 
-__version__ = "0.4.43"
+__version__ = "0.4.44"
 
 from fetch import (LLAMA_TAG, LLAMA_BASE, HF_MODEL_URL, MODEL_SIZE,
                    asset_name, download, verify, sha256_file,
@@ -52,7 +52,7 @@ HELP = """Commands:
 /plan <tugas>         numbered build plan (maks 6 langkah), then build file by file
 /bina <tugas>         laksana plan automatik langkah demi langkah (maks 8, tukar pakar setiap langkah)
 (fikiran AI sentiasa ditunjuk automatik sebelum jawapan — tiada arahan khas)
-/backend llama|lmstudio|server  tukar enjin inferens
+/backend llama|lmstudio|server|auto  tukar enjin (auto=server interaktif, llama --once)
 /server               status resident llama-server (backend server sahaja)
 /model <nama|path|id>  tukar model pakar (satu aktif pada satu masa)
 /model add <url|fail> [--name N] [--domains a,b]  daftar model baharu
@@ -92,7 +92,8 @@ def build_parser():
     ap.add_argument("--lang", default="ms", choices=["ms", "en"])
     ap.add_argument("--name", default="XCoder")
     ap.add_argument("--setup", action="store_true", help="download engine + model only, then exit")
-    ap.add_argument("--backend", default="llama", choices=["llama", "lmstudio", "server", "auto"])
+    ap.add_argument("--backend", default="auto", choices=["llama", "lmstudio", "server", "auto"],
+                    help="auto=server jika interaktif, llama jika --once/pipe")
     ap.add_argument("--lm-url", default="http://localhost:1234/v1")
     ap.add_argument("--lm-model", default="ezcodex-0.5b")
     ap.add_argument("--port", type=int, default=8080, help="llama-server port (backend server)")
@@ -135,12 +136,41 @@ def get_manager(args):
     return _MANAGER
 
 
+def resolve_backend_name(args):
+    """auto -> server jika REPL interaktif (KV-cache + tanpa reload),
+    llama jika --once/pipe (0 RAM resident)."""
+    if getattr(args, "backend", "auto") != "auto":
+        return args.backend
+    if getattr(args, "once", ""):
+        return "llama"
+    try:
+        if sys.stdin.isatty():
+            return "server"
+    except Exception:
+        pass
+    return "llama"
+
+
+def fmt_speed(backend, tps):
+    """Pecahan timing: [prefill Xs | decode Ys -> N T/s] jika backend lapor timings."""
+    tm = getattr(backend, "last_timings", None)
+    if isinstance(tm, dict) and tm.get("predicted_ms"):
+        pre = (tm.get("prompt_ms") or 0) / 1000
+        dec = (tm.get("predicted_ms") or 1) / 1000
+        pn = tm.get("prompt_n", "?")
+        dn = tm.get("predicted_n", "?")
+        return f"[prefill {pre:.1f}s/{pn} | decode {dec:.1f}s/{dn} -> {tps:.1f} T/s]"
+    return f"{tps:.1f} T/s"
+
+
 def make_backend(args, cli_path=None, model_path=None):
-    if args.backend == "lmstudio":
+    name = resolve_backend_name(args)
+    if name == "lmstudio":
         return LmStudioBackend(args.lm_url, args.model or args.lm_model,
                                max_tokens=args.max_tokens)
-    if args.backend == "server":
+    if name == "server":
         from backends import ServerBackend
+        ensure_cli()  # pastikan enjin (termasuk llama-server) wujud
         model = Path(args.model) if args.model else (model_path or ensure_model())
         mgr = get_manager(args)
         already, secs = mgr.load(model)
@@ -385,6 +415,11 @@ def repl(args):
                 "rag_k": 2}
     print(f"{name} v{__version__} ready [{backend.kind}, model={cur['name']}, tools={'on' if tools_on else 'off'}, "
           f"route={'on' if auto_route else 'off'}, session={session}]. Taip /help\n")
+    try:
+        from tools import _rag_index
+        _rag_index()  # prewarm cache RAG semasa startup, bukan semasa tool dipanggil
+    except Exception:
+        pass
 
     def on_tool(tname, targ, result):
         print(f"[tool:{tname}] {targ[:120]}")
@@ -515,7 +550,8 @@ def repl(args):
                     msize = "4.5B" if "gemma" in cur.get("name", "") else "0.5B"
                     ans, tps, trace = run_agent(backend, sq, name=name, lang=lang, history=history,
                                                 tools_on=tools_on, tool_ctx=tool_ctx, on_tool=on_tool,
-                                                expert_ctx=expert_context(cur), on_think=on_think,
+                                                expert_ctx=expert_context(cur) if auto_route else "",
+                                                on_think=on_think,
                                                 size=msize)
                 except Exception as e:
                     print(f"Ralat langkah {i}: {e} — berhenti.")
@@ -529,13 +565,15 @@ def repl(args):
                     record_speed(MODELS_DIR, cur.get("name", ""), tps)
                 print(f"\n{name}> {ans}")
                 if tps:
-                    s = f"{tps:.1f} T/s ({el:.0f}s langkah)"
+                    s = fmt_speed(backend, tps) + f" ({el:.0f}s langkah)"
                     print(" " * max(0, width - len(s)) + f"\x1b[2m{s}\x1b[0m")
                 print()
             print(f"Siap {len(steps)} langkah. Semak fail, /good yang betul.")
             continue
         if q.startswith("/backend"):
             b = q.split()[-1]
+            if b == "auto":
+                b = resolve_backend_name(args)
             if b in ("llama", "auto"):
                 cli_path, model_path = ensure_cli(), ensure_model()
                 backend = LlamaCliBackend(cli_path, model_path, n_predict=args.max_tokens)
@@ -977,7 +1015,8 @@ def repl(args):
                     msize = "4.5B" if "gemma" in cur.get("name", "") else "0.5B"
                     ans, tps, trace = run_agent(backend, q, name=name, lang=lang, history=history,
                                                 tools_on=tools_on, tool_ctx=tool_ctx, on_tool=on_tool,
-                                                expert_ctx=expert_context(cur), on_think=on_think,
+                                                expert_ctx=expert_context(cur) if auto_route else "",
+                                                on_think=on_think,
                                                 size=msize)
                 except Exception as e:
                     print(f"Ralat: {e}")
@@ -990,7 +1029,7 @@ def repl(args):
             record_speed(MODELS_DIR, cur.get("name", ""), tps)
         print(f"\n{name}> {ans}")
         if tps:
-            s = f"{tps:.1f} T/s"
+            s = fmt_speed(backend, tps)
             print(" " * max(0, width - len(s)) + f"\x1b[2m{s}\x1b[0m")
         print()
 
@@ -1022,8 +1061,8 @@ def main():
         print(f"[auto] max_tokens {args.max_tokens} > ctx — dihadkan kepada ctx.")
         args.max_tokens = args.ctx
     if args.cmd != "train" and not args.once:
-        print(f"[auto] RAM {ram:.1f}GB CPU {cpu_count()} -> max_tokens={args.max_tokens} "
-              f"ctx={args.ctx} threads={args.threads} (tetapkan manual untuk ubah)")
+        print(f"[auto] RAM {ram:.1f}GB CPU {cpu_count()} -> backend={resolve_backend_name(args)} "
+              f"max_tokens={args.max_tokens} ctx={args.ctx} threads={args.threads} (tetapkan manual untuk ubah)")
     if args.cmd == "train":
         flt = (args.domain or "").strip().lower() or None
         corp_dest = f"finetune/stacks/{flt or 'general'}/corpus.txt"
@@ -1059,7 +1098,7 @@ def main():
         ans, tps, _ = run_agent(backend, args.once, name=args.name, lang=args.lang,
                                 tools_on=not args.no_tools,
                                 tool_ctx={"allow_all": True, "rag_k": 2},
-                                expert_ctx=expert_context(cur),
+                                expert_ctx=expert_context(cur) if args.autoroute else "",
                                 on_think=lambda t: print("\x1b[2m[berfikir]\n" + t[:800] + "\x1b[0m"))
         print(ans)
         if backend.kind == "server":

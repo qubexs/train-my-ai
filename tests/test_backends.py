@@ -10,7 +10,7 @@ def test_transcript_caps_and_labels():
     tm = transcript_messages(msgs)
     assert len(tt) == len(tm) == 3
     # content caps (prefix labels excluded)
-    assert tt[0].endswith("u" * 1000) and tt[1].endswith("a" * 500)
+    assert tt[0].endswith("u" * 1000) and tt[1].endswith("a" * 300)
     assert "[Hasil tool run]:" in tt[2]
     assert tm[2] == {"role": "user", "content": "[Hasil tool run]: r"}
     assert tm[0]["content"].endswith("u" * 1000)
@@ -18,5 +18,55 @@ def test_transcript_caps_and_labels():
 
 def test_transcript_recent_only():
     msgs = [{"role": "user", "content": f"q{i}"} for i in range(20)]
-    assert len(transcript_text(msgs)) == 6
-    assert transcript_text(msgs)[0].endswith("q14")
+    assert len(transcript_text(msgs)) == 4
+    assert transcript_text(msgs)[0].endswith("q16")
+
+
+def test_cli_threads_physical():
+    from backends import LlamaCliBackend
+    be = LlamaCliBackend("nope", "nope.gguf")
+    import os
+    assert 1 <= be.threads <= (os.cpu_count() or 4)
+
+
+def test_server_timings_surfaced():
+    """chat_ex stores llama-server timings; fmt in ezcodex renders them."""
+    import json
+    import threading
+    import urllib.error
+    from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+
+    payload = {"choices": [{"message": {"content": "ok"},
+                            "finish_reason": "stop"}],
+               "usage": {"completion_tokens": 10},
+               "timings": {"prompt_n": 40, "prompt_ms": 1200.0,
+                           "predicted_n": 10, "predicted_ms": 500.0}}
+
+    class H(BaseHTTPRequestHandler):
+        def do_POST(self):
+            body = json.dumps(payload).encode()
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json")
+            self.send_header("Content-Length", str(len(body)))
+            self.end_headers()
+            self.wfile.write(body)
+
+        def log_message(self, *a):
+            pass
+
+    srv = ThreadingHTTPServer(("127.0.0.1", 0), H)
+    srv.daemon_threads = True
+    threading.Thread(target=srv.serve_forever, daemon=True).start()
+    try:
+        from backends import LmStudioBackend
+        be = LmStudioBackend(f"http://127.0.0.1:{srv.server_port}/v1")
+        for _ in range(2):  # loopback Windows boleh putus sekali-sekala
+            try:
+                out, tps, fin = be.chat_ex("sys", [{"role": "user", "content": "hi"}])
+                break
+            except (ConnectionError, urllib.error.URLError):
+                continue
+        assert out == "ok" and fin == "stop" and tps > 0
+        assert be.last_timings["predicted_ms"] == 500.0
+    finally:
+        srv.shutdown()
