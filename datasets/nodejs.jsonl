@@ -481,143 +481,108 @@
 {"instruction": "Terangkan `node --version` secara ringkas.", "input": "", "output": "`node --version` plus `.nvmrc` pinning keeps dev, CI and images on one runtime."}
 {"instruction": "Apa yang perlu saya tahu tentang `node --version`?", "input": "", "output": "`node --version` plus `.nvmrc` pinning keeps dev, CI and images on one runtime."}
 {"instruction": "Bagaimanakah `node --version` berfungsi?", "input": "", "output": "`node --version` plus `.nvmrc` pinning keeps dev, CI and images on one runtime."}
-{"instruction": "Bilakah masa yang sesuai untuk `node --version`?", "input": "", "output": "`node --version` plus `.nvmrc` pinning keeps dev, CI and images on one runtime."}
 {"instruction": "Apa itu `npm init -y` dalam Node.js?", "input": "", "output": "`npm init -y` scaffolds package.json instantly; edit name/version/scripts right after."}
 {"instruction": "Apa yang perlu saya tahu tentang `npm init -y`?", "input": "", "output": "`npm init -y` scaffolds package.json instantly; edit name/version/scripts right after."}
 {"instruction": "Bagaimanakah `npm init -y` berfungsi?", "input": "", "output": "`npm init -y` scaffolds package.json instantly; edit name/version/scripts right after."}
-{"instruction": "Bilakah masa yang sesuai untuk `npm init -y`?", "input": "", "output": "`npm init -y` scaffolds package.json instantly; edit name/version/scripts right after."}
 {"instruction": "Bagaimana `npm install express` berfungsi?", "input": "", "output": "Local installs land in node_modules (never global for project deps); lockfile commits for reproducibility."}
 {"instruction": "Apa yang perlu saya tahu tentang `npm install express`?", "input": "", "output": "Local installs land in node_modules (never global for project deps); lockfile commits for reproducibility."}
 {"instruction": "Bagaimanakah `npm install express` berfungsi?", "input": "", "output": "Local installs land in node_modules (never global for project deps); lockfile commits for reproducibility."}
-{"instruction": "Bilakah masa yang sesuai untuk `npm install express`?", "input": "", "output": "Local installs land in node_modules (never global for project deps); lockfile commits for reproducibility."}
 {"instruction": "Bila guna `require vs import`?", "input": "", "output": "CommonJS `require` is dynamic and sync; ESM `import` is static and supports top-level await — new code uses ESM."}
 {"instruction": "Apa yang perlu saya tahu tentang `require vs import`?", "input": "", "output": "CommonJS `require` is dynamic and sync; ESM `import` is static and supports top-level await — new code uses ESM."}
 {"instruction": "Bagaimanakah `require vs import` berfungsi?", "input": "", "output": "CommonJS `require` is dynamic and sync; ESM `import` is static and supports top-level await — new code uses ESM."}
-{"instruction": "Bilakah masa yang sesuai untuk `require vs import`?", "input": "", "output": "CommonJS `require` is dynamic and sync; ESM `import` is static and supports top-level await — new code uses ESM."}
 {"instruction": "Jelaskan `process.env` dengan contoh.", "input": "", "output": "`process.env` reads environment strings; validate required vars at boot and fail fast with clear messages."}
 {"instruction": "Apa yang perlu saya tahu tentang `process.env`?", "input": "", "output": "`process.env` reads environment strings; validate required vars at boot and fail fast with clear messages."}
 {"instruction": "Bagaimanakah `process.env` berfungsi?", "input": "", "output": "`process.env` reads environment strings; validate required vars at boot and fail fast with clear messages."}
-{"instruction": "Bilakah masa yang sesuai untuk `process.env`?", "input": "", "output": "`process.env` reads environment strings; validate required vars at boot and fail fast with clear messages."}
 {"instruction": "Terangkan `__dirname ESM` secara ringkas.", "input": "", "output": "ESM has no `__dirname`; derive it from `import.meta.url` via `fileURLToPath` for path building."}
 {"instruction": "Apa yang perlu saya tahu tentang `__dirname ESM`?", "input": "", "output": "ESM has no `__dirname`; derive it from `import.meta.url` via `fileURLToPath` for path building."}
 {"instruction": "Bagaimanakah `__dirname ESM` berfungsi?", "input": "", "output": "ESM has no `__dirname`; derive it from `import.meta.url` via `fileURLToPath` for path building."}
-{"instruction": "Bilakah masa yang sesuai untuk `__dirname ESM`?", "input": "", "output": "ESM has no `__dirname`; derive it from `import.meta.url` via `fileURLToPath` for path building."}
 {"instruction": "Apa itu `fs.readFile` dalam Node.js?", "input": "", "output": "Prefer `fs/promises` with await over callbacks; stream (`createReadStream`) files too big for memory."}
 {"instruction": "Apa yang perlu saya tahu tentang `fs.readFile`?", "input": "", "output": "Prefer `fs/promises` with await over callbacks; stream (`createReadStream`) files too big for memory."}
 {"instruction": "Bagaimanakah `fs.readFile` berfungsi?", "input": "", "output": "Prefer `fs/promises` with await over callbacks; stream (`createReadStream`) files too big for memory."}
-{"instruction": "Bilakah masa yang sesuai untuk `fs.readFile`?", "input": "", "output": "Prefer `fs/promises` with await over callbacks; stream (`createReadStream`) files too big for memory."}
 {"instruction": "Bagaimana `http.createServer` berfungsi?", "input": "", "output": "The native server suffices for webhooks and proxies; frameworks pay off once routing grows."}
 {"instruction": "Apa yang perlu saya tahu tentang `http.createServer`?", "input": "", "output": "The native server suffices for webhooks and proxies; frameworks pay off once routing grows."}
 {"instruction": "Bagaimanakah `http.createServer` berfungsi?", "input": "", "output": "The native server suffices for webhooks and proxies; frameworks pay off once routing grows."}
-{"instruction": "Bilakah masa yang sesuai untuk `http.createServer`?", "input": "", "output": "The native server suffices for webhooks and proxies; frameworks pay off once routing grows."}
 {"instruction": "Bila guna `setTimeout`?", "input": "", "output": "Timers return ids for cancellation; unref background timers so they never hold the process open."}
 {"instruction": "Apa yang perlu saya tahu tentang `setTimeout`?", "input": "", "output": "Timers return ids for cancellation; unref background timers so they never hold the process open."}
 {"instruction": "Bagaimanakah `setTimeout` berfungsi?", "input": "", "output": "Timers return ids for cancellation; unref background timers so they never hold the process open."}
-{"instruction": "Bilakah masa yang sesuai untuk `setTimeout`?", "input": "", "output": "Timers return ids for cancellation; unref background timers so they never hold the process open."}
 {"instruction": "Jelaskan `setInterval` dengan contoh.", "input": "", "output": "`setInterval` repeats blindly — chain `setTimeout` instead when work must not overlap."}
 {"instruction": "Apa yang perlu saya tahu tentang `setInterval`?", "input": "", "output": "`setInterval` repeats blindly — chain `setTimeout` instead when work must not overlap."}
 {"instruction": "Bagaimanakah `setInterval` berfungsi?", "input": "", "output": "`setInterval` repeats blindly — chain `setTimeout` instead when work must not overlap."}
-{"instruction": "Bilakah masa yang sesuai untuk `setInterval`?", "input": "", "output": "`setInterval` repeats blindly — chain `setTimeout` instead when work must not overlap."}
 {"instruction": "Terangkan `console.log/error` secara ringkas.", "input": "", "output": "`console.error` routes to stderr for real errors; structured JSON logs beat printf in production."}
 {"instruction": "Apa yang perlu saya tahu tentang `console.log/error`?", "input": "", "output": "`console.error` routes to stderr for real errors; structured JSON logs beat printf in production."}
 {"instruction": "Bagaimanakah `console.log/error` berfungsi?", "input": "", "output": "`console.error` routes to stderr for real errors; structured JSON logs beat printf in production."}
-{"instruction": "Bilakah masa yang sesuai untuk `console.log/error`?", "input": "", "output": "`console.error` routes to stderr for real errors; structured JSON logs beat printf in production."}
 {"instruction": "Apa itu `process.argv` dalam Node.js?", "input": "", "output": "`process.argv` carries CLI args after two slots; parsers (commander/yargs) handle flags robustly."}
 {"instruction": "Apa yang perlu saya tahu tentang `process.argv`?", "input": "", "output": "`process.argv` carries CLI args after two slots; parsers (commander/yargs) handle flags robustly."}
 {"instruction": "Bagaimanakah `process.argv` berfungsi?", "input": "", "output": "`process.argv` carries CLI args after two slots; parsers (commander/yargs) handle flags robustly."}
-{"instruction": "Bilakah masa yang sesuai untuk `process.argv`?", "input": "", "output": "`process.argv` carries CLI args after two slots; parsers (commander/yargs) handle flags robustly."}
 {"instruction": "Bagaimana `Buffer` berfungsi?", "input": "", "output": "Buffers hold raw bytes for crypto/files/protocols; convert with explicit encodings (`utf8`, `base64`, `hex`)."}
 {"instruction": "Apa yang perlu saya tahu tentang `Buffer`?", "input": "", "output": "Buffers hold raw bytes for crypto/files/protocols; convert with explicit encodings (`utf8`, `base64`, `hex`)."}
 {"instruction": "Bagaimanakah `Buffer` berfungsi?", "input": "", "output": "Buffers hold raw bytes for crypto/files/protocols; convert with explicit encodings (`utf8`, `base64`, `hex`)."}
-{"instruction": "Bilakah masa yang sesuai untuk `Buffer`?", "input": "", "output": "Buffers hold raw bytes for crypto/files/protocols; convert with explicit encodings (`utf8`, `base64`, `hex`)."}
 {"instruction": "Bila guna `EventEmitter`?", "input": "", "output": "Emitters decouple modules via named events; remove listeners (`once`/`off`) to avoid leaks."}
 {"instruction": "Apa yang perlu saya tahu tentang `EventEmitter`?", "input": "", "output": "Emitters decouple modules via named events; remove listeners (`once`/`off`) to avoid leaks."}
 {"instruction": "Bagaimanakah `EventEmitter` berfungsi?", "input": "", "output": "Emitters decouple modules via named events; remove listeners (`once`/`off`) to avoid leaks."}
-{"instruction": "Bilakah masa yang sesuai untuk `EventEmitter`?", "input": "", "output": "Emitters decouple modules via named events; remove listeners (`once`/`off`) to avoid leaks."}
 {"instruction": "Jelaskan `streams pipe` dengan contoh.", "input": "", "output": "Streams move data in chunks with constant memory; `pipeline` wires backpressure and errors correctly."}
 {"instruction": "Apa yang perlu saya tahu tentang `streams pipe`?", "input": "", "output": "Streams move data in chunks with constant memory; `pipeline` wires backpressure and errors correctly."}
 {"instruction": "Bagaimanakah `streams pipe` berfungsi?", "input": "", "output": "Streams move data in chunks with constant memory; `pipeline` wires backpressure and errors correctly."}
-{"instruction": "Bilakah masa yang sesuai untuk `streams pipe`?", "input": "", "output": "Streams move data in chunks with constant memory; `pipeline` wires backpressure and errors correctly."}
 {"instruction": "Terangkan `child_process` secara ringkas.", "input": "", "output": "`execFile` (no shell) is injection-safe; `spawn` streams big output; avoid `exec` with user input."}
 {"instruction": "Apa yang perlu saya tahu tentang `child_process`?", "input": "", "output": "`execFile` (no shell) is injection-safe; `spawn` streams big output; avoid `exec` with user input."}
 {"instruction": "Bagaimanakah `child_process` berfungsi?", "input": "", "output": "`execFile` (no shell) is injection-safe; `spawn` streams big output; avoid `exec` with user input."}
-{"instruction": "Bilakah masa yang sesuai untuk `child_process`?", "input": "", "output": "`execFile` (no shell) is injection-safe; `spawn` streams big output; avoid `exec` with user input."}
 {"instruction": "Apa itu `package.json scripts` dalam Node.js?", "input": "", "output": "Scripts document and automate (`dev`, `start`, `test`); keep them cross-platform for Windows teammates."}
 {"instruction": "Apa yang perlu saya tahu tentang `package.json scripts`?", "input": "", "output": "Scripts document and automate (`dev`, `start`, `test`); keep them cross-platform for Windows teammates."}
 {"instruction": "Bagaimanakah `package.json scripts` berfungsi?", "input": "", "output": "Scripts document and automate (`dev`, `start`, `test`); keep them cross-platform for Windows teammates."}
-{"instruction": "Bilakah masa yang sesuai untuk `package.json scripts`?", "input": "", "output": "Scripts document and automate (`dev`, `start`, `test`); keep them cross-platform for Windows teammates."}
 {"instruction": "Bagaimana `nodemon tsx watch` berfungsi?", "input": "", "output": "Auto-restart on change during dev (nodemon/tsx/node --watch); production uses real process managers."}
 {"instruction": "Apa yang perlu saya tahu tentang `nodemon tsx watch`?", "input": "", "output": "Auto-restart on change during dev (nodemon/tsx/node --watch); production uses real process managers."}
 {"instruction": "Bagaimanakah `nodemon tsx watch` berfungsi?", "input": "", "output": "Auto-restart on change during dev (nodemon/tsx/node --watch); production uses real process managers."}
-{"instruction": "Bilakah masa yang sesuai untuk `nodemon tsx watch`?", "input": "", "output": "Auto-restart on change during dev (nodemon/tsx/node --watch); production uses real process managers."}
 {"instruction": "Bila guna `dotenv`?", "input": "", "output": "`.env` files feed local dev only — never commit; validate loaded values with a schema at startup."}
 {"instruction": "Apa yang perlu saya tahu tentang `dotenv`?", "input": "", "output": "`.env` files feed local dev only — never commit; validate loaded values with a schema at startup."}
 {"instruction": "Bagaimanakah `dotenv` berfungsi?", "input": "", "output": "`.env` files feed local dev only — never commit; validate loaded values with a schema at startup."}
-{"instruction": "Bilakah masa yang sesuai untuk `dotenv`?", "input": "", "output": "`.env` files feed local dev only — never commit; validate loaded values with a schema at startup."}
 {"instruction": "Jelaskan `graceful shutdown` dengan contoh.", "input": "", "output": "On SIGTERM stop accepting, drain, close DB, then exit — matching orchestrator grace periods."}
 {"instruction": "Apa yang perlu saya tahu tentang `graceful shutdown`?", "input": "", "output": "On SIGTERM stop accepting, drain, close DB, then exit — matching orchestrator grace periods."}
 {"instruction": "Bagaimanakah `graceful shutdown` berfungsi?", "input": "", "output": "On SIGTERM stop accepting, drain, close DB, then exit — matching orchestrator grace periods."}
-{"instruction": "Bilakah masa yang sesuai untuk `graceful shutdown`?", "input": "", "output": "On SIGTERM stop accepting, drain, close DB, then exit — matching orchestrator grace periods."}
 {"instruction": "Terangkan `os module` secara ringkas.", "input": "", "output": "`os.cpus().length` sizes pools, `os.tmpdir()` finds scratch space, `os.homedir()` locates configs portably."}
 {"instruction": "Apa yang perlu saya tahu tentang `os module`?", "input": "", "output": "`os.cpus().length` sizes pools, `os.tmpdir()` finds scratch space, `os.homedir()` locates configs portably."}
 {"instruction": "Bagaimanakah `os module` berfungsi?", "input": "", "output": "`os.cpus().length` sizes pools, `os.tmpdir()` finds scratch space, `os.homedir()` locates configs portably."}
-{"instruction": "Bilakah masa yang sesuai untuk `os module`?", "input": "", "output": "`os.cpus().length` sizes pools, `os.tmpdir()` finds scratch space, `os.homedir()` locates configs portably."}
 {"instruction": "Apa itu `path basename extname` dalam Node.js?", "input": "", "output": "`basename(p)` strips dirs, `extname(p)` grabs `.json` (leading-dot files count as no-extension)."}
 {"instruction": "Apa yang perlu saya tahu tentang `path basename extname`?", "input": "", "output": "`basename(p)` strips dirs, `extname(p)` grabs `.json` (leading-dot files count as no-extension)."}
 {"instruction": "Bagaimanakah `path basename extname` berfungsi?", "input": "", "output": "`basename(p)` strips dirs, `extname(p)` grabs `.json` (leading-dot files count as no-extension)."}
-{"instruction": "Bilakah masa yang sesuai untuk `path basename extname`?", "input": "", "output": "`basename(p)` strips dirs, `extname(p)` grabs `.json` (leading-dot files count as no-extension)."}
 {"instruction": "Bagaimana `process.exit codes` berfungsi?", "input": "", "output": "`process.exit(0)` clean, nonzero failure; flush streams first — abrupt exits truncate piped output."}
 {"instruction": "Apa yang perlu saya tahu tentang `process.exit codes`?", "input": "", "output": "`process.exit(0)` clean, nonzero failure; flush streams first — abrupt exits truncate piped output."}
 {"instruction": "Bagaimanakah `process.exit codes` berfungsi?", "input": "", "output": "`process.exit(0)` clean, nonzero failure; flush streams first — abrupt exits truncate piped output."}
-{"instruction": "Bilakah masa yang sesuai untuk `process.exit codes`?", "input": "", "output": "`process.exit(0)` clean, nonzero failure; flush streams first — abrupt exits truncate piped output."}
 {"instruction": "Bila guna `cluster fork`?", "input": "", "output": "`cluster.fork()` clones one worker per CPU behind one port; the primary only routes, never serves."}
 {"instruction": "Apa yang perlu saya tahu tentang `cluster fork`?", "input": "", "output": "`cluster.fork()` clones one worker per CPU behind one port; the primary only routes, never serves."}
 {"instruction": "Bagaimanakah `cluster fork` berfungsi?", "input": "", "output": "`cluster.fork()` clones one worker per CPU behind one port; the primary only routes, never serves."}
-{"instruction": "Bilakah masa yang sesuai untuk `cluster fork`?", "input": "", "output": "`cluster.fork()` clones one worker per CPU behind one port; the primary only routes, never serves."}
 {"instruction": "Jelaskan `worker threads` dengan contoh.", "input": "", "output": "Workers run CPU-bound JS off the loop sharing via `postMessage`; SharedArrayBuffer needs cross-origin isolation headers."}
 {"instruction": "Apa yang perlu saya tahu tentang `worker threads`?", "input": "", "output": "Workers run CPU-bound JS off the loop sharing via `postMessage`; SharedArrayBuffer needs cross-origin isolation headers."}
 {"instruction": "Bagaimanakah `worker threads` berfungsi?", "input": "", "output": "Workers run CPU-bound JS off the loop sharing via `postMessage`; SharedArrayBuffer needs cross-origin isolation headers."}
-{"instruction": "Bilakah masa yang sesuai untuk `worker threads`?", "input": "", "output": "Workers run CPU-bound JS off the loop sharing via `postMessage`; SharedArrayBuffer needs cross-origin isolation headers."}
 {"instruction": "Terangkan `fs.watch` secara ringkas.", "input": "", "output": "`fs.watch` notifies on file change (debounce it — editors emit bursts); chokidar smooths platform quirks."}
 {"instruction": "Apa yang perlu saya tahu tentang `fs.watch`?", "input": "", "output": "`fs.watch` notifies on file change (debounce it — editors emit bursts); chokidar smooths platform quirks."}
 {"instruction": "Bagaimanakah `fs.watch` berfungsi?", "input": "", "output": "`fs.watch` notifies on file change (debounce it — editors emit bursts); chokidar smooths platform quirks."}
-{"instruction": "Bilakah masa yang sesuai untuk `fs.watch`?", "input": "", "output": "`fs.watch` notifies on file change (debounce it — editors emit bursts); chokidar smooths platform quirks."}
 {"instruction": "Apa itu `zlib gzip` dalam Node.js?", "input": "", "output": "Compress responses/logs with `zlib.createGzip()` streams; level trades CPU for bytes on hot paths."}
 {"instruction": "Apa yang perlu saya tahu tentang `zlib gzip`?", "input": "", "output": "Compress responses/logs with `zlib.createGzip()` streams; level trades CPU for bytes on hot paths."}
 {"instruction": "Bagaimanakah `zlib gzip` berfungsi?", "input": "", "output": "Compress responses/logs with `zlib.createGzip()` streams; level trades CPU for bytes on hot paths."}
-{"instruction": "Bilakah masa yang sesuai untuk `zlib gzip`?", "input": "", "output": "Compress responses/logs with `zlib.createGzip()` streams; level trades CPU for bytes on hot paths."}
 {"instruction": "Bagaimana `ESM JSON import` berfungsi?", "input": "", "output": "`import data from './x.json' with { type: 'json' }` loads config statically; dynamic needs `fs` + `JSON.parse`."}
 {"instruction": "Apa yang perlu saya tahu tentang `ESM JSON import`?", "input": "", "output": "`import data from './x.json' with { type: 'json' }` loads config statically; dynamic needs `fs` + `JSON.parse`."}
 {"instruction": "Bagaimanakah `ESM JSON import` berfungsi?", "input": "", "output": "`import data from './x.json' with { type: 'json' }` loads config statically; dynamic needs `fs` + `JSON.parse`."}
-{"instruction": "Bilakah masa yang sesuai untuk `ESM JSON import`?", "input": "", "output": "`import data from './x.json' with { type: 'json' }` loads config statically; dynamic needs `fs` + `JSON.parse`."}
 {"instruction": "Bila guna `npm run env`?", "input": "", "output": "`npm run` injects `./node_modules/.bin` into PATH so local CLIs (tsc, vitest) run without global installs."}
 {"instruction": "Apa yang perlu saya tahu tentang `npm run env`?", "input": "", "output": "`npm run` injects `./node_modules/.bin` into PATH so local CLIs (tsc, vitest) run without global installs."}
 {"instruction": "Bagaimanakah `npm run env` berfungsi?", "input": "", "output": "`npm run` injects `./node_modules/.bin` into PATH so local CLIs (tsc, vitest) run without global installs."}
-{"instruction": "Bilakah masa yang sesuai untuk `npm run env`?", "input": "", "output": "`npm run` injects `./node_modules/.bin` into PATH so local CLIs (tsc, vitest) run without global installs."}
 {"instruction": "Jelaskan `NODE_ENV` dengan contoh.", "input": "", "output": "`NODE_ENV=production` gates dev-only middleware/logging; read once at boot into a validated config object."}
 {"instruction": "Apa yang perlu saya tahu tentang `NODE_ENV`?", "input": "", "output": "`NODE_ENV=production` gates dev-only middleware/logging; read once at boot into a validated config object."}
 {"instruction": "Bagaimanakah `NODE_ENV` berfungsi?", "input": "", "output": "`NODE_ENV=production` gates dev-only middleware/logging; read once at boot into a validated config object."}
-{"instruction": "Bilakah masa yang sesuai untuk `NODE_ENV`?", "input": "", "output": "`NODE_ENV=production` gates dev-only middleware/logging; read once at boot into a validated config object."}
 {"instruction": "Terangkan `diagnostics timing` secara ringkas.", "input": "", "output": "`console.time('sql')`/`timeEnd` profiles blocks; `process.hrtime.bigint()` nanosecond-diffs hot loops."}
 {"instruction": "Apa yang perlu saya tahu tentang `diagnostics timing`?", "input": "", "output": "`console.time('sql')`/`timeEnd` profiles blocks; `process.hrtime.bigint()` nanosecond-diffs hot loops."}
 {"instruction": "Bagaimanakah `diagnostics timing` berfungsi?", "input": "", "output": "`console.time('sql')`/`timeEnd` profiles blocks; `process.hrtime.bigint()` nanosecond-diffs hot loops."}
-{"instruction": "Bilakah masa yang sesuai untuk `diagnostics timing`?", "input": "", "output": "`console.time('sql')`/`timeEnd` profiles blocks; `process.hrtime.bigint()` nanosecond-diffs hot loops."}
 {"instruction": "Apa itu `unhandledRejection` dalam Node.js?", "input": "", "output": "Crash-or-log unhandled rejections explicitly at startup — silent promise failures corrupt state invisibly."}
 {"instruction": "Apa yang perlu saya tahu tentang `unhandledRejection`?", "input": "", "output": "Crash-or-log unhandled rejections explicitly at startup — silent promise failures corrupt state invisibly."}
 {"instruction": "Bagaimanakah `unhandledRejection` berfungsi?", "input": "", "output": "Crash-or-log unhandled rejections explicitly at startup — silent promise failures corrupt state invisibly."}
-{"instruction": "Bilakah masa yang sesuai untuk `unhandledRejection`?", "input": "", "output": "Crash-or-log unhandled rejections explicitly at startup — silent promise failures corrupt state invisibly."}
 {"instruction": "Bagaimana `AbortController fetch` berfungsi?", "input": "", "output": "Pass `signal` into fetch and `abort()` on supersede; catch AbortError separately from real failures."}
 {"instruction": "Apa yang perlu saya tahu tentang `AbortController fetch`?", "input": "", "output": "Pass `signal` into fetch and `abort()` on supersede; catch AbortError separately from real failures."}
 {"instruction": "Bagaimanakah `AbortController fetch` berfungsi?", "input": "", "output": "Pass `signal` into fetch and `abort()` on supersede; catch AbortError separately from real failures."}
-{"instruction": "Bilakah masa yang sesuai untuk `AbortController fetch`?", "input": "", "output": "Pass `signal` into fetch and `abort()` on supersede; catch AbortError separately from real failures."}
 {"instruction": "Bila guna `readline completer`?", "input": "", "output": "`readline` accepts a `completer` for tab-completion in CLIs; persist history with a file-backed interface."}
 {"instruction": "Apa yang perlu saya tahu tentang `readline completer`?", "input": "", "output": "`readline` accepts a `completer` for tab-completion in CLIs; persist history with a file-backed interface."}
 {"instruction": "Bagaimanakah `readline completer` berfungsi?", "input": "", "output": "`readline` accepts a `completer` for tab-completion in CLIs; persist history with a file-backed interface."}
-{"instruction": "Bilakah masa yang sesuai untuk `readline completer`?", "input": "", "output": "`readline` accepts a `completer` for tab-completion in CLIs; persist history with a file-backed interface."}
 {"instruction": "Jelaskan `worker pool queue` dengan contoh.", "input": "", "output": "Bounded queues (`p-limit`) cap concurrency on downstream APIs; unbounded `Promise.all` is a self-DDoS."}
 {"instruction": "Apa yang perlu saya tahu tentang `worker pool queue`?", "input": "", "output": "Bounded queues (`p-limit`) cap concurrency on downstream APIs; unbounded `Promise.all` is a self-DDoS."}
 {"instruction": "Bagaimanakah `worker pool queue` berfungsi?", "input": "", "output": "Bounded queues (`p-limit`) cap concurrency on downstream APIs; unbounded `Promise.all` is a self-DDoS."}
-{"instruction": "Bilakah masa yang sesuai untuk `worker pool queue`?", "input": "", "output": "Bounded queues (`p-limit`) cap concurrency on downstream APIs; unbounded `Promise.all` is a self-DDoS."}
 {"instruction": "What does `NODE_OPTIONS heap` do?", "input": "", "output": "`NODE_OPTIONS=--max-old-space-size=4096` raises the heap ceiling (default ~2-4GB); OOM first, flag second, profile third."}
 {"instruction": "Explain `NODE_OPTIONS heap` briefly.", "input": "", "output": "`NODE_OPTIONS=--max-old-space-size=4096` raises the heap ceiling (default ~2-4GB); OOM first, flag second, profile third."}
 {"instruction": "When do I use `NODE_OPTIONS heap`?", "input": "", "output": "`NODE_OPTIONS=--max-old-space-size=4096` raises the heap ceiling (default ~2-4GB); OOM first, flag second, profile third."}
@@ -634,7 +599,6 @@
 {"instruction": "Terangkan `NODE_OPTIONS heap` secara ringkas.", "input": "", "output": "`NODE_OPTIONS=--max-old-space-size=4096` raises the heap ceiling (default ~2-4GB); OOM first, flag second, profile third."}
 {"instruction": "Apa yang perlu saya tahu tentang `NODE_OPTIONS heap`?", "input": "", "output": "`NODE_OPTIONS=--max-old-space-size=4096` raises the heap ceiling (default ~2-4GB); OOM first, flag second, profile third."}
 {"instruction": "Bagaimanakah `NODE_OPTIONS heap` berfungsi?", "input": "", "output": "`NODE_OPTIONS=--max-old-space-size=4096` raises the heap ceiling (default ~2-4GB); OOM first, flag second, profile third."}
-{"instruction": "Bilakah masa yang sesuai untuk `NODE_OPTIONS heap`?", "input": "", "output": "`NODE_OPTIONS=--max-old-space-size=4096` raises the heap ceiling (default ~2-4GB); OOM first, flag second, profile third."}
 {"instruction": "What does `--inspect debug` do?", "input": "", "output": "`node --inspect` exposes Chrome DevTools debugging (breakpoints, heap snapshots); `--inspect-brk` pauses on entry."}
 {"instruction": "Explain `--inspect debug` briefly.", "input": "", "output": "`node --inspect` exposes Chrome DevTools debugging (breakpoints, heap snapshots); `--inspect-brk` pauses on entry."}
 {"instruction": "When do I use `--inspect debug`?", "input": "", "output": "`node --inspect` exposes Chrome DevTools debugging (breakpoints, heap snapshots); `--inspect-brk` pauses on entry."}
@@ -651,7 +615,6 @@
 {"instruction": "Apa itu `--inspect debug` dalam Node.js?", "input": "", "output": "`node --inspect` exposes Chrome DevTools debugging (breakpoints, heap snapshots); `--inspect-brk` pauses on entry."}
 {"instruction": "Apa yang perlu saya tahu tentang `--inspect debug`?", "input": "", "output": "`node --inspect` exposes Chrome DevTools debugging (breakpoints, heap snapshots); `--inspect-brk` pauses on entry."}
 {"instruction": "Bagaimanakah `--inspect debug` berfungsi?", "input": "", "output": "`node --inspect` exposes Chrome DevTools debugging (breakpoints, heap snapshots); `--inspect-brk` pauses on entry."}
-{"instruction": "Bilakah masa yang sesuai untuk `--inspect debug`?", "input": "", "output": "`node --inspect` exposes Chrome DevTools debugging (breakpoints, heap snapshots); `--inspect-brk` pauses on entry."}
 {"instruction": "What does `--experimental-strip-types` do?", "input": "", "output": "New Node runs TypeScript directly by stripping types (no enums/namespaces); tsx/ts-node still rule complex setups."}
 {"instruction": "Explain `--experimental-strip-types` briefly.", "input": "", "output": "New Node runs TypeScript directly by stripping types (no enums/namespaces); tsx/ts-node still rule complex setups."}
 {"instruction": "When do I use `--experimental-strip-types`?", "input": "", "output": "New Node runs TypeScript directly by stripping types (no enums/namespaces); tsx/ts-node still rule complex setups."}
@@ -668,7 +631,6 @@
 {"instruction": "Bagaimana `--experimental-strip-types` berfungsi?", "input": "", "output": "New Node runs TypeScript directly by stripping types (no enums/namespaces); tsx/ts-node still rule complex setups."}
 {"instruction": "Apa yang perlu saya tahu tentang `--experimental-strip-types`?", "input": "", "output": "New Node runs TypeScript directly by stripping types (no enums/namespaces); tsx/ts-node still rule complex setups."}
 {"instruction": "Bagaimanakah `--experimental-strip-types` berfungsi?", "input": "", "output": "New Node runs TypeScript directly by stripping types (no enums/namespaces); tsx/ts-node still rule complex setups."}
-{"instruction": "Bilakah masa yang sesuai untuk `--experimental-strip-types`?", "input": "", "output": "New Node runs TypeScript directly by stripping types (no enums/namespaces); tsx/ts-node still rule complex setups."}
 {"instruction": "What does `package exports map` do?", "input": "", "output": "`exports` in package.json gates subpath imports (`pkg/feature`) and hides internals — dual CJS/ESM via conditions."}
 {"instruction": "Explain `package exports map` briefly.", "input": "", "output": "`exports` in package.json gates subpath imports (`pkg/feature`) and hides internals — dual CJS/ESM via conditions."}
 {"instruction": "When do I use `package exports map`?", "input": "", "output": "`exports` in package.json gates subpath imports (`pkg/feature`) and hides internals — dual CJS/ESM via conditions."}
@@ -685,7 +647,6 @@
 {"instruction": "Bila guna `package exports map`?", "input": "", "output": "`exports` in package.json gates subpath imports (`pkg/feature`) and hides internals — dual CJS/ESM via conditions."}
 {"instruction": "Apa yang perlu saya tahu tentang `package exports map`?", "input": "", "output": "`exports` in package.json gates subpath imports (`pkg/feature`) and hides internals — dual CJS/ESM via conditions."}
 {"instruction": "Bagaimanakah `package exports map` berfungsi?", "input": "", "output": "`exports` in package.json gates subpath imports (`pkg/feature`) and hides internals — dual CJS/ESM via conditions."}
-{"instruction": "Bilakah masa yang sesuai untuk `package exports map`?", "input": "", "output": "`exports` in package.json gates subpath imports (`pkg/feature`) and hides internals — dual CJS/ESM via conditions."}
 {"instruction": "What does `engines field` do?", "input": "", "output": "`engines: {node: '>=20'}` documents runtime needs (npm warns, doesn't enforce); `.nvmrc` + Docker pin the reality."}
 {"instruction": "Explain `engines field` briefly.", "input": "", "output": "`engines: {node: '>=20'}` documents runtime needs (npm warns, doesn't enforce); `.nvmrc` + Docker pin the reality."}
 {"instruction": "When do I use `engines field`?", "input": "", "output": "`engines: {node: '>=20'}` documents runtime needs (npm warns, doesn't enforce); `.nvmrc` + Docker pin the reality."}
@@ -702,7 +663,6 @@
 {"instruction": "Jelaskan `engines field` dengan contoh.", "input": "", "output": "`engines: {node: '>=20'}` documents runtime needs (npm warns, doesn't enforce); `.nvmrc` + Docker pin the reality."}
 {"instruction": "Apa yang perlu saya tahu tentang `engines field`?", "input": "", "output": "`engines: {node: '>=20'}` documents runtime needs (npm warns, doesn't enforce); `.nvmrc` + Docker pin the reality."}
 {"instruction": "Bagaimanakah `engines field` berfungsi?", "input": "", "output": "`engines: {node: '>=20'}` documents runtime needs (npm warns, doesn't enforce); `.nvmrc` + Docker pin the reality."}
-{"instruction": "Bilakah masa yang sesuai untuk `engines field`?", "input": "", "output": "`engines: {node: '>=20'}` documents runtime needs (npm warns, doesn't enforce); `.nvmrc` + Docker pin the reality."}
 {"instruction": "What does `npm ci cache clean` do?", "input": "", "output": "`npm ci` for reproducible installs; `npm cache clean --force` and `node_modules` nukes fix haunted dependency states."}
 {"instruction": "Explain `npm ci cache clean` briefly.", "input": "", "output": "`npm ci` for reproducible installs; `npm cache clean --force` and `node_modules` nukes fix haunted dependency states."}
 {"instruction": "When do I use `npm ci cache clean`?", "input": "", "output": "`npm ci` for reproducible installs; `npm cache clean --force` and `node_modules` nukes fix haunted dependency states."}
@@ -719,7 +679,6 @@
 {"instruction": "Terangkan `npm ci cache clean` secara ringkas.", "input": "", "output": "`npm ci` for reproducible installs; `npm cache clean --force` and `node_modules` nukes fix haunted dependency states."}
 {"instruction": "Apa yang perlu saya tahu tentang `npm ci cache clean`?", "input": "", "output": "`npm ci` for reproducible installs; `npm cache clean --force` and `node_modules` nukes fix haunted dependency states."}
 {"instruction": "Bagaimanakah `npm ci cache clean` berfungsi?", "input": "", "output": "`npm ci` for reproducible installs; `npm cache clean --force` and `node_modules` nukes fix haunted dependency states."}
-{"instruction": "Bilakah masa yang sesuai untuk `npm ci cache clean`?", "input": "", "output": "`npm ci` for reproducible installs; `npm cache clean --force` and `node_modules` nukes fix haunted dependency states."}
 {"instruction": "What does `npm outdated update` do?", "input": "", "output": "`npm outdated` lists drift; `npm update` bumps semver-compatible; majors need explicit `install pkg@2` + migration."}
 {"instruction": "Explain `npm outdated update` briefly.", "input": "", "output": "`npm outdated` lists drift; `npm update` bumps semver-compatible; majors need explicit `install pkg@2` + migration."}
 {"instruction": "When do I use `npm outdated update`?", "input": "", "output": "`npm outdated` lists drift; `npm update` bumps semver-compatible; majors need explicit `install pkg@2` + migration."}
@@ -736,7 +695,6 @@
 {"instruction": "Apa itu `npm outdated update` dalam Node.js?", "input": "", "output": "`npm outdated` lists drift; `npm update` bumps semver-compatible; majors need explicit `install pkg@2` + migration."}
 {"instruction": "Apa yang perlu saya tahu tentang `npm outdated update`?", "input": "", "output": "`npm outdated` lists drift; `npm update` bumps semver-compatible; majors need explicit `install pkg@2` + migration."}
 {"instruction": "Bagaimanakah `npm outdated update` berfungsi?", "input": "", "output": "`npm outdated` lists drift; `npm update` bumps semver-compatible; majors need explicit `install pkg@2` + migration."}
-{"instruction": "Bilakah masa yang sesuai untuk `npm outdated update`?", "input": "", "output": "`npm outdated` lists drift; `npm update` bumps semver-compatible; majors need explicit `install pkg@2` + migration."}
 {"instruction": "What does `npm audit fix` do?", "input": "", "output": "`npm audit` grades vulnerabilities; `npm audit fix` patches compatible ones — review majors, they break APIs."}
 {"instruction": "Explain `npm audit fix` briefly.", "input": "", "output": "`npm audit` grades vulnerabilities; `npm audit fix` patches compatible ones — review majors, they break APIs."}
 {"instruction": "When do I use `npm audit fix`?", "input": "", "output": "`npm audit` grades vulnerabilities; `npm audit fix` patches compatible ones — review majors, they break APIs."}
@@ -753,7 +711,6 @@
 {"instruction": "Bagaimana `npm audit fix` berfungsi?", "input": "", "output": "`npm audit` grades vulnerabilities; `npm audit fix` patches compatible ones — review majors, they break APIs."}
 {"instruction": "Apa yang perlu saya tahu tentang `npm audit fix`?", "input": "", "output": "`npm audit` grades vulnerabilities; `npm audit fix` patches compatible ones — review majors, they break APIs."}
 {"instruction": "Bagaimanakah `npm audit fix` berfungsi?", "input": "", "output": "`npm audit` grades vulnerabilities; `npm audit fix` patches compatible ones — review majors, they break APIs."}
-{"instruction": "Bilakah masa yang sesuai untuk `npm audit fix`?", "input": "", "output": "`npm audit` grades vulnerabilities; `npm audit fix` patches compatible ones — review majors, they break APIs."}
 {"instruction": "What does `package-lock review` do?", "input": "", "output": "Review lockfile diffs in PRs (new deps, registry URLs); lockfile poisoning is a real supply-chain vector."}
 {"instruction": "Explain `package-lock review` briefly.", "input": "", "output": "Review lockfile diffs in PRs (new deps, registry URLs); lockfile poisoning is a real supply-chain vector."}
 {"instruction": "When do I use `package-lock review`?", "input": "", "output": "Review lockfile diffs in PRs (new deps, registry URLs); lockfile poisoning is a real supply-chain vector."}
@@ -770,7 +727,6 @@
 {"instruction": "Bila guna `package-lock review`?", "input": "", "output": "Review lockfile diffs in PRs (new deps, registry URLs); lockfile poisoning is a real supply-chain vector."}
 {"instruction": "Apa yang perlu saya tahu tentang `package-lock review`?", "input": "", "output": "Review lockfile diffs in PRs (new deps, registry URLs); lockfile poisoning is a real supply-chain vector."}
 {"instruction": "Bagaimanakah `package-lock review` berfungsi?", "input": "", "output": "Review lockfile diffs in PRs (new deps, registry URLs); lockfile poisoning is a real supply-chain vector."}
-{"instruction": "Bilakah masa yang sesuai untuk `package-lock review`?", "input": "", "output": "Review lockfile diffs in PRs (new deps, registry URLs); lockfile poisoning is a real supply-chain vector."}
 {"instruction": "What does `npm workspaces` do?", "input": "", "output": "Workspaces (`packages/*`) share one lockfile across monorepo packages with cross-links; `npm run -w pkg` targets one."}
 {"instruction": "Explain `npm workspaces` briefly.", "input": "", "output": "Workspaces (`packages/*`) share one lockfile across monorepo packages with cross-links; `npm run -w pkg` targets one."}
 {"instruction": "When do I use `npm workspaces`?", "input": "", "output": "Workspaces (`packages/*`) share one lockfile across monorepo packages with cross-links; `npm run -w pkg` targets one."}
@@ -787,7 +743,6 @@
 {"instruction": "Jelaskan `npm workspaces` dengan contoh.", "input": "", "output": "Workspaces (`packages/*`) share one lockfile across monorepo packages with cross-links; `npm run -w pkg` targets one."}
 {"instruction": "Apa yang perlu saya tahu tentang `npm workspaces`?", "input": "", "output": "Workspaces (`packages/*`) share one lockfile across monorepo packages with cross-links; `npm run -w pkg` targets one."}
 {"instruction": "Bagaimanakah `npm workspaces` berfungsi?", "input": "", "output": "Workspaces (`packages/*`) share one lockfile across monorepo packages with cross-links; `npm run -w pkg` targets one."}
-{"instruction": "Bilakah masa yang sesuai untuk `npm workspaces`?", "input": "", "output": "Workspaces (`packages/*`) share one lockfile across monorepo packages with cross-links; `npm run -w pkg` targets one."}
 {"instruction": "What does `npx dlx` do?", "input": "", "output": "`npx`/`npm dlx` runs packages without installing (scaffolds, one-off CLIs); pins versions to avoid moving-target surprises."}
 {"instruction": "Explain `npx dlx` briefly.", "input": "", "output": "`npx`/`npm dlx` runs packages without installing (scaffolds, one-off CLIs); pins versions to avoid moving-target surprises."}
 {"instruction": "When do I use `npx dlx`?", "input": "", "output": "`npx`/`npm dlx` runs packages without installing (scaffolds, one-off CLIs); pins versions to avoid moving-target surprises."}
@@ -804,7 +759,6 @@
 {"instruction": "Terangkan `npx dlx` secara ringkas.", "input": "", "output": "`npx`/`npm dlx` runs packages without installing (scaffolds, one-off CLIs); pins versions to avoid moving-target surprises."}
 {"instruction": "Apa yang perlu saya tahu tentang `npx dlx`?", "input": "", "output": "`npx`/`npm dlx` runs packages without installing (scaffolds, one-off CLIs); pins versions to avoid moving-target surprises."}
 {"instruction": "Bagaimanakah `npx dlx` berfungsi?", "input": "", "output": "`npx`/`npm dlx` runs packages without installing (scaffolds, one-off CLIs); pins versions to avoid moving-target surprises."}
-{"instruction": "Bilakah masa yang sesuai untuk `npx dlx`?", "input": "", "output": "`npx`/`npm dlx` runs packages without installing (scaffolds, one-off CLIs); pins versions to avoid moving-target surprises."}
 {"instruction": "What does `corepack yarn pnpm` do?", "input": "", "output": "Corepack shims yarn/pnpm per `packageManager` field; pnpm's store saves gigabytes across projects vs npm duplicates."}
 {"instruction": "Explain `corepack yarn pnpm` briefly.", "input": "", "output": "Corepack shims yarn/pnpm per `packageManager` field; pnpm's store saves gigabytes across projects vs npm duplicates."}
 {"instruction": "When do I use `corepack yarn pnpm`?", "input": "", "output": "Corepack shims yarn/pnpm per `packageManager` field; pnpm's store saves gigabytes across projects vs npm duplicates."}
@@ -821,7 +775,6 @@
 {"instruction": "Apa itu `corepack yarn pnpm` dalam Node.js?", "input": "", "output": "Corepack shims yarn/pnpm per `packageManager` field; pnpm's store saves gigabytes across projects vs npm duplicates."}
 {"instruction": "Apa yang perlu saya tahu tentang `corepack yarn pnpm`?", "input": "", "output": "Corepack shims yarn/pnpm per `packageManager` field; pnpm's store saves gigabytes across projects vs npm duplicates."}
 {"instruction": "Bagaimanakah `corepack yarn pnpm` berfungsi?", "input": "", "output": "Corepack shims yarn/pnpm per `packageManager` field; pnpm's store saves gigabytes across projects vs npm duplicates."}
-{"instruction": "Bilakah masa yang sesuai untuk `corepack yarn pnpm`?", "input": "", "output": "Corepack shims yarn/pnpm per `packageManager` field; pnpm's store saves gigabytes across projects vs npm duplicates."}
 {"instruction": "What does `SIGINT SIGTERM handlers` do?", "input": "", "output": "Handle both (Ctrl-C vs orchestrators); cleanup async work before `process.exit`, and never swallow the second signal."}
 {"instruction": "Explain `SIGINT SIGTERM handlers` briefly.", "input": "", "output": "Handle both (Ctrl-C vs orchestrators); cleanup async work before `process.exit`, and never swallow the second signal."}
 {"instruction": "When do I use `SIGINT SIGTERM handlers`?", "input": "", "output": "Handle both (Ctrl-C vs orchestrators); cleanup async work before `process.exit`, and never swallow the second signal."}
@@ -838,7 +791,6 @@
 {"instruction": "Bagaimana `SIGINT SIGTERM handlers` berfungsi?", "input": "", "output": "Handle both (Ctrl-C vs orchestrators); cleanup async work before `process.exit`, and never swallow the second signal."}
 {"instruction": "Apa yang perlu saya tahu tentang `SIGINT SIGTERM handlers`?", "input": "", "output": "Handle both (Ctrl-C vs orchestrators); cleanup async work before `process.exit`, and never swallow the second signal."}
 {"instruction": "Bagaimanakah `SIGINT SIGTERM handlers` berfungsi?", "input": "", "output": "Handle both (Ctrl-C vs orchestrators); cleanup async work before `process.exit`, and never swallow the second signal."}
-{"instruction": "Bilakah masa yang sesuai untuk `SIGINT SIGTERM handlers`?", "input": "", "output": "Handle both (Ctrl-C vs orchestrators); cleanup async work before `process.exit`, and never swallow the second signal."}
 {"instruction": "What does `process.title ps` do?", "input": "", "output": "`process.title` renames the process in `ps`/`top` (`myapp: worker`) — operability for multi-process boxes."}
 {"instruction": "Explain `process.title ps` briefly.", "input": "", "output": "`process.title` renames the process in `ps`/`top` (`myapp: worker`) — operability for multi-process boxes."}
 {"instruction": "When do I use `process.title ps`?", "input": "", "output": "`process.title` renames the process in `ps`/`top` (`myapp: worker`) — operability for multi-process boxes."}
@@ -855,7 +807,6 @@
 {"instruction": "Bila guna `process.title ps`?", "input": "", "output": "`process.title` renames the process in `ps`/`top` (`myapp: worker`) — operability for multi-process boxes."}
 {"instruction": "Apa yang perlu saya tahu tentang `process.title ps`?", "input": "", "output": "`process.title` renames the process in `ps`/`top` (`myapp: worker`) — operability for multi-process boxes."}
 {"instruction": "Bagaimanakah `process.title ps` berfungsi?", "input": "", "output": "`process.title` renames the process in `ps`/`top` (`myapp: worker`) — operability for multi-process boxes."}
-{"instruction": "Bilakah masa yang sesuai untuk `process.title ps`?", "input": "", "output": "`process.title` renames the process in `ps`/`top` (`myapp: worker`) — operability for multi-process boxes."}
 {"instruction": "What does `NODE_PATH avoid` do?", "input": "", "output": "`NODE_PATH` global resolution breaks portability — bundle deps locally; only legacy migrations need it temporarily."}
 {"instruction": "Explain `NODE_PATH avoid` briefly.", "input": "", "output": "`NODE_PATH` global resolution breaks portability — bundle deps locally; only legacy migrations need it temporarily."}
 {"instruction": "When do I use `NODE_PATH avoid`?", "input": "", "output": "`NODE_PATH` global resolution breaks portability — bundle deps locally; only legacy migrations need it temporarily."}
@@ -872,7 +823,6 @@
 {"instruction": "Jelaskan `NODE_PATH avoid` dengan contoh.", "input": "", "output": "`NODE_PATH` global resolution breaks portability — bundle deps locally; only legacy migrations need it temporarily."}
 {"instruction": "Apa yang perlu saya tahu tentang `NODE_PATH avoid`?", "input": "", "output": "`NODE_PATH` global resolution breaks portability — bundle deps locally; only legacy migrations need it temporarily."}
 {"instruction": "Bagaimanakah `NODE_PATH avoid` berfungsi?", "input": "", "output": "`NODE_PATH` global resolution breaks portability — bundle deps locally; only legacy migrations need it temporarily."}
-{"instruction": "Bilakah masa yang sesuai untuk `NODE_PATH avoid`?", "input": "", "output": "`NODE_PATH` global resolution breaks portability — bundle deps locally; only legacy migrations need it temporarily."}
 {"instruction": "What does `--max-old-space` do?", "input": "", "output": "`--max-old-space-size=8192` raises heap before OOM exits; pair with heap snapshots to fix the leak, not just the ceiling."}
 {"instruction": "Explain `--max-old-space` briefly.", "input": "", "output": "`--max-old-space-size=8192` raises heap before OOM exits; pair with heap snapshots to fix the leak, not just the ceiling."}
 {"instruction": "When do I use `--max-old-space`?", "input": "", "output": "`--max-old-space-size=8192` raises heap before OOM exits; pair with heap snapshots to fix the leak, not just the ceiling."}
@@ -889,7 +839,6 @@
 {"instruction": "Terangkan `--max-old-space` secara ringkas.", "input": "", "output": "`--max-old-space-size=8192` raises heap before OOM exits; pair with heap snapshots to fix the leak, not just the ceiling."}
 {"instruction": "Apa yang perlu saya tahu tentang `--max-old-space`?", "input": "", "output": "`--max-old-space-size=8192` raises heap before OOM exits; pair with heap snapshots to fix the leak, not just the ceiling."}
 {"instruction": "Bagaimanakah `--max-old-space` berfungsi?", "input": "", "output": "`--max-old-space-size=8192` raises heap before OOM exits; pair with heap snapshots to fix the leak, not just the ceiling."}
-{"instruction": "Bilakah masa yang sesuai untuk `--max-old-space`?", "input": "", "output": "`--max-old-space-size=8192` raises heap before OOM exits; pair with heap snapshots to fix the leak, not just the ceiling."}
 {"instruction": "What does `--trace-warnings` do?", "input": "", "output": "`--trace-warnings` prints stacks for deprecations/unhandled rejections — turns warnings into actionable locations."}
 {"instruction": "Explain `--trace-warnings` briefly.", "input": "", "output": "`--trace-warnings` prints stacks for deprecations/unhandled rejections — turns warnings into actionable locations."}
 {"instruction": "When do I use `--trace-warnings`?", "input": "", "output": "`--trace-warnings` prints stacks for deprecations/unhandled rejections — turns warnings into actionable locations."}
@@ -906,7 +855,6 @@
 {"instruction": "Apa itu `--trace-warnings` dalam Node.js?", "input": "", "output": "`--trace-warnings` prints stacks for deprecations/unhandled rejections — turns warnings into actionable locations."}
 {"instruction": "Apa yang perlu saya tahu tentang `--trace-warnings`?", "input": "", "output": "`--trace-warnings` prints stacks for deprecations/unhandled rejections — turns warnings into actionable locations."}
 {"instruction": "Bagaimanakah `--trace-warnings` berfungsi?", "input": "", "output": "`--trace-warnings` prints stacks for deprecations/unhandled rejections — turns warnings into actionable locations."}
-{"instruction": "Bilakah masa yang sesuai untuk `--trace-warnings`?", "input": "", "output": "`--trace-warnings` prints stacks for deprecations/unhandled rejections — turns warnings into actionable locations."}
 {"instruction": "What does `--pending-deprecation` do?", "input": "", "output": "Opt into future breaking behaviors early (`--pending-deprecation`) to migrate before forced upgrades."}
 {"instruction": "Explain `--pending-deprecation` briefly.", "input": "", "output": "Opt into future breaking behaviors early (`--pending-deprecation`) to migrate before forced upgrades."}
 {"instruction": "When do I use `--pending-deprecation`?", "input": "", "output": "Opt into future breaking behaviors early (`--pending-deprecation`) to migrate before forced upgrades."}
@@ -923,7 +871,6 @@
 {"instruction": "Bagaimana `--pending-deprecation` berfungsi?", "input": "", "output": "Opt into future breaking behaviors early (`--pending-deprecation`) to migrate before forced upgrades."}
 {"instruction": "Apa yang perlu saya tahu tentang `--pending-deprecation`?", "input": "", "output": "Opt into future breaking behaviors early (`--pending-deprecation`) to migrate before forced upgrades."}
 {"instruction": "Bagaimanakah `--pending-deprecation` berfungsi?", "input": "", "output": "Opt into future breaking behaviors early (`--pending-deprecation`) to migrate before forced upgrades."}
-{"instruction": "Bilakah masa yang sesuai untuk `--pending-deprecation`?", "input": "", "output": "Opt into future breaking behaviors early (`--pending-deprecation`) to migrate before forced upgrades."}
 {"instruction": "What does `--trace-uncaught` do?", "input": "", "output": "Uncaught exceptions print full context with `--trace-uncaught`; combine with domain logging in production."}
 {"instruction": "Explain `--trace-uncaught` briefly.", "input": "", "output": "Uncaught exceptions print full context with `--trace-uncaught`; combine with domain logging in production."}
 {"instruction": "When do I use `--trace-uncaught`?", "input": "", "output": "Uncaught exceptions print full context with `--trace-uncaught`; combine with domain logging in production."}
@@ -940,7 +887,6 @@
 {"instruction": "Bila guna `--trace-uncaught`?", "input": "", "output": "Uncaught exceptions print full context with `--trace-uncaught`; combine with domain logging in production."}
 {"instruction": "Apa yang perlu saya tahu tentang `--trace-uncaught`?", "input": "", "output": "Uncaught exceptions print full context with `--trace-uncaught`; combine with domain logging in production."}
 {"instruction": "Bagaimanakah `--trace-uncaught` berfungsi?", "input": "", "output": "Uncaught exceptions print full context with `--trace-uncaught`; combine with domain logging in production."}
-{"instruction": "Bilakah masa yang sesuai untuk `--trace-uncaught`?", "input": "", "output": "Uncaught exceptions print full context with `--trace-uncaught`; combine with domain logging in production."}
 {"instruction": "What does `worker execArgv` do?", "input": "", "output": "Workers inherit `execArgv` unless overridden — pass `--inspect` ports explicitly to debug specific workers."}
 {"instruction": "Explain `worker execArgv` briefly.", "input": "", "output": "Workers inherit `execArgv` unless overridden — pass `--inspect` ports explicitly to debug specific workers."}
 {"instruction": "When do I use `worker execArgv`?", "input": "", "output": "Workers inherit `execArgv` unless overridden — pass `--inspect` ports explicitly to debug specific workers."}
@@ -957,7 +903,6 @@
 {"instruction": "Jelaskan `worker execArgv` dengan contoh.", "input": "", "output": "Workers inherit `execArgv` unless overridden — pass `--inspect` ports explicitly to debug specific workers."}
 {"instruction": "Apa yang perlu saya tahu tentang `worker execArgv`?", "input": "", "output": "Workers inherit `execArgv` unless overridden — pass `--inspect` ports explicitly to debug specific workers."}
 {"instruction": "Bagaimanakah `worker execArgv` berfungsi?", "input": "", "output": "Workers inherit `execArgv` unless overridden — pass `--inspect` ports explicitly to debug specific workers."}
-{"instruction": "Bilakah masa yang sesuai untuk `worker execArgv`?", "input": "", "output": "Workers inherit `execArgv` unless overridden — pass `--inspect` ports explicitly to debug specific workers."}
 {"instruction": "What does `resourceLimits` do?", "input": "", "output": "`new Worker(path, { resourceLimits: { maxOldGenerationSizeMb: 512 } })` caps rogue workers per thread."}
 {"instruction": "Explain `resourceLimits` briefly.", "input": "", "output": "`new Worker(path, { resourceLimits: { maxOldGenerationSizeMb: 512 } })` caps rogue workers per thread."}
 {"instruction": "When do I use `resourceLimits`?", "input": "", "output": "`new Worker(path, { resourceLimits: { maxOldGenerationSizeMb: 512 } })` caps rogue workers per thread."}
@@ -974,7 +919,6 @@
 {"instruction": "Terangkan `resourceLimits` secara ringkas.", "input": "", "output": "`new Worker(path, { resourceLimits: { maxOldGenerationSizeMb: 512 } })` caps rogue workers per thread."}
 {"instruction": "Apa yang perlu saya tahu tentang `resourceLimits`?", "input": "", "output": "`new Worker(path, { resourceLimits: { maxOldGenerationSizeMb: 512 } })` caps rogue workers per thread."}
 {"instruction": "Bagaimanakah `resourceLimits` berfungsi?", "input": "", "output": "`new Worker(path, { resourceLimits: { maxOldGenerationSizeMb: 512 } })` caps rogue workers per thread."}
-{"instruction": "Bilakah masa yang sesuai untuk `resourceLimits`?", "input": "", "output": "`new Worker(path, { resourceLimits: { maxOldGenerationSizeMb: 512 } })` caps rogue workers per thread."}
 {"instruction": "What does `broadcast channel` do?", "input": "", "output": "`BroadcastChannel` messages across workers/threads by name — lighter than raw parentPort wiring for fan-out."}
 {"instruction": "Explain `broadcast channel` briefly.", "input": "", "output": "`BroadcastChannel` messages across workers/threads by name — lighter than raw parentPort wiring for fan-out."}
 {"instruction": "When do I use `broadcast channel`?", "input": "", "output": "`BroadcastChannel` messages across workers/threads by name — lighter than raw parentPort wiring for fan-out."}
@@ -991,7 +935,6 @@
 {"instruction": "Apa itu `broadcast channel` dalam Node.js?", "input": "", "output": "`BroadcastChannel` messages across workers/threads by name — lighter than raw parentPort wiring for fan-out."}
 {"instruction": "Apa yang perlu saya tahu tentang `broadcast channel`?", "input": "", "output": "`BroadcastChannel` messages across workers/threads by name — lighter than raw parentPort wiring for fan-out."}
 {"instruction": "Bagaimanakah `broadcast channel` berfungsi?", "input": "", "output": "`BroadcastChannel` messages across workers/threads by name — lighter than raw parentPort wiring for fan-out."}
-{"instruction": "Bilakah masa yang sesuai untuk `broadcast channel`?", "input": "", "output": "`BroadcastChannel` messages across workers/threads by name — lighter than raw parentPort wiring for fan-out."}
 {"instruction": "What does `message ports transfer` do?", "input": "", "output": "Transfer `MessagePort`s (not just messages) to hand live channels between workers without a central hub."}
 {"instruction": "Explain `message ports transfer` briefly.", "input": "", "output": "Transfer `MessagePort`s (not just messages) to hand live channels between workers without a central hub."}
 {"instruction": "When do I use `message ports transfer`?", "input": "", "output": "Transfer `MessagePort`s (not just messages) to hand live channels between workers without a central hub."}
@@ -1008,7 +951,6 @@
 {"instruction": "Bagaimana `message ports transfer` berfungsi?", "input": "", "output": "Transfer `MessagePort`s (not just messages) to hand live channels between workers without a central hub."}
 {"instruction": "Apa yang perlu saya tahu tentang `message ports transfer`?", "input": "", "output": "Transfer `MessagePort`s (not just messages) to hand live channels between workers without a central hub."}
 {"instruction": "Bagaimanakah `message ports transfer` berfungsi?", "input": "", "output": "Transfer `MessagePort`s (not just messages) to hand live channels between workers without a central hub."}
-{"instruction": "Bilakah masa yang sesuai untuk `message ports transfer`?", "input": "", "output": "Transfer `MessagePort`s (not just messages) to hand live channels between workers without a central hub."}
 {"instruction": "What does `performance marks` do?", "input": "", "output": "`performance.mark/measure` profiles sections with high-res timestamps; `PerformanceObserver` streams them to telemetry."}
 {"instruction": "Explain `performance marks` briefly.", "input": "", "output": "`performance.mark/measure` profiles sections with high-res timestamps; `PerformanceObserver` streams them to telemetry."}
 {"instruction": "When do I use `performance marks`?", "input": "", "output": "`performance.mark/measure` profiles sections with high-res timestamps; `PerformanceObserver` streams them to telemetry."}
@@ -1025,7 +967,6 @@
 {"instruction": "Bila guna `performance marks`?", "input": "", "output": "`performance.mark/measure` profiles sections with high-res timestamps; `PerformanceObserver` streams them to telemetry."}
 {"instruction": "Apa yang perlu saya tahu tentang `performance marks`?", "input": "", "output": "`performance.mark/measure` profiles sections with high-res timestamps; `PerformanceObserver` streams them to telemetry."}
 {"instruction": "Bagaimanakah `performance marks` berfungsi?", "input": "", "output": "`performance.mark/measure` profiles sections with high-res timestamps; `PerformanceObserver` streams them to telemetry."}
-{"instruction": "Bilakah masa yang sesuai untuk `performance marks`?", "input": "", "output": "`performance.mark/measure` profiles sections with high-res timestamps; `PerformanceObserver` streams them to telemetry."}
 {"instruction": "What does `asyncLocalStorage` do?", "input": "", "output": "`AsyncLocalStorage` carries request context (ids, tenants) through async chains — no parameter threading."}
 {"instruction": "Explain `asyncLocalStorage` briefly.", "input": "", "output": "`AsyncLocalStorage` carries request context (ids, tenants) through async chains — no parameter threading."}
 {"instruction": "When do I use `asyncLocalStorage`?", "input": "", "output": "`AsyncLocalStorage` carries request context (ids, tenants) through async chains — no parameter threading."}
@@ -1042,7 +983,6 @@
 {"instruction": "Jelaskan `asyncLocalStorage` dengan contoh.", "input": "", "output": "`AsyncLocalStorage` carries request context (ids, tenants) through async chains — no parameter threading."}
 {"instruction": "Apa yang perlu saya tahu tentang `asyncLocalStorage`?", "input": "", "output": "`AsyncLocalStorage` carries request context (ids, tenants) through async chains — no parameter threading."}
 {"instruction": "Bagaimanakah `asyncLocalStorage` berfungsi?", "input": "", "output": "`AsyncLocalStorage` carries request context (ids, tenants) through async chains — no parameter threading."}
-{"instruction": "Bilakah masa yang sesuai untuk `asyncLocalStorage`?", "input": "", "output": "`AsyncLocalStorage` carries request context (ids, tenants) through async chains — no parameter threading."}
 {"instruction": "What does `worker unref ref` do?", "input": "", "output": "`worker.unref()` lets the process exit with only workers left; `ref()` re-arms — background telemetry pattern."}
 {"instruction": "Explain `worker unref ref` briefly.", "input": "", "output": "`worker.unref()` lets the process exit with only workers left; `ref()` re-arms — background telemetry pattern."}
 {"instruction": "When do I use `worker unref ref`?", "input": "", "output": "`worker.unref()` lets the process exit with only workers left; `ref()` re-arms — background telemetry pattern."}
@@ -1059,7 +999,6 @@
 {"instruction": "Terangkan `worker unref ref` secara ringkas.", "input": "", "output": "`worker.unref()` lets the process exit with only workers left; `ref()` re-arms — background telemetry pattern."}
 {"instruction": "Apa yang perlu saya tahu tentang `worker unref ref`?", "input": "", "output": "`worker.unref()` lets the process exit with only workers left; `ref()` re-arms — background telemetry pattern."}
 {"instruction": "Bagaimanakah `worker unref ref` berfungsi?", "input": "", "output": "`worker.unref()` lets the process exit with only workers left; `ref()` re-arms — background telemetry pattern."}
-{"instruction": "Bilakah masa yang sesuai untuk `worker unref ref`?", "input": "", "output": "`worker.unref()` lets the process exit with only workers left; `ref()` re-arms — background telemetry pattern."}
 {"instruction": "What does `parentPort transferList` do?", "input": "", "output": "Pass `transferList: [buffer]` to move (not copy) ArrayBuffers into workers — zero-copy handoffs for binary pipelines."}
 {"instruction": "Explain `parentPort transferList` briefly.", "input": "", "output": "Pass `transferList: [buffer]` to move (not copy) ArrayBuffers into workers — zero-copy handoffs for binary pipelines."}
 {"instruction": "When do I use `parentPort transferList`?", "input": "", "output": "Pass `transferList: [buffer]` to move (not copy) ArrayBuffers into workers — zero-copy handoffs for binary pipelines."}
@@ -1076,7 +1015,6 @@
 {"instruction": "Apa itu `parentPort transferList` dalam Node.js?", "input": "", "output": "Pass `transferList: [buffer]` to move (not copy) ArrayBuffers into workers — zero-copy handoffs for binary pipelines."}
 {"instruction": "Apa yang perlu saya tahu tentang `parentPort transferList`?", "input": "", "output": "Pass `transferList: [buffer]` to move (not copy) ArrayBuffers into workers — zero-copy handoffs for binary pipelines."}
 {"instruction": "Bagaimanakah `parentPort transferList` berfungsi?", "input": "", "output": "Pass `transferList: [buffer]` to move (not copy) ArrayBuffers into workers — zero-copy handoffs for binary pipelines."}
-{"instruction": "Bilakah masa yang sesuai untuk `parentPort transferList`?", "input": "", "output": "Pass `transferList: [buffer]` to move (not copy) ArrayBuffers into workers — zero-copy handoffs for binary pipelines."}
 {"instruction": "What does `isMainThread guard` do?", "input": "", "output": "`if (isMainThread) { spawn workers } else { do work }` splits one file into orchestrator + worker roles cleanly."}
 {"instruction": "Explain `isMainThread guard` briefly.", "input": "", "output": "`if (isMainThread) { spawn workers } else { do work }` splits one file into orchestrator + worker roles cleanly."}
 {"instruction": "When do I use `isMainThread guard`?", "input": "", "output": "`if (isMainThread) { spawn workers } else { do work }` splits one file into orchestrator + worker roles cleanly."}
@@ -1093,7 +1031,6 @@
 {"instruction": "Bagaimana `isMainThread guard` berfungsi?", "input": "", "output": "`if (isMainThread) { spawn workers } else { do work }` splits one file into orchestrator + worker roles cleanly."}
 {"instruction": "Apa yang perlu saya tahu tentang `isMainThread guard`?", "input": "", "output": "`if (isMainThread) { spawn workers } else { do work }` splits one file into orchestrator + worker roles cleanly."}
 {"instruction": "Bagaimanakah `isMainThread guard` berfungsi?", "input": "", "output": "`if (isMainThread) { spawn workers } else { do work }` splits one file into orchestrator + worker roles cleanly."}
-{"instruction": "Bilakah masa yang sesuai untuk `isMainThread guard`?", "input": "", "output": "`if (isMainThread) { spawn workers } else { do work }` splits one file into orchestrator + worker roles cleanly."}
 {"instruction": "What does `setEnvironmentData` do?", "input": "", "output": "`worker.setEnvironmentData()` shares config into workers without message plumbing on every spawn."}
 {"instruction": "Explain `setEnvironmentData` briefly.", "input": "", "output": "`worker.setEnvironmentData()` shares config into workers without message plumbing on every spawn."}
 {"instruction": "When do I use `setEnvironmentData`?", "input": "", "output": "`worker.setEnvironmentData()` shares config into workers without message plumbing on every spawn."}
@@ -1110,7 +1047,6 @@
 {"instruction": "Bila guna `setEnvironmentData`?", "input": "", "output": "`worker.setEnvironmentData()` shares config into workers without message plumbing on every spawn."}
 {"instruction": "Apa yang perlu saya tahu tentang `setEnvironmentData`?", "input": "", "output": "`worker.setEnvironmentData()` shares config into workers without message plumbing on every spawn."}
 {"instruction": "Bagaimanakah `setEnvironmentData` berfungsi?", "input": "", "output": "`worker.setEnvironmentData()` shares config into workers without message plumbing on every spawn."}
-{"instruction": "Bilakah masa yang sesuai untuk `setEnvironmentData`?", "input": "", "output": "`worker.setEnvironmentData()` shares config into workers without message plumbing on every spawn."}
 {"instruction": "What does `markAsUntransferable` do?", "input": "", "output": "Mark shared buffers untransferable to catch accidental neutering at the source instead of debugging downstream."}
 {"instruction": "Explain `markAsUntransferable` briefly.", "input": "", "output": "Mark shared buffers untransferable to catch accidental neutering at the source instead of debugging downstream."}
 {"instruction": "When do I use `markAsUntransferable`?", "input": "", "output": "Mark shared buffers untransferable to catch accidental neutering at the source instead of debugging downstream."}
@@ -1127,7 +1063,6 @@
 {"instruction": "Jelaskan `markAsUntransferable` dengan contoh.", "input": "", "output": "Mark shared buffers untransferable to catch accidental neutering at the source instead of debugging downstream."}
 {"instruction": "Apa yang perlu saya tahu tentang `markAsUntransferable`?", "input": "", "output": "Mark shared buffers untransferable to catch accidental neutering at the source instead of debugging downstream."}
 {"instruction": "Bagaimanakah `markAsUntransferable` berfungsi?", "input": "", "output": "Mark shared buffers untransferable to catch accidental neutering at the source instead of debugging downstream."}
-{"instruction": "Bilakah masa yang sesuai untuk `markAsUntransferable`?", "input": "", "output": "Mark shared buffers untransferable to catch accidental neutering at the source instead of debugging downstream."}
 {"instruction": "What does `moveMessagePortToContext` do?", "input": "", "output": "Ports cross vm contexts via explicit moves — isolated plugin sandboxes with controlled channels."}
 {"instruction": "Explain `moveMessagePortToContext` briefly.", "input": "", "output": "Ports cross vm contexts via explicit moves — isolated plugin sandboxes with controlled channels."}
 {"instruction": "When do I use `moveMessagePortToContext`?", "input": "", "output": "Ports cross vm contexts via explicit moves — isolated plugin sandboxes with controlled channels."}
@@ -1144,7 +1079,6 @@
 {"instruction": "Terangkan `moveMessagePortToContext` secara ringkas.", "input": "", "output": "Ports cross vm contexts via explicit moves — isolated plugin sandboxes with controlled channels."}
 {"instruction": "Apa yang perlu saya tahu tentang `moveMessagePortToContext`?", "input": "", "output": "Ports cross vm contexts via explicit moves — isolated plugin sandboxes with controlled channels."}
 {"instruction": "Bagaimanakah `moveMessagePortToContext` berfungsi?", "input": "", "output": "Ports cross vm contexts via explicit moves — isolated plugin sandboxes with controlled channels."}
-{"instruction": "Bilakah masa yang sesuai untuk `moveMessagePortToContext`?", "input": "", "output": "Ports cross vm contexts via explicit moves — isolated plugin sandboxes with controlled channels."}
 {"instruction": "What does `receiveMessageOnPort` do?", "input": "", "output": "Synchronous port reads suit `worker.stdin`-style bootstraps; async `on('message')` everywhere else."}
 {"instruction": "Explain `receiveMessageOnPort` briefly.", "input": "", "output": "Synchronous port reads suit `worker.stdin`-style bootstraps; async `on('message')` everywhere else."}
 {"instruction": "When do I use `receiveMessageOnPort`?", "input": "", "output": "Synchronous port reads suit `worker.stdin`-style bootstraps; async `on('message')` everywhere else."}
@@ -1161,7 +1095,6 @@
 {"instruction": "Apa itu `receiveMessageOnPort` dalam Node.js?", "input": "", "output": "Synchronous port reads suit `worker.stdin`-style bootstraps; async `on('message')` everywhere else."}
 {"instruction": "Apa yang perlu saya tahu tentang `receiveMessageOnPort`?", "input": "", "output": "Synchronous port reads suit `worker.stdin`-style bootstraps; async `on('message')` everywhere else."}
 {"instruction": "Bagaimanakah `receiveMessageOnPort` berfungsi?", "input": "", "output": "Synchronous port reads suit `worker.stdin`-style bootstraps; async `on('message')` everywhere else."}
-{"instruction": "Bilakah masa yang sesuai untuk `receiveMessageOnPort`?", "input": "", "output": "Synchronous port reads suit `worker.stdin`-style bootstraps; async `on('message')` everywhere else."}
 {"instruction": "tulis package.json dengan express dan pg", "input": "", "output": "Ya, ini package.json lengkap:\n```json\n{\n  \"name\": \"blog\",\n  \"version\": \"1.0.0\",\n  \"type\": \"module\",\n  \"scripts\": { \"start\": \"node src/server.js\", \"dev\": \"node --watch src/server.js\" },\n  \"dependencies\": { \"express\": \"^4.21.0\", \"pg\": \"^8.13.0\" }\n}\n```\nPasang dengan `npm install`, jalan dengan `npm start`."}
 {"instruction": "write index.html blog skeleton", "input": "", "output": "Ya, ini rangka blog:\n```html\n<!DOCTYPE html>\n<html lang=\"ms\">\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<title>Blog Saya</title>\n<link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n<header><h1>Blog Saya</h1></header>\n<main id=\"senarai\"></main>\n<script src=\"app.js\" defer></script>\n</body>\n</html>\n```"}
 {"instruction": "What does `fs promises API` do?", "input": "", "output": "`fs/promises` (`readFile`, `writeFile`, `mkdir -p`, `readdir`) with await replaces callback pyramids throughout."}
@@ -1180,7 +1113,6 @@
 {"instruction": "Bagaimana `fs promises API` berfungsi?", "input": "", "output": "`fs/promises` (`readFile`, `writeFile`, `mkdir -p`, `readdir`) with await replaces callback pyramids throughout."}
 {"instruction": "Apa yang perlu saya tahu tentang `fs promises API`?", "input": "", "output": "`fs/promises` (`readFile`, `writeFile`, `mkdir -p`, `readdir`) with await replaces callback pyramids throughout."}
 {"instruction": "Bagaimanakah `fs promises API` berfungsi?", "input": "", "output": "`fs/promises` (`readFile`, `writeFile`, `mkdir -p`, `readdir`) with await replaces callback pyramids throughout."}
-{"instruction": "Bilakah masa yang sesuai untuk `fs promises API`?", "input": "", "output": "`fs/promises` (`readFile`, `writeFile`, `mkdir -p`, `readdir`) with await replaces callback pyramids throughout."}
 {"instruction": "What does `fs streams large` do?", "input": "", "output": "`createReadStream().pipe(res)` serves gigabytes constant-memory; `pipeline()` adds backpressure + error propagation."}
 {"instruction": "Explain `fs streams large` briefly.", "input": "", "output": "`createReadStream().pipe(res)` serves gigabytes constant-memory; `pipeline()` adds backpressure + error propagation."}
 {"instruction": "When do I use `fs streams large`?", "input": "", "output": "`createReadStream().pipe(res)` serves gigabytes constant-memory; `pipeline()` adds backpressure + error propagation."}
@@ -1197,7 +1129,6 @@
 {"instruction": "Bila guna `fs streams large`?", "input": "", "output": "`createReadStream().pipe(res)` serves gigabytes constant-memory; `pipeline()` adds backpressure + error propagation."}
 {"instruction": "Apa yang perlu saya tahu tentang `fs streams large`?", "input": "", "output": "`createReadStream().pipe(res)` serves gigabytes constant-memory; `pipeline()` adds backpressure + error propagation."}
 {"instruction": "Bagaimanakah `fs streams large` berfungsi?", "input": "", "output": "`createReadStream().pipe(res)` serves gigabytes constant-memory; `pipeline()` adds backpressure + error propagation."}
-{"instruction": "Bilakah masa yang sesuai untuk `fs streams large`?", "input": "", "output": "`createReadStream().pipe(res)` serves gigabytes constant-memory; `pipeline()` adds backpressure + error propagation."}
 {"instruction": "What does `path posix win32` do?", "input": "", "output": "`path.posix`/`path.win32` force flavors in cross-platform codebases; default `path` follows the host OS."}
 {"instruction": "Explain `path posix win32` briefly.", "input": "", "output": "`path.posix`/`path.win32` force flavors in cross-platform codebases; default `path` follows the host OS."}
 {"instruction": "When do I use `path posix win32`?", "input": "", "output": "`path.posix`/`path.win32` force flavors in cross-platform codebases; default `path` follows the host OS."}
@@ -1214,7 +1145,6 @@
 {"instruction": "Jelaskan `path posix win32` dengan contoh.", "input": "", "output": "`path.posix`/`path.win32` force flavors in cross-platform codebases; default `path` follows the host OS."}
 {"instruction": "Apa yang perlu saya tahu tentang `path posix win32`?", "input": "", "output": "`path.posix`/`path.win32` force flavors in cross-platform codebases; default `path` follows the host OS."}
 {"instruction": "Bagaimanakah `path posix win32` berfungsi?", "input": "", "output": "`path.posix`/`path.win32` force flavors in cross-platform codebases; default `path` follows the host OS."}
-{"instruction": "Bilakah masa yang sesuai untuk `path posix win32`?", "input": "", "output": "`path.posix`/`path.win32` force flavors in cross-platform codebases; default `path` follows the host OS."}
 {"instruction": "What does `os homedir tmpdir` do?", "input": "", "output": "`os.homedir()` locates configs, `os.tmpdir()` scratch space, `os.platform()` branches per OS portably."}
 {"instruction": "Explain `os homedir tmpdir` briefly.", "input": "", "output": "`os.homedir()` locates configs, `os.tmpdir()` scratch space, `os.platform()` branches per OS portably."}
 {"instruction": "When do I use `os homedir tmpdir`?", "input": "", "output": "`os.homedir()` locates configs, `os.tmpdir()` scratch space, `os.platform()` branches per OS portably."}
@@ -1231,7 +1161,6 @@
 {"instruction": "Terangkan `os homedir tmpdir` secara ringkas.", "input": "", "output": "`os.homedir()` locates configs, `os.tmpdir()` scratch space, `os.platform()` branches per OS portably."}
 {"instruction": "Apa yang perlu saya tahu tentang `os homedir tmpdir`?", "input": "", "output": "`os.homedir()` locates configs, `os.tmpdir()` scratch space, `os.platform()` branches per OS portably."}
 {"instruction": "Bagaimanakah `os homedir tmpdir` berfungsi?", "input": "", "output": "`os.homedir()` locates configs, `os.tmpdir()` scratch space, `os.platform()` branches per OS portably."}
-{"instruction": "Bilakah masa yang sesuai untuk `os homedir tmpdir`?", "input": "", "output": "`os.homedir()` locates configs, `os.tmpdir()` scratch space, `os.platform()` branches per OS portably."}
 {"instruction": "What does `process env validate` do?", "input": "", "output": "Parse env once at boot into a validated config object (zod/joi); scattered `process.env` reads drift untyped."}
 {"instruction": "Explain `process env validate` briefly.", "input": "", "output": "Parse env once at boot into a validated config object (zod/joi); scattered `process.env` reads drift untyped."}
 {"instruction": "When do I use `process env validate`?", "input": "", "output": "Parse env once at boot into a validated config object (zod/joi); scattered `process.env` reads drift untyped."}
@@ -1248,7 +1177,6 @@
 {"instruction": "Apa itu `process env validate` dalam Node.js?", "input": "", "output": "Parse env once at boot into a validated config object (zod/joi); scattered `process.env` reads drift untyped."}
 {"instruction": "Apa yang perlu saya tahu tentang `process env validate`?", "input": "", "output": "Parse env once at boot into a validated config object (zod/joi); scattered `process.env` reads drift untyped."}
 {"instruction": "Bagaimanakah `process env validate` berfungsi?", "input": "", "output": "Parse env once at boot into a validated config object (zod/joi); scattered `process.env` reads drift untyped."}
-{"instruction": "Bilakah masa yang sesuai untuk `process env validate`?", "input": "", "output": "Parse env once at boot into a validated config object (zod/joi); scattered `process.env` reads drift untyped."}
 {"instruction": "What does `process exit codes2` do?", "input": "", "output": "Exit `0` clean, `1` generic, custom codes per failure mode; flush streams before exiting or logs truncate."}
 {"instruction": "Explain `process exit codes2` briefly.", "input": "", "output": "Exit `0` clean, `1` generic, custom codes per failure mode; flush streams before exiting or logs truncate."}
 {"instruction": "When do I use `process exit codes2`?", "input": "", "output": "Exit `0` clean, `1` generic, custom codes per failure mode; flush streams before exiting or logs truncate."}
@@ -1265,7 +1193,6 @@
 {"instruction": "Bagaimana `process exit codes2` berfungsi?", "input": "", "output": "Exit `0` clean, `1` generic, custom codes per failure mode; flush streams before exiting or logs truncate."}
 {"instruction": "Apa yang perlu saya tahu tentang `process exit codes2`?", "input": "", "output": "Exit `0` clean, `1` generic, custom codes per failure mode; flush streams before exiting or logs truncate."}
 {"instruction": "Bagaimanakah `process exit codes2` berfungsi?", "input": "", "output": "Exit `0` clean, `1` generic, custom codes per failure mode; flush streams before exiting or logs truncate."}
-{"instruction": "Bilakah masa yang sesuai untuk `process exit codes2`?", "input": "", "output": "Exit `0` clean, `1` generic, custom codes per failure mode; flush streams before exiting or logs truncate."}
 {"instruction": "What does `signals handlers` do?", "input": "", "output": "Handle SIGTERM (orchestrators) and SIGINT (humans); SIGHUP traditionally reloads config without restarts."}
 {"instruction": "Explain `signals handlers` briefly.", "input": "", "output": "Handle SIGTERM (orchestrators) and SIGINT (humans); SIGHUP traditionally reloads config without restarts."}
 {"instruction": "When do I use `signals handlers`?", "input": "", "output": "Handle SIGTERM (orchestrators) and SIGINT (humans); SIGHUP traditionally reloads config without restarts."}
@@ -1282,7 +1209,6 @@
 {"instruction": "Bila guna `signals handlers`?", "input": "", "output": "Handle SIGTERM (orchestrators) and SIGINT (humans); SIGHUP traditionally reloads config without restarts."}
 {"instruction": "Apa yang perlu saya tahu tentang `signals handlers`?", "input": "", "output": "Handle SIGTERM (orchestrators) and SIGINT (humans); SIGHUP traditionally reloads config without restarts."}
 {"instruction": "Bagaimanakah `signals handlers` berfungsi?", "input": "", "output": "Handle SIGTERM (orchestrators) and SIGINT (humans); SIGHUP traditionally reloads config without restarts."}
-{"instruction": "Bilakah masa yang sesuai untuk `signals handlers`?", "input": "", "output": "Handle SIGTERM (orchestrators) and SIGINT (humans); SIGHUP traditionally reloads config without restarts."}
 {"instruction": "What does `stdin stdout piping` do?", "input": "", "output": "`process.stdin`/`stdout` compose with shell pipes; `readline` parses interactively, raw mode for TUIs."}
 {"instruction": "Explain `stdin stdout piping` briefly.", "input": "", "output": "`process.stdin`/`stdout` compose with shell pipes; `readline` parses interactively, raw mode for TUIs."}
 {"instruction": "When do I use `stdin stdout piping`?", "input": "", "output": "`process.stdin`/`stdout` compose with shell pipes; `readline` parses interactively, raw mode for TUIs."}
@@ -1299,7 +1225,6 @@
 {"instruction": "Jelaskan `stdin stdout piping` dengan contoh.", "input": "", "output": "`process.stdin`/`stdout` compose with shell pipes; `readline` parses interactively, raw mode for TUIs."}
 {"instruction": "Apa yang perlu saya tahu tentang `stdin stdout piping`?", "input": "", "output": "`process.stdin`/`stdout` compose with shell pipes; `readline` parses interactively, raw mode for TUIs."}
 {"instruction": "Bagaimanakah `stdin stdout piping` berfungsi?", "input": "", "output": "`process.stdin`/`stdout` compose with shell pipes; `readline` parses interactively, raw mode for TUIs."}
-{"instruction": "Bilakah masa yang sesuai untuk `stdin stdout piping`?", "input": "", "output": "`process.stdin`/`stdout` compose with shell pipes; `readline` parses interactively, raw mode for TUIs."}
 {"instruction": "What does `stderr logging` do?", "input": "", "output": "Errors to stderr (`console.error`), data to stdout — shell redirects (`2>err.log`) depend on the split."}
 {"instruction": "Explain `stderr logging` briefly.", "input": "", "output": "Errors to stderr (`console.error`), data to stdout — shell redirects (`2>err.log`) depend on the split."}
 {"instruction": "When do I use `stderr logging`?", "input": "", "output": "Errors to stderr (`console.error`), data to stdout — shell redirects (`2>err.log`) depend on the split."}
@@ -1316,7 +1241,6 @@
 {"instruction": "Terangkan `stderr logging` secara ringkas.", "input": "", "output": "Errors to stderr (`console.error`), data to stdout — shell redirects (`2>err.log`) depend on the split."}
 {"instruction": "Apa yang perlu saya tahu tentang `stderr logging`?", "input": "", "output": "Errors to stderr (`console.error`), data to stdout — shell redirects (`2>err.log`) depend on the split."}
 {"instruction": "Bagaimanakah `stderr logging` berfungsi?", "input": "", "output": "Errors to stderr (`console.error`), data to stdout — shell redirects (`2>err.log`) depend on the split."}
-{"instruction": "Bilakah masa yang sesuai untuk `stderr logging`?", "input": "", "output": "Errors to stderr (`console.error`), data to stdout — shell redirects (`2>err.log`) depend on the split."}
 {"instruction": "What does `worker isMainThread` do?", "input": "", "output": "`isMainThread` branches orchestrator vs worker files; `workerData` passes initial payloads without messages."}
 {"instruction": "Explain `worker isMainThread` briefly.", "input": "", "output": "`isMainThread` branches orchestrator vs worker files; `workerData` passes initial payloads without messages."}
 {"instruction": "When do I use `worker isMainThread`?", "input": "", "output": "`isMainThread` branches orchestrator vs worker files; `workerData` passes initial payloads without messages."}
@@ -1333,7 +1257,6 @@
 {"instruction": "Apa itu `worker isMainThread` dalam Node.js?", "input": "", "output": "`isMainThread` branches orchestrator vs worker files; `workerData` passes initial payloads without messages."}
 {"instruction": "Apa yang perlu saya tahu tentang `worker isMainThread`?", "input": "", "output": "`isMainThread` branches orchestrator vs worker files; `workerData` passes initial payloads without messages."}
 {"instruction": "Bagaimanakah `worker isMainThread` berfungsi?", "input": "", "output": "`isMainThread` branches orchestrator vs worker files; `workerData` passes initial payloads without messages."}
-{"instruction": "Bilakah masa yang sesuai untuk `worker isMainThread`?", "input": "", "output": "`isMainThread` branches orchestrator vs worker files; `workerData` passes initial payloads without messages."}
 {"instruction": "What does `Atomics SharedArray` do?", "input": "", "output": "`Atomics.wait/notify` synchronize SharedArrayBuffer across workers — true shared memory, carefully fenced."}
 {"instruction": "Explain `Atomics SharedArray` briefly.", "input": "", "output": "`Atomics.wait/notify` synchronize SharedArrayBuffer across workers — true shared memory, carefully fenced."}
 {"instruction": "When do I use `Atomics SharedArray`?", "input": "", "output": "`Atomics.wait/notify` synchronize SharedArrayBuffer across workers — true shared memory, carefully fenced."}
@@ -1350,7 +1273,6 @@
 {"instruction": "Bagaimana `Atomics SharedArray` berfungsi?", "input": "", "output": "`Atomics.wait/notify` synchronize SharedArrayBuffer across workers — true shared memory, carefully fenced."}
 {"instruction": "Apa yang perlu saya tahu tentang `Atomics SharedArray`?", "input": "", "output": "`Atomics.wait/notify` synchronize SharedArrayBuffer across workers — true shared memory, carefully fenced."}
 {"instruction": "Bagaimanakah `Atomics SharedArray` berfungsi?", "input": "", "output": "`Atomics.wait/notify` synchronize SharedArrayBuffer across workers — true shared memory, carefully fenced."}
-{"instruction": "Bilakah masa yang sesuai untuk `Atomics SharedArray`?", "input": "", "output": "`Atomics.wait/notify` synchronize SharedArrayBuffer across workers — true shared memory, carefully fenced."}
 {"instruction": "What does `inspector open` do?", "input": "", "output": "`inspector.open(9229)` attaches DevTools to running servers; `--inspect-brk` pauses before first line for startup bugs."}
 {"instruction": "Explain `inspector open` briefly.", "input": "", "output": "`inspector.open(9229)` attaches DevTools to running servers; `--inspect-brk` pauses before first line for startup bugs."}
 {"instruction": "When do I use `inspector open`?", "input": "", "output": "`inspector.open(9229)` attaches DevTools to running servers; `--inspect-brk` pauses before first line for startup bugs."}
@@ -1367,7 +1289,6 @@
 {"instruction": "Bila guna `inspector open`?", "input": "", "output": "`inspector.open(9229)` attaches DevTools to running servers; `--inspect-brk` pauses before first line for startup bugs."}
 {"instruction": "Apa yang perlu saya tahu tentang `inspector open`?", "input": "", "output": "`inspector.open(9229)` attaches DevTools to running servers; `--inspect-brk` pauses before first line for startup bugs."}
 {"instruction": "Bagaimanakah `inspector open` berfungsi?", "input": "", "output": "`inspector.open(9229)` attaches DevTools to running servers; `--inspect-brk` pauses before first line for startup bugs."}
-{"instruction": "Bilakah masa yang sesuai untuk `inspector open`?", "input": "", "output": "`inspector.open(9229)` attaches DevTools to running servers; `--inspect-brk` pauses before first line for startup bugs."}
 {"instruction": "What does `coverage V8 take` do?", "input": "", "output": "`NODE_V8_COVERAGE=dir` collects raw coverage from any run; `node:test --experimental-test-coverage` reports it."}
 {"instruction": "Explain `coverage V8 take` briefly.", "input": "", "output": "`NODE_V8_COVERAGE=dir` collects raw coverage from any run; `node:test --experimental-test-coverage` reports it."}
 {"instruction": "When do I use `coverage V8 take`?", "input": "", "output": "`NODE_V8_COVERAGE=dir` collects raw coverage from any run; `node:test --experimental-test-coverage` reports it."}
@@ -1384,7 +1305,6 @@
 {"instruction": "Jelaskan `coverage V8 take` dengan contoh.", "input": "", "output": "`NODE_V8_COVERAGE=dir` collects raw coverage from any run; `node:test --experimental-test-coverage` reports it."}
 {"instruction": "Apa yang perlu saya tahu tentang `coverage V8 take`?", "input": "", "output": "`NODE_V8_COVERAGE=dir` collects raw coverage from any run; `node:test --experimental-test-coverage` reports it."}
 {"instruction": "Bagaimanakah `coverage V8 take` berfungsi?", "input": "", "output": "`NODE_V8_COVERAGE=dir` collects raw coverage from any run; `node:test --experimental-test-coverage` reports it."}
-{"instruction": "Bilakah masa yang sesuai untuk `coverage V8 take`?", "input": "", "output": "`NODE_V8_COVERAGE=dir` collects raw coverage from any run; `node:test --experimental-test-coverage` reports it."}
 {"instruction": "What does `sea single exe` do?", "input": "", "output": "Single-executable apps (`--experimental-sea-config`) ship one binary (assets embedded); postject injection seals it."}
 {"instruction": "Explain `sea single exe` briefly.", "input": "", "output": "Single-executable apps (`--experimental-sea-config`) ship one binary (assets embedded); postject injection seals it."}
 {"instruction": "When do I use `sea single exe`?", "input": "", "output": "Single-executable apps (`--experimental-sea-config`) ship one binary (assets embedded); postject injection seals it."}
@@ -1401,7 +1321,6 @@
 {"instruction": "Terangkan `sea single exe` secara ringkas.", "input": "", "output": "Single-executable apps (`--experimental-sea-config`) ship one binary (assets embedded); postject injection seals it."}
 {"instruction": "Apa yang perlu saya tahu tentang `sea single exe`?", "input": "", "output": "Single-executable apps (`--experimental-sea-config`) ship one binary (assets embedded); postject injection seals it."}
 {"instruction": "Bagaimanakah `sea single exe` berfungsi?", "input": "", "output": "Single-executable apps (`--experimental-sea-config`) ship one binary (assets embedded); postject injection seals it."}
-{"instruction": "Bilakah masa yang sesuai untuk `sea single exe`?", "input": "", "output": "Single-executable apps (`--experimental-sea-config`) ship one binary (assets embedded); postject injection seals it."}
 {"instruction": "What does `permission model deny` do?", "input": "", "output": "`--experimental-permission --allow-fs-read=*` sandboxes by default-deny; audit flags before production lockdowns."}
 {"instruction": "Explain `permission model deny` briefly.", "input": "", "output": "`--experimental-permission --allow-fs-read=*` sandboxes by default-deny; audit flags before production lockdowns."}
 {"instruction": "When do I use `permission model deny`?", "input": "", "output": "`--experimental-permission --allow-fs-read=*` sandboxes by default-deny; audit flags before production lockdowns."}
@@ -1418,7 +1337,6 @@
 {"instruction": "Apa itu `permission model deny` dalam Node.js?", "input": "", "output": "`--experimental-permission --allow-fs-read=*` sandboxes by default-deny; audit flags before production lockdowns."}
 {"instruction": "Apa yang perlu saya tahu tentang `permission model deny`?", "input": "", "output": "`--experimental-permission --allow-fs-read=*` sandboxes by default-deny; audit flags before production lockdowns."}
 {"instruction": "Bagaimanakah `permission model deny` berfungsi?", "input": "", "output": "`--experimental-permission --allow-fs-read=*` sandboxes by default-deny; audit flags before production lockdowns."}
-{"instruction": "Bilakah masa yang sesuai untuk `permission model deny`?", "input": "", "output": "`--experimental-permission --allow-fs-read=*` sandboxes by default-deny; audit flags before production lockdowns."}
 {"instruction": "Tutorial buat website blog dari awal sampai siap dengan Node.js?", "input": "", "output": "Langkah: 1) npm init -y; pasang express. 2) server.js: app Express dengan route / baca senarai post dan /post/:id. 3) Simpan post dalam folder content/ sebagai fail Markdown + front-matter. 4) Template ringkas (EJS atau string template) untuk senarai dan bacaan. 5) Tambah borang tulis post (POST /tulis) simpan fail baharu. 6) Deploy: Dockerfile node:22-alpine, hos dengan compose. Mula minima, tambah komen dan carian kemudian."}
 {"instruction": "Bagaimana mula projek website kosong dengan Node.js?", "input": "", "output": "mkdir blog && cd blog && npm init -y && npm i express. Cipta server.js: require express, app.get '/' balas HTML, app.listen(3000). Jalan node server.js, buka localhost:3000. Itu rangka kosong; tambah route dan template satu demi satu."}
 {"instruction": "Struktur folder projek blog Node.js yang kemas?", "input": "", "output": "server.js (masuk), routes/ (posts.js, admin.js), views/ (senarai, baca, tulis), content/ (fail .md), public/ (css, imej), data.json (meta ringkas). Asing route, paparan dan kandungan supaya projek membesar tanpa berselirat."}

@@ -22,7 +22,7 @@ def parse_args():
     ap.add_argument("--out", default="xcoder-0.5b", help="e.g. xcoder-docker")
     ap.add_argument("--model", default="Qwen/Qwen2.5-0.5B-Instruct")
     ap.add_argument("--epochs", type=float, default=3.0)
-    ap.add_argument("--lr", type=float, default=2e-4)
+    ap.add_argument("--lr", type=float, default=1e-4)
     ap.add_argument("--batch", type=int, default=2)
     ap.add_argument("--accum", type=int, default=4)
     ap.add_argument("--max-len", type=int, default=1024)
@@ -36,7 +36,7 @@ def main():
     import torch
     from datasets import load_dataset
     from transformers import AutoModelForCausalLM, AutoTokenizer
-    from transformers import DataCollatorForLanguageModeling, Trainer, TrainingArguments
+    from transformers import Trainer, TrainingArguments
     from peft import LoraConfig, get_peft_model
 
     use_fp16 = a.fp16 == "on" or (a.fp16 == "auto" and torch.cuda.is_available()
@@ -72,11 +72,11 @@ def main():
     def fmt(x):
         ins, inp, out = x["instruction"], x.get("input", ""), x["output"]
         user = ins + (f"\n{inp}" if inp else "")
-        text = (f"<|im_start|>system\nYou are XCoder, a tiny CPU 0.5B coding "
-                f"assistant. Never mention Qwen/Alibaba.<|im_end|>\n"
-                f"<|im_start|>user\n{user}<|im_end|>\n"
-                f"<|im_start|>assistant\n{out}<|im_end|>")
-        return {"text": text}
+        prompt = (f"<|im_start|>system\nYou are XCoder, a tiny CPU 0.5B coding "
+                  f"assistant. Never mention Qwen/Alibaba.<|im_end|>\n"
+                  f"<|im_start|>user\n{user}<|im_end|>\n")
+        full = prompt + f"<|im_start|>assistant\n{out}<|im_end|>"
+        return {"text": full, "prompt": prompt, "answer": out}
 
     ds = ds.map(fmt)
 
@@ -89,11 +89,42 @@ def main():
                              dataloader_pin_memory=False, report_to="none")
 
     def tok_fn(batch):
-        return tok(batch["text"], truncation=True, max_length=a.max_len)
+        # Mask loss pada system+user: model belajar MENJAWAB, bukan mengulang prompt.
+        # (DataCollator tanpa mask mengajar model menjana semula arahan —
+        #  punca gelung "Bilakah masa..." / gema peranan.)
+        enc = tok(batch["text"], truncation=True, max_length=a.max_len)
+        new_labels = []
+        for i, full_ids in enumerate(enc["input_ids"]):
+            p_ids = tok(batch["prompt"][i], truncation=True,
+                        max_length=a.max_len)["input_ids"]
+            # panjang prompt dalam jujukan terpotong (anggaran selamat: prefix sepunya)
+            n = 0
+            for pf, ff in zip(p_ids, full_ids):
+                if pf != ff:
+                    break
+                n += 1
+            n = max(0, n - 2)  # toleransi sempadan token
+            new_labels.append([-100] * n + full_ids[n:])
+        enc["labels"] = new_labels
+        return enc
 
     ds_tok = ds.map(tok_fn, batched=True, remove_columns=ds.column_names)
+
+    def collate(features):
+        # Pad manual: labels dipad -100 supaya padding tidak dikira dalam loss.
+        # (DataCollatorForLanguageModeling akan tulis semula labels kami.)
+        import torch as _t
+        ids = [_t.tensor(f["input_ids"], dtype=_t.long) for f in features]
+        lab = [_t.tensor(f["labels"], dtype=_t.long) for f in features]
+        ids = _t.nn.utils.rnn.pad_sequence(ids, batch_first=True,
+                                           padding_value=tok.pad_token_id)
+        lab = _t.nn.utils.rnn.pad_sequence(lab, batch_first=True, padding_value=-100)
+        return {"input_ids": ids,
+                "attention_mask": (ids != tok.pad_token_id).long(),
+                "labels": lab}
+
     Trainer(model=model, args=args, train_dataset=ds_tok,
-            data_collator=DataCollatorForLanguageModeling(tok, mlm=False)).train()
+            data_collator=collate).train()
 
     merged = model.merge_and_unload()
     merged.save_pretrained(a.out + "-merged")
