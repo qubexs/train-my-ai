@@ -5,6 +5,17 @@ Model kecil di mesin sendiri: **18 pakar 0.5B** (satu aktif pada satu masa, ~70 
 Stack: JS, TS, Node.js, HTML, CSS, SQL, PostgreSQL, MySQL, Python, PHP, Laravel,
 Tailwind, Linux, Bash, Docker, general.
 
+## Pasang satu arahan
+
+```powershell
+git clone https://github.com/qubexs/train-my-ai.git; cd train-my-ai
+powershell -ExecutionPolicy Bypass -File install.ps1
+```
+
+Ini semak Python 3.9+, muat turun 18 model dari
+`tokkilejen/xcoder` (~6.5GB, skip yang sudah ada + disahkan),
+dan ambil enjin llama.cpp. Pilihan: `install.ps1 -Minimal` (asas+general, ~1GB).
+
 ## Mula cepat
 
 ```powershell
