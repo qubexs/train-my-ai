@@ -27,3 +27,14 @@ def test_ui_on_tab_plumbing():
 
 def test_run_tui_accepts_on_tab():
     assert "on_tab" in inspect.signature(run_tui).parameters
+
+
+def test_show_toggle_replaces():
+    ui = UI(None, "t", "s")
+    ui.show_toggle("[tools on]")
+    ui.show_toggle("[tools off]")
+    ui.show_toggle("[tools on]")
+    assert ui.view.lines == ["[tools on]"]
+    ui.view.add("hello")
+    ui.show_toggle("[tools off]")
+    assert ui.view.lines == ["[tools on]", "hello", "[tools off]"]

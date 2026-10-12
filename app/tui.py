@@ -9,6 +9,7 @@ import re
 import shutil
 import sys
 import textwrap
+import time
 
 ANSI_RE = re.compile(r"\x1b\[[0-9;]*m")
 
@@ -370,6 +371,14 @@ class UI:
         except Exception:
             pass
 
+    def show_toggle(self, msg):
+        """Papar status toggle, ganti baris toggle lama (elak spam)."""
+        self.view.flush_partial()
+        if self.view.lines and _strip_ansi(
+                self.view.lines[-1]).strip() in ("[tools on]", "[tools off]"):
+            self.view.lines.pop()
+        self.view.add(str(msg) + "\n")
+
     def read_line(self, label=""):
         self.view.discard_prompt()
         reader = WindowsReader() if os.name == "nt" else PosixReader()
@@ -385,13 +394,16 @@ class UI:
                 if key == "eof":
                     raise EOFError
                 if key == "tab":
-                    if self.on_tab is not None:
-                        try:
-                            msg = self.on_tab()
-                        except Exception as e:
-                            msg = f"(tools ralat: {e})"
-                        if msg:
-                            self.view.add(str(msg))
+                    now = time.time()
+                    if now - getattr(self, "_last_tab", 0.0) >= 0.6:
+                        self._last_tab = now
+                        if self.on_tab is not None:
+                            try:
+                                msg = self.on_tab()
+                            except Exception as e:
+                                msg = f"(tools ralat: {e})"
+                            if msg:
+                                self.show_toggle(msg)
                     self.draw()
                     continue
                 if key == "ctrlc":
