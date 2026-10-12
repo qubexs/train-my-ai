@@ -232,6 +232,13 @@ class InputBox:
         return t
 
 
+CHAR_KEYMAP = {"\r": "enter", "\n": "enter", "\x08": "backspace",
+               "\x7f": "backspace", "\x1b": "esc", "\x03": "ctrlc",
+               "\x04": "eof", "\x09": "tab", "\x01": "home", "\x05": "end",
+               "\x0b": "killline", "\x15": "clearline",
+               "\x17": "delword"}
+
+
 class WindowsReader:
     def __init__(self):
         import msvcrt
@@ -244,11 +251,7 @@ class WindowsReader:
             return {"H": "up", "P": "down", "K": "left", "M": "right",
                     "G": "home", "O": "end", "I": "pgup", "Q": "pgdn",
                     "S": "delete"}.get(ch2, "")
-        return {"\r": "enter", "\n": "enter", "\x08": "backspace",
-                "\x7f": "backspace", "\x1b": "esc", "\x03": "ctrlc",
-                "\x04": "eof", "\x01": "home", "\x05": "end",
-                "\x0b": "killline", "\x15": "clearline",
-                "\x17": "delword"}.get(ch, ch)
+        return CHAR_KEYMAP.get(ch, ch)
 
 
 class PosixReader:
@@ -322,17 +325,15 @@ class PosixReader:
                         "5": "pgup", "6": "pgdn", "7": "home",
                         "8": "end"}.get(code, "")
             return ""
-        return {"\r": "enter", "\n": "enter", "\x7f": "backspace",
-                "\x08": "backspace", "\x03": "ctrlc", "\x04": "eof",
-                "\x01": "home", "\x05": "end", "\x0b": "killline",
-                "\x15": "clearline", "\x17": "delword"}.get(ch, ch)
+        return CHAR_KEYMAP.get(ch, ch)
 
 
 class UI:
-    def __init__(self, screen, title, status):
+    def __init__(self, screen, title, status, on_tab=None):
         self.screen = screen
         self.title = title
         self.status = status
+        self.on_tab = on_tab
         self.view = Viewport()
         self.box = InputBox()
         self.label = ""
@@ -382,8 +383,16 @@ class UI:
                 except Exception:
                     continue
                 if key == "eof":
-                    if not self.box.text():
-                        raise EOFError
+                    raise EOFError
+                if key == "tab":
+                    if self.on_tab is not None:
+                        try:
+                            msg = self.on_tab()
+                        except Exception as e:
+                            msg = f"(tools ralat: {e})"
+                        if msg:
+                            self.view.add(str(msg))
+                    self.draw()
                     continue
                 if key == "ctrlc":
                     self.box.set_text("")
@@ -434,11 +443,11 @@ class TuiStdout:
         return False
 
 
-def run_tui(repl_fn, title, status):
+def run_tui(repl_fn, title, status, on_tab=None):
     """Run repl_fn() inside the fullscreen TUI. Returns when repl exits."""
     _enable_windows_ansi()
     with Screen() as screen:
-        ui = UI(screen, title, status)
+        ui = UI(screen, title, status, on_tab)
         old_in, old_out = sys.stdin, sys.stdout
         sys.stdin = TuiStdin(ui)
         sys.stdout = TuiStdout(ui)

@@ -18,7 +18,7 @@ APP_DIR = (Path(sys.executable).resolve().parent if getattr(sys, "frozen", False
            else Path(__file__).resolve().parent)
 sys.path.insert(0, str(APP_DIR))
 
-__version__ = "0.4.47"
+__version__ = "0.4.48"
 
 from fetch import (LLAMA_TAG, LLAMA_BASE, HF_MODEL_URL, MODEL_SIZE,
                    asset_name, download, verify, sha256_file,
@@ -74,6 +74,7 @@ HELP = """Commands:
 /export sft|corpus    pecah ke datasets/<stack> + gabung finetune/ (atau corpus.txt)
 /sambung | /continue   sambung jawapan terpotong terakhir
 /cwd                  print workspace root
+/keys                 diagnostik kekunci (paparkan nama setiap tekanan, Esc keluar)
 /keluar|/exit|/quit   exit
 Inline tool (when /tools on): model may emit ```tool:read docs/js-basics.md``` etc.
 Tools: list read write edit run bash rag (workspace-jailed, bash asks confirm).
@@ -123,6 +124,14 @@ def build_parser():
 
 
 _MANAGER = None
+
+# Dicapai TUI: repl() daftar closure toggle di sini supaya TAB berfungsi.
+TUI_TOGGLE = {"fn": None}
+
+
+def _tui_on_tab():
+    fn = TUI_TOGGLE.get("fn")
+    return fn() if fn else None
 
 
 def get_manager(args):
@@ -468,6 +477,13 @@ def repl(args):
 
     width = shutil.get_terminal_size((80, 20)).columns
     last_qa = [None, None, None]  # (question, answer, domain) for /good /bad
+
+    def toggle_tools():
+        """Flip tools_on untuk TAB TUI. Returns status text."""
+        nonlocal tools_on
+        tools_on = not tools_on
+        return f"[tools {'on' if tools_on else 'off'}]"
+    TUI_TOGGLE["fn"] = toggle_tools
 
     def switch_to(cand, dom):
         """Tukar pakar (satu aktif pada satu masa)."""
@@ -1071,6 +1087,29 @@ def repl(args):
         if q == "/cwd":
             print(Path.cwd())
             continue
+        if q == "/keys":
+            print("Tekan kekunci (Esc keluar):")
+            try:
+                import os as _os
+                if _os.name == "nt":
+                    from tui import WindowsReader as _R
+                    rdr = _R()
+                    while True:
+                        k = rdr.read_key()
+                        print(f"  {k!r}")
+                        if k == "esc":
+                            break
+                else:
+                    from tui import PosixReader as _R
+                    with _R() as rdr:
+                        while True:
+                            k = rdr.read_key()
+                            print(f"  {k!r}")
+                            if k == "esc":
+                                break
+            except Exception as e:
+                print(f"(tidak dapat baca kekunci: {e})")
+            continue
         if q == "/sambung":
             if not last_qa[0]:
                 print("Tiada apa untuk disambung lagi.")
@@ -1252,8 +1291,8 @@ def main():
     if args.tui and sys.stdin.isatty() and sys.stdout.isatty():
         from tui import run_tui
         title = f" XCoder {__version__} [{args.backend}] lang={args.lang} "
-        status = " PgUp/PgDn skrol | Up/Dn sejarah | Ctrl-D keluar | /help /update "
-        run_tui(lambda: repl(args), title, status)
+        status = " PgUp/PgDn skrol | Up/Dn sejarah | TAB tools | Ctrl-D keluar | /help /update "
+        run_tui(lambda: repl(args), title, status, on_tab=_tui_on_tab)
         return
     repl(args)
 
