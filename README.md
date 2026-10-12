@@ -47,6 +47,7 @@ Dasar: **inferens CPU** (jimat kuasa/RAM, 0 RAM ketika melahu) —
 | `/plan <tugas>` | pelan binaan bernombor (maks 6 langkah) |
 | `/bina <tugas>` | laksana pelan automatik, tukar pakar setiap langkah |
 | `/models` | senarai pakar + domain + T/s terakhir |
+| `/update` | semak git + model lokal/HF baharu, tawar pull/daftar/muat turun |
 | `/model <nama>` | tukar pakar aktif manual |
 | `/good` / `/bad` | nilai jawapan terakhir → log latihan (flywheel) |
 | `/export sft` | pecah training log ke `datasets/<stack>.jsonl` + gabung `finetune/` |

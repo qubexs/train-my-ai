@@ -18,7 +18,7 @@ APP_DIR = (Path(sys.executable).resolve().parent if getattr(sys, "frozen", False
            else Path(__file__).resolve().parent)
 sys.path.insert(0, str(APP_DIR))
 
-__version__ = "0.4.46"
+__version__ = "0.4.47"
 
 from fetch import (LLAMA_TAG, LLAMA_BASE, HF_MODEL_URL, MODEL_SIZE,
                    asset_name, download, verify, sha256_file,
@@ -54,6 +54,7 @@ HELP = """Commands:
 (fikiran AI sentiasa ditunjuk automatik sebelum jawapan — tiada arahan khas)
 /backend llama|lmstudio|server|auto  tukar enjin (auto=server interaktif, llama --once)
 /server               status resident llama-server (backend server sahaja)
+/update               semak git + model lokal/HF baharu, tawar pull/daftar/muat turun
 /model <nama|path|id>  tukar model pakar (satu aktif pada satu masa)
 /model add <url|fail> [--name N] [--domains a,b]  daftar model baharu
 /model import [fail] [--from dir]  auto-import GGUF terbaru + aktifkan
@@ -441,6 +442,20 @@ def repl(args):
         _rag_index()  # prewarm cache RAG semasa startup, bukan semasa tool dipanggil
     except Exception:
         pass
+    ROOT = APP_DIR.parent if (APP_DIR / "ezcodex.py").exists() else APP_DIR
+    try:
+        from updatecheck import summary as _upd_summary
+        _banner = _upd_summary(ROOT, MODELS_DIR)
+        if _banner:
+            print(_banner + "\n")
+    except Exception:
+        pass
+
+    def ask_yn(msg):
+        try:
+            return input(msg + " [y/N] ").strip().lower() in ("y", "yes")
+        except (EOFError, KeyboardInterrupt):
+            return False
 
     def on_tool(tname, targ, result):
         print(f"[tool:{tname}] {targ[:120]}")
@@ -626,6 +641,60 @@ def repl(args):
             print(f"server {st['url']} alive={st['alive']} healthy={st['healthy']} "
                   f"model={st['model']} flavor={st.get('flavor')} ngl={st.get('ngl')} "
                   f"idle_timeout={st['idle_timeout']}s")
+            continue
+        if q == "/update":
+            from updatecheck import (git_pull_ff, git_state, hf_new_files,
+                                     local_new_models)
+            print("--- git ---")
+            gs = git_state(ROOT)
+            if not gs["repo"]:
+                print("bukan repo git (exe diagih tanpa .git) — langkau git.")
+            else:
+                print(f"dirty={gs['dirty']} ahead={gs['ahead']} behind={gs['behind']}")
+                if gs["behind"] and not gs["dirty"]:
+                    if ask_yn(f"pull {gs['behind']} komit (fast-forward)?"):
+                        ok, msg = git_pull_ff(ROOT)
+                        print(("OK: " if ok else "GAGAL: ") + msg)
+                elif gs["behind"]:
+                    print("remote mendahului — commit/stash dahulu, kemudian /update semula.")
+                elif not gs["dirty"] and not gs["ahead"]:
+                    print("git terkini.")
+            print("--- model lokal baharu ---")
+            new_local = local_new_models(MODELS_DIR)
+            if not new_local:
+                print("tiada GGUF tidak berdaftar.")
+            else:
+                for f in new_local:
+                    print(f"  {f}")
+                if ask_yn(f"daftar {len(new_local)} model?"):
+                    for f in new_local:
+                        try:
+                            e = add_model(MODELS_DIR, str(MODELS_DIR / f))
+                            print(f"OK {e['name']} [{','.join(e.get('domains', []))}]")
+                        except SystemExit as ex:
+                            print(f"TOLAK {f}: {ex}")
+            print("--- HF baharu (tokkilejen/xcoder) ---")
+            new_hf, note = hf_new_files(MODELS_DIR, force=True)
+            print(f"sumber: {note}")
+            if not new_hf:
+                print("tiada fail baharu di HF.")
+            else:
+                from fetch import download as _dl
+                base = "https://huggingface.co/tokkilejen/xcoder/resolve/main"
+                show = new_hf[:20]
+                for f in show:
+                    print(f"  {f}")
+                if len(new_hf) > len(show):
+                    print(f"  ... +{len(new_hf) - len(show)} lagi")
+                if ask_yn(f"muat turun {len(new_hf)} fail?"):
+                    for f in new_hf:
+                        try:
+                            dest = MODELS_DIR / f.rsplit("/", 1)[-1]
+                            _dl(f"{base}/{f}", dest)
+                            e = add_model(MODELS_DIR, str(dest))
+                            print(f"OK {e['name']}")
+                        except SystemExit as ex:
+                            print(f"GAGAL {f}: {ex}")
             continue
         if q == "/models":
             for m in scan_models(MODELS_DIR):
@@ -1183,7 +1252,7 @@ def main():
     if args.tui and sys.stdin.isatty() and sys.stdout.isatty():
         from tui import run_tui
         title = f" XCoder {__version__} [{args.backend}] lang={args.lang} "
-        status = " PgUp/PgDn skrol | Up/Dn sejarah | Ctrl-D keluar | /help perintah "
+        status = " PgUp/PgDn skrol | Up/Dn sejarah | Ctrl-D keluar | /help /update "
         run_tui(lambda: repl(args), title, status)
         return
     repl(args)
