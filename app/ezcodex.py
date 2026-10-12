@@ -204,6 +204,21 @@ def pick_expert(domain, stack):
     return cands[0]
 
 
+def pick_base():
+    """Model utama (base) — tempat kembali bila soalan general.
+    Utamakan 'base' berfail, kemudian 'xcoder-general', kemudian mana-mana general berfail."""
+    cands = [m for m in scan_models(MODELS_DIR)
+             if m.get("file") and (MODELS_DIR / m["file"]).is_file()
+             and GENERAL in m.get("domains", [])]
+    if not cands:
+        return None
+    for prefer in ("base", "xcoder-general"):
+        for m in cands:
+            if m.get("name") == prefer:
+                return m
+    return cands[0]
+
+
 def expert_context(cur):
     names = ", ".join(f"{m['name']} [{','.join(m.get('domains', []))}]"
                       for m in scan_models(MODELS_DIR))
@@ -544,13 +559,19 @@ def repl(args):
                 sq = (f"Langkah {i}/{len(steps)} projek [{btask}]: {st}. "
                       f"Lengkapkan langkah ini sahaja (kod/arahan penuh).")
                 sdom = detect_domain(sq)
-                if auto_route and backend.kind in ("llama-cli", "llama", "server") \
-                        and sdom != GENERAL and sdom not in cur.get("domains", []):
-                    cand = pick_expert(sdom, detect_stack(sq))
-                    if cand:
-                        switch_to(cand, sdom)
-                    else:
-                        print(f"(tiada pakar {sdom} — terus dengan {cur['name']})")
+                if auto_route and backend.kind in ("llama-cli", "llama", "server"):
+                    if sdom == GENERAL and (GENERAL not in cur.get("domains", [])
+                                            or cur.get("name") == MANAGER_NAME):
+                        _bb = pick_base()
+                        if _bb is not None and _bb.get("name") != cur.get("name"):
+                            switch_to(_bb, GENERAL)
+                            print(f"-> kembali: {_bb['name']} [general] (base utama)")
+                    elif sdom != GENERAL and sdom not in cur.get("domains", []):
+                        cand = pick_expert(sdom, detect_stack(sq))
+                        if cand:
+                            switch_to(cand, sdom)
+                        else:
+                            print(f"(tiada pakar {sdom} — terus dengan {cur['name']})")
                 print(f"{short} berfikir ({cur['name']}) ...")
                 try:
                     msize = "4.5B" if "gemma" in cur.get("name", "") else "0.5B"
@@ -1031,9 +1052,18 @@ def repl(args):
             else:
                 if auto_route and backend.kind in ("llama-cli", "llama", "server"):
                     mg = pick_manager_open(q)
-                    if mg is not None and cur.get("name") != MANAGER_NAME:
-                        switch_to(mg, GENERAL)
-                        print(f"(soalan terbuka — pengurus {MANAGER_NAME} mengambil alih)")
+                    if mg is not None:
+                        if cur.get("name") != mg.get("name"):
+                            switch_to(mg, GENERAL)
+                            print(f"(soalan terbuka — pengurus {MANAGER_NAME} mengambil alih)")
+                    elif dom == GENERAL:
+                        # Kembali ke base utama bila topik kembali general.
+                        # Sebelum ini: kekal pada pakar web selama-lamanya (bug).
+                        if GENERAL not in cur.get("domains", []) or cur.get("name") == MANAGER_NAME:
+                            base = pick_base()
+                            if base is not None and base.get("name") != cur.get("name"):
+                                switch_to(base, GENERAL)
+                                print(f"-> kembali: {base['name']} [general] (base utama)")
                     elif dom != GENERAL and dom not in cur.get("domains", []):
                         cand = pick_expert(dom, detect_stack(q))
                         if cand:

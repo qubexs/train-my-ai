@@ -33,12 +33,18 @@ def resolve_layout(app_dir):
     return bins, models
 
 # xcoder-<expert>-0.5b-<quant>.gguf -> default domains for auto-registration.
+# Nota: stack = domain (tiada lapisan broad) — setiap stack petakan ke dirinya sendiri.
 EXPERT_DOMAIN_MAP = {
     "general": [GENERAL], "base": [GENERAL],
-    "js": ["web"], "web": ["web"],
-    "sql": ["data"], "data": ["data"],
-    "linux": ["linux"], "docker": ["docker"], "bash": ["linux"],
-    "python": ["python"], "php": ["php"], "laravel": ["php"],
+    "js": ["javascript"], "javascript": ["javascript"],
+    "typescript": ["typescript"], "ts": ["typescript"],
+    "nodejs": ["nodejs"], "node": ["nodejs"],
+    "html": ["html"], "css": ["css"], "tailwind": ["tailwind"],
+    "web": ["web"],
+    "sql": ["sql"], "postgresql": ["postgresql"], "postgres": ["postgresql"],
+    "mysql": ["mysql"], "data": ["data"],
+    "linux": ["linux"], "docker": ["docker"], "bash": ["bash"],
+    "python": ["python"], "php": ["php"], "laravel": ["laravel"],
 }
 
 
