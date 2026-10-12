@@ -13,8 +13,58 @@ CLEAN_PATS = [r"qwen2\.5-0\.5b-instruct", r"\bqwen2\.5\b", r"\bqwen\b",
 
 def sanitize(text):
     """Remove role-play echo (Pengguna:/Pembantu: lines), instruction echo,
+    system-prompt echo (0.5B models repeat system as answer),
     and collapse repeats."""
+    # Substrings (lowercase) that only appear in system prompt / instructions.
+    # If a model echoes them, drop that line — real answers never need them.
+    SYS_ECHO = (
+        "anda ialah",
+        "you are xcoder",
+        "you are, a cpu",  # safety for variant punctuation
+        "a cpu coding assistant",
+        "pembantu pengekodan cpu",
+        "pembantu kecil cpu",
+        "jawab ringkas dalam bahasa melayu",
+        "answer briefly in english",
+        "jika ditanya siapa anda",
+        "siapa cipta anda",
+        "if asked who you are",
+        "who created you",
+        "jawab tepat seperti ini",
+        "answer exactly",
+        "dibina untuk pengekodan",
+        "built for coding",
+        "jangan sebut",
+        "never mention",
+        "anda offline",
+        "fully offline",
+        "tanpa internet",
+        "no internet",
+        "tiada akses",
+        "no access to news",
+        "berita terkini",
+        "data live",
+        "latest news",
+        "live data",
+        "jangan reka",
+        "never invent",
+        "jangan ulang semula",
+        "never repeat the user's",
+        "terus jawab",
+        "answer directly",
+        "guna bahasa melayu malaysia",
+        "bukan indonesia",
+        "bukan 'komunitas'",
+        'bukan "komunitas"',
+        "format wajib setiap jawapan",
+        "mandatory format for every answer",
+        "<fikiran ringkas",
+        "<brief 1-2 lines",
+        "<jawapan penuh",
+        "<full answer",
+    )
     lines, out, prev, repeats = (text or "").splitlines(), [], None, 0
+    sys_removed = 0
     for ln in lines:
         s = ln.strip()
         if re.match(r"^(pengguna|pembantu|jawapan sebelum|soalan|user|assistant)\s*:"
@@ -26,18 +76,49 @@ def sanitize(text):
                     r"|^jangan sebut|^never mention",
                     s, re.IGNORECASE):
             continue
+        low = s.lower()
+        if any(k in low for k in SYS_ECHO):
+            sys_removed += 1
+            continue
+        # Broken tool template echo (0.5B invents syntax): ```bash:rag, placeholder args.
+        # Real tool calls have real args — placeholders like <question> are never valid.
+        if "```" in s and (
+                "```bash:" in low
+                or "<question>" in low
+                or "<shell command>" in low
+                or "<shell-command>" in low
+                or re.search(r"```tool:\w+\s*<", s, re.IGNORECASE)):
+            continue
         ln = re.sub(r"\s*\.{0,3}\s*\(truncated\)\.?", "", ln, flags=re.IGNORECASE)
         s = ln.strip()
         if not s:
             continue
         if s == prev:
             repeats += 1
-            if repeats >= 2:
+            if repeats >= 1:
                 continue
         else:
             repeats = 0
         prev = s
         out.append(ln)
+    # Greeting echo: "Halo! Bagaimana saya boleh membantu..." is valid ONLY as
+    # a standalone reply to hai/hello. If it is glued to other content
+    # (tool examples, tutorial, code), strip it — it is hallucination.
+    # If system echo was removed and only greeting remains, it was part of
+    # the echo (T1 case) — return empty so finish() shows fallback.
+    if len(out) > 1:
+        greet = [l for l in out if "bagaimana saya boleh membantu" in l.lower()
+                 or "how can i help you" in l.lower()]
+        if greet:
+            out = [l for l in out if l not in greet]
+    elif len(out) == 1 and sys_removed > 0 and (
+            "bagaimana saya boleh membantu" in out[0].lower()
+            or "how can i help you" in out[0].lower()):
+        return ""
+    # Trailing template fragment: model stops mid-template, e.g. real answer +
+    # "Tutupi dengan:" with nothing after. Strip those dangling lines.
+    while out and re.match(r"^\s*tutupi dengan\s*:?\s*$", out[-1], re.IGNORECASE):
+        out.pop()
     text = "\n".join(out).strip()
     return re.sub(r"\s*\(truncated\)\.?\s*$", "", text, flags=re.IGNORECASE).strip()
 
@@ -114,6 +195,18 @@ MS_FIX = [
     (r"\bBisa\b", "Boleh"),
     (r"\bgimana\b", "bagaimana"),
     (r"\bGimana\b", "Bagaimana"),
+    (r"\bmencoba\b", "mencuba"),
+    (r"\bMencoba\b", "Mencuba"),
+    (r"\bcoba\b", "cuba"),
+    (r"\bCoba\b", "Cuba"),
+    (r"\bkalo\b", "kalau"),
+    (r"\bKalo\b", "Kalau"),
+    (r"\bpakai\b", "guna"),
+    (r"\bPakai\b", "Guna"),
+    (r"\bkabar\b", "khabar"),
+    (r"\bKabar\b", "Khabar"),
+    (r"\bkabarmu\b", "khabarmu"),
+    (r"\bKabarmu\b", "Khabarmu"),
     (r"\bnggak\b", "tidak"),
     (r"\bngga\b", "tidak"),
     (r"\bdoang\b", "sahaja"),
@@ -172,6 +265,12 @@ def run_agent(backend, question, name="XCoder", lang="ms", history=None,
         nonlocal tps
         _, answer = split_thinking(raw_text, lang)
         ans = clean(sanitize(answer), name)
+        if not ans or re.match(r"^\s*tutupi dengan\s*:?\s*$", ans, re.IGNORECASE):
+            # Model only echoed system prompt (0.5B repeat bug) — jangan papar kosong.
+            ans = ("Maaf, model mengulang arahan sistem. Sila tanya semula dengan lebih spesifik, "
+                   "cth: `tulis fungsi tambah(a,b) python`."
+                   if lang == "ms" else
+                   "Sorry, the model echoed its system prompt. Please retry with a more specific prompt.")
         for _ in range(2):
             cut = hit_length or re.search(r"\(truncated\)", raw_text, re.IGNORECASE)
             if not cut:

@@ -408,8 +408,14 @@ def repl(args):
     tools_on = not args.no_tools
     auto_route = args.autoroute
     session = args.session
+    # Fresh session on every app start (default): jangan sambung default.jsonl lama.
+    # Explicit --session <nama> masih dihormati; /new dan /session masih boleh tukar.
+    if session == "default":
+        import time as _ts
+        session = f"sesi-{_ts.strftime('%H%M%S')}"
     history = scrub_history(load_session(session)[-20:])
     cur = match_cur(model_path)
+    short = (name[:2].lower() if name and len(name) >= 2 else (name or "xc").lower())
     tool_ctx = {"allow_all": args.allow_all,
                 "confirm": lambda msg: input(msg).strip().lower() in ("y", "yes"),
                 "rag_k": 2}
@@ -545,7 +551,7 @@ def repl(args):
                         switch_to(cand, sdom)
                     else:
                         print(f"(tiada pakar {sdom} — terus dengan {cur['name']})")
-                print(f"... {name} berfikir ({backend.kind}/{cur['name']}) ...")
+                print(f"{short} berfikir ({cur['name']}) ...")
                 try:
                     msize = "4.5B" if "gemma" in cur.get("name", "") else "0.5B"
                     ans, tps, trace = run_agent(backend, sq, name=name, lang=lang, history=history,
@@ -563,7 +569,7 @@ def repl(args):
                 el = _t.time() - t0
                 if tps:
                     record_speed(MODELS_DIR, cur.get("name", ""), tps)
-                print(f"\n{name}> {ans}")
+                print(f"{short}> {ans}")
                 if tps:
                     s = fmt_speed(backend, tps) + f" ({el:.0f}s langkah)"
                     print(" " * max(0, width - len(s)) + f"\x1b[2m{s}\x1b[0m")
@@ -986,7 +992,31 @@ def repl(args):
             print("Perintah tidak dikenali. Taip /help untuk senarai.")
             continue
 
-        print(f"... {name} berfikir ({backend.kind}/{cur['name']}) ...")
+        # Compact thinking line: xc berfikir (base) ... + animated dots (classic TTY only).
+        # TUI viewport cannot do \r overwrite — static line there.
+        import threading as _th
+        import time as _tm
+        _is_tui = getattr(sys.stdout, "__class__", object).__name__ == "TuiStdout"
+        _stop = _th.Event()
+        _th_obj = None
+        if not _is_tui:
+            def _spin(_s=short, _m=cur.get("name", ""), _ev=_stop):
+                _pats = [".  ", ".. ", "..."]
+                _i = 0
+                while not _ev.is_set():
+                    try:
+                        sys.stdout.write(f"\r{_s} berfikir ({_m}) {_pats[_i % 3]}")
+                        sys.stdout.flush()
+                    except Exception:
+                        break
+                    _i += 1
+                    _ev.wait(0.3)
+            _th_obj = _th.Thread(target=_spin, daemon=True)
+            _th_obj.start()
+        else:
+            # Leading \n separates from "> hai" partial in TUI viewport
+            # (view.add concatenates partial without newline otherwise).
+            print(f"\n{short} berfikir ({cur['name']}) ...")
         dom = detect_domain(q)
         self_ans = answer_self(q, cur, name, lang)
         off_ans = answer_offline(q, lang) if self_ans is None else None
@@ -1019,18 +1049,34 @@ def repl(args):
                                                 on_think=on_think,
                                                 size=msize)
                 except Exception as e:
+                    _stop.set()
+                    if _th_obj is not None:
+                        try:
+                            sys.stdout.write("\r" + " " * 60 + "\r")
+                        except Exception:
+                            pass
                     print(f"Ralat: {e}")
                     continue
+        # stop spinner, clear line
+        _stop.set()
+        if _th_obj is not None:
+            try:
+                sys.stdout.write("\r" + " " * 60 + "\r")
+            except Exception:
+                pass
         history += [{"role": "user", "content": q}, {"role": "assistant", "content": ans}]
         save_turn(session, history[-2:])
         log_training(q, ans, lang=lang, kind="chat", tools_trace=trace, domain=dom)
         last_qa = [q, ans, dom]
         if tps:
             record_speed(MODELS_DIR, cur.get("name", ""), tps)
-        print(f"\n{name}> {ans}")
+        print(f"{short}> {ans}")
         if tps:
-            s = fmt_speed(backend, tps)
-            print(" " * max(0, width - len(s)) + f"\x1b[2m{s}\x1b[0m")
+            s = f"({cur['name']} | {tps:.1f} T/s)"
+            print(f"\x1b[2m{s}\x1b[0m")
+        else:
+            s = f"({cur['name']})"
+            print(f"\x1b[2m{s}\x1b[0m")
         print()
 
     if backend.kind == "server":
