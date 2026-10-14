@@ -1121,3 +1121,5 @@
 {"instruction": "What problem does `project references composite` solve?", "input": "", "output": "`composite: true` + `references` split monorepos into buildable, cacheable TS projects with enforced boundaries."}
 {"instruction": "Apa yang perlu saya tahu tentang `project references composite`?", "input": "", "output": "`composite: true` + `references` split monorepos into buildable, cacheable TS projects with enforced boundaries."}
 {"instruction": "Bagaimanakah `project references composite` berfungsi?", "input": "", "output": "`composite: true` + `references` split monorepos into buildable, cacheable TS projects with enforced boundaries."}
+{"instruction": "TypeScript generic identity", "input": "", "output": "```ts\nfunction identiti<T>(x: T): T {\n  return x;\n}\nconsole.log(identiti<number>(77)); // 77\n```"}
+{"instruction": "TypeScript async fetch", "input": "", "output": "```ts\nasync function dapat(): Promise<string> {\n  const r = await fetch('http://localhost:1234/v1/models');\n  return r.statusText;\n}\n```"}

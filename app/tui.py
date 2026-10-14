@@ -55,6 +55,8 @@ def tint_line(ln):
     """Nice colors per message kind (plain lines untouched)."""
     s = _strip_ansi(ln)
     t = s.lstrip()
+    if t.startswith(("----- kod ", "---------------------")):
+        return C_CYAN + ln + C_RESET
     if t.startswith("[tool:"):
         return C_YELLOW + ln + C_RESET
     if t.startswith(("Ralat", "Blocked", "ERROR", "gagal", "DUPLIKAT", "SKIP")):
@@ -124,13 +126,47 @@ class Viewport:
             self._partial = ""
             self.scroll = 0
 
+    def update_line(self, idx, text):
+        """Tulis-semula baris sedia ada (untuk animasi dot berfikir)."""
+        if 0 <= idx < len(self.lines):
+            self.lines[idx] = text
+            self.scroll = 0
+
     def page(self, width, height):
         buf = self.lines + ([self._partial] if self._partial else [])
-        wrapped = []
+        # Gaya B: fence ``` ditukar ke blok teks tersusun
+        # (----- kod <lang> ----- + indent 4) supaya senang baca di terminal.
+        # Sumber markdown kekal ``` — chat web masih ada butang copy.
+        expanded = []
+        in_code = False
         for ln in buf:
+            s = _strip_ansi(ln).strip()
+            # Fence boleh diawali prefix prompt jawapan, cth "xc> ```js"
+            # (repl cetak "xc> <jawapan>" sebaris). Kesan ``` di mana-mana
+            # selagi sebelumnya kosong atau prompt pendek "xx>".
+            pre, sep, after = s.partition("```")
+            if sep and (pre.strip() == ""
+                        or (pre.strip().endswith(">") and len(pre.strip()) <= 8)):
+                if not in_code:
+                    lang = after.strip() or "kod"
+                    expanded.append((f"----- kod {lang} -----", False))
+                    in_code = True
+                else:
+                    expanded.append(("---------------------", False))
+                    in_code = False
+                continue
+            expanded.append((("    " + ln) if in_code else ln, in_code))
+        if in_code:
+            expanded.append(("---------------------", False))
+        wrapped = []
+        for ln, nowrap in expanded:
             plain = _strip_ansi(ln)
             if not plain.strip():
                 wrapped.append(ln)
+                continue
+            if nowrap:
+                # baris kod: jangan wrap (kekal indent), potong ikut lebar sahaja
+                wrapped.append(tint_line(cut_ansi(ln, width)))
                 continue
             parts = textwrap.wrap(plain, width=width) or [""]
             if len(parts) == 1:
@@ -170,7 +206,8 @@ class InputBox:
         self.pos = len(self.buf)
 
     def handle(self, key):
-        """Returns 'submit' or None. Mutates buffer/history."""
+        """Returns 'submit' or None. Mutates buffer/history.
+        (Tab diintas sebagai 'tab' dalam read_line sebelum sampai sini.)"""
         if key == "enter":
             return "submit"
         if key == "backspace":
@@ -241,18 +278,108 @@ CHAR_KEYMAP = {"\r": "enter", "\n": "enter", "\x08": "backspace",
 
 
 class WindowsReader:
+    """Konsol Win32 via ReadConsoleInputW — kekunci + roda tetikus.
+
+    msvcrt.getwch() tidak nampak peristiwa tetikus, jadi baca INPUT_RECORD
+    terus: KEY_EVENT dipeta seperti dahulu, MOUSE_WHEELED jadi wheelup/down.
+    Mod konsol dipulih dalam __exit__ (read_line sentiasa guna context)."""
+
+    _VK = {0x26: "up", 0x28: "down", 0x25: "left", 0x27: "right",
+           0x24: "home", 0x23: "end", 0x21: "pgup", 0x22: "pgdn",
+           0x2E: "delete"}
+    # aksara -> CHAR_KEYMAP modul (termasuk \x09 tab); kekunci khas -> _VK.
+
     def __init__(self):
-        import msvcrt
-        self.msvcrt = msvcrt
+        import ctypes
+        from ctypes import wintypes
+        self._ct = ctypes
+        k = ctypes.windll.kernel32
+        self._k = k
+        self._hin = k.GetStdHandle(-10)  # STD_INPUT_HANDLE
+
+        class COORD(ctypes.Structure):
+            _fields_ = [("X", wintypes.SHORT), ("Y", wintypes.SHORT)]
+
+        class KEY_EVENT_RECORD(ctypes.Structure):
+            _fields_ = [("bKeyDown", wintypes.BOOL),
+                        ("wRepeatCount", wintypes.WORD),
+                        ("wVirtualKeyCode", wintypes.WORD),
+                        ("wVirtualScanCode", wintypes.WORD),
+                        ("UnicodeChar", wintypes.WCHAR),
+                        ("dwControlKeyState", wintypes.DWORD)]
+
+        class MOUSE_EVENT_RECORD(ctypes.Structure):
+            _fields_ = [("dwMousePosition", COORD),
+                        ("dwButtonState", wintypes.DWORD),
+                        ("dwControlKeyState", wintypes.DWORD),
+                        ("dwEventFlags", wintypes.DWORD)]
+
+        class _U(ctypes.Union):
+            _fields_ = [("KeyEvent", KEY_EVENT_RECORD),
+                        ("MouseEvent", MOUSE_EVENT_RECORD),
+                        ("_pad", ctypes.c_byte * 16)]
+
+        class INPUT_RECORD(ctypes.Structure):
+            _fields_ = [("EventType", wintypes.WORD), ("Event", _U)]
+        self._IR = INPUT_RECORD
+        self._old_mode = None
+
+    def __enter__(self):
+        try:
+            mode = self._ct.c_ulong()
+            if self._k.GetConsoleMode(self._hin, self._ct.byref(mode)):
+                self._old_mode = mode.value
+                # tetikus on + extended flags, quick-edit off (supaya wheel sampai)
+                self._k.SetConsoleMode(
+                    self._hin, (mode.value | 0x80 | 0x10) & ~0x40)
+        except Exception:
+            pass
+        return self
+
+    def __exit__(self, *exc):
+        try:
+            if self._old_mode is not None:
+                self._k.SetConsoleMode(self._hin, self._old_mode)
+        except Exception:
+            pass
+
+    @staticmethod
+    def _wheel_dir(button_state):
+        """HIWORD(dwButtonState) = delta roda (±120 satu takuk)."""
+        d = (button_state >> 16) & 0xFFFF
+        if d >= 0x8000:
+            d -= 0x10000
+        if d > 0:
+            return "wheelup"
+        if d < 0:
+            return "wheeldown"
+        return ""
 
     def read_key(self):
-        ch = self.msvcrt.getwch()
-        if ch in ("\x00", "\xe0"):
-            ch2 = self.msvcrt.getwch()
-            return {"H": "up", "P": "down", "K": "left", "M": "right",
-                    "G": "home", "O": "end", "I": "pgup", "Q": "pgdn",
-                    "S": "delete"}.get(ch2, "")
-        return CHAR_KEYMAP.get(ch, ch)
+        ctypes = self._ct
+        n = ctypes.c_ulong()
+        rec = self._IR()
+        while True:
+            self._k.ReadConsoleInputW(self._hin, ctypes.byref(rec), 1,
+                                      ctypes.byref(n))
+            et = rec.EventType
+            if et == 1:  # KEY_EVENT
+                ke = rec.Event.KeyEvent
+                if not ke.bKeyDown:
+                    continue
+                ch, vk = ke.UnicodeChar, ke.wVirtualKeyCode
+                if vk in self._VK and ch in ("\x00", ""):
+                    return self._VK[vk]
+                return CHAR_KEYMAP.get(ch, ch)
+            if et == 2:  # MOUSE_EVENT
+                me = rec.Event.MouseEvent
+                if me.dwEventFlags & 0x0004:  # MOUSE_WHEELED
+                    w = self._wheel_dir(me.dwButtonState)
+                    if w:
+                        return w
+                continue
+            # FOCUS / MENU / lain-lain: abaikan
+            continue
 
 
 class PosixReader:
@@ -266,9 +393,20 @@ class PosixReader:
     def __enter__(self):
         self.old = self.termios.tcgetattr(self.fd)
         self.tty.setraw(self.fd)
+        try:
+            # mod tetikus SGR (1000 asas + 1006 lanjutan) ke stdout sebenar
+            sys.__stdout__.write("\x1b[?1000h\x1b[?1006h")
+            sys.__stdout__.flush()
+        except Exception:
+            pass
         return self
 
     def __exit__(self, *exc):
+        try:
+            sys.__stdout__.write("\x1b[?1000l\x1b[?1006l")
+            sys.__stdout__.flush()
+        except Exception:
+            pass
         try:
             self.termios.tcsetattr(self.fd, self.termios.TCSADRAIN, self.old)
         except Exception:
@@ -304,6 +442,24 @@ class PosixReader:
             if seq != "[":
                 return "esc"
             code = self._read_char()
+            if code == "<":
+                # peristiwa tetikus SGR: ESC [ < Cb ; Cx ; Cy M/m
+                # Cb 64 = roda atas, 65 = roda bawah; butang lain diabaikan.
+                s = ""
+                while True:
+                    chm = self._read_char()
+                    if chm in ("m", "M", ""):
+                        break
+                    s += chm
+                try:
+                    cb = int(s.split(";")[0])
+                except ValueError:
+                    return ""
+                if cb == 64:
+                    return "wheelup"
+                if cb == 65:
+                    return "wheeldown"
+                return ""
             if code == "A":
                 return "up"
             if code == "B":
@@ -330,7 +486,7 @@ class PosixReader:
 
 
 class UI:
-    def __init__(self, screen, title, status, on_tab=None):
+    def __init__(self, screen, title, status, on_tab=None, shared=None):
         self.screen = screen
         self.title = title
         self.status = status
@@ -338,6 +494,7 @@ class UI:
         self.view = Viewport()
         self.box = InputBox()
         self.label = ""
+        self.shared = shared  # keadaan kongsi (cth. {"tools": True}) — Tab togol ini
 
     def size(self):
         s = shutil.get_terminal_size((80, 24))
@@ -362,7 +519,9 @@ class UI:
         else:
             shown = text
         out.append(cut_ansi(shown, w))
-        out.append(_bar(" " + self.status.strip() + " ", w, C_STATUS))
+        # status boleh statik (str) atau hidup (callable ui -> str)
+        st = self.status(self) if callable(self.status) else self.status
+        out.append(_bar(" " + st.strip() + " ", w, C_STATUS))
         # home, each line cleared (no ghost text), clear below frame, cursor on input
         frame = "\x1b[H" + "\x1b[K\n".join(out) + "\x1b[K\x1b[J" + f"\x1b[{msg_h + 3};{cx + 1}H"
         self.screen.write(frame)
@@ -382,8 +541,7 @@ class UI:
     def read_line(self, label=""):
         self.view.discard_prompt()
         reader = WindowsReader() if os.name == "nt" else PosixReader()
-        if os.name != "nt":
-            reader.__enter__()
+        reader.__enter__()
         try:
             while True:
                 self.draw()
@@ -412,20 +570,27 @@ class UI:
                     continue
                 if key == "esc":
                     continue
+                if key == "wheelup":
+                    # roda tetikus: skrol KANDUNGAN hasil (3 baris), bukan sejarah input
+                    self.view.scroll += 3
+                    continue
+                if key == "wheeldown":
+                    self.view.scroll = max(0, self.view.scroll - 3)
+                    continue
                 if key == "pgup":
                     self.view.scroll += 10
                     continue
                 if key == "pgdn":
                     self.view.scroll = max(0, self.view.scroll - 10)
                     continue
-                if self.box.handle(key) == "submit":
+                act = self.box.handle(key)
+                if act == "submit":
                     line = self.box.commit()
                     self.view.add(C_GREEN + "> " + line + C_RESET)
                     self.draw()
                     return line
         finally:
-            if os.name != "nt":
-                reader.__exit__()
+            reader.__exit__()
 
 
 class TuiStdin:
@@ -455,11 +620,14 @@ class TuiStdout:
         return False
 
 
-def run_tui(repl_fn, title, status, on_tab=None):
-    """Run repl_fn() inside the fullscreen TUI. Returns when repl exits."""
+def run_tui(repl_fn, title, status, on_tab=None, shared=None):
+    """Run repl_fn() inside the fullscreen TUI. Returns when repl exits.
+    status: str statik atau callable(ui) -> str hidup (mod tool, (Done.)).
+    on_tab: callback Tab (debounce + mesej togol).
+    shared: dikt keadaan kongsi untuk status hidup."""
     _enable_windows_ansi()
     with Screen() as screen:
-        ui = UI(screen, title, status, on_tab)
+        ui = UI(screen, title, status, on_tab, shared)
         old_in, old_out = sys.stdin, sys.stdout
         sys.stdin = TuiStdin(ui)
         sys.stdout = TuiStdout(ui)

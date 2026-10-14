@@ -213,6 +213,8 @@ MS_FIX = [
     (r"\bbanget\b", "sangat"),
     (r"\bngomong\b", "bercakap"),
     (r"\bngerti\b", "faham"),
+    (r"\bsukses\b", "berjaya"),
+    (r"\bSukses\b", "Berjaya"),
     (r"\byg\b", "yang"),
 ]
 

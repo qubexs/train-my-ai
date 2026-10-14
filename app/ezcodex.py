@@ -18,7 +18,7 @@ APP_DIR = (Path(sys.executable).resolve().parent if getattr(sys, "frozen", False
            else Path(__file__).resolve().parent)
 sys.path.insert(0, str(APP_DIR))
 
-__version__ = "0.4.49"
+__version__ = "0.4.50"
 
 from fetch import (LLAMA_TAG, LLAMA_BASE, HF_MODEL_URL, MODEL_SIZE,
                    asset_name, download, verify, sha256_file,
@@ -48,7 +48,7 @@ def ensure_model():
 HELP = """Commands:
 /help                 this help
 /lang ms|en           switch language (clears turn cache, keeps session file)
-/tools on|off         enable/disable agentic tool loop
+/tools on|off         enable/disable agentic tool loop (Tab = suis Build/Plan)
 /plan <tugas>         numbered build plan (maks 6 langkah), then build file by file
 /bina <tugas>         laksana plan automatik langkah demi langkah (maks 8, tukar pakar setiap langkah)
 (fikiran AI sentiasa ditunjuk automatik sebelum jawapan — tiada arahan khas)
@@ -422,7 +422,40 @@ def print_speed_recap(rows):
     print()
 
 
-def repl(args):
+def reveal(prefix, text, enabled=True):
+    """Cetak jawapan dengan kesan menaip (typewriter) — visual seperti streaming.
+    Output paip/skrip cetak sekaligus (tiada lengah). Berfungsi di REPL klasik
+    dan TUI sebab kedua-duanya melalui sys.stdout.write."""
+    import re as _re
+    import time as _t
+    _is_tui = getattr(sys.stdout, "__class__", object).__name__ == "TuiStdout"
+    try:
+        _tty = bool(sys.stdout.isatty())
+    except Exception:
+        _tty = False
+    sys.stdout.write(prefix)
+    sys.stdout.flush()
+    if enabled and text and (_is_tui or _tty):
+        step = max(24, len(text) // 60 or 1)
+        buf = ""
+        for w in _re.split(r"(\s+)", text):
+            buf += w
+            if len(buf) >= step:
+                sys.stdout.write(buf)
+                sys.stdout.flush()
+                buf = ""
+                _t.sleep(0.03)
+        if buf:
+            sys.stdout.write(buf)
+            sys.stdout.flush()
+    else:
+        sys.stdout.write(text or "")
+        sys.stdout.flush()
+    sys.stdout.write("\n")
+    sys.stdout.flush()
+
+
+def repl(args, shared=None):
     cli_path = model_path = None
     if args.backend in ("llama", "auto"):
         cli_path, model_path = ensure_cli(), ensure_model()
@@ -482,6 +515,8 @@ def repl(args):
         """Flip tools_on untuk TAB TUI. Returns status text."""
         nonlocal tools_on
         tools_on = not tools_on
+        if shared is not None:
+            shared["tools"] = tools_on
         return f"[tools {'on' if tools_on else 'off'}]"
     TUI_TOGGLE["fn"] = toggle_tools
 
@@ -533,6 +568,9 @@ def repl(args):
             q = input("anda> ").strip()
         except (EOFError, KeyboardInterrupt):
             break
+        # Tab (TUI) togol shared["tools"] — selaras senyap, bar bawah sudah tunjuk mod.
+        if shared is not None and shared.get("tools", tools_on) != tools_on:
+            tools_on = shared["tools"]
         if not q:
             continue
         if not q.startswith("/") and q.split() and q.split()[0].lower() in BARE_CMDS:
@@ -553,6 +591,8 @@ def repl(args):
             continue
         if q.startswith("/tools"):
             tools_on = q.split()[-1] != "off"
+            if shared is not None:
+                shared["tools"] = tools_on
             print(f"tools={'on' if tools_on else 'off'}")
             continue
         if q == "/plan" or q.startswith("/plan "):
@@ -621,7 +661,7 @@ def repl(args):
                 el = _t.time() - t0
                 if tps:
                     record_speed(MODELS_DIR, cur.get("name", ""), tps)
-                print(f"{short}> {ans}")
+                reveal(f"{short}> ", ans)
                 if tps:
                     s = fmt_speed(backend, tps) + f" ({el:.0f}s langkah)"
                     print(" " * max(0, width - len(s)) + f"\x1b[2m{s}\x1b[0m")
@@ -886,7 +926,7 @@ def repl(args):
                          tools_trace=[{"tool": "consult", "arg": n, "result": a[:300]} for n, a in parts],
                          domain=cdom)
             last_qa = [ctask, sans, cdom]
-            print(f"\n{name} (sintesis {gname})> {sans}")
+            reveal(f"\n{name} (sintesis {gname})> ", sans)
             if stps:
                 print(f"{stps:.1f} T/s")
                 crows.append((gname, stps, _sel))
@@ -927,7 +967,7 @@ def repl(args):
                     print(f"(ralat: {e})")
                     continue
                 el = _t2.time() - t0
-                print(rans)
+                reveal("", rans)
                 if rtps:
                     print(f"\x1b[2m[{m['name']}] {rtps:.1f} T/s ({el:.0f}s)\x1b[0m")
                     record_speed(MODELS_DIR, m["name"], rtps)
@@ -982,7 +1022,7 @@ def repl(args):
                     print(f"(ralat: {e})")
                     continue
                 el = _t3.time() - t0
-                print(rans)
+                reveal("", rans)
                 if rtps:
                     print(f"\x1b[2m[{m['name']}] {rtps:.1f} T/s ({el:.0f}s)\x1b[0m")
                     record_speed(MODELS_DIR, m["name"], rtps)
@@ -1025,7 +1065,7 @@ def repl(args):
             last_qa = [wtask, verdict, detect_domain(wtask)]
             if vtps:
                 record_speed(MODELS_DIR, MANAGER_NAME, vtps)
-            print(f"\n{name} (keputusan {MANAGER_NAME})> {verdict}")
+            reveal(f"\n{name} (keputusan {MANAGER_NAME})> ", verdict)
             if vtps:
                 print(f"\x1b[2m[{MANAGER_NAME}] {vtps:.1f} T/s ({_vel:.0f}s)\x1b[0m")
                 wrows.append((MANAGER_NAME, vtps, _vel))
@@ -1145,7 +1185,26 @@ def repl(args):
         else:
             # Leading \n separates from "> hai" partial in TUI viewport
             # (view.add concatenates partial without newline otherwise).
-            print(f"\n{short} berfikir ({cur['name']}) ...")
+            # Dot beranimasi: tulis-semula baris ini selagi model berfikir.
+            _tpre = f"{short} berfikir ({cur['name']}) "
+            print(f"\n{_tpre}...")
+            _tui = getattr(sys.stdout, "ui", None)
+            _tidx = len(_tui.view.lines) - 1 if _tui is not None else -1
+            if _tui is not None and _tidx >= 0:
+                def _tspin(_u=_tui, _idx=_tidx, _pre=_tpre, _ev=_stop):
+                    _pats = ["... ", "..  ", ".   ", "..  "]
+                    _i = 0
+                    while not _ev.is_set():
+                        try:
+                            if _u.view.lines[_idx].startswith(_pre):
+                                _u.view.update_line(_idx, _pre + _pats[_i % 4])
+                                _u.draw()
+                        except Exception:
+                            break
+                        _i += 1
+                        _ev.wait(0.3)
+                _th_obj = _th.Thread(target=_tspin, daemon=True)
+                _th_obj.start()
         dom = detect_domain(q)
         self_ans = answer_self(q, cur, name, lang)
         off_ans = answer_offline(q, lang) if self_ans is None else None
@@ -1291,8 +1350,18 @@ def main():
     if args.tui and sys.stdin.isatty() and sys.stdout.isatty():
         from tui import run_tui
         title = f" XCoder {__version__} [{args.backend}] lang={args.lang} "
-        status = " PgUp/PgDn skrol | Up/Dn sejarah | TAB tools | Ctrl-D keluar | /help /update "
-        run_tui(lambda: repl(args), title, status, on_tab=_tui_on_tab)
+        shared = {"tools": not args.no_tools}
+
+        def status_fn(ui):
+            # Bar bawah hidup: mod Plan/Build + (Done.) bila tiada lagi kandungan bawah.
+            mode = "Build" if shared["tools"] else "Plan"
+            s = (f" {mode} | PgUp/PgDn skrol | Up/Dn sejarah | Ctrl-D keluar ")
+            if ui.view.scroll == 0:
+                s += "(Done.)"
+            return s
+
+        run_tui(lambda: repl(args, shared), title, status_fn,
+                on_tab=_tui_on_tab, shared=shared)
         return
     repl(args)
 
