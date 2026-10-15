@@ -18,7 +18,7 @@ APP_DIR = (Path(sys.executable).resolve().parent if getattr(sys, "frozen", False
            else Path(__file__).resolve().parent)
 sys.path.insert(0, str(APP_DIR))
 
-__version__ = "0.4.50"
+__version__ = "0.4.51"
 
 from fetch import (LLAMA_TAG, LLAMA_BASE, HF_MODEL_URL, MODEL_SIZE,
                    asset_name, download, verify, sha256_file,
@@ -60,9 +60,7 @@ HELP = """Commands:
 /model import [fail] [--from dir]  auto-import GGUF terbaru + aktifkan
 /models               senarai semua model pakar + domain
 /models check         audit GGUF (hash, sah, duplikat, registry)
-  /consult <soalan>     runding 2 pakar, pengurus sintesis jawapan penuh
-  /semua <soalan>       semua model jawab, setiap satu result sendiri
-  /kerja <soalan>       pakar bekerjasama, gemma semak + putuskan
+(Soalan biasa: base jawab, pakar sambung, base kumpul — bergilir automatik.)
 /route on|off         auto-tukar pakar ikut domain (lalai: sentiasa on)
 /session <name>       switch session file (sessions/<name>.jsonl)
 /sessions             list sessions
@@ -859,219 +857,6 @@ def repl(args, shared=None):
                    "domains": hit.get("domains", [GENERAL]) if hit else [GENERAL]}
             print(f"model={cur['name']} [{','.join(cur['domains'])}] {note}".rstrip())
             continue
-        if q == "/consult" or q.startswith("/consult "):
-            ctask = q[len("/consult"):].strip()
-            if not ctask:
-                print("guna: /consult <soalan>  (runding 2 pakar, pengurus sintesis penuh)")
-                continue
-            cdom = detect_domain(ctask)
-            cands = [m for m in scan_models(MODELS_DIR)
-                     if m.get("file") and (MODELS_DIR / m["file"]).is_file()
-                     and cdom in m.get("domains", [])][:2]
-            if not cands:
-                print(f"tiada pakar {cdom} berfail — latih dahulu.")
-                continue
-            cli = cli_path or ensure_cli()
-            from agent import clean as _clean
-            parts = []
-            crows = []
-            for m in cands:
-                print(f"[consult:{m['name']}] bertanya...")
-                try:
-                    tmp = LlamaCliBackend(cli, MODELS_DIR / m["file"], n_predict=300)
-                    esys = (f"Anda pakar {','.join(m.get('domains', []))}. Jawab ringkas."
-                            if lang == "ms" else
-                            f"You are a {','.join(m.get('domains', []))} expert. Answer briefly.")
-                    import time as _t0
-                    _s0 = _t0.time()
-                    rraw, _ctps = tmp.chat(esys, [{"role": "user", "content": ctask}])
-                    _cel = _t0.time() - _s0
-                    rans = _clean(sanitize(rraw), name)
-                except Exception as e:
-                    rans = f"(ralat: {e})"
-                    _ctps, _cel = None, 0
-                parts.append((m["name"], rans))
-                crows.append((m["name"], _ctps, _cel))
-                print(f"[{m['name']}]: {rans[:400]}\n")
-            mfile = manager_file()
-            if mfile is not None:
-                gfile, gname = mfile, MANAGER_NAME + " (pengurus)"
-            else:
-                gfile = next((MODELS_DIR / m["file"] for m in scan_models(MODELS_DIR)
-                              if m.get("name") in ("xcoder-general", "base") and m.get("file")
-                              and (MODELS_DIR / m["file"]).is_file()), None)
-                gname = "general"
-            if gfile is None:
-                print("tiada model general berfail untuk sintesis.")
-                continue
-            print(f"[sintesis {gname}] menggabung...")
-            ssys = ("Gabung jawapan pakar di bawah menjadi SATU jawapan akhir ringkas dalam Bahasa Melayu. "
-                    "Buang ulangan; jika bercanggah pilih yang paling betul. Terus jawab, tanpa ulas."
-                    if lang == "ms" else
-                    "Merge the expert answers below into ONE brief final answer in English. "
-                    "Drop repetition; on conflict pick the most correct. Answer directly.")
-            suser = ctask + "\n\n" + "\n\n".join(f"[{n}]: {a}" for n, a in parts)
-            try:
-                _s1 = _t0.time()
-                sraw, stps = LlamaCliBackend(cli, gfile, n_predict=args.max_tokens).chat(ssys, [{"role": "user",
-                                                                                             "content": suser}])
-                _sel = _t0.time() - _s1
-                sans = _clean(sanitize(sraw), name)
-            except Exception as e:
-                print(f"Ralat sintesis: {e}")
-                continue
-            history += [{"role": "user", "content": ctask}, {"role": "assistant", "content": sans}]
-            save_turn(session, history[-2:])
-            log_training(ctask, sans, lang=lang, kind="consult",
-                         tools_trace=[{"tool": "consult", "arg": n, "result": a[:300]} for n, a in parts],
-                         domain=cdom)
-            last_qa = [ctask, sans, cdom]
-            reveal(f"\n{name} (sintesis {gname})> ", sans)
-            if stps:
-                print(f"{stps:.1f} T/s")
-                crows.append((gname, stps, _sel))
-            print_speed_recap(crows)
-            print()
-            continue
-        if q == "/semua" or q.startswith("/semua "):
-            stask = q[len("/semua"):].strip()
-            if not stask:
-                print("guna: /semua <soalan>  (semua model jawab, result sendiri-sendiri)")
-                continue
-            cands = [m for m in scan_models(MODELS_DIR)
-                     if m.get("file") and (MODELS_DIR / m["file"]).is_file()]
-            if not cands:
-                print("tiada model berfail.")
-                continue
-            print(f"{len(cands)} model akan jawab bergilir (~1-2 min setiap satu, Ctrl-C henti).")
-            cli = cli_path or ensure_cli()
-            from agent import clean as _clean2
-            sdom = detect_domain(stask)
-            srows = []
-            for m in cands:
-                hdr = f"=== [{m['name']}] [{','.join(m.get('domains', []))}] ==="
-                print(f"\n{hdr}")
-                try:
-                    tmp = LlamaCliBackend(cli, MODELS_DIR / m["file"], n_predict=250)
-                    esys = (f"Anda pakar {','.join(m.get('domains', []))}. Jawab ringkas."
-                            if lang == "ms" else
-                            f"You are a {','.join(m.get('domains', []))} expert. Answer briefly.")
-                    import time as _t2
-                    t0 = _t2.time()
-                    rraw, rtps = tmp.chat(esys, [{"role": "user", "content": stask}])
-                    rans = _clean2(sanitize(rraw), name)
-                except KeyboardInterrupt:
-                    print("(dihenti — model berbaki dilangkau)")
-                    break
-                except Exception as e:
-                    print(f"(ralat: {e})")
-                    continue
-                el = _t2.time() - t0
-                reveal("", rans)
-                if rtps:
-                    print(f"\x1b[2m[{m['name']}] {rtps:.1f} T/s ({el:.0f}s)\x1b[0m")
-                    record_speed(MODELS_DIR, m["name"], rtps)
-                srows.append((m["name"], rtps, el))
-                log_training(stask, rans, lang=lang, kind="semua",
-                             domain=",".join(m.get("domains", [])))
-            print_speed_recap(srows)
-            print("Siap /semua. /good mana yang betul untuk latih semula.")
-            continue
-        if q == "/kerja" or q.startswith("/kerja "):
-            wtask = q[len("/kerja"):].strip()
-            if not wtask:
-                print("guna: /kerja <soalan>  (pakar jawab, gemma semak + putuskan)")
-                continue
-            from experts import matching_stacks as _ms
-            stacks = _ms(wtask) or [detect_domain(wtask)]
-            cands = [m for m in scan_models(MODELS_DIR)
-                     if m.get("file") and (MODELS_DIR / m["file"]).is_file()
-                     and m.get("name") != MANAGER_NAME
-                     and any(d in stacks for d in m.get("domains", []))]
-            # utamakan nama sepadan stack, had 4 pakar (masa CPU)
-            cands.sort(key=lambda m: 0 if any(s in m["name"] for s in stacks) else 1)
-            cands = cands[:4]
-            if not cands:
-                print("tiada pakar berfail untuk soalan ini.")
-                continue
-            mfile = manager_file()
-            if mfile is None:
-                print(f"pengurus {MANAGER_NAME} tiada — muat turun dahulu.")
-                continue
-            print(f"{len(cands)} pakar {[m['name'] for m in cands]} akan jawab, "
-                  f"{MANAGER_NAME} semak + putuskan.")
-            cli = cli_path or ensure_cli()
-            from agent import clean as _clean3
-            parts = []
-            wrows = []
-            for m in cands:
-                print(f"\n=== [{m['name']}] ===")
-                try:
-                    tmp = LlamaCliBackend(cli, MODELS_DIR / m["file"], n_predict=250)
-                    esys = (f"Anda pakar {','.join(m.get('domains', []))}. Jawab ringkas."
-                            if lang == "ms" else
-                            f"You are a {','.join(m.get('domains', []))} expert. Answer briefly.")
-                    import time as _t3
-                    t0 = _t3.time()
-                    rraw, rtps = tmp.chat(esys, [{"role": "user", "content": wtask}])
-                    rans = _clean3(sanitize(rraw), name)
-                except KeyboardInterrupt:
-                    print("(dihenti — pakar berbaki dilangkau)")
-                    break
-                except Exception as e:
-                    print(f"(ralat: {e})")
-                    continue
-                el = _t3.time() - t0
-                reveal("", rans)
-                if rtps:
-                    print(f"\x1b[2m[{m['name']}] {rtps:.1f} T/s ({el:.0f}s)\x1b[0m")
-                    record_speed(MODELS_DIR, m["name"], rtps)
-                wrows.append((m["name"], rtps, el))
-                parts.append((m["name"], rans))
-                log_training(wtask, rans, lang=lang, kind="kerja",
-                             domain=",".join(m.get("domains", [])))
-            if not parts:
-                print("tiada jawapan pakar untuk disemak.")
-                continue
-            vsys = ("Anda pengurus dan penyemak. Di bawah jawapan beberapa pakar untuk soalan pengguna. "
-                    "Untuk SETIAP pakar beri: skor /10 + satu ayat (betul? salah di mana?). "
-                    "Kemudian tulis JAWAPAN AKHIR yang digabung dan diperbetul, dalam Bahasa Melayu. "
-                    "Format: baris `Nama: skor/10 - ulasan` setiap pakar, baris kosong, `KEPUTUSAN:` + jawapan. "
-                    "Jangan tulis proses berfikir; terus ke format."
-                    if lang == "ms" else
-                    "You are the manager and verifier. Below are answers from several experts. "
-                    "For EACH expert give: score /10 + one sentence (correct? where wrong?). "
-                    "Then write the merged corrected FINAL ANSWER in English. "
-                    "Format: `Name: score/10 - review` per expert, blank line, `VERDICT:` + answer. "
-                    "No thinking process; go straight to the format.")
-            vuser = wtask + "\n\n" + "\n\n".join(f"[{n}]: {a}" for n, a in parts)
-            print(f"\n[{MANAGER_NAME} menyemak...]")
-            try:
-                _v0 = _t3.time()
-                vraw, vtps = LlamaCliBackend(cli, mfile,
-                                             n_predict=args.max_tokens).chat(vsys, [{"role": "user",
-                                                                                    "content": vuser}])
-                _vel = _t3.time() - _v0
-                verdict = _clean3(sanitize(vraw), name)
-            except Exception as e:
-                print(f"Ralat semakan: {e}")
-                continue
-            history += [{"role": "user", "content": wtask},
-                        {"role": "assistant", "content": verdict}]
-            save_turn(session, history[-2:])
-            log_training(wtask, verdict, lang=lang, kind="kerja-verdict",
-                         tools_trace=[{"tool": "kerja", "arg": n, "result": a[:200]}
-                                      for n, a in parts])
-            last_qa = [wtask, verdict, detect_domain(wtask)]
-            if vtps:
-                record_speed(MODELS_DIR, MANAGER_NAME, vtps)
-            reveal(f"\n{name} (keputusan {MANAGER_NAME})> ", verdict)
-            if vtps:
-                print(f"\x1b[2m[{MANAGER_NAME}] {vtps:.1f} T/s ({_vel:.0f}s)\x1b[0m")
-                wrows.append((MANAGER_NAME, vtps, _vel))
-            print_speed_recap(wrows)
-            print()
-            continue
         if q.startswith("/route"):
             auto_route = q.split()[-1] != "off" if len(q.split()) > 1 else True
             print(f"route={'on' if auto_route else 'off'} (auto-tukar pakar ikut domain)")
@@ -1206,6 +991,7 @@ def repl(args, shared=None):
                 _th_obj = _th.Thread(target=_tspin, daemon=True)
                 _th_obj.start()
         dom = detect_domain(q)
+        already_shown, log_dom = False, dom
         self_ans = answer_self(q, cur, name, lang)
         off_ans = answer_offline(q, lang) if self_ans is None else None
         if self_ans is not None:
@@ -1217,43 +1003,203 @@ def repl(args, shared=None):
             if loc is not None:
                 ans, tps, trace = loc, None, [{"tool": "local", "arg": q[:100], "result": "mkdir"}]
             else:
+                already_shown = False
+                log_dom = dom
                 if auto_route and backend.kind in ("llama-cli", "llama", "server"):
                     mg = pick_manager_open(q)
                     if mg is not None:
                         if cur.get("name") != mg.get("name"):
                             switch_to(mg, GENERAL)
                             print(f"(soalan terbuka — pengurus {MANAGER_NAME} mengambil alih)")
-                    elif dom == GENERAL:
-                        # Kembali ke base utama bila topik kembali general.
-                        # Sebelum ini: kekal pada pakar web selama-lamanya (bug).
-                        if GENERAL not in cur.get("domains", []) or cur.get("name") == MANAGER_NAME:
-                            base = pick_base()
-                            if base is not None and base.get("name") != cur.get("name"):
-                                switch_to(base, GENERAL)
-                                print(f"-> kembali: {base['name']} [general] (base utama)")
-                    elif dom != GENERAL and dom not in cur.get("domains", []):
-                        cand = pick_expert(dom, detect_stack(q))
-                        if cand:
-                            switch_to(cand, dom)
-                        else:
-                            print(f"(tiada pakar {dom} — jawab dengan {cur['name']}; "
-                                  f"latih: train --mode sft --domain {dom})")
-                try:
-                    msize = "4.5B" if "gemma" in cur.get("name", "") else "0.5B"
-                    ans, tps, trace = run_agent(backend, q, name=name, lang=lang, history=history,
-                                                tools_on=tools_on, tool_ctx=tool_ctx, on_tool=on_tool,
-                                                expert_ctx=expert_context(cur) if auto_route else "",
-                                                on_think=on_think,
-                                                size=msize)
-                except Exception as e:
-                    _stop.set()
-                    if _th_obj is not None:
+                        msize = "4.5B" if "gemma" in cur.get("name", "") else "0.5B"
                         try:
-                            sys.stdout.write("\r" + " " * 60 + "\r")
-                        except Exception:
-                            pass
-                    print(f"Ralat: {e}")
-                    continue
+                            ans, tps, trace = run_agent(backend, q, name=name, lang=lang, history=history,
+                                                        tools_on=tools_on, tool_ctx=tool_ctx, on_tool=on_tool,
+                                                        expert_ctx=expert_context(cur) if auto_route else "",
+                                                        on_think=on_think,
+                                                        size=msize)
+                        except Exception as e:
+                            _stop.set()
+                            if _th_obj is not None:
+                                try:
+                                    sys.stdout.write("\r" + " " * 60 + "\r")
+                                except Exception:
+                                    pass
+                            print(f"Ralat: {e}")
+                            continue
+                    else:
+                        # LALAI: base jawab dulu, pakar berkaitan sambung bergilir
+                        # hingga lengkap (unload automatik bila switch_to).
+                        from experts import matching_stacks as _dms
+                        need = [s for s in _dms(q) if s != GENERAL]
+                        if not need and dom != GENERAL:
+                            need = [dom]
+                        cands = [m for m in scan_models(MODELS_DIR)
+                                 if m.get("file") and (MODELS_DIR / m["file"]).is_file()
+                                 and m.get("name") != MANAGER_NAME
+                                 and any(d in need for d in m.get("domains", []))]
+
+                        def _rkey(m):
+                            doms = m.get("domains", [])
+                            hit = next((d for d in doms if d in need), None)
+                            return (0 if any(s in m["name"] for s in need) else 1,
+                                    len(doms),
+                                    need.index(hit) if hit is not None else 999)
+                        cands.sort(key=_rkey)
+                        legs, covered = [], set()
+                        for m in cands:
+                            new = {d for d in m.get("domains", []) if d in need} - covered
+                            if new:
+                                legs.append(m)
+                                covered |= new
+                            if len(legs) >= 3 or covered >= set(need):
+                                break
+                        # spinner awal sudah selesai tugas — hentikan sebelum streaming kaki.
+                        _stop.set()
+                        if not _is_tui and _th_obj is not None:
+                            try:
+                                sys.stdout.write("\r" + " " * 60 + "\r")
+                            except Exception:
+                                pass
+                        base = pick_base()
+                        if base is None:
+                            print("(tiada model base berfail — jawab dengan model semasa)")
+                            msize = "0.5B"
+                            try:
+                                ans, tps, trace = run_agent(backend, q, name=name, lang=lang, history=history,
+                                                            tools_on=tools_on, tool_ctx=tool_ctx, on_tool=on_tool,
+                                                            expert_ctx=expert_context(cur) if auto_route else "",
+                                                            on_think=on_think, size=msize)
+                            except Exception as e:
+                                print(f"Ralat: {e}")
+                                continue
+                        else:
+                            if cur.get("name") != base["name"]:
+                                switch_to(base, GENERAL)
+                            import time as _t5
+                            rrows = []
+                            acc = []
+                            try:
+                                _b0 = _t5.time()
+                                bans, btps, btrace = run_agent(
+                                    backend, q, name=name, lang=lang, history=history,
+                                    tools_on=tools_on, tool_ctx=tool_ctx, on_tool=on_tool,
+                                    expert_ctx=expert_context(cur) if auto_route else "",
+                                    on_think=on_think, size="0.5B")
+                            except KeyboardInterrupt:
+                                print("(dihenti)")
+                                continue
+                            except Exception as e:
+                                print(f"Ralat: {e}")
+                                continue
+                            _bel = _t5.time() - _b0
+                            acc.append("[base]:\n" + bans)
+                            reveal(f"\n{name} (base)> ", bans)
+                            if btps:
+                                record_speed(MODELS_DIR, base["name"], btps)
+                                print(f"\x1b[2m[{base['name']}] {btps:.1f} T/s\x1b[0m")
+                            rrows.append((base["name"], btps, _bel))
+                            log_training(q, bans, lang=lang, kind="chat-base",
+                                         tools_trace=btrace, domain=GENERAL)
+                            for m in legs:
+                                switch_to(m, ",".join(m.get("domains", [])))
+                                sq = (f"Soalan asal pengguna (WAJIB dijawab): {q}\n\nJawapan terkumpul setakat ini (konteks sahaja):\n"
+                                      f"{chr(10).join(acc)}\n\nAnda pakar {','.join(m.get('domains', []))}. "
+                                      f"HANYA tulis bahagian BARU yang belum diliputi (maksimum ~40 baris, kod penuh + ringkas). "
+                                      f"DILARANG mengulang atau menulis semula jawapan dari awal. "
+                                      f"Jika yang terkumpul menyeleweng dari soalan asal, "
+                                      f"ABAIKAN ia dan jawab soalan asal. Jangan ulang apa yang sudah betul."
+                                      if lang == "ms" else
+                                      f"Original user question (MUST answer): {q}\n\nAccumulated answer so far (context only):\n"
+                                      f"{chr(10).join(acc)}\n\nYou are the {','.join(m.get('domains', []))} expert. "
+                                      f"Write ONLY the NEW not-yet-covered part (max ~40 lines, full code + brief). "
+                                      f"FORBIDDEN to repeat or rewrite the answer from the start. "
+                                      f"If the accumulated text drifted off-topic, IGNORE it and answer the original. "
+                                      f"Do not repeat what is already correct.")
+                                print(f"{short} berfikir ({m['name']}) ...")
+                                try:
+                                    _s0 = _t5.time()
+                                    eraw, etps, etrace = run_agent(
+                                        backend, sq, name=name, lang=lang, history=history,
+                                        tools_on=False, tool_ctx=tool_ctx, on_tool=None,
+                                        expert_ctx=expert_context(cur) if auto_route else "",
+                                        on_think=on_think, size="0.5B")
+                                except KeyboardInterrupt:
+                                    print("(dihenti — pakar berbaki dilangkau)")
+                                    break
+                                except Exception as e:
+                                    print(f"(ralat {m['name']}: {e} — dilangkau)")
+                                    continue
+                                _eel = _t5.time() - _s0
+                                acc.append(f"[{m['name']}]:\n" + eraw)
+                                reveal(f"\n{name} ({m['name']} sambung)> ", eraw)
+                                if etps:
+                                    record_speed(MODELS_DIR, m["name"], etps)
+                                    print(f"\x1b[2m[{m['name']}] {etps:.1f} T/s\x1b[0m")
+                                rrows.append((m["name"], etps, _eel))
+                                log_training(sq, eraw, lang=lang, kind="chat-leg",
+                                             domain=",".join(m.get("domains", [])))
+                                # kembali ke base: KUMPUL + SUSUN (collector/organizer)
+                                switch_to(base, GENERAL)
+                                oq = (f"Soalan asal pengguna: {q}\n\nJawapan terkumpul setakat ini:\n"
+                                      f"{chr(10).join(acc)}\n\nAnda base XCoder (pengumpul/penyusun). "
+                                      f"SUSUN SEMULA jawapan di atas jadi satu jawapan lengkap dan kemas: "
+                                      f"buang ulangan, betulkan percanggahan (utamakan pakar), kekal ringkas. "
+                                      f"Jawab penuh dalam Bahasa Melayu."
+                                      if lang == "ms" else
+                                      f"Original user question: {q}\n\nAccumulated answer so far:\n"
+                                      f"{chr(10).join(acc)}\n\nYou are the base XCoder (collector/organizer). "
+                                      f"REORGANIZE the above into one complete tidy answer: drop repetition, "
+                                      f"fix conflicts (prefer the expert), stay brief. Answer fully in English.")
+                                print(f"{short} berfikir (base) ...")
+                                try:
+                                    _o0 = _t5.time()
+                                    merged, otps, otrace = run_agent(
+                                        backend, oq, name=name, lang=lang, history=history,
+                                        tools_on=False, tool_ctx=tool_ctx, on_tool=None,
+                                        expert_ctx=expert_context(cur) if auto_route else "",
+                                        on_think=on_think, size="0.5B")
+                                except KeyboardInterrupt:
+                                    print("(dihenti — pakar berbaki dilangkau)")
+                                    break
+                                except Exception as e:
+                                    print(f"(ralat kumpul: {e} — kekal susunan sedia ada)")
+                                    continue
+                                _oel = _t5.time() - _o0
+                                acc = [merged]
+                                reveal(f"\n{name} (base)> ", merged)
+                                if otps:
+                                    record_speed(MODELS_DIR, base["name"], otps)
+                                    print(f"\x1b[2m[base] {otps:.1f} T/s\x1b[0m")
+                                rrows.append((base["name"], otps, _oel))
+                                log_training(oq, merged, lang=lang, kind="chat-organize",
+                                             domain=GENERAL)
+                            ans = "\n\n".join(acc) if legs else bans
+                            trace = btrace
+                            already_shown = True
+                            log_dom = ",".join(need) if need else GENERAL
+                            if legs:
+                                if cur.get("name") != base["name"]:
+                                    switch_to(base, GENERAL)
+                                print_speed_recap(rrows)
+                            tps = None  # kelajuan sudah dipapar live + recap; elak duplikat di ekor
+                else:
+                    msize = "4.5B" if "gemma" in cur.get("name", "") else "0.5B"
+                    try:
+                        ans, tps, trace = run_agent(backend, q, name=name, lang=lang, history=history,
+                                                    tools_on=tools_on, tool_ctx=tool_ctx, on_tool=on_tool,
+                                                    expert_ctx=expert_context(cur) if auto_route else "",
+                                                    on_think=on_think,
+                                                    size=msize)
+                    except Exception as e:
+                        _stop.set()
+                        if _th_obj is not None:
+                            try:
+                                sys.stdout.write("\r" + " " * 60 + "\r")
+                            except Exception:
+                                pass
+                        print(f"Ralat: {e}")
+                        continue
         # stop spinner, clear line
         _stop.set()
         if _th_obj is not None:
@@ -1263,11 +1209,12 @@ def repl(args, shared=None):
                 pass
         history += [{"role": "user", "content": q}, {"role": "assistant", "content": ans}]
         save_turn(session, history[-2:])
-        log_training(q, ans, lang=lang, kind="chat", tools_trace=trace, domain=dom)
-        last_qa = [q, ans, dom]
+        log_training(q, ans, lang=lang, kind="chat", tools_trace=trace, domain=log_dom)
+        last_qa = [q, ans, log_dom]
         if tps:
             record_speed(MODELS_DIR, cur.get("name", ""), tps)
-        print(f"{short}> {ans}")
+        if not already_shown:
+            reveal(f"{short}> ", ans)
         if tps:
             s = f"({cur['name']} | {tps:.1f} T/s)"
             print(f"\x1b[2m{s}\x1b[0m")

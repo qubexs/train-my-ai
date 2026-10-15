@@ -5,6 +5,12 @@ from tools import DISPATCH, TOOL_SPEC
 
 TOOL_RE = re.compile(r"```tool:(\w+)\s*(.*?)\s*```", re.S)
 
+# Aksara CJK (Cina/Jepun/Korea) — model asas Qwen kadang bocor ke sini;
+# khalayak repo ini Melayu + English sahaja, jadi baris beraksara CJK dibuang.
+CJK_RE = re.compile("[\u4e00-\u9fff\u3400-\u4dbf\u3040-\u30ff\uac00-\ud7af\U00020000-\U0002a6df]")
+
+FENCE_OPEN_RE = re.compile(r"^```[\w+#-]*\s*$")
+
 CLEAN_PATS = [r"qwen2\.5-0\.5b-instruct", r"\bqwen2\.5\b", r"\bqwen\b",
               r"\banthropic\b", r"\bclaude\b", r"\bmeta ai\b", r"\bllama\b",
               r"\balibaba cloud\b", r"\balibaba\b", r"\btongyi\b", r"\bqianwen\b",
@@ -36,6 +42,8 @@ def sanitize(text):
         "built for coding",
         "jangan sebut",
         "never mention",
+        "aksara cina",
+        "chinese/japanese/korean",
         "anda offline",
         "fully offline",
         "tanpa internet",
@@ -65,8 +73,26 @@ def sanitize(text):
     )
     lines, out, prev, repeats = (text or "").splitlines(), [], None, 0
     sys_removed = 0
+    # Buang pasangan fence kosong (```js terus ```) — 0.5B kerap buka-tutup tanpa isi.
+    # Pasangan berjujukan: penutup blok berisi tidak boleh dimakan sebagai pembuka.
+    _drop, _open, _seen = set(), None, False
+    for _i, _ln in enumerate(lines):
+        _s = _ln.strip()
+        if _s == "```" or FENCE_OPEN_RE.match(_s):
+            if _open is None:
+                _open, _seen = _i, False
+            else:
+                if not _seen:
+                    _drop.add(_open)
+                    _drop.add(_i)
+                _open = None
+        elif _s:
+            _seen = True
+    lines = [ln for _i, ln in enumerate(lines) if _i not in _drop]
     for ln in lines:
         s = ln.strip()
+        if CJK_RE.search(s):
+            continue
         if re.match(r"^(pengguna|pembantu|jawapan sebelum|soalan|user|assistant)\s*:"
                      r"|^hasil tool\b.*?:"
                      r"|^<\|\s*im_(start|end)\s*\|>",
@@ -134,12 +160,15 @@ def clean(text, name):
 
 def system_prompt(name, lang, tools_on=True, size="0.5B"):
     base = ("Anda ialah {n}, pembantu pengekodan CPU {s}. Jawab ringkas dalam Bahasa Melayu. "
+            "Jangan sesekali keluarkan aksara Cina/Jepun/Korea — hanya Bahasa Melayu "
+            "(atau English jika diminta). "
             "Jika ditanya siapa anda / siapa cipta anda, jawab tepat seperti ini: Saya {n}, dibina untuk pengekodan. "
             "Jangan sebut Qwen, Alibaba, Tongyi, Gemma, Google, DeepMind. Anda offline tanpa internet — "
             "jika ditanya berita terkini atau data live, jawab jujur tiada akses, jangan reka. "
             "Jangan ulang semula soalan pengguna; terus jawab."
             if lang == "ms" else
             "You are {n}, a CPU coding assistant {s}. Answer briefly in English. "
+            "Never output Chinese/Japanese/Korean characters — English only. "
             "If asked who you are / who created you, answer exactly: I am {n}, built for coding. "
             "Never mention Qwen, Alibaba, Tongyi, Gemma, Google, DeepMind. You are fully offline with no internet — "
             "if asked for latest news or live data, say honestly you have no access, never invent. "
@@ -213,6 +242,11 @@ MS_FIX = [
     (r"\bbanget\b", "sangat"),
     (r"\bngomong\b", "bercakap"),
     (r"\bngerti\b", "faham"),
+    (r"\bmembagi\b", "berkongsi"),
+    (r"\bMembagi\b", "Berkongsi"),
+    (r"\bmenjelajahi\b", "meneroka"),
+    (r"\bMenjelajahi\b", "Meneroka"),
+    (r"\bmengeksplor\w*\b", "meneroka"),
     (r"\bsukses\b", "berjaya"),
     (r"\bSukses\b", "Berjaya"),
     (r"\byg\b", "yang"),
