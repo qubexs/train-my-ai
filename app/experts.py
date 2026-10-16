@@ -44,6 +44,10 @@ EXPERT_DOMAIN_MAP = {
     "sql": ["sql"], "postgresql": ["postgresql"], "postgres": ["postgresql"],
     "mysql": ["mysql"], "data": ["data"],
     "linux": ["linux"], "docker": ["docker"], "bash": ["bash"],
+    "git": ["git"],
+    "react": ["react"],
+    "mongodb": ["mongodb"], "mongo": ["mongodb"],
+    "redis": ["redis"],
     "python": ["python"], "php": ["php"], "laravel": ["laravel"],
 }
 
@@ -96,6 +100,14 @@ STACKS = {
     "sql": ["sql", "query", "select ", "join ", "jadual", "table"],
     "laravel": ["laravel", "eloquent", "blade", "migration"],
     "php": ["php", ".php", "composer", "artisan", "wordpress", "symfony"],
+    "react": ["react", "jsx", "usestate", "useeffect", "component react",
+              "next.js", "vite react"],
+    "mongodb": ["mongodb", "mongo", "mongosh", "objectid", "aggregation pipeline",
+                "find({", "mongoose"],
+    "redis": ["redis", "setex", "hgetall", "pub/sub", "ioredis", "cache redis",
+              "redis-cli"],
+    "git": ["git commit", "git push", "git pull", "git clone", "github",
+            "pull request", "merge conflict", "gitignore", "rebase", "git log"],
     "bash": ["bash", "shell", "skrip shell", ".sh", "chmod +x", "terminal"],
     "docker": ["docker", "kontena", "container", "dockerfile", "compose",
                "kubernetes", "k8s", "docker image", "image docker"],
@@ -110,7 +122,9 @@ STACK2DOMAIN = {
     "tailwind": "web", "css": "web",
     "postgresql": "data", "mysql": "data", "sql": "data",
     "laravel": "php", "php": "php",
-    "bash": "linux", "docker": "linux", "linux": "linux",
+    "bash": "linux", "docker": "linux", "linux": "linux", "git": "linux",
+    "mongodb": "data", "redis": "data",
+    "react": "web",
     "python": "python",
 }
 
@@ -258,11 +272,12 @@ def scan(models_dir):
                               "domains": [GENERAL],
                               "desc": "model asas (belum dimuat turun)",
                               "trained": False})
-    # 16 stack seeds (stack = domain), fallback to base until trained.
+    # 20 stack seeds (stack = domain), fallback to base until trained.
     seeds = [(f"xcoder-{s}", [s]) for s in
              ["general", "javascript", "typescript", "nodejs", "html", "css",
               "tailwind", "sql", "postgresql", "mysql", "linux", "docker",
-              "bash", "python", "php", "laravel"]]
+              "bash", "python", "php", "laravel",
+              "git", "react", "mongodb", "redis"]]
     for sname, sdom in seeds:
         if not any(m.get("name") == sname for m in reg["models"]):
             reg["models"].append({"name": sname, "file": "", "url": "",

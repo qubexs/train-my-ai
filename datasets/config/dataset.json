@@ -17,12 +17,16 @@
     "python": {"domain": "python", "file": "python.jsonl", "desc": "Python"},
     "laravel": {"domain": "php", "file": "laravel.jsonl", "desc": "Laravel"},
     "php": {"domain": "php", "file": "php.jsonl", "desc": "PHP"},
+    "git": {"domain": "linux", "file": "git.jsonl", "desc": "Git version control"},
+    "react": {"domain": "web", "file": "react.jsonl", "desc": "React UI"},
+    "mongodb": {"domain": "data", "file": "mongodb.jsonl", "desc": "MongoDB NoSQL"},
+    "redis": {"domain": "data", "file": "redis.jsonl", "desc": "Redis cache/queue"},
     "general": {"domain": "general", "file": "general.jsonl", "desc": "Identity + mixed general"}
   },
   "domains": {
-    "web": ["javascript", "typescript", "nodejs", "html", "css", "tailwind"],
-    "data": ["sql", "postgresql", "mysql"],
-    "linux": ["linux", "docker", "bash"],
+    "web": ["javascript", "typescript", "nodejs", "html", "css", "tailwind", "react"],
+    "data": ["sql", "postgresql", "mysql", "mongodb", "redis"],
+    "linux": ["linux", "docker", "bash", "git"],
     "python": ["python"],
     "php": ["php", "laravel"],
     "general": ["general"]
