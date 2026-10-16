@@ -145,6 +145,62 @@ DOCKER_FLAGS = [
     ("trust signers", "`docker trust inspect` lists Notary signers per tag; expired/revoked keys explain sudden pull denials — rotate before expiry, not after."),
 ]
 
+# Round 4: official docs (Dockerfile reference) + GFG curriculum gaps.
+DOCKER_DOCS = [
+    ("HEALTHCHECK instruction", "`HEALTHCHECK --interval=30s --timeout=3s CMD curl -f http://localhost/ || exit 1` marks containers healthy/unhealthy; Compose `depends_on: condition: service_healthy` and Swarm act on it — liveness built into the image."),
+    ("SHELL instruction", "`SHELL [\"/bin/bash\", \"-c\"]` swaps the default shell for subsequent RUN/CMD (PowerShell on Windows); exec-form RUN bypasses it — set explicitly when scripts need bash features."),
+    ("STOPSIGNAL instruction", "`STOPSIGNAL SIGTERM` declares the stop signal (default SIGTERM); apps needing graceful drains on other signals declare them — pairs with `docker stop -t` grace windows."),
+    ("ONBUILD instruction", "`ONBUILD COPY . /app` defers instructions until the image is used as a base (language stacks pre-wiring app setup); overuse creates spooky action — document every trigger in the base README."),
+    ("LABEL instruction", "`LABEL org.opencontainers.image.version=1.0` adds queryable metadata (`docker inspect --format`); replaces deprecated MAINTAINER — version, authors and licenses as labels, not comments."),
+    ("ARG instruction", "`ARG VERSION=1` build-time vars (usable in FROM if declared before it); unlike ENV they vanish at runtime — never smuggle secrets through ARG (baked into history)."),
+    ("parser syntax directive", "`# syntax=docker/dockerfile:1` pins the BuildKit frontend for latest features without engine upgrades; must be line one — after any instruction it becomes a plain comment."),
+    ("parser escape directive", "`# escape=` `` ` `` `` switches line continuation for Windows paths; default `\\` collides with `c:\\` separators — one directive line saves hours of backslash archaeology."),
+    ("parser check directive", "`# check=skip=JSONArgsRecommended` silences lint checks; `error=true` fails builds on warnings — pin `syntax:` too or future checks break builds unexpectedly."),
+    ("exec vs shell form", "Exec `CMD [\"app\",\"--flag\"]` skips shell munging (signals reach PID 1); shell form wraps in `/bin/sh -c` (globs/vars work, signals need `exec`). ENTRYPOINT exec + CMD args = overridable defaults."),
+    ("COPY --from --link", "`COPY --from=build /app/bin /bin` pulls from named stages without extra layers; `--link` decouples layer history for faster rebuilds — multi-stage hygiene in two flags."),
+    ("ADD vs COPY", "`COPY` for local files (predictable); `ADD` adds tar auto-extract + remote URLs — almost always prefer explicit `RUN curl` over magic ADD behaviors."),
+    (".dockerignore file", "Lists context excludes (`node_modules`, `.git`, `*.log`) so builds stay small and cache-stable; changing ignored files no longer busts cache — first file in every serious repo."),
+    ("WORKDIR instruction", "`WORKDIR /app` creates and cds (all relative paths follow); absolute paths reset cleanly — never `RUN cd` (each RUN starts fresh at WORKDIR)."),
+    ("USER instruction", "`USER app` drops root for subsequent RUN/CMD; numeric `UID:GID` avoids name lookups — combine with `--chown` COPY for owned files without extra layers."),
+    ("VOLUME instruction", "`VOLUME /data` declares anonymous mountpoints (initialized from image content on first run); explicit `-v`/compose named volumes beat anonymous sprawl in production."),
+    ("EXPOSE instruction", "`EXPOSE 8080/tcp` documents listening ports (UDP with `/udp`); publishes nothing — `-p`/`-P` at runtime or user-defined networks for container-to-container traffic."),
+    ("docker architecture", "Client CLI talks to the dockerd daemon (REST API) which delegates to containerd (lifecycle) → runc (OCI runtime) → shim per container. `docker version` shows both halves — debug the right layer first."),
+    ("install docker ubuntu", "`apt install docker-ce docker-ce-cli containerd.io` from Docker's repo (not distro snapshots); `usermod -aG docker $USER` for sudo-less CLI, then `docker run hello-world` verifies the full chain."),
+    ("docker hub workflow", "`docker login` → `docker tag app user/app:1.0` → `docker push` publishes; official images (`_/nginx`) are vetted bases — pin digests for supply-chain sanity, not floating tags."),
+    ("private registry", "`docker run -d -p 5000:5000 registry:2` hosts images locally; `docker tag app host:5000/app && docker push` publishes — TLS + auth before exposing beyond localhost."),
+    ("volumes vs bind", "Named volumes (managed, portable, driver-backed) for data; bind mounts (host paths) for dev code/configs; tmpfs for secrets-in-RAM. `docker inspect -f '{{.Mounts}}'` reveals the truth when data vanishes."),
+    ("docker storage drivers", "overlay2 (default, fast copy-up) beats devicemapper/aufs legacy; `docker system df` shows reclaimable per type — full disks from build cache, not containers, in most incidents."),
+    ("backup container data", "Stop writes, `docker run --volumes-from app -v $(pwd):/b ubuntu tar czf /b/data.tgz /data` archives volumes without touching the app container — restore reverses the stream. Commit-based backups lose volumes; never use them."),
+    ("docker network types", "bridge (default, isolated + port-map), host (no isolation, max speed), none (no net), overlay (multi-host swarm), macvlan (LAN IPs). User-defined bridges add DNS; default bridge has none — first networking fix in every tutorial."),
+    ("bridge vs host vs overlay", "bridge for single-host apps, host for wire-speed daemons (ports collide!), overlay for swarm services with VIP/DNSRR — choose per workload, and default bridge is never the answer for name resolution."),
+    ("docker dns resolution", "User-defined networks embed DNS (container names resolve); `--add-host`/`extra_hosts` inject statics; `host.docker.internal` reaches the host — DNS failures mean wrong network, not broken DNS."),
+    ("published vs exposed ports", "EXPOSE documents; `-p 8080:80` publishes (host:container, loopback-bind with `127.0.0.1:`); `-P` randomizes all exposed — `docker compose port web 80` reveals dynamic mappings."),
+    ("swarm init join", "`docker swarm init --advertise-addr IP` seeds managers (odd counts 3/5 for Raft quorum); `swarm join --token` adds workers/managers — quorum loss freezes scheduling until `--force-new-cluster` recovery."),
+    ("swarm service scale", "`docker service create --replicas 3 --publish 80:80 --name web img` deploys; `service scale web=5` grows, `service update --image v2` rolls with `--update-delay` — orchestration without Kubernetes weight."),
+    ("swarm rollback", "`docker service update --rollback` reverts to the previous spec on failed pushes; `--update-failure-action rollback` automates it — deploys that un-deploy themselves."),
+    ("docker security practices", "Run as non-root USER, read-only `--read-only` + tmpfs, `no-new-privileges`, drop caps (`--cap-drop ALL --cap-add NET_BIND_SERVICE`), pinned digests, scanned bases, secrets via files — layered, no single control saves you."),
+    ("distroless images", "`gcr.io/distroless/static` ships app + runtime only (no shell/package manager) — smaller attack surface and size; debug with `:debug` variants, never ship shells to prod."),
+    ("hadolint lint", "Hadolint lints Dockerfiles (DL3008 pin apt versions, DL3020 prefer COPY over ADD, DL4006 pipefail) — CI-gated Dockerfiles stop image sins at review, matching shellcheck for scripts."),
+    ("image optimize layers", "Order stable-first (deps before source), one RUN per concern chained with `&&`, `.dockerignore` ruthlessly, `--no-cache` rarely — cache hits are build speed, layer count is pull speed."),
+    ("multi-stage node", "`FROM node:20 AS build` (npm ci + build) then `FROM node:20-alpine` + `COPY --from=build` ships runtime only — devDeps and source never reach production layers."),
+    ("buildx platforms", "`docker buildx build --platform linux/amd64,arm64 -t app --push .` ships multi-arch; `--builder` isolates drivers — Apple Silicon building for amd64 servers without surprises."),
+    ("build cache mounts", "`RUN --mount=type=cache,target=/root/.npm npm ci` persists package caches across builds without bloating layers — 10x faster rebuilds, zero image weight."),
+    ("build secrets safe", "`RUN --mount=type=secret,id=npmrc,target=/root/.npmrc npm ci` + `buildx --secret` keeps tokens out of layers/history — ARG/env secrets persist forever, secrets mounts never do."),
+    ("docker events debug", "`docker events --filter container=web --since 1h` streams lifecycle (die/OOM/kill) with exit codes — post-mortems start here, pairing exit 137 (OOM) and 143 (SIGTERM) to causes."),
+    ("troubleshoot exit codes", "125 daemon errors, 126 exec failures, 127 missing binaries, 137 OOM-killed, 139 segfault, 143 SIGTERM — read the code before the logs; `docker inspect -f '{{.State}}'` confirms."),
+    ("docker stats monitor", "`docker stats --no-stream --format` snapshots CPU/mem/IO per container for scripts; cgroup files underpin it — monitoring that survives Docker daemon restarts reads cgroups directly."),
+    ("image inspect format", "`docker image inspect -f '{{json .Config.Env}}'` extracts env/labels/ports scriptably — grep is for humans, Go templates for pipelines."),
+    ("docker save load", "`docker save app:1 | gzip > a.tgz` archives images offline; `docker load -i` restores — air-gapped transfers and registry migrations without pushing."),
+    ("docker commit why not", "`docker commit` snapshots mutation into images (unreproducible, volume-blind); Dockerfiles rebuild identically — commits are debugging aids, never release artifacts."),
+    ("rootless docker", "Rootless (`dockerd-rootless-setuptool`) runs daemons unprivileged (ports ≥1024, no host net) — shared CI runners and desktops without root daemons; user-namespace remapping keeps rootful features where needed."),
+    ("docker context use", "`docker context create prod --docker host=ssh://user@h` + `docker context use prod` switches daemons per command — multi-host fleets from one CLI, contexts exported per environment."),
+    ("compose profiles", "`profiles: [debug]` marks optional services started only with `--profile debug` — seeders/debuggers out of default `up`, one flag away when needed."),
+    ("compose depends healthy", "`depends_on: {db: {condition: service_healthy}}` orders on HEALTHCHECK, not just start — plus app-level retries, because healthy-then-crash still happens."),
+    ("compose env secrets", "`.env` + `env_file` for config, `secrets:` (files under /run/secrets) for credentials — committed `.env` with secrets is the most common compose breach, review for it."),
+    ("compose restart policies", "`restart: unless-stopped` for services; `deploy.restart_policy` (Swarm: condition/on-failure windows) differs — Compose ignores `deploy`, Swarm needs it."),
+    ("compose watch develop", "`develop: {watch: [{path: ., action: rebuild}]}` live-syncs code into running services — inner-loop compose without manual up/build cycles."),
+]
+
 # (compose field, explanation)
 COMPOSE_FIELDS = [
     ("image", "Pins the exact image (always tag versions, never bare names relying on latest)."),
@@ -361,7 +417,7 @@ PHRASING_SQL = [
 
 def gen_docker():
     out = []
-    for cmd, expl in DOCKER_FLAGS + [(f"compose {f}", e) for f, e in COMPOSE_FIELDS]:
+    for cmd, expl in DOCKER_FLAGS + DOCKER_DOCS + [(f"compose {f}", e) for f, e in COMPOSE_FIELDS]:
         for p in PHRASINGS:
             out.append((p.format(c=cmd), expl))
     return out
