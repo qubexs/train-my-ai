@@ -21,6 +21,13 @@ def sanitize(text):
     """Remove role-play echo (Pengguna:/Pembantu: lines), instruction echo,
     system-prompt echo (0.5B models repeat system as answer),
     and collapse repeats."""
+    # Model penaakulan (Qwen3.5): buang kesan berfikir, ambil jawapan akhir.
+    # Ada "[End thinking]" -> ambil selepas yang TERAKHIR (walau tanpa Start).
+    # Tiada penutup (terpotong di tengah fikir) -> kosongkan (finish() beri panduan).
+    if "[End thinking]" in (text or ""):
+        text = (text or "").split("[End thinking]")[-1]
+    elif "[Start thinking]" in (text or ""):
+        text = ""
     # Substrings (lowercase) that only appear in system prompt / instructions.
     # If a model echoes them, drop that line — real answers never need them.
     SYS_ECHO = (
@@ -66,6 +73,12 @@ def sanitize(text):
         'bukan "komunitas"',
         "format wajib setiap jawapan",
         "mandatory format for every answer",
+        "max 3 tool steps",
+        "only use tools when needed",
+        "fikir section",
+        "jawapan akhir section",
+        "thinking section",
+        "final answer section",
         "<fikiran ringkas",
         "<brief 1-2 lines",
         "<jawapan penuh",
@@ -184,18 +197,25 @@ def system_prompt(name, lang, tools_on=True, size="0.5B"):
              "FINAL ANSWER: <full answer>")
     if tools_on:
         base += "\n\n" + TOOL_SPEC
+    if lang == "ms":
+        base += "\nJika anda model penaakulan, berfikir RINGKAS (maksimum 5 langkah) — jangan meluah panjang."
+    else:
+        base += "\nIf you are a reasoning model, think BRIEFLY (max 5 steps) — never ramble."
     return base
 
 
 def split_thinking(text, lang="ms"):
-    """Pisah fikiran vs jawapan akhir. Returns (thinking|None, answer)."""
+    """Pisah fikiran vs jawapan akhir. Returns (thinking|None, answer).
+    Belah pada kemunculan TERAKHIR (model penaakulan kadang bincang format
+    dahulu sebelum tulis jawapan sebenar)."""
     mark = "jawapan akhir" if lang == "ms" else "final answer"
-    parts = re.split(mark, text or "", flags=re.IGNORECASE, maxsplit=1)
-    if len(parts) == 2 and parts[1].strip():
-        think = sanitize(parts[0])
+    hits = list(re.finditer(mark, text or "", flags=re.IGNORECASE))
+    if hits and hits[-1].end() < len(text or ""):
+        think = sanitize((text or "")[:hits[-1].start()])
         think = re.sub(r"^(fikir|thinking)\s*:\s*", "", think, flags=re.IGNORECASE)
-        answer = re.sub(r"^[\s:\-]+", "", parts[1])
-        return think or None, answer
+        answer = re.sub(r"^[\s:\-]+", "", (text or "")[hits[-1].end():])
+        if answer.strip():
+            return think or None, answer
     return None, text
 
 
@@ -263,10 +283,11 @@ def malay_fix(text):
 
 def run_agent(backend, question, name="XCoder", lang="ms", history=None,
               tools_on=True, max_steps=3, tool_ctx=None, on_tool=None,
-              expert_ctx="", on_think=None, size="0.5B"):
+              expert_ctx="", on_think=None, size="0.5B", max_tokens=None):
     """Returns (final_answer, tps, tools_trace). expert_ctx grounds the model
     on the real active expert + registry so it never invents model names.
-    Thinking trace is parsed and shown via on_think (always on)."""
+    Thinking trace is parsed and shown via on_think (always on).
+    max_tokens: bajet token (None = lalai backend; model penaakulan perlu lebih)."""
     history = history or []
     tool_ctx = tool_ctx or {}
     messages = list(history[-4:]) + [{"role": "user", "content": question}]
@@ -321,7 +342,7 @@ def run_agent(backend, question, name="XCoder", lang="ms", history=None,
                                                      "ia berhenti. Jangan ulang dari awal."
                                                      if lang == "ms" else
                                                      "Continue the cut-off answer above from exactly where it "
-                                                     "stopped. Do not restart.")}])
+                                                     "stopped. Do not restart.")}], max_tokens)
             except Exception:
                 break
             if ctps:
@@ -335,7 +356,7 @@ def run_agent(backend, question, name="XCoder", lang="ms", history=None,
 
     budget = max_steps + 1  # total tool executions allowed
     for _ in range(max_steps + 1):
-        raw, tps, fin = ask(system, messages)
+        raw, tps, fin = ask(system, messages, max_tokens)
         calls = extract_tool_calls(raw) if tools_on else []
         if not calls:
             show_think(raw)
@@ -358,6 +379,6 @@ def run_agent(backend, question, name="XCoder", lang="ms", history=None,
     plain = system_prompt(name, lang, False)
     if expert_ctx:
         plain += "\n\n" + expert_ctx
-    raw, tps, fin = ask(plain, messages)
+    raw, tps, fin = ask(plain, messages, max_tokens)
     show_think(raw)
     return finish(strip_tool_blocks(raw), fin == "length"), tps, trace

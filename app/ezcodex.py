@@ -190,6 +190,24 @@ def make_backend(args, cli_path=None, model_path=None):
     return LlamaCliBackend(cli, model, n_predict=args.max_tokens)
 
 
+def model_size(name, file=""):
+    """Label saiz untuk system prompt, dari nama + fail model (base kini 1.5B)."""
+    n = ((name or "") + " " + (file or "")).lower()
+    if "gemma" in n or "4.5b" in n:
+        return "4.5B"
+    if "3.5" in n or re.search(r"(?<![\d.])2b", n):
+        return "2B"
+    if "1.5b" in n:
+        return "1.5B"
+    return "0.5B"
+
+
+def is_thinking(name, file=""):
+    """Kesan model penaakulan (Qwen3.5 kes berfikir panjang, perlu bajet 2x)."""
+    n = ((name or "") + " " + (file or "")).lower()
+    return ("3.5" in n or "think" in n or "reason" in n or "qwq" in n)
+
+
 def match_cur(model_path_str):
     for m in scan_models(MODELS_DIR):
         if m.get("file") and str(model_path_str or "").replace("\\", "/").endswith(m["file"]):
@@ -536,6 +554,12 @@ def repl(args, shared=None):
         cur = {"name": cand["name"], "domains": cand.get("domains", [dom])}
         print(f"-> route: {cur['name']} [{dom}] (satu model aktif)")
 
+    def cur_size():
+        """Label saiz model aktif (registry fail, bukan tekaan nama)."""
+        hit = next((x for x in scan_models(MODELS_DIR)
+                    if x.get("name") == cur.get("name")), {})
+        return model_size(cur.get("name", ""), hit.get("file", ""))
+
     def make_plan(task):
         """Rancangan bernombor (pengurus gemma jika ada, else model aktif)."""
         psys = ("Anda perancang projek. Balas dengan senarai bernombor TEPAT 6 langkah ke bawah "
@@ -643,7 +667,7 @@ def repl(args, shared=None):
                             print(f"(tiada pakar {sdom} — terus dengan {cur['name']})")
                 print(f"{short} berfikir ({cur['name']}) ...")
                 try:
-                    msize = "4.5B" if "gemma" in cur.get("name", "") else "0.5B"
+                    msize = cur_size()
                     ans, tps, trace = run_agent(backend, sq, name=name, lang=lang, history=history,
                                                 tools_on=tools_on, tool_ctx=tool_ctx, on_tool=on_tool,
                                                 expert_ctx=expert_context(cur) if auto_route else "",
@@ -1011,7 +1035,7 @@ def repl(args, shared=None):
                         if cur.get("name") != mg.get("name"):
                             switch_to(mg, GENERAL)
                             print(f"(soalan terbuka — pengurus {MANAGER_NAME} mengambil alih)")
-                        msize = "4.5B" if "gemma" in cur.get("name", "") else "0.5B"
+                        msize = cur_size()
                         try:
                             ans, tps, trace = run_agent(backend, q, name=name, lang=lang, history=history,
                                                         tools_on=tools_on, tool_ctx=tool_ctx, on_tool=on_tool,
@@ -1064,7 +1088,7 @@ def repl(args, shared=None):
                         base = pick_base()
                         if base is None:
                             print("(tiada model base berfail — jawab dengan model semasa)")
-                            msize = "0.5B"
+                            msize = cur_size()
                             try:
                                 ans, tps, trace = run_agent(backend, q, name=name, lang=lang, history=history,
                                                             tools_on=tools_on, tool_ctx=tool_ctx, on_tool=on_tool,
@@ -1081,11 +1105,15 @@ def repl(args, shared=None):
                             acc = []
                             try:
                                 _b0 = _t5.time()
+                                _bbig = (args.max_tokens * 2 if is_thinking(
+                                    base.get("name", ""), base.get("file", "")) else None)
                                 bans, btps, btrace = run_agent(
                                     backend, q, name=name, lang=lang, history=history,
                                     tools_on=tools_on, tool_ctx=tool_ctx, on_tool=on_tool,
                                     expert_ctx=expert_context(cur) if auto_route else "",
-                                    on_think=on_think, size="0.5B")
+                                    on_think=on_think,
+                                    size=model_size(base.get("name", ""), base.get("file", "")),
+                                    max_tokens=_bbig)
                             except KeyboardInterrupt:
                                 print("(dihenti)")
                                 continue
@@ -1119,11 +1147,15 @@ def repl(args, shared=None):
                                 print(f"{short} berfikir ({m['name']}) ...")
                                 try:
                                     _s0 = _t5.time()
+                                    _lbig = (args.max_tokens * 2 if is_thinking(
+                                        m.get("name", ""), m.get("file", "")) else None)
                                     eraw, etps, etrace = run_agent(
                                         backend, sq, name=name, lang=lang, history=history,
                                         tools_on=False, tool_ctx=tool_ctx, on_tool=None,
                                         expert_ctx=expert_context(cur) if auto_route else "",
-                                        on_think=on_think, size="0.5B")
+                                        on_think=on_think,
+                                        size=model_size(m.get("name", ""), m.get("file", "")),
+                                        max_tokens=_lbig)
                                 except KeyboardInterrupt:
                                     print("(dihenti — pakar berbaki dilangkau)")
                                     break
@@ -1158,7 +1190,9 @@ def repl(args, shared=None):
                                         backend, oq, name=name, lang=lang, history=history,
                                         tools_on=False, tool_ctx=tool_ctx, on_tool=None,
                                         expert_ctx=expert_context(cur) if auto_route else "",
-                                        on_think=on_think, size="0.5B")
+                                        on_think=on_think,
+                                        size=model_size(base.get("name", ""), base.get("file", "")),
+                                        max_tokens=_bbig)
                                 except KeyboardInterrupt:
                                     print("(dihenti — pakar berbaki dilangkau)")
                                     break
@@ -1184,7 +1218,7 @@ def repl(args, shared=None):
                                 print_speed_recap(rrows)
                             tps = None  # kelajuan sudah dipapar live + recap; elak duplikat di ekor
                 else:
-                    msize = "4.5B" if "gemma" in cur.get("name", "") else "0.5B"
+                    msize = cur_size()
                     try:
                         ans, tps, trace = run_agent(backend, q, name=name, lang=lang, history=history,
                                                     tools_on=tools_on, tool_ctx=tool_ctx, on_tool=on_tool,

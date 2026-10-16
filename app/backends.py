@@ -29,6 +29,12 @@ def transcript_text(messages):
     return turns
 
 
+def is_thinking_model(model_path):
+    """Kesan model penaakulan (Qwen3.5 fikir panjang; suis template ada)."""
+    n = str(model_path or "").lower()
+    return ("3.5" in n or "think" in n or "reason" in n or "qwq" in n)
+
+
 def transcript_messages(messages):
     """Same policy as transcript_text, but as OpenAI message list for APIs."""
     out = []
@@ -72,6 +78,10 @@ class LlamaCliBackend:
         # Sistem di-inline sebagai blok ChatML (bukan -sys): replika tepat format
         # latihan SFT yang disahkan reproduksi verbatim.
         full = f"<|im_start|>system\n{system}<|im_end|>\n" + "\n".join(turns)
+        if is_thinking_model(self.model):
+            # Suis template natif Qwen3.5: blok <think> kosong = fikir DIMATIKAN.
+            # Tanpa ini model membazir ratusan token meracau sebelum menjawab.
+            full += "<think>\n\n</think>\n\n"
         try:
             p = subprocess.run(
                 [self.cli, "-m", self.model, "-c", str(self.ctx),

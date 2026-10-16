@@ -1,6 +1,14 @@
 {
   "models": [
     {
+      "id": "Qwen/Qwen3.5-2B",
+      "label": "Qwen3.5 2B (reasoning, 256K ctx)",
+      "params": "2B",
+      "vendor": "Qwen",
+      "fits_t4": true,
+      "note": "Thinking model: strip [Start/End thinking] at display. Q4_K_M ~1.4GB."
+    },
+    {
       "id": "Qwen/Qwen2.5-0.5B-Instruct",
       "label": "Qwen2.5 0.5B Instruct (default, T4-safe)",
       "params": "0.5B",
