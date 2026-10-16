@@ -201,6 +201,72 @@ DOCKER_DOCS = [
     ("compose watch develop", "`develop: {watch: [{path: ., action: rebuild}]}` live-syncs code into running services — inner-loop compose without manual up/build cycles."),
 ]
 
+# Round 5: gap-fill — daemon.json, swarm ops, compose CLI, supply chain, drivers.
+DOCKER_GAPS = [
+    ("dockle cis bench", "Dockle audits images against CIS benchmarks (empty credentials, licences, setuid); fail CI on FATAL, triage WARN — image policy as code alongside hadolint lint."),
+    ("dive analysis", "`dive app:1` navigates layers showing wasted bytes per layer; efficiency score +100% means nothing duplicated — inspect before optimizing blindly."),
+    ("buildkitd toml config", "`/etc/buildkitd.toml` tunes workers (`[worker.oci] max-parallelism`), GC (`gckeepstorage`), registries mirrors — daemon behavior versioned in git, not clicked in UIs."),
+    ("registry mirror", "`registry-mirrors: [http://mirror:5000]` in daemon.json pulls through cache; `insecure-registries` only for lab HTTP — mirrors cut external pulls and survive outages."),
+    ("credential helper pass", "`credsStore: pass` (or wincred/osxkeychain) encrypts registry logins in OS keychains — raw base64 in config.json is obscured, not secret; `docker-credential-pass` per host."),
+    ("cosign sign verify", "`cosign sign --key cosign.key img:tag` attaches signatures; `cosign verify --key cosign.pub` enforces before deploy — Notary's successor for keyless (Fulcio/Rekor) or keyed signing in CI."),
+    ("trivy grype scan", "`trivy image app:1` / `grype app:1` list CVEs with severities and fixes; gate merges on CRITICAL, schedule daily rescans — scanners complement (not replace) minimal bases."),
+    ("snyk container test", "`snyk container test app:1 --severity-threshold=high` fails builds on known vulns with fix advice; monitor mode tracks base-image drift after release."),
+    ("init tini zombie", "`--init` injects tini (PID 1 reaping + signal forwarding); unwiped zombies and ignored SIGTERM trace to missing init — one flag, whole signal class fixed. Compose: `init: true`."),
+    ("ipc host share", "`--ipc host` shares host IPC namespace (shm-hungry apps, debuggers); default private IPC isolates — `--shm-size 2g` fixes Chrome/Selenium crashes without full host sharing."),
+    ("storage-opt size", "`--storage-opt size=20G` caps per-container writable layers on devicemapper/zfs/btrfs drivers — runaway logs inside containers stop eating host disks at the driver level."),
+    ("zfs storage driver", "ZFS driver (`storage-driver: zfs`, dataset per layer) brings compression/checksums/snapshots to layers; `zfs list -t snapshot` audits — copy-on-write done by the filesystem, not overlay code."),
+    ("btrfs storage driver", "Btrfs driver maps layers to subvolumes (instant snapshots, built-in checksums); fragmentation + quota groups need watching — pick per host kernel maturity, not habit."),
+    ("overlay2 override opts", "`storage-opts: [overlay2.override_kernel_check=true]` runs on older kernels deliberately; `overlay2.size` variant caps — overrides documented in daemon.json, never assumed across upgrades."),
+    ("mtu daemon fix", "MTU mismatches (VPNs, PPPoE, cloud overlays) silently blackhole big packets: set `'mtu': 1400` in daemon.json + matching compose `driver_opts: com.docker.network.driver.mtu` — `ping -M do -s 1472` proves the path."),
+    ("bip bridge range", "`\"bip\": \"10.200.0.1/24\"` moves docker0 off colliding office/VPN ranges; `fixed-cidr` subdivides — address planning before first `up`, renumbering after is outage work."),
+    ("dns daemon servers", "`\"dns\": [\"10.0.0.53\", \"8.8.8.8\"]` pins daemon-wide resolvers; per-container `--dns/--dns-search` override; user networks embed DNS anyway — daemon DNS matters for default-bridge legacy only."),
+    ("icc disable isolate", "`\"icc\": false` disables inter-container communication on default bridge (iptables isolation); user networks segment properly instead — default-bridge ICC=false breaks legacy links, which is the point."),
+    ("userland proxy disable", "`\"userland-proxy\": false` skips the usermode forwarders (hairpin NAT handles loopback) saving ports/CPU at scale; disable only after verifying hairpin works on your kernel — old hosts still need the proxy."),
+    ("live restore upgrade", "`\"live-restore\": true` keeps containers running across daemon upgrades/restarts — maintenances without rescheduling; incompatible with swarm managers (cluster state still migrates)."),
+    ("default ulimit daemon", "`\"default-ulimits\": {nofile: {Hard: 65535, Soft: 65535}}` raises FD ceilings fleet-wide; per-service `ulimits:` override — databases stop hitting 1024 defaults at 3am under load."),
+    ("log opts rotate", "`\"log-driver\": \"json-file\", \"log-opts\": {\"max-size\": \"10m\", \"max-file\": \"3\"}` bounds logs per container fleet-wide; compose `logging:` overrides per chatty service — disks fill from logs, plan rotation first."),
+    ("drain pause node", "`docker node update --availability drain N` evicts tasks for maintenance (pause freezes scheduling without evicting); `--availability active` returns — rolling host work without killing workloads."),
+    ("global service mode", "`--mode global` runs one task per node (agents, log shippers, monitors) vs replicated counts — daemonset semantics; `--mode replicated-job` runs N total then stops (migrations, batch)."),
+    ("placement constraint", "`--constraint node.role==manager` / `node.labels.disk==ssd` / `engine.labels.arch==arm64` pins tasks to capable nodes; `--placement-pref spread=node.labels.rack` balances — labels planned, not improvised."),
+    ("update order config", "`--update-order stop-first` (vs start-first default) frees ports/volumes before new tasks start; `--update-monitor` + `--update-max-failure-ratio` gate rollouts on health — stateful services need stop-first."),
+    ("rollback config values", "`--rollback-delay/--rollback-monitor/--rollback-max-failure-ratio` tune auto-undo separately from rollout values; `service update --rollback` manual trigger — rollback config reviewed as carefully as rollout."),
+    ("secret rotate steps", "Rotate without downtime: `secret create db_pass_v2`, `service update --secret-rm old --secret-add new`, verify, `secret rm old` — versioned names (never reuse), apps reload on file change or restart."),
+    ("config create inspect", "`docker config create nginx_conf ./nginx.conf` stores non-secret configs; `config inspect --pretty` audits; services mount under `/` (configurable target) — configs versioned like code, mounted like files."),
+    ("network attachable", "`docker network create --attachable net` lets standalone `docker run --network net` containers join swarm-scoped overlays — debugging and one-offs inside service networks without service definitions."),
+    ("internal network", "`--internal` blocks external egress (DB/backplane nets); `--ingress` is the special publish mesh — internal for data planes, ingress only for published ports."),
+    ("host mode port swarm", "`--publish mode=host,target=80` bypasses ingress mesh (source IP preserved, no VIP load-balance) for logged/proxied traffic; default ingress mode balances, host mode reveals — choose per service visibility needs."),
+    ("dnsrr vip endpoint", "`--endpoint-mode dnsrr` returns task IPs (client-side balance: gRPC, stateful); default `vip` load-balances via mesh — endpoint mode per service, not per stack, matched to protocol semantics."),
+    ("macvlan 802.1q trunk", "`docker network create -d macvlan --subnet=.. -o parent=eth0.100 net` tags VLAN 100 giving containers LAN IPs; promiscuous mode required on the parent — legacy appliances and DHCP clients as containers."),
+    ("none network use", "`--network none` (or `network_mode: none`) gives loopback only — maximum isolation for untrusted compute/batch; add `--cap-drop ALL` and read-only rootfs to complete the cell."),
+    ("container network mode", "`--network container:web` shares another container's net stack (sidecars: proxies, log tailers, debuggers) — localhost between them, lifecycle coupled; compose `network_mode: service:web` equivalent."),
+    ("config prune secret prune", "`docker config prune`/`secret prune` remove unused objects; configs still referenced by services survive — prune before scripting bulk creates, audit after."),
+    ("system events filter", "`docker events --filter 'event=die' --filter 'container=web' --since 1h --format` streams lifecycle as structured data — alerting and audit pipelines consume events, humans read logs."),
+    ("config inspect pretty", "`docker config inspect --pretty cfg` shows human-readable metadata; `--format` extracts for scripts — inspect before mounting unknown configs into services."),
+    ("secret inspect safe", "`secret inspect` shows metadata only, never values (values live only in tasks' `/run/secrets`) — safe to log; values escaping into inspect output would be a CVE-class bug."),
+    ("node inspect labels", "`docker node inspect --pretty N` shows availability, role, labels, engine version; `node update --label-add` stages placement targets — label before constraining, always."),
+    ("swarm ca rotate", "`docker swarm ca --rotate` rotates the signing CA (tasks re-issue certs rolling); `--ca-cert/--external-ca` integrate enterprise PKI — expired swarm CAs freeze joins, rotate on calendar, not incident."),
+    ("swarm token rotate", "`docker swarm join-token --rotate worker` invalidates leaked join tokens; separate manager/worker tokens limit blast radius — committed tokens rotate immediately, then git-history scrubbed."),
+    ("stack ps services", "`docker stack ps mystack` shows task states per service (failed tasks with error text); `stack services` desired vs running — stack-level views beat per-service guessing during incidents."),
+    ("compose convert dry", "`docker compose convert` renders the merged model without running (like `config`); `--models`/`--profiles` variants preview subsets — review generated truth before `up`."),
+    ("compose top ps", "`docker compose top` shows processes per service (PID/host view); `compose ps --format json` scripts health — top for humans, ps-json for monitors."),
+    ("compose events stream", "`docker compose events` streams container lifecycle with timestamps; `--json` feeds pipelines — deploy watchers consume events, not polling ps loops."),
+    ("compose pause unpause", "`compose pause` freezes (SIGSTOP, memory held) vs `stop` (SIGTERM, containers persist) vs `down` (removed); `unpause` resumes — pause for inspection, stop for restarts, down for teardown."),
+    ("compose kill signal", "`compose kill -s SIGQUIT web` sends signals (dumps, reloads) without lifecycle change; default KILL — signal for diagnosis, kill for stuck, stop for graceful."),
+    ("compose stop vs down", "`stop` halts (state kept, fast restart); `down` removes containers/networks (`-v` also volumes = data loss); `rm` deletes stopped — stop restarts, down rebuilds, rm forgets."),
+    ("compose rm volumes danger", "`compose rm -v` deletes anonymous volumes with containers; named volumes survive unless `down -v` — the `-v` flag is where data goes to die, confirm twice."),
+    ("compose create only", "`compose create` builds containers without starting (inspect/network pre-checks); `up` starts; `start` restarts existing — create stages, up runs, start resumes."),
+    ("compose ls contexts", "`compose ls` lists projects across contexts with status; `-a` includes stopped — fleet awareness before per-project commands in multi-tenant hosts."),
+    ("compose cp files", "`compose cp web:/app/out ./out` copies both directions without exec/ssh; `compose cp ./seed.sql db:/docker-entrypoint-initdb.d/` seeds DBs — file moves without shell access."),
+    ("compose watch ignore", "`develop.watch` with `ignore:` patterns skips node_modules/.git noise; `action: sync` (fast files) vs `rebuild` (deps) vs `restart` — ignore lists keep watchers from hot-looping."),
+    ("compose bridge legacy", "`docker compose` v2 (Go, `compose` subcommand) vs legacy `docker-compose` (Python, `_` separators); v2 `name:` field controls project naming — scripts pinned to one, never both."),
+    ("compose env interpolation", "`${VAR:-default}` in compose files with `.env` beside the file (or `--env-file`); `$$` escapes literals — `compose config` renders truth, review it when vars misbehave."),
+    ("compose extends reuse", "`extends: {service: base, file: common.yml}` inherits definitions (env/logging/resources) avoiding repetition; overrides merge — shared stanzas, per-service deltas."),
+    ("windows containers modes", "Windows offers process isolation (same build, fast) vs Hyper-V isolation (kernel per container, version-flexible); `isolation: hyperv` per service; LCOW runs Linux containers on Windows hosts — match mode to host build compatibility."),
+    ("docker desktop resources", "Desktop (Mac/Win) runs a Linux VM: CPUs/memory/disk sliders + virtiofs file sharing + `host.docker.internal` gateway — dev parity with prod Linux, never production itself; WSL2 backend on Windows."),
+    ("save load airgap", "`docker save img:tag | gzip > a.tgz` then sneakernet + `docker load -i` transfers without registries; `--platform` variants per arch — air-gapped fleets run on save/load discipline plus checksum logs."),
+    ("image attest sbom", "`docker buildx build --attest type=sbom --attest type=provenance --sbom=true` attaches build evidence; `buildx imagetools inspect` reveals manifests+attestations — signatures cover the index, SLSA-minded supply chains demand them."),
+]
+
 # (compose field, explanation)
 COMPOSE_FIELDS = [
     ("image", "Pins the exact image (always tag versions, never bare names relying on latest)."),
@@ -417,7 +483,7 @@ PHRASING_SQL = [
 
 def gen_docker():
     out = []
-    for cmd, expl in DOCKER_FLAGS + DOCKER_DOCS + [(f"compose {f}", e) for f, e in COMPOSE_FIELDS]:
+    for cmd, expl in DOCKER_FLAGS + DOCKER_DOCS + DOCKER_GAPS + [(f"compose {f}", e) for f, e in COMPOSE_FIELDS]:
         for p in PHRASINGS:
             out.append((p.format(c=cmd), expl))
     return out
