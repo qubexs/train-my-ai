@@ -56,6 +56,30 @@ atomic symlink deploys + FPM reload + opcache reset; FrankenPHP workers
 (stateless discipline); audit/outdated scheduled; Psalm/PHPStan leveled;
 Box PHAR distribution.
 
+## Advanced II (SPL/FFI/async/crypto/i18n/integrations)
+
+SPL streaming (`SplFileObject` CSV!), heaps/queues, recursive iterators;
+generators bidirectional (`send/throw/getReturn`, `yield from`); FFI
+(structs/callbacks/free/preload-gated!); Fibers + Revolt/Amp (never manual
+threads!); WeakMap cycles; readonly deep-copy semantics; backed enums +
+methods/traits; attributes reflected (cached!); FCC over string callables;
+`match` guards exhaustive; interfaces (`Stringable/ArrayAccess/Iterator/
+Countable/Observer`); CSV injection (`=+...@` prefixed!); Excel chunk filters;
+PDF merge (FPDI) vs style (mPDF) vs quality (Chrome); QR/EAN check digits;
+JWT JWK rotation + constraints; OAuth2 PKCE + state + refresh; SAML metadata
++ SLO; TOTP window + hashed backups; WebAuthn counter + UV; Casbin model/policy;
+respect/rakit chains; PHP-DI compiled prod; PSR-14 stoppable; syslog central;
+dotenv immutable + vault rotation; Symfony tables/progress/signals; Prophecy/
+Codeception/Behat layers; Infection MSI + Deptrac layers + churn hotspots;
+phpDocumentor guides; Blackfire compares; Amp/ReactPHP streams; Swoole
+tables/timers; RoadRunner KV/Temporal; FrankenPHP workers; parallel Runtime
+(no-GIL!); OPcache file-cache + preload + JIT counters; Redis sessions +
+locks; pepper + dual-rotate; sodium sealed/nonces/memzero; mbstring strict;
+ICU prices/plurals/dates; streaming hashes; CMS timestamps; GnuPG isolated;
+KX directions split; zlib streaming; Zip AES (never ZipCrypto!); curl_multi
++ abort callbacks; socket servers framed; TLS verify (never off!); FTP
+passive+binary; Gearman background; AMQP topology-as-code + DLX.
+
 ## Beginner path (W3Schools flow)
 
 Install (XAMPP/MAMP or `php -S` built-in dev server!) → syntax/comments →
