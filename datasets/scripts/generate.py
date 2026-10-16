@@ -508,6 +508,55 @@ SQL_CONCEPTS = [
     ("Panduan cepat mula query?", "1) Senarai lajur perlu, 2) FROM + JOIN betul, 3) WHERE tapis, 4) GROUP/HAVING jika agregat, 5) ORDER + LIMIT, 6) EXPLAIN sebelum ke produksi."),
 ]
 
+SQL_ADV = [
+    ("EXCEPT vs INTERSECT vs MINUS", "`EXCEPT` (tolak set, standard!), `INTERSECT` (kekalkan persamaan), Oracle `MINUS` (EXCEPT lama!); `EXCEPT ALL` kekalkan duplikat — operasi set menegak (lajur sepadan!), dedupes lalai kecuali ALL."),
+    ("VALUES table constructor", "`VALUES (1,'a'), (2,'b')` membina jadual sebaris (`FROM (VALUES ...) AS t(id,nama)`); `TABLE t` pintasan SELECT * — data ujian sebaris (tanpa jadual sebenar!), CTE gabung (`WITH v AS (...)`)."),
+    ("TABLESAMPLE sampling", "`TABLESAMPLE BERNOULLI(10)` rawak per-baris (~10%!), `SYSTEM (1000)` blok pantas (berat sebelah berkelompok!) — sampel QA (bukan anggaran tepat!), kaedah didokumen (keputusan dilabel anggaran!)."),
+    ("GROUPING SETS CUBE ROLLUP", "`GROUP BY GROUPING SETS ((a),(a,b),())` kubus tersuai; `ROLLUP(a,b)` hierarki subtotal; `CUBE(a,b)` semua kombinasi; `GROUPING()` label aras — agregat multi-aras satu laluan (bukan UNION manual!), NULL dikelirukan (GROUPING bezakan!)."),
+    ("QUALIFY filter windows", "Snowflake/DuckDB `QUALIFY ROW_NUMBER() ... = 1` tapis hasil window (tanpa subquery!); standard: subquery + WHERE — QUALIFY di mana disokong (bacaan bersih!), subquery portabel (semua enjin!)."),
+    ("window frame ROWS RANGE", "`ROWS BETWEEN 6 PRECEDING AND CURRENT ROW` fizikal (purata bergerak 7-hari!), `RANGE` rakan-nilai (seri berkongsi!), `GROUPS` rakan-kumpulan; `UNBOUNDED PRECEDING` kumulatif — frame eksplisit (lalai `RANGE UNBOUNDED` menipu!), unit difahami."),
+    ("window LEAD LAG IGNORE", "`LAG(x) IGNORE NULLS` langkau tiada (siri masa berlubang!); `LEAD(x, 2)` pandang 2 ke depan; `NTH_VALUE(x, 3)` kedudukan; `NTILE(4)` kuartil; `CUME_DIST/PERCENT_RANK` taburan — NULL dilayan (IGNORE vs RESPECT!), bingkai ditetapkan."),
+    ("window FILTER PARTITION", "`COUNT(*) FILTER (WHERE aktif) OVER (PARTITION BY bandar)` agregat bersyarat per tetingkap (tanpa CASE!); `PARTITION BY` berbilang lajur; NULL partition berkumpul (dijangka!) — FILTER elegan (CASE verbose!), partition direka (bukan rawak!)."),
+    ("LATERAL join function", "`JOIN LATERAL (SELECT ... WHERE x.id = t.id LIMIT 3)` korelasi per baris (top-N setiap kumpulan!); SQL Server `CROSS/OUTER APPLY` setara — LATERAL untuk per-baris subquery (N kecil!), pra-agregat untuk besar (skala!)."),
+    ("PIVOT UNPIVOT dynamic", "`PIVOT (SUM(jumlah) FOR suku IN ('Q1','Q2'))` baris-ke-lajur; `UNPIVOT` songsang; dinamik perlukan SQL dinamik (senarai lajur dibina!) — PIVOT untuk laporan tetap (lajur diketahui!), app pivot untuk dinamik (fleksibiliti!)."),
+    ("MERGE upsert matched", "`MERGE INTO sasaran USING sumber ON ... WHEN MATCHED THEN UPDATE ... WHEN NOT MATCHED THEN INSERT ... WHEN NOT MATCHED BY SOURCE THEN DELETE` segerak penuh atom (ETL perlahan-berubah!); syarat tambahan (`AND`) cabang halus — MERGE atom (bukan baca-tulis-berlumba!), diuji per cabang (matched/unmatched/both!)."),
+    ("RETURNING OUTPUT clause", "Postgres `RETURNING id` (ID segar tanpa round-trip!); SQL Server `OUTPUT inserted.id` setara; MySQL tiada (`LAST_INSERT_ID()` ganti!) — ID dibaca dari kenyataan sama (bukan query kedua berlumba!), dialek diketahui."),
+    ("TOP FETCH pagination", "T-SQL `TOP 10` / `OFFSET 20 ROWS FETCH NEXT 10 ROWS ONLY` (standard!); MySQL `LIMIT 10, 20` (offset-dalam untuk jutaan! keyset ganti!); Oracle `FETCH FIRST` — halaman dengan ORDER stabil (tanpa ORDER rawak!), keyset skala (offset tidak!)."),
+    ("JSON query modify", "`JSON_VALUE(doc,'$.nama')` ekstrak, `JSON_QUERY` objek, `JSON_MODIFY(doc,'$.umur',30)` kemas kini (SQL Server!); `ISJSON()` kekang; indeks pada laluan lazim — JSON untuk fleksibel (bukan ganti lajur disoal!), diindeks bila panas."),
+    ("generated virtual stored", "`harga_cukai DECIMAL GENERATED ALWAYS AS (harga*1.1) STORED` dikira+konsisten (indeks boleh!); VIRTUAL kira-semasa-baca (jimat stor!); MySQL/Postgres sintaks berbeza sedikit — terbitan dijamin (bukan app hitung!), STORED untuk indeks."),
+    ("temporal system tables", "`PERIOD FOR SYSTEM_TIME` + `WITH SYSTEM VERSIONING` simpan sejarah baris automatik (`FOR SYSTEM_TIME AS OF` tanya masa lalu!); retention (`HISTORY_RETENTION`) — audit tanpa trigger (enjin uruskan!), purata kos stor (dasar jelas!)."),
+    ("graph node edge match", "`CREATE TABLE Orang AS NODE` + `Suka AS EDGE`; `MATCH (a:Orang)-[Suka]->(b)` lalui rangkaian (rakan-rakan-rakan!); `SHORTEST_PATH` laluan — graf dalam SQL (rangkaian sosial!), khusus graf DB untuk dalam (Neo4j!)."),
+    ("spatial index nearest", "`CREATE SPATIAL INDEX` + `ST_Distance_Sphere(p1,p2)` meter + `ST_Contains(geom, point)` dalam-kawasan; SRID sepadan (4326 GPS!) — unit difahami (darjah vs meter!), indeks spatial (imbasan penuh dibunuh!)."),
+    ("columnstore archive analytics", "Columnstore (SQL Server: `CLUSTERED COLUMNSTORE INDEX`) mampat 10x + imbas lajur (analitik!); archive tables + `COLUMNSTORE_ARCHIVE` sejuk — OLTP baris (transaksi!), analitik kolumnar (imbasan!), pilihan mengikut beban."),
+    ("memory optimized table", "`MEMORY_OPTIMIZED` + `DURABILITY=SCHEMA_ONLY` (sementara pantas!) / `SCHEMA_AND_DATA` (kekal!); hash indexes (`BUCKET_COUNT` betul!); natively compiled procs — memori untuk panas melampau (had RAM!), kekal disemak (hilang = bencana!)."),
+    ("always encrypted enclave", "Always Encrypted (kolum sulit, kunci di luar DB!) + enklave VBS (pengiraan atas sulit!) — DBA tidak nampak plaintext (pematuhan!); driver khas (bukan semua pemacu sokong!) — sulit hujung-ke-hujung (aplikasi sahaja pegang kunci!)."),
+    ("dynamic masking rls azure", "`MASKED WITH (FUNCTION='email()')` topeng per-peranan (panggilan pusat nampak XXX!); RLS `FILTER PREDICATE` baris per pengguna — topeng paparan (bukan keselamatan penuh!), RLS baris (multi-tenant!), audit gabung."),
+    ("ssis package deploy", "SSIS (`.dtsx`, aliran data/kawalan) deploy ke SSISDB (`catalog.deploy_project`); parameter persekitaran (dev/prod!); execution reports — ETL visual (jejak audit!), pakej berversi (git!), jadual ejen (bukan manual!)."),
+    ("ssrs report paginated", "SSRS `.rdl` laporan berpaginasi (jadual/matrik/carta!) + langganan (emel berjadual!) + parameter cascading — laporan operasi (cetak/PDF!), bukan dasbor interaktif (Power BI untuk itu!)."),
+    ("powerbi directquery vs import", "Import (mampat xColumnar, pantas, refresh berjadual!) vs DirectQuery (langsung, sentiasa segar, perlahan!) vs Direct Lake — mod dipilih per data (saiz/kesegaran!), agregasi tabulasi (`SUMX` iterator!), DAX measured (bukan lajur dikira untuk agregat!)."),
+    ("delta lake merge vacuum", "`MERGE INTO` upsert lakehouse + `VACUUM` (retensi 7 hari! time-travel selamat!) + `OPTIMIZE ZORDER` (laju!); Bronze→Silver→Gold medallion — lakehouse berversi (perjalanan masa!), vakum dijadual (storan terkawal!)."),
+    ("iceberg snapshot expire", "`CALL system.expire_snapshots(table, older_than)` potong sejarah; `rewrite_data_files` padatkan; partition evolution (skema berubah selamat!) — snapshot diurus (storan!), evolusi tanpa tulis semula (migrasi sifar-downtime!)."),
+    ("dbt ref test source", "`{{ ref('pesanan') }}` graf pergantungan (tertib bina automatik!); `source()` mentah didokumen; `unique`+`not_null` tests setiap model (CI gagal bila pecah!); `snapshot` SCD2 sejarah — transformasi diuji (bukan harapan!), docs dijana (lineage!)."),
+    ("trino cost connectors", "Trino/Presto federasi (hive/postgres/kafka/delta dalam satu query!); connector pushdown disemak (`EXPLAIN`!); exchange spill cakera (tanya gergasi!) — federasi untuk gabungan (bukan pindah!), pushdown disahkan (tarik penuh = perlahan!)."),
+    ("snowflake clustering mpc", "`CLUSTER BY (tarikh)` mikro-partition prune (bukan indeks!); `AUTOMATIC_CLUSTERING` latar; `MPC` kongsi selamat (tiada salinan!) — kluster ikut turas (prune!), saiz gudang ikut beban (auto-gantung!), kos dipantau (kredit!)."),
+    ("bigquery partition expire", "`PARTITION BY DATE(dibuat)` + `partition_expiration_days` + `require_partition_filter` (imbasan penuh ditolak!) — partition wajib (kos!), luput automatik (storan terkawal!), slot ditempah beban stabil (atas permintaan berubah!)."),
+    ("clickhouse order pk skip", "`ORDER BY (tarikh, id)` primary key isihan (bukan indeks B-tree!); `PARTITION BY toYYYYMM` buang; `TTL` gerak sejuk; Skip indexes (`bloom_filter/minmax`) — susunan sisihan (prune!), TTL kitaran (panas→sejuk!), `FINAL` elak (gabung latar!)."),
+    ("duckdb parquet hive read", "`SELECT * FROM 's3://b/*.parquet'` query langsung (tiada server!); hive partitioning auto-dikesan; `COPY TO 'out.parquet'` eksport; MotherDuck kongsi (`ATTACH`) — analitik setempat (laptop berkuasa!), S3 sebagai tablespace (tiada ETL!)."),
+    ("sqlite fts5 trigram", "`CREATE VIRTUAL TABLE ft USING fts5(tajuk, isi)` + `MATCH 'kopi*'` prefix + `highlight()` snippet + `rank` susun; trigram tokenizer CJK — carian terbenam (tiada pelayan!), tokenizer ikut bahasa (ngram CJK!), vakum berkala."),
+    ("sqlite json generated", "`data->>'$.emel'` ekstrak + generated column berindeks untuk panas (`ADD COLUMN emel GENERATED ALWAYS AS (...) STORED`); `json_each` unnest; `json_patch` gabung — JSON fleksibel (tepi!), lajur nyata untuk disoal (indeks!)."),
+    ("sqlite upsert vacuum", "`INSERT ... ON CONFLICT(email) DO UPDATE SET nama=excluded.nama` upsert atom; `VACUUM INTO 'sandaran.db'` sandaran dalam talian (tidak kunci lama!); WAL mode konkurensi — upsert tanpa lumba (satu kenyataan!), vakum berkala (bukan auto!)."),
+    ("cockroach follower reads", "`AS OF SYSTEM TIME follower_read_timestamp()` baca replika (stale dibenarkan, pantas!); `ZONE CONFIG` pin/macau; `BACKUP SCHEDULED` — baca pengikut untuk analitik (bukan transaksi!), zon kawal latensi/kos."),
+    ("timescale hypertable policy", "`create_hypertable('metrik','masa')` auto-partition masa (chunk ~25% RAM!); compression + retention policies (`add_retention_policy('30 hari')`); continuous aggregates prakira — siri-masa tanpa pembedahan partition manual (dasar dijadual!)."),
+    ("kafka jdbc sink flatten", "JDBC Sink (`insert.mode=upsert`, `pk.mode=record_value`) tenggelamkan topik ke jadual (SMT `Flatten`/`ReplaceField` bentuk!); dead-letter `.errors` — tenggelam diisytihar (skema dipetakan!), ralat disalurkan (bukan digugurkan senyap!)."),
+    ("flink sql window watarmark", "`TUMBLE(ts, INTERVAL '1' MINUTE)` + `WATERMARK FOR ts AS ts - INTERVAL '5' SECOND` tangani lewat (side-output terlalu-lewat!); `MATCH_RECOGNIZE` corak peristiwa — watermark takrif 'tepat masa' (lewat disalurkan!), tetingkap pilih semantik (tumbling vs hop vs session!)."),
+    ("spark catalyst tungsten", "Catalyst mengoptimum (predicate pushdown! join order!), Tungsten laksana (whole-stage codegen!); `CACHE` panas guna-semula; `AQE` adaptif runtime — rancangan dibaca (`EXPLAIN`!), cache disengajakan (bukan harapan!), condong ditangani (salt keys!)."),
+    ("athena projection partition", "`projection.tarikh.type=date` + `storage.location.template` ramal partition tanpa MSCK (serverless discovery!); `require_partition_filter` selamatkan kos; Parquet+Snappy — unjuran elak baiki manual (skala!), saring partition (imbasan penuh = bil!), mampat betul."),
+    ("redshift distkey sortkey", "`DISTKEY(pelanggan_id)` sebaris join (collocated!), `SORTKEY(tarikh)` julat prune; `DISTSTYLE ALL` dimensi kecil salin; `VACUUM DELETE ONLY` pulih — kunci sebar ikut join (condong diukur!), isih ikut turas (prune!), vakum dijadual."),
+    ("dynamodb single table gsi", "Satu jadual + `PK/SK` overload (pola akses direka dahulu!) + GSI jarang (`sparse` jimat!) + `TransactWriteItems` atom; `Query` (bukan `Scan`!) — corak akses direka (bukan dinormalkan!), GSI bayar per tulis (sedikit, disengajakan!)."),
+    ("cassandra partition cluster", "Partition key sebaris (hotspot dibunuh!), clustering order dalam-partition; `ALLOW FILTERING` larangan prod; `tombstone` padam akhirnya (compaction!); quorum `LOCAL_QUORUM` — kunci partition direka (cardinality tinggi!), tombstone dipantau (baca perlahan!)."),
+]
+
+
 
 PHRASING_SQL = [
     "{q}",
@@ -558,7 +607,7 @@ def gen_sql():
     for q, s in joins:
         for p in PHRASING_SQL:
             out.append((p.format(q=q), f"```sql\n{s}\n```"))
-    for q, a in SQL_CONCEPTS:
+    for q, a in SQL_CONCEPTS + SQL_ADV:
         out.append((q, a))
     return out
 
