@@ -49,3 +49,18 @@ ignored when cached!); Telescope local-only + pruned; Horizon supervises
 style/analysis/upgrades; Forge provisioned vs Vapor serverless per traffic;
 Livewire (server reactivity, validate server-side!) / Inertia (no-API SPA) /
 Filament (policy-enforced admin) per team shape.
+
+## Official packages & guides (laravel.com + cheatsheet)
+
+Install: `php.new` scripts / Herd (parked `.test` domains, Pro DBs/mail) /
+`laravel new` prompts (tests/DB/starter) + `composer run dev` (server+queue+
+Vite). Full-stack (Blade/Livewire/Inertia) vs API (Sanctum + Next/mobile).
+Cashier (trials/invoices/webhooks, no PCI scope), Dusk (real browsers, CI
+headless), Scout (Meili/Algolia, `scout:import`), Pennant (flags per team,
+purge dead), Pulse (self-hosted cards, prune), Reverb + Echo (self-hosted
+sockets, presence), Boost (AI agents + `.ai/guidelines/`), Telescope local-only.
+Request lifecycle memorized (public/index → middleware → route → controller →
+policy → resource). Helpers: `Str::`/`Arr::`/`collect()`/`rescue()`/`retry()`/
+`tap()`/`dispatch()`/`report()`/`now()`/`config()` (cached — `env()` only in
+config files!). Pagination custom views + `appends()`; dump-server beyond `dd()`;
+`action()` refactor-safe URLs.
