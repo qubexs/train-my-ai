@@ -49,3 +49,33 @@ gh-ost/pt-osc for hot giants, watch replica lag!); blue-green atomic renames;
 ordered UUID PKs (`UUID_TO_BIN(...,1)`); CDC (Debezium/Maxwell/outbox
 transactional); migrations versioned (Flyway/Liquibase); ORMs picked per
 need (velocity vs explicit SQL, N+1 watched everywhere).
+
+## Beginner path (tutorialspoint flow)
+
+Install → connect (`mysql -u -p`) → `CREATE DATABASE` → tables
+(`CREATE/SHOW/DESCRIBE/ALTER/RENAME/CLONE/TRUNCATE/DROP`) → users
+(`CREATE/DROP/SHOW`, passwords, GRANT/REVOKE, lock/unlock) → queries
+(INSERT/SELECT/UPDATE/DELETE, REPLACE/IGNORE/UPSERT, INSERT..SELECT) →
+views (create/update/drop/rename) → indexes (unique/clustered/show/drop) →
+operators (WHERE/LIMIT/DISTINCT/ORDER/GROUP/HAVING, AND/OR/LIKE/IN/ANY/EXISTS/
+NOT/BETWEEN/UNION/MINUS/INTERSECT/INTERVAL) → joins (all 7 + self/delete/update,
+union-vs-join) → keys (unique/primary/foreign/composite/alternate) → triggers
+(full lifecycle before/after × insert/update/delete) → types (varchar/boolean/
+enum/decimal/int/float/bit/blob/set) → regex (`RLIKE`, `regexp_*`) → fulltext
+(natural/boolean/expansion/ngram) → functions (date/numeric/string/aggregate)
+→ misc (NULL/transactions/sequences/duplicates/injection/subquery/check/engines/
+CSV/UUID/CTE/cascade/upsert/partitions/cursor/procedures/SIGNAL/charset/ROLLUP/
+literals/EXPLAIN/JSON/stddev/random/processlist/coalesce).
+
+## Manual map (dev.mysql.com 8.4)
+
+Install/upgrade paths → tutorial (connect, batch mode) → programs (`mysql`,
+`mysqladmin`, `mysqlcheck`, `mysqldump`, `mysqlimport`, `mysqlshow`,
+`mysqlslap`, `mysqlbinlog`, `mysqldumpslow`, `perror`) → security (privileges,
+roles, MFA, keyring, audit, firewall, masking, SELinux) → backup (mysqldump
+tips, PITR positions) → optimization (SELECT/subquery/indexes/InnoDB/locks/
+EXPLAIN/trace/benchmarks) → charset/collations → data types → functions
+(JSON/window/spatial/cast/encryption) → SQL statements → data dictionary →
+InnoDB deep → replication/Group Replication → Shell/Cluster/ReplicaSet →
+partitioning → stored objects → INFORMATION_SCHEMA/Performance/sys schemas →
+connectors/Workbench → errors/glossary.
