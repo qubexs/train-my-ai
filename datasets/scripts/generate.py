@@ -267,6 +267,51 @@ DOCKER_GAPS = [
     ("image attest sbom", "`docker buildx build --attest type=sbom --attest type=provenance --sbom=true` attaches build evidence; `buildx imagetools inspect` reveals manifests+attestations — signatures cover the index, SLSA-minded supply chains demand them."),
 ]
 
+# Round 6: Dockerfile flags, apt/distro, Windows, buildx CLI, language images, new tools.
+DOCKER_ROUND6 = [
+    ("copy chmod chown", "`COPY --chmod=755 --chown=app:app src/ /app/` sets mode+owner atomically (no extra RUN/chown layers); numeric IDs survive missing names — one instruction replaces three."),
+    ("add checksum", "`ADD --checksum=sha256:abc... https://x/f.tgz /` verifies downloads at build time; `--keep-git-dir=true` preserves history for version-stamped builds; `--exclude` trims clones — verified reproducible fetches."),
+    ("check skip error lint", "`# check=skip=StageNameCasing` silences style lints; `error=true` fails builds on warnings (pin `syntax:` or future checks break you); hadolint DL3026 (FROM AS casing) and DL4006 (pipefail) mirror these in CI."),
+    ("hadolint rules core", "Core hadolint rules: DL3006 (no `latest` tag), DL3008 (pin apt versions `pkg=1.2.*`), DL3009 (delete lists same layer), DL3015 (no `--no-install-recommends` miss), DL4000 (MAINTAINER dead) — gate Dockerfiles like shellcheck gates scripts."),
+    ("apt clean layer", "`apt-get update && apt-get install -y --no-install-recommends pkg && rm -rf /var/lib/apt/lists/*` in ONE RUN — separate update/install layers ship stale caches; `--no-install-recommends` halves Debian layers."),
+    ("apt cache keep", "`echo 'Binary::apt::APT::Keep-Downloaded-Packages \"true\"' > /etc/apt/apt.conf.d/keep-cache` + `--mount=type=cache` persists debs across builds without image weight — CI rebuilds stop re-downloading the world."),
+    ("gpg signed repo", "`curl -fsSL key | gpg --dearmor -o /usr/share/keyrings/x.gpg` then `deb [signed-by=/usr/share/keyrings/x.gpg] url dist main` — signed-by per repo (apt-key deprecated); `apt-transport-https` assumed modern, `lsb_release -cs` picks codenames dynamically."),
+    ("rhel yum dnf docker", "RHEL/CentOS Stream: `dnf config-manager --add-repo https://download.docker.com/.../docker-ce.repo && dnf install docker-ce` — subscription-manager hosts use official repos; `amazon-linux-extras`/`dnf` variants per AMI generation, never distro docker snapshots."),
+    ("sles zypper docker", "SLES: `zypper addrepo` Docker SLE module then `zypper install docker` — containers module licensed; `sles` images live in the Rancher/SUSE registry, not Hub, with BCI minimal bases for builds."),
+    ("arch pacman docker", "`pacman -S docker docker-compose` tracks rolling latest (pin via cached pkgs on breakage); Arch images (`archlinux/archlinux`) update with `pacman -Syu` in builds — rolling bases need digest pins doubly."),
+    ("alpine apk docker", "`apk add --no-cache pkg` avoids index layers entirely; `alpine` bases (~5MB) plus `XXX-openrc` service scripts — musl quirks (DNS, threads) surface in exotic binaries, test coverage accordingly."),
+    ("windows servercore nanoserver", "ServerCore (full APIs, GBs) vs NanoServer (minimal, MBs, no MSI/services); `mcr.microsoft.com/windows/servercore:ltsc2022` tags per host build — container OS must match host kernel (Hyper-V isolation relaxes this)."),
+    ("hyperv vs process isolation", "Process isolation (same kernel build, fast start) vs Hyper-V (utility VM per container, version-flexible, slower); `isolation: hyperv` per service; LCOW (Linux-on-Windows) deprecated in favor of WSL2 backends."),
+    ("wsl2 backend desktop", "Docker Desktop WSL2 backend runs the daemon inside a managed distro (fast file sharing via virtiofs, `host.docker.internal` gateway); resource sliders bound the VM — dev parity, and `vpnkit` userland networking explains odd MTU/DNS behaviors."),
+    ("desktop file sharing", "Bind mounts cross OS boundaries through shared-drives (legacy osxfs/Hyper-V) or virtiofs (modern) — thousands of small files (node_modules) crawl; named volumes or sync (mutagen) for hot code paths."),
+    ("buildx create remote", "`docker buildx create --name r --driver remote tcp://builder:1234` offloads builds to beefy hosts; `--bootstrap --use` initializes and switches — laptops orchestrate, builders compile."),
+    ("buildx inspect ls rm", "`buildx inspect --bootstrap` verifies driver+platforms; `ls` lists builders/contexts; `rm` deletes; `du` audits disk, `prune` reclaims — builder fleet hygiene mirrors image hygiene."),
+    ("buildx check cloud", "`docker build check .` lints without building (fast CI gate); Docker Build Cloud (`--driver cloud org/builder`) gives managed builders with shared cache — local Dockerfiles, elastic backends."),
+    ("insecure entitlements", "`--allow=device,network.host,security.insecure` grants build entitlements the daemon whitelists (`buildkitd.toml` insecure-entitlements); `--device=nvidia.com/gpu=all` (CDI), `--network=host`, `--security=insecure` (privileged equivalent) — each a deliberate hole, review per use."),
+    ("cuda build image", "CUDA bases (`nvidia/cuda:12-runtime-ubuntu24.04`) + `ENV NVIDIA_VISIBLE_DEVICES=all` + `--gpus all` at runtime expose GPUs; devel images for compiles, runtime for ships; `ARG CUDA=12` parametrizes — ML images version CUDA like code versions deps."),
+    ("conda mamba image", "Miniforge/mamba (`condaforge/mambaforge`) + `mamba install --freeze-installed` resolve fast with exact pins (`environment.lock`); `conda clean -afy` trims — data-science images without pip roulette."),
+    ("poetry install image", "`poetry install --no-root --only main` (or `--without dev`) with `POETRY_VIRTUALENVS_CREATE=false` for system installs; `poetry.lock` committed — multi-stage: deps stage then artifact-only runtime."),
+    ("cargo chef image", "cargo-chef (`FROM lukemathwalker/cargo-chef AS chef`, `cargo chef prepare --recipe-path` then `cook`) caches Rust deps across source edits — compile-once layers, sub-minute rebuilds on big workspaces."),
+    ("go mod image", "`COPY go.mod go.sum ./` + `RUN go mod download` caches modules before source (layer-stable); `CGO_ENABLED=0 go build -trimpath` static binaries into `scratch`/distroless — Go multi-stage at its simplest and best."),
+    ("gradle maven image", "Gradle: `./gradlew dependencies --no-daemon` warms caches; Maven: `mvn -B dependency:go-offline` + custom `settings.xml` (mirrors via `--mount=type=secret`) — JVM builds cache deps first, compile second, always `-B` batch in CI."),
+    ("yarn pnpm image", "Yarn Berry (`YARN_ENABLE_IMMUTABLE_INSTALLS=false` + `yarn workspaces focus --production`) or pnpm (`pnpm fetch` then `--offline install`, `pnpm store` cache-mount) — Plug'n'Play/zero-installs shrink Node layers dramatically vs npm."),
+    ("composer php image", "`COPY --from=composer:2 /usr/bin/composer /usr/bin/composer` multi-stages the tool; `composer install --no-dev --optimize-autoloader` + platform-checks — PHP images without dev tooling in prod layers."),
+    ("openblas ffmpeg image", "Numeric/media bases pre-install `libopenblas-dev`/`ffmpeg` via apt in builder stages, copy only `.so` runtime libs forward (`ldd` reveals the set) — ML/media images where apt bloat dwarfs app code."),
+    ("testcontainers pattern", "Testcontainers spins real Postgres/Redis/Kafka per test (`@Container`, Ryuk cleanup) — integration tests against actual services in CI, `TESTCONTAINERS_RYUK_DISABLED` only for debugging; DinD or socket-mount required in runners."),
+    ("localstack dynamodb dev", "`localstack/localstack -e SERVICES=s3,dynamodb` fakes AWS locally; `awslocal` CLI alias; Lambda invoke + S3 events wired in compose — cloud integration tests without cloud bills or credentials."),
+    ("docker debug shell", "`docker debug app` (or `docker exec -it` fallback) drops shells into running containers including distroless (debug variants side-load tools); `docker init` scaffolds Dockerfile+compose+ignore for new projects — official starters, customize after."),
+    ("docker scout cves", "`docker scout cves app:1` lists fixable CVEs with base-image recommendations; `quickview` grades, `sbom` exports, `compare` diffs tags — scanning integrated where developers already build."),
+    ("docker model runner", "Docker Model Runner (`docker model pull ai/smollm2`, `docker model run`) serves LLMs via OCI artifacts on shared GPU/CPU backends — `mcp` gateway exposes them as tools; GenAI stacks compose like any service."),
+    ("ask gordon help", "`docker ask \"why is my build slow?\"` queries Gordon (docs-aware assistant) from CLI; `mcp gateway` bridges models to Docker tools — help without leaving the terminal, verify answers against docs."),
+    ("compose watch exec", "`develop.watch: [{path: ., target: /app, action: sync+exec}]` syncs files then runs commands (migrations, tests) per change — code-test loops inside compose without rebuilds or manual exec."),
+    ("compose include files", "`include: [common.yml, ../shared.yml]` merges multiple compose files (shared bases, env overlays); `name:` field controls project identity — modular stacks with reviewed shared layers."),
+    ("colima lima alternatives", "Colima (`colima start --cpu 4 --memory 8`) / Lima / Rancher Desktop / Podman Desktop / Orbstack replace Docker Desktop per-OS (licensing, resources, speed) — daemon-compatible CLIs keep `docker` commands working, contexts switch backends."),
+    ("hub rate limits", "Anonymous pulls: 100/6h, authed free: 200/6h, Pro/Team higher (`docker scout` counts); mirrors/caches (registry pull-through, `--registry-mirror`) + vendored bases survive Hub outages and limits."),
+    ("scout policy compare", "`docker scout policy` evaluates organizational rules (approved bases, max severity); `scout compare v1 v2` diffs vuln posture across releases — policy gates in CI, trends per release."),
+    ("compose scale profiles", "`docker compose up --scale worker=4` (long syntax `deploy.replicas` in Swarm) fans out; combined with `--profile` matrices for env-specific topologies — scale flags for dev, files for prod."),
+    ("stack deploy ignore", "`docker stack deploy -c app.yml --with-registry-auth --prune` refreshes swarm stacks (prune removes deleted services); `--resolve-image always` re-pins digests — registry-auth forwards Hub logins to nodes."),
+]
+
 # (compose field, explanation)
 COMPOSE_FIELDS = [
     ("image", "Pins the exact image (always tag versions, never bare names relying on latest)."),
@@ -483,7 +528,7 @@ PHRASING_SQL = [
 
 def gen_docker():
     out = []
-    for cmd, expl in DOCKER_FLAGS + DOCKER_DOCS + DOCKER_GAPS + [(f"compose {f}", e) for f, e in COMPOSE_FIELDS]:
+    for cmd, expl in DOCKER_FLAGS + DOCKER_DOCS + DOCKER_GAPS + DOCKER_ROUND6 + [(f"compose {f}", e) for f, e in COMPOSE_FIELDS]:
         for p in PHRASINGS:
             out.append((p.format(c=cmd), expl))
     return out
