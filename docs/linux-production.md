@@ -32,3 +32,29 @@ limits (`ulimit`, `LimitNOFILE`); nice/ionice/taskset tame neighbors.
 `nc -zv` probes; `tcpdump` precise captures; `strace -f` file access;
 `opensnoop` live; backups (`rsync --link-dest` snapshots, borg/restic with
 tested restores!); upgrades listed-then-applied with `needrestart` checks.
+
+## Self-help first (KodeKloud method)
+
+`cmd --help` (seconds, alphabetical flags!) before `man cmd` (minutes: NAME/
+SYNOPSIS/DESCRIPTION/OPTIONS/EXAMPLES, pager `/`+`n`+`q`); sections qualify
+(`man 1 printf` command vs `man 3 printf` C function!); `apropos -s 1,8`
+finds by purpose (generic stems match more! + `mandb` on fresh VMs);
+double-TAB lists options, TAB completes paths/names (bash-completion package!);
+`info` for GNU depth, `/usr/share/doc` for package notes, `help` for builtins,
+`type -a`/`command -v` for truth (scripts!), `tldr`/`navi` for examples.
+
+## Kernel admin (docs.kernel.org map)
+
+Oops decoded (`decode_stacktrace.sh` + `addr2line`, symbols required!) and
+reported per admin-guide; SysRq `REISUB` before power buttons (`sync` before
+`reboot`!); livepatch CVE-without-reboot (majors still scheduled); cmdline
+params versioned (`update-grub` after!); THP per workload (DBs `never`!);
+KSM for homogeneous fleets (metered!); zswap/zram tiers beat disk swap;
+lockdown+Secure Boot (`mokutil`) for compliance; crashkernel reserved +
+`kdumpctl` verified + test crash in maintenance; watchdogs on (NMI/softlockup/
+hung-task investigated, never blanket-off); earlyoom/nohang/systemd-oomd beat
+kernel lottery on desktops; `fstrim.timer` weekly (not `discard` mounts!);
+unattended-upgrades security-only + reboot windows; MOTD informs (patch/reboot
+status); Cockpit for occasional admins (CLI stays source of truth);
+tracing (`ftrace`/`perf`/eBPF) with overhead measured; fault injection proves
+error paths (ENOMEM handling!).
