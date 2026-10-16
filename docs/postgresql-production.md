@@ -53,3 +53,30 @@ monthly + `DETACH` archival; `pg_repack` over `VACUUM FULL`.
 `log_min_duration_statement=500` + auto_explain plans; `scram-sha-256` HBA
 (first-match order!), `verify-full` SSL; Patroni/etcd failover rehearsed;
 sync standbys for durability; daily DBA queries (locks, bloat, lag).
+
+## Beginner path (W3Schools flow)
+
+Install → `psql` → `CREATE DATABASE` → tables (`CREATE/INSERT/SELECT`) →
+evolve (`ADD/ALTER/DROP COLUMN`) → filter (`WHERE`, never `= NULL`) →
+summarize (MIN/MAX/COUNT/SUM/AVG) → pattern (`LIKE/ILIKE`, leading `%` kills
+btree) → sets (`IN`, `BETWEEN`, `AS` aliases) → joins (INNER/LEFT/RIGHT/FULL/
+CROSS map) → stack (`UNION` vertical vs JOIN horizontal) → group (`GROUP BY`
++ `HAVING` post-filter) → membership (`EXISTS` fastest, `ANY`/`ALL`) →
+branch (`CASE` searched vs simple).
+
+## Deep reference (pg.center wiki map)
+
+SQLSTATE codes (23505/23503/40001/40P01/57014 — branch on codes, never text);
+catalogs (`pg_class`, `pg_index`, `pg_attribute`); index AMs (btree/hash/GiST/
+SP-GiST/GIN/BRIN matched to shape); plan nodes (Seq/Index/Nested/Hash/Merge/
+Gather/Memoize read fluently); wait events (Lock/IO/LWLock/Client/IPC name the
+bottleneck); lock ladder (ACCESS SHARE → ACCESS EXCLUSIVE, DDL blocks all);
+auth methods (trust never remote, scram modern, peer local, cert/LDAP central);
+predefined roles (`pg_read_all_data`, `pg_monitor`, `pg_signal_backend`);
+psql slashes (`\\l \\dn \\dt \\df \\du \\x \\timing \\copy \\watch`);
+CLI tools (createdb, pg_isready, pg_lsclusters); conninfo keywords (sslmode,
+timeouts, app names); PLs (plpgsql default, plpython, plv8); FTS pieces
+(parsers/dicts/configs, `ts_debug`); collations (fixed at initdb!); decoding
+plugins (wal2json/pgoutput, slots monitored); extensions vetted (trusted vs
+superuser); upgrades (`pg_upgrade --check`, extensions rebuilt, ANALYZE after);
+GUC reload-vs-restart (`pg_file_settings` shows pending).
