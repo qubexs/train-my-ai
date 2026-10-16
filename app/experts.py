@@ -46,6 +46,10 @@ EXPERT_DOMAIN_MAP = {
     "linux": ["linux"], "docker": ["docker"], "bash": ["bash"],
     "git": ["git"],
     "react": ["react"],
+    "jquery": ["jquery"], "jqueryui": ["jqueryui"],
+    "vuejs": ["vuejs"], "vue": ["vuejs"],
+    "angularjs": ["angularjs"], "angular": ["angular"],
+    "bootstrap": ["bootstrap"],
     "mongodb": ["mongodb"], "mongo": ["mongodb"],
     "redis": ["redis"],
     "python": ["python"], "php": ["php"], "laravel": ["laravel"],
@@ -92,6 +96,21 @@ STACKS = {
                "backend js", "rest api", "endpoint"],
     "javascript": ["javascript", ".js", "console.log", "function ", "=>",
                    "const ", "let ", " js "],
+    "jqueryui": ["jqueryui", "jquery ui", "datepicker", "draggable jquery",
+                 "sortable jquery", "dialog jquery", "accordion jquery",
+                 "autocomplete jquery"],
+    "jquery": ["jquery", "$(", "$.", ".ajax(", ".append(", ".click(",
+               "selector jquery"],
+    "vuejs": ["vuejs", "vue ", "v-model", "v-if", "v-for", "reactive(",
+              "computed(", "composition api", "options api", "vuex", "pinia",
+              "nuxt", "<template>", "vue router", "vue ref"],
+    "angularjs": ["angularjs", "angular.js", "$scope", "ng-app", "ng-controller",
+                  "$http", "directive angularjs"],
+    "angular": ["angular", "@component", "@injectable", "ngmodule", "rxjs",
+                "angular cli", "standalone component", "signals angular",
+                "ngif", "ngfor"],
+    "bootstrap": ["bootstrap", "btn-primary", "col-md", "navbar", "container-fluid",
+                  "modal bootstrap", "row col", "card bootstrap"],
     "html": ["html", ".html", "<div", "<html", "tag html"],
     "tailwind": ["tailwind"],
     "css": ["css", ".css", "flexbox", "stylesheet", "grid "],
@@ -125,6 +144,8 @@ STACK2DOMAIN = {
     "bash": "linux", "docker": "linux", "linux": "linux", "git": "linux",
     "mongodb": "data", "redis": "data",
     "react": "web",
+    "jquery": "web", "jqueryui": "web", "vuejs": "web",
+    "angular": "web", "angularjs": "web", "bootstrap": "web",
     "python": "python",
 }
 
@@ -277,7 +298,9 @@ def scan(models_dir):
              ["general", "javascript", "typescript", "nodejs", "html", "css",
               "tailwind", "sql", "postgresql", "mysql", "linux", "docker",
               "bash", "python", "php", "laravel",
-              "git", "react", "mongodb", "redis"]]
+              "git", "react", "mongodb", "redis",
+              "jquery", "jqueryui", "vuejs", "angular", "angularjs",
+              "bootstrap"]]
     for sname, sdom in seeds:
         if not any(m.get("name") == sname for m in reg["models"]):
             reg["models"].append({"name": sname, "file": "", "url": "",

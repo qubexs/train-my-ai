@@ -21,10 +21,17 @@
     "react": {"domain": "web", "file": "react.jsonl", "desc": "React UI"},
     "mongodb": {"domain": "data", "file": "mongodb.jsonl", "desc": "MongoDB NoSQL"},
     "redis": {"domain": "data", "file": "redis.jsonl", "desc": "Redis cache/queue"},
-    "general": {"domain": "general", "file": "general.jsonl", "desc": "Identity + mixed general"}
+    "general": {"domain": "general", "file": "general.jsonl", "desc": "Identity + mixed general"},
+    "jquery": {"domain": "web", "file": "jquery.jsonl", "desc": "jQuery DOM/Ajax"},
+    "jqueryui": {"domain": "web", "file": "jqueryui.jsonl", "desc": "jQuery UI widgets"},
+    "vuejs": {"domain": "web", "file": "vuejs.jsonl", "desc": "Vue.js framework"},
+    "angular": {"domain": "web", "file": "angular.jsonl", "desc": "Angular framework"},
+    "angularjs": {"domain": "web", "file": "angularjs.jsonl", "desc": "AngularJS 1.x"},
+    "bootstrap": {"domain": "web", "file": "bootstrap.jsonl", "desc": "Bootstrap CSS"}
   },
   "domains": {
-    "web": ["javascript", "typescript", "nodejs", "html", "css", "tailwind", "react"],
+    "web": ["javascript", "typescript", "nodejs", "html", "css", "tailwind", "react",
+            "jquery", "jqueryui", "vuejs", "angular", "angularjs", "bootstrap"],
     "data": ["sql", "postgresql", "mysql", "mongodb", "redis"],
     "linux": ["linux", "docker", "bash", "git"],
     "python": ["python"],
