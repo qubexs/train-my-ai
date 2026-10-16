@@ -55,3 +55,26 @@ prod (display OFF, log ON, sane limits); Xdebug dev-only + Sentry context;
 atomic symlink deploys + FPM reload + opcache reset; FrankenPHP workers
 (stateless discipline); audit/outdated scheduled; Psalm/PHPStan leveled;
 Box PHAR distribution.
+
+## Beginner path (W3Schools flow)
+
+Install (XAMPP/MAMP or `php -S` built-in dev server!) → syntax/comments →
+variables/scope → echo/print → datatypes → strings (+modify/concat/slice/escape)
+→ numbers/casting/math → constants/magic → operators/if/switch/match → loops
+(all 5 + break/continue) → functions → arrays (+10 sub-pages: create/access/
+update/add/remove/sort/multidim/functions) → superglobals ($_GET/$_POST/
+$_SERVER/$_REQUEST) → regex → forms (required/complete/URL-email) → date →
+include → files (open/read/create/upload) → cookies/sessions → filters →
+callbacks → JSON → exceptions → OOP (+14: classes/construct/destruct/modifiers/
+inherit/constants/abstract/interface/traits/static/namespace/iterables) → MySQL
+(connect/create/insert/lastid/multiple/prepared/select/where/orderby/delete/
+update/limit) → XML (SimpleXML/DOM/expat) → AJAX (intro/db/XML/live-search/poll)
+→ reference (array/calendar/date/directory/error/exception/filesystem/filter/
+FTP/JSON/keywords/libxml/mail/math/misc/mysqli/network/output/regex/simplexml/
+stream/string/variable).
+
+## Projects (GFG ladder)
+
+PDF download headers → auto-download → image resize (GD memory!) → uploader →
+link extractor → signup+MySQL → admin login (guards/throttle) → chat polling →
+covid tracker (API consume). Each: validate → store → PRG → test.
