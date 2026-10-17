@@ -47,12 +47,17 @@
     "lua": {"domain": "legacy", "file": "lua.jsonl", "desc": "Lua scripting"},
     "visualbasic": {"domain": "legacy", "file": "visualbasic.jsonl", "desc": "Visual Basic / VB.NET"},
     "pascal": {"domain": "legacy", "file": "pascal.jsonl", "desc": "Pascal / Delphi"},
-    "cobol": {"domain": "legacy", "file": "cobol.jsonl", "desc": "COBOL"}
+    "cobol": {"domain": "legacy", "file": "cobol.jsonl", "desc": "COBOL"},
+    "django": {"domain": "frameworks", "file": "django.jsonl", "desc": "Django framework"},
+    "flask": {"domain": "frameworks", "file": "flask.jsonl", "desc": "Flask framework"},
+    "spring": {"domain": "frameworks", "file": "spring.jsonl", "desc": "Spring framework (Java)"},
+    "sqlite": {"domain": "data", "file": "sqlite.jsonl", "desc": "SQLite"},
+    "mariadb": {"domain": "data", "file": "mariadb.jsonl", "desc": "MariaDB"}
   },
   "domains": {
     "web": ["javascript", "typescript", "nodejs", "html", "css", "tailwind", "react",
             "jquery", "jqueryui", "vuejs", "angular", "angularjs", "bootstrap"],
-    "data": ["sql", "postgresql", "mysql", "mongodb", "redis"],
+    "data": ["sql", "postgresql", "mysql", "mongodb", "redis", "sqlite", "mariadb"],
     "linux": ["linux", "docker", "bash", "git"],
     "python": ["python"],
     "php": ["php", "laravel"],
@@ -60,6 +65,7 @@
                "kotlin", "swift"],
     "systems": ["c", "cpp", "csharp", "go", "java", "rust"],
     "legacy": ["ruby", "perl", "lua", "visualbasic", "pascal", "cobol"],
+    "frameworks": ["django", "flask", "spring"],
     "general": ["general"]
   }
 }

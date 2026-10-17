@@ -65,6 +65,10 @@ EXPERT_DOMAIN_MAP = {
     "visualbasic": ["visualbasic"], "vb": ["visualbasic"], "vba": ["visualbasic"],
     "pascal": ["pascal"], "delphi": ["pascal"], "cobol": ["cobol"],
     "legacy": ["legacy"],
+    "django": ["django"], "flask": ["flask"],
+    "spring": ["spring"], "springboot": ["spring"],
+    "sqlite": ["sqlite"], "sqlite3": ["sqlite"], "mariadb": ["mariadb"],
+    "frameworks": ["frameworks"], "databases": ["data"],
 }
 
 
@@ -139,7 +143,7 @@ STACKS = {
     "tailwind": ["tailwind"],
     "css": ["css", ".css", "flexbox", "stylesheet", "grid "],
     "postgresql": ["postgresql", "postgres", "psql", "supabase", "prisma"],
-    "mysql": ["mysql", "mariadb", "phpmyadmin"],
+    "mysql": ["mysql", "phpmyadmin"],
     "sql": ["sql", "query", "select ", "join ", "jadual", "table"],
     "laravel": ["laravel", "eloquent", "blade", "migration"],
     "php": ["php", ".php", "composer", "artisan", "wordpress", "symfony"],
@@ -156,8 +160,7 @@ STACKS = {
                "kubernetes", "k8s", "docker image", "image docker"],
     "linux": ["linux", "ubuntu", "debian", "grep", "chmod", "chown", "ssh",
               "cron", "systemd", "arahan linux", "perintah linux"],
-    "python": ["python", "pip install", "pandas", "flask", "django",
-               "skrip python"],
+    "python": ["python", "pip install", "pandas", "skrip python"],
     "c": ["c programming", "bahasa c", "c language", "malloc", "stdio.h",
           "printf(", "pointer c", "ansi c", "c99", "c11"],
     "cpp": ["c++", "cpp", "stl", "std::", "template<", "cmake", "vector<",
@@ -166,8 +169,7 @@ STACKS = {
                "linq", "nuget", "visual studio"],
     "go": ["golang", "goroutine", "go mod", "gofmt", " go ", "go test",
            "go build"],
-    "java": ["java ", "java.", "jvm", "spring boot", "maven",
-             "kotlin/java", "java class"],
+    "java": ["java ", "java.", "jvm", "maven", "kotlin/java", "java class"],
     "rust": [" rust ", "rustc", "cargo", "rustup", "borrow checker",
              "ownership rust", "crates.io", "tokio"],
     "visualbasic": ["visual basic", "vb.net", "vbscript", "vba", "vb6"],
@@ -176,6 +178,15 @@ STACKS = {
     "ruby": ["ruby", "rails", "rubygems", "gem install", "rspec", "erb"],
     "perl": [" perl", "perl5", "cpan", "cpanm", "perl script"],
     "lua": [" lua", "luajit", "luau", "love2d", "roblox lua"],
+    "django": ["django", "manage.py", "django rest", "makemigrations",
+               "get_queryset", "admin.site", "drf", "queryset"],
+    "flask": ["flask", "app.route", "@app.route", "render_template",
+              "werkzeug", "flask blueprint", "flask app"],
+    "spring": ["spring boot", "springboot", "@springbootapplication",
+               "@autowired", "@restcontroller", "spring data", "spring jpa",
+               "application.properties", "spring framework"],
+    "sqlite": ["sqlite", "sqlite3", "pragma", "rowid", "autoincrement"],
+    "mariadb": ["mariadb", "galera", "mariadb-server", "maxscale"],
 }
 
 STACK2DOMAIN = {
@@ -195,6 +206,8 @@ STACK2DOMAIN = {
     "java": "systems", "rust": "systems",
     "ruby": "legacy", "perl": "legacy", "lua": "legacy",
     "visualbasic": "legacy", "pascal": "legacy", "cobol": "legacy",
+    "django": "frameworks", "flask": "frameworks", "spring": "frameworks",
+    "sqlite": "data", "mariadb": "data",
     "python": "python",
 }
 
@@ -245,6 +258,7 @@ LEGACY_GROUPS = {
     "linux": ["linux", "bash", "docker"],
     "python": ["python"],
     "php": ["php", "laravel"],
+    "frameworks": ["django", "flask", "spring"],
     "general": [GENERAL],
 }
 
@@ -352,7 +366,8 @@ def scan(models_dir):
               "bootstrap", "flutter", "reactnative", "android", "ios",
               "xamarin", "dart", "kotlin", "swift",
               "c", "cpp", "csharp", "go", "java", "rust",
-              "ruby", "perl", "lua", "visualbasic", "pascal", "cobol"]]
+              "ruby", "perl", "lua", "visualbasic", "pascal", "cobol",
+              "django", "flask", "spring", "sqlite", "mariadb"]]
     for sname, sdom in seeds:
         if not any(m.get("name") == sname for m in reg["models"]):
             reg["models"].append({"name": sname, "file": "", "url": "",
