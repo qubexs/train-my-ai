@@ -35,7 +35,13 @@
     "xamarin": {"domain": "mobile", "file": "xamarin.jsonl", "desc": "Xamarin / .NET MAUI"},
     "dart": {"domain": "mobile", "file": "dart.jsonl", "desc": "Dart language"},
     "kotlin": {"domain": "mobile", "file": "kotlin.jsonl", "desc": "Kotlin language"},
-    "swift": {"domain": "mobile", "file": "swift.jsonl", "desc": "Swift language"}
+    "swift": {"domain": "mobile", "file": "swift.jsonl", "desc": "Swift language"},
+    "c": {"domain": "systems", "file": "c.jsonl", "desc": "C language"},
+    "cpp": {"domain": "systems", "file": "cpp.jsonl", "desc": "C++ language/STL"},
+    "csharp": {"domain": "systems", "file": "csharp.jsonl", "desc": "C# / .NET"},
+    "go": {"domain": "systems", "file": "go.jsonl", "desc": "Go / Golang"},
+    "java": {"domain": "systems", "file": "java.jsonl", "desc": "Java / JVM"},
+    "rust": {"domain": "systems", "file": "rust.jsonl", "desc": "Rust language"}
   },
   "domains": {
     "web": ["javascript", "typescript", "nodejs", "html", "css", "tailwind", "react",
@@ -46,6 +52,7 @@
     "php": ["php", "laravel"],
     "mobile": ["flutter", "reactnative", "android", "ios", "xamarin", "dart",
                "kotlin", "swift"],
+    "systems": ["c", "cpp", "csharp", "go", "java", "rust"],
     "general": ["general"]
   }
 }

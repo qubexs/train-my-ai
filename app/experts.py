@@ -57,6 +57,10 @@ EXPERT_DOMAIN_MAP = {
     "mongodb": ["mongodb"], "mongo": ["mongodb"],
     "redis": ["redis"],
     "python": ["python"], "php": ["php"], "laravel": ["laravel"],
+    "c": ["c"], "cpp": ["cpp"], "c++": ["cpp"],
+    "csharp": ["csharp"], "cs": ["csharp"], "dotnet": ["csharp"],
+    "go": ["go"], "golang": ["go"], "java": ["java"],
+    "rust": ["rust"], "systems": ["systems"],
 }
 
 
@@ -150,6 +154,18 @@ STACKS = {
               "cron", "systemd", "arahan linux", "perintah linux"],
     "python": ["python", "pip install", "pandas", "flask", "django",
                "skrip python"],
+    "c": ["c programming", "bahasa c", "c language", "malloc", "stdio.h",
+          "printf(", "pointer c", "ansi c", "c99", "c11"],
+    "cpp": ["c++", "cpp", "stl", "std::", "template<", "cmake", "vector<",
+            "g++", "raii", "unique_ptr", "cplusplus"],
+    "csharp": ["c#", "csharp", "dotnet", ".net", "unity", "asp.net", "blazor",
+               "linq", "nuget", "visual studio"],
+    "go": ["golang", "goroutine", "go mod", "gofmt", " go ", "go test",
+           "go build"],
+    "java": ["java ", "java.", "jvm", "spring boot", "maven",
+             "kotlin/java", "java class"],
+    "rust": [" rust ", "rustc", "cargo", "rustup", "borrow checker",
+             "ownership rust", "crates.io", "tokio"],
 }
 
 STACK2DOMAIN = {
@@ -165,6 +181,8 @@ STACK2DOMAIN = {
     "flutter": "mobile", "reactnative": "mobile", "android": "mobile",
     "ios": "mobile", "xamarin": "mobile", "dart": "mobile",
     "kotlin": "mobile", "swift": "mobile",
+    "c": "systems", "cpp": "systems", "csharp": "systems", "go": "systems",
+    "java": "systems", "rust": "systems",
     "python": "python",
 }
 
@@ -320,7 +338,8 @@ def scan(models_dir):
               "git", "react", "mongodb", "redis",
               "jquery", "jqueryui", "vuejs", "angular", "angularjs",
               "bootstrap", "flutter", "reactnative", "android", "ios",
-              "xamarin", "dart", "kotlin", "swift"]]
+              "xamarin", "dart", "kotlin", "swift",
+              "c", "cpp", "csharp", "go", "java", "rust"]]
     for sname, sdom in seeds:
         if not any(m.get("name") == sname for m in reg["models"]):
             reg["models"].append({"name": sname, "file": "", "url": "",

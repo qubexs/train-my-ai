@@ -1419,7 +1419,13 @@ GENERATORS = {"docker": gen_docker, "sql": gen_sql,
               "xamarin": lambda: gen_cmd(XAMARIN_TOPICS),
               "dart": lambda: gen_cmd(DART_TOPICS),
               "kotlin": lambda: gen_cmd(KOTLIN_TOPICS),
-              "swift": lambda: gen_cmd(SWIFT_TOPICS)}
+              "swift": lambda: gen_cmd(SWIFT_TOPICS),
+              "c": lambda: gen_cmd(C_TOPICS),
+              "cpp": lambda: gen_cmd(CPP_TOPICS),
+              "csharp": lambda: gen_cmd(CSHARP_TOPICS),
+              "go": lambda: gen_cmd(GO_TOPICS),
+              "java": lambda: gen_cmd(JAVA_TOPICS),
+              "rust": lambda: gen_cmd(RUST_TOPICS)}
 
 REACT_TOPICS = [
     ("react function components", "Function components (`function Card({title}) { return <div>{title}</div> }`) are the modern default (hooks!); classes legacy (`extends Component`! `this.setState`!) — functions compose (hooks!), classes maintain (old code!), default export per file (imports clean!)."),
