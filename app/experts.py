@@ -61,6 +61,10 @@ EXPERT_DOMAIN_MAP = {
     "csharp": ["csharp"], "cs": ["csharp"], "dotnet": ["csharp"],
     "go": ["go"], "golang": ["go"], "java": ["java"],
     "rust": ["rust"], "systems": ["systems"],
+    "ruby": ["ruby"], "perl": ["perl"], "lua": ["lua"],
+    "visualbasic": ["visualbasic"], "vb": ["visualbasic"], "vba": ["visualbasic"],
+    "pascal": ["pascal"], "delphi": ["pascal"], "cobol": ["cobol"],
+    "legacy": ["legacy"],
 }
 
 
@@ -166,6 +170,12 @@ STACKS = {
              "kotlin/java", "java class"],
     "rust": [" rust ", "rustc", "cargo", "rustup", "borrow checker",
              "ownership rust", "crates.io", "tokio"],
+    "visualbasic": ["visual basic", "vb.net", "vbscript", "vba", "vb6"],
+    "cobol": ["cobol", "copybook", "jcl", "perform varying", "pic 9"],
+    "pascal": ["pascal", "delphi", "freepascal", "lazarus"],
+    "ruby": ["ruby", "rails", "rubygems", "gem install", "rspec", "erb"],
+    "perl": [" perl", "perl5", "cpan", "cpanm", "perl script"],
+    "lua": [" lua", "luajit", "luau", "love2d", "roblox lua"],
 }
 
 STACK2DOMAIN = {
@@ -183,6 +193,8 @@ STACK2DOMAIN = {
     "kotlin": "mobile", "swift": "mobile",
     "c": "systems", "cpp": "systems", "csharp": "systems", "go": "systems",
     "java": "systems", "rust": "systems",
+    "ruby": "legacy", "perl": "legacy", "lua": "legacy",
+    "visualbasic": "legacy", "pascal": "legacy", "cobol": "legacy",
     "python": "python",
 }
 
@@ -339,7 +351,8 @@ def scan(models_dir):
               "jquery", "jqueryui", "vuejs", "angular", "angularjs",
               "bootstrap", "flutter", "reactnative", "android", "ios",
               "xamarin", "dart", "kotlin", "swift",
-              "c", "cpp", "csharp", "go", "java", "rust"]]
+              "c", "cpp", "csharp", "go", "java", "rust",
+              "ruby", "perl", "lua", "visualbasic", "pascal", "cobol"]]
     for sname, sdom in seeds:
         if not any(m.get("name") == sname for m in reg["models"]):
             reg["models"].append({"name": sname, "file": "", "url": "",

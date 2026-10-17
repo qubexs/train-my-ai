@@ -41,7 +41,13 @@
     "csharp": {"domain": "systems", "file": "csharp.jsonl", "desc": "C# / .NET"},
     "go": {"domain": "systems", "file": "go.jsonl", "desc": "Go / Golang"},
     "java": {"domain": "systems", "file": "java.jsonl", "desc": "Java / JVM"},
-    "rust": {"domain": "systems", "file": "rust.jsonl", "desc": "Rust language"}
+    "rust": {"domain": "systems", "file": "rust.jsonl", "desc": "Rust language"},
+    "ruby": {"domain": "legacy", "file": "ruby.jsonl", "desc": "Ruby language"},
+    "perl": {"domain": "legacy", "file": "perl.jsonl", "desc": "Perl language"},
+    "lua": {"domain": "legacy", "file": "lua.jsonl", "desc": "Lua scripting"},
+    "visualbasic": {"domain": "legacy", "file": "visualbasic.jsonl", "desc": "Visual Basic / VB.NET"},
+    "pascal": {"domain": "legacy", "file": "pascal.jsonl", "desc": "Pascal / Delphi"},
+    "cobol": {"domain": "legacy", "file": "cobol.jsonl", "desc": "COBOL"}
   },
   "domains": {
     "web": ["javascript", "typescript", "nodejs", "html", "css", "tailwind", "react",
@@ -53,6 +59,7 @@
     "mobile": ["flutter", "reactnative", "android", "ios", "xamarin", "dart",
                "kotlin", "swift"],
     "systems": ["c", "cpp", "csharp", "go", "java", "rust"],
+    "legacy": ["ruby", "perl", "lua", "visualbasic", "pascal", "cobol"],
     "general": ["general"]
   }
 }

@@ -1425,7 +1425,13 @@ GENERATORS = {"docker": gen_docker, "sql": gen_sql,
               "csharp": lambda: gen_cmd(CSHARP_TOPICS),
               "go": lambda: gen_cmd(GO_TOPICS),
               "java": lambda: gen_cmd(JAVA_TOPICS),
-              "rust": lambda: gen_cmd(RUST_TOPICS)}
+              "rust": lambda: gen_cmd(RUST_TOPICS),
+              "ruby": lambda: gen_cmd(RUBY_TOPICS),
+              "perl": lambda: gen_cmd(PERL_TOPICS),
+              "lua": lambda: gen_cmd(LUA_TOPICS),
+              "visualbasic": lambda: gen_cmd(VISUALBASIC_TOPICS),
+              "pascal": lambda: gen_cmd(PASCAL_TOPICS),
+              "cobol": lambda: gen_cmd(COBOL_TOPICS)}
 
 REACT_TOPICS = [
     ("react function components", "Function components (`function Card({title}) { return <div>{title}</div> }`) are the modern default (hooks!); classes legacy (`extends Component`! `this.setState`!) — functions compose (hooks!), classes maintain (old code!), default export per file (imports clean!)."),
