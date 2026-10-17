@@ -49,25 +49,21 @@ TOOL_MAP = {"bash": "bash", "read_file": "read", "write_file": "write",
 MT_SYS = ("Anda penterjemah teknikal. Terjemah teks pengguna ke Bahasa Melayu "
           "Malaysia (BUKAN Indonesia: guna 'komuniti', 'kod', 'boleh', "
           "'bagaimana', 'fail', 'paparan'). KEKALKAN kod, nama fail, jalan "
-          "fail, arahan shell, dan format markdown. KEKALKAN token @@FK@@ dan "
-          "@@JA@@ tepat seperti asal. Jangan tambah, ringkas, atau buang "
-          "kandungan. Output terjemahan sahaja tanpa mukadimah.")
+          "fail, arahan shell, dan format markdown. Jangan tambah, ringkas, "
+          "atau buang kandungan. Output terjemahan sahaja tanpa mukadimah.")
 
-LABEL_MASKS = [("FIKIR:", "@@FK@@"), ("JAWAPAN AKHIR:", "@@JA@@")]
-
-
-def mask_labels(text):
-    for label, token in LABEL_MASKS:
-        text = text.replace(label, token)
-    return text
+LABEL_RE = re.compile(r"(FIKIR:|JAWAPAN AKHIR:)")
 
 
-def unmask_labels(text):
-    text = re.sub(r"@+\s*F\s*K\s*@+", "FIKIR:", text)
-    text = re.sub(r"@+\s*J\s*A\s*@+", "JAWAPAN AKHIR:", text)
-    for label, token in LABEL_MASKS:
-        text = text.replace(token, label)
-    return text
+def label_chunks(text):
+    """Pecah teks pada label FIKIR:/JAWAPAN AKHIR: -> [(jenis, teks)].
+    jenis 'lab' = label literal (kekal), 'txt' = prosa (terjemah)."""
+    parts = LABEL_RE.split(text)
+    out = []
+    for i, p in enumerate(parts):
+        if p:
+            out.append(("lab" if i % 2 == 1 else "txt", p))
+    return out
 
 UNICODE_MAP = {"\u2192": "->", "\u2190": "<-", "\u2194": "<->", "\u00d7": "x",
                "\u2139": "(i)", "\u2714": "OK", "\u00b7": ".", "\u2018": "'",
@@ -346,7 +342,13 @@ def http_translate(server, model, text, timeout):
                                  headers={"Content-Type": "application/json"})
     with urllib.request.urlopen(req, timeout=timeout) as r:
         data = json.loads(r.read().decode("utf-8"))
-    return data["choices"][0]["message"]["content"].strip()
+    msg = data["choices"][0]["message"]
+    out = (msg.get("content") or "").strip()
+    if not out:
+        rc = (msg.get("reasoning_content") or "").strip()
+        raise ValueError("jawapan kosong dari server"
+                         + (" (model habis token ketika fikir)" if rc else ""))
+    return out
 
 
 def translate_long(server, model, text, timeout, chunk=3000):
@@ -384,12 +386,16 @@ def cmd_translate(a):
     for r in rows:
         texts = [r["instruction"]] + ([r["output"]] if a.translate_output else [])
         for text in texts:
-            for is_code, seg in prose_segments(mask_labels(text)):
-                if is_code or not seg.strip():
+            for is_code, seg in prose_segments(text):
+                if is_code:
                     continue
-                h = hashlib.sha1(seg.encode("utf-8")).hexdigest()
-                if h not in cache:
-                    jobs[h] = seg
+                for kind, part in label_chunks(seg):
+                    unit = part.strip() if kind == "txt" else ""
+                    if not unit:
+                        continue
+                    h = hashlib.sha1(unit.encode("utf-8")).hexdigest()
+                    if h not in cache:
+                        jobs[h] = unit
     print(f"segmen unik perlu terjemah: {len(jobs)}")
 
     def work(item):
@@ -424,15 +430,23 @@ def cmd_translate(a):
         if not text:
             return text
         out = []
-        for is_code, seg in prose_segments(mask_labels(text)):
-            if is_code or not seg.strip():
+        for is_code, seg in prose_segments(text):
+            if is_code:
                 out.append(seg)
                 continue
-            lead = seg[:len(seg) - len(seg.lstrip())]
-            trail = seg[len(seg.rstrip()):]
-            h = hashlib.sha1(seg.encode("utf-8")).hexdigest()
-            out.append(lead + cache.get(h, seg) + trail)
-        return unmask_labels("".join(out))
+            for kind, part in label_chunks(seg):
+                if kind == "lab":
+                    out.append(part)
+                    continue
+                unit = part.strip()
+                if not unit:
+                    out.append(part)
+                    continue
+                lead = part[:len(part) - len(part.lstrip())]
+                trail = part[len(part.rstrip()):]
+                h = hashlib.sha1(unit.encode("utf-8")).hexdigest()
+                out.append(lead + cache.get(h, unit) + trail)
+        return "".join(out)
 
     for r in rows:
         r["instruction"] = rebuild(r["instruction"])
