@@ -50,6 +50,10 @@ EXPERT_DOMAIN_MAP = {
     "vuejs": ["vuejs"], "vue": ["vuejs"],
     "angularjs": ["angularjs"], "angular": ["angular"],
     "bootstrap": ["bootstrap"],
+    "flutter": ["flutter"], "dart": ["dart"],
+    "reactnative": ["reactnative"],
+    "android": ["android"], "ios": ["ios"],
+    "xamarin": ["xamarin"], "kotlin": ["kotlin"], "swift": ["swift"],
     "mongodb": ["mongodb"], "mongo": ["mongodb"],
     "redis": ["redis"],
     "python": ["python"], "php": ["php"], "laravel": ["laravel"],
@@ -111,6 +115,18 @@ STACKS = {
                 "ngif", "ngfor"],
     "bootstrap": ["bootstrap", "btn-primary", "col-md", "navbar", "container-fluid",
                   "modal bootstrap", "row col", "card bootstrap"],
+    "flutter": ["flutter", "statelesswidget", "statefulwidget", "pubspec", "buildcontext",
+                "flutter run", "flutter pub", "widget flutter"],
+    "reactnative": ["react native", "reactnative", "expo", "react-navigation",
+                    "flatlist", "asyncstorage", "nativewind"],
+    "android": ["android", "gradle", "android studio", "activity", "jetpack",
+                "logcat", "manifest android"],
+    "ios": ["ios", "iphone", "ipad", "xcode", "swiftui", "uikit", "cocoapods",
+            "testflight"],
+    "xamarin": ["xamarin", "xaml", "maui", "xamarin.forms"],
+    "dart": ["dart ", "dartlang", "dart:async", "dart:io"],
+    "kotlin": ["kotlin", "kotlinx", "ktor", "kmp"],
+    "swift": ["swift", "swiftui", "xcode", "cocoapods", "swift package", "vapor"],
     "html": ["html", ".html", "<div", "<html", "tag html"],
     "tailwind": ["tailwind"],
     "css": ["css", ".css", "flexbox", "stylesheet", "grid "],
@@ -146,6 +162,9 @@ STACK2DOMAIN = {
     "react": "web",
     "jquery": "web", "jqueryui": "web", "vuejs": "web",
     "angular": "web", "angularjs": "web", "bootstrap": "web",
+    "flutter": "mobile", "reactnative": "mobile", "android": "mobile",
+    "ios": "mobile", "xamarin": "mobile", "dart": "mobile",
+    "kotlin": "mobile", "swift": "mobile",
     "python": "python",
 }
 
@@ -300,7 +319,8 @@ def scan(models_dir):
               "bash", "python", "php", "laravel",
               "git", "react", "mongodb", "redis",
               "jquery", "jqueryui", "vuejs", "angular", "angularjs",
-              "bootstrap"]]
+              "bootstrap", "flutter", "reactnative", "android", "ios",
+              "xamarin", "dart", "kotlin", "swift"]]
     for sname, sdom in seeds:
         if not any(m.get("name") == sname for m in reg["models"]):
             reg["models"].append({"name": sname, "file": "", "url": "",

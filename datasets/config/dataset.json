@@ -27,7 +27,15 @@
     "vuejs": {"domain": "web", "file": "vuejs.jsonl", "desc": "Vue.js framework"},
     "angular": {"domain": "web", "file": "angular.jsonl", "desc": "Angular framework"},
     "angularjs": {"domain": "web", "file": "angularjs.jsonl", "desc": "AngularJS 1.x"},
-    "bootstrap": {"domain": "web", "file": "bootstrap.jsonl", "desc": "Bootstrap CSS"}
+    "bootstrap": {"domain": "web", "file": "bootstrap.jsonl", "desc": "Bootstrap CSS"},
+    "flutter": {"domain": "mobile", "file": "flutter.jsonl", "desc": "Flutter framework"},
+    "reactnative": {"domain": "mobile", "file": "reactnative.jsonl", "desc": "React Native"},
+    "android": {"domain": "mobile", "file": "android.jsonl", "desc": "Android (Kotlin/Java)"},
+    "ios": {"domain": "mobile", "file": "ios.jsonl", "desc": "iOS (Swift/UIKit)"},
+    "xamarin": {"domain": "mobile", "file": "xamarin.jsonl", "desc": "Xamarin / .NET MAUI"},
+    "dart": {"domain": "mobile", "file": "dart.jsonl", "desc": "Dart language"},
+    "kotlin": {"domain": "mobile", "file": "kotlin.jsonl", "desc": "Kotlin language"},
+    "swift": {"domain": "mobile", "file": "swift.jsonl", "desc": "Swift language"}
   },
   "domains": {
     "web": ["javascript", "typescript", "nodejs", "html", "css", "tailwind", "react",
@@ -36,6 +44,8 @@
     "linux": ["linux", "docker", "bash", "git"],
     "python": ["python"],
     "php": ["php", "laravel"],
+    "mobile": ["flutter", "reactnative", "android", "ios", "xamarin", "dart",
+               "kotlin", "swift"],
     "general": ["general"]
   }
 }
