@@ -27,7 +27,9 @@
 # max_seq_length=3072 (long Fable agent rows fit; short rows pack together).
 # 1 epoch, deterministic 1% md5 eval holdout -> <out>/eval.jsonl (hash
 # band 50-59, disjoint from the repo's 5% band [0-49) so merge.py outputs
-# still yield a holdout). Checkpoints every 100 steps with auto-resume
+# still yield a holdout). NOTE: Qwen3.5 is processor-based -> Unsloth
+# ignores packing=True (rows padded individually); fp16 unsupported ->
+# switch to fp32 if bf16 missing (T4). Checkpoints every 100 steps with auto-resume
 # (stored under /content/drive/xcoder/<OUT> when Google Drive is mounted;
 # incomplete checkpoints — sesi mati semasa save — dilangkau automatik).
 #
