@@ -21,6 +21,7 @@ Add new knowledge (avoid forgetting):
   --replay mixes old rows from <out>/clean into every new shard; --eval-ratio
   holds out a deterministic % and logs eval_loss per shard; --shuffle-shards
   randomises stack order (seeded). Re-run with the same --out to resume.
+  Switching to a merged base? Use a NEW --out and --replay-from <old>/clean.
 """
 import argparse
 import hashlib
@@ -165,7 +166,8 @@ def validate_model(model):
         info = json.loads(http_text(f"https://huggingface.co/api/models/{model}"))
         files = [s["rfilename"] for s in info.get("siblings", [])]
     except Exception as e:  # noqa: BLE001
-        log(f"amaran: tak dapat semak {model} ({e}) - teruskan")
+        log(f"amaran: tak dapat semak {model} ({e}) - jika private, "
+            f"login HF dahulu (huggingface-cli login)")
         return
     has_cfg = "config.json" in files
     has_w = any(f.endswith((".safetensors", ".bin")) for f in files)
@@ -230,6 +232,8 @@ def main():
     ap.add_argument("--rank", type=int, default=16, help="LoRA r (32-64 utk knowledge)")
     ap.add_argument("--replay", type=float, default=0.0,
                     help="0.2 = campur 20%% row lama setiap shard (anti-lupa)")
+    ap.add_argument("--replay-from", default="",
+                    help="folder clean/ larian lama (comma) utk replay+dedupe")
     ap.add_argument("--eval-ratio", type=float, default=0.0,
                     help="0.01 = 1%% holdout per shard, log eval_loss")
     ap.add_argument("--eval-rows", type=int, default=100)
@@ -281,6 +285,14 @@ def main():
     if a.replay > 0:
         for p in st["completed"]:
             replay_pool.extend(read_jsonl(clean_dir / p))
+    if a.replay_from:
+        for d in a.replay_from.split(","):
+            d = d.strip()
+            if not d:
+                continue
+            for p in Path(d).rglob("*.jsonl"):
+                replay_pool.extend(read_jsonl(p))
+    if a.replay > 0 or a.replay_from:
         log(f"replay pool: {len(replay_pool)} row")
 
     model = tok = trainer_cls = bf16_ok = None
