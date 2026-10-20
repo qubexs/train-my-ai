@@ -1,0 +1,125 @@
+Cari pengguna di mana nama bersamaan 'Ali'
+Cari pengguna di mana nama bersamaan 'Ali' — tunjukkan SQL.
+Cari pesanan di mana pengguna_id bersamaan 'Ali'
+Cari pesanan di mana pengguna_id bersamaan 'Ali' — tunjukkan SQL.
+Cari produk di mana nama bersamaan 'Ali'
+Cari produk di mana nama bersamaan 'Ali' — tunjukkan SQL.
+How do I configure a firewall with ufw?
+How do I find which process has a file or port open?
+How do I list and add rules with iptables?
+How do I set up NAT/port forwarding on Linux?
+Jumlah belanja setiap pengguna
+Jumlah belanja setiap pengguna — tunjukkan SQL.
+Jumlahkan nama dalam pengguna berkelompok mengikut emel
+Jumlahkan nama dalam pengguna berkelompok mengikut emel — tunjukkan SQL.
+Jumlahkan nama dalam produk berkelompok mengikut harga
+Jumlahkan nama dalam produk berkelompok mengikut harga — tunjukkan SQL.
+Jumlahkan pengguna_id dalam pesanan berkelompok mengikut jumlah
+Jumlahkan pengguna_id dalam pesanan berkelompok mengikut jumlah — tunjukkan SQL.
+Kemas kini pengguna: tetapkan nama kepada 'Ali' untuk id 1
+Kemas kini pengguna: tetapkan nama kepada 'Ali' untuk id 1 — tunjukkan SQL.
+Kemas kini pesanan: tetapkan pengguna_id kepada 'Ali' untuk id 1
+Kemas kini pesanan: tetapkan pengguna_id kepada 'Ali' untuk id 1 — tunjukkan SQL.
+Kemas kini produk: tetapkan nama kepada 'Ali' untuk id 1
+Kemas kini produk: tetapkan nama kepada 'Ali' untuk id 1 — tunjukkan SQL.
+Kira baris dalam pengguna
+Kira baris dalam pengguna — tunjukkan SQL.
+Kira baris dalam pesanan
+Kira baris dalam pesanan — tunjukkan SQL.
+Kira baris dalam produk
+Kira baris dalam produk — tunjukkan SQL.
+MySQL auto increment table
+Nilai maksimum nama dalam pengguna
+Nilai maksimum nama dalam pengguna — tunjukkan SQL.
+Nilai maksimum nama dalam produk
+Nilai maksimum nama dalam produk — tunjukkan SQL.
+Nilai maksimum pengguna_id dalam pesanan
+Nilai maksimum pengguna_id dalam pesanan — tunjukkan SQL.
+Padam baris id 9 dari pengguna
+Padam baris id 9 dari pengguna — tunjukkan SQL.
+Padam baris id 9 dari pesanan
+Padam baris id 9 dari pesanan — tunjukkan SQL.
+Padam baris id 9 dari produk
+Padam baris id 9 dari produk — tunjukkan SQL.
+Purata nama dalam pengguna
+Purata nama dalam pengguna — tunjukkan SQL.
+Purata nama dalam produk
+Purata nama dalam produk — tunjukkan SQL.
+Purata pengguna_id dalam pesanan
+Purata pengguna_id dalam pesanan — tunjukkan SQL.
+SQL cipta table pengguna
+SQL delete baris
+SQL group by kiraan
+SQL index pada nama
+SQL insert pengguna
+SQL join asas
+SQL kira baris pengguna
+SQL order by nama
+SQL select dengan where
+SQL select semua pengguna
+SQL tambah column umur
+SQL transaction asas
+SQL update nama
+Senaraikan semua pengguna
+Senaraikan semua pengguna — tunjukkan SQL.
+Senaraikan semua pesanan
+Senaraikan semua pesanan — tunjukkan SQL.
+Senaraikan semua produk
+Senaraikan semua produk — tunjukkan SQL.
+Sertai pesanan dengan nama pengguna
+Sertai pesanan dengan nama pengguna — tunjukkan SQL.
+Sertai produk dengan baki stok rendah
+Sertai produk dengan baki stok rendah — tunjukkan SQL.
+Susun pengguna mengikut nama menurun, 5 teratas
+Susun pengguna mengikut nama menurun, 5 teratas — tunjukkan SQL.
+Susun pesanan mengikut pengguna_id menurun, 5 teratas
+Susun pesanan mengikut pengguna_id menurun, 5 teratas — tunjukkan SQL.
+Susun produk mengikut nama menurun, 5 teratas
+Susun produk mengikut nama menurun, 5 teratas — tunjukkan SQL.
+Tambah satu baris ke pengguna
+Tambah satu baris ke pengguna — tunjukkan SQL.
+Tambah satu baris ke pesanan
+Tambah satu baris ke pesanan — tunjukkan SQL.
+Tambah satu baris ke produk
+Tambah satu baris ke produk — tunjukkan SQL.
+Tulis query: Cari pengguna di mana nama bersamaan 'Ali'.
+Tulis query: Cari pesanan di mana pengguna_id bersamaan 'Ali'.
+Tulis query: Cari produk di mana nama bersamaan 'Ali'.
+Tulis query: Jumlah belanja setiap pengguna.
+Tulis query: Jumlahkan nama dalam pengguna berkelompok mengikut emel.
+Tulis query: Jumlahkan nama dalam produk berkelompok mengikut harga.
+Tulis query: Jumlahkan pengguna_id dalam pesanan berkelompok mengikut jumlah.
+Tulis query: Kemas kini pengguna: tetapkan nama kepada 'Ali' untuk id 1.
+Tulis query: Kemas kini pesanan: tetapkan pengguna_id kepada 'Ali' untuk id 1.
+Tulis query: Kemas kini produk: tetapkan nama kepada 'Ali' untuk id 1.
+Tulis query: Kira baris dalam pengguna.
+Tulis query: Kira baris dalam pesanan.
+Tulis query: Kira baris dalam produk.
+Tulis query: Nilai maksimum nama dalam pengguna.
+Tulis query: Nilai maksimum nama dalam produk.
+Tulis query: Nilai maksimum pengguna_id dalam pesanan.
+Tulis query: Padam baris id 9 dari pengguna.
+Tulis query: Padam baris id 9 dari pesanan.
+Tulis query: Padam baris id 9 dari produk.
+Tulis query: Purata nama dalam pengguna.
+Tulis query: Purata nama dalam produk.
+Tulis query: Purata pengguna_id dalam pesanan.
+Tulis query: Senaraikan semua pengguna.
+Tulis query: Senaraikan semua pesanan.
+Tulis query: Senaraikan semua produk.
+Tulis query: Sertai pesanan dengan nama pengguna.
+Tulis query: Sertai produk dengan baki stok rendah.
+Tulis query: Susun pengguna mengikut nama menurun, 5 teratas.
+Tulis query: Susun pesanan mengikut pengguna_id menurun, 5 teratas.
+Tulis query: Susun produk mengikut nama menurun, 5 teratas.
+Tulis query: Tambah satu baris ke pengguna.
+Tulis query: Tambah satu baris ke pesanan.
+Tulis query: Tambah satu baris ke produk.
+What do setuid, setgid and the sticky bit do?
+What does the latest tag mean?
+What is a good image tagging strategy for CI/CD?
+What is an image digest and why pin it?
+What is nftables and how does it compare to iptables?
+What is the difference between CMD and ENTRYPOINT?
+What is the difference between a StatefulSet and a Deployment?
+What is the difference between a zombie and an orphan process?

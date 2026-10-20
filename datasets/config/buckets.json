@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "note": "Revised XCoder dataset plan. Targets include existing rows; per-bucket stacks cover every stack in dataset.json exactly once. git-tooling target reduced 400000->4485: github-code filters boilerplate (.gitignore) and no other free source exists; total_target reduced accordingly.",
+  "total_target": 9604485,
+  "buckets": {
+    "js-ts": {
+      "label": "JavaScript and TypeScript",
+      "target": 1500000,
+      "stacks": ["javascript", "typescript"]
+    },
+    "python": {
+      "label": "Python",
+      "target": 1200000,
+      "stacks": ["python"]
+    },
+    "php-laravel": {
+      "label": "PHP and Laravel",
+      "target": 1200000,
+      "stacks": ["php", "laravel"]
+    },
+    "sql-db": {
+      "label": "SQL, MySQL and PostgreSQL",
+      "target": 1000000,
+      "stacks": ["sql", "mysql", "postgresql", "sqlite", "mariadb", "mongodb", "redis"]
+    },
+    "web-ui": {
+      "label": "HTML, CSS, Bootstrap and web UI",
+      "target": 900000,
+      "stacks": ["html", "css", "bootstrap", "tailwind", "jquery", "jqueryui", "react", "vuejs", "angular", "angularjs"]
+    },
+    "algorithms": {
+      "label": "Algorithms, data structures and problem solving",
+      "target": 800000,
+      "stacks": ["algorithms"]
+    },
+    "debug-test": {
+      "label": "Debugging, testing and code review",
+      "target": 800000,
+      "stacks": ["debugging", "testing"]
+    },
+    "apis-backend": {
+      "label": "APIs, backend and system integration",
+      "target": 700000,
+      "stacks": ["api", "nodejs", "django", "flask", "spring"]
+    },
+    "linux-devops": {
+      "label": "Linux, shell, Docker and DevOps",
+      "target": 500000,
+      "stacks": ["linux", "bash", "docker"]
+    },
+    "git-tooling": {
+      "label": "Git, tooling and software engineering",
+      "target": 4485,
+      "stacks": ["git"]
+    },
+    "docs-refactor": {
+      "label": "Documentation, explanations and refactoring",
+      "target": 500000,
+      "stacks": ["docs", "refactoring"]
+    },
+    "other": {
+      "label": "Other programming languages and concepts",
+      "target": 500000,
+      "stacks": ["c", "cpp", "csharp", "go", "java", "rust", "ruby", "perl",
+                "lua", "visualbasic", "pascal", "cobol", "flutter", "reactnative",
+                "android", "ios", "xamarin", "dart", "kotlin", "swift",
+                "networking", "general"]
+    }
+  }
+}

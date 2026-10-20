@@ -50,5 +50,7 @@ build/
 dist/
 *.spec
 
-# Training datasets are kept out of this repo (stored separately)
-/datasets/
+# Training data is kept out of this repo (stored on HF: myxcoder/programming).
+# Tooling/config under datasets/ stays tracked; bulk data does not.
+datasets/*.jsonl
+datasets/*.jsonl.bak

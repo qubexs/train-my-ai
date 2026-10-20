@@ -1,0 +1,4276 @@
+Apa yang perlu saya tahu tentang `$(date +%F)`?
+Apa yang perlu saya tahu tentang `$1 $@ $#`?
+Apa yang perlu saya tahu tentang `${PORT:-3000}`?
+Apa yang perlu saya tahu tentang `${VAR:=default}`?
+Apa yang perlu saya tahu tentang `${s/old/new}`?
+Apa yang perlu saya tahu tentang `${s:0:3}`?
+Apa yang perlu saya tahu tentang `<<EOF heredoc`?
+Apa yang perlu saya tahu tentang `BASH_REMATCH groups`?
+Apa yang perlu saya tahu tentang `BASH_SOURCE LINENO`?
+Apa yang perlu saya tahu tentang `BASH_XTRACEFD log`?
+Apa yang perlu saya tahu tentang `DEBUG trap`?
+Apa yang perlu saya tahu tentang `EPOCHSECONDS SRANDOM`?
+Apa yang perlu saya tahu tentang `ERR trap scope`?
+Apa yang perlu saya tahu tentang `FUNCNAME stack`?
+Apa yang perlu saya tahu tentang `IFS field tricks`?
+Apa yang perlu saya tahu tentang `PIPESTATUS check`?
+Apa yang perlu saya tahu tentang `PS1 prompt`?
+Apa yang perlu saya tahu tentang `PS4 custom`?
+Apa yang perlu saya tahu tentang `RETURN trap`?
+Apa yang perlu saya tahu tentang `[[ $x =~ ^[0-9]+$ ]]`?
+Apa yang perlu saya tahu tentang `a | b | c`?
+Apa yang perlu saya tahu tentang `age secrets`?
+Apa yang perlu saya tahu tentang `alias unalias`?
+Apa yang perlu saya tahu tentang `allexport vars`?
+Apa yang perlu saya tahu tentang `apt install`?
+Apa yang perlu saya tahu tentang `arr=(a b c)`?
+Apa yang perlu saya tahu tentang `assign default :=`?
+Apa yang perlu saya tahu tentang `assoc key ops`?
+Apa yang perlu saya tahu tentang `assoc_expand_once`?
+Apa yang perlu saya tahu tentang `at oneshot`?
+Apa yang perlu saya tahu tentang `autocd dirs`?
+Apa yang perlu saya tahu tentang `awk begin end`?
+Apa yang perlu saya tahu tentang `awk filter rows`?
+Apa yang perlu saya tahu tentang `awk sum column`?
+Apa yang perlu saya tahu tentang `base64 encode`?
+Apa yang perlu saya tahu tentang `bash version check`?
+Apa yang perlu saya tahu tentang `bat pager`?
+Apa yang perlu saya tahu tentang `bats testing`?
+Apa yang perlu saya tahu tentang `bind shortcut`?
+Apa yang perlu saya tahu tentang `brace expansion`?
+Apa yang perlu saya tahu tentang `braceexpand toggle`?
+Apa yang perlu saya tahu tentang `caller debug`?
+Apa yang perlu saya tahu tentang `case $1 in`?
+Apa yang perlu saya tahu tentang `checkhash path`?
+Apa yang perlu saya tahu tentang `checkjobs exit`?
+Apa yang perlu saya tahu tentang `checkwinsize resize`?
+Apa yang perlu saya tahu tentang `chmod numeric`?
+Apa yang perlu saya tahu tentang `chown user group`?
+Apa yang perlu saya tahu tentang `cmd > out 2>&1`?
+Apa yang perlu saya tahu tentang `cmd1 && cmd2`?
+Apa yang perlu saya tahu tentang `cmdhist multiline`?
+Apa yang perlu saya tahu tentang `column -t align`?
+Apa yang perlu saya tahu tentang `comm compare sorted`?
+Apa yang perlu saya tahu tentang `compgen list`?
+Apa yang perlu saya tahu tentang `complete custom`?
+Apa yang perlu saya tahu tentang `coproc two-way`?
+Apa yang perlu saya tahu tentang `cron schedule`?
+Apa yang perlu saya tahu tentang `csplit context split`?
+Apa yang perlu saya tahu tentang `curl download resume`?
+Apa yang perlu saya tahu tentang `curl retry backoff`?
+Apa yang perlu saya tahu tentang `curl timing`?
+Apa yang perlu saya tahu tentang `cut fields`?
+Apa yang perlu saya tahu tentang `date format calc`?
+Apa yang perlu saya tahu tentang `dd clone`?
+Apa yang perlu saya tahu tentang `df inodes`?
+Apa yang perlu saya tahu tentang `diff cmp files`?
+Apa yang perlu saya tahu tentang `diff exit codes`?
+Apa yang perlu saya tahu tentang `dig dns`?
+Apa yang perlu saya tahu tentang `direxpand paths`?
+Apa yang perlu saya tahu tentang `disown huponexit`?
+Apa yang perlu saya tahu tentang `dmesg errors`?
+Apa yang perlu saya tahu tentang `dotglob hidden`?
+Apa yang perlu saya tahu tentang `du top dirs`?
+Apa yang perlu saya tahu tentang `emacs vi mode`?
+Apa yang perlu saya tahu tentang `entr rerun`?
+Apa yang perlu saya tahu tentang `env hierarchy`?
+Apa yang perlu saya tahu tentang `errexit pitfalls`?
+Apa yang perlu saya tahu tentang `errtrace functrace`?
+Apa yang perlu saya tahu tentang `exec cmd`?
+Apa yang perlu saya tahu tentang `exit codes`?
+Apa yang perlu saya tahu tentang `exit trap codes`?
+Apa yang perlu saya tahu tentang `expand unexpand tabs`?
+Apa yang perlu saya tahu tentang `expand_aliases scripts`?
+Apa yang perlu saya tahu tentang `extquote strings`?
+Apa yang perlu saya tahu tentang `failglob strict`?
+Apa yang perlu saya tahu tentang `fd find`?
+Apa yang perlu saya tahu tentang `find . -print0 | xargs -0`?
+Apa yang perlu saya tahu tentang `find exec plus`?
+Apa yang perlu saya tahu tentang `find mtime size`?
+Apa yang perlu saya tahu tentang `flock singleton`?
+Apa yang perlu saya tahu tentang `for f in *.md`?
+Apa yang perlu saya tahu tentang `free available`?
+Apa yang perlu saya tahu tentang `function greet()`?
+Apa yang perlu saya tahu tentang `fzf history`?
+Apa yang perlu saya tahu tentang `getopts flags`?
+Apa yang perlu saya tahu tentang `getopts silent errors`?
+Apa yang perlu saya tahu tentang `git archive deploy`?
+Apa yang perlu saya tahu tentang `globasciiranges`?
+Apa yang perlu saya tahu tentang `globstar extglob`?
+Apa yang perlu saya tahu tentang `gnu_errfmt errors`?
+Apa yang perlu saya tahu tentang `gpg encrypt sign`?
+Apa yang perlu saya tahu tentang `grep context`?
+Apa yang perlu saya tahu tentang `grep extended`?
+Apa yang perlu saya tahu tentang `grep invert count`?
+Apa yang perlu saya tahu tentang `head tail files`?
+Apa yang perlu saya tahu tentang `histappend share`?
+Apa yang perlu saya tahu tentang `history control`?
+Apa yang perlu saya tahu tentang `histverify expand`?
+Apa yang perlu saya tahu tentang `htop vs top`?
+Apa yang perlu saya tahu tentang `hyperfine bench`?
+Apa yang perlu saya tahu tentang `if [[ -f fail ]]`?
+Apa yang perlu saya tahu tentang `inherit_errexit subshell`?
+Apa yang perlu saya tahu tentang `ip addr route`?
+Apa yang perlu saya tahu tentang `jobs wait &`?
+Apa yang perlu saya tahu tentang `join two files`?
+Apa yang perlu saya tahu tentang `journalctl unit`?
+Apa yang perlu saya tahu tentang `jq extract field`?
+Apa yang perlu saya tahu tentang `jq filter select`?
+Apa yang perlu saya tahu tentang `jq walk reduce`?
+Apa yang perlu saya tahu tentang `kill -l signals`?
+Apa yang perlu saya tahu tentang `kill signals`?
+Apa yang perlu saya tahu tentang `lastpipe variable`?
+Apa yang perlu saya tahu tentang `localvar_inherit`?
+Apa yang perlu saya tahu tentang `logger syslog`?
+Apa yang perlu saya tahu tentang `login_shell detect`?
+Apa yang perlu saya tahu tentang `lsof port`?
+Apa yang perlu saya tahu tentang `lvm extend`?
+Apa yang perlu saya tahu tentang `mailwarn mail`?
+Apa yang perlu saya tahu tentang `mapfile callback`?
+Apa yang perlu saya tahu tentang `mapfile delimiter`?
+Apa yang perlu saya tahu tentang `mapfile lines`?
+Apa yang perlu saya tahu tentang `mapfile skip count`?
+Apa yang perlu saya tahu tentang `mktemp secure files`?
+Apa yang perlu saya tahu tentang `mount fstab`?
+Apa yang perlu saya tahu tentang `nameref declare -n`?
+Apa yang perlu saya tahu tentang `nc port test`?
+Apa yang perlu saya tahu tentang `ncdu disk`?
+Apa yang perlu saya tahu tentang `nl number lines`?
+Apa yang perlu saya tahu tentang `nmcli wifi`?
+Apa yang perlu saya tahu tentang `no_empty_cmd_completion`?
+Apa yang perlu saya tahu tentang `nocaseglob match`?
+Apa yang perlu saya tahu tentang `noclobber safe`?
+Apa yang perlu saya tahu tentang `node check syntax`?
+Apa yang perlu saya tahu tentang `noexec dryrun`?
+Apa yang perlu saya tahu tentang `noglob paths`?
+Apa yang perlu saya tahu tentang `notify jobs`?
+Apa yang perlu saya tahu tentang `nounset empty arrays`?
+Apa yang perlu saya tahu tentang `od hexdump bytes`?
+Apa yang perlu saya tahu tentang `onecmd flag`?
+Apa yang perlu saya tahu tentang `openssl s_client`?
+Apa yang perlu saya tahu tentang `openssl selfsign`?
+Apa yang perlu saya tahu tentang `passwd lock`?
+Apa yang perlu saya tahu tentang `paste join lines`?
+Apa yang perlu saya tahu tentang `pgrep pkill`?
+Apa yang perlu saya tahu tentang `physical cd`?
+Apa yang perlu saya tahu tentang `ping mtr`?
+Apa yang perlu saya tahu tentang `pip download wheels`?
+Apa yang perlu saya tahu tentang `posix mode`?
+Apa yang perlu saya tahu tentang `printf %q quoting`?
+Apa yang perlu saya tahu tentang `printf format`?
+Apa yang perlu saya tahu tentang `progcomp programmable`?
+Apa yang perlu saya tahu tentang `promptvars expand`?
+Apa yang perlu saya tahu tentang `ps forest`?
+Apa yang perlu saya tahu tentang `pushd popd`?
+Apa yang perlu saya tahu tentang `python http server`?
+Apa yang perlu saya tahu tentang `read array -a`?
+Apa yang perlu saya tahu tentang `read custom delim`?
+Apa yang perlu saya tahu tentang `read readline edit`?
+Apa yang perlu saya tahu tentang `readonly VAR`?
+Apa yang perlu saya tahu tentang `restricted_shell`?
+Apa yang perlu saya tahu tentang `rg ripgrep`?
+Apa yang perlu saya tahu tentang `rsync archive`?
+Apa yang perlu saya tahu tentang `scp sftp`?
+Apa yang perlu saya tahu tentang `screen detach`?
+Apa yang perlu saya tahu tentang `script session`?
+Apa yang perlu saya tahu tentang `sed backup edit`?
+Apa yang perlu saya tahu tentang `sed delete lines`?
+Apa yang perlu saya tahu tentang `sed replace inline`?
+Apa yang perlu saya tahu tentang `select PS3 custom`?
+Apa yang perlu saya tahu tentang `select menu`?
+Apa yang perlu saya tahu tentang `seq 1 10`?
+Apa yang perlu saya tahu tentang `set -euo pipefail`?
+Apa yang perlu saya tahu tentang `set -x debug`?
+Apa yang perlu saya tahu tentang `sha256sum verify`?
+Apa yang perlu saya tahu tentang `shellcheck lint`?
+Apa yang perlu saya tahu tentang `shfmt format`?
+Apa yang perlu saya tahu tentang `shift_verbose`?
+Apa yang perlu saya tahu tentang `shift`?
+Apa yang perlu saya tahu tentang `shopt options`?
+Apa yang perlu saya tahu tentang `shuf random lines`?
+Apa yang perlu saya tahu tentang `sort human uniq`?
+Apa yang perlu saya tahu tentang `sort uniq pipeline`?
+Apa yang perlu saya tahu tentang `source guard`?
+Apa yang perlu saya tahu tentang `source lib.sh`?
+Apa yang perlu saya tahu tentang `sourcepath lookup`?
+Apa yang perlu saya tahu tentang `split large files`?
+Apa yang perlu saya tahu tentang `ss advanced`?
+Apa yang perlu saya tahu tentang `ssh keygen copy`?
+Apa yang perlu saya tahu tentang `stat format`?
+Apa yang perlu saya tahu tentang `strace syscall`?
+Apa yang perlu saya tahu tentang `string replace`?
+Apa yang perlu saya tahu tentang `strings binaries`?
+Apa yang perlu saya tahu tentang `stty sane`?
+Apa yang perlu saya tahu tentang `su login shell`?
+Apa yang perlu saya tahu tentang `substring slice`?
+Apa yang perlu saya tahu tentang `sudo visudo`?
+Apa yang perlu saya tahu tentang `systemctl status`?
+Apa yang perlu saya tahu tentang `systemd cat edit`?
+Apa yang perlu saya tahu tentang `systemd mask`?
+Apa yang perlu saya tahu tentang `systemd timer`?
+Apa yang perlu saya tahu tentang `tac reverse cat`?
+Apa yang perlu saya tahu tentang `tail follow`?
+Apa yang perlu saya tahu tentang `tar create extract`?
+Apa yang perlu saya tahu tentang `tcpdump filter`?
+Apa yang perlu saya tahu tentang `tee split output`?
+Apa yang perlu saya tahu tentang `test -e -s -x`?
+Apa yang perlu saya tahu tentang `test -e -s`?
+Apa yang perlu saya tahu tentang `time keyword`?
+Apa yang perlu saya tahu tentang `timeout guard`?
+Apa yang perlu saya tahu tentang `tmux send-keys`?
+Apa yang perlu saya tahu tentang `tmux session`?
+Apa yang perlu saya tahu tentang `tmux synchronize`?
+Apa yang perlu saya tahu tentang `tput colors`?
+Apa yang perlu saya tahu tentang `tr squeeze delete`?
+Apa yang perlu saya tahu tentang `tr translate`?
+Apa yang perlu saya tahu tentang `trap cleanup EXIT`?
+Apa yang perlu saya tahu tentang `type command which`?
+Apa yang perlu saya tahu tentang `type hash cmd`?
+Apa yang perlu saya tahu tentang `ulimit core`?
+Apa yang perlu saya tahu tentang `umask in scripts`?
+Apa yang perlu saya tahu tentang `until loop`?
+Apa yang perlu saya tahu tentang `update alternatives`?
+Apa yang perlu saya tahu tentang `uptime load`?
+Apa yang perlu saya tahu tentang `useradd mod del`?
+Apa yang perlu saya tahu tentang `verbose trace`?
+Apa yang perlu saya tahu tentang `wait -n -p`?
+Apa yang perlu saya tahu tentang `watch monitor`?
+Apa yang perlu saya tahu tentang `wc count`?
+Apa yang perlu saya tahu tentang `wget mirror`?
+Apa yang perlu saya tahu tentang `wget spider check`?
+Apa yang perlu saya tahu tentang `while read baris`?
+Apa yang perlu saya tahu tentang `who w last`?
+Apa yang perlu saya tahu tentang `xargs replace`?
+Apa yang perlu saya tahu tentang `xpg_echo portability`?
+Apa yang perlu saya tahu tentang `yq yaml`?
+Apa yang perlu saya tahu tentang `zip unzip`?
+Apakah fungsi `$(date +%F)`?
+Apakah fungsi `$1 $@ $#`?
+Apakah fungsi `${PORT:-3000}`?
+Apakah fungsi `${VAR:=default}`?
+Apakah fungsi `${s/old/new}`?
+Apakah fungsi `${s:0:3}`?
+Apakah fungsi `<<EOF heredoc`?
+Apakah fungsi `BASH_REMATCH groups`?
+Apakah fungsi `BASH_SOURCE LINENO`?
+Apakah fungsi `BASH_XTRACEFD log`?
+Apakah fungsi `DEBUG trap`?
+Apakah fungsi `EPOCHSECONDS SRANDOM`?
+Apakah fungsi `ERR trap scope`?
+Apakah fungsi `FUNCNAME stack`?
+Apakah fungsi `IFS field tricks`?
+Apakah fungsi `PIPESTATUS check`?
+Apakah fungsi `PS1 prompt`?
+Apakah fungsi `PS4 custom`?
+Apakah fungsi `RETURN trap`?
+Apakah fungsi `[[ $x =~ ^[0-9]+$ ]]`?
+Apakah fungsi `a | b | c`?
+Apakah fungsi `age secrets`?
+Apakah fungsi `alias unalias`?
+Apakah fungsi `allexport vars`?
+Apakah fungsi `apt install`?
+Apakah fungsi `arr=(a b c)`?
+Apakah fungsi `assign default :=`?
+Apakah fungsi `assoc key ops`?
+Apakah fungsi `assoc_expand_once`?
+Apakah fungsi `at oneshot`?
+Apakah fungsi `autocd dirs`?
+Apakah fungsi `awk begin end`?
+Apakah fungsi `awk filter rows`?
+Apakah fungsi `awk sum column`?
+Apakah fungsi `base64 encode`?
+Apakah fungsi `bash version check`?
+Apakah fungsi `bat pager`?
+Apakah fungsi `bats testing`?
+Apakah fungsi `bind shortcut`?
+Apakah fungsi `brace expansion`?
+Apakah fungsi `braceexpand toggle`?
+Apakah fungsi `caller debug`?
+Apakah fungsi `case $1 in`?
+Apakah fungsi `checkhash path`?
+Apakah fungsi `checkjobs exit`?
+Apakah fungsi `checkwinsize resize`?
+Apakah fungsi `chmod numeric`?
+Apakah fungsi `chown user group`?
+Apakah fungsi `cmd > out 2>&1`?
+Apakah fungsi `cmd1 && cmd2`?
+Apakah fungsi `cmdhist multiline`?
+Apakah fungsi `column -t align`?
+Apakah fungsi `comm compare sorted`?
+Apakah fungsi `compgen list`?
+Apakah fungsi `complete custom`?
+Apakah fungsi `coproc two-way`?
+Apakah fungsi `cron schedule`?
+Apakah fungsi `csplit context split`?
+Apakah fungsi `curl download resume`?
+Apakah fungsi `curl retry backoff`?
+Apakah fungsi `curl timing`?
+Apakah fungsi `cut fields`?
+Apakah fungsi `date format calc`?
+Apakah fungsi `dd clone`?
+Apakah fungsi `df inodes`?
+Apakah fungsi `diff cmp files`?
+Apakah fungsi `diff exit codes`?
+Apakah fungsi `dig dns`?
+Apakah fungsi `direxpand paths`?
+Apakah fungsi `disown huponexit`?
+Apakah fungsi `dmesg errors`?
+Apakah fungsi `dotglob hidden`?
+Apakah fungsi `du top dirs`?
+Apakah fungsi `emacs vi mode`?
+Apakah fungsi `entr rerun`?
+Apakah fungsi `env hierarchy`?
+Apakah fungsi `errexit pitfalls`?
+Apakah fungsi `errtrace functrace`?
+Apakah fungsi `exec cmd`?
+Apakah fungsi `exit codes`?
+Apakah fungsi `exit trap codes`?
+Apakah fungsi `expand unexpand tabs`?
+Apakah fungsi `expand_aliases scripts`?
+Apakah fungsi `extquote strings`?
+Apakah fungsi `failglob strict`?
+Apakah fungsi `fd find`?
+Apakah fungsi `find . -print0 | xargs -0`?
+Apakah fungsi `find exec plus`?
+Apakah fungsi `find mtime size`?
+Apakah fungsi `flock singleton`?
+Apakah fungsi `for f in *.md`?
+Apakah fungsi `free available`?
+Apakah fungsi `function greet()`?
+Apakah fungsi `fzf history`?
+Apakah fungsi `getopts flags`?
+Apakah fungsi `getopts silent errors`?
+Apakah fungsi `git archive deploy`?
+Apakah fungsi `globasciiranges`?
+Apakah fungsi `globstar extglob`?
+Apakah fungsi `gnu_errfmt errors`?
+Apakah fungsi `gpg encrypt sign`?
+Apakah fungsi `grep context`?
+Apakah fungsi `grep extended`?
+Apakah fungsi `grep invert count`?
+Apakah fungsi `head tail files`?
+Apakah fungsi `histappend share`?
+Apakah fungsi `history control`?
+Apakah fungsi `histverify expand`?
+Apakah fungsi `htop vs top`?
+Apakah fungsi `hyperfine bench`?
+Apakah fungsi `if [[ -f fail ]]`?
+Apakah fungsi `inherit_errexit subshell`?
+Apakah fungsi `ip addr route`?
+Apakah fungsi `jobs wait &`?
+Apakah fungsi `join two files`?
+Apakah fungsi `journalctl unit`?
+Apakah fungsi `jq extract field`?
+Apakah fungsi `jq filter select`?
+Apakah fungsi `jq walk reduce`?
+Apakah fungsi `kill -l signals`?
+Apakah fungsi `kill signals`?
+Apakah fungsi `lastpipe variable`?
+Apakah fungsi `localvar_inherit`?
+Apakah fungsi `logger syslog`?
+Apakah fungsi `login_shell detect`?
+Apakah fungsi `lsof port`?
+Apakah fungsi `lvm extend`?
+Apakah fungsi `mailwarn mail`?
+Apakah fungsi `mapfile callback`?
+Apakah fungsi `mapfile delimiter`?
+Apakah fungsi `mapfile lines`?
+Apakah fungsi `mapfile skip count`?
+Apakah fungsi `mktemp secure files`?
+Apakah fungsi `mount fstab`?
+Apakah fungsi `nameref declare -n`?
+Apakah fungsi `nc port test`?
+Apakah fungsi `ncdu disk`?
+Apakah fungsi `nl number lines`?
+Apakah fungsi `nmcli wifi`?
+Apakah fungsi `no_empty_cmd_completion`?
+Apakah fungsi `nocaseglob match`?
+Apakah fungsi `noclobber safe`?
+Apakah fungsi `node check syntax`?
+Apakah fungsi `noexec dryrun`?
+Apakah fungsi `noglob paths`?
+Apakah fungsi `notify jobs`?
+Apakah fungsi `nounset empty arrays`?
+Apakah fungsi `od hexdump bytes`?
+Apakah fungsi `onecmd flag`?
+Apakah fungsi `openssl s_client`?
+Apakah fungsi `openssl selfsign`?
+Apakah fungsi `passwd lock`?
+Apakah fungsi `paste join lines`?
+Apakah fungsi `pgrep pkill`?
+Apakah fungsi `physical cd`?
+Apakah fungsi `ping mtr`?
+Apakah fungsi `pip download wheels`?
+Apakah fungsi `posix mode`?
+Apakah fungsi `printf %q quoting`?
+Apakah fungsi `printf format`?
+Apakah fungsi `progcomp programmable`?
+Apakah fungsi `promptvars expand`?
+Apakah fungsi `ps forest`?
+Apakah fungsi `pushd popd`?
+Apakah fungsi `python http server`?
+Apakah fungsi `read array -a`?
+Apakah fungsi `read custom delim`?
+Apakah fungsi `read readline edit`?
+Apakah fungsi `readonly VAR`?
+Apakah fungsi `restricted_shell`?
+Apakah fungsi `rg ripgrep`?
+Apakah fungsi `rsync archive`?
+Apakah fungsi `scp sftp`?
+Apakah fungsi `screen detach`?
+Apakah fungsi `script session`?
+Apakah fungsi `sed backup edit`?
+Apakah fungsi `sed delete lines`?
+Apakah fungsi `sed replace inline`?
+Apakah fungsi `select PS3 custom`?
+Apakah fungsi `select menu`?
+Apakah fungsi `seq 1 10`?
+Apakah fungsi `set -euo pipefail`?
+Apakah fungsi `set -x debug`?
+Apakah fungsi `sha256sum verify`?
+Apakah fungsi `shellcheck lint`?
+Apakah fungsi `shfmt format`?
+Apakah fungsi `shift_verbose`?
+Apakah fungsi `shift`?
+Apakah fungsi `shopt options`?
+Apakah fungsi `shuf random lines`?
+Apakah fungsi `sort human uniq`?
+Apakah fungsi `sort uniq pipeline`?
+Apakah fungsi `source guard`?
+Apakah fungsi `source lib.sh`?
+Apakah fungsi `sourcepath lookup`?
+Apakah fungsi `split large files`?
+Apakah fungsi `ss advanced`?
+Apakah fungsi `ssh keygen copy`?
+Apakah fungsi `stat format`?
+Apakah fungsi `strace syscall`?
+Apakah fungsi `string replace`?
+Apakah fungsi `strings binaries`?
+Apakah fungsi `stty sane`?
+Apakah fungsi `su login shell`?
+Apakah fungsi `substring slice`?
+Apakah fungsi `sudo visudo`?
+Apakah fungsi `systemctl status`?
+Apakah fungsi `systemd cat edit`?
+Apakah fungsi `systemd mask`?
+Apakah fungsi `systemd timer`?
+Apakah fungsi `tac reverse cat`?
+Apakah fungsi `tail follow`?
+Apakah fungsi `tar create extract`?
+Apakah fungsi `tcpdump filter`?
+Apakah fungsi `tee split output`?
+Apakah fungsi `test -e -s -x`?
+Apakah fungsi `test -e -s`?
+Apakah fungsi `time keyword`?
+Apakah fungsi `timeout guard`?
+Apakah fungsi `tmux send-keys`?
+Apakah fungsi `tmux session`?
+Apakah fungsi `tmux synchronize`?
+Apakah fungsi `tput colors`?
+Apakah fungsi `tr squeeze delete`?
+Apakah fungsi `tr translate`?
+Apakah fungsi `trap cleanup EXIT`?
+Apakah fungsi `type command which`?
+Apakah fungsi `type hash cmd`?
+Apakah fungsi `ulimit core`?
+Apakah fungsi `umask in scripts`?
+Apakah fungsi `until loop`?
+Apakah fungsi `update alternatives`?
+Apakah fungsi `uptime load`?
+Apakah fungsi `useradd mod del`?
+Apakah fungsi `verbose trace`?
+Apakah fungsi `wait -n -p`?
+Apakah fungsi `watch monitor`?
+Apakah fungsi `wc count`?
+Apakah fungsi `wget mirror`?
+Apakah fungsi `wget spider check`?
+Apakah fungsi `while read baris`?
+Apakah fungsi `who w last`?
+Apakah fungsi `xargs replace`?
+Apakah fungsi `xpg_echo portability`?
+Apakah fungsi `yq yaml`?
+Apakah fungsi `zip unzip`?
+Bagaimana baca fail besar ke array bash dengan pantas?
+Bagaimana bezakan output dua arahan dinamik dalam bash?
+Bagaimana buat SSH tunnel tiga jenis dalam bash?
+Bagaimana citek fail sementara selamat dalam bash?
+Bagaimana guna parameter expansion bash ganti sed?
+Bagaimana kesan arahan mana gagal dalam pipeline bash?
+Bagaimanakah `$(date +%F)` berfungsi?
+Bagaimanakah `$1 $@ $#` berfungsi?
+Bagaimanakah `${PORT:-3000}` berfungsi?
+Bagaimanakah `${VAR:=default}` berfungsi?
+Bagaimanakah `${s/old/new}` berfungsi?
+Bagaimanakah `${s:0:3}` berfungsi?
+Bagaimanakah `<<EOF heredoc` berfungsi?
+Bagaimanakah `BASH_REMATCH groups` berfungsi?
+Bagaimanakah `BASH_SOURCE LINENO` berfungsi?
+Bagaimanakah `BASH_XTRACEFD log` berfungsi?
+Bagaimanakah `DEBUG trap` berfungsi?
+Bagaimanakah `EPOCHSECONDS SRANDOM` berfungsi?
+Bagaimanakah `ERR trap scope` berfungsi?
+Bagaimanakah `FUNCNAME stack` berfungsi?
+Bagaimanakah `IFS field tricks` berfungsi?
+Bagaimanakah `PIPESTATUS check` berfungsi?
+Bagaimanakah `PS1 prompt` berfungsi?
+Bagaimanakah `PS4 custom` berfungsi?
+Bagaimanakah `RETURN trap` berfungsi?
+Bagaimanakah `[[ $x =~ ^[0-9]+$ ]]` berfungsi?
+Bagaimanakah `a | b | c` berfungsi?
+Bagaimanakah `age secrets` berfungsi?
+Bagaimanakah `alias unalias` berfungsi?
+Bagaimanakah `allexport vars` berfungsi?
+Bagaimanakah `apt install` berfungsi?
+Bagaimanakah `arr=(a b c)` berfungsi?
+Bagaimanakah `assign default :=` berfungsi?
+Bagaimanakah `assoc key ops` berfungsi?
+Bagaimanakah `assoc_expand_once` berfungsi?
+Bagaimanakah `at oneshot` berfungsi?
+Bagaimanakah `autocd dirs` berfungsi?
+Bagaimanakah `awk begin end` berfungsi?
+Bagaimanakah `awk filter rows` berfungsi?
+Bagaimanakah `awk sum column` berfungsi?
+Bagaimanakah `base64 encode` berfungsi?
+Bagaimanakah `bash version check` berfungsi?
+Bagaimanakah `bat pager` berfungsi?
+Bagaimanakah `bats testing` berfungsi?
+Bagaimanakah `bind shortcut` berfungsi?
+Bagaimanakah `brace expansion` berfungsi?
+Bagaimanakah `braceexpand toggle` berfungsi?
+Bagaimanakah `caller debug` berfungsi?
+Bagaimanakah `case $1 in` berfungsi?
+Bagaimanakah `checkhash path` berfungsi?
+Bagaimanakah `checkjobs exit` berfungsi?
+Bagaimanakah `checkwinsize resize` berfungsi?
+Bagaimanakah `chmod numeric` berfungsi?
+Bagaimanakah `chown user group` berfungsi?
+Bagaimanakah `cmd > out 2>&1` berfungsi?
+Bagaimanakah `cmd1 && cmd2` berfungsi?
+Bagaimanakah `cmdhist multiline` berfungsi?
+Bagaimanakah `column -t align` berfungsi?
+Bagaimanakah `comm compare sorted` berfungsi?
+Bagaimanakah `compgen list` berfungsi?
+Bagaimanakah `complete custom` berfungsi?
+Bagaimanakah `coproc two-way` berfungsi?
+Bagaimanakah `cron schedule` berfungsi?
+Bagaimanakah `csplit context split` berfungsi?
+Bagaimanakah `curl download resume` berfungsi?
+Bagaimanakah `curl retry backoff` berfungsi?
+Bagaimanakah `curl timing` berfungsi?
+Bagaimanakah `cut fields` berfungsi?
+Bagaimanakah `date format calc` berfungsi?
+Bagaimanakah `dd clone` berfungsi?
+Bagaimanakah `df inodes` berfungsi?
+Bagaimanakah `diff cmp files` berfungsi?
+Bagaimanakah `diff exit codes` berfungsi?
+Bagaimanakah `dig dns` berfungsi?
+Bagaimanakah `direxpand paths` berfungsi?
+Bagaimanakah `disown huponexit` berfungsi?
+Bagaimanakah `dmesg errors` berfungsi?
+Bagaimanakah `dotglob hidden` berfungsi?
+Bagaimanakah `du top dirs` berfungsi?
+Bagaimanakah `emacs vi mode` berfungsi?
+Bagaimanakah `entr rerun` berfungsi?
+Bagaimanakah `env hierarchy` berfungsi?
+Bagaimanakah `errexit pitfalls` berfungsi?
+Bagaimanakah `errtrace functrace` berfungsi?
+Bagaimanakah `exec cmd` berfungsi?
+Bagaimanakah `exit codes` berfungsi?
+Bagaimanakah `exit trap codes` berfungsi?
+Bagaimanakah `expand unexpand tabs` berfungsi?
+Bagaimanakah `expand_aliases scripts` berfungsi?
+Bagaimanakah `extquote strings` berfungsi?
+Bagaimanakah `failglob strict` berfungsi?
+Bagaimanakah `fd find` berfungsi?
+Bagaimanakah `find . -print0 | xargs -0` berfungsi?
+Bagaimanakah `find exec plus` berfungsi?
+Bagaimanakah `find mtime size` berfungsi?
+Bagaimanakah `flock singleton` berfungsi?
+Bagaimanakah `for f in *.md` berfungsi?
+Bagaimanakah `free available` berfungsi?
+Bagaimanakah `function greet()` berfungsi?
+Bagaimanakah `fzf history` berfungsi?
+Bagaimanakah `getopts flags` berfungsi?
+Bagaimanakah `getopts silent errors` berfungsi?
+Bagaimanakah `git archive deploy` berfungsi?
+Bagaimanakah `globasciiranges` berfungsi?
+Bagaimanakah `globstar extglob` berfungsi?
+Bagaimanakah `gnu_errfmt errors` berfungsi?
+Bagaimanakah `gpg encrypt sign` berfungsi?
+Bagaimanakah `grep context` berfungsi?
+Bagaimanakah `grep extended` berfungsi?
+Bagaimanakah `grep invert count` berfungsi?
+Bagaimanakah `head tail files` berfungsi?
+Bagaimanakah `histappend share` berfungsi?
+Bagaimanakah `history control` berfungsi?
+Bagaimanakah `histverify expand` berfungsi?
+Bagaimanakah `htop vs top` berfungsi?
+Bagaimanakah `hyperfine bench` berfungsi?
+Bagaimanakah `if [[ -f fail ]]` berfungsi?
+Bagaimanakah `inherit_errexit subshell` berfungsi?
+Bagaimanakah `ip addr route` berfungsi?
+Bagaimanakah `jobs wait &` berfungsi?
+Bagaimanakah `join two files` berfungsi?
+Bagaimanakah `journalctl unit` berfungsi?
+Bagaimanakah `jq extract field` berfungsi?
+Bagaimanakah `jq filter select` berfungsi?
+Bagaimanakah `jq walk reduce` berfungsi?
+Bagaimanakah `kill -l signals` berfungsi?
+Bagaimanakah `kill signals` berfungsi?
+Bagaimanakah `lastpipe variable` berfungsi?
+Bagaimanakah `localvar_inherit` berfungsi?
+Bagaimanakah `logger syslog` berfungsi?
+Bagaimanakah `login_shell detect` berfungsi?
+Bagaimanakah `lsof port` berfungsi?
+Bagaimanakah `lvm extend` berfungsi?
+Bagaimanakah `mailwarn mail` berfungsi?
+Bagaimanakah `mapfile callback` berfungsi?
+Bagaimanakah `mapfile delimiter` berfungsi?
+Bagaimanakah `mapfile lines` berfungsi?
+Bagaimanakah `mapfile skip count` berfungsi?
+Bagaimanakah `mktemp secure files` berfungsi?
+Bagaimanakah `mount fstab` berfungsi?
+Bagaimanakah `nameref declare -n` berfungsi?
+Bagaimanakah `nc port test` berfungsi?
+Bagaimanakah `ncdu disk` berfungsi?
+Bagaimanakah `nl number lines` berfungsi?
+Bagaimanakah `nmcli wifi` berfungsi?
+Bagaimanakah `no_empty_cmd_completion` berfungsi?
+Bagaimanakah `nocaseglob match` berfungsi?
+Bagaimanakah `noclobber safe` berfungsi?
+Bagaimanakah `node check syntax` berfungsi?
+Bagaimanakah `noexec dryrun` berfungsi?
+Bagaimanakah `noglob paths` berfungsi?
+Bagaimanakah `notify jobs` berfungsi?
+Bagaimanakah `nounset empty arrays` berfungsi?
+Bagaimanakah `od hexdump bytes` berfungsi?
+Bagaimanakah `onecmd flag` berfungsi?
+Bagaimanakah `openssl s_client` berfungsi?
+Bagaimanakah `openssl selfsign` berfungsi?
+Bagaimanakah `passwd lock` berfungsi?
+Bagaimanakah `paste join lines` berfungsi?
+Bagaimanakah `pgrep pkill` berfungsi?
+Bagaimanakah `physical cd` berfungsi?
+Bagaimanakah `ping mtr` berfungsi?
+Bagaimanakah `pip download wheels` berfungsi?
+Bagaimanakah `posix mode` berfungsi?
+Bagaimanakah `printf %q quoting` berfungsi?
+Bagaimanakah `printf format` berfungsi?
+Bagaimanakah `progcomp programmable` berfungsi?
+Bagaimanakah `promptvars expand` berfungsi?
+Bagaimanakah `ps forest` berfungsi?
+Bagaimanakah `pushd popd` berfungsi?
+Bagaimanakah `python http server` berfungsi?
+Bagaimanakah `read array -a` berfungsi?
+Bagaimanakah `read custom delim` berfungsi?
+Bagaimanakah `read readline edit` berfungsi?
+Bagaimanakah `readonly VAR` berfungsi?
+Bagaimanakah `restricted_shell` berfungsi?
+Bagaimanakah `rg ripgrep` berfungsi?
+Bagaimanakah `rsync archive` berfungsi?
+Bagaimanakah `scp sftp` berfungsi?
+Bagaimanakah `screen detach` berfungsi?
+Bagaimanakah `script session` berfungsi?
+Bagaimanakah `sed backup edit` berfungsi?
+Bagaimanakah `sed delete lines` berfungsi?
+Bagaimanakah `sed replace inline` berfungsi?
+Bagaimanakah `select PS3 custom` berfungsi?
+Bagaimanakah `select menu` berfungsi?
+Bagaimanakah `seq 1 10` berfungsi?
+Bagaimanakah `set -euo pipefail` berfungsi?
+Bagaimanakah `set -x debug` berfungsi?
+Bagaimanakah `sha256sum verify` berfungsi?
+Bagaimanakah `shellcheck lint` berfungsi?
+Bagaimanakah `shfmt format` berfungsi?
+Bagaimanakah `shift_verbose` berfungsi?
+Bagaimanakah `shift` berfungsi?
+Bagaimanakah `shopt options` berfungsi?
+Bagaimanakah `shuf random lines` berfungsi?
+Bagaimanakah `sort human uniq` berfungsi?
+Bagaimanakah `sort uniq pipeline` berfungsi?
+Bagaimanakah `source guard` berfungsi?
+Bagaimanakah `source lib.sh` berfungsi?
+Bagaimanakah `sourcepath lookup` berfungsi?
+Bagaimanakah `split large files` berfungsi?
+Bagaimanakah `ss advanced` berfungsi?
+Bagaimanakah `ssh keygen copy` berfungsi?
+Bagaimanakah `stat format` berfungsi?
+Bagaimanakah `strace syscall` berfungsi?
+Bagaimanakah `string replace` berfungsi?
+Bagaimanakah `strings binaries` berfungsi?
+Bagaimanakah `stty sane` berfungsi?
+Bagaimanakah `su login shell` berfungsi?
+Bagaimanakah `substring slice` berfungsi?
+Bagaimanakah `sudo visudo` berfungsi?
+Bagaimanakah `systemctl status` berfungsi?
+Bagaimanakah `systemd cat edit` berfungsi?
+Bagaimanakah `systemd mask` berfungsi?
+Bagaimanakah `systemd timer` berfungsi?
+Bagaimanakah `tac reverse cat` berfungsi?
+Bagaimanakah `tail follow` berfungsi?
+Bagaimanakah `tar create extract` berfungsi?
+Bagaimanakah `tcpdump filter` berfungsi?
+Bagaimanakah `tee split output` berfungsi?
+Bagaimanakah `test -e -s -x` berfungsi?
+Bagaimanakah `test -e -s` berfungsi?
+Bagaimanakah `time keyword` berfungsi?
+Bagaimanakah `timeout guard` berfungsi?
+Bagaimanakah `tmux send-keys` berfungsi?
+Bagaimanakah `tmux session` berfungsi?
+Bagaimanakah `tmux synchronize` berfungsi?
+Bagaimanakah `tput colors` berfungsi?
+Bagaimanakah `tr squeeze delete` berfungsi?
+Bagaimanakah `tr translate` berfungsi?
+Bagaimanakah `trap cleanup EXIT` berfungsi?
+Bagaimanakah `type command which` berfungsi?
+Bagaimanakah `type hash cmd` berfungsi?
+Bagaimanakah `ulimit core` berfungsi?
+Bagaimanakah `umask in scripts` berfungsi?
+Bagaimanakah `until loop` berfungsi?
+Bagaimanakah `update alternatives` berfungsi?
+Bagaimanakah `uptime load` berfungsi?
+Bagaimanakah `useradd mod del` berfungsi?
+Bagaimanakah `verbose trace` berfungsi?
+Bagaimanakah `wait -n -p` berfungsi?
+Bagaimanakah `watch monitor` berfungsi?
+Bagaimanakah `wc count` berfungsi?
+Bagaimanakah `wget mirror` berfungsi?
+Bagaimanakah `wget spider check` berfungsi?
+Bagaimanakah `while read baris` berfungsi?
+Bagaimanakah `who w last` berfungsi?
+Bagaimanakah `xargs replace` berfungsi?
+Bagaimanakah `xpg_echo portability` berfungsi?
+Bagaimanakah `yq yaml` berfungsi?
+Bagaimanakah `zip unzip` berfungsi?
+Beri contoh penggunaan `$(date +%F)`.
+Beri contoh penggunaan `$1 $@ $#`.
+Beri contoh penggunaan `${PORT:-3000}`.
+Beri contoh penggunaan `${VAR:=default}`.
+Beri contoh penggunaan `${s/old/new}`.
+Beri contoh penggunaan `${s:0:3}`.
+Beri contoh penggunaan `<<EOF heredoc`.
+Beri contoh penggunaan `BASH_REMATCH groups`.
+Beri contoh penggunaan `BASH_SOURCE LINENO`.
+Beri contoh penggunaan `BASH_XTRACEFD log`.
+Beri contoh penggunaan `DEBUG trap`.
+Beri contoh penggunaan `EPOCHSECONDS SRANDOM`.
+Beri contoh penggunaan `ERR trap scope`.
+Beri contoh penggunaan `FUNCNAME stack`.
+Beri contoh penggunaan `IFS field tricks`.
+Beri contoh penggunaan `PIPESTATUS check`.
+Beri contoh penggunaan `PS1 prompt`.
+Beri contoh penggunaan `PS4 custom`.
+Beri contoh penggunaan `RETURN trap`.
+Beri contoh penggunaan `[[ $x =~ ^[0-9]+$ ]]`.
+Beri contoh penggunaan `a | b | c`.
+Beri contoh penggunaan `age secrets`.
+Beri contoh penggunaan `alias unalias`.
+Beri contoh penggunaan `allexport vars`.
+Beri contoh penggunaan `apt install`.
+Beri contoh penggunaan `arr=(a b c)`.
+Beri contoh penggunaan `assign default :=`.
+Beri contoh penggunaan `assoc key ops`.
+Beri contoh penggunaan `assoc_expand_once`.
+Beri contoh penggunaan `at oneshot`.
+Beri contoh penggunaan `autocd dirs`.
+Beri contoh penggunaan `awk begin end`.
+Beri contoh penggunaan `awk filter rows`.
+Beri contoh penggunaan `awk sum column`.
+Beri contoh penggunaan `base64 encode`.
+Beri contoh penggunaan `bash version check`.
+Beri contoh penggunaan `bat pager`.
+Beri contoh penggunaan `bats testing`.
+Beri contoh penggunaan `bind shortcut`.
+Beri contoh penggunaan `brace expansion`.
+Beri contoh penggunaan `braceexpand toggle`.
+Beri contoh penggunaan `caller debug`.
+Beri contoh penggunaan `case $1 in`.
+Beri contoh penggunaan `checkhash path`.
+Beri contoh penggunaan `checkjobs exit`.
+Beri contoh penggunaan `checkwinsize resize`.
+Beri contoh penggunaan `chmod numeric`.
+Beri contoh penggunaan `chown user group`.
+Beri contoh penggunaan `cmd > out 2>&1`.
+Beri contoh penggunaan `cmd1 && cmd2`.
+Beri contoh penggunaan `cmdhist multiline`.
+Beri contoh penggunaan `column -t align`.
+Beri contoh penggunaan `comm compare sorted`.
+Beri contoh penggunaan `compgen list`.
+Beri contoh penggunaan `complete custom`.
+Beri contoh penggunaan `coproc two-way`.
+Beri contoh penggunaan `cron schedule`.
+Beri contoh penggunaan `csplit context split`.
+Beri contoh penggunaan `curl download resume`.
+Beri contoh penggunaan `curl retry backoff`.
+Beri contoh penggunaan `curl timing`.
+Beri contoh penggunaan `cut fields`.
+Beri contoh penggunaan `date format calc`.
+Beri contoh penggunaan `dd clone`.
+Beri contoh penggunaan `df inodes`.
+Beri contoh penggunaan `diff cmp files`.
+Beri contoh penggunaan `diff exit codes`.
+Beri contoh penggunaan `dig dns`.
+Beri contoh penggunaan `direxpand paths`.
+Beri contoh penggunaan `disown huponexit`.
+Beri contoh penggunaan `dmesg errors`.
+Beri contoh penggunaan `dotglob hidden`.
+Beri contoh penggunaan `du top dirs`.
+Beri contoh penggunaan `emacs vi mode`.
+Beri contoh penggunaan `entr rerun`.
+Beri contoh penggunaan `env hierarchy`.
+Beri contoh penggunaan `errexit pitfalls`.
+Beri contoh penggunaan `errtrace functrace`.
+Beri contoh penggunaan `exec cmd`.
+Beri contoh penggunaan `exit codes`.
+Beri contoh penggunaan `exit trap codes`.
+Beri contoh penggunaan `expand unexpand tabs`.
+Beri contoh penggunaan `expand_aliases scripts`.
+Beri contoh penggunaan `extquote strings`.
+Beri contoh penggunaan `failglob strict`.
+Beri contoh penggunaan `fd find`.
+Beri contoh penggunaan `find . -print0 | xargs -0`.
+Beri contoh penggunaan `find exec plus`.
+Beri contoh penggunaan `find mtime size`.
+Beri contoh penggunaan `flock singleton`.
+Beri contoh penggunaan `for f in *.md`.
+Beri contoh penggunaan `free available`.
+Beri contoh penggunaan `function greet()`.
+Beri contoh penggunaan `fzf history`.
+Beri contoh penggunaan `getopts flags`.
+Beri contoh penggunaan `getopts silent errors`.
+Beri contoh penggunaan `git archive deploy`.
+Beri contoh penggunaan `globasciiranges`.
+Beri contoh penggunaan `globstar extglob`.
+Beri contoh penggunaan `gnu_errfmt errors`.
+Beri contoh penggunaan `gpg encrypt sign`.
+Beri contoh penggunaan `grep context`.
+Beri contoh penggunaan `grep extended`.
+Beri contoh penggunaan `grep invert count`.
+Beri contoh penggunaan `head tail files`.
+Beri contoh penggunaan `histappend share`.
+Beri contoh penggunaan `history control`.
+Beri contoh penggunaan `histverify expand`.
+Beri contoh penggunaan `htop vs top`.
+Beri contoh penggunaan `hyperfine bench`.
+Beri contoh penggunaan `if [[ -f fail ]]`.
+Beri contoh penggunaan `inherit_errexit subshell`.
+Beri contoh penggunaan `ip addr route`.
+Beri contoh penggunaan `jobs wait &`.
+Beri contoh penggunaan `join two files`.
+Beri contoh penggunaan `journalctl unit`.
+Beri contoh penggunaan `jq extract field`.
+Beri contoh penggunaan `jq filter select`.
+Beri contoh penggunaan `jq walk reduce`.
+Beri contoh penggunaan `kill -l signals`.
+Beri contoh penggunaan `kill signals`.
+Beri contoh penggunaan `lastpipe variable`.
+Beri contoh penggunaan `localvar_inherit`.
+Beri contoh penggunaan `logger syslog`.
+Beri contoh penggunaan `login_shell detect`.
+Beri contoh penggunaan `lsof port`.
+Beri contoh penggunaan `lvm extend`.
+Beri contoh penggunaan `mailwarn mail`.
+Beri contoh penggunaan `mapfile callback`.
+Beri contoh penggunaan `mapfile delimiter`.
+Beri contoh penggunaan `mapfile lines`.
+Beri contoh penggunaan `mapfile skip count`.
+Beri contoh penggunaan `mktemp secure files`.
+Beri contoh penggunaan `mount fstab`.
+Beri contoh penggunaan `nameref declare -n`.
+Beri contoh penggunaan `nc port test`.
+Beri contoh penggunaan `ncdu disk`.
+Beri contoh penggunaan `nl number lines`.
+Beri contoh penggunaan `nmcli wifi`.
+Beri contoh penggunaan `no_empty_cmd_completion`.
+Beri contoh penggunaan `nocaseglob match`.
+Beri contoh penggunaan `noclobber safe`.
+Beri contoh penggunaan `node check syntax`.
+Beri contoh penggunaan `noexec dryrun`.
+Beri contoh penggunaan `noglob paths`.
+Beri contoh penggunaan `notify jobs`.
+Beri contoh penggunaan `nounset empty arrays`.
+Beri contoh penggunaan `od hexdump bytes`.
+Beri contoh penggunaan `onecmd flag`.
+Beri contoh penggunaan `openssl s_client`.
+Beri contoh penggunaan `openssl selfsign`.
+Beri contoh penggunaan `passwd lock`.
+Beri contoh penggunaan `paste join lines`.
+Beri contoh penggunaan `pgrep pkill`.
+Beri contoh penggunaan `physical cd`.
+Beri contoh penggunaan `ping mtr`.
+Beri contoh penggunaan `pip download wheels`.
+Beri contoh penggunaan `posix mode`.
+Beri contoh penggunaan `printf %q quoting`.
+Beri contoh penggunaan `printf format`.
+Beri contoh penggunaan `progcomp programmable`.
+Beri contoh penggunaan `promptvars expand`.
+Beri contoh penggunaan `ps forest`.
+Beri contoh penggunaan `pushd popd`.
+Beri contoh penggunaan `python http server`.
+Beri contoh penggunaan `read array -a`.
+Beri contoh penggunaan `read custom delim`.
+Beri contoh penggunaan `read readline edit`.
+Beri contoh penggunaan `readonly VAR`.
+Beri contoh penggunaan `restricted_shell`.
+Beri contoh penggunaan `rg ripgrep`.
+Beri contoh penggunaan `rsync archive`.
+Beri contoh penggunaan `scp sftp`.
+Beri contoh penggunaan `screen detach`.
+Beri contoh penggunaan `script session`.
+Beri contoh penggunaan `sed backup edit`.
+Beri contoh penggunaan `sed delete lines`.
+Beri contoh penggunaan `sed replace inline`.
+Beri contoh penggunaan `select PS3 custom`.
+Beri contoh penggunaan `select menu`.
+Beri contoh penggunaan `seq 1 10`.
+Beri contoh penggunaan `set -euo pipefail`.
+Beri contoh penggunaan `set -x debug`.
+Beri contoh penggunaan `sha256sum verify`.
+Beri contoh penggunaan `shellcheck lint`.
+Beri contoh penggunaan `shfmt format`.
+Beri contoh penggunaan `shift_verbose`.
+Beri contoh penggunaan `shift`.
+Beri contoh penggunaan `shopt options`.
+Beri contoh penggunaan `shuf random lines`.
+Beri contoh penggunaan `sort human uniq`.
+Beri contoh penggunaan `sort uniq pipeline`.
+Beri contoh penggunaan `source guard`.
+Beri contoh penggunaan `source lib.sh`.
+Beri contoh penggunaan `sourcepath lookup`.
+Beri contoh penggunaan `split large files`.
+Beri contoh penggunaan `ss advanced`.
+Beri contoh penggunaan `ssh keygen copy`.
+Beri contoh penggunaan `stat format`.
+Beri contoh penggunaan `strace syscall`.
+Beri contoh penggunaan `string replace`.
+Beri contoh penggunaan `strings binaries`.
+Beri contoh penggunaan `stty sane`.
+Beri contoh penggunaan `su login shell`.
+Beri contoh penggunaan `substring slice`.
+Beri contoh penggunaan `sudo visudo`.
+Beri contoh penggunaan `systemctl status`.
+Beri contoh penggunaan `systemd cat edit`.
+Beri contoh penggunaan `systemd mask`.
+Beri contoh penggunaan `systemd timer`.
+Beri contoh penggunaan `tac reverse cat`.
+Beri contoh penggunaan `tail follow`.
+Beri contoh penggunaan `tar create extract`.
+Beri contoh penggunaan `tcpdump filter`.
+Beri contoh penggunaan `tee split output`.
+Beri contoh penggunaan `test -e -s -x`.
+Beri contoh penggunaan `test -e -s`.
+Beri contoh penggunaan `time keyword`.
+Beri contoh penggunaan `timeout guard`.
+Beri contoh penggunaan `tmux send-keys`.
+Beri contoh penggunaan `tmux session`.
+Beri contoh penggunaan `tmux synchronize`.
+Beri contoh penggunaan `tput colors`.
+Beri contoh penggunaan `tr squeeze delete`.
+Beri contoh penggunaan `tr translate`.
+Beri contoh penggunaan `trap cleanup EXIT`.
+Beri contoh penggunaan `type command which`.
+Beri contoh penggunaan `type hash cmd`.
+Beri contoh penggunaan `ulimit core`.
+Beri contoh penggunaan `umask in scripts`.
+Beri contoh penggunaan `until loop`.
+Beri contoh penggunaan `update alternatives`.
+Beri contoh penggunaan `uptime load`.
+Beri contoh penggunaan `useradd mod del`.
+Beri contoh penggunaan `verbose trace`.
+Beri contoh penggunaan `wait -n -p`.
+Beri contoh penggunaan `watch monitor`.
+Beri contoh penggunaan `wc count`.
+Beri contoh penggunaan `wget mirror`.
+Beri contoh penggunaan `wget spider check`.
+Beri contoh penggunaan `while read baris`.
+Beri contoh penggunaan `who w last`.
+Beri contoh penggunaan `xargs replace`.
+Beri contoh penggunaan `xpg_echo portability`.
+Beri contoh penggunaan `yq yaml`.
+Beri contoh penggunaan `zip unzip`.
+Bila perlu guna `$(date +%F)`?
+Bila perlu guna `$1 $@ $#`?
+Bila perlu guna `${PORT:-3000}`?
+Bila perlu guna `${VAR:=default}`?
+Bila perlu guna `${s/old/new}`?
+Bila perlu guna `${s:0:3}`?
+Bila perlu guna `<<EOF heredoc`?
+Bila perlu guna `BASH_REMATCH groups`?
+Bila perlu guna `BASH_SOURCE LINENO`?
+Bila perlu guna `BASH_XTRACEFD log`?
+Bila perlu guna `DEBUG trap`?
+Bila perlu guna `EPOCHSECONDS SRANDOM`?
+Bila perlu guna `ERR trap scope`?
+Bila perlu guna `FUNCNAME stack`?
+Bila perlu guna `IFS field tricks`?
+Bila perlu guna `PIPESTATUS check`?
+Bila perlu guna `PS1 prompt`?
+Bila perlu guna `PS4 custom`?
+Bila perlu guna `RETURN trap`?
+Bila perlu guna `[[ $x =~ ^[0-9]+$ ]]`?
+Bila perlu guna `a | b | c`?
+Bila perlu guna `age secrets`?
+Bila perlu guna `alias unalias`?
+Bila perlu guna `allexport vars`?
+Bila perlu guna `apt install`?
+Bila perlu guna `arr=(a b c)`?
+Bila perlu guna `assign default :=`?
+Bila perlu guna `assoc key ops`?
+Bila perlu guna `assoc_expand_once`?
+Bila perlu guna `at oneshot`?
+Bila perlu guna `autocd dirs`?
+Bila perlu guna `awk begin end`?
+Bila perlu guna `awk filter rows`?
+Bila perlu guna `awk sum column`?
+Bila perlu guna `base64 encode`?
+Bila perlu guna `bash version check`?
+Bila perlu guna `bat pager`?
+Bila perlu guna `bats testing`?
+Bila perlu guna `bind shortcut`?
+Bila perlu guna `brace expansion`?
+Bila perlu guna `braceexpand toggle`?
+Bila perlu guna `caller debug`?
+Bila perlu guna `case $1 in`?
+Bila perlu guna `checkhash path`?
+Bila perlu guna `checkjobs exit`?
+Bila perlu guna `checkwinsize resize`?
+Bila perlu guna `chmod numeric`?
+Bila perlu guna `chown user group`?
+Bila perlu guna `cmd > out 2>&1`?
+Bila perlu guna `cmd1 && cmd2`?
+Bila perlu guna `cmdhist multiline`?
+Bila perlu guna `column -t align`?
+Bila perlu guna `comm compare sorted`?
+Bila perlu guna `compgen list`?
+Bila perlu guna `complete custom`?
+Bila perlu guna `coproc two-way`?
+Bila perlu guna `cron schedule`?
+Bila perlu guna `csplit context split`?
+Bila perlu guna `curl download resume`?
+Bila perlu guna `curl retry backoff`?
+Bila perlu guna `curl timing`?
+Bila perlu guna `cut fields`?
+Bila perlu guna `date format calc`?
+Bila perlu guna `dd clone`?
+Bila perlu guna `df inodes`?
+Bila perlu guna `diff cmp files`?
+Bila perlu guna `diff exit codes`?
+Bila perlu guna `dig dns`?
+Bila perlu guna `direxpand paths`?
+Bila perlu guna `disown huponexit`?
+Bila perlu guna `dmesg errors`?
+Bila perlu guna `dotglob hidden`?
+Bila perlu guna `du top dirs`?
+Bila perlu guna `emacs vi mode`?
+Bila perlu guna `entr rerun`?
+Bila perlu guna `env hierarchy`?
+Bila perlu guna `errexit pitfalls`?
+Bila perlu guna `errtrace functrace`?
+Bila perlu guna `exec cmd`?
+Bila perlu guna `exit codes`?
+Bila perlu guna `exit trap codes`?
+Bila perlu guna `expand unexpand tabs`?
+Bila perlu guna `expand_aliases scripts`?
+Bila perlu guna `extquote strings`?
+Bila perlu guna `failglob strict`?
+Bila perlu guna `fd find`?
+Bila perlu guna `find . -print0 | xargs -0`?
+Bila perlu guna `find exec plus`?
+Bila perlu guna `find mtime size`?
+Bila perlu guna `flock singleton`?
+Bila perlu guna `for f in *.md`?
+Bila perlu guna `free available`?
+Bila perlu guna `function greet()`?
+Bila perlu guna `fzf history`?
+Bila perlu guna `getopts flags`?
+Bila perlu guna `getopts silent errors`?
+Bila perlu guna `git archive deploy`?
+Bila perlu guna `globasciiranges`?
+Bila perlu guna `globstar extglob`?
+Bila perlu guna `gnu_errfmt errors`?
+Bila perlu guna `gpg encrypt sign`?
+Bila perlu guna `grep context`?
+Bila perlu guna `grep extended`?
+Bila perlu guna `grep invert count`?
+Bila perlu guna `head tail files`?
+Bila perlu guna `histappend share`?
+Bila perlu guna `history control`?
+Bila perlu guna `histverify expand`?
+Bila perlu guna `htop vs top`?
+Bila perlu guna `hyperfine bench`?
+Bila perlu guna `if [[ -f fail ]]`?
+Bila perlu guna `inherit_errexit subshell`?
+Bila perlu guna `ip addr route`?
+Bila perlu guna `jobs wait &`?
+Bila perlu guna `join two files`?
+Bila perlu guna `journalctl unit`?
+Bila perlu guna `jq extract field`?
+Bila perlu guna `jq filter select`?
+Bila perlu guna `jq walk reduce`?
+Bila perlu guna `kill -l signals`?
+Bila perlu guna `kill signals`?
+Bila perlu guna `lastpipe variable`?
+Bila perlu guna `localvar_inherit`?
+Bila perlu guna `logger syslog`?
+Bila perlu guna `login_shell detect`?
+Bila perlu guna `lsof port`?
+Bila perlu guna `lvm extend`?
+Bila perlu guna `mailwarn mail`?
+Bila perlu guna `mapfile callback`?
+Bila perlu guna `mapfile delimiter`?
+Bila perlu guna `mapfile lines`?
+Bila perlu guna `mapfile skip count`?
+Bila perlu guna `mktemp secure files`?
+Bila perlu guna `mount fstab`?
+Bila perlu guna `nameref declare -n`?
+Bila perlu guna `nc port test`?
+Bila perlu guna `ncdu disk`?
+Bila perlu guna `nl number lines`?
+Bila perlu guna `nmcli wifi`?
+Bila perlu guna `no_empty_cmd_completion`?
+Bila perlu guna `nocaseglob match`?
+Bila perlu guna `noclobber safe`?
+Bila perlu guna `node check syntax`?
+Bila perlu guna `noexec dryrun`?
+Bila perlu guna `noglob paths`?
+Bila perlu guna `notify jobs`?
+Bila perlu guna `nounset empty arrays`?
+Bila perlu guna `od hexdump bytes`?
+Bila perlu guna `onecmd flag`?
+Bila perlu guna `openssl s_client`?
+Bila perlu guna `openssl selfsign`?
+Bila perlu guna `passwd lock`?
+Bila perlu guna `paste join lines`?
+Bila perlu guna `pgrep pkill`?
+Bila perlu guna `physical cd`?
+Bila perlu guna `ping mtr`?
+Bila perlu guna `pip download wheels`?
+Bila perlu guna `posix mode`?
+Bila perlu guna `printf %q quoting`?
+Bila perlu guna `printf format`?
+Bila perlu guna `progcomp programmable`?
+Bila perlu guna `promptvars expand`?
+Bila perlu guna `ps forest`?
+Bila perlu guna `pushd popd`?
+Bila perlu guna `python http server`?
+Bila perlu guna `read array -a`?
+Bila perlu guna `read custom delim`?
+Bila perlu guna `read readline edit`?
+Bila perlu guna `readonly VAR`?
+Bila perlu guna `restricted_shell`?
+Bila perlu guna `rg ripgrep`?
+Bila perlu guna `rsync archive`?
+Bila perlu guna `scp sftp`?
+Bila perlu guna `screen detach`?
+Bila perlu guna `script session`?
+Bila perlu guna `sed backup edit`?
+Bila perlu guna `sed delete lines`?
+Bila perlu guna `sed replace inline`?
+Bila perlu guna `select PS3 custom`?
+Bila perlu guna `select menu`?
+Bila perlu guna `seq 1 10`?
+Bila perlu guna `set -euo pipefail`?
+Bila perlu guna `set -x debug`?
+Bila perlu guna `sha256sum verify`?
+Bila perlu guna `shellcheck lint`?
+Bila perlu guna `shfmt format`?
+Bila perlu guna `shift_verbose`?
+Bila perlu guna `shift`?
+Bila perlu guna `shopt options`?
+Bila perlu guna `shuf random lines`?
+Bila perlu guna `sort human uniq`?
+Bila perlu guna `sort uniq pipeline`?
+Bila perlu guna `source guard`?
+Bila perlu guna `source lib.sh`?
+Bila perlu guna `sourcepath lookup`?
+Bila perlu guna `split large files`?
+Bila perlu guna `ss advanced`?
+Bila perlu guna `ssh keygen copy`?
+Bila perlu guna `stat format`?
+Bila perlu guna `strace syscall`?
+Bila perlu guna `string replace`?
+Bila perlu guna `strings binaries`?
+Bila perlu guna `stty sane`?
+Bila perlu guna `su login shell`?
+Bila perlu guna `substring slice`?
+Bila perlu guna `sudo visudo`?
+Bila perlu guna `systemctl status`?
+Bila perlu guna `systemd cat edit`?
+Bila perlu guna `systemd mask`?
+Bila perlu guna `systemd timer`?
+Bila perlu guna `tac reverse cat`?
+Bila perlu guna `tail follow`?
+Bila perlu guna `tar create extract`?
+Bila perlu guna `tcpdump filter`?
+Bila perlu guna `tee split output`?
+Bila perlu guna `test -e -s -x`?
+Bila perlu guna `test -e -s`?
+Bila perlu guna `time keyword`?
+Bila perlu guna `timeout guard`?
+Bila perlu guna `tmux send-keys`?
+Bila perlu guna `tmux session`?
+Bila perlu guna `tmux synchronize`?
+Bila perlu guna `tput colors`?
+Bila perlu guna `tr squeeze delete`?
+Bila perlu guna `tr translate`?
+Bila perlu guna `trap cleanup EXIT`?
+Bila perlu guna `type command which`?
+Bila perlu guna `type hash cmd`?
+Bila perlu guna `ulimit core`?
+Bila perlu guna `umask in scripts`?
+Bila perlu guna `until loop`?
+Bila perlu guna `update alternatives`?
+Bila perlu guna `uptime load`?
+Bila perlu guna `useradd mod del`?
+Bila perlu guna `verbose trace`?
+Bila perlu guna `wait -n -p`?
+Bila perlu guna `watch monitor`?
+Bila perlu guna `wc count`?
+Bila perlu guna `wget mirror`?
+Bila perlu guna `wget spider check`?
+Bila perlu guna `while read baris`?
+Bila perlu guna `who w last`?
+Bila perlu guna `xargs replace`?
+Bila perlu guna `xpg_echo portability`?
+Bila perlu guna `yq yaml`?
+Bila perlu guna `zip unzip`?
+Bilakah masa yang sesuai untuk `$(date +%F)`?
+Bilakah masa yang sesuai untuk `$1 $@ $#`?
+Bilakah masa yang sesuai untuk `${PORT:-3000}`?
+Bilakah masa yang sesuai untuk `${VAR:=default}`?
+Bilakah masa yang sesuai untuk `${s/old/new}`?
+Bilakah masa yang sesuai untuk `${s:0:3}`?
+Bilakah masa yang sesuai untuk `<<EOF heredoc`?
+Bilakah masa yang sesuai untuk `BASH_REMATCH groups`?
+Bilakah masa yang sesuai untuk `BASH_SOURCE LINENO`?
+Bilakah masa yang sesuai untuk `BASH_XTRACEFD log`?
+Bilakah masa yang sesuai untuk `DEBUG trap`?
+Bilakah masa yang sesuai untuk `EPOCHSECONDS SRANDOM`?
+Bilakah masa yang sesuai untuk `ERR trap scope`?
+Bilakah masa yang sesuai untuk `FUNCNAME stack`?
+Bilakah masa yang sesuai untuk `IFS field tricks`?
+Bilakah masa yang sesuai untuk `PIPESTATUS check`?
+Bilakah masa yang sesuai untuk `PS1 prompt`?
+Bilakah masa yang sesuai untuk `PS4 custom`?
+Bilakah masa yang sesuai untuk `RETURN trap`?
+Bilakah masa yang sesuai untuk `[[ $x =~ ^[0-9]+$ ]]`?
+Bilakah masa yang sesuai untuk `a | b | c`?
+Bilakah masa yang sesuai untuk `age secrets`?
+Bilakah masa yang sesuai untuk `alias unalias`?
+Bilakah masa yang sesuai untuk `allexport vars`?
+Bilakah masa yang sesuai untuk `apt install`?
+Bilakah masa yang sesuai untuk `arr=(a b c)`?
+Bilakah masa yang sesuai untuk `assign default :=`?
+Bilakah masa yang sesuai untuk `assoc key ops`?
+Bilakah masa yang sesuai untuk `assoc_expand_once`?
+Bilakah masa yang sesuai untuk `at oneshot`?
+Bilakah masa yang sesuai untuk `autocd dirs`?
+Bilakah masa yang sesuai untuk `awk begin end`?
+Bilakah masa yang sesuai untuk `awk filter rows`?
+Bilakah masa yang sesuai untuk `awk sum column`?
+Bilakah masa yang sesuai untuk `base64 encode`?
+Bilakah masa yang sesuai untuk `bash version check`?
+Bilakah masa yang sesuai untuk `bat pager`?
+Bilakah masa yang sesuai untuk `bats testing`?
+Bilakah masa yang sesuai untuk `bind shortcut`?
+Bilakah masa yang sesuai untuk `brace expansion`?
+Bilakah masa yang sesuai untuk `braceexpand toggle`?
+Bilakah masa yang sesuai untuk `caller debug`?
+Bilakah masa yang sesuai untuk `case $1 in`?
+Bilakah masa yang sesuai untuk `checkhash path`?
+Bilakah masa yang sesuai untuk `checkjobs exit`?
+Bilakah masa yang sesuai untuk `checkwinsize resize`?
+Bilakah masa yang sesuai untuk `chmod numeric`?
+Bilakah masa yang sesuai untuk `chown user group`?
+Bilakah masa yang sesuai untuk `cmd > out 2>&1`?
+Bilakah masa yang sesuai untuk `cmd1 && cmd2`?
+Bilakah masa yang sesuai untuk `cmdhist multiline`?
+Bilakah masa yang sesuai untuk `column -t align`?
+Bilakah masa yang sesuai untuk `comm compare sorted`?
+Bilakah masa yang sesuai untuk `compgen list`?
+Bilakah masa yang sesuai untuk `complete custom`?
+Bilakah masa yang sesuai untuk `coproc two-way`?
+Bilakah masa yang sesuai untuk `cron schedule`?
+Bilakah masa yang sesuai untuk `csplit context split`?
+Bilakah masa yang sesuai untuk `curl download resume`?
+Bilakah masa yang sesuai untuk `curl retry backoff`?
+Bilakah masa yang sesuai untuk `curl timing`?
+Bilakah masa yang sesuai untuk `cut fields`?
+Bilakah masa yang sesuai untuk `date format calc`?
+Bilakah masa yang sesuai untuk `dd clone`?
+Bilakah masa yang sesuai untuk `df inodes`?
+Bilakah masa yang sesuai untuk `diff cmp files`?
+Bilakah masa yang sesuai untuk `diff exit codes`?
+Bilakah masa yang sesuai untuk `dig dns`?
+Bilakah masa yang sesuai untuk `direxpand paths`?
+Bilakah masa yang sesuai untuk `disown huponexit`?
+Bilakah masa yang sesuai untuk `dmesg errors`?
+Bilakah masa yang sesuai untuk `dotglob hidden`?
+Bilakah masa yang sesuai untuk `du top dirs`?
+Bilakah masa yang sesuai untuk `emacs vi mode`?
+Bilakah masa yang sesuai untuk `entr rerun`?
+Bilakah masa yang sesuai untuk `env hierarchy`?
+Bilakah masa yang sesuai untuk `errexit pitfalls`?
+Bilakah masa yang sesuai untuk `errtrace functrace`?
+Bilakah masa yang sesuai untuk `exec cmd`?
+Bilakah masa yang sesuai untuk `exit codes`?
+Bilakah masa yang sesuai untuk `exit trap codes`?
+Bilakah masa yang sesuai untuk `expand unexpand tabs`?
+Bilakah masa yang sesuai untuk `expand_aliases scripts`?
+Bilakah masa yang sesuai untuk `extquote strings`?
+Bilakah masa yang sesuai untuk `failglob strict`?
+Bilakah masa yang sesuai untuk `fd find`?
+Bilakah masa yang sesuai untuk `find . -print0 | xargs -0`?
+Bilakah masa yang sesuai untuk `find exec plus`?
+Bilakah masa yang sesuai untuk `find mtime size`?
+Bilakah masa yang sesuai untuk `flock singleton`?
+Bilakah masa yang sesuai untuk `for f in *.md`?
+Bilakah masa yang sesuai untuk `free available`?
+Bilakah masa yang sesuai untuk `function greet()`?
+Bilakah masa yang sesuai untuk `fzf history`?
+Bilakah masa yang sesuai untuk `getopts flags`?
+Bilakah masa yang sesuai untuk `getopts silent errors`?
+Bilakah masa yang sesuai untuk `git archive deploy`?
+Bilakah masa yang sesuai untuk `globasciiranges`?
+Bilakah masa yang sesuai untuk `globstar extglob`?
+Bilakah masa yang sesuai untuk `gnu_errfmt errors`?
+Bilakah masa yang sesuai untuk `gpg encrypt sign`?
+Bilakah masa yang sesuai untuk `grep context`?
+Bilakah masa yang sesuai untuk `grep extended`?
+Bilakah masa yang sesuai untuk `grep invert count`?
+Bilakah masa yang sesuai untuk `head tail files`?
+Bilakah masa yang sesuai untuk `histappend share`?
+Bilakah masa yang sesuai untuk `history control`?
+Bilakah masa yang sesuai untuk `histverify expand`?
+Bilakah masa yang sesuai untuk `htop vs top`?
+Bilakah masa yang sesuai untuk `hyperfine bench`?
+Bilakah masa yang sesuai untuk `if [[ -f fail ]]`?
+Bilakah masa yang sesuai untuk `inherit_errexit subshell`?
+Bilakah masa yang sesuai untuk `ip addr route`?
+Bilakah masa yang sesuai untuk `jobs wait &`?
+Bilakah masa yang sesuai untuk `join two files`?
+Bilakah masa yang sesuai untuk `journalctl unit`?
+Bilakah masa yang sesuai untuk `jq extract field`?
+Bilakah masa yang sesuai untuk `jq filter select`?
+Bilakah masa yang sesuai untuk `jq walk reduce`?
+Bilakah masa yang sesuai untuk `kill -l signals`?
+Bilakah masa yang sesuai untuk `kill signals`?
+Bilakah masa yang sesuai untuk `lastpipe variable`?
+Bilakah masa yang sesuai untuk `localvar_inherit`?
+Bilakah masa yang sesuai untuk `logger syslog`?
+Bilakah masa yang sesuai untuk `login_shell detect`?
+Bilakah masa yang sesuai untuk `lsof port`?
+Bilakah masa yang sesuai untuk `lvm extend`?
+Bilakah masa yang sesuai untuk `mailwarn mail`?
+Bilakah masa yang sesuai untuk `mapfile callback`?
+Bilakah masa yang sesuai untuk `mapfile delimiter`?
+Bilakah masa yang sesuai untuk `mapfile lines`?
+Bilakah masa yang sesuai untuk `mapfile skip count`?
+Bilakah masa yang sesuai untuk `mktemp secure files`?
+Bilakah masa yang sesuai untuk `mount fstab`?
+Bilakah masa yang sesuai untuk `nameref declare -n`?
+Bilakah masa yang sesuai untuk `nc port test`?
+Bilakah masa yang sesuai untuk `ncdu disk`?
+Bilakah masa yang sesuai untuk `nl number lines`?
+Bilakah masa yang sesuai untuk `nmcli wifi`?
+Bilakah masa yang sesuai untuk `no_empty_cmd_completion`?
+Bilakah masa yang sesuai untuk `nocaseglob match`?
+Bilakah masa yang sesuai untuk `noclobber safe`?
+Bilakah masa yang sesuai untuk `node check syntax`?
+Bilakah masa yang sesuai untuk `noexec dryrun`?
+Bilakah masa yang sesuai untuk `noglob paths`?
+Bilakah masa yang sesuai untuk `notify jobs`?
+Bilakah masa yang sesuai untuk `nounset empty arrays`?
+Bilakah masa yang sesuai untuk `od hexdump bytes`?
+Bilakah masa yang sesuai untuk `onecmd flag`?
+Bilakah masa yang sesuai untuk `openssl s_client`?
+Bilakah masa yang sesuai untuk `openssl selfsign`?
+Bilakah masa yang sesuai untuk `passwd lock`?
+Bilakah masa yang sesuai untuk `paste join lines`?
+Bilakah masa yang sesuai untuk `pgrep pkill`?
+Bilakah masa yang sesuai untuk `physical cd`?
+Bilakah masa yang sesuai untuk `ping mtr`?
+Bilakah masa yang sesuai untuk `pip download wheels`?
+Bilakah masa yang sesuai untuk `posix mode`?
+Bilakah masa yang sesuai untuk `printf %q quoting`?
+Bilakah masa yang sesuai untuk `printf format`?
+Bilakah masa yang sesuai untuk `progcomp programmable`?
+Bilakah masa yang sesuai untuk `promptvars expand`?
+Bilakah masa yang sesuai untuk `ps forest`?
+Bilakah masa yang sesuai untuk `pushd popd`?
+Bilakah masa yang sesuai untuk `python http server`?
+Bilakah masa yang sesuai untuk `read array -a`?
+Bilakah masa yang sesuai untuk `read custom delim`?
+Bilakah masa yang sesuai untuk `read readline edit`?
+Bilakah masa yang sesuai untuk `readonly VAR`?
+Bilakah masa yang sesuai untuk `restricted_shell`?
+Bilakah masa yang sesuai untuk `rg ripgrep`?
+Bilakah masa yang sesuai untuk `rsync archive`?
+Bilakah masa yang sesuai untuk `scp sftp`?
+Bilakah masa yang sesuai untuk `screen detach`?
+Bilakah masa yang sesuai untuk `script session`?
+Bilakah masa yang sesuai untuk `sed backup edit`?
+Bilakah masa yang sesuai untuk `sed delete lines`?
+Bilakah masa yang sesuai untuk `sed replace inline`?
+Bilakah masa yang sesuai untuk `select PS3 custom`?
+Bilakah masa yang sesuai untuk `select menu`?
+Bilakah masa yang sesuai untuk `seq 1 10`?
+Bilakah masa yang sesuai untuk `set -euo pipefail`?
+Bilakah masa yang sesuai untuk `set -x debug`?
+Bilakah masa yang sesuai untuk `sha256sum verify`?
+Bilakah masa yang sesuai untuk `shellcheck lint`?
+Bilakah masa yang sesuai untuk `shfmt format`?
+Bilakah masa yang sesuai untuk `shift_verbose`?
+Bilakah masa yang sesuai untuk `shift`?
+Bilakah masa yang sesuai untuk `shopt options`?
+Bilakah masa yang sesuai untuk `shuf random lines`?
+Bilakah masa yang sesuai untuk `sort human uniq`?
+Bilakah masa yang sesuai untuk `sort uniq pipeline`?
+Bilakah masa yang sesuai untuk `source guard`?
+Bilakah masa yang sesuai untuk `source lib.sh`?
+Bilakah masa yang sesuai untuk `sourcepath lookup`?
+Bilakah masa yang sesuai untuk `split large files`?
+Bilakah masa yang sesuai untuk `ss advanced`?
+Bilakah masa yang sesuai untuk `ssh keygen copy`?
+Bilakah masa yang sesuai untuk `stat format`?
+Bilakah masa yang sesuai untuk `strace syscall`?
+Bilakah masa yang sesuai untuk `string replace`?
+Bilakah masa yang sesuai untuk `strings binaries`?
+Bilakah masa yang sesuai untuk `stty sane`?
+Bilakah masa yang sesuai untuk `su login shell`?
+Bilakah masa yang sesuai untuk `substring slice`?
+Bilakah masa yang sesuai untuk `sudo visudo`?
+Bilakah masa yang sesuai untuk `systemctl status`?
+Bilakah masa yang sesuai untuk `systemd cat edit`?
+Bilakah masa yang sesuai untuk `systemd mask`?
+Bilakah masa yang sesuai untuk `systemd timer`?
+Bilakah masa yang sesuai untuk `tac reverse cat`?
+Bilakah masa yang sesuai untuk `tail follow`?
+Bilakah masa yang sesuai untuk `tar create extract`?
+Bilakah masa yang sesuai untuk `tcpdump filter`?
+Bilakah masa yang sesuai untuk `tee split output`?
+Bilakah masa yang sesuai untuk `test -e -s -x`?
+Bilakah masa yang sesuai untuk `test -e -s`?
+Bilakah masa yang sesuai untuk `time keyword`?
+Bilakah masa yang sesuai untuk `timeout guard`?
+Bilakah masa yang sesuai untuk `tmux send-keys`?
+Bilakah masa yang sesuai untuk `tmux session`?
+Bilakah masa yang sesuai untuk `tmux synchronize`?
+Bilakah masa yang sesuai untuk `tput colors`?
+Bilakah masa yang sesuai untuk `tr squeeze delete`?
+Bilakah masa yang sesuai untuk `tr translate`?
+Bilakah masa yang sesuai untuk `trap cleanup EXIT`?
+Bilakah masa yang sesuai untuk `type command which`?
+Bilakah masa yang sesuai untuk `type hash cmd`?
+Bilakah masa yang sesuai untuk `ulimit core`?
+Bilakah masa yang sesuai untuk `umask in scripts`?
+Bilakah masa yang sesuai untuk `until loop`?
+Bilakah masa yang sesuai untuk `update alternatives`?
+Bilakah masa yang sesuai untuk `uptime load`?
+Bilakah masa yang sesuai untuk `useradd mod del`?
+Bilakah masa yang sesuai untuk `verbose trace`?
+Bilakah masa yang sesuai untuk `wait -n -p`?
+Bilakah masa yang sesuai untuk `watch monitor`?
+Bilakah masa yang sesuai untuk `wc count`?
+Bilakah masa yang sesuai untuk `wget mirror`?
+Bilakah masa yang sesuai untuk `wget spider check`?
+Bilakah masa yang sesuai untuk `while read baris`?
+Bilakah masa yang sesuai untuk `who w last`?
+Bilakah masa yang sesuai untuk `xargs replace`?
+Bilakah masa yang sesuai untuk `xpg_echo portability`?
+Bilakah masa yang sesuai untuk `yq yaml`?
+Bilakah masa yang sesuai untuk `zip unzip`?
+Cari teks dalam semua fail
+Explain `$(date +%F)` briefly.
+Explain `$1 $@ $#` briefly.
+Explain `${PORT:-3000}` briefly.
+Explain `${VAR:=default}` briefly.
+Explain `${s/old/new}` briefly.
+Explain `${s:0:3}` briefly.
+Explain `<<EOF heredoc` briefly.
+Explain `BASH_REMATCH groups` briefly.
+Explain `BASH_SOURCE LINENO` briefly.
+Explain `BASH_XTRACEFD log` briefly.
+Explain `DEBUG trap` briefly.
+Explain `EPOCHSECONDS SRANDOM` briefly.
+Explain `ERR trap scope` briefly.
+Explain `FUNCNAME stack` briefly.
+Explain `IFS field tricks` briefly.
+Explain `PIPESTATUS check` briefly.
+Explain `PS1 prompt` briefly.
+Explain `PS4 custom` briefly.
+Explain `RETURN trap` briefly.
+Explain `[[ $x =~ ^[0-9]+$ ]]` briefly.
+Explain `a | b | c` briefly.
+Explain `age secrets` briefly.
+Explain `alias unalias` briefly.
+Explain `allexport vars` briefly.
+Explain `apt install` briefly.
+Explain `arr=(a b c)` briefly.
+Explain `assign default :=` briefly.
+Explain `assoc key ops` briefly.
+Explain `assoc_expand_once` briefly.
+Explain `at oneshot` briefly.
+Explain `autocd dirs` briefly.
+Explain `awk begin end` briefly.
+Explain `awk filter rows` briefly.
+Explain `awk sum column` briefly.
+Explain `base64 encode` briefly.
+Explain `bash version check` briefly.
+Explain `bat pager` briefly.
+Explain `bats testing` briefly.
+Explain `bind shortcut` briefly.
+Explain `brace expansion` briefly.
+Explain `braceexpand toggle` briefly.
+Explain `caller debug` briefly.
+Explain `case $1 in` briefly.
+Explain `checkhash path` briefly.
+Explain `checkjobs exit` briefly.
+Explain `checkwinsize resize` briefly.
+Explain `chmod numeric` briefly.
+Explain `chown user group` briefly.
+Explain `cmd > out 2>&1` briefly.
+Explain `cmd1 && cmd2` briefly.
+Explain `cmdhist multiline` briefly.
+Explain `column -t align` briefly.
+Explain `comm compare sorted` briefly.
+Explain `compgen list` briefly.
+Explain `complete custom` briefly.
+Explain `coproc two-way` briefly.
+Explain `cron schedule` briefly.
+Explain `csplit context split` briefly.
+Explain `curl download resume` briefly.
+Explain `curl retry backoff` briefly.
+Explain `curl timing` briefly.
+Explain `cut fields` briefly.
+Explain `date format calc` briefly.
+Explain `dd clone` briefly.
+Explain `df inodes` briefly.
+Explain `diff cmp files` briefly.
+Explain `diff exit codes` briefly.
+Explain `dig dns` briefly.
+Explain `direxpand paths` briefly.
+Explain `disown huponexit` briefly.
+Explain `dmesg errors` briefly.
+Explain `dotglob hidden` briefly.
+Explain `du top dirs` briefly.
+Explain `emacs vi mode` briefly.
+Explain `entr rerun` briefly.
+Explain `env hierarchy` briefly.
+Explain `errexit pitfalls` briefly.
+Explain `errtrace functrace` briefly.
+Explain `exec cmd` briefly.
+Explain `exit codes` briefly.
+Explain `exit trap codes` briefly.
+Explain `expand unexpand tabs` briefly.
+Explain `expand_aliases scripts` briefly.
+Explain `extquote strings` briefly.
+Explain `failglob strict` briefly.
+Explain `fd find` briefly.
+Explain `find . -print0 | xargs -0` briefly.
+Explain `find exec plus` briefly.
+Explain `find mtime size` briefly.
+Explain `flock singleton` briefly.
+Explain `for f in *.md` briefly.
+Explain `free available` briefly.
+Explain `function greet()` briefly.
+Explain `fzf history` briefly.
+Explain `getopts flags` briefly.
+Explain `getopts silent errors` briefly.
+Explain `git archive deploy` briefly.
+Explain `globasciiranges` briefly.
+Explain `globstar extglob` briefly.
+Explain `gnu_errfmt errors` briefly.
+Explain `gpg encrypt sign` briefly.
+Explain `grep context` briefly.
+Explain `grep extended` briefly.
+Explain `grep invert count` briefly.
+Explain `head tail files` briefly.
+Explain `histappend share` briefly.
+Explain `history control` briefly.
+Explain `histverify expand` briefly.
+Explain `htop vs top` briefly.
+Explain `hyperfine bench` briefly.
+Explain `if [[ -f fail ]]` briefly.
+Explain `inherit_errexit subshell` briefly.
+Explain `ip addr route` briefly.
+Explain `jobs wait &` briefly.
+Explain `join two files` briefly.
+Explain `journalctl unit` briefly.
+Explain `jq extract field` briefly.
+Explain `jq filter select` briefly.
+Explain `jq walk reduce` briefly.
+Explain `kill -l signals` briefly.
+Explain `kill signals` briefly.
+Explain `lastpipe variable` briefly.
+Explain `localvar_inherit` briefly.
+Explain `logger syslog` briefly.
+Explain `login_shell detect` briefly.
+Explain `lsof port` briefly.
+Explain `lvm extend` briefly.
+Explain `mailwarn mail` briefly.
+Explain `mapfile callback` briefly.
+Explain `mapfile delimiter` briefly.
+Explain `mapfile lines` briefly.
+Explain `mapfile skip count` briefly.
+Explain `mktemp secure files` briefly.
+Explain `mount fstab` briefly.
+Explain `nameref declare -n` briefly.
+Explain `nc port test` briefly.
+Explain `ncdu disk` briefly.
+Explain `nl number lines` briefly.
+Explain `nmcli wifi` briefly.
+Explain `no_empty_cmd_completion` briefly.
+Explain `nocaseglob match` briefly.
+Explain `noclobber safe` briefly.
+Explain `node check syntax` briefly.
+Explain `noexec dryrun` briefly.
+Explain `noglob paths` briefly.
+Explain `notify jobs` briefly.
+Explain `nounset empty arrays` briefly.
+Explain `od hexdump bytes` briefly.
+Explain `onecmd flag` briefly.
+Explain `openssl s_client` briefly.
+Explain `openssl selfsign` briefly.
+Explain `passwd lock` briefly.
+Explain `paste join lines` briefly.
+Explain `pgrep pkill` briefly.
+Explain `physical cd` briefly.
+Explain `ping mtr` briefly.
+Explain `pip download wheels` briefly.
+Explain `posix mode` briefly.
+Explain `printf %q quoting` briefly.
+Explain `printf format` briefly.
+Explain `progcomp programmable` briefly.
+Explain `promptvars expand` briefly.
+Explain `ps forest` briefly.
+Explain `pushd popd` briefly.
+Explain `python http server` briefly.
+Explain `read array -a` briefly.
+Explain `read custom delim` briefly.
+Explain `read readline edit` briefly.
+Explain `readonly VAR` briefly.
+Explain `restricted_shell` briefly.
+Explain `rg ripgrep` briefly.
+Explain `rsync archive` briefly.
+Explain `scp sftp` briefly.
+Explain `screen detach` briefly.
+Explain `script session` briefly.
+Explain `sed backup edit` briefly.
+Explain `sed delete lines` briefly.
+Explain `sed replace inline` briefly.
+Explain `select PS3 custom` briefly.
+Explain `select menu` briefly.
+Explain `seq 1 10` briefly.
+Explain `set -euo pipefail` briefly.
+Explain `set -x debug` briefly.
+Explain `sha256sum verify` briefly.
+Explain `shellcheck lint` briefly.
+Explain `shfmt format` briefly.
+Explain `shift_verbose` briefly.
+Explain `shift` briefly.
+Explain `shopt options` briefly.
+Explain `shuf random lines` briefly.
+Explain `sort human uniq` briefly.
+Explain `sort uniq pipeline` briefly.
+Explain `source guard` briefly.
+Explain `source lib.sh` briefly.
+Explain `sourcepath lookup` briefly.
+Explain `split large files` briefly.
+Explain `ss advanced` briefly.
+Explain `ssh keygen copy` briefly.
+Explain `stat format` briefly.
+Explain `strace syscall` briefly.
+Explain `string replace` briefly.
+Explain `strings binaries` briefly.
+Explain `stty sane` briefly.
+Explain `su login shell` briefly.
+Explain `substring slice` briefly.
+Explain `sudo visudo` briefly.
+Explain `systemctl status` briefly.
+Explain `systemd cat edit` briefly.
+Explain `systemd mask` briefly.
+Explain `systemd timer` briefly.
+Explain `tac reverse cat` briefly.
+Explain `tail follow` briefly.
+Explain `tar create extract` briefly.
+Explain `tcpdump filter` briefly.
+Explain `tee split output` briefly.
+Explain `test -e -s -x` briefly.
+Explain `test -e -s` briefly.
+Explain `time keyword` briefly.
+Explain `timeout guard` briefly.
+Explain `tmux send-keys` briefly.
+Explain `tmux session` briefly.
+Explain `tmux synchronize` briefly.
+Explain `tput colors` briefly.
+Explain `tr squeeze delete` briefly.
+Explain `tr translate` briefly.
+Explain `trap cleanup EXIT` briefly.
+Explain `type command which` briefly.
+Explain `type hash cmd` briefly.
+Explain `ulimit core` briefly.
+Explain `umask in scripts` briefly.
+Explain `until loop` briefly.
+Explain `update alternatives` briefly.
+Explain `uptime load` briefly.
+Explain `useradd mod del` briefly.
+Explain `verbose trace` briefly.
+Explain `wait -n -p` briefly.
+Explain `watch monitor` briefly.
+Explain `wc count` briefly.
+Explain `wget mirror` briefly.
+Explain `wget spider check` briefly.
+Explain `while read baris` briefly.
+Explain `who w last` briefly.
+Explain `xargs replace` briefly.
+Explain `xpg_echo portability` briefly.
+Explain `yq yaml` briefly.
+Explain `zip unzip` briefly.
+Give a practical example of `$(date +%F)`.
+Give a practical example of `$1 $@ $#`.
+Give a practical example of `${PORT:-3000}`.
+Give a practical example of `${VAR:=default}`.
+Give a practical example of `${s/old/new}`.
+Give a practical example of `${s:0:3}`.
+Give a practical example of `<<EOF heredoc`.
+Give a practical example of `BASH_REMATCH groups`.
+Give a practical example of `BASH_SOURCE LINENO`.
+Give a practical example of `BASH_XTRACEFD log`.
+Give a practical example of `DEBUG trap`.
+Give a practical example of `EPOCHSECONDS SRANDOM`.
+Give a practical example of `ERR trap scope`.
+Give a practical example of `FUNCNAME stack`.
+Give a practical example of `IFS field tricks`.
+Give a practical example of `PIPESTATUS check`.
+Give a practical example of `PS1 prompt`.
+Give a practical example of `PS4 custom`.
+Give a practical example of `RETURN trap`.
+Give a practical example of `[[ $x =~ ^[0-9]+$ ]]`.
+Give a practical example of `a | b | c`.
+Give a practical example of `age secrets`.
+Give a practical example of `alias unalias`.
+Give a practical example of `allexport vars`.
+Give a practical example of `apt install`.
+Give a practical example of `arr=(a b c)`.
+Give a practical example of `assign default :=`.
+Give a practical example of `assoc key ops`.
+Give a practical example of `assoc_expand_once`.
+Give a practical example of `at oneshot`.
+Give a practical example of `autocd dirs`.
+Give a practical example of `awk begin end`.
+Give a practical example of `awk filter rows`.
+Give a practical example of `awk sum column`.
+Give a practical example of `base64 encode`.
+Give a practical example of `bash version check`.
+Give a practical example of `bat pager`.
+Give a practical example of `bats testing`.
+Give a practical example of `bind shortcut`.
+Give a practical example of `brace expansion`.
+Give a practical example of `braceexpand toggle`.
+Give a practical example of `caller debug`.
+Give a practical example of `case $1 in`.
+Give a practical example of `checkhash path`.
+Give a practical example of `checkjobs exit`.
+Give a practical example of `checkwinsize resize`.
+Give a practical example of `chmod numeric`.
+Give a practical example of `chown user group`.
+Give a practical example of `cmd > out 2>&1`.
+Give a practical example of `cmd1 && cmd2`.
+Give a practical example of `cmdhist multiline`.
+Give a practical example of `column -t align`.
+Give a practical example of `comm compare sorted`.
+Give a practical example of `compgen list`.
+Give a practical example of `complete custom`.
+Give a practical example of `coproc two-way`.
+Give a practical example of `cron schedule`.
+Give a practical example of `csplit context split`.
+Give a practical example of `curl download resume`.
+Give a practical example of `curl retry backoff`.
+Give a practical example of `curl timing`.
+Give a practical example of `cut fields`.
+Give a practical example of `date format calc`.
+Give a practical example of `dd clone`.
+Give a practical example of `df inodes`.
+Give a practical example of `diff cmp files`.
+Give a practical example of `diff exit codes`.
+Give a practical example of `dig dns`.
+Give a practical example of `direxpand paths`.
+Give a practical example of `disown huponexit`.
+Give a practical example of `dmesg errors`.
+Give a practical example of `dotglob hidden`.
+Give a practical example of `du top dirs`.
+Give a practical example of `emacs vi mode`.
+Give a practical example of `entr rerun`.
+Give a practical example of `env hierarchy`.
+Give a practical example of `errexit pitfalls`.
+Give a practical example of `errtrace functrace`.
+Give a practical example of `exec cmd`.
+Give a practical example of `exit codes`.
+Give a practical example of `exit trap codes`.
+Give a practical example of `expand unexpand tabs`.
+Give a practical example of `expand_aliases scripts`.
+Give a practical example of `extquote strings`.
+Give a practical example of `failglob strict`.
+Give a practical example of `fd find`.
+Give a practical example of `find . -print0 | xargs -0`.
+Give a practical example of `find exec plus`.
+Give a practical example of `find mtime size`.
+Give a practical example of `flock singleton`.
+Give a practical example of `for f in *.md`.
+Give a practical example of `free available`.
+Give a practical example of `function greet()`.
+Give a practical example of `fzf history`.
+Give a practical example of `getopts flags`.
+Give a practical example of `getopts silent errors`.
+Give a practical example of `git archive deploy`.
+Give a practical example of `globasciiranges`.
+Give a practical example of `globstar extglob`.
+Give a practical example of `gnu_errfmt errors`.
+Give a practical example of `gpg encrypt sign`.
+Give a practical example of `grep context`.
+Give a practical example of `grep extended`.
+Give a practical example of `grep invert count`.
+Give a practical example of `head tail files`.
+Give a practical example of `histappend share`.
+Give a practical example of `history control`.
+Give a practical example of `histverify expand`.
+Give a practical example of `htop vs top`.
+Give a practical example of `hyperfine bench`.
+Give a practical example of `if [[ -f fail ]]`.
+Give a practical example of `inherit_errexit subshell`.
+Give a practical example of `ip addr route`.
+Give a practical example of `jobs wait &`.
+Give a practical example of `join two files`.
+Give a practical example of `journalctl unit`.
+Give a practical example of `jq extract field`.
+Give a practical example of `jq filter select`.
+Give a practical example of `jq walk reduce`.
+Give a practical example of `kill -l signals`.
+Give a practical example of `kill signals`.
+Give a practical example of `lastpipe variable`.
+Give a practical example of `localvar_inherit`.
+Give a practical example of `logger syslog`.
+Give a practical example of `login_shell detect`.
+Give a practical example of `lsof port`.
+Give a practical example of `lvm extend`.
+Give a practical example of `mailwarn mail`.
+Give a practical example of `mapfile callback`.
+Give a practical example of `mapfile delimiter`.
+Give a practical example of `mapfile lines`.
+Give a practical example of `mapfile skip count`.
+Give a practical example of `mktemp secure files`.
+Give a practical example of `mount fstab`.
+Give a practical example of `nameref declare -n`.
+Give a practical example of `nc port test`.
+Give a practical example of `ncdu disk`.
+Give a practical example of `nl number lines`.
+Give a practical example of `nmcli wifi`.
+Give a practical example of `no_empty_cmd_completion`.
+Give a practical example of `nocaseglob match`.
+Give a practical example of `noclobber safe`.
+Give a practical example of `node check syntax`.
+Give a practical example of `noexec dryrun`.
+Give a practical example of `noglob paths`.
+Give a practical example of `notify jobs`.
+Give a practical example of `nounset empty arrays`.
+Give a practical example of `od hexdump bytes`.
+Give a practical example of `onecmd flag`.
+Give a practical example of `openssl s_client`.
+Give a practical example of `openssl selfsign`.
+Give a practical example of `passwd lock`.
+Give a practical example of `paste join lines`.
+Give a practical example of `pgrep pkill`.
+Give a practical example of `physical cd`.
+Give a practical example of `ping mtr`.
+Give a practical example of `pip download wheels`.
+Give a practical example of `posix mode`.
+Give a practical example of `printf %q quoting`.
+Give a practical example of `printf format`.
+Give a practical example of `progcomp programmable`.
+Give a practical example of `promptvars expand`.
+Give a practical example of `ps forest`.
+Give a practical example of `pushd popd`.
+Give a practical example of `python http server`.
+Give a practical example of `read array -a`.
+Give a practical example of `read custom delim`.
+Give a practical example of `read readline edit`.
+Give a practical example of `readonly VAR`.
+Give a practical example of `restricted_shell`.
+Give a practical example of `rg ripgrep`.
+Give a practical example of `rsync archive`.
+Give a practical example of `scp sftp`.
+Give a practical example of `screen detach`.
+Give a practical example of `script session`.
+Give a practical example of `sed backup edit`.
+Give a practical example of `sed delete lines`.
+Give a practical example of `sed replace inline`.
+Give a practical example of `select PS3 custom`.
+Give a practical example of `select menu`.
+Give a practical example of `seq 1 10`.
+Give a practical example of `set -euo pipefail`.
+Give a practical example of `set -x debug`.
+Give a practical example of `sha256sum verify`.
+Give a practical example of `shellcheck lint`.
+Give a practical example of `shfmt format`.
+Give a practical example of `shift_verbose`.
+Give a practical example of `shift`.
+Give a practical example of `shopt options`.
+Give a practical example of `shuf random lines`.
+Give a practical example of `sort human uniq`.
+Give a practical example of `sort uniq pipeline`.
+Give a practical example of `source guard`.
+Give a practical example of `source lib.sh`.
+Give a practical example of `sourcepath lookup`.
+Give a practical example of `split large files`.
+Give a practical example of `ss advanced`.
+Give a practical example of `ssh keygen copy`.
+Give a practical example of `stat format`.
+Give a practical example of `strace syscall`.
+Give a practical example of `string replace`.
+Give a practical example of `strings binaries`.
+Give a practical example of `stty sane`.
+Give a practical example of `su login shell`.
+Give a practical example of `substring slice`.
+Give a practical example of `sudo visudo`.
+Give a practical example of `systemctl status`.
+Give a practical example of `systemd cat edit`.
+Give a practical example of `systemd mask`.
+Give a practical example of `systemd timer`.
+Give a practical example of `tac reverse cat`.
+Give a practical example of `tail follow`.
+Give a practical example of `tar create extract`.
+Give a practical example of `tcpdump filter`.
+Give a practical example of `tee split output`.
+Give a practical example of `test -e -s -x`.
+Give a practical example of `test -e -s`.
+Give a practical example of `time keyword`.
+Give a practical example of `timeout guard`.
+Give a practical example of `tmux send-keys`.
+Give a practical example of `tmux session`.
+Give a practical example of `tmux synchronize`.
+Give a practical example of `tput colors`.
+Give a practical example of `tr squeeze delete`.
+Give a practical example of `tr translate`.
+Give a practical example of `trap cleanup EXIT`.
+Give a practical example of `type command which`.
+Give a practical example of `type hash cmd`.
+Give a practical example of `ulimit core`.
+Give a practical example of `umask in scripts`.
+Give a practical example of `until loop`.
+Give a practical example of `update alternatives`.
+Give a practical example of `uptime load`.
+Give a practical example of `useradd mod del`.
+Give a practical example of `verbose trace`.
+Give a practical example of `wait -n -p`.
+Give a practical example of `watch monitor`.
+Give a practical example of `wc count`.
+Give a practical example of `wget mirror`.
+Give a practical example of `wget spider check`.
+Give a practical example of `while read baris`.
+Give a practical example of `who w last`.
+Give a practical example of `xargs replace`.
+Give a practical example of `xpg_echo portability`.
+Give a practical example of `yq yaml`.
+Give a practical example of `zip unzip`.
+Give a real-world scenario for `$(date +%F)`.
+Give a real-world scenario for `$1 $@ $#`.
+Give a real-world scenario for `${PORT:-3000}`.
+Give a real-world scenario for `${VAR:=default}`.
+Give a real-world scenario for `${s/old/new}`.
+Give a real-world scenario for `${s:0:3}`.
+Give a real-world scenario for `<<EOF heredoc`.
+Give a real-world scenario for `BASH_REMATCH groups`.
+Give a real-world scenario for `BASH_SOURCE LINENO`.
+Give a real-world scenario for `BASH_XTRACEFD log`.
+Give a real-world scenario for `DEBUG trap`.
+Give a real-world scenario for `EPOCHSECONDS SRANDOM`.
+Give a real-world scenario for `ERR trap scope`.
+Give a real-world scenario for `FUNCNAME stack`.
+Give a real-world scenario for `IFS field tricks`.
+Give a real-world scenario for `PIPESTATUS check`.
+Give a real-world scenario for `PS1 prompt`.
+Give a real-world scenario for `PS4 custom`.
+Give a real-world scenario for `RETURN trap`.
+Give a real-world scenario for `[[ $x =~ ^[0-9]+$ ]]`.
+Give a real-world scenario for `a | b | c`.
+Give a real-world scenario for `age secrets`.
+Give a real-world scenario for `alias unalias`.
+Give a real-world scenario for `allexport vars`.
+Give a real-world scenario for `apt install`.
+Give a real-world scenario for `arr=(a b c)`.
+Give a real-world scenario for `assign default :=`.
+Give a real-world scenario for `assoc key ops`.
+Give a real-world scenario for `assoc_expand_once`.
+Give a real-world scenario for `at oneshot`.
+Give a real-world scenario for `autocd dirs`.
+Give a real-world scenario for `awk begin end`.
+Give a real-world scenario for `awk filter rows`.
+Give a real-world scenario for `awk sum column`.
+Give a real-world scenario for `base64 encode`.
+Give a real-world scenario for `bash version check`.
+Give a real-world scenario for `bat pager`.
+Give a real-world scenario for `bats testing`.
+Give a real-world scenario for `bind shortcut`.
+Give a real-world scenario for `brace expansion`.
+Give a real-world scenario for `braceexpand toggle`.
+Give a real-world scenario for `caller debug`.
+Give a real-world scenario for `case $1 in`.
+Give a real-world scenario for `checkhash path`.
+Give a real-world scenario for `checkjobs exit`.
+Give a real-world scenario for `checkwinsize resize`.
+Give a real-world scenario for `chmod numeric`.
+Give a real-world scenario for `chown user group`.
+Give a real-world scenario for `cmd > out 2>&1`.
+Give a real-world scenario for `cmd1 && cmd2`.
+Give a real-world scenario for `cmdhist multiline`.
+Give a real-world scenario for `column -t align`.
+Give a real-world scenario for `comm compare sorted`.
+Give a real-world scenario for `compgen list`.
+Give a real-world scenario for `complete custom`.
+Give a real-world scenario for `coproc two-way`.
+Give a real-world scenario for `cron schedule`.
+Give a real-world scenario for `csplit context split`.
+Give a real-world scenario for `curl download resume`.
+Give a real-world scenario for `curl retry backoff`.
+Give a real-world scenario for `curl timing`.
+Give a real-world scenario for `cut fields`.
+Give a real-world scenario for `date format calc`.
+Give a real-world scenario for `dd clone`.
+Give a real-world scenario for `df inodes`.
+Give a real-world scenario for `diff cmp files`.
+Give a real-world scenario for `diff exit codes`.
+Give a real-world scenario for `dig dns`.
+Give a real-world scenario for `direxpand paths`.
+Give a real-world scenario for `disown huponexit`.
+Give a real-world scenario for `dmesg errors`.
+Give a real-world scenario for `dotglob hidden`.
+Give a real-world scenario for `du top dirs`.
+Give a real-world scenario for `emacs vi mode`.
+Give a real-world scenario for `entr rerun`.
+Give a real-world scenario for `env hierarchy`.
+Give a real-world scenario for `errexit pitfalls`.
+Give a real-world scenario for `errtrace functrace`.
+Give a real-world scenario for `exec cmd`.
+Give a real-world scenario for `exit codes`.
+Give a real-world scenario for `exit trap codes`.
+Give a real-world scenario for `expand unexpand tabs`.
+Give a real-world scenario for `expand_aliases scripts`.
+Give a real-world scenario for `extquote strings`.
+Give a real-world scenario for `failglob strict`.
+Give a real-world scenario for `fd find`.
+Give a real-world scenario for `find . -print0 | xargs -0`.
+Give a real-world scenario for `find exec plus`.
+Give a real-world scenario for `find mtime size`.
+Give a real-world scenario for `flock singleton`.
+Give a real-world scenario for `for f in *.md`.
+Give a real-world scenario for `free available`.
+Give a real-world scenario for `function greet()`.
+Give a real-world scenario for `fzf history`.
+Give a real-world scenario for `getopts flags`.
+Give a real-world scenario for `getopts silent errors`.
+Give a real-world scenario for `git archive deploy`.
+Give a real-world scenario for `globasciiranges`.
+Give a real-world scenario for `globstar extglob`.
+Give a real-world scenario for `gnu_errfmt errors`.
+Give a real-world scenario for `gpg encrypt sign`.
+Give a real-world scenario for `grep context`.
+Give a real-world scenario for `grep extended`.
+Give a real-world scenario for `grep invert count`.
+Give a real-world scenario for `head tail files`.
+Give a real-world scenario for `histappend share`.
+Give a real-world scenario for `history control`.
+Give a real-world scenario for `histverify expand`.
+Give a real-world scenario for `htop vs top`.
+Give a real-world scenario for `hyperfine bench`.
+Give a real-world scenario for `if [[ -f fail ]]`.
+Give a real-world scenario for `if [[ -f file ]]`.
+Give a real-world scenario for `inherit_errexit subshell`.
+Give a real-world scenario for `ip addr route`.
+Give a real-world scenario for `jobs wait &`.
+Give a real-world scenario for `join two files`.
+Give a real-world scenario for `journalctl unit`.
+Give a real-world scenario for `jq extract field`.
+Give a real-world scenario for `jq filter select`.
+Give a real-world scenario for `jq walk reduce`.
+Give a real-world scenario for `kill -l signals`.
+Give a real-world scenario for `kill signals`.
+Give a real-world scenario for `lastpipe variable`.
+Give a real-world scenario for `localvar_inherit`.
+Give a real-world scenario for `logger syslog`.
+Give a real-world scenario for `login_shell detect`.
+Give a real-world scenario for `lsof port`.
+Give a real-world scenario for `lvm extend`.
+Give a real-world scenario for `mailwarn mail`.
+Give a real-world scenario for `mapfile callback`.
+Give a real-world scenario for `mapfile delimiter`.
+Give a real-world scenario for `mapfile lines`.
+Give a real-world scenario for `mapfile skip count`.
+Give a real-world scenario for `mktemp secure files`.
+Give a real-world scenario for `mount fstab`.
+Give a real-world scenario for `nameref declare -n`.
+Give a real-world scenario for `nc port test`.
+Give a real-world scenario for `ncdu disk`.
+Give a real-world scenario for `nl number lines`.
+Give a real-world scenario for `nmcli wifi`.
+Give a real-world scenario for `no_empty_cmd_completion`.
+Give a real-world scenario for `nocaseglob match`.
+Give a real-world scenario for `noclobber safe`.
+Give a real-world scenario for `node check syntax`.
+Give a real-world scenario for `noexec dryrun`.
+Give a real-world scenario for `noglob paths`.
+Give a real-world scenario for `notify jobs`.
+Give a real-world scenario for `nounset empty arrays`.
+Give a real-world scenario for `od hexdump bytes`.
+Give a real-world scenario for `onecmd flag`.
+Give a real-world scenario for `openssl s_client`.
+Give a real-world scenario for `openssl selfsign`.
+Give a real-world scenario for `passwd lock`.
+Give a real-world scenario for `paste join lines`.
+Give a real-world scenario for `pgrep pkill`.
+Give a real-world scenario for `physical cd`.
+Give a real-world scenario for `ping mtr`.
+Give a real-world scenario for `pip download wheels`.
+Give a real-world scenario for `posix mode`.
+Give a real-world scenario for `printf %q quoting`.
+Give a real-world scenario for `printf format`.
+Give a real-world scenario for `progcomp programmable`.
+Give a real-world scenario for `promptvars expand`.
+Give a real-world scenario for `ps forest`.
+Give a real-world scenario for `pushd popd`.
+Give a real-world scenario for `python http server`.
+Give a real-world scenario for `read array -a`.
+Give a real-world scenario for `read custom delim`.
+Give a real-world scenario for `read readline edit`.
+Give a real-world scenario for `readonly VAR`.
+Give a real-world scenario for `restricted_shell`.
+Give a real-world scenario for `rg ripgrep`.
+Give a real-world scenario for `rsync archive`.
+Give a real-world scenario for `scp sftp`.
+Give a real-world scenario for `screen detach`.
+Give a real-world scenario for `script session`.
+Give a real-world scenario for `sed backup edit`.
+Give a real-world scenario for `sed delete lines`.
+Give a real-world scenario for `sed replace inline`.
+Give a real-world scenario for `select PS3 custom`.
+Give a real-world scenario for `select menu`.
+Give a real-world scenario for `seq 1 10`.
+Give a real-world scenario for `set -euo pipefail`.
+Give a real-world scenario for `set -x debug`.
+Give a real-world scenario for `sha256sum verify`.
+Give a real-world scenario for `shellcheck lint`.
+Give a real-world scenario for `shfmt format`.
+Give a real-world scenario for `shift_verbose`.
+Give a real-world scenario for `shift`.
+Give a real-world scenario for `shopt options`.
+Give a real-world scenario for `shuf random lines`.
+Give a real-world scenario for `sort human uniq`.
+Give a real-world scenario for `sort uniq pipeline`.
+Give a real-world scenario for `source guard`.
+Give a real-world scenario for `source lib.sh`.
+Give a real-world scenario for `sourcepath lookup`.
+Give a real-world scenario for `split large files`.
+Give a real-world scenario for `ss advanced`.
+Give a real-world scenario for `ssh keygen copy`.
+Give a real-world scenario for `stat format`.
+Give a real-world scenario for `strace syscall`.
+Give a real-world scenario for `string replace`.
+Give a real-world scenario for `strings binaries`.
+Give a real-world scenario for `stty sane`.
+Give a real-world scenario for `su login shell`.
+Give a real-world scenario for `substring slice`.
+Give a real-world scenario for `sudo visudo`.
+Give a real-world scenario for `systemctl status`.
+Give a real-world scenario for `systemd cat edit`.
+Give a real-world scenario for `systemd mask`.
+Give a real-world scenario for `systemd timer`.
+Give a real-world scenario for `tac reverse cat`.
+Give a real-world scenario for `tail follow`.
+Give a real-world scenario for `tar create extract`.
+Give a real-world scenario for `tcpdump filter`.
+Give a real-world scenario for `tee split output`.
+Give a real-world scenario for `test -e -s -x`.
+Give a real-world scenario for `test -e -s`.
+Give a real-world scenario for `time keyword`.
+Give a real-world scenario for `timeout guard`.
+Give a real-world scenario for `tmux send-keys`.
+Give a real-world scenario for `tmux session`.
+Give a real-world scenario for `tmux synchronize`.
+Give a real-world scenario for `tput colors`.
+Give a real-world scenario for `tr squeeze delete`.
+Give a real-world scenario for `tr translate`.
+Give a real-world scenario for `trap cleanup EXIT`.
+Give a real-world scenario for `type command which`.
+Give a real-world scenario for `type hash cmd`.
+Give a real-world scenario for `ulimit core`.
+Give a real-world scenario for `umask in scripts`.
+Give a real-world scenario for `until loop`.
+Give a real-world scenario for `update alternatives`.
+Give a real-world scenario for `uptime load`.
+Give a real-world scenario for `useradd mod del`.
+Give a real-world scenario for `verbose trace`.
+Give a real-world scenario for `wait -n -p`.
+Give a real-world scenario for `watch monitor`.
+Give a real-world scenario for `wc count`.
+Give a real-world scenario for `wget mirror`.
+Give a real-world scenario for `wget spider check`.
+Give a real-world scenario for `while read baris`.
+Give a real-world scenario for `who w last`.
+Give a real-world scenario for `xargs replace`.
+Give a real-world scenario for `xpg_echo portability`.
+Give a real-world scenario for `yq yaml`.
+Give a real-world scenario for `zip unzip`.
+How do I analyze logs for top IP addresses in bash?
+How do I convert CSV to JSON with jq in bash?
+How do I create a swap file?
+How do I create an SSH tunnel?
+How do I debug a running process file access with strace?
+How do I match regex and capture groups in bash?
+How do I open a shell inside a running container?
+How do I pick a deploy target interactively with fzf?
+How do I quote untrusted strings safely for eval in bash?
+How do I read lines safely in bash?
+How do I run a command with timeout and capture output in bash?
+How do I safely handle empty arrays under set -u?
+How do I use curl to POST JSON?
+How do I use rsync for backups with hard-link snapshots?
+How do I write a bash for loop over files?
+How do I write a deploy script in bash?
+How do I write an if statement in bash that checks if a file exists?
+How do bash arrays work?
+How do bash for loops and globs work?
+How do bash functions return values?
+How do bash if conditions and [[ ]] work?
+How do bash parameter expansions work?
+How do bash scripts take arguments ($1, $@, $#)?
+How do redirects and process substitution work?
+How does bash case work?
+How does trap cleanup work in bash?
+How would you explain `$(date +%F)` to a junior developer?
+How would you explain `$1 $@ $#` to a junior developer?
+How would you explain `${PORT:-3000}` to a junior developer?
+How would you explain `${VAR:=default}` to a junior developer?
+How would you explain `${s/old/new}` to a junior developer?
+How would you explain `${s:0:3}` to a junior developer?
+How would you explain `<<EOF heredoc` to a junior developer?
+How would you explain `BASH_REMATCH groups` to a junior developer?
+How would you explain `BASH_SOURCE LINENO` to a junior developer?
+How would you explain `BASH_XTRACEFD log` to a junior developer?
+How would you explain `DEBUG trap` to a junior developer?
+How would you explain `EPOCHSECONDS SRANDOM` to a junior developer?
+How would you explain `ERR trap scope` to a junior developer?
+How would you explain `FUNCNAME stack` to a junior developer?
+How would you explain `IFS field tricks` to a junior developer?
+How would you explain `PIPESTATUS check` to a junior developer?
+How would you explain `PS1 prompt` to a junior developer?
+How would you explain `PS4 custom` to a junior developer?
+How would you explain `RETURN trap` to a junior developer?
+How would you explain `[[ $x =~ ^[0-9]+$ ]]` to a junior developer?
+How would you explain `a | b | c` to a junior developer?
+How would you explain `age secrets` to a junior developer?
+How would you explain `alias unalias` to a junior developer?
+How would you explain `allexport vars` to a junior developer?
+How would you explain `apt install` to a junior developer?
+How would you explain `arr=(a b c)` to a junior developer?
+How would you explain `assign default :=` to a junior developer?
+How would you explain `assoc key ops` to a junior developer?
+How would you explain `assoc_expand_once` to a junior developer?
+How would you explain `at oneshot` to a junior developer?
+How would you explain `autocd dirs` to a junior developer?
+How would you explain `awk begin end` to a junior developer?
+How would you explain `awk filter rows` to a junior developer?
+How would you explain `awk sum column` to a junior developer?
+How would you explain `base64 encode` to a junior developer?
+How would you explain `bash version check` to a junior developer?
+How would you explain `bat pager` to a junior developer?
+How would you explain `bats testing` to a junior developer?
+How would you explain `bind shortcut` to a junior developer?
+How would you explain `brace expansion` to a junior developer?
+How would you explain `braceexpand toggle` to a junior developer?
+How would you explain `caller debug` to a junior developer?
+How would you explain `case $1 in` to a junior developer?
+How would you explain `checkhash path` to a junior developer?
+How would you explain `checkjobs exit` to a junior developer?
+How would you explain `checkwinsize resize` to a junior developer?
+How would you explain `chmod numeric` to a junior developer?
+How would you explain `chown user group` to a junior developer?
+How would you explain `cmd > out 2>&1` to a junior developer?
+How would you explain `cmd1 && cmd2` to a junior developer?
+How would you explain `cmdhist multiline` to a junior developer?
+How would you explain `column -t align` to a junior developer?
+How would you explain `comm compare sorted` to a junior developer?
+How would you explain `compgen list` to a junior developer?
+How would you explain `complete custom` to a junior developer?
+How would you explain `coproc two-way` to a junior developer?
+How would you explain `cron schedule` to a junior developer?
+How would you explain `csplit context split` to a junior developer?
+How would you explain `curl download resume` to a junior developer?
+How would you explain `curl retry backoff` to a junior developer?
+How would you explain `curl timing` to a junior developer?
+How would you explain `cut fields` to a junior developer?
+How would you explain `date format calc` to a junior developer?
+How would you explain `dd clone` to a junior developer?
+How would you explain `df inodes` to a junior developer?
+How would you explain `diff cmp files` to a junior developer?
+How would you explain `diff exit codes` to a junior developer?
+How would you explain `dig dns` to a junior developer?
+How would you explain `direxpand paths` to a junior developer?
+How would you explain `disown huponexit` to a junior developer?
+How would you explain `dmesg errors` to a junior developer?
+How would you explain `dotglob hidden` to a junior developer?
+How would you explain `du top dirs` to a junior developer?
+How would you explain `emacs vi mode` to a junior developer?
+How would you explain `entr rerun` to a junior developer?
+How would you explain `env hierarchy` to a junior developer?
+How would you explain `errexit pitfalls` to a junior developer?
+How would you explain `errtrace functrace` to a junior developer?
+How would you explain `exec cmd` to a junior developer?
+How would you explain `exit codes` to a junior developer?
+How would you explain `exit trap codes` to a junior developer?
+How would you explain `expand unexpand tabs` to a junior developer?
+How would you explain `expand_aliases scripts` to a junior developer?
+How would you explain `extquote strings` to a junior developer?
+How would you explain `failglob strict` to a junior developer?
+How would you explain `fd find` to a junior developer?
+How would you explain `find . -print0 | xargs -0` to a junior developer?
+How would you explain `find exec plus` to a junior developer?
+How would you explain `find mtime size` to a junior developer?
+How would you explain `flock singleton` to a junior developer?
+How would you explain `for f in *.md` to a junior developer?
+How would you explain `free available` to a junior developer?
+How would you explain `function greet()` to a junior developer?
+How would you explain `fzf history` to a junior developer?
+How would you explain `getopts flags` to a junior developer?
+How would you explain `getopts silent errors` to a junior developer?
+How would you explain `git archive deploy` to a junior developer?
+How would you explain `globasciiranges` to a junior developer?
+How would you explain `globstar extglob` to a junior developer?
+How would you explain `gnu_errfmt errors` to a junior developer?
+How would you explain `gpg encrypt sign` to a junior developer?
+How would you explain `grep context` to a junior developer?
+How would you explain `grep extended` to a junior developer?
+How would you explain `grep invert count` to a junior developer?
+How would you explain `head tail files` to a junior developer?
+How would you explain `histappend share` to a junior developer?
+How would you explain `history control` to a junior developer?
+How would you explain `histverify expand` to a junior developer?
+How would you explain `htop vs top` to a junior developer?
+How would you explain `hyperfine bench` to a junior developer?
+How would you explain `if [[ -f fail ]]` to a junior developer?
+How would you explain `inherit_errexit subshell` to a junior developer?
+How would you explain `ip addr route` to a junior developer?
+How would you explain `jobs wait &` to a junior developer?
+How would you explain `join two files` to a junior developer?
+How would you explain `journalctl unit` to a junior developer?
+How would you explain `jq extract field` to a junior developer?
+How would you explain `jq filter select` to a junior developer?
+How would you explain `jq walk reduce` to a junior developer?
+How would you explain `kill -l signals` to a junior developer?
+How would you explain `kill signals` to a junior developer?
+How would you explain `lastpipe variable` to a junior developer?
+How would you explain `localvar_inherit` to a junior developer?
+How would you explain `logger syslog` to a junior developer?
+How would you explain `login_shell detect` to a junior developer?
+How would you explain `lsof port` to a junior developer?
+How would you explain `lvm extend` to a junior developer?
+How would you explain `mailwarn mail` to a junior developer?
+How would you explain `mapfile callback` to a junior developer?
+How would you explain `mapfile delimiter` to a junior developer?
+How would you explain `mapfile lines` to a junior developer?
+How would you explain `mapfile skip count` to a junior developer?
+How would you explain `mktemp secure files` to a junior developer?
+How would you explain `mount fstab` to a junior developer?
+How would you explain `nameref declare -n` to a junior developer?
+How would you explain `nc port test` to a junior developer?
+How would you explain `ncdu disk` to a junior developer?
+How would you explain `nl number lines` to a junior developer?
+How would you explain `nmcli wifi` to a junior developer?
+How would you explain `no_empty_cmd_completion` to a junior developer?
+How would you explain `nocaseglob match` to a junior developer?
+How would you explain `noclobber safe` to a junior developer?
+How would you explain `node check syntax` to a junior developer?
+How would you explain `noexec dryrun` to a junior developer?
+How would you explain `noglob paths` to a junior developer?
+How would you explain `notify jobs` to a junior developer?
+How would you explain `nounset empty arrays` to a junior developer?
+How would you explain `od hexdump bytes` to a junior developer?
+How would you explain `onecmd flag` to a junior developer?
+How would you explain `openssl s_client` to a junior developer?
+How would you explain `openssl selfsign` to a junior developer?
+How would you explain `passwd lock` to a junior developer?
+How would you explain `paste join lines` to a junior developer?
+How would you explain `pgrep pkill` to a junior developer?
+How would you explain `physical cd` to a junior developer?
+How would you explain `ping mtr` to a junior developer?
+How would you explain `pip download wheels` to a junior developer?
+How would you explain `posix mode` to a junior developer?
+How would you explain `printf %q quoting` to a junior developer?
+How would you explain `printf format` to a junior developer?
+How would you explain `progcomp programmable` to a junior developer?
+How would you explain `promptvars expand` to a junior developer?
+How would you explain `ps forest` to a junior developer?
+How would you explain `pushd popd` to a junior developer?
+How would you explain `python http server` to a junior developer?
+How would you explain `read array -a` to a junior developer?
+How would you explain `read custom delim` to a junior developer?
+How would you explain `read readline edit` to a junior developer?
+How would you explain `readonly VAR` to a junior developer?
+How would you explain `restricted_shell` to a junior developer?
+How would you explain `rg ripgrep` to a junior developer?
+How would you explain `rsync archive` to a junior developer?
+How would you explain `scp sftp` to a junior developer?
+How would you explain `screen detach` to a junior developer?
+How would you explain `script session` to a junior developer?
+How would you explain `sed backup edit` to a junior developer?
+How would you explain `sed delete lines` to a junior developer?
+How would you explain `sed replace inline` to a junior developer?
+How would you explain `select PS3 custom` to a junior developer?
+How would you explain `select menu` to a junior developer?
+How would you explain `seq 1 10` to a junior developer?
+How would you explain `set -euo pipefail` to a junior developer?
+How would you explain `set -x debug` to a junior developer?
+How would you explain `sha256sum verify` to a junior developer?
+How would you explain `shellcheck lint` to a junior developer?
+How would you explain `shfmt format` to a junior developer?
+How would you explain `shift_verbose` to a junior developer?
+How would you explain `shift` to a junior developer?
+How would you explain `shopt options` to a junior developer?
+How would you explain `shuf random lines` to a junior developer?
+How would you explain `sort human uniq` to a junior developer?
+How would you explain `sort uniq pipeline` to a junior developer?
+How would you explain `source guard` to a junior developer?
+How would you explain `source lib.sh` to a junior developer?
+How would you explain `sourcepath lookup` to a junior developer?
+How would you explain `split large files` to a junior developer?
+How would you explain `ss advanced` to a junior developer?
+How would you explain `ssh keygen copy` to a junior developer?
+How would you explain `stat format` to a junior developer?
+How would you explain `strace syscall` to a junior developer?
+How would you explain `string replace` to a junior developer?
+How would you explain `strings binaries` to a junior developer?
+How would you explain `stty sane` to a junior developer?
+How would you explain `su login shell` to a junior developer?
+How would you explain `substring slice` to a junior developer?
+How would you explain `sudo visudo` to a junior developer?
+How would you explain `systemctl status` to a junior developer?
+How would you explain `systemd cat edit` to a junior developer?
+How would you explain `systemd mask` to a junior developer?
+How would you explain `systemd timer` to a junior developer?
+How would you explain `tac reverse cat` to a junior developer?
+How would you explain `tail follow` to a junior developer?
+How would you explain `tar create extract` to a junior developer?
+How would you explain `tcpdump filter` to a junior developer?
+How would you explain `tee split output` to a junior developer?
+How would you explain `test -e -s -x` to a junior developer?
+How would you explain `test -e -s` to a junior developer?
+How would you explain `time keyword` to a junior developer?
+How would you explain `timeout guard` to a junior developer?
+How would you explain `tmux send-keys` to a junior developer?
+How would you explain `tmux session` to a junior developer?
+How would you explain `tmux synchronize` to a junior developer?
+How would you explain `tput colors` to a junior developer?
+How would you explain `tr squeeze delete` to a junior developer?
+How would you explain `tr translate` to a junior developer?
+How would you explain `trap cleanup EXIT` to a junior developer?
+How would you explain `type command which` to a junior developer?
+How would you explain `type hash cmd` to a junior developer?
+How would you explain `ulimit core` to a junior developer?
+How would you explain `umask in scripts` to a junior developer?
+How would you explain `until loop` to a junior developer?
+How would you explain `update alternatives` to a junior developer?
+How would you explain `uptime load` to a junior developer?
+How would you explain `useradd mod del` to a junior developer?
+How would you explain `verbose trace` to a junior developer?
+How would you explain `wait -n -p` to a junior developer?
+How would you explain `watch monitor` to a junior developer?
+How would you explain `wc count` to a junior developer?
+How would you explain `wget mirror` to a junior developer?
+How would you explain `wget spider check` to a junior developer?
+How would you explain `while read baris` to a junior developer?
+How would you explain `who w last` to a junior developer?
+How would you explain `xargs replace` to a junior developer?
+How would you explain `xpg_echo portability` to a junior developer?
+How would you explain `yq yaml` to a junior developer?
+How would you explain `zip unzip` to a junior developer?
+Jadikan skrip boleh laku
+Lihat 20 baris akhir log
+Semak port 1234 sedang dengar
+Senarai fail Linux termasuk tersembunyi
+Terangkan `$(date +%F)` dalam satu minit.
+Terangkan `$(date +%F)` secara ringkas.
+Terangkan `$1 $@ $#` dalam satu minit.
+Terangkan `$1 $@ $#` secara ringkas.
+Terangkan `${PORT:-3000}` dalam satu minit.
+Terangkan `${PORT:-3000}` secara ringkas.
+Terangkan `${VAR:=default}` dalam satu minit.
+Terangkan `${VAR:=default}` secara ringkas.
+Terangkan `${s/old/new}` dalam satu minit.
+Terangkan `${s/old/new}` secara ringkas.
+Terangkan `${s:0:3}` dalam satu minit.
+Terangkan `${s:0:3}` secara ringkas.
+Terangkan `<<EOF heredoc` dalam satu minit.
+Terangkan `<<EOF heredoc` secara ringkas.
+Terangkan `BASH_REMATCH groups` dalam satu minit.
+Terangkan `BASH_REMATCH groups` secara ringkas.
+Terangkan `BASH_SOURCE LINENO` dalam satu minit.
+Terangkan `BASH_SOURCE LINENO` secara ringkas.
+Terangkan `BASH_XTRACEFD log` dalam satu minit.
+Terangkan `BASH_XTRACEFD log` secara ringkas.
+Terangkan `DEBUG trap` dalam satu minit.
+Terangkan `DEBUG trap` secara ringkas.
+Terangkan `EPOCHSECONDS SRANDOM` dalam satu minit.
+Terangkan `EPOCHSECONDS SRANDOM` secara ringkas.
+Terangkan `ERR trap scope` dalam satu minit.
+Terangkan `ERR trap scope` secara ringkas.
+Terangkan `FUNCNAME stack` dalam satu minit.
+Terangkan `FUNCNAME stack` secara ringkas.
+Terangkan `IFS field tricks` dalam satu minit.
+Terangkan `IFS field tricks` secara ringkas.
+Terangkan `PIPESTATUS check` dalam satu minit.
+Terangkan `PIPESTATUS check` secara ringkas.
+Terangkan `PS1 prompt` dalam satu minit.
+Terangkan `PS1 prompt` secara ringkas.
+Terangkan `PS4 custom` dalam satu minit.
+Terangkan `PS4 custom` secara ringkas.
+Terangkan `RETURN trap` dalam satu minit.
+Terangkan `RETURN trap` secara ringkas.
+Terangkan `[[ $x =~ ^[0-9]+$ ]]` dalam satu minit.
+Terangkan `[[ $x =~ ^[0-9]+$ ]]` secara ringkas.
+Terangkan `a | b | c` dalam satu minit.
+Terangkan `a | b | c` secara ringkas.
+Terangkan `age secrets` dalam satu minit.
+Terangkan `age secrets` secara ringkas.
+Terangkan `alias unalias` dalam satu minit.
+Terangkan `alias unalias` secara ringkas.
+Terangkan `allexport vars` dalam satu minit.
+Terangkan `allexport vars` secara ringkas.
+Terangkan `apt install` dalam satu minit.
+Terangkan `apt install` secara ringkas.
+Terangkan `arr=(a b c)` dalam satu minit.
+Terangkan `arr=(a b c)` secara ringkas.
+Terangkan `assign default :=` dalam satu minit.
+Terangkan `assign default :=` secara ringkas.
+Terangkan `assoc key ops` dalam satu minit.
+Terangkan `assoc key ops` secara ringkas.
+Terangkan `assoc_expand_once` dalam satu minit.
+Terangkan `assoc_expand_once` secara ringkas.
+Terangkan `at oneshot` dalam satu minit.
+Terangkan `at oneshot` secara ringkas.
+Terangkan `autocd dirs` dalam satu minit.
+Terangkan `autocd dirs` secara ringkas.
+Terangkan `awk begin end` dalam satu minit.
+Terangkan `awk begin end` secara ringkas.
+Terangkan `awk filter rows` dalam satu minit.
+Terangkan `awk filter rows` secara ringkas.
+Terangkan `awk sum column` dalam satu minit.
+Terangkan `awk sum column` secara ringkas.
+Terangkan `base64 encode` dalam satu minit.
+Terangkan `base64 encode` secara ringkas.
+Terangkan `bash version check` dalam satu minit.
+Terangkan `bash version check` secara ringkas.
+Terangkan `bat pager` dalam satu minit.
+Terangkan `bat pager` secara ringkas.
+Terangkan `bats testing` dalam satu minit.
+Terangkan `bats testing` secara ringkas.
+Terangkan `bind shortcut` dalam satu minit.
+Terangkan `bind shortcut` secara ringkas.
+Terangkan `brace expansion` dalam satu minit.
+Terangkan `brace expansion` secara ringkas.
+Terangkan `braceexpand toggle` dalam satu minit.
+Terangkan `braceexpand toggle` secara ringkas.
+Terangkan `caller debug` dalam satu minit.
+Terangkan `caller debug` secara ringkas.
+Terangkan `case $1 in` dalam satu minit.
+Terangkan `case $1 in` secara ringkas.
+Terangkan `checkhash path` dalam satu minit.
+Terangkan `checkhash path` secara ringkas.
+Terangkan `checkjobs exit` dalam satu minit.
+Terangkan `checkjobs exit` secara ringkas.
+Terangkan `checkwinsize resize` dalam satu minit.
+Terangkan `checkwinsize resize` secara ringkas.
+Terangkan `chmod numeric` dalam satu minit.
+Terangkan `chmod numeric` secara ringkas.
+Terangkan `chown user group` dalam satu minit.
+Terangkan `chown user group` secara ringkas.
+Terangkan `cmd > out 2>&1` dalam satu minit.
+Terangkan `cmd > out 2>&1` secara ringkas.
+Terangkan `cmd1 && cmd2` dalam satu minit.
+Terangkan `cmd1 && cmd2` secara ringkas.
+Terangkan `cmdhist multiline` dalam satu minit.
+Terangkan `cmdhist multiline` secara ringkas.
+Terangkan `column -t align` dalam satu minit.
+Terangkan `column -t align` secara ringkas.
+Terangkan `comm compare sorted` dalam satu minit.
+Terangkan `comm compare sorted` secara ringkas.
+Terangkan `compgen list` dalam satu minit.
+Terangkan `compgen list` secara ringkas.
+Terangkan `complete custom` dalam satu minit.
+Terangkan `complete custom` secara ringkas.
+Terangkan `coproc two-way` dalam satu minit.
+Terangkan `coproc two-way` secara ringkas.
+Terangkan `cron schedule` dalam satu minit.
+Terangkan `cron schedule` secara ringkas.
+Terangkan `csplit context split` dalam satu minit.
+Terangkan `csplit context split` secara ringkas.
+Terangkan `curl download resume` dalam satu minit.
+Terangkan `curl download resume` secara ringkas.
+Terangkan `curl retry backoff` dalam satu minit.
+Terangkan `curl retry backoff` secara ringkas.
+Terangkan `curl timing` dalam satu minit.
+Terangkan `curl timing` secara ringkas.
+Terangkan `cut fields` dalam satu minit.
+Terangkan `cut fields` secara ringkas.
+Terangkan `date format calc` dalam satu minit.
+Terangkan `date format calc` secara ringkas.
+Terangkan `dd clone` dalam satu minit.
+Terangkan `dd clone` secara ringkas.
+Terangkan `df inodes` dalam satu minit.
+Terangkan `df inodes` secara ringkas.
+Terangkan `diff cmp files` dalam satu minit.
+Terangkan `diff cmp files` secara ringkas.
+Terangkan `diff exit codes` dalam satu minit.
+Terangkan `diff exit codes` secara ringkas.
+Terangkan `dig dns` dalam satu minit.
+Terangkan `dig dns` secara ringkas.
+Terangkan `direxpand paths` dalam satu minit.
+Terangkan `direxpand paths` secara ringkas.
+Terangkan `disown huponexit` dalam satu minit.
+Terangkan `disown huponexit` secara ringkas.
+Terangkan `dmesg errors` dalam satu minit.
+Terangkan `dmesg errors` secara ringkas.
+Terangkan `dotglob hidden` dalam satu minit.
+Terangkan `dotglob hidden` secara ringkas.
+Terangkan `du top dirs` dalam satu minit.
+Terangkan `du top dirs` secara ringkas.
+Terangkan `emacs vi mode` dalam satu minit.
+Terangkan `emacs vi mode` secara ringkas.
+Terangkan `entr rerun` dalam satu minit.
+Terangkan `entr rerun` secara ringkas.
+Terangkan `env hierarchy` dalam satu minit.
+Terangkan `env hierarchy` secara ringkas.
+Terangkan `errexit pitfalls` dalam satu minit.
+Terangkan `errexit pitfalls` secara ringkas.
+Terangkan `errtrace functrace` dalam satu minit.
+Terangkan `errtrace functrace` secara ringkas.
+Terangkan `exec cmd` dalam satu minit.
+Terangkan `exec cmd` secara ringkas.
+Terangkan `exit codes` dalam satu minit.
+Terangkan `exit codes` secara ringkas.
+Terangkan `exit trap codes` dalam satu minit.
+Terangkan `exit trap codes` secara ringkas.
+Terangkan `expand unexpand tabs` dalam satu minit.
+Terangkan `expand unexpand tabs` secara ringkas.
+Terangkan `expand_aliases scripts` dalam satu minit.
+Terangkan `expand_aliases scripts` secara ringkas.
+Terangkan `extquote strings` dalam satu minit.
+Terangkan `extquote strings` secara ringkas.
+Terangkan `failglob strict` dalam satu minit.
+Terangkan `failglob strict` secara ringkas.
+Terangkan `fd find` dalam satu minit.
+Terangkan `fd find` secara ringkas.
+Terangkan `find . -print0 | xargs -0` dalam satu minit.
+Terangkan `find . -print0 | xargs -0` secara ringkas.
+Terangkan `find exec plus` dalam satu minit.
+Terangkan `find exec plus` secara ringkas.
+Terangkan `find mtime size` dalam satu minit.
+Terangkan `find mtime size` secara ringkas.
+Terangkan `flock singleton` dalam satu minit.
+Terangkan `flock singleton` secara ringkas.
+Terangkan `for f in *.md` dalam satu minit.
+Terangkan `for f in *.md` secara ringkas.
+Terangkan `free available` dalam satu minit.
+Terangkan `free available` secara ringkas.
+Terangkan `function greet()` dalam satu minit.
+Terangkan `function greet()` secara ringkas.
+Terangkan `fzf history` dalam satu minit.
+Terangkan `fzf history` secara ringkas.
+Terangkan `getopts flags` dalam satu minit.
+Terangkan `getopts flags` secara ringkas.
+Terangkan `getopts silent errors` dalam satu minit.
+Terangkan `getopts silent errors` secara ringkas.
+Terangkan `git archive deploy` dalam satu minit.
+Terangkan `git archive deploy` secara ringkas.
+Terangkan `globasciiranges` dalam satu minit.
+Terangkan `globasciiranges` secara ringkas.
+Terangkan `globstar extglob` dalam satu minit.
+Terangkan `globstar extglob` secara ringkas.
+Terangkan `gnu_errfmt errors` dalam satu minit.
+Terangkan `gnu_errfmt errors` secara ringkas.
+Terangkan `gpg encrypt sign` dalam satu minit.
+Terangkan `gpg encrypt sign` secara ringkas.
+Terangkan `grep context` dalam satu minit.
+Terangkan `grep context` secara ringkas.
+Terangkan `grep extended` dalam satu minit.
+Terangkan `grep extended` secara ringkas.
+Terangkan `grep invert count` dalam satu minit.
+Terangkan `grep invert count` secara ringkas.
+Terangkan `head tail files` dalam satu minit.
+Terangkan `head tail files` secara ringkas.
+Terangkan `histappend share` dalam satu minit.
+Terangkan `histappend share` secara ringkas.
+Terangkan `history control` dalam satu minit.
+Terangkan `history control` secara ringkas.
+Terangkan `histverify expand` dalam satu minit.
+Terangkan `histverify expand` secara ringkas.
+Terangkan `htop vs top` dalam satu minit.
+Terangkan `htop vs top` secara ringkas.
+Terangkan `hyperfine bench` dalam satu minit.
+Terangkan `hyperfine bench` secara ringkas.
+Terangkan `if [[ -f fail ]]` dalam satu minit.
+Terangkan `if [[ -f fail ]]` secara ringkas.
+Terangkan `inherit_errexit subshell` dalam satu minit.
+Terangkan `inherit_errexit subshell` secara ringkas.
+Terangkan `ip addr route` dalam satu minit.
+Terangkan `ip addr route` secara ringkas.
+Terangkan `jobs wait &` dalam satu minit.
+Terangkan `jobs wait &` secara ringkas.
+Terangkan `join two files` dalam satu minit.
+Terangkan `join two files` secara ringkas.
+Terangkan `journalctl unit` dalam satu minit.
+Terangkan `journalctl unit` secara ringkas.
+Terangkan `jq extract field` dalam satu minit.
+Terangkan `jq extract field` secara ringkas.
+Terangkan `jq filter select` dalam satu minit.
+Terangkan `jq filter select` secara ringkas.
+Terangkan `jq walk reduce` dalam satu minit.
+Terangkan `jq walk reduce` secara ringkas.
+Terangkan `kill -l signals` dalam satu minit.
+Terangkan `kill -l signals` secara ringkas.
+Terangkan `kill signals` dalam satu minit.
+Terangkan `kill signals` secara ringkas.
+Terangkan `lastpipe variable` dalam satu minit.
+Terangkan `lastpipe variable` secara ringkas.
+Terangkan `localvar_inherit` dalam satu minit.
+Terangkan `localvar_inherit` secara ringkas.
+Terangkan `logger syslog` dalam satu minit.
+Terangkan `logger syslog` secara ringkas.
+Terangkan `login_shell detect` dalam satu minit.
+Terangkan `login_shell detect` secara ringkas.
+Terangkan `lsof port` dalam satu minit.
+Terangkan `lsof port` secara ringkas.
+Terangkan `lvm extend` dalam satu minit.
+Terangkan `lvm extend` secara ringkas.
+Terangkan `mailwarn mail` dalam satu minit.
+Terangkan `mailwarn mail` secara ringkas.
+Terangkan `mapfile callback` dalam satu minit.
+Terangkan `mapfile callback` secara ringkas.
+Terangkan `mapfile delimiter` dalam satu minit.
+Terangkan `mapfile delimiter` secara ringkas.
+Terangkan `mapfile lines` dalam satu minit.
+Terangkan `mapfile lines` secara ringkas.
+Terangkan `mapfile skip count` dalam satu minit.
+Terangkan `mapfile skip count` secara ringkas.
+Terangkan `mktemp secure files` dalam satu minit.
+Terangkan `mktemp secure files` secara ringkas.
+Terangkan `mount fstab` dalam satu minit.
+Terangkan `mount fstab` secara ringkas.
+Terangkan `nameref declare -n` dalam satu minit.
+Terangkan `nameref declare -n` secara ringkas.
+Terangkan `nc port test` dalam satu minit.
+Terangkan `nc port test` secara ringkas.
+Terangkan `ncdu disk` dalam satu minit.
+Terangkan `ncdu disk` secara ringkas.
+Terangkan `nl number lines` dalam satu minit.
+Terangkan `nl number lines` secara ringkas.
+Terangkan `nmcli wifi` dalam satu minit.
+Terangkan `nmcli wifi` secara ringkas.
+Terangkan `no_empty_cmd_completion` dalam satu minit.
+Terangkan `no_empty_cmd_completion` secara ringkas.
+Terangkan `nocaseglob match` dalam satu minit.
+Terangkan `nocaseglob match` secara ringkas.
+Terangkan `noclobber safe` dalam satu minit.
+Terangkan `noclobber safe` secara ringkas.
+Terangkan `node check syntax` dalam satu minit.
+Terangkan `node check syntax` secara ringkas.
+Terangkan `noexec dryrun` dalam satu minit.
+Terangkan `noexec dryrun` secara ringkas.
+Terangkan `noglob paths` dalam satu minit.
+Terangkan `noglob paths` secara ringkas.
+Terangkan `notify jobs` dalam satu minit.
+Terangkan `notify jobs` secara ringkas.
+Terangkan `nounset empty arrays` dalam satu minit.
+Terangkan `nounset empty arrays` secara ringkas.
+Terangkan `od hexdump bytes` dalam satu minit.
+Terangkan `od hexdump bytes` secara ringkas.
+Terangkan `onecmd flag` dalam satu minit.
+Terangkan `onecmd flag` secara ringkas.
+Terangkan `openssl s_client` dalam satu minit.
+Terangkan `openssl s_client` secara ringkas.
+Terangkan `openssl selfsign` dalam satu minit.
+Terangkan `openssl selfsign` secara ringkas.
+Terangkan `passwd lock` dalam satu minit.
+Terangkan `passwd lock` secara ringkas.
+Terangkan `paste join lines` dalam satu minit.
+Terangkan `paste join lines` secara ringkas.
+Terangkan `pgrep pkill` dalam satu minit.
+Terangkan `pgrep pkill` secara ringkas.
+Terangkan `physical cd` dalam satu minit.
+Terangkan `physical cd` secara ringkas.
+Terangkan `ping mtr` dalam satu minit.
+Terangkan `ping mtr` secara ringkas.
+Terangkan `pip download wheels` dalam satu minit.
+Terangkan `pip download wheels` secara ringkas.
+Terangkan `posix mode` dalam satu minit.
+Terangkan `posix mode` secara ringkas.
+Terangkan `printf %q quoting` dalam satu minit.
+Terangkan `printf %q quoting` secara ringkas.
+Terangkan `printf format` dalam satu minit.
+Terangkan `printf format` secara ringkas.
+Terangkan `progcomp programmable` dalam satu minit.
+Terangkan `progcomp programmable` secara ringkas.
+Terangkan `promptvars expand` dalam satu minit.
+Terangkan `promptvars expand` secara ringkas.
+Terangkan `ps forest` dalam satu minit.
+Terangkan `ps forest` secara ringkas.
+Terangkan `pushd popd` dalam satu minit.
+Terangkan `pushd popd` secara ringkas.
+Terangkan `python http server` dalam satu minit.
+Terangkan `python http server` secara ringkas.
+Terangkan `read array -a` dalam satu minit.
+Terangkan `read array -a` secara ringkas.
+Terangkan `read custom delim` dalam satu minit.
+Terangkan `read custom delim` secara ringkas.
+Terangkan `read readline edit` dalam satu minit.
+Terangkan `read readline edit` secara ringkas.
+Terangkan `readonly VAR` dalam satu minit.
+Terangkan `readonly VAR` secara ringkas.
+Terangkan `restricted_shell` dalam satu minit.
+Terangkan `restricted_shell` secara ringkas.
+Terangkan `rg ripgrep` dalam satu minit.
+Terangkan `rg ripgrep` secara ringkas.
+Terangkan `rsync archive` dalam satu minit.
+Terangkan `rsync archive` secara ringkas.
+Terangkan `scp sftp` dalam satu minit.
+Terangkan `scp sftp` secara ringkas.
+Terangkan `screen detach` dalam satu minit.
+Terangkan `screen detach` secara ringkas.
+Terangkan `script session` dalam satu minit.
+Terangkan `script session` secara ringkas.
+Terangkan `sed backup edit` dalam satu minit.
+Terangkan `sed backup edit` secara ringkas.
+Terangkan `sed delete lines` dalam satu minit.
+Terangkan `sed delete lines` secara ringkas.
+Terangkan `sed replace inline` dalam satu minit.
+Terangkan `sed replace inline` secara ringkas.
+Terangkan `select PS3 custom` dalam satu minit.
+Terangkan `select PS3 custom` secara ringkas.
+Terangkan `select menu` dalam satu minit.
+Terangkan `select menu` secara ringkas.
+Terangkan `seq 1 10` dalam satu minit.
+Terangkan `seq 1 10` secara ringkas.
+Terangkan `set -euo pipefail` dalam satu minit.
+Terangkan `set -euo pipefail` secara ringkas.
+Terangkan `set -x debug` dalam satu minit.
+Terangkan `set -x debug` secara ringkas.
+Terangkan `sha256sum verify` dalam satu minit.
+Terangkan `sha256sum verify` secara ringkas.
+Terangkan `shellcheck lint` dalam satu minit.
+Terangkan `shellcheck lint` secara ringkas.
+Terangkan `shfmt format` dalam satu minit.
+Terangkan `shfmt format` secara ringkas.
+Terangkan `shift_verbose` dalam satu minit.
+Terangkan `shift_verbose` secara ringkas.
+Terangkan `shift` dalam satu minit.
+Terangkan `shift` secara ringkas.
+Terangkan `shopt options` dalam satu minit.
+Terangkan `shopt options` secara ringkas.
+Terangkan `shuf random lines` dalam satu minit.
+Terangkan `shuf random lines` secara ringkas.
+Terangkan `sort human uniq` dalam satu minit.
+Terangkan `sort human uniq` secara ringkas.
+Terangkan `sort uniq pipeline` dalam satu minit.
+Terangkan `sort uniq pipeline` secara ringkas.
+Terangkan `source guard` dalam satu minit.
+Terangkan `source guard` secara ringkas.
+Terangkan `source lib.sh` dalam satu minit.
+Terangkan `source lib.sh` secara ringkas.
+Terangkan `sourcepath lookup` dalam satu minit.
+Terangkan `sourcepath lookup` secara ringkas.
+Terangkan `split large files` dalam satu minit.
+Terangkan `split large files` secara ringkas.
+Terangkan `ss advanced` dalam satu minit.
+Terangkan `ss advanced` secara ringkas.
+Terangkan `ssh keygen copy` dalam satu minit.
+Terangkan `ssh keygen copy` secara ringkas.
+Terangkan `stat format` dalam satu minit.
+Terangkan `stat format` secara ringkas.
+Terangkan `strace syscall` dalam satu minit.
+Terangkan `strace syscall` secara ringkas.
+Terangkan `string replace` dalam satu minit.
+Terangkan `string replace` secara ringkas.
+Terangkan `strings binaries` dalam satu minit.
+Terangkan `strings binaries` secara ringkas.
+Terangkan `stty sane` dalam satu minit.
+Terangkan `stty sane` secara ringkas.
+Terangkan `su login shell` dalam satu minit.
+Terangkan `su login shell` secara ringkas.
+Terangkan `substring slice` dalam satu minit.
+Terangkan `substring slice` secara ringkas.
+Terangkan `sudo visudo` dalam satu minit.
+Terangkan `sudo visudo` secara ringkas.
+Terangkan `systemctl status` dalam satu minit.
+Terangkan `systemctl status` secara ringkas.
+Terangkan `systemd cat edit` dalam satu minit.
+Terangkan `systemd cat edit` secara ringkas.
+Terangkan `systemd mask` dalam satu minit.
+Terangkan `systemd mask` secara ringkas.
+Terangkan `systemd timer` dalam satu minit.
+Terangkan `systemd timer` secara ringkas.
+Terangkan `tac reverse cat` dalam satu minit.
+Terangkan `tac reverse cat` secara ringkas.
+Terangkan `tail follow` dalam satu minit.
+Terangkan `tail follow` secara ringkas.
+Terangkan `tar create extract` dalam satu minit.
+Terangkan `tar create extract` secara ringkas.
+Terangkan `tcpdump filter` dalam satu minit.
+Terangkan `tcpdump filter` secara ringkas.
+Terangkan `tee split output` dalam satu minit.
+Terangkan `tee split output` secara ringkas.
+Terangkan `test -e -s -x` dalam satu minit.
+Terangkan `test -e -s -x` secara ringkas.
+Terangkan `test -e -s` dalam satu minit.
+Terangkan `test -e -s` secara ringkas.
+Terangkan `time keyword` dalam satu minit.
+Terangkan `time keyword` secara ringkas.
+Terangkan `timeout guard` dalam satu minit.
+Terangkan `timeout guard` secara ringkas.
+Terangkan `tmux send-keys` dalam satu minit.
+Terangkan `tmux send-keys` secara ringkas.
+Terangkan `tmux session` dalam satu minit.
+Terangkan `tmux session` secara ringkas.
+Terangkan `tmux synchronize` dalam satu minit.
+Terangkan `tmux synchronize` secara ringkas.
+Terangkan `tput colors` dalam satu minit.
+Terangkan `tput colors` secara ringkas.
+Terangkan `tr squeeze delete` dalam satu minit.
+Terangkan `tr squeeze delete` secara ringkas.
+Terangkan `tr translate` dalam satu minit.
+Terangkan `tr translate` secara ringkas.
+Terangkan `trap cleanup EXIT` dalam satu minit.
+Terangkan `trap cleanup EXIT` secara ringkas.
+Terangkan `type command which` dalam satu minit.
+Terangkan `type command which` secara ringkas.
+Terangkan `type hash cmd` dalam satu minit.
+Terangkan `type hash cmd` secara ringkas.
+Terangkan `ulimit core` dalam satu minit.
+Terangkan `ulimit core` secara ringkas.
+Terangkan `umask in scripts` dalam satu minit.
+Terangkan `umask in scripts` secara ringkas.
+Terangkan `until loop` dalam satu minit.
+Terangkan `until loop` secara ringkas.
+Terangkan `update alternatives` dalam satu minit.
+Terangkan `update alternatives` secara ringkas.
+Terangkan `uptime load` dalam satu minit.
+Terangkan `uptime load` secara ringkas.
+Terangkan `useradd mod del` dalam satu minit.
+Terangkan `useradd mod del` secara ringkas.
+Terangkan `verbose trace` dalam satu minit.
+Terangkan `verbose trace` secara ringkas.
+Terangkan `wait -n -p` dalam satu minit.
+Terangkan `wait -n -p` secara ringkas.
+Terangkan `watch monitor` dalam satu minit.
+Terangkan `watch monitor` secara ringkas.
+Terangkan `wc count` dalam satu minit.
+Terangkan `wc count` secara ringkas.
+Terangkan `wget mirror` dalam satu minit.
+Terangkan `wget mirror` secara ringkas.
+Terangkan `wget spider check` dalam satu minit.
+Terangkan `wget spider check` secara ringkas.
+Terangkan `while read baris` dalam satu minit.
+Terangkan `while read baris` secara ringkas.
+Terangkan `who w last` dalam satu minit.
+Terangkan `who w last` secara ringkas.
+Terangkan `xargs replace` dalam satu minit.
+Terangkan `xargs replace` secara ringkas.
+Terangkan `xpg_echo portability` dalam satu minit.
+Terangkan `xpg_echo portability` secara ringkas.
+Terangkan `yq yaml` dalam satu minit.
+Terangkan `yq yaml` secara ringkas.
+Terangkan `zip unzip` dalam satu minit.
+Terangkan `zip unzip` secara ringkas.
+Tulis amaran cakera bash dengan ambang
+Tulis backup sulit dengan GPG dalam bash
+Tulis config logrotate untuk app
+Tulis contoh associative array bash yang lengkap
+Tulis gelung bash selamat untuk semua fail log termasuk tersembunyi
+Tulis gelung ssh banyak hos dengan kunci
+Tulis hurai CSV bash tanpa subshell rosak
+Tulis hurai argumen panjang bash tanpa getopts
+Tulis imbas kesihatan ssh banyak hos
+Tulis lanjutan LVM selamat dalam bash
+Tulis mampatan log parallel bash dengan xargs
+Tulis menu dialog bash untuk operasi pelayan
+Tulis menu interaktif bash dengan select
+Tulis nota keluaran automatik dari git dalam bash
+Tulis output berwarna dan spinner bash
+Tulis parser flag bash dengan getopts yang lengkap
+Tulis pasangan systemd timer ganti cron
+Tulis pemantau servis bash auto-restart
+Tulis pemasa bash tanpa fork dan rawak selamat
+Tulis pembaca config INI bash
+Tulis pemeriksa port bash untuk banyak hos
+Tulis pemuat .env bash yang selamat
+Tulis penganalisis log bash top-ralat harian
+Tulis perangkap debug bash yang tunjuk baris gagal
+Tulis perbandingan fail bash yang bezakan berbeza vs ralat
+Tulis probe kesediaan bash tunggu database sedia
+Tulis prompt pengesahan bash sebelum tindakan bahaya
+Tulis provision pengguna bash lengkap
+Tulis rename pukal bash selamat dengan pratonton
+Tulis sandaran sqlite dengan pengesahan integriti
+Tulis sesi tmux dev automatik
+Tulis singleton bash dengan flock
+Tulis skrip backup bash dengan rsync snapshot
+Tulis skrip backup cron dengan logging dan rotation
+Tulis skrip bash POST JSON dengan curl dan semakan ralat
+Tulis skrip bash hurai JSON dengan jq dalam gelung
+Tulis skrip bash parallel dengan wait dan cleanup
+Tulis skrip keras servis baru (checklist automatik)
+Tulis skrip pemasangan selamat dengan periksa idempoten
+Tulis skrip semak pautan mati dokumentasi
+Tulis skrip semak sijil TLS banyak hos
+Tulis skrip uji beban ringan dengan curl dan time
+Tulis template skrip bash selamat yang lengkap
+Tulis ujian bats untuk skrip bash
+Tulis unit systemd lengkap untuk aplikasi
+What are Linux namespaces? Can I try one by hand?
+What are environment variables and how do I set them?
+What does `$(date +%F)` do?
+What does `$1 $@ $#` do?
+What does `${PORT:-3000}` do?
+What does `${VAR:=default}` do?
+What does `${s/old/new}` do?
+What does `${s:0:3}` do?
+What does `<<EOF heredoc` do?
+What does `BASH_REMATCH groups` do?
+What does `BASH_SOURCE LINENO` do?
+What does `BASH_XTRACEFD log` do?
+What does `DEBUG trap` do?
+What does `EPOCHSECONDS SRANDOM` do?
+What does `ERR trap scope` do?
+What does `FUNCNAME stack` do?
+What does `IFS field tricks` do?
+What does `PIPESTATUS check` do?
+What does `PS1 prompt` do?
+What does `PS4 custom` do?
+What does `RETURN trap` do?
+What does `[[ $x =~ ^[0-9]+$ ]]` do?
+What does `a | b | c` do?
+What does `age secrets` do?
+What does `alias unalias` do?
+What does `allexport vars` do?
+What does `apt install` do?
+What does `arr=(a b c)` do?
+What does `assign default :=` do?
+What does `assoc key ops` do?
+What does `assoc_expand_once` do?
+What does `at oneshot` do?
+What does `autocd dirs` do?
+What does `awk begin end` do?
+What does `awk filter rows` do?
+What does `awk sum column` do?
+What does `base64 encode` do?
+What does `bash version check` do?
+What does `bat pager` do?
+What does `bats testing` do?
+What does `bind shortcut` do?
+What does `brace expansion` do?
+What does `braceexpand toggle` do?
+What does `caller debug` do?
+What does `case $1 in` do?
+What does `checkhash path` do?
+What does `checkjobs exit` do?
+What does `checkwinsize resize` do?
+What does `chmod numeric` do?
+What does `chown user group` do?
+What does `cmd > out 2>&1` do?
+What does `cmd1 && cmd2` do?
+What does `cmdhist multiline` do?
+What does `column -t align` do?
+What does `comm compare sorted` do?
+What does `compgen list` do?
+What does `complete custom` do?
+What does `coproc two-way` do?
+What does `cron schedule` do?
+What does `csplit context split` do?
+What does `curl download resume` do?
+What does `curl retry backoff` do?
+What does `curl timing` do?
+What does `cut fields` do?
+What does `date format calc` do?
+What does `dd clone` do?
+What does `df inodes` do?
+What does `diff cmp files` do?
+What does `diff exit codes` do?
+What does `dig dns` do?
+What does `direxpand paths` do?
+What does `disown huponexit` do?
+What does `dmesg errors` do?
+What does `dotglob hidden` do?
+What does `du top dirs` do?
+What does `emacs vi mode` do?
+What does `entr rerun` do?
+What does `env hierarchy` do?
+What does `errexit pitfalls` do?
+What does `errtrace functrace` do?
+What does `exec cmd` do?
+What does `exit codes` do?
+What does `exit trap codes` do?
+What does `expand unexpand tabs` do?
+What does `expand_aliases scripts` do?
+What does `extquote strings` do?
+What does `failglob strict` do?
+What does `fd find` do?
+What does `find . -print0 | xargs -0` do?
+What does `find exec plus` do?
+What does `find mtime size` do?
+What does `flock singleton` do?
+What does `for f in *.md` do?
+What does `free available` do?
+What does `function greet()` do?
+What does `fzf history` do?
+What does `getopts flags` do?
+What does `getopts silent errors` do?
+What does `git archive deploy` do?
+What does `globasciiranges` do?
+What does `globstar extglob` do?
+What does `gnu_errfmt errors` do?
+What does `gpg encrypt sign` do?
+What does `grep context` do?
+What does `grep extended` do?
+What does `grep invert count` do?
+What does `head tail files` do?
+What does `histappend share` do?
+What does `history control` do?
+What does `histverify expand` do?
+What does `htop vs top` do?
+What does `hyperfine bench` do?
+What does `if [[ -f fail ]]` do?
+What does `if [[ -f file ]]` do?
+What does `inherit_errexit subshell` do?
+What does `ip addr route` do?
+What does `jobs wait &` do?
+What does `join two files` do?
+What does `journalctl unit` do?
+What does `jq extract field` do?
+What does `jq filter select` do?
+What does `jq walk reduce` do?
+What does `kill -l signals` do?
+What does `kill signals` do?
+What does `lastpipe variable` do?
+What does `localvar_inherit` do?
+What does `logger syslog` do?
+What does `login_shell detect` do?
+What does `lsof port` do?
+What does `lvm extend` do?
+What does `mailwarn mail` do?
+What does `mapfile callback` do?
+What does `mapfile delimiter` do?
+What does `mapfile lines` do?
+What does `mapfile skip count` do?
+What does `mktemp secure files` do?
+What does `mount fstab` do?
+What does `nameref declare -n` do?
+What does `nc port test` do?
+What does `ncdu disk` do?
+What does `nl number lines` do?
+What does `nmcli wifi` do?
+What does `no_empty_cmd_completion` do?
+What does `nocaseglob match` do?
+What does `noclobber safe` do?
+What does `node check syntax` do?
+What does `noexec dryrun` do?
+What does `noglob paths` do?
+What does `notify jobs` do?
+What does `nounset empty arrays` do?
+What does `od hexdump bytes` do?
+What does `onecmd flag` do?
+What does `openssl s_client` do?
+What does `openssl selfsign` do?
+What does `passwd lock` do?
+What does `paste join lines` do?
+What does `pgrep pkill` do?
+What does `physical cd` do?
+What does `ping mtr` do?
+What does `pip download wheels` do?
+What does `posix mode` do?
+What does `printf %q quoting` do?
+What does `printf format` do?
+What does `progcomp programmable` do?
+What does `promptvars expand` do?
+What does `ps forest` do?
+What does `pushd popd` do?
+What does `python http server` do?
+What does `read array -a` do?
+What does `read custom delim` do?
+What does `read readline edit` do?
+What does `readonly VAR` do?
+What does `restricted_shell` do?
+What does `rg ripgrep` do?
+What does `rsync archive` do?
+What does `scp sftp` do?
+What does `screen detach` do?
+What does `script session` do?
+What does `sed backup edit` do?
+What does `sed delete lines` do?
+What does `sed replace inline` do?
+What does `select PS3 custom` do?
+What does `select menu` do?
+What does `seq 1 10` do?
+What does `set -euo pipefail` do?
+What does `set -x debug` do?
+What does `sha256sum verify` do?
+What does `shellcheck lint` do?
+What does `shfmt format` do?
+What does `shift_verbose` do?
+What does `shift` do?
+What does `shopt options` do?
+What does `shuf random lines` do?
+What does `sort human uniq` do?
+What does `sort uniq pipeline` do?
+What does `source guard` do?
+What does `source lib.sh` do?
+What does `sourcepath lookup` do?
+What does `split large files` do?
+What does `ss advanced` do?
+What does `ssh keygen copy` do?
+What does `stat format` do?
+What does `strace syscall` do?
+What does `string replace` do?
+What does `strings binaries` do?
+What does `stty sane` do?
+What does `su login shell` do?
+What does `substring slice` do?
+What does `sudo visudo` do?
+What does `systemctl status` do?
+What does `systemd cat edit` do?
+What does `systemd mask` do?
+What does `systemd timer` do?
+What does `tac reverse cat` do?
+What does `tail follow` do?
+What does `tar create extract` do?
+What does `tcpdump filter` do?
+What does `tee split output` do?
+What does `test -e -s -x` do?
+What does `test -e -s` do?
+What does `time keyword` do?
+What does `timeout guard` do?
+What does `tmux send-keys` do?
+What does `tmux session` do?
+What does `tmux synchronize` do?
+What does `tput colors` do?
+What does `tr squeeze delete` do?
+What does `tr translate` do?
+What does `trap cleanup EXIT` do?
+What does `type command which` do?
+What does `type hash cmd` do?
+What does `ulimit core` do?
+What does `umask in scripts` do?
+What does `until loop` do?
+What does `update alternatives` do?
+What does `uptime load` do?
+What does `useradd mod del` do?
+What does `verbose trace` do?
+What does `wait -n -p` do?
+What does `watch monitor` do?
+What does `wc count` do?
+What does `wget mirror` do?
+What does `wget spider check` do?
+What does `while read baris` do?
+What does `who w last` do?
+What does `xargs replace` do?
+What does `xpg_echo portability` do?
+What does `yq yaml` do?
+What does `zip unzip` do?
+What does chmod +x do and how do I run a script?
+What is `$(date +%F)` for?
+What is `$1 $@ $#` for?
+What is `${PORT:-3000}` for?
+What is `${VAR:=default}` for?
+What is `${s/old/new}` for?
+What is `${s:0:3}` for?
+What is `<<EOF heredoc` for?
+What is `BASH_REMATCH groups` for?
+What is `BASH_SOURCE LINENO` for?
+What is `BASH_XTRACEFD log` for?
+What is `DEBUG trap` for?
+What is `EPOCHSECONDS SRANDOM` for?
+What is `ERR trap scope` for?
+What is `FUNCNAME stack` for?
+What is `IFS field tricks` for?
+What is `PIPESTATUS check` for?
+What is `PS1 prompt` for?
+What is `PS4 custom` for?
+What is `RETURN trap` for?
+What is `[[ $x =~ ^[0-9]+$ ]]` for?
+What is `a | b | c` for?
+What is `age secrets` for?
+What is `alias unalias` for?
+What is `allexport vars` for?
+What is `apt install` for?
+What is `arr=(a b c)` for?
+What is `assign default :=` for?
+What is `assoc key ops` for?
+What is `assoc_expand_once` for?
+What is `at oneshot` for?
+What is `autocd dirs` for?
+What is `awk begin end` for?
+What is `awk filter rows` for?
+What is `awk sum column` for?
+What is `base64 encode` for?
+What is `bash version check` for?
+What is `bat pager` for?
+What is `bats testing` for?
+What is `bind shortcut` for?
+What is `brace expansion` for?
+What is `braceexpand toggle` for?
+What is `caller debug` for?
+What is `case $1 in` for?
+What is `checkhash path` for?
+What is `checkjobs exit` for?
+What is `checkwinsize resize` for?
+What is `chmod numeric` for?
+What is `chown user group` for?
+What is `cmd > out 2>&1` for?
+What is `cmd1 && cmd2` for?
+What is `cmdhist multiline` for?
+What is `column -t align` for?
+What is `comm compare sorted` for?
+What is `compgen list` for?
+What is `complete custom` for?
+What is `coproc two-way` for?
+What is `cron schedule` for?
+What is `csplit context split` for?
+What is `curl download resume` for?
+What is `curl retry backoff` for?
+What is `curl timing` for?
+What is `cut fields` for?
+What is `date format calc` for?
+What is `dd clone` for?
+What is `df inodes` for?
+What is `diff cmp files` for?
+What is `diff exit codes` for?
+What is `dig dns` for?
+What is `direxpand paths` for?
+What is `disown huponexit` for?
+What is `dmesg errors` for?
+What is `dotglob hidden` for?
+What is `du top dirs` for?
+What is `emacs vi mode` for?
+What is `entr rerun` for?
+What is `env hierarchy` for?
+What is `errexit pitfalls` for?
+What is `errtrace functrace` for?
+What is `exec cmd` for?
+What is `exit codes` for?
+What is `exit trap codes` for?
+What is `expand unexpand tabs` for?
+What is `expand_aliases scripts` for?
+What is `extquote strings` for?
+What is `failglob strict` for?
+What is `fd find` for?
+What is `find . -print0 | xargs -0` for?
+What is `find exec plus` for?
+What is `find mtime size` for?
+What is `flock singleton` for?
+What is `for f in *.md` for?
+What is `free available` for?
+What is `function greet()` for?
+What is `fzf history` for?
+What is `getopts flags` for?
+What is `getopts silent errors` for?
+What is `git archive deploy` for?
+What is `globasciiranges` for?
+What is `globstar extglob` for?
+What is `gnu_errfmt errors` for?
+What is `gpg encrypt sign` for?
+What is `grep context` for?
+What is `grep extended` for?
+What is `grep invert count` for?
+What is `head tail files` for?
+What is `histappend share` for?
+What is `history control` for?
+What is `histverify expand` for?
+What is `htop vs top` for?
+What is `hyperfine bench` for?
+What is `if [[ -f fail ]]` for?
+What is `inherit_errexit subshell` for?
+What is `ip addr route` for?
+What is `jobs wait &` for?
+What is `join two files` for?
+What is `journalctl unit` for?
+What is `jq extract field` for?
+What is `jq filter select` for?
+What is `jq walk reduce` for?
+What is `kill -l signals` for?
+What is `kill signals` for?
+What is `lastpipe variable` for?
+What is `localvar_inherit` for?
+What is `logger syslog` for?
+What is `login_shell detect` for?
+What is `lsof port` for?
+What is `lvm extend` for?
+What is `mailwarn mail` for?
+What is `mapfile callback` for?
+What is `mapfile delimiter` for?
+What is `mapfile lines` for?
+What is `mapfile skip count` for?
+What is `mktemp secure files` for?
+What is `mount fstab` for?
+What is `nameref declare -n` for?
+What is `nc port test` for?
+What is `ncdu disk` for?
+What is `nl number lines` for?
+What is `nmcli wifi` for?
+What is `no_empty_cmd_completion` for?
+What is `nocaseglob match` for?
+What is `noclobber safe` for?
+What is `node check syntax` for?
+What is `noexec dryrun` for?
+What is `noglob paths` for?
+What is `notify jobs` for?
+What is `nounset empty arrays` for?
+What is `od hexdump bytes` for?
+What is `onecmd flag` for?
+What is `openssl s_client` for?
+What is `openssl selfsign` for?
+What is `passwd lock` for?
+What is `paste join lines` for?
+What is `pgrep pkill` for?
+What is `physical cd` for?
+What is `ping mtr` for?
+What is `pip download wheels` for?
+What is `posix mode` for?
+What is `printf %q quoting` for?
+What is `printf format` for?
+What is `progcomp programmable` for?
+What is `promptvars expand` for?
+What is `ps forest` for?
+What is `pushd popd` for?
+What is `python http server` for?
+What is `read array -a` for?
+What is `read custom delim` for?
+What is `read readline edit` for?
+What is `readonly VAR` for?
+What is `restricted_shell` for?
+What is `rg ripgrep` for?
+What is `rsync archive` for?
+What is `scp sftp` for?
+What is `screen detach` for?
+What is `script session` for?
+What is `sed backup edit` for?
+What is `sed delete lines` for?
+What is `sed replace inline` for?
+What is `select PS3 custom` for?
+What is `select menu` for?
+What is `seq 1 10` for?
+What is `set -euo pipefail` for?
+What is `set -x debug` for?
+What is `sha256sum verify` for?
+What is `shellcheck lint` for?
+What is `shfmt format` for?
+What is `shift_verbose` for?
+What is `shift` for?
+What is `shopt options` for?
+What is `shuf random lines` for?
+What is `sort human uniq` for?
+What is `sort uniq pipeline` for?
+What is `source guard` for?
+What is `source lib.sh` for?
+What is `sourcepath lookup` for?
+What is `split large files` for?
+What is `ss advanced` for?
+What is `ssh keygen copy` for?
+What is `stat format` for?
+What is `strace syscall` for?
+What is `string replace` for?
+What is `strings binaries` for?
+What is `stty sane` for?
+What is `su login shell` for?
+What is `substring slice` for?
+What is `sudo visudo` for?
+What is `systemctl status` for?
+What is `systemd cat edit` for?
+What is `systemd mask` for?
+What is `systemd timer` for?
+What is `tac reverse cat` for?
+What is `tail follow` for?
+What is `tar create extract` for?
+What is `tcpdump filter` for?
+What is `tee split output` for?
+What is `test -e -s -x` for?
+What is `test -e -s` for?
+What is `time keyword` for?
+What is `timeout guard` for?
+What is `tmux send-keys` for?
+What is `tmux session` for?
+What is `tmux synchronize` for?
+What is `tput colors` for?
+What is `tr squeeze delete` for?
+What is `tr translate` for?
+What is `trap cleanup EXIT` for?
+What is `type command which` for?
+What is `type hash cmd` for?
+What is `ulimit core` for?
+What is `umask in scripts` for?
+What is `until loop` for?
+What is `update alternatives` for?
+What is `uptime load` for?
+What is `useradd mod del` for?
+What is `verbose trace` for?
+What is `wait -n -p` for?
+What is `watch monitor` for?
+What is `wc count` for?
+What is `wget mirror` for?
+What is `wget spider check` for?
+What is `while read baris` for?
+What is `who w last` for?
+What is `xargs replace` for?
+What is `xpg_echo portability` for?
+What is `yq yaml` for?
+What is `zip unzip` for?
+What is cron and how do I schedule a job?
+What is set -euo pipefail in bash?
+What is the difference between su and sudo?
+What problem does `$(date +%F)` solve?
+What problem does `$1 $@ $#` solve?
+What problem does `${PORT:-3000}` solve?
+What problem does `${VAR:=default}` solve?
+What problem does `${s/old/new}` solve?
+What problem does `${s:0:3}` solve?
+What problem does `<<EOF heredoc` solve?
+What problem does `BASH_REMATCH groups` solve?
+What problem does `BASH_SOURCE LINENO` solve?
+What problem does `BASH_XTRACEFD log` solve?
+What problem does `DEBUG trap` solve?
+What problem does `EPOCHSECONDS SRANDOM` solve?
+What problem does `ERR trap scope` solve?
+What problem does `FUNCNAME stack` solve?
+What problem does `IFS field tricks` solve?
+What problem does `PIPESTATUS check` solve?
+What problem does `PS1 prompt` solve?
+What problem does `PS4 custom` solve?
+What problem does `RETURN trap` solve?
+What problem does `[[ $x =~ ^[0-9]+$ ]]` solve?
+What problem does `a | b | c` solve?
+What problem does `age secrets` solve?
+What problem does `alias unalias` solve?
+What problem does `allexport vars` solve?
+What problem does `apt install` solve?
+What problem does `arr=(a b c)` solve?
+What problem does `assign default :=` solve?
+What problem does `assoc key ops` solve?
+What problem does `assoc_expand_once` solve?
+What problem does `at oneshot` solve?
+What problem does `autocd dirs` solve?
+What problem does `awk begin end` solve?
+What problem does `awk filter rows` solve?
+What problem does `awk sum column` solve?
+What problem does `base64 encode` solve?
+What problem does `bash version check` solve?
+What problem does `bat pager` solve?
+What problem does `bats testing` solve?
+What problem does `bind shortcut` solve?
+What problem does `brace expansion` solve?
+What problem does `braceexpand toggle` solve?
+What problem does `caller debug` solve?
+What problem does `case $1 in` solve?
+What problem does `checkhash path` solve?
+What problem does `checkjobs exit` solve?
+What problem does `checkwinsize resize` solve?
+What problem does `chmod numeric` solve?
+What problem does `chown user group` solve?
+What problem does `cmd > out 2>&1` solve?
+What problem does `cmd1 && cmd2` solve?
+What problem does `cmdhist multiline` solve?
+What problem does `column -t align` solve?
+What problem does `comm compare sorted` solve?
+What problem does `compgen list` solve?
+What problem does `complete custom` solve?
+What problem does `coproc two-way` solve?
+What problem does `cron schedule` solve?
+What problem does `csplit context split` solve?
+What problem does `curl download resume` solve?
+What problem does `curl retry backoff` solve?
+What problem does `curl timing` solve?
+What problem does `cut fields` solve?
+What problem does `date format calc` solve?
+What problem does `dd clone` solve?
+What problem does `df inodes` solve?
+What problem does `diff cmp files` solve?
+What problem does `diff exit codes` solve?
+What problem does `dig dns` solve?
+What problem does `direxpand paths` solve?
+What problem does `disown huponexit` solve?
+What problem does `dmesg errors` solve?
+What problem does `dotglob hidden` solve?
+What problem does `du top dirs` solve?
+What problem does `emacs vi mode` solve?
+What problem does `entr rerun` solve?
+What problem does `env hierarchy` solve?
+What problem does `errexit pitfalls` solve?
+What problem does `errtrace functrace` solve?
+What problem does `exec cmd` solve?
+What problem does `exit codes` solve?
+What problem does `exit trap codes` solve?
+What problem does `expand unexpand tabs` solve?
+What problem does `expand_aliases scripts` solve?
+What problem does `extquote strings` solve?
+What problem does `failglob strict` solve?
+What problem does `fd find` solve?
+What problem does `find . -print0 | xargs -0` solve?
+What problem does `find exec plus` solve?
+What problem does `find mtime size` solve?
+What problem does `flock singleton` solve?
+What problem does `for f in *.md` solve?
+What problem does `free available` solve?
+What problem does `function greet()` solve?
+What problem does `fzf history` solve?
+What problem does `getopts flags` solve?
+What problem does `getopts silent errors` solve?
+What problem does `git archive deploy` solve?
+What problem does `globasciiranges` solve?
+What problem does `globstar extglob` solve?
+What problem does `gnu_errfmt errors` solve?
+What problem does `gpg encrypt sign` solve?
+What problem does `grep context` solve?
+What problem does `grep extended` solve?
+What problem does `grep invert count` solve?
+What problem does `head tail files` solve?
+What problem does `histappend share` solve?
+What problem does `history control` solve?
+What problem does `histverify expand` solve?
+What problem does `htop vs top` solve?
+What problem does `hyperfine bench` solve?
+What problem does `if [[ -f fail ]]` solve?
+What problem does `inherit_errexit subshell` solve?
+What problem does `ip addr route` solve?
+What problem does `jobs wait &` solve?
+What problem does `join two files` solve?
+What problem does `journalctl unit` solve?
+What problem does `jq extract field` solve?
+What problem does `jq filter select` solve?
+What problem does `jq walk reduce` solve?
+What problem does `kill -l signals` solve?
+What problem does `kill signals` solve?
+What problem does `lastpipe variable` solve?
+What problem does `localvar_inherit` solve?
+What problem does `logger syslog` solve?
+What problem does `login_shell detect` solve?
+What problem does `lsof port` solve?
+What problem does `lvm extend` solve?
+What problem does `mailwarn mail` solve?
+What problem does `mapfile callback` solve?
+What problem does `mapfile delimiter` solve?
+What problem does `mapfile lines` solve?
+What problem does `mapfile skip count` solve?
+What problem does `mktemp secure files` solve?
+What problem does `mount fstab` solve?
+What problem does `nameref declare -n` solve?
+What problem does `nc port test` solve?
+What problem does `ncdu disk` solve?
+What problem does `nl number lines` solve?
+What problem does `nmcli wifi` solve?
+What problem does `no_empty_cmd_completion` solve?
+What problem does `nocaseglob match` solve?
+What problem does `noclobber safe` solve?
+What problem does `node check syntax` solve?
+What problem does `noexec dryrun` solve?
+What problem does `noglob paths` solve?
+What problem does `notify jobs` solve?
+What problem does `nounset empty arrays` solve?
+What problem does `od hexdump bytes` solve?
+What problem does `onecmd flag` solve?
+What problem does `openssl s_client` solve?
+What problem does `openssl selfsign` solve?
+What problem does `passwd lock` solve?
+What problem does `paste join lines` solve?
+What problem does `pgrep pkill` solve?
+What problem does `physical cd` solve?
+What problem does `ping mtr` solve?
+What problem does `pip download wheels` solve?
+What problem does `posix mode` solve?
+What problem does `printf %q quoting` solve?
+What problem does `printf format` solve?
+What problem does `progcomp programmable` solve?
+What problem does `promptvars expand` solve?
+What problem does `ps forest` solve?
+What problem does `pushd popd` solve?
+What problem does `python http server` solve?
+What problem does `read array -a` solve?
+What problem does `read custom delim` solve?
+What problem does `read readline edit` solve?
+What problem does `readonly VAR` solve?
+What problem does `restricted_shell` solve?
+What problem does `rg ripgrep` solve?
+What problem does `rsync archive` solve?
+What problem does `scp sftp` solve?
+What problem does `screen detach` solve?
+What problem does `script session` solve?
+What problem does `sed backup edit` solve?
+What problem does `sed delete lines` solve?
+What problem does `sed replace inline` solve?
+What problem does `select PS3 custom` solve?
+What problem does `select menu` solve?
+What problem does `seq 1 10` solve?
+What problem does `set -euo pipefail` solve?
+What problem does `set -x debug` solve?
+What problem does `sha256sum verify` solve?
+What problem does `shellcheck lint` solve?
+What problem does `shfmt format` solve?
+What problem does `shift_verbose` solve?
+What problem does `shift` solve?
+What problem does `shopt options` solve?
+What problem does `shuf random lines` solve?
+What problem does `sort human uniq` solve?
+What problem does `sort uniq pipeline` solve?
+What problem does `source guard` solve?
+What problem does `source lib.sh` solve?
+What problem does `sourcepath lookup` solve?
+What problem does `split large files` solve?
+What problem does `ss advanced` solve?
+What problem does `ssh keygen copy` solve?
+What problem does `stat format` solve?
+What problem does `strace syscall` solve?
+What problem does `string replace` solve?
+What problem does `strings binaries` solve?
+What problem does `stty sane` solve?
+What problem does `su login shell` solve?
+What problem does `substring slice` solve?
+What problem does `sudo visudo` solve?
+What problem does `systemctl status` solve?
+What problem does `systemd cat edit` solve?
+What problem does `systemd mask` solve?
+What problem does `systemd timer` solve?
+What problem does `tac reverse cat` solve?
+What problem does `tail follow` solve?
+What problem does `tar create extract` solve?
+What problem does `tcpdump filter` solve?
+What problem does `tee split output` solve?
+What problem does `test -e -s -x` solve?
+What problem does `test -e -s` solve?
+What problem does `time keyword` solve?
+What problem does `timeout guard` solve?
+What problem does `tmux send-keys` solve?
+What problem does `tmux session` solve?
+What problem does `tmux synchronize` solve?
+What problem does `tput colors` solve?
+What problem does `tr squeeze delete` solve?
+What problem does `tr translate` solve?
+What problem does `trap cleanup EXIT` solve?
+What problem does `type command which` solve?
+What problem does `type hash cmd` solve?
+What problem does `ulimit core` solve?
+What problem does `umask in scripts` solve?
+What problem does `until loop` solve?
+What problem does `update alternatives` solve?
+What problem does `uptime load` solve?
+What problem does `useradd mod del` solve?
+What problem does `verbose trace` solve?
+What problem does `wait -n -p` solve?
+What problem does `watch monitor` solve?
+What problem does `wc count` solve?
+What problem does `wget mirror` solve?
+What problem does `wget spider check` solve?
+What problem does `while read baris` solve?
+What problem does `who w last` solve?
+What problem does `xargs replace` solve?
+What problem does `xpg_echo portability` solve?
+What problem does `yq yaml` solve?
+What problem does `zip unzip` solve?
+When do I use `$(date +%F)`?
+When do I use `$1 $@ $#`?
+When do I use `${PORT:-3000}`?
+When do I use `${VAR:=default}`?
+When do I use `${s/old/new}`?
+When do I use `${s:0:3}`?
+When do I use `<<EOF heredoc`?
+When do I use `BASH_REMATCH groups`?
+When do I use `BASH_SOURCE LINENO`?
+When do I use `BASH_XTRACEFD log`?
+When do I use `DEBUG trap`?
+When do I use `EPOCHSECONDS SRANDOM`?
+When do I use `ERR trap scope`?
+When do I use `FUNCNAME stack`?
+When do I use `IFS field tricks`?
+When do I use `PIPESTATUS check`?
+When do I use `PS1 prompt`?
+When do I use `PS4 custom`?
+When do I use `RETURN trap`?
+When do I use `[[ $x =~ ^[0-9]+$ ]]`?
+When do I use `a | b | c`?
+When do I use `age secrets`?
+When do I use `alias unalias`?
+When do I use `allexport vars`?
+When do I use `apt install`?
+When do I use `arr=(a b c)`?
+When do I use `assign default :=`?
+When do I use `assoc key ops`?
+When do I use `assoc_expand_once`?
+When do I use `at oneshot`?
+When do I use `autocd dirs`?
+When do I use `awk begin end`?
+When do I use `awk filter rows`?
+When do I use `awk sum column`?
+When do I use `base64 encode`?
+When do I use `bash version check`?
+When do I use `bat pager`?
+When do I use `bats testing`?
+When do I use `bind shortcut`?
+When do I use `brace expansion`?
+When do I use `braceexpand toggle`?
+When do I use `caller debug`?
+When do I use `case $1 in`?
+When do I use `checkhash path`?
+When do I use `checkjobs exit`?
+When do I use `checkwinsize resize`?
+When do I use `chmod numeric`?
+When do I use `chown user group`?
+When do I use `cmd > out 2>&1`?
+When do I use `cmd1 && cmd2`?
+When do I use `cmdhist multiline`?
+When do I use `column -t align`?
+When do I use `comm compare sorted`?
+When do I use `compgen list`?
+When do I use `complete custom`?
+When do I use `coproc two-way`?
+When do I use `cron schedule`?
+When do I use `csplit context split`?
+When do I use `curl download resume`?
+When do I use `curl retry backoff`?
+When do I use `curl timing`?
+When do I use `cut fields`?
+When do I use `date format calc`?
+When do I use `dd clone`?
+When do I use `df inodes`?
+When do I use `diff cmp files`?
+When do I use `diff exit codes`?
+When do I use `dig dns`?
+When do I use `direxpand paths`?
+When do I use `disown huponexit`?
+When do I use `dmesg errors`?
+When do I use `dotglob hidden`?
+When do I use `du top dirs`?
+When do I use `emacs vi mode`?
+When do I use `entr rerun`?
+When do I use `env hierarchy`?
+When do I use `errexit pitfalls`?
+When do I use `errtrace functrace`?
+When do I use `exec cmd`?
+When do I use `exit codes`?
+When do I use `exit trap codes`?
+When do I use `expand unexpand tabs`?
+When do I use `expand_aliases scripts`?
+When do I use `extquote strings`?
+When do I use `failglob strict`?
+When do I use `fd find`?
+When do I use `find . -print0 | xargs -0`?
+When do I use `find exec plus`?
+When do I use `find mtime size`?
+When do I use `flock singleton`?
+When do I use `for f in *.md`?
+When do I use `free available`?
+When do I use `function greet()`?
+When do I use `fzf history`?
+When do I use `getopts flags`?
+When do I use `getopts silent errors`?
+When do I use `git archive deploy`?
+When do I use `globasciiranges`?
+When do I use `globstar extglob`?
+When do I use `gnu_errfmt errors`?
+When do I use `gpg encrypt sign`?
+When do I use `grep context`?
+When do I use `grep extended`?
+When do I use `grep invert count`?
+When do I use `head tail files`?
+When do I use `histappend share`?
+When do I use `history control`?
+When do I use `histverify expand`?
+When do I use `htop vs top`?
+When do I use `hyperfine bench`?
+When do I use `if [[ -f fail ]]`?
+When do I use `inherit_errexit subshell`?
+When do I use `ip addr route`?
+When do I use `jobs wait &`?
+When do I use `join two files`?
+When do I use `journalctl unit`?
+When do I use `jq extract field`?
+When do I use `jq filter select`?
+When do I use `jq walk reduce`?
+When do I use `kill -l signals`?
+When do I use `kill signals`?
+When do I use `lastpipe variable`?
+When do I use `localvar_inherit`?
+When do I use `logger syslog`?
+When do I use `login_shell detect`?
+When do I use `lsof port`?
+When do I use `lvm extend`?
+When do I use `mailwarn mail`?
+When do I use `mapfile callback`?
+When do I use `mapfile delimiter`?
+When do I use `mapfile lines`?
+When do I use `mapfile skip count`?
+When do I use `mktemp secure files`?
+When do I use `mount fstab`?
+When do I use `nameref declare -n`?
+When do I use `nc port test`?
+When do I use `ncdu disk`?
+When do I use `nl number lines`?
+When do I use `nmcli wifi`?
+When do I use `no_empty_cmd_completion`?
+When do I use `nocaseglob match`?
+When do I use `noclobber safe`?
+When do I use `node check syntax`?
+When do I use `noexec dryrun`?
+When do I use `noglob paths`?
+When do I use `notify jobs`?
+When do I use `nounset empty arrays`?
+When do I use `od hexdump bytes`?
+When do I use `onecmd flag`?
+When do I use `openssl s_client`?
+When do I use `openssl selfsign`?
+When do I use `passwd lock`?
+When do I use `paste join lines`?
+When do I use `pgrep pkill`?
+When do I use `physical cd`?
+When do I use `ping mtr`?
+When do I use `pip download wheels`?
+When do I use `posix mode`?
+When do I use `printf %q quoting`?
+When do I use `printf format`?
+When do I use `progcomp programmable`?
+When do I use `promptvars expand`?
+When do I use `ps forest`?
+When do I use `pushd popd`?
+When do I use `python http server`?
+When do I use `read array -a`?
+When do I use `read custom delim`?
+When do I use `read readline edit`?
+When do I use `readonly VAR`?
+When do I use `restricted_shell`?
+When do I use `rg ripgrep`?
+When do I use `rsync archive`?
+When do I use `scp sftp`?
+When do I use `screen detach`?
+When do I use `script session`?
+When do I use `sed backup edit`?
+When do I use `sed delete lines`?
+When do I use `sed replace inline`?
+When do I use `select PS3 custom`?
+When do I use `select menu`?
+When do I use `seq 1 10`?
+When do I use `set -euo pipefail`?
+When do I use `set -x debug`?
+When do I use `sha256sum verify`?
+When do I use `shellcheck lint`?
+When do I use `shfmt format`?
+When do I use `shift_verbose`?
+When do I use `shift`?
+When do I use `shopt options`?
+When do I use `shuf random lines`?
+When do I use `sort human uniq`?
+When do I use `sort uniq pipeline`?
+When do I use `source guard`?
+When do I use `source lib.sh`?
+When do I use `sourcepath lookup`?
+When do I use `split large files`?
+When do I use `ss advanced`?
+When do I use `ssh keygen copy`?
+When do I use `stat format`?
+When do I use `strace syscall`?
+When do I use `string replace`?
+When do I use `strings binaries`?
+When do I use `stty sane`?
+When do I use `su login shell`?
+When do I use `substring slice`?
+When do I use `sudo visudo`?
+When do I use `systemctl status`?
+When do I use `systemd cat edit`?
+When do I use `systemd mask`?
+When do I use `systemd timer`?
+When do I use `tac reverse cat`?
+When do I use `tail follow`?
+When do I use `tar create extract`?
+When do I use `tcpdump filter`?
+When do I use `tee split output`?
+When do I use `test -e -s -x`?
+When do I use `test -e -s`?
+When do I use `time keyword`?
+When do I use `timeout guard`?
+When do I use `tmux send-keys`?
+When do I use `tmux session`?
+When do I use `tmux synchronize`?
+When do I use `tput colors`?
+When do I use `tr squeeze delete`?
+When do I use `tr translate`?
+When do I use `trap cleanup EXIT`?
+When do I use `type command which`?
+When do I use `type hash cmd`?
+When do I use `ulimit core`?
+When do I use `umask in scripts`?
+When do I use `until loop`?
+When do I use `update alternatives`?
+When do I use `uptime load`?
+When do I use `useradd mod del`?
+When do I use `verbose trace`?
+When do I use `wait -n -p`?
+When do I use `watch monitor`?
+When do I use `wc count`?
+When do I use `wget mirror`?
+When do I use `wget spider check`?
+When do I use `while read baris`?
+When do I use `who w last`?
+When do I use `xargs replace`?
+When do I use `xpg_echo portability`?
+When do I use `yq yaml`?
+When do I use `zip unzip`?
+Why does every bash script start with set -euo pipefail?
+Why xargs -0 with find -print0?
+Write a bash function with local scope and argument validation
+Write a safe bash script template with error handling
+`$(date +%F)` untuk apa?
+`$1 $@ $#` untuk apa?
+`${PORT:-3000}` untuk apa?
+`${VAR:=default}` untuk apa?
+`${s/old/new}` untuk apa?
+`${s:0:3}` untuk apa?
+`<<EOF heredoc` untuk apa?
+`BASH_REMATCH groups` untuk apa?
+`BASH_SOURCE LINENO` untuk apa?
+`BASH_XTRACEFD log` untuk apa?
+`DEBUG trap` untuk apa?
+`EPOCHSECONDS SRANDOM` untuk apa?
+`ERR trap scope` untuk apa?
+`FUNCNAME stack` untuk apa?
+`IFS field tricks` untuk apa?
+`PIPESTATUS check` untuk apa?
+`PS1 prompt` untuk apa?
+`PS4 custom` untuk apa?
+`RETURN trap` untuk apa?
+`[[ $x =~ ^[0-9]+$ ]]` untuk apa?
+`a | b | c` untuk apa?
+`age secrets` untuk apa?
+`alias unalias` untuk apa?
+`allexport vars` untuk apa?
+`apt install` untuk apa?
+`arr=(a b c)` untuk apa?
+`assign default :=` untuk apa?
+`assoc key ops` untuk apa?
+`assoc_expand_once` untuk apa?
+`at oneshot` untuk apa?
+`autocd dirs` untuk apa?
+`awk begin end` untuk apa?
+`awk filter rows` untuk apa?
+`awk sum column` untuk apa?
+`base64 encode` untuk apa?
+`bash version check` untuk apa?
+`bat pager` untuk apa?
+`bats testing` untuk apa?
+`bind shortcut` untuk apa?
+`brace expansion` untuk apa?
+`braceexpand toggle` untuk apa?
+`caller debug` untuk apa?
+`case $1 in` untuk apa?
+`checkhash path` untuk apa?
+`checkjobs exit` untuk apa?
+`checkwinsize resize` untuk apa?
+`chmod numeric` untuk apa?
+`chown user group` untuk apa?
+`cmd > out 2>&1` untuk apa?
+`cmd1 && cmd2` untuk apa?
+`cmdhist multiline` untuk apa?
+`column -t align` untuk apa?
+`comm compare sorted` untuk apa?
+`compgen list` untuk apa?
+`complete custom` untuk apa?
+`coproc two-way` untuk apa?
+`cron schedule` untuk apa?
+`csplit context split` untuk apa?
+`curl download resume` untuk apa?
+`curl retry backoff` untuk apa?
+`curl timing` untuk apa?
+`cut fields` untuk apa?
+`date format calc` untuk apa?
+`dd clone` untuk apa?
+`df inodes` untuk apa?
+`diff cmp files` untuk apa?
+`diff exit codes` untuk apa?
+`dig dns` untuk apa?
+`direxpand paths` untuk apa?
+`disown huponexit` untuk apa?
+`dmesg errors` untuk apa?
+`dotglob hidden` untuk apa?
+`du top dirs` untuk apa?
+`emacs vi mode` untuk apa?
+`entr rerun` untuk apa?
+`env hierarchy` untuk apa?
+`errexit pitfalls` untuk apa?
+`errtrace functrace` untuk apa?
+`exec cmd` untuk apa?
+`exit codes` untuk apa?
+`exit trap codes` untuk apa?
+`expand unexpand tabs` untuk apa?
+`expand_aliases scripts` untuk apa?
+`extquote strings` untuk apa?
+`failglob strict` untuk apa?
+`fd find` untuk apa?
+`find . -print0 | xargs -0` untuk apa?
+`find exec plus` untuk apa?
+`find mtime size` untuk apa?
+`flock singleton` untuk apa?
+`for f in *.md` untuk apa?
+`free available` untuk apa?
+`function greet()` untuk apa?
+`fzf history` untuk apa?
+`getopts flags` untuk apa?
+`getopts silent errors` untuk apa?
+`git archive deploy` untuk apa?
+`globasciiranges` untuk apa?
+`globstar extglob` untuk apa?
+`gnu_errfmt errors` untuk apa?
+`gpg encrypt sign` untuk apa?
+`grep context` untuk apa?
+`grep extended` untuk apa?
+`grep invert count` untuk apa?
+`head tail files` untuk apa?
+`histappend share` untuk apa?
+`history control` untuk apa?
+`histverify expand` untuk apa?
+`htop vs top` untuk apa?
+`hyperfine bench` untuk apa?
+`if [[ -f fail ]]` untuk apa?
+`inherit_errexit subshell` untuk apa?
+`ip addr route` untuk apa?
+`jobs wait &` untuk apa?
+`join two files` untuk apa?
+`journalctl unit` untuk apa?
+`jq extract field` untuk apa?
+`jq filter select` untuk apa?
+`jq walk reduce` untuk apa?
+`kill -l signals` untuk apa?
+`kill signals` untuk apa?
+`lastpipe variable` untuk apa?
+`localvar_inherit` untuk apa?
+`logger syslog` untuk apa?
+`login_shell detect` untuk apa?
+`lsof port` untuk apa?
+`lvm extend` untuk apa?
+`mailwarn mail` untuk apa?
+`mapfile callback` untuk apa?
+`mapfile delimiter` untuk apa?
+`mapfile lines` untuk apa?
+`mapfile skip count` untuk apa?
+`mktemp secure files` untuk apa?
+`mount fstab` untuk apa?
+`nameref declare -n` untuk apa?
+`nc port test` untuk apa?
+`ncdu disk` untuk apa?
+`nl number lines` untuk apa?
+`nmcli wifi` untuk apa?
+`no_empty_cmd_completion` untuk apa?
+`nocaseglob match` untuk apa?
+`noclobber safe` untuk apa?
+`node check syntax` untuk apa?
+`noexec dryrun` untuk apa?
+`noglob paths` untuk apa?
+`notify jobs` untuk apa?
+`nounset empty arrays` untuk apa?
+`od hexdump bytes` untuk apa?
+`onecmd flag` untuk apa?
+`openssl s_client` untuk apa?
+`openssl selfsign` untuk apa?
+`passwd lock` untuk apa?
+`paste join lines` untuk apa?
+`pgrep pkill` untuk apa?
+`physical cd` untuk apa?
+`ping mtr` untuk apa?
+`pip download wheels` untuk apa?
+`posix mode` untuk apa?
+`printf %q quoting` untuk apa?
+`printf format` untuk apa?
+`progcomp programmable` untuk apa?
+`promptvars expand` untuk apa?
+`ps forest` untuk apa?
+`pushd popd` untuk apa?
+`python http server` untuk apa?
+`read array -a` untuk apa?
+`read custom delim` untuk apa?
+`read readline edit` untuk apa?
+`readonly VAR` untuk apa?
+`restricted_shell` untuk apa?
+`rg ripgrep` untuk apa?
+`rsync archive` untuk apa?
+`scp sftp` untuk apa?
+`screen detach` untuk apa?
+`script session` untuk apa?
+`sed backup edit` untuk apa?
+`sed delete lines` untuk apa?
+`sed replace inline` untuk apa?
+`select PS3 custom` untuk apa?
+`select menu` untuk apa?
+`seq 1 10` untuk apa?
+`set -euo pipefail` untuk apa?
+`set -x debug` untuk apa?
+`sha256sum verify` untuk apa?
+`shellcheck lint` untuk apa?
+`shfmt format` untuk apa?
+`shift_verbose` untuk apa?
+`shift` untuk apa?
+`shopt options` untuk apa?
+`shuf random lines` untuk apa?
+`sort human uniq` untuk apa?
+`sort uniq pipeline` untuk apa?
+`source guard` untuk apa?
+`source lib.sh` untuk apa?
+`sourcepath lookup` untuk apa?
+`split large files` untuk apa?
+`ss advanced` untuk apa?
+`ssh keygen copy` untuk apa?
+`stat format` untuk apa?
+`strace syscall` untuk apa?
+`string replace` untuk apa?
+`strings binaries` untuk apa?
+`stty sane` untuk apa?
+`su login shell` untuk apa?
+`substring slice` untuk apa?
+`sudo visudo` untuk apa?
+`systemctl status` untuk apa?
+`systemd cat edit` untuk apa?
+`systemd mask` untuk apa?
+`systemd timer` untuk apa?
+`tac reverse cat` untuk apa?
+`tail follow` untuk apa?
+`tar create extract` untuk apa?
+`tcpdump filter` untuk apa?
+`tee split output` untuk apa?
+`test -e -s -x` untuk apa?
+`test -e -s` untuk apa?
+`time keyword` untuk apa?
+`timeout guard` untuk apa?
+`tmux send-keys` untuk apa?
+`tmux session` untuk apa?
+`tmux synchronize` untuk apa?
+`tput colors` untuk apa?
+`tr squeeze delete` untuk apa?
+`tr translate` untuk apa?
+`trap cleanup EXIT` untuk apa?
+`type command which` untuk apa?
+`type hash cmd` untuk apa?
+`ulimit core` untuk apa?
+`umask in scripts` untuk apa?
+`until loop` untuk apa?
+`update alternatives` untuk apa?
+`uptime load` untuk apa?
+`useradd mod del` untuk apa?
+`verbose trace` untuk apa?
+`wait -n -p` untuk apa?
+`watch monitor` untuk apa?
+`wc count` untuk apa?
+`wget mirror` untuk apa?
+`wget spider check` untuk apa?
+`while read baris` untuk apa?
+`who w last` untuk apa?
+`xargs replace` untuk apa?
+`xpg_echo portability` untuk apa?
+`yq yaml` untuk apa?
+`zip unzip` untuk apa?
