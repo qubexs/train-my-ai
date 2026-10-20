@@ -27,13 +27,11 @@ import argparse
 import hashlib
 import json
 import random
-import sys
 import time
 import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(ROOT / "datasets" / "scripts"))
 
 SYSTEM = ("You are XCoder, a tiny CPU coding assistant. "
           "Answer briefly in the user's language (Bahasa Melayu or English). "
@@ -106,24 +104,22 @@ def load_limits(a):
             "min_a": a.min_a, "max_a": a.max_a}
 
 
-try:
-    from _common import check_row
-    from audit import scrub_hits
-except Exception:  # noqa: BLE001 - standalone (script fetched without repo)
-    def check_row(r):
-        return (isinstance(r, dict) and isinstance(r.get("instruction"), str)
-                and isinstance(r.get("output"), str)
-                and r["instruction"].strip() and r["output"].strip())
+def check_row(r):
+    return (isinstance(r, dict) and isinstance(r.get("instruction"), str)
+            and isinstance(r.get("output"), str)
+            and r["instruction"].strip() and r["output"].strip())
 
-    _FORBIDDEN = ["qwen", "alibaba", "tongyi", "dashscope",
-                  "as an ai language model", "as a large language model"]
-    _DENIAL = ["bukan", "not ", "never", "tiada", "tidak ", "jangan",
-               "no. i am", "no, i am", "i am xcoder", "saya xcoder"]
 
-    def scrub_hits(text):
-        low = text.lower()
-        return [t for t in _FORBIDDEN
-                if t in low and not any(m in low for m in _DENIAL)]
+_FORBIDDEN = ["qwen", "alibaba", "tongyi", "dashscope",
+              "as an ai language model", "as a large language model"]
+_DENIAL = ["bukan", "not ", "never", "tiada", "tidak ", "jangan",
+           "no. i am", "no, i am", "i am xcoder", "saya xcoder"]
+
+
+def scrub_hits(text):
+    low = text.lower()
+    return [t for t in _FORBIDDEN
+            if t in low and not any(m in low for m in _DENIAL)]
 
 
 def clean_rows(text, seen, limits, stack):
