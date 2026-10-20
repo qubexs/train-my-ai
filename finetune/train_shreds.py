@@ -207,7 +207,7 @@ def validate_model(model):
         raise SystemExit(
             f"{model} tiada config.json/safetensors (GGUF sahaja) - tidak boleh "
             f"dilatih. Upload merged safetensors ke repo itu, atau guna "
-            f"--model Qwen/Qwen3.5-0.8B-Base.")
+            f"--model Qwen/Qwen3.5-0.8B.")
 
 
 def load_state(path, model):
@@ -246,7 +246,7 @@ def main():
     ap.add_argument("--repo", default=REPO)
     ap.add_argument("--branch", default=BRANCH)
     ap.add_argument("--shred-dir", default=str(ROOT / "datasets" / "shred"))
-    ap.add_argument("--out", default="/content/drive/MyDrive/xcoder/shreds")
+    ap.add_argument("--out", default="/content/drive/MyDrive/DriveXcoder/xcoder/v2")
     ap.add_argument("--max-seq", type=int, default=3072)
     ap.add_argument("--min-q", type=int, default=5)
     ap.add_argument("--max-q", type=int, default=16000)
