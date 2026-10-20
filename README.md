@@ -1,6 +1,6 @@
 # XCoder — pembantu pengekodan lokal (CPU)
 
-Model kecil di mesin sendiri: **base Qwen3.5-2B** (penaakulan, ~14 T/s)
+Model penaakulan terkini: **xcoder-gen1-0.8B** (Q4_K_M, thinking/reasoning)
 + **xcoder-javascript 1.5B** + 16 pakar **0.5B** (~45–55 T/s) — satu aktif
 pada satu masa. Bahasa: **Melayu 🇲🇾 + English 🇬🇧**.
 Stack: JS, TS, Node.js, HTML, CSS, SQL, PostgreSQL, MySQL, Python, PHP, Laravel,
@@ -9,6 +9,8 @@ Tailwind, Linux, Bash, Docker, general.
 Jawapan lalai berjalan **geganti (relay)**: base jawab dulu → pakar berkaitan
 sambung bergilir (unload automatik bila tukar model) → base kumpul + susun
 antara setiap kaki → kembali ke base. Kelajuan setiap kaki dipapar live.
+Jejak **fikiran (thinking/reasoning)** dipapar automatik (dim) sebelum jawapan
+akhir — tiada arahan khas diperlukan.
 
 ## Pasang satu arahan
 
@@ -19,6 +21,22 @@ powershell -ExecutionPolicy Bypass -File install.ps1
 
 Ini semak Python 3.9+, muat turun model asas (~1.1GB Qwen3.5-2B + pakar 0.5B),
 dan ambil enjin llama.cpp. Model lama diarkib dalam `models/0.5b/`.
+
+### Model penaakulan (thinking/reasoning)
+
+`xcoder-gen1-0.8B` dilatih untuk berfikir dahulu, kemudian menjawab. Muat turun
+terus dari Hugging Face ke `models/`:
+
+```powershell
+Invoke-WebRequest `
+  -Uri "https://huggingface.co/myxcoder/xcoder/resolve/main/xcoder-gen1-0.8b-q4_k_m.gguf" `
+  -OutFile "models\xcoder-gen1-0.8b-q4_k_m.gguf"
+```
+
+Fail dikesan automatik oleh `/models`; pilih sebagai model aktif dengan
+`/model xcoder-gen1-0.8b-q4_k_m`. Semasa menjana, jejak `berfikir` muncul dim
+diikuti jawapan akhir. Butiran model:
+<https://huggingface.co/myxcoder/xcoder/blob/main/xcoder-gen1-0.8b-q4_k_m.gguf>
 
 ## Mula cepat
 
