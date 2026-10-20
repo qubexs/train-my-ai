@@ -7,13 +7,15 @@ Usage (from repo root, .venv-gguf has huggingface_hub):
   python datasets/scripts/shred.py download                 # just all.jsonl
   python datasets/scripts/shred.py download --files python.jsonl,django.jsonl
   python datasets/scripts/shred.py download --all           # whole repo (~1.2GB)
-  python datasets/scripts/shred.py shred                     # -> datasets/shred/<stack>/<stack>.jsonl
+  python datasets/scripts/shred.py shred                     # -> datasets/shred/<stack>/shred-00001.jsonl
   python datasets/scripts/shred.py shred --stacks python,django,flask
+  python datasets/scripts/shred.py shred --rows 5000         # max rows per shard
   python datasets/scripts/shred.py all                       # download all.jsonl then shred
 
 Shred rules: a row is assigned to a stack by matching (instruction, output)
-against datasets/<stack>.jsonl (config/dataset.json). Output is one folder per
-stack (folder name = stack). Rows that match nothing go to
+against datasets/<stack>.jsonl (config/dataset.json). Each stack gets a folder
+(folder name = stack) split into shards of at most --rows rows, named
+shred-00001.jsonl, shred-00002.jsonl, ... Rows that match nothing go to
 <out>/_unmatched.jsonl. Download lands in datasets/raw/hf/ (git-ignored).
 """
 import argparse
@@ -97,7 +99,7 @@ def build_map(stacks, allow_hf, repo):
     return key2stack
 
 
-def cmd_shred(source, out_dir, stacks, allow_hf, repo):
+def cmd_shred(source, out_dir, stacks, allow_hf, repo, rows_per_shard):
     src = Path(source)
     if not src.is_absolute():
         src = (HF_DIR / source) if (HF_DIR / source).exists() else (ROOT / source)
@@ -122,19 +124,24 @@ def cmd_shred(source, out_dir, stacks, allow_hf, repo):
                     umatch = (out / "_unmatched.jsonl").open("w", encoding="utf-8")
                 umatch.write(dump_row(r) + "\n")
                 continue
-            h = handles.get(stack)
-            if h is None:
+            n = counts.get(stack, 0)
+            if n % rows_per_shard == 0:
+                if stack in handles:
+                    handles[stack].close()
                 (out / stack).mkdir(parents=True, exist_ok=True)
-                h = handles[stack] = (out / stack / f"{stack}.jsonl").open("w", encoding="utf-8")
-            h.write(dump_row(r) + "\n")
-            counts[stack] = counts.get(stack, 0) + 1
+                i = n // rows_per_shard + 1
+                handles[stack] = (out / stack / f"shred-{i:05d}.jsonl").open(
+                    "w", encoding="utf-8")
+            handles[stack].write(dump_row(r) + "\n")
+            counts[stack] = n + 1
     finally:
         for h in handles.values():
             h.close()
         if umatch:
             umatch.close()
     for stack, n in sorted(counts.items(), key=lambda kv: -kv[1]):
-        print(f"{stack}: {n} rows -> {out / stack / (stack + '.jsonl')}")
+        shards = (n + rows_per_shard - 1) // rows_per_shard
+        print(f"{stack}: {n} rows -> {shards} shard(s) in {out / stack}")
     print(f"TOTAL: {sum(counts.values())} rows, unmatched: {unmatched} -> {out}")
 
 
@@ -148,6 +155,7 @@ def main():
     ap.add_argument("--source", default=DEFAULT_SOURCE, help="combined jsonl for shred")
     ap.add_argument("--out", default="datasets/shred")
     ap.add_argument("--stacks", default="", help="comma list; default = all config stacks")
+    ap.add_argument("--rows", type=int, default=5000, help="max rows per shard (default 5000)")
     ap.add_argument("--no-hf-map", action="store_true",
                     help="jangan muat turun fail stack dari HF bila hilang")
     a = ap.parse_args()
@@ -160,10 +168,10 @@ def main():
     elif a.cmd == "download":
         cmd_download(a.repo, files, a.all)
     elif a.cmd == "shred":
-        cmd_shred(a.source, a.out, stacks, not a.no_hf_map, a.repo)
+        cmd_shred(a.source, a.out, stacks, not a.no_hf_map, a.repo, a.rows)
     elif a.cmd == "all":
         cmd_download(a.repo, files, a.all)
-        cmd_shred(a.source, a.out, stacks, not a.no_hf_map, a.repo)
+        cmd_shred(a.source, a.out, stacks, not a.no_hf_map, a.repo, a.rows)
 
 
 if __name__ == "__main__":
