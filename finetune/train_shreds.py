@@ -207,7 +207,7 @@ def validate_model(model):
         raise SystemExit(
             f"{model} tiada config.json/safetensors (GGUF sahaja) - tidak boleh "
             f"dilatih. Upload merged safetensors ke repo itu, atau guna "
-            f"--model Qwen/Qwen3.5-0.8B.")
+            f"--model Qwen/Qwen3.5-0.8B-Base.")
 
 
 def load_state(path, model):
