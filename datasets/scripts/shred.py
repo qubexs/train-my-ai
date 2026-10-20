@@ -7,13 +7,14 @@ Usage (from repo root, .venv-gguf has huggingface_hub):
   python datasets/scripts/shred.py download                 # just all.jsonl
   python datasets/scripts/shred.py download --files python.jsonl,django.jsonl
   python datasets/scripts/shred.py download --all           # whole repo (~1.2GB)
-  python datasets/scripts/shred.py shred                     # -> datasets/raw/shred/<stack>.jsonl
+  python datasets/scripts/shred.py shred                     # -> datasets/shred/<stack>/<stack>.jsonl
   python datasets/scripts/shred.py shred --stacks python,django,flask
   python datasets/scripts/shred.py all                       # download all.jsonl then shred
 
 Shred rules: a row is assigned to a stack by matching (instruction, output)
-against datasets/<stack>.jsonl (config/dataset.json). Rows that match nothing go
-to <out>/_unmatched.jsonl. Download lands in datasets/raw/hf/ (git-ignored).
+against datasets/<stack>.jsonl (config/dataset.json). Output is one folder per
+stack (folder name = stack). Rows that match nothing go to
+<out>/_unmatched.jsonl. Download lands in datasets/raw/hf/ (git-ignored).
 """
 import argparse
 import json
@@ -123,7 +124,8 @@ def cmd_shred(source, out_dir, stacks, allow_hf, repo):
                 continue
             h = handles.get(stack)
             if h is None:
-                h = handles[stack] = (out / f"{stack}.jsonl").open("w", encoding="utf-8")
+                (out / stack).mkdir(parents=True, exist_ok=True)
+                h = handles[stack] = (out / stack / f"{stack}.jsonl").open("w", encoding="utf-8")
             h.write(dump_row(r) + "\n")
             counts[stack] = counts.get(stack, 0) + 1
     finally:
@@ -132,7 +134,7 @@ def cmd_shred(source, out_dir, stacks, allow_hf, repo):
         if umatch:
             umatch.close()
     for stack, n in sorted(counts.items(), key=lambda kv: -kv[1]):
-        print(f"{stack}: {n} rows -> {out / (stack + '.jsonl')}")
+        print(f"{stack}: {n} rows -> {out / stack / (stack + '.jsonl')}")
     print(f"TOTAL: {sum(counts.values())} rows, unmatched: {unmatched} -> {out}")
 
 
@@ -144,7 +146,7 @@ def main():
     ap.add_argument("--files", default="", help="comma list (download)")
     ap.add_argument("--all", action="store_true", help="download whole repo")
     ap.add_argument("--source", default=DEFAULT_SOURCE, help="combined jsonl for shred")
-    ap.add_argument("--out", default="datasets/raw/shred")
+    ap.add_argument("--out", default="datasets/shred")
     ap.add_argument("--stacks", default="", help="comma list; default = all config stacks")
     ap.add_argument("--no-hf-map", action="store_true",
                     help="jangan muat turun fail stack dari HF bila hilang")
