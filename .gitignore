@@ -54,3 +54,5 @@ dist/
 # Tooling/config under datasets/ stays tracked; bulk data does not.
 datasets/*.jsonl
 datasets/*.jsonl.bak
+
+datasets/shred/*/part-*.jsonl
