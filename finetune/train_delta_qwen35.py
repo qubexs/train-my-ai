@@ -24,8 +24,16 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "app"))
+sys.path.insert(0, str(ROOT / "finetune"))
+
+try:  # Windows: TRL fused LM head needs Triton (Linux-only) - pasang fallback torch
+    import trl_win_compat
+    trl_win_compat.install()
+except Exception:  # noqa: BLE001
+    pass
 
 from train_all import ensure_llamacpp, find_quantize  # noqa: E402
+from hf_export import finalize_hf_dir, swap_into_place  # noqa: E402
 
 _LOCK_SOCK = None
 
@@ -83,8 +91,8 @@ def promote_master(out_dir, master):
     return (src, copied) if copied else None
 
 
-def export_gguf(model_dir, models_dir, gguf_name, quant="Q4_K_M"):
-    """HF dir -> f16.gguf -> models/<gguf_name>.new (quant). Return Path|None."""
+def export_gguf(model_dir, gguf_dir, gguf_name, quant="Q4_K_M"):
+    """HF dir -> f16.gguf -> v2/gguf/<gguf_name> (quant). Return Path|None."""
     conv = ensure_llamacpp(ROOT / "build" / "train")
     conv_py = next((p for p in (ROOT / ".venv-gguf" / "Scripts" / "python.exe",
                                 ROOT / ".venv-gguf" / "bin" / "python")
@@ -92,20 +100,39 @@ def export_gguf(model_dir, models_dir, gguf_name, quant="Q4_K_M"):
     f16 = Path(model_dir).parent / (Path(model_dir).name + "-f16.gguf")
     subprocess.run([str(conv_py or sys.executable), str(conv), str(model_dir),
                     "--outfile", str(f16), "--outtype", "f16"], check=True)
-    models_dir = Path(models_dir)
-    models_dir.mkdir(parents=True, exist_ok=True)
-    dest_new = models_dir / f"{gguf_name}.new"
-    if dest_new.exists():
-        try:
-            dest_new.unlink()
-        except OSError:
-            print(f"PERINGATAN: {dest_new.name} lama tidak boleh dipadam (dikunci?)")
-    subprocess.run([find_quantize(), str(f16), str(dest_new), quant], check=True)
+    gguf_dir = Path(gguf_dir)
+    gguf_dir.mkdir(parents=True, exist_ok=True)
+    dest = gguf_dir / gguf_name
+    if dest.suffix.lower() != ".gguf":
+        dest = dest.with_suffix(".gguf")
+    tmp = dest.with_name(dest.name + ".tmp")
+    if tmp.exists():
+        tmp.unlink()
+    subprocess.run([find_quantize(), str(f16), str(tmp), quant], check=True)
     f16.unlink(missing_ok=True)
-    if not dest_new.is_file() or dest_new.stat().st_size < 50_000_000:
+    if not tmp.is_file() or tmp.stat().st_size < 50_000_000:
         print("Ralat: GGUF output mencurigakan kecil")
         return None
-    return dest_new
+    tmp.replace(dest)
+    return dest
+
+
+def export_v2(model, tok, v2, gguf_name, quant, name=OUT_NAME, master=""):
+    """Merge -> <v2>/merged (HF-ready) + <v2>/gguf/<gguf_name>.gguf."""
+    import torch
+    v2 = Path(v2)
+    v2.mkdir(parents=True, exist_ok=True)
+    stage = v2 / "_merged.tmp"
+    if stage.exists():
+        shutil.rmtree(stage)
+    merged = model.merge_and_unload().to(torch.bfloat16)
+    merged.save_pretrained(str(stage))
+    tok.save_pretrained(str(stage))
+    finalize_hf_dir(stage, base=MODEL, name=name, master=master)
+    mdir = swap_into_place(stage, v2 / "merged")
+    print(f"merged -> {mdir}")
+    dest = export_gguf(mdir, v2 / "gguf", gguf_name, quant)
+    return mdir, dest
 
 
 def main():
@@ -119,7 +146,12 @@ def main():
     ap.add_argument("--batch", type=int, default=1)
     ap.add_argument("--accum", type=int, default=8)
     ap.add_argument("--max-len", type=int, default=2048)
-    ap.add_argument("--models-dir", default=str(ROOT / "models"))
+    ap.add_argument("--v2-dir", default=str(ROOT / "build" / "v2"),
+                    help="folder eksport (merged/ + gguf/)")
+    ap.add_argument("--models-dir", default=str(ROOT / "models"),
+                    help="(tidak digunakan lagi: GGUF kini ke <v2>/gguf)")
+    ap.add_argument("--qlora-4bit", action="store_true",
+                    help="muat base 4-bit (bitsandbytes) - jimat VRAM, laju")
     ap.add_argument("--thinking", action="store_true",
                     help="sasaran sertakan medan reasoning (<think>)")
     ap.add_argument("--no-export", action="store_true",
@@ -145,7 +177,7 @@ def main():
         print(f"Ralat: master adapter tiada di {master} "
               f"(init master dahulu: train_delta_runner.py --init-master)")
         return 1
-    models_dir = Path(a.models_dir)
+    v2 = Path(a.v2_dir)
     gguf_name = a.gguf_name or GGUF_NAME
 
     from datasets import Dataset
@@ -154,7 +186,19 @@ def main():
     from transformers import AutoTokenizer
     from trl import SFTConfig, SFTTrainer
 
-    model, tok = load_qwen(MODEL, dtype=torch.float32)
+    if a.qlora_4bit:
+        from peft import prepare_model_for_kbit_training
+        from transformers import BitsAndBytesConfig
+        qcfg = BitsAndBytesConfig(
+            load_in_4bit=True, bnb_4bit_quant_type="nf4",
+            bnb_4bit_compute_dtype=torch.float16,
+            bnb_4bit_use_double_quant=True)
+        model, tok = load_qwen(MODEL, quantization_config=qcfg,
+                               device_map={"": 0})
+        model = prepare_model_for_kbit_training(
+            model, use_gradient_checkpointing=True)
+    else:
+        model, tok = load_qwen(MODEL, dtype=torch.float32)
     if (master / "tokenizer_config.json").is_file():
         try:
             mtok = AutoTokenizer.from_pretrained(str(master))
@@ -166,15 +210,10 @@ def main():
     model = PeftModel.from_pretrained(model, str(master), is_trainable=True)
 
     if a.export_only:
-        out_dir = Path(a.out) if a.out else ROOT / "build" / "train" / (
-            f"{OUT_NAME}-merge-{time.strftime('%Y%m%d-%H%M%S')}")
-        out_dir.mkdir(parents=True, exist_ok=True)
-        merged = model.merge_and_unload()
-        merged.save_pretrained(str(out_dir))
-        tok.save_pretrained(str(out_dir))
-        dest = export_gguf(out_dir, models_dir, gguf_name, a.quant)
+        _, dest = export_v2(model, tok, v2, gguf_name, a.quant,
+                            name=OUT_NAME, master=str(master))
         if dest:
-            print(f"GGUF sedia: {dest} (aktivasi oleh CLI bila model tidak digunakan)")
+            print(f"GGUF sedia: {dest}")
             return 0
         return 1
 
@@ -244,15 +283,11 @@ def main():
         print(f"PERINGATAN: adapter baharu tidak dijumpai di {out_dir}")
         return 1
 
-    merged = trainer.model.merge_and_unload()
-    mdir = out_dir / "merged"
-    merged.save_pretrained(str(mdir))
-    tok.save_pretrained(str(mdir))
-    print(f"merged -> {mdir}")
-    dest = export_gguf(mdir, models_dir, gguf_name, a.quant)
+    _, dest = export_v2(trainer.model, tok, v2, gguf_name, a.quant,
+                        name=OUT_NAME, master=str(master))
     if not dest:
         return 1
-    print(f"GGUF sedia: {dest} (aktivasi oleh CLI bila model tidak digunakan)")
+    print(f"GGUF sedia: {dest}")
     pm = promote_master(out_dir, master)
     if pm:
         print(f"master dikemas kini dari {pm[0]} ({pm[1]} fail)")

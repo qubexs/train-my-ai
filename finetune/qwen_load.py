@@ -15,16 +15,16 @@ CLASSES = ("AutoModelForMultimodalLM", "AutoModelForImageTextToText",
            "AutoModelForVision2Seq", "AutoModelForCausalLM")
 
 
-def _from_pretrained(cls, name, dtype):
+def _from_pretrained(cls, name, dtype, **kw):
     if dtype is None:
-        return cls.from_pretrained(name)
+        return cls.from_pretrained(name, **kw)
     try:
-        return cls.from_pretrained(name, dtype=dtype)
+        return cls.from_pretrained(name, dtype=dtype, **kw)
     except TypeError:
-        return cls.from_pretrained(name, torch_dtype=dtype)
+        return cls.from_pretrained(name, torch_dtype=dtype, **kw)
 
 
-def load_qwen(model_name=MODEL, dtype=None):
+def load_qwen(model_name=MODEL, dtype=None, **kw):
     """Returns (model, tok). tok sentiasa ada apply_chat_template."""
     import transformers
     from transformers import AutoTokenizer
@@ -46,7 +46,7 @@ def load_qwen(model_name=MODEL, dtype=None):
         if cls is None:
             continue
         try:
-            model = _from_pretrained(cls, model_name, dtype)
+            model = _from_pretrained(cls, model_name, dtype, **kw)
             break
         except Exception as e:  # kelas salah atau checkpoint tak serasi
             last = e

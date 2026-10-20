@@ -277,15 +277,17 @@ def run_delta(shard, master, out, thinking, a):
            "--max-len", str(a.max_len)]
     if thinking:
         cmd.append("--thinking")
+    if getattr(a, "qlora_4bit", False):
+        cmd.append("--qlora-4bit")
     print(f"[delta] {Path(shard).parent.name}/{Path(shard).name} -> {out.name}")
     return subprocess.run(cmd, cwd=str(ROOT)).returncode
 
 
-def run_export(master, gguf_name, models_dir):
+def run_export(master, gguf_name, v2_dir):
     cmd = [PY, str(ROOT / "finetune" / "train_delta_qwen35.py"),
            "--export-only", "--master", str(master),
-           "--gguf-name", gguf_name, "--models-dir", str(models_dir)]
-    print(f"[export] master -> models/{gguf_name}.new")
+           "--gguf-name", gguf_name, "--v2-dir", str(v2_dir)]
+    print(f"[export] master -> {v2_dir}\\merged + {v2_dir}\\gguf")
     return subprocess.run(cmd, cwd=str(ROOT)).returncode
 
 
@@ -345,7 +347,12 @@ def main():
     ap.add_argument("--self-learn", action="store_true")
     ap.add_argument("--learn-rounds", type=int, default=4)
     ap.add_argument("--gguf-name", default="xcoder-gen1-think-0.8B.Q4_K_M")
-    ap.add_argument("--models-dir", default=str(ROOT / "models"))
+    ap.add_argument("--v2-dir", default=str(ROOT / "build" / "v2"),
+                    help="folder eksport (merged/ + gguf/)")
+    ap.add_argument("--models-dir", default=str(ROOT / "models"),
+                    help="(tidak digunakan lagi: GGUF kini ke <v2>/gguf)")
+    ap.add_argument("--qlora-4bit", action="store_true",
+                    help="base 4-bit (bitsandbytes) - jimat VRAM, lebih laju")
     ap.add_argument("--epochs", type=float, default=1.0)
     ap.add_argument("--lr", type=float, default=1e-4)
     ap.add_argument("--batch", type=int, default=1)
@@ -402,7 +409,7 @@ def main():
         print(f"[runner] {trained} shard dilatih sesi ini; baki {remaining}")
 
         if a.export and remaining == 0:
-            rc = run_export(a.master, a.gguf_name, a.models_dir)
+            rc = run_export(a.master, a.gguf_name, a.v2_dir)
             if rc:
                 return rc
         elif a.export:
@@ -413,7 +420,7 @@ def main():
             if rc:
                 return rc
             if a.export:
-                rc = run_export(a.master, a.gguf_name, a.models_dir)
+                rc = run_export(a.master, a.gguf_name, a.v2_dir)
                 if rc:
                     return rc
 

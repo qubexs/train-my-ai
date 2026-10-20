@@ -56,3 +56,4 @@ datasets/*.jsonl
 datasets/*.jsonl.bak
 
 datasets/shred/*/part-*.jsonl
+finetune/.delta_runner.lock

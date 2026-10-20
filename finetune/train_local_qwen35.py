@@ -32,6 +32,13 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT / "finetune"))
+
+try:  # Windows: TRL fused LM head needs Triton (Linux-only) - pasang fallback torch
+    import trl_win_compat
+    trl_win_compat.install()
+except Exception:  # noqa: BLE001
+    pass
 
 
 def arg(flag, default=None):

@@ -27,6 +27,7 @@ import argparse
 import hashlib
 import json
 import random
+import shutil
 import time
 import urllib.request
 from pathlib import Path
@@ -227,6 +228,30 @@ def save_state(path, st):
     Path(path).write_text(json.dumps(st, indent=1), encoding="utf-8")
 
 
+def out_guard(out, allow_local=False):
+    """Pasti OUT_DIR kekal (Drive) & boleh ditulis - elak ckpt hilang senyap."""
+    out = Path(out)
+    text = str(out).replace("\\", "/")
+    if (text.startswith("/content/") and "/content/drive/" not in text
+            and not allow_local):
+        raise SystemExit(
+            f"OUT_DIR {out} nampak lokal (ephemeral) - checkpoint akan hilang. "
+            f"Guna /content/drive/MyDrive/... atau --allow-local-out")
+    out.mkdir(parents=True, exist_ok=True)
+    test = out / ".write_test"
+    try:
+        test.write_text(time.strftime("%Y-%m-%d %H:%M:%S"), encoding="utf-8")
+        test.unlink(missing_ok=True)
+    except Exception as e:  # noqa: BLE001
+        log(f"RALAT: OUT_DIR tidak boleh ditulis ({e})")
+        raise SystemExit("OUT_DIR tidak boleh ditulis - semak mount/akaun Drive")
+    try:
+        free = shutil.disk_usage(out).free / (1024 ** 3)
+    except OSError:
+        free = float("nan")
+    log(f"out={out} | tulis=ok | bebas={free:.1f} GB")
+
+
 def to_text(tok, r, thinking):
     user = r["instruction"]
     if r.get("input"):
@@ -277,6 +302,8 @@ def main():
     ap.add_argument("--delete-after", action="store_true",
                     help="padam fail shard yang dimuat turun selepas diproses")
     ap.add_argument("--reset", action="store_true")
+    ap.add_argument("--allow-local-out", action="store_true",
+                    help="benarkan OUT_DIR lokal (ephemeral) - bukan Drive")
     a = ap.parse_args()
 
     if a.model.lower().endswith(".gguf"):
@@ -285,10 +312,10 @@ def main():
     validate_model(a.model)
 
     out = Path(a.out)
+    out_guard(out, allow_local=a.allow_local_out)
     raw_dir = out / "raw"
     clean_dir = out / "clean"
     state_path = out / "state.json"
-    out.mkdir(parents=True, exist_ok=True)
     if a.reset:
         for p in (state_path,):
             if p.exists():
@@ -470,6 +497,25 @@ def main():
                 load_in_4bit=False)
             emodel.save_pretrained_merged(str(out / "merged"), etok,
                                           save_method="merged_16bit")
+            mdir = out / "merged"
+            try:
+                from transformers import AutoProcessor
+                AutoProcessor.from_pretrained(a.model).save_pretrained(str(mdir))
+                log("processor -> merged/ (preprocessor/video configs)")
+            except Exception as e:  # noqa: BLE001
+                log(f"amaran: processor tidak disimpan ({e})")
+            try:
+                (mdir / "LICENSE").write_text(
+                    http_text(f"https://huggingface.co/{a.model}/resolve/main/"
+                              f"LICENSE"), encoding="utf-8")
+            except Exception as e:  # noqa: BLE001
+                log(f"amaran: LICENSE tidak disalin ({e})")
+            (mdir / "README.md").write_text(
+                f"---\nlicense: apache-2.0\nbase_model: {a.model}\n"
+                f"library_name: transformers\npipeline_tag: image-text-to-text\n"
+                f"---\n\n# XCoder gen1\n\nMerged LoRA delta daripada "
+                f"`{a.model}` (latihan shard demi shard).\n",
+                encoding="utf-8")
             emodel.save_pretrained_gguf(str(out / "gguf"), etok,
                                         quantization_method="q4_k_m")
             log(f"exported {out / 'merged'} + {out / 'gguf'}")
