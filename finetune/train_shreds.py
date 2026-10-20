@@ -228,6 +228,43 @@ def save_state(path, st):
     Path(path).write_text(json.dumps(st, indent=1), encoding="utf-8")
 
 
+def export_all(out, a, last_ckpt):
+    """ckpt terakhir -> <out>/merged (HF-ready) + <out>/gguf/*.gguf."""
+    import gc
+
+    import torch
+    gc.collect()
+    torch.cuda.empty_cache()
+    from unsloth import FastVisionModel
+    log(f"export: muat {last_ckpt}")
+    emodel, etok = FastVisionModel.from_pretrained(
+        str(last_ckpt), max_seq_length=a.max_seq, load_in_4bit=False)
+    emodel.save_pretrained_merged(str(out / "merged"), etok,
+                                  save_method="merged_16bit")
+    mdir = out / "merged"
+    try:
+        from transformers import AutoProcessor
+        AutoProcessor.from_pretrained(a.model).save_pretrained(str(mdir))
+        log("processor -> merged/ (preprocessor/video configs)")
+    except Exception as e:  # noqa: BLE001
+        log(f"amaran: processor tidak disimpan ({e})")
+    try:
+        (mdir / "LICENSE").write_text(
+            http_text(f"https://huggingface.co/{a.model}/resolve/main/"
+                      f"LICENSE"), encoding="utf-8")
+    except Exception as e:  # noqa: BLE001
+        log(f"amaran: LICENSE tidak disalin ({e})")
+    (mdir / "README.md").write_text(
+        f"---\nlicense: apache-2.0\nbase_model: {a.model}\n"
+        f"library_name: transformers\npipeline_tag: image-text-to-text\n"
+        f"---\n\n# XCoder gen1\n\nMerged LoRA delta daripada "
+        f"`{a.model}` (latihan shard demi shard).\n",
+        encoding="utf-8")
+    emodel.save_pretrained_gguf(str(out / "gguf"), etok,
+                                quantization_method="q4_k_m")
+    log(f"exported {out / 'merged'} + {out / 'gguf'}")
+
+
 def out_guard(out, allow_local=False):
     """Pasti OUT_DIR kekal (Drive) & boleh ditulis - elak ckpt hilang senyap."""
     out = Path(out)
@@ -304,6 +341,9 @@ def main():
     ap.add_argument("--reset", action="store_true")
     ap.add_argument("--allow-local-out", action="store_true",
                     help="benarkan OUT_DIR lokal (ephemeral) - bukan Drive")
+    ap.add_argument("--export-only", action="store_true",
+                    help="eksport merged+GGUF dari ckpt terakhir sahaja, "
+                         "tanpa teruskan latihan")
     a = ap.parse_args()
 
     if a.model.lower().endswith(".gguf"):
@@ -321,6 +361,16 @@ def main():
             if p.exists():
                 p.unlink()
         log("state di-reset (checkpoint/clean kekal)")
+
+    if a.export_only:
+        if a.no_export:
+            raise SystemExit("--export-only bercanggah dengan --no-export")
+        st = load_state(state_path, a.model)
+        if not st.get("last_ckpt"):
+            raise SystemExit("tiada checkpoint untuk dieksport")
+        export_all(out, a, st["last_ckpt"])
+        log("siap (export-only)")
+        return
 
     shards = list_shards(a.repo, a.branch, a.shred_dir)
     if a.stacks:
@@ -484,41 +534,9 @@ def main():
         if not st.get("last_ckpt"):
             log("tiada checkpoint - langkau eksport")
         else:
-            import gc
-            import torch
             if model is not None:
                 del model
-            gc.collect()
-            torch.cuda.empty_cache()
-            from unsloth import FastVisionModel
-            log(f"export: muat {st['last_ckpt']}")
-            emodel, etok = FastVisionModel.from_pretrained(
-                str(st["last_ckpt"]), max_seq_length=a.max_seq,
-                load_in_4bit=False)
-            emodel.save_pretrained_merged(str(out / "merged"), etok,
-                                          save_method="merged_16bit")
-            mdir = out / "merged"
-            try:
-                from transformers import AutoProcessor
-                AutoProcessor.from_pretrained(a.model).save_pretrained(str(mdir))
-                log("processor -> merged/ (preprocessor/video configs)")
-            except Exception as e:  # noqa: BLE001
-                log(f"amaran: processor tidak disimpan ({e})")
-            try:
-                (mdir / "LICENSE").write_text(
-                    http_text(f"https://huggingface.co/{a.model}/resolve/main/"
-                              f"LICENSE"), encoding="utf-8")
-            except Exception as e:  # noqa: BLE001
-                log(f"amaran: LICENSE tidak disalin ({e})")
-            (mdir / "README.md").write_text(
-                f"---\nlicense: apache-2.0\nbase_model: {a.model}\n"
-                f"library_name: transformers\npipeline_tag: image-text-to-text\n"
-                f"---\n\n# XCoder gen1\n\nMerged LoRA delta daripada "
-                f"`{a.model}` (latihan shard demi shard).\n",
-                encoding="utf-8")
-            emodel.save_pretrained_gguf(str(out / "gguf"), etok,
-                                        quantization_method="q4_k_m")
-            log(f"exported {out / 'merged'} + {out / 'gguf'}")
+            export_all(out, a, st["last_ckpt"])
     log("siap")
 
 
