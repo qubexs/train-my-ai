@@ -1,0 +1,84 @@
+{
+  "models": [
+    {
+      "id": "Qwen/Qwen3.5-2B",
+      "label": "Qwen3.5 2B (reasoning, 256K ctx)",
+      "params": "2B",
+      "vendor": "Qwen",
+      "fits_t4": true,
+      "note": "Thinking model: strip [Start/End thinking] at display. Q4_K_M ~1.4GB."
+    },
+    {
+      "id": "Qwen/Qwen2.5-0.5B-Instruct",
+      "label": "Qwen2.5 0.5B Instruct (default, T4-safe)",
+      "params": "0.5B",
+      "vendor": "Qwen",
+      "fits_t4": true,
+      "note": "Repo default. ~30-60min, 3 epochs. GGUF ~350MB."
+    },
+    {
+      "id": "Qwen/Qwen2.5-1.5B-Instruct",
+      "label": "Qwen2.5 1.5B Instruct",
+      "params": "1.5B",
+      "vendor": "Qwen",
+      "fits_t4": true,
+      "note": "Better quality, still fits T4 16GB with 4-bit."
+    },
+    {
+      "id": "Qwen/Qwen2.5-7B-Instruct",
+      "label": "Qwen2.5 7B Instruct",
+      "params": "7B",
+      "vendor": "Qwen",
+      "fits_t4": true,
+      "note": "Needs batch=1, seq 1024, grad_accum 8 on T4."
+    },
+    {
+      "id": "google/gemma-2-2b-it",
+      "label": "Gemma 2 2B IT (Google)",
+      "params": "2B",
+      "vendor": "Google",
+      "fits_t4": true,
+      "note": "Needs HF token + accept licence on huggingface.co."
+    },
+    {
+      "id": "google/gemma-2-9b-it",
+      "label": "Gemma 2 9B IT (Google)",
+      "params": "9B",
+      "vendor": "Google",
+      "fits_t4": false,
+      "note": "Tight on T4 free; use seq 512, batch 1. May OOM."
+    },
+    {
+      "id": "meta-llama/Llama-3.2-1B-Instruct",
+      "label": "Llama 3.2 1B Instruct (Meta)",
+      "params": "1B",
+      "vendor": "Meta",
+      "fits_t4": true,
+      "note": "Needs HF token + accept licence."
+    },
+    {
+      "id": "meta-llama/Llama-3.2-3B-Instruct",
+      "label": "Llama 3.2 3B Instruct (Meta)",
+      "params": "3B",
+      "vendor": "Meta",
+      "fits_t4": true,
+      "note": "Needs HF token. Good balance on T4."
+    },
+    {
+      "id": "mistralai/Mistral-7B-Instruct-v0.3",
+      "label": "Mistral 7B Instruct v0.3",
+      "params": "7B",
+      "vendor": "Mistral",
+      "fits_t4": true,
+      "note": "Batch=1 only on T4 free."
+    },
+    {
+      "id": "microsoft/Phi-3-mini-4k-instruct",
+      "label": "Phi-3 mini 4k Instruct (Microsoft)",
+      "params": "3.8B",
+      "vendor": "Microsoft",
+      "fits_t4": true,
+      "note": "Strong small model, fits T4 easily."
+    }
+  ]
+}
