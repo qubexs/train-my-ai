@@ -7,13 +7,9 @@ $ErrorActionPreference = "Stop"
 $Root = Split-Path -Parent $MyInvocation.MyCommand.Path
 $HF = "https://huggingface.co/myxcoder/xcoder/resolve/main"
 
-$Base = @("qwen2.5-0.5b-instruct-q4_k_m.gguf", "xcoder-general-0.5b-q4_k_m.gguf")
-$Rest = @("xcoder-bash", "xcoder-css", "xcoder-docker", "xcoder-html",
-  "xcoder-javascript", "xcoder-laravel", "xcoder-linux", "xcoder-mysql",
-  "xcoder-nodejs", "xcoder-php", "xcoder-postgresql", "xcoder-python",
-  "xcoder-sql", "xcoder-tailwind", "xcoder-typescript", "xcoder-web") |
-  ForEach-Object { "$_-0.5b-q4_k_m.gguf" }
-$Files = if ($Minimal) { $Base } else { $Base + $Rest }
+$Base = @("xcoder-gen1-0.8b-q4_k_m.gguf")
+$Rest = @()
+$Files = $Base
 
 $py = Get-Command py -ErrorAction SilentlyContinue
 if (-not $py) { $py = Get-Command python -ErrorAction SilentlyContinue }
