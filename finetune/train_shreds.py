@@ -61,11 +61,20 @@ def list_shards(repo, branch, local_dir):
         return [f"{SHRED_PREFIX}{p}" for p in sorted(paths)]
     url = (f"https://api.github.com/repos/{repo}/git/trees/{branch}"
            f"?recursive=1")
-    tree = json.loads(http_text(url)).get("tree", [])
-    return sorted(t["path"] for t in tree
-                  if t.get("type") == "blob"
-                  and t["path"].startswith(SHRED_PREFIX)
-                  and t["path"].endswith(".jsonl"))
+    try:
+        tree = json.loads(http_text(url)).get("tree", [])
+        found = sorted(t["path"] for t in tree
+                       if t.get("type") == "blob"
+                       and t["path"].startswith(SHRED_PREFIX)
+                       and t["path"].endswith(".jsonl"))
+        if found:
+            return found
+        raise ValueError("tree kosong")
+    except Exception as e:  # noqa: BLE001 - API hadir had kadar (403)
+        log(f"amaran: GitHub API gagal ({e}) - guna manifest")
+    manifest = (f"https://raw.githubusercontent.com/{repo}/{branch}/"
+                f"{SHRED_PREFIX}manifest.txt")
+    return [ln.strip() for ln in http_text(manifest).splitlines() if ln.strip()]
 
 
 def fetch_shard(path, repo, branch, raw_dir, local_dir):
@@ -82,15 +91,42 @@ def fetch_shard(path, repo, branch, raw_dir, local_dir):
     return dest.read_text(encoding="utf-8")
 
 
+def drop_cached(path, raw_dir):
+    p = Path(raw_dir) / path
+    if p.exists():
+        p.unlink()
+        try:
+            p.parent.rmdir()
+        except OSError:
+            pass
+
+
 def load_limits(a):
     return {"min_q": a.min_q, "max_q": a.max_q,
             "min_a": a.min_a, "max_a": a.max_a}
 
 
-def clean_rows(text, seen, limits, stack):
+try:
     from _common import check_row
     from audit import scrub_hits
+except Exception:  # noqa: BLE001 - standalone (script fetched without repo)
+    def check_row(r):
+        return (isinstance(r, dict) and isinstance(r.get("instruction"), str)
+                and isinstance(r.get("output"), str)
+                and r["instruction"].strip() and r["output"].strip())
 
+    _FORBIDDEN = ["qwen", "alibaba", "tongyi", "dashscope",
+                  "as an ai language model", "as a large language model"]
+    _DENIAL = ["bukan", "not ", "never", "tiada", "tidak ", "jangan",
+               "no. i am", "no, i am", "i am xcoder", "saya xcoder"]
+
+    def scrub_hits(text):
+        low = text.lower()
+        return [t for t in _FORBIDDEN
+                if t in low and not any(m in low for m in _DENIAL)]
+
+
+def clean_rows(text, seen, limits, stack):
     kept, stats = [], {"rows": 0, "bad": 0, "bounds": 0, "scrub": 0,
                        "dupe": 0, "retag": 0}
     for line in text.splitlines():
@@ -242,6 +278,8 @@ def main():
     ap.add_argument("--list-only", action="store_true")
     ap.add_argument("--dry-run", action="store_true", help="list + clean only")
     ap.add_argument("--no-export", action="store_true")
+    ap.add_argument("--delete-after", action="store_true",
+                    help="padam fail shard yang dimuat turun selepas diproses")
     ap.add_argument("--reset", action="store_true")
     a = ap.parse_args()
 
@@ -321,6 +359,8 @@ def main():
     for i, path in enumerate(shards, 1):
         if path in done:
             log(f"[{i}/{len(shards)}] skip {path}")
+            if a.delete_after:
+                drop_cached(path, raw_dir)
             continue
         text = fetch_shard(path, a.repo, a.branch, raw_dir, a.shred_dir)
         stack = path[len(SHRED_PREFIX):].split("/", 1)[0]
@@ -351,10 +391,14 @@ def main():
             f"bad={stats['bad']} bounds={stats['bounds']} scrub={stats['scrub']} "
             f"dupe={stats['dupe']} holdout={len(rows) - len(new_rows)}")
         if a.dry_run:
+            if a.delete_after:
+                drop_cached(path, raw_dir)
             continue
         if not rows:
             st["completed"].append(path)
             save_state(state_path, st)
+            if a.delete_after:
+                drop_cached(path, raw_dir)
             continue
 
         train_rows = list(new_rows)
@@ -368,6 +412,8 @@ def main():
         if not train_rows:
             st["completed"].append(path)
             save_state(state_path, st)
+            if a.delete_after:
+                drop_cached(path, raw_dir)
             continue
 
         from datasets import Dataset
@@ -408,6 +454,8 @@ def main():
         save_state(state_path, st)
         replay_pool.extend(new_rows)
         log(f"checkpoint -> {ckpt}")
+        if a.delete_after:
+            drop_cached(path, raw_dir)
 
     if not a.dry_run and not a.no_export:
         if not st.get("last_ckpt"):
